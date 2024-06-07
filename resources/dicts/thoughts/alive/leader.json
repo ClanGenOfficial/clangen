@@ -163,7 +163,7 @@
     {
         "id": "childish_leader",
         "thoughts": [
-            "Pranks r_c by switching their fresh-kill with crow-food"
+            "Pranks r_c by switching {PRONOUN/r_c/poss} fresh-kill with crow-food"
         ],
         "main_trait_constraint": [
             "childish"
@@ -181,7 +181,7 @@
     {
         "id": "insecure_leader",
         "thoughts": [
-            "Thinks {PRONOUN/m_c/subject} don't deserve StarClan's blessing of 9 lives",
+            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} deserve StarClan's blessing of 9 lives",
             "Wonders if cats like {PRONOUN/m_c/object} as a leader"
         ],
         "main_trait_constraint": [

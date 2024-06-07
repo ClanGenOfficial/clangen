@@ -1,6 +1,8 @@
 import pygame
 
 _images = {}
+
+
 def load_image(path):
     """
     If not in the cache already, loads the image from path as a surface.

@@ -1,7 +1,8 @@
-import ujson
 import collections
 import os
 from os.path import exists as file_exists
+
+import ujson
 
 """ This script exists to count and catalogue all patrols.   """
 
@@ -26,20 +27,24 @@ def get_patrol_details(path):
             with open(path, "r") as read_file:
                 patrols = ujson.loads(read_file.read())
         except:
-            print(f'Something went wrong with {path}')
+            print(f"Something went wrong with {path}")
 
     if not patrols:
         return
 
     if type(patrols[0]) != dict:
-        print(path, "is not in the correct patrol format. It may not be a patrol .json.")
+        print(
+            path, "is not in the correct patrol format. It may not be a patrol .json."
+        )
         return
 
     if not patrols:
         return
 
     if type(patrols[0]) != dict:
-        print(path, "is not in the correct patrol format. It may not be a patrol .json.")
+        print(
+            path, "is not in the correct patrol format. It may not be a patrol .json."
+        )
         return
 
     for p_ in patrols:
@@ -95,7 +100,7 @@ def check_patrol_sprites():
 
     # looking for patrol ID without numbers
     if not image_found:
-        image_name = ''.join([i for i in image_name if not i.isdigit()])
+        image_name = "".join([i for i in image_name if not i.isdigit()])
 
         exists = file_exists(f"{path}{image_name}.png")
         if exists:
@@ -106,7 +111,7 @@ def check_patrol_sprites():
     # looking for patrol ID with biome indicator replaced with 'gen'
     # if that isn't found then patrol type placeholder will be used
     if not image_found:
-        image_name = ''.join([i for i in image_name if not i.isdigit()])
+        image_name = "".join([i for i in image_name if not i.isdigit()])
         image_name = image_name.replace("fst_", "gen_")
         image_name = image_name.replace("mtn_", "gen_")
         image_name = image_name.replace("pln_", "gen_")
@@ -146,17 +151,21 @@ for root, dirs, files in os.walk(path):
 
 # Now that we have everything gathered, lets do some checks.
 
-print("""
+print(
+    """
 You can ask me to do a few different things! But make sure to ask it correctly. When prompted, please use one of the following commands:
 Check patrol IDs
 Check patrol sprites
 Check for certain patrols
-""")
+"""
+)
 task = input("What would you like to do? ")
 
-if 'patrol ids' in task.casefold():
+if "patrol ids" in task.casefold():
     # AT CHECK TO MAKE SURE ALL PATROL IDs ARE UNIQUE
-    duplicates = [item for item, count in collections.Counter(ALL_PATROLS).items() if count > 1]
+    duplicates = [
+        item for item, count in collections.Counter(ALL_PATROLS).items() if count > 1
+    ]
     if duplicates:
         print("There are duplicate patrols IDs:")
         for d in duplicates:
@@ -165,7 +174,7 @@ if 'patrol ids' in task.casefold():
     else:
         print("All patrol IDs are unique. \n\n")
 
-if 'patrol sprite' in task.casefold():
+if "patrol sprite" in task.casefold():
 
     explicit_art = []
     has_patrol_sprite = []
@@ -183,7 +192,7 @@ if 'patrol sprite' in task.casefold():
 
 # We can do a lot with these sets we have just generated! For example:
 
-'''## FINDING ALL PATROLS IN THE FOREST BIOME WITH NEW_CAT TAG
+"""## FINDING ALL PATROLS IN THE FOREST BIOME WITH NEW_CAT TAG
 
 forest_new_cat = DETAILS["BIOME_forest"].intersection(DETAILS["TAG_new_cat"])
 print("Number of patrols with the new_cat tag in the forest biome: ", len(forest_new_cat))
@@ -193,4 +202,4 @@ print("Patrol IDs: ", forest_new_cat)
 
 looking = DETAILS["TAG_death"].intersection(DETAILS["MIN_1"], DETAILS["MAX_1"])
 print("Number of patrols death tag and min_cat = 1 and max_cats = 1: ", len(looking))
-print("Patrol IDs: ", looking)'''
+print("Patrol IDs: ", looking)"""

@@ -72,7 +72,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: ${{ env.update_api_push_token != '' }}
+        if: ${{ env.update_api_push_token != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
         run: |
           gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
@@ -166,7 +166,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: ${{ env.update_api_push_token != '' }}
+        if: ${{ env.update_api_push_token != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
           curl -X 'POST' \
@@ -283,7 +283,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: ${{ env.update_api_push_token != '' }}
+        if: ${{ env.update_api_push_token != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
         shell: bash
         run: |
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
@@ -407,7 +407,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: ${{ env.update_api_push_token != '' }}
+        if: ${{ env.update_api_push_token != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
         shell: bash
         run: |
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
@@ -531,7 +531,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: ${{ env.update_api_push_token != '' }}
+        if: ${{ env.update_api_push_token != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
         shell: bash
         run: |
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
@@ -634,7 +634,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
-        if: ${{ env.update_api_push_token != '' }}
+        if: ${{ env.update_api_push_token != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
         run: |
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
@@ -665,7 +665,7 @@ jobs:
 
   confirm_release_ubuntu_22_04:
     runs-on: ubuntu-22.04
-    if: ${{ vars.USE_UPDATE_API != '' }}
+    if: ${{ vars.USE_UPDATE_API != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
     needs:
       - build_ubuntu_20_04
       - build_ubuntu_22_04

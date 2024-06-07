@@ -128,6 +128,13 @@
             "text_horiz_alignment": "left"
         }
     },
+    "#text_box_30_horizleft_spacing_95_dark": {
+        "prototype": "#text_box_30_horizleft_dark",
+        "misc": {
+            "text_horiz_alignment": "left",
+            "line_spacing": "0.95"
+        }
+    },
     "#text_box_30_horizleft_pad_0_8_dark": {
         "prototype": "#text_box_30_horizleft_dark",
         "misc": {

@@ -2,7 +2,7 @@
     {
         "patrol_id": "wtlnd_med_soloripples1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -69,7 +69,7 @@
     {
         "patrol_id": "wtlnd_med_herblocation1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -136,7 +136,7 @@
     {
         "patrol_id": "wtlnd_med_herblocation2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1596,7 +1596,7 @@
     {
         "patrol_id": "wtlnd_med_rescue1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -2298,7 +2298,7 @@
     {
         "patrol_id": "wtlnd_med_appfirstsign1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2333,7 +2333,7 @@
     {
         "patrol_id": "wtlnd_med_discussion1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2401,7 +2401,7 @@
     {
         "patrol_id": "wtlnd_med_dwindleherbsgathering1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2511,7 +2511,7 @@
 	{
         "patrol_id": "wtlnd_med_soloripples1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2577,7 +2577,7 @@
 	{
         "patrol_id": "wtlnd_med_herblocation1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2644,7 +2644,7 @@
 	{
         "patrol_id": "wtlnd_med_herblocation2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2684,7 +2684,7 @@
 	{
         "patrol_id": "wtlnd_med_rescue1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -2730,7 +2730,7 @@
 	{
         "patrol_id": "wtlnd_med_appfirstsign1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",

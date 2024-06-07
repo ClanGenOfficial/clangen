@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 from typing import List, Union
+
 from scripts.patrol.patrol_outcome import PatrolOutcome
 
 
@@ -36,9 +37,9 @@ class PatrolEvent:
         
         self.patrol_art = patrol_art
         self.patrol_art_clean = patrol_art_clean
-        self.biome = biome if biome is not None else ["Any"]
-        self.camp = camp if camp is not None else ["Any"]
-        self.season = season if season is not None else ["Any"]
+        self.biome = biome if biome is not None else ["any"]
+        self.camp = camp if camp is not None else ["any"]
+        self.season = season if season is not None else ["any"]
         self.tags = tags if tags is not None else []
         self.intro_text = intro_text
         

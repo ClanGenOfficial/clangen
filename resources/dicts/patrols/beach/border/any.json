@@ -2,7 +2,7 @@
     {
         "patrol_id": "bch_bord_rogue1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -93,7 +93,7 @@
     {
         "patrol_id": "bch_bord_rogue2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -175,7 +175,7 @@
     {
         "patrol_id": "bch_bord_rogue3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -312,7 +312,7 @@
     {
         "patrol_id": "bch_bord_flashflood1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_flashflood",
@@ -399,7 +399,7 @@
     {
         "patrol_id": "bch_bord_flashflood2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_flashflood",
@@ -486,7 +486,7 @@
     {
         "patrol_id": "bch_bord_flashflood3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_flashflood",
@@ -555,7 +555,7 @@
     {
         "patrol_id": "bch_bord_flashflood4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_flashflood",
@@ -609,7 +609,7 @@
     {
         "patrol_id": "bch_bord_trackrogue1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -778,7 +778,7 @@
     {
         "patrol_id": "bch_bord_trackrogue2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -954,7 +954,7 @@
     {
         "patrol_id": "bch_bord_trackrogue3",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1042,7 +1042,7 @@
     {
         "patrol_id": "bch_bord_trackrogue4",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1187,7 +1187,7 @@
     {
         "patrol_id": "bch_bord_trackrogue5",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1332,7 +1332,7 @@
     {
         "patrol_id": "bch_bord_trackrogue6",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1405,7 +1405,7 @@
     {
         "patrol_id": "bch_bord_trackrogue7",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1495,7 +1495,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1528,7 +1528,7 @@
     {
         "patrol_id": "bch_bord_trackrogue8",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1618,7 +1618,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1651,7 +1651,7 @@
     {
         "patrol_id": "bch_bord_trackrogue9",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -1678,7 +1678,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1711,7 +1711,7 @@
     {
         "patrol_id": "bch_bord_nessie1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "nessie_INTRO",
@@ -1741,7 +1741,7 @@
     {
         "patrol_id": "bch_bord_frogman1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
         "patrol_art": "loveland_frog_INTRO",

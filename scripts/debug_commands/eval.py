@@ -1,10 +1,8 @@
+import builtins
 from typing import List
 
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log, add_multiple_lines_to_log
-
-import builtins
-from typing import List
 
 warningAccepted = False
 
@@ -22,8 +20,10 @@ class EvalCommand(Command):
             return
         global warningAccepted  # pylint: disable=global-statement,global-variable-not-assigned
         if not warningAccepted:
-            add_multiple_lines_to_log("""WARNING: This command can be used to run code in your game. Only use this if you know what you're doing.
-                                         If you have been told to use this by anyone other than the official clangen discord contributors, BLOCK THEM IMMEDIATELY.
+            add_multiple_lines_to_log("""WARNING: This command can be used to run code in your game. 
+                                         Only use this if you know what you're doing.
+                                         If you have been told to use this by anyone other than the official 
+                                         ClanGen Discord contributors, BLOCK THEM IMMEDIATELY.
                                          If you are not sure what this means, DO NOT USE THIS COMMAND.
                                          To disable this warning, type \"understandrisks\".""")
             return

@@ -2,7 +2,7 @@
     {
         "patrol_id": "wtlnd_hunt_lizard1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -33,7 +33,7 @@
     {
         "patrol_id": "wtlnd_gen_hunt_twolegplace1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -52,7 +52,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to one.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -84,7 +84,7 @@
     {
         "patrol_id": "wtlnd_gen_hunt_twolegplace2",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -102,7 +102,7 @@
                 "weight": 20
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to as many as they can carry.",
                 "exp": 20,
                 "weight": 5
             }
@@ -132,7 +132,7 @@
     {
         "patrol_id": "wtlnd_hunt_strange1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -151,7 +151,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "A quick dip in a stagnant pond will do! The plan works and their hunt goes well.",
+                "text": "A quick dip in a stagnant pond will do! The plan works, and their hunt goes well.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -187,7 +187,7 @@
     {
         "patrol_id": "wtlnd_hunt_strange2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -236,7 +236,7 @@
     {
         "patrol_id": "wtlnd_hunt_huntassessment1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -257,13 +257,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
+                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place, and they pull off a perfect catch!",
+                "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the right opportunity presents itself, and they pull off a perfect catch!",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -285,12 +285,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to catch what isn't there.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty-pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -310,7 +310,7 @@
     {
         "patrol_id": "wtlnd_hunt_solo2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -329,7 +329,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a drying pool that's trapped a fat fish flopping in it, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
+                "text": "r_c finds a drying pool that's trapped a fat fish flopping in it, and they can barely drag the thing back to camp, but great StarClan, it's juicy when they sit down to eat it with their Clanmates.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -368,7 +368,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration.",
+                "text": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty-pawed and prickling with frustration.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bold", "childish", "confident", "daring", "playful"]
@@ -378,7 +378,7 @@
     {
         "patrol_id": "wtlnd_hunt_solo3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -399,7 +399,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a drying pool that's trapped a fat fish flopping in it, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+                "text": "r_c finds a drying pool that's trapped a fat fish flopping in it, and they can barely drag the thing back to camp, but great StarClan, it's juicy when they sit down to eat it with their Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with their friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -448,7 +448,7 @@
     {
         "patrol_id": "wtlnd_hunt_solo4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -469,7 +469,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a drying pool that's trapped a fat fish flopping in it, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+                "text": "r_c finds a drying pool that's trapped a fat fish flopping in it, and they can barely drag the thing back to camp, but great StarClan, it's juicy when they sit down to eat it with their Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with their friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -518,7 +518,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetnr1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -537,13 +537,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in their mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -591,7 +591,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetnr2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -610,13 +610,13 @@
                 "prey": ["large"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in their mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a hunk of meat in their mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -664,7 +664,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetnr3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -683,13 +683,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in their mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -727,7 +727,7 @@
                 ]
             },
             {
-                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
+                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter delicious-smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["multi"]
@@ -737,7 +737,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetnr4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["disaster"],
         "patrol_art": "hunt_general_intro",
@@ -756,13 +756,13 @@
                 "prey": ["large"]
             },
             {
-                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in their mouth.",
+                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a hunk of meat in their mouth.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,3"]
@@ -800,7 +800,7 @@
                 ]
             },
             {
-                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. The whole patrol investigates, and doors slam down behind them. There's nothing they can do to get out - eventually the Twolegs notice, and the trapped cats are taken from c_n.",
+                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter delicious-smelling mush in little burrows. The whole patrol investigates, and doors slam down behind them. There's nothing they can do to get out - eventually the Twolegs notice, and the trapped cats are taken from c_n.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["patrol"]
@@ -810,7 +810,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -860,7 +860,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -886,7 +886,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -931,7 +931,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -956,7 +956,7 @@
     {
         "patrol_id": "wtlnd_hunt_twolegdencatdare1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
         "patrol_art": "hunt_general_intro",
@@ -964,7 +964,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1043,7 +1043,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses their pelt against p_l on the way back to c_n.",
+                "text": "Carelessly, r_c is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, they hear p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses their pelt against p_l on the way back to c_n.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1057,7 +1057,7 @@
                 ]
             },
             {
-                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1101,7 +1101,7 @@
     {
         "patrol_id": "wtlnd_hunt_twolegdenappdare1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
         "patrol_art": "hunt_general_intro",
@@ -1111,7 +1111,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1174,7 +1174,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses their pelt against app1 as they pad home.",
+                "text": "Carelessly, app2 is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, they hear app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses their pelt against app1 as they pad home.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1188,7 +1188,7 @@
                 ]
             },
             {
-                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1231,7 +1231,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1283,7 +1283,7 @@
                 "stat_trait": ["adventurous", "bold", "confident", "daring", "playful"]
             },
             {
-                "text": "r_c is caught in a trap hidden in the swampgrass and is taken by Twolegs shortly after.",
+                "text": "r_c is caught in a trap hidden in the swampgrass and taken by Twolegs shortly after.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
@@ -1293,7 +1293,7 @@
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1355,7 +1355,7 @@
     {
         "patrol_id": "wtlnd_hunt_thunderpath1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement"],
         "patrol_art": "hunt_general_intro",
@@ -1368,13 +1368,13 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1387,7 +1387,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1427,7 +1427,7 @@
     {
         "patrol_id": "wtlnd_hunt_thunderpath2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement", "cruel_season"],
         "patrol_art": "hunt_general_intro",
@@ -1440,13 +1440,13 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1459,7 +1459,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1499,7 +1499,7 @@
     {
         "patrol_id": "wtlnd_hunt_thunderpath3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement"],
         "patrol_art": "hunt_general_intro",
@@ -1512,13 +1512,13 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1531,7 +1531,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1565,7 +1565,7 @@
     {
         "patrol_id": "wtlnd_hunt_thunderpath4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["retirement", "cruel_season"],
         "patrol_art": "hunt_general_intro",
@@ -1578,13 +1578,13 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol crosses the Thunderpath and can hunt on the other side.",
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -1597,7 +1597,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -1636,7 +1636,7 @@
     {
         "patrol_id": "wtlnd_hunt_lilsalamander1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1731,7 +1731,7 @@
     {
         "patrol_id": "wtlnd_hunt_lilsalamander2",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "hunt_general_intro",
@@ -1798,7 +1798,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1806,12 +1806,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate.",
+        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1842,7 +1842,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1887,7 +1887,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge4",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1895,7 +1895,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate.",
+        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -1915,7 +1915,7 @@
                 ]
             },
             {
-                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1931,7 +1931,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1995,7 +1995,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -2023,7 +2023,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge3",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2067,7 +2067,7 @@
                 ]
             },
             {
-                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the eel.",
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the eel.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -2185,7 +2185,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge5",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2193,12 +2193,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
+        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2229,7 +2229,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2293,7 +2293,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -2321,7 +2321,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge6",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2329,7 +2329,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
+        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -2349,7 +2349,7 @@
                 ]
             },
             {
-                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2365,7 +2365,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2429,7 +2429,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -2457,7 +2457,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge8",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2470,7 +2470,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c is smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "text": "r_c is all alone and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2501,7 +2501,7 @@
                 ]
             },
             {
-                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the stork.",
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the stork.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -2622,7 +2622,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge4",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2681,7 +2681,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2738,7 +2738,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -2766,7 +2766,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge2",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2809,7 +2809,7 @@
                 ]
             },
             {
-                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2825,7 +2825,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2886,7 +2886,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge3",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -2929,7 +2929,7 @@
                 ]
             },
             {
-                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims a seat at the carcass.",
+                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims {PRONOUN/s_c/poss} share of the carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -2945,7 +2945,7 @@
                 ]
             },
             {
-                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the swamp, muck casing their pelt, until the fox finally throws them off and the battered s_c goes back to proudly claim the carcass.",
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the swamp, muck casing their pelt, until the fox finally throws them off and the battered s_c goes back to proudly claim the carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -3053,7 +3053,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_steal1",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -3066,7 +3066,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that - with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox leaps up frightened out of its skin as the cats pounce to take possession of the bird.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that - with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox yips with fear as the cats pounce to take possession of the bird.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -3111,7 +3111,7 @@
                 ]
             },
             {
-                "text": "Tracking the fox trail, s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
+                "text": "s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3148,7 +3148,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3280,7 +3280,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_steal2",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -3293,7 +3293,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. Having more cats makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -3324,7 +3324,7 @@
                 ]
             },
             {
-                "text": "Tracking the fox trail, s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
+                "text": "s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3354,7 +3354,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3458,7 +3458,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_steal6",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -3532,7 +3532,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
+                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's efforts.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3636,7 +3636,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal1",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -3649,7 +3649,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -3695,7 +3695,7 @@
                 ]
             },
             {
-                "text": "The cats slowly follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
+                "text": "The cats follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3725,7 +3725,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3740,7 +3740,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then drive it more gently from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3767,7 +3767,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it lashes out at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3790,7 +3790,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -3829,7 +3829,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal5",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -3842,7 +3842,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -3888,7 +3888,7 @@
                 ]
             },
             {
-                "text": "The cats slowly follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
+                "text": "The cats follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3918,7 +3918,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3933,7 +3933,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then drive it more gently from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3960,7 +3960,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it lashes out at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3982,7 +3982,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -4020,7 +4020,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal6",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4067,7 +4067,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
+                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's efforts.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -4135,7 +4135,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge9",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4143,12 +4143,12 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
+        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -4179,7 +4179,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -4243,7 +4243,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -4271,7 +4271,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge7",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4279,7 +4279,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. Tracking it, they find the animal feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
+        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -4299,7 +4299,7 @@
                 ]
             },
             {
-                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4315,7 +4315,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -4379,7 +4379,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -4407,7 +4407,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge10",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4420,7 +4420,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c is smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+                "text": "r_c is all alone and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -4451,7 +4451,7 @@
                 ]
             },
             {
-                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the stork.",
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the stork.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -4572,7 +4572,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge1",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4631,7 +4631,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -4688,7 +4688,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -4716,7 +4716,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge5",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4759,7 +4759,7 @@
                 ]
             },
             {
-                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+                "text": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4775,7 +4775,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good.",
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -4836,7 +4836,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge6",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -4879,7 +4879,7 @@
                 ]
             },
             {
-                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims a seat at the carcass.",
+                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims {PRONOUN/s_c/poss} share of the carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -4895,7 +4895,7 @@
                 ]
             },
             {
-                "text": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the swamp, muck casing their pelt, until the fox finally throws them off and the battered s_c goes back to proudly claim the carcass.",
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the swamp, muck casing their pelt, until the fox finally throws them off and the battered s_c goes back to proudly claim the carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -5003,7 +5003,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_steal4",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -5016,7 +5016,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that - with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox leaps up frightened out of its skin as the cats pounce to take possession of the bird.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that - with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox yips with fear as the cats pounce to take possession of the bird.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -5061,7 +5061,7 @@
                 ]
             },
             {
-                "text": "Tracking the fox trail, s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
+                "text": "s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -5098,7 +5098,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5230,7 +5230,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_steal5",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -5243,7 +5243,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. Having more cats makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -5274,7 +5274,7 @@
                 ]
             },
             {
-                "text": "Tracking the fox trail, s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
+                "text": "s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -5304,7 +5304,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5408,7 +5408,7 @@
     {
         "patrol_id": "wtlnd_hunt_redfox_steal3",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -5482,7 +5482,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
+                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's efforts.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5582,7 +5582,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal4",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -5595,7 +5595,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -5641,7 +5641,7 @@
                 ]
             },
             {
-                "text": "The cats slowly follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
+                "text": "The cats follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -5671,7 +5671,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5686,7 +5686,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then drive it more gently from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -5713,7 +5713,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it lashes out at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -5736,7 +5736,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -5775,7 +5775,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal2",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -5788,7 +5788,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
+                "text": "It's a gray fox, which as far as the cats are concerned means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -5834,7 +5834,7 @@
                 ]
             },
             {
-                "text": "The cats slowly follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
+                "text": "The cats follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -5864,7 +5864,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The fox's trail vanishes just as quickly as it had appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol has to head back home disappointed.",
+                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5879,7 +5879,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then drive it more gently from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -5906,7 +5906,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it bites at r_c.",
+                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it lashes out at r_c.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -5928,7 +5928,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border it makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -5966,7 +5966,7 @@
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal3",
         "biome": ["wetland"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -6013,7 +6013,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
+                "text": "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's efforts.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -6081,7 +6081,7 @@
     {
         "patrol_id": "wtlnd_hunt_wareprey_lorelocked1",
         "biome": ["wetlands"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",

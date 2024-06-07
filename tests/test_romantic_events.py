@@ -1,8 +1,8 @@
 import unittest
-import os
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.events_module.relationship.romantic_events import Romantic_Events
+
 
 class RelationshipConditions(unittest.TestCase):
     def test_main_cat_status_one(self):
