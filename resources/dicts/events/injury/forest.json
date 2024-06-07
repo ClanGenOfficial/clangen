@@ -46,7 +46,7 @@
         "season": ["any"],
         "tags": [],
         "weight": 30,
-        "event_text": "m_c was hunting on a night patrol, and nearly got carried off by an owl! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alive, but with many a scratch as proof of {PRONOUN/m_c/poss} adventure.",
+        "event_text": "m_c was hunting on a night patrol and nearly got carried off by an owl! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alive, but with many a scratch as proof of {PRONOUN/m_c/poss} adventure.",
         "m_c": {
             "status": [
                 "apprentice"]

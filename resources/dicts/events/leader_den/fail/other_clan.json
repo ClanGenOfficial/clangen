@@ -33,7 +33,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "During the Gathering, m_c makes scathing comments about o_c. o_c_n's leader is quite blatantly ignoring {PRONOUN/m_c/object} though.",
+    "event_text": "During the Gathering, m_c makes scathing comments about o_c_n. o_c_n's leader is quite blatantly ignoring {PRONOUN/m_c/object} though.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -41,7 +41,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "During the Gathering, m_c tries to make overtures of peace with o_c. o_c_n's leader seems far from interested and, in fact, seems to take further offense.",
+    "event_text": "During the Gathering, m_c tries to make overtures of peace with o_c_n. o_c_n's leader seems far from interested and, in fact, seems to take further offense.",
     "rel_change": -1,
     "m_c": {},
     "player_clan_temper": ["any"],

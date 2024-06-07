@@ -56,7 +56,7 @@
         ]
     },  
     {
-        "event_id": "pln_injury_mangledleg_multimultitraidany1",
+        "event_id": "pln_injury_mangledleg_multimultitraitany1",
         "location": ["plains"],
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "sub_type": [],
