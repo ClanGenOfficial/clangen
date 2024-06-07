@@ -1,3 +1,4 @@
+import inspect
 from typing import Union, Tuple
 import html
 
@@ -13,7 +14,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
 
-from scripts.utility import scale
+from scripts.utility import scale, shorten_text_to_fit
 
 
 class UIImageButton(pygame_gui.elements.UIButton):
@@ -288,7 +289,7 @@ class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
                                           )
 
 
-class UISpriteButton():
+class UISpriteButton:
     """This is for use with the cat sprites. It wraps together a UIImage and Transparent Button.
     For most functions, this can be used exactly like other pygame_gui elements."""
 
@@ -695,7 +696,28 @@ class UICheckbox(UIImageButton):
         self.change_object_id("#unchecked_checkbox")
 
 
-class DisplayCatList(UIAutoResizingContainer):
+class UIBasicCatListDisplay(UIAutoResizingContainer):
+    """
+    Creates and displays a list of click-able cat sprites.
+    :param relative_rect: The starting size and relative position of the container.
+    :param container: The container this container is within. Defaults to None (which is the root
+                      container for the UI)
+    :param starting_height: The starting layer height of this container above its container.
+                            Defaults to 1.
+    :param object_id: An object ID for this element.
+    :param manager: The UI manager for this element. If not provided or set to None,
+                    it will try to use the first UIManager that was created by your application.
+    :param cat_list: the list of cat objects that need to display
+    :param cats_displayed: the number of cats to display on one page
+    :param px_between: the pixel space between each cat sprite
+    :param columns: the number of cats in a row before a new row is created
+    :param next_button: the next_button ui_element
+    :param prev_button: the prev_button ui_element
+    :param current_page: the currently displayed page of the cat list
+    :param tool_tip_name: should a tooltip displaying the cat's name be added to each cat sprite, default False
+    :param visible: Whether the element is visible by default. Warning - container visibility
+                    may override this.
+    """
 
     def __init__(
             self,
@@ -711,8 +733,10 @@ class DisplayCatList(UIAutoResizingContainer):
             next_button: UIImageButton,
             prev_button: UIImageButton,
             current_page: int,
-            tool_tip_name: bool
+            tool_tip_name: bool = False,
+            visible: bool = True
     ):
+
         self.cat_list = cat_list
         self.cats_displayed = cats_displayed
         self.px_between = px_between
@@ -725,7 +749,7 @@ class DisplayCatList(UIAutoResizingContainer):
         self.cat_sprites = {}
 
         super().__init__(relative_rect=relative_rect, container=container, starting_height=starting_height,
-                         object_id=object_id, manager=manager)
+                         object_id=object_id, visible=visible, manager=manager)
 
         self._display_cats()
 
@@ -759,8 +783,8 @@ class DisplayCatList(UIAutoResizingContainer):
         for ele in self.elements:
             ele.kill()
 
-        pos_x = 0
-        pos_y = 0
+        pos_x = self.px_between
+        pos_y = self.px_between
         i = 0
 
         for kitty in display_cats:
@@ -776,7 +800,7 @@ class DisplayCatList(UIAutoResizingContainer):
 
             # changing position
             pos_x += self.px_between
-            if pos_x >= ((self.px_between + 100) * i):
+            if pos_x >= ((self.px_between + 100) * self.columns):
                 pos_x = 0
                 pos_y += self.px_between
 
@@ -798,3 +822,111 @@ class DisplayCatList(UIAutoResizingContainer):
         else:
             self.prev_button.enable()
             self.next_button.enable()
+
+
+class UINamedCatListDisplay(UIBasicCatListDisplay):
+    """
+    Creates and displays a list of click-able cat sprites.
+    :param relative_rect: The starting size and relative position of the container.
+    :param container: The container this container is within. Defaults to None (which is the root
+                      container for the UI)
+    :param starting_height: The starting layer height of this container above its container.
+                            Defaults to 1.
+    :param object_id: An object ID for this element.
+    :param manager: The UI manager for this element. If not provided or set to None,
+                    it will try to use the first UIManager that was created by your application.
+    :param cat_list: the list of cat objects that need to display
+    :param cats_displayed: the number of cats to display on one page
+    :param x_px_between: the pixel space between each cat sprite on the x-axis
+    :param y_px_between: the pixel space between each cat sprite on the y-axis
+    :param columns: the number of cats in a row before a new row is created
+    :param next_button: the next_button ui_element
+    :param prev_button: the prev_button ui_element
+    :param current_page: the currently displayed page of the cat list
+    :param text_theme: the theme to use when creating name text
+    :param visible: Whether the element is visible by default. Warning - container visibility
+                    may override this.
+    """
+
+    def __init__(self,
+                 relative_rect: RectLike,
+                 container: UIContainer,
+                 starting_height: int,
+                 object_id: str,
+                 manager,
+                 cat_list: list,
+                 cats_displayed: int,
+                 x_px_between: int,
+                 y_px_between: int,
+                 columns: int,
+                 next_button: UIImageButton,
+                 prev_button: UIImageButton,
+                 current_page: int,
+                 text_theme: str,
+                 visible: bool = True
+                 ):
+        self.cat_list = cat_list
+        self.cats_displayed = cats_displayed
+        self.x_px_between = x_px_between
+        self.y_px_between = y_px_between
+        self.columns = columns
+        self.current_page = current_page
+        self.text_theme = text_theme
+
+        self.cat_sprites = {}
+        self.cat_names = {}
+
+        super().__init__(relative_rect, container, starting_height, object_id, manager, cat_list, cats_displayed,
+                         x_px_between, columns, next_button, prev_button, current_page, visible=visible)
+
+    def _display_cats(self):
+        """
+        creates the cat display
+        """
+        cat_chunks = [
+            self.cat_list
+            [x: x + self.cats_displayed]
+            for x
+            in range(0, len(self.cat_list), self.cats_displayed)
+        ]
+
+        self.current_page = max(1, min(self.current_page, len(cat_chunks)))
+
+        self._update_arrow_buttons(cat_chunks)
+
+        display_cats = []
+        if cat_chunks:
+            display_cats = cat_chunks[self.current_page - 1]
+
+        for ele in self.elements:
+            ele.kill()
+
+        pos_x = self.x_px_between
+        pos_y = self.y_px_between
+        i = 0
+
+        for kitty in display_cats:
+            self.cat_sprites[f"sprite{i}"] = UISpriteButton(
+                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                kitty.sprite,
+                cat_object=kitty,
+                container=self,
+                object_id=f"#sprite{str(i)}",
+                tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
+                starting_height=1
+            )
+
+            self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((pos_x, pos_y + 120), (100 + self.x_px_between, 60))),
+                shorten_text_to_fit(str(kitty.name), 220, 30),
+                container=self,
+                object_id=self.text_theme,
+            )
+
+            # changing position
+            pos_x += self.x_px_between
+            if pos_x >= ((self.x_px_between + 100) * self.columns):
+                pos_x = 0
+                pos_y += self.y_px_between
+
+            i += 1
