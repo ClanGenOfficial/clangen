@@ -1894,8 +1894,10 @@ def event_text_adjust(
     :param patrol_cats: List of Cat objects for cats in patrol, if present
     :param patrol_apprentices: List of Cat objects for patrol_apprentices (app#), if present
     :param new_cats: List of Cat objects for new_cats (n_c:index), if present
+    :param multi_cats: List of Cat objects for multi_cat (multi_cat), if present
     :param clan: pass game.clan
     :param other_clan: OtherClan object for other_clan (o_c_n), if present
+    :param chosen_herb: string of chosen_herb (chosen_herb), if present
     """
 
     vowels = ['A', 'E', 'I', 'O', 'U']
