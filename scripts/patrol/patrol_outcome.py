@@ -213,7 +213,6 @@ class PatrolOutcome:
         Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
         """
-        results = []
         # This must be done before text processing so that the new cat's pronouns are generated first
         results = [self._handle_new_cats(patrol)]
 
@@ -840,7 +839,7 @@ class PatrolOutcome:
             history_text = (
                 history_text
                 if "r_c" not in history_text
-                else history_text.replace("r_c", str(patrol.patrol_random_cat.name))
+                else history_text.replace("r_c", str(patrol.random_cat.name))
             )
             history_text = (
                 history_text
