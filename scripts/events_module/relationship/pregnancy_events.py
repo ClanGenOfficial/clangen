@@ -373,7 +373,7 @@ class Pregnancy_Events:
             for kit in kits:
                 kit.outside = True
                 game.clan.add_to_outside(kit)
-                kit.backstory = "outsider"
+                kit.backstory = "outsider1"
                 if cat.exiled:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
