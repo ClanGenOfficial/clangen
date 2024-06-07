@@ -83,10 +83,7 @@ class Age(StrEnum):
 
     @staticmethod
     def get_from_string(string):
-        if string in [age for age in Age]:
-            return Age[string]
-        else:
-            return Age.NONE
+        return string in Age.list() if string in Age.list else Age.NONE
 
     @classmethod
     def list(cls):
