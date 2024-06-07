@@ -1,6 +1,7 @@
 from enum import Enum
-from strenum import StrEnum
 from random import randint
+
+from strenum import StrEnum
 
 from scripts.game_structure.game_essentials import game
 
@@ -26,6 +27,7 @@ class Age(StrEnum):
     def is_underage(self):
         """True if cat is newborn, kitten or adolescent"""
         return self in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]
+
     def is_adult_any(self):
         """True is cat is young adult, adult or senior adult"""
         return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT]
@@ -88,6 +90,7 @@ class Age(StrEnum):
     @classmethod
     def list(cls):
         return list(map(lambda c: c.value, cls))
+
 
 class AgeMoonsRange(Enum):
     """Relationship between life stage & moons. DO NOT CALL THIS"""
