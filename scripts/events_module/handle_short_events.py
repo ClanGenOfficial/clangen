@@ -120,9 +120,9 @@ class HandleShortEvents():
                     found = True
                     break
             if not found:
-                print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
-                      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
-
+                # print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
+                pass
         # ---------------------------------------------------------------------------- #
         #                               do the event                                   #
         # ---------------------------------------------------------------------------- #
@@ -425,12 +425,13 @@ class HandleShortEvents():
                 if self.chosen_event.m_c["dies"]:
                     # find history
                     if self.main_cat.status == "leader":
-                        death_history = block.get("lead_death")
+                        death_history = history_text_adjust(block.get('lead_death'),
+                                                            self.other_clan_name, game.clan, self.main_cat)
                     else:
-                        death_history = block.get("reg_death")
+                        death_history = history_text_adjust(block.get('lead_death'),
+                                                            self.other_clan_name, game.clan, self.main_cat)
 
                     # handle murder
-                    murder_unrevealed_history = None
                     if "murder" in self.chosen_event.sub_type:
                         revealed = False
                         History.add_murders(self.main_cat, self.random_cat, revealed, death_history)

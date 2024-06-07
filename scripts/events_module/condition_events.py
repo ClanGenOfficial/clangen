@@ -17,7 +17,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,
     get_alive_status_cats,
-    get_leader_life_notice
+    get_leader_life_notice, get_random_moon_cat
 )
 
 
@@ -315,7 +315,6 @@ class Condition_Events:
         Returns: boolean - if an event was triggered
         """
         triggered = False
-        text = None
         random_number = int(
             random.random()
             * game.get_config_value(

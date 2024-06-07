@@ -705,7 +705,7 @@ class Cat:
 
                 text = choice(possible_strings)
                 text += " " + choice(MINOR_MAJOR_REACTION["major"])
-                text = event_text_adjust(Cat, text, self, cat)
+                text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
                 # grief the cat
                 if game.clan.game_mode != "classic":
