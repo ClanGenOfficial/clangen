@@ -19,7 +19,7 @@
         "chance_of_success": 45,
         "success_outcomes": [
             {
-                "text": "As p_l looks into the puddle, they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
+                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject} {VERB/p_l/are/is} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing and {VERB/p_l/race/races} back to the camp to tell and consult with {PRONOUN/p_l/poss} leader.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -472,12 +472,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "c_n can never have enough cobwebs, p_l instructs their team, leading them out to search for them.",
+        "intro_text": "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs that they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
+                "text": "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs that {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} colliding with things in {PRONOUN/r_c/poss} path {PRONOUN/r_c/subject} can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -521,7 +521,7 @@
                 ]
             },
             {
-                "text": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow their lead, it's a very successful gathering mission.",
+                "text": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow {PRONOUN/s_c/poss} lead, it's a very successful gathering mission.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -546,7 +546,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find.",
+                "text": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds {PRONOUN/p_l/poss} breath and counts to ten before {PRONOUN/p_l/subject} dismiss the patrol, every found cobweb ruined, what little they did manage to find.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -747,7 +747,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help them makes the patrol an easy afternoon's work.",
+                "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help {PRONOUN/p_l/object} makes the patrol an easy afternoon's work.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["horsetail"],
@@ -816,7 +816,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats snappy with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -851,12 +851,12 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} go to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile - once they're satisfied, they take a moment to wrap their jaws around the heap, then make their way back to camp.",
+                "text": "p_l quickly makes {PRONOUN/p_l/poss} way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} a bit of time slicing bits off with {PRONOUN/p_l/poss} claws, careful not to get any roots or dirt in the pile - once {PRONOUN/p_l/subject} {VERB/p_l/'re/'s} satisfied, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} a moment to wrap {PRONOUN/p_l/poss} jaws around the heap, then make {PRONOUN/p_l/poss} way back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["moss"]
@@ -864,7 +864,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again.",
+                "text": "Mouse-dung! When p_l gets to the best moss-gathering spot, {PRONOUN/p_l/subject} find that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1122,7 +1122,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along r_c as their assistant for this trip, and the two cats head out in relative silence.",
+        "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along r_c as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1144,7 +1144,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
+                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
