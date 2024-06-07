@@ -17,9 +17,9 @@ class Age(IntEnum):
 
     def __str__(self):
         """ONLY USE FOR JSONING!"""
-        if self == Age.YOUNGADULT:
+        if self.is_young_adult():
             return "young adult"
-        elif self == Age.SENIORADULT:
+        elif self.is_senior_adult():
             return "senior adult"
         else:
             return self.name.lower()
@@ -31,13 +31,34 @@ class Age(IntEnum):
     def is_underage(self):
         """True if cat is newborn, kitten or adolescent"""
         return self in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]
-    def is_adult(self):
+    def is_adult_any(self):
         """True is cat is young adult, adult or senior adult"""
         return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT]
 
     def is_adult_or_senior(self):
         """True if cat is young adult, adult, senior adult or senior"""
         return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT, Age.SENIOR]
+
+    def is_newborn(self):
+        return self == Age.NEWBORN
+
+    def is_kitten(self):
+        return self == Age.KITTEN
+
+    def is_adolescent(self):
+        return self == Age.ADOLESCENT
+
+    def is_young_adult(self):
+        return self == Age.YOUNGADULT
+
+    def is_adult(self):
+        return self == Age.ADULT
+
+    def is_senior_adult(self):
+        return self == Age.SENIORADULT
+
+    def is_senior(self):
+        return self == Age.SENIOR
 
     @staticmethod
     def get_age_from_moons(moons):
@@ -60,8 +81,6 @@ class Age(IntEnum):
                 ):
                     return Age[key_age.name]
 
-    def get_age_moon_range(self):
-        return AgeMoonsRange[self.name]
     @staticmethod
     def get_random_moons_for_age(age) -> int:
         age_moon = AgeMoonsRange[age.name]
@@ -79,3 +98,11 @@ class AgeMoonsRange(Enum):
 
     def __getitem__(self, item):
         return self.value[item]
+
+    @staticmethod
+    def get_adolescence_start():
+        return AgeMoonsRange.ADOLESCENT[0]
+
+    @staticmethod
+    def get_adolescence_end():
+        return AgeMoonsRange.ADOLESCENT[1]

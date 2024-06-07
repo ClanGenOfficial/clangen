@@ -391,29 +391,29 @@ class Cat:
         )
 
         # Personality
-        self.personality = Personality(kit_trait=self.is_baby())
+        self.personality = Personality(kit_trait=self.age.is_kit())
 
         # experience and current patrol status
         if self.age.is_kit():  # newborn or kitten
             self.experience = 0
-        elif self.age == Age.ADOLESCENT:
+        elif self.age.is_adolescent():
             m = self.moons
             self.experience = 0
             ran = game.config["graduation"]["base_app_timeskip_ex"]
-            while m > AgeMoonsRange.ADOLESCENT[0]:
+            while m > AgeMoonsRange.get_adolescence_start():
                 exp = choice(
                     list(range(ran[0][0], ran[0][1] + 1))
                     + list(range(ran[1][0], ran[1][1] + 1))
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age <= Age.ADULT:
+        elif self.age.is_young_adult() or self.age.is_adult():
             self.experience = randint(Cat.experience_levels_range["prepared"][0],
                                       Cat.experience_levels_range["proficient"][1])
-        elif self.age == Age.SENIORADULT:
+        elif self.age.is_senior_adult():
             self.experience = randint(Cat.experience_levels_range["competent"][0],
                                       Cat.experience_levels_range["expert"][1])
-        elif self.age == Age.SENIOR:
+        elif self.age.is_senior():
             self.experience = randint(Cat.experience_levels_range["competent"][0],
                                       Cat.experience_levels_range["master"][1])
         else:
@@ -879,7 +879,7 @@ class Cat:
         if not (self.outside or self.exiled):
             return
 
-        self.personality.set_kit(self.is_baby())  # Update kit trait stuff
+        self.personality.set_kit(self.age.is_kit())  # Update kit trait stuff
 
     def describe_cat(self, short=False):
         """Generates a string describing the cat's appearance and gender.
@@ -1409,7 +1409,7 @@ class Cat:
 
         if self.exiled or self.outside:
             # this is handled in events.py
-            self.personality.set_kit(self.is_baby())
+            self.personality.set_kit(self.age.is_kit())
             self.thoughts()
             return
 
@@ -1422,7 +1422,7 @@ class Cat:
             self.personality.facet_wobble(facet_max=2)
 
         # Set personality to correct type
-        self.personality.set_kit(self.is_baby())
+        self.personality.set_kit(self.age.is_kit())
         # Upon age-change
 
         if self.status in [
@@ -3020,13 +3020,13 @@ class Cat:
         self.faded = True
 
         # Silhouette sprite
-        if self.age == Age.NEWBORN:
+        if self.age.is_newborn():
             file_name = "faded_newborn"
-        elif self.age == Age.KITTEN:
+        elif self.age.is_kitten():
             file_name = "faded_kitten"
-        elif self.age.is_adult():
+        elif self.age.is_adult_any:
             file_name = "faded_adult"
-        elif self.age == Age.ADOLESCENT:
+        elif self.age.is_adolescent():
             file_name = "faded_adol"
         else:
             file_name = "faded_senior"
@@ -3234,15 +3234,7 @@ class Cat:
     @moons.setter
     def moons(self, value: int):
         self._moons = value
-
-        updated_age = False
         self.age = Age.get_age_from_moons(self._moons)
-        try:
-            if not updated_age and self.age is not None:
-                self.age = Age.SENIOR
-        except AttributeError:
-            print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
-
     @property
     def sprite(self):
         # Update the sprite
@@ -3256,10 +3248,6 @@ class Cat:
     # ---------------------------------------------------------------------------- #
     #                                  other                                       #
     # ---------------------------------------------------------------------------- #
-
-    def is_baby(self):
-        return self.age <= Age.KITTEN
-
     def get_save_dict(self, faded=False):
         if faded:
             return {

@@ -14,7 +14,7 @@ from collections import Counter
 
 import ujson
 
-from scripts.cat.enums.age import Age
+from scripts.cat.enums.age import Age, AgeMoonsRange
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -1677,7 +1677,7 @@ class Events:
                     self.ceremony(cat, "elder")
 
             # apprentice a kitten to either med or warrior
-            if cat.moons == cat_class.age_moons[Age.ADOLESCENT][0]:
+            if cat.moons == AgeMoonsRange.get_adolescence_start():
                 if cat.status == "kitten":
                     med_cat_list = [
                         i

@@ -814,9 +814,8 @@ class RelationshipScreen(Screens):
         # ROMANTIC LOVE
         # CHECK AGE DIFFERENCE
         same_age = the_relationship.cat_to.age == self.the_cat.age
-        adult_ages = ["young adult", "adult", "senior adult", "senior"]
         both_adult = (
-            the_relationship.cat_to.age in adult_ages and self.the_cat.age in adult_ages
+                the_relationship.cat_to.age.is_adult_any() and self.the_cat.age.is_adult_any()
         )
         check_age = both_adult or same_age
 

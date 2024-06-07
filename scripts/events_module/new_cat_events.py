@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat, INJURIES, BACKSTORIES
+from scripts.cat.enums.age import Age
 from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.event_class import Single_Event
@@ -287,11 +288,11 @@ class NewCatEvents:
     def update_cat_properties(cat):
         if cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
             cat.status = "medicine cat"
-        elif cat.age in ["newborn", "kitten"]:
+        elif cat.age.is_kit():
             cat.status = cat.age
-        elif cat.age == "senior":
+        elif cat.age == Age.SENIOR:
             cat.status = "elder"
-        elif cat.age == "adolescent":
+        elif cat.age == Age.ADOLESCENT:
             cat.status = "apprentice"
             cat.update_mentor()
         else:
