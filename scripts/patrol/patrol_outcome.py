@@ -1094,7 +1094,7 @@ class PatrolOutcome:
             if not match:
                 continue
 
-            if match.group(1) in Age:
+            if match.group(1) in Age.list():
                 age = Age.get_random_moons_for_age(Age.get_from_string(match))
                 break
 

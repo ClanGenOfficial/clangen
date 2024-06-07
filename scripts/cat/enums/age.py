@@ -83,10 +83,14 @@ class Age(StrEnum):
 
     @staticmethod
     def get_from_string(string):
-        if string in Age:
+        if string in [age for age in Age]:
             return Age[string]
         else:
             return Age.NONE
+
+    @classmethod
+    def list(cls):
+        return list(map(lambda c: c.value, cls))
 
 class AgeMoonsRange(Enum):
     """Relationship between life stage & moons. DO NOT CALL THIS"""
