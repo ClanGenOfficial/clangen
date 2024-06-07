@@ -83,10 +83,6 @@ class Age(StrEnum):
         age_moon = AgeMoonsRange[age.name]
         return randint(age_moon.value[0], age_moon.value[1])
 
-    @staticmethod
-    def get_from_string(string):
-        return string in Age.list() if string in Age.list() else Age.NONE
-
     @classmethod
     def list(cls):
         return list(map(lambda c: c.value, cls))
