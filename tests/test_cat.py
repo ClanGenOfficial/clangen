@@ -3,7 +3,7 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 
-from scripts.cat.age import Age
+from scripts.cat.enums.age import Age
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 
@@ -36,6 +36,12 @@ class TestCreationAge(unittest.TestCase):
     def test_elder(self):
         test_cat = Cat(moons=120)
         self.assertEqual(test_cat.age, Age.SENIOR)
+
+    def test_apprentice_exp(self):
+        test_cat = Cat(moons=7,age=Age.ADOLESCENT)
+        self.assertGreaterEqual(test_cat.experience, 3)
+        self.assertLessEqual(test_cat.experience, 12)
+
 
 
 class TestRelativesFunction(unittest.TestCase):

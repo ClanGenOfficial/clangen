@@ -13,7 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
-from scripts.cat.age import Age
+from scripts.cat.enums.age import Age, AgeMoonsRange
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -48,16 +48,6 @@ class Cat:
 
     dead_cats = []
     used_screen = screen
-
-    age_moons = {
-        Age.NEWBORN: game.config["cat_ages"]["newborn"],
-        Age.KITTEN: game.config["cat_ages"]["kitten"],
-        Age.ADOLESCENT: game.config["cat_ages"]["adolescent"],
-        Age.YOUNGADULT: game.config["cat_ages"]["young adult"],
-        Age.ADULT: game.config["cat_ages"]["adult"],
-        Age.SENIORADULT: game.config["cat_ages"]["senior adult"],
-        Age.SENIOR: game.config["cat_ages"]["senior"],
-    }
 
     # This in is in reverse order: top of the list at the bottom
     rank_sort_order = [
@@ -253,7 +243,7 @@ class Cat:
             self.age = Age(choice(range(Age.NEWBORN, Age.SENIOR)))
         elif moons is not None:
             self.moons = moons
-            self.init_moons_age(moons)
+            self.age = Age.get_age_from_moons(moons)
         else:
             if status == 'newborn':
                 self.age = Age.NEWBORN
@@ -265,7 +255,7 @@ class Cat:
                 self.age = Age.ADOLESCENT
             else:
                 self.age = Age(choice(range(Age.YOUNGADULT, Age.SENIORADULT)))
-            self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+            self.moons = Age.get_random_moons_for_age(self.age)
 
         # backstory
         if self.backstory is None:
@@ -354,30 +344,10 @@ class Cat:
         else:
             self.df = False
 
-        self.init_moons_age(moons)
+        self.age = Age.get_age_from_moons(moons)
 
         self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
         return True
-
-    def init_moons_age(self, moons):
-        """
-        Gets the correct life stage for associated moons
-
-        :param moons: Age in moons
-        :return: None
-        """
-        if moons > 300:
-            # Out of range, always elder
-            self.age = Age.SENIOR
-        elif moons == 0:
-            self.age = Age.NEWBORN
-        else:
-            # In range
-            for key_age in self.age_moons.keys():
-                if moons in range(
-                        self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
-                ):
-                    self.age = key_age
 
     def init_generate_cat(self, skill_dict):
         """
@@ -391,7 +361,7 @@ class Cat:
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
         # newborns can't be trans, sorry babies
-        if self.age in [Age.NEWBORN, Age.KITTEN]:
+        if self.age.is_kit():
             trans_chance = 0
             nb_chance = 0
         if theythemdefault is True:
@@ -424,13 +394,13 @@ class Cat:
         self.personality = Personality(kit_trait=self.is_baby())
 
         # experience and current patrol status
-        if self.age in [Age.NEWBORN, Age.KITTEN]:  # newborn or kitten
+        if self.age.is_kit():  # newborn or kitten
             self.experience = 0
         elif self.age == Age.ADOLESCENT:
             m = self.moons
             self.experience = 0
-            while m > Cat.age_moons[Age.ADOLESCENT][0]:
-                ran = game.config["graduation"]["base_app_timeskip_ex"]
+            ran = game.config["graduation"]["base_app_timeskip_ex"]
+            while m > AgeMoonsRange.ADOLESCENT[0]:
                 exp = choice(
                     list(range(ran[0][0], ran[0][1] + 1))
                     + list(range(ran[1][0], ran[1][1] + 1))
@@ -2401,8 +2371,7 @@ class Cat:
                 ):
                     return False
 
-        age_restricted_ages = [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]
-        if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
+        if self.age.is_underage() or other_cat.age.is_underage():
             if self.age != other_cat.age:
                 return False
 
@@ -3055,7 +3024,7 @@ class Cat:
             file_name = "faded_newborn"
         elif self.age == Age.KITTEN:
             file_name = "faded_kitten"
-        elif self.age in [Age.ADULT, Age.YOUNGADULT, Age.SENIORADULT]:
+        elif self.age.is_adult():
             file_name = "faded_adult"
         elif self.age == Age.ADOLESCENT:
             file_name = "faded_adol"
@@ -3267,12 +3236,7 @@ class Cat:
         self._moons = value
 
         updated_age = False
-        for key_age in self.age_moons.keys():
-            if self._moons in range(
-                    self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
-            ):
-                updated_age = True
-                self.age = key_age
+        self.age = Age.get_age_from_moons(self._moons)
         try:
             if not updated_age and self.age is not None:
                 self.age = Age.SENIOR

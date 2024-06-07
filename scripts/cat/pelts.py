@@ -2,7 +2,7 @@ import random
 from random import choice
 from re import sub
 
-from scripts.cat.age import Age
+from scripts.cat.enums.age import Age
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 

@@ -14,7 +14,7 @@ from collections import Counter
 
 import ujson
 
-from scripts.cat.age import Age
+from scripts.cat.enums.age import Age
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.history import History
 from scripts.cat.names import Name

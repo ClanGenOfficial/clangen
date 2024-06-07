@@ -17,7 +17,7 @@ from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text, chunks
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
 from scripts.screens.Screens import Screens
-from scripts.cat.age import Age
+from scripts.cat.enums.age import Age
 from scripts.cat.history import History
 from scripts.game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from scripts.housekeeping.datadir import get_save_dir
