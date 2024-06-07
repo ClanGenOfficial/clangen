@@ -54,8 +54,6 @@ class AllegiancesScreen(Screens):
 
         self.scroll_container = UIModifiedScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
                                                                          , manager=MANAGER)
-        
-
         self.ranks_boxes = []
         self.names_boxes = []
         y_pos = 0
