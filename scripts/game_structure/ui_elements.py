@@ -91,10 +91,10 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
 class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
     def __init__(self, relative_rect: pygame.Rect, manager=None, starting_height: int = 1,
-                 container=None, parent_element=None, object_id=None, anchors=None, visible: int = 1):
+                 container=None, parent_element=None, object_id=None, anchors=None, visible: int = 1, allow_scroll_x: bool = False):
         super().__init__(relative_rect=relative_rect, manager=manager, starting_height=starting_height,
                          container=container, parent_element=parent_element, object_id=object_id, anchors=anchors,
-                         visible=visible)
+                         visible=visible, allow_scroll_x=allow_scroll_x)
 
     def _sort_out_element_container_scroll_bars(self):
         """
@@ -102,8 +102,8 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         bar has been moved. Instead it tries to keep the scrollbars in the same approximate position
         they were in before resizing
         """
-        self._check_scroll_bars_and_adjust()
-        need_horiz_scroll_bar, need_vert_scroll_bar = self._check_scroll_bars_and_adjust()
+        self._check_scroll_bars()
+        need_horiz_scroll_bar, need_vert_scroll_bar = self._check_scroll_bars()
         print(f"scroll{need_vert_scroll_bar}")
         self.scroll_bar_width = 30
         if need_vert_scroll_bar:
