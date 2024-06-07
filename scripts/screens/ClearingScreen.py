@@ -5,7 +5,6 @@ import ujson
 from scripts.cat.cats import Cat
 
 from ..events_module.condition_events import Condition_Events
-from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.image_button import (
     UISpriteButton,
