@@ -1743,7 +1743,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 sets themselves up in ambush, pouncing on the mouse with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+                "text": "app1 sets {PRONOUN/app1/self} up in ambush, pouncing on the mouse with a squeak of surprise from both prey and apprentice. {PRONOUN/app1/subject/CAP} {VERB/app1/look/looks} up, holding {PRONOUN/app1/poss} fresh-kill, meeting p_l's eyes with a purr.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -1758,7 +1758,7 @@
                 ]
             },
             {
-                "text": "app1 stalks the mouse to an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps.",
+                "text": "app1 stalks the mouse to an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair head back home there's a happy bounce in app1's steps.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
@@ -1775,7 +1775,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance.",
+                "text": "app1 narrowly misses the mouse, {PRONOUN/app1/poss} tail drooping sadly as it scurries off into the distance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1810,7 +1810,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "While p_l was right - app1 definitely cares more about how they look to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out foraging in the newleaf grass, and p_l indulgently makes sure to tell app1 their reaction speed was very good in front of app2.",
+                "text": "While p_l was right - app1 definitely cares more about how {PRONOUN/app1/subject} {VERB/app1/look/looks} to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out foraging in the newleaf grass, and p_l indulgently makes sure to tell app1 {PRONOUN/app1/poss} reaction speed was very good in front of app2.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1840,7 +1840,7 @@
                 ]
             },
             {
-                "text": "There is a time and a place for app1 to try their luck looking good in front of app2 - and that time is now! They trot back to camp at the front of the hunting patrol, carrying the mice they caught with slightly more than the right amount of pride.",
+                "text": "There is a time and a place for app1 to try {PRONOUN/app1/poss} luck looking good in front of app2 - and that time is now! {PRONOUN/app1/subject/CAP} {VERB/app1/trot/trots} back to camp at the front of the hunting patrol, carrying the mice {PRONOUN/app1/subject} caught with slightly more than the right amount of pride.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1867,7 +1867,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 is so busy watching if app2 is watching <i>them</i> that they forget to watch their own paws - and falling into the deep newleaf mud impressed nobody.",
+                "text": "app1 is so busy watching if app2 is watching <i>{PRONOUN/app1/object}</i> that {PRONOUN/app1/subject} {VERB/app1/forget/forgets} to watch {PRONOUN/app1/poss} own paws - and falling into the deep newleaf mud impressed nobody.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
