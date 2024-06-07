@@ -11,11 +11,11 @@ from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
 
-menu_screens = ['settings screen', 'start screen', 'switch clan screen']
-creation_screens = ['make clan screen']
+menu_screens = ["settings screen", "start screen", "switch clan screen"]
+creation_screens = ["make clan screen"]
 
 
-class MusicManager():
+class MusicManager:
 
     def __init__(self):
         self.playlists = {}
@@ -44,7 +44,7 @@ class MusicManager():
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
-        if self.muted:
+        if game.settings["audio_mute"] or self.muted:
             return
 
         self.biome_playlist = self.get_biome_music()
@@ -53,21 +53,31 @@ class MusicManager():
         # print(f"menu playlist is {self.playlists['menu_playlist']}")
 
         # menu screen
-        if screen in menu_screens and self.current_playlist != self.playlists["menu_playlist"]:
+        if (
+            screen in menu_screens
+            and self.current_playlist != self.playlists["menu_playlist"]
+        ):
             # print("menu screen")
             if pygame.mixer.get_busy():
                 pygame.mixer.music.stop()
             self.play_playlist(self.playlists["menu_playlist"])
 
         # clan creation screen
-        elif screen in creation_screens and self.current_playlist != self.playlists["creation_playlist"]:
+        elif (
+            screen in creation_screens
+            and self.current_playlist != self.playlists["creation_playlist"]
+        ):
             # print("creation screen")
             if pygame.mixer.get_busy():
                 pygame.mixer.music.stop()
             self.play_playlist(self.playlists["creation_playlist"])
 
         # other screens
-        elif screen not in menu_screens and screen not in creation_screens and self.current_playlist != self.biome_playlist:
+        elif (
+            screen not in menu_screens
+            and screen not in creation_screens
+            and self.current_playlist != self.biome_playlist
+        ):
             print("biome screen")
             self.fade_music()
             self.play_playlist(self.biome_playlist)
@@ -117,14 +127,18 @@ class MusicManager():
         if self.current_track:
             playlist_copy = self.current_playlist.copy()
             # print(f"playlist: {playlist_copy}, removing track: {self.current_track}")
-            playlist_copy.remove(self.current_track)  # don't want to repeat current track, so we take it out
+            playlist_copy.remove(
+                self.current_track
+            )  # don't want to repeat current track, so we take it out
             options = playlist_copy
             # print(f"final list: {options}")
         else:
             options = self.current_playlist
 
         self.queued_track = random.choice(options)
-        print(f"queueing music: current track is {self.current_track}, new track is {self.queued_track}")
+        print(
+            f"queueing music: current track is {self.current_track}, new track is {self.queued_track}"
+        )
 
     def play_queued(self):
         """
@@ -160,7 +174,7 @@ class MusicManager():
         self.check_music(screen)
 
     def change_volume(self, new_volume):
-        """ changes the volume, int given should be between 0 and 100"""
+        """changes the volume, int given should be between 0 and 100"""
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100
@@ -180,13 +194,13 @@ class MusicManager():
         biome = game.clan.biome
         new_playlist = []
 
-        if biome == 'Forest':
+        if biome == "Forest":
             new_playlist = self.playlists["forest_playlist"]
-        elif biome == 'Plains':
+        elif biome == "Plains":
             new_playlist = self.playlists["plains_playlist"]
-        elif biome == 'Mountainous':
+        elif biome == "Mountainous":
             new_playlist = self.playlists["beach_playlist"]
-        elif biome == 'Beach':
+        elif biome == "Beach":
             new_playlist = self.playlists["mountainous_playlist"]
 
         return new_playlist
@@ -195,7 +209,7 @@ class MusicManager():
 music_manager = MusicManager()
 
 
-class _SoundManager():
+class _SoundManager:
 
     def __init__(self):
         self.sounds = {}
@@ -214,8 +228,9 @@ class _SoundManager():
             try:
                 self.sounds[sound] = []
                 for path in sound_data[sound]:
-                    self.sounds[sound].append(pygame.mixer.Sound("resources/audio/sounds/" +
-                                                                 path))
+                    self.sounds[sound].append(
+                        pygame.mixer.Sound("resources/audio/sounds/" + path)
+                    )
 
                 for each in self.sounds[sound]:
                     pygame.mixer.Sound.set_volume(each, self.volume)
@@ -239,8 +254,8 @@ class _SoundManager():
             self.pressed = None
 
     def play(self, sound, button=None):
-        """ plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
-        used instead """
+        """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
+        used instead"""
         if game.settings["audio_mute"]:
             return
 
@@ -257,7 +272,7 @@ class _SoundManager():
             logger.exception(f"Could not find sound {sound}")
 
     def change_volume(self, new_volume):
-        """ changes the volume, int given should be between 0 and 100"""
+        """changes the volume, int given should be between 0 and 100"""
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100
