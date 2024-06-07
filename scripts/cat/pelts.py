@@ -642,12 +642,12 @@ class Pelt:
         self.cat_sprites['senior adult'] = self.cat_sprites['adult']
 
     def init_scars(self, age):
-        if age == Age.NEWBORN:
+        if age.is_newborn():
             return
 
-        if age in [Age.KITTEN, Age.ADOLESCENT]:
+        if age.is_underage():  # kitten or adolescent now as newborn already excluded
             scar_choice = random.randint(0, 50)  # 2%
-        elif age in [Age.YOUNGADULT, Age.ADULT]:
+        elif age.is_young_adult() or age.is_adult():
             scar_choice = random.randint(0, 20)  # 5%
         else:
             scar_choice = random.randint(0, 15)  # 6.67%
@@ -662,14 +662,14 @@ class Pelt:
             self.scars.remove('HALFTAIL')
 
     def init_accessories(self, age):
-        if age == Age.NEWBORN:
+        if age.is_newborn():
             self.accessory = None
             return
 
         acc_display_choice = random.randint(0, 80)
-        if age in [Age.KITTEN, Age.ADOLESCENT]:
+        if age.is_underage():  # kitten or adolescent now as newborn already excluded
             acc_display_choice = random.randint(0, 180)
-        elif age in [Age.YOUNGADULT, Age.ADULT]:
+        elif age.is_young_adult() or age.is_adult():
             acc_display_choice = random.randint(0, 100)
 
         if acc_display_choice == 1:

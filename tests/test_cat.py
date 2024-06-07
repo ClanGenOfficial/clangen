@@ -12,35 +12,73 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 
 class TestCreationAge(unittest.TestCase):
+    def test_newborn(self):
+        test_cat = Cat(moons=0)
+        self.assertEqual(test_cat.age, Age.NEWBORN)
+        self.assertTrue(test_cat.age.is_kit())
+        self.assertTrue(test_cat.age.is_underage())
+        self.assertFalse(test_cat.age.is_adult_any())
+        self.assertFalse(test_cat.age.is_adult_or_senior())
 
     def test_kitten(self):
         test_cat = Cat(moons=5)
         self.assertEqual(test_cat.age, Age.KITTEN)
 
+        self.assertTrue(test_cat.age.is_kit())
+        self.assertTrue(test_cat.age.is_underage())
+        self.assertFalse(test_cat.age.is_adult_any())
+        self.assertFalse(test_cat.age.is_adult_or_senior())
+
     def test_adolescent(self):
         test_cat = Cat(moons=6)
         self.assertEqual(test_cat.age, Age.ADOLESCENT)
 
+        self.assertFalse(test_cat.age.is_kit())
+        self.assertTrue(test_cat.age.is_underage())
+        self.assertFalse(test_cat.age.is_adult_any())
+        self.assertFalse(test_cat.age.is_adult_or_senior())
+
     def test_young_adult(self):
         test_cat = Cat(moons=12)
         self.assertEqual(test_cat.age, Age.YOUNGADULT)
+
+        self.assertFalse(test_cat.age.is_kit())
+        self.assertFalse(test_cat.age.is_underage())
+        self.assertTrue(test_cat.age.is_adult_any())
+        self.assertTrue(test_cat.age.is_adult_or_senior())
     
     def test_adult(self):
         test_cat = Cat(moons=48)
         self.assertEqual(test_cat.age, Age.ADULT)
 
+        self.assertFalse(test_cat.age.is_kit())
+        self.assertFalse(test_cat.age.is_underage())
+        self.assertTrue(test_cat.age.is_adult_any())
+        self.assertTrue(test_cat.age.is_adult_or_senior())
+
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
         self.assertEqual(test_cat.age, Age.SENIORADULT)
+
+        self.assertFalse(test_cat.age.is_kit())
+        self.assertFalse(test_cat.age.is_underage())
+        self.assertTrue(test_cat.age.is_adult_any())
+        self.assertTrue(test_cat.age.is_adult_or_senior())
 
     def test_elder(self):
         test_cat = Cat(moons=120)
         self.assertEqual(test_cat.age, Age.SENIOR)
 
+        self.assertFalse(test_cat.age.is_kit())
+        self.assertFalse(test_cat.age.is_underage())
+        self.assertFalse(test_cat.age.is_adult_any())
+        self.assertTrue(test_cat.age.is_adult_or_senior())
+
     def test_apprentice_exp(self):
-        test_cat = Cat(moons=7,age=Age.ADOLESCENT)
-        self.assertGreaterEqual(test_cat.experience, 3)
-        self.assertLessEqual(test_cat.experience, 12)
+        for i in range(1, 10):
+            test_cat = Cat(moons=7,age=Age.ADOLESCENT)
+            self.assertGreaterEqual(test_cat.experience, 6)
+            self.assertLessEqual(test_cat.experience, 15)
 
 
 

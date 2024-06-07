@@ -4,6 +4,7 @@ from copy import deepcopy
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.age import Age
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.conditions import (
@@ -280,7 +281,7 @@ class Condition_Events:
                     other_clan_name = f"{other_clan.name}Clan"
 
                 possible_events = GenerateEvents.possible_short_events(
-                    cat.status, cat.age, "injury"
+                    cat.status, str(cat.age), "injury"
                 )
                 final_events = GenerateEvents.filter_possible_short_events(
                     possible_events,
@@ -998,10 +999,10 @@ class Condition_Events:
                         "senior": 10,
                     }
 
-                chance = int(retire_chances.get(cat.age))
+                chance = int(retire_chances.get(str(cat.age)))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
-                    if cat.age == "adolescent":
+                    if cat.age == Age.ADOLESCENT:
                         event = (
                             f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
                             f"kits, they're warmly welcomed into the elder's den."
@@ -1028,7 +1029,7 @@ class Condition_Events:
                             f"{cat.name} has decided to retire from normal Clan duty."
                         )
 
-                    if cat.age == "adolescent":
+                    if cat.age == Age.ADOLESCENT:
                         event += (
                             f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor "
                             f"of their contributions to {game.clan.name}Clan."

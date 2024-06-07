@@ -17,7 +17,6 @@ from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text, chunks
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
 from scripts.screens.Screens import Screens
-from scripts.cat.enums.age import Age
 from scripts.cat.history import History
 from scripts.game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from scripts.housekeeping.datadir import get_save_dir
@@ -821,9 +820,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # AGE
-        if the_cat.age == Age.KITTEN:
+        if the_cat.age.is_kitten():
             output += "young"
-        elif the_cat.age == Age.SENIOR:
+        elif the_cat.age.is_senior():
             output += "senior"
         else:
             output += str(the_cat.age)
@@ -2149,8 +2148,7 @@ class ProfileScreen(Screens):
                 self.change_adoptive_parent_button.enable()
 
             if (
-                self.the_cat.age
-                not in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT, Age.SENIOR]
+                not self.the_cat.age.is_adult_or_senior()
                 or self.the_cat.exiled
                 or self.the_cat.outside
             ):
@@ -2493,7 +2491,7 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
-        if the_cat.age == Age.NEWBORN or the_cat.not_working():
+        if the_cat.age.is_newborn() or the_cat.not_working():
             biome = "nest"
 
         biome = biome.lower()
