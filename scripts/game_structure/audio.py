@@ -111,7 +111,6 @@ class MusicManager():
         """
         #  if playlist is empty or has a single track, don't attempt queueing
         if self.number_of_tracks < 2:
-            print(f"playlist only has {self.number_of_tracks} tracks, cannot queue")
             return
 
         # otherwise we pick a new track and queue it
@@ -142,7 +141,6 @@ class MusicManager():
         fades the music out, by default the fade is 2 seconds
         """
         if pygame.mixer.music.get_busy():
-            print("busy mixer")
             pygame.mixer.music.fadeout(fadeout)
 
     def mute_music(self):
