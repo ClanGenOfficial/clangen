@@ -629,7 +629,7 @@
                 ]
             },
             {
-                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} swear someone pushed them, and blame s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
+                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object}, and {VERB/r_c/blame/blames} s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1847,7 +1847,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with their eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see them faceplant into the walls. app2 does notice when app1 faceplants into them though!",
+                "text": "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with {PRONOUN/app1/poss} eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see {PRONOUN/app1/object} faceplant into the walls. app2 does notice when app1 faceplants into {PRONOUN/app2/object} though!",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_happy_cat2",
@@ -1869,7 +1869,7 @@
                 ]
             },
             {
-                "text": "p_l reassures app1 that this sett is well known and safe. But with a little mischief in their expression, p_l suggests being careful where they set their paws. app1 discovers what that means when they're wandering around in the dark and slide head over heels down a steep slope, straight into app2 with an oof! Maybe that'd be fun to do again?",
+                "text": "p_l reassures app1 that this sett is well known and safe. But with a little mischief in {PRONOUN/p_l/poss} expression, p_l suggests being careful where {PRONOUN/app1/subject} {VERB/app1/set/sets} {PRONOUN/app1/poss} paws. app1 discovers what that means when {PRONOUN/app1/subject}{VERB/app1/'re/'s} wandering around in the dark and slide head over heels down a steep slope, straight into app2 with an oof! Maybe that'd be fun to do again?",
                 "exp": 15,
                 "weight": 5,
                 "art": "gen_bord_twocat_hostile_app_app",
@@ -1955,7 +1955,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
+                "text": "app1 refuses to believe tunnels could possibly be hard to navigate. {PRONOUN/app1/subject/CAP} also {VERB/app1/refuse/refuses} to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",
@@ -1977,7 +1977,7 @@
                 ]
             },
             {
-                "text": "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching.",
+                "text": "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",
