@@ -647,7 +647,7 @@ class MakeClanScreen(Screens):
                 self.elements["next_step"].enable()
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
         elif self.sub_screen in ["choose leader", "choose deputy", "choose med cat"]:
-            if not self.selected_cat.age.is_underage():
+            if self.selected_cat.age.is_underage():
                 self.elements["select_cat"].hide()
                 self.elements["error_message"].show()
             else:
