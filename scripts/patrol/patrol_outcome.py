@@ -3,7 +3,7 @@
 import random
 import re
 from os.path import exists as path_exists
-from random import choice, randint, choices
+from random import choice, choices
 from typing import List, Dict, Union, TYPE_CHECKING
 
 import pygame
@@ -21,9 +21,7 @@ from scripts.utility import (
     unpack_rel_block,
     event_text_adjust,
     create_new_cat_block,
-    gather_cat_objects,
-    change_relationship_values,
-    create_new_cat,
+    gather_cat_objects
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
@@ -64,7 +62,7 @@ class PatrolOutcome:
         outsider_rep: Union[int, None] = None,
         other_clan_rep: Union[int, None] = None,
         relationship_effects: List[dict] = None,
-        relationship_constaints: List[str] = None,
+        relationship_constraints: List[str] = None,
         outcome_art: Union[str, None] = None,
         outcome_art_clean: Union[str, None] = None,
         stat_cat: Cat = None,
@@ -102,8 +100,8 @@ class PatrolOutcome:
         self.relationship_effects = (
             relationship_effects if relationship_effects is not None else []
         )
-        self.relationship_constaints = (
-            relationship_constaints if relationship_constaints is not None else []
+        self.relationship_constraints = (
+            relationship_constraints if relationship_constraints is not None else []
         )
         self.outcome_art = outcome_art
         self.outcome_art_clean = outcome_art_clean
@@ -179,8 +177,8 @@ class PatrolOutcome:
                     stat_trait=_d.get("stat_trait"),
                     can_have_stat=_d.get("can_have_stat"),
                     dead_cats=_d.get("dead_cats"),
-                    injury=_d.get("injury"),
                     lost_cats=_d.get("lost_cats"),
+                    injury=_d.get("injury"),
                     history_leader_death=(
                         _d["history_text"].get("lead_death")
                         if isinstance(_d.get("history_text"), dict)
@@ -265,24 +263,24 @@ class PatrolOutcome:
             return True
 
         # Code to allow anyone but p_l to be selected as stat cat
-        if not allowed_specfic or "not_pl" in allowed_specfic:
+        if not allowed_specific or "not_pl" in allowed_specific:
             if kitty is patrol.patrol_leader:
                 return False
             return True
 
         # Otherwise, check to see if the cat matched any of the specfic cats
-        if "p_l" in allowed_specfic and kitty == patrol.patrol_leader:
+        if "p_l" in allowed_specific and kitty == patrol.patrol_leader:
             return True
         if "r_c" in allowed_specific and kitty == patrol.random_cat:
             return True
         if (
-            "app1" in allowed_specfic
+            "app1" in allowed_specific
             and len(patrol.patrol_apprentices) >= 1
             and kitty == patrol.patrol_apprentices[0]
         ):
             return True
         if (
-            "app2" in allowed_specfic
+            "app2" in allowed_specific
             and len(patrol.patrol_apprentices) >= 2
             and kitty == patrol.patrol_apprentices[1]
         ):
@@ -290,7 +288,7 @@ class PatrolOutcome:
 
         return False
 
-    def _get_stat_cat(self, patrol: "Patrol") -> bool:
+    def _get_stat_cat(self, patrol: "Patrol"):
         """Sets the stat cat. Returns true if a stat cat was found, and False is a stat cat was not found"""
 
         print("---")
@@ -300,7 +298,7 @@ class PatrolOutcome:
         print(f"Can Have Stat: {self.can_have_stat}")
 
         # Grab any specfic stat cat requirements:
-        allowed_specfic = [
+        allowed_specific = [
             x
             for x in self.can_have_stat
             if x in ("r_c", "p_l", "app1", "app2", "any", "not_pl_rc")
@@ -308,12 +306,12 @@ class PatrolOutcome:
 
         # Special default behavior for patrols less than two cats.
         # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than than two cats
-        if not allowed_specfic and len(patrol.patrol_cats) <= 2:
-            allowed_specfic = ["p_l"]
+        if not allowed_specific and len(patrol.patrol_cats) <= 2:
+            allowed_specific = ["p_l"]
 
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
-            # First, the blanet requirments
+            # First, the blanket requirements
             if "app" in self.can_have_stat and kitty.status not in [
                 "apprentice",
                 "medicine cat apprentice",
@@ -332,8 +330,8 @@ class PatrolOutcome:
             ]:
                 continue
 
-            # Then, move on the the specfic requirements.
-            if not self._allowed_stat_cat_specfic(kitty, patrol, allowed_specfic):
+            # Then, move on the specific requirements.
+            if not self._allowed_stat_cat_specific(kitty, patrol, allowed_specific):
                 continue
 
             possible_stat_cats.append(kitty)
@@ -610,19 +608,19 @@ class PatrolOutcome:
         # Determine which herbs get picked
         specific_herbs = [x for x in self.herbs if x in HERBS]
         if "random_herbs" in self.herbs:
-            specfic_herbs += random.sample(
+            specific_herbs += random.sample(
                 HERBS, k=choices([1, 2, 3], [6, 5, 1], k=1)[0]
             )
 
         # Remove duplicates
-        specfic_herbs = list(set(specfic_herbs))
+        specific_herbs = list(set(specific_herbs))
 
-        if not specfic_herbs:
+        if not specific_herbs:
             print(f"{self.herbs} - gave no herbs to give")
             return ""
 
         patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
-        for _herb in specfic_herbs:
+        for _herb in specific_herbs:
             if large_bonus:
                 amount_gotten = 4
             else:
@@ -638,13 +636,13 @@ class PatrolOutcome:
 
         plural_herbs_list = ["cobwebs", "oak leaves"]
 
-        if len(specfic_herbs) == 1 and specfic_herbs[0] not in plural_herbs_list:
-            insert = f"{specfic_herbs[0]} was"
-        elif len(specfic_herbs) == 1 and specfic_herbs[0] in plural_herbs_list:
-            insert = f"{specfic_herbs[0]} were"
-        elif len(specfic_herbs) == 2:
-            if str(specfic_herbs[0]) == str(specfic_herbs[1]):
-                insert = f"{specfic_herbs[0]} was"
+        if len(specific_herbs) == 1 and specific_herbs[0] not in plural_herbs_list:
+            insert = f"{specific_herbs[0]} was"
+        elif len(specific_herbs) == 1 and specific_herbs[0] in plural_herbs_list:
+            insert = f"{specific_herbs[0]} were"
+        elif len(specific_herbs) == 2:
+            if str(specific_herbs[0]) == str(specific_herbs[1]):
+                insert = f"{specific_herbs[0]} was"
             else:
                 insert = f"{specific_herbs[0]} and {specific_herbs[1]} were"
         else:
@@ -813,7 +811,7 @@ class PatrolOutcome:
     def _add_potential_history(self, cat: Cat, condition):
         """Add potential history for a condition"""
 
-    def __handle_scarring(self, cat: Cat, scar_list: str, patrol: "Patrol") -> str:
+    def __handle_scarring(self, cat: Cat, scar_list: str, patrol: "Patrol"):
         """Add scar and scar history. Returns scar given"""
 
         if len(cat.pelt.scars) >= 4:

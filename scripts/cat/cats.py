@@ -624,6 +624,7 @@ class Cat:
 
         # Keep track is the body was treated with rosemary.
         body_treated = False
+        text = None
 
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
@@ -1951,7 +1952,7 @@ class Cat:
 
         if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
-            if "blood loss" in new_injury.also_got and len(get_med_cats(Cat)) != 0:
+            if "blood loss" in new_injury.also_got and len(get_alive_status_cats(Cat, ["medicine cat"], working=True)) != 0:
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -2457,6 +2458,7 @@ class Cat:
 
         # If only deal with relationships if this is a breakup.
         if breakup:
+            self_relationship = None
             if not self.dead:
                 if other_cat.ID not in self.relationships:
                     self.create_one_relationship(other_cat)

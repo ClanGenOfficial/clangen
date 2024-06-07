@@ -307,7 +307,6 @@ class GroupEvents:
             the amount of cats for the current interaction
         interact_cats : list
             a list of cats, which are open to interact with the main cat
-        cat_abbreviations_counter: dict
         """
         cat_abbreviations_counter = {}
         possibilities = {}

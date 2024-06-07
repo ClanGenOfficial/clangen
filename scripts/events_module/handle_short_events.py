@@ -5,7 +5,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
-from scripts.clan_resources.freshkill import Freshkill_Pile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
+from scripts.clan_resources.freshkill import FreshkillPile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relation_events import Relation_Events
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, \
@@ -46,7 +46,7 @@ class HandleShortEvents():
         self.chosen_event = None
         self.additional_event_text = ""
 
-    def handle_event(self, event_type: str, main_cat: Cat, random_cat: Cat, freshkill_pile: Freshkill_Pile,
+    def handle_event(self, event_type: str, main_cat: Cat, random_cat: Cat, freshkill_pile: FreshkillPile,
                      sub_type: list = None):
         """ 
         This function handles the generation and execution of the event
@@ -197,7 +197,7 @@ class HandleShortEvents():
             History.reveal_murder(
                 cat=self.main_cat,
                 other_cat=other_cat,
-                Cat=Cat,
+                cat_class=Cat,
                 victim=self.victim_cat,
                 murder_index=self.murder_index)
 
@@ -578,7 +578,7 @@ class HandleShortEvents():
                         History.add_possible_history(cat, injury, scar_text=possible_scar, death_text=possible_death,
                                                      other_cat=self.random_cat)
 
-    def handle_freshkill_supply(self, block, freshkill_pile: Freshkill_Pile):
+    def handle_freshkill_supply(self, block, freshkill_pile: FreshkillPile):
         """
         handles adjusting the amount of freshkill according to info in block
         :param block: supplies block

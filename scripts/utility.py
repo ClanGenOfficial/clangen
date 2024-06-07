@@ -589,6 +589,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
             n_c.create_inheritance_new_cat()
 
     return new_cats
+
 def get_other_clan(clan_name):
     """
     returns the clan object of given clan name

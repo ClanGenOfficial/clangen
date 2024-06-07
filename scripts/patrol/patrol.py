@@ -2,7 +2,6 @@
 # -*- coding: ascii -*-
 import random
 from copy import deepcopy
-from itertools import combinations
 from itertools import repeat
 from os.path import exists as path_exists
 from random import choice, randint, choices
@@ -24,7 +23,6 @@ from scripts.utility import (
     process_text,
     adjust_prey_abbr,
     find_special_list_types,
-    get_special_snippet_list,
     filter_relationship_type,
     get_special_snippet_list,
 )
@@ -621,7 +619,7 @@ class Patrol:
 
         return all_patrol_events
 
-    def determine_outcome(self, antagonize=False) -> Tuple[str]:
+    def determine_outcome(self, antagonize=False):
 
         if self.patrol_event is None:
             return
@@ -1145,72 +1143,6 @@ class Patrol:
 
         #TODO: check if this can be handled in event_text_adjust
         return text
-
-    # ---------------------------------------------------------------------------- #
-    #                                   Handlers                                   #
-    # ---------------------------------------------------------------------------- #
-
-    def handle_history(
-        self, cat, condition=None, possible=False, scar=False, death=False
-    ):
-        """
-        this handles the scar and death history of the cat
-        :param cat: the cat gaining the history
-        :param condition: if the history is related to a condition, include its name here
-        :param possible: if you want the history added to the possible scar/death then set this to True, defaults to False
-        :param scar: if you want the scar history added set this to True, default is False
-        :param death: if you want the death history added set this to True, default is False
-        """
-        if not self.patrol_event.history_text:
-            print(
-                f"WARNING: No history found for {self.patrol_event.patrol_id}, it may not need one but double check please!"
-            )
-        if scar and "scar" in self.patrol_event.history_text:
-            adjust_text = self.patrol_event.history_text["scar"]
-            adjust_text = adjust_text.replace(
-                "o_c_n", f"{str(self.other_clan.name)}Clan"
-            )
-            adjust_text = process_text(
-                adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))}
-            )
-            if possible:
-                History.add_possible_history(
-                    cat, condition=condition, scar_text=adjust_text
-                )
-            else:
-                History.add_scar(cat, adjust_text)
-        if death:
-            if cat.status == "leader":
-                if "lead_death" in self.patrol_event.history_text:
-                    adjust_text = self.patrol_event.history_text["lead_death"]
-                    adjust_text = adjust_text.replace(
-                        "o_c_n", f"{str(self.other_clan.name)}Clan"
-                    )
-                    adjust_text = process_text(
-                        adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))}
-                    )
-                    if possible:
-                        History.add_possible_history(
-                            cat, condition=condition, death_text=adjust_text
-                        )
-                    else:
-                        History.add_death(cat, adjust_text)
-            else:
-                if "reg_death" in self.patrol_event.history_text:
-                    adjust_text = self.patrol_event.history_text["reg_death"]
-                    adjust_text = adjust_text.replace(
-                        "o_c_n", f"{str(self.other_clan.name)}Clan"
-                    )
-                    adjust_text = process_text(
-                        adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))}
-                    )
-                    if possible:
-                        History.add_possible_history(
-                            cat, condition=condition, death_text=adjust_text
-                        )
-                    else:
-                        History.add_death(cat, adjust_text)
-
 
 # ---------------------------------------------------------------------------- #
 #                               PATROL CLASS END                               #
