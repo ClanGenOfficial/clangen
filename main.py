@@ -21,8 +21,7 @@ import sys
 import threading
 import time
 from importlib.util import find_spec
-from scripts.game_structure.audio import sound_manager
-
+from scripts.game_structure.audio import sound_manager, music_manager
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
