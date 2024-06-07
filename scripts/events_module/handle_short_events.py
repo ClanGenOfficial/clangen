@@ -120,6 +120,7 @@ class HandleShortEvents():
                     found = True
                     break
             if not found:
+                # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
                 # print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
                 #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
                 pass
@@ -128,8 +129,10 @@ class HandleShortEvents():
         # ---------------------------------------------------------------------------- #
         try:
             self.chosen_event = (random.choice(final_events))
-            print(f"CHOSEN: {self.chosen_event.event_id}")
+            # this print is good for testing, but gets spammy in large clans
+            # print(f"CHOSEN: {self.chosen_event.event_id}")
         except IndexError:
+            # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
             print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name}")
             return
 
@@ -147,7 +150,6 @@ class HandleShortEvents():
                 return
             self.handle_mass_death()
             if len(self.multi_cat) <= 2:
-                print("Mass death event was selected, but there weren't enough cats available.")
                 return
 
         # create new cats (must happen here so that new cats can be included in further changes)
@@ -189,7 +191,6 @@ class HandleShortEvents():
 
         # handle murder reveals
         if "murder_reveal" in self.chosen_event.sub_type:
-            print("MURDER REVEAL")
             if "clan_wide" in self.chosen_event.tags:
                 other_cat = None
             else:

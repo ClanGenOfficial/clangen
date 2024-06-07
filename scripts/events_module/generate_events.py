@@ -549,7 +549,6 @@ class GenerateEvents:
                 if "war" in event.sub_type:
                     rel_change_type = game.switches["war_rel_change_type"]
                     if event.other_clan["changed"] < 0 and rel_change_type != "rel_down":
-                        # print(f"dropped {event.event_id} due to wrong rel change type")
                         continue
 
                 # don't waste time checking rep if any rep is allowed
@@ -609,7 +608,6 @@ class GenerateEvents:
                             trigger_factor = 1.2
 
                         trigger_value = round(trigger_factor * needed_amount, 2)
-                        # print(f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {pile.total_amount}")
 
                         # "full" means total_amount is enough for 1 moons worth, but is not over the multiplier
                         if "full" in trigger:
