@@ -254,7 +254,7 @@ class Cat:
             else:
                 faded_cats = []
 
-            while potential_id in [self.all_cats, faded_cats]:
+            while potential_id in self.all_cats or potential_id in faded_cats:
                 potential_id = str(next(Cat.id_iter))
             self.ID = potential_id
         else:
