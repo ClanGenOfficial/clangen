@@ -473,7 +473,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
         existing_outsiders = [i for i in Cat.all_cats.values() if i.outside and not i.dead]
         possible_outsiders = []
         for cat in existing_outsiders:
-            if bs_override and cat.backstory not in stor:
+            if stor and cat.backstory not in stor:
                 continue
             if cat_type != cat.status:
                 continue
