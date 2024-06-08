@@ -63,7 +63,7 @@ class TestCatStatus(unittest.TestCase):
         self.assertEqual(test_cat.status, Status.DEPUTY)
 
         self.assertTrue(test_cat.status.is_warrior_any)
-        self.assertTrue(test_cat.status.is_leadership())
+        self.assertTrue(test_cat.status.is_deputy_or_leader())
 
         self.assertFalse(test_cat.status.is_app_any())
         self.assertFalse(test_cat.status.is_mediator_any())
@@ -74,7 +74,7 @@ class TestCatStatus(unittest.TestCase):
         self.assertEqual(test_cat.status, Status.LEADER)
 
         self.assertTrue(test_cat.status.is_warrior_any)
-        self.assertTrue(test_cat.status.is_leadership())
+        self.assertTrue(test_cat.status.is_deputy_or_leader())
 
         self.assertFalse(test_cat.status.is_app_any())
         self.assertFalse(test_cat.status.is_mediator_any())

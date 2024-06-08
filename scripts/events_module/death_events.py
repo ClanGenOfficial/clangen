@@ -51,7 +51,7 @@ class Death_Events():
         additional_event_text = ""
 
         # assign default history
-        if cat.status == 'leader':
+        if cat.status.is_leader():
             death_history = death_cause.history_text.get("lead_death")
         else:
             death_history = death_cause.history_text.get("reg_death")
@@ -74,7 +74,7 @@ class Death_Events():
             if "revealed" in death_cause.tags:
                 revealed = True
             else:
-                if cat.status == 'leader':
+                if cat.status.is_leader():
                     death_history = death_cause.history_text.get("lead_death")
                     murder_unrevealed_history = death_cause.history_text.get("lead_murder_unrevealed")
                 else:
@@ -106,7 +106,7 @@ class Death_Events():
                 involved_cats.append(other_cat.ID)
 
         # give history to cat if they die
-        if cat.status == 'leader':
+        if cat.status.is_leader():
             if "all_lives" in death_cause.tags:
                 game.clan.leader_lives -= 10
                 additional_event_text += cat.die(body)
@@ -126,7 +126,7 @@ class Death_Events():
 
         # give death history to other cat and kill them if they die
         if "multi_death" in death_cause.tags:
-            if other_cat.status == 'leader':
+            if other_cat.status.is_leader():
                 if "all_lives" in death_cause.tags:
                     game.clan.leader_lives -= 10
                     additional_event_text += other_cat.die(body)

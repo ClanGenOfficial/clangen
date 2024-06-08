@@ -277,11 +277,11 @@ class Cat:
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status == Status.NEWBORN:
+            if status.is_newborn():
                 self.age = 'newborn'
-            elif status == Status.KITTEN:
+            elif status.is_kitten():
                 self.age = 'kitten'
-            elif status == Status.ELDER:
+            elif status.is_elder():
                 self.age = 'senior'
             elif status.is_app_any():
                 self.age = 'adolescent'
@@ -352,7 +352,7 @@ class Cat:
         """Perform faded-specific initialisation
 
         :param ID: Cat ID
-        :param status: Cat status
+        :param Status status: Cat status
         :param prefix: Cat's prefix
         :param suffix: Cat's suffix
         :param moons: Age in moons
@@ -793,6 +793,7 @@ class Cat:
         self.outside = True
 
         if self.status.is_leader() or self.status.is_warrior():
+            # this seems like it should be is_deputy, but I'm doing a like-for-like replacement
             self.status_change(Status.WARRIOR)
 
         for app in self.apprentice.copy():
@@ -830,10 +831,9 @@ class Cat:
 
         return ids
 
-    def status_change(self, new_status: Status|str, resort=False):
+    def status_change(self, new_status: Status | str, resort=False):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
-        new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
-                    'medicine cat', 'elder'.
+        new_status = The new status of a cat.
         resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                 only be true for non-timeskip status changes."""
 
@@ -844,6 +844,9 @@ class Cat:
         old_status = self.status
         self.status = new_status
         self.name.status = new_status
+
+        if new_status.is_outside_clan():
+            return
 
         self.update_mentor()
         for app in self.apprentice.copy():
@@ -1813,7 +1816,7 @@ class Cat:
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
-        if name == "kittencough" and self.status != "kitten":
+        if name == "kittencough" and not self.status.is_kitten():
             return
 
         illness = ILLNESSES[name]
@@ -2043,7 +2046,7 @@ class Cat:
             )  # creating a range in which a condition can present
             moons_until = max(moons_until, 0)
 
-        if born_with and self.status not in ["kitten", "newborn"]:
+        if born_with and not self.status.is_kit_any():
             moons_until = -2
         elif born_with is False:
             moons_until = 0
@@ -2110,15 +2113,10 @@ class Cat:
 
         # There are some special tasks we need to do for apprentice
         # Note that although you can un-retire cats, they will be a full warrior/med_cat/mediator
-        if self.moons > 6 and self.status in [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-        ]:
+        if self.moons > 6 and self.status.is_app_any():
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
-            self.status_change(
-                "warrior"
-            )  # Temp switch them to warrior, so the following step will work
+            self.status_change(Status.WARRIOR
+                               )  # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
 
         self.status_change("elder")
@@ -2264,9 +2262,9 @@ class Cat:
             return False
 
         if (
-                self.status.is_app() and
+                self.status.is_warrior_app() and
                 not (potential_mentor.status.is_warrior()
-                     or potential_mentor.status.is_leadership())
+                     or potential_mentor.status.is_deputy_or_leader())
         ):
             return False
 
@@ -2808,7 +2806,7 @@ class Cat:
         else:
             apply_bonus = True
             # EX gain on success
-            if mediator.status != "mediator apprentice":
+            if not mediator.status.is_mediator_app():
                 exp_gain = randint(10, 24)
 
                 gm_modifier = 1
@@ -2827,7 +2825,7 @@ class Cat:
                     lvl_modifier = 1
                 mediator.experience += exp_gain / lvl_modifier / gm_modifier
 
-        if mediator.status == "mediator apprentice":
+        if mediator.status.is_mediator_app():
             mediator.experience += max(randint(1, 6), 1)
 
         # determine the traits to effect

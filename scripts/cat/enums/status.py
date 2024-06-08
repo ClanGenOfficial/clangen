@@ -26,19 +26,19 @@ class Status(StrEnum):
     ROGUE = "rogue"
 
     def is_working_any(self):
-        """Return true if in clan and NOT newborn, kitten or elder."""
+        """True if cat is a working role (warrior + app, medcat + app, mediator + app, deputy and leader)"""
         return not (self.is_kit_any()
                     and self.is_elder()) \
             and not self.is_outside_clan()
 
     def is_patrol_any(self):
-        """True if able to go on patrol (working cats minus mediator & mediator app)"""
+        """True if able to go on patrol (warrior + app, medcat + app, deputy and leader)"""
         return (self.is_warrior_any()
                 or self.is_medcat_any()
-                or self.is_leadership())
+                or self.is_deputy_or_leader())
 
     def is_patrol_app(self):
-        """True if apprentice who can go on patrol (warrior app or medcat app)"""
+        """True if apprentice who can go on patrol (warrior app and medcat app)"""
         return self in [Status.APP, Status.MEDCATAPP]
 
     def is_kit_any(self):
@@ -64,16 +64,20 @@ class Status(StrEnum):
         """True if cat is warrior or apprentice."""
         return self in [Status.WARRIOR, Status.APP]
 
-    def is_leadership(self):
+    def is_deputy_or_leader(self):
         """True if cat is deputy or leader."""
         return self in [Status.DEPUTY, Status.LEADER]
 
+    def is_warrior_medcat_or_mediator(self):  # TODO grr.
+        """True if cat is warrior, medcat or mediator"""
+        return self in [Status.WARRIOR, Status.MEDCAT, Status.MEDIATOR]
+
     def is_normal_adult(self):
-        """True if cat is deputy, leader or warrior"""
-        return self.is_leadership() or self.is_warrior()
+        """True if cat is warrior, deputy or leader"""
+        return self.is_deputy_or_leader() or self.is_warrior()
 
     def is_outside_clan(self):
-        """True if cat does not hold a Clan role"""
+        """True if cat is former Clanmember, exiled, kittypet, loner or rogue"""
         return self in [
             Status.EXCLAN, Status.EXILED, Status.KITTYPET,
             Status.LONER, Status.ROGUE]
@@ -90,7 +94,7 @@ class Status(StrEnum):
         """True if elder."""
         return self == Status.ELDER
 
-    def is_app(self):
+    def is_warrior_app(self):
         """True if (warrior) apprentice."""
         return self == Status.APP
 

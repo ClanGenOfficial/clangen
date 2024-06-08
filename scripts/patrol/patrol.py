@@ -158,7 +158,7 @@ class Patrol:
                 else:
                     self.patrol_statuses["all apprentices"] = 1
 
-            if cat.status.is_leadership() or cat.status.is_warrior():
+            if cat.status.is_normal_adult():
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1
                 else:

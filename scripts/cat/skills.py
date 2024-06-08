@@ -370,7 +370,7 @@ class CatSkills:
             pass
         elif status.is_kitten() or moons < 6:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
-        elif status.is_app():
+        elif status.is_warrior_app():
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
             if random.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(

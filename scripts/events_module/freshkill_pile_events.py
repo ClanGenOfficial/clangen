@@ -87,23 +87,23 @@ class Freshkill_Events:
             history_text = "this should not show up - history text"
 
             # give history to cat if they die
-            if cat.status != "leader" and chosen_event.history_text[0] is not None:
+            if not cat.status.is_leader() and chosen_event.history_text[0] is not None:
                 history_text = event_text_adjust(
                     Cat, chosen_event.history_text[0], cat, other_cat, other_clan_name
                 )
-            elif cat.status == "leader" and chosen_event.history_text[1] is not None:
+            elif cat.status.is_leader() and chosen_event.history_text[1] is not None:
                 history_text = event_text_adjust(
                     Cat, chosen_event.history_text[1], cat, other_cat, other_clan_name
                 )
 
-            if cat.status == "leader":
+            if cat.status.is_leader():
                 game.clan.leader_lives -= 1
 
             cat.die()
             History.add_death(cat, history_text)
 
             # if the cat is the leader, the illness "starving" needs to be added again
-            if cat.status == "leader" and game.clan.leader_lives > 0:
+            if cat.status.is_leader() and game.clan.leader_lives > 0:
                 cat.get_ill("starving")
 
             types = ["birth_death"]
@@ -142,7 +142,7 @@ class Freshkill_Events:
             and cat_nutrition.percentage > STARV_PERCENTAGE
         ):
             # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
-            if cat.status in ["kitten", "elder"]:
+            if cat.status.is_kitten() or cat.status.is_elder():
                 needed_tags = ["starving"]
                 illness = "starving"
             else:
@@ -419,7 +419,7 @@ class Freshkill_Events:
                     Cat, event.history_text[2], cat, other_cat
                 )
 
-            if cat.status == "leader":
+            if cat.status.is_leader():
                 History.add_possible_history(
                     cat,
                     event.injury,
@@ -438,7 +438,7 @@ class Freshkill_Events:
 
             cat.get_injured(event.injury, event_triggered=True)
             if "multi_injury" in event.tags and other_cat:
-                if other_cat.status == "leader":
+                if other_cat.status.is_leader():
                     History.add_possible_history(
                         other_cat,
                         event.injury,
@@ -470,7 +470,7 @@ class Freshkill_Events:
                     Cat, event.history_text[1], cat, other_cat
                 )
 
-            if cat.status == "leader":
+            if cat.status.is_leader():
                 game.clan.leader_lives -= 1
                 History.add_death(cat, history_leader, other_cat=other_cat)
             else:
@@ -478,7 +478,7 @@ class Freshkill_Events:
 
             cat.die()
             if "multi_death" in event.tags and other_cat:
-                if other_cat.status == "leader":
+                if other_cat.status.is_leader():
                     game.clan.leader_lives -= 1
                     History.add_death(other_cat, history_leader, other_cat=cat)
                 else:
