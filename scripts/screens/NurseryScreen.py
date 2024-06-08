@@ -1,3 +1,5 @@
+from random import choice
+
 import pygame
 import pygame_gui
 import ujson
@@ -6,7 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.screens.Screens import Screens
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.utility import scale, get_text_box_theme
+from scripts.utility import scale, get_text_box_theme, shorten_text_to_fit
 
 class NurseryScreen(Screens):
     """
@@ -16,7 +18,7 @@ class NurseryScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.chosen_kits = []
-        self.partaking_adult = None
+        self.chosen_adult = None
 
         self.current_adult_page = 1
         self.current_kit_page = 1
@@ -33,6 +35,9 @@ class NurseryScreen(Screens):
 
         self.focus_frame_container = None
         self.focus_frame_elements = {}
+        self.focus_container = None
+        self.focus_elements = {}
+        self.selected_cat = None
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
@@ -94,6 +99,12 @@ class NurseryScreen(Screens):
             elif event.ui_element == self.adult_selection_elements["page_left"]:
                 self.current_adult_page -= 1
                 self.update_adult_list()
+            elif event.ui_element == self.focus_frame_elements["random_dice"]:
+                self.randomize_selected_cat()
+                self.update_focus()
+            elif event.ui_element in self.adult_cat_buttons.values() or event.ui_element in self.kits_cat_buttons.values():
+                self.selected_cat = event.ui_element.return_cat_object()
+                self.update_focus()
 
     def exit_screen(self):
         """Runs when screen exits"""
@@ -105,6 +116,9 @@ class NurseryScreen(Screens):
         self.adult_selection_container.kill()
         self.kits_selection_container.kill()
         self.focus_frame_container.kill()
+        self.focus_container.kill()
+
+        self.selected_cat = None
     
     def create_adult_selection(self):
         """
@@ -321,13 +335,30 @@ class NurseryScreen(Screens):
     
     def create_focus_frame(self):
         """
-        handles the creation of focus_frame_container
+        handles the creation of focus_container_frame
         """
         self.focus_frame_container = pygame_gui.elements.UIAutoResizingContainer(
             scale(pygame.Rect((1000, 240), (0, 0))),
             object_id="#focus_frame_container",
             starting_height=3,
-            manager=MANAGER)
+            manager=MANAGER
+        )
+        self.focus_frame_elements["random_dice"] = UIImageButton(
+            scale(pygame.Rect((60, 532), (68, 68))),
+            "",
+            object_id="#random_dice_button",
+            container=self.focus_frame_container,
+            starting_height=1,
+            manager=MANAGER
+        )
+        self.focus_frame_elements["add_cat"] = UIImageButton(
+            scale(pygame.Rect((168, 532), (182, 68))),
+            "",
+            object_id="#add_cat_nursery_button",
+            container=self.focus_frame_container,
+            starting_height=1,
+            manager=MANAGER
+        )
         self.focus_frame_elements["frame"] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 0), (400, 550))),
                                                                          pygame.image.load(
                                                                              "resources/images/nursery_focus_frame.png").convert_alpha(),
@@ -335,4 +366,93 @@ class NurseryScreen(Screens):
                                                                          container=self.focus_frame_container,
                                                                          starting_height=1,
                                                                          manager=MANAGER
-                                                                         )
+        )
+        self.focus_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((0, 0), (0, 0))),
+            object_id="#focus_container",
+            container=self.focus_frame_container,
+            starting_height=1,
+            manager=MANAGER,
+        )
+    
+    def update_focus(self):
+        """
+        Handles creating and updating the elements inside focus frame.
+        """
+        # clearing/resetting
+        if self.focus_container:
+            for ele in self.focus_elements:
+                self.focus_elements[ele].kill()
+            self.focus_elements = {}
+        else:
+            self.focus_container = pygame_gui.elements.UIAutoResizingContainer(
+                scale(pygame.Rect((0, 0), (0, 0))),
+                object_id="#focus_container",
+                container=self.focus_frame_container,
+                starting_height=1,
+                manager=MANAGER,
+            )
+        
+        self.focus_elements["cat_sprite"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((50, 30), (300, 300))),
+            pygame.transform.scale(self.selected_cat.sprite, (300, 300)),
+            object_id="#focus_cat_sprite",
+            container=self.focus_container,
+            starting_height=1,
+            manager=MANAGER,
+        )
+        self.focus_elements["cat_name"] = pygame_gui.elements.UILabel(
+            scale(pygame.Rect((0, 350), (400, -1))),
+            text=shorten_text_to_fit(str(self.selected_cat.name), 400, 30),
+            object_id="#text_box_30_horizcenter",
+            container=self.focus_container,
+            manager=MANAGER,
+        )
+        self.focus_elements["cat_status"] = pygame_gui.elements.UILabel(
+            relative_rect=scale(pygame.Rect((0, 390), (400, -1))),
+            text=f"{self.selected_cat.status}",
+            object_id="#text_box_22_horizcenter",
+            container=self.focus_container,
+            manager=MANAGER,
+        )
+
+    def randomize_selected_cat(self):
+        """
+        Handles picking a random, available cat from kittens and adults when clicking randomize -button.
+        Returns the random cat.
+        """
+        able_cats = {
+            "unadded kittens": [],
+            "unadded adults": [],
+            "unadded all": [],
+            "all": []
+        }
+
+        # Fetching cats
+        kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
+        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working()]
+
+        for k in kittens:
+            if k not in self.chosen_kits:
+                able_cats["unadded kittens"].append(k)
+                able_cats["unadded all"].append(k)
+            able_cats["all"].append(k)
+        
+        for a in adults:
+            if a != self.chosen_adult:
+                able_cats["unadded adults"].append(a)
+                able_cats["unadded all"].append(a)
+            able_cats["all"].append(a)
+        
+        # Choosing cat
+        if self.chosen_adult != None and len(self.chosen_kits) == 3:
+            # All playmate spots are already filled
+            self.selected_cat = choice(able_cats["all"])
+        elif self.chosen_adult != None or len(able_cats["unadded adults"]) == 0:
+            self.selected_cat = choice(able_cats["unadded kittens"])
+        elif len(self.chosen_kits) == 3 or len(able_cats["unadded kittens"]) == 0:
+            self.selected_cat = choice(able_cats["unadded adults"])
+        elif len(able_cats["unadded adults"]) == 0 and len(able_cats["unadded kittens"]) == 0:
+            self.selected_cat = choice(able_cats["all"])
+        else:
+            self.selected_cat = choice(able_cats["unadded all"])
