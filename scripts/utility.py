@@ -1040,7 +1040,7 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
 
 def filter_relationship_type(
         group: list,
-        filter_types: list[str],
+        filter_types: List[str],
         event_id: str = None,
         patrol_leader=None
 ):
