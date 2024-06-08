@@ -1,11 +1,13 @@
+from math import ceil
+
 import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer
+from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UINamedCatListDisplay
 from scripts.screens.Screens import Screens
-from scripts.utility import scale
+from scripts.utility import scale, get_text_box_theme
 
 
 class NewListScreen(Screens):
@@ -32,8 +34,12 @@ class NewListScreen(Screens):
         self.choose_group_buttons = {}
 
         self.sort_by_button_container = None
-        self.sort_by_buttons = {}
         self.sort_by_dropdown = None
+        self.sort_by_buttons = {}
+
+        self.cat_display_container = None
+        self.cat_display = None
+        self.display_container_elements = {}
 
     def handle_event(self, event):
         pass
@@ -56,9 +62,12 @@ class NewListScreen(Screens):
         self.cat_list_bar = pygame_gui.elements.UIAutoResizingContainer(
             scale(pygame.Rect((209, 268), (0, 0))),
             object_id="#cat_list_bar",
-            container=self.list_screen_container,
             manager=MANAGER
         )
+
+        # need to use add_element instead of specifying container in self.cat_list_bar
+        # to prevent blinking on screen switch
+        self.list_screen_container.add_element(self.cat_list_bar)
 
         # FAVORITE CAT TOGGLE
         self.cat_list_bar_elements["fav_toggle"] = UIImageButton(
@@ -132,18 +141,16 @@ class NewListScreen(Screens):
                 object_id=object_id,
                 starting_height=2,
                 manager=MANAGER,
-                visible=False
             )
             y_pos += 64
 
         self.choose_living_dropdown = UIDropDownContainer(
-            scale(pygame.Rect((546, 0), (0, 0))),
+            self.living_groups_container.relative_rect,
             container=self.cat_list_bar,
             object_id="#choose_living_dropdown",
             starting_height=1,
             parent_button=self.cat_list_bar_elements["choose_group_button"],
             child_button_container=self.living_groups_container,
-            visible=False,
             manager=MANAGER
         )
 
@@ -189,7 +196,7 @@ class NewListScreen(Screens):
             scale(pygame.Rect((922, 0), (276, 68))),
             "",
             container=self.cat_list_bar,
-            object_id="#filter_by_rank_button",
+            object_id=f"#filter_by_{game.sort_type}_button",
             starting_height=1,
             manager=MANAGER
         )
@@ -204,7 +211,7 @@ class NewListScreen(Screens):
 
         y_pos = 0
         for object_id in ["#filter_rank_button", "#filter_age_button", "#filter_age_reverse_button",
-                          "#filter_ID_button", "#filter_exp_button", "#filter_death_button"]:
+                          "#filter_id_button", "#filter_exp_button", "#filter_death_button"]:
             self.sort_by_buttons[object_id.strip("#")] = UIImageButton(
                 scale(pygame.Rect((0, y_pos), (128, 68))),
                 "",
@@ -227,15 +234,108 @@ class NewListScreen(Screens):
 
         self.sort_by_dropdown.close()
 
+        # CAT DISPLAY
+        self.cat_display_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((30, 170), (0, 0))),
+            object_id="#cat_display_container",
+            container=self.list_screen_container,
+            manager=MANAGER
+        )
+        # prev/next page buttons
+        self.display_container_elements["previous_page_button"] = UIImageButton(
+            scale(pygame.Rect((590, 1030), (68, 68))),
+            "",
+            container=self.cat_display_container,
+            object_id="#arrow_left_button",
+            manager=MANAGER,
+        )
+        self.display_container_elements["next_page_button"] = UIImageButton(
+            scale(pygame.Rect((882, 1030), (68, 68))),
+            "",
+            container=self.cat_display_container,
+            object_id="#arrow_right_button",
+            manager=MANAGER,
+        )
+        # page number
+        self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
+            "",
+            scale(pygame.Rect((680, 1190), (220, 60))),
+            container=self.cat_display_container,
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER,
+        )  # Text will be filled in later
+
         # Determine the starting list of cats.
         self.get_cat_list()
-
+        self.update_cat_list()
 
     def exit_screen(self):
-        self.cat_list_bar.kill()
+        self.list_screen_container.kill()
 
     def on_use(self):
         pass
+
+    def update_cat_list(self, search_text=""):
+        self.current_listed_cats = []
+        Cat.sort_cats(self.full_cat_list)
+
+        # adding in the guide if necessary, this ensures the guide isn't affected by sorting as we always want them to
+        # be the first cat on the list
+        if (self.current_group == "df" and game.clan.instructor.df) or (
+                self.current_group == "sc" and not game.clan.instructor.df
+        ):
+            if game.clan.instructor in self.full_cat_list:
+                self.full_cat_list.remove(game.clan.instructor)
+            self.full_cat_list.insert(0, game.clan.instructor)
+
+        search_text = search_text.strip()
+        if search_text not in ["", "name search"]:
+            for cat in self.full_cat_list:
+                if search_text.lower() in str(cat.name).lower():
+                    self.current_listed_cats.append(cat)
+        else:
+            self.current_listed_cats = self.full_cat_list.copy()
+
+        self.all_pages = (
+            int(ceil(len(self.current_listed_cats) / 20.0))
+            if len(self.current_listed_cats) > 20
+            else 1
+        )
+
+        Cat.ordered_cat_list = self.current_listed_cats
+        self.update_cat_display()
+
+    def update_cat_display(self):
+
+        # update title
+        if self.current_group == "clan":
+            self.update_heading_text(f"{game.clan.name}Clan")
+        elif self.current_group == "cotc":
+            self.update_heading_text(f"Cats Outside the Clan")
+        elif self.current_group == "sc":
+            self.update_heading_text(f"StarClan")
+        elif self.current_group == "ur":
+            self.update_heading_text(f"Unknown Residence")
+        elif self.current_group == "df":
+            self.update_heading_text(f"Dark Forest")
+
+        self.cat_display = UINamedCatListDisplay(
+            scale(pygame.Rect((0, 0), (0, 0))),
+            container=self.cat_display_container,
+            object_id="#cat_list_display",
+            starting_height=1,
+            cat_list=self.current_listed_cats,
+            cats_displayed=20,
+            x_px_between=240,
+            y_px_between=200,
+            columns=5,
+            prev_button=self.display_container_elements["previous_page_button"],
+            next_button=self.display_container_elements["next_page_button"],
+            current_page=self.current_page,
+            text_theme=get_text_box_theme("#text_box_30_horizcenter") if self.death_status == "living"
+            else "#text_box_30_horizcenter_light",
+            manager=MANAGER
+        )
 
     def get_cat_list(self):
         if game.last_list_forProfile:

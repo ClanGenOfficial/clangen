@@ -739,6 +739,9 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             visible: bool = True
     ):
 
+        super().__init__(relative_rect=relative_rect, container=container, starting_height=starting_height,
+                         object_id=object_id, visible=visible, manager=manager)
+
         self.cat_list = cat_list
         self.cats_displayed = cats_displayed
         self.px_between = px_between
@@ -748,19 +751,21 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         self.prev_button = prev_button
         self.tool_tip_name = tool_tip_name
 
+        self.total_pages: int = 0
         self.cat_sprites = {}
-
-        super().__init__(relative_rect=relative_rect, container=container, starting_height=starting_height,
-                         object_id=object_id, visible=visible, manager=manager)
 
         self._display_cats()
 
-    def update_display(self, page_number):
+    def update_display(self, current_page: int, cat_list: list = None):
         """
         updates current_page and refreshes the cat display
+        :param current_page: the currently displayed page
+        :param cat_list: the new list of cats to display, leave None if list isn't changing, default None
         """
 
-        self.current_page = page_number
+        self.current_page = current_page
+        if cat_list:
+            self.cat_list = cat_list
         self._display_cats()
 
     def _display_cats(self):
@@ -780,6 +785,7 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
         display_cats = []
         if cat_chunks:
+            self.total_pages = len(cat_chunks)
             display_cats = cat_chunks[self.current_page - 1]
 
         for ele in self.elements:
@@ -801,11 +807,11 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
             # changing position
             pos_x += self.px_between
-            if pos_x >= ((self.px_between + 100) * self.columns):
-                pos_x = 0
+            if pos_x >= (self.px_between * self.columns):
+                pos_x = self.px_between
                 pos_y += self.px_between
 
-    def _update_arrow_buttons(self, cat_chunks):
+    def _update_arrow_buttons(self, cat_chunks: list):
         """
         enables/disables appropriate arrow buttons
         """
@@ -895,6 +901,7 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
 
         display_cats = []
         if cat_chunks:
+            self.total_pages = len(cat_chunks)
             display_cats = cat_chunks[self.current_page - 1]
 
         for ele in self.elements:
@@ -915,7 +922,7 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
             )
 
             self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((pos_x, pos_y + 120), (100 + self.x_px_between, 60))),
+                scale(pygame.Rect((pos_x - self.x_px_between / 2, pos_y + 100), (100 + self.x_px_between, 60))),
                 shorten_text_to_fit(str(kitty.name), 220, 30),
                 container=self,
                 object_id=self.text_theme,
@@ -923,6 +930,6 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
 
             # changing position
             pos_x += self.x_px_between
-            if pos_x >= ((self.x_px_between + 100) * self.columns):
-                pos_x = 0
+            if pos_x > (self.x_px_between * self.columns):
+                pos_x = self.x_px_between
                 pos_y += self.y_px_between

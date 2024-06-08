@@ -368,7 +368,7 @@ class ListScreen(Screens):
         self.filter_by_ID = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos), (296, 68))),
             "",
-            object_id="#filter_by_ID_button",
+            object_id="#filter_by_id_button",
             manager=MANAGER,
         )
         self.filter_by_death = UIImageButton(
@@ -423,7 +423,7 @@ class ListScreen(Screens):
         self.filter_id = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos), (114, 68))),
             "",
-            object_id="#filter_ID_button",
+            object_id="#filter_id_button",
             starting_height=2,
             manager=MANAGER,
         )
