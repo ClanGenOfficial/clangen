@@ -446,7 +446,7 @@
     },
     {
         "event_id": "gen_death_murder_anymed4",
-        "location": ["any"],
+        "location": ["forest", "plains", "beach"],
         "season": [
             "any"
         ],
@@ -4416,7 +4416,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c died trying to save an apprentice from o_c_n.",
+        "event_text": "m_c died trying to save an o_c_n apprentice.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5660,7 +5660,7 @@
   },
   {
     "event_id": "multi_death_massdeath_fire1",
-    "location": ["any"],
+    "location": ["forest:camp1_camp2", "plains:camp1_camp3", "beach:camp1_camp3", "mountainous:camp4"],
     "season": ["greenleaf"],
     "sub_type": ["mass_death"],
     "tags": [],
@@ -5777,7 +5777,7 @@
     ]
   },
   {
-    "event_id": "multi_death_massdeath_greencough1",
+    "event_id": "multi_death_massdeath_tainted1",
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["mass_death"],

@@ -75,10 +75,10 @@ def get_alive_clan_queens(living_cats):
 def get_alive_status_cats(Cat, get_status: list, working: bool = False, sort: bool = False) -> list:
     """
     returns a list of cat objects for all living cats of get_status in Clan
-    :param Cat: Cat class
-    :param get_status: list of statuses searching for
-    :param working: default False, set to True if you would like the list to only include working cats
-    :param sort: default False, set to True if you would like list sorted by descending moon age
+    :param Cat Cat: Cat class
+    :param list get_status: list of statuses searching for
+    :param bool working: default False, set to True if you would like the list to only include working cats
+    :param bool sort: default False, set to True if you would like list sorted by descending moon age
     """
 
     alive_cats = [i for i in Cat.all_cats.values() if i.status in get_status and not i.dead and not i.outside]
@@ -279,18 +279,26 @@ def change_clan_relations(other_clan, difference):
     game.clan.all_clans[y].relations = clan_relations
 
 
-def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]) -> list:
+def create_new_cat_block(
+        Cat,
+        Relationship,
+        event,
+        in_event_cats: dict,
+        i: int,
+        attribute_list: List[str]
+) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
-    :param Cat: always pass Cat class
-    :param Relationship: always pass Relationship class
+    :param Cat Cat: always pass Cat class
+    :param Relationship Relationship: always pass Relationship class
     :param event: always pass the event class
-    :param in_event_cats: dict containing involved cats' abbreviations as keys and cat objects as values
-    :param i: index of the cat block
-    :param attribute_list: attribute list contained within the block
+    :param dict in_event_cats: dict containing involved cats' abbreviations as keys and cat objects as values
+    :param int i: index of the cat block
+    :param list[str] attribute_list: attribute list contained within the block
     """
 
     thought = "Is looking around the camp with wonder"
+    new_cats = None
 
     # gather bio parents
     parent1 = None
@@ -627,24 +635,25 @@ def create_new_cat(
 ) -> list:
     """
     This function creates new cats and then returns a list of those cats
-    :param Cat: pass the Cat class
-    :params Relationship: pass the Relationship class
-    :param new_name: set True if cat(s) is a loner/rogue receiving a new Clan name - default: False
-    :param loner: set True if cat(s) is a loner or rogue - default: False
-    :param kittypet: set True if cat(s) is a kittypet - default: False
-    :param kit: set True if the cat is a lone kitten - default: False
-    :param litter: set True if a litter of kittens needs to be generated - default: False
-    :param other_clan: if new cat(s) are from a neighboring clan, set true
-    :param backstory: a list of possible backstories.json for the new cat(s) - default: None
-    :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
-    :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
-    :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
-    :param thought: if you need to give a custom "welcome" thought, set it here
-    :param alive: set this as False to generate the cat as already dead - default: True (alive)
-    :param outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
-    :param parent1: Cat ID to set as the biological parent1
-    :param parent2: Cat ID object to set as the biological parert2
+    :param Cat Cat: pass the Cat class
+    :params Relationship Relationship: pass the Relationship class
+    :param bool new_name: set True if cat(s) is a loner/rogue receiving a new Clan name - default: False
+    :param bool loner: set True if cat(s) is a loner or rogue - default: False
+    :param bool kittypet: set True if cat(s) is a kittypet - default: False
+    :param bool kit: set True if the cat is a lone kitten - default: False
+    :param bool litter: set True if a litter of kittens needs to be generated - default: False
+    :param bool other_clan: if new cat(s) are from a neighboring clan, set true
+    :param bool backstory: a list of possible backstories.json for the new cat(s) - default: None
+    :param str status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
+    :param int age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
+    :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
+    :param str thought: if you need to give a custom "welcome" thought, set it here
+    :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
+    :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
+    :param str parent1: Cat ID to set as the biological parent1
+    :param str parent2: Cat ID object to set as the biological parert2
     """
+    # TODO: it would be nice to rewrite this to be less bool-centric
     accessory = None
     if isinstance(backstory, list):
         backstory = choice(backstory)
@@ -861,55 +870,6 @@ def create_new_cat(
     return created_cats
 
 
-def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
-    """
-    TODO: DOCS
-    """
-    suffix = ""
-    if backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
-        status = "rogue"
-    elif backstory in BACKSTORIES["backstory_categories"]["former_clancat_backstories"]:
-        status = "former Clancat"
-    if status == "kittypet":
-        name = choice(names.names_dict["loner_names"])
-    elif status in ["loner", "rogue"]:
-        name = choice(
-            names.names_dict["loner_names"] + names.names_dict["normal_prefixes"]
-        )
-    elif status == "former Clancat":
-        name = choice(names.names_dict["normal_prefixes"])
-        suffix = choice(names.names_dict["normal_suffixes"])
-    else:
-        name = choice(names.names_dict["loner_names"])
-    new_cat = Cat(
-        prefix=name,
-        suffix=suffix,
-        status=status,
-        gender=choice(["female", "male"]),
-        backstory=backstory,
-    )
-    if status == "kittypet":
-        new_cat.pelt.accessory = choice(Pelt.collars)
-    new_cat.outside = True
-
-    if not alive:
-        new_cat.die()
-
-    thought = "Wonders about those Clan cats they just met"
-    new_cat.thought = thought
-
-    # create relationships - only with outsiders
-    # (this function will handle, that the cat only knows other outsiders)
-    new_cat.create_relationships_new_cat()
-    new_cat.create_inheritance_new_cat()
-
-    game.clan.add_cat(new_cat)
-    game.clan.add_to_outside(new_cat)
-    name = str(name + suffix)
-
-    return name
-
-
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #
 # ---------------------------------------------------------------------------- #
@@ -1078,13 +1038,22 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     return return_dict
 
 
-def filter_relationship_type(group: list, filter_types: list, event_id: str = None, patrol_leader=None):
+def filter_relationship_type(
+        group: list,
+        filter_types: list[str],
+        event_id: str = None,
+        patrol_leader=None
+):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
-    :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for parent/child, the cat being tested as parent must be index 0)
-    :param filter_types: the relationship types to check for. possible types: "siblings", "mates", "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor", (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int", "jealousy_int", "trust_int"
-    :param event_id: if the event has an ID, include it here
-    :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
+    :param list[Cat] group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
+    parent/child, the cat being tested as parent must be index 0)
+    :param list[str] filter_types: the relationship types to check for. possible types: "siblings", "mates",
+    "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor",
+    (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int",
+    "jealousy_int", "trust_int"
+    :param str event_id: if the event has an ID, include it here
+    :param Cat patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
     # keeping this list here just for quick reference of what tags are handled here
     possible_rel_types = ["siblings", "mates", "mates_with_pl", "not_mates", "parent/child", "child/parent",
@@ -1266,15 +1235,23 @@ def filter_relationship_type(group: list, filter_types: list, event_id: str = No
     return True
 
 
-def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None, extra_cat=None) -> list:
+def gather_cat_objects(
+        Cat,
+        abbr_list: List[str],
+        event,
+        stat_cat=None,
+        extra_cat=None
+) -> list:
     """
     gathers cat objects from list of abbreviations used within an event format block
-    :param Cat: Cat class
-    :param abbr_list: The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan",
+    :param Cat Cat: Cat class
+    :param list[str] abbr_list: The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan",
     "some_clan", "patrol", "multi", "n_c{index}"
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
-    :param stat_cat: if passing the Patrol class, must include stat_cat separately
-    :param extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
+    :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not
+    passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.
+    The other cat abbreviations will not work.
     :return: list of cat objects
     """
     out_set = set()
@@ -1313,16 +1290,22 @@ def gather_cat_objects(Cat, abbr_list: List[str], event, stat_cat=None, extra_ca
     return list(out_set)
 
 
-def unpack_rel_block(Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None):
+def unpack_rel_block(
+        Cat,
+        relationship_effects: List[dict],
+        event=None,
+        stat_cat=None,
+        extra_cat=None
+):
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
     accordingly.
 
-    :param Cat: Cat class
-    :param relationship_effects: the relationship effect block
+    :param Cat Cat: Cat class
+    :param list[dict] relationship_effects: the relationship effect block
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
-    :param stat_cat: if passing the Patrol class, must include stat_cat separately
-    :param extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
+    :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
     possible_values = ("romantic", "platonic", "dislike", "comfort", "jealous", "trust", "respect")
 
@@ -1462,17 +1445,20 @@ def change_relationship_values(
     """
     changes relationship values according to the parameters.
 
-    cats_from - a list of cats for the cats whose rel values are being affected
-    cats_to - a list of cat IDs for the cats who are the target of that rel value
-            i.e. cats in cats_from lose respect towards the cats in cats_to
-    auto_romance - if this is set to False (which is the default) then if the cat_from already has romantic value
-            with cat_to then the platonic_like param value will also be used for the romantic_love param
-            if you don't want this to happen, then set auto_romance to False
-    log - string to add to relationship log. 
-
-    use the relationship value params to indicate how much the values should change.
-    
-
+    :param list[Cat] cats_from: list of cat objects whose rel values will be affected
+    (e.g. cat_from loses trust in cat_to)
+    :param list[Cat] cats_to: list of cats objects who are the target of that rel value
+    (e.g. cat_from loses trust in cat_to)
+    :param int romantic_love: amount to change romantic, default 0
+    :param int platonic_like: amount to change platonic, default 0
+    :param int dislike: amount to change dislike, default 0
+    :param int admiration: amount to change admiration (respect), default 0
+    :param int comfortable: amount to change comfort, default 0
+    :param int jealousy: amount to change jealousy, default 0
+    :param int trust: amount to change trust, default 0
+    :param bool auto_romance: if the cat_from already has romantic value with cat_to, then the platonic_like param value
+    will also be applied to romantic, default False
+    :param str log: the string to append to the relationship log of cats involved
         """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
@@ -1884,22 +1870,21 @@ def event_text_adjust(
         chosen_herb: str = None):
     """
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
-    :param Cat: always pass the Cat class
-    :param text: the text being adjusted
-    :param patrol_leader: Cat object for patrol_leader (p_l), if present
-    :param main_cat: Cat object for main_cat (m_c), if present
-    :param random_cat: Cat object for random_cat (r_c), if present
-    :param stat_cat: Cat object for stat_cat (s_c), if present
-    :param victim_cat: Cat object for victim_cat (mur_c), if present
-    :param patrol_cats: List of Cat objects for cats in patrol, if present
-    :param patrol_apprentices: List of Cat objects for patrol_apprentices (app#), if present
-    :param new_cats: List of Cat objects for new_cats (n_c:index), if present
-    :param multi_cats: List of Cat objects for multi_cat (multi_cat), if present
-    :param clan: pass game.clan
-    :param other_clan: OtherClan object for other_clan (o_c_n), if present
-    :param chosen_herb: string of chosen_herb (chosen_herb), if present
+    :param Cat Cat: always pass the Cat class
+    :param str text: the text being adjusted
+    :param Cat patrol_leader: Cat object for patrol_leader (p_l), if present
+    :param Cat main_cat: Cat object for main_cat (m_c), if present
+    :param Cat random_cat: Cat object for random_cat (r_c), if present
+    :param Cat stat_cat: Cat object for stat_cat (s_c), if present
+    :param Cat victim_cat: Cat object for victim_cat (mur_c), if present
+    :param list[Cat] patrol_cats: List of Cat objects for cats in patrol, if present
+    :param list[Cat] patrol_apprentices: List of Cat objects for patrol_apprentices (app#), if present
+    :param list[Cat] new_cats: List of Cat objects for new_cats (n_c:index), if present
+    :param list[Cat] multi_cats: List of Cat objects for multi_cat (multi_cat), if present
+    :param Clan clan: pass game.clan
+    :param OtherClan other_clan: OtherClan object for other_clan (o_c_n), if present
+    :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
-
     vowels = ['A', 'E', 'I', 'O', 'U']
     if not text:
         text = 'This should not appear, report as a bug please! Tried to adjust the text, but no text was provided.'
