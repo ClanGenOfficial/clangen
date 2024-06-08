@@ -58,12 +58,12 @@
             "rect_width": "300"
         }
     },
-    "#fav_cat.tool_tip": {
+    "#fav_cat_toggle_on.tool_tip": {
         "misc": {
             "rect_width": "150"
         }
     },
-    "#not_fav_cat.tool_tip": {
+    "#fav_cat_toggle_off.tool_tip": {
         "misc": {
             "rect_width": "150"
         }

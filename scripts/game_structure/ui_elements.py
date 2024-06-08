@@ -91,7 +91,8 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
 class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
     def __init__(self, relative_rect: pygame.Rect, manager=None, starting_height: int = 1,
-                 container=None, parent_element=None, object_id=None, anchors=None, visible: int = 1, allow_scroll_x: bool = False):
+                 container=None, parent_element=None, object_id=None, anchors=None, visible: int = 1,
+                 allow_scroll_x: bool = False):
         super().__init__(relative_rect=relative_rect, manager=manager, starting_height=starting_height,
                          container=container, parent_element=parent_element, object_id=object_id, anchors=anchors,
                          visible=visible, allow_scroll_x=allow_scroll_x)
@@ -615,16 +616,17 @@ class UIDropDownContainer(UIAutoResizingContainer):
             starting_height: int,
             parent_button: UIImageButton,
             child_button_container: UIContainer,
-            visible: bool,
-            manager: IUIManagerInterface):
+            manager: IUIManagerInterface,
+            visible: bool = False,
+    ):
+        super().__init__(relative_rect=relative_rect, container=container, object_id=object_id,
+                         starting_height=starting_height, visible=visible, manager=manager)
+
         self.parent_button = parent_button
         self.child_button_container = child_button_container
 
         self.is_open: bool = False
         self.selected_element = None
-
-        super().__init__(relative_rect=relative_rect, container=container, object_id=object_id,
-                         starting_height=starting_height, visible=visible, manager=manager)
 
     def close(self):
         """
@@ -785,9 +787,8 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
         pos_x = self.px_between
         pos_y = self.px_between
-        i = 0
 
-        for kitty in display_cats:
+        for i, kitty in enumerate(display_cats):
             self.cat_sprites[f"sprite{i}"] = UISpriteButton(
                 scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                 kitty.sprite,
@@ -803,8 +804,6 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             if pos_x >= ((self.px_between + 100) * self.columns):
                 pos_x = 0
                 pos_y += self.px_between
-
-            i += 1
 
     def _update_arrow_buttons(self, cat_chunks):
         """
@@ -903,9 +902,8 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
 
         pos_x = self.x_px_between
         pos_y = self.y_px_between
-        i = 0
 
-        for kitty in display_cats:
+        for i, kitty in enumerate(display_cats):
             self.cat_sprites[f"sprite{i}"] = UISpriteButton(
                 scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                 kitty.sprite,
@@ -928,5 +926,3 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
             if pos_x >= ((self.x_px_between + 100) * self.columns):
                 pos_x = 0
                 pos_y += self.y_px_between
-
-            i += 1
