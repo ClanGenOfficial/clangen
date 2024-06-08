@@ -70,10 +70,6 @@ class FreshkillPile:
         # the pile could be handled as a list but this makes it more readable
         if pile:
             self.pile = pile
-            total = 0
-            for k, v in pile.items():
-                total += v
-            self.total_amount = total
         else:
             self.pile = {
                 "expires_in_4": game.prey_config["start_amount"],
@@ -81,7 +77,6 @@ class FreshkillPile:
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = game.prey_config["start_amount"]
         self.nutrition_info = {}
         self.living_cats = []
         self.already_fed = []
@@ -97,8 +92,6 @@ class FreshkillPile:
                 the amount which should be added to the pile
         """
         self.pile["expires_in_4"] += amount
-        self.total_amount += amount
-        self.total_amount = round(self.total_amount, 2)
 
     def remove_freshkill(self, amount, take_random: bool = False) -> None:
         """
@@ -119,11 +112,9 @@ class FreshkillPile:
         for key in order:
             amount = self.take_from_pile(key, amount)
 
-    def update_total_amount(self):
-        """
-        Update the total amount of the prey pile
-        """
-        self.total_amount = sum(self.pile.values())
+    @property
+    def total_amount(self):
+        return round(sum(self.pile.values()), 2)
 
     def _update_needed_food(self, living_cats: List[Cat]) -> None:
         queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
@@ -189,15 +180,13 @@ class FreshkillPile:
                 event_list.append(
                     f"Some prey expired, {amount} pieces were removed from the pile."
                 )
-        self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
         self.already_fed = []
         self.feed_cats(living_cats)
         self.already_fed = []
-        value_diff -= sum(self.pile.values())
+        value_diff -= self.total_amount
         event_list.append(f"{value_diff} pieces of prey were consumed.")
         self._update_needed_food(living_cats)
-        self.update_total_amount()
 
     def feed_cats(self, living_cats: list, additional_food_round=False) -> None:
         """
@@ -597,13 +586,10 @@ class FreshkillPile:
         remaining_amount = given_amount
         if self.pile[pile_group] >= given_amount:
             self.pile[pile_group] -= given_amount
-            self.total_amount -= given_amount
             remaining_amount = 0
         elif self.pile[pile_group] > 0:
             remaining_amount = given_amount - self.pile[pile_group]
-            self.total_amount -= self.pile[pile_group]
             self.pile[pile_group] = 0
-        self.total_amount = round(self.total_amount, 2)
 
         return remaining_amount
 

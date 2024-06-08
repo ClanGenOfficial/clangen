@@ -105,7 +105,6 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile = FreshkillPile()
         current_amount = self.prey_requirement["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         youngest_warrior = Cat()
         youngest_warrior.status = "warrior"
@@ -144,7 +143,6 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile = FreshkillPile()
         current_amount = self.prey_requirement["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         lowest_warrior = Cat()
         lowest_warrior.status = "warrior"
@@ -207,7 +205,6 @@ class FreshkillPileTest(unittest.TestCase):
         # be able to feed one queen and some of the warrior
         current_amount = self.prey_requirement["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         freshkill_pile.add_cat_to_nutrition(injured_cat)
         freshkill_pile.add_cat_to_nutrition(sick_cat)
@@ -229,7 +226,6 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile = FreshkillPile()
         current_amount = self.prey_requirement["warrior"]
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         lowest_warrior = Cat()
         lowest_warrior.status = "warrior"
@@ -270,7 +266,6 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile = FreshkillPile()
         current_amount = self.prey_requirement["warrior"] + (self.prey_requirement["warrior"]/2)
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         best_hunter_warrior = Cat()
         best_hunter_warrior.status = "warrior"
@@ -326,7 +321,6 @@ class FreshkillPileTest(unittest.TestCase):
         # be able to feed one queen and some of the warrior
         current_amount = self.prey_requirement["queen/pregnant"] + (self.prey_requirement["warrior"] / 2)
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         freshkill_pile.add_cat_to_nutrition(mother)
         freshkill_pile.add_cat_to_nutrition(father)
@@ -366,7 +360,6 @@ class FreshkillPileTest(unittest.TestCase):
         # be able to feed one queen and some of the warrior
         current_amount = self.prey_requirement["queen/pregnant"]
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         freshkill_pile.add_cat_to_nutrition(pregnant_cat)
         freshkill_pile.add_cat_to_nutrition(cat2)
@@ -403,7 +396,6 @@ class FreshkillPileTest(unittest.TestCase):
         # be able to feed one queen and some of the warrior
         current_amount = self.prey_requirement["warrior"] * 2 
         freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
 
         freshkill_pile.add_cat_to_nutrition(injured_cat)
         freshkill_pile.add_cat_to_nutrition(sick_cat)
