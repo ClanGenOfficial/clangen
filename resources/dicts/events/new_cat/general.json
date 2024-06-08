@@ -374,7 +374,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 15,
-        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol lead by m_c heads out and finds a wandering cat to bring into the Clan. The new cat takes on a more Clan-like name and is now known as n_c:0.",
+        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol led by m_c heads out and finds a wandering cat to bring into the Clan. The new cat takes on a more Clan-like name and is now known as n_c:0.",
         "m_c": {
             "status": ["leader", "deputy", "warrior"]
         },
@@ -396,7 +396,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c finds a kittypet named n_c:0, who joins the Clan. The kittypet decides to keep {PRONOUN/n_c:0/poss} old name.",
+        "event_text": "m_c finds a kittypet named n_c:0 who joins the Clan. The kittypet decides to keep {PRONOUN/n_c:0/poss} old name.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "status": ["any"]

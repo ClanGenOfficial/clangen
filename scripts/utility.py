@@ -120,10 +120,10 @@ def get_living_clan_cat_count(Cat):
 
 def get_cats_same_age(Cat, cat, age_range=10):
     """
-    Look for all cats in the Clan and returns a list of cats, which are in the same age range as the given cat.
+    Look for all cats in the Clan and returns a list of cats which are in the same age range as the given cat.
     :param Cat: Cat class
     :param cat: the given cat
-    :param age_range: default 10. The allowed age difference between the two cats 
+    :param int age_range: The allowed age difference between the two cats, default 10
     """
     cats = []
     for inter_cat in Cat.all_cats.values():

@@ -963,7 +963,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c fell into the river, and r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
+        "event_text": "m_c fell into the river. r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [ "adolescent", "young adult", "adult", "senior adult", "senior" ],
             "status": [ "any" ],
@@ -1117,7 +1117,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, c_n launches a search. They find {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of c_n, and what killed {PRONOUN/m_c/object}.",
+        "event_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, c_n launches a search. They find {PRONOUN/m_c/poss} cooling body after a long search. They wonder why {PRONOUN/m_c/subject} decided to leave the safety of c_n, and what killed {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [ "adolescent", "young adult"],
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "mediator", "medicine cat", "deputy" ],
@@ -1665,7 +1665,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 30,
-        "event_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident, and hopes to take {PRONOUN/m_c/poss} place.",
+        "event_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident and hopes to take {PRONOUN/m_c/poss} place.",
         "m_c": {
             "status": [
                 "deputy"
@@ -2659,7 +2659,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right below m_c. r_c starts sprinting to m_c's position, but couldn't get there in time, not before m_c was carried high into the sky.",
+        "event_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
@@ -5530,7 +5530,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was playing on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
+        "event_text": "m_c was playing on the ice when it cracked and {PRONOUN/m_c/subject} fell in.",
         "m_c": {
             "status": [
                 "kitten"
@@ -5584,7 +5584,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c vanished from camp after sneaking out, and the search parties find nothing but blood.",
+        "event_text": "m_c vanished from camp after sneaking out. The search parties find nothing but blood.",
         "m_c": {
             "status": [
                 "kitten"
