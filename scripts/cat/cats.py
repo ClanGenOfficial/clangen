@@ -3218,7 +3218,7 @@ class Cat:
 
     @staticmethod
     def rank_order(cat: Cat):
-        return cat.status
+        return cat.status.index(cat.status)
         # if cat.status in Cat.rank_sort_order:
         #     return Cat.rank_sort_order.index(cat.status)
         # else:
