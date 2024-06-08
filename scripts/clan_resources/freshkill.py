@@ -15,8 +15,6 @@ class Nutrition:
         """Initialize the class."""
         self.max_score = 1
         self.current_score = 0
-        self.percentage = 0
-        self.nutrition_text = "default text"
 
     def __str__(self):
         this_is_a_dict_not_a_string = {
@@ -42,12 +40,19 @@ class Nutrition:
         if value < 0:
             value = 0
         self._current_score = value
-        self.percentage = self._current_score / self.max_score * 100
+
+    @property
+    def percentage(self):
+        return self._current_score / self.max_score * 100
+
+    @property
+    def nutrition_text(self):
         text_config = game.prey_config["text_nutrition"]
-        self.nutrition_text = text_config["text"][0]
+        nutrition_text = text_config["text"][0]
         for index in range(len(text_config["lower_range"])):
             if self.percentage >= text_config["lower_range"][index]:
-                self.nutrition_text = text_config["text"][index]
+                nutrition_text = text_config["text"][index]
+        return nutrition_text
 
 
 class FreshkillPile:
@@ -666,7 +671,6 @@ class FreshkillPile:
         max_score = PREY_REQUIREMENT[prey_status] * factor
         nutrition.max_score = max_score
         nutrition.current_score = max_score
-        nutrition.percentage = 100
 
         # adapt sickness (increase needed amount)
         if (
