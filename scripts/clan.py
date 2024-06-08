@@ -425,7 +425,7 @@ class Clan:
         TODO: DOCS
         """
         if medicine_cat:
-            if not medicine_cat.status.ismedcat():
+            if not medicine_cat.status.is_medcat():
                 Cat.all_cats[medicine_cat.ID].status_change(Status.MEDCAT)
             if medicine_cat.ID not in self.med_cat_list:
                 self.med_cat_list.append(medicine_cat.ID)
