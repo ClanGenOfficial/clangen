@@ -1315,7 +1315,7 @@ class ProfileScreen(Screens):
                 and self.the_cat.dead
         ):
             bs_blurb = f"This cat was a {self.the_cat.status} in life."
-        elif self.the_cat.status.is_outside_clan:
+        elif self.the_cat.status.is_outside_clan():
             bs_blurb = f"This cat is a {self.the_cat.status} and currently resides outside of the Clans."
 
         if bs_blurb is not None:
