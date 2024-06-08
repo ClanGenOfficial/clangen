@@ -120,10 +120,12 @@ class ClanScreen(Screens):
         # This should be a temp solution. We should change the code that determines positions.
         i = 0
         for x in game.clan.clan_cats:
-            if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
-                    not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside) and (
-                    Cat.all_cats[x].status.is_newborn() or game.config['fun']['all_cats_are_newborn'] or
-                    game.config['fun']['newborns_can_roam']):
+            if (not Cat.all_cats[x].dead
+                    and Cat.all_cats[x].in_camp
+                    and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
+                    and (not Cat.all_cats[x].status.is_newborn() or game.config['fun']['all_cats_are_newborn'] or
+                         game.config['fun']['newborns_can_roam'])
+            ):
 
                 i += 1
                 if i > self.max_sprites_displayed:
