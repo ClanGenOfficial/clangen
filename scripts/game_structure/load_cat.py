@@ -62,7 +62,7 @@ def json_load():
                     cat["specsuffix_hidden"] if "specsuffix_hidden" in cat else False
                 ),
                 gender=cat["gender"],
-                status= Status.str_to_status(cat["status"]),
+                status= Status(cat["status"]),
                 parent1=cat["parent1"],
                 parent2=cat["parent2"],
                 moons=cat["moons"],

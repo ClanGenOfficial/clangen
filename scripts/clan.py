@@ -17,6 +17,7 @@ import pygame
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
+from scripts.cat.enums.status import Status
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
@@ -424,8 +425,8 @@ class Clan:
         TODO: DOCS
         """
         if medicine_cat:
-            if medicine_cat.status != "medicine cat":
-                Cat.all_cats[medicine_cat.ID].status_change("medicine cat")
+            if not medicine_cat.status.ismedcat():
+                Cat.all_cats[medicine_cat.ID].status_change(Status.MEDCAT)
             if medicine_cat.ID not in self.med_cat_list:
                 self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]
