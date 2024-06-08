@@ -8,6 +8,8 @@ from typing import List, Dict, Union, TYPE_CHECKING
 
 import pygame
 
+from scripts.cat.enums.status import Status
+
 if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
 
@@ -294,32 +296,23 @@ class PatrolOutcome:
         ]
 
         # Special default behavior for patrols less than two cats.
-        # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than than two cats
+        # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than two cats
         if not allowed_specfic and len(patrol.patrol_cats) <= 2:
             allowed_specfic = ["p_l"]
 
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
-            # First, the blanet requirments
-            if "app" in self.can_have_stat and kitty.status not in [
-                "apprentice",
-                "medicine cat apprentice",
-            ]:
+            # First, the blanket requirements
+            if "app" in self.can_have_stat and not kitty.status.is_patrol_app():
                 continue
 
-            if "adult" in self.can_have_stat and kitty.status in [
-                "apprentice",
-                "medicine cat apprentice",
-            ]:
+            if "adult" in self.can_have_stat and kitty.status.is_patrol_app():
                 continue
 
-            if "healer" in self.can_have_stat and kitty.status not in [
-                "medicine cat",
-                "medicine cat apprentice",
-            ]:
+            if "healer" in self.can_have_stat and not kitty.status.is_medcat_any():
                 continue
 
-            # Then, move on the the specfic requirements.
+            # Then, move on to the specfic requirements.
             if not self._allowed_stat_cat_specfic(kitty, patrol, allowed_specfic):
                 continue
 
@@ -396,7 +389,7 @@ class PatrolOutcome:
 
         if gained_exp or app_exp:
             for cat in patrol.patrol_cats:
-                if cat.status in ["apprentice", "medicine cat apprentice"]:
+                if cat.status.is_patrol_app():
                     cat.experience = cat.experience + app_exp
                 else:
                     cat.experience = cat.experience + gained_exp
@@ -470,7 +463,7 @@ class PatrolOutcome:
 
         results = []
         for _cat in cats_to_kill:
-            if _cat.status == "leader":
+            if _cat.status.is_leader():
                 if "all_lives" in self.dead_cats:
                     game.clan.leader_lives = 0
                     results.append(f"{_cat.name} lost all of their lives.")
@@ -1071,6 +1064,7 @@ class PatrolOutcome:
             if not match:
                 continue
 
+            # frankly idk how to break this down
             if match.group(1) in (
                 "newborn",
                 "kitten",
@@ -1082,7 +1076,7 @@ class PatrolOutcome:
                 "medicine cat apprentice",
                 "medicine cat",
             ):
-                status = match.group(1)
+                status = Status(match.group(1))
                 break
 
         # SET AGE
@@ -1119,34 +1113,34 @@ class PatrolOutcome:
 
         # CAT TYPES AND BACKGROUND
         if "kittypet" in attribute_list:
-            cat_type = "kittypet"
+            cat_type = Status.KITTYPET
         elif "rogue" in attribute_list:
-            cat_type = "rogue"
+            cat_type = Status.ROGUE
         elif "loner" in attribute_list:
-            cat_type = "loner"
+            cat_type = Status.LONER
         elif "clancat" in attribute_list:
-            cat_type = "former Clancat"
+            cat_type = Status.EXCLAN
         else:
-            cat_type = choice(["kittypet", "loner", "former Clancat"])
+            cat_type = choice([Status.KITTYPET, Status.LONER, Status.EXCLAN])
 
         # LITTER
         litter = False
         if "litter" in attribute_list:
             litter = True
-            if status not in ("kitten", "newborn"):
-                status = "kitten"
+            if not status.is_kit_any():
+                status = Status.KITTEN
 
         # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS.
-        if status in ("kitten", "newborn"):
+        if status.is_kit_any():
             chosen_backstory = choice(
                 BACKSTORIES["backstory_categories"]["abandoned_backstories"]
             )
-        elif status == "medicine cat" and cat_type == "former Clancat":
+        elif status.is_medcat() and cat_type.is_ex_clan():
             chosen_backstory = choice(["medicine_cat", "disgraced1"])
-        elif status == "medicine cat":
+        elif status.is_medcat():
             chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
         else:
-            if cat_type == "former Clancat":
+            if cat_type.is_ex_clan():
                 x = "former_clancat"
             else:
                 x = cat_type
@@ -1172,7 +1166,7 @@ class PatrolOutcome:
                 break
 
         # KITTEN THOUGHT
-        if status in ("kitten", "newborn"):
+        if status.is_kit_any():
             thought = "Is snuggled safe in the nursery"
 
         # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -1195,11 +1189,11 @@ class PatrolOutcome:
             Cat,
             Relationship,
             new_name=new_name,
-            loner=cat_type in ["loner", "rogue"],
-            kittypet=cat_type == "kittypet",
-            other_clan=cat_type == "former Clancat",
+            loner=cat_type.is_loner() or cat_type.is_rogue(),
+            kittypet=cat_type.is_kittypet(),
+            other_clan=cat_type.is_ex_clan(),
             kit=(
-                False if litter else status in ["kitten", "newborn"]
+                False if litter else status.is_kit_any()
             ),  # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -1356,7 +1350,7 @@ class PatrolOutcome:
             print("WARNING: Injury occured, but some death or scar history is missing.")
 
         final_death_history = None
-        if cat.status == "leader":
+        if cat.status.is_leader():
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:
@@ -1398,7 +1392,7 @@ class PatrolOutcome:
             print("WARNING: Death occured, but some death history is missing.")
 
         final_death_history = None
-        if cat.status == "leader":
+        if cat.status.is_leader():
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:

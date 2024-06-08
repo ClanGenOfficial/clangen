@@ -26,7 +26,7 @@ class CeremonyScreen(Screens):
     def screen_switches(self):
         self.hide_menu_buttons()
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
-        if self.the_cat.status == 'leader':
+        if self.the_cat.status.is_leader():
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
@@ -34,7 +34,7 @@ class CeremonyScreen(Screens):
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
-        if self.the_cat.status == 'leader' and not self.the_cat.dead:
+        if self.the_cat.status.is_leader() and not self.the_cat.dead:
             self.life_text = History.get_lead_ceremony(self.the_cat)
 
         else:

@@ -522,7 +522,7 @@ class Cat:
         May return some additional text to add to the death event.
         """
         if (
-                self.status == Status.LEADER
+                self.status.is_leader()
                 and "pregnant" in self.injuries
                 and game.clan.leader_lives > 0
         ):
@@ -538,7 +538,7 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        if self.status == Status.LEADER:
+        if self.status.is_leader():
             if game.clan.leader_lives > 0:
                 self.thought = "Was startled to find themself in Silverpelt for a moment... did they lose a life?"
                 return ""
@@ -793,7 +793,7 @@ class Cat:
         self.outside = True
 
         if self.status.is_leader() or self.status.is_warrior():
-            self.status_change("warrior")
+            self.status_change(Status.WARRIOR)
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
@@ -830,12 +830,17 @@ class Cat:
 
         return ids
 
-    def status_change(self, new_status: Status, resort=False):
+    def status_change(self, new_status: Status|str, resort=False):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
                     'medicine cat', 'elder'.
         resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                 only be true for non-timeskip status changes."""
+
+        # auto-converting string
+        if isinstance(new_status, str):
+            new_status = Status(new_status)
+
         old_status = self.status
         self.status = new_status
         self.name.status = new_status
@@ -851,17 +856,17 @@ class Cat:
             game.clan.remove_med_cat(self)
 
         # updates mentors
-        if self.status.is_app_any():
+        if new_status.is_app_any():
             pass
 
-        elif self.status.is_mediator_any():
+        elif new_status.is_mediator_any():
             pass
 
-        elif self.status.is_medcat():
+        elif new_status.is_medcat():
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
-        elif self.status.is_warrior() or self.status.is_elder():
+        elif new_status.is_warrior() or new_status.is_elder():
             if old_status.is_leader():
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -2261,7 +2266,7 @@ class Cat:
         if (
                 self.status.is_app() and
                 not (potential_mentor.status.is_warrior()
-                     or potential_mentor.status.is_deputy_or_leader())
+                     or potential_mentor.status.is_leadership())
         ):
             return False
 
@@ -2312,16 +2317,16 @@ class Cat:
             print("Everything is terrible!! (new_mentor {new_mentor} is a Cat D:)")
             return
         # Check if cat can have a mentor
-        illegible_for_mentor = (
+        ineligible_for_mentor = (
                 self.dead
                 or self.outside
                 or self.exiled
-                or self.status
-                not in ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+                or not self.status.is_app_any()
         )
-        if illegible_for_mentor:
+        if ineligible_for_mentor:
             self.__remove_mentor()
             return
+
         # If eligible, cat should get a mentor.
         if new_mentor:
             self.__remove_mentor()

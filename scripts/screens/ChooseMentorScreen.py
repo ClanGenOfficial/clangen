@@ -529,21 +529,21 @@ class ChooseMentorScreen(Screens):
     def get_valid_mentors(self):
         valid_mentors = []
 
-        if self.the_cat.status == "apprentice":
+        if self.the_cat.status.is_app():
             for cat in Cat.all_cats_list:
                 if (
                     not cat.dead
                     and not cat.outside
-                    and cat.status in ["warrior", "deputy", "leader"]
+                    and cat.status.is_normal_adult()
                 ):
                     valid_mentors.append(cat)
-        elif self.the_cat.status == "medicine cat apprentice":
+        elif self.the_cat.status.is_medcat_app():
             for cat in Cat.all_cats_list:
-                if not cat.dead and not cat.outside and cat.status == "medicine cat":
+                if not cat.dead and not cat.outside and cat.status.is_medcat():
                     valid_mentors.append(cat)
-        elif self.the_cat.status == "mediator apprentice":
+        elif self.the_cat.status.is_mediator_app():
             for cat in Cat.all_cats_list:
-                if not cat.dead and not cat.outside and cat.status == "mediator":
+                if not cat.dead and not cat.outside and cat.status.is_mediator():
                     valid_mentors.append(cat)
 
         return valid_mentors

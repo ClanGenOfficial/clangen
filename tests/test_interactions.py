@@ -1,6 +1,7 @@
 import unittest
 
 from scripts.cat.cats import Cat, Relationship
+from scripts.cat.enums.status import Status
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat_relations.interaction import (
     SingleInteraction,
@@ -99,10 +100,8 @@ class RelationshipConstraints(unittest.TestCase):
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
-        warrior = Cat()
-        warrior.status = "warrior"
-        medicine = Cat()
-        medicine.status = "medicine cat"
+        warrior = Cat(status=Status.WARRIOR)
+        medicine = Cat(status=Status.MEDCAT)
 
         # when
         warrior_to_all = SingleInteraction("test")

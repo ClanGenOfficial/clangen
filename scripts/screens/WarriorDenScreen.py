@@ -70,7 +70,7 @@ class WarriorDenScreen(Screens):
                         if "mediator" in description and self.save_button.is_enabled:
                             # only create the mediator list if needed to check
                             mediator_list = list(filter(
-                                lambda x: x.status == "mediator" and not x.dead and not x.outside, Cat.all_cats_list
+                                lambda x: x.status.is_mediator_any() and not x.dead and not x.outside, Cat.all_cats_list
                             ))
                             if len(mediator_list) < 1:
                                 self.save_button.disable()
