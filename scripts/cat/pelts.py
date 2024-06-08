@@ -645,7 +645,7 @@ class Pelt:
         if age.is_newborn():
             return
 
-        if age.is_underage():  # kitten or adolescent now as newborn already excluded
+        if age.is_underage():
             scar_choice = random.randint(0, 50)  # 2%
         elif age.is_young_adult() or age.is_adult():
             scar_choice = random.randint(0, 20)  # 5%
@@ -667,7 +667,7 @@ class Pelt:
             return
 
         acc_display_choice = random.randint(0, 80)
-        if age.is_underage():  # kitten or adolescent now as newborn already excluded
+        if age.is_underage():
             acc_display_choice = random.randint(0, 180)
         elif age.is_young_adult() or age.is_adult():
             acc_display_choice = random.randint(0, 100)
