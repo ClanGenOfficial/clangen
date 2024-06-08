@@ -18,7 +18,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertTrue(test_cat.age.is_kit())
         self.assertTrue(test_cat.age.is_underage())
         self.assertFalse(test_cat.age.is_adult_any())
-        self.assertFalse(test_cat.age.is_adult_or_senior())
+        self.assertFalse(test_cat.age.is_adult_any_or_senior())
 
     def test_kitten(self):
         test_cat = Cat(moons=5)
@@ -27,7 +27,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertTrue(test_cat.age.is_kit())
         self.assertTrue(test_cat.age.is_underage())
         self.assertFalse(test_cat.age.is_adult_any())
-        self.assertFalse(test_cat.age.is_adult_or_senior())
+        self.assertFalse(test_cat.age.is_adult_any_or_senior())
 
     def test_adolescent(self):
         test_cat = Cat(moons=6)
@@ -36,7 +36,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertFalse(test_cat.age.is_kit())
         self.assertTrue(test_cat.age.is_underage())
         self.assertFalse(test_cat.age.is_adult_any())
-        self.assertFalse(test_cat.age.is_adult_or_senior())
+        self.assertFalse(test_cat.age.is_adult_any_or_senior())
 
     def test_young_adult(self):
         test_cat = Cat(moons=12)
@@ -45,7 +45,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
         self.assertTrue(test_cat.age.is_adult_any())
-        self.assertTrue(test_cat.age.is_adult_or_senior())
+        self.assertTrue(test_cat.age.is_adult_any_or_senior())
     
     def test_adult(self):
         test_cat = Cat(moons=48)
@@ -54,7 +54,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
         self.assertTrue(test_cat.age.is_adult_any())
-        self.assertTrue(test_cat.age.is_adult_or_senior())
+        self.assertTrue(test_cat.age.is_adult_any_or_senior())
 
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
@@ -63,7 +63,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
         self.assertTrue(test_cat.age.is_adult_any())
-        self.assertTrue(test_cat.age.is_adult_or_senior())
+        self.assertTrue(test_cat.age.is_adult_any_or_senior())
 
     def test_elder(self):
         test_cat = Cat(moons=120)
@@ -72,7 +72,7 @@ class TestCreationAge(unittest.TestCase):
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
         self.assertFalse(test_cat.age.is_adult_any())
-        self.assertTrue(test_cat.age.is_adult_or_senior())
+        self.assertTrue(test_cat.age.is_adult_any_or_senior())
 
     def test_apprentice_exp(self):
         for i in range(1, 10):

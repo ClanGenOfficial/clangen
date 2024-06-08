@@ -2148,7 +2148,7 @@ class ProfileScreen(Screens):
                 self.change_adoptive_parent_button.enable()
 
             if (
-                not self.the_cat.age.is_adult_or_senior()
+                not self.the_cat.age.is_adult_any_or_senior()
                 or self.the_cat.exiled
                 or self.the_cat.outside
             ):

@@ -32,7 +32,7 @@ class Age(StrEnum):
         """True is cat is young adult, adult or senior adult"""
         return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT]
 
-    def is_adult_or_senior(self):
+    def is_adult_any_or_senior(self):
         """True if cat is young adult, adult, senior adult or senior"""
         return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT, Age.SENIOR]
 
