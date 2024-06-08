@@ -529,7 +529,7 @@ class ChooseMentorScreen(Screens):
     def get_valid_mentors(self):
         valid_mentors = []
 
-        if self.the_cat.status.is_app():
+        if self.the_cat.status.is_warrior_app():
             for cat in Cat.all_cats_list:
                 if (
                     not cat.dead

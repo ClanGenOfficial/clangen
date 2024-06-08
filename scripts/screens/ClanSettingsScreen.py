@@ -369,7 +369,7 @@ class ClanSettingsScreen(Screens):
                 med_cat_apprentices += 1
             elif cat.status.is_warrior():
                 warriors += 1
-            elif cat.status.is_app():
+            elif cat.status.is_warrior_app():
                 warrior_apprentices += 1
             elif cat.status.is_mediator_app():
                 mediator_apprentices += 1

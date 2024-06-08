@@ -253,7 +253,7 @@ class RoleScreen(Screens):
         else:
             deputy_invalid = True
 
-        if self.the_cat.status.is_app():
+        if self.the_cat.status.is_warrior_app():
             # LEADERSHIP
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -462,7 +462,7 @@ class RoleScreen(Screens):
                      f"Sometimes, cats may retire due to disability or injury. Whatever the " \
                      f"circumstance of their retirement, elders are held in high esteem in the Clan, and always eat " \
                      f"before Warriors and Medicine Cats. "
-        elif self.the_cat.status.is_app():
+        elif self.the_cat.status.is_warrior_app():
             output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a warrior. " \
                      f"Kits can be made warrior apprentices at six moons of age, where they will learn how " \
                      f"to hunt and fight for their Clan. Typically, the training of an apprentice is entrusted " \

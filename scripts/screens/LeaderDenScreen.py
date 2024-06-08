@@ -195,7 +195,7 @@ class LeaderDenScreen(Screens):
                         and not i.exiled
                         and not i.outside
                         and not i.not_working()
-                        and i.status in ["mediator", "mediator apprentice"]
+                           and i.status.is_mediator_any()
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
@@ -210,7 +210,7 @@ class LeaderDenScreen(Screens):
                     if not i.dead
                     and not i.exiled
                     and not i.outside
-                    and i.status not in ["newborn", "kitten", "apprentice", "leader"]
+                       and i.status.is_warrior()
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)
