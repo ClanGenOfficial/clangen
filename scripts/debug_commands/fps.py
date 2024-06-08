@@ -2,8 +2,6 @@ from typing import List
 
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
-from typing import List
-
 from scripts.game_structure.game_essentials import game
 
 

@@ -1,10 +1,11 @@
+import os
 import unittest
+
 import ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled
 
-import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 

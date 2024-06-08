@@ -1,9 +1,9 @@
 import unittest
+
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import SkillPath, Skill
-
 from scripts.cat_relations.interaction import (
-    Single_Interaction, 
+    SingleInteraction,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints
 )
@@ -105,15 +105,15 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         medicine.status = "medicine cat"
 
         # when
-        warrior_to_all = Single_Interaction("test")
+        warrior_to_all = SingleInteraction("test")
         warrior_to_all.main_status_constraint = ["warrior"]
         warrior_to_all.random_status_constraint = ["warrior", "medicine cat"]
 
-        warrior_to_warrior = Single_Interaction("test")
+        warrior_to_warrior = SingleInteraction("test")
         warrior_to_warrior.main_status_constraint = ["warrior"]
         warrior_to_warrior.random_status_constraint = ["warrior"]
 
-        medicine_to_warrior = Single_Interaction("test")
+        medicine_to_warrior = SingleInteraction("test")
         medicine_to_warrior.main_status_constraint = ["medicine cat"]
         medicine_to_warrior.random_status_constraint = ["warrior"]
 
@@ -148,11 +148,11 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         troublesome.personality.trait = "troublesome"
 
         # when
-        calm_to_all = Single_Interaction("test")
+        calm_to_all = SingleInteraction("test")
         calm_to_all.main_trait_constraint = ["calm"]
         calm_to_all.random_trait_constraint = []
 
-        all_to_calm = Single_Interaction("test")
+        all_to_calm = SingleInteraction("test")
         all_to_calm.main_trait_constraint = ["troublesome", "calm"]
         all_to_calm.random_trait_constraint = ["calm"]
 
@@ -175,11 +175,11 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
 
         # when
-        hunter_to_all = Single_Interaction("test")
+        hunter_to_all = SingleInteraction("test")
         hunter_to_all.main_skill_constraint = ["good hunter"]
         hunter_to_all.random_skill_constraint = []
 
-        all_to_hunter = Single_Interaction("test")
+        all_to_hunter = SingleInteraction("test")
         all_to_hunter.main_skill_constraint = ["good fighter", "good hunter"]
         all_to_hunter.random_skill_constraint = ["good hunter"]
 
@@ -202,12 +202,12 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         half.backstory = "halfclan1"
 
         # when
-        clan_to_all = Single_Interaction("test")
+        clan_to_all = SingleInteraction("test")
         clan_to_all.backstory_constraint = {
             "m_c": ["clanborn"]
         }
 
-        all_to_clan = Single_Interaction("test")
+        all_to_clan = SingleInteraction("test")
         all_to_clan.backstory_constraint = {
             "m_c": ["halfclan1", "clanborn"],
             "r_c": ["clanborn"]

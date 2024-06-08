@@ -1,13 +1,12 @@
 from typing import List
 
-from scripts.debug_commands.command import Command
-
-from scripts.debug_commands.utils import add_output_line_to_log
-
-from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat
+from scripts.debug_commands.command import Command
+from scripts.debug_commands.utils import add_output_line_to_log
+from scripts.game_structure.game_essentials import game
 
-class addCatCommand(Command):
+
+class AddCatCommand(Command):
     name = "add"
     description = "Add a cat"
     aliases = ["a"]
@@ -17,7 +16,8 @@ class addCatCommand(Command):
         game.clan.add_cat(cat)
         add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
 
-class removeCatCommand(Command):
+
+class RemoveCatCommand(Command):
     name = "remove"
     description = "Remove a cat"
     aliases = ["r"]
@@ -34,7 +34,8 @@ class removeCatCommand(Command):
                 return
         add_output_line_to_log(f"Could not find cat with name or ID {args[0]}")
 
-class listCatsCommand(Command):
+
+class ListCatsCommand(Command):
     name = "list"
     description = "List all cats"
     aliases = ["l"]
@@ -43,7 +44,8 @@ class listCatsCommand(Command):
         for cat in Cat.all_cats_list:
             add_output_line_to_log(f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old")
 
-class ageCatsCommand(Command):
+
+class AgeCatsCommand(Command):
     name = "age"
     description = "Age a cat"
     usage = "<cat name|id> [number]"
@@ -67,17 +69,16 @@ class ageCatsCommand(Command):
                     add_output_line_to_log(f"{cat.name} is now {cat.moons} moons old")
 
 
-
 class CatsCommand(Command):
     name = "cats"
     description = "Manage Cats"
     aliases = ["cat"]
 
     subCommands = [
-        addCatCommand(),
-        removeCatCommand(),
-        listCatsCommand(),
-        ageCatsCommand()
+        AddCatCommand(),
+        RemoveCatCommand(),
+        ListCatsCommand(),
+        AgeCatsCommand()
     ]
 
     def callback(self, args: List[str]):

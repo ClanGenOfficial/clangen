@@ -1,3 +1,4 @@
+import os
 import unittest
 
 from scripts.cat.cats import Cat
@@ -9,7 +10,6 @@ from scripts.utility import (
     get_alive_clan_queens
 )
 
-import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 

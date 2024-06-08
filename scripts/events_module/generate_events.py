@@ -3,6 +3,7 @@
 import random
 
 import ujson
+
 from scripts.game_structure.game_essentials import game
 
 resource_directory = "resources/dicts/events/"

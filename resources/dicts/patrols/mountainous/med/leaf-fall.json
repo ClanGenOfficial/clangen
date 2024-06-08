@@ -234,7 +234,7 @@
         },
         "weight": 20,
         "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -505,7 +505,7 @@
         },
         "weight": 20,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit and p_l heads out to take advantage, bringing app1 along.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -776,7 +776,7 @@
         },
         "weight": 20,
         "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1048,7 +1048,7 @@
         },
         "weight": 20,
         "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and they need to ensure c_n has stocks for the coming leaf-bare.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1319,7 +1319,7 @@
         },
         "weight": 20,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l brings app1 along for a lesson.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1589,7 +1589,7 @@
         },
         "weight": 20,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in their arsenal. If they were particularly lucky, p_l explains to app1, perhaps there might be some other plants, like wild garlic, around to collect as well.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1872,7 +1872,7 @@
         },
         "weight": 20,
         "intro_text": "With leaf-fall washing the world in rich, warm tones, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stock until newleaf. There's a tree in a dip along a stream they want to check on today, and they bring app1 to teach why harvesting from a sheltered plant can be helpful.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2149,17 +2149,17 @@
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Many stems of goldenrod and marigold surround p_l as they work, snipping stems and yellow clumps of tiny flowers to bring back to c_n's herb stores.",
+                "text": "Many stems of goldenrod and marigold surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping stems and yellow clumps of tiny flowers to bring back to c_n's herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "marigold"]
             },
             {
-                "text": "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, as it turns out, is actually quite a lot, including an opportunistic haul of marigold.",
+                "text": "With the leaf-fall goldenrod bushes starting to die back, p_l collects all {PRONOUN/p_l/subject} can. That, as it turns out, is actually quite a lot, including an opportunistic haul of marigold.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "marigold"]
@@ -2174,7 +2174,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful.",
                 "exp": 0,
                 "weight": 20
             }
@@ -2198,7 +2198,7 @@
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with app1.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -2418,24 +2418,24 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l sniffs the clean, fresh morning air, wondering if they can smell juniper berries on the breeze.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "p_l sniffs the clean, fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. They notice a fallen oak branch nearby and stop to collect a few undamaged leaves. They're starting to turn colors, but the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them. As {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and {VERB/p_l/stop/stops} to collect a few undamaged leaves. They're starting to turn colors, but the leaves are still usable.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"]
             },
             {
-                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. p_l will always feel better having a good solid store of the stuff to use, especially because the berries keep forever in the herb stores. They pass a lone, gnarled oak tree on the way back to camp and make sure to stop to gather some of the leaves while they're there. Oak leaves are great for fighting infections.",
+                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. p_l will always feel better having a good solid store of the stuff to use, especially because the berries keep forever in the herb stores. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} a lone, gnarled oak tree on the way back to camp and {VERB/p_l/make/makes} sure to stop to gather some of the leaves while {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} there. Oak leaves are great for fighting infections.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves", "juniper"]
             },
             {
-                "text": "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From their vantage point, they are able to reach a low oak branch. They are astounded the branch has a healthy collection of still-green oak leaves. They take the opportunity to gather a pawful.",
+                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From {PRONOUN/s_c/poss} vantage point, {PRONOUN/s_c/subject} {VERB/s_c/are/is} able to reach a low oak branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} astounded the branch has a healthy collection of still-green oak leaves. {PRONOUN/s_c/subject/CAP} {VERB/s_c/take/takes} the opportunity to gather a pawful.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2444,7 +2444,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment.",
+                "text": "p_l seems to have forgotten where to find a juniper tree, much to {PRONOUN/p_l/poss} own embarrassment.",
                 "exp": 0,
                 "weight": 20
             }
@@ -2468,7 +2468,7 @@
         },
         "weight": 20,
         "intro_text": "p_l sniffs the clean fresh morning air, wondering if they can smell juniper berries on the breeze. They bring app1 to investigate.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -3105,7 +3105,7 @@
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with app1.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -3375,7 +3375,7 @@
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with app1 before the plants wither and die off.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -3645,7 +3645,7 @@
         },
         "weight": 20,
         "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it. p_l explains to app1 how mullein's height make it easy to spot from a distance.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -3915,7 +3915,7 @@
         },
         "weight": 20,
         "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves, explaining to app1 how the leaves lose their herbal potency with the reds of leaf-fall.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -4185,7 +4185,7 @@
         },
         "weight": 20,
         "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. app1 asks if they'll really die back in leaf-bare - the plant seems too determined to give up in the cold.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -4455,7 +4455,7 @@
         },
         "weight": 20,
         "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -4844,7 +4844,7 @@
         },
         "weight": 20,
         "intro_text": "As leaf-fall arrives, the raspberry plants burst into fruit, suddenly revealing that several brambles p_l assumed were roses are actually useful for herb harvesting. app1 isn't commenting on their mentor's mistake.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5114,7 +5114,7 @@
         },
         "weight": 20,
         "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with app1, bringing the apprentice for an important herbcraft lesson.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5335,23 +5335,23 @@
         },
         "weight": 20,
         "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+                "text": "The urgency drains out of p_l as {PRONOUN/p_l/subject} {VERB/p_l/sit/sits} amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as {PRONOUN/p_l/subject} {VERB/p_l/have/has} collected a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "thyme"]
             },
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near their nest.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring {PRONOUN/p_l/subject} {VERB/p_l/have/has} a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near {PRONOUN/p_l/poss} nest.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "goldenrod", "thyme"]
             },
             {
-                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb, as they make their way home. Spotting a small goldenrod plant that looks like it's beginning to shrivel up from the frosts, they pause to gather the remaining stems to make good use of it.",
+                "text": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/p_l/poss} little joke, mouth crammed full of the herb, as {PRONOUN/p_l/subject} {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way home. Spotting a small goldenrod plant that looks like it's beginning to shrivel up from the frosts, {PRONOUN/p_l/subject} {VERB/p_l/pause/pauses} to gather the remaining stems to make good use of it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5360,7 +5360,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l has no time - and no thyme. They're forced to give up on the search for today.",
+                "text": "p_l has no time - and no thyme. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} forced to give up on the search for today.",
                 "exp": 0,
                 "weight": 20
             }
@@ -5384,7 +5384,7 @@
         },
         "weight": 20,
         "intro_text": "The thyme plants are running out of growing time - p_l better take app1 to harvest them before leaf-fall is over.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5654,7 +5654,7 @@
         },
         "weight": 20,
         "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l brings along app1, to see if they can do it.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5727,7 +5727,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

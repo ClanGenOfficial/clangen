@@ -540,7 +540,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a red fox. Tracking it, {PRONOUN/r_c/self} {VERB/r_c/find/finds} the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -560,7 +560,7 @@
                 ]
             },
             {
-                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up. They pounce onto the fox's back, digging in their claws. It's a wild ride through the plains until the fox bucks them off, but it wins them the fawn carcass.",
+                "text": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the plains until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
