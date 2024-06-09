@@ -880,7 +880,7 @@ class PatrolScreen(Screens):
 
             # Draw mentor or apprentice
             relation = "should not display"
-            if self.selected_cat.status.is_medcat_any() or self.selected_cat.apprentice != []:
+            if self.selected_cat.status.is_patrol_app() or self.selected_cat.apprentice != []:
                 self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((990, 380), (332, 340))),
                     self.app_frame, manager=MANAGER)
