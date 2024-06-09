@@ -389,9 +389,9 @@ class FreshkillPile:
                 continue
 
             feeding_amount, needed_amount = self.determine_portion(cat, ration_prey, additional_food_round)
-            self.feed_cat(cat, feeding_amount, needed_amount)
+            self.feed_one_cat(cat, feeding_amount, needed_amount)
 
-    def feed_cat(self, cat: Cat, feeding_amount, needed_amount) -> None:
+    def feed_one_cat(self, cat: Cat, feeding_amount, needed_amount) -> None:
         """
         Handle the feeding process.
 

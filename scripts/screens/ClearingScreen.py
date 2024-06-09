@@ -86,7 +86,7 @@ class ClearingScreen(Screens):
                         self.focus_cat_object.ID
                     ].current_score
                     amount = max_amount - current_amount
-                game.clan.freshkill_pile.feed_cat(self.focus_cat_object, amount, 0)
+                game.clan.freshkill_pile.feed_one_cat(self.focus_cat_object, amount, 0)
                 Freshkill_Events.handle_nutrient(
                     self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
                 )
