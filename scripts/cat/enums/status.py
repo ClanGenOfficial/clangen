@@ -29,7 +29,7 @@ class Status(ExtendedStrEnum):
         """True if cat is a working role (warrior + app, medcat + app, mediator + app, deputy and leader)"""
         return not (self.is_kit_any()
                     and self.is_elder()) \
-            and not self.is_outside_clan()
+            and self.is_clan_status()
 
     def is_patrol_any(self):
         """True if able to go on patrol (warrior + app, medcat + app, deputy and leader)"""
@@ -81,6 +81,12 @@ class Status(ExtendedStrEnum):
         return self in [
             Status.EXCLAN, Status.EXILED, Status.KITTYPET,
             Status.LONER, Status.ROGUE]
+
+    def is_clan_status(self):
+        """True if cat is a member of the Clan.
+
+        (newborn, kitten, elder, warrior + app, medcat + app, mediator + app, deputy & leader)"""
+        return not self.is_outside_clan()
 
     def is_newborn(self):
         """True if newborn."""

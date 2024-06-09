@@ -185,10 +185,10 @@ class Cat:
         self._mentor = None  # plz
         self._experience = None
         self._moons = None
+        self._status = None
 
         # Public attributes
         self.gender = gender
-        self.status = Status(status)
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)
@@ -245,6 +245,8 @@ class Cat:
         self.inheritance = None
 
         self.history = None
+
+        self.status = status
 
         # setting ID
         if ID is None:
@@ -347,6 +349,17 @@ class Cat:
 
         if self.ID not in ["0", None]:
             Cat.insert_cat(self)
+
+    @property
+    def status(self):
+        return self._status
+
+    @status.setter
+    def status(self, val: str | Status):
+        if isinstance(val, str):
+            self._status = Status(val)
+        else:
+            self._status = val
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
         """Perform faded-specific initialisation

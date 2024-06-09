@@ -177,7 +177,7 @@ class Thoughts:
                 return False
 
         if random_cat and 'random_outside_status' in thought:
-            if random_cat and random_cat.outside and not random_cat.status.is_outside_clan():
+            if random_cat and random_cat.outside and random_cat.status.is_clan_status():
                 outside_status = "lost"
             elif random_cat and random_cat.outside:
                 outside_status = "outside"
@@ -187,7 +187,7 @@ class Thoughts:
             if outside_status not in thought['random_outside_status']:
                 return False
         else:
-            if random_cat and random_cat.outside and not random_cat.status.is_outside_clan():
+            if random_cat and random_cat.outside and random_cat.status.is_clan_status():
                 outside_status = "lost"
             elif random_cat and random_cat.outside:
                 outside_status = "outside"

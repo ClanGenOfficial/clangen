@@ -1061,7 +1061,7 @@ class ProfileScreen(Screens):
                 and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
-            if the_cat.status.is_outside_clan():
+            if the_cat.status.is_clan_status():
                 nutr = None
                 if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1324,7 +1324,7 @@ class ProfileScreen(Screens):
         else:
             text = str(self.the_cat.name) + "'s past history is unknown."
 
-        if not self.the_cat.dead and not self.the_cat.status.is_outside_clan():
+        if not self.the_cat.dead and self.the_cat.status.is_clan_status():
             beginning = History.get_beginning(self.the_cat)
             if beginning:
                 if beginning["clan_born"]:

@@ -296,7 +296,7 @@ class FreshkillPileTest(unittest.TestCase):
         # young enough kid
         mother = Cat(gender="female", status=Status.WARRIOR)
         father = Cat(gender="male", status=Status.WARRIOR)
-        kid = Cat(moons=2, status=Status.KITTEN, parent1=father.ID, parent2=mother.ID)
+        kid = Cat(moons=2, status=Status.KITTEN, parent1=mother.ID, parent2=father.ID)
 
         no_parent = Cat(status=Status.WARRIOR)
 
