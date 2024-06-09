@@ -20,7 +20,8 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
-from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
+from scripts.clan_resources.freshkill import FreshkillPile
+from scripts.cat.nutrition import Nutrition
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
