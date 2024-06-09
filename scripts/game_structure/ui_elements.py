@@ -535,6 +535,21 @@ class IDImageButton(UIImageButton):
 
 
 class UIDropDownContainer(UIAutoResizingContainer):
+    """
+    holds and controls the elements within a dropdown
+    :param relative_rect: The starting size and relative position of the container.
+    :param container: The container this container is within. Defaults to None (which is the root
+                      container for the UI)
+    :param starting_height: The starting layer height of this container above its container.
+                            Defaults to 1.
+    :param object_id: An object ID for this element.
+    :param manager: The UI manager for this element. If not provided or set to None,
+                    it will try to use the first UIManager that was created by your application.
+    :param parent_button: The button that opens and closes the dropdown
+    :param child_button_container: The container holding the buttons within the dropdown
+    :param visible: Whether the element is visible by default. Warning - container visibility
+                    may override this.
+"""
 
     def __init__(
             self,
@@ -588,30 +603,39 @@ class UIDropDownContainer(UIAutoResizingContainer):
 class UICheckbox(UIImageButton):
     """
     Creates a checkbox and allows for easy check and uncheck
+    :param position: The relative position of the container.
+    :param container: The container this container is within. Defaults to None (which is the root
+                      container for the UI)
+    :param starting_height: The starting layer height of this container above its container.
+                            Defaults to 1.
+    :param manager: The UI manager for this element. If not provided or set to None,
+                    it will try to use the first UIManager that was created by your application.
+    :param visible: Whether the element is visible by default. Warning - container visibility
+                    may override this.
+    :param check: the checkbox begins in the "checked" state, default False
     """
 
     def __init__(
             self,
             position: tuple,
-            text: str,
             container: UIContainer,
             tool_tip_text: str,
             starting_height: int,
             visible: bool,
-            check: bool,
             manager,
+            check: bool = False,
     ):
 
-        self.checked = False
+        self.checked = check
 
         relative_rect = scale(pygame.Rect(position, (68, 68)))
 
         if check:
-            object_id = "#unchecked_checkbox"
-        else:
             object_id = "#checked_checkbox"
+        else:
+            object_id = "#unchecked_checkbox"
 
-        super().__init__(relative_rect=relative_rect, text=text, container=container, tool_tip_text=tool_tip_text,
+        super().__init__(relative_rect=relative_rect, text="", container=container, tool_tip_text=tool_tip_text,
                          starting_height=starting_height, visible=visible, manager=manager, object_id=object_id)
 
     def check(self):
@@ -707,6 +731,9 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         self._display_cats()
 
     def _chunk(self):
+        """
+        separates the cat list into smaller chunks to display on each page
+        """
         self.cat_chunks = [
             self.cat_list
             [x: x + self.cats_displayed]

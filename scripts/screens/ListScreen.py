@@ -482,6 +482,9 @@ class ListScreen(Screens):
                     self.update_cat_list(self.cat_list_bar_elements["search_bar_entry"].get_text())
 
     def update_cat_list(self, search_text=""):
+        """
+        updates the cat list and display, search text is taken into account
+        """
         self.current_listed_cats = []
         Cat.sort_cats(self.full_cat_list)
 
@@ -513,9 +516,12 @@ class ListScreen(Screens):
             self.current_page = 1
 
         Cat.ordered_cat_list = self.current_listed_cats
-        self.update_cat_display()
+        self._update_cat_display()
 
-    def update_cat_display(self):
+    def _update_cat_display(self):
+        """
+        updates the cat display, includes the page number display
+        """
         self.display_container_elements["page_entry"].change_object_id(
             get_text_box_theme("#page_entry_box")
             if self.death_status == "living"
@@ -558,7 +564,9 @@ class ListScreen(Screens):
         self.set_bg_and_heading()
 
     def set_bg_and_heading(self):
-
+        """
+        sets the background and heading according to current group
+        """
         if self.current_group == "clan":
             self.df_bg.hide()
             self.ur_bg.hide()
@@ -586,6 +594,9 @@ class ListScreen(Screens):
             self.update_heading_text(f"Dark Forest")
 
     def get_cat_list(self):
+        """
+        grabs the correct cat list for current group
+        """
         if game.last_list_forProfile:
             if game.last_list_forProfile == "sc":
                 self.get_sc_cats()
@@ -601,6 +612,9 @@ class ListScreen(Screens):
             self.get_your_clan_cats()
 
     def get_your_clan_cats(self):
+        """
+        grabs clan cats
+        """
         self.current_group = "clan"
         self.death_status = "living"
         self.full_cat_list = []
@@ -609,6 +623,9 @@ class ListScreen(Screens):
                 self.full_cat_list.append(the_cat)
 
     def get_cotc_cats(self):
+        """
+        grabs cats outside the clan
+        """
         self.current_group = "cotc"
         self.death_status = "living"
         self.full_cat_list = []
@@ -617,6 +634,9 @@ class ListScreen(Screens):
                 self.full_cat_list.append(the_cat)
 
     def get_sc_cats(self):
+        """
+        grabs starclan cats
+        """
         self.current_group = "sc"
         self.death_status = "dead"
         self.full_cat_list = []
@@ -631,6 +651,9 @@ class ListScreen(Screens):
                 self.full_cat_list.append(the_cat)
 
     def get_df_cats(self):
+        """
+        grabs dark forest cats
+        """
         self.current_group = "df"
         self.death_status = "dead"
         self.full_cat_list = []
@@ -645,6 +668,9 @@ class ListScreen(Screens):
                 self.full_cat_list.append(the_cat)
 
     def get_ur_cats(self):
+        """
+        grabs unknown residence cats
+        """
         self.current_group = "ur"
         self.death_status = "dead"
         self.full_cat_list = []
