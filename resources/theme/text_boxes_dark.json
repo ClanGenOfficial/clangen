@@ -28,7 +28,7 @@
         "misc": {
             "shape": "rounded_rectangle",
             "shape_corner_radius": 2,
-            "border_width": "1",
+            "border_width": "3",
             "text_horiz_alignment": "right"
         },
         "font": {
