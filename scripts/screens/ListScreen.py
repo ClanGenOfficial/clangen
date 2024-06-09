@@ -401,12 +401,21 @@ class ListScreen(Screens):
             manager=MANAGER,
         )
         # page number
+        self.display_container_elements["page_entry"] = pygame_gui.elements.UITextEntryLine(
+            scale(pygame.Rect((710, 1038), (60, 55))),
+            container=self.cat_display_container,
+            placeholder_text=str(self.current_page),
+            object_id=get_text_box_theme("#page_entry_box") if self.death_status == "living"
+            else "#page_entry_box_dark",
+            manager=MANAGER
+
+        )
         self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((655, 1035), (220, 60))),
+            scale(pygame.Rect((700, 1034), (200, 60))),
             container=self.cat_display_container,
-            object_id=get_text_box_theme("#text_box_30_horizcenter") if self.death_status == "living"
-            else "#text_box_30_horizcenter_light",
+            object_id=get_text_box_theme("#text_box_30_horizleft") if self.death_status == "living"
+            else "#text_box_30_horizleft_light",
             manager=MANAGER,
         )  # Text will be filled in later
 
@@ -462,12 +471,15 @@ class ListScreen(Screens):
 
     def on_use(self):
         # Only update the positions if the search text changes
-        if (self.cat_list_bar_elements["search_bar_entry"].is_focused
-                and self.cat_list_bar_elements["search_bar_entry"].get_text() == "name search"):
-            self.cat_list_bar_elements["search_bar_entry"].set_text("")
         if self.cat_list_bar_elements["search_bar_entry"].get_text() != self.previous_search_text:
             self.update_cat_list(self.cat_list_bar_elements["search_bar_entry"].get_text())
         self.previous_search_text = self.cat_list_bar_elements["search_bar_entry"].get_text()
+
+        if self.display_container_elements["page_entry"].is_focused:
+            if self.display_container_elements["page_entry"].get_text() != str(self.current_page):
+                if self.display_container_elements["page_entry"].get_text():
+                    self.current_page = int(self.display_container_elements["page_entry"].get_text())
+                    self.update_cat_list(self.cat_list_bar_elements["search_bar_entry"].get_text())
 
     def update_cat_list(self, search_text=""):
         self.current_listed_cats = []
@@ -495,16 +507,26 @@ class ListScreen(Screens):
             if len(self.current_listed_cats) > 20
             else 1
         )
+        if self.current_page > self.all_pages:
+            self.current_page = self.all_pages
+        elif self.current_page < 1:
+            self.current_page = 1
 
         Cat.ordered_cat_list = self.current_listed_cats
         self.update_cat_display()
 
     def update_cat_display(self):
+        self.display_container_elements["page_entry"].change_object_id(
+            get_text_box_theme("#page_entry_box")
+            if self.death_status == "living"
+            else "#page_entry_box_dark"
+        )
+        self.display_container_elements["page_entry"].set_text(str(self.current_page))
         self.display_container_elements["page_number"].change_object_id(
             get_text_box_theme("#text_box_30_horizcenter")
             if self.death_status == "living"
             else "#text_box_30_horizcenter_light")
-        self.display_container_elements["page_number"].set_text(str(self.current_page) + "/" + str(self.all_pages))
+        self.display_container_elements["page_number"].set_text(f"/{self.all_pages}")
 
         if not self.cat_display:
             self.cat_display = UINamedCatListDisplay(
