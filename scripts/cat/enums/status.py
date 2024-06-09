@@ -1,7 +1,7 @@
-from strenum import StrEnum
+from scripts.game_structure.extended_strenum import ExtendedStrEnum
 
 
-class Status(StrEnum):
+class Status(ExtendedStrEnum):
     """
     Roles that a cat may hold.
     """
@@ -24,14 +24,6 @@ class Status(StrEnum):
     KITTYPET = "kittypet"
     LONER = "loner"
     ROGUE = "rogue"
-
-    @classmethod
-    def list(cls):
-        return list(map(lambda c: c.value, cls))
-
-    @classmethod
-    def index(cls, val: str, **kwargs):
-        return Status.list().index(val)
 
     def is_working_any(self):
         """True if cat is a working role (warrior + app, medcat + app, mediator + app, deputy and leader)"""

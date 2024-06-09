@@ -986,8 +986,8 @@ class PatrolOutcome:
             for index in mate_indexes:
                 if index in in_patrol_cats:
                     if in_patrol_cats[index] in (
-                        "apprentice",
-                        "medicine cat apprentice",
+                            "apprentice",
+                            "medicine cat apprentice",
                     ):
                         print("Can't give apprentices mates")
                         continue
@@ -1017,8 +1017,8 @@ class PatrolOutcome:
             for index in romance_indexes:
                 if index in in_patrol_cats:
                     if in_patrol_cats[index] in (
-                        "apprentice",
-                        "medicine cat apprentice",
+                            "apprentice",
+                            "medicine cat apprentice",
                     ):
                         print("Can't romance apprentices")
                         continue
@@ -1042,8 +1042,8 @@ class PatrolOutcome:
         elif "female" in attribute_list:
             gender = "female"
         elif (
-            "can_birth" in attribute_list
-            and not game.clan.clan_settings["same sex birth"]
+                "can_birth" in attribute_list
+                and not game.clan.clan_settings["same sex birth"]
         ):
             gender = "female"
         else:
@@ -1058,24 +1058,16 @@ class PatrolOutcome:
             new_name = choice([True, False])
 
         # STATUS - must be handled before backstories.
-        status = None
+        status = Status.NONE
         for _tag in attribute_list:
             match = re.match(r"status:(.+)", _tag)
             if not match:
                 continue
 
-            # frankly idk how to break this down
-            if match.group(1) in (
-                "newborn",
-                "kitten",
-                "elder",
-                "apprentice",
-                "warrior",
-                "mediator apprentice",
-                "mediator",
-                "medicine cat apprentice",
-                "medicine cat",
-            ):
+            # maybe this?
+            if match.group(1) in Status.list():
+                if Status(match.group(1)).is_outside_clan():
+                    continue
                 status = Status(match.group(1))
                 break
 
@@ -1197,7 +1189,7 @@ class PatrolOutcome:
             ),  # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
-            status=status,
+            status=status if (status is not Status.NONE) else None,
             age=age,
             gender=gender,
             thought=thought,
