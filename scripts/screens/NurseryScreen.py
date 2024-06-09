@@ -122,6 +122,13 @@ class NurseryScreen(Screens):
                 self.focus_cat = None
                 self.update_focus()
                 self.update_chosen_cats()
+            elif event.ui_element == self.focus_frame_elements["remove"]:
+                if self.focus_cat.age != "kitten":
+                    self.chosen_adult = None
+                else:
+                    self.chosen_kits.remove(self.focus_cat)
+                self.update_focus()
+                self.update_chosen_cats()
 
     def exit_screen(self):
         """Runs when screen exits"""
@@ -530,6 +537,13 @@ class NurseryScreen(Screens):
         # If at least 1 kitten has been picked, enable playtime button
         if len(self.chosen_kits) > 0:
             self.chosen_cats_elements["begin_playtime"].enable()
+        else:
+            self.chosen_cats_elements["begin_playtime"].disable()
+        
+        # reset/clear
+        for ele in self.chosen_cats_elements:
+            if ele != "begin_playtime":
+                self.chosen_cats_elements[ele].kill()
 
         # Draw adult
         if self.chosen_adult != None:
@@ -555,4 +569,3 @@ class NurseryScreen(Screens):
                     starting_height=1,
                     manager=MANAGER,
                 )
-        
