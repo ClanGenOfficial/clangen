@@ -5082,5 +5082,22 @@
                 "path": "resources/images/buttons/add_cat_nursery_unavailable.png"
             }
         }
+    },
+    "#begin_playtime_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/begin_playtime.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/begin_playtime_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/begin_playtime.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/begin_playtime_unavailable.png"
+            }
+        }
     }
 }

@@ -17,8 +17,6 @@ class NurseryScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
-        self.chosen_kits = []
-        self.chosen_adult = None
 
         self.current_adult_page = 1
         self.current_kit_page = 1
@@ -37,7 +35,12 @@ class NurseryScreen(Screens):
         self.focus_frame_elements = {}
         self.focus_container = None
         self.focus_elements = {}
-        self.selected_cat = None
+        self.focus_cat = None
+
+        self.chosen_kits = []
+        self.chosen_adult = None
+        self.chosen_cats_container = None
+        self.chosen_cats_elements = {}
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
@@ -69,6 +72,11 @@ class NurseryScreen(Screens):
         
         # FOCUS FRAME
         self.create_focus_frame()
+        self.focus_frame_elements["add_cat"].disable()
+
+        # CHOSEN CATS
+        self.create_chosen_cats()
+        self.chosen_cats_elements["begin_playtime"].disable()
         
         # ADULT SELECTION
         self.create_adult_selection()
@@ -100,10 +108,10 @@ class NurseryScreen(Screens):
                 self.current_adult_page -= 1
                 self.update_adult_list()
             elif event.ui_element == self.focus_frame_elements["random_dice"]:
-                self.randomize_selected_cat()
+                self.randomize_focus_cat()
                 self.update_focus()
             elif event.ui_element in self.adult_cat_buttons.values() or event.ui_element in self.kits_cat_buttons.values():
-                self.selected_cat = event.ui_element.return_cat_object()
+                self.focus_cat = event.ui_element.return_cat_object()
                 self.update_focus()
 
     def exit_screen(self):
@@ -117,8 +125,9 @@ class NurseryScreen(Screens):
         self.kits_selection_container.kill()
         self.focus_frame_container.kill()
         self.focus_container.kill()
+        self.chosen_cats_container.kill()
 
-        self.selected_cat = None
+        self.focus_cat = None
     
     def create_adult_selection(self):
         """
@@ -266,7 +275,7 @@ class NurseryScreen(Screens):
         Handles creating and updating the list of available adults.
         """
         # get cats
-        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working()]
+        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working() and not i.outside]
 
         # separate them into chunks for the pages
         adult_chunks = self.chunks(adults, 8)
@@ -393,9 +402,18 @@ class NurseryScreen(Screens):
                 manager=MANAGER,
             )
         
+        # Update availability of cat
+        if self.focus_cat.age == "kitten" and len(self.chosen_kits) == 3 and self.focus_cat not in self.chosen_kits:
+            self.focus_frame_elements["add_cat"].disable()
+        elif self.focus_cat.age != "kitten" and self.chosen_adult != None and self.focus_cat != self.chosen_adult:
+            self.focus_frame_elements["add_cat"].disable()
+        else:
+            self.focus_frame_elements["add_cat"].enable()
+        
+        # Cat info
         self.focus_elements["cat_sprite"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((50, 30), (300, 300))),
-            pygame.transform.scale(self.selected_cat.sprite, (300, 300)),
+            pygame.transform.scale(self.focus_cat.sprite, (300, 300)),
             object_id="#focus_cat_sprite",
             container=self.focus_container,
             starting_height=1,
@@ -403,20 +421,20 @@ class NurseryScreen(Screens):
         )
         self.focus_elements["cat_name"] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((0, 350), (400, -1))),
-            text=shorten_text_to_fit(str(self.selected_cat.name), 400, 30),
+            text=shorten_text_to_fit(str(self.focus_cat.name), 400, 30),
             object_id="#text_box_30_horizcenter",
             container=self.focus_container,
             manager=MANAGER,
         )
         self.focus_elements["cat_status"] = pygame_gui.elements.UILabel(
-            relative_rect=scale(pygame.Rect((0, 390), (400, -1))),
-            text=f"{self.selected_cat.status}",
+            relative_rect=scale(pygame.Rect((0, 400), (400, -1))),
+            text=f"{self.focus_cat.status}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_container,
             manager=MANAGER,
         )
 
-    def randomize_selected_cat(self):
+    def randomize_focus_cat(self):
         """
         Handles picking a random, available cat from kittens and adults when clicking randomize -button.
         Returns the random cat.
@@ -430,7 +448,7 @@ class NurseryScreen(Screens):
 
         # Fetching cats
         kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
-        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working()]
+        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working() and not i.outside]
 
         for k in kittens:
             if k not in self.chosen_kits:
@@ -447,12 +465,37 @@ class NurseryScreen(Screens):
         # Choosing cat
         if self.chosen_adult != None and len(self.chosen_kits) == 3:
             # All playmate spots are already filled
-            self.selected_cat = choice(able_cats["all"])
+            self.focus_cat = choice(able_cats["all"])
         elif self.chosen_adult != None or len(able_cats["unadded adults"]) == 0:
-            self.selected_cat = choice(able_cats["unadded kittens"])
+            self.focus_cat = choice(able_cats["unadded kittens"])
         elif len(self.chosen_kits) == 3 or len(able_cats["unadded kittens"]) == 0:
-            self.selected_cat = choice(able_cats["unadded adults"])
+            self.focus_cat = choice(able_cats["unadded adults"])
         elif len(able_cats["unadded adults"]) == 0 and len(able_cats["unadded kittens"]) == 0:
-            self.selected_cat = choice(able_cats["all"])
+            self.focus_cat = choice(able_cats["all"])
         else:
-            self.selected_cat = choice(able_cats["unadded all"])
+            self.focus_cat = choice(able_cats["unadded all"])
+
+    def create_chosen_cats(self):
+        """
+        Handles the creation of the container that holds the chosen cats and playtime button.
+        """
+        self.chosen_cats_container = pygame_gui.elements.UIAutoResizingContainer(
+            scale(pygame.Rect((300, 150), (0, 0))),
+            object_id="#chosen_cats_container",
+            starting_height=3,
+            manager=MANAGER
+        )
+        self.chosen_cats_elements["begin_playtime"] = UIImageButton(
+            scale(pygame.Rect((150, 630), (284, 60))),
+            "",
+            object_id="#begin_playtime_button",
+            container=self.chosen_cats_container,
+            starting_height=1,
+            manager=MANAGER
+        )
+    
+    def update_chosen_cats(self):
+        """
+        Handles updating and creating elements inside the chosen cats container.
+        """
+        pass
