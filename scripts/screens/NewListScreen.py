@@ -61,6 +61,7 @@ class NewListScreen(Screens):
                     element.change_object_id("#fav_cat_toggle_on")
                     element.tool_tip_text = "hide favorite cat indicators"
                     game.clan.clan_settings["show fav"] = True
+                self.update_cat_list(self.cat_list_bar_elements["search_bar_entry"].get_text())
 
             # VIEW DEAD/LIVING
             elif element == self.cat_list_bar_elements["view_button"]:
@@ -455,6 +456,8 @@ class NewListScreen(Screens):
             self.cat_display.cat_sprites[ele].kill()
         for ele in self.cat_display.cat_names:
             self.cat_display.cat_names[ele].kill()
+        for ele in self.cat_display.favor_indicator:
+            self.cat_display.favor_indicator[ele].kill()
         self.list_screen_container.kill()
 
     def on_use(self):
@@ -502,7 +505,6 @@ class NewListScreen(Screens):
             if self.death_status == "living"
             else "#text_box_30_horizcenter_light")
         self.display_container_elements["page_number"].set_text(str(self.current_page) + "/" + str(self.all_pages))
-
 
         if not self.cat_display:
             self.cat_display = UINamedCatListDisplay(

@@ -13,6 +13,7 @@ from pygame_gui.core.utility import translate
 from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import game
 
 from scripts.utility import scale, shorten_text_to_fit
 
@@ -900,6 +901,7 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
 
         self.cat_sprites = {}
         self.cat_names = {}
+        self.favor_indicator = {}
 
         super().__init__(relative_rect, container, starting_height, object_id, manager, cat_list, cats_displayed,
                          x_px_between, columns, current_page, next_button, prev_button, first_button, last_button,
@@ -929,11 +931,32 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
             self.cat_sprites[ele].kill()
         for ele in self.cat_names:
             self.cat_names[ele].kill()
+        for ele in self.favor_indicator:
+            self.favor_indicator[ele].kill()
 
         pos_x = self.x_px_between
         pos_y = self.y_px_between
 
         for i, kitty in enumerate(display_cats):
+            if game.clan.clan_settings["show fav"] and kitty.favourite:
+                _favor_circle = pygame.transform.scale(
+                    pygame.image.load(
+                        f"resources/images/fav_marker.png"
+                    ).convert_alpha(),
+                    (100, 100),
+                )
+
+                if game.settings["dark mode"]:
+                    _favor_circle.set_alpha(150)
+
+                self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                    _favor_circle,
+                    object_id=f"favor_circle{i}",
+                    container=self,
+                    starting_height=1
+                )
+
             self.cat_sprites[f"sprite{i}"] = UISpriteButton(
                 scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                 kitty.sprite,
