@@ -651,6 +651,8 @@ class UIDropDownContainer(UIAutoResizingContainer):
         self.selected_element = button
 
         for child in self.child_button_container.elements:
+            if child == button:
+                continue
             child.enable()
 
 
@@ -732,9 +734,11 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             cats_displayed: int,
             px_between: int,
             columns: int,
+            current_page: int,
             next_button: UIImageButton,
             prev_button: UIImageButton,
-            current_page: int,
+            first_button: UIImageButton = None,
+            last_button: UIImageButton = None,
             tool_tip_name: bool = False,
             visible: bool = True
     ):
@@ -749,6 +753,8 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         self.current_page = current_page
         self.next_button = next_button
         self.prev_button = prev_button
+        self.first_button = first_button
+        self.last_button = last_button
         self.tool_tip_name = tool_tip_name
 
         self.total_pages: int = 0
@@ -756,7 +762,7 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
         self._display_cats()
 
-    def update_display(self, current_page: int, cat_list: list = None):
+    def update_display(self, current_page: int, cat_list: list):
         """
         updates current_page and refreshes the cat display
         :param current_page: the currently displayed page
@@ -764,8 +770,7 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         """
 
         self.current_page = current_page
-        if cat_list:
-            self.cat_list = cat_list
+        self.cat_list = cat_list
         self._display_cats()
 
     def _display_cats(self):
@@ -788,7 +793,7 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             self.total_pages = len(cat_chunks)
             display_cats = cat_chunks[self.current_page - 1]
 
-        for ele in self.elements:
+        for ele in self.cat_sprites:
             ele.kill()
 
         pos_x = self.px_between
@@ -799,6 +804,7 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
                 scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                 kitty.sprite,
                 cat_object=kitty,
+                cat_id=kitty.ID,
                 container=self,
                 object_id=f"#sprite{str(i)}",
                 tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
@@ -818,15 +824,27 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         if len(cat_chunks) <= 1:
             self.prev_button.disable()
             self.next_button.disable()
+            if self.first_button:
+                self.first_button.disable()
+                self.last_button.disable()
         elif self.current_page >= len(cat_chunks):
             self.prev_button.enable()
             self.next_button.disable()
+            if self.first_button:
+                self.first_button.enable()
+                self.last_button.disable()
         elif self.current_page == 1 and len(cat_chunks) > 1:
             self.prev_button.disable()
             self.next_button.enable()
+            if self.first_button:
+                self.first_button.disable()
+                self.last_button.enable()
         else:
             self.prev_button.enable()
             self.next_button.enable()
+            if self.first_button:
+                self.first_button.enable()
+                self.last_button.enable()
 
 
 class UINamedCatListDisplay(UIBasicCatListDisplay):
@@ -864,10 +882,12 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
                  x_px_between: int,
                  y_px_between: int,
                  columns: int,
+                 text_theme: str,
+                 current_page: int,
                  next_button: UIImageButton,
                  prev_button: UIImageButton,
-                 current_page: int,
-                 text_theme: str,
+                 first_button: UIImageButton = None,
+                 last_button: UIImageButton = None,
                  visible: bool = True
                  ):
         self.cat_list = cat_list
@@ -882,7 +902,8 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
         self.cat_names = {}
 
         super().__init__(relative_rect, container, starting_height, object_id, manager, cat_list, cats_displayed,
-                         x_px_between, columns, next_button, prev_button, current_page, visible=visible)
+                         x_px_between, columns, current_page, next_button, prev_button, first_button, last_button,
+                         visible=visible)
 
     def _display_cats(self):
         """
@@ -904,8 +925,10 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
             self.total_pages = len(cat_chunks)
             display_cats = cat_chunks[self.current_page - 1]
 
-        for ele in self.elements:
-            ele.kill()
+        for ele in self.cat_sprites:
+            self.cat_sprites[ele].kill()
+        for ele in self.cat_names:
+            self.cat_names[ele].kill()
 
         pos_x = self.x_px_between
         pos_y = self.y_px_between
@@ -915,6 +938,7 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
                 scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                 kitty.sprite,
                 cat_object=kitty,
+                cat_id=kitty.ID,
                 container=self,
                 object_id=f"#sprite{str(i)}",
                 tool_tip_text=str(kitty.name) if self.tool_tip_name else None,

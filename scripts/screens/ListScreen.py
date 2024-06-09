@@ -414,7 +414,7 @@ class ListScreen(Screens):
         self.filter_age_reverse = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos + 1), (114, 68))),
             "",
-            object_id="#filter_age_reverse_button",
+            object_id="#filter_reverse_age_button",
             starting_height=2,
             manager=MANAGER,
         )
