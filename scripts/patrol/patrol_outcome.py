@@ -1058,7 +1058,7 @@ class PatrolOutcome:
             new_name = choice([True, False])
 
         # STATUS - must be handled before backstories.
-        status = None
+        status = Status.NONE
         for _tag in attribute_list:
             match = re.match(r"status:(.+)", _tag)
             if not match:
