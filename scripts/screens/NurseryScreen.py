@@ -73,6 +73,7 @@ class NurseryScreen(Screens):
         # FOCUS FRAME
         self.create_focus_frame()
         self.focus_frame_elements["add_cat"].disable()
+        self.focus_frame_elements["remove"].hide()
 
         # CHOSEN CATS
         self.create_chosen_cats()
@@ -113,6 +114,14 @@ class NurseryScreen(Screens):
             elif event.ui_element in self.adult_cat_buttons.values() or event.ui_element in self.kits_cat_buttons.values():
                 self.focus_cat = event.ui_element.return_cat_object()
                 self.update_focus()
+            elif event.ui_element == self.focus_frame_elements["add_cat"]:
+                if self.focus_cat.age != "kitten":
+                    self.chosen_adult = self.focus_cat
+                else:
+                    self.chosen_kits.append(self.focus_cat)
+                self.focus_cat = None
+                self.update_focus()
+                self.update_chosen_cats()
 
     def exit_screen(self):
         """Runs when screen exits"""
@@ -128,6 +137,8 @@ class NurseryScreen(Screens):
         self.chosen_cats_container.kill()
 
         self.focus_cat = None
+        self.chosen_adult = None
+        self.chosen_kits = []
     
     def create_adult_selection(self):
         """
@@ -368,6 +379,14 @@ class NurseryScreen(Screens):
             starting_height=1,
             manager=MANAGER
         )
+        self.focus_frame_elements["remove"] = UIImageButton(
+            scale(pygame.Rect((174, 532), (174, 68))),
+            "",
+            object_id="#remove_button",
+            container=self.focus_frame_container,
+            starting_height=1,
+            manager=MANAGER
+        )
         self.focus_frame_elements["frame"] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 0), (400, 550))),
                                                                          pygame.image.load(
                                                                              "resources/images/nursery_focus_frame.png").convert_alpha(),
@@ -402,37 +421,47 @@ class NurseryScreen(Screens):
                 manager=MANAGER,
             )
         
-        # Update availability of cat
-        if self.focus_cat.age == "kitten" and len(self.chosen_kits) == 3 and self.focus_cat not in self.chosen_kits:
-            self.focus_frame_elements["add_cat"].disable()
-        elif self.focus_cat.age != "kitten" and self.chosen_adult != None and self.focus_cat != self.chosen_adult:
-            self.focus_frame_elements["add_cat"].disable()
+        if self.focus_cat != None:
+            # Update availability of cat
+            if self.focus_cat.age == "kitten" and len(self.chosen_kits) == 3 and self.focus_cat not in self.chosen_kits:
+                self.focus_frame_elements["add_cat"].disable()
+            elif self.focus_cat.age != "kitten" and self.chosen_adult != None and self.focus_cat != self.chosen_adult:
+                self.focus_frame_elements["add_cat"].disable()
+            else:
+                self.focus_frame_elements["add_cat"].enable()
+            
+            if self.focus_cat in self.chosen_kits or self.focus_cat == self.chosen_adult:
+                self.focus_frame_elements["add_cat"].hide()
+                self.focus_frame_elements["remove"].show()
+            else:
+                self.focus_frame_elements["add_cat"].show()
+                self.focus_frame_elements["remove"].hide()
+            
+            # Cat info
+            self.focus_elements["cat_sprite"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((50, 30), (300, 300))),
+                pygame.transform.scale(self.focus_cat.sprite, (300, 300)),
+                object_id="#focus_cat_sprite",
+                container=self.focus_container,
+                starting_height=1,
+                manager=MANAGER,
+            )
+            self.focus_elements["cat_name"] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((0, 350), (400, -1))),
+                text=shorten_text_to_fit(str(self.focus_cat.name), 400, 30),
+                object_id="#text_box_30_horizcenter",
+                container=self.focus_container,
+                manager=MANAGER,
+            )
+            self.focus_elements["cat_status"] = pygame_gui.elements.UILabel(
+                relative_rect=scale(pygame.Rect((0, 400), (400, -1))),
+                text=f"{self.focus_cat.status}",
+                object_id="#text_box_22_horizcenter",
+                container=self.focus_container,
+                manager=MANAGER,
+            )
         else:
-            self.focus_frame_elements["add_cat"].enable()
-        
-        # Cat info
-        self.focus_elements["cat_sprite"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((50, 30), (300, 300))),
-            pygame.transform.scale(self.focus_cat.sprite, (300, 300)),
-            object_id="#focus_cat_sprite",
-            container=self.focus_container,
-            starting_height=1,
-            manager=MANAGER,
-        )
-        self.focus_elements["cat_name"] = pygame_gui.elements.UILabel(
-            scale(pygame.Rect((0, 350), (400, -1))),
-            text=shorten_text_to_fit(str(self.focus_cat.name), 400, 30),
-            object_id="#text_box_30_horizcenter",
-            container=self.focus_container,
-            manager=MANAGER,
-        )
-        self.focus_elements["cat_status"] = pygame_gui.elements.UILabel(
-            relative_rect=scale(pygame.Rect((0, 400), (400, -1))),
-            text=f"{self.focus_cat.status}",
-            object_id="#text_box_22_horizcenter",
-            container=self.focus_container,
-            manager=MANAGER,
-        )
+            self.focus_frame_elements["add_cat"].disable()
 
     def randomize_focus_cat(self):
         """
@@ -480,13 +509,13 @@ class NurseryScreen(Screens):
         Handles the creation of the container that holds the chosen cats and playtime button.
         """
         self.chosen_cats_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((300, 150), (0, 0))),
+            scale(pygame.Rect((250, 150), (0, 0))),
             object_id="#chosen_cats_container",
             starting_height=3,
             manager=MANAGER
         )
         self.chosen_cats_elements["begin_playtime"] = UIImageButton(
-            scale(pygame.Rect((150, 630), (284, 60))),
+            scale(pygame.Rect((200, 630), (284, 60))),
             "",
             object_id="#begin_playtime_button",
             container=self.chosen_cats_container,
@@ -498,4 +527,32 @@ class NurseryScreen(Screens):
         """
         Handles updating and creating elements inside the chosen cats container.
         """
-        pass
+        # If at least 1 kitten has been picked, enable playtime button
+        if len(self.chosen_kits) > 0:
+            self.chosen_cats_elements["begin_playtime"].enable()
+
+        # Draw adult
+        if self.chosen_adult != None:
+            self.chosen_cats_elements["adult_sprite"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((192, 100), (300, 300))),
+                pygame.transform.scale(self.chosen_adult.sprite, (300, 300)),
+                object_id="#chosen_adult_sprite",
+                container=self.chosen_cats_container,
+                starting_height=1,
+                manager=MANAGER,
+            )
+        
+        # Draw kittens
+        kit_placements = [(0, 200), (192, 300), (384, 200)]
+        
+        if len(self.chosen_kits) != 0:
+            for n in range(len(self.chosen_kits)):
+                self.chosen_cats_elements["kitten_sprite" + str(n)] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect(kit_placements[n], (300, 300))),
+                    pygame.transform.scale(self.chosen_kits[n].sprite, (300, 300)),
+                    object_id="#chosen_kitten_sprite" + str(n),
+                    container=self.chosen_cats_container,
+                    starting_height=1,
+                    manager=MANAGER,
+                )
+        

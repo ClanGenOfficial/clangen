@@ -5099,5 +5099,22 @@
                 "path": "resources/images/buttons/begin_playtime_unavailable.png"
             }
         }
+    },
+    "#remove_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/remove.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/remove_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/remove.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/remove_unavailable.png"
+            }
+        }
     }
 }
