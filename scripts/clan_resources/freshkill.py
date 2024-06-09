@@ -156,17 +156,17 @@ class FreshkillPile:
 
         self.needed_prey = needed_prey
 
-    def time_skip(self, living_cats: list, event_list: list) -> None:
+    def time_skip(self, hungry_cats: list, event_list: list) -> None:
         """Handles the time skip for the freshkill pile. Decrements the timers on prey items and feeds listed cats
 
-        :param list living_cats: living cats which should be fed
+        :param list hungry_cats: living cats which should be fed
         :param list event_list: the current moonskip event list
         """
 
         if not FRESHKILL_ACTIVE:  # we aren't running freshkill things this game, we leave immediately
             return
 
-        self.living_cats = living_cats
+        self.living_cats = hungry_cats
         previous_amount = 0
         # update the freshkill pile
         for key, value in self.pile.items():
@@ -178,11 +178,11 @@ class FreshkillPile:
                     f"Some prey expired, {amount} pieces were removed from the pile."
                 )
         value_diff = self.total_amount
-        self.feed_cats(living_cats)
+        self.feed_cats(self.living_cats)
         self.already_fed = []
         value_diff -= self.total_amount
         event_list.append(f"{value_diff} pieces of prey were consumed.")
-        self._update_needed_food(living_cats)
+        self._update_needed_food(hungry_cats)
 
     def feed_cats(self, living_cats: list, additional_food_round=False) -> None:
         """Feed all living clan cats. This runs before aging up.
@@ -488,7 +488,7 @@ class FreshkillPile:
 
     @staticmethod
     def handle_kits_and_queens(living_cats):
-        clan_cats = {cat.ID: cat for cat in living_cats}
+        clan_cats = {cat.ID: cat for cat in deepcopy(living_cats)}
         """Dict with key : value of cat.ID : cat"""
 
         # find queens & pregnant cats IDs to set their status to queen/pregnant
