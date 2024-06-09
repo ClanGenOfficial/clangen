@@ -912,8 +912,6 @@ class LeaderDenScreen(Screens):
         pos_y = 0
         i = 0
 
-        pygame_gui.elements.UITabContainer
-
         for cat in display_cats:
             self.outsider_cat_buttons[f"sprite{str(i)}"] = UISpriteButton(
                 scale(pygame.Rect((10 + pos_x, 0 + pos_y), (100, 100))),

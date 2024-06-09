@@ -16,7 +16,7 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked, UIModifiedScrollingContainer
+from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.datadir import (
     get_save_dir,
     get_cache_dir,
@@ -1470,7 +1470,7 @@ class ChangelogPopup(UIWindow):
             container=self,
         )
 
-        self.scrolling_container = UIModifiedScrollingContainer(
+        self.scrolling_container = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((20, 130), (960, 650))),
             allow_scroll_x=False,
             container=self,

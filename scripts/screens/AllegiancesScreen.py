@@ -7,8 +7,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
-    UITextBoxTweaked,
-    UIModifiedScrollingContainer
+    UITextBoxTweaked
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -52,8 +51,6 @@ class AllegiancesScreen(Screens):
             manager=MANAGER,
         )
 
-        self.scroll_container = UIModifiedScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
-                                                                         , manager=MANAGER)
         self.ranks_boxes = []
         self.names_boxes = []
         y_pos = 0
