@@ -14,7 +14,6 @@ from .ListScreen import ListScreen
 from .MakeClanScreen import MakeClanScreen
 from .MedDenScreen import MedDenScreen
 from .MediationScreen import MediationScreen
-from .NewListScreen import NewListScreen
 from .PatrolScreen import PatrolScreen
 from .ProfileScreen import ProfileScreen
 from .RelationshipScreen import RelationshipScreen
@@ -63,7 +62,7 @@ make_clan_screen = MakeClanScreen('make clan screen')
 
 allegiances_screen = AllegiancesScreen('allegiances screen')
 camp_screen = ClanScreen('camp screen')
-catlist_screen = NewListScreen('list screen')
+catlist_screen = ListScreen('list screen')
 med_den_screen = MedDenScreen('med den screen')
 freshkill_pile_screen = ClearingScreen('clearing screen')
 warrior_den_screen = WarriorDenScreen('warrior den screen')
