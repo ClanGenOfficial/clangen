@@ -277,13 +277,13 @@ class Cat:
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status.is_newborn():
+            if self.status.is_newborn():
                 self.age = 'newborn'
-            elif status.is_kitten():
+            elif self.status.is_kitten():
                 self.age = 'kitten'
-            elif status.is_elder():
+            elif self.status.is_elder():
                 self.age = 'senior'
-            elif status.is_app_any():
+            elif self.status.is_app_any():
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
