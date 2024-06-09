@@ -760,7 +760,9 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
         self.total_pages: int = 0
         self.cat_sprites = {}
+        self.cat_chunks = []
 
+        self._chunk()
         self._display_cats()
 
     def update_display(self, current_page: int, cat_list: list):
@@ -771,28 +773,32 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         """
 
         self.current_page = current_page
-        self.cat_list = cat_list
+        if cat_list != self.cat_list:
+            self.cat_list = cat_list
+            self._chunk()
         self._display_cats()
 
-    def _display_cats(self):
-        """
-        creates the cat display
-        """
-        cat_chunks = [
+    def _chunk(self):
+        self.cat_chunks = [
             self.cat_list
             [x: x + self.cats_displayed]
             for x
             in range(0, len(self.cat_list), self.cats_displayed)
         ]
 
-        self.current_page = max(1, min(self.current_page, len(cat_chunks)))
+    def _display_cats(self):
+        """
+        creates the cat display
+        """
 
-        self._update_arrow_buttons(cat_chunks)
+        self.current_page = max(1, min(self.current_page, len(self.cat_chunks)))
+
+        self._update_arrow_buttons()
 
         display_cats = []
-        if cat_chunks:
-            self.total_pages = len(cat_chunks)
-            display_cats = cat_chunks[self.current_page - 1]
+        if self.cat_chunks:
+            self.total_pages = len(self.cat_chunks)
+            display_cats = self.cat_chunks[self.current_page - 1]
 
         for ele in self.cat_sprites:
             ele.kill()
@@ -818,23 +824,23 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
                 pos_x = self.px_between
                 pos_y += self.px_between
 
-    def _update_arrow_buttons(self, cat_chunks: list):
+    def _update_arrow_buttons(self):
         """
         enables/disables appropriate arrow buttons
         """
-        if len(cat_chunks) <= 1:
+        if len(self.cat_chunks) <= 1:
             self.prev_button.disable()
             self.next_button.disable()
             if self.first_button:
                 self.first_button.disable()
                 self.last_button.disable()
-        elif self.current_page >= len(cat_chunks):
+        elif self.current_page >= len(self.cat_chunks):
             self.prev_button.enable()
             self.next_button.disable()
             if self.first_button:
                 self.first_button.enable()
                 self.last_button.disable()
-        elif self.current_page == 1 and len(cat_chunks) > 1:
+        elif self.current_page == 1 and len(self.cat_chunks) > 1:
             self.prev_button.disable()
             self.next_button.enable()
             if self.first_button:
@@ -911,21 +917,14 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
         """
         creates the cat display
         """
-        cat_chunks = [
-            self.cat_list
-            [x: x + self.cats_displayed]
-            for x
-            in range(0, len(self.cat_list), self.cats_displayed)
-        ]
+        self.current_page = max(1, min(self.current_page, len(self.cat_chunks)))
 
-        self.current_page = max(1, min(self.current_page, len(cat_chunks)))
-
-        self._update_arrow_buttons(cat_chunks)
+        self._update_arrow_buttons()
 
         display_cats = []
-        if cat_chunks:
-            self.total_pages = len(cat_chunks)
-            display_cats = cat_chunks[self.current_page - 1]
+        if self.cat_chunks:
+            self.total_pages = len(self.cat_chunks)
+            display_cats = self.cat_chunks[self.current_page - 1]
 
         for ele in self.cat_sprites:
             self.cat_sprites[ele].kill()
