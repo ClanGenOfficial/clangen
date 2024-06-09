@@ -15,6 +15,7 @@ import ujson  # type: ignore
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
+from scripts.cat.nutrition import Nutrition
 from scripts.cat.pelts import Pelt
 from scripts.cat.skills import CatSkills
 from scripts.cat.thoughts import Thoughts
@@ -224,6 +225,8 @@ class Cat:
         self.permanent_condition = {}
         self.df = False
         self.experience_level = None
+
+        self.nutrition = Nutrition(status)
 
         # Various behavior toggles
         self.no_kits = False

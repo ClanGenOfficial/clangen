@@ -142,7 +142,7 @@ class FreshkillPile:
             :param list living_cats: list of living cats which should be fed
             :param additional_food_round: Whether this is a manual feeding from the freshkill pile, default False
         """
-        self.update_nutrition(living_cats)
+        Nutrition.update_nutrition(living_cats)
 
         # NOTE: this is for testing purposes
         if not game.clan:
@@ -151,19 +151,21 @@ class FreshkillPile:
 
         # NOTE: the tactics should have their own function for testing purposes
         if game.clan.clan_settings["younger first"]:
-            self.tactic_younger_first(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["moons", "id"])
         elif game.clan.clan_settings["less nutrition first"]:
-            self.tactic_less_nutrition_first(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["nutrition", "status", "moons", "id"])
         elif game.clan.clan_settings["more experience first"]:
-            self.tactic_more_experience_first(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["experience", "status", "moons", "id"])
         elif game.clan.clan_settings["hunter first"]:
-            self.tactic_hunter_first(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["hunter", "status", "moons", "id"])
         elif game.clan.clan_settings["sick/injured first"]:
-            self.tactic_sick_injured_first(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["sick", "status", "moons", "id"])
         elif game.clan.clan_settings["by-status"]:
-            self.tactic_status(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["status", "moons", "id"])
         else:
-            self.tactic_status(living_cats, additional_food_round)
+            clan_cats = self.sort_cats(living_cats, ["status", "moons", "id"])
+
+        self.feed_group(clan_cats, additional_food_round)
 
     def amount_food_needed(self):
         """Get the amount of freshkill the clan needs.
@@ -350,13 +352,13 @@ class FreshkillPile:
             cat : Cat
                 the cat to feed
             feeding_amount : int|float
-                the amount which will be consumed
+                Allocated amount of food
             needed_amount : int|float
-                the amount the cat actually needs for the moon
+                Amount cat needs to maintain nutrition level for this moon
         """
 
         ration = game.clan.clan_settings["ration prey"] if game.clan else False
-        remaining_amount = feeding_amount
+        remaining_amount = deepcopy(feeding_amount)
         amount_difference = needed_amount - feeding_amount
 
         remaining_amount = self.remove_freshkill(remaining_amount)
@@ -411,29 +413,30 @@ class FreshkillPile:
         if "pregnant" not in cat.injuries and cat.not_working():
             if game.clan and game.clan.game_mode == "cruel season":
                 feeding_amount += CONDITION_INCREASE
-            needed_amount = feeding_amount
+                needed_amount = feeding_amount
         else:
             if ration_prey and cat.status == "warrior":
                 feeding_amount = feeding_amount / 2
 
-        if self.nutrition_info[cat.ID].percentage > 99:
+        if cat.nutrition.percentage > 99:
+            if additional_food_round:
+                needed_amount = 0
             return feeding_amount, needed_amount
 
-        if self.total_amount * 2 > self.amount_food_needed():
+        if cat.nutrition.total_amount * 2 > self.amount_food_needed():
             feeding_amount += 2
 
-        if self.total_amount * 1.8 > self.amount_food_needed():
+        elif cat.nutrition.total_amount * 1.8 > self.amount_food_needed():
             feeding_amount += 1.5
 
-        elif self.total_amount * 1.2 > self.amount_food_needed():
+        elif cat.nutrition.total_amount * 1.2 > self.amount_food_needed():
             feeding_amount += 1
 
-        elif self.total_amount > self.amount_food_needed():
+        elif cat.nutrition.total_amount > self.amount_food_needed():
             feeding_amount += 0.5
 
         if additional_food_round:
             needed_amount = 0
-
         return feeding_amount, needed_amount
 
     @staticmethod
@@ -462,78 +465,114 @@ class FreshkillPile:
     #                              nutrition relevant                              #
     # ---------------------------------------------------------------------------- #
 
-    def update_nutrition(self, living_cats: list) -> None:
-        """
-        Handles increasing or decreasing the max score of their nutrition
-        depending on their age. Automatically removes irrelevant cats.
+    # def add_cat_to_nutrition(self, cat: Cat) -> None:
+    #     """
+    #     Parameters
+    #     ----------
+    #     cat : Cat
+    #         the cat, which should be added to the nutrition info
+    #     """
+    #     nutrition = Nutrition()
+    #     factor = 3
+    #     if str(cat.status) in ["newborn", "kitten", "elder"]:
+    #         factor = 2
+    #
+    #     queen_dict, kits = get_alive_clan_queens(self.living_cats)
+    #     prey_status = str(cat.status)
+    #     if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
+    #         prey_status = "queen/pregnant"
+    #     max_score = PREY_REQUIREMENT[prey_status] * factor
+    #     nutrition.max_score = max_score
+    #     nutrition.current_score = max_score
+    #
+    #     # adapt sickness (increase needed amount)
+    #     if (
+    #             "pregnant" not in cat.injuries
+    #             and cat.not_working()
+    #             and game.clan
+    #             and game.clan.game_mode == "cruel season"
+    #     ):
+    #         nutrition.max_score += CONDITION_INCREASE * factor
+    #         nutrition.current_score = nutrition.max_score
+    #
+    #     self.nutrition_info[cat.ID] = nutrition
 
-            Parameters
-            ----------
-            living_cats : list
-                the list of the current living cats, where the nutrition should be stored
-        """
-        old_nutrition_info = deepcopy(self.nutrition_info)
-        self.nutrition_info = {}
-        queen_dict, kits = get_alive_clan_queens(living_cats)
+    @staticmethod
+    def sort_cats(clan_cats: list, sort_order: list) -> list:
+        if sort_order is None:
+            sort_order = ["status", "moons"]
 
-        for cat in living_cats:
-            if str(cat.status) not in PREY_REQUIREMENT:
+        # invert the order of filters, so we can apply them in the right order
+        sort_order.reverse()
+
+        output = deepcopy(clan_cats)
+
+        for sort in sort_order:
+            if sort == "status":
+                output.sort(key=lambda cat: FEEDING_ORDER.index(cat.status))
+            elif sort == "moons":
+                output.sort(key=lambda cat: cat.moons)
+            elif sort == "nutrition":
+                output.sort(key=lambda cat: cat.nutrition.percentage)
                 continue
-            # update the nutrition_info
-            if cat.ID in old_nutrition_info:
-                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
-                factor = 3
-                status_ = str(cat.status)
-                if str(cat.status) in ["newborn", "kitten"] or (
-                        cat.moons > 114 and str(cat.status) == "elder"
-                ):
-                    factor = 2
-                if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
-                    status_ = "queen/pregnant"
-
-                # check if the max_score is correct, otherwise update
-                required_max = PREY_REQUIREMENT[status_] * factor
-                current_score = self.nutrition_info[cat.ID].current_score
-                if self.nutrition_info[cat.ID].max_score != required_max:
-                    previous_max = self.nutrition_info[cat.ID].max_score
-                    self.nutrition_info[cat.ID].max_score = required_max
-                    self.nutrition_info[cat.ID].current_score = (
-                            current_score / previous_max * required_max
-                    )
+            elif sort == "experience":
+                output.sort(key=lambda cat: cat.experience, reverse=True)
+                continue
+            elif sort == "hunter":
+                output.sort(key=lambda cat: FreshkillPile.sort_hunter(cat), reverse=True)
+                continue
+            elif sort == "sick":
+                output.sort(key=lambda cat: FreshkillPile.sort_sick(cat), reverse=True)
+                continue
+            elif sort == "id":
+                output.sort(key=lambda cat: int(cat.ID))
+                continue
             else:
-                self.add_cat_to_nutrition(cat)
+                continue
+        return output
 
-    def add_cat_to_nutrition(self, cat: Cat) -> None:
-        """
-        Parameters
-        ----------
-        cat : Cat
-            the cat, which should be added to the nutrition info
-        """
-        nutrition = Nutrition()
-        factor = 3
-        if str(cat.status) in ["newborn", "kitten", "elder"]:
-            factor = 2
-
-        queen_dict, kits = get_alive_clan_queens(self.living_cats)
-        prey_status = str(cat.status)
-        if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
-            prey_status = "queen/pregnant"
-        max_score = PREY_REQUIREMENT[prey_status] * factor
-        nutrition.max_score = max_score
-        nutrition.current_score = max_score
-
-        # adapt sickness (increase needed amount)
-        if (
-                "pregnant" not in cat.injuries
-                and cat.not_working()
-                and game.clan
-                and game.clan.game_mode == "cruel season"
+    @staticmethod
+    def sort_hunter(cat):
+        if not cat.skills:
+            return 0
+        if (cat.skills.primary and
+                cat.skills.primary.path == SkillPath.HUNTER
         ):
-            nutrition.max_score += CONDITION_INCREASE * factor
-            nutrition.current_score = nutrition.max_score
+            return cat.skills.primary.tier
+        elif (cat.skills.secondary and
+              cat.skills.secondary.path == SkillPath.HUNTER
+        ):
+            return cat.skills.secondary.tier
+        else:
+            return 0
 
-        self.nutrition_info[cat.ID] = nutrition
+    @classmethod
+    def sort_sick(cls, cat):
+        """If a cat is unfortunate enough to be riddled with multiple things, their priority will be higher."""
+        priority = 0
+        if len(cat.injuries) > 0:
+            for injury in cat.injuries.values():
+                priority += cls.sick_priority(injury)
+        # elif len(cat.injuries) == 1:
+        #     priority += cls.sick_priority(cat.injuries)
+
+        if len(cat.illnesses) > 0:
+            for illness in cat.illnesses.values():
+                priority += cls.sick_priority(illness)
+        # elif len(cat.illnesses) == 1:
+        #     priority += cls.sick_priority(cat.illnesses[1])
+
+        return priority
+
+    @staticmethod
+    def sick_priority(ailment) -> int:
+        if ailment["severity"] == "major":
+            priority = 2
+        elif ailment["severity"] == "minor":
+            priority = 1
+        else:
+            priority = 0
+        return priority
 
 
 # ---------------------------------------------------------------------------- #

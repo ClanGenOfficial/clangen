@@ -1,22 +1,52 @@
+from copy import deepcopy
+
 from scripts.game_structure.game_essentials import game
+from scripts.utility import get_alive_clan_queens
 
 
 class Nutrition:
     """All the information about nutrition from one cat."""
 
-    def __init__(self) -> None:
+    def __init__(self, status="warrior") -> None:
         """Initialize the class."""
-        self.max_score = 1
-        self.current_score = 0
+
+        self._max_score = 1
+        self._current_score = 1
+        self.max_score = status
 
     def __str__(self):
         this_is_a_dict_not_a_string = {
-            "max_score": self.max_score,
+            "max_score": self._max_score,
             "current_score": self.current_score,
             "percentage": self.percentage,
             "nutrition_text": self.nutrition_text,
         }
         return str(this_is_a_dict_not_a_string)
+
+    @property
+    def max_score(self):
+        return self._max_score
+
+    @max_score.setter
+    def max_score(self, status):
+        if status not in PREY_REQUIREMENT:
+            print(f"Status {status} is not in prey requirement index! Setting max_score to 1")
+            self._max_score = 1
+
+        base_size = 3
+        if status in ["newborn", "kitten", "elder"]:
+            # todo: this is missing the nuance of the original
+            #  which specified age in moons as well for elder
+            base_size = 2
+
+        required_max = PREY_REQUIREMENT[status] * base_size
+
+        if self.max_score and required_max != self.max_score:
+            prev_max = self._max_score
+            self._max_score = required_max
+            self.current_score = (
+                    (self.current_score / prev_max) * required_max
+            )
 
     @property
     def current_score(self):
@@ -38,6 +68,10 @@ class Nutrition:
     def percentage(self):
         return self._current_score / self.max_score * 100
 
+    @percentage.setter
+    def percentage(self, val):
+        self._current_score = (val / 100) * self.max_score
+
     @property
     def nutrition_text(self):
         text_config = game.prey_config["text_nutrition"]
@@ -50,3 +84,51 @@ class Nutrition:
     @property
     def is_low_nutrition(self):
         return self.percentage < 100
+
+    @staticmethod
+    def is_pregnant_nursing_or_nursing_kit(cat_id, cat_injuries, cat_list):
+        """True if cat is pregnant, nursing or a kit that is nursing"""
+        queen_dict, kits = get_alive_clan_queens(cat_list)
+
+        # TODO: this isn't in the original
+        #  and I'm not sure how we store gender following the update, but
+        #  but I've had incidents where a cis male is given the pregnancy bonus
+        #  It's hard to notice if you're not looking for it.
+        # if cat.gender == "male":
+        #     return
+
+        if "pregnant" in cat_injuries:
+            return True
+
+        # Nursing queens & associated kits
+        for queen_id, their_kits in queen_dict.items():
+            young_kits = [kit.ID for kit in their_kits if kit.moons < 3]
+            if len(young_kits) == 0 and queen_id == cat_id:
+                return False
+            elif len(young_kits) == 0:
+                continue
+
+            for key in young_kits:
+                if key == cat_id:
+                    return True
+            continue
+
+    @staticmethod
+    def update_nutrition(living_cats: list) -> None:
+        """
+        Handles increasing or decreasing the max score of their nutrition
+        depending on their age. Automatically removes irrelevant cats.
+        """
+        queen_dict, kits = get_alive_clan_queens(living_cats)
+
+        for cat in living_cats:
+            if str(cat.status) not in PREY_REQUIREMENT:
+                continue
+            status_ = deepcopy(cat.status)
+            if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
+                status_ = "queen/pregnant"
+
+            cat.nutrition.max_score = status_
+
+
+PREY_REQUIREMENT = game.prey_config["prey_requirement"]
