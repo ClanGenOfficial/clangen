@@ -37,19 +37,13 @@ class Freshkill_Events:
         if not FRESHKILL_ACTIVE:
             return
 
-        if cat.ID not in nutrition_info.keys():
-            print(
-                f"WARNING: Could not find cat with ID {cat.ID}({cat.name}) in the nutrition information."
-            )
-            return
-
         # get all events for a certain status of a cat
-        cat_nutrition = nutrition_info[cat.ID]
+        cat_nutrition = cat.nutrition
         possible_events = GenerateEvents.possible_short_events(
             cat.status, cat.age, "nutrition"
         )
 
-        # get the other needed information and values to create a event
+        # get the other needed information and values to create an event
         possible_other_cats = [
             i
             for i in Cat.all_cats.values()
@@ -72,7 +66,7 @@ class Freshkill_Events:
 
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
-            # this statement above will prevent, that a dead cat will get an illness
+            # this statement above will prevent a dead cat getting an illness
             final_events = Freshkill_Events.get_filtered_possibilities(
                 possible_events, ["death"], cat, other_cat
             )
