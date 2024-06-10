@@ -8,7 +8,6 @@ TODO: Docs
 
 import random
 # pylint: enable=line-too-long
-import re
 import traceback
 from collections import Counter
 
@@ -110,7 +109,6 @@ class Events:
             game.clan.freshkill_pile.time_skip(relevant_cats, game.freshkill_event_list)
             # get the moonskip freshkill
             self.get_moon_freshkill()
-
 
         # checking if a lost cat returns on their own
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
@@ -1967,7 +1965,7 @@ class Events:
             if cat.experience > cat.experience_levels_range["trainee"][1]:
                 return
 
-            if cat.status == "medicine cat apprentice":
+            if cat.status.is_medcat_app():
                 ran = game.config["graduation"]["base_med_app_timeskip_ex"]
             else:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
@@ -2036,7 +2034,6 @@ class Events:
         # choose other cat
         random_cat = get_random_moon_cat(Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True)
 
-
         if (
                 not int(random.random() * chance)
                 and cat.age != "kitten"
@@ -2075,7 +2072,7 @@ class Events:
 
         # chance to kill leader: 1/50 by default
         if not int(random.random() * game.get_config_value("death_related", "leader_death_chance")) \
-                and cat.status == 'leader' \
+                and cat.status.is_leader() \
                 and not cat.not_working():
             handle_short_events.handle_event(event_type="birth_death",
                                              main_cat=cat,
@@ -2235,7 +2232,7 @@ class Events:
             # little Easter egg just for fun
             if (
                     cat.personality.trait == "ambitious"
-                    and Cat.fetch_cat(chosen_target.cat_to).status == Status.LEADER
+                    and Cat.fetch_cat(chosen_target.cat_to).status.is_leader()
             ):
                 kill_chance -= 10
 
@@ -2481,7 +2478,7 @@ class Events:
                 not game.clan.deputy
                 or game.clan.deputy.dead
                 or game.clan.deputy.outside
-                or game.clan.deputy.status == Status.ELDER
+                or game.clan.deputy.status.is_elder()
         ):
             if game.clan.clan_settings.get("deputy"):
 

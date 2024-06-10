@@ -1068,7 +1068,7 @@ class KillCat(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status == "leader":
+        if self.the_cat.status.is_leader():
             self.done_button = UIImageButton(
                 scale(pygame.Rect((695, 305), (154, 60))),
                 "",
@@ -1177,7 +1177,7 @@ class KillCat(UIWindow):
                     "",
                     self.death_entry_box.get_text(),
                 )
-                if self.the_cat.status == "leader":
+                if self.the_cat.status.is_leader():
 
                     if death_message.startswith("was"):
                         death_message = death_message.replace(
