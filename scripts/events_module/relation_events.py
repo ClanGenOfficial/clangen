@@ -144,7 +144,7 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
-        same_age_cats = get_cats_same_age(cat, game.config["mates"]["age_range"])
+        same_age_cats = get_cats_same_age(Cat, cat, game.config["mates"]["age_range"])
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if (
@@ -221,7 +221,7 @@ class Relation_Events:
             return
 
         for new_cat in new_cats:
-            same_age_cats = get_cats_same_age(new_cat)
+            same_age_cats = get_cats_same_age(Cat, new_cat)
             alive_cats = [
                 i for i in new_cat.all_cats.values() if not i.dead and not i.outside
             ]
@@ -229,7 +229,7 @@ class Relation_Events:
 
             if len(alive_cats) == 0:
                 return
-            elif len(same_age_cats) < number and len(same_age_cats) > 0:
+            elif number > len(same_age_cats) > 0:
                 for age_cat in same_age_cats:
                     Welcoming_Events.welcome_cat(age_cat, new_cat)
 
