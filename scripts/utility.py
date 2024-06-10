@@ -2403,6 +2403,10 @@ def generate_sprite(
             tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
             tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+        if cat.pelt.tint != "none" and cat.pelt.tint in sprites.cat_tints["dilute_tint_colours"]:
+            tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+            tint.fill(tuple(sprites.cat_tints["dilute_tint_colours"][cat.pelt.tint]))
+            new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_ADD)
 
         # draw white patches
         if cat.pelt.white_patches is not None:
