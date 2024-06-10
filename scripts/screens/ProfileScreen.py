@@ -2150,9 +2150,7 @@ class ProfileScreen(Screens):
         elif self.open_tab == "relations":
             if self.the_cat.dead:
                 self.change_adoptive_parent_button.disable()
-                if game.clan.clan_settings["dead_relations"]:
-                    pass
-                else:
+                if not game.clan.clan_settings["dead_relations"]:
                     self.see_relationships_button.disable()
             else:
                 self.see_relationships_button.enable()
