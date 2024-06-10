@@ -135,6 +135,7 @@ class Game:
         "skip_conditions": [],
         "show_history_moons": False,
         "fps": 30,
+        "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
     }
     all_screens = {}

@@ -307,7 +307,6 @@ class GroupEvents:
             the amount of cats for the current interaction
         interact_cats : list
             a list of cats, which are open to interact with the main cat
-        cat_abbreviations_counter: dict
         """
         cat_abbreviations_counter = {}
         possibilities = {}
@@ -586,12 +585,14 @@ class GroupEvents:
             platonic = amount if dictionary["jealousy"] == "increase" else amount * -1
         if "trust" in dictionary and dictionary["trust"] != "neutral":
             platonic = amount if dictionary["trust"] == "increase" else amount * -1
+        abbreviations_cat = []
 
-        for inter_cat_id in abbreviations_cat_id.values():
-            inter_cat = Cat.all_cats[inter_cat_id]
+        for cat in abbreviations_cat_id:
+            abbreviations_cat.append(Cat.fetch_cat(cat))
+        for inter_cat in abbreviations_cat:
             change_relationship_values(
                 cats_from=[inter_cat],
-                cats_to=list(abbreviations_cat_id.values()),
+                cats_to=list(abbreviations_cat),
                 romantic_love=romantic,
                 platonic_like=platonic,
                 dislike=dislike,
@@ -618,6 +619,7 @@ class GroupEvents:
             cat_from_id = abbreviations_cat_id[abbre_from]
             cat_to_id = abbreviations_cat_id[abbre_to]
             cat_from = Cat.all_cats[cat_from_id]
+            cat_to = Cat.all_cats[cat_to_id]
 
             # set all values to influence the relationship
             romantic = 0
@@ -654,7 +656,7 @@ class GroupEvents:
 
             change_relationship_values(
                 cats_from=[cat_from],
-                cats_to=[cat_to_id],
+                cats_to=[cat_to],
                 romantic_love=romantic,
                 platonic_like=platonic,
                 dislike=dislike,
