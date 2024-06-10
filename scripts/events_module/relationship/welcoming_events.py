@@ -53,13 +53,13 @@ class Welcoming_Events:
         interaction_str = choice(random_interaction.interactions)
 
         # prepare string for display
-        interaction_str = event_text_adjust(Cat, interaction_str, clan_cat, new_cat)
+        interaction_str = event_text_adjust(Cat, interaction_str, main_cat=clan_cat, random_cat=new_cat)
 
         # influence the relationship
         new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
         clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
         change_relationship_values(
-            cats_to=[clan_cat.ID],
+            cats_to=[clan_cat],
             cats_from=[new_cat],
             romantic_love=new_to_clan_cat["romantic"],
             platonic_like=new_to_clan_cat["platonic"],
@@ -67,10 +67,10 @@ class Welcoming_Events:
             admiration=new_to_clan_cat["admiration"],
             comfortable=new_to_clan_cat["comfortable"],
             jealousy=new_to_clan_cat["jealousy"],
-            trust=new_to_clan_cat["trust"],
+            trust=new_to_clan_cat["trust"]
         )
         change_relationship_values(
-            cats_to=[new_cat.ID],
+            cats_to=[new_cat],
             cats_from=[clan_cat],
             romantic_love=clan_cat_to_new["romantic"],
             platonic_like=clan_cat_to_new["platonic"],
@@ -78,7 +78,7 @@ class Welcoming_Events:
             admiration=clan_cat_to_new["admiration"],
             comfortable=clan_cat_to_new["comfortable"],
             jealousy=clan_cat_to_new["jealousy"],
-            trust=clan_cat_to_new["trust"],
+            trust=clan_cat_to_new["trust"]
         )
 
         # add it to the event list

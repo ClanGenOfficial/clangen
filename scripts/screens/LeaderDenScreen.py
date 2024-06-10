@@ -15,7 +15,7 @@ from scripts.utility import (
     get_other_clan,
     clan_symbol_sprite,
     shorten_text_to_fit,
-    get_med_cats,
+    get_alive_status_cats,
     get_living_clan_cat_count,
 )
 
@@ -184,7 +184,7 @@ class LeaderDenScreen(Screens):
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
-                meds = get_med_cats(Cat)
+                meds = get_alive_status_cats(Cat, get_status=["medicine cat", "medicine cat apprentice"], working=True, sort=True)
                 if meds:
                     self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps
