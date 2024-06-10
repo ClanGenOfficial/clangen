@@ -79,9 +79,21 @@ class Age(StrEnum):
                     return Age[key_age.name]
 
     @staticmethod
-    def get_random_moons_for_age(age) -> int:
-        age_moon = AgeMoonsRange[age.name]
-        return randint(age_moon.value[0], age_moon.value[1])
+    def get_random_moons_for_age(age, end_age=None) -> int:
+        """Returns a random moons value for the given age.
+
+        If just `age` is supplied, the range is that age range.
+        If both are supplied, the range is `age`'s min and `end_age`'s max
+
+        :param Age age: The age whose range to get (max overridden by end_age if applicable)
+        :param Age end_age: The age whose maximum value to take, default None"""
+        start = AgeMoonsRange[age.name].value[0]
+        if end_age is not None:
+            end = AgeMoonsRange[end_age.name]
+        else:
+            end = AgeMoonsRange[age.name].value[1]
+
+        return randint(start, end)
 
     @classmethod
     def list(cls):

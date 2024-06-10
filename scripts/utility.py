@@ -407,11 +407,11 @@ def create_new_cat_block(
 
     if status and not moons:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
-            moons = randint(Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1])
+            moons = Age.get_random_moons_for_age(Age.ADOLESCENT)
         elif status in ["warrior", "mediator", "medicine cat"]:
-            moons = randint(Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1])
+            moons = Age.get_random_moons_for_age(Age.YOUNGADULT, Age.SENIORADULT)
         elif status == "elder":
-            moons = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
+            moons = Age.get_random_moons_for_age(Age.SENIOR)
 
     if "kittypet" in attribute_list:
         cat_type = "kittypet"
