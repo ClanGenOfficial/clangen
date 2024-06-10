@@ -544,7 +544,7 @@ class Cat:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
-                final_thought = event_text_adjust(self, death_thought, self)
+                final_thought = event_text_adjust(self, death_thought, main_cat=self)
                 self.thought = final_thought
                 return ""
             elif game.clan.leader_lives <= 0:
@@ -552,7 +552,7 @@ class Cat:
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
                 death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
-                final_thought = event_text_adjust(self, death_thought, self)
+                final_thought = event_text_adjust(self, death_thought, main_cat=self)
                 self.thought = final_thought
                 if game.clan.instructor.df is False:
                     text = (
@@ -564,7 +564,7 @@ class Cat:
             self.dead = True
             game.just_died.append(self.ID)
             death_thought = Thoughts.new_death_thought(self, darkforest, isoutside)
-            final_thought = event_text_adjust(self, death_thought, self)
+            final_thought = event_text_adjust(self, death_thought, main_cat=self)
             self.thought = final_thought
 
 

@@ -339,7 +339,11 @@ class Thoughts:
         return created_list
     
     def leader_death_thought(self, lives_left, darkforest):
-        #loading the special leader death thoughts, since they function differently than regular ones
+        """
+        Load the special leader death thoughts, since they function differently than regular ones
+        :param lives_left: How many lives the leader has left - used to determine if they actually die or not
+        :param darkforest: Whether or not dead cats go to StarClan (false) or the DF (true)
+        """
         base_path = f"resources/dicts/thoughts/ondeath"
         if darkforest is False:
             spec_dir = "/starclan"
