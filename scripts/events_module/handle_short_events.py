@@ -682,7 +682,7 @@ class HandleShortEvents():
             elif adjustment == "reduce_eighth":
                 herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 8)
             elif "increase" in adjustment:
-                herbs[self.chosen_herb] += adjustment.split("_")[1]
+                herbs[self.chosen_herb] += int(adjustment.split("_")[1])
 
         if not self.chosen_herb:
             self.chosen_herb = random.choice(list(herbs.keys()))

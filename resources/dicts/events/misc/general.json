@@ -2564,7 +2564,7 @@
         "trigger": [
           "low"
         ],
-        "amount": "increase_5"
+        "adjust": "increase_5"
       }
     ]
   },
