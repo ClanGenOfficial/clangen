@@ -1935,6 +1935,7 @@
                 "art": "gen_happy_cat2",
                 "other_clan_rep": 2,
                 "relationships":
+				[
                 {
                     "cats_to": [ "app1" ],
                     "cats_from": [ "patrol" ],
@@ -1942,6 +1943,7 @@
                     "values": [ "platonic", "trust", "respect" ],
                     "amount": 10
                 }
+				]
             },
             {
                 "text": "app1 watches the other apprentice from across the border as the two patrols get on with marking their side of the border in silence. Every so often, app1 looks up and catches the other apprentice's eye; would they have been friends, if they were born in the same Clan? The patrol passes without incident, and app1 can't help casting a look back at the border as {PRONOUN/app1/subject} {VERB/app1/leave/leaves}.",
