@@ -398,7 +398,7 @@ def create_new_cat_block(
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
-            moons = get_random_moons_for_age()
+            moons = get_random_moons_for_age(give_mates[0].age)
             break
 
         if match.group(1) == "has_kits":
