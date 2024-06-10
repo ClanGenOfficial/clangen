@@ -1229,6 +1229,7 @@ class UpdateWindow(UIWindow):
             scale(pygame.Rect((40, 20), (520, -1))),
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
+            starting_height=4,
             container=self,
         )
         self.announce_restart_callback = announce_restart_callback
