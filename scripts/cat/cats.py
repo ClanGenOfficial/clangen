@@ -3693,40 +3693,39 @@ class Personality:
             # This will only trigger if they have the same personality.
             return None
 
+# Creates a random cat
+def create_cat(status, moons=None, biome=None):
+    new_cat = Cat(status=status, biome=biome)
+    
+    if moons is not None:
+        new_cat.moons = moons
+    else:
+        if new_cat.moons >= 160:
+            new_cat.moons = choice(range(120, 155))
+        elif new_cat.moons == 0:
+            new_cat.moons = choice([1, 2, 3, 4, 5])
+    
+    not_allowed_scars = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
+                         'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
+    
+    for scar in new_cat.pelt.scars:
+        if scar in not_allowed_scars:
+            new_cat.pelt.scars.remove(scar)
+    
+    return new_cat
+
+
 
 # Twelve example cats
 def create_example_cats():
-    e = sample(range(12), 3)
-    not_allowed = [
-        "NOPAW",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOEAR",
-        "BOTHBLIND",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BRIGHTHEART",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "MANLEG",
-    ]
-    for a in range(12):
-        if a in e:
-            game.choose_cats[a] = Cat(status="warrior", biome=None)
+    warrior_indices = sample(range(12), 3)
+    
+    for cat_index in range(12):
+        if cat_index in warrior_indices:
+            game.choose_cats[cat_index] = create_cat(status='warrior')
         else:
-            game.choose_cats[a] = Cat(
-                status=choice(["kitten", "apprentice", "warrior", "warrior", "elder"]),
-                biome=None,
-            )
-        if game.choose_cats[a].moons >= 160:
-            game.choose_cats[a].moons = choice(range(120, 155))
-        elif game.choose_cats[a].moons == 0:
-            game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
-        for scar in game.choose_cats[a].pelt.scars:
-            if scar in not_allowed:
-                game.choose_cats[a].pelt.scars.remove(scar)
-
-        # update_sprite(game.choose_cats[a])
+            random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
+            game.choose_cats[cat_index] = create_cat(status=random_status)
 
 
 # CAT CLASS ITEMS
