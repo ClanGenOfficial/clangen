@@ -627,7 +627,7 @@ class RelationshipScreen(Screens):
             if self.inspect_cat.dead:
                 self.view_profile_button.enable()
                 self.switch_focus_button.disable()
-                self.log_icon.disable()
+                self.log_icon.enable()
             else:
                 self.view_profile_button.enable()
                 self.switch_focus_button.enable()

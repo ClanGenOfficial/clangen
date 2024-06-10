@@ -33,7 +33,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
-    get_med_cats,
+    get_alive_status_cats,
     get_personality_compatibility,
     event_text_adjust,
     update_sprite,
@@ -172,6 +172,7 @@ class Cat:
         """
 
         self.history = None
+
         if (
             faded
         ):  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
@@ -229,6 +230,7 @@ class Cat:
         self.no_kits = False
         self.no_mates = False
         self.no_retire = False
+
         self.prevent_fading = False  # Prevents a cat from fading
 
         self.faded_offspring = (
@@ -254,7 +256,7 @@ class Cat:
             else:
                 faded_cats = []
 
-            while potential_id in [self.all_cats, faded_cats]:
+            while potential_id in self.all_cats or potential_id in faded_cats:
                 potential_id = str(next(Cat.id_iter))
             self.ID = potential_id
         else:
@@ -517,8 +519,6 @@ class Cat:
         body - defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
-
-        May return some additional text to add to the death event.
         """
         if (
             self.status == "leader"
@@ -526,6 +526,7 @@ class Cat:
             and game.clan.leader_lives > 0
         ):
             self.illnesses.clear()
+
             self.injuries = {
                 key: value
                 for (key, value) in self.injuries.items()
@@ -594,7 +595,7 @@ class Cat:
             )
             game.clan.add_to_unknown(self)
 
-        return text
+        return
 
     def exile(self):
         """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
@@ -623,6 +624,7 @@ class Cat:
 
         # Keep track is the body was treated with rosemary.
         body_treated = False
+        text = None
 
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
@@ -703,7 +705,7 @@ class Cat:
 
                 text = choice(possible_strings)
                 text += " " + choice(MINOR_MAJOR_REACTION["major"])
-                text = event_text_adjust(Cat, text, self, cat)
+                text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
                 # grief the cat
                 if game.clan.game_mode != "classic":
@@ -765,7 +767,7 @@ class Cat:
                         )
                     )
 
-                text = event_text_adjust(Cat, choice(possible_strings), self, cat)
+                text = event_text_adjust(Cat, choice(possible_strings), main_cat=self, random_cat=cat)
                 if cat.ID not in Cat.grief_strings:
                     Cat.grief_strings[cat.ID] = []
 
@@ -1557,7 +1559,7 @@ class Cat:
             self, other_cat, game_mode, biome, season, camp
         )
 
-        chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
+        chosen_thought = event_text_adjust(Cat, chosen_thought, main_cat=self, random_cat=other_cat, clan=game.clan)
 
         # insert thought
         self.thought = str(chosen_thought)
@@ -1611,24 +1613,7 @@ class Cat:
             if self.status == "leader":
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
-                if game.clan.leader_lives > 0:
-                    text = f"{self.name} lost a life to {illness}."
-                    # game.health_events_list.append(text)
-                    # game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(
-                        Single_Event(
-                            text, ["birth_death", "health"], game.clan.leader.ID
-                        )
-                    )
-                elif game.clan.leader_lives <= 0:
-                    text = f"{self.name} lost their last life to {illness}."
-                    # game.health_events_list.append(text)
-                    # game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(
-                        Single_Event(
-                            text, ["birth_death", "health"], game.clan.leader.ID
-                        )
-                    )
+
             self.die()
             return False
 
@@ -1967,7 +1952,7 @@ class Cat:
 
         if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
-            if "blood loss" in new_injury.also_got and len(get_med_cats(Cat)) != 0:
+            if "blood loss" in new_injury.also_got and len(get_alive_status_cats(Cat, ["medicine cat"], working=True)) != 0:
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -2118,6 +2103,7 @@ class Cat:
         ]
         if "starving" in non_minor_illnesses and len(non_minor_illnesses) == 1:
             return True
+
         return False
 
     def retire_cat(self):
@@ -2472,6 +2458,7 @@ class Cat:
 
         # If only deal with relationships if this is a breakup.
         if breakup:
+            self_relationship = None
             if not self.dead:
                 if other_cat.ID not in self.relationships:
                     self.create_one_relationship(other_cat)
@@ -3115,6 +3102,11 @@ class Cat:
     @staticmethod
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else."""
+
+        # just preventing any attempts to load something that isn't a cat ID
+        if not cat.isdigit():
+            return
+
         try:
             clan = (
                 game.switches["clan_list"][0] if game.clan is None else game.clan.name
@@ -3127,6 +3119,7 @@ class Cat:
             ) as read_file:
                 cat_info = ujson.loads(read_file.read())
                 # If loading cats is attempted before the Clan is loaded, we would need to use this.
+
         except (
             AttributeError
         ):  # NOPE, cats are always loaded before the Clan, so doesn't make sense to throw an error
