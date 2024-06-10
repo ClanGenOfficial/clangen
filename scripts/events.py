@@ -1434,7 +1434,7 @@ class Events:
                     self.ceremony(cat, "elder")
 
             # apprentice a kitten to either med or warrior
-            if cat.moons == AgeMoonsRange.get_adolescence_start():
+            if cat.moons == get_adolescence_start():
                 if cat.status == "kitten":
                     med_cat_list = [
                         i

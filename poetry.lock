@@ -1191,4 +1191,4 @@ discord = ["pypresence"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.13"
-content-hash = "881db23f9d4e724a59122a7cca58d453c3e44d6cb82845757d4ef6746b23c066"
+content-hash = "072b83786f0f913e4282ef6923cefd01815e5bc96da34509c4570172f7125957"

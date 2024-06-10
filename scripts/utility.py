@@ -16,7 +16,7 @@ from typing import List
 import pygame
 import ujson
 
-from scripts.cat.enums.age import Age
+from scripts.cat.enums.age import Age, AgeMoonsRange
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -386,33 +386,32 @@ def create_new_cat_block(
             break
 
     # SET AGE
-    age = None
+    moons = None
     for _tag in attribute_list:
         match = re.match(r"age:(.+)", _tag)
         if not match:
             continue
 
-        if match.group(1) in Cat.age_moons:
-            age = randint(Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1])
+        if match.group(1) in Age:
+            moons = Age.get_random_moons_for_age(Age(match.group(1)))
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
-            age = randint(Cat.age_moons[give_mates[0].age][0],
-                          Cat.age_moons[give_mates[0].age][1])
+            moons = Age.get_random_moons_for_age(give_mates[0].age)
             break
 
         if match.group(1) == "has_kits":
-            age = randint(19, 120)
+            moons = randint(19, 120)
             break
 
-    if status and not age:
+    if status and not moons:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
-            age = randint(Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1])
+            moons = randint(Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1])
         elif status in ["warrior", "mediator", "medicine cat"]:
-            age = randint(Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1])
+            moons = randint(Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1])
         elif status == "elder":
-            age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
+            moons = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
 
     if "kittypet" in attribute_list:
         cat_type = "kittypet"
@@ -489,7 +488,7 @@ def create_new_cat_block(
                 continue
             if gender and gender != cat.gender:
                 continue
-            if age and age not in Cat.age_moons[cat.age]:
+            if moons and moons not in AgeMoonsRange[cat.age]:
                 continue
             possible_outsiders.append(cat)
 
@@ -542,7 +541,7 @@ def create_new_cat_block(
                                   litter=litter,
                                   backstory=chosen_backstory,
                                   status=status,
-                                  age=age,
+                                  moons=moons,
                                   gender=gender,
                                   thought=thought,
                                   alive=alive,

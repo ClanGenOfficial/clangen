@@ -102,9 +102,5 @@ class AgeMoonsRange(Enum):
         return self.value[item]
 
     @staticmethod
-    def get_adolescence_start():
-        return AgeMoonsRange.ADOLESCENT[0]
-
-    @staticmethod
-    def get_adolescence_end():
-        return AgeMoonsRange.ADOLESCENT[1]
+    def breeding_age_range():
+        return [AgeMoonsRange.ADOLESCENT[0], AgeMoonsRange.SENIOR[1]]
