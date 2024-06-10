@@ -117,6 +117,11 @@
             "Allow first cousins to be mates and have romantic interactions",
             "Allows cats with the same grandparents but different parents to become mates.",
             false
+        ],
+        "dead_relations": [
+            "Save dead cats' relationships",
+            "Allow dead cats to retain their relationship information. May cause lag on large saves.",
+            false
         ]
     },
     "freshkill_tactics":{
