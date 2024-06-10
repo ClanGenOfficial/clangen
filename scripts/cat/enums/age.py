@@ -101,7 +101,7 @@ def get_age_from_moons(moons):
                 return Age[key_age.name]
 
 
-def get_random_moons_for_age(age: Age | str, end_age: Age | str = None) -> int:
+def get_random_moons_for_age(age, end_age=None) -> int:
     """Returns a random moons value for the given age.
 
     If just `age` is supplied, the range is that age range.
