@@ -1223,12 +1223,13 @@ class UpdateWindow(UIWindow):
             object_id="#game_over_window",
             resizable=False,
         )
+        self.set_blocking(True)
         self.last_screen = last_screen
-        self.update_message = UITextBoxTweaked(
+        self.update_message = pygame_gui.elements.UITextBox(
             f"Update in progress.",
             scale(pygame.Rect((40, 20), (520, -1))),
-            line_spacing=1,
-            object_id="#text_box_30_horizcenter",
+            object_id="#text_box_30_horizcenter_spacing_95",
+            starting_height=4,
             container=self,
         )
         self.announce_restart_callback = announce_restart_callback
@@ -1450,7 +1451,9 @@ class ChangelogPopup(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
+
         game.switches["window_open"] = True
+
         self.last_screen = last_screen
         self.changelog_popup_title = UITextBoxTweaked(
             f"<strong>What's New</strong>",
@@ -1468,13 +1471,6 @@ class ChangelogPopup(UIWindow):
             line_spacing=1,
             object_id="#changelog_popup_subtitle",
             container=self,
-        )
-
-        self.scrolling_container = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((20, 130), (960, 650))),
-            allow_scroll_x=False,
-            container=self,
-            manager=MANAGER,
         )
 
         dynamic_changelog = False
