@@ -2558,11 +2558,15 @@
       "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"]
     },
-    "supplies": {
-      "type": "any_herb",
-      "trigger": ["low"],
-      "amount": "increase_5"
-    }
+    "supplies": [
+      {
+        "type": "any_herb",
+        "trigger": [
+          "low"
+        ],
+        "amount": "increase_5"
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_medicinecatmedcatapp1",
