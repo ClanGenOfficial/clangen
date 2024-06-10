@@ -257,7 +257,7 @@
 		]
 	},
 	"event_generation": {
-		"debug_ensure_event_id": "gen_death_border_any1"
+		"debug_ensure_event_id": null
 	},
 	"death_related": {
 		"leader_death_chance": 50,
