@@ -1224,11 +1224,10 @@ class UpdateWindow(UIWindow):
             resizable=False,
         )
         self.last_screen = last_screen
-        self.update_message = UITextBoxTweaked(
+        self.update_message = pygame_gui.elements.UITextBox(
             f"Update in progress.",
             scale(pygame.Rect((40, 20), (520, -1))),
-            line_spacing=1,
-            object_id="#text_box_30_horizcenter",
+            object_id="#text_box_30_horizcenter_spacing_95",
             starting_height=4,
             container=self,
         )
