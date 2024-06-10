@@ -25,10 +25,16 @@
       "new_thought": "Heard rumors that their old Clan was hunting for them",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": 15
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["platonic"],
           "amount": -5
         }
@@ -45,6 +51,9 @@
       "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": 20
         }
@@ -61,10 +70,16 @@
       "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": 20
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["platonic"],
           "amount": -10
         }
@@ -81,6 +96,9 @@
       "new_thought": "Heard rumors that a Clan was looking for them",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": 5
         }
@@ -90,13 +108,16 @@
   {
     "interaction_type": "drive",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
-    "reputation": ["any", "lost"],
+    "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
-      "status": ["exiled"],
+      "status": ["exiled", "lost"],
       "new_thought": "Heard rumors that their old Clan wants them gone",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": 5
         }
@@ -110,13 +131,7 @@
     "rep_change": 1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was searching for them",
-      "relationships": [
-        {
-          "values": ["dislike"],
-          "amount": 20
-        }
-      ]
+      "new_thought": "Heard rumors that a Clan was looking for them"
     }
   },
   {
@@ -129,10 +144,16 @@
       "new_thought": "Heard rumors that their old Clan was searching for them",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": -5
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["platonic"],
           "amount": 5
         }
@@ -149,10 +170,16 @@
       "new_thought": "Heard rumors that their old Clan has been searching for them",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": -5
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["platonic"],
           "amount": 5
         }
