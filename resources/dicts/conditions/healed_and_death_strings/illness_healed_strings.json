@@ -81,6 +81,11 @@
         "The stench coming from m_c is finally fading, {PRONOUN/m_c/subject} recovered from carrionplace disease.",
         "Against all odds, m_c has recovered from carrionplace disease."
     ],
-	"malnourished": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
-	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."]
+	"malnourished": [
+        "m_c finally feels energized again, it seems the newly consistent meals have done {pronoun/m_c/object} good."
+    ],
+	"starving": [
+        "m_c's paws no longer feel quite so heavy. {pronoun/m_c/subject/CAP} can tell that {pronoun/m_c/subject} still need to eat more, but at least the situation isn't as dire.",
+        "m_c still feels the rumbles of hunger in {pronoun/m_c/poss} belly, but it's nothing compared to the emptiness they had so recently experienced."
+    ]
 }
