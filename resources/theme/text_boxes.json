@@ -15,7 +15,8 @@
         },
         "font": {
             "name": "notosans",
-            "size": "30"
+            "size": "30",
+            "line_spacing": "1"
         }
     },
     "#dev_watermark": {
