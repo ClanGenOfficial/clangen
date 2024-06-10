@@ -656,7 +656,7 @@ class History:
         :param murder_index: Index of the murder"""
 
         victim = cat_class.fetch_cat(victim)
-        murder_history = History.get_murders(murderer)
+        murder_history = History.get_murders(cat)
         victim_history = History.get_murders(victim)
 
         if murder_history:
