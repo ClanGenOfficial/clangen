@@ -1223,6 +1223,7 @@ class UpdateWindow(UIWindow):
             object_id="#game_over_window",
             resizable=False,
         )
+        self.set_blocking(True)
         self.last_screen = last_screen
         self.update_message = pygame_gui.elements.UITextBox(
             f"Update in progress.",
