@@ -560,9 +560,10 @@ class Cat:
             self.thought = (
                 "Is surprised to find themself walking the stars of Silverpelt"
             )
-        if not game.clan.clan_settings["dead_relations"]:
-            # Clear Relationships.
-            self.relationships = {}
+        if game.clan:
+            if not game.clan.clan_settings["dead_relations"]:
+                # Clear Relationships.
+                self.relationships = {}
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -1536,8 +1537,8 @@ class Cat:
             if kin_thought_chance <= game.config["relationship"]["kin_thought_chance"]:
                 kin_group_choice = randint(0, 100)
                 
-                # 40% chance of choosing close kin
-                if kin_group_choice >= 60:
+                # 50% chance of choosing close kin
+                if kin_group_choice >= 50:
                     close_kin = {
                         "gen_parents": [cat_id for cat_id in self.get_parents() if not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
                         "gen_siblings": [cat_id for cat_id in self.get_siblings() if not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
@@ -1551,8 +1552,8 @@ class Cat:
                     else:
                         pass
                 
-                # 40% chance of choosing kin
-                elif kin_group_choice >= 20:
+                # 35% chance of choosing kin
+                elif kin_group_choice >= 15:
                     kin = {
                         "gen_grandparents": [cat_id for cat_id in Cat.all_cats if Cat.all_cats.get(cat_id).is_grandparent(self) and not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
                         "gen_auntuncle": [cat_id for cat_id in Cat.all_cats if self.is_uncle_aunt(Cat.all_cats.get(cat_id)) and not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
@@ -1565,7 +1566,7 @@ class Cat:
                     else:
                         pass
                 
-                # 40% chance of choosing distant kin
+                # 15% chance of choosing distant kin
                 elif kin_group_choice >= 0:
                     distant_kin = {
                         "gen_distantkin": [cat_id for cat_id in self.get_distant_kin() if not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)]
@@ -1592,24 +1593,25 @@ class Cat:
                         break
 
         elif where_kitty in ["starclan", "hell", "UR"]:
-            if game.clan.clan_settings["dead_relations"]:
-                # Roll relationship-based thought
-                if rel_thought_chance <= game.config["relationship"]["relationship_thought_chance"]:
-                    cats_with_relationship = [
-                        cat_id for cat_id in all_cats
-                        if cat_id in self.relationships
-                        and cat_id != self.ID
-                    ]
-                    if cats_with_relationship:
-                        other_cat = choice(cats_with_relationship)
-                    else:
-                        pass
+            if game.clan:
+                if game.clan.clan_settings["dead_relations"]:
+                    # Roll relationship-based thought
+                    if rel_thought_chance <= game.config["relationship"]["relationship_thought_chance"]:
+                        cats_with_relationship = [
+                            cat_id for cat_id in all_cats
+                            if cat_id in self.relationships
+                            and cat_id != self.ID
+                        ]
+                        if cats_with_relationship:
+                            other_cat = choice(cats_with_relationship)
+                        else:
+                            pass
             # Roll kin-based thought
             if kin_thought_chance <= game.config["relationship"]["kin_thought_chance"]:
                 kin_group_choice = randint(0, 100)
                 
-                # 40% chance of choosing close kin
-                if kin_group_choice >= 60:
+                # 50% chance of choosing close kin
+                if kin_group_choice >= 50:
                     close_kin = {
                         "gen_parents": list(self.get_parents()),
                         "gen_siblings": list(self.get_siblings()),
@@ -1623,8 +1625,8 @@ class Cat:
                     else:
                         pass
                 
-                # 40% chance of choosing kin
-                elif kin_group_choice >= 20:
+                # 35% chance of choosing kin
+                elif kin_group_choice >= 15:
                     kin = {
                         "gen_grandparents": [cat_id for cat_id in Cat.all_cats if Cat.all_cats.get(cat_id).is_grandparent(self) and not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
                         "gen_auntuncle": [cat_id for cat_id in Cat.all_cats if self.is_uncle_aunt(Cat.all_cats.get(cat_id)) and not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
@@ -1637,7 +1639,7 @@ class Cat:
                     else:
                         pass
                 
-                # 40% chance of choosing distant kin
+                # 15% chance of choosing distant kin
                 elif kin_group_choice >= 0:
                     distant_kin = {
                         "gen_distantkin": list(self.get_distant_kin())
@@ -1676,8 +1678,8 @@ class Cat:
             if kin_thought_chance <= game.config["relationship"]["kin_thought_chance"]:
                 kin_group_choice = randint(0, 100)
 
-                # 40% chance of choosing close kin
-                if kin_group_choice >= 60:
+                # 50% chance of choosing close kin
+                if kin_group_choice >= 50:
                     close_kin = {
                         "gen_parents": list(self.get_parents()),
                         "gen_siblings": list(self.get_siblings()),
@@ -1691,8 +1693,8 @@ class Cat:
                     else:
                         pass
                 
-                # 40% chance of choosing kin
-                elif kin_group_choice >= 20:
+                # 35% chance of choosing kin
+                elif kin_group_choice >= 15:
                     kin = {
                         "gen_grandparents": [cat_id for cat_id in Cat.all_cats if Cat.all_cats.get(cat_id).is_grandparent(self) and not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
                         "gen_auntuncle": [cat_id for cat_id in Cat.all_cats if self.is_uncle_aunt(Cat.all_cats.get(cat_id)) and not (Cat.all_cats.get(cat_id).dead and dead_chance != 1)],
@@ -1705,7 +1707,7 @@ class Cat:
                     else:
                         pass
                 
-                # 40% chance of choosing distant kin
+                # 15% chance of choosing distant kin
                 elif kin_group_choice >= 0:
                     distant_kin = {
                         "gen_distantkin": list(self.get_distant_kin())
