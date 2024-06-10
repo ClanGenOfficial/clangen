@@ -538,17 +538,22 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        if self.status == "leader":
+        darkforest = game.clan.instructor.df
+        isoutside = self.outside
+        if self.status == 'leader':
             if game.clan.leader_lives > 0:
-                self.thought = "Was startled to find themself in Silverpelt for a moment... did they lose a life?"
+                lives_left = game.clan.leader_lives
+                death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
+                final_thought = event_text_adjust(self, death_thought, main_cat=self)
+                self.thought = final_thought
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                self.thought = (
-                    "Is surprised to find themself walking the stars of Silverpelt"
-                )
+                death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
+                final_thought = event_text_adjust(self, death_thought, main_cat=self)
+                self.thought = final_thought
                 if game.clan.instructor.df is False:
                     text = (
                         "They've lost their last life and have travelled to StarClan."
@@ -558,12 +563,10 @@ class Cat:
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            self.thought = (
-                "Is surprised to find themself walking the stars of Silverpelt"
-            )
+            death_thought = Thoughts.new_death_thought(self, darkforest, isoutside)
+            final_thought = event_text_adjust(self, death_thought, main_cat=self)
+            self.thought = final_thought
 
-        # Clear Relationships.
-        self.relationships = {}
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -587,12 +590,8 @@ class Cat:
                 game.clan.add_to_starclan(self)
             elif game.clan.instructor.df is True:
                 self.df = True
-                self.thought = "Is startled to find themself wading in the muck of a shadowed forest"
                 game.clan.add_to_darkforest(self)
         else:
-            self.thought = (
-                "Is fascinated by the new ghostly world they've stumbled into"
-            )
             game.clan.add_to_unknown(self)
 
         return
