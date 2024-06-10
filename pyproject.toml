@@ -16,7 +16,7 @@ keywords = ["warriorcats", "fanedit", "game", "pygame"]
 python = ">=3.8,<3.13"
 pygame-ce = "^2.2.1"
 ujson = "^5.7.0"
-pygame-gui = "0.6.10"
+pygame-gui = "0.6.11"
 platformdirs = "^3.3.0"
 pypresence = { version = "^4.2.1", optional = true }
 pgpy = "^0.6.0"
