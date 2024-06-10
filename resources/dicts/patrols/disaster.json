@@ -1530,8 +1530,7 @@
                 "exp": 30,
                 "weight": 20,
                 "new_cat": [
-                    ["loner",
-                    "meeting"]
+                    ["loner", "meeting"]
                 ]
             },
             {
@@ -1539,8 +1538,7 @@
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
-                    ["loner",
-                    "meeting"]
+                    ["loner", "meeting"]
                 ]
             },
             {

@@ -1,0 +1,21 @@
+[
+  {
+        "event_id": "gen_death_bury_multi1",
+        "location": ["mountainous:camp1"],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [ "all_lives", "no_body" ],
+        "weight": 20,
+        "event_text": "m_c was buried alive when an avalanche hit the camp.",
+        "m_c": {
+            "dies": true
+        },
+        "history": [{
+            "cats": ["m_c"],
+            "reg_death": "m_c was buried alive in an avalanche.",
+            "lead_death": "{VERB/m_c/were/was} buried alive in an avalanche"
+        }]
+    }
+]
