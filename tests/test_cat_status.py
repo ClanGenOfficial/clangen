@@ -18,8 +18,8 @@ class TestCatStatus(unittest.TestCase):
         self.assertTrue(test_cat.status.is_kit_any())
 
     def test_apprentice(self):
-        test_cat = Cat(status=Status.APP)
-        self.assertEqual(test_cat.status, Status.APP)
+        test_cat = Cat(status=Status.WARRIORAPP)
+        self.assertEqual(test_cat.status, Status.WARRIORAPP)
 
         self.assertTrue(test_cat.status.is_app_any)
         self.assertTrue(test_cat.status.is_warrior_any)

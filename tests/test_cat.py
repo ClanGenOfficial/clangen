@@ -384,7 +384,7 @@ class TestMateFunctions(unittest.TestCase):
 class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):
         # given
-        app = Cat(moons=7, status=Status.APP)
+        app = Cat(moons=7, status=Status.WARRIORAPP)
         mentor = Cat(moons=20, status=Status.WARRIOR)
         app.update_mentor(mentor.ID)
 

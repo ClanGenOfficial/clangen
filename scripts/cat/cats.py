@@ -3713,7 +3713,7 @@ def create_example_cats():
             game.choose_cats[a] = Cat(status=Status.WARRIOR, biome=None)
         else:
             game.choose_cats[a] = Cat(
-                status=choice([Status.KITTEN, Status.APP, Status.WARRIOR, Status.WARRIOR, Status.ELDER]),
+                status=choice([Status.KITTEN, Status.WARRIORAPP, Status.WARRIOR, Status.WARRIOR, Status.ELDER]),
                 biome=None,
             )
         if game.choose_cats[a].moons >= 160:

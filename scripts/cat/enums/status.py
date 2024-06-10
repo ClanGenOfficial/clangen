@@ -3,14 +3,14 @@ from scripts.game_structure.extended_strenum import ExtendedStrEnum
 
 class Status(ExtendedStrEnum):
     """
-    Roles that a cat may hold.
+    Roles that a cat may hold. Check ExtendedStrEnum for more things!
     """
     # These are in this order for food priority filtering
     NONE = "ERROR"
     NEWBORN = "newborn"
     KITTEN = "kitten"
     ELDER = "elder"
-    APP = "apprentice"
+    WARRIORAPP = "apprentice"
     WARRIOR = "warrior"
     MEDIATORAPP = "mediator apprentice"
     MEDIATOR = "mediator"
@@ -39,7 +39,7 @@ class Status(ExtendedStrEnum):
 
     def is_patrol_app(self):
         """True if apprentice who can go on patrol (warrior app and medcat app)"""
-        return self in [Status.APP, Status.MEDCATAPP]
+        return self in [Status.WARRIORAPP, Status.MEDCATAPP]
 
     def is_kit_any(self):
         """True if cat is newborn or kitten."""
@@ -48,7 +48,7 @@ class Status(ExtendedStrEnum):
     def is_app_any(self):
         """True if cat is apprentice,
         medicine cat apprentice or mediator apprentice."""
-        return self in [Status.APP,
+        return self in [Status.WARRIORAPP,
                         Status.MEDCATAPP,
                         Status.MEDIATORAPP]
 
@@ -62,7 +62,7 @@ class Status(ExtendedStrEnum):
 
     def is_warrior_any(self):
         """True if cat is warrior or apprentice."""
-        return self in [Status.WARRIOR, Status.APP]
+        return self in [Status.WARRIOR, Status.WARRIORAPP]
 
     def is_deputy_or_leader(self):
         """True if cat is deputy or leader."""
@@ -102,7 +102,7 @@ class Status(ExtendedStrEnum):
 
     def is_warrior_app(self):
         """True if (warrior) apprentice."""
-        return self == Status.APP
+        return self == Status.WARRIORAPP
 
     def is_warrior(self):
         """True if warrior."""
@@ -151,3 +151,7 @@ class Status(ExtendedStrEnum):
     def is_rogue(self):
         """True if rogue"""
         return self == Status.ROGUE
+
+    def is_none(self):
+        """True if debug/default empty value"""
+        return self == Status.NONE

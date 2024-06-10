@@ -16,6 +16,8 @@ from typing import List
 import pygame
 import ujson
 
+from scripts.cat.enums.status import Status
+
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 from scripts.cat.history import History
@@ -371,16 +373,14 @@ def create_new_cat_block(
         new_name = choice([True, False])
 
     # STATUS - must be handled before backstories
-    status = None
+    status = Status.NONE
     for _tag in attribute_list:
         match = re.match(r"status:(.+)", _tag)
         if not match:
             continue
 
-        if match.group(1) in ["newborn", "kitten", "elder", "apprentice", "warrior",
-                              "mediator apprentice", "mediator", "medicine cat apprentice",
-                              "medicine cat"]:
-            status = match.group(1)
+        if Status(match.group(1)) in Status.list():
+            status = Status(match.group(1))
             break
 
     # SET AGE
@@ -404,12 +404,12 @@ def create_new_cat_block(
             age = randint(19, 120)
             break
 
-    if status and not age:
-        if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
+    if not status.is_none() and not age:
+        if status.is_app_any():
             age = randint(Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1])
-        elif status in ["warrior", "mediator", "medicine cat"]:
+        elif status.is_warrior() or status.is_mediator() or status.is_medcat():
             age = randint(Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1])
-        elif status == "elder":
+        elif status.is_elder():
             age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
 
     if "kittypet" in attribute_list:
@@ -427,15 +427,15 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if status not in ["kitten", "newborn"]:
-            status = "kitten"
+        if not status.is_kit_any():
+            status = Status.KITTEN
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
-    if status in ("kitten", "newborn"):
+    if status.is_kit_any():
         chosen_backstory = choice(BACKSTORIES["backstory_categories"]["abandoned_backstories"])
-    elif status == "medicine cat" and cat_type == "former Clancat":
+    elif status.is_medcat() and cat_type == "former Clancat":
         chosen_backstory = choice(["medicine_cat", "disgraced1"])
-    elif status == "medicine cat":
+    elif status.is_medcat():
         chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
     else:
         if cat_type == "former Clancat":
@@ -458,14 +458,14 @@ def create_new_cat_block(
             break
 
     # KITTEN THOUGHT
-    if status in ["kitten", "newborn"]:
+    if status.is_kit_any():
         thought = "Is snuggled safe in the nursery"
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
     if "meeting" in attribute_list:
         outside = True
-        status = cat_type
+        status = Status(cat_type)
         new_name = False
         thought = "Is wondering about those new cats"
 
@@ -535,7 +535,7 @@ def create_new_cat_block(
                                   loner=cat_type in ["loner", "rogue"],
                                   kittypet=cat_type == "kittypet",
                                   other_clan=cat_type == 'former Clancat',
-                                  kit=False if litter else status in ["kitten", "newborn"],
+                                  kit=False if litter else status.is_kit_any(),
                                   # this is for singular kits, litters need this to be false
                                   litter=litter,
                                   backstory=chosen_backstory,
@@ -624,7 +624,7 @@ def create_new_cat(
         litter: bool = False,
         other_clan: bool = None,
         backstory: bool = None,
-        status: str = None,
+        status: Status = None,
         age: int = None,
         gender: str = None,
         thought: str = 'Is looking around the camp with wonder',
@@ -644,7 +644,7 @@ def create_new_cat(
     :param bool litter: set True if a litter of kittens needs to be generated - default: False
     :param bool other_clan: if new cat(s) are from a neighboring clan, set true
     :param bool backstory: a list of possible backstories.json for the new cat(s) - default: None
-    :param str status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
+    :param Status status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param int age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param str thought: if you need to give a custom "welcome" thought, set it here
@@ -672,17 +672,17 @@ def create_new_cat(
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
     if not isinstance(age, int):
-        if status == "newborn":
+        if status.is_newborn():
             age = 0
         elif litter or kit:
             age = randint(1, 5)
-        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
+        elif status.is_app_any():
             age = randint(6, 11)
-        elif status == "warrior":
+        elif status.is_warrior():
             age = randint(23, 120)
-        elif status == "medicine cat":
+        elif status.is_medcat():
             age = randint(23, 140)
-        elif status == "elder":
+        elif status.is_elder():
             age = randint(120, 130)
         else:
             age = randint(6, 120)
@@ -690,16 +690,15 @@ def create_new_cat(
     # setting status
     if not status:
         if age == 0:
-            status = "newborn"
+            status = Status.NEWBORN
         elif age < 6:
-            status = "kitten"
+            status = Status.KITTEN
         elif 6 <= age <= 11:
-            status = "apprentice"
+            status = Status.WARRIORAPP
         elif age >= 12:
-            status = "warrior"
+            status = Status.WARRIOR
         elif age >= 120:
-            status = "elder"
-
+            status = Status.ELDER
     # cat creation and naming time
     for index in range(number_of_cats):
         # setting gender

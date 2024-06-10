@@ -444,7 +444,7 @@ class Events:
                             elif invited_cat.age == "senior":
                                 invited_cat.status = Status.ELDER
                             elif invited_cat.age == "adolescent":
-                                invited_cat.status = Status.APP
+                                invited_cat.status = Status.WARRIORAPP
                                 invited_cat.update_mentor()
                             else:
                                 invited_cat.status = Status.WARRIOR
