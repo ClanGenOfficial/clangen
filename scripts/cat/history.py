@@ -646,10 +646,10 @@ class History:
 
     @staticmethod
 
-    def reveal_murder(murderer, other_cat, cat_class, victim, murder_index):
+    def reveal_murder(cat, other_cat, cat_class, victim, murder_index):
         """ Reveals the murder properly in all associated history text.
 
-        :param murderer: The murderer
+        :param cat: The murderer
         :param other_cat: The cat who discovers the truth about the murder
         :param cat_class: The cat class
         :param victim: The victim whose murder is being revealed
