@@ -93,6 +93,11 @@
             "rect_width": "700"
         }
     },
+    "#blank_button_small.tool_tip": {
+        "misc": {
+            "rect_width": "500"
+        }
+    },
     "#mns_image_moon.tool_tip": {
         "misc": {
             "rect_width": "240"

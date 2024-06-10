@@ -4,10 +4,11 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
-from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
-from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
+from scripts.events_module.generate_events import GenerateEvents
+from scripts.game_structure.game_essentials import game
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
+
 
 # ---------------------------------------------------------------------------- #
 #                               Death Event Class                              #
@@ -61,7 +62,6 @@ class MiscEvents():
                     reveal = True
                     break
 
-        #print('misc event', cat.ID)
         final_events = GenerateEvents.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
                                                                    alive_kits, murder_reveal=reveal)
 
@@ -133,8 +133,12 @@ class MiscEvents():
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
         if reveal:
+            # Check if whole clan should replace murder witness
+            if "clan_discovery" in misc_event.tags:
+                History.get_murders(cat)["is_murderer"][murder_index]["clan_discovery"] = True
+            # Reveal murder
             History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
-
+            
     @staticmethod
     def handle_relationship_changes(cat, misc_event, other_cat):
 
@@ -233,7 +237,6 @@ class MiscEvents():
         chance_of_reveal = 1
 
         chance_roll = random.randint(0, chance_of_reveal)
-        print(chance_roll)
 
         return bool(chance_roll = 1)
 

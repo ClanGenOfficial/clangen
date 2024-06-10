@@ -2,9 +2,8 @@ import random
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
+from scripts.game_structure.game_essentials import game
 
 
 # ---------------------------------------------------------------------------- #
@@ -34,7 +33,7 @@ class OutsiderEvents:
                     death_history = "m_c died while being lost and trying to get back to the Clan."
 
                 History.add_death(cat, death_text=death_history)
-                cat.die(None) # none is to prevent griefing
+                cat.die()
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat.ID))
                 

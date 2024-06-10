@@ -1,6 +1,5 @@
 import random
 
-from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from scripts.game_structure.game_essentials import game
@@ -32,7 +31,7 @@ class Scar_Events():
     claw_scars = [
         "ONE", "TWO", "SNOUT", "TAILSCAR", "CHEEK",
         "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE",
-        "BRIDGE", "HINDLEG", "BACK", "SCRATCH"
+        "BRIDGE", "HINDLEG", "BACK", "SCRATCHSIDE"
     ]
     leg_scars = [
         "NOPAW", "TOETRAP", "MANLEG", "FOUR"

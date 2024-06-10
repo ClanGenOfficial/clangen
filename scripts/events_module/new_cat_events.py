@@ -1,15 +1,12 @@
-from scripts.cat.names import names
-from scripts.cat_relations.relationship import Relationship
-
 import random
 
 from scripts.cat.cats import Cat, INJURIES, BACKSTORIES
-from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, create_new_cat
-from scripts.game_structure.game_essentials import game
-from scripts.event_class import Single_Event
 from scripts.cat.names import Name
-from scripts.cat.history import History
+from scripts.cat_relations.relationship import Relationship
+from scripts.event_class import Single_Event
+from scripts.events_module.generate_events import GenerateEvents
+from scripts.game_structure.game_essentials import game
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, create_new_cat
 
 
 # ---------------------------------------------------------------------------- #
@@ -34,7 +31,6 @@ class NewCatEvents:
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{other_clan.name}Clan'
 
-        
         #Determine
         if NewCatEvents.has_outside_cat():
             if random.randint(1, 3) == 1:
@@ -66,13 +62,11 @@ class NewCatEvents:
                     outside_cat.create_one_relationship(the_cat)
 
                 # takes cat out of the outside cat list
-                game.clan.add_to_clan(outside_cat)
-                history = History()
-                history.add_beginning(outside_cat)
+                outside_cat.add_to_clan()
 
                 return [outside_cat]
 
-        
+
         # ---------------------------------------------------------------------------- #
         #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
@@ -105,7 +99,6 @@ class NewCatEvents:
             status = "medicine cat apprentice"
         elif "new_med" in new_cat_event.tags:
             status = "medicine cat"
-
 
         created_cats = create_new_cat(Cat,
                                       Relationship,
@@ -179,7 +172,6 @@ class NewCatEvents:
             new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:
-                # print('moon event new cat rel gain')
                 cat.create_one_relationship(new_cat)
                 new_cat.create_one_relationship(cat)
                 

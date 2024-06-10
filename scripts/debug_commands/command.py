@@ -1,7 +1,7 @@
 """
 Base command class for debug mode.
 """
-from typing import List
+
 from abc import ABC, abstractmethod
 from typing import List
 
@@ -33,12 +33,12 @@ class Command(ABC):
         return []
 
     @property
-    def subCommands(self):
+    def sub_commands(self):
         """The sub commands of the command"""
         return []
 
     @property
-    def bypassConjoinedStrings(self):
+    def bypass_conjoined_strings(self):
         """Bypasses arguments wrapped in quotes being joined together"""
         return False
 

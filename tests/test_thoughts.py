@@ -1,14 +1,72 @@
+import os
 import unittest
 
-import os
+from scripts.cat.cats import Cat
+from scripts.cat.thoughts import Thoughts
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.thoughts import Thoughts
 
-import ujson
+class TestNotWorkingThoughts(unittest.TestCase):
+    def setUp(self):
+        self.main = Cat(status="warrior")
+        self.other = Cat(status="warrior")
+        self.biome = "Forest"
+        self.season = "Newleaf"
+        self.camp = "camp2"
 
-from scripts.cat.cats import Cat
+        self.thoughts = [
+            {"id": "test_not_working_true", "thoughts": [], "not_working": True},
+            {"id": "test_not_working_false", "thoughts": [], "not_working": False},
+            {"id": "test_not_working_any", "thoughts": []},
+        ]
+
+    def available_thought_ids(self):
+        """Return a list of id's for available thoughts"""
+        possible = [thought for thought in self.thoughts if
+                    Thoughts.cats_fulfill_thought_constraints(
+                        self.main,
+                        self.other,
+                        thought,
+                        "expanded",
+                        self.biome,
+                        self.season,
+                        self.camp)]
+
+        return {thought["id"] for thought in possible}
+
+    def test_not_working_thought_null(self):
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
+
+    def test_not_working_thought_injury_minor(self):
+        # given
+        self.main.injuries["test-injury-1"] = {"severity": "minor"}
+
+        # then
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
+
+    def test_not_working_thought_injury_major(self):
+        # given
+        self.main.injuries["test-injury-1"] = {"severity": "major"}
+
+        # then
+        self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
+
+    def test_not_working_thought_illness_minor(self):
+        # given
+        self.main.illnesses["test-illness-1"] = {"severity": "minor"}
+
+        # then
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
+
+    def test_not_working_thought_illness_major(self):
+        # given
+        self.main.illnesses["test-illness-1"] = {"severity": "major"}
+
+        # then
+        self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
+
 
 class TestsGetStatusThought(unittest.TestCase):
 
@@ -40,8 +98,6 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
-        """Prints can be turned back on if testing is needed"""
-        #print("Exiled Thoughts: " + str(thoughts))
 
     def test_lost_thoughts(self):
         # given
@@ -53,8 +109,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
-        """Prints can be turned back on if testing is needed"""
-        #print("Lost Thoughts: " + str(thoughts))
+
 
 class TestFamilyThoughts(unittest.TestCase):
 
@@ -85,4 +140,3 @@ class TestFamilyThoughts(unittest.TestCase):
         # when
 
         # then
-
