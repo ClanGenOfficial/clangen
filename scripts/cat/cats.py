@@ -550,7 +550,9 @@ class Cat:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                Thoughts.leader_death_thought(self, 0, darkforest)
+                death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
+                final_thought = event_text_adjust(Cat, death_thought, self)
+                self.thought = final_thought
                 if game.clan.instructor.df is False:
                     text = (
                         "They've lost their last life and have travelled to StarClan."

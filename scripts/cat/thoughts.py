@@ -355,7 +355,7 @@ class Thoughts:
                 chosen_thought = choice(thought_group["thoughts"])
                 return chosen_thought
             else:
-                with open(f"{base_path}death{spec_dir}/leader_death.json", 'r') as read_file:
+                with open(f"{base_path}{spec_dir}/leader_death.json", 'r') as read_file:
                     THOUGHTS = ujson.loads(read_file.read())
                 loaded_thoughts = THOUGHTS
                 thought_group = choice(Thoughts.create_death_thoughts(self, loaded_thoughts))
