@@ -57,44 +57,6 @@ class Age(StrEnum):
     def is_senior(self):
         return self == Age.SENIOR
 
-    @staticmethod
-    def get_age_from_moons(moons):
-        """
-        Gets the correct life stage for associated moons
-
-        :param int moons: Age in moons
-        :return: Matching age group (Age)
-        """
-        if moons > 300:
-            # Out of range, always senior
-            return Age.SENIOR
-        elif moons == 0:
-            return Age.NEWBORN
-        else:
-            # In range
-            for key_age in AgeMoonsRange:
-                if moons in range(
-                        key_age[0], key_age[1] + 1
-                ):
-                    return Age[key_age.name]
-
-    @staticmethod
-    def get_random_moons_for_age(age, end_age=None) -> int:
-        """Returns a random moons value for the given age.
-
-        If just `age` is supplied, the range is that age range.
-        If both are supplied, the range is `age`'s min and `end_age`'s max
-
-        :param Age age: The age whose range to get (max overridden by end_age if applicable)
-        :param Age end_age: The age whose maximum value to take, default None"""
-        start = AgeMoonsRange[age.name].value[0]
-        if end_age is not None:
-            end = AgeMoonsRange[end_age.name]
-        else:
-            end = AgeMoonsRange[age.name].value[1]
-
-        return randint(start, end)
-
     @classmethod
     def list(cls):
         return list(map(lambda c: c.value, cls))
@@ -116,3 +78,57 @@ class AgeMoonsRange(Enum):
     @staticmethod
     def breeding_age_range():
         return [AgeMoonsRange.ADOLESCENT[0], AgeMoonsRange.SENIOR[1]]
+
+
+def get_age_from_moons(moons):
+    """
+    Gets the correct life stage for associated moons
+
+    :param int moons: Age in moons
+    :return: Matching age group (Age)
+    """
+    if moons > 300:
+        # Out of range, always senior
+        return Age.SENIOR
+    elif moons <= 0:  # negative moons? hopefully not but technically possible
+        return Age.NEWBORN
+    else:
+        # In range
+        for key_age in AgeMoonsRange:
+            if moons in range(
+                    key_age[0], key_age[1] + 1
+            ):
+                return Age[key_age.name]
+
+
+def get_random_moons_for_age(age: Age | str, end_age: Age | str = None) -> int:
+    """Returns a random moons value for the given age.
+
+    If just `age` is supplied, the range is that age range.
+    If both are supplied, the range is `age`'s min and `end_age`'s max
+
+    :param str|Age age: The age whose range to get (max overridden by end_age if applicable)
+    :param str|Age end_age: The age whose maximum value to take, default None"""
+
+    if isinstance(age, str):
+        if age in Age:
+            age = Age(age)
+        else:
+            raise KeyError(f"{age} is not a valid age. Check spelling!")
+
+    if isinstance(end_age, str):
+        if end_age in Age:
+            end_age = Age(age)
+        else:
+            raise KeyError(f"{end_age} is not a valid age. Check spelling!")
+
+    try:
+        start = AgeMoonsRange[age.name].value[0]
+        if end_age is not None:
+            end = AgeMoonsRange[end_age.name].value[1]
+        else:
+            end = AgeMoonsRange[age.name].value[1]
+
+        return randint(start, end)
+    except KeyError:
+        print(f"{age} not in ")

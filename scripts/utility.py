@@ -16,7 +16,7 @@ from typing import List
 import pygame
 import ujson
 
-from scripts.cat.enums.age import Age, AgeMoonsRange
+from scripts.cat.enums.age import Age, AgeMoonsRange, get_random_moons_for_age
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -393,12 +393,12 @@ def create_new_cat_block(
             continue
 
         if match.group(1) in Age:
-            moons = Age.get_random_moons_for_age(Age(match.group(1)))
+            moons = get_random_moons_for_age(match.group(1))
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
-            moons = Age.get_random_moons_for_age(give_mates[0].age)
+            moons = get_random_moons_for_age()
             break
 
         if match.group(1) == "has_kits":
@@ -407,11 +407,11 @@ def create_new_cat_block(
 
     if status and not moons:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
-            moons = Age.get_random_moons_for_age(Age.ADOLESCENT)
+            moons = get_random_moons_for_age(Age.ADOLESCENT)
         elif status in ["warrior", "mediator", "medicine cat"]:
-            moons = Age.get_random_moons_for_age(Age.YOUNGADULT, Age.SENIORADULT)
-        elif status == "elder":
-            moons = Age.get_random_moons_for_age(Age.SENIOR)
+            moons = get_random_moons_for_age(Age.SENIORADULT)
+        elif status == "elder":  # making the assumption that all seniors are elders
+            moons = get_random_moons_for_age(Age.SENIOR)
 
     if "kittypet" in attribute_list:
         cat_type = "kittypet"

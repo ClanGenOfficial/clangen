@@ -13,7 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
-from scripts.cat.enums.age import Age, AgeMoonsRange
+from scripts.cat.enums.age import Age, AgeMoonsRange, get_age_from_moons, get_random_moons_for_age
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -44,7 +44,6 @@ from scripts.utility import (
 
 class Cat:
     """The cat class."""
-    age: Age
 
     dead_cats = []
     used_screen = screen
@@ -164,13 +163,13 @@ class Cat:
         # Private attributes
         self._mentor = None  # plz
         self._experience = None
-        self._moons = None
+        # self.age - is just a calculation based on moons
 
         # Public attributes
+        self.moons = 0
         self.gender = gender
         self.status = status
         self.backstory = backstory
-        self.age = Age.NONE
         self.skills = CatSkills(skill_dict=skill_dict)
         self.personality = Personality(
             trait="troublesome", lawful=0, aggress=0, stable=0, social=0
@@ -240,26 +239,23 @@ class Cat:
         else:
             self.ID = ID
 
-        # age and status
-        if status is None and moons is None:
-            self.age = choice([Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT, Age.YOUNGADULT,
-                               Age.ADULT, Age.SENIORADULT, Age.SENIOR])
-            self.moons = Age.get_random_moons_for_age(self.age)
-        elif moons is not None:
+        # moons (and age by proxy)
+        if moons is not None:
             self.moons = moons
-            self.age = Age.get_age_from_moons(moons)
-        else:
+        elif status is not None:
             if status == 'newborn':
-                self.age = Age.NEWBORN
+                self.moons = get_random_moons_for_age(Age.NEWBORN)
             elif status == 'kitten':
-                self.age = Age.KITTEN
+                self.moons = get_random_moons_for_age(Age.KITTEN)
             elif status == 'elder':
-                self.age = Age.SENIOR
+                self.moons = get_random_moons_for_age(Age.SENIOR)
             elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
-                self.age = Age.ADOLESCENT
+                self.moons = get_random_moons_for_age(Age.ADOLESCENT)
             else:
-                self.age = choice([Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT])
-            self.moons = Age.get_random_moons_for_age(self.age)
+                self.moons = get_random_moons_for_age(Age.YOUNGADULT, Age.SENIORADULT)
+        else:
+            # pick a random moons, covering the gamut from newborn to senior
+            self.moons = get_random_moons_for_age(Age.NEWBORN, Age.SENIOR)
 
         # backstory
         if self.backstory is None:
@@ -347,8 +343,6 @@ class Cat:
             self.df = kwargs["df"]
         else:
             self.df = False
-
-        self.age = Age.get_age_from_moons(moons)
 
         self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
         return True
@@ -3223,13 +3217,9 @@ class Cat:
                 break
 
     @property
-    def moons(self):
-        return self._moons
+    def age(self):
+        return get_age_from_moons(self.moons)
 
-    @moons.setter
-    def moons(self, value: int):
-        self._moons = value
-        self.age = Age.get_age_from_moons(self._moons)
     @property
     def sprite(self):
         # Update the sprite
