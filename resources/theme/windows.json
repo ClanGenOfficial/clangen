@@ -5,6 +5,12 @@
     "#save_check_window": {
         "prototype": "#window_base_theme"
     },
+    "#notif_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#filter_window": {
+        "prototype": "#window_base_theme"
+    },
     "#delete_check_window": {
         "prototype": "#window_base_theme"
     },
@@ -12,6 +18,12 @@
         "prototype": "#window_base_theme"
     },
     "#change_cat_gender_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#change_cat_pronouns_window": {
+        "prototype": "#window_base_theme"
+    },
+    "#test_pronouns_window": {
         "prototype": "#window_base_theme"
     },
 	"#relationship_log_window": {

@@ -1,10 +1,11 @@
 import random
 
-from scripts.cat.cats import Cat, INJURIES
-from scripts.events_module.generate_events import GenerateEvents, OngoingEvent
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_med_cats
-from scripts.game_structure.game_essentials import game
+from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
+from scripts.events_module.generate_events import GenerateEvents
+from scripts.game_structure.game_essentials import game
+from scripts.utility import get_alive_status_cats
+
 
 # ---------------------------------------------------------------------------- #
 #                            Disaster Event Class                              #
@@ -161,7 +162,7 @@ class DisasterEvents():
 
         leader = Cat.fetch_cat(game.clan.leader)
         deputy = Cat.fetch_cat(game.clan.deputy)
-        med_cats = get_med_cats(Cat, working=False)
+        med_cats = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
 
         # checking if there are cats of the specified rank
         if not leader.dead and not leader.outside:

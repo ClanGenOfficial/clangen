@@ -14,11 +14,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "Gather round, gather round. p_l sits in the centre of the group, in the most prominent place, and drops {PRONOUN/p_l/poss} voice down low as a hush falls - today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger.",
-        "decline_text": "A leaf-fall rainshower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
+        "intro_text": "Gather round, gather round. p_l sits in the center of the group and drops {PRONOUN/p_l/poss} voice down low as a hush falls. Today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger.",
+        "decline_text": "A leaf-fall rain shower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
         "success_outcomes": [
             {
-                    "text": "At first, few but the medicine cats noticed the leaf-fall, its harshness, the snows early, the prey scarce. All noticed on the day StarClan hissed - the great sun itself blinking dark under their anger. All paid heed to the omens then, and the Clans turned back to the Stars, begging for life and sun to return. They learned a lesson not soon forgotten.",
+                    "text": "At first, few but the medicine cats noticed how harsh this leaf-fall was: the snows early, the prey scarce. But all cats noticed on the day StarClan hissed - the great sun itself went dark under their anger. All paid heed to the omens then, and the Clans turned back to StarClan, begging for life and sun to return. They learned a lesson not soon forgotten.",
                     "exp": 40,
                     "weight": 20,
                     "relationships": [
