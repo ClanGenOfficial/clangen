@@ -404,7 +404,7 @@ class Cat:
             m = self.moons
             self.experience = 0
             ran = game.config["graduation"]["base_app_timeskip_ex"]
-            while m > AgeMoonsRange.get_adolescence_start():
+            while m > AgeMoonsRange.ADOLESCENT[0]:
                 exp = choice(
                     list(range(ran[0][0], ran[0][1] + 1))
                     + list(range(ran[1][0], ran[1][1] + 1))
