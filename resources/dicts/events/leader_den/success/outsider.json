@@ -31,10 +31,16 @@
       "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": -5
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
           "values": ["trust"],
           "amount": 5
         }
@@ -52,10 +58,16 @@
       "kit_thought": "Is curious why {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been brought here",
       "relationships": [
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
           "values": ["dislike"],
           "amount": -5
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
           "values": ["trust"],
           "amount": 5
         }
@@ -64,7 +76,7 @@
   },
   {
     "interaction_type": "search",
-    "event_text": "m_c was found brought back to the safety of the Clan",
+    "event_text": "m_c was found and brought back to the safety of the Clan",
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
@@ -73,10 +85,16 @@
       "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
       "relationships": [
         {
-          "values": ["platonic"],
-          "amount": 5
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
         },
         {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
           "values": ["trust"],
           "amount": 5
         }
