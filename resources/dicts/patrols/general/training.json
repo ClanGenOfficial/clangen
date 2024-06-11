@@ -3261,7 +3261,7 @@
                 ]
             },
             {
-                "text": "That... honestly sounds like it could be a vision. That's unusual - p_l's sure it hasn't fun for app1 to deal with that on top of {PRONOUN/app1/poss} training, but it's not a bad thing. Those connected to StarClan in such ways are rare and have been instrumental in protecting c_n in the past.",
+                "text": "That... honestly sounds like it could be a vision. That's unusual - p_l is sure it hasn't been fun for app1 to deal with that on top of {PRONOUN/app1/poss} training, but it's not a bad thing. Those connected to StarClan in such ways are rare and have been instrumental in protecting c_n in the past.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -5074,7 +5074,7 @@
                 ]
             },
             {
-                "text": "{PRONOUN/r_c/poss/CAP} mate is <i>so</i> mouse-brained. Mouse-brained and {PRONOUN/r_c/subject} love {PRONOUN/s_c/object} for it; r_c helps up s_c from where {PRONOUN/s_c/poss} silly game has left {PRONOUN/s_c/object} sprawled on the ground, and r_c joins in with s_c's laughter.",
+                "text": "{PRONOUN/r_c/poss/CAP} mate is <i>so</i> mouse-brained. Mouse-brained and {PRONOUN/r_c/subject} {VERB/r_c/love/loves} {PRONOUN/s_c/object} for it. r_c helps up s_c from where their silly game has left {PRONOUN/s_c/object} sprawled on the ground and joins in with s_c's laughter.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [

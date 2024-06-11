@@ -2910,7 +2910,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c.",
+        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c_n.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -5506,7 +5506,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 20,
-        "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap. The other cats on the patrol flank {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/limp/limps} back to the camp.",
         "m_c": {
             "age": ["any"],
             "status": [
