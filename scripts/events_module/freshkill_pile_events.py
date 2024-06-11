@@ -5,9 +5,6 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.clan_resources.freshkill import (
     FreshkillPile,
-    MAL_PERCENTAGE,
-    STARV_PERCENTAGE,
-    FRESHKILL_ACTIVE,
     FRESHKILL_EVENT_TRIGGER_FACTOR,
     FRESHKILL_EVENT_ACTIVE,
     EVENT_WEIGHT_TYPE,
@@ -18,154 +15,10 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 
 
-class Freshkill_Events:
+class FreshkillEvents:
     """All events with a connection to freshkill pile or the nutrition of cats."""
 
-    @staticmethod
-    def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
-        """
-        Handles gaining conditions or death for cats with low nutrient.
-        This function should only be called if the game is in 'expanded' or 'cruel season' mode.
 
-            Parameters
-            ----------
-            cat : Cat
-                the cat which has to be checked and updated
-            nutrition_info : dict
-                dictionary of all nutrition information (can be found in the freshkill pile)
-        """
-        if not FRESHKILL_ACTIVE:
-            return
-
-        # get all events for a certain status of a cat
-        cat_nutrition = cat.nutrition
-        possible_events = GenerateEvents.possible_short_events(
-            cat.status, cat.age, "nutrition"
-        )
-
-        # get the other needed information and values to create an event
-        possible_other_cats = [
-            i
-            for i in Cat.all_cats.values()
-            if not (i.dead or i.outside) and i.ID != cat.ID
-        ]
-        if len(possible_other_cats) <= 0:
-            other_cat = None
-        else:
-            other_cat = random.choice(possible_other_cats)
-        other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f"{other_clan.name}Clan"
-
-        if other_clan_name == "None":
-            other_clan = game.clan.all_clans[0]
-            other_clan_name = f"{other_clan.name}Clan"
-
-        needed_tags = []
-        illness = None
-        heal = False
-
-        # handle death first, if percentage is 0 or lower, the cat will die
-        if cat_nutrition.percentage <= 0:
-            # this statement above will prevent a dead cat getting an illness
-            final_events = Freshkill_Events.get_filtered_possibilities(
-                possible_events, ["death"], cat, other_cat
-            )
-            if len(final_events) <= 0:
-                return
-            chosen_event = random.choice(final_events)
-
-            # set up all the text's
-            death_text = event_text_adjust(
-                Cat, chosen_event.event_text, cat, other_cat, other_clan_name
-            )
-            history_text = "this should not show up - history text"
-
-            # give history to cat if they die
-            if cat.status != "leader" and chosen_event.history_text[0] is not None:
-                history_text = event_text_adjust(
-                    Cat, chosen_event.history_text[0], cat, other_cat, other_clan_name
-                )
-            elif cat.status == "leader" and chosen_event.history_text[1] is not None:
-                history_text = event_text_adjust(
-                    Cat, chosen_event.history_text[1], cat, other_cat, other_clan_name
-                )
-
-            if cat.status == "leader":
-                game.clan.leader_lives -= 1
-
-            cat.die()
-            History.add_death(cat, history_text)
-
-            # if the cat is the leader, the illness "starving" needs to be added again
-            if cat.status == "leader" and game.clan.leader_lives > 0:
-                cat.get_ill("starving")
-
-            types = ["birth_death"]
-            game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))
-            return
-
-        # heal cat if percentage is high enough and cat is ill
-        elif (
-            cat_nutrition.percentage > MAL_PERCENTAGE
-            and cat.is_ill()
-            and "malnourished" in cat.illnesses
-        ):
-            needed_tags = ["malnourished_healed"]
-            illness = "malnourished"
-            heal = True
-
-        # heal cat if percentage is high enough and cat is ill
-        elif (
-            cat_nutrition.percentage > STARV_PERCENTAGE
-            and cat.is_ill()
-            and "starving" in cat.illnesses
-        ):
-            if cat_nutrition.percentage < MAL_PERCENTAGE:
-                if "malnourished" not in cat.illnesses:
-                    cat.get_ill("malnourished")
-                needed_tags = ["starving_healed"]
-                illness = "starving"
-                heal = True
-            else:
-                needed_tags = ["starving_healed"]
-                illness = "starving"
-                heal = True
-
-        elif (
-            cat_nutrition.percentage <= MAL_PERCENTAGE
-            and cat_nutrition.percentage > STARV_PERCENTAGE
-        ):
-            # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
-            if cat.status in ["kitten", "elder"]:
-                needed_tags = ["starving"]
-                illness = "starving"
-            else:
-                needed_tags = ["malnourished"]
-                illness = "malnourished"
-
-        elif cat_nutrition.percentage <= STARV_PERCENTAGE:
-            needed_tags = ["starving"]
-            illness = "starving"
-
-        # handle the gaining/healing illness
-        if heal:
-            cat.illnesses.pop(illness)
-        elif not heal and illness:
-            cat.get_ill(illness)
-
-        # filter the events according to the needed tags
-        final_events = Freshkill_Events.get_filtered_possibilities(
-            possible_events, needed_tags, cat, other_cat
-        )
-        if len(final_events) <= 0:
-            return
-
-        chosen_event = random.choice(final_events)
-        event_text = event_text_adjust(
-            Cat, chosen_event.event_text, cat, other_cat, other_clan_name
-        )
-        types = ["health"]
-        game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
 
     @staticmethod
     def handle_amount_freshkill_pile(
@@ -200,7 +53,7 @@ class Freshkill_Events:
         if trigger_factor < 1.2 and game.clan.game_mode == "cruel season":
             trigger_factor = 1.2
 
-        # check if amount of the freshkill pile is too big and a event will be triggered
+        # check if amount of the freshkill pile is too big and an event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
         trigger_value = round(trigger_factor * needed_amount, 2)
 
@@ -266,7 +119,7 @@ class Freshkill_Events:
             if (not much_prey and "much_prey" not in event.tags) or much_prey:
                 final_events.append(event)
 
-        final_events = Freshkill_Events.get_filtered_possibilities(
+        final_events = FreshkillEvents.get_filtered_possibilities(
             final_events, needed_tags, cat, other_cat
         )
 
@@ -277,9 +130,9 @@ class Freshkill_Events:
         # get the event and trigger certain things
         chosen_event = random.choice(final_events)
         event_text = event_text_adjust(Cat, chosen_event.event_text, cat, other_cat)
-        Freshkill_Events.handle_history_death(chosen_event, cat, other_cat)
+        FreshkillEvents.handle_history_death(chosen_event, cat, other_cat)
 
-        # if a food is stolen, remove the food
+        # if food is stolen, remove the food
         reduce_amount = 0
         if "reduce_half" in chosen_event.tags:
             reduce_amount = int(freshkill_pile.total_amount / 2)
@@ -389,7 +242,7 @@ class Freshkill_Events:
             Parameters
             ----------
             event : Single_Event
-                the event which is be chosen
+                the event which is chosen
             cat : Cat
                 the main cat of the provided possible event list
             other_cat : Cat
@@ -451,7 +304,7 @@ class Freshkill_Events:
 
                 other_cat.get_injured(event.injury, event_triggered=True)
 
-        # if the length of the history text is 2, this means the event is a instant death event
+        # if the length of the history text is 2, this means the event is an instant death event
         if "death" in event.tags or "multi_death" in event.tags:
             history_normal = None
             history_leader = None

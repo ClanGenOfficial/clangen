@@ -3,7 +3,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.events_module.freshkill_pile_events import Freshkill_Events
+from scripts.events_module.freshkill_pile_events import FreshkillEvents
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.image_button import (
     UISpriteButton,
@@ -87,7 +87,7 @@ class ClearingScreen(Screens):
                     ].current_score
                     amount = max_amount - current_amount
                 game.clan.freshkill_pile.feed_one_cat(self.focus_cat_object, amount, 0)
-                Freshkill_Events.handle_nutrient(
+                FreshkillEvents.handle_nutrient(
                     self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
                 )
                 self.update_cats_list()
@@ -106,7 +106,7 @@ class ClearingScreen(Screens):
                     self.handle_tab_toggles()
             elif event.ui_element == self.feed_all_button:
                 game.clan.freshkill_pile.already_fed = []
-                game.clan.freshkill_pile.feed_cats(self.hungry_cats, True)
+                game.clan.freshkill_pile.prepare_feed_cats(self.hungry_cats, True)
                 game.clan.freshkill_pile.already_fed = []
                 self.update_cats_list()
                 self.update_nutrition_cats()
@@ -174,20 +174,11 @@ class ClearingScreen(Screens):
             self.handle_checkbox_events(event)
 
     def update_cats_list(self):
-        self.satisfied_cats = []
-        self.hungry_cats = []
-        nutrition_info = game.clan.freshkill_pile.nutrition_info
-        low_nutrition_cats = [
-            cat_id
-            for cat_id, nutrient in nutrition_info.items()
-            if nutrient.percentage <= 99
-        ]
-        for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
-                if the_cat.ID in low_nutrition_cats:
-                    self.hungry_cats.append(the_cat)
-                else:
-                    self.satisfied_cats.append(the_cat)
+        clan_cats = [cat for cat in Cat.all_cats_list if not cat.outside and not cat.dead]
+
+        self.hungry_cats = [cat for cat in clan_cats if cat.nutrition.percentage <= 99]
+        self.satisfied_cats = [cat for cat in clan_cats if cat.ID not in self.hungry_cats]
+
         if self.tab_showing == self.satisfied_tab:
             self.tab_list = self.satisfied_cats
         else:

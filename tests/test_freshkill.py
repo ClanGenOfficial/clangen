@@ -97,209 +97,9 @@ class FreshkillPileTest(unittest.TestCase):
 
         # then
         self.assertEqual(test_clan.freshkill_pile.total_amount, self.AMOUNT)
-        test_clan.freshkill_pile.feed_cats([test_warrior])
+        test_clan.freshkill_pile.prepare_feed_cats([test_warrior])
         self.assertEqual(test_clan.freshkill_pile.total_amount,
                          self.AMOUNT - self.PREY_REQUIREMENT["warrior"])
-
-    def test_tactic_younger_first(self) -> None:
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.PREY_REQUIREMENT["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-
-        youngest_warrior = Cat()
-        youngest_warrior.status = "warrior"
-        youngest_warrior.moons = 20
-        middle_warrior = Cat()
-        middle_warrior.status = "warrior"
-        middle_warrior.moons = 30
-        oldest_warrior = Cat()
-        oldest_warrior.status = "warrior"
-        oldest_warrior.moons = 40
-
-        freshkill_pile.add_cat_to_nutrition(youngest_warrior)
-        freshkill_pile.add_cat_to_nutrition(middle_warrior)
-        freshkill_pile.add_cat_to_nutrition(oldest_warrior)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[youngest_warrior.ID].percentage, 100)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 100)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[oldest_warrior.ID].percentage, 100)
-
-        # when
-        freshkill_pile.tactic_younger_first(
-            [oldest_warrior, middle_warrior, youngest_warrior])
-
-        # then
-        self.assertEqual(
-            freshkill_pile.nutrition_info[youngest_warrior.ID].percentage, 100)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 100)
-        self.assertNotEqual(
-            freshkill_pile.nutrition_info[oldest_warrior.ID].percentage, 100)
-
-    def test_tactic_less_nutrition_first(self) -> None:
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.PREY_REQUIREMENT["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-
-        lowest_warrior = Cat()
-        lowest_warrior.status = "warrior"
-        lowest_warrior.moons = 20
-        middle_warrior = Cat()
-        middle_warrior.status = "warrior"
-        middle_warrior.moons = 30
-        highest_warrior = Cat()
-        highest_warrior.status = "warrior"
-        highest_warrior.moons = 40
-
-        freshkill_pile.add_cat_to_nutrition(lowest_warrior)
-        max_score = freshkill_pile.nutrition_info[lowest_warrior.ID].max_score
-        give_score = max_score - self.PREY_REQUIREMENT["warrior"]
-        freshkill_pile.nutrition_info[lowest_warrior.ID].current_score = give_score
-
-        freshkill_pile.add_cat_to_nutrition(middle_warrior)
-        give_score = max_score - (self.PREY_REQUIREMENT["warrior"] / 2)
-        freshkill_pile.nutrition_info[middle_warrior.ID].current_score = give_score
-
-        freshkill_pile.add_cat_to_nutrition(highest_warrior)
-        self.assertLessEqual(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 70)
-        self.assertLessEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 90)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100)
-
-        # when
-        living_cats = [highest_warrior, middle_warrior, lowest_warrior]
-        freshkill_pile.living_cats = living_cats
-        freshkill_pile.tactic_less_nutrition_first(living_cats)
-
-        # then
-        self.assertEqual(freshkill_pile.total_amount, 0)
-        self.assertGreaterEqual(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 60)
-        self.assertGreaterEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 80)
-        self.assertLess(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 70)
-
-    def test_tactic_sick_injured_first(self) -> None:
-        # given
-        # young enough kid
-        injured_cat = Cat()
-        injured_cat.status = "warrior"
-        injured_cat.injuries["test_injury"] = {
-            "severity": "major"
-        }
-        sick_cat = Cat()
-        sick_cat.status = "warrior"
-        sick_cat.illnesses["test_illness"] = {
-            "severity": "major"
-        }
-        healthy_cat = Cat()
-        healthy_cat.status = "warrior"
-
-        freshkill_pile = FreshkillPile()
-        # be able to feed one queen and some of the warrior
-        current_amount = self.PREY_REQUIREMENT["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-
-        freshkill_pile.add_cat_to_nutrition(injured_cat)
-        freshkill_pile.add_cat_to_nutrition(sick_cat)
-        freshkill_pile.add_cat_to_nutrition(healthy_cat)
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
-
-        # when
-        freshkill_pile.tactic_sick_injured_first([healthy_cat, sick_cat, injured_cat])
-
-        # then
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertLess(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 70)
-
-    def test_more_experience_first(self) -> None:
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.PREY_REQUIREMENT["warrior"]
-        freshkill_pile.pile["expires_in_4"] = current_amount
-
-        lowest_warrior = Cat()
-        lowest_warrior.status = "warrior"
-        lowest_warrior.experience = 20
-        middle_warrior = Cat()
-        middle_warrior.status = "warrior"
-        middle_warrior.experience = 30
-        highest_warrior = Cat()
-        highest_warrior.status = "warrior"
-        highest_warrior.experience = 40
-
-        freshkill_pile.add_cat_to_nutrition(lowest_warrior)
-        freshkill_pile.add_cat_to_nutrition(middle_warrior)
-        freshkill_pile.add_cat_to_nutrition(highest_warrior)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 100)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 100)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100)
-
-        # when
-        freshkill_pile.tactic_more_experience_first(
-            [lowest_warrior, middle_warrior, highest_warrior])
-
-        # then
-        # self.assertEqual(freshkill_pile.total_amount,0)
-        self.assertLess(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 70)
-        self.assertLess(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 90)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100)
-
-    def test_hunter_first(self) -> None:
-        # check also different ranks of hunting skill
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.PREY_REQUIREMENT["warrior"] + (self.PREY_REQUIREMENT["warrior"] / 2)
-        freshkill_pile.pile["expires_in_4"] = current_amount
-
-        best_hunter_warrior = Cat()
-        best_hunter_warrior.status = "warrior"
-        best_hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 25)
-        self.assertEqual(best_hunter_warrior.skills.primary.tier, 3)
-        hunter_warrior = Cat()
-        hunter_warrior.status = "warrior"
-        hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 0)
-        self.assertEqual(hunter_warrior.skills.primary.tier, 1)
-        no_hunter_warrior = Cat()
-        no_hunter_warrior.status = "warrior"
-        no_hunter_warrior.skills.primary = Skill(SkillPath.MEDIATOR, 0, True)
-
-        freshkill_pile.add_cat_to_nutrition(best_hunter_warrior)
-        freshkill_pile.add_cat_to_nutrition(hunter_warrior)
-        freshkill_pile.add_cat_to_nutrition(no_hunter_warrior)
-        self.assertEqual(freshkill_pile.nutrition_info[best_hunter_warrior.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[hunter_warrior.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[no_hunter_warrior.ID].percentage, 100)
-
-        # when
-        living_cats = [hunter_warrior, no_hunter_warrior, best_hunter_warrior]
-        freshkill_pile.tactic_hunter_first(living_cats)
-
-        # then
-        # this hunter should be fed completely
-        self.assertEqual(freshkill_pile.nutrition_info[best_hunter_warrior.ID].percentage, 100)
-        # this hunter should be fed partially
-        self.assertLess(freshkill_pile.nutrition_info[hunter_warrior.ID].percentage, 90)
-        self.assertGreater(freshkill_pile.nutrition_info[hunter_warrior.ID].percentage, 70)
-        # this cat should not be fed
-        self.assertLess(freshkill_pile.nutrition_info[no_hunter_warrior.ID].percentage, 70)
-
     def test_pregnant_handling(self) -> None:
         # given
         # young enough kid
@@ -313,25 +113,21 @@ class FreshkillPileTest(unittest.TestCase):
         cat3 = Cat()
         cat3.status = "warrior"
 
+        self.assertTrue("pregnant" in pregnant_cat.injuries)
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
         current_amount = self.PREY_REQUIREMENT["queen/pregnant"]
         freshkill_pile.pile["expires_in_4"] = current_amount
 
-        freshkill_pile.add_cat_to_nutrition(pregnant_cat)
-        freshkill_pile.add_cat_to_nutrition(cat2)
-        freshkill_pile.add_cat_to_nutrition(cat3)
-        self.assertEqual(freshkill_pile.nutrition_info[pregnant_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[cat2.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[cat3.ID].percentage, 100)
+
 
         # when
-        freshkill_pile.feed_cats([cat2, cat3, pregnant_cat])
+        freshkill_pile.prepare_feed_cats([cat2, cat3, pregnant_cat])
 
         # then
-        self.assertEqual(freshkill_pile.nutrition_info[pregnant_cat.ID].percentage, 100)
-        self.assertLess(freshkill_pile.nutrition_info[cat2.ID].percentage, 70)
-        self.assertLess(freshkill_pile.nutrition_info[cat3.ID].percentage, 70)
+        self.assertEqual(pregnant_cat.nutrition.percentage, 100)
+        self.assertLess(cat2.nutrition.percentage, 70)
+        self.assertLess(cat3.nutrition.percentage, 70)
 
     def test_sick_handling(self) -> None:
         # given
@@ -354,21 +150,18 @@ class FreshkillPileTest(unittest.TestCase):
         current_amount = self.PREY_REQUIREMENT["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
 
-        freshkill_pile.add_cat_to_nutrition(injured_cat)
-        freshkill_pile.add_cat_to_nutrition(sick_cat)
-        freshkill_pile.add_cat_to_nutrition(healthy_cat)
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
+        self.assertEqual(injured_cat.nutrition.percentage, 100)
+        self.assertEqual(sick_cat.nutrition.percentage, 100)
+        self.assertEqual(healthy_cat.nutrition.percentage, 100)
 
         # when
-        freshkill_pile.feed_cats([sick_cat, injured_cat, healthy_cat])
+        freshkill_pile.prepare_feed_cats([sick_cat, injured_cat, healthy_cat])
 
         # then
         # ensure the injured and sick cats got fed
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertLess(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 70)
+        self.assertEqual(injured_cat.nutrition.percentage, 100)
+        self.assertEqual(sick_cat.nutrition.percentage, 100)
+        self.assertLess(healthy_cat.nutrition.percentage, 70)
 
 
 class FreshkillPilePregnancyTest(unittest.TestCase):
@@ -413,14 +206,14 @@ class FreshkillPilePregnancyTest(unittest.TestCase):
         living_cats = [no_parent, father, kid, mother]
         self.assertEqual([mother.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
 
-        freshkill_pile.feed_cats(living_cats, False)
+        freshkill_pile.prepare_feed_cats(living_cats)
 
         # then
         self.assertEqual(kid.nutrition.percentage, 100)
         self.assertEqual(mother.nutrition.percentage, 100)
-        self.assertLess(no_parent.nutrition.percentage, 90)
-        self.assertGreater(no_parent.nutrition.percentage, 70)
-        self.assertLess(father.nutrition.percentage, 70)
+        self.assertLess(father.nutrition.percentage, 90)
+        self.assertGreater(father.nutrition.percentage, 70)
+        self.assertLess(no_parent.nutrition.percentage, 70)
 
     def test_queen_female_only(self) -> None:
         # given
@@ -450,13 +243,13 @@ class FreshkillPilePregnancyTest(unittest.TestCase):
         # when
         living_cats = [no_parent, kid, mother]
         self.assertEqual([mother.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
-        freshkill_pile.tactic_status(living_cats)
+
+        freshkill_pile.prepare_feed_cats(living_cats)
 
         # then
-        self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[mother.ID].percentage, 100)
-        self.assertLess(freshkill_pile.nutrition_info[no_parent.ID].percentage, 90)
-        self.assertGreater(freshkill_pile.nutrition_info[no_parent.ID].percentage, 70)
+        self.assertEqual(kid.nutrition.percentage, 100)
+        self.assertEqual(mother.nutrition.percentage, 100)
+        self.assertLess(no_parent.nutrition.percentage, 80)
 
     def test_queen_male_only(self):
         # given
@@ -587,6 +380,10 @@ class FreshkillBaseSortTest(unittest.TestCase):
         self.assertEqual(warrior3.skills.primary.tier, 1)
 
         correct_order = [warrior1, warrior3, warrior2]
+
+        self.assertEqual(FreshkillPile.sort_hunter(warrior1), 3)
+        self.assertEqual(FreshkillPile.sort_hunter(warrior2), 0)
+        self.assertEqual(FreshkillPile.sort_hunter(warrior3), 1)
 
         self.assertEqual(FreshkillPile.sort_cats(all_cats, ["hunter"]), correct_order)
 

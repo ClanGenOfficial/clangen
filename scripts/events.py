@@ -26,7 +26,7 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
-from scripts.events_module.freshkill_pile_events import Freshkill_Events
+from scripts.events_module.freshkill_pile_events import FreshkillEvents
 from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
@@ -124,7 +124,7 @@ class Events:
             # handle freshkill pile events, after feeding
             # first 5 moons there will not be any freshkill pile event
             if game.clan.age >= 5:
-                Freshkill_Events.handle_amount_freshkill_pile(
+                FreshkillEvents.handle_amount_freshkill_pile(
                     game.clan.freshkill_pile, relevant_cats
                 )
             self.get_moon_freshkill()
@@ -1390,8 +1390,8 @@ class Events:
             game.clan.game_mode in ["expanded", "cruel season"]
             and game.clan.freshkill_pile
         ):
-            Freshkill_Events.handle_nutrient(
-                cat, game.clan.freshkill_pile.nutrition_info
+            FreshkillEvents.handle_nutrient(
+                cat, game.clan.freshkill_pile
             )
             if cat.dead:
                 return
