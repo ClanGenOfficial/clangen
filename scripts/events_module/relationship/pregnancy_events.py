@@ -4,7 +4,7 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat.history import History
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship
@@ -376,7 +376,7 @@ class Pregnancy_Events:
                 game.clan.add_to_outside(kit)
                 kit.backstory = "outsider1"
                 if cat.exiled:
-                    kit.status = Status.LONER
+                    kit.status = StatusEnum.LONER
                     name = choice(names.names_dict["normal_prefixes"])
                     kit.name = Name("loner", prefix=name, suffix="")
                 if other_cat and not other_cat.outside:
@@ -765,7 +765,7 @@ class Pregnancy_Events:
                         insert = "their kit is"
                     thought = f"Is glad that {insert} safe"
                     blood_parent = create_new_cat(Cat,
-                                                  status=random.choice([Status.LONER, Status.KITTYPET]),
+                                                  status=random.choice([StatusEnum.LONER, StatusEnum.KITTYPET]),
                                                   alive=False,
                                                   thought=thought,
                                                   age=randint(15, 120),
@@ -776,19 +776,19 @@ class Pregnancy_Events:
                     parent1=blood_parent.ID,
                     moons=0,
                     backstory=backstory,
-                    status=Status.NEWBORN,
+                    status=StatusEnum.NEWBORN,
                 )
             elif cat and other_cat:
                 # Two parents provided
                 # The cat that gave birth is always parent1 so there is no need to check gender
                 kit = Cat(
-                    parent1=cat.ID, parent2=other_cat.ID, moons=0, status=Status.NEWBORN
+                    parent1=cat.ID, parent2=other_cat.ID, moons=0, status=StatusEnum.NEWBORN
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
-                    parent1=cat.ID, moons=0, backstory=backstory, status=Status.NEWBORN
+                    parent1=cat.ID, moons=0, backstory=backstory, status=StatusEnum.NEWBORN
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 

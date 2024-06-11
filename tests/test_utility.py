@@ -2,7 +2,7 @@ import os
 import unittest
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
     get_highest_romantic_relation,
@@ -187,17 +187,17 @@ class TestGetQueens(unittest.TestCase):
 
     def setUp(self) -> None:
         self.test_cat1 = Cat()
-        self.test_cat1.status = Status.WARRIOR
+        self.test_cat1.status = StatusEnum.WARRIOR
         self.test_cat2 = Cat()
-        self.test_cat2.status = Status.WARRIOR
+        self.test_cat2.status = StatusEnum.WARRIOR
         self.test_cat3 = Cat()
-        self.test_cat3.status = Status.WARRIOR
+        self.test_cat3.status = StatusEnum.WARRIOR
         self.test_cat4 = Cat()
-        self.test_cat4.status = Status.WARRIOR
+        self.test_cat4.status = StatusEnum.WARRIOR
         self.test_cat5 = Cat()
-        self.test_cat5.status = Status.WARRIOR
+        self.test_cat5.status = StatusEnum.WARRIOR
         self.test_cat6 = Cat()
-        self.test_cat6.status = Status.WARRIOR
+        self.test_cat6.status = StatusEnum.WARRIOR
 
     def tearDown(self) -> None:
         del self.test_cat1

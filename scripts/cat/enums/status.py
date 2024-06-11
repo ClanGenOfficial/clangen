@@ -1,7 +1,7 @@
 from scripts.game_structure.extended_strenum import ExtendedStrEnum
 
 
-class Status(ExtendedStrEnum):
+class StatusEnum(ExtendedStrEnum):
     """
     Roles that a cat may hold. Check ExtendedStrEnum for more things!
     """
@@ -39,38 +39,38 @@ class Status(ExtendedStrEnum):
 
     def is_patrol_app(self):
         """True if apprentice who can go on patrol (warrior app and medcat app)"""
-        return self in [Status.WARRIORAPP, Status.MEDCATAPP]
+        return self in [StatusEnum.WARRIORAPP, StatusEnum.MEDCATAPP]
 
     def is_kit_any(self):
         """True if cat is newborn or kitten."""
-        return self in [Status.NEWBORN, Status.KITTEN]
+        return self in [StatusEnum.NEWBORN, StatusEnum.KITTEN]
 
     def is_app_any(self):
         """True if cat is apprentice,
         medicine cat apprentice or mediator apprentice."""
-        return self in [Status.WARRIORAPP,
-                        Status.MEDCATAPP,
-                        Status.MEDIATORAPP]
+        return self in [StatusEnum.WARRIORAPP,
+                        StatusEnum.MEDCATAPP,
+                        StatusEnum.MEDIATORAPP]
 
     def is_mediator_any(self):
         """True if cat is mediator or mediator apprentice."""
-        return self in [Status.MEDIATOR, Status.MEDIATORAPP]
+        return self in [StatusEnum.MEDIATOR, StatusEnum.MEDIATORAPP]
 
     def is_medcat_any(self):
         """True if cat is medicine cat or medicine cat apprentice."""
-        return self in [Status.MEDCAT, Status.MEDCATAPP]
+        return self in [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP]
 
     def is_warrior_any(self):
         """True if cat is warrior or apprentice."""
-        return self in [Status.WARRIOR, Status.WARRIORAPP]
+        return self in [StatusEnum.WARRIOR, StatusEnum.WARRIORAPP]
 
     def is_deputy_or_leader(self):
         """True if cat is deputy or leader."""
-        return self in [Status.DEPUTY, Status.LEADER]
+        return self in [StatusEnum.DEPUTY, StatusEnum.LEADER]
 
     def is_warrior_medcat_or_mediator(self):  # TODO grr.
         """True if cat is warrior, medcat or mediator"""
-        return self in [Status.WARRIOR, Status.MEDCAT, Status.MEDIATOR]
+        return self in [StatusEnum.WARRIOR, StatusEnum.MEDCAT, StatusEnum.MEDIATOR]
 
     def is_normal_adult(self):
         """True if cat is warrior, deputy or leader"""
@@ -79,8 +79,8 @@ class Status(ExtendedStrEnum):
     def is_outside_clan(self):
         """True if cat is former Clanmember, exiled, kittypet, loner or rogue"""
         return self in [
-            Status.EXCLAN, Status.EXILED, Status.KITTYPET,
-            Status.LONER, Status.ROGUE]
+            StatusEnum.EXCLAN, StatusEnum.EXILED, StatusEnum.KITTYPET,
+            StatusEnum.LONER, StatusEnum.ROGUE]
 
     def is_clan_status(self):
         """True if cat is a member of the Clan.
@@ -90,68 +90,68 @@ class Status(ExtendedStrEnum):
 
     def is_newborn(self):
         """True if newborn."""
-        return self == Status.NEWBORN
+        return self == StatusEnum.NEWBORN
 
     def is_kitten(self):
         """True if kitten."""
-        return self == Status.KITTEN
+        return self == StatusEnum.KITTEN
 
     def is_elder(self):
         """True if elder."""
-        return self == Status.ELDER
+        return self == StatusEnum.ELDER
 
     def is_warrior_app(self):
         """True if (warrior) apprentice."""
-        return self == Status.WARRIORAPP
+        return self == StatusEnum.WARRIORAPP
 
     def is_warrior(self):
         """True if warrior."""
-        return self == Status.WARRIOR
+        return self == StatusEnum.WARRIOR
 
     def is_mediator_app(self):
         """True if mediator apprentice."""
-        return self == Status.MEDIATORAPP
+        return self == StatusEnum.MEDIATORAPP
 
     def is_mediator(self):
         """True if mediator."""
-        return self == Status.MEDIATOR
+        return self == StatusEnum.MEDIATOR
 
     def is_medcat_app(self):
         """True if medicine cat apprentice."""
-        return self == Status.MEDCATAPP
+        return self == StatusEnum.MEDCATAPP
 
     def is_medcat(self):
         """True if medicine cat."""
-        return self == Status.MEDCAT
+        return self == StatusEnum.MEDCAT
 
     def is_deputy(self):
         """True if deputy."""
-        return self == Status.DEPUTY
+        return self == StatusEnum.DEPUTY
 
     def is_leader(self):
         """True if leader."""
-        return self == Status.LEADER
+        return self == StatusEnum.LEADER
 
     def is_ex_clan(self):
         """True if status is former Clancat"""
-        return self == Status.EXCLAN
+        return self == StatusEnum.EXCLAN
 
     def is_exiled(self):
         """True if exiled"""
-        return self == Status.EXILED
+        return self == StatusEnum.EXILED
 
     def is_kittypet(self):
         """True if kittypet"""
-        return self == Status.KITTYPET
+        return self == StatusEnum.KITTYPET
 
     def is_loner(self):
         """True if loner"""
-        return self == Status.LONER
+        return self == StatusEnum.LONER
 
     def is_rogue(self):
         """True if rogue"""
-        return self == Status.ROGUE
+        return self == StatusEnum.ROGUE
 
     def is_none(self):
         """True if debug/default empty value"""
-        return self == Status.NONE
+        return self == StatusEnum.NONE

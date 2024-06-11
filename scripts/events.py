@@ -14,7 +14,7 @@ from collections import Counter
 import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums.status import Status
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.clan import HERBS
@@ -442,12 +442,12 @@ class Events:
                                     invited_cat.specsuffix_hidden = False
 
                             elif invited_cat.age == "senior":
-                                invited_cat.status = Status.ELDER
+                                invited_cat.status = StatusEnum.ELDER
                             elif invited_cat.age == "adolescent":
-                                invited_cat.status = Status.WARRIORAPP
+                                invited_cat.status = StatusEnum.WARRIORAPP
                                 invited_cat.update_mentor()
                             else:
-                                invited_cat.status = Status.WARRIOR
+                                invited_cat.status = StatusEnum.WARRIOR
 
                         invited_cat.create_relationships_new_cat()
 
@@ -535,7 +535,7 @@ class Events:
                         cat.ID,
                     )
                 )
-                cat.status_change(Status.MEDIATOR)
+                cat.status_change(StatusEnum.MEDIATOR)
 
     def get_moon_freshkill(self):
         """Adding auto freshkill for the current moon."""
@@ -848,7 +848,7 @@ class Events:
                 ) or random.getrandbits(1):
                     status_use = cat.status
                     if status_use.is_deputy_or_leader():
-                        status_use = Status.WARRIOR
+                        status_use = StatusEnum.WARRIOR
                     chance = info_dict[f"injury_chance_{status_use}"]
                     if game.clan.clan_settings.get("raid other clans"):
                         # increase the chance of injuries depending on how many clans are raided
@@ -995,9 +995,9 @@ class Events:
                     self.ceremony(x, "apprentice")
             elif not x.status.is_medcat():
                 if x.moons == 0:
-                    x.status = Status.NEWBORN
+                    x.status = StatusEnum.NEWBORN
                 elif x.moons < 6:
-                    x.status = Status.KITTEN
+                    x.status = StatusEnum.KITTEN
                 elif x.moons < 12 and not x.status.is_app_any():
                     x.status_change("apprentice")
                 elif x.moons < 120 and not x.status.is_warrior():

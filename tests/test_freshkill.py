@@ -3,7 +3,7 @@ import unittest
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan import Clan
 from scripts.clan_resources.freshkill import FreshkillPile
@@ -91,7 +91,7 @@ class FreshkillPileTest(unittest.TestCase):
                          game_mode='expanded',
                          starting_members=[],
                          starting_season='Newleaf')
-        test_warrior = Cat(status=Status.WARRIOR)
+        test_warrior = Cat(status=StatusEnum.WARRIOR)
         test_clan.add_cat(test_warrior)
 
         # then
@@ -107,11 +107,11 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        youngest_warrior = Cat(status=Status.WARRIOR)
+        youngest_warrior = Cat(status=StatusEnum.WARRIOR)
         youngest_warrior.moons = 20
-        middle_warrior = Cat(status=Status.WARRIOR)
+        middle_warrior = Cat(status=StatusEnum.WARRIOR)
         middle_warrior.moons = 30
-        oldest_warrior = Cat(status=Status.WARRIOR)
+        oldest_warrior = Cat(status=StatusEnum.WARRIOR)
         oldest_warrior.moons = 40
 
         freshkill_pile.add_cat_to_nutrition(youngest_warrior)
@@ -143,11 +143,11 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        lowest_warrior = Cat(status=Status.WARRIOR)
+        lowest_warrior = Cat(status=StatusEnum.WARRIOR)
         lowest_warrior.moons = 20
-        middle_warrior = Cat(status=Status.WARRIOR)
+        middle_warrior = Cat(status=StatusEnum.WARRIOR)
         middle_warrior.moons = 30
-        highest_warrior = Cat(status=Status.WARRIOR)
+        highest_warrior = Cat(status=StatusEnum.WARRIOR)
         highest_warrior.moons = 40
 
         freshkill_pile.add_cat_to_nutrition(lowest_warrior)
@@ -185,16 +185,16 @@ class FreshkillPileTest(unittest.TestCase):
     def test_tactic_sick_injured_first(self) -> None:
         # given
         # young enough kid
-        injured_cat = Cat(status=Status.WARRIOR)
+        injured_cat = Cat(status=StatusEnum.WARRIOR)
         injured_cat.injuries["test_injury"] = {
             "severity": "major"
         }
 
-        sick_cat = Cat(status=Status.WARRIOR)
+        sick_cat = Cat(status=StatusEnum.WARRIOR)
         sick_cat.illnesses["test_illness"] = {
             "severity": "major"
         }
-        healthy_cat = Cat(status=Status.WARRIOR)
+        healthy_cat = Cat(status=StatusEnum.WARRIOR)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
@@ -224,11 +224,11 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        lowest_warrior = Cat(status=Status.WARRIOR)
+        lowest_warrior = Cat(status=StatusEnum.WARRIOR)
         lowest_warrior.experience = 20
-        middle_warrior = Cat(status=Status.WARRIOR)
+        middle_warrior = Cat(status=StatusEnum.WARRIOR)
         middle_warrior.experience = 30
-        highest_warrior = Cat(status=Status.WARRIOR)
+        highest_warrior = Cat(status=StatusEnum.WARRIOR)
         highest_warrior.experience = 40
 
         freshkill_pile.add_cat_to_nutrition(lowest_warrior)
@@ -262,13 +262,13 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        best_hunter_warrior = Cat(status=Status.WARRIOR)
+        best_hunter_warrior = Cat(status=StatusEnum.WARRIOR)
         best_hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 25)
         self.assertEqual(best_hunter_warrior.skills.primary.tier, 3)
-        hunter_warrior = Cat(status=Status.WARRIOR)
+        hunter_warrior = Cat(status=StatusEnum.WARRIOR)
         hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 0)
         self.assertEqual(hunter_warrior.skills.primary.tier, 1)
-        no_hunter_warrior = Cat(status=Status.WARRIOR)
+        no_hunter_warrior = Cat(status=StatusEnum.WARRIOR)
         no_hunter_warrior.skills.primary = Skill(SkillPath.MEDIATOR, 0, True)
 
         freshkill_pile.add_cat_to_nutrition(best_hunter_warrior)
@@ -294,11 +294,11 @@ class FreshkillPileTest(unittest.TestCase):
     def test_queen_handling(self) -> None:
         # given
         # young enough kid
-        mother = Cat(gender="female", status=Status.WARRIOR)
-        father = Cat(gender="male", status=Status.WARRIOR)
-        kid = Cat(moons=2, status=Status.KITTEN, parent1=mother.ID, parent2=father.ID)
+        mother = Cat(gender="female", status=StatusEnum.WARRIOR)
+        father = Cat(gender="male", status=StatusEnum.WARRIOR)
+        kid = Cat(moons=2, status=StatusEnum.KITTEN, parent1=mother.ID, parent2=father.ID)
 
-        no_parent = Cat(status=Status.WARRIOR)
+        no_parent = Cat(status=StatusEnum.WARRIOR)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
@@ -330,12 +330,12 @@ class FreshkillPileTest(unittest.TestCase):
     def test_pregnant_handling(self) -> None:
         # given
         # young enough kid
-        pregnant_cat = Cat(status=Status.WARRIOR)
+        pregnant_cat = Cat(status=StatusEnum.WARRIOR)
         pregnant_cat.injuries["pregnant"] = {
             "severity": "minor"
         }
-        cat2 = Cat(status=Status.WARRIOR)
-        cat3 = Cat(status=Status.WARRIOR)
+        cat2 = Cat(status=StatusEnum.WARRIOR)
+        cat3 = Cat(status=StatusEnum.WARRIOR)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
@@ -361,15 +361,15 @@ class FreshkillPileTest(unittest.TestCase):
     def test_sick_handling(self) -> None:
         # given
         # young enough kid
-        injured_cat = Cat(status=Status.WARRIOR)
+        injured_cat = Cat(status=StatusEnum.WARRIOR)
         injured_cat.injuries["claw-wound"] = {
             "severity": "major"
         }
-        sick_cat = Cat(status=Status.WARRIOR)
+        sick_cat = Cat(status=StatusEnum.WARRIOR)
         sick_cat.illnesses["diarrhea"] = {
             "severity": "major"
         }
-        healthy_cat = Cat(status=Status.WARRIOR)
+        healthy_cat = Cat(status=StatusEnum.WARRIOR)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior

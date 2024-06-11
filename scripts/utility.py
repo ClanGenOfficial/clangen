@@ -16,7 +16,7 @@ from typing import List
 import pygame
 import ujson
 
-from scripts.cat.enums.status import Status
+from scripts.cat.enums.status import StatusEnum
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -373,14 +373,14 @@ def create_new_cat_block(
         new_name = choice([True, False])
 
     # STATUS - must be handled before backstories
-    status = Status.NONE
+    status = StatusEnum.NONE
     for _tag in attribute_list:
         match = re.match(r"status:(.+)", _tag)
         if not match:
             continue
 
-        if Status(match.group(1)) in Status.list():
-            status = Status(match.group(1))
+        if StatusEnum(match.group(1)) in StatusEnum.list():
+            status = StatusEnum(match.group(1))
             break
 
     # SET AGE
@@ -428,7 +428,7 @@ def create_new_cat_block(
     if "litter" in attribute_list:
         litter = True
         if not status.is_kit_any():
-            status = Status.KITTEN
+            status = StatusEnum.KITTEN
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
     if status.is_kit_any():
@@ -465,7 +465,7 @@ def create_new_cat_block(
     outside = False
     if "meeting" in attribute_list:
         outside = True
-        status = Status(cat_type)
+        status = StatusEnum(cat_type)
         new_name = False
         thought = "Is wondering about those new cats"
 
@@ -624,7 +624,7 @@ def create_new_cat(
         litter: bool = False,
         other_clan: bool = None,
         backstory: bool = None,
-        status: Status = None,
+        status: StatusEnum = None,
         age: int = None,
         gender: str = None,
         thought: str = 'Is looking around the camp with wonder',
@@ -644,7 +644,7 @@ def create_new_cat(
     :param bool litter: set True if a litter of kittens needs to be generated - default: False
     :param bool other_clan: if new cat(s) are from a neighboring clan, set true
     :param bool backstory: a list of possible backstories.json for the new cat(s) - default: None
-    :param Status status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
+    :param StatusEnum status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param int age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param str thought: if you need to give a custom "welcome" thought, set it here
@@ -690,15 +690,15 @@ def create_new_cat(
     # setting status
     if not status:
         if age == 0:
-            status = Status.NEWBORN
+            status = StatusEnum.NEWBORN
         elif age < 6:
-            status = Status.KITTEN
+            status = StatusEnum.KITTEN
         elif 6 <= age <= 11:
-            status = Status.WARRIORAPP
+            status = StatusEnum.WARRIORAPP
         elif age >= 12:
-            status = Status.WARRIOR
+            status = StatusEnum.WARRIOR
         elif age >= 120:
-            status = Status.ELDER
+            status = StatusEnum.ELDER
     # cat creation and naming time
     for index in range(number_of_cats):
         # setting gender

@@ -4,7 +4,7 @@ from copy import deepcopy
 from unittest.mock import patch
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat_relations.relationship import Relationship
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -384,8 +384,8 @@ class TestMateFunctions(unittest.TestCase):
 class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):
         # given
-        app = Cat(moons=7, status=Status.WARRIORAPP)
-        mentor = Cat(moons=20, status=Status.WARRIOR)
+        app = Cat(moons=7, status=StatusEnum.WARRIORAPP)
+        mentor = Cat(moons=20, status=StatusEnum.WARRIOR)
         app.update_mentor(mentor.ID)
 
         # when
