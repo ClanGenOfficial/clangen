@@ -235,8 +235,6 @@ class Cat:
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
 
-        self.favourite = False
-
         self.specsuffix_hidden = specsuffix_hidden
         self.inheritance = None
 

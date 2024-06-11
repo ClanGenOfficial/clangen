@@ -120,11 +120,11 @@ class SpriteInspectScreen(Screens):
                 self.make_cat_image()
                 self.update_checkboxes()
             elif event.ui_element == self.cat_elements["favourite_button"]:
-                self.the_cat.favourite = False
+                self.the_cat.config.favorite = False
                 self.cat_elements["favourite_button"].hide()
                 self.cat_elements["not_favourite_button"].show()
             elif event.ui_element == self.cat_elements["not_favourite_button"]:
-                self.the_cat.favourite = True
+                self.the_cat.config.favorite = True
                 self.cat_elements["favourite_button"].show()
                 self.cat_elements["not_favourite_button"].hide()
 
@@ -311,7 +311,7 @@ class SpriteInspectScreen(Screens):
             tool_tip_text="Mark as favorite",
             starting_height=2,
         )
-        if self.the_cat.favourite:
+        if self.the_cat.config.favorite:
             self.cat_elements["favourite_button"].show()
             self.cat_elements["not_favourite_button"].hide()
         else:

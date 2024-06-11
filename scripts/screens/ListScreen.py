@@ -224,7 +224,7 @@ class ListScreen(Screens):
             "",
             object_id="#fav_cat",
             manager=MANAGER,
-            tool_tip_text="hide favourite cat indicators",
+            tool_tip_text="hide favorite cat indicators",
         )
 
         self.filter_not_fav = UIImageButton(
@@ -232,7 +232,7 @@ class ListScreen(Screens):
             "",
             object_id="#not_fav_cat",
             manager=MANAGER,
-            tool_tip_text="show favourite cat indicators",
+            tool_tip_text="show favorite cat indicators",
         )
 
         if game.clan.clan_settings["show fav"]:
@@ -705,7 +705,7 @@ class ListScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
 
                 # update_sprite(cat)
-                if game.clan.clan_settings["show fav"] and cat.favourite:
+                if game.clan.clan_settings["show fav"] and cat.config.favorite:
 
                     _temp = pygame.transform.scale(
                         pygame.image.load(
