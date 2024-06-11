@@ -31,6 +31,7 @@ class NurseryScreen(Screens):
         self.kits_selection_container = None
         self.kits_selection_elements = {}
         self.kits_cat_buttons = {}
+        self.available_kittens = {}
 
         self.focus_frame_container = None
         self.focus_frame_elements = {}
@@ -86,6 +87,7 @@ class NurseryScreen(Screens):
         self.update_adult_list()
 
         # KITS SELECTION
+        self.create_available_kittens()
         self.create_kits_selection()
         self.update_kits_list()
 
@@ -170,21 +172,35 @@ class NurseryScreen(Screens):
         # add parents to list
         for a in adults:
             for k in kittens:
-                if a.ID in [k.parent1, k.parent2] or a.ID in k.adoptive_parents:
+                if (a.ID in [k.parent1, k.parent2] or a.ID in k.adoptive_parents) and a not in self.available_adults["all"]:
                     self.available_adults["parents"].append(a)
                     self.available_adults["all"].append(a)
-                    adults.remove(a)
         
         # add caretakers to list
         # TODO: add caretaker role first.
         
         # add volunteers to list
         for c in range(randint(0, 3 if len(adults) > 3 else len(adults))):
-            vol = choice(adults)
-            self.available_adults["volunteers"].append(vol)
-            self.available_adults["all"].append(vol)
-            adults.remove(vol)
+            while True:
+                vol = choice(adults)
+                if  vol not in self.available_adults["all"]:
+                    self.available_adults["volunteers"].append(vol)
+                    self.available_adults["all"].append(vol)
+                    break
 
+    def create_available_kittens(self):
+        """
+        Creates a dict of available kittens. Kittens are the keys, values are their parents.
+        """
+        # get kittens
+        kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
+
+        # adding parents to list
+        for k in kittens:
+            self.available_kittens[k] = []
+            for a in self.available_adults["parents"]:
+                if a.ID in [k.parent1, k.parent2] or a.ID in k.adoptive_parents:
+                    self.available_kittens[k].append(a)
     
     def create_adult_selection(self):
         """
@@ -263,7 +279,9 @@ class NurseryScreen(Screens):
         Handles creating and updating the list of available kittens.
         """
         # get kittens
-        kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
+        kittens = []
+        for k in self.available_kittens.keys():
+            kittens.append(k)
 
         # separate them into chunks for the pages
         kitten_chunks = self.chunks(kittens, 8)
@@ -500,12 +518,33 @@ class NurseryScreen(Screens):
                 manager=MANAGER,
             )
             self.focus_elements["cat_status"] = pygame_gui.elements.UILabel(
-                relative_rect=scale(pygame.Rect((0, 400), (400, -1))),
+                relative_rect=scale(pygame.Rect((0, 395), (400, -1))),
                 text=f"{self.focus_cat.status}",
                 object_id="#text_box_22_horizcenter",
                 container=self.focus_container,
                 manager=MANAGER,
             )
+
+            # Role in the nursery
+            role = ""
+            if self.focus_cat in self.available_adults["volunteers"]:
+                role = "volunteer"
+            elif self.focus_cat in self.available_adults["parents"]:
+                role = "parent"
+            elif self.focus_cat in self.available_kittens.keys():
+                if len(self.available_kittens[self.focus_cat]) == 1:
+                    role = "child of " + str(self.available_kittens[self.focus_cat][0].name)
+                elif len(self.available_kittens[self.focus_cat]) > 1:
+                    role = "child of " + str(self.available_kittens[self.focus_cat][0].name) + " and others"
+
+            self.focus_elements["role"] = pygame_gui.elements.UILabel(
+                relative_rect=scale(pygame.Rect((0, 425), (400, -1))),
+                text=role,
+                object_id="#text_box_22_horizcenter",
+                container=self.focus_container,
+                manager=MANAGER,
+            )
+            
         else:
             self.focus_frame_elements["add_cat"].disable()
 
@@ -522,7 +561,9 @@ class NurseryScreen(Screens):
         }
 
         # Fetching cats
-        kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
+        kittens = []
+        for k in self.available_kittens.keys():
+            kittens.append(k)
         adults = self.available_adults["all"]
 
         for k in kittens:
