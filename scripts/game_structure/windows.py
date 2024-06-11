@@ -1966,7 +1966,7 @@ class ChangeCatToggles(UIWindow):
             self.checkboxes["prevent_fading"].disable()
 
         # No Kits
-        if self.the_cat.no_kits:
+        if self.the_cat.config.no_kits:
             box_type = "#checked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
         else:
@@ -2021,16 +2021,16 @@ class ChangeCatToggles(UIWindow):
                 game.all_screens["profile screen"].screen_switches()
                 self.kill()
             elif event.ui_element == self.checkboxes["prevent_fading"]:
-                self.the_cat.prevent_fading = not self.the_cat.prevent_fading
+                self.the_cat.prevent_fading = not self.the_cat.config.prevent_fading
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_kits"]:
-                self.the_cat.no_kits = not self.the_cat.no_kits
+                self.the_cat.config.no_kits = not self.the_cat.config.no_kits
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_retire"]:
-                self.the_cat.no_retire = not self.the_cat.no_retire
+                self.the_cat.no_retire = not self.the_cat.config.no_retire
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_mates"]:
-                self.the_cat.no_mates = not self.the_cat.no_mates
+                self.the_cat.no_mates = not self.the_cat.config.no_mates
                 self.refresh_checkboxes()
 
         return super().process_event(event)

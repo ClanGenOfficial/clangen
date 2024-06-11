@@ -208,7 +208,7 @@ class Pregnancy_Events:
             return
 
         # additional save for no kit setting
-        if (cat and cat.no_kits) or (other_cat and other_cat.no_kits):
+        if (cat and cat.config.no_kits) or (other_cat and other_cat.config.no_kits):
             return
 
         if clan.clan_settings["same sex birth"]:
@@ -519,7 +519,7 @@ class Pregnancy_Events:
         not_correct_age = (
             cat.age in ["newborn", "kitten", "adolescent"] or cat.moons < 15
         )
-        if not_correct_age or cat.no_kits or cat.dead:
+        if not_correct_age or cat.config.no_kits or cat.dead:
             return False
 
         # check for mate

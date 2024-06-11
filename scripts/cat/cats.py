@@ -13,6 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
+from scripts.cat.cat_config import CatConfig
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -172,6 +173,7 @@ class Cat:
         """
 
         self.history = None
+        self.config = CatConfig()
 
         if (
             faded
@@ -227,7 +229,6 @@ class Cat:
         self.experience_level = None
 
         # Various behavior toggles
-        self.no_kits = False
         self.no_mates = False
         self.no_retire = False
 
@@ -3357,9 +3358,6 @@ class Cat:
                 "previous_mates": self.previous_mates,
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
-                "no_kits": self.no_kits,
-                "no_retire": self.no_retire,
-                "no_mates": self.no_mates,
                 "exiled": self.exiled,
                 "driven_out": self.driven_out,
                 "pelt_name": self.pelt.name,
@@ -3394,8 +3392,11 @@ class Cat:
                 "outside": self.outside,
                 "faded_offspring": self.faded_offspring,
                 "opacity": self.pelt.opacity,
-                "prevent_fading": self.prevent_fading,
-                "favourite": self.favourite,
+                "no_kits": self.config.no_kits,
+                "no_retire": self.config.no_retire,
+                "no_mates": self.config.no_mates,
+                "prevent_fading": self.config.prevent_fading,
+                "favourite": self.config.favorite,
             }
 
 

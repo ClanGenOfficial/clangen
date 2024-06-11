@@ -326,9 +326,9 @@ class GenerateEvents:
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
             if "adoption" in event.sub_type:
-                if cat.no_kits:
+                if cat.config.no_kits:
                     continue
-                if any(Cat_class.fetch_cat(i).no_kits for i in cat.mate):
+                if any(Cat_class.fetch_cat(i).config.no_kits for i in cat.mate):
                     continue
 
             # check for old age

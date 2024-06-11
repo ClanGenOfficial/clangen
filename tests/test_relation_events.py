@@ -16,7 +16,7 @@ class CanHaveKits(unittest.TestCase):
     def test_prevent_kits(self):
         # given
         cat = Cat()
-        cat.no_kits = True
+        cat.config.no_kits = True
 
         # then
         self.assertFalse(Pregnancy_Events.check_if_can_have_kits(cat, single_parentage=True, allow_affair=True))
@@ -27,7 +27,7 @@ class CanHaveKits(unittest.TestCase):
         test_clan = Clan(name="clan")
         test_clan.pregnancy_data = {}
         cat1 = Cat(gender='female')
-        cat1.no_kits = True
+        cat1.config.no_kits = True
         cat2 = Cat(gender='male')
 
         cat1.mate.append(cat2.ID)
