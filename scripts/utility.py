@@ -1274,8 +1274,9 @@ def gather_cat_objects(
             out_set.add(event.patrol_apprentices[1])
         elif abbr == "clan":
             out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
-        elif abbr == "some_clan":
-            out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
+        elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
+            clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)]
+            out_set.update(sample(clan_cats, randint(1, round(len(clan_cats) / 8))))
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
         elif abbr == "multi":
