@@ -652,7 +652,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's no guarentee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} jump down, trotting over with tail up, happily touching noses with p_l.",
+                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up, happily touching noses with p_l.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
