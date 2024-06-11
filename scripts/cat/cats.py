@@ -229,7 +229,6 @@ class Cat:
         self.experience_level = None
 
         # Various behavior toggles
-        self.no_mates = False
         self.no_retire = False
 
         self.prevent_fading = False  # Prevents a cat from fading
@@ -2383,7 +2382,7 @@ class Cat:
             return False
 
         # No Mates Check
-        if not ignore_no_mates and (self.no_mates or other_cat.no_mates):
+        if not ignore_no_mates and (self.config.no_mates or other_cat.config.no_mates):
             return False
 
         # Inheritance check

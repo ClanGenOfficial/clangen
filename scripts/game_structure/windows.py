@@ -1998,7 +1998,7 @@ class ChangeCatToggles(UIWindow):
         )
 
         # No mates
-        if self.the_cat.no_mates:
+        if self.the_cat.config.no_mates:
             box_type = "#checked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
         else:
@@ -2030,7 +2030,7 @@ class ChangeCatToggles(UIWindow):
                 self.the_cat.no_retire = not self.the_cat.config.no_retire
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_mates"]:
-                self.the_cat.no_mates = not self.the_cat.config.no_mates
+                self.the_cat.config.no_mates = not self.the_cat.config.no_mates
                 self.refresh_checkboxes()
 
         return super().process_event(event)
