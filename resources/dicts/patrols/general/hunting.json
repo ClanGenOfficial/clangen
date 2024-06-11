@@ -352,7 +352,8 @@
                 "injury": [
                     {
                       "cats": [
-                        "r_c"
+                          "r_c",
+                          "some_clan"
                       ],
                         "injuries": ["poisoned"],
                         "scars": []
