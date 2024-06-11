@@ -1275,7 +1275,8 @@ def gather_cat_objects(
         elif abbr == "clan":
             out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
         elif abbr == "some_clan":
-            out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
+            out_set.update([x for x in Cat.all_cats_list if
+                            not (x.dead or x.outside or x.exiled)])  # are these supposed to be the same??
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
         elif abbr == "multi":
