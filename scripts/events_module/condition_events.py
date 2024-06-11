@@ -126,7 +126,7 @@ class Condition_Events:
         ILLNESS_DEATH_STRINGS = ujson.loads(read_file.read())
 
     @staticmethod
-    def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
+    def handle_nutrient(cat: Cat) -> None:
         """
         Handles gaining conditions or death for cats with low nutrient.
         This function should only be called if the game is in 'expanded' or 'cruel season' mode.
@@ -137,25 +137,16 @@ class Condition_Events:
             ----------
             cat : Cat
                 the cat which has to be checked and updated
-            nutrition_info : dict
-                dictionary of all nutrition information (can be found in the freshkill pile)
         """
         if not FRESHKILL_ACTIVE:
             return
-
-        if cat.ID not in nutrition_info.keys():
-            print(f"WARNING: Could not find cat with ID {cat.ID}({cat.name}) in the nutrition information.")
-            return
-
-        # get all events for a certain status of a cat
-        cat_nutrition = nutrition_info[cat.ID]
 
         event = None
         illness = None
         heal = False
 
         # handle death first, if percentage is 0 or lower, the cat will die
-        if cat_nutrition.percentage <= 0:
+        if cat.nutrition.percentage <= 0:
             text = ""
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
@@ -180,8 +171,8 @@ class Condition_Events:
             # if the cat is the leader and isn't full dead
             # make them malnourished and refill nutrition slightly
             if cat.status == "leader" and game.clan.leader_lives > 0:
-                mal_score = nutrition_info[cat.ID].max_score / 100 * (MAL_PERCENTAGE + 1)
-                nutrition_info[cat.ID].current_score = round(mal_score, 2)
+                mal_score = cat.nutrition.max_score / 100 * (MAL_PERCENTAGE + 1)
+                cat.nutrition.current_score = round(mal_score, 2)
                 cat.get_ill("malnourished")
 
             types = ["birth_death"]
@@ -189,14 +180,14 @@ class Condition_Events:
             return
 
         # heal cat if percentage is high enough and cat is ill
-        elif cat_nutrition.percentage > MAL_PERCENTAGE and cat.is_ill() and "malnourished" in cat.illnesses:
+        elif cat.nutrition.percentage > MAL_PERCENTAGE and cat.is_ill() and "malnourished" in cat.illnesses:
             illness = "malnourished"
             event = random.choice(Condition_Events.ILLNESS_HEALED_STRINGS["malnourished"])
             heal = True
 
         # heal cat if percentage is high enough and cat is ill
-        elif cat_nutrition.percentage > STARV_PERCENTAGE and cat.is_ill() and "starving" in cat.illnesses:
-            if cat_nutrition.percentage < MAL_PERCENTAGE:
+        elif cat.nutrition.percentage > STARV_PERCENTAGE and cat.is_ill() and "starving" in cat.illnesses:
+            if cat.nutrition.percentage < MAL_PERCENTAGE:
                 if "malnourished" not in cat.illnesses:
                     cat.get_ill("malnourished")
                 illness = "starving"
@@ -205,14 +196,14 @@ class Condition_Events:
                 illness = "starving"
                 heal = True
 
-        elif MAL_PERCENTAGE >= cat_nutrition.percentage > STARV_PERCENTAGE:
+        elif MAL_PERCENTAGE >= cat.nutrition.percentage > STARV_PERCENTAGE:
             # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
             if cat.status in ["kitten", "elder"]:
                 illness = "starving"
             else:
                 illness = "malnourished"
 
-        elif cat_nutrition.percentage <= STARV_PERCENTAGE:
+        elif cat.nutrition.percentage <= STARV_PERCENTAGE:
             illness = "starving"
 
         # handle the gaining/healing illness

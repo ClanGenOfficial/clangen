@@ -88,7 +88,7 @@ class ClearingScreen(Screens):
                     amount = max_amount - current_amount
                 game.clan.freshkill_pile.feed_one_cat(self.focus_cat_object, amount, 0)
                 Condition_Events.handle_nutrient(
-                    self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
+                    self.focus_cat_object
                 )
                 self.update_cats_list()
                 self.update_nutrition_cats()

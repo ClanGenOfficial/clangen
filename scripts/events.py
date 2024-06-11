@@ -1150,7 +1150,7 @@ class Events:
             and game.clan.freshkill_pile
         ):
             Condition_Events.handle_nutrient(
-                cat, game.clan.freshkill_pile
+                cat
             )
             if cat.dead:
                 return
