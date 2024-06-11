@@ -295,21 +295,21 @@ class FreshkillPile:
             if ration_prey and cat.status == "warrior":
                 feeding_amount = feeding_amount / 2
 
-        if cat.nutrition.percentage > 99:
+        if cat.nutrition.percentage == 100:
             if additional_food_round:
                 needed_amount = 0
             return feeding_amount, needed_amount
 
-        if cat.nutrition.total_amount * 2 > self.amount_food_needed():
+        if self.total_amount * 2 > self.amount_food_needed():
             feeding_amount += 2
 
-        elif cat.nutrition.total_amount * 1.8 > self.amount_food_needed():
+        elif self.total_amount * 1.8 > self.amount_food_needed():
             feeding_amount += 1.5
 
-        elif cat.nutrition.total_amount * 1.2 > self.amount_food_needed():
+        elif self.total_amount * 1.2 > self.amount_food_needed():
             feeding_amount += 1
 
-        elif cat.nutrition.total_amount > self.amount_food_needed():
+        elif self.total_amount > self.amount_food_needed():
             feeding_amount += 0.5
 
         if additional_food_round:
