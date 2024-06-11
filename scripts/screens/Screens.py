@@ -164,7 +164,7 @@ class Screens:
             "",
             visible=False,
             manager=MANAGER,
-            object_id="#text_box_34_horizcenter_light",
+            object_id="#mute_button",
         ),
     }
     mute_button = UIImageButton(

@@ -5059,7 +5059,7 @@
                 "path": "resources/images/buttons/mute_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/buttons/mute.png"
+                "path": "resources/images/buttons/mute_hover.png"
             },
             "disabled_image": {
                 "path": "resources/images/buttons/mute.png"
@@ -5076,7 +5076,7 @@
                 "path": "resources/images/buttons/unmute_hover.png"
             },
             "selected_image": {
-                "path": "resources/images/buttons/unmute.png"
+                "path": "resources/images/buttons/unmute_hover.png"
             },
             "disabled_image": {
                 "path": "resources/images/buttons/unmute.png"
