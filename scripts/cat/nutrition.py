@@ -38,7 +38,6 @@ class Nutrition:
             return
 
         if status not in PREY_REQUIREMENT:
-            print(f"Status {status} is not in prey requirement index! Setting max_score to 1")
             self._max_score = 1
             return
 
