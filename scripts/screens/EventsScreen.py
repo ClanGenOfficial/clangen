@@ -4,7 +4,7 @@ import pygame_gui
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.ui_elements import IDImageButton, UIImageButton
+from scripts.game_structure.ui_elements import IDImageButton, UIImageButton, UIModifiedScrollingContainer
 from scripts.game_structure.windows import GameOver
 from scripts.utility import (
     get_living_clan_cat_count,
@@ -71,25 +71,25 @@ class EventsScreen(Screens):
             pass
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if (
-                event.ui_element == self.ceremonies_events_button
-                and self.ceremony_alert
+                    event.ui_element == self.ceremonies_events_button
+                    and self.ceremony_alert
             ):
                 self.ceremony_alert.kill()
             elif (
-                event.ui_element == self.birth_death_events_button
-                and self.birth_death_alert
+                    event.ui_element == self.birth_death_events_button
+                    and self.birth_death_alert
             ):
                 self.birth_death_alert.kill()
             elif (
-                event.ui_element == self.relationship_events_button
-                and self.relation_alert
+                    event.ui_element == self.relationship_events_button
+                    and self.relation_alert
             ):
                 self.relation_alert.kill()
             elif event.ui_element == self.health_events_button and self.health_alert:
                 self.health_alert.kill()
             elif (
-                event.ui_element == self.other_clans_events_button
-                and self.other_clans_alert
+                    event.ui_element == self.other_clans_events_button
+                    and self.other_clans_alert
             ):
                 self.other_clans_alert.kill()
             elif event.ui_element == self.misc_events_button and self.misc_alert:
@@ -108,8 +108,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.all_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "all events"
                 # Update Display
@@ -119,8 +119,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.ceremonies_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "ceremony events"
                 self.ceremonies_events_button.disable()
@@ -133,8 +133,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.birth_death_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "birth death events"
                 self.birth_death_events_button.enable()
@@ -147,8 +147,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.relationship_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "relationship events"
                 self.relationship_events_button.enable()
@@ -161,8 +161,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.health_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "health events"
                 self.health_events_button.disable()
@@ -173,8 +173,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.other_clans_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "other clans events"
                 self.other_clans_events_button.disable()
@@ -187,8 +187,8 @@ class EventsScreen(Screens):
             elif event.ui_element == self.misc_events_button:
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
+                            self.event_container.vert_scroll_bar.scroll_position
+                            / self.event_container.vert_scroll_bar.scrollable_height
                     )
                 self.event_display_type = "misc events"
                 self.misc_events_button.disable()
@@ -666,7 +666,7 @@ class EventsScreen(Screens):
             ele.kill()
         self.cat_profile_buttons = []
 
-        # In order to set-set the scroll-bar postion, we have to remake the scrolling container
+        # In order to set-set the scroll-bar position, we have to remake the scrolling container
         self.event_container.kill()
         self.make_events_container()
 
@@ -688,7 +688,7 @@ class EventsScreen(Screens):
                         ev.text,
                         pygame.Rect((0, y), (box_length - 20, -1)),
                         object_id=get_text_box_theme("#text_box_30_horizleft"),
-                        container=self.event_container,
+                        container=self.event_container.scrollable_container,
                         starting_height=2,
                         manager=MANAGER,
                     )
@@ -702,18 +702,12 @@ class EventsScreen(Screens):
                             pygame_gui.elements.UIImage(
                                 pygame.Rect(
                                     (0, y),
-                                    (
-                                        box_length + 100,
-                                        self.display_events_elements[
-                                            "event" + str(i)
-                                        ].get_relative_rect()[3]
-                                        + padding,
-                                    ),
+                                    (box_length + 100,
+                                     self.display_events_elements["event" + str(i)].get_relative_rect()[3] + padding),
                                 ),
-                                image_cache.load_image(
-                                    "resources/images/shading_dark.png"
-                                ),
-                                container=self.event_container,
+                                image_cache.load_image("resources/images/shading_dark.png"),
+                                starting_height=1,
+                                container=self.event_container.scrollable_container,
                                 manager=MANAGER,
                             )
                         )
@@ -722,39 +716,29 @@ class EventsScreen(Screens):
                             pygame_gui.elements.UIImage(
                                 pygame.Rect(
                                     (0, y),
-                                    (
-                                        box_length + 100,
-                                        self.display_events_elements[
-                                            "event" + str(i)
-                                        ].get_relative_rect()[3]
-                                        + padding,
-                                    ),
+                                    (box_length + 100,
+                                     self.display_events_elements["event" + str(i)].get_relative_rect()[3] + padding),
                                 ),
                                 image_cache.load_image("resources/images/shading.png"),
-                                container=self.event_container,
+                                starting_height=1,
+                                container=self.event_container.scrollable_container,
                                 manager=MANAGER,
                             )
                         )
 
                     self.display_events_elements["shading" + str(i)].disable()
 
-                y += self.display_events_elements["event" + str(i)].get_relative_rect()[
-                    3
-                ]
+                y += self.display_events_elements["event" + str(i)].get_relative_rect()[3]
 
                 self.involved_cat_buttons.append(
                     IDImageButton(
                         pygame.Rect(
-                            (
-                                self.event_container.get_relative_rect()[2]
-                                - button_padding,
-                                y - 10,
-                            ),
+                            (self.event_container.get_relative_rect()[2] - button_padding, y - 10),
                             (button_size, button_size),
                         ),
                         ids=ev.cats_involved,
-                        container=self.event_container,
-                        layer_starting_height=2,
+                        container=self.event_container.scrollable_container,
+                        layer_starting_height=3,
                         object_id="#events_cat_button",
                         manager=MANAGER,
                     )
@@ -775,18 +759,14 @@ class EventsScreen(Screens):
                     (ele.get_relative_rect()[0] - 20, ele.get_relative_rect()[1])
                 )
 
-        if self.event_container.horiz_scroll_bar:
-            self.event_container.set_dimensions(
-                (box_length, self.events_container_y + 20)
-            )
-            self.event_container.horiz_scroll_bar.hide()
-        else:
-            self.event_container.set_dimensions((box_length, self.events_container_y))
+        self.event_container.set_dimensions((box_length, self.events_container_y))
         # Set the scroll bar to the last position it was at
         if self.scroll_height.get(self.event_display_type):
             self.event_container.vert_scroll_bar.set_scroll_from_start_percentage(
                 self.scroll_height[self.event_display_type]
             )
+
+        self.event_container.set_visual_debug_mode(True)
 
     def make_cat_buttons(self, button_pressed):
         """Makes the buttons that take you to the profile."""
@@ -869,8 +849,9 @@ class EventsScreen(Screens):
 
     def make_events_container(self):
         """In its own function so that there is only one place the box size is set"""
-        self.event_container = pygame_gui.elements.UIScrollingContainer(
+        self.event_container = UIModifiedScrollingContainer(
             scale(pygame.Rect((432, 552), (1028, 700))),
-            allow_scroll_x=False,
+            object_id="#scroll_container",
+            starting_height=1,
             manager=MANAGER,
         )

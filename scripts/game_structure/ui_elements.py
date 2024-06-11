@@ -91,110 +91,86 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
 
 class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
-    def __init__(self, relative_rect: pygame.Rect, manager=None, starting_height: int = 1,
-                 container=None, parent_element=None, object_id=None, anchors=None, visible: int = 1,
-                 allow_scroll_x: bool = False):
+    def __init__(
+            self,
+            relative_rect: pygame.Rect,
+            manager=None,
+            starting_height: int = 1,
+            container=None,
+            parent_element=None,
+            object_id=None,
+            anchors=None,
+            visible: int = 1):
+
         super().__init__(relative_rect=relative_rect, manager=manager, starting_height=starting_height,
                          container=container, parent_element=parent_element, object_id=object_id, anchors=anchors,
-                         visible=visible, allow_scroll_x=allow_scroll_x)
+                         visible=visible, allow_scroll_x=False, should_grow_automatically=True)
+
+        self.scroll_bar_width = 48
+        scroll_bar_rect = scale(pygame.Rect(-self.scroll_bar_width,
+                                            0,
+                                            self.scroll_bar_width,
+                                            self._view_container.rect.height))
+        self.vert_scroll_bar.kill()
+        self.vert_scroll_bar = None
+        self.vert_scroll_bar = UIImageVerticalScrollBar(relative_rect=scroll_bar_rect,
+                                                        visible_percentage=1.0,
+                                                        manager=self.ui_manager,
+                                                        container=self._root_container,
+                                                        parent_element=self,
+                                                        starting_height=10,
+                                                        anchors={'left': 'right',
+                                                                 'right': 'right',
+                                                                 'top': 'top',
+                                                                 'bottom': 'bottom'})
+
+        self.join_focus_sets(self.vert_scroll_bar)
+        if self.vert_scroll_bar is not None:
+            self.vert_scroll_bar.set_container_this_will_scroll(self.scrollable_container)
 
     def _sort_out_element_container_scroll_bars(self):
         """
         This creates, re-sizes or removes the scrollbars after resizing, but not after the scroll
-        bar has been moved. Instead it tries to keep the scrollbars in the same approximate position
+        bar has been moved. Instead, it tries to keep the scrollbars in the same approximate position
         they were in before resizing
         """
-        self._check_scroll_bars()
         need_horiz_scroll_bar, need_vert_scroll_bar = self._check_scroll_bars()
-        print(f"scroll{need_vert_scroll_bar}")
-        self.scroll_bar_width = 30
+
         if need_vert_scroll_bar:
-            vis_percent = self._view_container.rect.height / self.scrolling_height
-            if self.vert_scroll_bar is None:
-                print(self.scroll_bar_width)
-                scroll_bar_rect = pygame.Rect(-self.scroll_bar_width,
-                                              0,
-                                              self.scroll_bar_width,
-                                              self._view_container.rect.height)
-                self.vert_scroll_bar = UIImageVerticalScrollBar(relative_rect=scroll_bar_rect,
-                                                                visible_percentage=vis_percent,
-                                                                manager=self.ui_manager,
-                                                                container=self._root_container,
-                                                                parent_element=self,
-                                                                anchors={'left': 'right',
-                                                                         'right': 'right',
-                                                                         'top': 'top',
-                                                                         'bottom': 'bottom'})
-                print(self.vert_scroll_bar)
-                self.join_focus_sets(self.vert_scroll_bar)
-            else:
-                start_percent = ((self._view_container.rect.top -
-                                  self.scrollable_container.rect.top)
-                                 / self.scrolling_height)
-                self.vert_scroll_bar.start_percentage = start_percent
-                self.vert_scroll_bar.set_visible_percentage(vis_percent)
-                self.vert_scroll_bar.set_dimensions((self.scroll_bar_width,
-                                                     self._view_container.rect.height))
+            self.vert_scroll_bar.enable()
+            vis_percent = (self._view_container.rect.height - self.scroll_bar_height) / self.scrolling_height
+            start_percent = ((self._view_container.rect.top -
+                              self.scrollable_container.rect.top)
+                             / self.scrolling_height)
+            self.vert_scroll_bar.set_scroll_from_start_percentage(start_percent)
+            self.vert_scroll_bar.set_visible_percentage(vis_percent)
+            self.vert_scroll_bar.change_layer(9)
+
         else:
             self._remove_vert_scrollbar()
 
-        if need_horiz_scroll_bar:
-            vis_percent = self._view_container.rect.width / self.scrolling_width
-            if self.horiz_scroll_bar is None:
-                self.scroll_bar_height = 20
-                scroll_bar_rect = pygame.Rect(0,
-                                              -self.scroll_bar_height,
-                                              self._view_container.rect.width,
-                                              self.scroll_bar_height)
-                self.horiz_scroll_bar = pygame_gui.elements.UIHorizontalScrollBar(relative_rect=scroll_bar_rect,
-                                                                                  visible_percentage=vis_percent,
-                                                                                  manager=self.ui_manager,
-                                                                                  container=self._root_container,
-                                                                                  parent_element=self,
-                                                                                  anchors={'left': 'left',
-                                                                                           'right': 'right',
-                                                                                           'top': 'bottom',
-                                                                                           'bottom': 'bottom'})
-                self.join_focus_sets(self.horiz_scroll_bar)
-            else:
-                start_percent = ((self._view_container.rect.left -
-                                  self.scrollable_container.rect.left)
-                                 / self.scrolling_width)
-                self.horiz_scroll_bar.start_percentage = start_percent
-                self.horiz_scroll_bar.set_visible_percentage(vis_percent)
-                self.horiz_scroll_bar.set_dimensions((self._view_container.rect.width,
-                                                      self.scroll_bar_height))
-        else:
-            self._remove_horiz_scrollbar()
-
-    def set_scrollable_area_dimensions(self, dimensions: Union[pygame.math.Vector2,
-                                                               Tuple[int, int],
-                                                               Tuple[float, float]]):
-        """
-        Set the size of the scrollable area container. It starts the same size as the view
-        container but often you want to expand it, or why have a scrollable container?
-
-        :param dimensions: The new dimensions.
-        """
-        self.scrollable_container.set_dimensions(dimensions)
-
-        self._calculate_scrolling_dimensions()
-        self._sort_out_element_container_scroll_bars()
+        self._remove_horiz_scrollbar()
 
 
 class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
     def __init__(self, relative_rect: pygame.Rect, visible_percentage: float, manager=None, container=None,
-                 parent_element=None, object_id=None, anchors=None, visible: int = 1):
+                 parent_element=None, object_id=None, anchors=None, visible: int = 1, starting_height: int = 1):
         super().__init__(relative_rect=relative_rect, visible_percentage=visible_percentage, manager=manager,
                          container=container, parent_element=parent_element, object_id=object_id, anchors=anchors,
                          visible=visible)
+        self.sliding_button.change_layer(starting_height)
+        if game.settings["fullscreen"]:
+            self.button_height = 32
+        else:
+            self.button_height = 16
+        self.arrow_button_height = self.button_height
         self.top_button.kill()
         self.top_button = UIImageButton(scale(pygame.Rect((0, 0),
-                                                          (44, 40))),
+                                                          (32, 32))),
                                         text='',
                                         manager=self.ui_manager,
                                         container=self.button_container,
-                                        starting_height=1,
+                                        starting_height=starting_height,
                                         parent_element=self,
                                         object_id="#vertical_slider_up_arrow_button",
                                         anchors={'left': 'left',
@@ -205,11 +181,11 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
 
         self.bottom_button.kill()
         self.bottom_button = UIImageButton(scale(pygame.Rect((0, -self.arrow_button_height),
-                                                             (44, 40))),
+                                                             (32, 32))),
                                            text='',
                                            manager=self.ui_manager,
                                            container=self.button_container,
-                                           starting_height=1,
+                                           starting_height=starting_height,
                                            parent_element=self,
                                            object_id="#vertical_slider_down_arrow_button",
                                            anchors={'left': 'left',
