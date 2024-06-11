@@ -260,7 +260,7 @@ class FreshkillPilePregnancyTest(unittest.TestCase):
         kid = Cat()
         kid.status = "kitten"
         kid.moons = 2
-        kid.parent1 = father
+        kid.parent2 = father
 
         no_parent = Cat()
         no_parent.status = "warrior"
@@ -268,7 +268,7 @@ class FreshkillPilePregnancyTest(unittest.TestCase):
         freshkill_pile = FreshkillPile()
 
         # be able to feed two warriors and a kitten
-        current_amount = (self.PREY_REQUIREMENT["warrior"] * 2) + self.PREY_REQUIREMENT["kitten"]
+        current_amount = (self.PREY_REQUIREMENT["warrior"]) + self.PREY_REQUIREMENT["kitten"]
         freshkill_pile.pile["expires_in_4"] = current_amount
 
         self.assertEqual(kid.nutrition.percentage, 100)
@@ -278,13 +278,13 @@ class FreshkillPilePregnancyTest(unittest.TestCase):
         # when
         living_cats = [no_parent, kid, father]
         self.assertNotEqual([father.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
-        freshkill_pile.tactic_status(living_cats)
+        freshkill_pile.prepare_feed_cats(living_cats)
 
         # then
         self.assertEqual(kid.nutrition.percentage, 100)
         self.assertEqual(father.nutrition.percentage, 100)
-        self.assertLess(no_parent.nutrition.percentage, 90)
-        self.assertGreater(no_parent.nutrition.percentage, 70)
+        self.assertLess(no_parent.nutrition.percentage, 80)
+        self.assertGreater(no_parent.nutrition.percentage, 60)
 
 
 class FreshkillBaseSortTest(unittest.TestCase):
