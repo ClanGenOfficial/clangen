@@ -256,8 +256,11 @@
 			"due to how it's written in the save files. So don't try to 'fix' it."
 		]
 	},
+	"event_generation": {
+		"debug_ensure_event_id": null
+	},
 	"death_related": {
-		"leader_death_chance": 125,
+		"leader_death_chance": 50,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
 		"cruel season_death_chance": 300,
