@@ -7,9 +7,6 @@ from scripts.utility import get_alive_clan_queens
 class Nutrition:
     """All the information about nutrition from one cat."""
 
-    hungry_cats = []
-    satisfied_cats = []
-
     def __init__(self, status="warrior") -> None:
         """Initialize the class."""
 
