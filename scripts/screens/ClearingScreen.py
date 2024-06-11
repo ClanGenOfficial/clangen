@@ -3,7 +3,6 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.events_module.freshkill_pile_events import FreshkillEvents
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.image_button import (
     UISpriteButton,
@@ -12,6 +11,7 @@ from scripts.game_structure.image_button import (
 )
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
+from ..events_module.condition_events import Condition_Events
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
@@ -87,7 +87,7 @@ class ClearingScreen(Screens):
                     ].current_score
                     amount = max_amount - current_amount
                 game.clan.freshkill_pile.feed_one_cat(self.focus_cat_object, amount, 0)
-                FreshkillEvents.handle_nutrient(
+                Condition_Events.handle_nutrient(
                     self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
                 )
                 self.update_cats_list()
@@ -143,8 +143,8 @@ class ClearingScreen(Screens):
                 self.update_cats_list()
                 self.update_nutrition_cats()
             elif (
-                event.ui_element in self.cat_buttons.values()
-                and event.ui_element != self.focus_cat
+                    event.ui_element in self.cat_buttons.values()
+                    and event.ui_element != self.focus_cat
             ):
                 self.focus_cat_object = event.ui_element.return_cat_object()
                 self.update_focus_cat()
@@ -230,12 +230,12 @@ class ClearingScreen(Screens):
             object_id="#help_button",
             manager=MANAGER,
             tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
-            "important source of freshkill. You can see what was consumed and catched in the Log below! "
-            "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away. "
-            "Cats under 3 moons with a parent(queen) taking care of them, don't need food. "
-            "<br><br>"
-            "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
-            "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
+                          "important source of freshkill. You can see what was consumed and catched in the Log below! "
+                          "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away. "
+                          "Cats under 3 moons with a parent(queen) taking care of them, don't need food. "
+                          "<br><br>"
+                          "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
+                          "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
         )
         self.last_page = UIImageButton(
             scale(pygame.Rect((660, 1272), (68, 68))),
@@ -431,13 +431,13 @@ class ClearingScreen(Screens):
         nutrition_info = game.clan.freshkill_pile.nutrition_info
         if self.focus_cat_object.ID in nutrition_info:
             nutrition_text = (
-                "nutrition: " + nutrition_info[self.focus_cat_object.ID].nutrition_text
+                    "nutrition: " + nutrition_info[self.focus_cat_object.ID].nutrition_text
             )
             if game.clan.clan_settings["showxp"]:
                 nutrition_text += (
-                    " ("
-                    + str(int(nutrition_info[self.focus_cat_object.ID].percentage))
-                    + ")"
+                        " ("
+                        + str(int(nutrition_info[self.focus_cat_object.ID].percentage))
+                        + ")"
                 )
             info_list.append(nutrition_text)
         work_status = "This cat can work"
@@ -502,7 +502,7 @@ class ClearingScreen(Screens):
                     full_text = " nutrition: " + nutrition_info[cat.ID].nutrition_text
                     if game.clan.clan_settings["showxp"]:
                         full_text += (
-                            " (" + str(int(nutrition_info[cat.ID].percentage)) + ")"
+                                " (" + str(int(nutrition_info[cat.ID].percentage)) + ")"
                         )
                     condition_list.append(full_text)
             conditions = (
@@ -632,7 +632,7 @@ class ClearingScreen(Screens):
             self.focus_cat.kill()
 
     def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
+        return [L[x: x + n] for x in range(0, len(L), n)]
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
@@ -768,8 +768,8 @@ class ClearingScreen(Screens):
             if len(desc) == 4 and isinstance(desc[3], list):
                 x_val += 50
                 disabled = (
-                    game.clan.clan_settings.get(desc[3][0], not desc[3][1])
-                    != desc[3][1]
+                        game.clan.clan_settings.get(desc[3][0], not desc[3][1])
+                        != desc[3][1]
                 )
 
             self.tactic_boxes[code] = UIImageButton(
@@ -803,8 +803,8 @@ class ClearingScreen(Screens):
                 if len(desc) == 4 and isinstance(desc[3], list):
                     x_val += 50
                     disabled = (
-                        game.clan.clan_settings.get(desc[3][0], not desc[3][1])
-                        != desc[3][1]
+                            game.clan.clan_settings.get(desc[3][0], not desc[3][1])
+                            != desc[3][1]
                     )
 
                 self.checkboxes[code] = UIImageButton(
@@ -827,8 +827,8 @@ class ClearingScreen(Screens):
         if event.ui_element in self.tactic_boxes.values():
             for key, value in self.tactic_boxes.items():
                 if (
-                    value == event.ui_element
-                    and value.object_ids[1] == "#unchecked_checkbox"
+                        value == event.ui_element
+                        and value.object_ids[1] == "#unchecked_checkbox"
                 ):
                     game.clan.switch_setting(key)
                     active_key = key
@@ -839,9 +839,9 @@ class ClearingScreen(Screens):
             # un-switch all other keys
             for key, value in self.tactic_boxes.items():
                 if (
-                    active_key
-                    and key != active_key
-                    and value.object_ids[1] == "#checked_checkbox"
+                        active_key
+                        and key != active_key
+                        and value.object_ids[1] == "#checked_checkbox"
                 ):
                     game.clan.switch_setting(key)
                     self.settings_changed = True
