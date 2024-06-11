@@ -864,7 +864,7 @@ class Condition_Events:
     @staticmethod
     def determine_retirement(cat, triggered):
 
-        if game.clan.clan_settings["retirement"] or cat.no_retire:
+        if game.clan.clan_settings["retirement"] or cat.config.no_retire:
             return
 
         if (

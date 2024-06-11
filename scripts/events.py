@@ -1419,7 +1419,7 @@ class Events:
 
             # retiring to elder den
             if (
-                not cat.no_retire
+                    not cat.config.no_retire
                 and cat.status in ["warrior", "deputy"]
                 and len(cat.apprentice) < 1
                 and cat.moons > 114

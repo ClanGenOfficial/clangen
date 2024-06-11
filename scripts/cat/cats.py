@@ -229,8 +229,6 @@ class Cat:
         self.experience_level = None
 
         # Various behavior toggles
-        self.no_retire = False
-
         self.prevent_fading = False  # Prevents a cat from fading
 
         self.faded_offspring = (

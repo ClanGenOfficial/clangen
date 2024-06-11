@@ -1982,7 +1982,7 @@ class ChangeCatToggles(UIWindow):
         )
 
         # No Retire
-        if self.the_cat.no_retire:
+        if self.the_cat.config.no_retire:
             box_type = "#checked_checkbox"
             tool_tip = "Allow cat to retiring automatically."
         else:
@@ -2021,13 +2021,13 @@ class ChangeCatToggles(UIWindow):
                 game.all_screens["profile screen"].screen_switches()
                 self.kill()
             elif event.ui_element == self.checkboxes["prevent_fading"]:
-                self.the_cat.prevent_fading = not self.the_cat.config.prevent_fading
+                self.the_cat.config.prevent_fading = not self.the_cat.config.prevent_fading
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_kits"]:
                 self.the_cat.config.no_kits = not self.the_cat.config.no_kits
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_retire"]:
-                self.the_cat.no_retire = not self.the_cat.config.no_retire
+                self.the_cat.config.no_retire = not self.the_cat.config.no_retire
                 self.refresh_checkboxes()
             elif event.ui_element == self.checkboxes["prevent_mates"]:
                 self.the_cat.config.no_mates = not self.the_cat.config.no_mates
