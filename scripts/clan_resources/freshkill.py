@@ -46,7 +46,7 @@ class FreshkillPile:
         """
         self.pile["expires_in_4"] += amount
 
-    def remove_freshkill(self, amount, take_random: bool = False) -> int | None:
+    def remove_freshkill(self, amount, take_random: bool = False) -> int:
         """
         Remove a certain amount of fresh kill from the pile.
 
