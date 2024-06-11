@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 
 import pygame
 import pygame_gui
@@ -26,6 +26,7 @@ class NurseryScreen(Screens):
         self.adult_selection_container = None
         self.adult_selection_elements = {}
         self.adult_cat_buttons = {}
+        self.available_adults = {}
 
         self.kits_selection_container = None
         self.kits_selection_elements = {}
@@ -80,6 +81,7 @@ class NurseryScreen(Screens):
         self.chosen_cats_elements["begin_playtime"].disable()
         
         # ADULT SELECTION
+        self.create_available_adults()
         self.create_adult_selection()
         self.update_adult_list()
 
@@ -146,6 +148,43 @@ class NurseryScreen(Screens):
         self.focus_cat = None
         self.chosen_adult = None
         self.chosen_kits = []
+        self.available_adults = {}
+    
+    def create_available_adults(self):
+        """
+        Creates a dict of available adults. It will consider randomized volunteers, caretakers, and parents with kittens.
+        """
+        self.available_adults = {
+            "parents": [],
+            "caretakers": [],
+            "volunteers": [],
+            "all": []
+        }
+
+        # get adult clan cats
+        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working() and not i.outside]
+
+        # get kittens in the nursery
+        kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
+
+        # add parents to list
+        for a in adults:
+            for k in kittens:
+                if a.ID in [k.parent1, k.parent2] or a.ID in k.adoptive_parents:
+                    self.available_adults["parents"].append(a)
+                    self.available_adults["all"].append(a)
+                    adults.remove(a)
+        
+        # add caretakers to list
+        # TODO: add caretaker role first.
+        
+        # add volunteers to list
+        for c in range(randint(0, 3 if len(adults) > 3 else len(adults))):
+            vol = choice(adults)
+            self.available_adults["volunteers"].append(vol)
+            self.available_adults["all"].append(vol)
+            adults.remove(vol)
+
     
     def create_adult_selection(self):
         """
@@ -293,7 +332,7 @@ class NurseryScreen(Screens):
         Handles creating and updating the list of available adults.
         """
         # get cats
-        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working() and not i.outside]
+        adults = self.available_adults["all"]
 
         # separate them into chunks for the pages
         adult_chunks = self.chunks(adults, 8)
@@ -484,7 +523,7 @@ class NurseryScreen(Screens):
 
         # Fetching cats
         kittens = [i for i in Cat.all_cats.values() if i.age == "kitten" and not i.dead and not i.not_working()]
-        adults = [i for i in Cat.all_cats.values() if i.age not in ["kitten", "newborn"] and not i.dead and not i.not_working() and not i.outside]
+        adults = self.available_adults["all"]
 
         for k in kittens:
             if k not in self.chosen_kits:
@@ -516,18 +555,32 @@ class NurseryScreen(Screens):
         Handles the creation of the container that holds the chosen cats and playtime button.
         """
         self.chosen_cats_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((250, 150), (0, 0))),
+            scale(pygame.Rect((250, 120), (0, 0))),
             object_id="#chosen_cats_container",
             starting_height=3,
             manager=MANAGER
         )
         self.chosen_cats_elements["begin_playtime"] = UIImageButton(
-            scale(pygame.Rect((200, 630), (284, 60))),
+            scale(pygame.Rect((200, 660), (284, 60))),
             "",
             object_id="#begin_playtime_button",
             container=self.chosen_cats_container,
             starting_height=1,
             manager=MANAGER
+        )
+        self.chosen_cats_elements["intro_text"] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((0, 0), (684, -1))),
+                text=shorten_text_to_fit(str("Who will play today?"), 684, 30),
+                object_id="#text_box_40_horizcenter",
+                container=self.chosen_cats_container,
+                manager=MANAGER,
+        )
+        self.chosen_cats_elements["explanation"] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((0, 62), (684, -1))),
+                text="Choose kittens to play together, with or without a kitsitter.",
+                object_id="#text_box_26_horizcenter",
+                container=self.chosen_cats_container,
+                manager=MANAGER,
         )
     
     def update_chosen_cats(self):
@@ -540,15 +593,15 @@ class NurseryScreen(Screens):
         else:
             self.chosen_cats_elements["begin_playtime"].disable()
         
-        # reset/clear
+        # reset/clear cat sprites
         for ele in self.chosen_cats_elements:
-            if ele != "begin_playtime":
+            if ele not in ["begin_playtime", "intro_text", "explanation"]:
                 self.chosen_cats_elements[ele].kill()
 
         # Draw adult
         if self.chosen_adult != None:
             self.chosen_cats_elements["adult_sprite"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((192, 100), (300, 300))),
+                scale(pygame.Rect((192, 130), (300, 300))),
                 pygame.transform.scale(self.chosen_adult.sprite, (300, 300)),
                 object_id="#chosen_adult_sprite",
                 container=self.chosen_cats_container,
@@ -557,7 +610,7 @@ class NurseryScreen(Screens):
             )
         
         # Draw kittens
-        kit_placements = [(0, 200), (192, 300), (384, 200)]
+        kit_placements = [(0, 230), (192, 330), (384, 230)]
         
         if len(self.chosen_kits) != 0:
             for n in range(len(self.chosen_kits)):
