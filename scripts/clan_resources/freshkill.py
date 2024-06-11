@@ -346,7 +346,9 @@ class FreshkillPile:
         # invert the order of filters, so we can apply them in the right order
         sort_order.reverse()
 
+        # To ensure the cats are in a guaranteed, repeatable order
         output = clan_cats
+        output.sort(key=lambda cat: int(cat.ID))
 
         for sort in sort_order:
             if sort == "status":
