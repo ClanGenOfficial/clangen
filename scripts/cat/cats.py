@@ -553,10 +553,9 @@ class Cat:
         # Deal with leader death
         text = ""
         
-        if self.status.is_leader():
         darkforest = game.clan.instructor.df
         isoutside = self.outside
-        
+        if self.status.is_leader():        
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
