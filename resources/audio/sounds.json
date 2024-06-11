@@ -4,5 +4,6 @@
   "page_flip": ["Page_Flip_1.mp3","Page_Flip_2.mp3","Page_Flip_3.mp3","Page_Flip_4.mp3","Page_Flip_5.mp3"],
   "dice_roll": ["Dice_roll_1.mp3","Dice_roll_2.mp3","Dice_roll_3.mp3","Dice_roll_4.mp3","Dice_roll_5.mp3","Dice_roll_6.mp3","Dice_roll_7.mp3"],
   "save": ["Save_Button.mp3"],
-  "timeskip": ["Timeskip_Button.mp3"]
+  "timeskip": ["Timeskip_Button.mp3"],
+  "antagonize": ["Antagonize_Button.mp3"]
 }
