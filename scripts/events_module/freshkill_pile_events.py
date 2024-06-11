@@ -86,7 +86,7 @@ class FreshkillEvents:
                 other_cat = random.choice(living_cats)
 
         possible_events = GenerateEvents.possible_short_events(
-            cat.status, cat.age, "freshkill_pile"
+            "freshkill_pile"
         )
         possible_tasks = []
         for tag_type in EVENT_WEIGHT_TYPE:

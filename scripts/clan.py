@@ -1119,19 +1119,6 @@ class Clan:
                 ) as read_file:  # pylint: disable=redefined-outer-name
                     pile = ujson.load(read_file)
                     clan.freshkill_pile = FreshkillPile(pile)
-
-                file_path = get_save_dir() + f"/{game.clan.name}/nutrition_info.json"
-                if os.path.exists(file_path) and clan.freshkill_pile:
-                    with open(file_path, "r", encoding="utf-8") as read_file:
-                        nutritions = ujson.load(read_file)
-                        for k, nutr in nutritions.items():
-                            nutrition = Nutrition()
-                            nutrition.max_score = nutr["max_score"]
-                            nutrition.current_score = nutr["current_score"]
-                            clan.freshkill_pile.nutrition_info[k] = nutrition
-                        if len(nutritions) <= 0:
-                            for cat in Cat.all_cats_list:
-                                clan.freshkill_pile.add_cat_to_nutrition(cat)
             else:
                 clan.freshkill_pile = FreshkillPile()
         except:
@@ -1150,11 +1137,11 @@ class Clan:
         )
 
         data = {}
-        for k, nutr in clan.freshkill_pile.nutrition_info.items():
-            data[k] = {
-                "max_score": nutr.max_score,
-                "current_score": nutr.current_score,
-                "percentage": nutr.percentage,
+        for cat in Cat.all_cats_list:
+            data[cat.ID] = {
+                "max_score": cat.nutrition.max_score,
+                "current_score": cat.nutrition.current_score,
+                "percentage": cat.nutrition.percentage,
             }
 
         game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
