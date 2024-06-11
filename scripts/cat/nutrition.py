@@ -33,7 +33,7 @@ class Nutrition:
 
     @max_score.setter
     def max_score(self, status):
-        if isinstance(status, float | int):
+        if isinstance(status, float) or isinstance(status, int):
             self._max_score = status
             return
 
