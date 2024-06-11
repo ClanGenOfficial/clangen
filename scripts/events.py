@@ -1041,7 +1041,7 @@ class Events:
         """
         if (
             game.clan.clan_settings["fading"]
-            and not cat.prevent_fading
+                and not cat.config.prevent_fading
             and cat.ID != game.clan.instructor.ID
             and not cat.faded
         ):

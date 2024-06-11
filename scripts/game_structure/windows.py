@@ -1946,7 +1946,7 @@ class ChangeCatToggles(UIWindow):
         if self.the_cat == game.clan.instructor:
             box_type = "#checked_checkbox"
             tool_tip = "The afterlife guide can never fade."
-        elif self.the_cat.prevent_fading:
+        elif self.the_cat.config.prevent_fading:
             box_type = "#checked_checkbox"
             tool_tip = "Prevents cat from fading away after being dead for 202 moons."
         else:

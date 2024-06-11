@@ -228,9 +228,6 @@ class Cat:
         self.df = False
         self.experience_level = None
 
-        # Various behavior toggles
-        self.prevent_fading = False  # Prevents a cat from fading
-
         self.faded_offspring = (
             []
         )  # Stores of a list of faded offspring, for relation tracking purposes
