@@ -4,7 +4,7 @@ from copy import deepcopy
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.age import Age
+from scripts.cat.enums.age import AgeEnum
 from scripts.cat.history import History
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
@@ -916,7 +916,7 @@ class Condition_Events:
                 chance = int(retire_chances.get(str(cat.age)))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
-                    if cat.age == Age.ADOLESCENT:
+                    if cat.age == AgeEnum.ADOLESCENT:
                         event = (
                             f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
                             f"kits, they're warmly welcomed into the elder's den."
@@ -943,7 +943,7 @@ class Condition_Events:
                             f"{cat.name} has decided to retire from normal Clan duty."
                         )
 
-                    if cat.age == Age.ADOLESCENT:
+                    if cat.age == AgeEnum.ADOLESCENT:
                         event += (
                             f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor "
                             f"of their contributions to {game.clan.name}Clan."

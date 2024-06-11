@@ -6,7 +6,7 @@ from strenum import StrEnum
 from scripts.game_structure.game_essentials import game
 
 
-class Age(StrEnum):
+class AgeEnum(StrEnum):
     """Cat age group"""
     NONE = "ERROR"
     NEWBORN = "newborn"
@@ -22,40 +22,40 @@ class Age(StrEnum):
 
     def is_kit(self):
         """True if cat is newborn or kitten"""
-        return self in [Age.NEWBORN, Age.KITTEN]
+        return self in [AgeEnum.NEWBORN, AgeEnum.KITTEN]
 
     def is_underage(self):
         """True if cat is newborn, kitten or adolescent"""
-        return self in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]
+        return self in [AgeEnum.NEWBORN, AgeEnum.KITTEN, AgeEnum.ADOLESCENT]
 
     def is_adult_any(self):
         """True is cat is young adult, adult or senior adult"""
-        return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT]
+        return self in [AgeEnum.YOUNGADULT, AgeEnum.ADULT, AgeEnum.SENIORADULT]
 
     def is_adult_any_or_senior(self):
         """True if cat is young adult, adult, senior adult or senior"""
-        return self in [Age.YOUNGADULT, Age.ADULT, Age.SENIORADULT, Age.SENIOR]
+        return self in [AgeEnum.YOUNGADULT, AgeEnum.ADULT, AgeEnum.SENIORADULT, AgeEnum.SENIOR]
 
     def is_newborn(self):
-        return self == Age.NEWBORN
+        return self == AgeEnum.NEWBORN
 
     def is_kitten(self):
-        return self == Age.KITTEN
+        return self == AgeEnum.KITTEN
 
     def is_adolescent(self):
-        return self == Age.ADOLESCENT
+        return self == AgeEnum.ADOLESCENT
 
     def is_young_adult(self):
-        return self == Age.YOUNGADULT
+        return self == AgeEnum.YOUNGADULT
 
     def is_adult(self):
-        return self == Age.ADULT
+        return self == AgeEnum.ADULT
 
     def is_senior_adult(self):
-        return self == Age.SENIORADULT
+        return self == AgeEnum.SENIORADULT
 
     def is_senior(self):
-        return self == Age.SENIOR
+        return self == AgeEnum.SENIOR
 
     @classmethod
     def list(cls):
@@ -89,16 +89,16 @@ def get_age_from_moons(moons):
     """
     if moons > 300:
         # Out of range, always senior
-        return Age.SENIOR
+        return AgeEnum.SENIOR
     elif moons <= 0:  # negative moons? hopefully not but technically possible
-        return Age.NEWBORN
+        return AgeEnum.NEWBORN
     else:
         # In range
         for key_age in AgeMoonsRange:
             if moons in range(
                     key_age[0], key_age[1] + 1
             ):
-                return Age[key_age.name]
+                return AgeEnum[key_age.name]
 
 
 def get_random_moons_for_age(age, end_age=None) -> int:
@@ -107,18 +107,18 @@ def get_random_moons_for_age(age, end_age=None) -> int:
     If just `age` is supplied, the range is that age range.
     If both are supplied, the range is `age`'s min and `end_age`'s max
 
-    :param str|Age age: The age whose range to get (max overridden by end_age if applicable)
-    :param str|Age end_age: The age whose maximum value to take, default None"""
+    :param str|AgeEnum age: The age whose range to get (max overridden by end_age if applicable)
+    :param str|AgeEnum end_age: The age whose maximum value to take, default None"""
 
     if isinstance(age, str):
-        if age in Age:
-            age = Age(age)
+        if age in AgeEnum:
+            age = AgeEnum(age)
         else:
             raise KeyError(f"{age} is not a valid age. Check spelling!")
 
     if isinstance(end_age, str):
-        if end_age in Age:
-            end_age = Age(age)
+        if end_age in AgeEnum:
+            end_age = AgeEnum(age)
         else:
             raise KeyError(f"{end_age} is not a valid age. Check spelling!")
 

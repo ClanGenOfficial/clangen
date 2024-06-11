@@ -8,7 +8,7 @@ from typing import List, Dict, Union, TYPE_CHECKING
 
 import pygame
 
-from scripts.cat.enums.age import Age
+from scripts.cat.enums.age import AgeEnum
 
 from scripts.events_module.handle_short_events import INJURY_GROUPS
 

@@ -16,7 +16,7 @@ from typing import List
 import pygame
 import ujson
 
-from scripts.cat.enums.age import Age, AgeMoonsRange, get_random_moons_for_age
+from scripts.cat.enums.age import AgeEnum, AgeMoonsRange, get_random_moons_for_age
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -392,7 +392,7 @@ def create_new_cat_block(
         if not match:
             continue
 
-        if match.group(1) in Age:
+        if match.group(1) in AgeEnum:
             moons = get_random_moons_for_age(match.group(1))
             break
 
@@ -407,11 +407,11 @@ def create_new_cat_block(
 
     if status and not moons:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
-            moons = get_random_moons_for_age(Age.ADOLESCENT)
+            moons = get_random_moons_for_age(AgeEnum.ADOLESCENT)
         elif status in ["warrior", "mediator", "medicine cat"]:
-            moons = get_random_moons_for_age(Age.SENIORADULT)
+            moons = get_random_moons_for_age(AgeEnum.SENIORADULT)
         elif status == "elder":  # making the assumption that all seniors are elders
-            moons = get_random_moons_for_age(Age.SENIOR)
+            moons = get_random_moons_for_age(AgeEnum.SENIOR)
 
     if "kittypet" in attribute_list:
         cat_type = "kittypet"
@@ -2351,7 +2351,7 @@ def generate_sprite(
                 cat_sprite = str(15)
     else:
         if age == "elder" and not game.config["fun"]["all_cats_are_newborn"]:
-            age = Age.SENIOR
+            age = AgeEnum.SENIOR
 
         if game.config["fun"]["all_cats_are_newborn"]:
             cat_sprite = str(cat.pelt.cat_sprites["newborn"])

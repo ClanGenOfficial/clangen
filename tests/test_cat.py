@@ -3,7 +3,7 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 
-from scripts.cat.enums.age import Age
+from scripts.cat.enums.age import AgeEnum
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 
@@ -14,7 +14,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 class TestCreationAge(unittest.TestCase):
     def test_newborn(self):
         test_cat = Cat(moons=0)
-        self.assertEqual(test_cat.age, Age.NEWBORN)
+        self.assertEqual(test_cat.age, AgeEnum.NEWBORN)
         self.assertTrue(test_cat.age.is_kit())
         self.assertTrue(test_cat.age.is_underage())
         self.assertFalse(test_cat.age.is_adult_any())
@@ -22,7 +22,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_kitten(self):
         test_cat = Cat(moons=5)
-        self.assertEqual(test_cat.age, Age.KITTEN)
+        self.assertEqual(test_cat.age, AgeEnum.KITTEN)
 
         self.assertTrue(test_cat.age.is_kit())
         self.assertTrue(test_cat.age.is_underage())
@@ -31,7 +31,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_adolescent(self):
         test_cat = Cat(moons=6)
-        self.assertEqual(test_cat.age, Age.ADOLESCENT)
+        self.assertEqual(test_cat.age, AgeEnum.ADOLESCENT)
 
         self.assertFalse(test_cat.age.is_kit())
         self.assertTrue(test_cat.age.is_underage())
@@ -40,7 +40,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_young_adult(self):
         test_cat = Cat(moons=12)
-        self.assertEqual(test_cat.age, Age.YOUNGADULT)
+        self.assertEqual(test_cat.age, AgeEnum.YOUNGADULT)
 
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
@@ -49,7 +49,7 @@ class TestCreationAge(unittest.TestCase):
     
     def test_adult(self):
         test_cat = Cat(moons=48)
-        self.assertEqual(test_cat.age, Age.ADULT)
+        self.assertEqual(test_cat.age, AgeEnum.ADULT)
 
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
@@ -58,7 +58,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
-        self.assertEqual(test_cat.age, Age.SENIORADULT)
+        self.assertEqual(test_cat.age, AgeEnum.SENIORADULT)
 
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
@@ -67,7 +67,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_elder(self):
         test_cat = Cat(moons=120)
-        self.assertEqual(test_cat.age, Age.SENIOR)
+        self.assertEqual(test_cat.age, AgeEnum.SENIOR)
 
         self.assertFalse(test_cat.age.is_kit())
         self.assertFalse(test_cat.age.is_underage())
@@ -76,7 +76,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_apprentice_exp(self):
         for i in range(1, 10):
-            test_cat = Cat(moons=7,age=Age.ADOLESCENT)
+            test_cat = Cat(moons=7, age=AgeEnum.ADOLESCENT)
             self.assertGreaterEqual(test_cat.experience, 6)
             self.assertLessEqual(test_cat.experience, 15)
 

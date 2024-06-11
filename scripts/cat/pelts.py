@@ -2,7 +2,7 @@ import random
 from random import choice
 from re import sub
 
-from scripts.cat.enums.age import Age
+from scripts.cat.enums.age import AgeEnum
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 
@@ -209,7 +209,7 @@ class Pelt:
         self.skin = skin
 
     @staticmethod
-    def generate_new_pelt(gender: str, parents: tuple = (), age: Age = Age.ADULT):
+    def generate_new_pelt(gender: str, parents: tuple = (), age: AgeEnum = AgeEnum.ADULT):
         new_pelt = Pelt()
 
         pelt_white = new_pelt.init_pattern_color(parents, gender)

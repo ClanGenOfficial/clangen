@@ -13,7 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
-from scripts.cat.enums.age import Age, AgeMoonsRange, get_age_from_moons, get_random_moons_for_age
+from scripts.cat.enums.age import AgeEnum, AgeMoonsRange, get_age_from_moons, get_random_moons_for_age
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -244,18 +244,18 @@ class Cat:
             self.moons = moons
         elif status is not None:
             if status == 'newborn':
-                self.moons = get_random_moons_for_age(Age.NEWBORN)
+                self.moons = get_random_moons_for_age(AgeEnum.NEWBORN)
             elif status == 'kitten':
-                self.moons = get_random_moons_for_age(Age.KITTEN)
+                self.moons = get_random_moons_for_age(AgeEnum.KITTEN)
             elif status == 'elder':
-                self.moons = get_random_moons_for_age(Age.SENIOR)
+                self.moons = get_random_moons_for_age(AgeEnum.SENIOR)
             elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
-                self.moons = get_random_moons_for_age(Age.ADOLESCENT)
+                self.moons = get_random_moons_for_age(AgeEnum.ADOLESCENT)
             else:
-                self.moons = get_random_moons_for_age(Age.YOUNGADULT, Age.SENIORADULT)
+                self.moons = get_random_moons_for_age(AgeEnum.YOUNGADULT, AgeEnum.SENIORADULT)
         else:
             # pick a random moons, covering the gamut from newborn to senior
-            self.moons = get_random_moons_for_age(Age.NEWBORN, Age.SENIOR)
+            self.moons = get_random_moons_for_age(AgeEnum.NEWBORN, AgeEnum.SENIOR)
 
         # backstory
         if self.backstory is None:
