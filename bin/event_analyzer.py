@@ -54,6 +54,7 @@ valid_records = {
         "cats": {
             "m_c": [],
             "r_c": [],
+            "n_c": []
         },
         "injuries": {},
         "scars": {}
@@ -1040,7 +1041,8 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
     events = pa_init(directory, blacklist)
     pa_split(events)
     event_count = len(events)
-    pa_overview_report(event_count)
+    pa_problem_report()
+    # pa_overview_report(event_count)
 
 
 def pa_init(directory, blacklist) -> list:
@@ -1112,8 +1114,9 @@ def pa_split(events):
             pa_add_records_with_subtype(event_id, event["tags"], valid_records["tags"], invalid_records["tags"])
 
         if "new_accessory" in event:
-            if "tags" not in event or "accessory" not in event["tags"]:
+            if not ("accessory" in e for e in event["sub_type"]):
                 print("Naughty naughty not tagging ur sheet")
+                pa_invalid_record(event_id, "[no accessory tag]", invalid_records["new_accessory"])
             pa_add_records(event_id, event["new_accessory"],
                            valid_records["new_accessory"], invalid_records["new_accessory"],
                            ignore_categories=True)
@@ -1135,7 +1138,6 @@ def pa_split(events):
 
         # INJURIES & HISTORY
         if "injury" in event:
-            # checking if event has history requirement
             for injury in event["injury"]:
                 # this horrible thing checks if any of the injuries cause death or scarring and have no history
                 if "history" not in event and len(set(all_history).intersection(set(injury["injuries"]))) > 0:
@@ -1143,6 +1145,29 @@ def pa_split(events):
                     print(event_id)
                     pa_invalid_record(event_id, missing, invalid_records["injury"]["history"])
                     break
+
+                if "cats" in injury:
+                    pa_add_records(event_id, injury["cats"], valid_records["injury"]["cats"],
+                                   invalid_records["injury"]["cats"],
+                                   validation={"type": "startswith",
+                                               "data": valid_records["injury"]["cats"].keys()})
+                else:
+                    pa_invalid_record(event_id, missing, invalid_records["injury"]["cats"])
+
+                if "injuries" in injury:
+                    pa_add_records(event_id, injury["injuries"], valid_records["injury"]["injuries"],
+                                   invalid_records["injury"]["injuries"],
+                                   ignore_categories=True)
+                else:
+                    pa_invalid_record(event_id, missing, invalid_records["injury"]["injuries"])
+
+                if "scars" in injury:
+                    pa_add_records(event_id, injury["scars"], valid_records["injury"]["scars"],
+                                   invalid_records["injury"]["scars"],
+                                   ignore_categories=True)
+                elif injury["injuries"] in history_scarrable:
+                    pa_invalid_record(event_id, "[scarrable but no scars]",
+                                      invalid_records["injury"]["injuries"])
 
 
 def pa_add_records(event_id, records, valid_log, error_log, validation=None, ignore_categories=False):
@@ -1306,6 +1331,33 @@ def pa_problem_report():
         pa_dump_records(invalid_records["sub_type"])
         no_errors = False
 
+    if invalid_records["new_accessory"]:
+        pa_header("Accessory")
+        pa_dump_records(invalid_records["new_accessory"])
+        no_errors = False
+
+    pa_header("Injury Errors", trailing_newline=False, big=True)
+    no_injury_errors = True
+
+    if any(invalid_records["injury"]["cats"].values()):
+        pa_header("Missing/invalid cats")
+        pa_dump_records(invalid_records["injury"]["cats"])
+        no_injury_errors = False
+
+    if any(invalid_records["injury"]["injuries"].values()):
+        pa_header("Injuries with no... injuries")
+        pa_dump_records(invalid_records["injury"]["injuries"])
+        no_injury_errors = False
+
+    if any(invalid_records["injury"]["scars"].values()):
+        pa_header("Injuries with invalid scars")
+        pa_dump_records(invalid_records["injury"]["scars"])
+        no_injury_errors = False
+
+    if no_injury_errors:
+        print("No errors found :)")
+
+
     pa_header("m_c Errors", trailing_newline=False, big=True)
     no_mc_errors = True
 
@@ -1414,7 +1466,7 @@ def pa_overview_report(event_count):
     print(f"Total number of events: {event_count}\n")
 
     print("Breakdown by location:")
-    pa_subgroup_report(valid_records["location"])
+    pa_subgroup_report(valid_records["location"], True)
 
     print("\nBreakdown by season:")
     pa_group_report(valid_records["season"])
@@ -1426,21 +1478,18 @@ def pa_overview_report(event_count):
     pa_subgroup_report(valid_records["tags"], True)
 
     print("\nBreakdown by accessory gained:")
-    pa_group_report(valid_records["new_accessory"])
-
-    for i in invalid_records["new_accessory"]:
-        print(i)
+    pa_subgroup_report(valid_records["new_accessory"])
 
 
 def pa_group_report(records, detailed=False):
     output = dict(sorted(records.items(), key=lambda x: len(x[1]), reverse=True))
     for name, group in output.items():
         print(f"{indent}{name}: {len(group)}")
-
-
 def pa_subgroup_report(records, detailed=False):
     records = dict(sorted(records.items(), key=lambda x: pa_sort_subgroup(x), reverse=True))
     for name, group in records.items():
+        if not isinstance(group, list):
+            group = dict(sorted(group.items(), key=lambda x: len(x[1]), reverse=True))
         groupcount = sum(len(sub) for sub in group.values()) if not isinstance(group, list) else len(group)
         print(f"{indent}{name}: {groupcount}")
         if name == "any" or not detailed or not isinstance(group, dict):
@@ -1491,7 +1540,9 @@ def pa_dump_records(records):
                 continue
             print(name)
             for item in record:
-                print("    " + item)
+                print(indent + item)
+
+
 
 
 if __name__ == "__main__":
