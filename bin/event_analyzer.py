@@ -41,7 +41,14 @@ valid_records = {
         "murder_reveal": [],
         "accessory": [],
         "ceremony": []},
-    "tags": {},
+    "tags": {
+        "classic": [],
+        "cruel_season": [],
+        "clan": {},
+        "no_body": [],
+        "skill_trait_required": [],
+        "clan_wide": []
+    },
     "new_accessory": {},
     "injury": {
         "cats": {
@@ -949,6 +956,8 @@ invalid_records = {
     },
     "sub_type": {
     },
+    "tags": {},
+    "new_accessory": {},
     "weight": [],
     "injury": {
         "cats": {},
@@ -1098,6 +1107,17 @@ def pa_split(events):
                     pa_invalid_record(event_id, event["sub_type"] + " in " + genre, invalid_records["sub_type"])
             pa_add_records(event_id, event["sub_type"], valid_records["sub_type"], invalid_records["sub_type"])
 
+        # TAGS
+        if "tags" in event:
+            pa_add_records_with_subtype(event_id, event["tags"], valid_records["tags"], invalid_records["tags"])
+
+        if "new_accessory" in event:
+            if "tags" not in event or "accessory" not in event["tags"]:
+                print("Naughty naughty not tagging ur sheet")
+            pa_add_records(event_id, event["new_accessory"],
+                           valid_records["new_accessory"], invalid_records["new_accessory"],
+                           ignore_categories=True)
+
         # WEIGHT - only care if it's missing
         if "weight" not in event:
             invalid_records["weight"].append(event_id)
@@ -1134,18 +1154,25 @@ def pa_add_records(event_id, records, valid_log, error_log, validation=None, ign
 
 
 def pa_add_records_with_subtype(event_id, records, valid_log, invalid_log,
-                                allow_category=True, no_subtype="[no subtype]", delineator=":"):
+                                allow_category=True, delineator=":"):
     for record in records:
         if delineator not in record:
             if allow_category:
                 if record in valid_log:
                     if record == "any":
                         valid_log[record].append(event_id)
+                        continue
+                    if isinstance(valid_log[record], list):
+                        valid_log[record].append(event_id)
+                        continue
+
+                    if "any" in valid_log[record]:
+                        valid_log[record]["any"].append(event_id)
                     else:
-                        if "any" in valid_log[record]:
-                            valid_log[record]["any"].append(event_id)
-                        else:
+                        if isinstance(valid_log[record], dict):
                             valid_log[record]["any"] = [event_id]
+                        else:
+                            valid_log[record] = [event_id]
                 else:
                     pa_invalid_record(event_id, record, invalid_log)
         else:
@@ -1156,7 +1183,7 @@ def pa_add_records_with_subtype(event_id, records, valid_log, invalid_log,
                 if category in valid_log and value in valid_log[category]:
                     valid_log[category][value].append(event_id)
                 elif category in valid_log:
-                    valid_log[category][value] = [event_id]
+                    valid_log[category][str(value)] = [event_id]
                 else:
                     pa_invalid_record(event_id, (category + delineator + value), invalid_log)
 
@@ -1395,33 +1422,35 @@ def pa_overview_report(event_count):
     print("\nBreakdown by sub-type:")
     pa_group_report(valid_records["sub_type"])
 
+    print("\nBreakdown by tags:")
+    pa_subgroup_report(valid_records["tags"], True)
+
+    print("\nBreakdown by accessory gained:")
+    pa_group_report(valid_records["new_accessory"])
+
+    for i in invalid_records["new_accessory"]:
+        print(i)
+
 
 def pa_group_report(records, detailed=False):
-    for name, group in records.items():
+    output = dict(sorted(records.items(), key=lambda x: len(x[1]), reverse=True))
+    for name, group in output.items():
         print(f"{indent}{name}: {len(group)}")
 
 
 def pa_subgroup_report(records, detailed=False):
-    i = 0
-    totals = [0] * len(records)
+    records = dict(sorted(records.items(), key=lambda x: pa_sort_subgroup(x), reverse=True))
     for name, group in records.items():
-        if name == "any":
-            totals[i] = len(group)
-            i += 1
-            continue
-
-        for subgroup in group.values():
-            totals[i] += len(subgroup)
-        i += 1
-
-    i = 0
-    for name, group in records.items():
-        print(f"{indent}{name}: {totals[i]}")
-        i += 1
-        if name == "any" or not detailed:
+        groupcount = sum(len(sub) for sub in group.values()) if not isinstance(group, list) else len(group)
+        print(f"{indent}{name}: {groupcount}")
+        if name == "any" or not detailed or not isinstance(group, dict):
             continue
         for name_sub, subgroup in group.items():
             print(f"{indent}{indent}{indent}{name_sub}: {len(subgroup)}")
+
+
+def pa_sort_subgroup(group):
+    return sum(len(sub) for sub in group[1]) if not isinstance(group[1], list) else len(group[1])
 
 
 # -------------
