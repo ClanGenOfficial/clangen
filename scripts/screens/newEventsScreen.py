@@ -60,19 +60,30 @@ class newEventsScreen(Screens):
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele in self.event_buttons:
+                    if ele == "all":
+                        continue
                     if self.event_buttons[ele] == element:
-                        x_pos = self.alert[ele].get_relative_rect[0] - 20
-                        y_pos = self.alert[ele].get_relative_rect[1]
-                        self.alert[ele].set_relative_position(x_pos, y_pos)
+                        x_pos = int(self.alert[ele].get_relative_rect()[0] - 10)
+                        y_pos = self.alert[ele].get_relative_rect()[1]
+                        self.alert[ele].set_relative_position((x_pos, y_pos))
 
         if event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele in self.event_buttons:
+                    if ele == "all":
+                        continue
                     if self.event_buttons[ele] == element:
-                        x_pos = self.alert[ele].get_relative_rect[0] + 20
-                        y_pos = self.alert[ele].get_relative_rect[1]
-                        self.alert[ele].set_relative_position(x_pos, y_pos)
+                        x_pos = int(self.alert[ele].get_relative_rect()[0] + 10)
+                        y_pos = self.alert[ele].get_relative_rect()[1]
+                        self.alert[ele].set_relative_position((x_pos, y_pos))
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
+            element = event.ui_element
+            if element in self.event_buttons.values():
+                for ele in self.event_buttons:
+                    if self.event_buttons[ele] == element:
+                        self.handle_tab_event(ele)
 
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             element = event.ui_element
@@ -80,10 +91,6 @@ class newEventsScreen(Screens):
                 self.events_thread = self.loading_screen_start_work(
                     events_class.one_moon
                 )
-            if element in self.event_buttons.values():
-                for ele in self.event_buttons:
-                    if self.event_buttons[ele] == element:
-                        self.handle_tab_event(ele)
             elif element in self.involved_cat_buttons.values():
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons.values():
@@ -104,12 +111,15 @@ class newEventsScreen(Screens):
             self.display_events = self.birth_death_events
         elif display_type == "relationship":
             self.display_events = self.relation_events
+        elif display_type == "health":
+            self.display_events = self.health_events
         elif display_type == "other_clans":
             self.display_events = self.other_clans_events
         elif display_type == "misc":
             self.display_events = self.misc_events
 
-        self.alert[display_type].hide()
+        if display_type != "all":
+            self.alert[display_type].hide()
 
         self.update_events_display()
 
@@ -208,7 +218,7 @@ class newEventsScreen(Screens):
 
             if event_type != "all":
                 self.alert[f"{event_type}"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((-10, 148 + y_pos), (8, 44))),
+                    scale(pygame.Rect((-10, 48 + y_pos), (8, 44))),
                     pygame.transform.scale(
                         image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
                     ),
