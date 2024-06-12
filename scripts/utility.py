@@ -1274,8 +1274,9 @@ def gather_cat_objects(
             out_set.add(event.patrol_apprentices[1])
         elif abbr == "clan":
             out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
-        elif abbr == "some_clan":
-            out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
+        elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
+            clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)]
+            out_set.update(sample(clan_cats, randint(1, round(len(clan_cats) / 8))))
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
         elif abbr == "multi":
@@ -2403,6 +2404,10 @@ def generate_sprite(
             tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
             tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+        if cat.pelt.tint != "none" and cat.pelt.tint in sprites.cat_tints["dilute_tint_colours"]:
+            tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+            tint.fill(tuple(sprites.cat_tints["dilute_tint_colours"][cat.pelt.tint]))
+            new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_ADD)
 
         # draw white patches
         if cat.pelt.white_patches is not None:

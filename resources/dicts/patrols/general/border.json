@@ -1935,13 +1935,15 @@
                 "art": "gen_happy_cat2",
                 "other_clan_rep": 2,
                 "relationships":
+				[
                 {
-                    "cats_from": [ "patrol" ],
                     "cats_to": [ "app1" ],
+                    "cats_from": [ "patrol" ],
                     "mutual": false,
                     "values": [ "platonic", "trust", "respect" ],
                     "amount": 10
                 }
+				]
             },
             {
                 "text": "app1 watches the other apprentice from across the border as the two patrols get on with marking their side of the border in silence. Every so often, app1 looks up and catches the other apprentice's eye; would they have been friends, if they were born in the same Clan? The patrol passes without incident, and app1 can't help casting a look back at the border as {PRONOUN/app1/subject} {VERB/app1/leave/leaves}.",
@@ -1983,13 +1985,15 @@
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": -1,
                 "relationships":
-                {
-                    "cats_from": [ "patrol" ],
-                    "cats_to": [ "app1" ],
-                    "mutual": false,
-                    "values": [ "dislike" ],
-                    "amount": 5
-                }
+                [
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "patrol" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    }
+                ]
             },
             {
                 "text": "app1 waves {PRONOUN/app1/poss} tail to the other apprentice, but s_c yanks {PRONOUN/app1/object} back. With {PRONOUN/s_c/poss} lip curled, s_c lectures app1 not to nurture friendships with other Clans, since they might one day meet in battle. The o_c_n patrol is well within earshot of this lecture, and app1 slinks back to camp with humiliation burning under {PRONOUN/app1/poss} pelt.",
@@ -2001,8 +2005,8 @@
                 "relationships":
                 [
                     {
-                        "cats_from": [ "s_c" ],
                         "cats_to": [ "app1" ],
+                        "cats_from": [ "s_c" ],
                         "mutual": true,
                         "values": [ "dislike" ],
                         "amount": 10
