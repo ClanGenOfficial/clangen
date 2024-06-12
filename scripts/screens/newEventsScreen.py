@@ -1,11 +1,14 @@
 import pygame
 import pygame_gui
 
+from scripts.cat.cats import Cat
+from scripts.events import events_class
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER, screen_y, screen_x
-from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer, IDImageButton
+from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer, IDImageButton, \
+    UIInvolvedCatScrollingContainer
 from scripts.screens.Screens import Screens
-from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme
+from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme, shorten_text_to_fit
 
 
 class newEventsScreen(Screens):
@@ -25,8 +28,10 @@ class newEventsScreen(Screens):
     def __init__(self, name):
         super().__init__(name)
 
+        self.events_thread = None
         self.event_screen_container = None
         self.clan_info = {}
+        self.timeskip_button = None
 
         self.full_event_display_container = None
         self.events_frame = None
@@ -35,6 +40,7 @@ class newEventsScreen(Screens):
         self.event_display = None
         self.event_display_elements = {}
         self.cat_profile_buttons = {}
+        self.involved_cat_container = None
         self.involved_cat_buttons = {}
 
         # Stores the involved cat button that currently has its cat profile buttons open
@@ -48,14 +54,19 @@ class newEventsScreen(Screens):
 
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             element = event.ui_element
+            if element == self.timeskip_button:
+                self.events_thread = self.loading_screen_start_work(
+                    events_class.one_moon
+                )
             if element in self.event_buttons.values():
                 for ele in self.event_buttons:
                     if self.event_buttons[ele] == element:
                         self.handle_tab_event(ele)
-            elif element in self.involved_cat_buttons:
-                pass
-            elif element in self.cat_profile_buttons:
-                pass
+            elif element in self.involved_cat_buttons.values():
+                self.make_cat_buttons(element)
+            elif element in self.cat_profile_buttons.values():
+                game.switches["cat"] = element.ids
+                self.change_screen("profile screen")
             else:
                 self.menu_button_pressed(event)
 
@@ -127,6 +138,21 @@ class newEventsScreen(Screens):
             manager=MANAGER,
         )
 
+        # Set text for Clan age
+        if game.clan.age == 1:
+            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
+        if game.clan.age != 1:
+            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
+
+        self.timeskip_button = UIImageButton(
+            scale(pygame.Rect((620, 436), (360, 60))),
+            "",
+            object_id="#timeskip_button",
+            starting_height=1,
+            container=self.event_screen_container,
+            manager=MANAGER,
+        )
+
         self.full_event_display_container = pygame_gui.elements.UIAutoResizingContainer(
             scale(pygame.Rect((120, 532), (0, 0))),
             object_id="#event_display_container",
@@ -160,8 +186,13 @@ class newEventsScreen(Screens):
         self.event_buttons[self.event_display_type].disable()
 
         self.make_event_scrolling_container()
-
         self.open_involved_cat_button = None
+        self.update_events_display()
+
+        # Draw and disable the correct menu buttons.
+        self.set_disabled_menu_buttons(["events_screen"])
+        self.update_heading_text(f"{game.clan.name}Clan")
+        self.show_menu_buttons()
         self.update_events_display()
 
     def make_event_scrolling_container(self):
@@ -174,6 +205,59 @@ class newEventsScreen(Screens):
             starting_height=3,
             manager=MANAGER
         )
+
+    def make_cat_buttons(self, button_pressed):
+        """Makes the buttons that take you to the profile."""
+
+        # Check if the button you pressed doesn't have it cat profile buttons currently displayed.
+
+        # if it does, clear the cat profile buttons
+        if self.open_involved_cat_button == button_pressed:
+            self.open_involved_cat_button = None
+            for ele in self.cat_profile_buttons:
+                self.cat_profile_buttons[ele].kill()
+            self.cat_profile_buttons = {}
+            return
+
+        # If it doesn't have its buttons displayed, set the current open involved_cat_button to the pressed button,
+        # clear all other buttons, and open the cat profile buttons.
+        self.open_involved_cat_button = button_pressed
+        if self.involved_cat_container:
+            self.involved_cat_container.kill()
+
+        x_pos = 700
+        y_pos = button_pressed.get_relative_rect()[1]
+
+        self.involved_cat_container = UIInvolvedCatScrollingContainer(
+            scale(pygame.Rect((0, y_pos), (950, 700))),
+            starting_height=3,
+            object_id="#involved_cat_container",
+            container=self.event_display,
+            manager=MANAGER
+        )
+        print(x_pos)
+        for i, cat_id in enumerate(button_pressed.ids):
+            cat_ob = Cat.fetch_cat(cat_id)
+            if cat_ob:
+                # Shorten name if needed
+                name = str(cat_ob.name)
+                short_name = shorten_text_to_fit(name, 195, 26)
+
+                self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
+                        scale(pygame.Rect((x_pos - (250 * i), y_pos + 4), (232, 60))),
+                        text=short_name,
+                        ids=cat_id,
+                        container=self.involved_cat_container,
+                        object_id="#events_cat_profile_button",
+                        layer_starting_height=1,
+                        manager=MANAGER,
+                    )
+                # There is only room for about four buttons.
+                if i > 3:
+                    break
+                i += 1
+
+
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -294,5 +378,6 @@ class newEventsScreen(Screens):
         self.event_buttons[self.event_display_type].disable()
 
     def on_use(self):
+        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
 
         pass

@@ -10,7 +10,7 @@ from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
-from pygame_gui.elements import UIAutoResizingContainer
+from pygame_gui.elements import UIAutoResizingContainer, UIHorizontalScrollBar
 
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -89,6 +89,31 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
         return changed
 
+class UIInvolvedCatScrollingContainer(pygame_gui.elements.UIScrollingContainer):
+    def __init__(self, relative_rect: pygame.Rect, manager=None, starting_height: int = 1, container=None,
+                 object_id=None, visible: int = 1):
+
+        super().__init__(relative_rect, manager=manager, starting_height=starting_height, container=container,
+                         object_id=object_id, visible=visible, allow_scroll_y=False, should_grow_automatically=True)
+
+        self.horiz_scroll_bar.kill()
+        self.horiz_scroll_bar = None
+
+        scroll_bar_rect = scale(pygame.Rect(0, -10, self.relative_rect.width, 10))
+        self.horiz_scroll_bar = UIHorizontalScrollBar(relative_rect=scroll_bar_rect,
+                                                      visible_percentage=1.0,
+                                                      manager=self.ui_manager,
+                                                      container=self._root_container,
+                                                      parent_element=self,
+                                                      anchors={'left': 'left',
+                                                               'right': 'right',
+                                                               'top': 'bottom',
+                                                               'bottom': 'bottom'})
+
+        self.join_focus_sets(self.horiz_scroll_bar)
+        if self.horiz_scroll_bar is not None:
+            self.horiz_scroll_bar.set_container_this_will_scroll(self.scrollable_container)
+
 
 class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
     def __init__(
@@ -97,20 +122,18 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
             manager=None,
             starting_height: int = 1,
             container=None,
-            parent_element=None,
             object_id=None,
-            anchors=None,
             visible: int = 1):
 
         super().__init__(relative_rect=relative_rect, manager=manager, starting_height=starting_height,
-                         container=container, parent_element=parent_element, object_id=object_id, anchors=anchors,
-                         visible=visible, allow_scroll_x=False, should_grow_automatically=True)
+                         container=container, object_id=object_id, visible=visible, allow_scroll_x=False,
+                         should_grow_automatically=True)
 
-        self.scroll_bar_width = 48
-        scroll_bar_rect = scale(pygame.Rect(-self.scroll_bar_width,
+        self.scroll_bar_width = 24
+        scroll_bar_rect = pygame.Rect(-self.scroll_bar_width,
                                             0,
                                             self.scroll_bar_width,
-                                            self._view_container.rect.height))
+                                            self.relative_rect.height)
         self.vert_scroll_bar.kill()
         self.vert_scroll_bar = None
         self.vert_scroll_bar = UIImageVerticalScrollBar(relative_rect=scroll_bar_rect,
@@ -123,7 +146,6 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
                                                                  'right': 'right',
                                                                  'top': 'top',
                                                                  'bottom': 'bottom'})
-
         self.join_focus_sets(self.vert_scroll_bar)
         if self.vert_scroll_bar is not None:
             self.vert_scroll_bar.set_container_this_will_scroll(self.scrollable_container)
