@@ -257,8 +257,6 @@ class newEventsScreen(Screens):
                     break
                 i += 1
 
-
-
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
         self.event_screen_container.kill()
@@ -343,7 +341,7 @@ class newEventsScreen(Screens):
                 else:
                     image_path += ".png"
 
-                y_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3] + 100
+                y_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3] + 140
 
                 self.event_display_elements[f"shading{i}"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((0, y_pos), (1028, y_len))),
@@ -355,7 +353,7 @@ class newEventsScreen(Screens):
                 )
 
             # INVOLVED CAT BUTTON
-            y_pos += self.event_display_elements[f"event{i}"].get_relative_rect()[3]
+            y_pos += self.event_display_elements[f"event{i}"].get_relative_rect()[3] + 40
 
             self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
                 scale(pygame.Rect((948, y_pos + 10), (68, 68))),
@@ -378,6 +376,6 @@ class newEventsScreen(Screens):
         self.event_buttons[self.event_display_type].disable()
 
     def on_use(self):
-        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
+        #self.loading_screen_on_use(self.events_thread, self.timeskip_done)
 
         pass
