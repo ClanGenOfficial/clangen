@@ -492,7 +492,7 @@
   {
     "event_id": "gen_misc_leafbare_misc1",
     "location": ["any"],
-    "season": ["leafbare"],
+    "season": ["leaf-bare"],
     "weight": 20,
     "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
     "m_c": {
