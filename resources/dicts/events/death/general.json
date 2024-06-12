@@ -928,7 +928,7 @@
         }]
     },
     {
-        "event_id": "gen_death_badprey_any1",
+        "event_id": "gen_death_badprey_anydoubledeath1",
         "location": ["any"],
         "season": [
             "any"
@@ -997,7 +997,7 @@
         }]
     },
     {
-        "event_id": "gen_death_rogue_any1",
+        "event_id": "gen_death_rogue_anydoubledeath1",
         "location": ["any"],
         "season": [
             "any"
@@ -1357,7 +1357,7 @@
         }
     },
     {
-        "event_id": "gen_death_war_any5",
+        "event_id": "gen_death_war_sacrifice1",
         "location": ["any"],
         "season": [
             "any"
@@ -2626,7 +2626,7 @@
         ]
     },
     {
-        "event_id": "gen_death_war_any3",
+        "event_id": "gen_death_war_any5",
         "location": ["mountainous", "forest", "beach"],
         "season": [
             "any"
@@ -3259,7 +3259,7 @@
         ]
     },
     {
-        "event_id": "gen_death_ockill_anymed1",
+        "event_id": "gen_death_ockill_anymed2",
         "location": ["any"],
         "season": [
             "any"
@@ -3302,7 +3302,7 @@
         ]
     },
     {
-        "event_id": "gen_death_ockill_anymed2",
+        "event_id": "gen_death_ockill_anymed3",
         "location": ["any"],
         "season": ["any"],
         "tags": [],
