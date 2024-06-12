@@ -2,13 +2,16 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER, screen_y, screen_x
 from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer, IDImageButton, \
     UIInvolvedCatScrollingContainer
+from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
-from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme, shorten_text_to_fit
+from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme, shorten_text_to_fit, \
+    get_living_clan_cat_count
 
 
 class newEventsScreen(Screens):
@@ -36,6 +39,7 @@ class newEventsScreen(Screens):
         self.full_event_display_container = None
         self.events_frame = None
         self.event_buttons = {}
+        self.alert = {}
 
         self.event_display = None
         self.event_display_elements = {}
@@ -51,6 +55,24 @@ class newEventsScreen(Screens):
     def handle_event(self, event):
         if game.switches["window_open"]:
             return
+
+        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            element = event.ui_element
+            if element in self.event_buttons.values():
+                for ele in self.event_buttons:
+                    if self.event_buttons[ele] == element:
+                        x_pos = self.alert[ele].get_relative_rect[0] - 20
+                        y_pos = self.alert[ele].get_relative_rect[1]
+                        self.alert[ele].set_relative_position(x_pos, y_pos)
+
+        if event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
+            element = event.ui_element
+            if element in self.event_buttons.values():
+                for ele in self.event_buttons:
+                    if self.event_buttons[ele] == element:
+                        x_pos = self.alert[ele].get_relative_rect[0] + 20
+                        y_pos = self.alert[ele].get_relative_rect[1]
+                        self.alert[ele].set_relative_position(x_pos, y_pos)
 
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             element = event.ui_element
@@ -86,6 +108,8 @@ class newEventsScreen(Screens):
             self.display_events = self.other_clans_events
         elif display_type == "misc":
             self.display_events = self.misc_events
+
+        self.alert[display_type].hide()
 
         self.update_events_display()
 
@@ -181,6 +205,19 @@ class newEventsScreen(Screens):
                 container=self.full_event_display_container,
                 manager=MANAGER
             )
+
+            if event_type != "all":
+                self.alert[f"{event_type}"] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((-10, 148 + y_pos), (8, 44))),
+                    pygame.transform.scale(
+                        image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
+                    ),
+                    container=self.full_event_display_container,
+                    object_id=f"alert_mark_{event_type}",
+                    manager=MANAGER,
+                    visible=False
+                )
+
             y_pos += 100
 
         self.event_buttons[self.event_display_type].disable()
@@ -376,6 +413,61 @@ class newEventsScreen(Screens):
         self.event_buttons[self.event_display_type].disable()
 
     def on_use(self):
-        #self.loading_screen_on_use(self.events_thread, self.timeskip_done)
-
+        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
         pass
+
+    def timeskip_done(self):
+        """Various sorting and other tasks that must be done with the timeskip is over."""
+
+        self.scroll_height = {}
+
+        if get_living_clan_cat_count(Cat) == 0:
+            GameOver("events screen")
+
+        self.update_display_events_lists()
+
+        self.event_display_type = "all"
+        self.event_buttons["all"].disable()
+
+        for tab in self.event_buttons:
+            if tab != "all":
+                self.event_buttons[tab].enable()
+
+        if not self.all_events:
+            self.all_events.append(
+                Single_Event("Nothing interesting happened this moon.")
+            )
+
+        self.display_events = self.all_events
+
+        if self.ceremony_events:
+            self.alert["ceremony"].show()
+        else:
+            self.alert["ceremony"].hide()
+
+        if self.birth_death_events:
+            self.alert["birth_death"].show()
+        else:
+            self.alert["birth_death"].hide()
+
+        if self.relation_events:
+            self.alert["relationship"].show()
+        else:
+            self.alert["relationship"].hide()
+
+        if self.health_events:
+            self.alert["health"].show()
+        else:
+            self.alert["health"].hide()
+
+        if self.other_clans_events:
+            self.alert["other_clans"].show()
+        else:
+            self.alert["other_clans"].hide()
+
+        if self.misc_events:
+            self.alert["misc"].show()
+        else:
+            self.alert["misc"].hide()
+
+        self.update_events_display()
