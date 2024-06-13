@@ -10,6 +10,7 @@ import random
 # pylint: enable=line-too-long
 import traceback
 from collections import Counter
+from copy import copy
 
 import ujson
 
@@ -401,13 +402,7 @@ class Events:
 
                     for cat_ID in invited_cats:
                         invited_cat = Cat.fetch_cat(cat_ID)
-                        if invited_cat.status.lower() in [
-                            "kittypet",
-                            "loner",
-                            "rogue",
-                            "former clancat",
-                            "exiled",
-                        ]:
+                        if invited_cat.status.is_outside_clan():
                             if (
                                     "guided" in invited_cat.backstory
                                     and invited_cat.status != "exiled"
@@ -420,7 +415,7 @@ class Events:
                                 "healer_backstories"
                             ]
                             ):
-                                invited_cat.status = "medicine cat"
+                                invited_cat.status = StatusEnum.MEDCAT
 
                             elif invited_cat.age in ["newborn", "kitten"]:
                                 invited_cat.status = invited_cat.age
@@ -846,7 +841,7 @@ class Events:
                 if game.clan.clan_settings.get(
                         "raid other clans"
                 ) or random.getrandbits(1):
-                    status_use = cat.status
+                    status_use = copy(cat.status)
                     if status_use.is_deputy_or_leader():
                         status_use = StatusEnum.WARRIOR
                     chance = info_dict[f"injury_chance_{status_use}"]
@@ -1995,7 +1990,7 @@ class Events:
         alive_cats = list(
             filter(
                 lambda kitty: (
-                        kitty.status.is_leader() and not kitty.dead and not kitty.outside
+                        not kitty.status.is_leader() and not kitty.dead and not kitty.outside
                 ),
                 Cat.all_cats.values(),
             )

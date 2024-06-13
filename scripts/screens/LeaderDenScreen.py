@@ -210,7 +210,7 @@ class LeaderDenScreen(Screens):
                     if not i.dead
                     and not i.exiled
                     and not i.outside
-                       and i.status.is_warrior()
+                       and (not i.status.is_kit_any() and not i.status.is_warrior_app() and not i.status.is_leader())
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)

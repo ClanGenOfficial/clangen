@@ -289,7 +289,7 @@ class FreshkillPile:
                 relevant_group = relevant_queens + pregnant_cats
             else:
                 relevant_group = [
-                    cat for cat in living_cats if cat.status == feeding_status
+                    cat for cat in living_cats if str(cat.status) == feeding_status
                 ]
                 # remove all cats, which are also queens / pregnant
                 relevant_group = [
@@ -373,7 +373,7 @@ class FreshkillPile:
         # first feed the cats with the lowest nutrition
         for cat_id, v in sorted_nutrition.items():
             cat = Cat.all_cats[cat_id]
-            status = cat.status
+            status = str(cat.status)
             # check if this is a kit: if so, check if they are fed by the mother
             if status.is_kit_any() and cat in fed_kits:
                 continue
@@ -621,7 +621,7 @@ class FreshkillPile:
         queen_dict, kits = get_alive_clan_queens(self.living_cats)
 
         for cat in living_cats:
-            if cat.status not in PREY_REQUIREMENT:
+            if str(cat.status) not in PREY_REQUIREMENT:
                 continue
             # update the nutrition_info
             if cat.ID in old_nutrition_info:
@@ -660,7 +660,7 @@ class FreshkillPile:
             factor = 2
 
         queen_dict, kits = get_alive_clan_queens(self.living_cats)
-        prey_status = cat.status
+        prey_status = str(cat.status)
         if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
             prey_status = "queen/pregnant"
         max_score = PREY_REQUIREMENT[prey_status] * factor

@@ -6,7 +6,6 @@ class StatusEnum(ExtendedStrEnum):
     Roles that a cat may hold. Check ExtendedStrEnum for more things!
     """
     # These are in this order for food priority filtering
-    NONE = "ERROR"
     NEWBORN = "newborn"
     KITTEN = "kitten"
     ELDER = "elder"
@@ -19,6 +18,7 @@ class StatusEnum(ExtendedStrEnum):
     DEPUTY = "deputy"
     LEADER = "leader"
 
+    NONE = "ERROR"
     EXCLAN = "former Clancat"
     EXILED = "exiled"
     KITTYPET = "kittypet"
@@ -77,7 +77,7 @@ class StatusEnum(ExtendedStrEnum):
         return self.is_deputy_or_leader() or self.is_warrior()
 
     def is_outside_clan(self):
-        """True if cat is former Clanmember, exiled, kittypet, loner or rogue"""
+        """True if cat is former Clancat, exiled, kittypet, loner or rogue"""
         return self in [
             StatusEnum.EXCLAN, StatusEnum.EXILED, StatusEnum.KITTYPET,
             StatusEnum.LONER, StatusEnum.ROGUE]

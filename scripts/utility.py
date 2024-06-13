@@ -379,7 +379,8 @@ def create_new_cat_block(
         if not match:
             continue
 
-        if StatusEnum(match.group(1)) in StatusEnum.list():
+        if StatusEnum(match.group(1)) in StatusEnum.list() \
+                and StatusEnum(match.group(1)).is_clan_status():
             status = StatusEnum(match.group(1))
             break
 
@@ -407,7 +408,7 @@ def create_new_cat_block(
     if not status.is_none() and not age:
         if status.is_app_any():
             age = randint(Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1])
-        elif status.is_warrior() or status.is_mediator() or status.is_medcat():
+        elif status.is_warrior_medcat_or_mediator():
             age = randint(Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1])
         elif status.is_elder():
             age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
