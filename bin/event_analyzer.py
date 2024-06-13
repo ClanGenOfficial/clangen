@@ -1,6 +1,7 @@
 import json
 import os
 from collections import Counter
+from typing import MutableMapping
 
 import ujson
 
@@ -47,7 +48,13 @@ valid_records = {
         "clan": {},
         "no_body": [],
         "skill_trait_required": [],
-        "clan_wide": []
+        "clan_wide": [],
+        "all_lives": [],
+        "some_lives": [],
+        "lives_remain": [],
+        "high_lives": [],
+        "mid_lives": [],
+        "low_lives": []
     },
     "new_accessory": {},
     "injury": {
@@ -103,144 +110,168 @@ valid_records = {
         },
         "skill": {
             "TEACHER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "HUNTER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "FIGHTER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "RUNNER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CLIMBER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "SWIMMER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "SPEAKER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "MEDIATOR": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CLEVER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "INSIGHTFUL": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "SENSE": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "KIT": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "STORY": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "LORE": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CAMP": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "HEALER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "STAR": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "DUSK": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "OMEN": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "DREAM": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CLAIRVOYANT": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "PROPHET": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "GHOST": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "DARK": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
@@ -249,144 +280,173 @@ valid_records = {
         },
         "not_skill": {
             "TEACHER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "HUNTER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "FIGHTER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "RUNNER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CLIMBER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "SWIMMER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "SPEAKER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "MEDIATOR": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CLEVER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "INSIGHTFUL": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "SENSE": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "KIT": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "STORY": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "LORE": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CAMP": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "HEALER": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "STAR": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "DUSK": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "OMEN": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "DREAM": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "CLAIRVOYANT": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "PROPHET": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
             "GHOST": {
+                "0": [],
                 "1": [],
                 "2": [],
                 "3": [],
                 "4": []
             },
-        },
+            "DARK": {
+                "0": [],
+                "1": [],
+                "2": [],
+                "3": [],
+                "4": []
+            }, },
         "trait": {
             "troublesome": [],
             "lonesome": [],
@@ -1028,8 +1088,7 @@ type_subtype = {
 
 
 def event_analysis(directory: str = None, blacklist: list[str] = None):
-    # 1: pull all the event scripts
-    # 2
+    global event_flat
     pa_header("Event analyzer\nv0.1", "For finding gaps in our current offering", trailing_newline=False)
     if directory is None:
         directory = "../resources/dicts/events/"
@@ -1040,9 +1099,14 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
 
     events = pa_init(directory, blacklist)
     pa_split(events)
-    event_count = len(events)
+
+    event_flat = flatten(valid_records)
+    event_count = len(tuple(event_flat))
     pa_problem_report()
-    # pa_overview_report(event_count)
+    pa_overview_report(event_count)
+
+    # pa_intersection(group1="location.any", group2="season.leaf-bare")
+    # pa_intersection(group1="season.any", group2="location.any")
 
 
 def pa_init(directory, blacklist) -> list:
@@ -1111,11 +1175,23 @@ def pa_split(events):
 
         # TAGS
         if "tags" in event:
+            for tag in event["tags"]:
+                if "no_body" in tag:
+                    if not ("dies" in die_check for main_c in event["m_c"] for die_check in main_c):
+                        pa_invalid_record(event_id, "[no_body but m_c doesn't die]",
+                                          invalid_records["tags"])
+                if "skill_trait_requirement" in tag:
+                    if not (("skill" in skill_check for skill_check in event["m_c"]) or
+                            ("trait" in trait_check for trait_check in event["m_c"]) or
+                            ("skill" in skill_check for skill_check in event["r_c"]) or
+                            ("trait" in trait_check for trait_check in event["r_c"])):
+                        pa_invalid_record(event_id, "[skill_trait_requirement but no skill_traits]",
+                                          invalid_records["tags"])
+
             pa_add_records_with_subtype(event_id, event["tags"], valid_records["tags"], invalid_records["tags"])
 
         if "new_accessory" in event:
             if not ("accessory" in e for e in event["sub_type"]):
-                print("Naughty naughty not tagging ur sheet")
                 pa_invalid_record(event_id, "[no accessory tag]", invalid_records["new_accessory"])
             pa_add_records(event_id, event["new_accessory"],
                            valid_records["new_accessory"], invalid_records["new_accessory"],
@@ -1326,6 +1402,11 @@ def pa_problem_report():
         pa_dump_records(invalid_records["sub_type"])
         no_errors = False
 
+    if invalid_records["tags"]:
+        pa_header("Invalid tags")
+        pa_dump_records(invalid_records["tags"])
+        no_errors = False
+
     if invalid_records["weight"]:
         pa_header("Events missing a weighting")
         pa_dump_records(invalid_records["sub_type"])
@@ -1356,7 +1437,6 @@ def pa_problem_report():
 
     if no_injury_errors:
         print("No errors found :)")
-
 
     pa_header("m_c Errors", trailing_newline=False, big=True)
     no_mc_errors = True
@@ -1461,9 +1541,9 @@ def pa_problem_report():
         print("No errors found :)")
 
 
-def pa_overview_report(event_count):
+def pa_overview_report(count):
     pa_header("Overview", big=True, trailing_newline=True)
-    print(f"Total number of events: {event_count}\n")
+    print(f"Total number of events: {count}\n")
 
     print("Breakdown by location:")
     pa_subgroup_report(valid_records["location"], True)
@@ -1485,6 +1565,8 @@ def pa_group_report(records, detailed=False):
     output = dict(sorted(records.items(), key=lambda x: len(x[1]), reverse=True))
     for name, group in output.items():
         print(f"{indent}{name}: {len(group)}")
+
+
 def pa_subgroup_report(records, detailed=False):
     records = dict(sorted(records.items(), key=lambda x: pa_sort_subgroup(x), reverse=True))
     for name, group in records.items():
@@ -1497,9 +1579,63 @@ def pa_subgroup_report(records, detailed=False):
         for name_sub, subgroup in group.items():
             print(f"{indent}{indent}{indent}{name_sub}: {len(subgroup)}")
 
-
 def pa_sort_subgroup(group):
     return sum(len(sub) for sub in group[1]) if not isinstance(group[1], list) else len(group[1])
+
+
+def pa_set_prep(group1, group2):
+    left = []
+    group1_key = group1.rsplit(".", 1)
+    if "not_skill" in group1_key[0]:
+        a = {key: val for key, val in event_flat.items()
+             if key.startswith(group1_key[0])
+             and key.endswith(str(range(1, int(group1_key[1]) + 1)))}
+
+
+def pa_intersection(group1: str, group2: str, subgroup1=None, subgroup2=None):
+    group1_key = group1.rsplit(".", 1)
+    group2_key = group2.rsplit(".", 1)
+    a = {key: val for key, val in event_flat.items() if
+         key.startswith(group1_key[0] if group1_key[1] == "any" else group1)}
+    left = []
+    for value in a.values():
+        left += value
+    b = {key: val for key, val in event_flat.items() if
+         key.startswith(group2_key[0] if group2_key[1] == "any" else group2)}
+    right = []
+    for value in b.values():
+        right += value
+
+    matching_events = list(filter(lambda x: x in set(left), set(right)))
+
+    print(
+        f"There are {len(matching_events)} events that match \"{group1.replace('.', ' -> ')}\" and \"{group2.replace('.', ' -> ')}\".")
+
+
+def pa_innerjoin(group1, group1_sub, group2, group2_sub):
+    if group1_sub is not None and group1_sub is not "any":
+        a = valid_records[group1]["any"] + valid_records[group1][group1_sub]
+    else:
+        a = recursive_items(valid_records[group1])
+
+    if group2_sub is not None and group2_sub is not "any":
+        b = valid_records[group2]["any"] + valid_records[group2][group2_sub]
+    else:
+        b = recursive_items(valid_records[group2])
+
+    out = list(set(a) & set(b))
+    return out
+
+
+def flatten(dictionary, parent_key='', separator='.'):
+    items = []
+    for key, value in dictionary.items():
+        new_key = parent_key + separator + key if parent_key else key
+        if isinstance(value, MutableMapping):
+            items.extend(flatten(value, new_key, separator=separator).items())
+        else:
+            items.append((new_key, value))
+    return dict(items)
 
 
 # -------------
@@ -1541,8 +1677,6 @@ def pa_dump_records(records):
             print(name)
             for item in record:
                 print(indent + item)
-
-
 
 
 if __name__ == "__main__":
