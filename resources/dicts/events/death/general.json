@@ -6023,7 +6023,7 @@
     "event_text": "r_c attempts to take what remains of m_c's lives, but a warning from StarClan gives {PRONOUN/m_c/object} enough information to avoid such a fate. {PRONOUN/m_c/subject} still lose a life, but at least {PRONOUN/m_c/subject} manage take r_c down with {PRONOUN/m_c/object}.",
     "m_c": {
         "status": ["leader"],
-        "skill": ["OMEN,1", "DREAM,1", "PROPHET,1", "GHOST,2"],
+        "skill": ["OMEN,1", "DREAM,1", "PROPHET,1", "GHOST,2", "STAR,1"],
         "dies": true
     },
     "r_c": {
