@@ -1,6 +1,5 @@
 import json
 import os
-from collections import Counter
 from typing import MutableMapping
 
 import ujson
@@ -10,10 +9,10 @@ import ujson
 missing = "[tag missing]"
 indent = "    "
 
-global event_count
-
 all_ids = {}
 dupe_ids = []
+
+event_flat = []
 
 valid_records = {
     "location": {
@@ -1579,6 +1578,7 @@ def pa_subgroup_report(records, detailed=False):
         for name_sub, subgroup in group.items():
             print(f"{indent}{indent}{indent}{name_sub}: {len(subgroup)}")
 
+
 def pa_sort_subgroup(group):
     return sum(len(sub) for sub in group[1]) if not isinstance(group[1], list) else len(group[1])
 
@@ -1610,21 +1610,6 @@ def pa_intersection(group1: str, group2: str, subgroup1=None, subgroup2=None):
 
     print(
         f"There are {len(matching_events)} events that match \"{group1.replace('.', ' -> ')}\" and \"{group2.replace('.', ' -> ')}\".")
-
-
-def pa_innerjoin(group1, group1_sub, group2, group2_sub):
-    if group1_sub is not None and group1_sub is not "any":
-        a = valid_records[group1]["any"] + valid_records[group1][group1_sub]
-    else:
-        a = recursive_items(valid_records[group1])
-
-    if group2_sub is not None and group2_sub is not "any":
-        b = valid_records[group2]["any"] + valid_records[group2][group2_sub]
-    else:
-        b = recursive_items(valid_records[group2])
-
-    out = list(set(a) & set(b))
-    return out
 
 
 def flatten(dictionary, parent_key='', separator='.'):
