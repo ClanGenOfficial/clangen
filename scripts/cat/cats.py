@@ -189,6 +189,7 @@ class Cat:
         self._status = None
 
         # Public attributes
+        self.status = status if status is not StatusEnum.NONE else None
         self.gender = gender
         self.backstory = backstory
         self.age = None
@@ -248,7 +249,6 @@ class Cat:
 
         self.history = None
 
-        self.status = status
 
         # setting ID
         if ID is None:
