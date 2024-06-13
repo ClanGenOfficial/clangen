@@ -145,7 +145,7 @@ class FreshkillPile:
             [
                 PREY_REQUIREMENT[cat.status]
                 for cat in living_cats
-                if not cat.status.is_kit_any() and cat.status.is_clan_status() and not cat.outside
+                if not cat.status.is_kit_any() and not cat.status.is_exiled() and not cat.outside
             ]
         )
         # increase the number for sick cats
@@ -289,7 +289,7 @@ class FreshkillPile:
                 relevant_group = relevant_queens + pregnant_cats
             else:
                 relevant_group = [
-                    cat for cat in living_cats if str(cat.status) == feeding_status
+                    cat for cat in living_cats if cat.status == feeding_status
                 ]
                 # remove all cats, which are also queens / pregnant
                 relevant_group = [
