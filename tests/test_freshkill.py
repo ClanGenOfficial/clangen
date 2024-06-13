@@ -294,11 +294,15 @@ class FreshkillPileTest(unittest.TestCase):
     def test_queen_handling(self) -> None:
         # given
         # young enough kid
-        mother = Cat(gender="female", status=StatusEnum.WARRIOR)
-        father = Cat(gender="male", status=StatusEnum.WARRIOR)
-        kid = Cat(moons=2, status=StatusEnum.KITTEN, parent1=mother.ID, parent2=father.ID)
+        mother = Cat(gender="female")
+        mother.status = StatusEnum.WARRIOR
+        father = Cat(gender="male")
+        father.status = StatusEnum.WARRIOR
+        kid = Cat(moons=2, parent1=mother.ID, parent2=father.ID)
+        kid.status = StatusEnum.KITTEN
 
-        no_parent = Cat(status=StatusEnum.WARRIOR)
+        no_parent = Cat()
+        no_parent.status = StatusEnum.WARRIOR
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
@@ -359,21 +363,24 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertLess(freshkill_pile.nutrition_info[cat3.ID].percentage, 70)
 
     def test_sick_handling(self) -> None:
+
         # given
         # young enough kid
-        injured_cat = Cat(status=StatusEnum.WARRIOR)
+        injured_cat = Cat()
+        injured_cat.status = StatusEnum.WARRIOR
         injured_cat.injuries["claw-wound"] = {
             "severity": "major"
         }
-        sick_cat = Cat(status=StatusEnum.WARRIOR)
+        sick_cat = Cat()
+        sick_cat.status = StatusEnum.WARRIOR
         sick_cat.illnesses["diarrhea"] = {
             "severity": "major"
         }
-        healthy_cat = Cat(status=StatusEnum.WARRIOR)
-
+        healthy_cat = Cat()
+        healthy_cat.status = StatusEnum.WARRIOR
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
-        current_amount = self.prey_requirement["warrior"] * 2 
+        current_amount = self.prey_requirement["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 

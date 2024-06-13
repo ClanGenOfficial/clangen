@@ -156,7 +156,7 @@ class Cat:
 
         :param str prefix: Cat's prefix (e.g. Fire- for Fireheart)
         :param str gender: Cat's gender, default None
-        :param StatusEnum status: Cat's role in the clan, default Rank.NEWBORN
+        :param StatusEnum status: Cat's role in the clan, default `StatusEnum.NEWBORN`
         :param str backstory: Cat's origin, default "clanborn"
         :param str parent1: ID of parent 1, default None
         :param str parent2: ID of parent 2, default None
@@ -186,10 +186,9 @@ class Cat:
         self._mentor = None  # plz
         self._experience = None
         self._moons = None
-        self._status = None
 
         # Public attributes
-        self.status = status if status is not StatusEnum.NONE else None
+        self.status = status
         self.gender = gender
         self.backstory = backstory
         self.age = None
@@ -352,16 +351,6 @@ class Cat:
         if self.ID not in ["0", None]:
             Cat.insert_cat(self)
 
-    @property
-    def status(self):
-        return self._status
-
-    @status.setter
-    def status(self, val: str | StatusEnum):
-        if isinstance(val, str):
-            self._status = StatusEnum(val)
-        else:
-            self._status = val
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
         """Perform faded-specific initialisation

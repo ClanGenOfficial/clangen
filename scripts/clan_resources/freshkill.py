@@ -373,7 +373,7 @@ class FreshkillPile:
         # first feed the cats with the lowest nutrition
         for cat_id, v in sorted_nutrition.items():
             cat = Cat.all_cats[cat_id]
-            status = str(cat.status)
+            status = cat.status
             # check if this is a kit: if so, check if they are fed by the mother
             if status.is_kit_any() and cat in fed_kits:
                 continue
