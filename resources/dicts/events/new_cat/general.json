@@ -243,8 +243,7 @@
                 "old_name",
                 "loner",
                 "status:warrior",
-                "mate:m_c",
-                "mate:r_c"
+                "mate:m_c,r_c"
             ]
         ],
         "relationships": [
