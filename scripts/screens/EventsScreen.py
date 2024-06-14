@@ -14,6 +14,7 @@ from scripts.utility import (
     clan_symbol_sprite,
 )
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 from ..cat.cats import Cat
 from ..game_structure import image_cache
 
@@ -204,108 +205,110 @@ class EventsScreen(Screens):
             else:
                 self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if event.key == pygame.K_RIGHT:
-                self.change_screen("camp screen")
-            elif event.key == pygame.K_UP:
-                if self.event_display_type == "ceremony events":
-                    self.event_display_type = "all events"
-                    # Update Display
-                    self.update_list_buttons(self.all_events_button)
-                    self.display_events = self.all_events
-                    self.update_events_display()
-                elif self.event_display_type == "birth death events":
-                    self.event_display_type = "ceremony events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.ceremonies_events_button, self.ceremony_alert
-                    )
-                    self.display_events = self.ceremony_events
-                    self.update_events_display()
-                elif self.event_display_type == "relationship events":
-                    self.event_display_type = "birth death events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.birth_death_events_button, self.birth_death_alert
-                    )
-                    self.display_events = self.birth_death_events
-                    self.update_events_display()
-                elif self.event_display_type == "health events":
-                    self.event_display_type = "relationship events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.relationship_events_button, self.relation_alert
-                    )
-                    self.display_events = self.relation_events
-                    self.update_events_display()
-                elif self.event_display_type == "other clans events":
-                    self.event_display_type = "health events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.health_events_button, self.health_alert
-                    )
-                    self.display_events = self.health_events
-                    self.update_events_display()
-                elif self.event_display_type == "misc events":
-                    self.event_display_type = "other clans events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.other_clans_events_button, self.other_clans_alert
-                    )
-                    self.display_events = self.other_clans_events
-                    self.update_events_display()
-            elif event.key == pygame.K_DOWN:
-                if self.event_display_type == "all events":
-                    self.event_display_type = "ceremony events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.ceremonies_events_button, self.ceremony_alert
-                    )
-                    self.display_events = self.ceremony_events
-                    self.update_events_display()
-                elif self.event_display_type == "ceremony events":
-                    self.event_display_type = "birth death events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.birth_death_events_button, self.birth_death_alert
-                    )
-                    self.display_events = self.birth_death_events
-                    self.update_events_display()
-                elif self.event_display_type == "birth death events":
-                    self.event_display_type = "relationship events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.relationship_events_button, self.relation_alert
-                    )
-                    self.display_events = self.relation_events
-                    self.update_events_display()
-                elif self.event_display_type == "relationship events":
-                    self.event_display_type = "health events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.health_events_button, self.health_alert
-                    )
-                    self.display_events = self.health_events
-                    self.update_events_display()
-                elif self.event_display_type == "health events":
-                    self.event_display_type = "other clans events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.other_clans_events_button, self.other_clans_alert
-                    )
-                    self.display_events = self.other_clans_events
-                    self.update_events_display()
-                elif self.event_display_type == "other clans events":
-                    self.event_display_type = "misc events"
-                    # Update Display
-                    self.update_list_buttons(self.misc_events_button, self.misc_alert)
-                    self.display_events = self.misc_events
-                    self.update_events_display()
-            elif event.key == pygame.K_SPACE:
+        elif event.type == pygame.KEYDOWN:  # and game.settings["keybinds"]:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
 
-                self.events_thread = self.loading_screen_start_work(
-                    events_class.one_moon
-                )
+            # if event.key == pygame.K_RIGHT:
+            #     self.change_screen("camp screen")
+            # elif event.key == pygame.K_UP:
+            #     if self.event_display_type == "ceremony events":
+            #         self.event_display_type = "all events"
+            #         # Update Display
+            #         self.update_list_buttons(self.all_events_button)
+            #         self.display_events = self.all_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "birth death events":
+            #         self.event_display_type = "ceremony events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.ceremonies_events_button, self.ceremony_alert
+            #         )
+            #         self.display_events = self.ceremony_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "relationship events":
+            #         self.event_display_type = "birth death events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.birth_death_events_button, self.birth_death_alert
+            #         )
+            #         self.display_events = self.birth_death_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "health events":
+            #         self.event_display_type = "relationship events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.relationship_events_button, self.relation_alert
+            #         )
+            #         self.display_events = self.relation_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "other clans events":
+            #         self.event_display_type = "health events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.health_events_button, self.health_alert
+            #         )
+            #         self.display_events = self.health_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "misc events":
+            #         self.event_display_type = "other clans events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.other_clans_events_button, self.other_clans_alert
+            #         )
+            #         self.display_events = self.other_clans_events
+            #         self.update_events_display()
+            # elif event.key == pygame.K_DOWN:
+            #     if self.event_display_type == "all events":
+            #         self.event_display_type = "ceremony events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.ceremonies_events_button, self.ceremony_alert
+            #         )
+            #         self.display_events = self.ceremony_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "ceremony events":
+            #         self.event_display_type = "birth death events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.birth_death_events_button, self.birth_death_alert
+            #         )
+            #         self.display_events = self.birth_death_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "birth death events":
+            #         self.event_display_type = "relationship events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.relationship_events_button, self.relation_alert
+            #         )
+            #         self.display_events = self.relation_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "relationship events":
+            #         self.event_display_type = "health events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.health_events_button, self.health_alert
+            #         )
+            #         self.display_events = self.health_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "health events":
+            #         self.event_display_type = "other clans events"
+            #         # Update Display
+            #         self.update_list_buttons(
+            #             self.other_clans_events_button, self.other_clans_alert
+            #         )
+            #         self.display_events = self.other_clans_events
+            #         self.update_events_display()
+            #     elif self.event_display_type == "other clans events":
+            #         self.event_display_type = "misc events"
+            #         # Update Display
+            #         self.update_list_buttons(self.misc_events_button, self.misc_alert)
+            #         self.display_events = self.misc_events
+            #         self.update_events_display()
+            # elif event.key == pygame.K_SPACE:
+            #
+            #     self.events_thread = self.loading_screen_start_work(
+            #         events_class.one_moon
+            #     )
 
     def screen_switches(self):
         # On first open, update display events list

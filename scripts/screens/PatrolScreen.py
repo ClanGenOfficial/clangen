@@ -64,12 +64,8 @@ class PatrolScreen(Screens):
 
             self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+        elif event.type == pygame.KEYDOWN:
             Keybinds.handle_navigation(Keybinds(), self, event.key)
-            # if event.key == pygame.K_LEFT:
-            #     self.change_screen("starclan screen")
-            # elif event.key == pygame.K_RIGHT:
-            #     self.change_screen('list screen')
 
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:

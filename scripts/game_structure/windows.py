@@ -302,7 +302,7 @@ class SaveCheck(UIWindow):
                     self.mm_btn.enable()
 
                 # only allow one instance of this window
-        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+        elif event.type == pygame.KEYDOWN:
             # if we pressed escape, close this window
             if event.key == pygame.K_ESCAPE:
                 game.is_close_menu_open = False
