@@ -194,8 +194,9 @@ class ListScreen(Screens):
             if self.search_bar.is_focused:
                 return
             if event.key == pygame.K_LEFT:
+                self.change_screen("camp screen")
+            elif event.key == pygame.K_RIGHT:
                 self.change_screen("patrol screen")
-
     def screen_switches(self):
         # Determine the starting list of cats.
         if game.last_list_forProfile:
