@@ -1038,13 +1038,14 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_retireany1",
+    "event_id": "gen_misc_any_multistatusmultiageretire1",
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c thinks about retiring.",
     "m_c": {
-        "age": ["senior adult", "senior"]
+        "age": ["senior adult", "senior"],
+        "status": ["warrior", "mediator", "medicine cat", "leader"]
     }
   },
   {
@@ -2131,7 +2132,7 @@
     "m_c": {
       "age":["any"],  
       "status": ["mediator", "mediator apprentice"],
-      "trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise", "inquisitive", "childish", "playful"]
+      "trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise",  "childish", "playful"]
     },
     "relationships": [
         {
@@ -2262,7 +2263,7 @@
     },
     "r_c": {
       "status": ["leader"],
-      "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","inquisitive","childish","playful"]
+      "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","childish","playful"]
     },
     "relationships": [
       {
