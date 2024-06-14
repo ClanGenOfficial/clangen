@@ -19,7 +19,7 @@ from scripts.event_class import Single_Event
 #                               Death Event Class                              #
 # ---------------------------------------------------------------------------- #
 
-class HandleShortEvents():
+class HandleShortEvents:
     """Handles generating and executing ShortEvents"""
 
     def __init__(self):
@@ -305,7 +305,7 @@ class HandleShortEvents():
         if "misc" not in self.types:
             self.types.append("misc")
         acc_list = []
-        possible_accs = self.chosen_event.new_accessory
+        possible_accs = getattr(self.chosen_event, 'new_accessory', [])
         if "WILD" in possible_accs:
             acc_list.extend(Pelt.wild_accessories)
         if "PLANT" in possible_accs:
@@ -317,14 +317,14 @@ class HandleShortEvents():
             if acc not in ["WILD", "PLANT", "COLLAR"]:
                 acc_list.append(acc)
 
-        if "NOTAIL" in self.main_cat.pelt.scars or "HALFTAIL" in self.main_cat.pelt.scars:
-            for acc in Pelt.tail_accessories:
-                try:
-                    acc_list.remove(acc)
-                except ValueError:
-                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+        if getattr(getattr(self.main_cat, "pelt", None), "scars", None):
+            if "NOTAIL" in self.main_cat.pelt.scars or "HALFTAIL" in self.main_cat.pelt.scars:
+                for acc in Pelt.tail_accessories:
+                    if acc in acc_list:
+                        acc_list.remove(acc)
 
-        self.main_cat.pelt.accessory = random.choice(acc_list)
+        if acc_list:
+            self.main_cat.pelt.accessory = random.choice(acc_list)
 
     def handle_death(self):
         """
