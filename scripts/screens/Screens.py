@@ -9,7 +9,6 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.windows import SaveCheck, EventLoading
-from scripts.screens.classes.keybinds.keybinds import handle_keypress
 from scripts.utility import update_sprite, scale
 
 
@@ -241,9 +240,6 @@ class Screens():
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here. """
         pass
-
-    def handle_keypress(self, key):
-        handle_keypress(self, key)
 
     def exit_screen(self):
         """Runs when screen exits"""

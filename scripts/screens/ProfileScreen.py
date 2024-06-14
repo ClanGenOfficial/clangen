@@ -256,7 +256,7 @@ class ProfileScreen(Screens):
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
-                    print("invalid next cat", self.previous_cat)
+                    print("invalid next cat", self.next_cat)
             
             elif event.key == pygame.K_ESCAPE:
                 self.close_current_tab()

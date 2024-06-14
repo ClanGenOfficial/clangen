@@ -9,7 +9,7 @@ from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
-from .classes.keybinds.keybinds import handle_keypress
+from .classes.keybinds.keybinds import Keybinds
 
 
 class PatrolScreen(Screens):
@@ -65,7 +65,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            handle_keypress(self, event.key)
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
             # if event.key == pygame.K_LEFT:
             #     self.change_screen("starclan screen")
             # elif event.key == pygame.K_RIGHT:

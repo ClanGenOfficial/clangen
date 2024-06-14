@@ -12,6 +12,7 @@ from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import scale
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 
 
 class ClanScreen(Screens):
@@ -84,7 +85,6 @@ class ClanScreen(Screens):
                 self.change_screen('leader den screen')
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            self.handle_keypress(event.key)
             if event.key == pygame.K_SPACE:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
@@ -95,6 +95,7 @@ class ClanScreen(Screens):
                 game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
 
     def screen_switches(self):
         self.update_camp_bg()

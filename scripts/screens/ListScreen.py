@@ -14,6 +14,7 @@ from scripts.game_structure.game_essentials import (
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 
 
 class ListScreen(Screens):
@@ -196,7 +197,7 @@ class ListScreen(Screens):
             elif self.search_bar.is_focused:
                 return
             else:
-                self.handle_keypress(event.key)
+                Keybinds.handle_navigation(Keybinds(), self, event.key)
             # if event.key == pygame.K_LEFT:
             #     self.change_screen("patrol screen")
 
