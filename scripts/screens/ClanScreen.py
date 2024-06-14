@@ -84,11 +84,8 @@ class ClanScreen(Screens):
                 self.change_screen('leader den screen')
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            if event.key == pygame.K_RIGHT:
-                self.change_screen('starclan screen')
-            elif event.key == pygame.K_LEFT:
-                self.change_screen('events screen')
-            elif event.key == pygame.K_SPACE:
+            self.handle_keypress(event.key)
+            if event.key == pygame.K_SPACE:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
                 game.save_cats()

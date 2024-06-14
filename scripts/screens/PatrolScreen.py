@@ -9,6 +9,7 @@ from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
+from .classes.keybinds.keybinds import handle_keypress
 
 
 class PatrolScreen(Screens):
@@ -64,10 +65,11 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            if event.key == pygame.K_LEFT:
-                self.change_screen("starclan screen")
-            elif event.key == pygame.K_RIGHT:
-                self.change_screen('list screen')
+            handle_keypress(self, event.key)
+            # if event.key == pygame.K_LEFT:
+            #     self.change_screen("starclan screen")
+            # elif event.key == pygame.K_RIGHT:
+            #     self.change_screen('list screen')
 
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:

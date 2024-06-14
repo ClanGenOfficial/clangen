@@ -191,10 +191,14 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if self.search_bar.is_focused:
+            if event.key == pygame.K_ESCAPE and self.search_bar.is_focused:
+                self.search_bar.unfocus()
+            elif self.search_bar.is_focused:
                 return
-            if event.key == pygame.K_LEFT:
-                self.change_screen("patrol screen")
+            else:
+                self.handle_keypress(event.key)
+            # if event.key == pygame.K_LEFT:
+            #     self.change_screen("patrol screen")
 
     def screen_switches(self):
         # Determine the starting list of cats.
