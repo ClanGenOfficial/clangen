@@ -4756,8 +4756,8 @@
         "event_id": "gen_death_age_anylead3",
         "location": ["any"],
         "season": ["any"],
+        "sub_type": ["old_age"],
         "tags": [
-            "old_age",
             "some_lives"
         ],
         "weight": 20,
