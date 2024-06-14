@@ -192,10 +192,12 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if event.key == pygame.K_ESCAPE and self.search_bar.is_focused:
+            if event.key in [pygame.K_ESCAPE, pygame.K_RETURN] and self.search_bar.is_focused:
                 self.search_bar.unfocus()
             elif self.search_bar.is_focused:
                 return
+            elif event.key in [pygame.K_TAB, pygame.K_RETURN]:
+                self.search_bar.focus()
             else:
                 Keybinds.handle_navigation(Keybinds(), self, event.key)
             # if event.key == pygame.K_LEFT:

@@ -8,6 +8,7 @@ from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
+from scripts.screens.classes.keybinds.keybinds import Keybinds
 from scripts.utility import (
     scale,
     get_text_box_theme,
@@ -109,6 +110,8 @@ class LeaderDenScreen(Screens):
                     event.ui_element.get_object_ids()[3]
                 )
                 self.update_outsider_cats()
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
 
     def screen_switches(self):
         """

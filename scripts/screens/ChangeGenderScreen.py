@@ -12,6 +12,7 @@ from scripts.game_structure.image_button import UIImageButton, CatButton
 from scripts.utility import get_text_box_theme, shorten_text_to_fit
 from scripts.utility import scale
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 from ..game_structure.windows import PronounCreation
 
 with open("resources/dicts/pronouns.json", "r", encoding="utf-8") as f:
@@ -102,7 +103,8 @@ class ChangeGenderScreen(Screens):
                         game.clan.custom_pronouns.remove(event.ui_element.cat_object)
 
                 self.update_selected_cat()
-
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
     def screen_switches(self):
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),

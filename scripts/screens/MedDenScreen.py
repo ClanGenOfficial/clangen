@@ -11,6 +11,7 @@ from scripts.game_structure.image_button import (
 )
 from scripts.utility import get_text_box_theme, scale, get_alive_status_cats, shorten_text_to_fit, get_living_clan_cat_count
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
@@ -109,7 +110,8 @@ class MedDenScreen(Screens):
                 self.log_tab.disable()
                 self.cats_tab.enable()
                 self.handle_tab_toggles()
-
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
     def screen_switches(self):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(

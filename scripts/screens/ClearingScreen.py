@@ -3,6 +3,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
+from .classes.keybinds.keybinds import Keybinds
 
 from ..events_module.condition_events import Condition_Events
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
@@ -171,6 +172,8 @@ class ClearingScreen(Screens):
             if len(self.hungry_cats) <= 0 and self.feed_all_button.is_enabled:
                 self.feed_all_button.disable()
             self.handle_checkbox_events(event)
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
 
     def update_cats_list(self):
         self.satisfied_cats = []
