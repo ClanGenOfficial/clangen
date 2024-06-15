@@ -5942,44 +5942,21 @@
     }
   },
   {
-    "event_id": "gen_death_trapmurderskill1",
+    "event_id": "gen_death_trapmurder1",
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder"],
     "tags": ["all_lives", "low_lives"],
     "weight": 30,
-    "event_text": "r_c watches impassively as m_c struggles in a Twoleg trap, waiting till {PRONOUN/m_c/subject} slowly stop moving before leaving the area.",
+    "event_text": "r_c watches impassively as m_c struggles in a Twoleg trap, waiting till {PRONOUN/m_c/subject} slowly {VERB/m_c/stop/stops} moving before leaving the area.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "dies": true
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "trait": ["sneaky", "lonesome", "cold", "strict", "careful", "cunning"],
       "skill": ["CLEVER,1", "INSIGHTFUL,2"]
-    },
-    "history:": [
-      {
-      "cats": ["m_c"],
-      "reg_death": "m_c died when r_c lured {PRONOUN/m_c/object} into a Twoleg trap.",
-      "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
-      }
-    ]
-  },
-  {
-    "event_id": "gen_death_trapmurdertrait1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["murder"],
-    "tags": ["all_lives", "low_lives"],
-    "weight": 30,
-    "event_text": "r_c watches impassively as m_c struggles in a Twoleg trap, waiting till {PRONOUN/m_c/subject} slowly stop moving before leaving the area.",
-    "m_c": {
-      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-      "dies": true
-    },
-    "r_c": {
-      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-      "trait": ["sneaky", "lonesome", "cold", "strict", "careful", "cunning"]
     },
     "history:": [
       {
@@ -5996,7 +5973,7 @@
     "sub_type": ["murder"],
     "tags": ["all_lives", "low_lives"],
     "weight": 30,
-    "event_text": "r_c hisses {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} kill m_c.",
+    "event_text": "r_c hisses {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} {VERB/r_c/kill/kills} m_c.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "dies": true
