@@ -85,7 +85,7 @@ class newEventsScreen(Screens):
                     if self.event_buttons[ele] == element:
                         self.handle_tab_event(ele)
 
-        if event.type == pygame_gui.UI_BUTTON_PRESSED:
+        if event.type == pygame_gui.UI_BUTTON_PRESSED:  # everything else on button press to prevent blinking
             element = event.ui_element
             if element == self.timeskip_button:
                 self.events_thread = self.loading_screen_start_work(
@@ -272,17 +272,20 @@ class newEventsScreen(Screens):
         if self.involved_cat_container:
             self.involved_cat_container.kill()
 
-        x_pos = 700
-        y_pos = button_pressed.get_relative_rect()[1]
+        x_pos = 655
+        if game.settings["fullscreen"]:
+            y_pos = button_pressed.get_relative_rect()[1]
+        else:
+            y_pos = button_pressed.get_relative_rect()[1] * 2
 
         self.involved_cat_container = UIInvolvedCatScrollingContainer(
-            scale(pygame.Rect((0, y_pos), (950, 700))),
+            scale(pygame.Rect((20, y_pos), (890, 105))),
             starting_height=3,
             object_id="#involved_cat_container",
             container=self.event_display,
             manager=MANAGER
         )
-        print(x_pos)
+
         for i, cat_id in enumerate(button_pressed.ids):
             cat_ob = Cat.fetch_cat(cat_id)
             if cat_ob:
@@ -291,18 +294,18 @@ class newEventsScreen(Screens):
                 short_name = shorten_text_to_fit(name, 195, 26)
 
                 self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
-                        scale(pygame.Rect((x_pos - (250 * i), y_pos + 4), (232, 60))),
-                        text=short_name,
-                        ids=cat_id,
-                        container=self.involved_cat_container,
-                        object_id="#events_cat_profile_button",
-                        layer_starting_height=1,
-                        manager=MANAGER,
-                    )
-                # There is only room for about four buttons.
-                if i > 3:
-                    break
-                i += 1
+                    scale(pygame.Rect((x_pos, 4), (232, 60))),
+                    text=short_name,
+                    ids=cat_id,
+                    container=self.involved_cat_container,
+                    object_id="#events_cat_profile_button",
+                    layer_starting_height=1,
+                    manager=MANAGER,
+                )
+
+                x_pos += -255
+                if x_pos < 0:
+                    x_pos += 54
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -369,7 +372,7 @@ class newEventsScreen(Screens):
             if not isinstance(event_object.text, str):
                 print(f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}")
                 continue
-            print(f"y_pos: {y_pos}")
+
             # TEXT BOX
             self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
                 event_object.text,
@@ -393,10 +396,7 @@ class newEventsScreen(Screens):
                 else:
                     image_path += ".png"
 
-                print(f"event relative rect: {self.event_display_elements[f'event{i}'].get_relative_rect()}")
-                print(f"text_box_len: {text_box_len}")
                 y_len = text_box_len + 120
-                print(f"y_len: {text_box_len + 120}")
 
                 self.event_display_elements[f"shading{i}"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((0, y_pos), (1028, y_len))),
@@ -409,7 +409,6 @@ class newEventsScreen(Screens):
 
             # INVOLVED CAT BUTTON
             y_pos += text_box_len + 20
-            print(f"button y_pos: {y_pos}")
 
             self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
                 scale(pygame.Rect((928, y_pos), (68, 68))),
@@ -421,8 +420,6 @@ class newEventsScreen(Screens):
             )
 
             y_pos += 100
-            print(f"last y_pos: {y_pos}")
-
 
     def update_list_buttons(self):
         """

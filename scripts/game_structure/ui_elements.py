@@ -89,17 +89,19 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
         return changed
 
+
 class UIInvolvedCatScrollingContainer(pygame_gui.elements.UIScrollingContainer):
     def __init__(self, relative_rect: pygame.Rect, manager=None, starting_height: int = 1, container=None,
                  object_id=None, visible: int = 1):
-
         super().__init__(relative_rect, manager=manager, starting_height=starting_height, container=container,
                          object_id=object_id, visible=visible, allow_scroll_y=False, should_grow_automatically=True)
 
         self.horiz_scroll_bar.kill()
         self.horiz_scroll_bar = None
 
-        scroll_bar_rect = scale(pygame.Rect(0, -10, self.relative_rect.width, 10))
+        self.scroll_bar_height = 15
+
+        scroll_bar_rect = scale(pygame.Rect(0, -self.scroll_bar_height, self.relative_rect.width, self.scroll_bar_height))
         self.horiz_scroll_bar = UIHorizontalScrollBar(relative_rect=scroll_bar_rect,
                                                       visible_percentage=1.0,
                                                       manager=self.ui_manager,
@@ -109,6 +111,7 @@ class UIInvolvedCatScrollingContainer(pygame_gui.elements.UIScrollingContainer):
                                                                'right': 'right',
                                                                'top': 'bottom',
                                                                'bottom': 'bottom'})
+        self.horiz_scroll_bar.set_dimensions(scroll_bar_rect)
 
         self.join_focus_sets(self.horiz_scroll_bar)
         if self.horiz_scroll_bar is not None:
@@ -131,9 +134,9 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
 
         self.scroll_bar_width = 24
         scroll_bar_rect = pygame.Rect(-self.scroll_bar_width,
-                                            0,
-                                            self.scroll_bar_width,
-                                            self.relative_rect.height)
+                                      0,
+                                      self.scroll_bar_width,
+                                      self.relative_rect.height)
         self.vert_scroll_bar.kill()
         self.vert_scroll_bar = None
         self.vert_scroll_bar = UIImageVerticalScrollBar(relative_rect=scroll_bar_rect,
@@ -215,6 +218,17 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
                                                     'top': 'bottom',
                                                     'bottom': 'bottom'}
                                            )
+
+class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
+    def __init__(self, relative_rect: RectLike, visible_percentage: float, manager, container, parent_element, anchors):
+        super().__init__(relative_rect, visible_percentage, manager=manager, container=container,
+                         parent_element=parent_element, anchors=anchors)
+
+        self.button_width = 15
+        self.arrow_button_width = self.button_width
+
+        self.rebuild()
+
 
 
 class UISpriteButton:
