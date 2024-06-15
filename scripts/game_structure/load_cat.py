@@ -5,7 +5,8 @@ from random import choice
 
 import ujson
 
-from scripts.cat.cats import Cat, Personality, BACKSTORIES
+from scripts.cat.cats import Cat, BACKSTORIES
+from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
