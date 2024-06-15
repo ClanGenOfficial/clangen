@@ -1985,6 +1985,12 @@ class Cat:
         return self.inheritance.all_but_cousins
     
     def get_distant_kin(self, max_depth=2):
+        """
+        Recursively retrieves distant relatives up to a specified depth.
+        
+        :param max_depth: The maximum depth to explore the relative tree. Default is 2.
+        :return: A list of ids of all distant relatives up to the specified depth.
+        """
         if not self.inheritance:
             self.inheritance = Inheritance(self)
         
