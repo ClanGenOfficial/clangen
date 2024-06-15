@@ -2462,7 +2462,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c makes a humming sound, and asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} a particular story the elders are fond of. p_l nods, and r_c asks what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the moral is. It eventually turns into talking about multiple old stories, which certainly makes for interesting conversation, and it's all too soon that they have their mouths too full of herbs to continue.",
+                "text": "r_c makes a humming sound and asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} a particular story the elders are fond of. p_l nods; r_c asks what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the moral is. It eventually turns into talking about multiple old stories, which certainly makes for interesting conversation - it's all too soon that they have their mouths too full of herbs to continue.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],

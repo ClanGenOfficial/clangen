@@ -20,7 +20,8 @@
             "border_width": "2",
             "shadow_width": "0",
             "enable_title_bar": "0",
-            "text_horiz_alignment": "center"
+            "text_horiz_alignment": "center",
+            "line_spacing": "1"
         }
     },
     "#cat_button.tool_tip": {
@@ -58,12 +59,12 @@
             "rect_width": "150"
         }
     },
-    "#fav_cat.tool_tip": {
+    "#fav_cat_toggle_on.tool_tip": {
         "misc": {
             "rect_width": "150"
         }
     },
-    "#not_fav_cat.tool_tip": {
+    "#fav_cat_toggle_off.tool_tip": {
         "misc": {
             "rect_width": "150"
         }
