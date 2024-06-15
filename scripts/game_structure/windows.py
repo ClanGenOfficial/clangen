@@ -16,7 +16,7 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
+from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.datadir import (
     get_save_dir,
     get_cache_dir,

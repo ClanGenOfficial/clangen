@@ -4,7 +4,7 @@ import pygame_gui
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import IDImageButton, UIImageButton
+from scripts.game_structure.ui_elements import IDImageButton, UIImageButton
 from scripts.game_structure.windows import GameOver
 from scripts.utility import (
     get_living_clan_cat_count,
