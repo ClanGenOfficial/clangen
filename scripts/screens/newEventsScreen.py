@@ -369,7 +369,7 @@ class newEventsScreen(Screens):
             if not isinstance(event_object.text, str):
                 print(f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}")
                 continue
-
+            print(f"y_pos: {y_pos}")
             # TEXT BOX
             self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
                 event_object.text,
@@ -380,6 +380,11 @@ class newEventsScreen(Screens):
                 manager=MANAGER
             )
 
+            if game.settings["fullscreen"]:
+                text_box_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3]
+            else:
+                text_box_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3] * 2
+
             # SHADING
             if i % 2 == 0:
                 image_path = "resources/images/shading"
@@ -388,7 +393,10 @@ class newEventsScreen(Screens):
                 else:
                     image_path += ".png"
 
-                y_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3] + 140
+                print(f"event relative rect: {self.event_display_elements[f'event{i}'].get_relative_rect()}")
+                print(f"text_box_len: {text_box_len}")
+                y_len = text_box_len + 120
+                print(f"y_len: {text_box_len + 120}")
 
                 self.event_display_elements[f"shading{i}"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((0, y_pos), (1028, y_len))),
@@ -400,10 +408,11 @@ class newEventsScreen(Screens):
                 )
 
             # INVOLVED CAT BUTTON
-            y_pos += self.event_display_elements[f"event{i}"].get_relative_rect()[3] + 40
+            y_pos += text_box_len + 20
+            print(f"button y_pos: {y_pos}")
 
             self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
-                scale(pygame.Rect((948, y_pos + 10), (68, 68))),
+                scale(pygame.Rect((928, y_pos), (68, 68))),
                 ids=event_object.cats_involved,
                 layer_starting_height=3,
                 object_id="#events_cat_button",
@@ -412,6 +421,8 @@ class newEventsScreen(Screens):
             )
 
             y_pos += 100
+            print(f"last y_pos: {y_pos}")
+
 
     def update_list_buttons(self):
         """
