@@ -214,8 +214,6 @@ class GenerateEvents:
         final_events = []
         incorrect_format = []
 
-        event_id_requirement_not_met = None
-
         # Chance to bypass the skill or trait requirements. 
         trait_skill_bypass = 15
 
