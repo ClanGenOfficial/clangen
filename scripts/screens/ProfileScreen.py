@@ -634,14 +634,14 @@ class ProfileScreen(Screens):
             self.generate_column1(self.the_cat),
             scale(pygame.Rect((600, 460), (360, 380))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=0.95,
+            line_spacing=1,
             manager=MANAGER,
         )
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
             self.generate_column2(self.the_cat),
             scale(pygame.Rect((980, 460), (500, 360))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=0.95,
+            line_spacing=1,
             manager=MANAGER,
         )
 
@@ -1608,7 +1608,13 @@ class ProfileScreen(Screens):
         
 
     def get_text_for_murder_event(self, event, death):
-        """returns the adjusted murder history text for the victim"""
+        """ Returns the adjusted murder history text for the victim """
+        
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
+
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
             if event["revealed"] is True:
                 final_text = event_text_adjust(
@@ -1618,7 +1624,10 @@ class ProfileScreen(Screens):
                     random_cat=Cat.fetch_cat(death["involved"]))
 
                 if event.get("revelation_text"):
-                    final_text = final_text + event["revelation_text"]
+                    final_text = f"{final_text} {event['revelation_text']}"
+                if moons:
+                    if event.get("revelation_moon"):
+                        final_text = f"{final_text} (Moon {event['revelation_moon']})."
                 return final_text
             else:
                 return event_text_adjust(
@@ -1761,9 +1770,11 @@ class ProfileScreen(Screens):
                 if victim["revealed"]:
                     victim_names[name] = []
                     if victim.get("revelation_text"):
-                        reveal_text = str(victim["revelation_text"])
+                        reveal_text = victim["revelation_text"]
                     if moons:
                         victim_names[name].append(victim["moon"])
+                        if victim.get("revelation_moon"):
+                            reveal_text = f"{reveal_text} (Moon {victim['revelation_moon']})"
 
             if victim_names:
                 for name in victim_names:
