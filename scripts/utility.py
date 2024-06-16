@@ -1527,6 +1527,16 @@ def change_relationship_values(
                         rel.log.append(log_text)
 
 def get_kin_groups(self, dead_chance=None, use_dead_chance=False):
+    """
+    Retrieves the kin groups (close kin, kin, and distant kin) for the cat.
+
+    :param dead_chance: The chance of considering dead cats (optional).
+    :param use_dead_chance: Whether to include the dead_chance condition (default: False).
+    :return: A tuple containing three dictionaries: close_kin, kin, and distant_kin.
+             - close_kin: Dictionary of close kin groups (parents, siblings, children, mates, former mates).
+             - kin: Dictionary of kin groups (grandparents, aunts/uncles, cousins, grandkits).
+             - distant_kin: Dictionary of distant kin groups.
+    """
     if use_dead_chance:
         close_kin = {
             "gen_parents": [self.all_cats.get(cat_id) for cat_id in self.get_parents() if not (self.all_cats.get(cat_id).dead and dead_chance != 1)],
