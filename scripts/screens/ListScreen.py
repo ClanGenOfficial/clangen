@@ -5,10 +5,10 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 
-from classes.keybinds.keybinds import Keybinds
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UINamedCatListDisplay
 from scripts.screens.Screens import Screens
+from scripts.screens.classes.keybinds.keybinds import Keybinds
 from scripts.utility import scale, get_text_box_theme
 
 
@@ -168,12 +168,13 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if event.key in [pygame.K_ESCAPE, pygame.K_RETURN] and self.search_bar.is_focused:
-                self.search_bar.unfocus()
-            elif self.search_bar.is_focused:
+            if event.key in [pygame.K_ESCAPE, pygame.K_RETURN] and self.cat_list_bar_elements[
+                "search_bar_entry"].is_focused:
+                self.cat_list_bar_elements["search_bar_entry"].unfocus()
+            elif self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             elif event.key in [pygame.K_TAB, pygame.K_RETURN]:
-                self.search_bar.focus()
+                self.cat_list_bar_elements["search_bar_entry"].focus()
             else:
                 Keybinds.handle_navigation(Keybinds(), self, event.key)
 
