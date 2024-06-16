@@ -1544,7 +1544,7 @@ class Cat:
                     # since we rolled a special thought already and couldn't get one
                     thought_choices_reroll = ['kin', 'normal']
                     weights_reroll = [
-                        (1.5 * game.config["relationship"]["kin_thought_chance"]),
+                        (1.25 * game.config["relationship"]["kin_thought_chance"]),
                         100 - game.config["relationship"]["kin_thought_chance"]
                     ]
                     thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
@@ -1616,7 +1616,7 @@ class Cat:
                     # since we rolled a special thought already and couldn't get one
                     thought_choices_reroll = ['kin', 'normal']
                     weights_reroll = [
-                        (1.5 * game.config["relationship"]["kin_thought_chance"]),
+                        (1.25 * game.config["relationship"]["kin_thought_chance"]),
                         100 - game.config["relationship"]["kin_thought_chance"]
                     ]
                     thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
@@ -1685,7 +1685,7 @@ class Cat:
                     # since we rolled a special thought already and couldn't get one
                     thought_choices_reroll = ['kin', 'normal']
                     weights_reroll = [
-                        (1.5 * game.config["relationship"]["kin_thought_chance"]),
+                        (1.25 * game.config["relationship"]["kin_thought_chance"]),
                         100 - game.config["relationship"]["kin_thought_chance"]
                     ]
                     thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
