@@ -1,11 +1,10 @@
-import inspect
 from typing import Union, Tuple
 import html
 
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
-from pygame_gui.core.gui_type_hints import RectLike, Coordinate
+from pygame_gui.core.gui_type_hints import RectLike
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
@@ -852,15 +851,10 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
                  last_button: UIImageButton = None,
                  visible: bool = True
                  ):
-        self.cat_list = cat_list
-        self.cats_displayed = cats_displayed
         self.x_px_between = x_px_between
         self.y_px_between = y_px_between
-        self.columns = columns
-        self.current_page = current_page
         self.text_theme = text_theme
 
-        self.cat_sprites = {}
         self.cat_names = {}
         self.favor_indicator = {}
 
