@@ -17,7 +17,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale
 from .Screens import Screens
@@ -1216,7 +1216,7 @@ class MakeClanScreen(Screens):
           scale(pygame.Rect((1120, 1240), (68, 68))), "",
           object_id="#unchecked_checkbox",
           manager=MANAGER,
-          tool_tip_text= "When checked, a completely random clan starting in Newleaf will be generated."
+          tool_tip_text= "When checked, a completely random Clan starting in Newleaf will be generated."
         )
 
         self.elements['random_clan_checkbox_label'] = pygame_gui.elements.UILabel(

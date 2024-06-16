@@ -5,7 +5,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import (
     get_text_box_theme,
     scale_dimentions,

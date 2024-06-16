@@ -7,7 +7,7 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import (
+from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
     UIRelationStatusBar,

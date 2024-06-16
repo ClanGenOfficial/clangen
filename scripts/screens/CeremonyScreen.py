@@ -5,10 +5,15 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import scale
 from .Screens import Screens
+from scripts.utility import get_text_box_theme
+from scripts.cat.cats import Cat
+import pygame_gui
+from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.game_essentials import game, screen_x, MANAGER
 from ..cat.history import History
 
 
@@ -25,6 +30,7 @@ class CeremonyScreen(Screens):
 
     def screen_switches(self):
         self.hide_menu_buttons()
+
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
         if self.the_cat.status == 'leader':
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
