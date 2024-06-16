@@ -53,8 +53,44 @@ class Clan:
         "mediator",
         "general",
     ]
-
+    name = ""
+    leader = ""
     leader_lives = 0
+    leader_predecessors = 0
+    deputy = ""
+    deputy_predecessors = 0
+    medicine_cat = ""
+    med_cat_list = []
+    med_cat_predecessors = 0
+    herbs = {}
+    age = 0
+    current_season = "Newleaf"
+    starting_season = "Newleaf"
+    instructor = None
+    biome = "Plains"
+    camp_bg = "camp1"
+    chosen_symbol = ""
+    game_mode = "classic"
+    pregnancy_data = {}
+    inheritance = {}
+    custom_pronouns = []
+    clan_settings = {}
+    setting_lists = {}
+    all_settings = []
+    _reputation = 80
+    starting_members = []
+    freshkill_pile = None
+    war = {
+        "at_war": False,
+        "enemy": None,
+        "duration": 0,
+    }
+    last_focus_change = None
+    clans_in_focus = []
+    faded_ids = []
+
+    # other general stuff (these really need separating out but that'll be another refactor for another day
+    all_clans = []
     clan_cats = []
     starclan_cats = []
     darkforest_cats = []
@@ -80,12 +116,10 @@ class Clan:
         "high_social": ["gracious", "mellow", "logical"],
     }
 
+
     with open("resources/placements.json", "r") as read_file:
         layouts = ujson.loads(read_file.read())
 
-    age = 0
-    current_season = "Newleaf"
-    all_clans = []
 
     def __init__(
         self,
@@ -142,12 +176,11 @@ class Clan:
             self.clan_settings[setting] = values[0]
             self.setting_lists[setting] = values
 
-        all_settings = []
-        all_settings.append(_settings["general"])
-        all_settings.append(_settings["role"])
-        all_settings.append(_settings["relation"])
-        all_settings.append(_settings["freshkill_tactics"])
-        all_settings.append(_settings["clan_focus"])
+        all_settings = [_settings["general"],
+                        _settings["role"],
+                        _settings["relation"],
+                        _settings["freshkill_tactics"],
+                        _settings["clan_focus"]]
 
         for setting in all_settings:  # Add all the settings to the settings dictionary
             for setting_name, inf in setting.items():
@@ -174,9 +207,7 @@ class Clan:
         self.last_focus_change = None
         self.clans_in_focus = []
 
-        self.faded_ids = (
-            []
-        )  # Stores ID's of faded cats, to ensure these IDs aren't reused.
+        self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
         if self_run_init_functions:
             self.post_initialization_functions()
 

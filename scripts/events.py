@@ -2162,7 +2162,7 @@ class Events:
 
             return triggered_death
 
-    def handle_murder(self, cat):
+    def handle_murder(self, cat, force_murder=False):
         """ Handles murder """
         relationships = cat.relationships.values()
         targets = []
@@ -2180,7 +2180,7 @@ class Events:
 
         # Check to see if random murder is triggered.
         # If so, we allow targets to be anyone they have even the smallest amount of dislike for
-        if random.getrandbits(max(1, int(random_murder_chance))) == 1:
+        if (random.getrandbits(max(1, int(random_murder_chance))) == 1) or force_murder:
             targets = [
                 i
                 for i in relationships
@@ -2214,7 +2214,7 @@ class Events:
 
         murder_capable = max(1, murder_capable)
 
-        if random.getrandbits(murder_capable) != 1:
+        if random.getrandbits(murder_capable) != 1 and not force_murder:
             return
 
         # If random murder is not triggered, targets can only be those they have some dislike for
@@ -2274,7 +2274,7 @@ class Events:
 
             kill_chance = max(1, int(kill_chance))
 
-            if not int(random.random() * kill_chance):
+            if not int(random.random() * kill_chance) or force_murder:
                 print(
                     cat.name, "TARGET CHOSEN", Cat.fetch_cat(chosen_target.cat_to).name
                 )
