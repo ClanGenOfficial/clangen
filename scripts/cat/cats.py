@@ -8,7 +8,8 @@ import bisect
 import itertools
 import os.path
 import sys
-from random import choice, randint, sample, random, choices, getrandbits, randrange
+import random
+from random import choice, randint, sample, getrandbits, randrange
 from typing import Dict, List, Any
 
 import ujson  # type: ignore
@@ -1497,8 +1498,14 @@ class Cat:
         biome = game.switches["biome"]
         camp = game.switches["camp_bg"]
         dead_chance = getrandbits(4)
-        rel_thought_chance = randint(0, 100)
-        kin_thought_chance = randint(0, 100)
+        # Define the choices and their corresponding weights
+        thought_choices = ['relationship', 'kin', 'normal']
+        weights = [
+            game.config["relationship"]["relationship_thought_chance"],
+            game.config["relationship"]["kin_thought_chance"],
+            100 - (game.config["relationship"]["relationship_thought_chance"] + game.config["relationship"]["kin_thought_chance"])
+        ]
+        thought_type = random.choices(thought_choices, weights=weights)[0]
         try:
             season = game.clan.current_season
         except:
@@ -1520,8 +1527,8 @@ class Cat:
         i = 0
         # for cats inside the clan
         if where_kitty == "inside":
-            # Roll relationship-based thought
-            if rel_thought_chance <= game.config["relationship"]["relationship_thought_chance"]:
+            # Roll relation and kin thought chances
+            if thought_type == 'relationship':
                 cats_with_relationship = [
                     Cat.all_cats[rel_cat] for rel_cat in all_cats
                     if rel_cat in self.relationships
@@ -1533,10 +1540,17 @@ class Cat:
                     other_cat = chosen_cat.ID
                     # print("relationship thought: from: ", self.name, " to: ", chosen_cat.name)
                 else:
-                    pass
+                    # if no cats available, roll again for a chance at a kin thought at a slightly higher chance
+                    # since we rolled a special thought already and couldn't get one
+                    thought_choices_reroll = ['kin', 'normal']
+                    weights_reroll = [
+                        (1.5 * game.config["relationship"]["kin_thought_chance"]),
+                        100 - game.config["relationship"]["kin_thought_chance"]
+                    ]
+                    thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
                 
             # Roll kin-based thought
-            if kin_thought_chance <= game.config["relationship"]["kin_thought_chance"]:
+            if thought_type == 'kin':
                 kin_group_choice = randint(0, 100)
                 close_kin, kin, distant_kin = get_kin_groups(self, dead_chance, use_dead_chance=True)
                 
@@ -1586,8 +1600,8 @@ class Cat:
                         break
 
         elif where_kitty in ["starclan", "hell", "UR"]:
-            # Roll relationship-based thought
-            if rel_thought_chance <= game.config["relationship"]["relationship_thought_chance"]:
+            # Roll relation and kin thought chances
+            if thought_type == 'relationship':
                 cats_with_relationship = [
                     Cat.all_cats[rel_cat] for rel_cat in all_cats
                     if rel_cat in self.relationships
@@ -1598,10 +1612,17 @@ class Cat:
                     other_cat = chosen_cat.ID
                     # print("relationship thought: from: ", self.name, " to: ", chosen_cat.name)
                 else:
-                    pass
+                    # if no cats available, roll again for a chance at a kin thought at a slightly higher chance
+                    # since we rolled a special thought already and couldn't get one
+                    thought_choices_reroll = ['kin', 'normal']
+                    weights_reroll = [
+                        (1.5 * game.config["relationship"]["kin_thought_chance"]),
+                        100 - game.config["relationship"]["kin_thought_chance"]
+                    ]
+                    thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
                 
             # Roll kin-based thought
-            if kin_thought_chance <= game.config["relationship"]["kin_thought_chance"]:
+            if thought_type == 'kin':
                 kin_group_choice = randint(0, 100)
                 close_kin, kin, distant_kin = get_kin_groups(self)
                 
@@ -1648,8 +1669,8 @@ class Cat:
         # for cats currently outside
         # it appears as for now, kittypets and loners can only think about outsider cats
         elif where_kitty == "outside":
-            # Roll relationship-based thought
-            if rel_thought_chance <= game.config["relationship"]["relationship_thought_chance"]:
+            # Roll relation and kin thought chances
+            if thought_type == 'relationship':
                 cats_with_relationship = [
                     Cat.all_cats[rel_cat] for rel_cat in all_cats
                     if rel_cat in self.relationships
@@ -1660,10 +1681,17 @@ class Cat:
                     other_cat = chosen_cat.ID
                     # print("relationship thought: from: ", self.name, " to: ", chosen_cat.name)
                 else:
-                    pass
+                    # if no cats available, roll again for a chance at a kin thought at a slightly higher chance
+                    # since we rolled a special thought already and couldn't get one
+                    thought_choices_reroll = ['kin', 'normal']
+                    weights_reroll = [
+                        (1.5 * game.config["relationship"]["kin_thought_chance"]),
+                        100 - game.config["relationship"]["kin_thought_chance"]
+                    ]
+                    thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
                 
             # Roll kin-based thought
-            if kin_thought_chance <= game.config["relationship"]["kin_thought_chance"]:
+            if thought_type == 'kin':
                 kin_group_choice = randint(0, 100)
                 close_kin, kin, distant_kin = get_kin_groups(self)
                 
