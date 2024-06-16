@@ -1,7 +1,7 @@
 [
     {
         "event_id": "fst_death_war_any1",
-        "location": ["any"],
+        "location": ["forest"],
         "season": [
             "any"
         ],
@@ -23,7 +23,7 @@
     },
     {
         "event_id": "fst_death_dog_any1",
-        "location": ["any"],
+        "location": ["forest"],
         "season": [
             "any"
         ],
@@ -69,5 +69,53 @@
             "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
             }
         ]
+    },
+    {
+        "event_id": "gen_death_owl_anylead3",
+        "location": ["forest:camp1_camp2_camp4"],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "weight": 20,
+        "event_text": "m_c was carried off by an owl, never to be seen again.",
+        "m_c": {
+            "age": [
+                "kitten", "adolescent"
+            ],
+            "dies": true
+        },
+        "history": [{
+            "cats": ["m_c"],
+            "reg_death": "m_c was carried away by an owl."
+        }]
+    },
+    {
+        "event_id": "gen_death_rook_any1",
+        "location": ["forest:camp2"],
+        "season": [
+            "any"
+        ],
+        "tags": ["no_body"],
+        "weight": 20,
+        "event_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky by a rook.",
+        "m_c": {
+            "age": [ "kitten", "adolescent"],
+            "status": [ "any" ],
+            "dies": true
+        },
+        "r_c": {
+            "age": ["apprentice", "warrior", "deputy"],
+            "status": [ "any" ],
+            "not_skill": [
+                "RUNNER,2"
+            ]
+        },
+        "history": [{
+            "cats": ["m_c"],
+            "reg_death": "m_c was grabbed by a rook, never to be seen again."
+        }]
     }
 ]
