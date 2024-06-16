@@ -258,18 +258,10 @@ def json_load():
 
         # load the relationships
         try:
-            if game.clan:
-                if game.clan.clan_settings["dead_relations"]:
-                    cat.load_relationship_of_cat()
-                    if cat.relationships is not None and len(cat.relationships) < 1:
-                        cat.init_all_relationships()
-                else:
-                    if not cat.dead:
-                        cat.load_relationship_of_cat()
-                        if cat.relationships is not None and len(cat.relationships) < 1:
-                            cat.init_all_relationships()
-                    else:
-                        cat.relationships = {}
+            if not cat.dead:
+                if cat.relationships is not None and len(cat.relationships) < 1:
+                    cat.init_all_relationships()
+            cat.load_relationship_of_cat()
         except Exception as e:
             logger.exception(
                 f"There was an error loading relationships for cat #{cat}."
