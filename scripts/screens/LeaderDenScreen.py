@@ -536,7 +536,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_clan_elements[f"clan_symbol"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((138, 134), (200, 200))),
-            pygame.transform.scale(clan_symbol_sprite(self.focus_clan), (200, 200)),
+            pygame.transform.scale(clan_symbol_sprite(self.focus_clan, force_light=True), (200, 200)),
             object_id="#clan_symbol",
             starting_height=1,
             container=self.focus_clan_container,
