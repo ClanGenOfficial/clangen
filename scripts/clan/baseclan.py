@@ -4,7 +4,7 @@ class BaseClan:
     name = ""
 
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
-    seasons = [
+    SEASONS = [
         "Newleaf",
         "Newleaf",
         "Newleaf",
