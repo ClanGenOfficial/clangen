@@ -652,7 +652,7 @@ class UICheckbox(UIImageButton):
         self.change_object_id("#unchecked_checkbox")
 
 
-class UIBasicCatListDisplay(UIAutoResizingContainer):
+class UIBasicCatListDisplay(UIContainer):
     """
     Creates and displays a list of click-able cat sprites.
     :param relative_rect: The starting size and relative position of the container.
@@ -816,7 +816,6 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         """
         enables/disables appropriate arrow buttons
         """
-        print(f"{len(self.cat_chunks)}, {self.current_page}")
         if len(self.cat_chunks) <= 1:
             self.prev_button.disable()
             self.next_button.disable()
