@@ -5,9 +5,8 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, MANAGER, screen_y, screen_x
-from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer, IDImageButton, \
-    UIInvolvedCatScrollingContainer
+from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer, IDImageButton
 from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme, shorten_text_to_fit, \
@@ -250,7 +249,8 @@ class newEventsScreen(Screens):
             scale(pygame.Rect((432, 552), (1080, 700))),
             object_id="#event_display",
             starting_height=3,
-            manager=MANAGER
+            manager=MANAGER,
+            allow_scroll_y=True
         )
 
     def make_cat_buttons(self, button_pressed):
@@ -278,12 +278,13 @@ class newEventsScreen(Screens):
         else:
             y_pos = button_pressed.get_relative_rect()[1] * 2
 
-        self.involved_cat_container = UIInvolvedCatScrollingContainer(
-            scale(pygame.Rect((20, y_pos), (890, 105))),
+        self.involved_cat_container = UIModifiedScrollingContainer(
+            scale(pygame.Rect((20, y_pos), (890, 108))),
             starting_height=3,
             object_id="#involved_cat_container",
             container=self.event_display,
-            manager=MANAGER
+            manager=MANAGER,
+            allow_scroll_x=True
         )
 
         for i, cat_id in enumerate(button_pressed.ids):
@@ -306,6 +307,12 @@ class newEventsScreen(Screens):
                 x_pos += -255
                 if x_pos < 0:
                     x_pos += 54
+
+        x_pos = (
+                self.involved_cat_container.horiz_scroll_bar.scroll_position
+                + self.involved_cat_container.horiz_scroll_bar.arrow_button_width)
+        y_pos = - self.involved_cat_container.horiz_scroll_bar.sliding_button.get_relative_rect()[2]
+        self.involved_cat_container.horiz_scroll_bar.set_scroll_from_start_percentage(1)
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -396,7 +403,7 @@ class newEventsScreen(Screens):
                 else:
                     image_path += ".png"
 
-                y_len = text_box_len + 120
+                y_len = text_box_len + 125
 
                 self.event_display_elements[f"shading{i}"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((0, y_pos), (1028, y_len))),
@@ -408,7 +415,7 @@ class newEventsScreen(Screens):
                 )
 
             # INVOLVED CAT BUTTON
-            y_pos += text_box_len + 20
+            y_pos += text_box_len + 15
 
             self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
                 scale(pygame.Rect((928, y_pos), (68, 68))),
@@ -419,7 +426,7 @@ class newEventsScreen(Screens):
                 manager=MANAGER
             )
 
-            y_pos += 100
+            y_pos += 110
 
     def update_list_buttons(self):
         """
