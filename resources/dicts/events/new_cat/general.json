@@ -648,7 +648,7 @@
         }
     },
     {
-        "event_id": "gen_new_cat_war_any2",
+        "event_id": "gen_new_cat_war_anydefect1",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
@@ -672,7 +672,7 @@
         }
     },
     {
-        "event_id": "gen_new_cat_war_any2",
+        "event_id": "gen_new_cat_war_anydefect2",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],

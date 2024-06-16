@@ -10,7 +10,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["righteous", "bold", "strict"]
+      "trait": ["righteous", "bold", "strict", "nervous", "insecure"]
     },
     "relationships": [
       {
@@ -39,7 +39,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["oblivious"]
+      "trait": ["oblivious", "arrogant", "daring", "bold", "confident", "flamboyant"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -56,7 +56,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful"]
+      "trait": ["vengeful", "righteous", "rebellious", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -74,7 +74,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful"]
+      "trait": ["vengeful", "righteous", "rebellious", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "relationships": [
       {
@@ -104,7 +104,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold"]
+      "trait": ["cold", "bold", "daring", "strict"]
     }
   },
   {
@@ -117,7 +117,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold"]
+      "trait": ["cold", "bold", "strict", "confident", "calm", "shameless", "arrogant"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -134,7 +134,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty"]
+      "trait": ["bloodthirsty", "vengeful", "fierce"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -167,7 +167,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty"]
+      "trait": ["bloodthirsty", "vengeful", "fierce"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -200,7 +200,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty"]
+      "trait": ["bloodthirsty", "vengeful", "confident", "playful", "troublesome", "arrogant", "cunning"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -217,8 +217,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "relationship_status": ["trust_20"],
-      "trait": ["bloodthirsty"]
+      "relationship_status": ["trust_20"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -243,8 +242,7 @@
     "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
     "m_c": {
       "age": ["any"],
-      "status": ["any"],
-      "trait": ["bloodthirsty"]
+      "status": ["any"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -492,7 +490,7 @@
   {
     "event_id": "gen_misc_leafbare_misc1",
     "location": ["any"],
-    "season": ["leafbare"],
+    "season": ["leaf-bare"],
     "weight": 20,
     "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
     "m_c": {
@@ -2558,11 +2556,15 @@
       "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"]
     },
-    "supplies": {
-      "type": "any_herb",
-      "trigger": ["low"],
-      "amount": "increase_5"
-    }
+    "supplies": [
+      {
+        "type": "any_herb",
+        "trigger": [
+          "low"
+        ],
+        "adjust": "increase_5"
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_medicinecatmedcatapp1",
@@ -2928,7 +2930,7 @@
     ]
   },
   {
-    "event_id": "gen_misc_freshkill_anystolen1",
+    "event_id": "gen_misc_freshkill_anystolen2",
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
@@ -3114,7 +3116,7 @@
     }
   },
   {
-    "event_id": "gen_misc_herb_anyallyrequeslungwort2",
+    "event_id": "gen_misc_herb_anyallyrequeslungwort4",
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],

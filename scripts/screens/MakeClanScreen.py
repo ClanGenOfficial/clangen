@@ -17,10 +17,11 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale
 from .Screens import Screens
+from ..cat.enums.status import StatusEnum
 from ..cat.sprites import sprites
 from ..game_structure.windows import SymbolFilterWindow
 
@@ -1126,9 +1127,9 @@ class MakeClanScreen(Screens):
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
         else:
             self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(status='warrior')
-        self.deputy = create_cat(status='warrior')
-        self.med_cat = create_cat(status='warrior')
+        self.leader = create_cat(status=StatusEnum.WARRIOR)
+        self.deputy = create_cat(status=StatusEnum.WARRIOR)
+        self.med_cat = create_cat(status=StatusEnum.WARRIOR)
         for _ in range(randrange(4, 8)):
             random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
             self.members.append(create_cat(status=random_status))

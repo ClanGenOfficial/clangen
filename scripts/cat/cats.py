@@ -3708,7 +3708,7 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(status='warrior')
+            game.choose_cats[cat_index] = create_cat(status=StatusEnum.WARRIOR)
         else:
             random_status = choice(
                 [StatusEnum.KITTEN, StatusEnum.WARRIORAPP, StatusEnum.WARRIOR, StatusEnum.WARRIOR, StatusEnum.ELDER])

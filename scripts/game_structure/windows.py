@@ -16,7 +16,7 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
+from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.datadir import (
     get_save_dir,
     get_cache_dir,
@@ -42,13 +42,14 @@ from scripts.utility import (
 
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
-        game.switches["window_open"] = True
 
         super().__init__(
             scale(pygame.Rect((500, 350), (600, 700))),
             window_display_title="Symbol Filters",
             object_id="#filter_window",
         )
+        game.switches["window_open"] = True
+        self.set_blocking(True)
 
         self.possible_tags = {
             "plant": ["flower", "tree"],
@@ -85,6 +86,7 @@ class SymbolFilterWindow(UIWindow):
         x_pos = 30
         y_pos = 40
         for tag, subtags in self.possible_tags.items():
+            print(game.switches["disallowed_symbol_tags"])
             self.checkbox[tag] = UIImageButton(
                 scale(pygame.Rect((x_pos, y_pos), (68, 68))),
                 "",
@@ -115,6 +117,8 @@ class SymbolFilterWindow(UIWindow):
                         manager=MANAGER,
                     )
 
+                    if tag in game.switches["disallowed_symbol_tags"]:
+                        self.checkbox[s_tag].disable()
                     if s_tag in game.switches["disallowed_symbol_tags"]:
                         self.checkbox[s_tag].change_object_id("#unchecked_checkbox")
 
@@ -154,7 +158,7 @@ class SymbolFilterWindow(UIWindow):
                                         "#unchecked_checkbox"
                                     )
                                     self.checkbox[s_tag].disable()
-                                    if s_tag not in game.switches:
+                                    if s_tag not in game.switches["disallowed_symbol_tags"]:
                                         game.switches["disallowed_symbol_tags"].append(
                                             s_tag
                                         )
