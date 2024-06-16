@@ -8,7 +8,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, CatButton
+from scripts.game_structure.ui_elements import UIImageButton, CatButton
 from scripts.utility import get_text_box_theme, shorten_text_to_fit
 from scripts.utility import scale
 from .Screens import Screens

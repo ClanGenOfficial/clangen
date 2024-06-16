@@ -31,7 +31,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
