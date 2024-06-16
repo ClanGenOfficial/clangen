@@ -1526,6 +1526,47 @@ def change_relationship_values(
                     if log_text not in rel.log:
                         rel.log.append(log_text)
 
+def get_kin_groups(self, dead_chance=None, use_dead_chance=False):
+    if use_dead_chance:
+        close_kin = {
+            "gen_parents": [self.all_cats.get(cat_id) for cat_id in self.get_parents() if not (self.all_cats.get(cat_id).dead and dead_chance != 1)],
+            "gen_siblings": [self.all_cats.get(cat_id) for cat_id in self.get_siblings() if not (self.all_cats.get(cat_id).dead and dead_chance != 1)],
+            "gen_children": [self.all_cats.get(cat_id) for cat_id in self.get_children() if not (self.all_cats.get(cat_id).dead and dead_chance != 1)],
+            "gen_mates": [self.all_cats.get(cat_id) for cat_id in self.mate if not (self.all_cats.get(cat_id).dead and dead_chance != 1)],
+            "gen_former_mates": [self.all_cats.get(cat_id) for cat_id in self.previous_mates if not (self.all_cats.get(cat_id).dead and dead_chance != 1)]
+        }
+        
+        kin = {
+            "gen_grandparents": [cat for cat in self.all_cats.values() if cat.is_grandparent(self) and not (cat.dead and dead_chance != 1)],
+            "gen_auntuncle": [cat for cat in self.all_cats.values() if self.is_uncle_aunt(cat) and not (cat.dead and dead_chance != 1)],
+            "gen_cousin": [cat for cat in self.all_cats.values() if self.is_cousin(cat) and not (cat.dead and dead_chance != 1)],
+            "gen_grandkits": [self.all_cats.get(cat_id) for cat_id in self.get_grandkits() if not (self.all_cats.get(cat_id).dead and dead_chance != 1)]
+        }
+        
+        distant_kin = {
+            "gen_distantkin": [self.all_cats.get(cat_id) for cat_id in self.get_distant_kin() if not (self.all_cats.get(cat_id).dead and dead_chance != 1)]
+        }
+    else:
+        close_kin = {
+            "gen_parents": [self.all_cats.get(cat_id) for cat_id in self.get_parents()],
+            "gen_siblings": [self.all_cats.get(cat_id) for cat_id in self.get_siblings()],
+            "gen_children": [self.all_cats.get(cat_id) for cat_id in self.get_children()],
+            "gen_mates": [self.all_cats.get(cat_id) for cat_id in self.mate],
+            "gen_former_mates": [self.all_cats.get(cat_id) for cat_id in self.previous_mates]
+        }
+        
+        kin = {
+            "gen_grandparents": [self.all_cats.get(cat_id) for cat_id in self.all_cats if self.all_cats.get(cat_id).is_grandparent(self)],
+            "gen_auntuncle": [self.all_cats.get(cat_id) for cat_id in self.all_cats if self.is_uncle_aunt(self.all_cats.get(cat_id))],
+            "gen_cousin": [self.all_cats.get(cat_id) for cat_id in self.all_cats if self.is_cousin(self.all_cats.get(cat_id))],
+            "gen_grandkits": [self.all_cats.get(cat_id) for cat_id in self.get_grandkits()]
+        }
+        
+        distant_kin = {
+            "gen_distantkin": [self.all_cats.get(cat_id) for cat_id in self.get_distant_kin()]
+        }
+    
+    return close_kin, kin, distant_kin
 
 # ---------------------------------------------------------------------------- #
 #                               Text Adjust                                    #
