@@ -100,16 +100,17 @@ class Inheritance:
             # parents_siblings
             self.init_parents_siblings(inter_id, inter_cat)
 
-            # cousins
-            self.init_cousins(inter_id, inter_cat)
-
-        # since grand kits depending on kits, ALL KITS HAVE TO BE SET FIRST!
+        # since grandkits depends on kits, ALL KITS HAVE TO BE SET FIRST!
+        # cousins depend on parents_siblings so those must be set first too
         for inter_id, inter_cat in self.cat.all_cats.items():
             if inter_id == self.cat.ID:
                 continue
 
             # grand kits
             self.init_grand_kits(inter_id, inter_cat)
+            
+            # cousins
+            self.init_cousins(inter_id, inter_cat)
 
         # relations to faded cats - these must occur after all non-faded
         # cats have been handled, and in the following order.
