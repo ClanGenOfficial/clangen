@@ -677,11 +677,11 @@ class History:
                 victim_history["revealed_by"] = other_cat.ID if other_cat else None
                 victim_history["revelation_moon"] = game.clan.age
                 if not other_cat:
-                    murder_history["revelation_text"] = \
-                        "The truth of {PRONOUN/m_c/poss} murder is known to the Clan."
+                    victim_history["revelation_text"] = \
+                        "The truth of [victim]'s murder is known to the Clan."
                 else:
                     victim_history["revelation_text"] = \
-                        "The truth of {PRONOUN/m_c/poss} murder was discovered by [discoverer]."
+                        "The truth of [victim]'s murder was discovered by [discoverer]."
 
                 if other_cat:
                     discoverer = str(other_cat.name)
@@ -694,4 +694,6 @@ class History:
                                                                                               discoverer)
                 victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]',
                                                                                               discoverer)
+                victim_history["revelation_text"] = victim_history["revelation_text"].replace('[victim]',
+                                                                                              str(victim.name))
 
