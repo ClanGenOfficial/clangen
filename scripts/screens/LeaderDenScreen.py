@@ -4,7 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.clan.clan import OtherClan
+from scripts.clan.otherclan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens

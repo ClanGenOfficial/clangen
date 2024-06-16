@@ -18,6 +18,7 @@ import ujson
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
+from scripts.clan.baseclan import BaseClan
 from scripts.clan.otherclan import OtherClan
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.events_module.generate_events import OngoingEvent
@@ -31,16 +32,11 @@ from scripts.utility import (
 )  # pylint: disable=redefined-builtin
 
 
-class Clan:
+class PlayerClan(BaseClan):
+    """
+    The player's clan in ClanGen
     """
 
-    The base clan for ClanGen.
-
-    """
-
-    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
-
-    name = ""
     leader = ""
     leader_lives = 0
     leader_predecessors = 0
@@ -51,11 +47,7 @@ class Clan:
     med_cat_predecessors = 0
     herbs = {}
     age = 0
-    current_season = "Newleaf"
-    starting_season = "Newleaf"
     instructor = None
-    biome = "Plains"
-    camp_bg = "camp1"
     chosen_symbol = ""
     game_mode = "classic"
     pregnancy_data = {}
@@ -64,7 +56,7 @@ class Clan:
     clan_settings = {}
     setting_lists = {}
     all_settings = []
-    _reputation = 80
+    _reputation = 80  # reputation with outsiders
     starting_members = []
     freshkill_pile = None
     war = {
@@ -76,37 +68,8 @@ class Clan:
     clans_in_focus = []
     faded_ids = []
 
-    # other general stuff (these really need separating out but that'll be another refactor for another day
-    all_clans = []
-    clan_cats = []
-    starclan_cats = []
-    darkforest_cats = []
-    unknown_cats = []
-    seasons = [
-        "Newleaf",
-        "Newleaf",
-        "Newleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Leaf-bare",
-        "Leaf-bare",
-    ]
-
-    temperament_dict = {
-        "low_social": ["cunning", "proud", "bloodthirsty"],
-        "mid_social": ["amiable", "stoic", "wary"],
-        "high_social": ["gracious", "mellow", "logical"],
-    }
-
-
     with open("resources/placements.json", "r") as read_file:
         layouts = ujson.loads(read_file.read())
-
 
     def __init__(
         self,
@@ -139,23 +102,19 @@ class Clan:
         self.med_cat_number = len(
             self.med_cat_list
         )  # Must do this after the medicine cat is added to the list.
-        self.herbs = {}
         self.age = 0
         self.current_season = "Newleaf"
         self.starting_season = starting_season
-        self.instructor = None
-        # This is the first cat in starclan, to "guide" the other dead cats there.
+
+        # self.instructor = None
+        # # This is the first cat in starclan, to "guide" the other dead cats there.
+
         self.biome = biome
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        self.pregnancy_data = {}
-        self.inheritance = {}
-        self.custom_pronouns = []
 
         # Init Settings
-        self.clan_settings = {}
-        self.setting_lists = {}
         with open("resources/clansettings.json", "r") as read_file:
             _settings = ujson.loads(read_file.read())
 
@@ -666,7 +625,7 @@ class Clan:
                 general[7] = "classic"
             elif general[8] == "None":
                 general[8] = 50
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -685,7 +644,7 @@ class Clan:
                 general[4] = 0
             elif general[7] == "None":
                 general[7] = "classic"
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -701,7 +660,7 @@ class Clan:
                 general[4] = 0
             elif general[3] == "None":
                 general[3] = "camp1"
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -712,7 +671,7 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         elif len(general) == 3:
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -722,7 +681,7 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         else:
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 general[0],
                 Cat.all_cats[leader_info[0]],
                 Cat.all_cats.get(deputy_info[0], None),
@@ -824,7 +783,7 @@ class Clan:
         else:
             med_cat = None
 
-        game.clan = Clan(
+        game.clan = PlayerClan(
             name=clan_data["clanname"],
             leader=leader,
             deputy=deputy,
@@ -1277,7 +1236,7 @@ class Clan:
         return _temperament
 
 
-clan_class = Clan()
+clan_class = PlayerClan()
 clan_class.remove_cat(cat_class.ID)
 
 HERBS = None

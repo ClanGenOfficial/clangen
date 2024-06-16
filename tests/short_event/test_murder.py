@@ -3,7 +3,7 @@ import unittest
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import Relationship
-from scripts.clan.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.events import Events
 from scripts.game_structure.game_essentials import game
 
@@ -26,9 +26,9 @@ def create_murderer():
 
 class TestShortEventMurder(unittest.TestCase):
     def setUp(self):
-        game.clan = Clan()
+        game.clan = PlayerClan()
         game.clan.instructor = Cat(status="warrior", dead=True, dead_for=20)
-        game.clan.all_clans = [Clan(name="Test")]
+        game.clan.all_clans = [PlayerClan(name="Test")]
 
     def tearDown(self):
         game.clan.leader_lives = 9

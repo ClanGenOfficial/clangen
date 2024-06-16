@@ -160,7 +160,7 @@ from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
-from scripts.clan.clan import clan_class
+from scripts.clan.playerclan import clan_class
 from scripts.utility import (
     get_text_box_theme,
     quit,

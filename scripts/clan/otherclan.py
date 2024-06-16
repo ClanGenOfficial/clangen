@@ -1,10 +1,11 @@
 from random import choice, randint
 
 from scripts.cat.names import names
+from scripts.clan.baseclan import BaseClan
 from scripts.utility import clan_symbol_sprite
 
 
-class OtherClan:
+class OtherClan(BaseClan):
     """
     A non-player clan in the ClanGen universe.
     """
@@ -15,26 +16,20 @@ class OtherClan:
         "hostile": ["antagonize", "appease", "declare"],
     }
 
-    temperament_list = [
-        "cunning",
-        "wary",
-        "logical",
-        "proud",
-        "stoic",
-        "mellow",
-        "bloodthirsty",
-        "amiable",
-        "gracious",
-    ]
+    name = ""
+    relations = 10
+    temperament = "mellow"
+    chosen_symbol = None
 
     def __init__(self, name="", relations=0, temperament="", chosen_symbol=""):
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])
         self.name = name or choice(clan_names)
         self.relations = relations or randint(8, 12)
-        self.temperament = temperament or choice(self.temperament_list)
-        if self.temperament not in self.temperament_list:
-            self.temperament = choice(self.temperament_list)
+        temperament_dict = [value for category in self.temperament_dict.values() for value in category]
+        self.temperament = temperament or choice(temperament_dict)
+        if self.temperament not in temperament_dict:
+            self.temperament = choice(temperament_dict)
 
         self.chosen_symbol = (
             None  # have to establish None first so that clan_symbol_sprite works

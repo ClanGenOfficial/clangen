@@ -12,7 +12,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.clan.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.game_structure.game_essentials import game
 from scripts.patrol.patrol_event import PatrolEvent
 from scripts.patrol.patrol_outcome import PatrolOutcome
@@ -118,7 +118,7 @@ class Patrol:
 
         return self.determine_outcome(antagonize=(path == "antag"))
 
-    def add_patrol_cats(self, patrol_cats: List[Cat], clan: Clan) -> None:
+    def add_patrol_cats(self, patrol_cats: List[Cat], clan: PlayerClan) -> None:
         """Add the list of cats to the patrol class and handles to set all needed values.
 
         Parameters
@@ -126,7 +126,7 @@ class Patrol:
         patrol_cats : list
             list of cats which are on the patrol
 
-        clan: Clan
+        clan: PlayerClan
             the Clan class of the game, this parameter is needed to make tests possible
 
         Returns

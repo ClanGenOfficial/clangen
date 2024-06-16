@@ -1,7 +1,6 @@
 import pygame
 
 from scripts.cat.sprites import sprites
-from scripts.clan.clan import Clan
 
 
 class StarClan:
@@ -39,6 +38,3 @@ class StarClan:
                     fade_level = f
         white.fill((255, 255, 255, fade_level))
         return white
-
-
-clan_class = Clan()
