@@ -1933,7 +1933,7 @@ class Cat:
             self.inheritance = Inheritance(self)
         return other_cat.ID in self.inheritance.siblings_kits.keys()
 
-    def get_uncle_aunt(self):
+    def get_uncle_aunts(self):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
         if not self.inheritance:
             self.inheritance = Inheritance(self)
@@ -2012,7 +2012,7 @@ class Cat:
                         for mate_id in Cat.all_cats.get(cousin_id).mate
                     ]
                     uncle_aunt_mates = [
-                        mate_id for aunt_uncle_id in self.get_uncle_aunt()
+                        mate_id for aunt_uncle_id in self.get_uncle_aunts()
                         for mate_id in Cat.all_cats.get(aunt_uncle_id).mate
                     ]
                     inlaws = sibling_mates + kit_parents + cousin_parents + uncle_aunt_mates
