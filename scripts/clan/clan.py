@@ -41,18 +41,6 @@ class Clan:
 
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
 
-    CAT_TYPES = [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "warrior",
-        "medicine",
-        "deputy",
-        "leader",
-        "elder",
-        "mediator",
-        "general",
-    ]
     name = ""
     leader = ""
     leader_lives = 0
