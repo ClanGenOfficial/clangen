@@ -45,6 +45,9 @@ class PlayerClan(BaseClan):
     medicine_cat = ""
     med_cat_list = []
     med_cat_predecessors = 0
+
+    camp_bg = "camp1"
+
     herbs = {}
     age = 0
     instructor = None

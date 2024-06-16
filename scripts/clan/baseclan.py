@@ -22,7 +22,6 @@ class BaseClan:
     current_season = "Newleaf"
     starting_season = "Newleaf"
     biome = "Plains"
-    camp_bg = "camp1"
 
     # other general stuff (these really need separating out but that'll be another refactor for another day
     all_clans = []
