@@ -8,8 +8,8 @@ import bisect
 import itertools
 import os.path
 import sys
+from random import choice, randint, sample, getrandbits, randrange, choices
 import random
-from random import choice, randint, sample, getrandbits, randrange
 from typing import Dict, List, Any
 
 import ujson  # type: ignore
