@@ -461,12 +461,9 @@ class ListScreen(Screens):
         self.update_cat_list()
 
     def exit_screen(self):
-        for ele in self.cat_display.cat_sprites:
-            self.cat_display.cat_sprites[ele].kill()
-        for ele in self.cat_display.cat_names:
-            self.cat_display.cat_names[ele].kill()
-        for ele in self.cat_display.favor_indicator:
-            self.cat_display.favor_indicator[ele].kill()
+        self.cat_display.clear_display()
+        self.cat_display = None
+        self.cat_display_container.kill()
         self.list_screen_container.kill()
 
     def on_use(self):
