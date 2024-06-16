@@ -645,7 +645,6 @@ class History:
         return cat.history.murder
 
     @staticmethod
-
     def reveal_murder(cat, other_cat, cat_class, victim, murder_index):
         """ Reveals the murder properly in all associated history text.
 
@@ -678,11 +677,12 @@ class History:
                 victim_history["revelation_moon"] = game.clan.age
                 if not other_cat:
                     victim_history["revelation_text"] = \
-                        "The truth of [victim]'s murder is known to the Clan."
+                        "The truth of their murder is known to the Clan."
                 else:
                     victim_history["revelation_text"] = \
-                        "The truth of [victim]'s murder was discovered by [discoverer]."
+                        "The truth of their murder was discovered by [discoverer]."
 
+                discoverer: str = ""
                 if other_cat:
                     discoverer = str(other_cat.name)
                 if "clan_discovery" in murder_history:
@@ -694,6 +694,3 @@ class History:
                                                                                               discoverer)
                 victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]',
                                                                                               discoverer)
-                victim_history["revelation_text"] = victim_history["revelation_text"].replace('[victim]',
-                                                                                              str(victim.name))
-
