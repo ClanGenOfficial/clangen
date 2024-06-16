@@ -351,7 +351,10 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c", "some_clan"],
+                      "cats": [
+                          "r_c",
+                          "some_clan"
+                      ],
                         "injuries": ["poisoned"],
                         "scars": []
                     }
