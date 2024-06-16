@@ -585,7 +585,7 @@
   },
   "Egg": {
     "variants": 1,
-    "tags0": ["animal"]
+    "tags0": ["animal", "bird", "other animal"]
   },
   "Egret": {
     "variants": 0,
@@ -657,7 +657,7 @@
   }, 
   "Fierce": {
     "variants": 1,
-    "tags0": ["animal"]
+    "tags0": ["animal", "mammal"]
   },
   "Fig": {
     "variants": 0,
@@ -1702,7 +1702,7 @@
   },
   "Scale": {
     "variants": 1,
-    "tags0": ["animal"]
+    "tags0": ["animal", "fish", "other animal"]
   },
   "Scorch": {
     "variants": 0, 

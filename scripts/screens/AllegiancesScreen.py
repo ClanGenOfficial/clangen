@@ -2,16 +2,17 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import (
+from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
-    UITextBoxTweaked,
+    UITextBoxTweaked
 )
 from scripts.utility import (
     get_text_box_theme,
     scale,
-    get_med_cats,
+    get_alive_status_cats,
     shorten_text_to_fit,
     get_alive_clan_queens,
 )
@@ -651,7 +652,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_med_cats(Cat, working=False)
+        self.meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
 
         if not self.meds:
             all_pages = []

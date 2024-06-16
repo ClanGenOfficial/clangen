@@ -6,7 +6,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
 from scripts.utility import (
     scale,
@@ -15,7 +15,7 @@ from scripts.utility import (
     get_other_clan,
     clan_symbol_sprite,
     shorten_text_to_fit,
-    get_med_cats,
+    get_alive_status_cats,
     get_living_clan_cat_count,
 )
 
@@ -184,7 +184,7 @@ class LeaderDenScreen(Screens):
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
-                meds = get_med_cats(Cat)
+                meds = get_alive_status_cats(Cat, get_status=["medicine cat", "medicine cat apprentice"], working=True, sort=True)
                 if meds:
                     self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps
@@ -536,7 +536,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_clan_elements[f"clan_symbol"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((138, 134), (200, 200))),
-            pygame.transform.scale(clan_symbol_sprite(self.focus_clan), (200, 200)),
+            pygame.transform.scale(clan_symbol_sprite(self.focus_clan, force_light=True), (200, 200)),
             object_id="#clan_symbol",
             starting_height=1,
             container=self.focus_clan_container,
@@ -911,6 +911,7 @@ class LeaderDenScreen(Screens):
         pos_x = 0
         pos_y = 0
         i = 0
+
         for cat in display_cats:
             self.outsider_cat_buttons[f"sprite{str(i)}"] = UISpriteButton(
                 scale(pygame.Rect((10 + pos_x, 0 + pos_y), (100, 100))),

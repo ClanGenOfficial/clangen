@@ -1,0 +1,698 @@
+[
+    {
+        "event_id": "gen_new_cat_adoption_anylonerlitter1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["adoption"],
+        "weight": 5,
+        "event_text": "A loner named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "m_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            ["age:has_kits", "meeting", "loner", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned2, outsider1",
+                "litter"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_adoption_anyroguelitter1",
+        "location": ["any"],
+        "season": ["any"],
+         "sub_type": ["adoption"],
+        "weight": 5,
+        "event_text": "A rogue named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "m_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            ["age:has_kits", "meeting", "rogue", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned2, outsider1",
+                "litter"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_adoption_anywelcomingotherclanlitter1",
+        "location": ["any"],
+        "season": ["any"],
+         "sub_type": ["adoption"],
+        "weight": 5,
+        "event_text": "A o_c_n queen decides to leave their litter with c_n. m_c takes them as {PRONOUN/m_c/poss} own.",
+        "m_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "backstory:abandoned2, outsider1",
+                "litter"
+            ]
+        ],
+        "other_clan": {
+            "current_rep": ["ally"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_adoption_anymultirepkittypetlitter1",
+        "location": ["any"],
+        "season": ["any"],
+         "sub_type": ["adoption"],
+        "weight": 5,
+        "event_text": "A kittypet named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "m_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            ["age:has_kits", "meeting", "kittypet", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned2, outsider1",
+                "litter"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_adoption_anylitter1",
+        "location": ["any"],
+        "season": ["any"],
+         "sub_type": ["adoption"],
+        "weight": 5,
+        "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/poss} own.",
+        "m_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "backstory:abandoned2, outsider1",
+                "litter"
+            ]
+        ]
+    },
+    {
+        "event_id": "gen_new_cat_anykit1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 5,
+        "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c:0/object} n_c:0.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "backstory:abandoned1, abandoned2, orphaned3, orphaned4, outsider1",
+                "status:kitten"
+            ]
+        ]
+    },
+    {
+        "event_id": "gen_new_cat_anylonerkit1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 5,
+        "event_text": "m_c finds a loner near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "medicine cat",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "new_cat": [
+            ["age:has_kits", "meeting", "loner", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned2, outsider1",
+                "status:kitten"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anykittypetkit1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 5,
+        "event_text": "m_c finds a kittypet near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "medicine cat",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "new_cat": [
+            ["age:has_kits", "meeting", "kittypet", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned2, outsider1",
+                "status:kitten"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyroguekit1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 5,
+        "event_text": "m_c finds a rogue near the border. It seems {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} bringing {PRONOUN/n_c:0/poss} kit named n_c:1 to the Clan, as {PRONOUN/n_c:0/subject} could no longer care for {PRONOUN/n_c:1/object}.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },"new_cat": [
+            ["age:has_kits", "meeting", "rogue", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned2, outsider1",
+                "status:kitten"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },  
+    {
+        "event_id": "gen_new_cat_anypolymate1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type":["romance"],
+        "weight": 5,
+        "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c/subject} {VERB/n_c/are/is} staying.",
+        "m_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
+            "relationship_status": ["mates"]
+          },
+          "r_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
+            "relationship_status": ["mates"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "status:warrior",
+                "mate:m_c,r_c" 
+            ]
+        ],
+        "relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantice", "trust"],
+            "amount": 55
+          },
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 25
+          },
+          {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantice", "trust"],
+            "amount": 55
+          },
+          {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 25
+          }
+        ]
+    },
+    {
+        "event_id": "gen_new_cat_anyloner1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 15,
+        "event_text": "m_c finds a loner named n_c:0, who joins the Clan. The loner decides to keep {PRONOUN/n_c:0/poss} old name.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["any"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyloner2",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A loner waits on the border for a patrol and, finding one led by m_c, asks to join the Clan. The loner decides to take on a more Clan-like name and is now called n_c:0.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader", "medicine cat"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyloner3",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A loner waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The loner decides to keep {PRONOUN/n_c:0/poss} old name, n_c:0.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat"
+            ]
+        },"new_cat": [
+            [
+                "old_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyloner4",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c finds a loner who asks to join the Clan. The loner decides to take on a more Clan-like name and is now called n_c:0.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_hostile_anyloner1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 15,
+        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol led by m_c heads out and finds a wandering cat to bring into the Clan. The new cat takes on a more Clan-like name and is now known as n_c:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["hostile"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anykittypet1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c finds a kittypet named n_c:0 who joins the Clan. The kittypet decides to keep {PRONOUN/n_c:0/poss} old name.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "kittypet",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anykittypet2",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c finds a kittypet who joins the Clan. The kittypet decides to take on a more Clan-like name and is now called n_c:0.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "kittypet",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anykittypet3",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to keep {PRONOUN/n_c:0/poss} old name, n_c:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "medicine cat"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "kittypet",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anykittypet4",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A kittypet waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The kittypet decides to take on a more Clan-like name and is now called n_c:0.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat"
+            ]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "kittypet",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyrogue1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c finds a rogue named n_c:0, who joins the Clan. The rogue decides to keep {PRONOUN/n_c:0/poss} old name.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "rogue",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyrogue2",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c finds a rogue who asks to join the Clan. The rogue decides to take on a more Clan-like name and is now called n_c:0.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "rogue",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["neutral","welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyrogue3",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to keep {PRONOUN/n_c:0/poss} old name, n_c:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "medicine cat"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "rogue",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyrogue4",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A rogue waits on the border for a patrol and, finding one lead by m_c, asks to join the Clan. The rogue decides to take a new name and is now called n_c:0.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "medicine cat"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "rogue",
+                "status:warrior",
+                "exists"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"],
+            "changed": 1
+        }
+    },
+
+    {
+        "event_id": "gen_new_cat_anyotherclancat1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c finds a warrior from o_c_n named n_c:0, who asks to join the Clan.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "clancat",
+                "status:warrior"
+            ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_anyotherclancat2",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 10,
+        "event_text": "m_c meets an injured warrior from o_c_n who asks to join the Clan, in exchange for healing.",
+        "m_c": {
+            "status": ["medicine cat", "leader", "warrior", "deputy", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "clancat",
+                "status:warrior"
+            ]
+        ],
+        "injury": [
+           {
+            "cats": ["n_c:0"],
+            "injuries": ["battle_injury", "big_bite_injury"]
+           }
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_war_any1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 15,
+        "event_text": "A member of o_c_n defects in the war and chooses to join c_n, m_c finds {PRONOUN/n_c:0/object} waiting at the border. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/decide/decides} to keep {PRONOUN/n_c:0/poss} name.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },
+        "new_cat": [
+          [
+            "old_name", 
+            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan", 
+            "status:warrior"
+          ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_war_anydefect1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 10,
+        "event_text": "n_c:0, the deputy of o_c_n, has defected to c_n in the war, m_c finds {PRONOUN/n_c:0/object} at the border. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/decide/decides} to keep {PRONOUN/n_c:0/poss} name.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },
+        "new_cat": [
+          [
+            "old_name", 
+            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan", 
+            "status:warrior"
+          ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_war_anydefect2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 15,
+        "event_text": "n_c:0, the medicine cat of o_c_n, has defected to c_n in the war, {PRONOUN/n_c:0/subject} meet m_c at the border. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/decide/decides} to keep {PRONOUN/n_c:0/poss} name.",
+        "m_c": {
+            "status": [
+                "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
+            ]
+        },
+        "new_cat": [
+          [
+            "old_name", 
+            "backstory:medicine_cat", 
+            "status:medicine_cat"
+          ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
+    }
+]

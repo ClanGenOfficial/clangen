@@ -163,17 +163,17 @@
         },
         "weight": 20,
         "intro_text": "app1 has been sent out into the mountains to try to find herbs alone.",
-        "decline_text": "Nervous and with an eerie sound on the wind scaring them, they decide to go back to camp with their tail dragging behind them and try again another day.",
+        "decline_text": "Nervous and with an eerie sound on the wind scaring them, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp with {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object} and try again another day.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
-                "text": "app1 is focused, determined to prove their independence. They find the herbs easily and bring them back to camp with their head held up high - no sweat, no stress, no fuss.",
+                "text": "app1 is focused, determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily and {VERB/app1/bring/brings} them back to camp with {PRONOUN/app1/poss} head held up high - no sweat, no stress, no fuss.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "app1 goes to an herb patch they're sure they know, only to find the plants withered and dead. They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]
@@ -181,7 +181,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to an herb patch they're sure they know, only to find the plants withered and dead. They give up and return to camp, their tail dragging miserably along the ground.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/give/gives} up and return to camp, {PRONOUN/app1/poss} tail dragging miserably along the ground.",
                 "exp": 0,
                 "weight": 20
             }
@@ -387,7 +387,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -397,7 +397,7 @@
                 "herbs": ["cobwebs"]
             },
             {
-                "text": "p_l visits a few of their favorite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass they have gathered.",
+                "text": "p_l visits a few of {PRONOUN/p_l/poss} favorite places to gather cobwebs. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} back to camp, {PRONOUN/p_l/subject} {VERB/p_l/end/ends} up startling several cats on {PRONOUN/p_l/poss} way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass {PRONOUN/p_l/subject} {VERB/p_l/have/has} gathered.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"]
@@ -405,7 +405,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Over-tired from caring for their patients all day and night, the only cobwebs p_l manages to 'collect' are the ones they accidentally walked into.",
+                "text": "Over-tired from caring for {PRONOUN/p_l/poss} patients all day and night, the only cobwebs p_l manages to 'collect' are the ones {PRONOUN/p_l/subject} accidentally walked into.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1403,7 +1403,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1413,13 +1413,13 @@
                 "herbs": ["moss", "horsetail"]
             },
             {
-                "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags the entire big, long shoot back to camp, where they diligently process it down further into smaller stem sections that are easily stored.",
+                "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags the entire big, long shoot back to camp, where {PRONOUN/p_l/subject} diligently {VERB/p_l/process/processes} it down further into smaller stem sections that are easily stored.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss", "horsetail"]
             },
             {
-                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags their haul back to camp - quite the impressive addition to the Clan's herb stores.",
+                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags {PRONOUN/s_c/poss} haul back to camp - quite the impressive addition to the Clan's herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1428,7 +1428,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1451,12 +1451,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
+                "text": "p_l doesn't know why horsetail plants lack leaves, but {PRONOUN/p_l/subject} {VERB/p_l/encourage/encourages} app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss", "horsetail"],
@@ -1500,7 +1500,7 @@
                 ]
             },
             {
-                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags their haul back to camp - quite the impressive addition to the Clan's herb stores - while they describe the plant's uses to app1",
+                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags {PRONOUN/s_c/poss} haul back to camp - quite the impressive addition to the Clan's herb stores - while {PRONOUN/s_c/subject} {VERB/s_c/describe/describes} the plant's uses to app1",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1525,7 +1525,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and app1 looks up at {PRONOUN/p_l/subject} with disappointment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1706,12 +1706,12 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as they go to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
+                "text": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["moss"],

@@ -533,7 +533,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display. The patrol breaks out into yowls and caterwauls until the dog loses its nerve and runs from the c_n border into the distance.",
+                "text": "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team {VERB/p_l/back/backs} {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display. The patrol breaks out into yowls and caterwauls until the dog loses its nerve and runs from the c_n border into the distance.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -699,7 +699,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The only explanation they have is that they're sick... Perhaps they were too much of a burden? p_l offers them a place in c_n, at least until they recover. They tentatively accept, looking longingly at the Thunderpath as they're led away.",
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for {PRONOUN/n_c:0/poss} housefolk. p_l comforts {PRONOUN/n_c:0/object}, asking why {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} left here. The only explanation {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} is that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} sick... Perhaps {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} too much of a burden? p_l offers {PRONOUN/n_c:0/object} a place in c_n, at least until {PRONOUN/n_c:0/subject} recover. {PRONOUN/n_c:0/subject/CAP} tentatively {VERB/n_c:0/accept/accepts}, looking longingly at the Thunderpath as {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} led away.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -1935,13 +1935,15 @@
                 "art": "gen_happy_cat2",
                 "other_clan_rep": 2,
                 "relationships":
+				[
                 {
-                    "cats_from": [ "patrol" ],
                     "cats_to": [ "app1" ],
+                    "cats_from": [ "patrol" ],
                     "mutual": false,
                     "values": [ "platonic", "trust", "respect" ],
                     "amount": 10
                 }
+				]
             },
             {
                 "text": "app1 watches the other apprentice from across the border as the two patrols get on with marking their side of the border in silence. Every so often, app1 looks up and catches the other apprentice's eye; would they have been friends, if they were born in the same Clan? The patrol passes without incident, and app1 can't help casting a look back at the border as {PRONOUN/app1/subject} {VERB/app1/leave/leaves}.",
@@ -1983,13 +1985,15 @@
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": -1,
                 "relationships":
-                {
-                    "cats_from": [ "patrol" ],
-                    "cats_to": [ "app1" ],
-                    "mutual": false,
-                    "values": [ "dislike" ],
-                    "amount": 5
-                }
+                [
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "patrol" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    }
+                ]
             },
             {
                 "text": "app1 waves {PRONOUN/app1/poss} tail to the other apprentice, but s_c yanks {PRONOUN/app1/object} back. With {PRONOUN/s_c/poss} lip curled, s_c lectures app1 not to nurture friendships with other Clans, since they might one day meet in battle. The o_c_n patrol is well within earshot of this lecture, and app1 slinks back to camp with humiliation burning under {PRONOUN/app1/poss} pelt.",
@@ -2001,8 +2005,8 @@
                 "relationships":
                 [
                     {
-                        "cats_from": [ "s_c" ],
                         "cats_to": [ "app1" ],
+                        "cats_from": [ "s_c" ],
                         "mutual": true,
                         "values": [ "dislike" ],
                         "amount": 10

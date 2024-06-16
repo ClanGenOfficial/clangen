@@ -351,7 +351,10 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c", "some_clan"],
+                      "cats": [
+                          "r_c",
+                          "some_clan"
+                      ],
                         "injuries": ["poisoned"],
                         "scars": []
                     }
@@ -1881,7 +1884,7 @@
             "prey": ["huge"]
         },
         {
-            "text": "It's cold, alone by themself. But app1 shakes it off, and {PRONOUN/app1/subject} {VERB/app1/find/finds} enough food that the Clan will have questions, waking up with a fresh-kill pile weirdly fuller than when they went to sleep.",
+            "text": "It's cold, alone by {PRONOUN/app1/self}. But app1 shakes it off, and {PRONOUN/app1/subject} {VERB/app1/find/finds} enough food that the Clan will have questions, waking up with a fresh-kill pile weirdly fuller than when they went to sleep.",
             "exp": 20,
             "weight": 10,
             "prey": ["huge"]
@@ -2928,7 +2931,7 @@
             "prey": ["huge"]
         },
         {
-            "text": "Not only does s_c personally catch a terrifying amount of prey, but they offer up support to everyone else to do the same, and the patrol brings a truly awe-inspiring haul home.",
+            "text": "Not only does s_c personally catch a terrifying amount of prey, but {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up support to everyone else to do the same, and the patrol brings a truly awe-inspiring haul home.",
             "exp": 30,
             "weight": 20,
             "stat_skill": ["HUNTER,0"],
@@ -2964,7 +2967,7 @@
             "weight": 20
         },
         {
-            "text": "p_l choose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "text": "p_l chose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
             "exp": 0,
             "weight": 20,
               "relationships": [

@@ -15,7 +15,8 @@
         },
         "font": {
             "name": "notosans",
-            "size": "30"
+            "size": "30",
+            "line_spacing": "1"
         }
     },
     "#dev_watermark": {
@@ -41,9 +42,9 @@
     "#search_entry_box": {
         "colours": {
             "dark_bg": "#00000000",
-            "selected_bg": "#00000000",
+            "selected_bg": "#796045",
             "normal_text": "#000000",
-            "selected_text": "#DCDCDC"
+            "selected_text": "#EFE5CE"
         },
         "misc": {
             "shape": "rectangle",
@@ -54,6 +55,21 @@
         "font": {
             "name": "notosans",
             "size": "26"
+        }
+    },
+    "#page_entry_box": {
+        "prototype": "#search_entry_box",
+        "colours": {
+            "normal_border": "#2F2918"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": 2,
+            "border_width": "3",
+            "text_horiz_alignment": "right"
+        },
+        "font": {
+            "size": 30
         }
     },
     "#text_box": {
