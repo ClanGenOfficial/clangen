@@ -426,16 +426,21 @@ class HandleShortEvents():
                 if self.chosen_event.m_c["dies"]:
                     # find history
                     if self.main_cat.status == "leader":
-                        death_history = history_text_adjust(block.get('lead_death'),
-                                                            self.other_clan_name, game.clan, self.main_cat)
+                        death_history = block.get('lead_death')
                     else:
-                        death_history = history_text_adjust(block.get('reg_death'),
-                                                            self.other_clan_name, game.clan, self.main_cat)
+                        death_history = block.get('reg_death')
 
                     # handle murder
                     if "murder" in self.chosen_event.sub_type:
                         revealed = False
+                        death_history = history_text_adjust(death_history,
+                                                            self.other_clan_name, game.clan,
+                                                            [Cat.fetch_cat(cat) for cat in self.involved_cats
+                                                             if cat != self.main_cat.ID][0])
                         History.add_murders(self.main_cat, self.random_cat, revealed, death_history)
+                    else:
+                        death_history = history_text_adjust(death_history,
+                                                            self.other_clan_name, game.clan, self.main_cat)
 
                     History.add_death(self.main_cat, death_history, other_cat=self.random_cat)
 
