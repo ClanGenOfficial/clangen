@@ -1955,13 +1955,13 @@ class Cat:
         return other_cat.ID in litter_mates
 
     def is_uncle_aunt(self, other_cat: Cat):
-        """Returns a list of the cat's aunts and uncles (ids)."""
+        """Check if the cats are related as uncle/aunt and niece/nephew."""
         if not self.inheritance:
             self.inheritance = Inheritance(self)
         return other_cat.ID in self.inheritance.siblings_kits.keys()
 
     def get_uncle_aunts(self):
-        """Check if the cats are related as uncle/aunt and niece/nephew."""
+        """Returns a list of the cat's aunts and uncles (ids)."""
         if not self.inheritance:
             self.inheritance = Inheritance(self)
         return list(self.inheritance.parents_siblings.keys())
