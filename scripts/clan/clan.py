@@ -19,7 +19,6 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.clan.otherclan import OtherClan
-from scripts.clan.starclan import clan_class
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure.game_essentials import game
@@ -609,7 +608,7 @@ class Clan:
 
     def load_clan_txt(self):
         """
-        TODO: DOCS
+        Handles loading old Clans from text files, rather than JSON.
         """
         other_clans = []
         if game.switches["clan_list"] == "":
@@ -623,12 +622,14 @@ class Clan:
                 self.all_clans.append(OtherClan())
             return
         game.switches["error_message"] = "There was an error loading the clan.txt"
+
         with open(
             get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.txt",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
             clan_data = read_file.read()
+
         clan_data = clan_data.replace("\t", ",")
         sections = clan_data.split("\n")
         if len(sections) == 7:
@@ -655,6 +656,7 @@ class Clan:
             instructor_info = sections[3]
             members = sections[4].split(",")
             other_clans = []
+
         if len(general) == 9:
             if general[3] == "None":
                 general[3] = "camp1"
@@ -728,11 +730,13 @@ class Clan:
                 self_run_init_functions=False,
             )
             game.clan.post_initialization_functions()
+
         game.clan.age = int(general[1])
         if not game.config["lock_season"]:
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season
+
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]
         ), int(leader_info[2])
@@ -1272,11 +1276,8 @@ class Clan:
 
         return _temperament
 
-    @temperament.setter
-    def temperament(self, val):
-        return
 
-
+clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
 
 HERBS = None

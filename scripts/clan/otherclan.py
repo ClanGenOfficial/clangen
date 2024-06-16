@@ -1,7 +1,6 @@
 from random import choice, randint
 
 from scripts.cat.names import names
-from scripts.clan.clan import Clan
 from scripts.utility import clan_symbol_sprite
 
 

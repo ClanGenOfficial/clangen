@@ -2,7 +2,7 @@ import unittest
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.clan import Clan
+from scripts.clan.clan import Clan
 from scripts.patrol.patrol import Patrol
 
 

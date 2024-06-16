@@ -3,7 +3,7 @@ import logging
 import pygame
 import pygame_gui
 
-from scripts.clan import Clan
+from scripts.clan.clan import Clan
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import DeleteCheck

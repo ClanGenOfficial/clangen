@@ -4,11 +4,9 @@ from re import sub
 import pygame
 import pygame_gui
 
-from scripts.utility import get_text_box_theme, scale
-from scripts.clan import Clan
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
-from scripts.clan import Clan
+from scripts.clan.clan import Clan
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,

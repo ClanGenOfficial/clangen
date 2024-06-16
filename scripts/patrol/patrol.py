@@ -12,7 +12,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.clan import Clan
+from scripts.clan.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.patrol.patrol_event import PatrolEvent
 from scripts.patrol.patrol_outcome import PatrolOutcome

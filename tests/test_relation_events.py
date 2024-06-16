@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
-from scripts.clan import Clan
+from scripts.clan.clan import Clan
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.events_module.relationship.romantic_events import Romantic_Events
 

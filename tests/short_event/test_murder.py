@@ -3,8 +3,7 @@ import unittest
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import Relationship
-from scripts.clan import Clan
-from scripts.clan_resources.freshkill import FreshkillPile
+from scripts.clan.clan import Clan
 from scripts.events import Events
 from scripts.game_structure.game_essentials import game
 
