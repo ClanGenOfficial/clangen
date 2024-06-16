@@ -258,8 +258,8 @@ class PlayerClan(BaseClan):
         #    game.settings['disasters'] = True
 
         # set the starting season
-        season_index = self.seasons.index(self.starting_season)
-        self.current_season = self.seasons[season_index]
+        season_index = self.SEASONS.index(self.starting_season)
+        self.current_season = self.SEASONS[season_index]
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
@@ -695,7 +695,7 @@ class PlayerClan(BaseClan):
 
         game.clan.age = int(general[1])
         if not game.config["lock_season"]:
-            game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+            game.clan.current_season = game.clan.SEASONS[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season
 
