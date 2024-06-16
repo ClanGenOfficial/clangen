@@ -8,8 +8,7 @@ import bisect
 import itertools
 import os.path
 import sys
-from random import choice, randint, sample, getrandbits, randrange, choices
-import random
+from random import choice, randint, sample, random, choices, getrandbits, randrange
 from typing import Dict, List, Any
 
 import ujson  # type: ignore
@@ -1505,7 +1504,7 @@ class Cat:
             game.config["relationship"]["kin_thought_chance"],
             100 - (game.config["relationship"]["relationship_thought_chance"] + game.config["relationship"]["kin_thought_chance"])
         ]
-        thought_type = random.choices(thought_choices, weights=weights)[0]
+        thought_type = choices(thought_choices, weights=weights)[0]
         try:
             season = game.clan.current_season
         except:
@@ -1547,7 +1546,7 @@ class Cat:
                         (1.25 * game.config["relationship"]["kin_thought_chance"]),
                         100 - game.config["relationship"]["kin_thought_chance"]
                     ]
-                    thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
+                    thought_type = choices(thought_choices_reroll, weights=weights_reroll)[0]
                 
             # Roll kin-based thought
             if thought_type == 'kin':
@@ -1619,7 +1618,7 @@ class Cat:
                         (1.25 * game.config["relationship"]["kin_thought_chance"]),
                         100 - game.config["relationship"]["kin_thought_chance"]
                     ]
-                    thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
+                    thought_type = choices(thought_choices_reroll, weights=weights_reroll)[0]
                 
             # Roll kin-based thought
             if thought_type == 'kin':
@@ -1688,7 +1687,7 @@ class Cat:
                         (1.25 * game.config["relationship"]["kin_thought_chance"]),
                         100 - game.config["relationship"]["kin_thought_chance"]
                     ]
-                    thought_type = random.choices(thought_choices_reroll, weights=weights_reroll)[0]
+                    thought_type = choices(thought_choices_reroll, weights=weights_reroll)[0]
                 
             # Roll kin-based thought
             if thought_type == 'kin':
