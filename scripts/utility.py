@@ -2258,19 +2258,22 @@ def update_sprite(cat):
     cat.all_cats[cat.ID] = cat
 
 
-def clan_symbol_sprite(clan, return_string=False):
+def clan_symbol_sprite(clan, return_string=False, force_light=False):
     """
     returns the clan symbol for the given clan_name, if no symbol exists then random symbol is chosen
     :param clan: the clan object
     :param return_string: default False, set True if the sprite name string is required rather than the sprite image
-
+    :param force_light: Set true if you want this sprite to override the dark/light mode changes with the light sprite
     """
     clan_name = clan.name
     if clan.chosen_symbol:
         if return_string:
             return clan.chosen_symbol
         else:
-            return sprites.sprites[f"{clan.chosen_symbol}"]
+            if game.settings["dark mode"] and not force_light:
+                return sprites.dark_mode_symbol(sprites.sprites[f"{clan.chosen_symbol}"])
+            else:
+                return sprites.sprites[f"{clan.chosen_symbol}"]
     else:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
@@ -2287,15 +2290,18 @@ def clan_symbol_sprite(clan, return_string=False):
                 )
                 return f"{choice(sprites.clan_symbols)}"
 
-        else:  # returns the actual sprite of the symbol
-            if possible_sprites:
-                return sprites.sprites[choice(possible_sprites)]
+        # returns the actual sprite of the symbol
+        if possible_sprites:
+            if game.settings["dark mode"] and not force_light:
+                return sprites.dark_mode_symbol(sprites.sprites[choice(possible_sprites)])
             else:
-                # give random symbol if no matching symbol exists
-                print(
-                    f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
-                )
-                return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
+                return sprites.sprites[choice(possible_sprites)]
+        else:
+            # give random symbol if no matching symbol exists
+            print(
+                f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
+            )
+            return sprites.dark_mode_symbol(sprites.sprites[f"{choice(sprites.clan_symbols)}"])
 
 
 def generate_sprite(
