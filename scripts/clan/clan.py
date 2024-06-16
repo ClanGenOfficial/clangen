@@ -13,13 +13,13 @@ import random
 import statistics
 from random import choice, randint
 
-import pygame
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
-from scripts.cat.sprites import sprites
+from scripts.clan.otherclan import OtherClan
+from scripts.clan.starclan import clan_class
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure.game_essentials import game
@@ -35,7 +35,7 @@ from scripts.utility import (
 class Clan:
     """
 
-    TODO: Docs
+    The base clan for ClanGen.
 
     """
 
@@ -1289,89 +1289,6 @@ class Clan:
         return
 
 
-class OtherClan:
-    """
-    TODO: DOCS
-    """
-
-    interaction_dict = {
-        "ally": ["offend", "praise"],
-        "neutral": ["provoke", "befriend"],
-        "hostile": ["antagonize", "appease", "declare"],
-    }
-
-    temperament_list = [
-        "cunning",
-        "wary",
-        "logical",
-        "proud",
-        "stoic",
-        "mellow",
-        "bloodthirsty",
-        "amiable",
-        "gracious",
-    ]
-
-    def __init__(self, name="", relations=0, temperament="", chosen_symbol=""):
-        clan_names = names.names_dict["normal_prefixes"]
-        clan_names.extend(names.names_dict["clan_prefixes"])
-        self.name = name or choice(clan_names)
-        self.relations = relations or randint(8, 12)
-        self.temperament = temperament or choice(self.temperament_list)
-        if self.temperament not in self.temperament_list:
-            self.temperament = choice(self.temperament_list)
-
-        self.chosen_symbol = (
-            None  # have to establish None first so that clan_symbol_sprite works
-        )
-        self.chosen_symbol = (
-            chosen_symbol
-            if chosen_symbol
-            else clan_symbol_sprite(self, return_string=True)
-        )
-
-    def __repr__(self):
-        return f"{self.name}Clan"
-
-
-class StarClan:
-    """
-    TODO: DOCS
-    """
-
-    forgotten_stages = {
-        0: [0, 100],
-        10: [101, 200],
-        30: [201, 300],
-        60: [301, 400],
-        90: [401, 500],
-        100: [501, 502],
-    }  # Tells how faded the cat will be in StarClan by months spent
-    dead_cats = {}
-
-    def __init__(self):
-        """
-        TODO: DOCS
-        """
-        self.instructor = None
-
-    def fade(self, cat):
-        """
-        TODO: DOCS
-        """
-        white = pygame.Surface((sprites.size, sprites.size))
-        fade_level = 0
-        if cat.dead:
-            for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items
-                if cat.dead_for in range(
-                    self.forgotten_stages[f][0], self.forgotten_stages[f][1]
-                ):
-                    fade_level = f
-        white.fill((255, 255, 255, fade_level))
-        return white
-
-
-clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
 
 HERBS = None
