@@ -1331,7 +1331,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anykit1",
+        "event_id": "multi_injury_anykiteagle1",
         "location": [
             "plains",
             "forest",
@@ -1398,7 +1398,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anykit1",
+        "event_id": "multi_injury_anykithawk1",
         "location": [
             "plains",
             "forest",
@@ -1660,7 +1660,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anybruises1",
+        "event_id": "multi_injury_anybruisestree1",
         "location": [
             "beach",
             "mountainous",
@@ -1688,7 +1688,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anybruises1",
+        "event_id": "multi_injury_anybruisesshowoff1",
         "location": [
             "beach",
             "forest",
@@ -4659,7 +4659,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
+        "event_id": "gen_injury_clawwoundcatbite_anydefensepunish1",
         "location": [
             "any"
         ],
@@ -5042,13 +5042,9 @@
         ]
     },
     {
-        "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
+        "event_id": "gen_injury_clawwoundcatbite_anydisobeypunish1",
+        "location": ["any"],
+        "season": ["any"],
         "weight": 10,
         "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for disobeying {PRONOUN/r_c/object}.",
         "m_c": {
@@ -5139,13 +5135,9 @@
         ]
     },
     {
-        "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
+        "event_id": "gen_injury_clawwoundcatbite_anymentorfight1",
+        "location": ["any"],
+        "season": ["any"],
         "weight": 10,
         "event_text": "m_c fought with {PRONOUN/m_c/poss} mentor, r_c, and was injured.",
         "m_c": {
