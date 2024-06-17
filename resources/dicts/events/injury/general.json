@@ -1017,7 +1017,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anykit1",
+        "event_id": "multi_injury_anykiteagle1",
         "location": [
             "plains",
             "forest",
@@ -1070,7 +1070,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anykit1",
+        "event_id": "multi_injury_anykithawk1",
         "location": [
             "plains",
             "forest",
@@ -1278,7 +1278,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anybruises1",
+        "event_id": "multi_injury_anybruisestree1",
         "location": [
             "beach",
             "mountainous",
@@ -1300,7 +1300,7 @@
         ]
     },
     {
-        "event_id": "multi_injury_anybruises1",
+        "event_id": "multi_injury_anybruisesshowoff1",
         "location": [
             "beach",
             "forest",
@@ -2910,7 +2910,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c.",
+        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c_n.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -3657,7 +3657,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
+        "event_id": "gen_injury_clawwoundcatbite_anydefensepunish1",
         "location": ["any"],
         "season": ["any"],
         "weight": 10,
@@ -3990,7 +3990,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
+        "event_id": "gen_injury_clawwoundcatbite_anydisobeypunish1",
         "location": ["any"],
         "season": ["any"],
         "weight": 10,
@@ -4074,7 +4074,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_clawwoundcatbite_anyapprenticemultitraitappmentorothercat1",
+        "event_id": "gen_injury_clawwoundcatbite_anymentorfight1",
         "location": ["any"],
         "season": ["any"],
         "weight": 10,
@@ -5506,7 +5506,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 20,
-        "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap. The other cats on the patrol flank {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/limp/limps} back to the camp.",
         "m_c": {
             "age": ["any"],
             "status": [

@@ -4,7 +4,7 @@ import pygame_gui
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import IDImageButton, UIImageButton
+from scripts.game_structure.ui_elements import IDImageButton, UIImageButton
 from scripts.game_structure.windows import GameOver
 from scripts.utility import (
     get_living_clan_cat_count,
@@ -332,13 +332,13 @@ class EventsScreen(Screens):
         self.season = pygame_gui.elements.UITextBox(
             f"Current season: {game.clan.current_season}",
             scale(pygame.Rect((680, 205), (1200, 80))),
-            object_id=get_text_box_theme("#text_box_30"),
+            object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             manager=MANAGER,
         )
         self.clan_age = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((680, 245), (1200, 80))),
-            object_id=get_text_box_theme("#text_box_30"),
+            object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             manager=MANAGER,
         )
 

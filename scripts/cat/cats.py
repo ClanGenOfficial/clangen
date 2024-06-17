@@ -538,17 +538,22 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        if self.status == "leader":
+        darkforest = game.clan.instructor.df
+        isoutside = self.outside
+        if self.status == 'leader':
             if game.clan.leader_lives > 0:
-                self.thought = "Was startled to find themself in Silverpelt for a moment... did they lose a life?"
+                lives_left = game.clan.leader_lives
+                death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
+                final_thought = event_text_adjust(self, death_thought, main_cat=self)
+                self.thought = final_thought
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                self.thought = (
-                    "Is surprised to find themself walking the stars of Silverpelt"
-                )
+                death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
+                final_thought = event_text_adjust(self, death_thought, main_cat=self)
+                self.thought = final_thought
                 if game.clan.instructor.df is False:
                     text = (
                         "They've lost their last life and have travelled to StarClan."
@@ -558,12 +563,10 @@ class Cat:
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            self.thought = (
-                "Is surprised to find themself walking the stars of Silverpelt"
-            )
+            death_thought = Thoughts.new_death_thought(self, darkforest, isoutside)
+            final_thought = event_text_adjust(self, death_thought, main_cat=self)
+            self.thought = final_thought
 
-        # Clear Relationships.
-        self.relationships = {}
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -587,12 +590,8 @@ class Cat:
                 game.clan.add_to_starclan(self)
             elif game.clan.instructor.df is True:
                 self.df = True
-                self.thought = "Is startled to find themself wading in the muck of a shadowed forest"
                 game.clan.add_to_darkforest(self)
         else:
-            self.thought = (
-                "Is fascinated by the new ghostly world they've stumbled into"
-            )
             game.clan.add_to_unknown(self)
 
         return
@@ -3693,40 +3692,39 @@ class Personality:
             # This will only trigger if they have the same personality.
             return None
 
+# Creates a random cat
+def create_cat(status, moons=None, biome=None):
+    new_cat = Cat(status=status, biome=biome)
+    
+    if moons is not None:
+        new_cat.moons = moons
+    else:
+        if new_cat.moons >= 160:
+            new_cat.moons = choice(range(120, 155))
+        elif new_cat.moons == 0:
+            new_cat.moons = choice([1, 2, 3, 4, 5])
+    
+    not_allowed_scars = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
+                         'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
+    
+    for scar in new_cat.pelt.scars:
+        if scar in not_allowed_scars:
+            new_cat.pelt.scars.remove(scar)
+    
+    return new_cat
+
+
 
 # Twelve example cats
 def create_example_cats():
-    e = sample(range(12), 3)
-    not_allowed = [
-        "NOPAW",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOEAR",
-        "BOTHBLIND",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BRIGHTHEART",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "MANLEG",
-    ]
-    for a in range(12):
-        if a in e:
-            game.choose_cats[a] = Cat(status="warrior", biome=None)
+    warrior_indices = sample(range(12), 3)
+    
+    for cat_index in range(12):
+        if cat_index in warrior_indices:
+            game.choose_cats[cat_index] = create_cat(status='warrior')
         else:
-            game.choose_cats[a] = Cat(
-                status=choice(["kitten", "apprentice", "warrior", "warrior", "elder"]),
-                biome=None,
-            )
-        if game.choose_cats[a].moons >= 160:
-            game.choose_cats[a].moons = choice(range(120, 155))
-        elif game.choose_cats[a].moons == 0:
-            game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
-        for scar in game.choose_cats[a].pelt.scars:
-            if scar in not_allowed:
-                game.choose_cats[a].pelt.scars.remove(scar)
-
-        # update_sprite(game.choose_cats[a])
+            random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
+            game.choose_cats[cat_index] = create_cat(status=random_status)
 
 
 # CAT CLASS ITEMS

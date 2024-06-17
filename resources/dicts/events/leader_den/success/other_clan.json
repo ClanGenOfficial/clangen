@@ -82,7 +82,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "During the Gathering, m_c does their best make peace with c_n's leader.",
+    "event_text": "During the Gathering, m_c does their best to make peace with o_c_n's leader.",
     "rel_change": 2,
     "m_c": {},
     "player_clan_temper": ["any"],

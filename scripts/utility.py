@@ -1274,8 +1274,9 @@ def gather_cat_objects(
             out_set.add(event.patrol_apprentices[1])
         elif abbr == "clan":
             out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
-        elif abbr == "some_clan":
-            out_set.update([x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)])
+        elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
+            clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)]
+            out_set.update(sample(clan_cats, randint(1, round(len(clan_cats) / 8))))
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
         elif abbr == "multi":
@@ -2257,19 +2258,22 @@ def update_sprite(cat):
     cat.all_cats[cat.ID] = cat
 
 
-def clan_symbol_sprite(clan, return_string=False):
+def clan_symbol_sprite(clan, return_string=False, force_light=False):
     """
     returns the clan symbol for the given clan_name, if no symbol exists then random symbol is chosen
     :param clan: the clan object
     :param return_string: default False, set True if the sprite name string is required rather than the sprite image
-
+    :param force_light: Set true if you want this sprite to override the dark/light mode changes with the light sprite
     """
     clan_name = clan.name
     if clan.chosen_symbol:
         if return_string:
             return clan.chosen_symbol
         else:
-            return sprites.sprites[f"{clan.chosen_symbol}"]
+            if game.settings["dark mode"] and not force_light:
+                return sprites.dark_mode_symbol(sprites.sprites[f"{clan.chosen_symbol}"])
+            else:
+                return sprites.sprites[f"{clan.chosen_symbol}"]
     else:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
@@ -2286,15 +2290,18 @@ def clan_symbol_sprite(clan, return_string=False):
                 )
                 return f"{choice(sprites.clan_symbols)}"
 
-        else:  # returns the actual sprite of the symbol
-            if possible_sprites:
-                return sprites.sprites[choice(possible_sprites)]
+        # returns the actual sprite of the symbol
+        if possible_sprites:
+            if game.settings["dark mode"] and not force_light:
+                return sprites.dark_mode_symbol(sprites.sprites[choice(possible_sprites)])
             else:
-                # give random symbol if no matching symbol exists
-                print(
-                    f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
-                )
-                return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
+                return sprites.sprites[choice(possible_sprites)]
+        else:
+            # give random symbol if no matching symbol exists
+            print(
+                f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
+            )
+            return sprites.dark_mode_symbol(sprites.sprites[f"{choice(sprites.clan_symbols)}"])
 
 
 def generate_sprite(
@@ -2403,6 +2410,10 @@ def generate_sprite(
             tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
             tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+        if cat.pelt.tint != "none" and cat.pelt.tint in sprites.cat_tints["dilute_tint_colours"]:
+            tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+            tint.fill(tuple(sprites.cat_tints["dilute_tint_colours"][cat.pelt.tint]))
+            new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_ADD)
 
         # draw white patches
         if cat.pelt.white_patches is not None:
