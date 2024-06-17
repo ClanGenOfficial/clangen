@@ -3916,7 +3916,7 @@
             "status": [ "any" ]
         },
         "history": [{
-            "cats": ["m_c" ],
+            "cats": [ "m_c", "r_c"],
             "reg_death": "m_c died defending r_c from a badger.",
             "lead_death": "defended r_c from a badger"
         }],
