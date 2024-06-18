@@ -1119,17 +1119,32 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
             if len(cmd_parts) == 3:
                 ea_intersection(cmd_parts[1], cmd_parts[2])
             elif len(cmd_parts) == 4:
-                ea_intersection(cmd_parts[1], cmd_parts[2], cmd_parts[3])
+                if cmd_parts[3] in ["id"]:
+                    ea_intersection(cmd_parts[1], cmd_parts[2], True)
+                else:
+                    ea_intersection(cmd_parts[1], cmd_parts[2])
             else:
                 print("Intersect failed - check you have input the commands correctly.")
         elif cmd_key in ["overview", "o"]:
             if len(cmd_parts) == 1:
                 ea_overview(len(all_ids))
             elif len(cmd_parts) == 2:
-                if cmd_parts[1] == "m":
-                    ea_overview_cat(len(all_ids))
-                elif cmd_parts[1] == "r":
+                if cmd_parts[1] == ["m", "mc", "m_c"]:
+                    ea_overview_cat(len(all_ids), "m_c")
+                elif cmd_parts[1] in ["r", "r_c", "rc"]:
                     ea_overview_cat(len(all_ids), "r_c")
+                elif cmd_parts[1] in ["g", "general", "all"]:
+                    ea_overview(len(all_ids))
+                elif cmd_parts[1] in ["location"]:
+                    ea_overview(len(all_ids), "location")
+                elif cmd_parts[1] in ["season"]:
+                    ea_overview(len(all_ids), "season")
+                elif cmd_parts[1] in ["subtype"]:
+                    ea_overview(len(all_ids), "subtype")
+                elif cmd_parts[1] in ["tags"]:
+                    ea_overview(len(all_ids), "tags")
+                elif cmd_parts[1] in ["accessory"]:
+                    ea_overview(len(all_ids), "season")
                 else:
                     print("Overview failed - invalid argument.")
             else:
@@ -1579,31 +1594,33 @@ def ea_problems():
     if no_rc_errors:
         print("No errors found :)")
 
-    input("\n\nPress Enter to continue...")
     print("Returning to main program.")
 
 
-def ea_overview(count):
+def ea_overview(count, subview="all"):
     ea_header("General Overview", big=True, trailing_newline=True)
     print(f"Total number of events: {count}\n")
     print("NB: Breakdown numbers will probably total to more than this as each event can have multiple of each group!!")
 
-    print("Breakdown by location:")
-    ea_subgroup_report(valid_records["location"], True)
+    if subview in ["all", "location"]:
+        print("Breakdown by location:")
+        ea_subgroup_report(valid_records["location"], True)
 
-    print("\nBreakdown by season:")
-    ea_group_report(valid_records["season"])
+    if subview in ["all", "season"]:
+        print("\nBreakdown by season:")
+        ea_group_report(valid_records["season"])
 
-    print("\nBreakdown by sub-type:")
-    ea_group_report(valid_records["sub_type"])
+    if subview in ["all", "subtype"]:
+        print("\nBreakdown by sub-type:")
+        ea_group_report(valid_records["sub_type"])
 
-    print("\nBreakdown by tags:")
-    ea_subgroup_report(valid_records["tags"], True)
+    if subview in ["all", "tags"]:
+        print("\nBreakdown by tags:")
+        ea_subgroup_report(valid_records["tags"], True)
 
-    print("\nBreakdown by accessory gained:")
-    ea_subgroup_report(valid_records["new_accessory"])
-
-    input("\n\nPress Enter to continue...")
+    if subview in ["all", "accessory"]:
+        print("\nBreakdown by accessory gained:")
+        ea_subgroup_report(valid_records["new_accessory"])
     print("Returning to main program.")
 
 
@@ -1763,13 +1780,18 @@ def ea_help():
     ea_header("Help", big=True)
     print('"help"/"h": Prints a list of commands in the tool (you\'re reading it currently!)')
     print('"intersect"/"i" [group1] [group2]:  Prints the number of events that are in BOTH input groups.\n'
-          + f"{indent}{indent}{indent}" + 'Use dot notation (e.g. season.any). Optional argument "-d" to '
+          + f"{indent}{indent}{indent}" + 'Use dot notation (e.g. season.any). Optional argument "id" to '
           + 'print a list of matching event IDs.')
     print('"details"/"d" [group]: Prints every event ID matching that tag.')
-    print('"overview"/"o" [type]: Prints an overview of events, broken down in broad categories.')
-    print(f"{indent}{indent}{indent}\"g\" - general")
-    print(f"{indent}{indent}{indent}\"m\" - m_c tags")
-    print(f"{indent}{indent}{indent}\"r\" - r_c tags")
+    print('"overview"/"o" [type]: Prints an overview of events, broken down in broad categories. Accepted types:')
+    print(f"{indent}{indent}{indent}\"g\" - general (all except m_c and r_c)")
+    print(f"{indent}{indent}{indent}\"location\" - location")
+    print(f"{indent}{indent}{indent}\"season\" - season")
+    print(f"{indent}{indent}{indent}\"subtype\" - subtype")
+    print(f"{indent}{indent}{indent}\"tags\" - tags")
+    print(f"{indent}{indent}{indent}\"accessory\" - accessories")
+    print(f"{indent}{indent}{indent}\"m\" - m_c tags (opens submenu)")
+    print(f"{indent}{indent}{indent}\"r\" - r_c tags (opens submenu)")
     print('"problems"/"p": Prints a list of all errors identified by the tool, broken down by category.')
     print('"quit"/"q": Quit the tool.')
 
