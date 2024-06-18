@@ -555,11 +555,33 @@ class ListScreen(Screens):
                 manager=MANAGER
             )
         else:
-            self.cat_display.text_theme = (
-                get_text_box_theme("#text_box_30_horizcenter")
-                if self.death_status == "living"
-                else "#text_box_30_horizcenter_light")
-            self.cat_display.update_display(current_page=self.current_page, cat_list=self.current_listed_cats)
+            if self.cat_display.relative_rect != "Rect(0, 0, 710, 480)":
+                self.cat_display.kill()
+                self.cat_display = UINamedCatListDisplay(
+                    scale(pygame.Rect((0, 0), (0, 0))),
+                    container=self.cat_display_container,
+                    object_id="#cat_list_display",
+                    starting_height=1,
+                    cat_list=self.current_listed_cats,
+                    cats_displayed=20,
+                    x_px_between=240,
+                    y_px_between=200,
+                    columns=5,
+                    prev_button=self.display_container_elements["previous_page_button"],
+                    next_button=self.display_container_elements["next_page_button"],
+                    first_button=self.display_container_elements["first_page_button"],
+                    last_button=self.display_container_elements["last_page_button"],
+                    current_page=self.current_page,
+                    text_theme=get_text_box_theme("#text_box_30_horizcenter") if self.death_status == "living"
+                    else "#text_box_30_horizcenter_light",
+                    manager=MANAGER
+                )
+            else:
+                self.cat_display.text_theme = (
+                    get_text_box_theme("#text_box_30_horizcenter")
+                    if self.death_status == "living"
+                    else "#text_box_30_horizcenter_light")
+                self.cat_display.update_display(current_page=self.current_page, cat_list=self.current_listed_cats)
 
         self.set_bg_and_heading()
 
