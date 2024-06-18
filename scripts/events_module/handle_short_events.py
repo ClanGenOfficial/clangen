@@ -134,7 +134,7 @@ class HandleShortEvents():
         except IndexError:
             # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
             print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name} "
-                  f"and {self.random_cat.name}")
+                  f"and {self.random_cat.name if self.random_cat else 'no random cat'}")
             return
 
         self.text = self.chosen_event.text
