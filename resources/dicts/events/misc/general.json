@@ -490,7 +490,7 @@
   {
     "event_id": "gen_misc_leafbare_misc1",
     "location": ["any"],
-    "season": ["leafbare"],
+    "season": ["leaf-bare"],
     "weight": 20,
     "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
     "m_c": {
@@ -2556,11 +2556,15 @@
       "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"]
     },
-    "supplies": {
-      "type": "any_herb",
-      "trigger": ["low"],
-      "amount": "increase_5"
-    }
+    "supplies": [
+      {
+        "type": "any_herb",
+        "trigger": [
+          "low"
+        ],
+        "adjust": "increase_5"
+      }
+    ]
   },
   {
     "event_id": "gen_misc_any_medicinecatmedcatapp1",
@@ -2926,7 +2930,7 @@
     ]
   },
   {
-    "event_id": "gen_misc_freshkill_anystolen1",
+    "event_id": "gen_misc_freshkill_anystolen2",
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
@@ -3112,7 +3116,7 @@
     }
   },
   {
-    "event_id": "gen_misc_herb_anyallyrequeslungwort2",
+    "event_id": "gen_misc_herb_anyallyrequeslungwort4",
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],

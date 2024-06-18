@@ -13,7 +13,7 @@ from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
+from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text, chunks
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
 from .Screens import Screens
@@ -634,14 +634,14 @@ class ProfileScreen(Screens):
             self.generate_column1(self.the_cat),
             scale(pygame.Rect((600, 460), (360, 380))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=0.95,
+            line_spacing=1,
             manager=MANAGER,
         )
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
             self.generate_column2(self.the_cat),
             scale(pygame.Rect((980, 460), (500, 360))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=0.95,
+            line_spacing=1,
             manager=MANAGER,
         )
 

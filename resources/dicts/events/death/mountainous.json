@@ -1,6 +1,6 @@
 [
   {
-        "event_id": "gen_death_bury_multi1",
+        "event_id": "mtn_death_bury_multicamp1",
         "location": ["mountainous:camp1"],
         "season": [
             "leaf-fall",
