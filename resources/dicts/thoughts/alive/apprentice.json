@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_warrior_app",
+      "id": "warrior_apprentice_gen",
         "thoughts":[
             "Feels worn out from training",
             "Wonders if {PRONOUN/m_c/subject}'ll be allowed to go night-hunting soon",
@@ -19,18 +19,6 @@
             "Practices {PRONOUN/m_c/poss} highest jump",
             "Practices {PRONOUN/m_c/poss} farthest leap",
             "Feels proud of {PRONOUN/m_c/self} for doing so well in training today",
-            "Is gossiping",
-            "Is acting angsty",
-            "Is dreading {PRONOUN/m_c/poss} apprentice duties",
-            "Fell into the nearby creek yesterday and is still feeling damp",
-            "Is having a hard time keeping up with {PRONOUN/m_c/poss} training",
-            "Was tasked with lining nests with fresh moss today",
-            "Is dreaming of someday making {PRONOUN/m_c/poss} Clan proud",
-            "Is thinking about the time {PRONOUN/m_c/subject} caught a huge rabbit",
-            "Practices some battle moves",
-            "Is helping to reinforce the camp wall with brambles",
-            "Is daydreaming about having a mate and kits someday",
-            "Had quite the adventure today",
             "Is thinking about how cool it will be when {PRONOUN/m_c/subject} {VERB/m_c/are/is} a warrior",
             "Wants to become a fierce warrior someday",
             "Wants to learn as many fighting techniques as {PRONOUN/m_c/subject} can",
@@ -50,7 +38,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_deputy",
+      "id": "warrior_apprentice_to_alive_deputy",
         "thoughts": [
             "Wants r_c to assign {PRONOUN/m_c/object} to the next patrol",
             "Is watching and learning from r_c",
@@ -65,7 +53,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_warrior",
+      "id": "warrior_apprentice_to_alive_warrior",
         "thoughts": [
             "Is watching and learning from r_c",
             "Is asking r_c questions about warrior life",
@@ -84,7 +72,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_mentor",
+      "id": "warrior_apprentice_to_alive_mentor",
         "thoughts": [
             "Is trying to perfect the latest move that r_c taught {PRONOUN/m_c/object}",
             "Is asking r_c questions",
@@ -101,7 +89,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_apprentice",
+      "id": "warrior_apprentice_to_alive_apprentice",
         "thoughts": [
             "Is learning how to hunt with r_c",
             "Teases r_c for missing an easy catch",
@@ -127,7 +115,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_elder",
+      "id": "warrior_apprentice_to_alive_elder",
         "thoughts":[
             "Is dreading having to clean the elders' den later",
             "Is picking ticks off of r_c",
@@ -151,7 +139,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_kits",
+      "id": "warrior_apprentice_to_alive_kits",
         "thoughts":[
             "Leaves fresh-kill outside the nursery for the kits",
             "Is showing r_c the proper way to do a hunter's crouch",
@@ -171,7 +159,7 @@
         ]
     },
     {
-        "id": "apprentice_dead_warrior",
+      "id": "warrior_apprentice_to_dead_warrior",
         "thoughts": [
             "Wishes {PRONOUN/m_c/subject} could learn from r_c",
             "Wants to be a great warrior, just like r_c"
@@ -184,7 +172,7 @@
         ]
     },
     {
-        "id": "formerly_a_rogue_warrior_apprentice",
+      "id": "formerly_rogue_warrior_apprentice",
         "thoughts": [
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
             "Has some trouble adjusting",
@@ -345,7 +333,7 @@
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
             "Drew blood during {PRONOUN/m_c/poss} battle training",
-            "Sinks {PRONOUN/m_c/poss} teeth into prey, pretending its another cat's pelt",
+          "Sinks {PRONOUN/m_c/poss} teeth into prey, pretending it's another cat's pelt",
             "Is caught playing with {PRONOUN/m_c/poss} prey instead of hunting",
             "Is cleaning blood from {PRONOUN/m_c/poss} claws",
             "Is hissing defiantly at r_c",
@@ -353,7 +341,7 @@
             "Is glaring at r_c",
             "Is covered in prey-blood after hunting",
             "Is clawing up moss for fun",
-            "Is asking what deathberries look like... for safety reasons of course",
+          "Is asking what deathberries look like - for safety reasons, of course...",
             "Hopes to get a scar from battle"
 
         ],
@@ -412,7 +400,8 @@
             "childish"
         ]
     },
-    { "id": "childish_apprentice_elder",
+  {
+    "id": "childish_apprentice_to_elder",
         "thoughts": [
             "Pouts about being asked to check the elders for ticks",
             "Is hiding instead of taking care of the elders",
