@@ -102,6 +102,9 @@ class History:
                     "victim": ID,
                     "revealed": bool,
                     "moon": moon
+                    "revealed_by": ID of the discoverer
+                    "revelation_moon": moon the murder was revealed
+                    "revelation_text": revealed death history
                     },
                 ]
             "is_victim": [
@@ -110,7 +113,10 @@ class History:
                     "revealed": bool,
                     "text": same text as the death history for this murder (revealed history)
                     "unrevealed_text": unrevealed death history
-                    "moon": moon
+                    "moon": moon the murder occurred
+                    "revealed_by": ID of the discoverer
+                    "revelation_moon": moon the murder was revealed
+                    "revelation_text": revealed death history
                     },
                 ]
             }
@@ -677,10 +683,10 @@ class History:
                 victim_history["revelation_moon"] = game.clan.age
                 if not other_cat:
                     victim_history["revelation_text"] = \
-                        "The truth of their murder is known to the Clan."
+                        "The truth of {PRONOUN/m_c/poss} murder is known to the Clan."
                 else:
                     victim_history["revelation_text"] = \
-                        "The truth of their murder was discovered by [discoverer]."
+                        "The truth of {PRONOUN/m_c/poss} murder was discovered by [discoverer]."
 
                 discoverer: str = ""
                 if other_cat:
