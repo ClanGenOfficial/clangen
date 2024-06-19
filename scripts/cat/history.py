@@ -101,10 +101,10 @@ class History:
                     {
                     "victim": ID,
                     "revealed": bool,
-                    "moon": moon
+                    "moon": moon the murder occurred
                     "revealed_by": ID of the discoverer
                     "revelation_moon": moon the murder was revealed
-                    "revelation_text": revealed death history
+                    "revelation_text": revealed murder history
                     },
                 ]
             "is_victim": [
