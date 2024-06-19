@@ -2,7 +2,6 @@
 # -*- coding: ascii -*-
 import random
 from copy import deepcopy
-from itertools import combinations
 from itertools import repeat
 from os.path import exists as path_exists
 from random import choice, randint, choices
@@ -24,6 +23,7 @@ from scripts.utility import (
     process_text,
     adjust_prey_abbr,
     find_special_list_types,
+    filter_relationship_type,
     get_special_snippet_list,
 )
 
@@ -43,7 +43,7 @@ class Patrol:
         self.patrol_event: PatrolEvent = None
 
         self.patrol_leader = None
-        self.patrol_random_cat = None
+        self.random_cat = None
         self.patrol_cats = []
         self.patrol_apprentices = []
         self.other_clan = None
@@ -91,7 +91,7 @@ class Patrol:
         if romantic_event_choice and Patrol.decide_if_romantic(
             romantic_event_choice,
             self.patrol_leader,
-            self.patrol_random_cat,
+            self.random_cat,
             self.patrol_apprentices,
         ):
             print("did the romance")
@@ -213,14 +213,14 @@ class Patrol:
         # DETERMINE RANDOM CAT
         # Find random cat
         if len(patrol_cats) > 1:
-            self.patrol_random_cat = choice(
+            self.random_cat = choice(
                 [i for i in patrol_cats if i != self.patrol_leader]
             )
         else:
-            self.patrol_random_cat = choice(patrol_cats)
+            self.random_cat = choice(patrol_cats)
 
         print("Patrol Leader:", str(self.patrol_leader.name))
-        print("Random Cat:", str(self.patrol_random_cat.name))
+        print("Random Cat:", str(self.random_cat.name))
 
     def get_possible_patrols(
         self,
@@ -271,7 +271,8 @@ class Patrol:
             clan_hostile = True
         elif 7 <= clan_relations <= 17:
             clan_neutral = True
-        other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
+        # this is just for separating them a bit from the other patrols, it means they can always happen
+        other_clan_chance = 1
         # chance for each kind of loner event to occur
         small_clan = False
         if not other_clan:
@@ -391,7 +392,10 @@ class Patrol:
         return final_patrols, final_romance_patrols
 
     def _check_constraints(self, patrol: PatrolEvent) -> bool:
-        if not self._filter_relationship(patrol):
+        if not filter_relationship_type(group=self.patrol_cats,
+                                        filter_types=patrol.relationship_constraints,
+                                        event_id=patrol.patrol_id,
+                                        patrol_leader=self.patrol_leader):
             return False
 
         if (
@@ -940,7 +944,7 @@ class Patrol:
 
         return all_patrol_events
 
-    def determine_outcome(self, antagonize=False) -> Tuple[str]:
+    def determine_outcome(self, antagonize=False):
 
         if self.patrol_event is None:
             return
@@ -1246,15 +1250,15 @@ class Patrol:
         replace_dict = {
             "p_l": (str(self.patrol_leader.name), choice(self.patrol_leader.pronouns)),
             "r_c": (
-                str(self.patrol_random_cat.name),
-                choice(self.patrol_random_cat.pronouns),
+                str(self.random_cat.name),
+                choice(self.random_cat.pronouns),
             ),
         }
 
         other_cats = [
             i
             for i in self.patrol_cats
-            if i not in [self.patrol_leader, self.patrol_random_cat]
+            if i not in [self.patrol_leader, self.random_cat]
         ]
         if len(other_cats) >= 1:
             replace_dict["o_c1"] = (
@@ -1462,73 +1466,8 @@ class Patrol:
             )
             text = text.replace(list_type, str(sign_list))
 
+        #TODO: check if this can be handled in event_text_adjust
         return text
-
-    # ---------------------------------------------------------------------------- #
-    #                                   Handlers                                   #
-    # ---------------------------------------------------------------------------- #
-
-    def handle_history(
-        self, cat, condition=None, possible=False, scar=False, death=False
-    ):
-        """
-        this handles the scar and death history of the cat
-        :param cat: the cat gaining the history
-        :param condition: if the history is related to a condition, include its name here
-        :param possible: if you want the history added to the possible scar/death then set this to True, defaults to False
-        :param scar: if you want the scar history added set this to True, default is False
-        :param death: if you want the death history added set this to True, default is False
-        """
-        if not self.patrol_event.history_text:
-            print(
-                f"WARNING: No history found for {self.patrol_event.patrol_id}, it may not need one but double check please!"
-            )
-        if scar and "scar" in self.patrol_event.history_text:
-            adjust_text = self.patrol_event.history_text["scar"]
-            adjust_text = adjust_text.replace(
-                "o_c_n", f"{str(self.other_clan.name)}Clan"
-            )
-            adjust_text = process_text(
-                adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))}
-            )
-            if possible:
-                History.add_possible_history(
-                    cat, condition=condition, scar_text=adjust_text
-                )
-            else:
-                History.add_scar(cat, adjust_text)
-        if death:
-            if cat.status == "leader":
-                if "lead_death" in self.patrol_event.history_text:
-                    adjust_text = self.patrol_event.history_text["lead_death"]
-                    adjust_text = adjust_text.replace(
-                        "o_c_n", f"{str(self.other_clan.name)}Clan"
-                    )
-                    adjust_text = process_text(
-                        adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))}
-                    )
-                    if possible:
-                        History.add_possible_history(
-                            cat, condition=condition, death_text=adjust_text
-                        )
-                    else:
-                        History.add_death(cat, adjust_text)
-            else:
-                if "reg_death" in self.patrol_event.history_text:
-                    adjust_text = self.patrol_event.history_text["reg_death"]
-                    adjust_text = adjust_text.replace(
-                        "o_c_n", f"{str(self.other_clan.name)}Clan"
-                    )
-                    adjust_text = process_text(
-                        adjust_text, {"r_c": (str(cat.name), choice(cat.pronouns))}
-                    )
-                    if possible:
-                        History.add_possible_history(
-                            cat, condition=condition, death_text=adjust_text
-                        )
-                    else:
-                        History.add_death(cat, adjust_text)
-
 
 # ---------------------------------------------------------------------------- #
 #                               PATROL CLASS END                               #

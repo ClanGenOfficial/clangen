@@ -4,7 +4,9 @@ from re import sub
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import create_example_cats, Cat
+from scripts.utility import get_text_box_theme, scale
+from scripts.clan import Clan
+from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.game_structure import image_cache
@@ -15,7 +17,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale
 from .Screens import Screens
@@ -209,10 +211,21 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["cruel_mode_button"]:
             self.game_mode = "cruel season"
             self.refresh_text_and_buttons()
-        # When the next_step button is pressed, go to the Clan naming page.
-        elif event.ui_element == self.elements["next_step"]:
-            game.settings["game_mode"] = self.game_mode
-            self.open_name_clan()
+
+        # Logic for when to quick start clan
+        elif event.ui_element == self.elements['next_step']:
+            game.settings['game_mode'] = self.game_mode
+            if '#checked_checkbox' in self.elements['random_clan_checkbox'].object_ids:
+                self.random_quick_start()
+                self.save_clan()
+                self.open_clan_saved_screen()
+            else:
+                self.open_name_clan()
+        elif event.ui_element == self.elements['random_clan_checkbox']:
+            if '#checked_checkbox' in self.elements['random_clan_checkbox'].object_ids:
+                self.elements['random_clan_checkbox'].change_object_id("#unchecked_checkbox")
+            else:
+                self.elements['random_clan_checkbox'].change_object_id("#checked_checkbox")
 
     def handle_game_mode_key(self, event):
         if event.key == pygame.K_ESCAPE:
@@ -237,9 +250,7 @@ class MakeClanScreen(Screens):
 
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
-            clan_names = names.names_dict["normal_prefixes"]
-            clan_names.extend(names.names_dict["clan_prefixes"])
-            self.elements["name_entry"].set_text(choice(clan_names))
+            self.elements["name_entry"].set_text(self.random_clan_name())
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements["next_step"]:
@@ -466,12 +477,7 @@ class MakeClanScreen(Screens):
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements["random_background"]:
             # Select a random biome and background
-            old_biome = self.biome_selected
-            possible_biomes = ["Forest", "Mountainous", "Plains", "Beach"]
-            # ensuring that the new random camp will not be the same one
-            if old_biome is not None:
-                possible_biomes.remove(old_biome)
-            self.biome_selected = choice(possible_biomes)
+            self.biome_selected = self.random_biome_selection()
             if self.biome_selected in ['Forest', "Mountainous"]:
                 self.selected_camp_tab = randrange(1, 5)
             else:
@@ -1112,6 +1118,39 @@ class MakeClanScreen(Screens):
         if self.symbol_selected in self.symbol_buttons:
             self.symbol_buttons[self.symbol_selected].disable()
 
+    def random_quick_start(self):
+        self.clan_name = self.random_clan_name()
+        self.biome_selected = self.random_biome_selection()
+        if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
+            # Use recommended symbol if it exists
+            self.symbol_selected = f"symbol{self.clan_name.upper()}0"
+        else:
+            self.symbol_selected = choice(sprites.clan_symbols)
+        self.leader = create_cat(status='warrior')
+        self.deputy = create_cat(status='warrior')
+        self.med_cat = create_cat(status='warrior')
+        for _ in range(randrange(4, 8)):
+            random_status = choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder'])
+            self.members.append(create_cat(status=random_status))
+
+    def random_clan_name(self):
+        clan_names = names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
+        while True:
+            chosen_name = choice(clan_names)
+            if chosen_name.casefold() not in [clan.casefold() for clan in game.switches['clan_list']]:
+                return chosen_name
+            print("Generated clan name was already in use! Rerolling...")
+    
+    def random_biome_selection(self):
+        # Select a random biome and background
+        old_biome = self.biome_selected
+        possible_biomes = ['Forest', 'Mountainous', 'Plains', 'Beach']
+        # ensuring that the new random camp will not be the same one
+        if old_biome is not None:
+            possible_biomes.remove(old_biome)
+        chosen_biome = choice(possible_biomes)
+        return chosen_biome
+
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
@@ -1141,6 +1180,7 @@ class MakeClanScreen(Screens):
         )
 
         # Create all the elements.
+
         self.elements["classic_mode_button"] = UIImageButton(
             scale(pygame.Rect((218, 480), (264, 60))),
             "",
@@ -1171,6 +1211,18 @@ class MakeClanScreen(Screens):
             "",
             object_id="#next_step_button",
             manager=MANAGER,
+        )
+        self.elements['random_clan_checkbox'] = UIImageButton(
+          scale(pygame.Rect((1120, 1240), (68, 68))), "",
+          object_id="#unchecked_checkbox",
+          manager=MANAGER,
+          tool_tip_text= "When checked, a completely random Clan starting in Newleaf will be generated."
+        )
+
+        self.elements['random_clan_checkbox_label'] = pygame_gui.elements.UILabel(
+          scale(pygame.Rect((1200, 1246), (-1, -1))), "Quick Start",
+          manager=MANAGER,
+          object_id=get_text_box_theme("#text_box_30_horizleft")
         )
         self.elements["mode_details"] = pygame_gui.elements.UITextBox(
             "",

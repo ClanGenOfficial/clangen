@@ -2,13 +2,14 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import (
+from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
     UITextBoxTweaked,
 )
-from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit
+from scripts.utility import get_text_box_theme, scale, get_alive_status_cats, shorten_text_to_fit, get_living_clan_cat_count
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
@@ -327,29 +328,28 @@ class MedDenScreen(Screens):
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
 
             herb_amount = sum(game.clan.herbs.values())
+            needed_amount = int(get_living_clan_cat_count(Cat) * 4)
             med_concern = f"This should not appear."
             if herb_amount == 0:
-                med_concern = (
-                    f"The herb stores are empty and bare, this does not bode well."
-                )
-            elif 0 < herb_amount <= 8:
+                med_concern = f"The herb stores are empty and bare, this does not bode well."
+            elif 0 < herb_amount <= needed_amount / 4:
                 if len(self.meds) == 1:
                     med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
                 else:
                     med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
-            elif 8 < herb_amount <= 20:
+            elif needed_amount / 4 < herb_amount <= needed_amount / 2:
                 med_concern = f"The herb stores are small, but it's enough for now."
-            elif 20 < herb_amount <= 30:
+            elif needed_amount / 2 < herb_amount <= needed_amount:
                 if len(self.meds) == 1:
                     med_concern = f"The medicine cat is content with how many herbs they have stocked up."
                 else:
                     med_concern = f"The medicine cats are content with how many herbs they have stocked up."
-            elif 30 < herb_amount <= 50:
+            elif needed_amount < herb_amount <= needed_amount * 2:
                 if len(self.meds) == 1:
                     med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
                 else:
                     med_concern = f"The herb stores are overflowing and the medicine cats have little worry."
-            elif 50 < herb_amount:
+            elif needed_amount * 2 < herb_amount:
                 if len(self.meds) == 1:
                     med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cat sends their thanks to Silverpelt."
                 else:
@@ -406,7 +406,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_med_cats(Cat, working=False)
+        self.meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"],sort=True)
 
         if not self.meds:
             all_pages = []

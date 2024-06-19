@@ -3,9 +3,10 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.events_module.freshkill_pile_events import Freshkill_Events
+
+from ..events_module.condition_events import Condition_Events
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import (
+from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
     UITextBoxTweaked,
@@ -87,9 +88,7 @@ class ClearingScreen(Screens):
                     ].current_score
                     amount = max_amount - current_amount
                 game.clan.freshkill_pile.feed_cat(self.focus_cat_object, amount, 0)
-                Freshkill_Events.handle_nutrient(
-                    self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
-                )
+                Condition_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
                 self.update_cats_list()
                 self.update_nutrition_cats()
                 self.update_focus_cat()
