@@ -3,7 +3,7 @@ import pygame
 from scripts.cat.sprites import sprites
 
 
-class StarClan:
+class DeadClan:
     """
     The ClanGen afterlife!
     """
