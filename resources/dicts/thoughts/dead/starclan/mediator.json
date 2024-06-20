@@ -3,7 +3,7 @@
         "id": "gen_dead_mediator",
         "thoughts": [
             "Is proud of {PRONOUN/m_c/poss} work as c_n's mediator, and hopes that {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} behind a legacy of peace",
-            "Is a bit exasperated upon watching c_n cats' arguments",
+            "Is a bit exasperated upon watching c_n's arguments",
             "Wishes {PRONOUN/m_c/subject} could help r_c solve {PRONOUN/r_c/poss} conflicts",
             "Is eagerly listening to gossip surrounding another Clan",
             "Wants to solve the disagreements between c_n and the surrounding Clans",
@@ -13,7 +13,7 @@
     {
         "id": "childish_mediator",
         "thoughts": [
-            "Is bored and is trying to use {PRONOUN/m_c/poss} skills to create drama in StarClan",
+            "Is bored and trying to use {PRONOUN/m_c/poss} skills to create drama in StarClan",
             "Is getting reprimanded by another StarClan cat for walking in r_c's dreams to meddle with {PRONOUN/r_c/poss} relationships",
             "Is secretly entertained as {PRONOUN/m_c/subject} {VERB/m_c/help/helps} resolve some conflicts with other StarClan cats"
         ],
