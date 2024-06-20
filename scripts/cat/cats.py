@@ -827,8 +827,6 @@ class Cat:
                 only be true for non-timeskip status changes."""
 
         old_status = self.status
-        self.status = new_status
-        self.name.status = new_status
 
         self.update_mentor()
         for app in self.apprentice.copy():
@@ -863,6 +861,9 @@ class Cat:
                 if game.clan.deputy.ID == self.ID:
                     game.clan.deputy = None
                     game.clan.deputy_predecessors += 1
+
+        self.status = new_status
+        self.name.status = new_status
 
         # update class dictionary
         self.all_cats[self.ID] = self
