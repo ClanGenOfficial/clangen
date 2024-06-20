@@ -1,8 +1,8 @@
 import pygame
 import pygame_gui
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
-
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -17,7 +17,6 @@ from scripts.utility import (
     get_alive_clan_queens,
 )
 from .Screens import Screens
-from scripts.cat.enums.status import Status
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
@@ -649,7 +648,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], sort=True)
+        self.meds = get_alive_status_cats(Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], sort=True)
 
         if not self.meds:
             all_pages = []

@@ -1,7 +1,7 @@
 import random
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure.game_essentials import game
@@ -163,7 +163,7 @@ class DisasterEvents():
 
         leader = Cat.fetch_cat(game.clan.leader)
         deputy = Cat.fetch_cat(game.clan.deputy)
-        med_cats = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], sort=True)
+        med_cats = get_alive_status_cats(Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], sort=True)
 
         # checking if there are cats of the specified rank
         if not leader.dead and not leader.outside:
