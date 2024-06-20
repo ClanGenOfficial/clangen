@@ -1,5 +1,5 @@
-from typing import Union, Tuple
 import html
+from typing import Union, Tuple
 
 import pygame
 import pygame_gui
@@ -13,7 +13,6 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
-
 from scripts.utility import scale, shorten_text_to_fit
 
 
@@ -261,6 +260,17 @@ class UISpriteButton:
             tool_tip_text=tool_tip_text,
             container=container,
         )
+        highlight_outline = relative_rect.inflate(2.5, 2.5)
+        highlight_surface = pygame.image.load("resources/images/selected_cat_frame.png").convert_alpha()
+        # highlight_surface.fill((255, 0, 0, 64))
+        self.highlight = pygame_gui.elements.UIImage(
+            relative_rect=highlight_outline,
+            image_surface=highlight_surface,
+            manager=manager,
+            container=container,
+            visible=False
+        )
+        self.highlight.disable()
 
     def return_cat_id(self):
         return self.button.return_cat_id()
@@ -277,6 +287,7 @@ class UISpriteButton:
     def hide(self):
         self.image.hide()
         self.button.hide()
+        self.highlight.hide()
 
     def show(self):
         self.image.show()
@@ -285,6 +296,7 @@ class UISpriteButton:
     def kill(self):
         self.button.kill()
         self.image.kill()
+        self.highlight.kill()
         del self
 
     def set_image(self, new_image):
@@ -716,6 +728,9 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         self._chunk()
         self._display_cats()
 
+        self._pointerfocus = 0
+        self.pointer = None
+
     def update_display(self, current_page: int, cat_list: list):
         """
         updates current_page and refreshes the cat display
@@ -806,6 +821,44 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             if self.first_button:
                 self.first_button.enable()
                 self.last_button.enable()
+
+    def handle_keybinds(self, key):
+        # only run this if keybinds are enabled
+        if not game.settings['keybinds']:
+            return
+
+    def move_pointer(self, direction):
+        if direction == "left":
+            self.pointerfocus = self.pointerfocus - 1
+        elif direction == "right":
+            self.pointerfocus = self.pointerfocus + 1
+        elif direction == "down":
+            self.pointerfocus = self.pointerfocus + self.columns
+        elif direction == "up":
+            self.pointerfocus = self.pointerfocus - self.columns
+        else:
+            return
+
+        if self.pointerfocus < 0:
+            self.pointerfocus = 0
+        if self.pointerfocus > self.cats_displayed:
+            self.pointerfocus = self.cats_displayed
+
+    @property
+    def pointerfocus(self):
+        return self._pointerfocus
+
+    @pointerfocus.setter
+    def pointerfocus(self, val):
+        if val < 0:
+            return
+        elif val >= self.cats_displayed:
+            return
+        self.cat_sprites[f"sprite{self._pointerfocus}"].highlight.hide()
+        self._pointerfocus = val
+        self.cat_sprites[f"sprite{self._pointerfocus}"].highlight.show()
+
+
 
 
 class UINamedCatListDisplay(UIBasicCatListDisplay):
