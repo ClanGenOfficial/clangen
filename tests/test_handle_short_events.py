@@ -44,33 +44,33 @@ class TestHandleAccessories(unittest.TestCase):
         setattr(self.test.chosen_event, "new_accessory", ["WILD"])
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertIn(self.test.main_cat.pelt.accessory, self.pelt_class.wild_accessories)
+        self.assertIn(self.test.main_cat.pelt.accessory, ["TEST_WILD"])
 
     def test_cat_gets_random_plant_accessory(self):
         setattr(self.test.chosen_event, "new_accessory", ["PLANT"])
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertIn(self.test.main_cat.pelt.accessory, self.pelt_class.plant_accessories)
+        self.assertIn(self.test.main_cat.pelt.accessory, ["TEST_PLANT"])
 
     def test_cat_gets_random_collar_accessory(self):
         setattr(self.test.chosen_event, "new_accessory", ["COLLAR"])
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertIn(self.test.main_cat.pelt.accessory, self.pelt_class.collars)
+        self.assertIn(self.test.main_cat.pelt.accessory, ["TEST_COLLAR"])
 
     def test_notail_cats_do_not_get_tail_accessories(self):
         setattr(self.test.chosen_event, "new_accessory", ["TEST_TAIL"])
         self.test.main_cat.pelt.scars = "NOTAIL"
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertNotIn(self.test.main_cat.pelt.accessory, self.pelt_class.tail_accessories)
+        self.assertNotIn(self.test.main_cat.pelt.accessory, ["TEST_TAIL"])
 
     def test_halftail_cats_do_not_get_tail_accessories(self):
         setattr(self.test.chosen_event, "new_accessory", ["TEST_TAIL"])
         self.test.main_cat.pelt.scars = "HALFTAIL"
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertNotIn(self.test.main_cat.pelt.accessory, self.pelt_class.tail_accessories)
+        self.assertNotIn(self.test.main_cat.pelt.accessory, ["TEST_TAIL"])
 
 
 class TestHandleDeath(unittest.TestCase):
