@@ -1,8 +1,6 @@
-import random
 import unittest
 
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import Pelt
 from scripts.events_module.handle_short_events import HandleShortEvents
 
 
@@ -19,11 +17,16 @@ class TestHandleAccessories(unittest.TestCase):
     def setUpClass(cls):
         # Mock classes
         cls.event_class = type('EventClass', (object,), {})
+        cls.pelt_class = type('PeltClass', (object,), {})
 
     def setUp(self):
         self.test = HandleShortEvents()
         self.test.chosen_event = self.event_class()
         self.test.main_cat = Cat()
+        setattr(self.pelt_class, "wild_accessories", ["TEST_WILD"])
+        setattr(self.pelt_class, "plant_accessories", ["TEST_PLANT"])
+        setattr(self.pelt_class, "collars", ["TEST_COLLAR"])
+        setattr(self.pelt_class, "tail_accessories", ["TEST_TAIL"])
 
     def test_misc_appended_to_types(self):
         self.test.types = []
@@ -40,34 +43,34 @@ class TestHandleAccessories(unittest.TestCase):
     def test_cat_gets_random_wild_accessory(self):
         setattr(self.test.chosen_event, "new_accessory", ["WILD"])
 
-        self.test.handle_accessories()
-        self.assertIn(self.test.main_cat.pelt.accessory, Pelt.wild_accessories)
+        self.test.handle_accessories(pelts=self.pelt_class)
+        self.assertIn(self.test.main_cat.pelt.accessory, self.pelt_class.wild_accessories)
 
     def test_cat_gets_random_plant_accessory(self):
         setattr(self.test.chosen_event, "new_accessory", ["PLANT"])
 
-        self.test.handle_accessories()
-        self.assertIn(self.test.main_cat.pelt.accessory, Pelt.plant_accessories)
+        self.test.handle_accessories(pelts=self.pelt_class)
+        self.assertIn(self.test.main_cat.pelt.accessory, self.pelt_class.plant_accessories)
 
     def test_cat_gets_random_collar_accessory(self):
         setattr(self.test.chosen_event, "new_accessory", ["COLLAR"])
 
-        self.test.handle_accessories()
-        self.assertIn(self.test.main_cat.pelt.accessory, Pelt.collars)
+        self.test.handle_accessories(pelts=self.pelt_class)
+        self.assertIn(self.test.main_cat.pelt.accessory, self.pelt_class.collars)
 
     def test_notail_cats_do_not_get_tail_accessories(self):
-        setattr(self.test.chosen_event, "new_accessory", [random.choice(Pelt.tail_accessories)])
+        setattr(self.test.chosen_event, "new_accessory", ["TEST_TAIL"])
         self.test.main_cat.pelt.scars = "NOTAIL"
 
-        self.test.handle_accessories()
-        self.assertNotIn(self.test.main_cat.pelt.accessory, Pelt.tail_accessories)
+        self.test.handle_accessories(pelts=self.pelt_class)
+        self.assertNotIn(self.test.main_cat.pelt.accessory, self.pelt_class.tail_accessories)
 
     def test_halftail_cats_do_not_get_tail_accessories(self):
-        setattr(self.test.chosen_event, "new_accessory", [random.choice(Pelt.tail_accessories)])
+        setattr(self.test.chosen_event, "new_accessory", ["TEST_TAIL"])
         self.test.main_cat.pelt.scars = "HALFTAIL"
 
-        self.test.handle_accessories()
-        self.assertNotIn(self.test.main_cat.pelt.accessory, Pelt.tail_accessories)
+        self.test.handle_accessories(pelts=self.pelt_class)
+        self.assertNotIn(self.test.main_cat.pelt.accessory, self.pelt_class.tail_accessories)
 
 
 class TestHandleDeath(unittest.TestCase):
