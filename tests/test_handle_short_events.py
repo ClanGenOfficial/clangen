@@ -102,9 +102,37 @@ class TestHandleHerbSupply(unittest.TestCase):
 
 
 class TestReset(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Mock class
+        cls.handle = type('HandleShortEventsClass', (), dict(
+            herb_notice=None,
+            types=[],
+            sub_types=[],
+            text=None,
+            involved_cats=[],
+            main_cat=None,
+            random_cat=None,
+            new_cat_objects=[],
+            new_cats=[],
+            victim_cat=None,
+            murder_index=None,
+            multi_cat=[],
+            dead_cats=[],
+            chosen_herb=None,
+            other_clan=None,
+            other_clan_name=None,
+            chosen_event=None,
+            additional_event_text=""
+        ))
+
     def test_reset_resets_all_attributes_to_default_values(self):
-        # given
-        test = HandleShortEvents()
+        default = self.handle()
+        test = self.handle()
+        # Check these are 2 separate instances
+        self.assertNotEqual(test, default)
+
+        # Given
         test.herb_notice = "herb notice"
         test.types = ["type1", "type2"]
         test.sub_types = ["type1", "type2"]
@@ -113,7 +141,7 @@ class TestReset(unittest.TestCase):
         test.main_cat = "main cat"
         test.random_cat = "random cat"
         test.new_cat_objects = ["cat1", "cat2"]
-        test.new_cats = [["Cat()"]]
+        test.new_cats = [[Cat()]]
         test.victim_cat = "victim cat"
         test.murder_index = "murder index"
         test.multi_cat = ["cat1", "cat2"]
@@ -124,29 +152,10 @@ class TestReset(unittest.TestCase):
         test.chosen_event = "chosen event"
         test.additional_event_text = "additional event text"
 
-        # when
-        default = HandleShortEvents()
-        self.assertNotEqual(test.herb_notice, default.herb_notice)
-        self.assertNotEqual(test.types, default.types)
-        self.assertNotEqual(test.sub_types, default.sub_types)
-        self.assertNotEqual(test.text, default.text)
-        self.assertNotEqual(test.involved_cats, default.involved_cats)
-        self.assertNotEqual(test.main_cat, default.main_cat)
-        self.assertNotEqual(test.random_cat, default.random_cat)
-        self.assertNotEqual(test.new_cat_objects, default.new_cat_objects)
-        self.assertNotEqual(test.new_cats, default.new_cats)
-        self.assertNotEqual(test.victim_cat, default.victim_cat)
-        self.assertNotEqual(test.murder_index, default.murder_index)
-        self.assertNotEqual(test.multi_cat, default.multi_cat)
-        self.assertNotEqual(test.dead_cats, default.dead_cats)
-        self.assertNotEqual(test.chosen_herb, default.chosen_herb)
-        self.assertNotEqual(test.other_clan, default.other_clan)
-        self.assertNotEqual(test.other_clan_name, default.other_clan_name)
-        self.assertNotEqual(test.chosen_event, default.chosen_event)
-        self.assertNotEqual(test.additional_event_text, default.additional_event_text)
+        # When
+        HandleShortEvents.reset(test)
 
-        # then
-        test.reset()
+        # Then
         self.assertEqual(test.herb_notice, default.herb_notice)
         self.assertEqual(test.types, default.types)
         self.assertEqual(test.sub_types, default.sub_types)
