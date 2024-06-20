@@ -3,14 +3,14 @@ from copy import deepcopy
 
 import ujson
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
 from scripts.cat.history import History
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, MAL_PERCENTAGE, STARV_PERCENTAGE
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
     get_amount_cat_for_one_medic,
 )
-from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, MAL_PERCENTAGE, STARV_PERCENTAGE
 from scripts.event_class import Single_Event
 from scripts.events_module.handle_short_events import handle_short_events
 from scripts.events_module.scar_events import Scar_Events
@@ -18,7 +18,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,
     get_alive_status_cats,
-    get_leader_life_notice, get_random_moon_cat
+    get_leader_life_notice
 )
 
 
@@ -699,7 +699,7 @@ class Condition_Events:
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
 
-                    med_list = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], working=True)
+                    med_list = get_alive_status_cats(Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], working=True)
                     # If the cat is a med cat, don't consider them as one for the event.
 
                     if cat in med_list:
@@ -794,7 +794,7 @@ class Condition_Events:
 
                 # choose event string and ensure Clan's med cat number aligns with event text
                 random_index = int(random.random() * len(possible_string_list))
-                med_list = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], working=True,
+                med_list = get_alive_status_cats(Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], working=True,
                                                  sort=True)
                 med_cat = None
                 has_parents = False
@@ -1039,7 +1039,7 @@ class Condition_Events:
 
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = int(random.random() * len(possible_string_list))
-                    med_list = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], working=True,
+                    med_list = get_alive_status_cats(Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], working=True,
                                                      sort=True)
                     if len(med_list) == 0:
                         if random_index == 0:

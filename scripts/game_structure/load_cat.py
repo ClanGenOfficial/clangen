@@ -5,12 +5,12 @@ from random import choice
 
 import ujson
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat, Personality, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from .game_essentials import game
-from ..cat.enums.status import Status
 from ..cat.skills import CatSkills
 from ..housekeeping.datadir import get_save_dir
 
@@ -62,7 +62,7 @@ def json_load():
                     cat["specsuffix_hidden"] if "specsuffix_hidden" in cat else False
                 ),
                 gender=cat["gender"],
-                status=Status(cat["status"]),
+                status=enums.Status(cat["status"]),
                 parent1=cat["parent1"],
                 parent2=cat["parent2"],
                 moons=cat["moons"],

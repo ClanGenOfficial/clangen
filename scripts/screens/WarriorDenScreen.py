@@ -2,14 +2,13 @@ import pygame
 import pygame_gui
 import ujson
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import Status
+from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.utility import scale, get_text_box_theme, get_alive_status_cats
-
 
 with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
@@ -77,7 +76,7 @@ class WarriorDenScreen(Screens):
                             if len(mediator_list) < 1:
                                 self.save_button.disable()
                         elif "medicine cat" in description and self.save_button.is_enabled:
-                            meds = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP])
+                            meds = get_alive_status_cats(Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP])
                             if len(meds) < 1:
                                 self.save_button.disable()
 

@@ -4,9 +4,9 @@ import random
 
 import ujson
 
-from scripts.cat.enums.status import Status
+from scripts.cat import enums
 from scripts.game_structure.game_essentials import game
-from scripts.utility import filter_relationship_type, get_living_clan_cat_count,get_alive_status_cats
+from scripts.utility import filter_relationship_type, get_living_clan_cat_count, get_alive_status_cats
 
 resource_directory = "resources/dicts/events/"
 
@@ -313,8 +313,8 @@ class GenerateEvents:
                     continue
 
             discard = False
-            for status in Status:
-                status = Status(status)  # if anyone knows of a cleaner way of doing this, I am all ears.
+            for status in enums.Status:
+                status = enums.Status(status)  # if anyone knows of a cleaner way of doing this, I am all ears.
                 if f"clan:{str(status)}" in event.tags:
                     if status.is_deputy_or_leader() and not get_alive_status_cats(Cat_class, [status]):
                         discard = True
@@ -324,8 +324,9 @@ class GenerateEvents:
                 continue
 
             if "clan_apps" in event.tags and not get_alive_status_cats(Cat_class,
-                                                                       [Status.WARRIORAPP,
-                                                                        Status.MEDCATAPP, Status.MEDIATORAPP]):
+                                                                       [enums.Status.WARRIORAPP,
+                                                                        enums.Status.MEDCATAPP,
+                                                                        enums.Status.MEDIATORAPP]):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.

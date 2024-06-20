@@ -4,8 +4,7 @@ from re import sub
 import pygame
 import pygame_gui
 
-from scripts.utility import get_text_box_theme, scale
-from scripts.clan import Clan
+from scripts.cat import enums
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
@@ -21,7 +20,6 @@ from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale
 from .Screens import Screens
-from ..cat.enums.status import Status
 from ..cat.sprites import sprites
 from ..game_structure.windows import SymbolFilterWindow
 
@@ -1127,12 +1125,12 @@ class MakeClanScreen(Screens):
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
         else:
             self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(status=Status.WARRIOR)
-        self.deputy = create_cat(status=Status.WARRIOR)
-        self.med_cat = create_cat(status=Status.WARRIOR)
+        self.leader = create_cat(status=enums.Status.WARRIOR)
+        self.deputy = create_cat(status=enums.Status.WARRIOR)
+        self.med_cat = create_cat(status=enums.Status.WARRIOR)
         for _ in range(randrange(4, 8)):
-            random_status = choice([Status.KITTEN, Status.WARRIORAPP,
-                                    Status.WARRIOR, Status.WARRIOR, Status.ELDER])
+            random_status = choice([enums.Status.KITTEN, enums.Status.WARRIORAPP,
+                                    enums.Status.WARRIOR, enums.Status.WARRIOR, enums.Status.ELDER])
             self.members.append(create_cat(status=random_status))
 
     def random_clan_name(self):
