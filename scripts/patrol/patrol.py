@@ -11,7 +11,7 @@ import pygame
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.patrol.patrol_event import PatrolEvent
@@ -170,23 +170,23 @@ class Patrol:
 
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
-        if StatusEnum.MEDCAT in self.patrol_status_list:
-            index = self.patrol_status_list.index(StatusEnum.MEDCAT)
+        if Status.MEDCAT in self.patrol_status_list:
+            index = self.patrol_status_list.index(Status.MEDCAT)
             self.patrol_leader = self.patrol_cats[index]
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
-        elif StatusEnum.MEDCATAPP in self.patrol_status_list:
-            index = self.patrol_status_list.index(StatusEnum.MEDCATAPP)
+        elif Status.MEDCATAPP in self.patrol_status_list:
+            index = self.patrol_status_list.index(Status.MEDCATAPP)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
         # sets leader as patrol leader
-        elif StatusEnum.LEADER in self.patrol_status_list:
-            index = self.patrol_status_list.index(StatusEnum.LEADER)
+        elif Status.LEADER in self.patrol_status_list:
+            index = self.patrol_status_list.index(Status.LEADER)
             self.patrol_leader = self.patrol_cats[index]
-        elif StatusEnum.DEPUTY in self.patrol_status_list:
-            index = self.patrol_status_list.index(StatusEnum.DEPUTY)
+        elif Status.DEPUTY in self.patrol_status_list:
+            index = self.patrol_status_list.index(Status.DEPUTY)
             self.patrol_leader = self.patrol_cats[index]
         else:
             # Get the oldest cat
@@ -248,7 +248,7 @@ class Patrol:
         # this next one is needed for Classic specifically
         patrol_type = (
             "med"
-            if [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP] in self.patrol_status_list
+            if [Status.MEDCAT, Status.MEDCATAPP] in self.patrol_status_list
             else patrol_type
         )
         patrol_size = len(self.patrol_cats)

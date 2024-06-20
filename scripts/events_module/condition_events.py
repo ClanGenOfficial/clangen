@@ -4,7 +4,7 @@ from copy import deepcopy
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 from scripts.cat.history import History
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
@@ -699,7 +699,7 @@ class Condition_Events:
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
 
-                    med_list = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True)
+                    med_list = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], working=True)
                     # If the cat is a med cat, don't consider them as one for the event.
 
                     if cat in med_list:
@@ -794,7 +794,7 @@ class Condition_Events:
 
                 # choose event string and ensure Clan's med cat number aligns with event text
                 random_index = int(random.random() * len(possible_string_list))
-                med_list = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True,
+                med_list = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], working=True,
                                                  sort=True)
                 med_cat = None
                 has_parents = False
@@ -1039,7 +1039,7 @@ class Condition_Events:
 
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = int(random.random() * len(possible_string_list))
-                    med_list = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True,
+                    med_list = get_alive_status_cats(Cat, [Status.MEDCAT, Status.MEDCATAPP], working=True,
                                                      sort=True)
                     if len(med_list) == 0:
                         if random_index == 0:

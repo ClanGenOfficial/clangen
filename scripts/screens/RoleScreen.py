@@ -12,7 +12,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, shorten_text_to_fit
 from scripts.utility import scale
 from scripts.screens.Screens import Screens
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 
 
 class RoleScreen(Screens):
@@ -47,30 +47,30 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
                 game.clan.deputy = self.the_cat
-                self.the_cat.status_change(StatusEnum.DEPUTY, resort=True)
+                self.the_cat.status_change(Status.DEPUTY, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
-                self.the_cat.status_change(StatusEnum.WARRIOR, resort=True)
+                self.the_cat.status_change(Status.WARRIOR, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_med_cat:
-                self.the_cat.status_change(StatusEnum.MEDCAT, resort=True)
+                self.the_cat.status_change(Status.MEDCAT, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.retire:
-                self.the_cat.status_change(StatusEnum.ELDER, resort=True)
+                self.the_cat.status_change(Status.ELDER, resort=True)
                 # Since you can't "unretire" a cat, apply the skill and trait change
                 # here
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
-                self.the_cat.status_change(StatusEnum.MEDIATOR, resort=True)
+                self.the_cat.status_change(Status.MEDIATOR, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior_app:
-                self.the_cat.status_change(StatusEnum.WARRIORAPP, resort=True)
+                self.the_cat.status_change(Status.WARRIORAPP, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_med_app:
-                self.the_cat.status_change(StatusEnum.MEDCATAPP, resort=True)
+                self.the_cat.status_change(Status.MEDCATAPP, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator_app:
-                self.the_cat.status_change(StatusEnum.MEDIATORAPP, resort=True)
+                self.the_cat.status_change(Status.MEDIATORAPP, resort=True)
                 self.update_selected_cat()
         
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:

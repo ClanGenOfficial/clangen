@@ -4,7 +4,7 @@ import unittest
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 from scripts.conditions import medical_cats_condition_fulfilled
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -13,37 +13,37 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 class TestsMedCondition(unittest.TestCase):
     def test_fulfilled(self):
-        cat1 = Cat(moons=20, status=StatusEnum.WARRIOR)
-        med = Cat(moons=20, status=StatusEnum.MEDCAT)
+        cat1 = Cat(moons=20, status=Status.WARRIOR)
+        med = Cat(moons=20, status=Status.MEDCAT)
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
 
     def test_fulfilled_many_cats(self):
-        cat1 = Cat(moons=20, status=StatusEnum.WARRIOR)
-        cat2 = Cat(moons=20, status=StatusEnum.WARRIOR)
-        cat3 = Cat(moons=20, status=StatusEnum.WARRIOR)
-        cat4 = Cat(moons=20, status=StatusEnum.WARRIOR)
+        cat1 = Cat(moons=20, status=Status.WARRIOR)
+        cat2 = Cat(moons=20, status=Status.WARRIOR)
+        cat3 = Cat(moons=20, status=Status.WARRIOR)
+        cat4 = Cat(moons=20, status=Status.WARRIOR)
 
-        med1 = Cat(moons=20, status=StatusEnum.MEDCAT)
-        med2 = Cat(moons=20, status=StatusEnum.MEDCAT)
+        med1 = Cat(moons=20, status=Status.MEDCAT)
+        med2 = Cat(moons=20, status=Status.MEDCAT)
 
         all_cats = [cat1, cat2, cat3, cat4, med1, med2]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 2))
 
     def test_injured_fulfilled(self):
-        cat1 = Cat(moons=20, status=StatusEnum.WARRIOR)
+        cat1 = Cat(moons=20, status=Status.WARRIOR)
 
-        med = Cat(moons=20, status=StatusEnum.MEDCAT)
+        med = Cat(moons=20, status=Status.MEDCAT)
         med.injuries["small cut"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
 
     def test_illness_fulfilled(self):
-        cat1 = Cat(moons=20, status=StatusEnum.WARRIOR)
+        cat1 = Cat(moons=20, status=Status.WARRIOR)
 
-        med = Cat(moons=20, status=StatusEnum.MEDCAT)
+        med = Cat(moons=20, status=Status.MEDCAT)
         med.illnesses["running nose"] = {"severity": "minor"}
 
         all_cats = [cat1, med]

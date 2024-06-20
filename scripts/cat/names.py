@@ -6,7 +6,7 @@ import random
 
 import ujson
 
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -62,7 +62,7 @@ class Name:
                             names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
 
     def __init__(self,
-                 status=StatusEnum.WARRIOR,
+                 status=Status.WARRIOR,
                  prefix=None,
                  suffix=None,
                  colour=None,

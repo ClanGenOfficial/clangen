@@ -2,7 +2,7 @@ import os
 import unittest
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
     get_highest_romantic_relation,
@@ -187,17 +187,17 @@ class TestGetQueens(unittest.TestCase):
 
     def setUp(self) -> None:
         self.test_cat1 = Cat()
-        self.test_cat1.status = StatusEnum.WARRIOR
+        self.test_cat1.status = Status.WARRIOR
         self.test_cat2 = Cat()
-        self.test_cat2.status = StatusEnum.WARRIOR
+        self.test_cat2.status = Status.WARRIOR
         self.test_cat3 = Cat()
-        self.test_cat3.status = StatusEnum.WARRIOR
+        self.test_cat3.status = Status.WARRIOR
         self.test_cat4 = Cat()
-        self.test_cat4.status = StatusEnum.WARRIOR
+        self.test_cat4.status = Status.WARRIOR
         self.test_cat5 = Cat()
-        self.test_cat5.status = StatusEnum.WARRIOR
+        self.test_cat5.status = Status.WARRIOR
         self.test_cat6 = Cat()
-        self.test_cat6.status = StatusEnum.WARRIOR
+        self.test_cat6.status = Status.WARRIOR
 
     def tearDown(self) -> None:
         del self.test_cat1
@@ -212,13 +212,13 @@ class TestGetQueens(unittest.TestCase):
         # young enough kid
         self.test_cat1.gender = "female"
 
-        self.test_cat2.status = StatusEnum.KITTEN
+        self.test_cat2.status = Status.KITTEN
         self.test_cat2.parent1 = self.test_cat1.ID
 
         # too old kid
         self.test_cat3.gender = "female"
 
-        self.test_cat4.status = StatusEnum.WARRIORAPP
+        self.test_cat4.status = Status.WARRIORAPP
         self.test_cat4.parent1 = self.test_cat3.ID
 
         # then
@@ -230,13 +230,13 @@ class TestGetQueens(unittest.TestCase):
         # young enough kid
         self.test_cat1.gender = "male"
 
-        self.test_cat2.status = StatusEnum.KITTEN
+        self.test_cat2.status = Status.KITTEN
         self.test_cat2.parent1 = self.test_cat1.ID
 
         # too old kid
         self.test_cat3.gender = "male"
 
-        self.test_cat4.status = StatusEnum.WARRIORAPP
+        self.test_cat4.status = Status.WARRIORAPP
         self.test_cat4.parent1 = self.test_cat3.ID
 
         # then
@@ -250,7 +250,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat2.gender = "male"
 
-        self.test_cat3.status = StatusEnum.KITTEN
+        self.test_cat3.status = Status.KITTEN
         self.test_cat3.parent1 = self.test_cat2.ID
         self.test_cat3.parent2 = self.test_cat1.ID
 
@@ -259,7 +259,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat5.gender = "male"
 
-        self.test_cat6.status = StatusEnum.WARRIORAPP
+        self.test_cat6.status = Status.WARRIORAPP
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
 
@@ -274,7 +274,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat2.gender = "male"
 
-        self.test_cat3.status = StatusEnum.KITTEN
+        self.test_cat3.status = Status.KITTEN
         self.test_cat3.parent1 = self.test_cat2.ID
         self.test_cat3.parent2 = self.test_cat1.ID
 
@@ -283,7 +283,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat5.gender = "male"
 
-        self.test_cat6.status = StatusEnum.WARRIORAPP
+        self.test_cat6.status = Status.WARRIORAPP
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
 
@@ -301,7 +301,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat2.gender = "female"
 
-        self.test_cat3.status = StatusEnum.KITTEN
+        self.test_cat3.status = Status.KITTEN
         self.test_cat3.parent1 = self.test_cat2.ID
         self.test_cat3.parent2 = self.test_cat1.ID
 
@@ -310,7 +310,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat5.gender = "female"
 
-        self.test_cat6.status = StatusEnum.WARRIORAPP
+        self.test_cat6.status = Status.WARRIORAPP
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
 
@@ -330,7 +330,7 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat3.gender = "male"
 
-        self.test_cat4.status = StatusEnum.KITTEN
+        self.test_cat4.status = Status.KITTEN
         self.test_cat4.parent1 = self.test_cat2.ID
         self.test_cat4.parent2 = self.test_cat1.ID
         self.test_cat4.adoptive_parents.append(self.test_cat3.ID)

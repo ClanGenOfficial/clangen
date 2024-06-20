@@ -13,7 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
-from scripts.cat.enums.status import StatusEnum
+from scripts.cat.enums.status import Status
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -122,7 +122,7 @@ class Cat:
             self,
             prefix=None,
             gender=None,
-            status=StatusEnum.NEWBORN,
+            status=Status.NEWBORN,
             backstory="clanborn",
             parent1=None,
             parent2=None,
@@ -141,7 +141,7 @@ class Cat:
 
         :param str prefix: Cat's prefix (e.g. Fire- for Fireheart)
         :param str gender: Cat's gender, default None
-        :param StatusEnum status: Cat's role in the clan, default `StatusEnum.NEWBORN`
+        :param Status status: Cat's role in the clan, default `StatusEnum.NEWBORN`
         :param str backstory: Cat's origin, default "clanborn"
         :param str parent1: ID of parent 1, default None
         :param str parent2: ID of parent 2, default None
@@ -341,7 +341,7 @@ class Cat:
         """Perform faded-specific initialisation
 
         :param ID: Cat ID
-        :param StatusEnum status: Cat status
+        :param Status status: Cat status
         :param prefix: Cat's prefix
         :param suffix: Cat's suffix
         :param moons: Age in moons
@@ -355,7 +355,7 @@ class Cat:
         self.parent2 = None
         self.adoptive_parents = []
         self.mate = []
-        self.status = StatusEnum(status)
+        self.status = Status(status)
         self.pronouns = []  # Needs to be set as a list
         self.moons = moons
         self.dead_for = 0
@@ -590,7 +590,7 @@ class Cat:
         status."""
         self.exiled = True
         self.outside = True
-        self.status = StatusEnum.EXILED
+        self.status = Status.EXILED
         if self.personality.trait == "vengeful":
             self.thought = "Swears their revenge for being exiled"
         else:
@@ -783,7 +783,7 @@ class Cat:
 
         if self.status.is_leader() or self.status.is_warrior():
             # this seems like it should be is_deputy, but I'm doing a like-for-like replacement
-            self.status_change(StatusEnum.WARRIOR)
+            self.status_change(Status.WARRIOR)
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
@@ -820,7 +820,7 @@ class Cat:
 
         return ids
 
-    def status_change(self, new_status: StatusEnum, resort=False):
+    def status_change(self, new_status: Status, resort=False):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         new_status = The new status of a cat.
         resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
@@ -1435,7 +1435,7 @@ class Cat:
         old_age = self.age
         self.moons += 1
         if self.moons == 1 and self.status.is_newborn():
-            self.status = StatusEnum.KITTEN
+            self.status = Status.KITTEN
         self.in_camp = 1
 
         if self.exiled or self.outside:
@@ -1923,7 +1923,7 @@ class Cat:
         if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
             if "blood loss" in new_injury.also_got and len(
-                    get_alive_status_cats(Cat, [StatusEnum.MEDCAT], working=True)) != 0:
+                    get_alive_status_cats(Cat, [Status.MEDCAT], working=True)) != 0:
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -2084,11 +2084,11 @@ class Cat:
         # Note that although you can un-retire cats, they will be a full warrior/med_cat/mediator
         if self.moons > 6 and self.status.is_app_any():
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
-            self.status_change(StatusEnum.WARRIOR
+            self.status_change(Status.WARRIOR
                                )  # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
 
-        self.status_change(StatusEnum.ELDER)
+        self.status_change(Status.ELDER)
         return
 
     def is_ill(self):
@@ -3194,7 +3194,7 @@ class Cat:
 
     @staticmethod
     def rank_order(cat: Cat):
-        return StatusEnum.index(cat.status)
+        return Status.index(cat.status)
 
     @staticmethod
     def get_adjusted_age(cat: Cat):
@@ -3686,10 +3686,10 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(status=StatusEnum.WARRIOR)
+            game.choose_cats[cat_index] = create_cat(status=Status.WARRIOR)
         else:
             random_status = choice(
-                [StatusEnum.KITTEN, StatusEnum.WARRIORAPP, StatusEnum.WARRIOR, StatusEnum.WARRIOR, StatusEnum.ELDER])
+                [Status.KITTEN, Status.WARRIORAPP, Status.WARRIOR, Status.WARRIOR, Status.ELDER])
             game.choose_cats[cat_index] = create_cat(status=random_status)
 
 
