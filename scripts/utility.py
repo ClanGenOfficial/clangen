@@ -74,7 +74,7 @@ def get_alive_clan_queens(living_cats):
     return queen_dict, living_kits
 
 
-def get_alive_status_cats(Cat, get_status: list[StatusEnum], working: bool = False, sort: bool = False) -> list:
+def get_alive_status_cats(Cat, get_status: list, working: bool = False, sort: bool = False) -> list:
     """
     returns a list of cat objects for all living cats of get_status in Clan
     :param Cat Cat: Cat class
