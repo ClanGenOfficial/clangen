@@ -11,7 +11,7 @@ import pygame
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.history import History
+from scripts.cat.enums.status import StatusEnum
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.patrol.patrol_event import PatrolEvent
@@ -135,7 +135,7 @@ class Patrol:
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
 
-            if cat.status.is_patrol_app():
+            if cat.status.can_patrol_app():
                 self.patrol_apprentices.append(cat)
 
             self.patrol_status_list.append(cat.status)
@@ -152,13 +152,13 @@ class Patrol:
                 else:
                     self.patrol_statuses["healer cats"] = 1
 
-            if cat.status.is_patrol_app():
+            if cat.status.can_patrol_app():
                 if "all apprentices" in self.patrol_statuses:
                     self.patrol_statuses["all apprentices"] += 1
                 else:
                     self.patrol_statuses["all apprentices"] = 1
 
-            if cat.status.is_normal_adult():
+            if cat.status.is_deputy_leader_or_warrior():
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1
                 else:
@@ -170,29 +170,29 @@ class Patrol:
 
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
-        if "medicine cat" in self.patrol_status_list:
-            index = self.patrol_status_list.index("medicine cat")
+        if StatusEnum.MEDCAT in self.patrol_status_list:
+            index = self.patrol_status_list.index(StatusEnum.MEDCAT)
             self.patrol_leader = self.patrol_cats[index]
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
-        elif "medicine cat apprentice" in self.patrol_status_list:
-            index = self.patrol_status_list.index("medicine cat apprentice")
+        elif StatusEnum.MEDCATAPP in self.patrol_status_list:
+            index = self.patrol_status_list.index(StatusEnum.MEDCATAPP)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
         # sets leader as patrol leader
-        elif "leader" in self.patrol_status_list:
-            index = self.patrol_status_list.index("leader")
+        elif StatusEnum.LEADER in self.patrol_status_list:
+            index = self.patrol_status_list.index(StatusEnum.LEADER)
             self.patrol_leader = self.patrol_cats[index]
-        elif "deputy" in self.patrol_status_list:
-            index = self.patrol_status_list.index("deputy")
+        elif StatusEnum.DEPUTY in self.patrol_status_list:
+            index = self.patrol_status_list.index(StatusEnum.DEPUTY)
             self.patrol_leader = self.patrol_cats[index]
         else:
             # Get the oldest cat
             possible_leader = [
                 i for i in self.patrol_cats
-                if not i.status.is_patrol_app()
+                if not i.status.can_patrol_app()
             ]
             if possible_leader:
                 # Flip a coin to pick the most experience, or oldest.
@@ -248,7 +248,7 @@ class Patrol:
         # this next one is needed for Classic specifically
         patrol_type = (
             "med"
-            if ["medicine cat", "medicine cat apprentice"] in self.patrol_status_list
+            if [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP] in self.patrol_status_list
             else patrol_type
         )
         patrol_size = len(self.patrol_cats)
@@ -1140,7 +1140,7 @@ class Patrol:
             )
             text = text.replace(list_type, str(sign_list))
 
-        #TODO: check if this can be handled in event_text_adjust
+        # TODO: check if this can be handled in event_text_adjust
         return text
 
 # ---------------------------------------------------------------------------- #

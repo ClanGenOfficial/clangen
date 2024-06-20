@@ -42,19 +42,6 @@ class Clan:
 
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
 
-    CAT_TYPES = [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "warrior",
-        "medicine",
-        "deputy",
-        "leader",
-        "elder",
-        "mediator",
-        "general",
-    ]
-
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
@@ -184,18 +171,18 @@ class Clan:
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
         if self.deputy is not None:
-            self.deputy.status_change("deputy")
+            self.deputy.status_change(StatusEnum.DEPUTY)
             self.clan_cats.append(self.deputy.ID)
 
         if self.leader:
-            self.leader.status_change("leader")
+            self.leader.status_change(StatusEnum.LEADER)
             self.clan_cats.append(self.leader.ID)
 
         if self.medicine_cat is not None:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
-            if self.medicine_cat.status != "medicine cat":
-                Cat.all_cats[self.medicine_cat.ID].status_change("medicine cat")
+            if not self.medicine_cat.status.is_medcat():
+                Cat.all_cats[self.medicine_cat.ID].status_change(StatusEnum.MEDCAT)
 
     def create_clan(self):
         """
@@ -206,15 +193,15 @@ class Clan:
         self.instructor = Cat(
             status=choice(
                 [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "medicine cat",
-                    "leader",
-                    "mediator",
-                    "deputy",
-                    "elder",
+                    StatusEnum.WARRIORAPP,
+                    StatusEnum.MEDIATORAPP,
+                    StatusEnum.MEDCATAPP,
+                    StatusEnum.WARRIOR,
+                    StatusEnum.MEDCAT,
+                    StatusEnum.LEADER,
+                    StatusEnum.MEDIATOR,
+                    StatusEnum.DEPUTY,
+                    StatusEnum.ELDER,
                 ]
             ),
         )
@@ -247,7 +234,7 @@ class Clan:
             Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = "clan_founder"
             if Cat.all_cats.get(cat_id).status.is_warrior_app():
-                Cat.all_cats.get(cat_id).status_change("apprentice")
+                Cat.all_cats.get(cat_id).status_change(StatusEnum.WARRIORAPP)
             Cat.all_cats.get(cat_id).thoughts()
 
         game.save_cats()
@@ -406,7 +393,7 @@ class Clan:
         if leader:
             self.history.add_lead_ceremony(leader)
             self.leader = leader
-            Cat.all_cats[leader.ID].status_change("leader")
+            Cat.all_cats[leader.ID].status_change(StatusEnum.LEADER)
             self.leader_predecessors += 1
             self.leader_lives = 9
         game.switches["new_leader"] = None
@@ -417,7 +404,7 @@ class Clan:
         """
         if deputy:
             self.deputy = deputy
-            Cat.all_cats[deputy.ID].status_change("deputy")
+            Cat.all_cats[deputy.ID].status_change(StatusEnum.DEPUTY)
             self.deputy_predecessors += 1
 
     def new_medicine_cat(self, medicine_cat):
@@ -730,7 +717,7 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
+            game.clan.instructor = Cat(status=choice([StatusEnum.WARRIOR, StatusEnum.WARRIOR, StatusEnum.ELDER]))
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -840,7 +827,7 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
+            game.clan.instructor = Cat(status=choice([StatusEnum.WARRIOR, StatusEnum.WARRIOR, StatusEnum.ELDER]))
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -1183,7 +1170,7 @@ class Clan:
         all_cats = [
             i
             for i in Cat.all_cats_list
-            if i.status not in ["leader", "deputy"] and not i.dead and not i.outside
+            if not i.status.is_deputy_or_leader() and not i.dead and not i.outside
         ]
         leader = (
             Cat.fetch_cat(self.leader)

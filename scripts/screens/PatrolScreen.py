@@ -642,7 +642,7 @@ class PatrolScreen(Screens):
         for the_cat in Cat.all_cats_list:
             if (not the_cat.dead and the_cat.in_camp
                     and the_cat.ID not in game.patrolled
-                    and the_cat.status.is_patrol_any()
+                    and the_cat.status.can_patrol_any()
                     and not the_cat.outside
                     and the_cat not in self.current_patrol
                     and not the_cat.not_working()):
@@ -880,12 +880,12 @@ class PatrolScreen(Screens):
 
             # Draw mentor or apprentice
             relation = "should not display"
-            if self.selected_cat.status.is_patrol_app() or self.selected_cat.apprentice != []:
+            if self.selected_cat.status.can_patrol_app() or self.selected_cat.apprentice != []:
                 self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((990, 380), (332, 340))),
                     self.app_frame, manager=MANAGER)
 
-                if self.selected_cat.status.is_patrol_app() and self.selected_cat.mentor is not None:
+                if self.selected_cat.status.can_patrol_app() and self.selected_cat.mentor is not None:
                     self.app_mentor = Cat.fetch_cat(self.selected_cat.mentor)
                     relation = 'mentor'
 

@@ -4,6 +4,7 @@ from copy import deepcopy
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat.history import History
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
@@ -698,7 +699,7 @@ class Condition_Events:
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
 
-                    med_list = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True)
+                    med_list = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True)
                     # If the cat is a med cat, don't consider them as one for the event.
 
                     if cat in med_list:
@@ -793,7 +794,8 @@ class Condition_Events:
 
                 # choose event string and ensure Clan's med cat number aligns with event text
                 random_index = int(random.random() * len(possible_string_list))
-                med_list = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True, sort=True)
+                med_list = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True,
+                                                 sort=True)
                 med_cat = None
                 has_parents = False
                 if cat.parent1 is not None and cat.parent2 is not None:
@@ -862,7 +864,7 @@ class Condition_Events:
         return
 
     @staticmethod
-    def determine_retirement(cat, triggered):
+    def determine_retirement(cat: Cat, triggered):
 
         if game.clan.clan_settings["retirement"] or cat.no_retire:
             return
@@ -870,17 +872,11 @@ class Condition_Events:
         if (
             not triggered
             and not cat.dead
-            and cat.status
-            not in [
-                "leader",
-                "medicine cat",
-                "kitten",
-                "newborn",
-                "medicine cat apprentice",
-                "mediator",
-                "mediator apprentice",
-                "elder",
-            ]
+                and not cat.status.is_kit_any()
+                and not cat.status.is_leader()
+                and not cat.status.is_medcat_any()
+                and not cat.status.is_mediator_any()
+                and not cat.status.is_elder()
         ):
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]["severity"] not in [
@@ -1043,7 +1039,8 @@ class Condition_Events:
 
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = int(random.random() * len(possible_string_list))
-                    med_list = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True, sort=True)
+                    med_list = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True,
+                                                     sort=True)
                     if len(med_list) == 0:
                         if random_index == 0:
                             random_index = 1

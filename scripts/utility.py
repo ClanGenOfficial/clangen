@@ -74,7 +74,7 @@ def get_alive_clan_queens(living_cats):
     return queen_dict, living_kits
 
 
-def get_alive_status_cats(Cat, get_status: list, working: bool = False, sort: bool = False) -> list:
+def get_alive_status_cats(Cat, get_status: list[StatusEnum], working: bool = False, sort: bool = False) -> list:
     """
     returns a list of cat objects for all living cats of get_status in Clan
     :param Cat Cat: Cat class
@@ -202,7 +202,7 @@ def get_random_moon_cat(Cat, main_cat, parent_child_modifier=True, mentor_app_mo
             if possible_parents:
                 random_cat = Cat.fetch_cat(choice(possible_parents))
         if mentor_app_modifier:
-            if main_cat.status in ["apprentice", "mediator apprentice", "medicine cat apprentice"] \
+            if main_cat.status.is_app_any() \
                     and main_cat.mentor \
                     and not int(random() * 3):
                 random_cat = Cat.fetch_cat(main_cat.mentor)
@@ -337,7 +337,7 @@ def create_new_cat_block(
         # TODO: make this less ugly
         for index in mate_indexes:
             if index in in_event_cats:
-                if in_event_cats[index] in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+                if in_event_cats[index].status.is_app_any():
                     print("Can't give apprentices mates")
                     continue
 
@@ -380,7 +380,7 @@ def create_new_cat_block(
             continue
 
         if StatusEnum(match.group(1)) in StatusEnum.list() \
-                and StatusEnum(match.group(1)).is_clan_status():
+                and StatusEnum(match.group(1)).is_inside_clan():
             status = StatusEnum(match.group(1))
             break
 
@@ -1833,7 +1833,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         kitty = Cat.fetch_cat(game.clan.deputy)
         cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
     if "med_name" in text:
-        kitty = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
+        kitty = choice(get_alive_status_cats(Cat, [StatusEnum.MEDCAT], working=True))
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if cat_dict:
@@ -1958,7 +1958,7 @@ def event_text_adjust(
 
     # med_name
     if "med_name" in text:
-        med = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
+        med = choice(get_alive_status_cats(Cat, [StatusEnum.MEDCAT], working=True))
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns

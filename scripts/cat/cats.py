@@ -68,21 +68,6 @@ class Cat:
         "senior": game.config["cat_ages"]["senior"],
     }
 
-    # This in is in reverse order: top of the list at the bottom
-    rank_sort_order = [
-        "newborn",
-        "kitten",
-        "elder",
-        "apprentice",
-        "warrior",
-        "mediator apprentice",
-        "mediator",
-        "medicine cat apprentice",
-        "medicine cat",
-        "deputy",
-        "leader",
-    ]
-
     gender_tags = {"female": "F", "male": "M"}
 
     # EX levels and ranges.
@@ -835,22 +820,15 @@ class Cat:
 
         return ids
 
-    def status_change(self, new_status: StatusEnum | str, resort=False):
+    def status_change(self, new_status: StatusEnum, resort=False):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         new_status = The new status of a cat.
         resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                 only be true for non-timeskip status changes."""
 
-        # auto-converting string
-        if isinstance(new_status, str):
-            new_status = StatusEnum(new_status)
-
         old_status = self.status
         self.status = new_status
         self.name.status = new_status
-
-        if new_status.is_outside_clan():
-            return
 
         self.update_mentor()
         for app in self.apprentice.copy():
@@ -880,7 +858,8 @@ class Cat:
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
-            if game.clan and game.clan.deputy:  # don't remove the check for game.clan, this is needed for tests
+            if game.clan and game.clan.deputy:
+                # game.clan check is needed to let tests work as tests don't have an instance of game
                 if game.clan.deputy.ID == self.ID:
                     game.clan.deputy = None
                     game.clan.deputy_predecessors += 1
@@ -895,7 +874,7 @@ class Cat:
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""
 
-        if self.status.is_working_any():
+        if self.status.is_warrior_medcat_or_mediator():
             # Give a couple doses of mentor influence:
             if mentor:
                 max_influence = randint(0, 2)
@@ -1942,7 +1921,8 @@ class Cat:
 
         if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
-            if "blood loss" in new_injury.also_got and len(get_alive_status_cats(Cat, ["medicine cat"], working=True)) != 0:
+            if "blood loss" in new_injury.also_got and len(
+                    get_alive_status_cats(Cat, [StatusEnum.MEDCAT], working=True)) != 0:
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -2107,7 +2087,7 @@ class Cat:
                                )  # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
 
-        self.status_change("elder")
+        self.status_change(StatusEnum.ELDER)
         return
 
     def is_ill(self):
@@ -3213,10 +3193,7 @@ class Cat:
 
     @staticmethod
     def rank_order(cat: Cat):
-        if cat.status in Cat.rank_sort_order:
-            return Cat.rank_sort_order.index(cat.status)
-        else:
-            return 0
+        return StatusEnum.index(cat.status)
 
     @staticmethod
     def get_adjusted_age(cat: Cat):

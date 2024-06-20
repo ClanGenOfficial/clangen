@@ -377,7 +377,7 @@ class Events:
                     outsider_cat.die()
 
                 elif info_dict["interaction_type"] == "drive":
-                    outsider_cat.status_change("exiled")
+                    outsider_cat.status_change(StatusEnum.EXILED)
                     outsider_cat.exiled = True
                     outsider_cat.driven_out = True
 
@@ -418,7 +418,7 @@ class Events:
                                 invited_cat.status = StatusEnum.MEDCAT
 
                             elif invited_cat.age in ["newborn", "kitten"]:
-                                invited_cat.status = invited_cat.age
+                                invited_cat.status = StatusEnum(invited_cat.age)
                                 if not invited_cat.name.suffix:
                                     invited_cat.name = Name(
                                         invited_cat.status,
@@ -536,7 +536,8 @@ class Events:
         """Adding auto freshkill for the current moon."""
         healthy_hunter = list(
             filter(
-                lambda c: (c.status.is_normal_adult() or c.status.is_warrior_app())
+                lambda c: (c.status.is_deputy_leader_or_warrior()
+                           or c.status.is_warrior_app())
                           and not c.dead
                           and not c.outside
                           and not c.exiled
@@ -575,7 +576,7 @@ class Events:
                 game.clan.herbs.update({new_herb: 1})
         else:
             event_list = []
-            meds_available = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True,
+            meds_available = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True,
                                                    sort=True)
             for med in meds_available:
                 if game.clan.current_season in ["Newleaf", "Greenleaf"]:
@@ -650,7 +651,7 @@ class Events:
             # handle warrior
             healthy_warriors = list(
                 filter(
-                    lambda c: c.status.is_normal_adult()
+                    lambda c: c.status.is_deputy_leader_or_warrior()
                               and not c.dead
                               and not c.outside
                               and not c.exiled
@@ -779,7 +780,7 @@ class Events:
             # handle prey
             healthy_warriors = list(
                 filter(
-                    lambda c: c.status.is_normal_adult()
+                    lambda c: c.status.is_deputy_leader_or_warrior()
                               and not c.dead
                               and not c.outside
                               and not c.exiled
@@ -978,27 +979,27 @@ class Events:
             if x.status.is_kit_any() or x.status.is_app_any():
                 if x.moons >= 15:
                     if x.status.is_medcat_app():
-                        self.ceremony(x, "medicine cat")
+                        self.ceremony(x, StatusEnum.MEDCAT)
                     elif x.status.is_mediator_app():
-                        self.ceremony(x, "mediator")
+                        self.ceremony(x, StatusEnum.MEDIATOR)
                     else:
-                        self.ceremony(x, "warrior")
+                        self.ceremony(x, StatusEnum.WARRIOR)
                 elif (
                         not x.status.is_app_any()
                         and x.moons >= 6
                 ):
-                    self.ceremony(x, "apprentice")
+                    self.ceremony(x, StatusEnum.WARRIORAPP)
             elif not x.status.is_medcat():
                 if x.moons == 0:
                     x.status = StatusEnum.NEWBORN
                 elif x.moons < 6:
                     x.status = StatusEnum.KITTEN
                 elif x.moons < 12 and not x.status.is_app_any():
-                    x.status_change("apprentice")
+                    x.status_change(StatusEnum.WARRIORAPP)
                 elif x.moons < 120 and not x.status.is_warrior():
-                    x.status_change("warrior")
+                    x.status_change(StatusEnum.WARRIOR)
                 elif x.moons > 120:
-                    x.status_change("elder")
+                    x.status_change(StatusEnum.ELDER)
 
     def handle_fading(self, cat):
         """
@@ -1395,7 +1396,7 @@ class Events:
                 ):
                     if cat.status.is_deputy():
                         game.clan.deputy = None
-                    self.ceremony(cat, "elder")
+                    self.ceremony(cat, StatusEnum.ELDER)
 
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons["adolescent"][0]:
@@ -1466,7 +1467,7 @@ class Events:
                         chance = 1
 
                     if not has_med_app and not int(random.random() * chance):
-                        self.ceremony(cat, "medicine cat apprentice")
+                        self.ceremony(cat, StatusEnum.MEDCATAPP)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
                     else:
@@ -1508,11 +1509,11 @@ class Events:
                                 and not has_mediator_apprentice
                                 and not int(random.random() * chance)
                         ):
-                            self.ceremony(cat, "mediator apprentice")
+                            self.ceremony(cat, StatusEnum.MEDIATORAPP)
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
                         else:
-                            self.ceremony(cat, "apprentice")
+                            self.ceremony(cat, StatusEnum.WARRIORAPP)
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
 
@@ -1541,18 +1542,18 @@ class Events:
                             preparedness = "prepared"
 
                     if cat.status.is_warrior_app():
-                        self.ceremony(cat, "warrior", preparedness)
+                        self.ceremony(cat, StatusEnum.WARRIOR, preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
                     # promote to med cat
                     elif cat.status.is_medcat_app():
-                        self.ceremony(cat, "medicine cat", preparedness)
+                        self.ceremony(cat, StatusEnum.MEDCAT, preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
                     elif cat.status.is_mediator_app():
-                        self.ceremony(cat, "mediator", preparedness)
+                        self.ceremony(cat, StatusEnum.MEDIATOR, preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
@@ -1576,7 +1577,7 @@ class Events:
                 else:
                     self.ceremony_id_by_tag[tag] = {ID}
 
-    def ceremony(self, cat, promoted_to, preparedness="prepared"):
+    def ceremony(self, cat, promoted_to: StatusEnum, preparedness="prepared"):
         """
         promote cats and add to event list
         """
@@ -1599,9 +1600,9 @@ class Events:
         dead_parents = []
         living_parents = []
         mentor_type = {
-            "medicine cat": ["medicine cat"],
-            "warrior": ["warrior", "deputy", "leader", "elder"],
-            "mediator": ["mediator"],
+            StatusEnum.MEDCAT: [StatusEnum.MEDCAT],
+            StatusEnum.WARRIOR: [StatusEnum.WARRIOR, StatusEnum.DEPUTY, StatusEnum.LEADER, StatusEnum.ELDER],
+            StatusEnum.MEDIATOR: [StatusEnum.MEDIATOR],
         }
 
         try:
@@ -1609,7 +1610,7 @@ class Events:
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
 
             # Get ones for prepared status ----------------------------------------------
-            if promoted_to in ["warrior", "medicine cat", "mediator"]:
+            if promoted_to.is_warrior_medcat_or_mediator():
                 possible_ceremonies = possible_ceremonies.intersection(
                     self.ceremony_id_by_tag[preparedness]
                 )
@@ -1766,7 +1767,7 @@ class Events:
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to in ["warrior", "mediator", "medicine cat"]:
+        if promoted_to.is_warrior_medcat_or_mediator():
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(
                     f"{resource_dir}ceremony_traits.json", encoding="ascii"
@@ -1948,11 +1949,7 @@ class Events:
         """
         TODO: DOCS
         """
-        if cat.status in [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-        ]:
+        if cat.status.is_app_any():
 
             if cat.not_working() and int(random.random() * 3):
                 return
@@ -2306,7 +2303,7 @@ class Events:
         if already_sick_count >= alive_count * 0.25:
             return
 
-        meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True, sort=True)
+        meds = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True, sort=True)
 
         for illness in cat.illnesses:
             # check if illness can infect other cats
@@ -2605,7 +2602,7 @@ class Events:
                         )
                         return
 
-                random_cat.status_change("deputy")
+                random_cat.status_change(StatusEnum.DEPUTY)
                 game.clan.deputy = random_cat
 
                 game.cur_events_list.append(

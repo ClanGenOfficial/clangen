@@ -10,8 +10,9 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
 )
 from scripts.utility import get_text_box_theme, scale, get_alive_status_cats, shorten_text_to_fit, get_living_clan_cat_count
-from .Screens import Screens
-from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from scripts.screens.Screens import Screens
+from scripts.cat.enums.status import StatusEnum
+from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
 class MedDenScreen(Screens):
@@ -406,7 +407,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"],sort=True)
+        self.meds = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], sort=True)
 
         if not self.meds:
             all_pages = []

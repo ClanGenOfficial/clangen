@@ -4,6 +4,7 @@ import random
 
 import ujson
 
+from scripts.cat.enums.status import StatusEnum
 from scripts.game_structure.game_essentials import game
 from scripts.utility import filter_relationship_type, get_living_clan_cat_count,get_alive_status_cats
 
@@ -289,7 +290,7 @@ class GenerateEvents:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
-            if cat.status == "leader":
+            if cat.status.is_leader():
                 if "all_lives" in event.tags and "murder" not in event.sub_type:
                     if int(cat.moons) < 150 and int(random.random() * 5):
                         continue
@@ -312,18 +313,19 @@ class GenerateEvents:
                     continue
 
             discard = False
-            for rank in Cat_class.rank_sort_order:
-                if f"clan:{rank}" in event.tags:
-                    if rank in ["leader", "deputy"] and not get_alive_status_cats(Cat_class, [rank]):
+            for status in StatusEnum:
+                status = StatusEnum(status)  # if anyone knows of a cleaner way of doing this, I am all ears.
+                if f"clan:{str(status)}" in event.tags:
+                    if status.is_deputy_or_leader() and not get_alive_status_cats(Cat_class, [status]):
                         discard = True
-                    elif not len(get_alive_status_cats(Cat_class, [rank])) >= 2:
+                    elif not len(get_alive_status_cats(Cat_class, [status])) >= 2:
                         discard = True
             if discard:
                 continue
 
             if "clan_apps" in event.tags and not get_alive_status_cats(Cat_class,
-                                                                       ["apprentice", "medicine cat apprentice",
-                                                                        "mediator apprentice"]):
+                                                                       [StatusEnum.WARRIORAPP,
+                                                                        StatusEnum.MEDCATAPP, StatusEnum.MEDIATORAPP]):
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.

@@ -945,7 +945,7 @@ class ProfileScreen(Screens):
         if (
                 the_cat.outside
                 and not the_cat.exiled
-                and the_cat.status.is_clan_status()
+                and the_cat.status.is_inside_clan()
         ):
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
@@ -1064,7 +1064,7 @@ class ProfileScreen(Screens):
                 and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
-            if the_cat.status.is_clan_status():
+            if the_cat.status.is_inside_clan():
                 nutr = None
                 if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1327,7 +1327,7 @@ class ProfileScreen(Screens):
         else:
             text = str(self.the_cat.name) + "'s past history is unknown."
 
-        if not self.the_cat.dead and self.the_cat.status.is_clan_status():
+        if not self.the_cat.dead and self.the_cat.status.is_inside_clan():
             beginning = History.get_beginning(self.the_cat)
             if beginning:
                 if beginning["clan_born"]:

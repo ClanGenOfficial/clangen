@@ -340,8 +340,7 @@ class ChooseMentorScreen(Screens):
                 and check_cat.dead == self.the_cat.dead
                 and check_cat.ID != game.clan.instructor.ID
                 and not check_cat.exiled
-                and check_cat.status
-                in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                    and check_cat.status.is_app_any()
                 and check_cat.df == self.the_cat.df
             ):
                 self.previous_cat = check_cat.ID
@@ -352,8 +351,7 @@ class ChooseMentorScreen(Screens):
                 and check_cat.dead == self.the_cat.dead
                 and check_cat.ID != game.clan.instructor.ID
                 and not check_cat.exiled
-                and check_cat.status
-                in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                and check_cat.status.is_app_any()
                 and check_cat.df == self.the_cat.df
             ):
                 self.next_cat = check_cat.ID
@@ -534,7 +532,7 @@ class ChooseMentorScreen(Screens):
                 if (
                     not cat.dead
                     and not cat.outside
-                    and cat.status.is_normal_adult()
+                        and cat.status.is_deputy_leader_or_warrior()
                 ):
                     valid_mentors.append(cat)
         elif self.the_cat.status.is_medcat_app():

@@ -4,6 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.status import StatusEnum
 from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
@@ -184,7 +185,8 @@ class LeaderDenScreen(Screens):
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
-                meds = get_alive_status_cats(Cat, get_status=["medicine cat", "medicine cat apprentice"], working=True, sort=True)
+                meds = get_alive_status_cats(Cat, get_status=[StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], working=True,
+                                             sort=True)
                 if meds:
                     self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps

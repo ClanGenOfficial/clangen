@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.status import StatusEnum
 from scripts.cat.history import History
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
@@ -55,13 +56,13 @@ class OutsiderEvents:
     @staticmethod
     def become_kittypet(cat: Cat):
         # TODO: Make backstory for all of these + for exiled cats
-        cat.status = 'kittypet'
+        cat.status = StatusEnum.KITTYPET
 
     @staticmethod
     def become_loner(cat: Cat):
-        cat.status = 'loner'
+        cat.status = StatusEnum.LONER
 
     @staticmethod
     def become_rogue(cat: Cat):
         """Cats will probably only become rogues if they were exiled formerly"""
-        cat.status = 'rogue'
+        cat.status = StatusEnum.ROGUE

@@ -376,7 +376,7 @@ class CatSkills:
                 new_skill.secondary = Skill.get_random_skill(
                     point_tier=1, interest_only=True, exclude=new_skill.primary.path
                 )
-        elif moons < 50:  # Should these thresholds be in a config file?
+        elif moons < 50:  # TODO: Should these thresholds be in a config file?
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(1, 2))
             if random.randint(1, 2) == 1:
                 new_skill.secondary = Skill.get_random_skill(
@@ -552,7 +552,7 @@ class CatSkills:
                     elif self.primary:
                         self.primary.points += amount_effect
 
-            elif the_cat.moons > 120: #TODO: Check if this should be tied to a config option (start of elder, e.g.?)
+            elif the_cat.moons > 120:  # TODO: Check if this should be tied to a config option (start of elder, e.g.?)
                 # for old cats, we want to check if the skills start to degrade at all, age is the great equalizer
 
                 self.primary.interest_only = False

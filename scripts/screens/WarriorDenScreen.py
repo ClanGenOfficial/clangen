@@ -3,6 +3,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.status import StatusEnum
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
@@ -71,12 +72,12 @@ class WarriorDenScreen(Screens):
                         if "mediator" in description and self.save_button.is_enabled:
                             # only create the mediator list if needed to check
                             mediator_list = list(filter(
-                                lambda x: x.status.is_mediator_any() and not x.dead and not x.outside, Cat.all_cats_list
+                                lambda x: x.status.is_mediator() and not x.dead and not x.outside, Cat.all_cats_list
                             ))
                             if len(mediator_list) < 1:
                                 self.save_button.disable()
                         elif "medicine cat" in description and self.save_button.is_enabled:
-                            meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"])
+                            meds = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP])
                             if len(meds) < 1:
                                 self.save_button.disable()
 

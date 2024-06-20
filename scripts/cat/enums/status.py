@@ -29,15 +29,15 @@ class StatusEnum(ExtendedStrEnum):
         """True if cat is a working role (warrior + app, medcat + app, mediator + app, deputy and leader)"""
         return not (self.is_kit_any()
                     or self.is_elder()) \
-            and self.is_clan_status()
+            and self.is_inside_clan()
 
-    def is_patrol_any(self):
+    def can_patrol_any(self):
         """True if able to go on patrol (warrior + app, medcat + app, deputy and leader)"""
         return (self.is_warrior_any()
                 or self.is_medcat_any()
                 or self.is_deputy_or_leader())
 
-    def is_patrol_app(self):
+    def can_patrol_app(self):
         """True if apprentice who can go on patrol (warrior app and medcat app)"""
         return self in [StatusEnum.WARRIORAPP, StatusEnum.MEDCATAPP]
 
@@ -68,11 +68,11 @@ class StatusEnum(ExtendedStrEnum):
         """True if cat is deputy or leader."""
         return self in [StatusEnum.DEPUTY, StatusEnum.LEADER]
 
-    def is_warrior_medcat_or_mediator(self):  # TODO grr.
+    def is_warrior_medcat_or_mediator(self):
         """True if cat is warrior, medcat or mediator"""
         return self in [StatusEnum.WARRIOR, StatusEnum.MEDCAT, StatusEnum.MEDIATOR]
 
-    def is_normal_adult(self):
+    def is_deputy_leader_or_warrior(self):
         """True if cat is warrior, deputy or leader"""
         return self.is_deputy_or_leader() or self.is_warrior()
 
@@ -82,7 +82,7 @@ class StatusEnum(ExtendedStrEnum):
             StatusEnum.EXCLAN, StatusEnum.EXILED, StatusEnum.KITTYPET,
             StatusEnum.LONER, StatusEnum.ROGUE]
 
-    def is_clan_status(self):
+    def is_inside_clan(self):
         """True if cat is a member of the Clan.
 
         (newborn, kitten, elder, warrior + app, medcat + app, mediator + app, deputy & leader)"""

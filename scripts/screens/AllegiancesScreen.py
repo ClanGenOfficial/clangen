@@ -17,6 +17,7 @@ from scripts.utility import (
     get_alive_clan_queens,
 )
 from .Screens import Screens
+from ..cat.enums.status import StatusEnum
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
@@ -648,7 +649,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
+        self.meds = get_alive_status_cats(Cat, [StatusEnum.MEDCAT, StatusEnum.MEDCATAPP], sort=True)
 
         if not self.meds:
             all_pages = []

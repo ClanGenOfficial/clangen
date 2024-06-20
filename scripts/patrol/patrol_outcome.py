@@ -312,10 +312,10 @@ class PatrolOutcome:
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
             # First, the blanket requirements
-            if "app" in self.can_have_stat and not kitty.status.is_patrol_app():
+            if "app" in self.can_have_stat and not kitty.status.can_patrol_app():
                 continue
 
-            if "adult" in self.can_have_stat and kitty.status.is_patrol_app():
+            if "adult" in self.can_have_stat and kitty.status.can_patrol_app():
                 continue
 
             if "healer" in self.can_have_stat and not kitty.status.is_medcat_any():
@@ -398,7 +398,7 @@ class PatrolOutcome:
 
         if gained_exp or app_exp:
             for cat in patrol.patrol_cats:
-                if cat.status.is_patrol_app():
+                if cat.status.can_patrol_app():
                     cat.experience = cat.experience + app_exp
                 else:
                     cat.experience = cat.experience + gained_exp
