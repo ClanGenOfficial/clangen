@@ -1144,7 +1144,7 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
                 elif cmd_parts[1] in ["tags"]:
                     ea_overview(len(all_ids), "tags")
                 elif cmd_parts[1] in ["accessory"]:
-                    ea_overview(len(all_ids), "season")
+                    ea_overview(len(all_ids), "accessory")
                 else:
                     print("Overview failed - invalid argument.")
             else:
