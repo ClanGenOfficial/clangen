@@ -168,9 +168,10 @@ class ListScreen(Screens):
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
-            elif event.key == pygame.K_LEFT:
+            if event.key == pygame.K_LEFT:
+                self.change_screen("camp screen")
+            elif event.key == pygame.K_RIGHT:
                 self.change_screen("patrol screen")
-
     def screen_switches(self):
 
         self.set_disabled_menu_buttons(["catlist_screen"])

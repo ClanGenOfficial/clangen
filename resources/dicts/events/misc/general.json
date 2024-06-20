@@ -1036,13 +1036,14 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_retireany1",
+    "event_id": "gen_misc_any_multistatusmultiageretire1",
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c thinks about retiring.",
     "m_c": {
-        "age": ["senior adult", "senior"]
+        "age": ["senior adult", "senior"],
+        "status": ["warrior", "mediator", "medicine cat", "leader"]
     }
   },
   {
@@ -1648,19 +1649,17 @@
     "event_id": "gen_misc_accessoryapprentice1",
     "location": ["any"],
     "season": ["any"],
-    "sub_type": ["accessory"],
+    "sub_type": ["accessory", "romance"],
     "weight": 20,
     "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
     "new_accessory": ["BLUE BERRIES", "HOLLY"],
     "m_c": {
       "age": ["adolescent"],
-      "status": ["apprentice"],
-      "relationship_status": ["can_romance"]
+      "status": ["apprentice"]
     },
     "r_c": {
       "age": ["adolescent"],
-      "status": ["apprentice"],
-      "relationship_status": ["can_romance"]
+      "status": ["apprentice"]
     },
     "relationships": [
         {
@@ -2129,7 +2128,7 @@
     "m_c": {
       "age":["any"],  
       "status": ["mediator", "mediator apprentice"],
-      "trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise", "inquisitive", "childish", "playful"]
+      "trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise",  "childish", "playful"]
     },
     "relationships": [
         {
@@ -2260,7 +2259,7 @@
     },
     "r_c": {
       "status": ["leader"],
-      "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","inquisitive","childish","playful"]
+      "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","childish","playful"]
     },
     "relationships": [
       {

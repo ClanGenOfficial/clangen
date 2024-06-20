@@ -2,66 +2,66 @@
     "greencough": {
         "yellowcough": [
              "There has to be a solution - if r_c tries hard enough, surely {PRONOUN/r_c/subject} can still save m_c from the yellowcough {PRONOUN/m_c/poss} greencough has progressed to.",
-             "m_c sits in the medicine cat den, miserable, coughing so hard it feels like {PRONOUN/m_c/subject} can barely get a breath in. {PRONOUN/m_c/poss/CAP} greencough has progressed to yellowcough, and the outlook looks grim."
+            "m_c sits miserably in the medicine cat den, coughing so hard it feels like {PRONOUN/m_c/subject} can barely get a breath in. The outlook looks grim as {PRONOUN/m_c/poss} greencough has progressed to yellowcough."
 
         ]
     },
     "kittencough": {
         "whitecough": [
             "r_c quietly tells m_c's parent that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to move m_c to the medicine cat den. m_c's kittencough has progressed to whitecough.",
-            "m_c coughs pathetically, wondering why it's not getting better, and why {PRONOUN/m_c/subject} {VERB/m_c/have/has} to be in the stinky medicine cat den now."
+            "m_c coughs pathetically, wondering why it's not getting better - and why {PRONOUN/m_c/subject} {VERB/m_c/have/has} to be in the stinky medicine cat den now."
 
         ]
     },
     "an infected wound": {
         "a festering wound": [
-            "The stink of infection has strengthened and worsened. r_c mutters about different herbs, as m_c watches {PRONOUN/r_c/object} change yet another poultice that probably won't work.",
+            "The stink of infection has strengthened and worsened. r_c mutters about different herbs as m_c watches {PRONOUN/r_c/object} change yet another poultice that probably won't work.",
             "m_c swears {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been cleaning it, but {PRONOUN/m_c/poss} wound has begun to fester like week-old prey."
 
         ]
     },
     "running nose": {
         "whitecough": [
-            "r_c moves m_c to the medicine cat den, where the whitecough that {PRONOUN/m_c/poss} running nose has turned into is more easily monitored.",
+            "r_c moves m_c to the medicine cat den, where the whitecough that {PRONOUN/m_c/poss} running nose has turned into can be more easily monitored.",
             "m_c brings {PRONOUN/m_c/self} to the medicine cat den, concerned {PRONOUN/m_c/poss} running nose only seems to be getting worse."
 
         ]
     },
     "whitecough": {
         "greencough":[
-            "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying {PRONOUN/r_c/object}.",
+            "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying r_c.",
             "m_c coughs, feeling like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up half {PRONOUN/m_c/poss} lungs. This is definitely worse than whitecough ever gets."
 
         ]
     },
     "yellowcough": {
         "redcough": [
-             "r_c spots the specks of blood in the bedding where m_c has been coughing, and swallows a wail of despair. If {PRONOUN/m_c/poss} yellowcough has progressed to redcough, it's a death sentence.",
+            "r_c spots the specks of blood in the bedding where m_c has been coughing and swallows a wail of despair. If {PRONOUN/m_c/poss} yellowcough has progressed to redcough, it's practically a death sentence.",
              "m_c is going to be fine. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} sure of it. {PRONOUN/m_c/poss/CAP} lungs don't hurt nearly as much anymore, and if there's blood in {PRONOUN/m_c/poss} mouth when {PRONOUN/m_c/subject} {VERB/m_c/finish/finishes} a coughing fit, what of it?"
 
         ]
     },
     "heat exhaustion": {
         "heat stroke": [
-            "r_c squeezes the damp moss onto m_c's forehead, as {PRONOUN/m_c/subject} {VERB/m_c/lie/lies} completely drained and panting. This is more than heat exhaustion, m_c will need time to recover from this heat stroke.",
-            "m_c dazedly rolls around in {PRONOUN/m_c/poss} nest, searching for a cooler spot. {PRONOUN/m_c/poss/CAP} exhaustion is beyond just a little thing, and {PRONOUN/m_c/poss} confused brain still has enough observational power to recognise full heat stroke."
+            "r_c presses the damp moss onto m_c's forehead as {PRONOUN/m_c/subject} {VERB/m_c/lie/lies} completely drained and panting. This is more than heat exhaustion now, m_c will need time to recover from this heat stroke.",
+            "m_c rolls around dazedly in {PRONOUN/m_c/poss} nest, searching for a cooler spot. {PRONOUN/m_c/poss/CAP} exhaustion is beyond just a little thing and {PRONOUN/m_c/poss} confused brain still has enough observational power to recognise full heat stroke."
 
         ]
     },
     "stomachache": {
         "diarrhea": [
-            "Embarrassed, m_c reports to r_c that {PRONOUN/m_c/poss} stomachache is now having consequences at the other end of {PRONOUN/m_c/poss} digestive system. r_c, as non-squeamish as all medicine cats, tells m_c that it's now very important {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} drinking water, as the diarrhea will make {PRONOUN/m_c/object} lose it quickly.",
+            "Embarrassed, m_c reports to r_c that {PRONOUN/m_c/poss} stomachache is now having consequences at the other end of {PRONOUN/m_c/poss} digestive system. r_c, as unsqueamish as all medicine cats, tells m_c that it's now very important {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} drinking water, as the diarrhea will make {PRONOUN/m_c/object} lose it quickly.",
             "m_c is now spending more time at the dirtplace than in camp, as {PRONOUN/m_c/poss} stomachache has progressed to diarrhea."
 
         ]
     },
     "fleas": {
         "torn pelt": [
-            "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt and r_c scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c/subject} gently {VERB/r_c/clean/cleans} the now raw areas of m_c's pelt.",
+            "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt. r_c scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c/subject} gently {VERB/r_c/clean/cleans} the now raw areas of m_c's pelt.",
             "m_c scratches and scratches and scratches, ever frustrated by {PRONOUN/m_c/poss} fleas. The constant scratching has begun to tear up {PRONOUN/m_c/poss} pelt, leaving raw patches of skin exposed.",
             "m_c's constant flea scratching has torn {PRONOUN/m_c/poss} pelt.",
             "m_c can't help scratching at {PRONOUN/m_c/poss} fleas and has left raw spots on {PRONOUN/m_c/poss} pelt.",
-            "Raw hairless patches are forming on m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/scratch/scraches} and {VERB/m_c/scratch/scratches} at {PRONOUN/m_c/poss} fleas."
+            "Raw hairless patches are forming on m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/scratch/scratches} and {VERB/m_c/scratch/scratches} at {PRONOUN/m_c/poss} fleas."
         ]
     },
     "grief stricken": {
@@ -70,7 +70,7 @@
             "m_c curls up in {PRONOUN/m_c/poss} nest, numb to the other cats beside {PRONOUN/m_c/object}. There's a hole inside {PRONOUN/m_c/poss} heart now that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} could never again be filled.",
             "m_c pads out of camp, wanting nothing more than to be away from the pitying looks of {PRONOUN/m_c/poss} Clanmates.",
             "m_c wishes desperately to hear the voice of {PRONOUN/m_c/poss} loved one again, to see their face and smell their scent. The reality of the situation makes m_c want to wail into the sky.",
-            "m_c realizes one day that this grief will never leave and {PRONOUN/m_c/subject}'ll just have to learn to live with it, there's nothing else to do."
+            "m_c realizes one day that this grief will never leave - {PRONOUN/m_c/subject}'ll just have to learn to live with it. There's nothing else to do."
         ],
         "constant nightmares": [
             "m_c heads to the medicine den, hoping that r_c will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}.",
