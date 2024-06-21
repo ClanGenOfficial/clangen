@@ -39,7 +39,7 @@
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
-    "event_text": "Like a seed just beginning to sprout, m_c is now on {PRONOUN/m_c/subject} journey to becoming a full warrior of c_n. With a proud gaze, r_c presents {PRONOUN/r_c/poss} kit with acc_singular. r_c knows that one day m_c will grow big and strong, just like a little seed can grow into a strong tree.",
+    "event_text": "Like a seed just beginning to sprout, m_c is now on {PRONOUN/m_c/poss} journey to becoming a full warrior of c_n. With a proud gaze, r_c presents {PRONOUN/r_c/poss} kit with acc_singular. r_c knows that one day m_c will grow big and strong, just like a little seed can grow into a strong tree.",
     "new_accessory": ["MAPLE SEED"],
     "m_c": {
       "status": ["apprentice"],
