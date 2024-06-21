@@ -1109,7 +1109,7 @@ class ChooseMateScreen(Screens):
                 and check_cat.ID != game.clan.instructor.ID
                 and not check_cat.exiled
                 and not check_cat.outside
-                and check_cat.age not in ["adolescent", "kitten", "newborn"]
+                and not check_cat.age.is_underage()
                 and check_cat.df == self.the_cat.df
             ):
                 self.previous_cat = check_cat.ID
@@ -1121,7 +1121,7 @@ class ChooseMateScreen(Screens):
                 and check_cat.ID != game.clan.instructor.ID
                 and not check_cat.exiled
                 and not check_cat.outside
-                and check_cat.age not in ["adolescent", "kitten", "newborn"]
+                and not check_cat.age.is_underage()
                 and check_cat.df == self.the_cat.df
             ):
                 self.next_cat = check_cat.ID

@@ -23,6 +23,7 @@ pgpy = "^0.6.0"
 requests = "^2.28.2"
 strenum = "^0.4.10"
 black = { version = "^21.7b0", python = ">=3.8," }
+click = "8.0.4"
 
 
 [tool.poetry.group.test]
@@ -49,3 +50,12 @@ discord = ["pypresence"]
 pythonpath = [
   "."
 ]
+
+[tool.poetry.dev-dependencies]
+black = {version = "^21.7b0", allow-prereleases = true}
+
+[tool.black]
+# https://github.com/psf/black
+target-version = ["py39"]
+line-length = 120
+color = true

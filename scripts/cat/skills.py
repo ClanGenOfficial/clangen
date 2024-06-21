@@ -3,6 +3,7 @@ from enum import Enum, Flag, auto
 from typing import Union
 
 
+
 class SkillPath(Enum):
     TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
     HUNTER = ("moss-ball hunter", "good hunter", "great hunter", "renowned hunter")
@@ -598,7 +599,7 @@ class CatSkills:
         else:
             # For outside cats, just check interest and flip it if needed.
             # Going on age, rather than status here.
-            if the_cat.age not in ["kitten", "adolescent"]:
+            if not (the_cat.age.is_kitten() and the_cat.age.is_adolescent()):
                 self.primary.interest_only = False
                 if self.secondary:
                     self.secondary.interest_only = False

@@ -4,6 +4,7 @@ from copy import deepcopy
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.age import AgeEnum
 from scripts.cat.history import History
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
@@ -310,7 +311,7 @@ class Condition_Events:
 
     @staticmethod
     def handle_injuries(cat, random_cat=None):
-        """ 
+        """
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
         """
@@ -912,10 +913,10 @@ class Condition_Events:
                         "senior": 10,
                     }
 
-                chance = int(retire_chances.get(cat.age))
+                chance = int(retire_chances.get(str(cat.age)))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
-                    if cat.age == "adolescent":
+                    if cat.age == AgeEnum.ADOLESCENT:
                         event = (
                             f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
                             f"kits, they're warmly welcomed into the elder's den."
@@ -942,7 +943,7 @@ class Condition_Events:
                             f"{cat.name} has decided to retire from normal Clan duty."
                         )
 
-                    if cat.age == "adolescent":
+                    if cat.age == AgeEnum.ADOLESCENT:
                         event += (
                             f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor "
                             f"of their contributions to {game.clan.name}Clan."

@@ -515,11 +515,8 @@ class Pregnancy_Events:
             return False
 
         # decide chances of having kits, and if it's possible at all.
-        # Including - age, dead statis, having kits turned off.
-        not_correct_age = (
-            cat.age in ["newborn", "kitten", "adolescent"] or cat.moons < 15
-        )
-        if not_correct_age or cat.no_kits or cat.dead:
+        # Including - age, dead status, having kits turned off.
+        if cat.age.is_underage() or cat.no_kits or cat.dead:
             return False
 
         # check for mate
@@ -767,7 +764,7 @@ class Pregnancy_Events:
                                                   status=random.choice(["loner", "kittypet"]),
                                                   alive=False,
                                                   thought=thought,
-                                                  age=randint(15, 120),
+                                                  moons=randint(15, 120),
                                                   outside=True)[0]
                     blood_parent.thought = thought
 
@@ -926,22 +923,22 @@ class Pregnancy_Events:
     def get_amount_of_kits(cat):
         """Get the amount of kits which will be born."""
         min_kits = game.config["pregnancy"]["min_kits"]
-        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age]
+        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][str(cat.age)]
         two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][
-            cat.age
+            str(cat.age)
         ]
         three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][
-            cat.age
+            str(cat.age)
         ]
         four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][
-            cat.age
+            str(cat.age)
         ]
         five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][
-            cat.age
+            str(cat.age)
         ]
         max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"][
             "max_kit_possibility"
-        ][cat.age]
+        ][str(cat.age)]
         amount = choice(
             min_kit + two_kits + three_kits + four_kits + five_kits + max_kits
         )

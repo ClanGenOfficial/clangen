@@ -99,11 +99,11 @@ class Thoughts:
 
         # main cat age constraint
         if 'main_age_constraint' in thought:
-            if main_cat.age not in thought['main_age_constraint']:
+            if str(main_cat.age) not in thought['main_age_constraint']:
                 return False
 
         if 'random_age_constraint' in thought and random_cat:
-            if random_cat.age not in thought['random_age_constraint']:
+            if str(random_cat.age) not in thought['random_age_constraint']:
                 return False
 
         if 'main_trait_constraint' in thought:
@@ -302,7 +302,7 @@ class Thoughts:
 
         # newborns only pull from their status thoughts. this is done for convenience
         try:
-            if main_cat.age == 'newborn':
+            if main_cat.age.is_newborn():
                 with open(f"{base_path}{life_dir}{spec_dir}/newborn.json", 'r') as read_file:
                     thoughts = ujson.loads(read_file.read())
                 loaded_thoughts = thoughts

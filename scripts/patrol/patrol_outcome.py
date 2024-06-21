@@ -8,6 +8,8 @@ from typing import List, Dict, Union, TYPE_CHECKING
 
 import pygame
 
+from scripts.cat.enums.age import AgeEnum
+
 from scripts.events_module.handle_short_events import INJURY_GROUPS
 
 if TYPE_CHECKING:
@@ -228,7 +230,7 @@ class PatrolOutcome:
                                            clan=game.clan,
                                            other_clan=patrol.other_clan)
 
-        # This order is important. 
+        # This order is important.
         results.append(self._handle_death(patrol))
         results.append(self._handle_lost(patrol))
         results.append(self._handle_condition_and_scars(patrol))

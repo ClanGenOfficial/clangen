@@ -16,6 +16,8 @@ from typing import List
 import pygame
 import ujson
 
+from scripts.cat.enums.age import AgeEnum, AgeMoonsRange, get_random_moons_for_age
+
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 from scripts.cat.history import History
@@ -384,33 +386,32 @@ def create_new_cat_block(
             break
 
     # SET AGE
-    age = None
+    moons = None
     for _tag in attribute_list:
         match = re.match(r"age:(.+)", _tag)
         if not match:
             continue
 
-        if match.group(1) in Cat.age_moons:
-            age = randint(Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1])
+        if match.group(1) in AgeEnum:
+            moons = get_random_moons_for_age(match.group(1))
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
-            age = randint(Cat.age_moons[give_mates[0].age][0],
-                          Cat.age_moons[give_mates[0].age][1])
+            moons = get_random_moons_for_age(give_mates[0].age)
             break
 
         if match.group(1) == "has_kits":
-            age = randint(19, 120)
+            moons = randint(19, 120)
             break
 
-    if status and not age:
+    if status and not moons:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
-            age = randint(Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1])
+            moons = get_random_moons_for_age(AgeEnum.ADOLESCENT)
         elif status in ["warrior", "mediator", "medicine cat"]:
-            age = randint(Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1])
-        elif status == "elder":
-            age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
+            moons = get_random_moons_for_age(AgeEnum.SENIORADULT)
+        elif status == "elder":  # making the assumption that all seniors are elders
+            moons = get_random_moons_for_age(AgeEnum.SENIOR)
 
     if "kittypet" in attribute_list:
         cat_type = "kittypet"
@@ -487,7 +488,7 @@ def create_new_cat_block(
                 continue
             if gender and gender != cat.gender:
                 continue
-            if age and age not in Cat.age_moons[cat.age]:
+            if moons and moons not in AgeMoonsRange[cat.age]:
                 continue
             possible_outsiders.append(cat)
 
@@ -540,7 +541,7 @@ def create_new_cat_block(
                                   litter=litter,
                                   backstory=chosen_backstory,
                                   status=status,
-                                  age=age,
+                                  moons=moons,
                                   gender=gender,
                                   thought=thought,
                                   alive=alive,
@@ -625,7 +626,7 @@ def create_new_cat(
         other_clan: bool = None,
         backstory: bool = None,
         status: str = None,
-        age: int = None,
+        moons: int = None,
         gender: str = None,
         thought: str = 'Is looking around the camp with wonder',
         alive: bool = True,
@@ -645,7 +646,7 @@ def create_new_cat(
     :param bool other_clan: if new cat(s) are from a neighboring clan, set true
     :param bool backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param str status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
-    :param int age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
+    :param int moons: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param str thought: if you need to give a custom "welcome" thought, set it here
     :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
@@ -671,33 +672,35 @@ def create_new_cat(
     else:
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
-    if not isinstance(age, int):
+    if not isinstance(moons, int):
+        # I would like this section to be looked at by someone - seems like this was made before game settings?
+        # Remove this when reviewed (TODO)
         if status == "newborn":
-            age = 0
+            moons = 0
         elif litter or kit:
-            age = randint(1, 5)
+            moons = randint(1, 5)
         elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
-            age = randint(6, 11)
+            moons = randint(6, 11)
         elif status == "warrior":
-            age = randint(23, 120)
+            moons = randint(23, 120)
         elif status == "medicine cat":
-            age = randint(23, 140)
+            moons = randint(23, 140)
         elif status == "elder":
-            age = randint(120, 130)
+            moons = randint(120, 130)
         else:
-            age = randint(6, 120)
+            moons = randint(6, 120)
 
     # setting status
     if not status:
-        if age == 0:
+        if moons == 0:
             status = "newborn"
-        elif age < 6:
+        elif moons < 6:
             status = "kitten"
-        elif 6 <= age <= 11:
+        elif 6 <= moons <= 11:
             status = "apprentice"
-        elif age >= 12:
+        elif moons >= 12:
             status = "warrior"
-        elif age >= 120:
+        elif moons >= 120:
             status = "elder"
 
     # cat creation and naming time
@@ -709,9 +712,9 @@ def create_new_cat(
             _gender = gender
 
         # other Clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
-        if other_clan or kit or litter or age < 12 and not (loner or kittypet):
+        if other_clan or kit or litter or moons < 12 and not (loner or kittypet):
             new_cat = Cat(
-                moons=age,
+                moons=moons,
                 status=status,
                 gender=_gender,
                 backstory=backstory,
@@ -744,7 +747,7 @@ def create_new_cat(
                         new_prefix = choice(words)  # pick new prefix from that list
                         name = new_prefix
                     new_cat = Cat(
-                        moons=age,
+                        moons=moons,
                         prefix=name,
                         status=status,
                         gender=_gender,
@@ -754,7 +757,7 @@ def create_new_cat(
                     )
                 else:  # completely new name
                     new_cat = Cat(
-                        moons=age,
+                        moons=moons,
                         status=status,
                         gender=_gender,
                         backstory=backstory,
@@ -764,7 +767,7 @@ def create_new_cat(
             # these cats keep their old names
             else:
                 new_cat = Cat(
-                    moons=age,
+                    moons=moons,
                     prefix=name,
                     suffix="",
                     status=status,
@@ -779,7 +782,7 @@ def create_new_cat(
             new_cat.pelt.accessory = accessory
 
         # give apprentice aged cat a mentor
-        if new_cat.age == "adolescent":
+        if new_cat.age.is_adolescent():
             new_cat.update_mentor()
 
         # Remove disabling scars, if they generated.
@@ -817,9 +820,9 @@ def create_new_cat(
                     ]:
                         continue
                     # next part ensures that a kit won't get a condition that takes too long to reveal
-                    age = new_cat.moons
+                    moons = new_cat.moons
                     leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
-                    if age > leeway:
+                    if moons > leeway:
                         continue
                     possible_conditions.append(condition)
 
@@ -2322,7 +2325,8 @@ def generate_sprite(
     :param no_not_working: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
-
+    # I recognise that I am not knowledgeable enough to pass judgement here
+    # I will need some advice to refactor this because it feels like it could do with improvement
     if life_state is not None:
         age = life_state
     else:
@@ -2354,7 +2358,7 @@ def generate_sprite(
                 cat_sprite = str(15)
     else:
         if age == "elder" and not game.config["fun"]["all_cats_are_newborn"]:
-            age = "senior"
+            age = AgeEnum.SENIOR
 
         if game.config["fun"]["all_cats_are_newborn"]:
             cat_sprite = str(cat.pelt.cat_sprites["newborn"])

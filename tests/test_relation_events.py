@@ -3,6 +3,7 @@ import unittest
 from unittest.mock import patch
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums.age import AgeEnum
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
@@ -49,8 +50,8 @@ class SameSexAdoptions(unittest.TestCase):
     def test_kits_are_adopted(self):
         # given
 
-        cat1 = Cat(gender='female', age="adult", moons=40)
-        cat2 = Cat(gender='female', age="adult", moons=40)
+        cat1 = Cat(gender='female', age=AgeEnum.ADULT, moons=40)
+        cat2 = Cat(gender='female', age=AgeEnum.ADULT, moons=40)
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 
