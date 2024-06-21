@@ -824,8 +824,12 @@ class Cat:
                 only be true for non-timeskip status changes."""
 
         old_status = self.status
+        self.status = new_status
+        self.name.status = new_status
 
+        # updates mentors
         self.update_mentor()
+
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
             if isinstance(fetched_cat, Cat):
@@ -874,9 +878,6 @@ class Cat:
 
         elif new_status.is_mediator_app():
             pass
-
-        self.status = new_status
-        self.name.status = new_status
 
         # update class dictionary
         self.all_cats[self.ID] = self

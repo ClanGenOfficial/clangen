@@ -354,7 +354,7 @@ class HandleShortEvents():
             if "birth_death" not in self.types:
                 self.types.append("birth_death")
 
-            if cat.status.is_leader():
+            if cat.status == 'leader':
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
                 elif "some_lives" in self.chosen_event.tags:
@@ -425,7 +425,7 @@ class HandleShortEvents():
                 # death history
                 if self.chosen_event.m_c["dies"]:
                     # find history
-                    if self.main_cat.status.is_leader():
+                    if self.main_cat.status == "leader":
                         death_history = history_text_adjust(block.get('lead_death'),
                                                             self.other_clan_name, game.clan, self.random_cat)
                     else:
@@ -442,7 +442,7 @@ class HandleShortEvents():
             if "r_c" in block["cats"]:
                 # death history
                 if self.chosen_event.r_c["dies"]:
-                    if self.random_cat.status.is_leader():
+                    if self.random_cat.status == 'leader':
                         death_history = history_text_adjust(block.get('lead_death'),
                                                             self.other_clan_name, game.clan, self.random_cat)
                     else:
@@ -454,7 +454,7 @@ class HandleShortEvents():
             # multi_cat history
             if "multi_cat" in block["cats"]:
                 for cat in self.multi_cat:
-                    if cat.status.is_leader():
+                    if cat.status == "leader":
                         death_history = history_text_adjust(block.get('lead_death'),
                                                             self.other_clan_name, game.clan, self.random_cat)
                     else:
@@ -569,7 +569,7 @@ class HandleShortEvents():
                     return
                 elif cat_abbr in block["cats"]:
                     possible_scar = history_text_adjust(block["scar"], self.other_clan_name, game.clan, self.random_cat)
-                    if cat.status.is_leader():
+                    if cat.status == "leader":
                         possible_death = history_text_adjust(block["lead_death"], self.other_clan_name, game.clan,
                                                              self.random_cat)
                     else:
