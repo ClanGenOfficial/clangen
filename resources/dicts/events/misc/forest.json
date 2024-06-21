@@ -35,7 +35,7 @@
   },
   {
     "event_id": "fst_misc_ceremony_parent_child_acc1",
-    "location": ["forest:{camp3}"],
+    "location": ["forest:camp3"],
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
