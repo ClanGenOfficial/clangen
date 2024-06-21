@@ -3,6 +3,7 @@ import pygame_gui
 
 from scripts.game_structure.game_essentials import game
 from scripts.screens.Screens import Screens
+from scripts.screens.classes.keybinds.customkeybinds import CustomKeybinds
 
 
 class Keybinds:
@@ -16,13 +17,6 @@ class Keybinds:
     PROFILE_CHILDREN = ["choose mate screen", "choose mentor screen", "choose adoptive parent screen",
                         "relationship screen", "see kits screen", "mediation screen", "change gender screen"]
 
-    BIND_LEFT = [pygame.K_a, pygame.K_LEFT]
-    BIND_RIGHT = [pygame.K_d, pygame.K_RIGHT]
-    BIND_UP = [pygame.K_w, pygame.K_UP]
-    BIND_DOWN = [pygame.K_s, pygame.K_DOWN]
-    BIND_NUMBERS = [pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4, pygame.K_5,
-                    pygame.K_6, pygame.K_7, pygame.K_8, pygame.K_9, pygame.K_0]
-
     NUMBER_SCREENS = ["events screen", "camp screen", "list screen", "patrol screen", "leader den screen",
                       "med den screen", "clearing screen", "warrior den screen"]
 
@@ -33,18 +27,18 @@ class Keybinds:
         screen_name = screen.name
 
         # handle moving through screens in the top bar
-        if screen_name in self.MAIN_SCREENS and key in self.BIND_LEFT + self.BIND_RIGHT:
+        if screen_name in self.MAIN_SCREENS and key in CustomKeybinds.BIND_LEFT + CustomKeybinds.BIND_RIGHT:
             idx = self.MAIN_SCREENS.index(screen_name)
             try:
-                if key in self.BIND_LEFT and idx > 0:
+                if key in CustomKeybinds.BIND_LEFT and idx > 0:
                     screen.change_screen(self.MAIN_SCREENS[idx - 1])
-                elif key in self.BIND_RIGHT and idx < len(self.MAIN_SCREENS):
+                elif key in CustomKeybinds.BIND_RIGHT and idx < len(self.MAIN_SCREENS):
                     screen.change_screen(self.MAIN_SCREENS[idx + 1])
             except IndexError:
                 return
 
         # handle jumping to screens in the top bar
-        elif key in self.BIND_NUMBERS:
+        elif key in CustomKeybinds.BIND_NUMBERS:
             if key == pygame.K_1:
                 screen.change_screen(self.NUMBER_SCREENS[0])
             elif key == pygame.K_2:

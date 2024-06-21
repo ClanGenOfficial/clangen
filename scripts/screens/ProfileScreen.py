@@ -17,7 +17,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text, chunks
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
 from .Screens import Screens
-from .classes.keybinds.keybinds import Keybinds
+from .classes.keybinds.customkeybinds import CustomKeybinds
 from ..cat.history import History
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
@@ -242,7 +242,7 @@ class ProfileScreen(Screens):
             if game.switches["window_open"]:
                 pass
 
-            elif event.key in Keybinds.BIND_LEFT:
+            elif event.key in CustomKeybinds.BIND_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
                     game.switches["cat"] = self.previous_cat
@@ -250,7 +250,7 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.key in Keybinds.BIND_RIGHT:
+            elif event.key in CustomKeybinds.BIND_RIGHT:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
                     game.switches["cat"] = self.next_cat

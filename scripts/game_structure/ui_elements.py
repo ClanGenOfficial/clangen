@@ -13,6 +13,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
+from scripts.screens.classes.keybinds.customkeybinds import CustomKeybinds
 from scripts.utility import scale, shorten_text_to_fit
 
 
@@ -833,7 +834,43 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         if not game.settings['keybinds']:
             return
 
-    def move_pointer(self, direction):
+        if key in [pygame.K_SPACE]:
+            if self.has_selection:
+                return "switch_screens"
+            else:
+                # set pointerfocus
+                self.pointerfocus = 0
+                return "selection_change"
+        elif self.has_selection:
+            if key in [pygame.K_ESCAPE]:
+                self.reset_selection()
+                return "selection_reset"
+            elif key in CustomKeybinds.BIND_UP:
+                self.change_selection("up")
+                return "selection_change"
+            elif key in CustomKeybinds.BIND_DOWN:
+                self.change_selection("down")
+                return "selection_change"
+            elif key in CustomKeybinds.BIND_LEFT:
+                self.change_selection("left")
+                return "selection_change"
+            elif key in CustomKeybinds.BIND_RIGHT:
+                self.change_selection("right")
+                return "selection_change"
+        return None
+
+    @property
+    def has_selection(self):
+        if f"sprite{self.pointerfocus}" in self.cat_sprites:
+            if self.cat_sprites[f"sprite{self.pointerfocus}"].highlight.visible:
+                return True
+        return False
+
+    def reset_selection(self):
+        self.cat_sprites[f"sprite{self.pointerfocus}"].highlight.hide()
+        self.pointerfocus = None
+
+    def change_selection(self, direction):
         """Adjust pointerfocus in the given direction to move the pointer"""
         if direction == "left":
             self.pointerfocus = self.pointerfocus - 1
@@ -846,14 +883,14 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         else:
             return
 
-    def get_pointer_cat_id(self) -> str:
+    def get_selected_cat_id(self) -> str:
         """Returns the ID of the cat the pointer is currently active on
         :return str:"""
         # this is to ensure we're getting a cat that's valid for the screen we're on
         self.pointerfocus = self._pointerfocus
         return self.cat_sprites[f"sprite{self.pointerfocus}"].cat_id
 
-    def get_pointer_cat_object(self):
+    def get_selected_cat_object(self):
         """Returns the cat object corresponding to the pointer's currently active location
         :return Cat:"""
         # this is to ensure we're getting a cat that's valid for the screen we're on
@@ -866,6 +903,11 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
     @pointerfocus.setter
     def pointerfocus(self, val):
+        if val is None:
+            self._pointerfocus = None
+            return
+        if self._pointerfocus is None:
+            self._pointerfocus = 0
         if val < 0:
             val = self._pointerfocus
         elif val > min(self.cats_displayed, len(self.cat_chunks[self.current_page - 1])) - 1:

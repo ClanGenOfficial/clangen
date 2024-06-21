@@ -306,14 +306,6 @@ class SaveCheck(UIWindow):
                     self.mm_btn.enable()
 
                 # only allow one instance of this window
-        elif event.type == pygame.KEYDOWN:
-            # if we pressed escape, close this window
-            if event.key == pygame.K_ESCAPE:
-                game.is_close_menu_open = False
-                game.switches["window_open"] = False
-                self.kill()
-                if self.isMainMenu:
-                    self.mm_btn.enable()
 
 
 class DeleteCheck(UIWindow):

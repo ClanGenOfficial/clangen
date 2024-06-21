@@ -7,6 +7,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UINamedCatListDisplay
 from scripts.screens.Screens import Screens
+from scripts.screens.classes.keybinds.customkeybinds import CustomKeybinds
 from scripts.screens.classes.keybinds.keybinds import Keybinds
 from scripts.utility import scale, get_text_box_theme
 
@@ -167,26 +168,23 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if (event.key in [pygame.K_ESCAPE, pygame.K_RETURN] and
-                    self.cat_list_bar_elements["search_bar_entry"].is_focused):
+            if (event.key in [pygame.K_ESCAPE, pygame.K_RETURN]
+                    and self.cat_list_bar_elements["search_bar_entry"].is_focused):
                 self.cat_list_bar_elements["search_bar_entry"].unfocus()
             elif self.cat_list_bar_elements["search_bar_entry"].is_focused:
-                return
+                pass
             elif event.key in [pygame.K_TAB, pygame.K_RETURN]:
                 self.cat_list_bar_elements["search_bar_entry"].focus()
-            elif event.key in [pygame.K_i, pygame.K_j, pygame.K_k, pygame.K_l]:
-                if event.key == pygame.K_i:
-                    self.cat_display.move_pointer("up")
-                elif event.key == pygame.K_k:
-                    self.cat_display.move_pointer("down")
-                elif event.key == pygame.K_j:
-                    self.cat_display.move_pointer("left")
-                elif event.key == pygame.K_l:
-                    self.cat_display.move_pointer("right")
-            elif event.key in [pygame.K_SPACE]:
-                print(self.cat_display.get_pointer_cat_id())
-            else:
-                Keybinds.handle_navigation(Keybinds(), self, event.key)
+            elif (event.key in CustomKeybinds.BIND_UP + CustomKeybinds.BIND_DOWN
+                  + CustomKeybinds.BIND_LEFT + CustomKeybinds.BIND_RIGHT
+                  + [pygame.K_ESCAPE, pygame.K_SPACE]):
+                outcome = self.cat_display.handle_keybinds(event.key)
+                if outcome == "switch_screens":
+                    game.switches["cat"] = self.cat_display.get_selected_cat_id()
+                    game.last_list_forProfile = self.current_group
+                    self.change_screen("profile screen")
+                elif outcome is None:
+                    Keybinds.handle_navigation(Keybinds(), self, event.key)
 
     def screen_switches(self):
 

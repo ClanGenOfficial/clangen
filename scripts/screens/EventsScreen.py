@@ -14,6 +14,7 @@ from scripts.utility import (
     clan_symbol_sprite,
 )
 from .Screens import Screens
+from .classes.keybinds.customkeybinds import CustomKeybinds
 from .classes.keybinds.keybinds import Keybinds
 from ..cat.cats import Cat
 from ..game_structure import image_cache
@@ -207,7 +208,7 @@ class EventsScreen(Screens):
 
         elif event.type == pygame.KEYDOWN:  # and game.settings["keybinds"]:
             Keybinds.handle_navigation(Keybinds(), self, event.key)
-            if event.key in Keybinds.BIND_UP:
+            if event.key in CustomKeybinds.BIND_UP:
                 if self.event_display_type == "ceremony events":
                     self.event_display_type = "all events"
                     # Update Display
@@ -254,7 +255,7 @@ class EventsScreen(Screens):
                     )
                     self.display_events = self.other_clans_events
                     self.update_events_display()
-            elif event.key in Keybinds.BIND_DOWN:
+            elif event.key in CustomKeybinds.BIND_DOWN:
                 if self.event_display_type == "all events":
                     self.event_display_type = "ceremony events"
                     # Update Display
