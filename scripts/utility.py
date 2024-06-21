@@ -689,7 +689,7 @@ def create_new_cat(
             age = randint(6, 120)
 
     # setting status
-    if not status:
+    if status.is_none():
         if age == 0:
             status = enums.Status.NEWBORN
         elif age < 6:
