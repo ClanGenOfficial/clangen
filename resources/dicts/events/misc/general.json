@@ -639,7 +639,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
+    "event_text": "m_c received a present, acc_plural from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c":{
       "age": ["any"],
@@ -3401,7 +3401,7 @@
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
-    "event_text": "r_c handed over acc_plural to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice.",
+    "event_text": "r_c handed over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice.",
     "new_accessory": ["FORGET ME NOTS"],
     "m_c": {
       "status": ["apprentice"],
@@ -3426,7 +3426,7 @@
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
-    "event_text": "r_c handed over acc_plural to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a warrior.",
+    "event_text": "r_c handed over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a warrior.",
     "new_accessory": ["FORGET ME NOTS"],
     "m_c": {
       "status": ["warrior"],
