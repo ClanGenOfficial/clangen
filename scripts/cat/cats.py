@@ -233,7 +233,6 @@ class Cat:
 
         self.history = None
 
-
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -335,7 +334,6 @@ class Cat:
 
         if self.ID not in ["0", None]:
             Cat.insert_cat(self)
-
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
         """Perform faded-specific initialisation
@@ -526,10 +524,10 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        
+
         darkforest = game.clan.instructor.df
         isoutside = self.outside
-        if self.status.is_leader():        
+        if self.status.is_leader():
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
@@ -555,7 +553,6 @@ class Cat:
             death_thought = Thoughts.new_death_thought(self, darkforest, isoutside)
             final_thought = event_text_adjust(self, death_thought, main_cat=self)
             self.thought = final_thought
-
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -842,14 +839,7 @@ class Cat:
         if new_status.is_app_any():
             pass
 
-        elif new_status.is_mediator_any():
-            pass
-
-        elif new_status.is_medcat():
-            if game.clan is not None:
-                game.clan.new_medicine_cat(self)
-
-        elif new_status.is_warrior() or new_status.is_elder():
+        elif new_status.is_warrior():
             if old_status.is_leader():
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -861,6 +851,29 @@ class Cat:
                 if game.clan.deputy.ID == self.ID:
                     game.clan.deputy = None
                     game.clan.deputy_predecessors += 1
+
+        elif new_status.is_medcat():
+            if game.clan is not None:
+                game.clan.new_medicine_cat(self)
+
+        elif new_status.is_elder():
+            if old_status.is_leader():
+                if game.clan.leader:
+                    if game.clan.leader.ID == self.ID:
+                        game.clan.leader = None
+                        game.clan.leader_predecessors += 1
+
+            if game.clan and game.clan.deputy:
+                # game.clan check is needed to let tests work as tests don't have an instance of game
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
+
+        elif new_status.is_mediator():
+            pass
+
+        elif new_status.is_mediator_app():
+            pass
 
         self.status = new_status
         self.name.status = new_status
@@ -2232,8 +2245,7 @@ class Cat:
 
         if (
                 self.status.is_warrior_app() and
-                not (potential_mentor.status.is_warrior()
-                     or potential_mentor.status.is_deputy_or_leader())
+                not potential_mentor.status.is_deputy_leader_or_warrior()
         ):
             return False
 
@@ -3194,7 +3206,10 @@ class Cat:
 
     @staticmethod
     def rank_order(cat: Cat):
-        return enums.Status.index(cat.status)
+        if cat.status.is_inside_clan():
+            return enums.Status.index(cat.status)
+        else:
+            return 0
 
     @staticmethod
     def get_adjusted_age(cat: Cat):
@@ -3657,6 +3672,7 @@ class Personality:
             # This will only trigger if they have the same personality.
             return None
 
+
 # Creates a random cat
 def create_cat(status, moons=None, biome=None):
     new_cat = Cat(status=status, biome=biome)
@@ -3677,7 +3693,6 @@ def create_cat(status, moons=None, biome=None):
             new_cat.pelt.scars.remove(scar)
 
     return new_cat
-
 
 
 # Twelve example cats

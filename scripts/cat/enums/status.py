@@ -18,7 +18,7 @@ class Status(ExtendedStrEnum):
     DEPUTY = "deputy"
     LEADER = "leader"
 
-    NONE = "ERROR"
+    NONE = "NONE"
     EXCLAN = "former Clancat"
     EXILED = "exiled"
     KITTYPET = "kittypet"

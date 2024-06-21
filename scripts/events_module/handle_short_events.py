@@ -6,13 +6,13 @@ from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import FreshkillPile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
+from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relation_events import Relation_Events
+from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, \
     history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
     get_leader_life_notice, get_alive_status_cats, get_living_clan_cat_count, adjust_list_text
-from scripts.game_structure.game_essentials import game
-from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
