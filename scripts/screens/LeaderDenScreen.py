@@ -103,7 +103,7 @@ class LeaderDenScreen(Screens):
             elif event.ui_element == self.focus_frame_elements["outsiders_tab"]:
                 self.open_outsiders_tab()
             elif event.ui_element in self.outsider_cat_buttons.values():
-                self.focus_cat = event.ui_element.return_cat_object()
+                self.focus_cat = event.ui_element.cat_object
                 self.update_outsider_focus()
             elif event.ui_element in self.focus_button.values():
                 self.update_outsider_interaction_choice(

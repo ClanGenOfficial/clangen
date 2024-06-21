@@ -158,7 +158,7 @@ class ListScreen(Screens):
 
             # CAT SPRITES
             elif element in self.cat_display.cat_sprites.values():
-                game.switches["cat"] = element.return_cat_id()
+                game.switches["cat"] = element.cat_id
                 game.last_list_forProfile = self.current_group
                 self.change_screen("profile screen")
 
@@ -183,6 +183,8 @@ class ListScreen(Screens):
                     self.cat_display.move_pointer("left")
                 elif event.key == pygame.K_l:
                     self.cat_display.move_pointer("right")
+            elif event.key in [pygame.K_SPACE]:
+                print(self.cat_display.get_pointer_cat_id())
             else:
                 Keybinds.handle_navigation(Keybinds(), self, event.key)
 

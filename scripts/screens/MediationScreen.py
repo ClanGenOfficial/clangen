@@ -99,7 +99,7 @@ class MediationScreen(Screens):
                     self.selected_cat_1 = self.random_cat()
                 self.update_selected_cats()
             elif event.ui_element in self.cat_buttons:
-                if event.ui_element.return_cat_object() not in [
+                if event.ui_element.cat.object not in [
                     self.selected_cat_1,
                     self.selected_cat_2,
                 ]:
@@ -107,9 +107,9 @@ class MediationScreen(Screens):
                         pygame.key.get_mods() & pygame.KMOD_SHIFT
                         or not self.selected_cat_1
                     ):
-                        self.selected_cat_1 = event.ui_element.return_cat_object()
+                        self.selected_cat_1 = event.ui_element.cat.object
                     else:
-                        self.selected_cat_2 = event.ui_element.return_cat_object()
+                        self.selected_cat_2 = event.ui_element.cat.object
                     self.update_selected_cats()
 
     def screen_switches(self):

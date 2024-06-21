@@ -234,69 +234,75 @@ class UISpriteButton:
             object_id=None,
             tool_tip_text=None,
     ):
+        self._root_container = UIContainer(
+            relative_rect=relative_rect.inflate(1.25, 1.25),
+            starting_height=starting_height,
+            manager=manager,
+            container=container)
 
         # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that
         # UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(
-            relative_rect,
+            pygame.Rect((0, 0), relative_rect.size),
             pygame.transform.scale(sprite, relative_rect.size),
+            starting_height=0,
             visible=visible,
             manager=manager,
-            container=container,
-            object_id=object_id,
+            container=self._root_container,
+            object_id=object_id
         )
         self.image.disable()
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
 
         self.button = CatButton(
-            relative_rect,
+            pygame.Rect((0, 0), relative_rect.size),
             "",
             object_id="#cat_button",
             visible=visible,
             cat_id=cat_id,
             cat_object=cat_object,
-            starting_height=starting_height,
+            starting_height=1,
             manager=manager,
             tool_tip_text=tool_tip_text,
-            container=container,
+            container=self._root_container,
         )
-        highlight_outline = relative_rect.inflate(2.5, 2.5)
-        highlight_surface = pygame.image.load("resources/images/selected_cat_frame.png").convert_alpha()
-        # highlight_surface.fill((255, 0, 0, 64))
+        highlight_outline = relative_rect.inflate(1.25, 1.25)
+        highlight_surface = pygame.transform.scale(
+            pygame.image.load("resources/images/selected_cat_frame.png").convert_alpha(),
+            highlight_outline.size)
+
         self.highlight = pygame_gui.elements.UIImage(
-            relative_rect=highlight_outline,
+            relative_rect=pygame.Rect((0, 0), highlight_outline.size),
             image_surface=highlight_surface,
+            starting_height=0,
             manager=manager,
-            container=container,
+            container=self._root_container,
             visible=False
         )
         self.highlight.disable()
 
-    def return_cat_id(self):
+    @property
+    def cat_id(self):
         return self.button.return_cat_id()
 
-    def return_cat_object(self):
+    @property
+    def cat_object(self):
         return self.button.return_cat_object()
 
     def enable(self):
-        self.button.enable()
+        self._root_container.enable()
 
     def disable(self):
-        self.button.disable()
+        self._root_container.disable()
 
     def hide(self):
-        self.image.hide()
-        self.button.hide()
-        self.highlight.hide()
+        self._root_container.hide()
 
     def show(self):
-        self.image.show()
-        self.button.show()
+        self._root_container.show()
 
     def kill(self):
-        self.button.kill()
-        self.image.kill()
-        self.highlight.kill()
+        self._root_container.kill()
         del self
 
     def set_image(self, new_image):
@@ -828,6 +834,7 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             return
 
     def move_pointer(self, direction):
+        """Adjust pointerfocus in the given direction to move the pointer"""
         if direction == "left":
             self.pointerfocus = self.pointerfocus - 1
         elif direction == "right":
@@ -839,10 +846,19 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         else:
             return
 
-        if self.pointerfocus < 0:
-            self.pointerfocus = 0
-        if self.pointerfocus > self.cats_displayed:
-            self.pointerfocus = self.cats_displayed
+    def get_pointer_cat_id(self) -> str:
+        """Returns the ID of the cat the pointer is currently active on
+        :return str:"""
+        # this is to ensure we're getting a cat that's valid for the screen we're on
+        self.pointerfocus = self._pointerfocus
+        return self.cat_sprites[f"sprite{self.pointerfocus}"].cat_id
+
+    def get_pointer_cat_object(self):
+        """Returns the cat object corresponding to the pointer's currently active location
+        :return Cat:"""
+        # this is to ensure we're getting a cat that's valid for the screen we're on
+        self.pointerfocus = self._pointerfocus
+        return self.cat_sprites[f"sprite{self.pointerfocus}"].cat_object
 
     @property
     def pointerfocus(self):
@@ -851,14 +867,16 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
     @pointerfocus.setter
     def pointerfocus(self, val):
         if val < 0:
-            return
-        elif val >= self.cats_displayed:
-            return
+            val = self._pointerfocus
+        elif val > min(self.cats_displayed, len(self.cat_chunks[self.current_page - 1])) - 1:
+            # if we're out of bounds after switching to this tab
+            if val > len(self.cat_chunks[self.current_page - 1]) - 1:
+                val = len(self.cat_chunks[self.current_page - 1]) - 1
+            else:
+                val = self._pointerfocus
         self.cat_sprites[f"sprite{self._pointerfocus}"].highlight.hide()
         self._pointerfocus = val
         self.cat_sprites[f"sprite{self._pointerfocus}"].highlight.show()
-
-
 
 
 class UINamedCatListDisplay(UIBasicCatListDisplay):

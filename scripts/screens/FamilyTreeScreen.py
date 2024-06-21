@@ -150,7 +150,7 @@ class FamilyTreeScreen(Screens):
                 or self.cat_elements.values()
             ):
                 try:
-                    id = event.ui_element.return_cat_id()
+                    id = event.ui_element.cat_id
                     if Cat.fetch_cat(id).faded:
                         return
                     game.switches["cat"] = id

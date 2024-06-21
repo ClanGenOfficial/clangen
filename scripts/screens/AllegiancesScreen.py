@@ -2,7 +2,6 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -337,11 +336,11 @@ class MedDenScreen(Screens):
                 self.minor_tab.disable()
                 self.update_sick_cats()
             elif event.ui_element in self.cat_buttons.values():
-                cat = event.ui_element.return_cat_object()
+                cat = event.ui_element.cat_object
                 game.switches["cat"] = cat.ID
                 self.change_screen("profile screen")
             elif event.ui_element == self.med_cat:
-                cat = event.ui_element.return_cat_object()
+                cat = event.ui_element.cat_object
                 game.switches["cat"] = cat.ID
                 self.change_screen("profile screen")
             elif event.ui_element == self.cats_tab:

@@ -2,14 +2,14 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
     UITextBoxTweaked,
 )
-from scripts.utility import get_text_box_theme, scale, get_alive_status_cats, shorten_text_to_fit, get_living_clan_cat_count
+from scripts.utility import get_text_box_theme, scale, get_alive_status_cats, shorten_text_to_fit, \
+    get_living_clan_cat_count
 from .Screens import Screens
 from .classes.keybinds.keybinds import Keybinds
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
@@ -93,11 +93,11 @@ class MedDenScreen(Screens):
                 self.minor_tab.disable()
                 self.update_sick_cats()
             elif event.ui_element in self.cat_buttons.values():
-                cat = event.ui_element.return_cat_object()
+                cat = event.ui_element.cat.object
                 game.switches["cat"] = cat.ID
                 self.change_screen("profile screen")
             elif event.ui_element == self.med_cat:
-                cat = event.ui_element.return_cat_object()
+                cat = event.ui_element.cat.object
                 game.switches["cat"] = cat.ID
                 self.change_screen("profile screen")
             elif event.ui_element == self.cats_tab:

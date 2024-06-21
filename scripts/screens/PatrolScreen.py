@@ -74,7 +74,7 @@ class PatrolScreen(Screens):
             self.update_button()
         # Check is a cat is clicked
         elif event.ui_element in self.cat_buttons.values():
-            self.selected_cat = event.ui_element.return_cat_object()
+            self.selected_cat = event.ui_element.cat.object
             self.update_selected_cat()
             self.update_button()
         elif event.ui_element == self.elements["add_remove_cat"]:

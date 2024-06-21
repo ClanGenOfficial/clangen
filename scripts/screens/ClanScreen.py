@@ -63,7 +63,7 @@ class ClanScreen(Screens):
                     SaveError(traceback.format_exc())
                     self.change_screen("start screen")
             if event.ui_element in self.cat_buttons:
-                game.switches["cat"] = event.ui_element.return_cat_id()
+                game.switches["cat"] = event.ui_element.cat_id
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:
                 if game.clan.clan_settings['den labels']:
