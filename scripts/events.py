@@ -36,6 +36,7 @@ from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
     get_alive_status_cats,
+    get_living_clan_cat_count,
     get_random_moon_cat,
     ceremony_text_adjust,
     get_current_season,
@@ -580,15 +581,16 @@ class Events:
         TODO: DOCS
         """
         if game.clan.game_mode == "classic":
-            herbs = game.clan.herbs.copy()
-            for herb in herbs:
-                adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1], k=1)
-                game.clan.herbs[herb] += adjust_by[0]
-                if game.clan.herbs[herb] <= 0:
-                    game.clan.herbs.pop(herb)
-            if not int(random.random() * 5):
-                new_herb = random.choice(HERBS)
-                game.clan.herbs.update({new_herb: 1})
+            # in classic, you have a random amount of herbs.
+            # the actual herb doesn't matter; it's just the count.
+            herb_owned = random.choice(HERBS)
+            # values that will change the text that is displayed to say how many herbs you have
+            required_herbs = get_living_clan_cat_count(Cat) * 4
+            adjustment_factor = random.choices([0.25, 0.5, 1, 2, 3], [1, 2, 3, 2, 1], k=1)[0]
+            herb_amount = int(required_herbs * adjustment_factor)
+            game.clan.herbs = {
+                herb_owned: herb_amount
+            }
         else:
             event_list = []
             meds_available = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], working=True,
