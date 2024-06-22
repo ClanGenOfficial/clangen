@@ -563,7 +563,11 @@ class MedDenScreen(Screens):
         if not herbs_stored:
             herb_list.append("Empty")
         if len(herb_list) <= 10:
-            herb_display = "<br>".join(sorted(herb_list))
+            # classic doesn't display herbs
+            if game.clan.game_mode == 'classic':
+                herb_display = None
+            else:
+                herb_display = "<br>".join(sorted(herb_list))
 
             self.den_base = UIImageButton(
                 scale(pygame.Rect((216, 190), (792, 448))),
