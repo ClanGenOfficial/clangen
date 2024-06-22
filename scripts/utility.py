@@ -1311,8 +1311,8 @@ def unpack_rel_block(
     possible_values = ("romantic", "platonic", "dislike", "comfort", "jealous", "trust", "respect")
 
     for block in relationship_effects:
-        cats_from = block.get("cats_from", ())
-        cats_to = block.get("cats_to", ())
+        cats_from = block.get("cats_from", [])
+        cats_to = block.get("cats_to", [])
         amount = block.get("amount")
         values = [x for x in block.get("values", ()) if x in possible_values]
 
@@ -1392,15 +1392,21 @@ def unpack_rel_block(
                 print(f"something is wrong with relationship log: {log}")
 
         if not log1:
-            try:
-                log1 = event.text + effect
-            except AttributeError:
-                print(f"WARNING: event changed relationships but did not create a relationship log")
+            if hasattr(event, "text"):
+                try:
+                    log1 = event.text + effect
+                except AttributeError:
+                    print(f"WARNING: event changed relationships but did not create a relationship log")
+            else:
+                log1 = "These cats recently interacted." + effect
         if not log2:
-            try:
-                log2 = event.text + effect
-            except AttributeError:
-                print(f"WARNING: event changed relationships but did not create a relationship log")
+            if hasattr(event, "text"):
+                try:
+                    log2 = event.text + effect
+                except AttributeError:
+                    print(f"WARNING: event changed relationships but did not create a relationship log")
+            else:
+                log2 = f"These cats recently interacted." + effect
 
         change_relationship_values(
             cats_to_ob,
