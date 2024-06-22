@@ -2291,7 +2291,6 @@ class Events:
         """
         This function will handle:
             - expanded mode: getting a new illness (extra function in own class)
-            - classic mode illness related deaths is already handled in the general death function
         Returns:
             - boolean if a death event occurred or not
         """
@@ -2300,10 +2299,9 @@ class Events:
         # ---------------------------------------------------------------------------- #
         # if triggered_death is True then the cat will die
         triggered_death = False
-        if game.clan.game_mode in ["expanded", "cruel season"]:
-            triggered_death = Condition_Events.handle_illnesses(
-                cat, game.clan.current_season
-            )
+        triggered_death = Condition_Events.handle_illnesses(
+            cat, game.clan.current_season
+        )
         return triggered_death
 
     def handle_twoleg_capture(self, cat):
