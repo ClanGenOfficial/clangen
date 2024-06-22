@@ -87,8 +87,7 @@
         },
         "misc": {
             "border_width": "0",
-            "shadow_width": "0",
-            "line_spacing": "1"
+            "shadow_width": "0"
         }
     },
     "#text_box_14": {

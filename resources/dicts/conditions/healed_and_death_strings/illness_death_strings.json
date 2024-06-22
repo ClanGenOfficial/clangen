@@ -39,7 +39,7 @@
     "m_c died to whitecough.",
     "Whitecough killed m_c.",
     "m_c was killed by whitecough.",
-    "The whitecough didn't have a chance to progress further, it was already strong enough to kill m_c."
+    "The whitecough didn't have a chance to progress further: it was already strong enough to kill m_c."
   ],
   "yellowcough": [
     "m_c died to yellowcough.",
@@ -63,7 +63,7 @@
     "m_c's body couldn't continue on without nourishment, {PRONOUN/m_c/subject} never woke up from {PRONOUN/m_c/poss} sleep.",
     "Starvation finally caught up to m_c.",
     "Skinny and exhausted, m_c could no longer continue without food.",
-    "Lack of food has finally killed m_c."
+    "The lack of food has finally killed m_c."
   ]
 
 }

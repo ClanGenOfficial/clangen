@@ -3257,7 +3257,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/s_c/object} for it.",
+                "text": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

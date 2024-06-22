@@ -332,13 +332,13 @@ class EventsScreen(Screens):
         self.season = pygame_gui.elements.UITextBox(
             f"Current season: {game.clan.current_season}",
             scale(pygame.Rect((680, 205), (1200, 80))),
-            object_id=get_text_box_theme("#text_box_30"),
+            object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             manager=MANAGER,
         )
         self.clan_age = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((680, 245), (1200, 80))),
-            object_id=get_text_box_theme("#text_box_30"),
+            object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             manager=MANAGER,
         )
 
