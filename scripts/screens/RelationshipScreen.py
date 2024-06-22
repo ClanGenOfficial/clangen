@@ -82,7 +82,7 @@ class RelationshipScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.sprite_buttons.values():
-                self.inspect_cat = event.ui_element.return_cat_object()
+                self.inspect_cat = event.ui_element.cat.object
                 self.update_inspected_relation()
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")

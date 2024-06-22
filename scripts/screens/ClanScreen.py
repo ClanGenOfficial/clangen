@@ -12,6 +12,7 @@ from scripts.game_structure.ui_elements import UISpriteButton, UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import scale
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 
 
 class ClanScreen(Screens):
@@ -62,7 +63,7 @@ class ClanScreen(Screens):
                     SaveError(traceback.format_exc())
                     self.change_screen("start screen")
             if event.ui_element in self.cat_buttons:
-                game.switches["cat"] = event.ui_element.return_cat_id()
+                game.switches["cat"] = event.ui_element.cat_id
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:
                 if game.clan.clan_settings['den labels']:
@@ -84,11 +85,7 @@ class ClanScreen(Screens):
                 self.change_screen('leader den screen')
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            if event.key == pygame.K_RIGHT:
-                self.change_screen('list screen')
-            elif event.key == pygame.K_LEFT:
-                self.change_screen('events screen')
-            elif event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
                 game.save_cats()
@@ -98,6 +95,7 @@ class ClanScreen(Screens):
                 game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
 
     def screen_switches(self):
         self.update_camp_bg()
@@ -134,7 +132,7 @@ class ClanScreen(Screens):
                         UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))),
                                        Cat.all_cats[x].sprite,
                                        cat_id=x,
-                                       starting_height=i)
+                                       starting_height=1)
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")

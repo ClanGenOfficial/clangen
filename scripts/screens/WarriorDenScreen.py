@@ -7,6 +7,7 @@ from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.screens.classes.keybinds.keybinds import Keybinds
 from scripts.utility import scale, get_text_box_theme, get_alive_status_cats
 
 
@@ -94,7 +95,8 @@ class WarriorDenScreen(Screens):
                     self.save_button.disable()
                     self.update_buttons()
                     self.create_top_info()
-
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
     def screen_switches(self):
         """
         Handle everything when it is switched to that screen.

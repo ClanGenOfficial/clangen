@@ -9,6 +9,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 
 
 class PatrolScreen(Screens):
@@ -63,11 +64,8 @@ class PatrolScreen(Screens):
 
             self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            if event.key == pygame.K_LEFT:
-                self.change_screen("list screen")
-            # elif event.key == pygame.K_RIGHT:
-            # self.change_screen('list screen')
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
 
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
@@ -76,7 +74,7 @@ class PatrolScreen(Screens):
             self.update_button()
         # Check is a cat is clicked
         elif event.ui_element in self.cat_buttons.values():
-            self.selected_cat = event.ui_element.return_cat_object()
+            self.selected_cat = event.ui_element.cat.object
             self.update_selected_cat()
             self.update_button()
         elif event.ui_element == self.elements["add_remove_cat"]:

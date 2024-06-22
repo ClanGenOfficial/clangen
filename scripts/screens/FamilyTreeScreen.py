@@ -7,6 +7,7 @@ from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
 
 
 class FamilyTreeScreen(Screens):
@@ -149,7 +150,7 @@ class FamilyTreeScreen(Screens):
                 or self.cat_elements.values()
             ):
                 try:
-                    id = event.ui_element.return_cat_id()
+                    id = event.ui_element.cat_id
                     if Cat.fetch_cat(id).faded:
                         return
                     game.switches["cat"] = id
@@ -161,7 +162,8 @@ class FamilyTreeScreen(Screens):
                 else:
                     self.exit_screen()
                     self.screen_switches()
-
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(Keybinds(), self, event.key)
     def screen_switches(self):
         """Set up things that are always on the page"""
 

@@ -1,5 +1,5 @@
-from typing import Union, Tuple
 import html
+from typing import Union, Tuple
 
 import pygame
 import pygame_gui
@@ -13,7 +13,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
-
+from scripts.screens.classes.keybinds.customkeybinds import CustomKeybinds
 from scripts.utility import scale, shorten_text_to_fit
 
 
@@ -235,56 +235,75 @@ class UISpriteButton:
             object_id=None,
             tool_tip_text=None,
     ):
+        self._root_container = UIContainer(
+            relative_rect=relative_rect.inflate(1.25, 1.25),
+            starting_height=starting_height,
+            manager=manager,
+            container=container)
 
         # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that
         # UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(
-            relative_rect,
+            pygame.Rect((0, 0), relative_rect.size),
             pygame.transform.scale(sprite, relative_rect.size),
+            starting_height=0,
             visible=visible,
             manager=manager,
-            container=container,
-            object_id=object_id,
+            container=self._root_container,
+            object_id=object_id
         )
         self.image.disable()
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
 
         self.button = CatButton(
-            relative_rect,
+            pygame.Rect((0, 0), relative_rect.size),
             "",
             object_id="#cat_button",
             visible=visible,
             cat_id=cat_id,
             cat_object=cat_object,
-            starting_height=starting_height,
+            starting_height=1,
             manager=manager,
             tool_tip_text=tool_tip_text,
-            container=container,
+            container=self._root_container,
         )
+        highlight_outline = relative_rect.inflate(1.25, 1.25)
+        highlight_surface = pygame.transform.scale(
+            pygame.image.load("resources/images/selected_cat_frame.png").convert_alpha(),
+            highlight_outline.size)
 
-    def return_cat_id(self):
+        self.highlight = pygame_gui.elements.UIImage(
+            relative_rect=pygame.Rect((0, 0), highlight_outline.size),
+            image_surface=highlight_surface,
+            starting_height=0,
+            manager=manager,
+            container=self._root_container,
+            visible=False
+        )
+        self.highlight.disable()
+
+    @property
+    def cat_id(self):
         return self.button.return_cat_id()
 
-    def return_cat_object(self):
+    @property
+    def cat_object(self):
         return self.button.return_cat_object()
 
     def enable(self):
-        self.button.enable()
+        self._root_container.enable()
 
     def disable(self):
-        self.button.disable()
+        self._root_container.disable()
 
     def hide(self):
-        self.image.hide()
-        self.button.hide()
+        self._root_container.hide()
 
     def show(self):
-        self.image.show()
-        self.button.show()
+        self._root_container.show()
 
     def kill(self):
-        self.button.kill()
-        self.image.kill()
+        self._root_container.kill()
         del self
 
     def set_image(self, new_image):
@@ -717,6 +736,9 @@ class UIBasicCatListDisplay(UIContainer):
         self._chunk()
         self._display_cats()
 
+        self._pointerfocus = 0
+        self.pointer = None
+
     def clear_display(self):
         for ele in self.cat_sprites:
             self.cat_sprites[ele].kill()
@@ -840,6 +862,97 @@ class UIBasicCatListDisplay(UIContainer):
             if self.first_button:
                 self.first_button.enable()
                 self.last_button.enable()
+
+    def handle_keybinds(self, key):
+        # only run this if keybinds are enabled
+        if not game.settings['keybinds']:
+            return
+
+        if key in [pygame.K_SPACE]:
+            if self.has_selection:
+                return "switch_screens"
+            else:
+                # set pointerfocus
+                self.pointerfocus = 0
+                return "selection_change"
+        elif self.has_selection:
+            if key in [pygame.K_ESCAPE]:
+                self.reset_selection()
+                return "selection_reset"
+            elif key in CustomKeybinds.BIND_UP:
+                self.change_selection("up")
+                return "selection_change"
+            elif key in CustomKeybinds.BIND_DOWN:
+                self.change_selection("down")
+                return "selection_change"
+            elif key in CustomKeybinds.BIND_LEFT:
+                self.change_selection("left")
+                return "selection_change"
+            elif key in CustomKeybinds.BIND_RIGHT:
+                self.change_selection("right")
+                return "selection_change"
+        return None
+
+    @property
+    def has_selection(self):
+        if f"sprite{self.pointerfocus}" in self.cat_sprites:
+            if self.cat_sprites[f"sprite{self.pointerfocus}"].highlight.visible:
+                return True
+        return False
+
+    def reset_selection(self):
+        self.cat_sprites[f"sprite{self.pointerfocus}"].highlight.hide()
+        self.pointerfocus = None
+
+    def change_selection(self, direction):
+        """Adjust pointerfocus in the given direction to move the pointer"""
+        if direction == "left":
+            self.pointerfocus = self.pointerfocus - 1
+        elif direction == "right":
+            self.pointerfocus = self.pointerfocus + 1
+        elif direction == "down":
+            self.pointerfocus = self.pointerfocus + self.columns
+        elif direction == "up":
+            self.pointerfocus = self.pointerfocus - self.columns
+        else:
+            return
+
+    def get_selected_cat_id(self) -> str:
+        """Returns the ID of the cat the pointer is currently active on
+        :return str:"""
+        # this is to ensure we're getting a cat that's valid for the screen we're on
+        self.pointerfocus = self._pointerfocus
+        return self.cat_sprites[f"sprite{self.pointerfocus}"].cat_id
+
+    def get_selected_cat_object(self):
+        """Returns the cat object corresponding to the pointer's currently active location
+        :return Cat:"""
+        # this is to ensure we're getting a cat that's valid for the screen we're on
+        self.pointerfocus = self._pointerfocus
+        return self.cat_sprites[f"sprite{self.pointerfocus}"].cat_object
+
+    @property
+    def pointerfocus(self):
+        return self._pointerfocus
+
+    @pointerfocus.setter
+    def pointerfocus(self, val):
+        if val is None:
+            self._pointerfocus = None
+            return
+        if self._pointerfocus is None:
+            self._pointerfocus = 0
+        if val < 0:
+            val = self._pointerfocus
+        elif val > min(self.cats_displayed, len(self.cat_chunks[self.current_page - 1])) - 1:
+            # if we're out of bounds after switching to this tab
+            if val > len(self.cat_chunks[self.current_page - 1]) - 1:
+                val = len(self.cat_chunks[self.current_page - 1]) - 1
+            else:
+                val = self._pointerfocus
+        self.cat_sprites[f"sprite{self._pointerfocus}"].highlight.hide()
+        self._pointerfocus = val
+        self.cat_sprites[f"sprite{self._pointerfocus}"].highlight.show()
 
 
 class UINamedCatListDisplay(UIBasicCatListDisplay):
