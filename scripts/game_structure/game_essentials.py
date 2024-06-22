@@ -419,6 +419,8 @@ class Game:
             cat_data = inter_cat.get_save_dict()
             clan_cats.append(cat_data)
 
+            inter_cat.save_condition()
+
             if inter_cat.history:
                 inter_cat.save_history(directory + "/history")
                 # after saving, dump the history info
