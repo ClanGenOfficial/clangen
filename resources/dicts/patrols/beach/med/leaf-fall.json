@@ -234,7 +234,7 @@
         },
         "weight": 20,
         "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -344,7 +344,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from {PRONOUN/p_l/object}, bringing along a patrol to help {PRONOUN/p_l/subject} cart the leaves back to the herb stores.",
+        "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from {PRONOUN/p_l/object}, bringing along a patrol to help {PRONOUN/p_l/subject} carry the leaves back to the herb stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -505,7 +505,7 @@
         },
         "weight": 20,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing app1 along.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1314,7 +1314,7 @@
         },
         "weight": 20,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried but potent daisy leaves, in case c_n's elders need it for {PRONOUN/p_l/poss} joints or cats need to unexpectedly travel. p_l brings app1 along for a lesson.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -5244,12 +5244,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from {PRONOUN/p_l/object}, bringing along a patrol to help {PRONOUN/p_l/subject} cart the leaves back to the herb stores.",
+        "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from {PRONOUN/p_l/object}, bringing along a patrol to help {PRONOUN/p_l/subject} carry the leaves back to the herb stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out {PRONOUN/p_l/poss} scent, leaving a foul taste hanging in the air. There is a chorus of long-suffering sighs as the cats get to work, accomplishing {PRONOUN/p_l/poss} unpleasant task professionally but without any joy.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out {PRONOUN/p_l/poss} scent, leaving a foul taste hanging in the air. There is a chorus of long-suffering sighs as the cats get to work, accomplishing {PRONOUN/p_l/poss} unpleasant task diligently but without any joy.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["ragwort"],

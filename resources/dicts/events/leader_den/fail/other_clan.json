@@ -1,0 +1,50 @@
+[
+  {
+    "interaction_type": "offend",
+    "event_text": "During the Gathering, m_c makes a joke at o_c_n's expense, hoping to hurt their feelings. The plan backfires, though, when o_c_n's leader finds more humor than offense in it.",
+    "rel_change": 1,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "During the Gathering, m_c flatters o_c_n to no end. By the end of the night, o_c_n's leader seems more annoyed at the attention than grateful.",
+    "rel_change": -1,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c attempts to make double-pawed comments about o_c_n's leader. Their leader, however, either doesn't care or is too oblivious to notice.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c cozies up to the o_c_n leader in an attempt to get in o_c_n's good graces. They don't seem very receptive, though.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "During the Gathering, m_c makes scathing comments about o_c_n. o_c_n's leader is quite blatantly ignoring {PRONOUN/m_c/object} though.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "During the Gathering, m_c tries to make overtures of peace with o_c_n. o_c_n's leader seems far from interested and, in fact, seems to take further offense.",
+    "rel_change": -1,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  }
+]

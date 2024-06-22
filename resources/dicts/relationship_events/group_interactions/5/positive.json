@@ -1,8 +1,8 @@
 [
     {
 	"id": "much_ado_about_nothing",
-	"biome": ["Any"],
-	"season": ["Any"],
+	"biome": ["any"],
+	"season": ["any"],
 	"intensity": "high",
 	"cat_amount": 5,
 	"interactions": [

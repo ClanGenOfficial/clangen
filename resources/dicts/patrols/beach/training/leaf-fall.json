@@ -371,7 +371,7 @@
     {
         "patrol_id": "bch_train_leaffall_lifeguarding_storyloreswimmerlocked1",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "bch_train_session1",
@@ -384,11 +384,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1", "SWIMMER,1"],
-        "intro_text": "The large patrol practises holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rock pool. app1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/app1/subject} practise this on a hot sunny day?",
+        "intro_text": "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rock pool. app1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/app1/subject} practice this on a hot sunny day?",
         "decline_text": "Taking a break turns into ending the patrol early.",
         "success_outcomes": [
                 {
-                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathise/sympathises}, but app1 can't rely on cats in distress only showing up with the sea is inviting. The sympathy (and a little physical warmth) put cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practise with enthusiasm.",
+                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathise/sympathises}, but app1 can't rely on cats in distress only showing up with the sea is inviting. The sympathy (and a little physical warmth) put cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practice with enthusiasm.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -419,7 +419,7 @@
                     ]
                 },
                 {
-                    "text": "s_c nods. Life guarding isn't easy, even in practise. But they offer up the story of a kitten saved by a c_n warrior, who had the strenght and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
+                    "text": "s_c nods. Life guarding isn't easy, even in practice. But they offer up the story of a kitten saved by a c_n warrior, who had the strenght and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",

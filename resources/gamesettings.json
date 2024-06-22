@@ -28,7 +28,7 @@
         ],
         "keybinds": [
             "Keybinds",
-            "Enables certian keybinds to be used throughout the menus for quick navigation.",
+            "Enables certain keybinds to be used throughout the menus for quick navigation.",
             false
         ],
         "shaders": [
@@ -65,6 +65,11 @@
             "Randomize relationship values when creating Clan",
             "Clan founder cats will start the game with established relationships.",
             true
+        ],
+        "they them default": [
+            "Use they/them as default pronouns",
+            "If this setting is on new cats will generate with they/them pronouns, regardless of gender.",
+            false
         ]
     },
     "..": "these are special. they do not have a display name or a tooltip",

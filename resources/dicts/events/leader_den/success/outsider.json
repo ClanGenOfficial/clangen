@@ -1,0 +1,104 @@
+[
+  {
+    "interaction_type": "hunt",
+    "event_text": "After a long search, m_c is found and killed where they stand.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "exiled", "lost"],
+      "new_thought": "Is shocked that {PRONOUN/m_c/subject} were killed",
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "m_c was found near c_n territory and driven far out of the surrounding lands.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "exiled", "lost"],
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "m_c was found and invited into the Clan.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Is curious about the Clan that sought {PRONOUN/m_c/object} out",
+      "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "m_c was found and invited back into the Clan.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["exiled"],
+      "new_thought": "Is curious why the Clan has allowed {PRONOUN/m_c/object} back",
+      "kit_thought": "Is curious why {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been brought here",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "m_c was found and brought back to the safety of the Clan",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Is glad to have returned",
+      "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        }
+      ]
+    }
+  }
+]

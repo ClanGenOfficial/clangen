@@ -41,7 +41,7 @@
     "#search_entry_box": {
         "colours": {
             "dark_bg": "#00000000",
-            "selected_bg": "#00000000",
+            "selected_bg": "#796045",
             "normal_text": "#000000",
             "selected_text": "#DCDCDC"
         },
@@ -54,6 +54,21 @@
         "font": {
             "name": "notosans",
             "size": "13"
+        }
+    },
+    "#page_entry_box": {
+        "prototype": "#search_entry_box",
+        "colours": {
+            "normal_border": "#2F2918"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": 2,
+            "border_width": "1",
+            "text_horiz_alignment": "right"
+        },
+        "font": {
+            "size": 15
         }
     },
     "#text_box": {
@@ -264,6 +279,13 @@
         "prototype": "#text_box_30",
         "misc": {
             "text_horiz_alignment": "left"
+        }
+    },
+    "#text_box_30_horizleft_spacing_95": {
+        "prototype": "#text_box_30_horizleft",
+        "misc": {
+            "text_horiz_alignment": "left",
+            "line_spacing": "0.95"
         }
     },
     "#text_box_30_horizleft_light": {

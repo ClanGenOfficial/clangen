@@ -3,13 +3,13 @@ from pygame_gui.windows.ui_console_window import UIConsoleWindow
 _debugClass: UIConsoleWindow = None
 
 
-def setDebugClass(debugClass: UIConsoleWindow):
+def set_debug_class(debug_class: UIConsoleWindow):
     global _debugClass  # pylint: disable=global-statement
-    _debugClass = debugClass
+    _debugClass = debug_class
 
 
 def add_multiple_lines_to_log(lines: str):
-    """Function to add multiple lines from a mutliline string to the log. 
+    """Function to add multiple lines from a mutliline string to the log.
     Automatically trims whitespace.
 
     Args:
