@@ -95,7 +95,7 @@ class ClanScreen(Screens):
                 game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
 
     def screen_switches(self):
         self.update_camp_bg()

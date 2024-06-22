@@ -183,7 +183,7 @@ class ListScreen(Screens):
                     game.last_list_forProfile = self.current_group
                     self.change_screen("profile screen")
                 elif outcome is None:
-                    Keybinds.handle_navigation(Keybinds(), self, event.key)
+                    Keybinds.handle_navigation(self, event.key)
 
     def screen_switches(self):
 

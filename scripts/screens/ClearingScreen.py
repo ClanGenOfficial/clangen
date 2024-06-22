@@ -172,7 +172,7 @@ class ClearingScreen(Screens):
                 self.feed_all_button.disable()
             self.handle_checkbox_events(event)
         elif event.type == pygame.KEYDOWN:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
 
     def update_cats_list(self):
         self.satisfied_cats = []

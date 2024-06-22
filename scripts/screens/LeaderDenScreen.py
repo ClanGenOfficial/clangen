@@ -111,7 +111,7 @@ class LeaderDenScreen(Screens):
                 )
                 self.update_outsider_cats()
         elif event.type == pygame.KEYDOWN:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
 
     def screen_switches(self):
         """

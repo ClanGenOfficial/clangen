@@ -111,7 +111,7 @@ class MedDenScreen(Screens):
                 self.cats_tab.enable()
                 self.handle_tab_toggles()
         elif event.type == pygame.KEYDOWN:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
     def screen_switches(self):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(

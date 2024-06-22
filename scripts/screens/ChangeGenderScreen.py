@@ -104,7 +104,7 @@ class ChangeGenderScreen(Screens):
 
                 self.update_selected_cat()
         elif event.type == pygame.KEYDOWN:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
     def screen_switches(self):
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),

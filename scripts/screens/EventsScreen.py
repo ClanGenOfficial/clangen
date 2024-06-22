@@ -207,7 +207,7 @@ class EventsScreen(Screens):
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN:  # and game.settings["keybinds"]:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
             if event.key in CustomKeybinds.BIND_UP:
                 if self.event_display_type == "ceremony events":
                     self.event_display_type = "all events"

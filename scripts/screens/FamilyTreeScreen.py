@@ -163,7 +163,7 @@ class FamilyTreeScreen(Screens):
                     self.exit_screen()
                     self.screen_switches()
         elif event.type == pygame.KEYDOWN:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
     def screen_switches(self):
         """Set up things that are always on the page"""
 

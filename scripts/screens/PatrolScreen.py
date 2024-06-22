@@ -65,7 +65,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN:
-            Keybinds.handle_navigation(Keybinds(), self, event.key)
+            Keybinds.handle_navigation(self, event.key)
 
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
