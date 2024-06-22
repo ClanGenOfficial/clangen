@@ -652,7 +652,7 @@ class UICheckbox(UIImageButton):
         self.change_object_id("#unchecked_checkbox")
 
 
-class UIBasicCatListDisplay(UIAutoResizingContainer):
+class UIBasicCatListDisplay(UIContainer):
     """
     Creates and displays a list of click-able cat sprites.
     :param relative_rect: The starting size and relative position of the container.
@@ -710,11 +710,22 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         self.tool_tip_name = tool_tip_name
 
         self.total_pages: int = 0
+        self.favor_indicator = {}
         self.cat_sprites = {}
         self.cat_chunks = []
 
         self._chunk()
         self._display_cats()
+
+    def clear_display(self):
+        for ele in self.cat_sprites:
+            self.cat_sprites[ele].kill()
+        for ele in self.favor_indicator:
+            self.favor_indicator[ele].kill()
+        self.next_button = None
+        self.prev_button = None
+        self.first_button = None
+        self.last_button = None
 
     def update_display(self, current_page: int, cat_list: list):
         """
@@ -761,22 +772,45 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         pos_y = self.px_between
 
         for i, kitty in enumerate(display_cats):
-            self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                kitty.sprite,
-                cat_object=kitty,
-                cat_id=kitty.ID,
-                container=self,
-                object_id=f"#sprite{str(i)}",
-                tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
-                starting_height=1
-            )
+            if game.clan.clan_settings["show fav"] and kitty.favourite:
+                self.create_favor_indicator(i, pos_x, pos_y)
+
+            self.create_cat_button(i, kitty, pos_x, pos_y)
 
             # changing position
             pos_x += self.px_between
             if pos_x >= (self.px_between * self.columns):
                 pos_x = self.px_between
                 pos_y += self.px_between
+
+    def create_cat_button(self, i, kitty, pos_x, pos_y):
+        self.cat_sprites[f"sprite{i}"] = UISpriteButton(
+            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+            kitty.sprite,
+            cat_object=kitty,
+            cat_id=kitty.ID,
+            container=self,
+            object_id=f"#sprite{str(i)}",
+            tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
+            starting_height=1
+        )
+
+    def create_favor_indicator(self, i, pos_x, pos_y):
+        _favor_circle = pygame.transform.scale(
+            pygame.image.load(
+                f"resources/images/fav_marker.png"
+            ).convert_alpha(),
+            (100, 100),
+        )
+        if game.settings["dark mode"]:
+            _favor_circle.set_alpha(150)
+        self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+            _favor_circle,
+            object_id=f"favor_circle{i}",
+            container=self,
+            starting_height=1
+        )
 
     def _update_arrow_buttons(self):
         """
@@ -851,16 +885,28 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
                  last_button: UIImageButton = None,
                  visible: bool = True
                  ):
+
         self.x_px_between = x_px_between
         self.y_px_between = y_px_between
         self.text_theme = text_theme
 
         self.cat_names = {}
-        self.favor_indicator = {}
 
         super().__init__(relative_rect, container, starting_height, object_id, manager, cat_list, cats_displayed,
                          x_px_between, columns, current_page, next_button, prev_button, first_button, last_button,
                          visible=visible)
+
+    def clear_display(self):
+        for ele in self.cat_sprites:
+            self.cat_sprites[ele].kill()
+        for ele in self.cat_names:
+            self.cat_names[ele].kill()
+        for ele in self.favor_indicator:
+            self.favor_indicator[ele].kill()
+        self.next_button = None
+        self.prev_button = None
+        self.first_button = None
+        self.last_button = None
 
     def _display_cats(self):
         """
@@ -887,34 +933,9 @@ class UINamedCatListDisplay(UIBasicCatListDisplay):
 
         for i, kitty in enumerate(display_cats):
             if game.clan.clan_settings["show fav"] and kitty.favourite:
-                _favor_circle = pygame.transform.scale(
-                    pygame.image.load(
-                        f"resources/images/fav_marker.png"
-                    ).convert_alpha(),
-                    (100, 100),
-                )
+                self.create_favor_indicator(i, pos_x, pos_y)
 
-                if game.settings["dark mode"]:
-                    _favor_circle.set_alpha(150)
-
-                self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                    _favor_circle,
-                    object_id=f"favor_circle{i}",
-                    container=self,
-                    starting_height=1
-                )
-
-            self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                kitty.sprite,
-                cat_object=kitty,
-                cat_id=kitty.ID,
-                container=self,
-                object_id=f"#sprite{str(i)}",
-                tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
-                starting_height=1
-            )
+            self.create_cat_button(i, kitty, pos_x, pos_y)
 
             self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((pos_x - self.x_px_between / 2, pos_y + 100), (100 + self.x_px_between, 60))),
