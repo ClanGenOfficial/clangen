@@ -1104,7 +1104,7 @@ class Condition_Events:
                 "this as a bug."
             )
             return
-        if game.clan.game_mode != "classic":
+        if game.clan.game_mode == "classic":
             herb_set = needed_herbs
         else:
             herb_set = clan_herbs.intersection(needed_herbs)
