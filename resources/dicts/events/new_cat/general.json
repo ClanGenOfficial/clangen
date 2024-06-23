@@ -236,15 +236,14 @@
           },
           "r_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
-            "status": ["any"],
-            "relationship_status": ["mates"]
+            "status": ["any"]
         },
         "new_cat": [
             [
                 "old_name",
                 "loner",
                 "status:warrior",
-                "mate:m_c,r_c" 
+                "mate:m_c,r_c"
             ]
         ],
         "relationships": [
