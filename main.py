@@ -64,7 +64,7 @@ from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
 
 directory = os.path.dirname(os.path.realpath('__file__'))
-os.chdir(directory) # this will throw an exception if the directory is invalid
+os.chdir(directory)  # this will throw an exception if the directory is invalid
 
 
 if os.path.exists("auto-updated"):
