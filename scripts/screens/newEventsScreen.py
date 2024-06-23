@@ -186,15 +186,15 @@ class newEventsScreen(Screens):
             manager=MANAGER,
         )
 
-        self.full_event_display_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((120, 532), (0, 0))),
+        self.full_event_display_container = pygame_gui.core.UIContainer(
+            scale(pygame.Rect((110, 532), (1400, 1400))),
             object_id="#event_display_container",
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER
         )
         self.events_frame = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((292, 0), (1068, 740))),
+            scale(pygame.Rect((302, 0), (1068, 740))),
             image_cache.load_image(
                 "resources/images/event_page_frame.png"
             ).convert_alpha(),
@@ -207,7 +207,7 @@ class newEventsScreen(Screens):
         y_pos = 0
         for event_type in ["all", "ceremony", "birth_death", "relationship", "health", "other_clans", "misc"]:
             self.event_buttons[f"{event_type}"] = UIImageButton(
-                scale(pygame.Rect((0, 38 + y_pos), (300, 60))),
+                scale(pygame.Rect((10, 38 + y_pos), (300, 60))),
                 "",
                 object_id=f"#{event_type}_events_button",
                 starting_height=1,
@@ -217,7 +217,7 @@ class newEventsScreen(Screens):
 
             if event_type != "all":
                 self.alert[f"{event_type}"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((-10, 48 + y_pos), (8, 44))),
+                    scale(pygame.Rect((0, 48 + y_pos), (8, 44))),
                     pygame.transform.scale(
                         image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
                     ),
