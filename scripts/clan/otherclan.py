@@ -40,5 +40,4 @@ class OtherClan(BaseClan):
             else clan_symbol_sprite(self, return_string=True)
         )
 
-    def __repr__(self):
-        return f"{self.name}Clan"
+
