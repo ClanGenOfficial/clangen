@@ -308,11 +308,6 @@ class newEventsScreen(Screens):
                 if x_pos < 0:
                     x_pos += 54
 
-        x_pos = (
-                self.involved_cat_container.horiz_scroll_bar.scroll_position
-                + self.involved_cat_container.horiz_scroll_bar.arrow_button_width)
-        y_pos = - self.involved_cat_container.horiz_scroll_bar.sliding_button.get_relative_rect()[2]
-        self.involved_cat_container.horiz_scroll_bar.set_scroll_from_start_percentage(1)
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -427,6 +422,7 @@ class newEventsScreen(Screens):
             )
 
             y_pos += 110
+
 
     def update_list_buttons(self):
         """

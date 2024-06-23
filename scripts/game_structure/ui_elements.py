@@ -104,7 +104,6 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         super().__init__(relative_rect=relative_rect, manager=manager, starting_height=starting_height,
                          container=container, object_id=object_id, visible=visible, allow_scroll_x=allow_scroll_x,
                          allow_scroll_y=allow_scroll_y, should_grow_automatically=True)
-
         if self.allow_scroll_y:
             self.vert_scroll_bar.kill()
             self.vert_scroll_bar = None
@@ -187,12 +186,14 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
             self._remove_horiz_scrollbar()
 
 
+
 class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
     def __init__(self, relative_rect: pygame.Rect, visible_percentage: float, manager=None, container=None,
                  parent_element=None, object_id=None, anchors=None, visible: int = 1, starting_height: int = 1):
         super().__init__(relative_rect=relative_rect, visible_percentage=visible_percentage, manager=manager,
                          container=container, parent_element=parent_element, object_id=object_id, anchors=anchors,
                          visible=visible)
+        self.scroll_wheel_speed = 100
         self.sliding_button.change_layer(starting_height)
         if game.settings["fullscreen"]:
             self.button_height = 32
@@ -228,6 +229,10 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
                                                     'top': 'bottom',
                                                     'bottom': 'bottom'}
                                            )
+
+    def set_visible_percentage(self, percentage: float):
+        super().set_visible_percentage(percentage)
+        self.scroll_wheel_speed = (1/self.visible_percentage) * 15
 
 
 class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
