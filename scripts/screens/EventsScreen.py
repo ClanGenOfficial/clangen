@@ -766,8 +766,6 @@ class EventsScreen(Screens):
                 self.scroll_height[self.event_display_type]
             )
 
-        self.event_container.set_visual_debug_mode(True)
-
     def make_cat_buttons(self, button_pressed):
         """Makes the buttons that take you to the profile."""
 

@@ -41,6 +41,7 @@ class newEventsScreen(Screens):
         self.alert = {}
 
         self.event_display = None
+        self.scroll_height = {}
         self.event_display_elements = {}
         self.cat_profile_buttons = {}
         self.involved_cat_container = None
@@ -93,12 +94,26 @@ class newEventsScreen(Screens):
             elif element in self.involved_cat_buttons.values():
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons.values():
+                self.save_scroll_position()
                 game.switches["cat"] = element.ids
                 self.change_screen("profile screen")
             else:
+                self.save_scroll_position()
                 self.menu_button_pressed(event)
 
+    def save_scroll_position(self):
+        """
+        adds current event display vert scroll bar position to `self.scroll_height` dict
+        """
+        if self.event_display.vert_scroll_bar:
+            self.scroll_height[self.event_display_type] = (
+                    self.event_display.vert_scroll_bar.scroll_position
+                    / self.event_display.vert_scroll_bar.scrollable_height
+            )
+
     def handle_tab_event(self, display_type):
+        self.save_scroll_position()
+
         self.event_display_type = display_type
         self.update_list_buttons()
 
@@ -239,7 +254,6 @@ class newEventsScreen(Screens):
         self.set_disabled_menu_buttons(["events_screen"])
         self.update_heading_text(f"{game.clan.name}Clan")
         self.show_menu_buttons()
-        self.update_events_display()
 
     def make_event_scrolling_container(self):
         if self.event_display:
@@ -307,7 +321,6 @@ class newEventsScreen(Screens):
                 x_pos += -255
                 if x_pos < 0:
                     x_pos += 54
-
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -423,6 +436,10 @@ class newEventsScreen(Screens):
 
             y_pos += 110
 
+        if self.scroll_height.get(self.event_display_type):
+            self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
+                self.scroll_height[self.event_display_type]
+            )
 
     def update_list_buttons(self):
         """
