@@ -386,7 +386,7 @@
         "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
         "m_c": {
             "status": ["kitten"],
-            "trait": ["daring", "impulsive", "noisy", "troublesome", "attention-seeker", "inquisitive", "quiet"]
+            "trait": ["daring", "impulsive", "noisy", "troublesome", "attention-seeker"]
         },
         "injury": [
             {

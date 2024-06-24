@@ -13,8 +13,7 @@
         },
         "misc": {
             "border_width": "0",
-            "shadow_width": "0",
-            "line_spacing": "1"
+            "shadow_width": "0"
         }
     },
     "#page_entry_box_dark": {
