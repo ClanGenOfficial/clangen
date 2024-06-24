@@ -10,7 +10,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.utility import get_text_box_theme, scale, scale_dimentions
 from .Screens import Screens
