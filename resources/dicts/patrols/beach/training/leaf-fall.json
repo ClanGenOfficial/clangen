@@ -58,7 +58,7 @@
                 ]
             },
             {
-                "text": "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for whatever reason, Twolegs worship the ginger cat so much that they made statues they throw into the ocean.",
+                "text": "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for whatever reason, Twolegs worship this ginger cat so much that they make statues they throw into the ocean.",
                 "exp": 5,
                 "weight": 40,
                 "stat_trait": ["adventurous"],
@@ -122,7 +122,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, trying not to get bit. When nothing moves, {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back to camp unscathed.",
+                "text": "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, afraid of getting bitten. When nothing moves, {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back to camp unscathed.",
                 "exp": 5,
                 "weight": 20,
                 "art": "running_warrior"
@@ -147,7 +147,7 @@
                 "weight": 40
             },
             {
-                "text": "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them 'lego dragons'. s_c wonders if Legodragon would be a proper name for a warrior.",
+                "text": "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them 'lego dragons.' s_c wonders if Legodragon would be a proper name for a warrior.",
                 "exp": 5,
                 "weight": 40,
                 "stat_skill": ["LORE,1"]
@@ -181,7 +181,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter-colored one, but app1 thinks that the smaller dark-patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter-colored one, but app1 thinks that the smaller dark-patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -202,7 +202,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -230,7 +230,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} heart jumps with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip. Sudden pain sparks down {PRONOUN/s_c/poss} flank as the other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -274,7 +274,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter-colored one, but app1 thinks that the smaller dark-patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter-colored one, but app1 thinks that the smaller dark-patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -295,7 +295,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -323,7 +323,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} heart jumps with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip. Sudden pain sparks down {PRONOUN/s_c/poss} flank as the other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -348,7 +348,7 @@
                 }
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping on nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles}, spinning end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles} end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -384,11 +384,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1", "SWIMMER,1"],
-        "intro_text": "The large patrol practises holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rock pool. app1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/app1/subject} practise this on a hot sunny day?",
+        "intro_text": "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rock pool. app1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/app1/subject} practice this on a hot sunny day?",
         "decline_text": "Taking a break turns into ending the patrol early.",
         "success_outcomes": [
                 {
-                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathise/sympathises}, but app1 can't rely on cats in distress only showing up with the sea is inviting. The sympathy (and a little physical warmth) put cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practise with enthusiasm.",
+                    "text": "s_c sits upwind of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathize/sympathizes}, but app1 can't rely on cats in distress only showing up with the sea is inviting. The sympathy (and a little physical warmth) cheer app1 up, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practice with enthusiasm.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -419,7 +419,7 @@
                     ]
                 },
                 {
-                    "text": "s_c nods. Life guarding isn't easy, even in practise. But they offer up the story of a kitten saved by a c_n warrior, who had the strenght and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
+                    "text": "s_c nods. Life guarding isn't easy, even in practice. But {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up the story of a kitten saved by a c_n warrior, who had the strength and will to keep the little ball of fur above the waves under borderline impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -450,7 +450,7 @@
                     ]
                 },
                 {
-                    "text": "Doesn't app1 want to be a ocean dancer, one of the many cats in c_n ancestry who've managed to master the waves, streaking in and out in to save lives that who've been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
+                    "text": "Doesn't app1 want to be a ocean dancer and join the ranks of c_n's ancestors who mastered the waves, streaking in and out in to save lives that otherwise would have been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",

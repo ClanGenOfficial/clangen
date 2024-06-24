@@ -1306,7 +1306,7 @@
                 ]
             },
             {
-                "text": "As the group splits up to practise hiding their tracks from each other, r_c pairs up with p_l. {PRONOUN/r_c/subject/CAP} {VERB/r_c/confess/confesses}, whiskers twitching with amusement, some gossip that {PRONOUN/r_c/subject} heard about another of {PRONOUN/r_c/poss} Clanmates. p_l stares at {PRONOUN/r_c/object}, unimpressed with r_c's rumour spreading. You should build your Clanmates up, not tear them down.",
+                "text": "As the group splits up to practice hiding their tracks from each other, r_c pairs up with p_l. {PRONOUN/r_c/subject/CAP} {VERB/r_c/confess/confesses}, whiskers twitching with amusement, some gossip that {PRONOUN/r_c/subject} heard about another of {PRONOUN/r_c/poss} Clanmates. p_l stares at {PRONOUN/r_c/object}, unimpressed with r_c's rumour spreading. You should build your Clanmates up, not tear them down.",
                 "exp": 40,
                 "weight": 20,
                 "can_have_stat":["p_l"],
@@ -1418,7 +1418,7 @@
                 ]
             },
             {
-                "text": "As the group splits up to practise hiding their tracks from each other, r_c pairs up with p_l. Both decend into sharing the latest gossip, whiskers twitching with amusement at the misfortune of others. Neither one knows they have an offended eavesdropper - the cat's out of the bag, and by the time the patrol ends, all of c_n will know who's been spreading these rumours.",
+                "text": "As the group splits up to practice hiding their tracks from each other, r_c pairs up with p_l. Both decend into sharing the latest gossip, whiskers twitching with amusement at the misfortune of others. Neither one knows they have an offended eavesdropper - the cat's out of the bag, and by the time the patrol ends, all of c_n will know who's been spreading these rumours.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat":["p_l"],
@@ -1536,7 +1536,7 @@
                 ]
             },
             {
-                "text": "The cats take advantage of the rare opportunity to work on some extremely challenging battle moves, ones that can only be practised with claws out for traction and grip, ones that need another warrior right there to catch in exactly the right way, ones that require complete precision. You'd think it'd be the talented fighters who shine in such sessions, but no, s_c is the crucial voice in the group, preventing mistakes, calling advice, plotting out variations to try.",
+                "text": "The cats take advantage of the rare opportunity to work on some extremely challenging battle moves, ones that can only be practiced with claws out for traction and grip, ones that need another warrior right there to catch in exactly the right way, ones that require complete precision. You'd think it'd be the talented fighters who shine in such sessions, but no, s_c is the crucial voice in the group, preventing mistakes, calling advice, plotting out variations to try.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -9505,7 +9505,7 @@
         "decline_text": "No one is interested bringing up that frustrating fable today.",
             "success_outcomes": [
                 {
-                "text": "Smug, slimey, greasy and unpleasent, the cats of the Whisker Grove stole from c_n and every other Clan, a bunch of pathetic poofy poncy wastes of air. Everyone should despise them for being cowardly ungrateful thieves, and should one ever be found in c_n's lands they will be driven out.",
+                "text": "Smug, slimey, greasy and unpleasant, the cats of the Whisker Grove stole from c_n and every other Clan, a bunch of pathetic poofy poncy wastes of air. Everyone should despise them for being cowardly ungrateful thieves, and should one ever be found in c_n's lands they will be driven out.",
                 "exp": 30,
                 "weight": 20,
                 "art": "scaryghost_INTRO",

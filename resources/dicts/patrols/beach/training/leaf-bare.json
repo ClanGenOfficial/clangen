@@ -15,11 +15,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "A winter gale howls outside camp - today's apprentice lesson will occur in the shelter of the den. p_l gathers {PRONOUN/p_l/poss} audience close. On the longest night of leafbare, if a cat is unlucky, they might spot great white islands appearing out of the sea-mist.",
-        "decline_text": "app1 shivers, and goes to close a breach in the den walls before the warmth is driven out. Myths will have to wait.",
+        "intro_text": "A winter gale howls outside camp, so today's lesson will occur in the shelter of the den. p_l gathers {PRONOUN/p_l/poss} audience close. On the longest night of leafbare, if a cat is unlucky, they might spot great white islands appearing out of the sea-mist.",
+        "decline_text": "app1 shivers and goes to patch a breach in the den walls before the warmth is leached out. Myths will have to wait.",
         "success_outcomes": [
             {
-                    "text": "Those who see it are called, like a riptide sucking them out of reach, p_l whispers. None who step foot on the white mist islands are ever seen again... The group shivers with pleasant fear in the warmth of their sheltered nests.",
+                    "text": "Those who see it are <i>called</i>, like an unseen riptide sucking them out of reach, p_l whispers. None who step foot on the white mist islands are ever seen again... The group shivers with pleasant fear in the warmth of their sheltered nests.",
                     "exp": 40,
                     "weight": 20,
                     "relationships": [
@@ -56,7 +56,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "The winds of the gale drown out p_l's voice. Instead, the cats give up on storytelling and cuddle together into a ball, watertight against the world.",
+                    "text": "The winds of the gale drown out p_l's voice. The cats give up on storytelling and cuddle together into a ball, watertight against the world.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [
@@ -90,7 +90,7 @@
         "decline_text": "The patrol stays in their nests instead of training.",
         "success_outcomes": [
                 {
-                    "text": "Let us speak of the nursery tales, s_c begins. Of Clans founded amid driftwood and loss, of the moon giving her blessing to warriors who swim under her gaze, of the magic of the sea, currently awful, but just as much awe inspiring. Outside it rages - but here in camp, c_n is safe.",
+                    "text": "Let us speak of the nursery tales, s_c begins. Of Clans founded amid driftwood and loss, of the moon giving her blessing to warriors who swim under her gaze, of the magic of the sea, currently awful, but equally awe-inspiring. Outside it rages - but here in camp, c_n is safe.",
                     "exp": 40,
                     "weight": 20,
                     "art": "bch_train_stormwaves",
@@ -121,7 +121,7 @@
                         ]
                 },
                 {
-                    "text": "This day will be a day of heroes, s_c whispers, capturing their Clanmates attention. Heroes born, or made, or found - such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it.",
+                    "text": "This day will be a day of heroes, s_c whispers, capturing {PRONOUN/s_c/poss} Clanmates' attention. Heroes born, made, or found - such figures always appear in c_n's history, be it a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, or a warrior answering the call. The storms mark it.",
                     "exp": 40,
                     "weight": 20,
                     "art": "bch_train_stormwaves",
