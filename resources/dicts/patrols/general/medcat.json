@@ -1211,8 +1211,7 @@
             {
                 "text": "r_c feels hounded, never given a moment's peace, and {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in dissaproval, but vanishes.",
                 "exp": 0,
-                "weight": 20,
-                "outsider_rep": -1
+                "weight": 20
             }
         ],
         "antag_success_outcomes": [
@@ -1280,7 +1279,7 @@
                 "text": "With the familiarity brought by {PRONOUN/s_c/poss} connection to StarClan, s_c turns to the ghost haunting {PRONOUN/p_l/poss} path, meeting {PRONOUN/s_c/poss} star-walking ancestor with a purr and quiet confidence.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["CLAIRVOYANT,2"],
+                "stat_skill": ["CLAIRVOYANT,2", "STAR,2"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -1336,8 +1335,7 @@
                 "text": "r_c feels hounded, never given a moment's peace, and {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in dissaproval, but vanishes.",
                 "exp": 0,
                 "art": "gen_angry_cat_med",
-                "weight": 20,
-                "outsider_rep": -1
+                "weight": 20
             },
             {
                 "text": "p_l feels hounded, never given a moment's peace, and {PRONOUN/p_l/subject} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only the rest of the patrol, staring at p_l disappointedly.",
@@ -1660,7 +1658,7 @@
             "normal adult": [1, 6]
         },
         "weight": 5,
-        "intro_text": "To p_l's concern, their warrior escort is unusually quiet. When prompted on {PRONOUN/r_c/poss} troubles, r_c comments that {PRONOUN/r_c/subject} could not help but think of what legacy {PRONOUN/r_c/subject} would leave behind if StarClan called upon {PRONOUN/r_c/object}.",
+        "intro_text": "To p_l's concern, {PRONOUN/p_l/poss} warrior escort is unusually quiet. When prompted on {PRONOUN/r_c/poss} troubles, r_c comments that {PRONOUN/r_c/subject} could not help but think of what legacy {PRONOUN/r_c/subject} would leave behind if StarClan called upon {PRONOUN/r_c/object}.",
         "decline_text": "p_l isn't sure how to exactly address such a statement, and quickly attempts to distract r_c with some herb collecting.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1680,7 +1678,7 @@
                 ]
             },
             {
-                "text": "p_l knows why this bothers s_c so much. A powerful connection to StarClan allows them to understand how their legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
+                "text": "p_l knows why this bothers s_c so much. Being a medcat gave p_l a connection to StarClan and allows {PRONOUN/p_l/object} to understand how {PRONOUN/p_l/poss} legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["ambitious", "bloodthirsty", "insecure"],
