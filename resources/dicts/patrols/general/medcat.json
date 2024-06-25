@@ -1060,11 +1060,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["respect", "trust", "comfort", "platonic"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["jealousy"],
+                        "amount": 5
                     }
                 ]
             },
