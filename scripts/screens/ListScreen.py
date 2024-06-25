@@ -7,6 +7,8 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UINamedCatListDisplay
 from scripts.screens.Screens import Screens
+from scripts.screens.classes.keybinds.customkeybinds import CustomKeybinds
+from scripts.screens.classes.keybinds.keybinds import Keybinds
 from scripts.utility import scale, get_text_box_theme
 
 
@@ -156,7 +158,7 @@ class ListScreen(Screens):
 
             # CAT SPRITES
             elif element in self.cat_display.cat_sprites.values():
-                game.switches["cat"] = element.return_cat_id()
+                game.switches["cat"] = element.cat_id
                 game.last_list_forProfile = self.current_group
                 self.change_screen("profile screen")
 
@@ -165,12 +167,24 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if self.cat_list_bar_elements["search_bar_entry"].is_focused:
-                return
-            if event.key == pygame.K_LEFT:
-                self.change_screen("camp screen")
-            elif event.key == pygame.K_RIGHT:
-                self.change_screen("patrol screen")
+            if (event.key in [pygame.K_ESCAPE, pygame.K_RETURN]
+                    and self.cat_list_bar_elements["search_bar_entry"].is_focused):
+                self.cat_list_bar_elements["search_bar_entry"].unfocus()
+            elif self.cat_list_bar_elements["search_bar_entry"].is_focused:
+                pass
+            elif event.key in [pygame.K_TAB, pygame.K_RETURN]:
+                self.cat_list_bar_elements["search_bar_entry"].focus()
+            elif (event.key in CustomKeybinds.BIND_UP + CustomKeybinds.BIND_DOWN
+                  + CustomKeybinds.BIND_LEFT + CustomKeybinds.BIND_RIGHT
+                  + [pygame.K_ESCAPE, pygame.K_SPACE]):
+                outcome = self.cat_display.handle_keybinds(event.key)
+                if outcome == "switch_screens":
+                    game.switches["cat"] = self.cat_display.get_selected_cat_id()
+                    game.last_list_forProfile = self.current_group
+                    self.change_screen("profile screen")
+                elif outcome is None:
+                    Keybinds.handle_navigation(self, event.key)
+
     def screen_switches(self):
 
         self.set_disabled_menu_buttons(["catlist_screen"])

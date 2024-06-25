@@ -8,6 +8,7 @@ from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
+from scripts.screens.classes.keybinds.keybinds import Keybinds
 from scripts.utility import (
     scale,
     get_text_box_theme,
@@ -102,13 +103,15 @@ class LeaderDenScreen(Screens):
             elif event.ui_element == self.focus_frame_elements["outsiders_tab"]:
                 self.open_outsiders_tab()
             elif event.ui_element in self.outsider_cat_buttons.values():
-                self.focus_cat = event.ui_element.return_cat_object()
+                self.focus_cat = event.ui_element.cat_object
                 self.update_outsider_focus()
             elif event.ui_element in self.focus_button.values():
                 self.update_outsider_interaction_choice(
                     event.ui_element.get_object_ids()[3]
                 )
                 self.update_outsider_cats()
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(self, event.key)
 
     def screen_switches(self):
         """

@@ -3,8 +3,6 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-
-from ..events_module.condition_events import Condition_Events
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -13,6 +11,8 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
+from .classes.keybinds.keybinds import Keybinds
+from ..events_module.condition_events import Condition_Events
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
@@ -145,7 +145,7 @@ class ClearingScreen(Screens):
                 event.ui_element in self.cat_buttons.values()
                 and event.ui_element != self.focus_cat
             ):
-                self.focus_cat_object = event.ui_element.return_cat_object()
+                self.focus_cat_object = event.ui_element.cat_object
                 self.update_focus_cat()
             elif event.ui_element == self.cats_tab:
                 self.open_tab = "cats"
@@ -171,6 +171,8 @@ class ClearingScreen(Screens):
             if len(self.hungry_cats) <= 0 and self.feed_all_button.is_enabled:
                 self.feed_all_button.disable()
             self.handle_checkbox_events(event)
+        elif event.type == pygame.KEYDOWN:
+            Keybinds.handle_navigation(self, event.key)
 
     def update_cats_list(self):
         self.satisfied_cats = []
