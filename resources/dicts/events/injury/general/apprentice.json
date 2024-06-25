@@ -9,7 +9,7 @@
             "scar",
             "FACE"
         ],
-        "event_text": "m_c mistook a hare for a rabbit while hunting and {PRONOUN/m_c/poss} eyes were scratched, a valuable lesson learnt.",
+        "event_text": "m_c mistook a hare for a rabbit while hunting and {PRONOUN/m_c/poss} eyes were scratched, a valuable lesson learned.",
         "history_text": {
             "scar": "m_c was scarred when a hare scratched {PRONOUN/m_c/poss} eyes.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a hare scratched {PRONOUN/m_c/poss} eyes."

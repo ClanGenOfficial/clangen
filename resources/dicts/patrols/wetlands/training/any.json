@@ -58,7 +58,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, and then startled yowling. Turning back, they spot r_c being washed away by the wave the monster brought in its wake.",
+        "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, and then startled yowling. Turning back, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} r_c being washed away by the wave the monster brought in its wake.",
         "decline_text": "p_l runs back to camp to fetch help.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -294,7 +294,7 @@
                 ]
             },
             {
-                "text": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+                "text": "Harshly, s_c tells r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -372,7 +372,7 @@
                 "weight": 20
             },
             {
-                "text": "Hurt and wheezing, r_c is alone as they drift to StarClan under the water.",
+                "text": "Hurt and wheezing, r_c is alone as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan under the water.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -401,7 +401,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing.",
+                "text": "At least this is a good chance to learn the territory! r_c heads off to map out the paths of solid ground through a boggy section {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing.",
                 "exp": 20,
                 "weight": 20
             },
@@ -411,7 +411,7 @@
                 "weight": 5
             },
             {
-                "text": "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders.",
+                "text": "There's nothing to worry about! s_c pads confidently through c_n territory, assured of {PRONOUN/s_c/subject} safety by the strength of c_n borders.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -451,12 +451,12 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy section {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
@@ -472,7 +472,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -514,17 +514,17 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy section {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels like work, though, and it isn't the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -535,7 +535,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -577,17 +577,17 @@
             "leader": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to themselves.",
-        "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+        "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy section {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels like work, though, and it isn't the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
@@ -598,7 +598,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -715,7 +715,7 @@
                 ]
             },
             {
-                "text": "app2, seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the sparkling night, their romantic ideas shattered.",
+                "text": "app2, seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting and then runs off into the sparkling night, their romantic ideas shattered.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -749,7 +749,7 @@
         "relationship_constraint": ["dislike_10"],
         "success_outcomes": [
             {
-                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful technique {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to judge the depth and danger of quagmires. p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful technique {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to judge the depth and danger of quagmires. p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle backflip with a smug smirk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -813,7 +813,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They set out late in the day, as the swamp seems made of shadows. r_c goes through their tricks, showing p_l how they use the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+                "text": "They set out late in the day, as the swamp seems made of shadows. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -827,7 +827,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, with both cats having ample opportunity to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+                "text": "It's a long but satisfying training session, giving both cats ample opportunity to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -841,7 +841,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract fish, frogs, newts, salamanders and other squishy things in the murky pools.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract fish, frogs, newts, salamanders and other squishy things in the murky pools.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -857,7 +857,7 @@
                 ]
             },
             {
-                "text": "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "text": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -884,7 +884,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+                "text": "r_c tries, but both the cats are too tired after a long day's work and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -898,7 +898,7 @@
                 ]
             },
             {
-                "text": "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse.",
+                "text": "r_c spots p_l looking at them a little bit too admiringly and ends the training session early with a diplomatic and completely made-up excuse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -926,7 +926,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
+        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall into {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
         "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -936,12 +936,12 @@
                 "weight": 20
             },
             {
-                "text": "HAH! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "text": "HAH! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} so completely entranced by its color and tiny, perfect legs that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} notice {PRONOUN/s_c/poss} own skill catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"]
