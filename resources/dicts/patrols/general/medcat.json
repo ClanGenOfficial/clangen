@@ -744,7 +744,7 @@
         ],
         "fail_outcomes": [
             { 
-                "text": "As r_c reflects on clair_list from {PRONOUN/r_c/poss} vision, {PRONOUN/r_c/subject} still find that {PRONOUN/r_c/subject} can't make sense of it.", 
+                "text": "As r_c reflects on clair_list from {PRONOUN/r_c/poss} vision, {PRONOUN/r_c/subject} still {VERB/r_c/find/finds} that {PRONOUN/r_c/subject} can't make sense of it.", 
                 "exp": 0, 
                 "weight": 20
             },
