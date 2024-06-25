@@ -365,7 +365,7 @@
                 ]
             },
             {
-                "text": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching.",
+                "text": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -495,7 +495,7 @@
                 ]
             },
             {
-                "text": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching.",
+                "text": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
