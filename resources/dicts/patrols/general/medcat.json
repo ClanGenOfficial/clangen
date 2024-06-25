@@ -1102,7 +1102,7 @@
                 ]
             },
             {
-                "text": "At first app1 doesn't speak up, however p_l notices the apprentice being distracted, and gently asked what was wrong. Instead of opening up though, app1 shuts down, refusing to talk about what was bothering {PRONOUN/app1/object} and just says that they should focus on gathering herbs.",
+                "text": "At first app1 doesn't speak up, however p_l notices the apprentice is distracted, and gently asks what's wrong. Instead of opening up though, app1 shuts down, refusing to talk about what was bothering {PRONOUN/app1/object} and just says that they should focus on gathering herbs.",
                 "exp": 0,
                 "weight": 20,
                 "herbs": ["random_herbs"],
