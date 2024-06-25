@@ -363,6 +363,7 @@ class Events:
             # ADJUST REP
             game.clan.reputation += chosen_event["rep_change"]
 
+            additional_kits = None
             # SUCCESS/FAIL
             if info_dict["success"]:
                 if info_dict["interaction_type"] == "hunt":
@@ -459,7 +460,8 @@ class Events:
                     clan=game.clan)
 
             if "kit_thought" in cat_dict:
-                additional_kits = outsider_cat.get_children()
+                if additional_kits is None:
+                    additional_kits = outsider_cat.get_children()
                 if additional_kits:
                     for kit_ID in additional_kits:
                         kit = Cat.fetch_cat(kit_ID)

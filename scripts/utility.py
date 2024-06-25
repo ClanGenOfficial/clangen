@@ -1311,8 +1311,8 @@ def unpack_rel_block(
     possible_values = ("romantic", "platonic", "dislike", "comfort", "jealous", "trust", "respect")
 
     for block in relationship_effects:
-        cats_from = block.get("cats_from", ())
-        cats_to = block.get("cats_to", ())
+        cats_from = block.get("cats_from", [])
+        cats_to = block.get("cats_to", [])
         amount = block.get("amount")
         values = [x for x in block.get("values", ()) if x in possible_values]
 
@@ -1392,15 +1392,21 @@ def unpack_rel_block(
                 print(f"something is wrong with relationship log: {log}")
 
         if not log1:
-            try:
-                log1 = event.text + effect
-            except AttributeError:
-                print(f"WARNING: event changed relationships but did not create a relationship log")
+            if hasattr(event, "text"):
+                try:
+                    log1 = event.text + effect
+                except AttributeError:
+                    print(f"WARNING: event changed relationships but did not create a relationship log")
+            else:
+                log1 = "These cats recently interacted." + effect
         if not log2:
-            try:
-                log2 = event.text + effect
-            except AttributeError:
-                print(f"WARNING: event changed relationships but did not create a relationship log")
+            if hasattr(event, "text"):
+                try:
+                    log2 = event.text + effect
+                except AttributeError:
+                    print(f"WARNING: event changed relationships but did not create a relationship log")
+            else:
+                log2 = f"These cats recently interacted." + effect
 
         change_relationship_values(
             cats_to_ob,
@@ -2630,19 +2636,15 @@ def quit(savesettings=False, clearevents=False):
     sys_exit()
 
 
-PERMANENT = None
 with open(f"resources/dicts/conditions/permanent_conditions.json", "r") as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-ACC_DISPLAY = None
 with open(f"resources/dicts/acc_display.json", "r") as read_file:
     ACC_DISPLAY = ujson.loads(read_file.read())
 
-SNIPPETS = None
 with open(f"resources/dicts/snippet_collections.json", "r") as read_file:
     SNIPPETS = ujson.loads(read_file.read())
 
-PREY_LISTS = None
 with open(f"resources/dicts/prey_text_replacements.json", "r") as read_file:
     PREY_LISTS = ujson.loads(read_file.read())
 

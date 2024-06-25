@@ -155,6 +155,10 @@ class HandleShortEvents():
         # create new cats (must happen here so that new cats can be included in further changes)
         self.handle_new_cats()
 
+        # give accessory
+        if self.chosen_event.new_accessory:
+            self.handle_accessories()
+
         # change relationships before killing anyone
         if self.chosen_event.relationships:
             # we're doing this here to make sure rel logs get adjusted text
@@ -223,10 +227,6 @@ class HandleShortEvents():
                     self.handle_freshkill_supply(block, freshkill_pile)
                 else:  # if freshkill isn't being adjusted, then it must be a herb supply
                     self.handle_herb_supply(block)
-
-        # give accessory
-        if self.chosen_event.new_accessory:
-            self.handle_accessories()
 
         if "clan_wide" in self.chosen_event.tags:
             self.involved_cats.clear()

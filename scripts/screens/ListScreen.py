@@ -39,7 +39,6 @@ class ListScreen(Screens):
         self.sort_by_dropdown = None
         self.sort_by_buttons = {}
 
-        self.cat_display_container = None
         self.cat_display = None
         self.display_container_elements = {}
 
@@ -178,8 +177,8 @@ class ListScreen(Screens):
         self.show_menu_buttons()
 
         # SCREEN CONTAINER - everything should come back to here
-        self.list_screen_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((0, 0), (0, 0))),
+        self.list_screen_container = pygame_gui.core.UIContainer(
+            scale(pygame.Rect((0, 0), (1600, 1400))),
             object_id="#list_screen",
             starting_height=1,
             manager=MANAGER,
@@ -187,8 +186,8 @@ class ListScreen(Screens):
         )
 
         # BAR CONTAINER
-        self.cat_list_bar = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((209, 268), (0, 0))),
+        self.cat_list_bar = pygame_gui.core.UIContainer(
+            scale(pygame.Rect((209, 268), (1400, 800))),
             object_id="#cat_list_bar",
             starting_height=3,
             manager=MANAGER
@@ -365,63 +364,6 @@ class ListScreen(Screens):
 
         self.sort_by_dropdown.close()
 
-        # CAT DISPLAY
-        self.cat_display_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((30, 170), (2000, 2000))),  # large rect size to prevent an odd loading blink
-            object_id="#cat_display_container",
-            starting_height=2,
-            manager=MANAGER
-        )
-        # first/prev/next/last page buttons
-        self.display_container_elements["first_page_button"] = UIImageButton(
-            scale(pygame.Rect((540, 1030), (68, 68))),
-            "",
-            container=self.cat_display_container,
-            object_id="#arrow_double_left_button",
-            manager=MANAGER,
-        )
-        self.display_container_elements["previous_page_button"] = UIImageButton(
-            scale(pygame.Rect((590, 1030), (68, 68))),
-            "",
-            container=self.cat_display_container,
-            object_id="#arrow_left_button",
-            manager=MANAGER,
-        )
-        self.display_container_elements["last_page_button"] = UIImageButton(
-            scale(pygame.Rect((932, 1030), (68, 68))),
-            "",
-            container=self.cat_display_container,
-            object_id="#arrow_double_right_button",
-            manager=MANAGER,
-        )
-        self.display_container_elements["next_page_button"] = UIImageButton(
-            scale(pygame.Rect((882, 1030), (68, 68))),
-            "",
-            container=self.cat_display_container,
-            object_id="#arrow_right_button",
-            manager=MANAGER,
-        )
-        # page number
-        self.display_container_elements["page_entry"] = pygame_gui.elements.UITextEntryLine(
-            scale(pygame.Rect((710, 1038), (60, 55))),
-            container=self.cat_display_container,
-            placeholder_text=str(self.current_page),
-            object_id=get_text_box_theme("#page_entry_box") if self.death_status == "living"
-            else "#page_entry_box_dark",
-            manager=MANAGER
-
-        )
-        self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
-            "",
-            scale(pygame.Rect((700, 1034), (200, 60))),
-            container=self.cat_display_container,
-            object_id=get_text_box_theme("#text_box_30_horizleft") if self.death_status == "living"
-            else "#text_box_30_horizleft_light",
-            manager=MANAGER,
-        )  # Text will be filled in later
-
-        self.list_screen_container.add_element(self.cat_display_container)
-
         # BG IMAGES
         self.sc_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
@@ -457,17 +399,64 @@ class ListScreen(Screens):
             manager=MANAGER
         )
 
+        # CAT DISPLAY
+        # first/prev/next/last page buttons
+        self.display_container_elements["first_page_button"] = UIImageButton(
+            scale(pygame.Rect((570, 1200), (68, 68))),
+            "",
+            container=self.list_screen_container,
+            object_id="#arrow_double_left_button",
+            manager=MANAGER,
+        )
+        self.display_container_elements["previous_page_button"] = UIImageButton(
+            scale(pygame.Rect((620, 1200), (68, 68))),
+            "",
+            container=self.list_screen_container,
+            object_id="#arrow_left_button",
+            manager=MANAGER,
+        )
+        self.display_container_elements["last_page_button"] = UIImageButton(
+            scale(pygame.Rect((962, 1200), (68, 68))),
+            "",
+            container=self.list_screen_container,
+            object_id="#arrow_double_right_button",
+            manager=MANAGER,
+        )
+        self.display_container_elements["next_page_button"] = UIImageButton(
+            scale(pygame.Rect((912, 1200), (68, 68))),
+            "",
+            container=self.list_screen_container,
+            object_id="#arrow_right_button",
+            manager=MANAGER,
+        )
+        # page number
+        self.display_container_elements["page_entry"] = pygame_gui.elements.UITextEntryLine(
+            scale(pygame.Rect((740, 1208), (60, 55))),
+            container=self.list_screen_container,
+            placeholder_text=str(self.current_page),
+            object_id=get_text_box_theme("#page_entry_box") if self.death_status == "living"
+            else "#page_entry_box_dark",
+            manager=MANAGER
+
+        )
+        self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
+            "",
+            scale(pygame.Rect((730, 1204), (200, 60))),
+            container=self.list_screen_container,
+            object_id=get_text_box_theme("#text_box_30_horizleft") if self.death_status == "living"
+            else "#text_box_30_horizleft_light",
+            manager=MANAGER,
+        )  # Text will be filled in later
+
+
+
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
 
     def exit_screen(self):
-        for ele in self.cat_display.cat_sprites:
-            self.cat_display.cat_sprites[ele].kill()
-        for ele in self.cat_display.cat_names:
-            self.cat_display.cat_names[ele].kill()
-        for ele in self.cat_display.favor_indicator:
-            self.cat_display.favor_indicator[ele].kill()
+        self.cat_display.clear_display()
+        self.cat_display = None
         self.list_screen_container.kill()
 
     def on_use(self):
@@ -537,8 +526,8 @@ class ListScreen(Screens):
 
         if not self.cat_display:
             self.cat_display = UINamedCatListDisplay(
-                scale(pygame.Rect((0, 0), (0, 0))),
-                container=self.cat_display_container,
+                scale(pygame.Rect((30, 170), (2000, 1000))),
+                container=self.list_screen_container,
                 object_id="#cat_list_display",
                 starting_height=1,
                 cat_list=self.current_listed_cats,
