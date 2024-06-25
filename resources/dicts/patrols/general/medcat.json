@@ -984,7 +984,7 @@
                 ]
             },
             {
-                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of clair_list... right?",
+                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of prophecy_list_sight... right?",
                 "exp": 0,
                 "weight": 20
             },
