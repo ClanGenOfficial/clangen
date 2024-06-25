@@ -3426,7 +3426,7 @@
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
-    "event_text": "r_c handed over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a warrior.",
+    "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that m_c is a warrior.",
     "new_accessory": ["FORGET ME NOTS"],
     "m_c": {
       "status": ["warrior"],
