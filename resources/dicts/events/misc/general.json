@@ -3451,7 +3451,7 @@
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
-    "event_text": "m_c was feeling a bit overwhelmed, now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice. Luckily, r_c was there with a gift of acc_plural and some comforting words to cheer m_c up.",
+    "event_text": "m_c is feeling a bit overwhelmed, now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice. Luckily, r_c is there with a gift of acc_plural and some comforting words to cheer m_c up.",
     "new_accessory": ["WILD","PLANT"],
     "m_c": {
       "status": ["apprentice"],
