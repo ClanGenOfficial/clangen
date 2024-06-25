@@ -786,7 +786,7 @@
                     "wise"]
             },
             {
-                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. However, as s_c reflects on the vision {PRONOUN/s_c/subject} {VERB/s_c/find/finds} that {PRONOUN/s_c/subject} can't dechiper the meaning.",
+                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. However, as s_c reflects on the vision {PRONOUN/s_c/subject} {VERB/s_c/find/finds} that {PRONOUN/s_c/subject} can't decipher the meaning.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["STAR,1"]
@@ -898,7 +898,7 @@
                 ]
             },
             {
-                "text": "s_c chooses to pad pelt-to-pelt with app1, the more expeirenced medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
+                "text": "s_c chooses to pad pelt-to-pelt with app1, the more experienced medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_talkingMA",
@@ -946,7 +946,7 @@
                 ]
             },
             {
-                "text": "At first app1 doesn't speak up, however p_l notices the apprentice being distracted, and gently asked what was wrong. app1 admitted to the vision, and the two had a discussion of the clair_list app1 felt in the dream, leaving app1 feeling relieved.",
+                "text": "At first app1 doesn't speak up, however p_l notices the apprentice is distracted, and gently asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list app1 experienced in the dream, leaving app1 feeling relieved.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -984,7 +984,7 @@
                 ]
             },
             {
-                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of clair_list... right?",
+                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of prophecy_list_sight... right?",
                 "exp": 0,
                 "weight": 20
             },
