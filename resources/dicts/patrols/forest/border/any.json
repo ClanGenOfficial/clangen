@@ -2208,8 +2208,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
-        "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "intro_text": "The patrol tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
+        "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2234,7 +2234,7 @@
                 ]
             },
             {
-                "text": "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "text": "The patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2451,8 +2451,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the Clan's territory.",
-        "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
+        "intro_text": "The patrol stumbles across a large dog, wandering in the middle of the Clan's territory.",
+        "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2477,7 +2477,7 @@
                 ]
             },
             {
-                "text": "Your patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
+                "text": "The patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2691,7 +2691,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a small dog.",
+        "intro_text": "The patrol comes across a small dog.",
         "decline_text": "The patrol decides not to pursue the dog.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2871,7 +2871,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
+        "intro_text": "The patrol comes across a small dog, right on the border of c_n territory.",
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2990,7 +2990,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
+        "intro_text": "The patrol comes across a small dog, right on the border of c_n territory.",
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
         "success_outcomes": [

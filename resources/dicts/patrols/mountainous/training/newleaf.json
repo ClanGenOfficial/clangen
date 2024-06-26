@@ -622,7 +622,7 @@
         "decline_text": "Let's not be anywhere near a bear newly emerged from hibernation, the cats decide.",
         "success_outcomes": [
                 {
-                    "text": "Have you ever starved? Felt hunger gnawing your belly until it flips, filled it with water just to get a moment's relief, felt your limbs tremble with weakness as your mind desperately yearns for prey? How long did that take, a day, a week? Imagine months without food. Stay away from bears emerging from hibernation.",
+                    "text": "Have you ever starved? Felt hunger gnawing your belly until it flips, filled it with water just to get a moment's relief, felt your limbs tremble with weakness as your mind desperately yearns for prey? How long did that take, a day, a week? Imagine moons without food. Stay away from bears emerging from hibernation.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
