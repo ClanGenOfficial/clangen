@@ -586,7 +586,7 @@ class Events:
             herb_owned = random.choice(HERBS)
             # values that will change the text that is displayed to say how many herbs you have
             required_herbs = get_living_clan_cat_count(Cat) * 4
-            adjustment_factor = random.choices([0.25, 0.5, 1, 2, 3], [1, 2, 3, 2, 1], k=1)[0]
+            adjustment_factor = random.choices([0.25, 0.5, 1, 2, 3], weights=[1, 2, 3, 2, 1], k=1)[0]
             herb_amount = int(required_herbs * adjustment_factor)
             game.clan.herbs = {
                 herb_owned: herb_amount
