@@ -10,8 +10,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l.",
-        "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
+        "intro_text": "As the patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l.",
+        "decline_text": "The patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -108,8 +108,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l.",
-        "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
+        "intro_text": "As the patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l.",
+        "decline_text": "The patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -135,13 +135,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for Clan relations.",
+                "text": "The patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for Clan relations.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text":  "s_c won't stand for this insult to {PRONOUN/s_c/poss} Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the o_c_n patrol, but the enemy patrol has no trouble rebuffing one cat. Your patrol backs off from the border, but s_c is unhappy that the rest of the patrol didn't back {PRONOUN/s_c/object} up.",
+                "text":  "s_c won't stand for this insult to {PRONOUN/s_c/poss} Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the o_c_n patrol, but the enemy patrol has no trouble rebuffing one cat. The patrol backs off from the border, but s_c is unhappy that the rest of the patrol didn't back {PRONOUN/s_c/object} up.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "vengeful", "loyal", "fierce"],
@@ -157,7 +157,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text":  "s_c won't stand for this insult to {PRONOUN/s_c/poss} Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the o_c_n patrol, but the enemy patrol has no trouble injuring one cat. Your patrol backs off from the border, but s_c is unhappy that the rest of the patrol didn't back {PRONOUN/s_c/object} up.",
+                "text":  "s_c won't stand for this insult to {PRONOUN/s_c/poss} Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the o_c_n patrol, but the enemy patrol has no trouble injuring one cat. The patrol backs off from the border, but s_c is unhappy that the rest of the patrol didn't back {PRONOUN/s_c/object} up.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "vengeful", "loyal", "fierce"],
@@ -206,7 +206,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
+                "text": "Angry at the insult to their Clan, the patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends the patrol back onto their own side of the border.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -214,7 +214,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
+                "text": "Angry at the insult to their Clan, the patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -233,7 +233,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on an enemy's territory.",
-        "decline_text": "Your patrol decides that one rabbit isn't worth the potential fight.",
+        "decline_text": "The patrol decides that one rabbit isn't worth the potential fight.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -249,7 +249,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats screech at the trespass and rush at your patrol. s_c barely manages to talk them down from a fight, begrudgingly handing over the rabbit, and the patrols part ways without any cat getting hurt.",
+                "text": "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats screech at the trespass and rush at the patrol. s_c barely manages to talk them down from a fight, begrudgingly handing over the rabbit, and the patrols part ways without any cat getting hurt.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -279,7 +279,7 @@
 				"prey": ["medium"]
             },
             {
-                "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
+                "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until the patrol leaves the area.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -416,12 +416,12 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
+        "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
         "decline_text": "p_l decides that it isn't important right now. They'll report it when they get back to camp.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, your patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l is still suspicious of the situation, {PRONOUN/p_l/subject} only {VERB/p_l/lecture/lectures} the apprentice on border lines before sending them back into o_c_n territory.",
+                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l is still suspicious of the situation, {PRONOUN/p_l/subject} only {VERB/p_l/lecture/lectures} the apprentice on border lines before sending them back into o_c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": 2
@@ -434,7 +434,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "Your patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c is hesitant, but insists that the patrol at least escort the wounded warrior to the border.",
+                "text": "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c is hesitant, but insists that the patrol at least escort the wounded warrior to the border.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["altruistic", "compassionate", "empathetic", "calm"],
@@ -443,7 +443,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol decides to follow the scent, but only ends up walking in circles. Either the trespasser is good at concealing their trail or your patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
+                "text": "The patrol decides to follow the scent, but only ends up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -457,7 +457,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat looks scared and only stares down at them before a large dog suddenly descends upon your patrol. r_c is killed before {PRONOUN/r_c/subject} can run and the rest of the patrol scatters in fear.",
+                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat looks scared and only stares down at them before a large dog suddenly descends upon the patrol. r_c is killed before {PRONOUN/r_c/subject} can run and the rest of the patrol scatters in fear.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -469,7 +469,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat snarls down at them, a gleam in their eye, before a large dog comes crashing down on the patrol. r_c is caught in its jaws but manages to tear {PRONOUN/r_c/self} free and sprint away.",
+                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat snarls down at them, a gleam in their eye, before a large dog comes crashing down on the patrol. r_c is caught in its jaws but manages to tear {PRONOUN/r_c/self} free and sprint away.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -489,7 +489,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually discovering a limping o_c_n warrior who hastily explains that a dog had chased them into c_n's territory.  The patrol is still angry, but they rein in their hostility and tensely return the cat to o_c_n territory.",
+                "text": "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually discovering a limping o_c_n warrior who hastily explains that a dog had chased them into c_n's territory.  The patrol is still angry, but they rein in their hostility and tensely return the cat to o_c_n territory.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -497,7 +497,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
+                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. The patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -555,7 +555,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat looks scared and only stares down at them before a large dog suddenly descends upon your patrol. r_c is killed before {PRONOUN/r_c/subject} can even run.",
+                "text": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat looks scared and only stares down at them before a large dog suddenly descends upon the patrol. r_c is killed before {PRONOUN/r_c/subject} can even run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -3575,7 +3575,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
+        "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
         "decline_text": "p_l decides that it isn't important right now. {PRONOUN/p_l/subject/CAP}'ll report it when the patrol gets back to camp.",
         "chance_of_success": 10,
         "relationship_constraint": ["dislike_60"],

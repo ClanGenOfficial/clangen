@@ -343,8 +343,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -362,7 +362,7 @@
                 ]
             },
             {
-                "text": "Your patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
+                "text": "The patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -520,8 +520,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -673,8 +673,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -822,8 +822,8 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -841,7 +841,7 @@
                 ]
             },
             {
-                "text": "Your patrol drives away the gray fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves. Better to deal with them now than when they're the height and nearly double the weight of a cat, though a gray fox will always be easier than a big red one.",
+                "text": "The patrol drives away the gray fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves. Better to deal with them now than when they're the height and nearly double the weight of a cat, though a gray fox will always be easier than a big red one.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -971,8 +971,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1120,8 +1120,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-        "decline_text": "Your patrol decides not to pursue the fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {

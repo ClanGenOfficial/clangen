@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol meets o_c_n, a Clan they consider to be allies, at the border.",
+        "intro_text": "The patrol meets o_c_n, a Clan they consider to be allies, at the border.",
         "decline_text": "You decide not to stop and talk with their patrol.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -43,13 +43,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though your patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
+                "text": "Though the patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text": "Your patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss.",
+                "text": "The patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "vengeful", "troublesome", "childish"],
@@ -58,7 +58,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
+                "text": "The patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually the patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -66,7 +66,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Despite considering them allies, these cats are no friends of c_n. Your patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
+                "text": "Despite considering them allies, these cats are no friends of c_n. The patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -84,7 +84,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol meets o_c_n, a Clan they consider to be allies, at the border.",
+        "intro_text": "The patrol meets o_c_n, a Clan they consider to be allies, at the border.",
         "decline_text": "You decide not to stop and talk with their patrol.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -125,13 +125,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though your patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
+                "text": "Though the patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text": "Your patrol stops to talk with the other cats but s_c is nervous to talk with o_c_n cats. The other patrol notices and takes offense at the lack of friendly demeanor.",
+                "text": "The patrol stops to talk with the other cats but s_c is nervous to talk with o_c_n cats. The other patrol notices and takes offense at the lack of friendly demeanor.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["nervous", "insecure"],
@@ -140,7 +140,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
+                "text": "The patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually the patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -148,7 +148,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Despite considering them allies, these cats are no friends of c_n. Your patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
+                "text": "Despite considering them allies, these cats are no friends of c_n. The patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -213,7 +213,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
+                "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until the patrol leaves the area.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -308,31 +308,31 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
+        "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
         "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance. Maybe an apprentice simply lost their way.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, your patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border, but p_l only chuckles and gently guides the young cat back to their own territory.",
+                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border, but p_l only chuckles and gently guides the young cat back to their own territory.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": 2
             },
             {
-                "text": "Your patrol follows the scent deeper into their own territory, eventually stumbling upon the o_c_n medicine cat! It seems there's an herb shortage and the medicine cat was hoping to borrow from c_n's own stores to treat a badly wounded warrior. p_l hastily escorts the cat to the c_n camp.",
+                "text": "The patrol follows the scent deeper into their own territory, eventually stumbling upon the o_c_n medicine cat! It seems there's an herb shortage and the medicine cat was hoping to borrow from c_n's own stores to treat a badly wounded warrior. p_l hastily escorts the cat to the c_n camp.",
                 "exp": 10,
                 "weight": 5,
                 "other_clan_rep": 2
             },
             {
-                "text": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and your patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol! s_c rallies the patrol to drive the dog away, thankfully avoiding any injuries. The o_c_n cat is grateful for the rescue.",
+                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol! s_c rallies the patrol to drive the dog away, thankfully avoiding any injuries. The o_c_n cat is grateful for the rescue.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
                 "other_clan_rep": 2
             },
             {
-                "text": "Your patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists that the patrol escort the warrior back to the o_c_n camp and the o_c_n leader is grateful for the service.",
+                "text": "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists that the patrol escort the warrior back to the o_c_n camp and the o_c_n leader is grateful for the service.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["altruistic", "compassionate", "empathetic", "calm"],
@@ -341,20 +341,20 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Your patrol decides to follow the scent, but only end up walking in circles. Either the trespasser is good at concealing their trail or your patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
+                "text": "The patrol decides to follow the scent, but only end up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c can't contain their annoyance at the trespass and when your patrol finds a lost o_c_n apprentice to be the source of the scent, s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
+                "text": "s_c can't contain their annoyance at the trespass and when the patrol finds a lost o_c_n apprentice to be the source of the scent, s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
                 "other_clan_rep": -1
             },
             {
-                "text": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon your patrol. r_c is killed before they can run and the rest of the patrol scatters in fear.",
+                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon the patrol. r_c is killed before they can run and the rest of the patrol scatters in fear.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -366,7 +366,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and your patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol, catching r_c but thankfully only injuring them before r_c tears themself free and sprints away.",
+                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol, catching r_c but thankfully only injuring them before r_c tears themself free and sprints away.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -386,7 +386,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs.",
+                "text": "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -394,7 +394,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
+                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. The patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -438,7 +438,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l decides to follow the scent, but only ends up walking in circles. Either the trespasser is good at concealing their trail or your patrol just needs to work on their tracking skills.  It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
+                "text": "p_l decides to follow the scent, but only ends up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills.  It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
