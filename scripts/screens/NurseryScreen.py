@@ -26,7 +26,7 @@ class NurseryScreen(Screens):
         self.adult_selection_container = None
         self.adult_selection_elements = {}
         self.adult_cat_buttons = {}
-        self.available_adults = {}
+        self.available_adults = {}  # TODO: make available adults save for the moon
 
         self.kits_selection_container = None
         self.kits_selection_elements = {}
@@ -663,3 +663,18 @@ class NurseryScreen(Screens):
                     starting_height=1,
                     manager=MANAGER,
                 )
+    
+    def reset_top_part(self):
+        """
+        Handles resetting the top-most containers whenever playtime activity is started or ended,
+        so that other containers can take their place.
+        """
+        if self.focus_frame_container:
+            self.focus_frame_container.kill()
+        if self.chosen_cats_container:
+            self.chosen_cats_container.kill()
+    
+    def playtime_frame_container(self):
+        pass
+    
+    
