@@ -232,7 +232,7 @@ class Condition_Events:
     @staticmethod
     def handle_illnesses(cat, season=None):
         """
-        This function handles overall the illnesses in 'expanded' (or 'cruel season') game mode.
+        This function handles the illnesses overall by randomly making cat ill (or not).
         It will return a bool to indicate if the cat is dead.
         """
         # return immediately if they're already dead
@@ -311,7 +311,7 @@ class Condition_Events:
     @staticmethod
     def handle_injuries(cat, random_cat=None):
         """ 
-        This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
+        This function handles injuries overall by randomly injuring cat (or not).
         Returns: boolean - if an event was triggered
         """
         triggered = False
