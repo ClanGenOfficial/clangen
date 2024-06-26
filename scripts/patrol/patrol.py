@@ -1064,7 +1064,7 @@ class Patrol:
         # TODO: check if this can be handled in event_text_adjust
         return text
 
-    def choose_patrol(self, patrols: list[PatrolEvent]):
+    def choose_patrol(self, patrols: List[PatrolEvent]):
         patrol_weights = []
         for patrol in patrols:
             constraint_weight = 0
@@ -1096,7 +1096,7 @@ class Patrol:
         for i in sorted_pat_weights:
             if random.randint(
                 1, 20
-            ):  # eyeballed a 1 in 20 chance, idk if this is right or not
+            ):  # eyeballed a 1 in 20 chance, IDK if this is right or not
                 selected_constraint_tier = [i]
                 break
         if selected_constraint_tier is None:
