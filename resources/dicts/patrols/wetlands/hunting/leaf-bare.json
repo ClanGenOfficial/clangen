@@ -2430,7 +2430,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -2544,7 +2544,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -2664,7 +2664,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -2770,7 +2770,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -2831,7 +2831,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -2945,7 +2945,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -3065,7 +3065,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -3171,7 +3171,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
@@ -3232,7 +3232,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
         "tags": [],
