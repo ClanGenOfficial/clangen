@@ -6,13 +6,13 @@ from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import FreshkillPile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
+from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relation_events import Relation_Events
+from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, \
     history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
     get_leader_life_notice, get_alive_status_cats, get_living_clan_cat_count, adjust_list_text
-from scripts.game_structure.game_essentials import game
-from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
@@ -133,7 +133,8 @@ class HandleShortEvents():
             # print(f"CHOSEN: {self.chosen_event.event_id}")
         except IndexError:
             # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
-            print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name}")
+            print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name} "
+                  f"and {self.random_cat.name if self.random_cat else 'no random cat'}")
             return
 
         self.text = self.chosen_event.text
@@ -154,6 +155,10 @@ class HandleShortEvents():
 
         # create new cats (must happen here so that new cats can be included in further changes)
         self.handle_new_cats()
+
+        # give accessory
+        if self.chosen_event.new_accessory:
+            self.handle_accessories()
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
@@ -223,10 +228,6 @@ class HandleShortEvents():
                     self.handle_freshkill_supply(block, freshkill_pile)
                 else:  # if freshkill isn't being adjusted, then it must be a herb supply
                     self.handle_herb_supply(block)
-
-        # give accessory
-        if self.chosen_event.new_accessory:
-            self.handle_accessories()
 
         if "clan_wide" in self.chosen_event.tags:
             self.involved_cats.clear()
@@ -427,16 +428,15 @@ class HandleShortEvents():
                     # find history
                     if self.main_cat.status == "leader":
                         death_history = history_text_adjust(block.get('lead_death'),
-                                                            self.other_clan_name, game.clan, self.main_cat)
+                                                            self.other_clan_name, game.clan, self.random_cat)
                     else:
                         death_history = history_text_adjust(block.get('reg_death'),
-                                                            self.other_clan_name, game.clan, self.main_cat)
+                                                            self.other_clan_name, game.clan, self.random_cat)
 
                     # handle murder
                     if "murder" in self.chosen_event.sub_type:
                         revealed = False
                         History.add_murders(self.main_cat, self.random_cat, revealed, death_history)
-
                     History.add_death(self.main_cat, death_history, other_cat=self.random_cat)
 
             # random_cat history
@@ -682,7 +682,7 @@ class HandleShortEvents():
             elif adjustment == "reduce_eighth":
                 herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 8)
             elif "increase" in adjustment:
-                herbs[self.chosen_herb] += adjustment.split("_")[1]
+                herbs[self.chosen_herb] += int(adjustment.split("_")[1])
 
         if not self.chosen_herb:
             self.chosen_herb = random.choice(list(herbs.keys()))
