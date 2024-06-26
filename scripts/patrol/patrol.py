@@ -5,7 +5,7 @@ from copy import deepcopy
 from itertools import repeat
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 import pygame
 import ujson
@@ -40,7 +40,7 @@ class Patrol:
 
     def __init__(self):
 
-        self.patrol_event: PatrolEvent = None
+        self.patrol_event: Union[PatrolEvent, None] = None
 
         self.patrol_leader = None
         self.random_cat = None
@@ -75,18 +75,14 @@ class Patrol:
         )
 
         if final_patrols:
-            normal_event_choice = choices(
-                final_patrols, weights=[x.weight for x in final_patrols]
-            )[0]
+            normal_event_choice = self.choose_patrol(final_patrols)
         else:
             print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", self.patrol_statuses)
             raise RuntimeError
 
         romantic_event_choice = None
         if final_romance_patrols:
-            romantic_event_choice = choices(
-                final_romance_patrols, [x.weight for x in final_romance_patrols]
-            )[0]
+            romantic_event_choice = self.choose_patrol(final_romance_patrols)
 
         if romantic_event_choice and Patrol.decide_if_romantic(
             romantic_event_choice,
@@ -103,7 +99,9 @@ class Patrol:
 
         return self.process_text(self.patrol_event.intro_text, None)
 
-    def proceed_patrol(self, path: str = "proceed") -> Tuple[str]:
+    def proceed_patrol(
+        self, path: str = "proceed"
+    ) -> Tuple[Union[str, None], Union[str, None], Union[str, None]]:
         """Proceed the patrol to the next step.
         path can be: "proceed", "antag", or "decline" """
 
@@ -392,10 +390,12 @@ class Patrol:
         return final_patrols, final_romance_patrols
 
     def _check_constraints(self, patrol: PatrolEvent) -> bool:
-        if not filter_relationship_type(group=self.patrol_cats,
-                                        filter_types=patrol.relationship_constraints,
-                                        event_id=patrol.patrol_id,
-                                        patrol_leader=self.patrol_leader):
+        if not filter_relationship_type(
+            group=self.patrol_cats,
+            filter_types=patrol.relationship_constraints,
+            event_id=patrol.patrol_id,
+            patrol_leader=self.patrol_leader,
+        ):
             return False
 
         if (
@@ -915,7 +915,7 @@ class Patrol:
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
 
-    def process_text(self, text, stat_cat: Cat) -> str:
+    def process_text(self, text, stat_cat: Union[Cat, None]) -> str:
         """Processes text"""
 
         vowels = ["A", "E", "I", "O", "U"]
@@ -1061,8 +1061,57 @@ class Patrol:
             )
             text = text.replace(list_type, str(sign_list))
 
-        #TODO: check if this can be handled in event_text_adjust
+        # TODO: check if this can be handled in event_text_adjust
         return text
+
+    def choose_patrol(self, patrols: list[PatrolEvent]):
+        patrol_weights = []
+        for patrol in patrols:
+            constraint_weight = 0
+
+            if game.clan.biome.casefold() in patrol.biome:
+                constraint_weight += 1
+
+            if game.clan.current_season.casefold() in patrol.season:
+                constraint_weight += 1
+
+            for minmax in patrol.min_max_status.values():
+                # not sure how to handle this yet
+                continue
+
+            for constraint in patrol.relationship_constraints:
+                # I want to do this with a bit more nuance but not sure how exactly
+                constraint_weight += 1
+
+            for constraint in patrol.pl_skill_constraints:
+                constraint = constraint.split(",")
+                constraint_weight += int(constraint[1])
+
+            patrol_weights.append(constraint_weight)
+
+        selected_constraint_tier = None
+        sorted_pat_weights = deepcopy(patrol_weights)
+        sorted_pat_weights.sort(reverse=True)
+        sorted_pat_weights = list(dict.fromkeys(sorted_pat_weights))
+        for i in sorted_pat_weights:
+            if random.randint(
+                1, 20
+            ):  # eyeballed a 1 in 20 chance, idk if this is right or not
+                selected_constraint_tier = [i]
+                break
+        if selected_constraint_tier is None:
+            # if nothing succeeded, we return to a flat chance
+            selected_constraint_tier = sorted_pat_weights
+
+        idxs = [
+            i for i, x in enumerate(patrol_weights) if x in selected_constraint_tier
+        ]
+        patrols_in_tier = [patrols[i] for i in idxs]
+        final_patrol = choices(
+            patrols_in_tier, weights=[x.weight for x in patrols_in_tier]
+        )[0]
+        return final_patrol
+
 
 # ---------------------------------------------------------------------------- #
 #                               PATROL CLASS END                               #
