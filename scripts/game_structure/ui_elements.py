@@ -652,7 +652,7 @@ class UICheckbox(UIImageButton):
         self.change_object_id("#unchecked_checkbox")
 
 
-class UIBasicCatListDisplay(UIContainer):
+class UICatListDisplay(UIContainer):
     """
     Creates and displays a list of click-able cat sprites.
     :param relative_rect: The starting size and relative position of the container.
