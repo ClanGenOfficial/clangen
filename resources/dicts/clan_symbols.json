@@ -793,7 +793,7 @@
   },
   "Frost": {
     "variants": 1,
-    "tags0": ["element"]
+    "tags0": ["element", "water"]
   },
   "Frozen": {
     "variants": 0,
