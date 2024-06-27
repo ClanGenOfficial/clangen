@@ -24,7 +24,6 @@ from .SpriteInspectScreen import SpriteInspectScreen
 from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
-from .newEventsScreen import newEventsScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -70,7 +69,7 @@ warrior_den_screen = WarriorDenScreen('warrior den screen')
 leader_den_screen = LeaderDenScreen('leader den screen')
 
 
-events_screen = newEventsScreen('events screen')
+events_screen = EventsScreen('events screen')
 
 
 settings_screen = SettingsScreen('settings screen')
