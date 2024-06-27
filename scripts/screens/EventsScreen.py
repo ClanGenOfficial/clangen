@@ -112,6 +112,9 @@ class EventsScreen(Screens):
             )
 
     def handle_tab_event(self, display_type):
+        """
+        saves current tab scroll position, removes alert, and then switches to the new tab
+        """
         self.save_scroll_position()
 
         self.event_display_type = display_type
@@ -256,6 +259,9 @@ class EventsScreen(Screens):
         self.show_menu_buttons()
 
     def make_event_scrolling_container(self):
+        """
+        kills and recreates the self.event_display container
+        """
         if self.event_display:
             self.event_display.kill()
 
@@ -270,8 +276,7 @@ class EventsScreen(Screens):
     def make_cat_buttons(self, button_pressed):
         """Makes the buttons that take you to the profile."""
 
-        # Check if the button you pressed doesn't have it cat profile buttons currently displayed.
-
+        # Check if the button you pressed doesn't have its cat profile buttons currently displayed.
         # if it does, clear the cat profile buttons
         if self.open_involved_cat_button == button_pressed:
             self.open_involved_cat_button = None
@@ -359,6 +364,10 @@ class EventsScreen(Screens):
         ]
 
     def update_events_display(self):
+        """
+        Kills and recreates the event display, updates the clan info, sets the event display scroll position if it was
+        previously saved
+        """
 
         # UPDATE CLAN INFO
         self.clan_info["season"].set_text(f"Current season: {game.clan.current_season}")
