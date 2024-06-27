@@ -1065,15 +1065,14 @@ class Patrol:
         return text
 
     def choose_patrol(self, patrols: List[PatrolEvent]):
+        """
+        Choose a patrol to display, preferentially choosing those with tighter constraints
+        :param patrols: The list of possible patrols
+        :return: The selected patrol
+        """
         patrol_weights = []
         for patrol in patrols:
             constraint_weight = 0
-
-            if game.clan.biome.casefold() in patrol.biome:
-                constraint_weight += 1
-
-            if game.clan.current_season.casefold() in patrol.season:
-                constraint_weight += 1
 
             for minmax in patrol.min_max_status.values():
                 # not sure how to handle this yet
@@ -1093,6 +1092,7 @@ class Patrol:
         sorted_pat_weights = deepcopy(patrol_weights)
         sorted_pat_weights.sort(reverse=True)
         sorted_pat_weights = list(dict.fromkeys(sorted_pat_weights))
+
         for i in sorted_pat_weights:
             if random.randint(
                 1, 20
@@ -1107,9 +1107,15 @@ class Patrol:
             i for i, x in enumerate(patrol_weights) if x in selected_constraint_tier
         ]
         patrols_in_tier = [patrols[i] for i in idxs]
+
+        for weight in sorted_pat_weights:
+            print(f"Weight value: {weight} - patrols: {patrol_weights.count(weight)}")
+        print(f"Selected tier: {selected_constraint_tier}")
+
         final_patrol = choices(
             patrols_in_tier, weights=[x.weight for x in patrols_in_tier]
         )[0]
+        print(f"Selected patrol ID: {final_patrol.patrol_id}")
         return final_patrol
 
 
