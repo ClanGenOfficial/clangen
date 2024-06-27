@@ -5,7 +5,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UIBasicCatListDisplay
+from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UICatListDisplay
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme
 
@@ -530,7 +530,7 @@ class ListScreen(Screens):
         self.display_container_elements["page_number"].set_text(f"/{self.all_pages}")
 
         if not self.cat_display:
-            self.cat_display = UIBasicCatListDisplay(
+            self.cat_display = UICatListDisplay(
                 scale(pygame.Rect((30, 170), (2000, 1000))),
                 object_id="#cat_list_display",
                 starting_height=1,
