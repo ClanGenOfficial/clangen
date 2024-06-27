@@ -171,6 +171,7 @@ class ListScreen(Screens):
                 self.change_screen("camp screen")
             elif event.key == pygame.K_RIGHT:
                 self.change_screen("patrol screen")
+
     def screen_switches(self):
 
         self.set_disabled_menu_buttons(["catlist_screen"])
@@ -376,6 +377,7 @@ class ListScreen(Screens):
             visible=False,
             manager=MANAGER
         )
+        self.sc_bg.disable()
         self.ur_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
@@ -405,6 +407,7 @@ class ListScreen(Screens):
             scale(pygame.Rect((570, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
+            starting_height=2,
             object_id="#arrow_double_left_button",
             manager=MANAGER,
         )
@@ -412,6 +415,7 @@ class ListScreen(Screens):
             scale(pygame.Rect((620, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
+            starting_height=2,
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
@@ -420,6 +424,7 @@ class ListScreen(Screens):
             "",
             container=self.list_screen_container,
             object_id="#arrow_double_right_button",
+            starting_height=2,
             manager=MANAGER,
         )
         self.display_container_elements["next_page_button"] = UIImageButton(
@@ -427,6 +432,7 @@ class ListScreen(Screens):
             "",
             container=self.list_screen_container,
             object_id="#arrow_right_button",
+            starting_height=2,
             manager=MANAGER,
         )
         # page number
@@ -447,8 +453,6 @@ class ListScreen(Screens):
             else "#text_box_30_horizleft_light",
             manager=MANAGER,
         )  # Text will be filled in later
-
-
 
         # Determine the starting list of cats.
         self.get_cat_list()
