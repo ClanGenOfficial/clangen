@@ -13,12 +13,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
-        "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
+        "intro_text": "The apprentices emerge into a pre-dawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
+        "decline_text": "Their mentors are already up for the day and call them back. There'll be time to play later.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their ear tips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows {PRONOUN/app1/object}, only to immediately hear a crack and sink up to {PRONOUN/app1/poss} ear tips in the fluffy stuff. Teasingly, app1 runs around near {PRONOUN/app1/object}, and it turns into a game of app2 romping through the snow trying to catch {PRONOUN/app1/object}.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "text": "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+                "text": "app1 finds a snowdrift, and {PRONOUN/app1/subject} and app2 spend the early morning by turning it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth.",
+                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into {PRONOUN/app1/poss} fur. s_c digs a little hollow and invites {PRONOUN?app1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth, of course. They both stay there to watch the sun rise and cuddle. For warmth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -74,17 +74,17 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but they now have to clean it up <i>and</i> hide the fact that they disturbed it in the first place! It leaves the both of them irritated and stressed.",
+                "text": "The apprentices find a promising patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but they now have to clean it up <i>and</i> hide the fact that they disturbed it in the first place! It leaves the both of them irritated and grossed out.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing.",
+                "text": "As they play in the snow, app1 falls over {PRONOUN/app1/self} embarrassingly and suddenly decides {PRONOUN/app1/subject} {VERB/app1/remember/remembers} that {PRONOUN/app1/subject} {VERB/app1/have/has} other things {PRONOUN/app1/subject} should be doing.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess their predawn adventure when they go to medicine cat den with a running nose.",
+                "text": "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess {PRONOUN/app1/poss} pre-dawn adventure when {PRONOUN/app1/subject} {VERB/app1/go/goes} to medicine cat den with a running nose.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -116,7 +116,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds {PRONOUN/app1/object} of the games {PRONOUN/app1/subject} {VERB/app1/play/plays} with the other apprentices.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -130,7 +130,7 @@
                 ]
             },
             {
-                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches in silence. It's a grim reminder of what wolf packs are capable of.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -144,7 +144,7 @@
                 ]
             },
             {
-                "text": "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky.",
+                "text": "s_c ignores the wolves and points out the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -187,7 +187,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds {PRONOUN/app1/object} of the games {PRONOUN/app1/subject} {VERB/app1/play/plays} with the other apprentices.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -201,7 +201,7 @@
                 ]
             },
             {
-                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches in silence. It's a grim reminder of what wolf packs are capable of.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -215,7 +215,7 @@
                 ]
             },
             {
-                "text": "s_c shows app1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 if they're ever part of a hunting patrol targeting large prey.",
+                "text": "s_c shows app1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 if {PRONOUN/app1/subject}{VERB/app1/'re/'s} ever part of a hunting patrol targeting large prey.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -259,7 +259,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised and app2 shocked to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised and app2 shocked to watch them play, taking turns chasing and running from each other in a way that reminds {PRONOUN/app1/object} of the games {PRONOUN/app1/subject} {VERB/app1/play/plays} with the other apprentices.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -273,7 +273,7 @@
                 ]
             },
             {
-                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches in silence. It's a grim reminder of what wolf packs are capable of.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -287,7 +287,7 @@
                 ]
             },
             {
-                "text": "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky.",
+                "text": "s_c ignores the wolves and points out the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -345,7 +345,7 @@
                 ]
             },
             {
-                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches in silence. It's a grim reminder of what wolf packs are capable of.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -399,10 +399,10 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place.",
-        "decline_text": "A happier story, the cats ask, please. No one wants difficulty sleeping tonight.",
+        "decline_text": "A happier story, the cats ask, please. No one wants trouble sleeping tonight.",
         "success_outcomes": [
                 {
-                    "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
+                    "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor and condemning them to walk a path of decay and cruelty.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [
@@ -430,7 +430,7 @@
                     ]
                 },
                 {
-                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that they needed to tear a hole in silverpelt just to be able to stop them. s_c hopes to one day be that powerful.",
+                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that they needed to tear a hole in Silverpelt just to stop them. s_c hopes to one day be that powerful.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -495,7 +495,7 @@
                     ]
                 },
                 {
-                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan, that seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
+                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan? That seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -529,7 +529,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy.",
+                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest and the ancient, narrowly-won battle between the good cats of the stars and the traitor in their midst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep fitful and uneasy.",
                     "exp": 0,
                     "weight": 20,
                   "injury": [
@@ -546,7 +546,7 @@
                        }
                 },
                 {
-                    "text": "p_l notices how eager and happy s_c seems to be, and feels a bit uneasy after finishing the tale. No cat should be that pleased to hear this story...",
+                    "text": "p_l notices how eager and happy s_c seems to be and feels a bit uneasy after finishing the tale. No cat should be that pleased to hear this story...",
                     "exp": 0,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -682,11 +682,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1"],
-        "intro_text": "Many seasons ago, p_l begins, there was born a powerful, Stars-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
+        "intro_text": "Many seasons ago, p_l begins, a powerful, Stars-gifted cat was born, one coveted by the Clans around them. As an apprentice, they were pulled in many directions and could not keep the peace, as all demanded their time and skill.",
         "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
         "success_outcomes": [
                 {
-                    "text": "After moons of having their clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leafbare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
+                    "text": "After moons of having their clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",
@@ -717,7 +717,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "Rudely, r_c leaves in the middle of p_l's tale, stealing the momentum from it. p_l trails off, embarrassed.",
+                    "text": "Rudely, r_c leaves in the middle of p_l's tale, robbing the story of its momentum. p_l trails off, embarrassed.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [
@@ -745,7 +745,7 @@
                     ]
                 },
                 {
-                    "text": "s_c is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is long beyond helping.",
+                    "text": "s_c is so concerned with the health of the long-dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is beyond helping.",
                     "exp": 0,
                     "weight": 20,
                     "art": "scaryghost_INTRO",
@@ -783,11 +783,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1", "CLEVER,1", "INSIGHTFUL,1", "TEACHER,1"],
-        "intro_text": "It's an old, important lesson. The apprentices are brought out to a valley, one side, steep, one shallow. The patrol settles on the shallow side, and the young cats are asked to study the clumped snow on the sharp wall across from them. Today, they will learn of avalanches.",
-        "decline_text": "...Or they would, if the valley wasn't so misted over it's barely possible to see the other side.",
+        "intro_text": "It's an old, important lesson. The apprentices are brought out to a valley, one side steep and one shallow. The patrol settles on the shallow side, and the young cats are asked to study the clumped snow on the sharp wall across from them. Today, they will learn of avalanches.",
+        "decline_text": "...Or they would, if the valley weren't so misted over it's barely possible to see the other side.",
         "success_outcomes": [
                 {
-                    "text": "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run - not down, but to the side, away from where the snow will flow. Do they understand?",
+                    "text": "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. The deep rumble of the snowcaps themselves falling to their doom is unfeeling, unthinking, and uncaring , p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run - not down, but to the side, away from where the snow will flow. Do they understand?",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
@@ -825,7 +825,7 @@
                     ]
                 },
                 {
-                    "text": "Somberly, p_l lists the cats {PRONOUN/p_l/subject} {VERB/p_l/know/knows} who died to avalanche, who thought they were faster, who didn't heed the signs, who weren't cautious. Most of these cats were dead long before p_l was born, {PRONOUN/p_l/poss} knowledge of history going back gnerations, but this is what history is <i>for</i>. To learn from it.",
+                    "text": "Somberly, p_l lists the cats {PRONOUN/p_l/subject} {VERB/p_l/know/knows} of who died in avalanches - who thought they were faster, who didn't heed the signs, who weren't cautious. Most of these cats were dead long before p_l was born, {PRONOUN/p_l/poss} knowledge of history going back generations, but that is the purpose of history. To learn from it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
@@ -863,7 +863,7 @@
                     ]
                 },
                 {
-                    "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water, or mud, but with unimaginable force. If you're caught, it's luck whether you survive. So don't get caught - run to the side of the slope, out of the path of the flow, horizonal, not tyring to race anything. Climb, climb anything. The tree will get swept away, but they might float.",
+                    "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. If one of them is caught, it's luck whether they survive. So don't get caught - run to the side of the slope, out of the path of the flow, horizonal, not trying to race anything. Climb, climb anything. The tree will get swept away, but they might float.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
@@ -901,7 +901,7 @@
                     ]
                 },
                 {
-                    "text": "p_l sees the apprentices nerves, and takes a moment to reassure them. The patrol is safe on this side of the valley. The important things to remember with avalanches is the warning sides, the trembling of snowpack under paw, the quiver in your whiskers that warns of danger.",
+                    "text": "p_l sees the apprentices' nerves and takes a moment to reassure them. The patrol is safe on this side of the valley. The important things to remember with avalanches is the warning sides: the trembling of snowpack under paw and the whisker-quiver that warns of danger.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",

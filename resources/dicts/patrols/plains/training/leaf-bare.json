@@ -18,7 +18,7 @@
         "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
         "success_outcomes": [
                 {
-                    "text": "After moons of having their clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leafbare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
+                    "text": "After moons of having their clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",
@@ -49,7 +49,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "Rudely, r_c leaves in the middle of p_l's tale, stealing the momentum from it. p_l trails off, embarrassed.",
+                    "text": "Rudely, r_c leaves in the middle of p_l's tale, robbing the story of its momentum. p_l trails off, embarrassed.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [
@@ -77,7 +77,7 @@
                     ]
                 },
                 {
-                    "text": "s_c is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is long beyond helping.",
+                    "text": "s_c is so concerned with the health of the long-dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is beyond helping.",
                     "exp": 0,
                     "weight": 20,
                     "art": "scaryghost_INTRO",

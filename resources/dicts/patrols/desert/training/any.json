@@ -1171,8 +1171,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques and perhaps doing some training with them?",
-        "decline_text": "r_c declines gently, explaining that they have too much work to do.",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1204,7 +1204,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but work through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see {PRONOUN/p_l/poss} silhouette.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing p_l how to use the sandscape to blend into the horizon so that prey won't see {PRONOUN/p_l/poss} silhouette.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],

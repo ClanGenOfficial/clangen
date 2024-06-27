@@ -176,7 +176,7 @@
                 ]
             },
             {
-                "text": "Carefully considering {PRONOUN/s_c/poss} options, s_c decides on a stakeout, and watches from a safe hiding place in the grass. When the badger pokes its head above ground at dusk, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} prepared, and {VERB/s_c/dart/darts} off back to camp to warn everyone before the predator has blinked the sleep out of its eyes.",
+                "text": "Carefully considering {PRONOUN/s_c/poss} options, s_c decides on a stakeout and watches from a safe hiding place in the grass. When the badger pokes its head above ground at dusk, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} prepared, and {VERB/s_c/dart/darts} off back to camp to warn everyone before the predator has blinked the sleep out of its eyes.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -388,7 +388,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the grass. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone makes it back home in the end. . . including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance there's a rustle from the grass. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone makes it back home in the end. . . including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1470,7 +1470,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that bison could possibly be so huge. They also refuse to get any closer to them, and start an argument with p_l about it.",
+                "text": "app1 cannot believe that bison could possibly be so huge. They also refuse to get any closer to them, and start an argument with p_l about it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1627,7 +1627,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that bison could possibly be so huge. They also refuse to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
+                "text": "app1 cannot believe that bison could possibly be so huge. They also refuse to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",
@@ -1785,7 +1785,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it.",
+                "text": "app1 cannot believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1955,7 +1955,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
+                "text": "app1 cannot believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",
@@ -2014,8 +2014,8 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "On top of the grassy knoll in the endless sea of grass, app1 waits for app2, the dark night cloaking the flat plains. The tip of their tail keeps twitching in excitement.",
-        "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
+        "intro_text": "On top of the grassy knoll in the endless sea of grass, app1 waits for app2, the dark night cloaking the flat plains. The tip of {PRONOUN/app1/poss} tail keeps twitching in excitement.",
+        "decline_text": "Oh no! They both forgot that they were tasked with changing the elders' bedding this evening!",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2049,7 +2049,7 @@
                 ]
             },
             {
-                "text": "app2 emerges from the thick dark of the night, the stars reflected in their eyes. Seeing s_c, {PRONOUN/app2/subject} {VERB/app2/trot/trots} up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact.",
+                "text": "app2 emerges from the thick dark of the night, the stars reflected in {PRONOUN/app2/poss} eyes. Seeing s_c, {PRONOUN/app2/subject} {VERB/app2/trot/trots} up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact.",
                 "exp": 10,
                 "weight": 20,
                 "art": "gen_med_warappmedapp_herbcontest",
