@@ -327,6 +327,8 @@ class newEventsScreen(Screens):
                 if x_pos < 0:
                     x_pos += 54
 
+        # self.involved_cat_container.set_dimensions((self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
+
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
         self.event_screen_container.kill()
