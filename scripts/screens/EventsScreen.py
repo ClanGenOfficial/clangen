@@ -321,6 +321,8 @@ class EventsScreen(Screens):
                 x_pos += -255
                 if x_pos < 0:
                     x_pos += 54
+                    if i > 2:
+                        x_pos += 73
 
         self.involved_cat_container.set_view_container_dimensions(
             (self.involved_cat_container.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
