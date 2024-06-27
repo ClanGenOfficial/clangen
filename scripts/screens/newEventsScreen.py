@@ -322,7 +322,8 @@ class newEventsScreen(Screens):
                 if x_pos < 0:
                     x_pos += 54
 
-        self.involved_cat_container.set_view_container_dimensions((self.involved_cat_container.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
+        self.involved_cat_container.set_view_container_dimensions(
+            (self.involved_cat_container.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -413,7 +414,10 @@ class newEventsScreen(Screens):
                 else:
                     image_path += ".png"
 
-                y_len = text_box_len + 125
+                if event_object.cats_involved:
+                    y_len = text_box_len + 125
+                else:
+                    y_len = text_box_len + 45
 
                 self.event_display_elements[f"shading{i}"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((0, y_pos), (1028, y_len))),
@@ -425,26 +429,30 @@ class newEventsScreen(Screens):
                 )
                 self.event_display_elements[f"shading{i}"].disable()
 
-            # INVOLVED CAT BUTTON
-            y_pos += text_box_len + 15
+            if event_object.cats_involved:
+                # INVOLVED CAT BUTTON
+                y_pos += text_box_len + 15
 
-            self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
-                scale(pygame.Rect((928, y_pos), (68, 68))),
-                ids=event_object.cats_involved,
-                layer_starting_height=3,
-                object_id="#events_cat_button",
-                container=self.event_display,
-                manager=MANAGER
-            )
+                self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
+                    scale(pygame.Rect((928, y_pos), (68, 68))),
+                    ids=event_object.cats_involved,
+                    layer_starting_height=3,
+                    object_id="#events_cat_button",
+                    container=self.event_display,
+                    manager=MANAGER
+                )
 
-            y_pos += 110
+                y_pos += 110
+            else:
+                y_pos += text_box_len + 45
 
         # this HAS TO UPDATE before saved scroll position can be set
         self.event_display.scrollable_container.update(1)
 
         # don't ask me why we have to redefine these dimensions, we just do
         # otherwise the scroll position save will break
-        self.event_display.set_dimensions((self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
+        self.event_display.set_dimensions(
+            (self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
 
         # set saved scroll position
         if game.switches["saved_scroll_positions"].get(self.event_display_type):
