@@ -206,13 +206,13 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
 
     def _get_scroll_bar_width(self) -> int:
         if game.settings["fullscreen"]:
-            return 48
+            return 44
         else:
             return 24
 
     def _get_scroll_bar_height(self) -> int:
         if game.settings["fullscreen"]:
-            return 40
+            return 38
         else:
             return 20
 
@@ -261,7 +261,11 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
 
     def set_visible_percentage(self, percentage: float):
         super().set_visible_percentage(percentage)
-        self.scroll_wheel_speed = (1 / self.visible_percentage) * 15
+        if game.settings["fullscreen"]:
+            speed = 30
+        else:
+            speed = 15
+        self.scroll_wheel_speed = (1 / self.visible_percentage) * speed
 
 
 

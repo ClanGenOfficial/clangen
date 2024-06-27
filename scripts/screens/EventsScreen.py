@@ -306,6 +306,11 @@ class EventsScreen(Screens):
             allow_scroll_x=True
         )
 
+        if game.settings["fullscreen"]:
+            fullscreen_modifier = 0
+        else:
+            fullscreen_modifier = 1
+
         for i, cat_id in enumerate(button_pressed.ids):
             cat_ob = Cat.fetch_cat(cat_id)
             if cat_ob:
@@ -325,9 +330,9 @@ class EventsScreen(Screens):
 
                 x_pos += -255
                 if x_pos < 0:
-                    x_pos += 54
+                    x_pos += 54 * fullscreen_modifier
                     if i > 2:
-                        x_pos += 73
+                        x_pos += 73 * fullscreen_modifier
 
         self.involved_cat_container.set_view_container_dimensions(
             (self.involved_cat_container.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))

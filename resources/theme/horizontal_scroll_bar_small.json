@@ -9,7 +9,7 @@
          "misc":
          {
             "enable_arrow_buttons": "0",
-            "border_width": "4"
+            "border_width": "2"
          }
      },
      "horizontal_scroll_bar.#sliding_button":
@@ -28,7 +28,7 @@
          "misc":
          {
            "border_width": "0",
-           "shadow_width": "4"
+           "shadow_width": "2"
          }
      },
      "horizontal_scroll_bar.#top_button":

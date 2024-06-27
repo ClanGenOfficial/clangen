@@ -1,5 +1,5 @@
-{
-     "horizontal_scroll_bar":
+ {
+     "vertical_scroll_bar":
      {
         "colours": {
           "dark_bg": "#b09c74",
@@ -8,11 +8,11 @@
         },
          "misc":
          {
-            "enable_arrow_buttons": "0",
-            "border_width": "4"
+            "enable_arrow_buttons": "1",
+            "border_width": "2"
          }
      },
-     "horizontal_scroll_bar.#sliding_button":
+     "vertical_scroll_bar.#sliding_button":
      {
          "colours":
          {
@@ -27,11 +27,11 @@
          },
          "misc":
          {
-           "border_width": "0",
-           "shadow_width": "4"
+           "border_width": "2",
+           "shadow_width": "2"
          }
      },
-     "horizontal_scroll_bar.#top_button":
+     "vertical_scroll_bar.#top_button":
      {
         "colours":
          {
@@ -46,7 +46,7 @@
            "shadow_width": "0"
          }
     },
-    "horizontal_scroll_bar.#bottom_button":
+    "vertical_scroll_bar.#bottom_button":
     {
         "colours":
          {
