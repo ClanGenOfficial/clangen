@@ -423,6 +423,7 @@ class newEventsScreen(Screens):
                     container=self.event_display,
                     manager=MANAGER
                 )
+                self.event_display_elements[f"shading{i}"].disable()
 
             # INVOLVED CAT BUTTON
             y_pos += text_box_len + 15
