@@ -81,9 +81,10 @@ class newEventsScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
             element = event.ui_element
             if element in self.event_buttons.values():
-                for ele in self.event_buttons:
-                    if self.event_buttons[ele] == element:
+                for ele, val in self.event_buttons.items():
+                    if val == element:
                         self.handle_tab_event(ele)
+                        break
 
         if event.type == pygame_gui.UI_BUTTON_PRESSED:  # everything else on button press to prevent blinking
             element = event.ui_element
@@ -136,6 +137,10 @@ class newEventsScreen(Screens):
             self.alert[display_type].hide()
 
         self.update_events_display()
+        if self.scroll_height.get(self.event_display_type):
+            self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
+                self.scroll_height[self.event_display_type]
+            )
 
     def screen_switches(self):
         # On first open, update display events list
@@ -436,6 +441,14 @@ class newEventsScreen(Screens):
 
             y_pos += 110
 
+        # this HAS TO UPDATE before saved scroll position can be set
+        self.event_display.scrollable_container.update(1)
+
+        # don't ask me why we have to redefine these dimensions, we just do
+        # otherwise the scroll position save will break
+        self.event_display.set_dimensions((self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
+
+        # set saved scroll position
         if self.scroll_height.get(self.event_display_type):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
                 self.scroll_height[self.event_display_type]

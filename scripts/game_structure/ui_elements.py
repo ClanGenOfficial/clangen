@@ -108,7 +108,7 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
             self.vert_scroll_bar.kill()
             self.vert_scroll_bar = None
 
-            self.scroll_bar_width = 24
+            self.scroll_bar_width = self._get_scroll_bar_width()
             scroll_bar_rect = pygame.Rect(-self.scroll_bar_width,
                                           0,
                                           self.scroll_bar_width,
@@ -152,13 +152,16 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         self._calculate_scrolling_dimensions()
         self._sort_out_element_container_scroll_bars()
 
+    def set_dimensions(self, dimensions, clamp_to_container: bool = False):
+        super().set_dimensions(dimensions, clamp_to_container)
+
     def _sort_out_element_container_scroll_bars(self):
         """
         This creates, re-sizes or removes the scrollbars after resizing, but not after the scroll
         bar has been moved. Instead, it tries to keep the scrollbars in the same approximate position
         they were in before resizing
         """
-        self.scroll_bar_width = 24
+        self.scroll_bar_width = self._get_scroll_bar_width()
         super()._sort_out_element_container_scroll_bars()
 
         if self.vert_scroll_bar:
@@ -177,23 +180,30 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         if (self.scrolling_height > self._view_container.rect.height or
                 self.scrollable_container.relative_rect.top != 0) and self.allow_scroll_y:
             need_vert_scroll_bar = True
-            self.scroll_bar_width = 24
+            self.scroll_bar_width = self._get_scroll_bar_width()
 
         # Need to subtract scrollbar width here to account for when the above statement evaluated to True
         if (self.scrolling_width > self._view_container.rect.width - self.scroll_bar_width or
                 self.scrollable_container.relative_rect.left != 0) and self.allow_scroll_x:
             need_horiz_scroll_bar = True
-            self.scroll_bar_height = 24
+            self.scroll_bar_height = self._get_scroll_bar_width()
 
             # Needs a second check for the case where we didn't need the vertical scroll bar until after creating a
             # horizontal scroll bar
             if (self.scrolling_height > self._view_container.rect.height - self.scroll_bar_height or
                     self.scrollable_container.relative_rect.top != 0) and self.allow_scroll_y:
                 need_vert_scroll_bar = True
-                self.scroll_bar_width = 24
+                self.scroll_bar_width = self._get_scroll_bar_width()
 
         self._calculate_scrolling_dimensions()
         return need_horiz_scroll_bar, need_vert_scroll_bar
+
+    def _get_scroll_bar_width(self) -> int:
+        if game.settings["fullscreen"]:
+            return 48
+        else:
+            return 24
+
 
 class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
     def __init__(self, relative_rect: pygame.Rect, visible_percentage: float, manager=None, container=None,
@@ -241,6 +251,10 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
     def set_visible_percentage(self, percentage: float):
         super().set_visible_percentage(percentage)
         self.scroll_wheel_speed = (1 / self.visible_percentage) * 15
+
+    def set_scroll_from_start_percentage(self, new_start_percentage: float):
+
+        super().set_scroll_from_start_percentage(new_start_percentage)
 
 
 class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
