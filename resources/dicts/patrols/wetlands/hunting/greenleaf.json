@@ -2209,7 +2209,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen13",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -2400,7 +2400,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen14",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -2563,7 +2563,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen6",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -2711,7 +2711,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -2874,7 +2874,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen5",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -3037,7 +3037,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen15",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -3186,7 +3186,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["hunting"],
         "tags": [],
@@ -3300,7 +3300,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["hunting"],
         "tags": [],
@@ -3420,7 +3420,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -3611,7 +3611,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen5",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -3774,7 +3774,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen15",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -3922,7 +3922,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen13",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -4085,7 +4085,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen14",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -4248,7 +4248,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen6",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": [],
         "tags": [],
@@ -4397,7 +4397,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["hunting"],
         "tags": [],
@@ -4511,7 +4511,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["hunting"],
         "tags": [],

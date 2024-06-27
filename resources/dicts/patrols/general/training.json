@@ -10497,64 +10497,6 @@
         ]
     },
     {
-        "patrol_id": "gen_train_silverpeltfable_storylorelocked1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [1, 5],
-            "apprentice": [1, 5]
-        },
-        "weight": 20,
-        "chance_of_success": 60,
-        "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "Legends tell of the first Clan cat that, upon her death, created the stars above and below...",
-        "decline_text": "No one is interested in fables today.",
-        "success_outcomes": [
-            {
-                "text": "As the first cat to ever pad through the stars, Silverpelt decorates her fur with the gleaming souls of fallen warriors to keep her company in Starclan.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": true,
-                            "values": ["platonic", "respect"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect"],
-                            "amount": 5
-                        }
-                     ]
-            }
-        ],
-            "fail_outcomes": [
-                {
-                    "text": "Legends build no muscles and practice no pounces. app1 is uninterested in the lesson.",
-                    "exp": 0,
-                    "weight": 20,
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["app1"],
-                            "mutual": false,
-                            "values": ["platonic", "respect"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ]
-    },
-    {
         "patrol_id": "gen_train_firestarfable_storylorelocked1",
         "biome": ["any"],
         "season": ["any"],
