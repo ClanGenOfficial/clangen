@@ -1453,7 +1453,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_twolegplacekittens1",
+        "patrol_id": "fst_hunt_twolegplacekittens_hostile1",
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
