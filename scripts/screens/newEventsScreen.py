@@ -41,7 +41,6 @@ class newEventsScreen(Screens):
         self.alert = {}
 
         self.event_display = None
-        self.scroll_height = {}
         self.event_display_elements = {}
         self.cat_profile_buttons = {}
         self.involved_cat_container = None
@@ -104,10 +103,10 @@ class newEventsScreen(Screens):
 
     def save_scroll_position(self):
         """
-        adds current event display vert scroll bar position to `self.scroll_height` dict
+        adds current event display vert scroll bar position to game.switches["saved_scroll_positions"] dict
         """
         if self.event_display.vert_scroll_bar:
-            self.scroll_height[self.event_display_type] = (
+            game.switches["saved_scroll_positions"][self.event_display_type] = (
                     self.event_display.vert_scroll_bar.scroll_position
                     / self.event_display.vert_scroll_bar.scrollable_height
             )
@@ -137,10 +136,6 @@ class newEventsScreen(Screens):
             self.alert[display_type].hide()
 
         self.update_events_display()
-        if self.scroll_height.get(self.event_display_type):
-            self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                self.scroll_height[self.event_display_type]
-            )
 
     def screen_switches(self):
         # On first open, update display events list
@@ -451,9 +446,9 @@ class newEventsScreen(Screens):
         self.event_display.set_dimensions((self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
 
         # set saved scroll position
-        if self.scroll_height.get(self.event_display_type):
+        if game.switches["saved_scroll_positions"].get(self.event_display_type):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                self.scroll_height[self.event_display_type]
+                game.switches["saved_scroll_positions"][self.event_display_type]
             )
 
     def update_list_buttons(self):
@@ -472,7 +467,7 @@ class newEventsScreen(Screens):
     def timeskip_done(self):
         """Various sorting and other tasks that must be done with the timeskip is over."""
 
-        self.scroll_height = {}
+        game.switches["saved_scroll_positions"] = {}
 
         if get_living_clan_cat_count(Cat) == 0:
             GameOver("events screen")
