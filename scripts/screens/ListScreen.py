@@ -364,6 +364,41 @@ class ListScreen(Screens):
 
         self.sort_by_dropdown.close()
 
+        # BG IMAGES
+        self.sc_bg = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 0), (1600, 1400))),
+            pygame.transform.scale(
+                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
+                (1600, 1400)),
+            container=self.list_screen_container,
+            starting_height=1,
+            object_id="#starclan_bg",
+            visible=False,
+            manager=MANAGER
+        )
+        self.ur_bg = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 0), (1600, 1400))),
+            pygame.transform.scale(
+                pygame.image.load("resources/images/urbg.png").convert_alpha(),
+                (1600, 1400)),
+            container=self.list_screen_container,
+            starting_height=1,
+            object_id="#unknown_residence_bg",
+            visible=False,
+            manager=MANAGER
+        )
+        self.df_bg = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 0), (1600, 1400))),
+            pygame.transform.scale(
+                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
+                (1600, 1400)),
+            container=self.list_screen_container,
+            starting_height=1,
+            object_id="#dark_forest_bg",
+            visible=False,
+            manager=MANAGER
+        )
+
         # CAT DISPLAY
         # first/prev/next/last page buttons
         self.display_container_elements["first_page_button"] = UIImageButton(
@@ -413,40 +448,7 @@ class ListScreen(Screens):
             manager=MANAGER,
         )  # Text will be filled in later
 
-        # BG IMAGES
-        self.sc_bg = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), (1600, 1400))),
-            pygame.transform.scale(
-                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
-                (1600, 1400)),
-            container=self.list_screen_container,
-            starting_height=1,
-            object_id="#starclan_bg",
-            visible=False,
-            manager=MANAGER
-        )
-        self.ur_bg = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), (1600, 1400))),
-            pygame.transform.scale(
-                pygame.image.load("resources/images/urbg.png").convert_alpha(),
-                (1600, 1400)),
-            container=self.list_screen_container,
-            starting_height=1,
-            object_id="#unknown_residence_bg",
-            visible=False,
-            manager=MANAGER
-        )
-        self.df_bg = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), (1600, 1400))),
-            pygame.transform.scale(
-                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
-                (1600, 1400)),
-            container=self.list_screen_container,
-            starting_height=1,
-            object_id="#dark_forest_bg",
-            visible=False,
-            manager=MANAGER
-        )
+
 
         # Determine the starting list of cats.
         self.get_cat_list()

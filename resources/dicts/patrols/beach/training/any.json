@@ -1107,7 +1107,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1325,7 +1325,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. app2 sides with p_l, and no one learns anything in the squabbling.",
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. app2 sides with p_l, and no one learns anything in the squabbling.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

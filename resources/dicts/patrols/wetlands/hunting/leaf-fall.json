@@ -2209,7 +2209,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen7",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -2400,7 +2400,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen8",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -2540,7 +2540,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen9",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -2688,7 +2688,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen16",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -2851,7 +2851,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen17",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -3014,7 +3014,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen9",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -3177,7 +3177,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
@@ -3291,7 +3291,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
@@ -3411,7 +3411,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen16",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -3602,7 +3602,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen17",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -3742,7 +3742,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen18",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -3890,7 +3890,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen7",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -4053,7 +4053,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen8",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -4216,7 +4216,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen18",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": [],
         "tags": [],
@@ -4379,7 +4379,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
@@ -4493,7 +4493,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
