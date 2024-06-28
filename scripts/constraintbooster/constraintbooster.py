@@ -9,7 +9,7 @@ from scripts.constraintbooster.constrainttypes import (
 
 
 class ConstraintBooster:
-    def __init__(self, proc_chance=20, number_of_groups=3, min_group_size=2):
+    def __init__(self, proc_chance=5, number_of_groups=3, min_group_size=2):
         """
         Create a constraint booster.
         :param proc_chance: The chance each group has of being selected (1/x). Default 20.
@@ -75,12 +75,14 @@ class ConstraintBooster:
         selected_group = None
         if not debug_force_flat:
             for group in groups:
-                if random.randint(1, self.proc_chance):
+                if random.randint(1, self.proc_chance) == 1:
                     selected_group = group
+                    print(f"ConstraintBooster group: {groups.index(selected_group)}")
                     break
         if selected_group is None:
             # if nothing succeeded, we return to a flat chance
             selected_group = options
+            print("ConstraintBooster - no group selected, flat chance")
 
         if not isinstance(selected_group, list):
             # there is only one value, return it as the selection
