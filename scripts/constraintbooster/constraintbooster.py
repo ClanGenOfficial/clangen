@@ -9,12 +9,12 @@ from scripts.constraintbooster.constrainttypes import (
 
 
 class ConstraintBooster:
-    def __init__(self, proc_chance=5, number_of_groups=3, min_group_size=1):
+    def __init__(self, proc_chance=5, number_of_groups=3, min_group_size=2):
         """
         Create a constraint booster.
         :param proc_chance: The chance each group has of being selected (1/x). Default 5.
         :param number_of_groups: Number of groups to make, default 3
-        :param min_group_size: Minimum number of items permitted per group, default 1
+        :param min_group_size: Minimum number of items permitted per group, default 2
         """
         self._constraints = []
         self.proc_chance = proc_chance
@@ -81,6 +81,10 @@ class ConstraintBooster:
         if selected_group is None:
             # if nothing succeeded, we return to a flat chance
             selected_group = options
+
+        if not isinstance(selected_group, list):
+            # there is only one value, return it as the selection
+            return selected_group
 
         final_choice = random.choices(
             selected_group,
