@@ -1,0 +1,102 @@
+[
+  {
+    "interaction_type": "offend",
+    "event_text": "During the Gathering, m_c makes an off-color comment about o_c_n's leader, much to o_c_n's shock.",
+    "rel_change": -2,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
+    "event_text": "During the Gathering, m_c keeps talking over o_c_n's leader.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": ["troublesome", "fierce", "bloodthirsty", "cold", "bold", "daring",  "righteous", "strict", "ambitious", "confident", "adventurous", "loyal", "responsible", "shameless", "sneaky", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "flamboyant", "rebellious"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
+    "event_text": "While getting to their spots before beginning the Gathering, m_c steps on the tail of o_c_n's leader. m_c gives no apology for the perhaps-not-quite mistake.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": ["troublesome", "lonesome", "childish", "playful", "charismatic", "bold", "daring", "nervous", "insecure", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "loyal", "shameless", "sneaky", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "During the Gathering, m_c is constantly singing o_c_n's praises. The other leaders don't seem so impressed, but o_c_n's leader is quite pleased.",
+    "rel_change": 2,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "m_c compliments o_c_n's newest warriors at the Gathering.",
+    "rel_change": 1,
+    "m_c": {
+      "status": ["deputy", "medicine cat", "medicine cat apprentice", "mediator", "mediator apprentice", "warrior"],
+      "trait": ["fierce", "childish", "playful", "charismatic", "bold", "daring", "nervous", "righteous", "insecure", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving",  "responsible", "shameless", "sneaky", "strange", "vengeful", "wise", "cunning", "oblivious", "sincere", "flamboyant"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c has a lot to say about o_c_n's recent patrols near c_n borders, and none of it is good.",
+    "rel_change": -2,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c spits accusations at o_c_n's leader.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": ["troublesome", "lonesome", "fierce", "bloodthirsty", "cold", "childish", "bold", "daring",  "righteous", "strict", "ambitious", "confident", "adventurous",  "loyal", "responsible", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "grumpy", "sincere", "flamboyant", "rebellious"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c does {PRONOUN/m_c/poss} best to get on o_c_n's good side.",
+    "rel_change": 2,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "During the Gathering, m_c has nothing but sharp comments and sarcastic quips to add whenever o_c_n's leader speaks.",
+    "rel_change": -2,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "During the Gathering, m_c does their best to make peace with o_c_n's leader.",
+    "rel_change": 2,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c spends the Gathering attempting small talk with o_c_n's leader and doing {PRONOUN/m_c/poss} best to smooth over the harsh edges of their Clans' relationship.",
+    "rel_change": 2,
+    "m_c": {
+      "status": ["leader"],
+      "skill": ["SPEAKER,1"]
+    },
+    "player_clan_temper": ["gracious", "mellow", "logical", "amiable", "cunning", "stoic"],
+    "other_clan_temper": ["any"]
+  }
+]

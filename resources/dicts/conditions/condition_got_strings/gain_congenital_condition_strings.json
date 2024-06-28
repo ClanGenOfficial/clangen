@@ -1,12 +1,12 @@
 {
     "born without a leg": [
-        "m_c mewls, snuggling up to {PRONOUN/m_c/poss} parent as {PRONOUN/m_c/subject} anxiously {VERB/m_c/await/awaits} the verdict, but r_c is confident that m_c's lack of a leg won't slow {PRONOUN/m_c/object} down, and the new family is left to bond, relieved and purring.",
+      "m_c mewls, snuggling up to {PRONOUN/m_c/poss} parent as {PRONOUN/m_c/subject} anxiously {VERB/m_c/await/awaits} the verdict. r_c is confident that m_c's lack of a leg won't slow {PRONOUN/m_c/object} down. The new family is left to bond, relieved and purring.",
         "It's immediately clear that m_c might take longer to find {PRONOUN/m_c/poss} feet - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been born without one of the usual set."
 
     ],
     "weak leg": [
-        "As m_c toddles around the nursery, r_c watches and m_c's parent waits in suspense. Finally, r_c nods, and confirms that one of m_c's legs isn't developing at the same rate as the others.",
-        "m_c keeps falling to one side, and eventually it's clear that one of the legs on that side just isn't as strong as the others."
+      "As m_c toddles around the nursery, r_c watches and m_c's parent waits in suspense. Finally, r_c nods and confirms that one of m_c's legs isn't developing at the same rate as the others.",
+      "m_c keeps falling to one side. Eventually it's clear that one of the legs on that side just isn't as strong as the others."
 
     ],
     "twisted leg": [
@@ -21,17 +21,17 @@
     ],
     "paralyzed": [
         "r_c soothes m_c's frantically worried parent - their kit will never walk, but it's still possible for {PRONOUN/m_c/object} to have a happy, healthy life.",
-        "It's immediately clear that m_c can't feel {PRONOUN/m_c/poss} hindlegs when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} born, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like a happy bundle of newborn fluff anyway."
+      "It's immediately clear that m_c can't feel {PRONOUN/m_c/poss} hindlegs as soon as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} born, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like a happy bundle of newborn fluff anyway."
 
     ],
     "raspy lungs": [
-        "m_c has been having a lot of trouble keeping up while playing. r_c listens to {PRONOUN/m_c/poss} chest, and diagnoses {PRONOUN/m_c/object} as having raspy lungs.",
+      "m_c has been having a lot of trouble keeping up while playing. r_c listens to {PRONOUN/m_c/poss} chest and diagnoses {PRONOUN/m_c/object} with raspy lungs.",
         "As m_c grows, {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} incapable of not snoring and panting loudly, until eventually it's clear {PRONOUN/m_c/poss} lungs are a little weaker than normal."
 
     ],
     "wasting disease": [
-        "r_c has been called in by m_c's worried parent, and unfortunately that worry was well-founded, as m_c seems to have wasting disease.",
-        "m_c seems weaker, lately, unable to play as much or explore as far.",
+      "r_c has been called in by m_c's worried parent. Unfortunately, that worry was well-founded, as m_c seems to have wasting disease.",
+      "m_c seems weaker lately, unable to play as much or explore as far.",
         "m_c is a sickly kit and the Clan fears {PRONOUN/m_c/subject} may not live past kithood. Even if {PRONOUN/m_c/subject} {VERB/m_c/do/does}, this sickness may never leave {PRONOUN/m_c/object}."
     ],
     "blind": [
@@ -50,7 +50,7 @@
 
     ],
     "partial hearing loss": [
-        "r_c is called in to assess m_c's hearing, and while it's still present, m_c definitely isn't hearing clearly.",
+      "r_c is called in to assess m_c's hearing. While it's still present, m_c definitely isn't hearing clearly.",
         "m_c keeps asking cats to repeat themselves, until it's clear that something about {PRONOUN/m_c/poss} hearing is weak and unreliable."
 
     ],
@@ -65,7 +65,7 @@
 
     ],
     "seizure prone": [
-        "r_c wakes m_c slowly. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} had a seizure, and are in the medicine cat den just while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}, r_c explains. It might happen again in the future, and m_c needs to be prepared.",
+      "r_c wakes m_c slowly. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} had a seizure and {VERB/m_c/are/is} in the medicine cat den just while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}, r_c explains. It might happen again in the future... and m_c needs to be prepared.",
         "In the middle of camp, right as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} about to pounce, m_c falls to the ground and begins shaking, a seizure rolling through {PRONOUN/m_c/poss} little body."
 
     ],
@@ -75,7 +75,7 @@
 
     ],
     "persistent headaches": [
-        "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and try to wriggle into the darkest corners of the medicine cat den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
+      "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and {VERB/m_c/try/tries} to wriggle into the darkest corners of the medicine cat den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
         "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the medicine cat den, {PRONOUN/m_c/poss} head hurting too much to move."
     ]
 }

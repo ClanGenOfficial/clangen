@@ -214,7 +214,7 @@
                 "herbs": ["many_herbs", "goldenrod", "betony"]
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/p_l/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/p_l/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -630,7 +630,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "At this time of year, the blackberries have grown enough leaves to completely shade the ground under their brambles. p_l harvests without worry, finding some raspberries too and picking large bunches of them to take home. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obligingly cats follow p_l's direction to cart everything home.",
+                "text": "At this time of year, the blackberries have grown enough leaves to completely shade the ground under their brambles. p_l harvests without worry, finding some raspberries too and picking large bunches of them to take home. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obligingly cats follow p_l's direction to carry everything home.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry", "raspberry"],
@@ -898,7 +898,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home. p_l is amused to find some plantain leaves in the mix as they're sorting later.",
+                "text": "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as they're sorting later.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["burdock", "plantain"],
@@ -1008,7 +1008,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The medicine cat carefully picks out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+                "text": "The medicine cat carefully picks out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"]
@@ -1057,7 +1057,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent holds drugged pleasure, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+                "text": "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent holds drugged pleasure, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"],
@@ -1168,7 +1168,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+                "text": "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["catmint"],
@@ -1542,8 +1542,8 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Greenleaf's bounty means that finding dandelions shouldn't be any trouble. If they're lucky, they might also be able to find additional herbs, such as wild garlic.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "Greenleaf's bounty means that finding dandelions shouldn't be any trouble. If {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} lucky, {PRONOUN/p_l/subject} might also be able to find additional herbs, such as wild garlic.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1553,7 +1553,7 @@
                 "herbs": ["dandelion", "wild_garlic"]
             },
             {
-                "text": "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants and the additional wild garlic they had been hoping to find. Later they'll sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
+                "text": "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants and the additional wild garlic {PRONOUN/p_l/subject} had been hoping to find. Later {PRONOUN/p_l/subject}'ll sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "dandelion", "wild_garlic"]
@@ -1811,8 +1811,8 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The thick growth of greenleaf will serve c_n well today, p_l decides, thinking about gathering elder leaves. There's a particular tree in a sheltered dip along a stream they want to check on today.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "The thick growth of greenleaf will serve c_n well today, p_l decides, thinking about gathering elder leaves. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1828,7 +1828,7 @@
                 "herbs": ["many_herbs", "elder_leaves", "juniper"]
             },
             {
-                "text": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead.",
+                "text": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carrying those back to camp instead.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1842,7 +1842,7 @@
                 "weight": 20
             },
             {
-                "text": "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground.",
+                "text": "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/p_l/poss} balance and tumbles to the ground.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1919,7 +1919,7 @@
                 ]
             },
             {
-                "text": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash.",
+                "text": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carrying those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2057,7 +2057,7 @@
                 ]
             },
             {
-                "text": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. With so many assistants they can bring a truly massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them.",
+                "text": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carrying those back to camp instead. With so many assistants they can bring a truly massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2836,7 +2836,7 @@
                 ]
             },
             {
-                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but they stick the location in their mind as a place to return to.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["lungwort"],
@@ -3229,7 +3229,7 @@
                 ]
             },
             {
-                "text": "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes , not even with an entire patrol helping them cart away mallow and just nearby a betony plant is patiently waiting for its stems to be collected.",
+                "text": "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes , not even with an entire patrol helping them carry away mallow and just nearby a betony plant is patiently waiting for its stems to be collected.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "betony"],
@@ -3312,7 +3312,7 @@
         },
         "weight": 20,
         "intro_text": "More marigold would be useful, particularly with greenleaf in full swing. The season will bring the marigold to bloom, and the flowers are just as useful as the leaves to p_l, <i>and</i> extremely easy to spot from a distance.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -3322,13 +3322,13 @@
                 "herbs": ["tansy", "marigold"]
             },
             {
-                "text": "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth, and somehow manages to fit in a little tansy too.",
+                "text": "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as {PRONOUN/p_l/subject} can stuff into {PRONOUN/p_l/poss} mouth, and somehow manages to fit in a little tansy too.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "tansy", "marigold"]
             },
             {
-                "text": "s_c finds a patch of marigold, harvests its best leaves and flowers, somehow finds some tansy as well, and pads home, unaware of how much of their success rests on their talent for herb gathering.",
+                "text": "s_c finds a patch of marigold, harvests its best leaves and flowers, somehow finds some tansy as well, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -3337,7 +3337,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful.",
                 "exp": 0,
                 "weight": 20
             }
@@ -4806,7 +4806,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. It's so bad, p_l almost misses the burdock plant ready to be harvested nearby. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task professionally, but without any joy.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. It's so bad, p_l almost misses the burdock plant ready to be harvested nearby. There a chorus of long-suffering sighs as the cats get to work, accomplishing their unpleasant task diligently, but without any joy.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["burdock", "ragwort"],
@@ -5029,11 +5029,11 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out to find tansy, scenting the air for its sharp smell and eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The yellow dew drops shining merrily in the distance guide p_l into the tansy patch, where they take a good harvest. It's just unfortunate they can't talk themselves out of harvesting some ragwort too - this is going to taste very bad.",
+                "text": "The yellow dew drops shining merrily in the distance guide p_l into the tansy patch, where {PRONOUN/p_l/subject} {VERB/p_l/take/takes} a good harvest. It's just unfortunate {PRONOUN/p_l/subject} can't talk {PRONOUN/p_l/self} out of harvesting some ragwort too - this is going to taste very bad.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["tansy", "ragwort"]
@@ -5045,7 +5045,7 @@
                 "herbs": ["many_herbs", "tansy", "ragwort"]
             },
             {
-                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb.",
+                "text": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort {PRONOUN/s_c/subject} {VERB/s_c/find/finds}. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5054,7 +5054,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
                 "exp": 0,
                 "weight": 20
             }

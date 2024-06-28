@@ -1,0 +1,189 @@
+[
+  {
+    "interaction_type": "hunt",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Heard rumors that a Clan was hunting for them",
+      "relationships": [
+        {
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["exiled", "lost"],
+      "new_thought": "Heard rumors that their old Clan was hunting for them",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 15
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": -5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "A patrol catches sight of m_c, but the outsider manages to escape.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 20
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "A patrol catches sight of m_c, but their old Clanmate manages to escape.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["exiled", "lost"],
+      "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 20
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": -10
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Heard rumors that a Clan was looking for them",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["exiled", "lost"],
+      "new_thought": "Heard rumors that their old Clan wants them gone",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Heard rumors that a Clan was looking for them"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["exiled"],
+      "new_thought": "Heard rumors that their old Clan was searching for them",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Heard rumors that their old Clan has been searching for them",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": 5
+        }
+      ]
+    }
+  }
+]

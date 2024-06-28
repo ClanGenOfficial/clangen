@@ -587,8 +587,8 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -661,7 +661,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close.",
+                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely {VERB/p_l/come/comes} close.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -682,7 +682,7 @@
                 ]
             },
             {
-                "text": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold.",
+                "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1212,24 +1212,24 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap. Maybe there's some wild garlic out there as well...",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant, the roots will still hold fresh, milky-white sap. Maybe there's some wild garlic out there as well...",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> At least the wild garlic bulbs they sniffed out nearby were in much better shape, and as stinky as ever.",
+                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> At least the wild garlic bulbs {PRONOUN/p_l/subject} sniffed out nearby were in much better shape, and as stinky as ever.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["wild_garlic", "dandelion"]
             },
             {
-                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants and a single surviving wild garlic bulb.",
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to uncover a couple good dandelion plants and a single surviving wild garlic bulb.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["wild_garlic", "dandelion"]
             },
             {
-                "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It's hard not to preen when they discover wild garlic not far away, too, though that was much easier with its strong scent.",
+                "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. It's hard not to preen when {PRONOUN/s_c/subject} {VERB/s_c/discover/discovers} wild garlic not far away, too, though that was much easier with its strong scent.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1963,8 +1963,8 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} or app1 can only remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -2012,7 +2012,7 @@
                 ]
             },
             {
-                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now.",
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} prove {PRONOUN/s_c/self} right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2037,7 +2037,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+                "text": "p_l searches and searches, but eventually {PRONOUN/p_l/subject} have to admit defeat. {PRONOUN/p_l/subject/CAP} can't remember where the garlic grew when the world was warm.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

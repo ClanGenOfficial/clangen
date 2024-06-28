@@ -1,0 +1,69 @@
+{
+  "seizure": [
+    "m_c died from a seizure.",
+    "m_c died during a seizure"
+  ],
+  "diarrhea": [
+    "m_c died to the dehydration caused by diarrhea.",
+    "m_c's body could not keep up with the demands of {PRONOUN/m_c/poss} illness and they died.",
+    "Diarrhea is no joke, the extreme dehydration it caused has killed m_c."
+  ],
+  "greencough": [
+    "m_c died to greencough.",
+    "m_c was killed by greencough.",
+    "Greencough killed m_c.",
+    "Greencough has taken m_c's life."
+  ],
+  "kittencough": [
+    "m_c died to kittencough.",
+    "m_c was killed by kittencough.",
+    "Kittencough has killed m_c.",
+    "Kittencough has taken m_c's life."
+  ],
+  "an infected wound": [
+    "m_c died to an infection.",
+    "m_c succumbed to an infection.",
+    "m_c was killed by {PRONOUN/m_c/poss} infected wound.",
+    "m_c's infection progressed too far and left {PRONOUN/m_c/subject} cold in their nest."
+  ],
+  "carrionplace disease": [
+    "m_c died to carrionplace disease.",
+    "Carrionplace disease has killed m_c."
+  ],
+  "redcough": [
+    "m_c died to redcough.",
+    "Redcough has finally taken m_c.",
+    "Redcough has killed m_c."
+  ],
+  "whitecough": [
+    "m_c died to whitecough.",
+    "Whitecough killed m_c.",
+    "m_c was killed by whitecough.",
+    "The whitecough didn't have a chance to progress further: it was already strong enough to kill m_c."
+  ],
+  "yellowcough": [
+    "m_c died to yellowcough.",
+    "Yellowcough has killed m_c.",
+    "m_c was killed by yellowcough.",
+    "Yellowcough has taken m_c's life."
+  ],
+  "a festering wound": [
+    "m_c has died to a festering wound.",
+    "A festering wound has killed m_c.",
+    "{PRONOUN/m_c/poss/CAP} festering wound has finally killed m_c."
+  ],
+  "heat stroke": [
+    "m_c died to heat stroke.",
+    "{PRONOUN/m_c/poss/CAP} case of heat stroke has killed m_c."
+  ],
+  "starving": [
+    "m_c died to starvation.",
+    "m_c couldn't go on any longer and collapsed from starvation.",
+    "Starvation has killed m_c.",
+    "m_c's body couldn't continue on without nourishment, {PRONOUN/m_c/subject} never woke up from {PRONOUN/m_c/poss} sleep.",
+    "Starvation finally caught up to m_c.",
+    "Skinny and exhausted, m_c could no longer continue without food.",
+    "The lack of food has finally killed m_c."
+  ]
+
+}
