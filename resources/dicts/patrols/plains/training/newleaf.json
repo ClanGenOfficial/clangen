@@ -66,7 +66,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 60,
-        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves a jaunty flag, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
+        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves a jaunty reed, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
         "decline_text": "The warriors get intercepted by a hunting patrol who need extra paws, and the possibility of a romantic afternoon evaporates.",
         "chance_of_success": 60,
         "relationship_constraint": ["mates_with_pl"],
@@ -114,7 +114,7 @@
                 ]
             },
             {
-                "text": "They emerge into the vast clover fields, a known romantic spot, with p_l near-bouncing with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much, they're so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} hope {PRONOUN/p_l/poss} mates never <i>leaf</i> them!",
+                "text": "They emerge into the vast clover fields, a known romantic spot, and p_l bounces with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} hope {PRONOUN/p_l/poss} mates never <i>leaf</i> {PRONOUN/p_l/object}!",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["childish", "playful", "charismatic", "flamboyant", "bold"],
@@ -138,7 +138,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay, they're all still here together in the sunshine.",
+                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay; they're all still here together in the sunshine.",
                 "exp": 0,
                 "weight": 20
             },
@@ -165,11 +165,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1", "STORY,1"],
-        "intro_text": "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the newly sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year.",
+        "intro_text": "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year.",
         "decline_text": "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work.",
         "success_outcomes": [
                 {
-                    "text": "This is the cycle, the fundemental truth underlying c_n. The grass sprouts in the spring as the snows retreat, grows heavy and flush with life in summer, drips wiht seed in leaf-fall, and is buried and withered in leaf-bare. Everything underpinning all their lives depends on it.",
+                    "text": "This is the cycle, the fundemental truth underlying c_n. The grass sprouts in the spring as the snows retreat, grows heavy and flush with life in summer, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. Everything underpinning all their lives depends on it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",
@@ -193,7 +193,7 @@
                     ]
                 },
                 {
-                    "text": "Everything we see exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, evne though we eat rabbit. One day, when we die, our bodies will become the grass, and the rabbits eat the grass. We are all connected in the great cycle.",
+                    "text": "Everything the patrol sees exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each memeber of c_n dies, their bodies will become the grass, and the rabbits eat the grass. Every creature is connected in the great cycle.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",
@@ -219,7 +219,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "p_l spends too long admiring the scenery, and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no one is too pleased with {PRONOUN/p_l/poss} lack of attention.",
+                    "text": "p_l spends too long admiring the scenery and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no one is too pleased with {PRONOUN/p_l/poss} lack of attention.",
                     "exp": 0,
                     "weight": 20,
                     "art": "running_warrior2",

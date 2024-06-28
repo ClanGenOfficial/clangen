@@ -42,7 +42,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+                "text": "s_c struggles to take the lesson seriously, and eventually the training session ends early with no real progress made.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "playful"],
@@ -450,7 +450,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out from the loose rocks.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out from the loose rocks.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -688,7 +688,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out from the loose rocks.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out from the loose rocks.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -861,7 +861,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out from the loose rocks.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out from the loose rocks.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1276,7 +1276,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the gentle blow and bats app1 off, bounding after {PRONOUN/app1/object} with promises of getting {PRONOUN/app1/object} back! On and on the chase goes, neither interested in winning it as they play under the light of the full moon.",
+                "text": "A giggling app1 bursts out from cover, pouncing on app2 with claws sheathed. app2 rolls with the gentle blow and bats app1 off, bounding after {PRONOUN/app1/object} with promises of getting {PRONOUN/app1/object} back! On and on the chase goes, neither interested in winning it as they play under the light of the full moon.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1331,7 +1331,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but {PRONOUN/app2/subject} {VERB/app2/scramble/scrambles} to {PRONOUN/app2/poss} feet looking hurt and alarmed - a rocky outlook is no place for games that knock you off balance.",
+                "text": "A giggling app1 bursts out from cover, pouncing on app2 with claws sheathed. app2 rolls with the blow and kicks app1 off, but {PRONOUN/app2/subject} {VERB/app2/scramble/scrambles} to {PRONOUN/app2/poss} feet looking hurt and alarmed - a rocky outlook is no place for games that knock you off balance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1550,7 +1550,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but {VERB/s_c/work/works} through it, showing p_l how to nearly surf on large rocks as they bound down slopes, giving them stable footing in the middle of a semi-controlled small landslide.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to nearly surf on large rocks as they bound down slopes, giving them stable footing in the middle of a semi-controlled small landslide.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -1607,7 +1607,7 @@
                 ]
             },
             {
-                "text": "r_c spots p_l looking at them a little bit too admiringly and ends the training session early with a diplomatic and completely made-up excuse.",
+                "text": "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly and ends the training session early with a diplomatic and completely made-up excuse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2069,7 +2069,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As p_l hops up on a fallen log to sharpen {PRONOUN/p_l/poss} claws for a training session, {PRONOUN/p_l/subject} find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates train better together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "intro_text": "As p_l hops up on a fallen log to sharpen {PRONOUN/p_l/poss} claws for a training session, {PRONOUN/p_l/subject} find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates train better together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_10"],

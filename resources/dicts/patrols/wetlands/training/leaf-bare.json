@@ -16,10 +16,10 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
         "intro_text": "p_l takes the apprentices out at dusk, setting the atmosphere for a fun story.",
-        "decline_text": "They're stopped - the camp has need of a little more work, this will have to wait for another night.",
+        "decline_text": "They're stopped - the camp has need of a little more work, and this will have to wait for another night.",
         "success_outcomes": [
             {
-                    "text": "On the brightest night of leafbare, under a full, piercing, blue moon, a great serpent will rise from the center of the swamp, banishing fangs dripping poison and a scaled pelt thicker than a monster. The apprentices shiver as p_l builds the image. It will rear up, higher than the tallest tree, no, twice as high, and <i>bite</i> the moon, swallowing it whole!",
+                    "text": "On the brightest night of leaf-bare, under a piercing blue moon, a great serpent will rise from the center of the swamp, with fangs dripping poison and a scaled pelt thicker than a monster. The apprentices shiver as p_l builds the image. It will rear up, higher than the tallest tree - no, twice as high - and <i>devour</i> the moon, swallowing it whole!",
                     "exp": 40,
                     "weight": 20,
                     "relationships": [
