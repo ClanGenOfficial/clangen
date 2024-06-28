@@ -9,7 +9,7 @@ from scripts.constraintbooster.constrainttypes import (
 
 
 class ConstraintBooster:
-    def __init__(self, proc_chance=5, number_of_groups=3, min_group_size=2):
+    def __init__(self, proc_chance=20, number_of_groups=3, min_group_size=2):
         """
         Create a constraint booster.
         :param proc_chance: The chance each group has of being selected (1/x). Default 5.
