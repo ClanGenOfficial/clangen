@@ -66,7 +66,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 60,
-        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves a jaunty flag, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
+        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves a jaunty reed, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
         "decline_text": "The warriors get intercepted by a hunting patrol who need extra paws, and the possibility of a romantic afternoon evaporates.",
         "chance_of_success": 60,
         "relationship_constraint": ["mates_with_pl"],
@@ -93,7 +93,7 @@
                 ]
             },
             {
-                "text": "Standing in the middle of the field of clovers {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} brought them to, p_l bunts up softly against both of {PRONOUN/p_l/subject} mates. The bond they all share is the greatest luck p_l has or will ever have, {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, and {PRONOUN/p_l/subject} wanted to declare that here, where the four-leaf clover grows.",
+                "text": "Standing in the middle of the field of clovers {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} brought them to, p_l bunts up softly against both of {PRONOUN/p_l/poss} mates. The bond they all share is the greatest luck p_l has or will ever have, {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, and {PRONOUN/p_l/subject} wanted to declare that here, where the four-leaf clover grows.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -114,7 +114,7 @@
                 ]
             },
             {
-                "text": "They emerge into the vast clover fields, a known romantic spot, with p_l near-bouncing with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much, they're so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} hope {PRONOUN/p_l/poss} mates never <i>leaf</i> them!",
+                "text": "They emerge into the vast clover fields, a known romantic spot, and p_l bounces with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} {VERB/p_l/hope/hopes} {PRONOUN/p_l/poss} mates never <i>leaf</i> {PRONOUN/p_l/object}!",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["childish", "playful", "charismatic", "flamboyant", "bold"],
@@ -138,7 +138,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay, they're all still here together in the sunshine.",
+                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay; they're all still here together in the sunshine.",
                 "exp": 0,
                 "weight": 20
             },
@@ -165,11 +165,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1", "TEACHER,1", "STORY,1"],
-        "intro_text": "Ugh. r_c loves the plains, but the baking hot sun isn't it's best look.",
+        "intro_text": "Ugh. r_c loves the plains, but the baking hot sun isn't its best look.",
         "decline_text": "It's too hot for this - let's head back to camp.",
         "success_outcomes": [
                 {
-                    "text": "Many generations ago, it wasn't always like this, p_l murmurs. Sure, this has always been plains - but there were more trees winding round the rivers, bushes clinging to sheltered dips in the land. Twolegs caused a hidious drought of swirling dust that killed off the patchy trees. It's their fault.",
+                    "text": "Many generations ago, it wasn't always like this, p_l murmurs. Sure, this has always been plains - but there were more trees winding round the rivers, bushes clinging to sheltered dips in the land. Twolegs caused a hideous drought of swirling dust that killed off the patchy trees. It's their fault.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_med_gatheringoakleaves_leaf-fall1",
@@ -193,7 +193,7 @@
                     ]
                 },
                 {
-                    "text": "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and offer it to r_c. There - the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down.",
+                    "text": "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c/offer/offers} it to r_c. There - the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_vision4",
@@ -268,12 +268,12 @@
                         }
                     ],
                     "history_text": {
-                        "reg_death": "The hot greenleaf sun is more dangerous than you might imagine, and its heat killed m_c.",
-                        "lead_death": "m_c got dehyrated and it progressed to killing {PRONOUN/m_c/object}"
+                        "reg_death": "The hot greenleaf sun is more dangerous than m_c realized, and its heat killed m_c.",
+                        "lead_death": "got dehydrated and couldn't recover"
                     }
                 },
                 {
-                    "text": "Ah, but r_c will miss this heat in leaf-bare, p_l banters back. We always want what we don't have, the grass is always greener on the other side of the river.",
+                    "text": "Ah, but r_c will miss this heat in leaf-bare, p_l banters back. A cat always wants what they don't have; the grass is always greener on the other side of the river.",
                     "exp": 0,
                     "weight": 20,
                     "art": "gen_train_sunset",
