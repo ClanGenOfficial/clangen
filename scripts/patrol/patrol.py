@@ -14,6 +14,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
+from scripts.patrol.patrol_constraintbooster import patrol_constraint_booster
 from scripts.patrol.patrol_event import PatrolEvent
 from scripts.patrol.patrol_outcome import PatrolOutcome
 from scripts.special_dates import get_special_date, contains_special_date_tag
@@ -75,14 +76,16 @@ class Patrol:
         )
 
         if final_patrols:
-            normal_event_choice = self.choose_patrol(final_patrols)
+            normal_event_choice = patrol_constraint_booster.get_choice(final_patrols)
         else:
             print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", self.patrol_statuses)
             raise RuntimeError
 
         romantic_event_choice = None
         if final_romance_patrols:
-            romantic_event_choice = self.choose_patrol(final_romance_patrols)
+            romantic_event_choice = patrol_constraint_booster.get_choice(
+                final_romance_patrols
+            )
 
         if romantic_event_choice and Patrol.decide_if_romantic(
             romantic_event_choice,
