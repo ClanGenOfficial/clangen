@@ -564,7 +564,7 @@
                 ]
             },
             {
-                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into {PRONOUN/app1/poss} fur. s_c digs a little hollow and invites {PRONOUN?app1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth, of course. They both stay there to watch the sun rise and cuddle. For warmth.",
+                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into {PRONOUN/app1/poss} fur. s_c digs a little hollow and invites {PRONOUN/app1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth, of course. They both stay there to watch the sun rise and cuddle. For warmth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
