@@ -12,7 +12,7 @@ class ConstraintBooster:
     def __init__(self, proc_chance=5, number_of_groups=3, min_group_size=2):
         """
         Create a constraint booster.
-        :param proc_chance: The chance each group has of being selected (1/x). Default 20.
+        :param proc_chance: The chance each group has of being selected (1/x). Default 5.
         :param number_of_groups: Number of groups to make, default 3
         :param min_group_size: Minimum number of items permitted per group, default 2
         """
@@ -72,17 +72,25 @@ class ConstraintBooster:
         option_dict = self._get_constraint_points(options)
         groups = self._make_groups(option_dict)
 
+        enough_groups = len(groups) == self.number_of_groups
+
         selected_group = None
-        if not debug_force_flat:
+        if not debug_force_flat and enough_groups:
             for group in groups:
                 if random.randint(1, self.proc_chance) == 1:
                     selected_group = group
-                    print(f"ConstraintBooster group: {groups.index(selected_group)}")
+                    print(
+                        f"ConstraintBooster: group selected ({groups.index(selected_group) + 1})"
+                    )
                     break
+
         if selected_group is None:
             # if nothing succeeded, we return to a flat chance
             selected_group = options
-            print("ConstraintBooster - no group selected, flat chance")
+            if enough_groups:
+                print("ConstraintBooster: no group selected, flat chance")
+            else:
+                print(f"ConstraintBooster: not enough items to group, flat chance")
 
         if not isinstance(selected_group, list):
             # there is only one value, return it as the selection
