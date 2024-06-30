@@ -879,8 +879,6 @@ class UICatListDisplay(UIContainer):
         [name.kill() for name in self.cat_names.values()]
         [favor.kill() for favor in self.favor_indicator.values()]
 
-        pos_x = self.x_px_between
-        pos_y = self.y_px_between
         show_fav = game.clan.clan_settings["show fav"]
 
         i = -1
@@ -895,10 +893,29 @@ class UICatListDisplay(UIContainer):
 
                 self.create_cat_button(i, kitty, container)
 
-                if show_fav and kitty.favourite:
-                    self.create_favor_indicator(i, container)
+        if show_fav:
+            i = -1
+            for row in range(self.rows):
+                for column in range(self.columns):
+                    container = self.boxes[row][column]
+                    i += 1
+                    try:
+                        kitty = display_cats[i]
+                    except IndexError:
+                        return
+                    if kitty.favourite:
+                        self.create_favor_indicator(i, container)
 
-                if self.show_names:
+        if self.show_names:
+            i = -1
+            for row in range(self.rows):
+                for column in range(self.columns):
+                    container = self.boxes[row][column]
+                    i += 1
+                    try:
+                        kitty = display_cats[i]
+                    except IndexError:
+                        return
                     self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
                         scale(
                             pygame.Rect(
@@ -914,12 +931,6 @@ class UICatListDisplay(UIContainer):
                             "top_target": self.cat_sprites[f"sprite{i}"],
                         },
                     )
-
-                # changing position
-                pos_x += self.x_px_between
-                if pos_x > (self.x_px_between * self.columns):
-                    pos_x = self.x_px_between
-                    pos_y += self.y_px_between
 
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
