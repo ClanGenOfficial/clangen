@@ -518,7 +518,10 @@ class ListScreen(Screens):
             manager=MANAGER,
         )  # Text will be filled in later
 
+        # this speeds up the load time 1000%
+        # don't ask why
         MANAGER.update(1)
+
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()

@@ -1,4 +1,3 @@
-import itertools
 from math import floor, ceil
 from typing import Union, Tuple, Optional
 import html
@@ -889,7 +888,7 @@ class UICatListDisplay(UIContainer):
                 try:
                     kitty = display_cats[i]
                 except IndexError:
-                    return
+                    break
 
                 self.create_cat_button(i, kitty, container)
 
