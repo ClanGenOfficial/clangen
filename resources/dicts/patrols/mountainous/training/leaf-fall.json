@@ -389,7 +389,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -410,7 +410,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -438,7 +438,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -482,7 +482,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -503,7 +503,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -531,7 +531,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -556,7 +556,7 @@
                 }
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping on nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles}, spinning end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles} end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
