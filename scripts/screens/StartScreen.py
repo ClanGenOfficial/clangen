@@ -30,6 +30,7 @@ from scripts.game_structure.game_essentials import (
     screen_x,
     screen_y,
     MANAGER,
+    offset,
 )
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
@@ -135,7 +136,7 @@ class StartScreen(Screens):
         TODO: DOCS
         """
         # have to blit this manually or else hover input doesn't get read properly
-        screen.blit(self.bg, (0, 0))
+        screen.blit(self.bg, offset)
 
     def exit_screen(self):
         """

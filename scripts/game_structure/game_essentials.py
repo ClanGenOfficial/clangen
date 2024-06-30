@@ -6,6 +6,7 @@ import pygame
 import pygame_gui
 import ujson
 
+import scripts.game_structure.ui_manager
 from scripts.event_class import Single_Event
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
@@ -624,20 +625,34 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
+display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+offset = (0, 0)
+offset_x = 0
+offset_y = 0
+screen_x = 800
+screen_y = 700
+
 if game.settings["fullscreen"]:
-    screen_x, screen_y = 1600, 1400
-    screen = pygame.display.set_mode(
-        (screen_x, screen_y), pygame.FULLSCREEN | pygame.SCALED
-    )
+
+    # These are the most options I can provide that have a good tradeoff for crunchiness
+    screen_sizes = [(1600, 1400), (1400, 1225), (1200, 1050), (1000, 875), (800, 700)]
+    for x, y in screen_sizes:
+        if x < display_size[0] and y < display_size[1]:
+            screen_x = x
+            screen_y = y
+            break
+    screen = pygame.display.set_mode(display_size, pygame.FULLSCREEN)
+    offset_x = (display_size[0] - screen_x) / 2
+    offset_y = (display_size[1] - screen_y) / 2
+    offset = (offset_x, offset_y)
 else:
-    screen_x, screen_y = 800, 700
     screen = pygame.display.set_mode((screen_x, screen_y))
 
 
-def load_manager(res: tuple):
+def load_manager(res: tuple, offset: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(
-        res, "resources/theme/defaults.json", enable_live_theme_updates=False
+    manager = scripts.game_structure.ui_manager.UIManager(
+        res, offset, "resources/theme/defaults.json", enable_live_theme_updates=False
     )
     manager.add_font_paths(
         font_name="notosans",
@@ -691,4 +706,4 @@ def load_manager(res: tuple):
     return manager
 
 
-MANAGER = load_manager((screen_x, screen_y))
+MANAGER = load_manager((screen_x, screen_y), (offset_x / 2, offset_y / 2))
