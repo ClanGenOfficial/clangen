@@ -9,6 +9,7 @@ from scripts.game_structure.game_essentials import (
     screen_x,
     screen_y,
     MANAGER,
+    offset,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.game_structure.propagating_thread import PropagatingThread
@@ -821,7 +822,10 @@ class ChooseAdoptiveParentScreen(Screens):
     def on_use(self):
 
         # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
+        screen.blit(
+            self.list_frame,
+            (150 / 1600 * screen_x + offset[0], 782 / 1400 * screen_y + offset[1]),
+        )
 
         self.loading_screen_on_use(
             self.work_thread, self.update_after_change, (700, 600)

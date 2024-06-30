@@ -4,7 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game, MANAGER, offset
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import (
     get_text_box_theme,
@@ -596,7 +596,7 @@ class SpriteInspectScreen(Screens):
         """Generates the image to save, with platform if needed."""
         if self.platform_shown:
             full_image = self.get_platform()
-            full_image.blit(self.cat_image, (15, 0))
+            full_image.blit(self.cat_image, (15 + offset[0], 0 + offset[1]))
             return full_image
         else:
             return self.cat_image

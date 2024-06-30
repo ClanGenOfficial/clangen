@@ -150,7 +150,7 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": False,
+        "showbounds": True,
         "visualdebugmode": False,
         "showfps": False,
     }
@@ -706,4 +706,6 @@ def load_manager(res: tuple, offset: tuple):
     return manager
 
 
+# idk why the manager needs the offset to be halved again, but it does. everywhere else
+# is fine with it being halved but here? divide by four or die ig
 MANAGER = load_manager((screen_x, screen_y), (offset_x / 2, offset_y / 2))
