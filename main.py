@@ -63,7 +63,7 @@ from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
 
-directory = os.path.dirname(__file__)
+directory = os.path.dirname(os.path.realpath("__file__"))
 if directory:
     os.chdir(directory)
 
@@ -205,9 +205,9 @@ def load_data():
         except Exception as e:
             logging.exception("File failed to load")
             if not game.switches["error_message"]:
-                game.switches["error_message"] = (
-                    "There was an error loading the cats file!"
-                )
+                game.switches[
+                    "error_message"
+                ] = "There was an error loading the cats file!"
                 game.switches["traceback"] = e
 
     finished_loading = True
