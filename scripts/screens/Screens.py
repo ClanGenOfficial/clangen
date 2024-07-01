@@ -13,10 +13,9 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
     offset,
-    game_screen,
+    game_screen_size,
     screen_scale,
 )
-from scripts.game_structure.svg_image_processing import load_and_scale_svg
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.windows import SaveCheck, EventLoading
@@ -28,6 +27,15 @@ class Screens:
     game_x = screen_x
     game_y = screen_y
     last_screen = ""
+    # the size has to be increased by 20 to account for the fact that we want the inner dimension to be
+    # game_screen_size
+    game_frame: pygame.Surface = pygame.image.load_sized_svg(
+        "resources/images/border_gamescreen.svg",
+        (
+            game_screen_size[0] + 20 * screen_scale,
+            game_screen_size[1] + 20 * screen_scale,
+        ),
+    )
 
     # menu buttons are used very often, so they are generated here.
     menu_buttons = {
@@ -208,7 +216,7 @@ class Screens:
         # Dictionary of work done, keyed by the target function name
         self.work_done = {}
 
-        bg = pygame.Surface(game_screen)
+        bg = pygame.Surface(game_screen_size)
         bg.fill(
             game.config["theme"]["dark_mode_background"]
             if game.settings["dark mode"]
@@ -218,9 +226,6 @@ class Screens:
         self.bgs = {"default": bg}
         self.blur_bgs = {"default": pygame.transform.scale(bg, screen.size)}
         self.active_bg: Optional[pygame.Surface] = None
-        self.game_frame: pygame.Surface = load_and_scale_svg(
-            "resources/images/border_gamescreen.svg", screen_scale
-        )
 
     def loading_screen_start_work(
         self, target: callable, thread_name: str = "work_thread", args: tuple = tuple()
@@ -589,9 +594,11 @@ class Screens:
         radius: int = 5,
     ):
         for name, bg in bgs.items():
-            self.bgs[name] = bg
+            self.bgs[name] = pygame.transform.scale(bg, game_screen_size)
             if blur_bgs is not None and name in blur_bgs:
-                self.blur_bgs[name] = blur_bgs[name]
+                self.blur_bgs[name] = pygame.transform.scale(
+                    blur_bgs[name], screen.size
+                )
                 continue
             self.blur_bgs[name] = pygame.transform.scale(
                 pygame.transform.box_blur(bg, radius), screen.size

@@ -4,7 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, MANAGER, game_screen
+from scripts.game_structure.game_essentials import game, MANAGER, game_screen_size
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UIDropDownContainer,
@@ -424,13 +424,13 @@ class ListScreen(Screens):
             {
                 "ur": pygame.transform.scale(
                     pygame.image.load("resources/images/urbg.png").convert_alpha(),
-                    game_screen,
+                    game_screen_size,
                 ),
                 "df": pygame.transform.scale(
                     pygame.image.load(
                         "resources/images/darkforestbg.png"
                     ).convert_alpha(),
-                    game_screen,
+                    game_screen_size,
                 ),
             },
             radius=10,
@@ -441,7 +441,7 @@ class ListScreen(Screens):
                     pygame.image.load(
                         "resources/images/starclanbg.png"
                     ).convert_alpha(),
-                    game_screen,
+                    game_screen_size,
                 ),
             },
             radius=2,
