@@ -7,10 +7,6 @@
             "link_hover": "#556B2F",
             "link_selected": "#556B2F"
         },
-        "font": {
-            "name": "notosans",
-            "size": "15"
-        },
         "misc": {
             "border_width": "0",
             "shadow_width": "0"
@@ -30,9 +26,6 @@
             "border_width": "1",
             "text_horiz_alignment": "right"
         },
-        "font": {
-            "size": 15
-        }
     },
     "#page_entry_box_dark": {
         "colours": {
@@ -48,16 +41,9 @@
             "border_width": "1",
             "text_horiz_alignment": "right"
         },
-        "font": {
-            "size": 15
-        }
     },
     "#text_box_22_dark": {
-        "prototype": "#default_dark",
-        "font": {
-            "name": "notosans",
-            "size": 11
-        }
+        "prototype": "#default_dark"
     },
     "#text_box_22_horizcenter_dark": {
         "prototype": "#text_box_22_dark",

@@ -70,10 +70,6 @@
             "selected_border": "#503825",
             "active_border": "#776045"
         },
-        "font": {
-            "name": "notosans",
-            "size": "15"
-        },
         "misc": {
             "border_width": "3",
             "shadow_width": "0"
@@ -131,10 +127,6 @@
             "normal_text": "#EEE4CD",
             "hovered_text": "#EFE5CE",
             "text_shadow": "#00000000"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "13"
         },
         "misc": {
             "border_width": "0",

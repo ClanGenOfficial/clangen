@@ -624,7 +624,6 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
 offset = (0, 0)
 offset_x = 0
 offset_y = 0
@@ -632,8 +631,14 @@ screen_x = 800
 screen_y = 700
 screen_scale = 1
 
+debug_force_screen_size = (2560, 1440)
+
 if game.settings["fullscreen"]:
-    # screen = pygame.display.set_mode(display_size, pygame.FULLSCREEN)
+    if debug_force_screen_size is not None:
+        display_size = debug_force_screen_size
+    else:
+        display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+
     # These are the most options I can provide that have a good tradeoff for crunchiness
     screen_sizes = {
         2: (1600, 1400),
@@ -648,14 +653,21 @@ if game.settings["fullscreen"]:
             screen_y = y
             screen_scale = i
             break
-    screen = pygame.display.set_mode(display_size, pygame.FULLSCREEN)
+    screen = pygame.display.set_mode(
+        display_size,
+        (
+            pygame.FULLSCREEN
+            if debug_force_screen_size is None
+            else pygame.FULLSCREEN | pygame.SCALED
+        ),
+    )
     offset_x = (display_size[0] - screen_x) / 2
     offset_y = (display_size[1] - screen_y) / 2
     offset = (offset_x, offset_y)
 else:
     screen = pygame.display.set_mode((screen_x, screen_y))
 
-game_screen = (screen_x, screen_y)
+game_screen_size = (screen_x, screen_y)
 
 
 def load_manager(res: tuple, offset: tuple, screen_scale: float):
@@ -675,43 +687,44 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
     )
 
-    if res[0] > 800:
-        manager.get_theme().load_theme("resources/theme/defaults.json")
-        manager.get_theme().load_theme("resources/theme/buttons.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_dark.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-        manager.get_theme().load_theme("resources/theme/window_base.json")
-        manager.get_theme().load_theme("resources/theme/tool_tips.json")
+    # if res[0] > 800:
+    #     manager.get_theme().load_theme("resources/theme/defaults.json")
+    #     manager.get_theme().load_theme("resources/theme/buttons.json")
+    #     manager.get_theme().load_theme("resources/theme/text_boxes.json")
+    #     manager.get_theme().load_theme("resources/theme/text_boxes_dark.json")
+    #     manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
+    #     manager.get_theme().load_theme("resources/theme/window_base.json")
+    #     manager.get_theme().load_theme("resources/theme/tool_tips.json")
+    #
+    #     manager.preload_fonts(
+    #         [
+    #             {"name": "notosans", "point_size": 30, "style": "italic"},
+    #             {"name": "notosans", "point_size": 26, "style": "italic"},
+    #             {"name": "notosans", "point_size": 30, "style": "bold"},
+    #             {"name": "notosans", "point_size": 26, "style": "bold"},
+    #             {"name": "notosans", "point_size": 22, "style": "bold"},
+    #         ]
+    #     )
+    #
+    # else:
 
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 30, "style": "italic"},
-                {"name": "notosans", "point_size": 26, "style": "italic"},
-                {"name": "notosans", "point_size": 30, "style": "bold"},
-                {"name": "notosans", "point_size": 26, "style": "bold"},
-                {"name": "notosans", "point_size": 22, "style": "bold"},
-            ]
-        )
+    manager.get_theme().load_theme("resources/theme/defaults_small.json")
+    manager.get_theme().load_theme("resources/theme/buttons_small.json")
+    manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
+    manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
+    manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
+    manager.get_theme().load_theme("resources/theme/window_base_small.json")
+    manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
 
-    else:
-        manager.get_theme().load_theme("resources/theme/defaults_small.json")
-        manager.get_theme().load_theme("resources/theme/buttons_small.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-        manager.get_theme().load_theme("resources/theme/window_base_small.json")
-        manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
-
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 11, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "bold"},
-                {"name": "notosans", "point_size": 15, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "italic"},
-                {"name": "notosans", "point_size": 15, "style": "italic"},
-            ]
-        )
+    manager.preload_fonts(
+        [
+            {"name": "notosans", "point_size": 11, "style": "bold"},
+            {"name": "notosans", "point_size": 13, "style": "bold"},
+            {"name": "notosans", "point_size": 15, "style": "bold"},
+            {"name": "notosans", "point_size": 13, "style": "italic"},
+            {"name": "notosans", "point_size": 15, "style": "italic"},
+        ]
+    )
 
     manager.get_theme().load_theme("resources/theme/windows.json")
     manager.get_theme().load_theme("resources/theme/image_buttons.json")
