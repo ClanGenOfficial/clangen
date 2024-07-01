@@ -568,6 +568,7 @@ class MakeClanScreen(Screens):
         return super().exit_screen()
 
     def on_use(self):
+        super().on_use()
 
         # Don't allow someone to enter no name for their clan
         if self.sub_screen == "name clan":

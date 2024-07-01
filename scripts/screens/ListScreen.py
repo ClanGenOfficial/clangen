@@ -514,6 +514,7 @@ class ListScreen(Screens):
         self.list_screen_container.kill()
 
     def on_use(self):
+        super().on_use()
         # Only update the positions if the search text changes
         if (
             self.cat_list_bar_elements["search_bar_entry"].get_text()
@@ -537,7 +538,6 @@ class ListScreen(Screens):
                     self.update_cat_list(
                         self.cat_list_bar_elements["search_bar_entry"].get_text()
                     )
-        self.show_bg()
 
     def update_cat_list(self, search_text=""):
         """

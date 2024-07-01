@@ -227,6 +227,7 @@ class SwitchClanScreen(Screens):
         """
         TODO: DOCS
         """
+        super().on_use()
         screen.blit(
             self.screen,
             (580 / 1600 * screen_x + offset[0], 300 / 1400 * screen_y + offset[1]),

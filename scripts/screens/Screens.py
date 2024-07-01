@@ -14,7 +14,9 @@ from scripts.game_structure.game_essentials import (
     MANAGER,
     offset,
     game_screen,
+    screen_scale,
 )
+from scripts.game_structure.svg_image_processing import load_and_scale_svg
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.windows import SaveCheck, EventLoading
@@ -216,6 +218,9 @@ class Screens:
         self.bgs = {"default": bg}
         self.blur_bgs = {"default": pygame.transform.scale(bg, screen.size)}
         self.active_bg: Optional[pygame.Surface] = None
+        self.game_frame: pygame.Surface = load_and_scale_svg(
+            "resources/images/border_gamescreen.svg", screen_scale
+        )
 
     def loading_screen_start_work(
         self, target: callable, thread_name: str = "work_thread", args: tuple = tuple()
@@ -289,8 +294,7 @@ class Screens:
 
     def on_use(self):
         """Runs every frame this screen is used."""
-        if self.active_bg is not None:
-            screen.blit(self.active_bg, offset)
+        self.show_bg()
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
@@ -578,9 +582,17 @@ class Screens:
             tool_tip_text=f"{game.clan.current_season}",
         )
 
-    def add_bgs(self, bgs: Dict[str, pygame.Surface], radius: int = 5):
+    def add_bgs(
+        self,
+        bgs: Dict[str, pygame.Surface],
+        blur_bgs: Dict[str, pygame.Surface] = None,
+        radius: int = 5,
+    ):
         for name, bg in bgs.items():
             self.bgs[name] = bg
+            if blur_bgs is not None and name in blur_bgs:
+                self.blur_bgs[name] = blur_bgs[name]
+                continue
             self.blur_bgs[name] = pygame.transform.scale(
                 pygame.transform.box_blur(bg, radius), screen.size
             )
@@ -594,9 +606,13 @@ class Screens:
     def show_bg(self):
         """Blit the currently selected blur_bg and bg."""
         if self.active_bg is None:
-            screen.blit(self.bgs["default"], offset)
-            return
-        screen.blit(self.blur_bgs[self.active_bg], (0, 0))
+            self.active_bg = "default"
+        if game.settings["fullscreen"]:
+            screen.blit(self.blur_bgs[self.active_bg], (0, 0))
+            screen.blit(
+                self.game_frame,
+                (offset[0] - (10 * screen_scale), offset[1] - (10 * screen_scale)),
+            )
         screen.blit(self.bgs[self.active_bg], offset)
 
 

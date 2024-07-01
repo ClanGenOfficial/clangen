@@ -820,6 +820,7 @@ class ChooseAdoptiveParentScreen(Screens):
         )
 
     def on_use(self):
+        super().on_use()
 
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(

@@ -53,15 +53,22 @@ class StartScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.warning_label = None
-        self.bg = pygame.image.load("resources/images/menu.png").convert()
-        self.bg_blur = pygame.transform.box_blur(
-            pygame.transform.scale(
-                pygame.image.load("resources/images/menu_logoless.png").convert(),
-                screen.size,
-            ),
-            10,
+        self.add_bgs(
+            {"bg": pygame.image.load("resources/images/menu.png").convert()},
+            {
+                "bg": pygame.transform.box_blur(
+                    pygame.transform.scale(
+                        pygame.image.load(
+                            "resources/images/menu_logoless.png"
+                        ).convert(),
+                        screen.size,
+                    ),
+                    10,
+                )
+            },
         )
-        self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
+        self.set_bg("bg")
+
         self.social_buttons = {}
 
     def handle_event(self, event):
@@ -142,9 +149,7 @@ class StartScreen(Screens):
         """
         TODO: DOCS
         """
-        # have to blit this manually or else hover input doesn't get read properly
-        screen.blit(self.bg_blur, (0, 0))
-        screen.blit(self.bg, offset)
+        super().on_use()
 
     def exit_screen(self):
         """

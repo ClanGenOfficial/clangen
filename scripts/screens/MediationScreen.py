@@ -499,16 +499,16 @@ class MediationScreen(Screens):
                 or check_cousins
             ):
                 related = True
-                self.selected_cat_elements["relation_icon" + tag] = (
-                    pygame_gui.elements.UIImage(
-                        scale(pygame.Rect((x + 28, y + 28), (36, 36))),
-                        pygame.transform.scale(
-                            image_cache.load_image(
-                                "resources/images/dot_big.png"
-                            ).convert_alpha(),
-                            (36, 36),
-                        ),
-                    )
+                self.selected_cat_elements[
+                    "relation_icon" + tag
+                ] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((x + 28, y + 28), (36, 36))),
+                    pygame.transform.scale(
+                        image_cache.load_image(
+                            "resources/images/dot_big.png"
+                        ).convert_alpha(),
+                        (36, 36),
+                    ),
                 )
 
         col1 = str(cat.moons)
@@ -584,12 +584,12 @@ class MediationScreen(Screens):
             name = str(cat.name)
             short_name = shorten_text_to_fit(name, 136, 22)
 
-            self.selected_cat_elements[f"relation_heading{tag}"] = (
-                pygame_gui.elements.UILabel(
-                    scale(pygame.Rect((x + 40, y + 320), (320, -1))),
-                    f"~~{short_name}'s feelings~~",
-                    object_id="#text_box_22_horizcenter",
-                )
+            self.selected_cat_elements[
+                f"relation_heading{tag}"
+            ] = pygame_gui.elements.UILabel(
+                scale(pygame.Rect((x + 40, y + 320), (320, -1))),
+                f"~~{short_name}'s feelings~~",
+                object_id="#text_box_22_horizcenter",
             )
 
             if other_cat.ID in cat.relationships:
@@ -632,17 +632,17 @@ class MediationScreen(Screens):
             else:
                 text = "romantic like:"
 
-            self.selected_cat_elements[f"romantic_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"romantic_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"romantic_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -662,17 +662,17 @@ class MediationScreen(Screens):
                 text = "platonic love:"
             else:
                 text = "platonic like:"
-            self.selected_cat_elements[f"plantonic_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"plantonic_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"platonic_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -693,17 +693,17 @@ class MediationScreen(Screens):
                 text = "hate:"
             else:
                 text = "dislike:"
-            self.selected_cat_elements[f"dislike_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"dislike_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"dislike_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -724,17 +724,17 @@ class MediationScreen(Screens):
                 text = "admiration:"
             else:
                 text = "respect:"
-            self.selected_cat_elements[f"admiration_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"admiration_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"admiration_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -755,17 +755,17 @@ class MediationScreen(Screens):
                 text = "security:"
             else:
                 text = "comfortable:"
-            self.selected_cat_elements[f"comfortable_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"comfortable_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"comfortable_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -786,17 +786,17 @@ class MediationScreen(Screens):
                 text = "resentment:"
             else:
                 text = "jealousy:"
-            self.selected_cat_elements[f"jealous_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"jealous_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"jealous_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -817,17 +817,17 @@ class MediationScreen(Screens):
                 text = "reliance:"
             else:
                 text = "trust:"
-            self.selected_cat_elements[f"trust_text{tag}"] = (
-                pygame_gui.elements.UITextBox(
-                    text,
-                    scale(
-                        pygame.Rect(
-                            (x + x_start, y + y_start + (barbar * bar_count) - 10),
-                            (300, 60),
-                        )
-                    ),
-                    object_id="#text_box_22_horizleft",
-                )
+            self.selected_cat_elements[
+                f"trust_text{tag}"
+            ] = pygame_gui.elements.UITextBox(
+                text,
+                scale(
+                    pygame.Rect(
+                        (x + x_start, y + y_start + (barbar * bar_count) - 10),
+                        (300, 60),
+                    )
+                ),
+                object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"trust_bar{tag}"] = UIRelationStatusBar(
                 scale(
@@ -988,6 +988,7 @@ class MediationScreen(Screens):
         return [L[x : x + n] for x in range(0, len(L), n)]
 
     def on_use(self):
+        super().on_use()
         # Only update the positions if the search text changes
         if self.search_bar.is_focused and self.search_bar.get_text() == "name search":
             self.search_bar.set_text("")

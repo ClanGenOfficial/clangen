@@ -1060,6 +1060,7 @@ class RelationshipScreen(Screens):
         )
 
     def on_use(self):
+        super().on_use()
 
         # LOAD UI IMAGES
         screen.blit(

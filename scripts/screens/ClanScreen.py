@@ -43,6 +43,9 @@ class ClanScreen(Screens):
     def on_use(self):
         if game.clan.clan_settings["backgrounds"]:
             self.show_bg()
+        else:
+            self.active_bg = "default"
+        super().on_use()
 
     def handle_event(self, event):
         if game.switches["window_open"]:

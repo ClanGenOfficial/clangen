@@ -7,7 +7,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
-    UITextBoxTweaked
+    UITextBoxTweaked,
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -28,7 +28,7 @@ class AllegiancesScreen(Screens):
             self.menu_button_pressed(event)
 
     def on_use(self):
-        pass
+        super().on_use()
 
     def screen_switches(self):
         # Heading

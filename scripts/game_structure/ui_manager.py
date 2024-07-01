@@ -49,7 +49,6 @@ class UIManager(pygame_gui.UIManager):
         )
         self.root_container.set_focus_set(None)
         self.root_container.set_position(offset)
-        self.root_container.set_visual_debug_mode(True)
 
         self.ui_window_stack = None
         self.ui_window_stack = UIWindowStack(

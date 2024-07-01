@@ -9,6 +9,7 @@ from scripts.game_structure.game_essentials import (
     screen_x,
     screen_y,
     MANAGER,
+    offset,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import (
@@ -962,14 +963,14 @@ class ChooseMateScreen(Screens):
             not game.clan.clan_settings["same sex birth"]
             and self.the_cat.gender == self.selected_cat.gender
         ):
-            self.selected_cat_elements["no kit warning"] = (
-                pygame_gui.elements.UITextBox(
-                    f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>",
-                    scale(pygame.Rect((550, 250), (498, 50))),
-                    object_id=get_text_box_theme(
-                        "#text_box_22_horizcenter_vertcenter_spacing_95"
-                    ),
-                )
+            self.selected_cat_elements[
+                "no kit warning"
+            ] = pygame_gui.elements.UITextBox(
+                f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>",
+                scale(pygame.Rect((550, 250), (498, 50))),
+                object_id=get_text_box_theme(
+                    "#text_box_22_horizcenter_vertcenter_spacing_95"
+                ),
             )
 
         if self.kits_selected_pair:
@@ -1143,8 +1144,12 @@ class ChooseMateScreen(Screens):
             self.previous_cat_button.enable()
 
     def on_use(self):
+        super().on_use()
         # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
+        screen.blit(
+            self.list_frame,
+            (150 / 1600 * screen_x + offset[0], 782 / 1400 * screen_y + offset[1]),
+        )
 
         self.loading_screen_on_use(self.work_thread, self.update_both, (700, 600))
 
