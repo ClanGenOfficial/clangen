@@ -42,14 +42,7 @@ class ClanScreen(Screens):
 
     def on_use(self):
         if game.clan.clan_settings["backgrounds"]:
-            if game.clan.current_season == "Newleaf":
-                screen.blit(self.newleaf_bg, offset)
-            elif game.clan.current_season == "Greenleaf":
-                screen.blit(self.greenleaf_bg, offset)
-            elif game.clan.current_season == "Leaf-bare":
-                screen.blit(self.leafbare_bg, offset)
-            elif game.clan.current_season == "Leaf-fall":
-                screen.blit(self.leaffall_bg, offset)
+            self.show_bg()
 
     def handle_event(self, event):
         if game.switches["window_open"]:
@@ -313,18 +306,28 @@ class ClanScreen(Screens):
             )
             all_backgrounds.append(platform_dir)
 
-        self.newleaf_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[0]).convert(), (screen_x, screen_y)
+        self.add_bgs(
+            {
+                "Newleaf": pygame.transform.scale(
+                    pygame.image.load(all_backgrounds[0]).convert(),
+                    (screen_x, screen_y),
+                ),
+                "Greenleaf": pygame.transform.scale(
+                    pygame.image.load(all_backgrounds[1]).convert(),
+                    (screen_x, screen_y),
+                ),
+                "Leaf-bare": pygame.transform.scale(
+                    pygame.image.load(all_backgrounds[2]).convert(),
+                    (screen_x, screen_y),
+                ),
+                "Leaf-fall": pygame.transform.scale(
+                    pygame.image.load(all_backgrounds[3]).convert(),
+                    (screen_x, screen_y),
+                ),
+            }
         )
-        self.greenleaf_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[1]).convert(), (screen_x, screen_y)
-        )
-        self.leafbare_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[2]).convert(), (screen_x, screen_y)
-        )
-        self.leaffall_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[3]).convert(), (screen_x, screen_y)
-        )
+
+        self.set_bg(game.clan.current_season)
 
     def choose_nonoverlapping_positions(self, first_choices, dens, weights=None):
         if not weights:

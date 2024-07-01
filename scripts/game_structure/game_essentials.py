@@ -3,7 +3,6 @@ from ast import literal_eval
 from shutil import move as shutil_move
 
 import pygame
-import pygame_gui
 import ujson
 
 import scripts.game_structure.ui_manager
@@ -631,15 +630,23 @@ offset_x = 0
 offset_y = 0
 screen_x = 800
 screen_y = 700
+screen_scale = 1
 
 if game.settings["fullscreen"]:
-
+    # screen = pygame.display.set_mode(display_size, pygame.FULLSCREEN)
     # These are the most options I can provide that have a good tradeoff for crunchiness
-    screen_sizes = [(1600, 1400), (1400, 1225), (1200, 1050), (1000, 875), (800, 700)]
-    for x, y in screen_sizes:
+    screen_sizes = {
+        2: (1600, 1400),
+        1.75: (1400, 1225),
+        1.5: (1200, 1050),
+        1.25: (1000, 875),
+        1: (800, 700),
+    }
+    for i, (x, y) in screen_sizes.items():
         if x < display_size[0] and y < display_size[1]:
             screen_x = x
             screen_y = y
+            screen_scale = i
             break
     screen = pygame.display.set_mode(display_size, pygame.FULLSCREEN)
     offset_x = (display_size[0] - screen_x) / 2
@@ -648,11 +655,17 @@ if game.settings["fullscreen"]:
 else:
     screen = pygame.display.set_mode((screen_x, screen_y))
 
+game_screen = (screen_x, screen_y)
 
-def load_manager(res: tuple, offset: tuple):
+
+def load_manager(res: tuple, offset: tuple, screen_scale: float):
     # initialize pygame_gui manager, and load themes
     manager = scripts.game_structure.ui_manager.UIManager(
-        res, offset, "resources/theme/defaults.json", enable_live_theme_updates=False
+        res,
+        offset,
+        screen_scale,
+        "resources/theme/defaults.json",
+        enable_live_theme_updates=False,
     )
     manager.add_font_paths(
         font_name="notosans",
@@ -706,6 +719,4 @@ def load_manager(res: tuple, offset: tuple):
     return manager
 
 
-# idk why the manager needs the offset to be halved again, but it does. everywhere else
-# is fine with it being halved but here? divide by four or die ig
-MANAGER = load_manager((screen_x, screen_y), (offset_x / 2, offset_y / 2))
+MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
