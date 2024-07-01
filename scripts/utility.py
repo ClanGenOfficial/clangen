@@ -1311,8 +1311,8 @@ def unpack_rel_block(
     possible_values = ("romantic", "platonic", "dislike", "comfort", "jealous", "trust", "respect")
 
     for block in relationship_effects:
-        cats_from = block.get("cats_from", ())
-        cats_to = block.get("cats_to", ())
+        cats_from = block.get("cats_from", [])
+        cats_to = block.get("cats_to", [])
         amount = block.get("amount")
         values = [x for x in block.get("values", ()) if x in possible_values]
 
@@ -1392,15 +1392,21 @@ def unpack_rel_block(
                 print(f"something is wrong with relationship log: {log}")
 
         if not log1:
-            try:
-                log1 = event.text + effect
-            except AttributeError:
-                print(f"WARNING: event changed relationships but did not create a relationship log")
+            if hasattr(event, "text"):
+                try:
+                    log1 = event.text + effect
+                except AttributeError:
+                    print(f"WARNING: event changed relationships but did not create a relationship log")
+            else:
+                log1 = "These cats recently interacted." + effect
         if not log2:
-            try:
-                log2 = event.text + effect
-            except AttributeError:
-                print(f"WARNING: event changed relationships but did not create a relationship log")
+            if hasattr(event, "text"):
+                try:
+                    log2 = event.text + effect
+                except AttributeError:
+                    print(f"WARNING: event changed relationships but did not create a relationship log")
+            else:
+                log2 = f"These cats recently interacted." + effect
 
         change_relationship_values(
             cats_to_ob,
@@ -2258,19 +2264,22 @@ def update_sprite(cat):
     cat.all_cats[cat.ID] = cat
 
 
-def clan_symbol_sprite(clan, return_string=False):
+def clan_symbol_sprite(clan, return_string=False, force_light=False):
     """
     returns the clan symbol for the given clan_name, if no symbol exists then random symbol is chosen
     :param clan: the clan object
     :param return_string: default False, set True if the sprite name string is required rather than the sprite image
-
+    :param force_light: Set true if you want this sprite to override the dark/light mode changes with the light sprite
     """
     clan_name = clan.name
     if clan.chosen_symbol:
         if return_string:
             return clan.chosen_symbol
         else:
-            return sprites.sprites[f"{clan.chosen_symbol}"]
+            if game.settings["dark mode"] and not force_light:
+                return sprites.dark_mode_symbol(sprites.sprites[f"{clan.chosen_symbol}"])
+            else:
+                return sprites.sprites[f"{clan.chosen_symbol}"]
     else:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
@@ -2287,15 +2296,18 @@ def clan_symbol_sprite(clan, return_string=False):
                 )
                 return f"{choice(sprites.clan_symbols)}"
 
-        else:  # returns the actual sprite of the symbol
-            if possible_sprites:
-                return sprites.sprites[choice(possible_sprites)]
+        # returns the actual sprite of the symbol
+        if possible_sprites:
+            if game.settings["dark mode"] and not force_light:
+                return sprites.dark_mode_symbol(sprites.sprites[choice(possible_sprites)])
             else:
-                # give random symbol if no matching symbol exists
-                print(
-                    f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
-                )
-                return sprites.sprites[f"{choice(sprites.clan_symbols)}"]
+                return sprites.sprites[choice(possible_sprites)]
+        else:
+            # give random symbol if no matching symbol exists
+            print(
+                f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
+            )
+            return sprites.dark_mode_symbol(sprites.sprites[f"{choice(sprites.clan_symbols)}"])
 
 
 def generate_sprite(
@@ -2624,19 +2636,15 @@ def quit(savesettings=False, clearevents=False):
     sys_exit()
 
 
-PERMANENT = None
 with open(f"resources/dicts/conditions/permanent_conditions.json", "r") as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-ACC_DISPLAY = None
 with open(f"resources/dicts/acc_display.json", "r") as read_file:
     ACC_DISPLAY = ujson.loads(read_file.read())
 
-SNIPPETS = None
 with open(f"resources/dicts/snippet_collections.json", "r") as read_file:
     SNIPPETS = ujson.loads(read_file.read())
 
-PREY_LISTS = None
 with open(f"resources/dicts/prey_text_replacements.json", "r") as read_file:
     PREY_LISTS = ujson.loads(read_file.read())
 

@@ -920,7 +920,7 @@
     },
     {
         "patrol_id": "mtn_bord_shortswim1",
-        "biome": ["mountain"],
+        "biome": ["mountainous"],
         "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],

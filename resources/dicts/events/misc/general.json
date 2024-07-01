@@ -611,7 +611,7 @@
     "event_id": "gen_misc_any_accessory4",
     "location": ["any"],
     "season": ["any"],
-    "sub_type": ["ceremony"],
+    "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
     "new_accessory": ["WILD", "PLANT"],
@@ -663,7 +663,7 @@
     "event_id": "gen_misc_any_accessory6",
     "location": ["any"],
     "season": ["any"],
-    "sub_type": ["ceremony"],
+    "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
     "new_accessory": ["WILD","PLANT"],
@@ -676,7 +676,7 @@
     "event_id": "gen_misc_any_accessory7",
     "location": ["any"],
     "season": ["any"],
-    "sub_type": ["ceremony"],
+    "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
     "new_accessory": ["WILD","PLANT"],
@@ -1036,13 +1036,14 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_retireany1",
+    "event_id": "gen_misc_any_multistatusmultiageretire1",
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c thinks about retiring.",
     "m_c": {
-        "age": ["senior adult", "senior"]
+        "age": ["senior adult", "senior"],
+        "status": ["warrior", "mediator", "medicine cat", "leader"]
     }
   },
   {
@@ -1648,19 +1649,17 @@
     "event_id": "gen_misc_accessoryapprentice1",
     "location": ["any"],
     "season": ["any"],
-    "sub_type": ["accessory"],
+    "sub_type": ["accessory", "romance"],
     "weight": 20,
     "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
     "new_accessory": ["BLUE BERRIES", "HOLLY"],
     "m_c": {
       "age": ["adolescent"],
-      "status": ["apprentice"],
-      "relationship_status": ["can_romance"]
+      "status": ["apprentice"]
     },
     "r_c": {
       "age": ["adolescent"],
-      "status": ["apprentice"],
-      "relationship_status": ["can_romance"]
+      "status": ["apprentice"]
     },
     "relationships": [
         {
@@ -2129,7 +2128,7 @@
     "m_c": {
       "age":["any"],  
       "status": ["mediator", "mediator apprentice"],
-      "trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise", "inquisitive", "childish", "playful"]
+      "trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise",  "childish", "playful"]
     },
     "relationships": [
         {
@@ -2260,7 +2259,7 @@
     },
     "r_c": {
       "status": ["leader"],
-      "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","inquisitive","childish","playful"]
+      "trait": ["calm","careful","insecure","lonesome","loyal","nervous","compassionate","faithful","loving","responsible","thoughtful","wise","childish","playful"]
     },
     "relationships": [
       {
@@ -2344,7 +2343,7 @@
     "event_id": "gen_misc_ceremony_any_medicinecatacc1",
     "location": ["any"],
     "season": ["any"],
-    "sub_type": ["ceremony"],
+    "sub_type": ["ceremony", "accessory"],
     "weight": 10,
     "event_text": "r_c presents m_c with acc_plural as a congratulations.",
     "new_accessory": ["WILD", "PLANT"],
@@ -3286,6 +3285,360 @@
           "type": "any_herb",
           "trigger": ["excess"],
           "adjust": "reduce_quarter"
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_parent_child_acc1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["any"],
+      "relationship_status":["child/parent"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_parent_child_acc2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} kit has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming an apprentice.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["apprentice"],
+      "relationship_status":["child/parent"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_parent_child_acc3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming a warrior. r_c knew that m_c would do great things for c_n.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["warrior"],
+      "relationship_status":["child/parent"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_parent_child_acc4",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations. m_c takes it, but as r_c turns away, a complicated expression crosses {PRONOUN/m_c/poss} face. Perhaps {PRONOUN/m_c/subject} had the wrong idea about r_c.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["any"],
+      "relationship_status":["child/parent", "dislike_20"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 5
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": false,
+        "values": ["dislike"],
+        "amount": -10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_sibling_sibling_acc1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that m_c is an apprentice.",
+    "new_accessory": ["FORGET ME NOTS"],
+    "m_c": {
+      "status": ["apprentice"],
+      "relationship_status":["siblings"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_sibling_sibling_acc2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that m_c is a warrior.",
+    "new_accessory": ["FORGET ME NOTS"],
+    "m_c": {
+      "status": ["warrior"],
+      "relationship_status":["siblings"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_sibling_sibling_acc3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "m_c is feeling a bit overwhelmed, now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice. Luckily, r_c is there with a gift of acc_plural and some comforting words to cheer m_c up.",
+    "new_accessory": ["WILD","PLANT"],
+    "m_c": {
+      "status": ["apprentice"],
+      "trait": ["nervous", "insecure"],
+      "relationship_status":["siblings"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 5
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_sibling_sibling_acc4",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "r_c feels so lucky to have {PRONOUN/r_c/poss} own sibling become a medicine cat apprentice. Knowing how time consuming it is to gather herbs, r_c spends a long time gathering up acc_plural to help out m_c. While m_c appreciates the efforts, none of these are particularly useful. Instead m_c uses the acc_plural to decorate {PRONOUN/m_c/poss} pelt.",
+    "new_accessory": ["HERBS", "DRY HERBS"],
+    "m_c": {
+      "status": ["medicine cat apprentice"],
+      "relationship_status":["siblings"]
+    },
+    "r_c": {
+      "status": ["apprentice", "warrior", "mediator", "mediator apprentice"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 5
+      },
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": false,
+        "values": ["respect"],
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_sibling_sibling_acc5",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "m_c can't help but feel hurt when {PRONOUN/m_c/poss} sibling isn't there to congratulate {PRONOUN/m_c/object} for becoming a warrior. However, when {PRONOUN/m_c/subject} later {VERB/m_c/go/goes} to {PRONOUN/m_c/poss} new nest {PRONOUN/m_c/subject} {VERB/m_c/find/finds} r_c there waiting for {PRONOUN/m_c/object}, with a gift of acc_plural. Together the siblings work on making m_c's new nest feel more comfortable.",
+    "new_accessory": ["WILD"],
+    "m_c": {
+      "status": ["warrior"],
+      "relationship_status":["siblings", "platonic_50"]
+    },
+    "r_c": {
+      "status": ["warrior"],
+      "relationship_status":["platonic_50"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_mentor_app_acc1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "m_c has been so excited for {PRONOUN/m_c/poss} first lesson with r_c. However, instead of something like hunting or moss gathering, r_c takes {PRONOUN/m_c/object} on a tour of the territory. At the end of the lesson, r_c gives m_c acc_plural, saying {PRONOUN/r_c/subject} {VERB/r_c/are/is} glad to be m_c's mentor.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "relationship_status":["app/mentor"]
+    },
+    "r_c": {
+      "status": ["any"],
+      "not_trait": ["cold", "gloomy", "lonesome", "strict", "grumpy"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": false,
+        "values": ["platonic", "comfort", "trust"],
+        "amount": 15
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": false,
+        "values": ["platonic"],
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_mentor_app_acc2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "As a new mentor, r_c wants to make a good initial impression on {PRONOUN/r_c/poss} apprentice, and after some careful consideration {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} the best way is a gift. Taking m_c to the side, r_c gives {PRONOUN/m_c/object} acc_plural, telling {PRONOUN/m_c/object} with a soft voice that if m_c has any sort of issue then {PRONOUN/m_c/subject} can come to {PRONOUN/r_c/object} for help.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "relationship_status":["app/mentor"]
+    },
+    "r_c": {
+      "status": ["any"],
+      "skill":["TEACHER,1"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": false,
+        "values": ["platonic", "comfort", "trust"],
+        "amount": 15
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": false,
+        "values": ["platonic"],
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "event_id": "gen_misc_ceremony_mentor_app_acc3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 10,
+    "event_text": "m_c yowls in shock, claws unsheathing from an unexpected to weight pinning {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN/m_c/poss} mentor who attacked {PRONOUN/m_c/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly tell m_c about the acc_plural that now adorns {PRONOUN/m_c/poss} pelt.",
+    "new_accessory": ["WILD", "PLANT"],
+    "m_c": {
+      "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "relationship_status":["app/mentor"]
+    },
+    "r_c": {
+      "status": ["any"],
+      "trait": ["childish","playful","oblivious","daring","shameless","sneaky","strange","flamboyant"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": false,
+        "values": ["dislike"],
+        "amount": 5
+      },
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": false,
+        "values": ["trust", "comfort"],
+        "amount": -5
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": false,
+        "values": ["platonic"],
+        "amount": 5
       }
     ]
   }

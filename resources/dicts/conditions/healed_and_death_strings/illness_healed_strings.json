@@ -1,10 +1,10 @@
 {
     "seizure": [
         "m_c has recovered from {PRONOUN/m_c/poss} seizure.",
-        "m_c is up and moving again after resting from {PRONOUN/m_c/poss} seizure."
+        "m_c is up and moving again after {PRONOUN/m_c/poss} seizure."
     ],
     "diarrhea": [
-        "m_c has stopped constantly running to the dirtplace, it seems {PRONOUN/m_c/poss} brush with diarrhea has ended.",
+        "m_c has stopped constantly running to the dirtplace. It seems {PRONOUN/m_c/poss} brush with diarrhea has ended.",
         "m_c is finally feeling better, {PRONOUN/m_c/poss} experience with diarrhea now over."
     ],
     "fleas": [
@@ -78,14 +78,14 @@
         "m_c picks {PRONOUN/m_c/self} up out of {PRONOUN/m_c/poss} nest and begins the day anew, a fresh conviction in {PRONOUN/m_c/poss} heart."
     ],
     "carrionplace disease": [
-        "The stench coming from m_c is finally fading, {PRONOUN/m_c/subject} recovered from carrionplace disease.",
+      "The stench coming from m_c is finally fading. {PRONOUN/m_c/subject}{VERB/m_c/'ve/s} recovered from carrionplace disease.",
         "Against all odds, m_c has recovered from carrionplace disease."
     ],
 	"malnourished": [
-        "m_c finally feels energized again, it seems the newly consistent meals have done {pronoun/m_c/object} good."
+        "m_c finally feels energized again. It seems the newly consistent meals have done {PRONOUN/m_c/object} good."
     ],
 	"starving": [
-        "m_c's paws no longer feel quite so heavy. {pronoun/m_c/subject/CAP} can tell that {pronoun/m_c/subject} still need to eat more, but at least the situation isn't as dire.",
-        "m_c still feels the rumbles of hunger in {pronoun/m_c/poss} belly, but it's nothing compared to the emptiness they had so recently experienced."
+        "m_c's paws no longer feel quite so heavy. {PRONOUN/m_c/subject/CAP} can tell that {PRONOUN/m_c/subject} still need to eat more, but at least the situation isn't as dire.",
+        "m_c still feels the rumbles of hunger in {PRONOUN/m_c/poss} belly, but it's nothing compared to the emptiness {PRONOUN/m_c/subject}'d so recently experienced."
     ]
 }

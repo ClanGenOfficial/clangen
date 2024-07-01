@@ -748,7 +748,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
@@ -811,7 +811,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
@@ -874,7 +874,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1113,7 +1113,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1331,7 +1331,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. app2 sides with p_l, and no one learns anything in the squabbling.",
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. app2 sides with p_l, and no one learns anything in the squabbling.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

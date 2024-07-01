@@ -1,4 +1,5 @@
 import os
+from copy import copy
 
 import pygame
 import ujson
@@ -366,6 +367,17 @@ class Sprites:
 
             y_pos += 1
 
+    def dark_mode_symbol(self, symbol):
+        """Change the color of the symbol to dark mode, then return it
+        :param Surface symbol: The clan symbol to convert"""
+        dark_mode_symbol = copy(symbol)
+        var = pygame.PixelArray(dark_mode_symbol)
+        var.replace((87, 76, 45), (239, 229, 206))
+        del var
+        # dark mode color (239, 229, 206)
+        # debug hot pink (255, 105, 180)
+
+        return dark_mode_symbol
 
 # CREATE INSTANCE
 sprites = Sprites()

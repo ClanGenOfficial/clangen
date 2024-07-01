@@ -1,11 +1,10 @@
-import inspect
 from typing import Union, Tuple
 import html
 
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
-from pygame_gui.core.gui_type_hints import RectLike, Coordinate
+from pygame_gui.core.gui_type_hints import RectLike
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
@@ -653,7 +652,7 @@ class UICheckbox(UIImageButton):
         self.change_object_id("#unchecked_checkbox")
 
 
-class UIBasicCatListDisplay(UIAutoResizingContainer):
+class UICatListDisplay(UIContainer):
     """
     Creates and displays a list of click-able cat sprites.
     :param relative_rect: The starting size and relative position of the container.
@@ -666,7 +665,8 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
                     it will try to use the first UIManager that was created by your application.
     :param cat_list: the list of cat objects that need to display
     :param cats_displayed: the number of cats to display on one page
-    :param px_between: the pixel space between each cat sprite
+    :param x_px_between: the pixel space between each cat sprite horizontally
+    :param y_px_between: the pixel space between each cat sprite vertically
     :param columns: the number of cats in a row before a new row is created
     :param next_button: the next_button ui_element
     :param prev_button: the prev_button ui_element
@@ -674,25 +674,30 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
     :param tool_tip_name: should a tooltip displaying the cat's name be added to each cat sprite, default False
     :param visible: Whether the element is visible by default. Warning - container visibility
                     may override this.
+    :param include_names: Should the cat names be displayed on the screen as part of the cat list, default False
+    :param text_theme: the text theme to use for the cat names being displayed
     """
 
     def __init__(
             self,
             relative_rect: RectLike,
-            container: UIContainer,
             starting_height: int,
             object_id: str,
             manager,
             cat_list: list,
             cats_displayed: int,
-            px_between: int,
+            x_px_between: int,
+            y_px_between: int,
             columns: int,
+            text_theme: str,
             current_page: int,
             next_button: UIImageButton,
             prev_button: UIImageButton,
             first_button: UIImageButton = None,
             last_button: UIImageButton = None,
+            container: UIContainer = None,
             tool_tip_name: bool = False,
+            include_names: bool = False,
             visible: bool = True
     ):
 
@@ -701,7 +706,9 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
 
         self.cat_list = cat_list
         self.cats_displayed = cats_displayed
-        self.px_between = px_between
+        self.x_px_between = x_px_between
+        self.y_px_between = y_px_between
+
         self.columns = columns
         self.current_page = current_page
         self.next_button = next_button
@@ -711,11 +718,28 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
         self.tool_tip_name = tool_tip_name
 
         self.total_pages: int = 0
+        self.favor_indicator = {}
         self.cat_sprites = {}
         self.cat_chunks = []
+        self.cat_names = {}
+
+        self.text_theme = text_theme
+        self.include_names = include_names
 
         self._chunk()
         self._display_cats()
+
+    def clear_display(self):
+        for ele in self.cat_sprites:
+            self.cat_sprites[ele].kill()
+        for ele in self.cat_names:
+            self.cat_names[ele].kill()
+        for ele in self.favor_indicator:
+            self.favor_indicator[ele].kill()
+        self.next_button = None
+        self.prev_button = None
+        self.first_button = None
+        self.last_button = None
 
     def update_display(self, current_page: int, cat_list: list):
         """
@@ -756,28 +780,63 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
             display_cats = self.cat_chunks[self.current_page - 1]
 
         for ele in self.cat_sprites:
-            ele.kill()
+            self.cat_sprites[ele].kill()
+        for ele in self.cat_names:
+            self.cat_names[ele].kill()
+        for ele in self.favor_indicator:
+            self.favor_indicator[ele].kill()
 
-        pos_x = self.px_between
-        pos_y = self.px_between
+        pos_x = self.x_px_between
+        pos_y = self.y_px_between
 
         for i, kitty in enumerate(display_cats):
-            self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                kitty.sprite,
-                cat_object=kitty,
-                cat_id=kitty.ID,
-                container=self,
-                object_id=f"#sprite{str(i)}",
-                tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
-                starting_height=1
-            )
+            if game.clan.clan_settings["show fav"] and kitty.favourite:
+                self.create_favor_indicator(i, pos_x, pos_y)
+
+            self.create_cat_button(i, kitty, pos_x, pos_y)
+
+            if self.include_names:
+                self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
+                    scale(pygame.Rect((pos_x - self.x_px_between / 2, pos_y + 100), (100 + self.x_px_between, 60))),
+                    shorten_text_to_fit(str(kitty.name), 220, 30),
+                    container=self,
+                    object_id=self.text_theme,
+                )
 
             # changing position
-            pos_x += self.px_between
-            if pos_x >= (self.px_between * self.columns):
-                pos_x = self.px_between
-                pos_y += self.px_between
+            pos_x += self.x_px_between
+            if pos_x > (self.x_px_between * self.columns):
+                pos_x = self.x_px_between
+                pos_y += self.y_px_between
+
+    def create_cat_button(self, i, kitty, pos_x, pos_y):
+        self.cat_sprites[f"sprite{i}"] = UISpriteButton(
+            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+            kitty.sprite,
+            cat_object=kitty,
+            cat_id=kitty.ID,
+            container=self,
+            object_id=f"#sprite{str(i)}",
+            tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
+            starting_height=1
+        )
+
+    def create_favor_indicator(self, i, pos_x, pos_y):
+        _favor_circle = pygame.transform.scale(
+            pygame.image.load(
+                f"resources/images/fav_marker.png"
+            ).convert_alpha(),
+            (100, 100),
+        )
+        if game.settings["dark mode"]:
+            _favor_circle.set_alpha(150)
+        self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+            _favor_circle,
+            object_id=f"favor_circle{i}",
+            container=self,
+            starting_height=1
+        )
 
     def _update_arrow_buttons(self):
         """
@@ -808,129 +867,3 @@ class UIBasicCatListDisplay(UIAutoResizingContainer):
                 self.first_button.enable()
                 self.last_button.enable()
 
-
-class UINamedCatListDisplay(UIBasicCatListDisplay):
-    """
-    Creates and displays a list of click-able cat sprites.
-    :param relative_rect: The starting size and relative position of the container.
-    :param container: The container this container is within. Defaults to None (which is the root
-                      container for the UI)
-    :param starting_height: The starting layer height of this container above its container.
-                            Defaults to 1.
-    :param object_id: An object ID for this element.
-    :param manager: The UI manager for this element. If not provided or set to None,
-                    it will try to use the first UIManager that was created by your application.
-    :param cat_list: the list of cat objects that need to display
-    :param cats_displayed: the number of cats to display on one page
-    :param x_px_between: the pixel space between each cat sprite on the x-axis
-    :param y_px_between: the pixel space between each cat sprite on the y-axis
-    :param columns: the number of cats in a row before a new row is created
-    :param next_button: the next_button ui_element
-    :param prev_button: the prev_button ui_element
-    :param current_page: the currently displayed page of the cat list
-    :param text_theme: the theme to use when creating name text
-    :param visible: Whether the element is visible by default. Warning - container visibility
-                    may override this.
-    """
-
-    def __init__(self,
-                 relative_rect: RectLike,
-                 container: UIContainer,
-                 starting_height: int,
-                 object_id: str,
-                 manager,
-                 cat_list: list,
-                 cats_displayed: int,
-                 x_px_between: int,
-                 y_px_between: int,
-                 columns: int,
-                 text_theme: str,
-                 current_page: int,
-                 next_button: UIImageButton,
-                 prev_button: UIImageButton,
-                 first_button: UIImageButton = None,
-                 last_button: UIImageButton = None,
-                 visible: bool = True
-                 ):
-        self.cat_list = cat_list
-        self.cats_displayed = cats_displayed
-        self.x_px_between = x_px_between
-        self.y_px_between = y_px_between
-        self.columns = columns
-        self.current_page = current_page
-        self.text_theme = text_theme
-
-        self.cat_sprites = {}
-        self.cat_names = {}
-        self.favor_indicator = {}
-
-        super().__init__(relative_rect, container, starting_height, object_id, manager, cat_list, cats_displayed,
-                         x_px_between, columns, current_page, next_button, prev_button, first_button, last_button,
-                         visible=visible)
-
-    def _display_cats(self):
-        """
-        creates the cat display
-        """
-        self.current_page = max(1, min(self.current_page, len(self.cat_chunks)))
-
-        self._update_arrow_buttons()
-
-        display_cats = []
-        if self.cat_chunks:
-            self.total_pages = len(self.cat_chunks)
-            display_cats = self.cat_chunks[self.current_page - 1]
-
-        for ele in self.cat_sprites:
-            self.cat_sprites[ele].kill()
-        for ele in self.cat_names:
-            self.cat_names[ele].kill()
-        for ele in self.favor_indicator:
-            self.favor_indicator[ele].kill()
-
-        pos_x = self.x_px_between
-        pos_y = self.y_px_between
-
-        for i, kitty in enumerate(display_cats):
-            if game.clan.clan_settings["show fav"] and kitty.favourite:
-                _favor_circle = pygame.transform.scale(
-                    pygame.image.load(
-                        f"resources/images/fav_marker.png"
-                    ).convert_alpha(),
-                    (100, 100),
-                )
-
-                if game.settings["dark mode"]:
-                    _favor_circle.set_alpha(150)
-
-                self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                    _favor_circle,
-                    object_id=f"favor_circle{i}",
-                    container=self,
-                    starting_height=1
-                )
-
-            self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                kitty.sprite,
-                cat_object=kitty,
-                cat_id=kitty.ID,
-                container=self,
-                object_id=f"#sprite{str(i)}",
-                tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
-                starting_height=1
-            )
-
-            self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((pos_x - self.x_px_between / 2, pos_y + 100), (100 + self.x_px_between, 60))),
-                shorten_text_to_fit(str(kitty.name), 220, 30),
-                container=self,
-                object_id=self.text_theme,
-            )
-
-            # changing position
-            pos_x += self.x_px_between
-            if pos_x > (self.x_px_between * self.columns):
-                pos_x = self.x_px_between
-                pos_y += self.y_px_between

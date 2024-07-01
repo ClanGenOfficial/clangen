@@ -1946,7 +1946,7 @@
                 ]
             },
             {
-                "text": "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way.",
+                "text": "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide-eyed and a little scared, in a fun way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2062,7 +2062,7 @@
                 ]
             },
             {
-                "text": "A friendly Twolegs makes a 'psspsspss' noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
+                "text": "A friendly Twolegs makes a 'psspsspss' noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["very_small"],
@@ -3089,7 +3089,7 @@
         "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens - a warrior discovers them, sending them back to camp with a loud scolding.",
         "success_outcomes": [
             {
-                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge, tall pillar, one that blinks down with slow, glowing red eyes.",
+                "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge, tall pillar - one that blinks down with slow, glowing red eyes.",
                 "exp": 0,
                 "weight": 20
             }
@@ -3113,12 +3113,12 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest.",
+        "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye: spindly, long, and partially hidden by the undergrowth of the forest.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/hurry/hurries} back to camp, a little freaked out.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It leaps up onto a fallen log - whatever it is, bulbous head, long, spindly limbs, pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
+                "text": "It leaps up onto a fallen log - whatever it is, with its bulbous head, long, spindly limbs, pale, hairless skin like a skink. r_c hisses, and its echo skitters off into the woods.",
                 "exp": 20,
                 "weight": 20
             }
