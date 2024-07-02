@@ -361,8 +361,6 @@ class Sprites:
                 if self.symbol_dict[symbol]["variants"] > 1 and x_mod > 0:
                     x_mod += -1
                 for variant_index in range(self.symbol_dict[symbol]["variants"]):
-                    print(f"symbol{symbol.upper()}{variant_index}")
-
                     x_pos = i + x_mod
 
                     if self.symbol_dict[symbol]["variants"] > 1:
@@ -370,8 +368,6 @@ class Sprites:
                     elif x_mod > 0:
                         x_pos += - 1
 
-                    print(f"x pos is: {x_pos}")
-                    print(f"y pos is: {y_pos}")
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
                     self.make_group('symbols',
                                     (x_pos, y_pos),
