@@ -3,6 +3,7 @@ from typing import Dict, Optional
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
@@ -19,7 +20,7 @@ from scripts.game_structure.game_essentials import (
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.windows import SaveCheck, EventLoading
-from scripts.utility import update_sprite, scale
+from scripts.utility import update_sprite, ui_scale
 
 
 class Screens:
@@ -40,7 +41,7 @@ class Screens:
     # menu buttons are used very often, so they are generated here.
     menu_buttons = {
         "events_screen": UIImageButton(
-            scale(pygame.Rect((492, 120), (164, 60))),
+            ui_scale(pygame.Rect((492, 120), (164, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -48,7 +49,7 @@ class Screens:
             starting_height=5,
         ),
         "camp_screen": UIImageButton(
-            scale(pygame.Rect((656, 120), (116, 60))),
+            ui_scale(pygame.Rect((656, 120), (116, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -56,14 +57,14 @@ class Screens:
             starting_height=5,
         ),
         "catlist_screen": UIImageButton(
-            scale(pygame.Rect((772, 120), (176, 60))),
+            ui_scale(pygame.Rect((772, 120), (176, 60))),
             "",
             visible=False,
             object_id="#catlist_menu_button",
             starting_height=5,
         ),
         "patrol_screen": UIImageButton(
-            scale(pygame.Rect((948, 120), (160, 60))),
+            ui_scale(pygame.Rect((948, 120), (160, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -71,7 +72,7 @@ class Screens:
             starting_height=5,
         ),
         "main_menu": UIImageButton(
-            scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((50, 50), (306, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -79,7 +80,7 @@ class Screens:
             starting_height=5,
         ),
         "allegiances": UIImageButton(
-            scale(pygame.Rect((1314, 50), (236, 60))),
+            ui_scale(pygame.Rect((1314, 50), (236, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -87,7 +88,7 @@ class Screens:
             starting_height=5,
         ),
         "clan_settings": UIImageButton(
-            scale(pygame.Rect((1380, 120), (170, 60))),
+            ui_scale(pygame.Rect((1380, 120), (170, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -95,7 +96,7 @@ class Screens:
             starting_height=5,
         ),
         "name_background": pygame_gui.elements.UIImage(
-            scale(pygame.Rect((610, 50), (380, 70))),
+            ui_scale(pygame.Rect((610, 50), (380, 70))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/clan_name_bg.png"
@@ -107,14 +108,14 @@ class Screens:
             starting_height=5,
         ),
         "moons_n_seasons": pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((50, 120), (306, 150))),
+            ui_scale(pygame.Rect((50, 120), (306, 150))),
             visible=False,
             allow_scroll_x=False,
             manager=MANAGER,
             starting_height=5,
         ),
         "moons_n_seasons_arrow": UIImageButton(
-            scale(pygame.Rect((349, 161), (44, 68))),
+            ui_scale(pygame.Rect((349, 161), (44, 68))),
             "",
             visible=False,
             manager=MANAGER,
@@ -122,7 +123,7 @@ class Screens:
             starting_height=5,
         ),
         "dens_bar": pygame_gui.elements.UIImage(
-            scale(pygame.Rect((80, 120), (20, 320))),
+            ui_scale(pygame.Rect((80, 120), (20, 320))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/vertical_bar.png"
@@ -134,7 +135,7 @@ class Screens:
             manager=MANAGER,
         ),
         "dens": UIImageButton(
-            scale(pygame.Rect((50, 120), (142, 60))),
+            ui_scale(pygame.Rect((50, 120), (142, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -142,7 +143,7 @@ class Screens:
             starting_height=6,
         ),
         "lead_den": UIImageButton(
-            scale(pygame.Rect((50, 200), (224, 56))),
+            ui_scale(pygame.Rect((50, 200), (224, 56))),
             "",
             visible=False,
             manager=MANAGER,
@@ -150,7 +151,7 @@ class Screens:
             starting_height=6,
         ),
         "med_cat_den": UIImageButton(
-            scale(pygame.Rect((50, 280), (302, 56))),
+            ui_scale(pygame.Rect((50, 280), (302, 56))),
             "",
             visible=False,
             manager=MANAGER,
@@ -158,7 +159,7 @@ class Screens:
             starting_height=6,
         ),
         "warrior_den": UIImageButton(
-            scale(pygame.Rect((50, 360), (242, 56))),
+            ui_scale(pygame.Rect((50, 360), (242, 56))),
             "",
             visible=False,
             manager=MANAGER,
@@ -166,7 +167,7 @@ class Screens:
             starting_height=6,
         ),
         "clearing": UIImageButton(
-            scale(pygame.Rect((50, 440), (162, 56))),
+            ui_scale(pygame.Rect((50, 440), (162, 56))),
             "",
             visible=False,
             manager=MANAGER,
@@ -175,10 +176,10 @@ class Screens:
         ),
         "heading": pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((610, 54), (390, 70))),
+            ui_scale(pygame.Rect((610, 54), (390, 70))),
             visible=False,
             manager=MANAGER,
-            object_id="#text_box_34_horizcenter_light",
+            object_id=ObjectID(class_id="@heading", object_id=None),
             starting_height=5,
         ),
     }
@@ -425,7 +426,7 @@ class Screens:
                         self.menu_buttons.update(
                             {
                                 "dens_bar": pygame_gui.elements.UIImage(
-                                    scale(pygame.Rect((80, 120), (20, 250))),
+                                    ui_scale(pygame.Rect((80, 120), (20, 250))),
                                     pygame.transform.scale(
                                         image_cache.load_image(
                                             "resources/images/vertical_bar.png"
@@ -468,18 +469,18 @@ class Screens:
     # open moons and seasons UI (AKA wide version)
     def mns_open(self):
         self.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-            scale(pygame.Rect((349, 161), (44, 68))),
+            ui_scale(pygame.Rect((349, 161), (44, 68))),
             "",
             manager=MANAGER,
             object_id="#arrow_mns_button",
         )
         self.menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((50, 120), (306, 150))),
+            ui_scale(pygame.Rect((50, 120), (306, 150))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
         self.moons_n_seasons_bg = UIImageButton(
-            scale(pygame.Rect((0, 0), (306, 150))),
+            ui_scale(pygame.Rect((0, 0), (306, 150))),
             "",
             manager=MANAGER,
             object_id="#mns_bg",
@@ -492,15 +493,15 @@ class Screens:
             moons_text = "moons"
 
         self.moons_n_seasons_moon = UIImageButton(
-            scale(pygame.Rect((28, 21), (48, 48))),
+            ui_scale(pygame.Rect((28, 21), (48, 48))),
             "",
             manager=MANAGER,
-            object_id="#mns_image_moon",
+            object_id=ObjectID(class_id="@mns_image", object_id="#moon"),
             container=self.menu_buttons["moons_n_seasons"],
         )
         self.moons_n_seasons_text = pygame_gui.elements.UITextBox(
             f"{game.clan.age} {moons_text}",
-            scale(pygame.Rect((85, 13), (200, 60))),
+            ui_scale(pygame.Rect((85, 13), (200, 60))),
             container=self.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
             object_id="#text_box_30_horizleft_light",
@@ -516,7 +517,7 @@ class Screens:
             season_image_id = "#mns_image_leaffall"
 
         self.moons_n_seasons_season = UIImageButton(
-            scale(pygame.Rect((28, 82), (48, 48))),
+            ui_scale(pygame.Rect((28, 82), (48, 48))),
             "",
             manager=MANAGER,
             object_id=season_image_id,
@@ -524,7 +525,7 @@ class Screens:
         )
         self.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
             f"{game.clan.current_season}",
-            scale(pygame.Rect((85, 72), (200, 60))),
+            ui_scale(pygame.Rect((85, 72), (200, 60))),
             container=self.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
             object_id="#text_box_30_horizleft_dark",
@@ -533,7 +534,7 @@ class Screens:
     # close moons and seasons UI (AKA narrow version)
     def mns_close(self):
         self.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-            scale(pygame.Rect((143, 161), (44, 68))),
+            ui_scale(pygame.Rect((143, 161), (44, 68))),
             "",
             object_id="#arrow_mns_closed_button",
         )
@@ -541,12 +542,12 @@ class Screens:
             self.menu_buttons["moons_n_seasons_arrow"].kill()
 
         self.menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((50, 120), (100, 150))),
+            ui_scale(pygame.Rect((50, 120), (100, 150))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
         self.moons_n_seasons_bg = UIImageButton(
-            scale(pygame.Rect((0, 0), (100, 150))),
+            ui_scale(pygame.Rect((0, 0), (100, 150))),
             "",
             manager=MANAGER,
             object_id="#mns_bg_closed",
@@ -559,7 +560,7 @@ class Screens:
             moons_text = "moons"
 
         self.moons_n_seasons_moon = UIImageButton(
-            scale(pygame.Rect((28, 21), (48, 48))),
+            ui_scale(pygame.Rect((28, 21), (48, 48))),
             "",
             manager=MANAGER,
             object_id="#mns_image_moon",
@@ -569,16 +570,16 @@ class Screens:
         )
 
         if game.clan.current_season == "Newleaf":
-            season_image_id = "#mns_image_newleaf"
+            season_image_id = ObjectID(class_id="@mns_image", object_id="#newleaf")
         elif game.clan.current_season == "Greenleaf":
-            season_image_id = "#mns_image_greenleaf"
+            season_image_id = ObjectID(class_id="@mns_image", object_id="#greenleaf")
         elif game.clan.current_season == "Leaf-bare":
-            season_image_id = "#mns_image_leafbare"
+            season_image_id = ObjectID(class_id="@mns_image", object_id="#leafbare")
         elif game.clan.current_season == "Leaf-fall":
-            season_image_id = "#mns_image_leaffall"
+            season_image_id = ObjectID(class_id="@mns_image", object_id="#leaffall")
 
         self.moons_n_seasons_season = UIImageButton(
-            scale(pygame.Rect((28, 82), (48, 48))),
+            ui_scale(pygame.Rect((28, 82), (48, 48))),
             "",
             manager=MANAGER,
             object_id=season_image_id,

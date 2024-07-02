@@ -11,7 +11,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import (
     get_text_box_theme,
-    scale,
+    ui_scale,
     get_alive_status_cats,
     shorten_text_to_fit,
     get_alive_clan_queens,
@@ -34,7 +34,7 @@ class AllegiancesScreen(Screens):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
             f"{game.clan.name}Clan Allegiances",
-            scale(pygame.Rect((390, 230), (800, 80))),
+            ui_scale(pygame.Rect((390, 230), (800, 80))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             manager=MANAGER,
         )
@@ -46,7 +46,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((100, 330), (1430, 1000))),
+            ui_scale(pygame.Rect((100, 330), (1430, 1000))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -58,7 +58,7 @@ class AllegiancesScreen(Screens):
             self.ranks_boxes.append(
                 pygame_gui.elements.UITextBox(
                     x[0],
-                    scale(pygame.Rect((0, y_pos), (300, -1))),
+                    ui_scale(pygame.Rect((0, y_pos), (300, -1))),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,
@@ -69,7 +69,7 @@ class AllegiancesScreen(Screens):
             self.names_boxes.append(
                 pygame_gui.elements.UITextBox(
                     x[1],
-                    scale(pygame.Rect((300, y_pos), (1060, -1))),
+                    ui_scale(pygame.Rect((300, y_pos), (1060, -1))),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,

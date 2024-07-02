@@ -37,14 +37,14 @@ def generate_button(base: pygame.Surface, width: int, scale=1):
     surface.fblits(
         (
             (left, (0, 0)),
-            (middle, (left.size[0], 0)),
-            (right, (left.size[0] + middle.size[0], 0)),
+            (middle, (left.width, 0)),
+            (right, (left.width + middle.width, 0)),
         )
     )
 
     if scale != 1:
         surface = pygame.transform.scale(
-            surface, (surface.size[0] * scale, surface.size[1] * scale)
+            surface, (surface.width * scale, surface.height * scale)
         )
     return surface
 

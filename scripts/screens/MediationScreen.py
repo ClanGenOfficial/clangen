@@ -12,7 +12,7 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIRelationStatusBar,
 )
-from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
+from scripts.utility import get_text_box_theme, ui_scale, shorten_text_to_fit
 from .Screens import Screens
 
 
@@ -134,11 +134,11 @@ class MediationScreen(Screens):
             self.selected_mediator = None
 
         self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
+            ui_scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
         )
 
         self.selected_frame_1 = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((100, 160), (400, 700))),
+            ui_scale(pygame.Rect((100, 160), (400, 700))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/mediator_selected_frame.png"),
                 (400, 700),
@@ -146,7 +146,7 @@ class MediationScreen(Screens):
         )
         self.selected_frame_1.disable()
         self.selected_frame_2 = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((1100, 160), (400, 700))),
+            ui_scale(pygame.Rect((1100, 160), (400, 700))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/mediator_selected_frame.png"),
                 (400, 700),
@@ -155,7 +155,7 @@ class MediationScreen(Screens):
         self.selected_frame_2.disable()
 
         self.cat_bg = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((100, 940), (1400, 300))),
+            ui_scale(pygame.Rect((100, 940), (1400, 300))),
             pygame.transform.scale(
                 pygame.image.load(
                     "resources/images/mediation_selection_bg.png"
@@ -168,88 +168,90 @@ class MediationScreen(Screens):
         # Will be overwritten
         self.romantic_checkbox = None
         self.romantic_checkbox_text = pygame_gui.elements.UILabel(
-            scale(pygame.Rect((737, 650), (200, 40))),
+            ui_scale(pygame.Rect((737, 650), (200, 40))),
             "Allow romantic",
             object_id=get_text_box_theme("#text_box_22_horizleft"),
             manager=MANAGER,
         )
 
         self.mediate_button = UIImageButton(
-            scale(pygame.Rect((560, 700), (210, 60))),
+            ui_scale(pygame.Rect((560, 700), (210, 60))),
             "",
             object_id="#mediate_button",
             manager=MANAGER,
         )
         self.sabotoge_button = UIImageButton(
-            scale(pygame.Rect((800, 700), (218, 60))),
+            ui_scale(pygame.Rect((800, 700), (218, 60))),
             "",
             object_id="#sabotage_button",
             manager=MANAGER,
         )
 
         self.next_med = UIImageButton(
-            scale(pygame.Rect((952, 540), (68, 68))),
+            ui_scale(pygame.Rect((952, 540), (68, 68))),
             "",
             object_id="#arrow_right_button",
         )
         self.last_med = UIImageButton(
-            scale(pygame.Rect((560, 540), (68, 68))), "", object_id="#arrow_left_button"
+            ui_scale(pygame.Rect((560, 540), (68, 68))),
+            "",
+            object_id="#arrow_left_button",
         )
 
         self.next_page = UIImageButton(
-            scale(pygame.Rect((866, 1224), (68, 68))),
+            ui_scale(pygame.Rect((866, 1224), (68, 68))),
             "",
             object_id="#relation_list_next",
         )
         self.previous_page = UIImageButton(
-            scale(pygame.Rect((666, 1224), (68, 68))),
+            ui_scale(pygame.Rect((666, 1224), (68, 68))),
             "",
             object_id="#relation_list_previous",
         )
 
         self.deselect_1 = UIImageButton(
-            scale(pygame.Rect((136, 868), (254, 60))),
+            ui_scale(pygame.Rect((136, 868), (254, 60))),
             "",
             object_id="#remove_cat_button",
         )
         self.deselect_2 = UIImageButton(
-            scale(pygame.Rect((1210, 868), (254, 60))),
+            ui_scale(pygame.Rect((1210, 868), (254, 60))),
             "",
             object_id="#remove_cat_button",
         )
 
         self.results = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((560, 770), (458, 200))),
+            ui_scale(pygame.Rect((560, 770), (458, 200))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
 
         self.error = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((560, 75), (458, 115))),
+            ui_scale(pygame.Rect((560, 75), (458, 115))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
 
         self.random1 = UIImageButton(
-            scale(pygame.Rect((396, 864), (68, 68))),
+            ui_scale(pygame.Rect((396, 864), (68, 68))),
             "",
             object_id="#random_dice_button",
         )
         self.random2 = UIImageButton(
-            scale(pygame.Rect((1136, 864), (68, 68))),
+            ui_scale(pygame.Rect((1136, 864), (68, 68))),
             "",
             object_id="#random_dice_button",
         )
 
         self.search_bar_image = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((110, 1250), (236, 68))),
+            ui_scale(pygame.Rect((110, 1250), (236, 68))),
             pygame.image.load("resources/images/search_bar.png").convert_alpha(),
             manager=MANAGER,
         )
         self.search_bar = pygame_gui.elements.UITextEntryLine(
-            scale(pygame.Rect((120, 1258), (230, 55))),
+            ui_scale(pygame.Rect((120, 1258), (230, 55))),
             object_id="#search_entry_box",
             initial_text="name search",
             manager=MANAGER,
@@ -287,14 +289,14 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
 
             self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((x_value, 180), (300, 300))),
+                ui_scale(pygame.Rect((x_value, 180), (300, 300))),
                 pygame.transform.scale(mediator.sprite, (300, 300)),
             )
 
             name = str(mediator.name)
             short_name = shorten_text_to_fit(name, 240, 22)
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((x_value - 10, 480), (320, -1))),
+                ui_scale(pygame.Rect((x_value - 10, 480), (320, -1))),
                 short_name,
                 object_id=get_text_box_theme(),
             )
@@ -312,7 +314,7 @@ class MediationScreen(Screens):
 
             self.mediator_elements["details"] = pygame_gui.elements.UITextBox(
                 text,
-                scale(pygame.Rect((x_value, 520), (310, 120))),
+                ui_scale(pygame.Rect((x_value, 520), (310, 120))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 manager=MANAGER,
             )
@@ -385,14 +387,14 @@ class MediationScreen(Screens):
 
                     self.cat_buttons.append(
                         pygame_gui.elements.UIImage(
-                            scale(pygame.Rect((x, y), (100, 100))), _temp
+                            ui_scale(pygame.Rect((x, y), (100, 100))), _temp
                         )
                     )
                     self.cat_buttons[-1].disable()
 
                 self.cat_buttons.append(
                     UISpriteButton(
-                        scale(pygame.Rect((x, y), (100, 100))),
+                        ui_scale(pygame.Rect((x, y), (100, 100))),
                         cat.sprite,
                         cat_object=cat,
                     )
@@ -428,14 +430,14 @@ class MediationScreen(Screens):
         y = starting_pos[1]
 
         self.selected_cat_elements["cat_image" + tag] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((x + 100, y + 14), (200, 200))),
+            ui_scale(pygame.Rect((x + 100, y + 14), (200, 200))),
             pygame.transform.scale(cat.sprite, (200, 200)),
         )
 
         name = str(cat.name)
         short_name = shorten_text_to_fit(name, 250, 30)
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
-            scale(pygame.Rect((x, y + 200), (400, 60))),
+            ui_scale(pygame.Rect((x, y + 200), (400, 60))),
             short_name,
             object_id="#text_box_30_horizcenter",
         )
@@ -464,7 +466,7 @@ class MediationScreen(Screens):
             ).convert_alpha()
 
         self.selected_cat_elements["gender" + tag] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((x + 320, y + 24), (50, 50))),
+            ui_scale(pygame.Rect((x + 320, y + 24), (50, 50))),
             pygame.transform.scale(gender_icon, (50, 50)),
         )
 
@@ -472,7 +474,7 @@ class MediationScreen(Screens):
         # MATE
         if other_cat and len(cat.mate) > 0 and other_cat.ID in cat.mate:
             self.selected_cat_elements["mate_icon" + tag] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((x + 28, y + 28), (44, 40))),
+                ui_scale(pygame.Rect((x + 28, y + 28), (44, 40))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_big.png"
@@ -502,7 +504,7 @@ class MediationScreen(Screens):
                 self.selected_cat_elements[
                     "relation_icon" + tag
                 ] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((x + 28, y + 28), (36, 36))),
+                    ui_scale(pygame.Rect((x + 28, y + 28), (36, 36))),
                     pygame.transform.scale(
                         image_cache.load_image(
                             "resources/images/dot_big.png"
@@ -523,7 +525,7 @@ class MediationScreen(Screens):
         col1 += "\n" + _t
         self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(
             col1,
-            scale(pygame.Rect((x + 42, y + 252), (180, -1))),
+            ui_scale(pygame.Rect((x + 42, y + 252), (180, -1))),
             object_id="#text_box_22_horizleft_spacing_95",
             manager=MANAGER,
         )
@@ -572,7 +574,7 @@ class MediationScreen(Screens):
 
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
             col2,
-            scale(pygame.Rect((x + 220, y + 252), (161, -1))),
+            ui_scale(pygame.Rect((x + 220, y + 252), (161, -1))),
             object_id="#text_box_22_horizleft_spacing_95",
             manager=MANAGER,
         )
@@ -587,7 +589,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"relation_heading{tag}"
             ] = pygame_gui.elements.UILabel(
-                scale(pygame.Rect((x + 40, y + 320), (320, -1))),
+                ui_scale(pygame.Rect((x + 40, y + 320), (320, -1))),
                 f"~~{short_name}'s feelings~~",
                 object_id="#text_box_22_horizcenter",
             )
@@ -636,7 +638,7 @@ class MediationScreen(Screens):
                 f"romantic_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -645,7 +647,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"romantic_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -666,7 +668,7 @@ class MediationScreen(Screens):
                 f"plantonic_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -675,7 +677,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"platonic_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -697,7 +699,7 @@ class MediationScreen(Screens):
                 f"dislike_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -706,7 +708,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"dislike_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -728,7 +730,7 @@ class MediationScreen(Screens):
                 f"admiration_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -737,7 +739,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"admiration_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -759,7 +761,7 @@ class MediationScreen(Screens):
                 f"comfortable_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -768,7 +770,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"comfortable_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -790,7 +792,7 @@ class MediationScreen(Screens):
                 f"jealous_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -799,7 +801,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"jealous_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -821,7 +823,7 @@ class MediationScreen(Screens):
                 f"trust_text{tag}"
             ] = pygame_gui.elements.UITextBox(
                 text,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 10),
                         (300, 60),
@@ -830,7 +832,7 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"trust_bar{tag}"] = UIRelationStatusBar(
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 30 + (barbar * bar_count)),
                         (300, 18),
@@ -888,7 +890,7 @@ class MediationScreen(Screens):
 
         if self.allow_romantic:
             self.romantic_checkbox = UIImageButton(
-                scale(pygame.Rect((642, 635), (68, 68))),
+                ui_scale(pygame.Rect((642, 635), (68, 68))),
                 "",
                 object_id="@checked_checkbox",
                 tool_tip_text="Allow effects on romantic like, if possible. ",
@@ -896,7 +898,7 @@ class MediationScreen(Screens):
             )
         else:
             self.romantic_checkbox = UIImageButton(
-                scale(pygame.Rect((642, 635), (68, 68))),
+                ui_scale(pygame.Rect((642, 635), (68, 68))),
                 "",
                 object_id="@unchecked_checkbox",
                 tool_tip_text="Allow effects on romantic like, if possible. ",

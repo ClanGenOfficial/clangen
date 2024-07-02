@@ -164,7 +164,7 @@ from scripts.clan import clan_class
 from scripts.utility import (
     get_text_box_theme,
     quit,
-    scale,
+    ui_scale,
 )  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
 import pygame_gui
@@ -213,11 +213,11 @@ def load_data():
     finished_loading = True
 
 
-def loading_animation():
+def loading_animation(screen_scale: float = 1):
     global finished_loading
 
     # Load images, adjust color
-    color = pygame.Surface((200, 210))
+    color = pygame.Surface((200 * screen_scale, 210 * screen_scale))
     if game.settings["dark mode"]:
         color.fill(game.config["theme"]["light_mode_background"])
     else:
@@ -305,7 +305,7 @@ else:
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
-        scale(pygame.Rect((1050, 1321), (600, 100))),
+        ui_scale(pygame.Rect((1050, 1321), (600, 100))),
         "Dev Build:",
         object_id="#dev_watermark",
     )

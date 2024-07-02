@@ -10,7 +10,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, CatButton
 from scripts.utility import get_text_box_theme, shorten_text_to_fit
-from scripts.utility import scale
+from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.windows import PronounCreation
 
@@ -19,7 +19,6 @@ with open("resources/dicts/pronouns.json", "r", encoding="utf-8") as f:
 
 
 class ChangeGenderScreen(Screens):
-
     def __init__(self, name=None):
         super().__init__(name)
         self.next_cat_button = None
@@ -70,15 +69,15 @@ class ChangeGenderScreen(Screens):
                     self.the_cat.genderalign = gender_identity
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
-                    self.selected_cat_elements["cat_gender"] = (
-                        pygame_gui.elements.UITextBox(
-                            f"{self.the_cat.genderalign}",
-                            scale(pygame.Rect((252, 500), (500, 500))),
-                            object_id=get_text_box_theme(
-                                "#text_box_30_horizcenter_spacing_95"
-                            ),
-                            manager=MANAGER,
-                        )
+                    self.selected_cat_elements[
+                        "cat_gender"
+                    ] = pygame_gui.elements.UITextBox(
+                        f"{self.the_cat.genderalign}",
+                        ui_scale(pygame.Rect((252, 500), (500, 500))),
+                        object_id=get_text_box_theme(
+                            "#text_box_30_horizcenter_spacing_95"
+                        ),
+                        manager=MANAGER,
                     )
 
             elif event.ui_element == self.buttons["add_pronouns"]:
@@ -105,19 +104,19 @@ class ChangeGenderScreen(Screens):
 
     def screen_switches(self):
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
         )
         self.previous_cat_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 120), (210, 60))),
+            ui_scale(pygame.Rect((50, 120), (210, 60))),
             "",
             object_id="#back_button",
             manager=MANAGER,
@@ -173,7 +172,7 @@ class ChangeGenderScreen(Screens):
             return
 
         self.elements["cat_frame"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((100, 200), (1398, 1040))),
+            ui_scale(pygame.Rect((100, 200), (1398, 1040))),
             pygame.transform.scale(
                 pygame.image.load(
                     "resources/images/gender_framing.png"
@@ -183,7 +182,7 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER,
         )
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((360, 210), (300, 300))),
+            ui_scale(pygame.Rect((360, 210), (300, 300))),
             pygame.transform.scale(self.the_cat.sprite, (300, 300)),
             manager=MANAGER,
         )
@@ -196,7 +195,7 @@ class ChangeGenderScreen(Screens):
 
         self.selected_cat_elements["cat_gender"] = pygame_gui.elements.UITextBox(
             text,
-            scale(pygame.Rect((260, 500), (500, 500))),
+            ui_scale(pygame.Rect((260, 500), (500, 500))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             manager=MANAGER,
         )
@@ -204,7 +203,7 @@ class ChangeGenderScreen(Screens):
         name = str(self.the_cat.name)
         header = "Change " + name + "'s Gender"
         self.selected_cat_elements["header"] = pygame_gui.elements.UILabel(
-            scale(pygame.Rect((490, 125), (650, 64))),
+            ui_scale(pygame.Rect((490, 125), (650, 64))),
             header,
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
         )
@@ -212,7 +211,7 @@ class ChangeGenderScreen(Screens):
         # Save Confirmation
         self.selected_cat_elements["identity_changed"] = pygame_gui.elements.UITextBox(
             "Gender identity changed!",
-            scale(pygame.Rect((770, 495), (800, 80))),
+            ui_scale(pygame.Rect((770, 495), (800, 80))),
             visible=False,
             object_id="#text_box_30_horizleft",
             manager=MANAGER,
@@ -221,23 +220,23 @@ class ChangeGenderScreen(Screens):
         self.selected_cat_elements["description"] = pygame_gui.elements.UITextBox(
             f"<br> You can set this to anything! "
             f"Gender identity does not affect gameplay.",
-            scale(pygame.Rect((625, 265), (660, 150))),
+            ui_scale(pygame.Rect((625, 265), (660, 150))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
         )
         self.buttons["add_pronouns"] = UIImageButton(
-            scale(pygame.Rect((640, 1290), (324, 56))),
+            ui_scale(pygame.Rect((640, 1290), (324, 56))),
             "",
             object_id="#add_pronouns_button",
             manager=MANAGER,
         )
         self.selected_cat_elements["gender"] = pygame_gui.elements.UITextEntryLine(
-            scale(pygame.Rect((700, 440), (330, 60))),
+            ui_scale(pygame.Rect((700, 440), (330, 60))),
             placeholder_text=self.the_cat.genderalign,
             manager=MANAGER,
         )
         self.buttons["save"] = UIImageButton(
-            scale(pygame.Rect((1065, 440), (146, 60))),
+            ui_scale(pygame.Rect((1065, 440), (146, 60))),
             "",
             object_id="#save_button_pronoun",
             starting_height=2,
@@ -262,17 +261,17 @@ class ChangeGenderScreen(Screens):
 
     def pronoun_update(self):
         # List the various pronouns
-        self.removalboxes_text["container_general"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                relative_rect=scale(pygame.Rect((100, 660), (675, 540))),
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
-                manager=MANAGER,
-            )
+        self.removalboxes_text[
+            "container_general"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            relative_rect=ui_scale(pygame.Rect((100, 660), (675, 540))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+            manager=MANAGER,
         )
 
         self.removalboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "Current Pronouns",
-            scale(pygame.Rect((280, 595), (350, 65))),
+            ui_scale(pygame.Rect((280, 595), (350, 65))),
             object_id="#text_box_34_horizleft_dark",
             manager=MANAGER,
         )
@@ -289,7 +288,7 @@ class ChangeGenderScreen(Screens):
             short_name = shorten_text_to_fit(displayname, 360, 26)
 
             # Create block for each pronounset with dynamic ycoor
-            block_rect = scale(pygame.Rect((75, ycoor), (544, 88)))
+            block_rect = ui_scale(pygame.Rect((75, ycoor), (544, 88)))
             self.elements[f"cat_pronouns_{n}"] = pygame_gui.elements.UIImage(
                 block_rect,
                 pygame.transform.scale(
@@ -300,7 +299,7 @@ class ChangeGenderScreen(Screens):
             )
 
             # Create remove button for each pronounset with dynamic ycoor
-            button_rect = scale(pygame.Rect((550, ycoor + 18), (48, 48)))
+            button_rect = ui_scale(pygame.Rect((550, ycoor + 18), (48, 48)))
             self.removalbuttons[f"cat_pronouns_{n}"] = CatButton(
                 button_rect,
                 "",
@@ -313,7 +312,7 @@ class ChangeGenderScreen(Screens):
             )
 
             # Create UITextBox for pronoun display with clickable remove button
-            text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
+            text_box_rect = ui_scale(pygame.Rect((100, ycoor + 4), (400, 78)))
             self.removalboxes_text[f"cat_pronouns_{n}"] = pygame_gui.elements.UITextBox(
                 short_name,
                 text_box_rect,
@@ -355,17 +354,17 @@ class ChangeGenderScreen(Screens):
 
     def preset_update(self):
         # List the various pronouns
-        self.removalboxes_text["container_general2"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                relative_rect=scale(pygame.Rect((795, 660), (675, 540))),
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
-                manager=MANAGER,
-            )
+        self.removalboxes_text[
+            "container_general2"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            relative_rect=ui_scale(pygame.Rect((795, 660), (675, 540))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+            manager=MANAGER,
         )
 
         self.removalboxes_text["instr2"] = pygame_gui.elements.UITextBox(
             "Saved Pronouns",
-            scale(pygame.Rect((1000, 595), (350, 65))),
+            ui_scale(pygame.Rect((1000, 595), (350, 65))),
             object_id="#text_box_34_horizleft_dark",
             manager=MANAGER,
         )
@@ -382,7 +381,7 @@ class ChangeGenderScreen(Screens):
             short_name = shorten_text_to_fit(displayname, 280, 26)
 
             # Create block for each pronounset with dynamic ycoor
-            block_rect = scale(pygame.Rect((75, ycoor), (544, 88)))
+            block_rect = ui_scale(pygame.Rect((75, ycoor), (544, 88)))
             self.elements[f"{n}"] = pygame_gui.elements.UIImage(
                 block_rect,
                 pygame.transform.scale(
@@ -392,7 +391,7 @@ class ChangeGenderScreen(Screens):
                 manager=MANAGER,
             )
 
-            button_rect = scale(pygame.Rect((425, ycoor + 14), (112, 56)))
+            button_rect = ui_scale(pygame.Rect((425, ycoor + 14), (112, 56)))
             self.addbuttons[f"default_pronouns_{n}"] = CatButton(
                 button_rect,
                 "",
@@ -408,16 +407,16 @@ class ChangeGenderScreen(Screens):
                 self.addbuttons[f"default_pronouns_{n}"].disable()
 
             # Create UITextBox for pronoun display and create tooltip for full pronoun display
-            button_rect = scale(pygame.Rect((550, ycoor + 18), (48, 48)))
-            text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.removalboxes_text[f"default_pronouns_{n}"] = (
-                pygame_gui.elements.UITextBox(
-                    short_name,
-                    text_box_rect,
-                    container=self.removalboxes_text["container_general2"],
-                    object_id="#text_box_30_horizleft_pad_0_8",
-                    manager=MANAGER,
-                )
+            button_rect = ui_scale(pygame.Rect((550, ycoor + 18), (48, 48)))
+            text_box_rect = ui_scale(pygame.Rect((100, ycoor + 4), (400, 78)))
+            self.removalboxes_text[
+                f"default_pronouns_{n}"
+            ] = pygame_gui.elements.UITextBox(
+                short_name,
+                text_box_rect,
+                container=self.removalboxes_text["container_general2"],
+                object_id="#text_box_30_horizleft_pad_0_8",
+                manager=MANAGER,
             )
 
             self.removalboxes_text[f"default_pronouns_{n}"].disable()
@@ -461,7 +460,7 @@ class ChangeGenderScreen(Screens):
             short_name = shorten_text_to_fit(displayname, 280, 26)
 
             # Create block for each pronounset with dynamic ycoor
-            block_rect = scale(pygame.Rect((75, ycoor), (544, 88)))
+            block_rect = ui_scale(pygame.Rect((75, ycoor), (544, 88)))
             self.elements[f"custom_pronouns_{n}"] = pygame_gui.elements.UIImage(
                 block_rect,
                 pygame.transform.scale(
@@ -474,7 +473,7 @@ class ChangeGenderScreen(Screens):
             # Create UITextBox for pronoun display with clickable remove button
 
             # Create remove button for each pronounset with dynamic ycoor
-            button_rect = scale(pygame.Rect((550, ycoor + 18), (48, 48)))
+            button_rect = ui_scale(pygame.Rect((550, ycoor + 18), (48, 48)))
             self.deletebuttons[f"custom_pronouns_{n}"] = CatButton(
                 button_rect,
                 "",
@@ -486,7 +485,7 @@ class ChangeGenderScreen(Screens):
                 manager=MANAGER,
             )
 
-            button_rect = scale(pygame.Rect((425, ycoor + 14), (112, 56)))
+            button_rect = ui_scale(pygame.Rect((425, ycoor + 14), (112, 56)))
             self.addbuttons[f"custom_pronouns_{n}"] = CatButton(
                 button_rect,
                 "",
@@ -501,15 +500,15 @@ class ChangeGenderScreen(Screens):
             if pronounset in self.the_cat.pronouns:
                 self.addbuttons[f"custom_pronouns_{n}"].disable()
 
-            text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.removalboxes_text[f"custom_pronouns_{n}"] = (
-                pygame_gui.elements.UITextBox(
-                    short_name,
-                    text_box_rect,
-                    container=self.removalboxes_text["container_general2"],
-                    object_id="#text_box_30_horizleft_pad_0_8",
-                    manager=MANAGER,
-                )
+            text_box_rect = ui_scale(pygame.Rect((100, ycoor + 4), (400, 78)))
+            self.removalboxes_text[
+                f"custom_pronouns_{n}"
+            ] = pygame_gui.elements.UITextBox(
+                short_name,
+                text_box_rect,
+                container=self.removalboxes_text["container_general2"],
+                object_id="#text_box_30_horizleft_pad_0_8",
+                manager=MANAGER,
             )
 
             self.removalboxes_text[f"custom_pronouns_{n}"].disable()

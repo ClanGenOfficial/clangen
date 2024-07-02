@@ -13,8 +13,8 @@ from pygame_gui.core.utility import translate
 from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
-from scripts.utility import scale, shorten_text_to_fit
+from scripts.game_structure.game_essentials import game, screen_scale
+from scripts.utility import ui_scale, shorten_text_to_fit
 
 
 class UISurfaceImageButton(pygame_gui.elements.UIButton):
@@ -345,7 +345,7 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
         )
         self.top_button.kill()
         self.top_button = UIImageButton(
-            scale(pygame.Rect((0, 0), (44, 40))),
+            ui_scale(pygame.Rect((0, 0), (44, 40))),
             text="",
             manager=self.ui_manager,
             container=self.button_container,
@@ -362,7 +362,7 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
 
         self.bottom_button.kill()
         self.bottom_button = UIImageButton(
-            scale(pygame.Rect((0, -self.arrow_button_height), (44, 40))),
+            ui_scale(pygame.Rect((0, -self.arrow_button_height), (44, 40))),
             text="",
             manager=self.ui_manager,
             container=self.button_container,
@@ -791,7 +791,7 @@ class UICheckbox(UIImageButton):
 
         self.checked = check
 
-        relative_rect = scale(pygame.Rect(position, (68, 68)))
+        relative_rect = ui_scale(pygame.Rect(position, (68, 68)))
 
         if check:
             object_id = "@checked_checkbox"
@@ -973,7 +973,7 @@ class UICatListDisplay(UIContainer):
 
             if self.include_names:
                 self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
-                    scale(
+                    ui_scale(
                         pygame.Rect(
                             (pos_x - self.x_px_between / 2, pos_y + 100),
                             (100 + self.x_px_between, 60),
@@ -992,7 +992,7 @@ class UICatListDisplay(UIContainer):
 
     def create_cat_button(self, i, kitty, pos_x, pos_y):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+            ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
             kitty.sprite,
             cat_object=kitty,
             cat_id=kitty.ID,
@@ -1010,7 +1010,7 @@ class UICatListDisplay(UIContainer):
         if game.settings["dark mode"]:
             _favor_circle.set_alpha(150)
         self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+            ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
             _favor_circle,
             object_id=f"favor_circle{i}",
             container=self,

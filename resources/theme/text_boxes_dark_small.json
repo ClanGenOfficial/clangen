@@ -70,11 +70,7 @@
         }
     },
     "#text_box_26_dark": {
-        "prototype": "#default_dark",
-        "font": {
-            "name": "notosans",
-            "size": 13
-        }
+        "prototype": "#default_dark"
     },
     "#text_box_26_horizcenter_pad_10_14_dark": {
         "prototype": "#text_box_26_dark",
@@ -92,11 +88,7 @@
         }
     },
     "#text_box_30_dark": {
-        "prototype": "#default_dark",
-        "font": {
-            "name": "notosans",
-            "size": 15
-        }
+        "prototype": "#default_dark"
     },
     "#text_box_30_horizcenter_dark": {
         "prototype": "#text_box_30_dark",
@@ -155,11 +147,7 @@
         }
     },
     "#text_box_34_dark": {
-        "prototype": "#default_dark",
-        "font": {
-            "name": "notosans",
-            "size": 17
-        }
+        "prototype": "#default_dark"
     },
     "#text_box_34_horizcenter_dark": {
         "prototype": "#text_box_34_dark",
@@ -174,11 +162,7 @@
         }
     },
     "#text_box_40_dark": {
-        "prototype": "#default_dark",
-        "font": {
-            "name": "notosans",
-            "size": 20
-        }
+        "prototype": "#default_dark"
     },
     "#text_box_40_horizcenter_dark": {
         "prototype": "#text_box_40_dark",

@@ -12,10 +12,6 @@
             "shape_corner_radius": "6",
             "shadow_width": "0",
             "padding": "(0,0)"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "15"
         }
     },
     "#dev_watermark": {
@@ -50,10 +46,6 @@
             "shadow_width": "0",
             "padding": "(0,0)",
             "border_width": "0"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "13"
         }
     },
     "#page_entry_box": {
@@ -66,9 +58,6 @@
             "shape_corner_radius": 2,
             "border_width": "1",
             "text_horiz_alignment": "right"
-        },
-        "font": {
-            "size": 15
         }
     },
     "#text_box": {
@@ -81,28 +70,16 @@
             "link_hover": "#556B2F",
             "link_selected": "#556B2F"
         },
-        "font": {
-            "name": "notosans",
-            "size": "15"
-        },
         "misc": {
             "border_width": "0",
             "shadow_width": "0"
         }
     },
     "@text_box_14": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "7"
-        }
+        "prototype": "#text_box"
     },
     "@text_box_14_horizleft": {
         "prototype": "@text_box_14",
-        "font": {
-            "name": "notosans",
-            "size": "7"
-        },
         "misc": {
             "border_width": "0",
             "shadow_width": "0",
@@ -110,11 +87,7 @@
         }
     },
     "@text_box_22": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "11"
-        }
+        "prototype": "#text_box"
     },
     "#text_box_22_horizcenter": {
         "prototype": "@text_box_22",
@@ -162,11 +135,7 @@
         }
     },
     "#text_box_26": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "13"
-        }
+        "prototype": "#text_box"
     },
     "#text_box_26_horizcenter": {
         "prototype": "#text_box_26",
@@ -198,20 +167,12 @@
         }
     },
     "#text_box_30": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "15"
-        }
+        "prototype": "#text_box"
     },
     "#text_box_current_version": {
         "prototype": "#text_box",
         "colours": {
             "normal_text": "#222222"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "12"
         }
     },
     "#update_popup_title": {
@@ -221,11 +182,6 @@
         "prototype": "#text_box",
         "misc": {
             "text_horiz_alignment": "center"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "20",
-            "bold": "1"
         }
     },
     "#changelog_popup_subtitle": {
@@ -235,10 +191,6 @@
         },
         "colours": {
             "normal_text": "#222222"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "12"
         }
     },
     "#text_box_30_horizcenter": {
@@ -323,11 +275,7 @@
         }
     },
     "#text_box_34": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "17"
-        }
+        "prototype": "#text_box"
     },
     "#text_box_34_horizcenter": {
         "prototype": "#text_box_34",
@@ -348,11 +296,7 @@
         }
     },
     "#text_box_40": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "20"
-        }
+        "prototype": "#text_box"
     },
     "#text_box_40_horizcenter": {
         "prototype": "#text_box_40",

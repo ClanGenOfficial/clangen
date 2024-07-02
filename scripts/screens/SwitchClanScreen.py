@@ -16,7 +16,7 @@ from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import DeleteCheck
 from scripts.utility import (
     get_text_box_theme,
-    scale,
+    ui_scale,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 
@@ -106,7 +106,7 @@ class SwitchClanScreen(Screens):
             (440 / 1600 * screen_x, 750 / 1400 * screen_y),
         )
         self.main_menu = UIImageButton(
-            scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#main_menu_button",
             manager=MANAGER,
@@ -114,14 +114,14 @@ class SwitchClanScreen(Screens):
         self.info = pygame_gui.elements.UITextBox(
             "Note: This will close the game.\n When you open it next, it should have the new Clan.",
             # pylint: disable=line-too-long
-            scale(pygame.Rect((200, 1200), (1200, 140))),
+            ui_scale(pygame.Rect((200, 1200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((200, 200), (1200, 140))),
+            ui_scale(pygame.Rect((200, 200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -144,7 +144,7 @@ class SwitchClanScreen(Screens):
             self.clan_name[-1].append(clan)
             self.clan_buttons[-1].append(
                 pygame_gui.elements.UIButton(
-                    scale(pygame.Rect((600, y_pos), (400, 78))),
+                    ui_scale(pygame.Rect((600, y_pos), (400, 78))),
                     clan + "Clan",
                     object_id="#saved_clan",
                     manager=MANAGER,
@@ -152,7 +152,7 @@ class SwitchClanScreen(Screens):
             )
             self.delete_buttons[-1].append(
                 UIImageButton(
-                    scale(pygame.Rect((940, y_pos + 17), (44, 44))),
+                    ui_scale(pygame.Rect((940, y_pos + 17), (44, 44))),
                     "",
                     object_id="#exit_window_button",
                     manager=MANAGER,
@@ -170,20 +170,20 @@ class SwitchClanScreen(Screens):
                 y_pos = 378
 
         self.next_page_button = UIImageButton(
-            scale(pygame.Rect((912, 1080), (68, 68))),
+            ui_scale(pygame.Rect((912, 1080), (68, 68))),
             "",
             object_id="#arrow_right_button",
             manager=MANAGER,
         )
         self.previous_page_button = UIImageButton(
-            scale(pygame.Rect((620, 1080), (68, 68))),
+            ui_scale(pygame.Rect((620, 1080), (68, 68))),
             "",
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
         self.page_number = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((680, 1080), (220, 70))),
+            ui_scale(pygame.Rect((680, 1080), (220, 70))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )

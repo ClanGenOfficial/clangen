@@ -7,7 +7,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import get_text_box_theme
-from scripts.utility import scale
+from scripts.utility import ui_scale
 from .Screens import Screens
 from scripts.utility import get_text_box_theme
 from scripts.cat.cats import Cat
@@ -34,14 +34,14 @@ class CeremonyScreen(Screens):
         if self.the_cat.status == "leader":
             self.header = pygame_gui.elements.UITextBox(
                 str(self.the_cat.name) + "'s Leadership Ceremony",
-                scale(pygame.Rect((200, 180), (1200, -1))),
+                ui_scale(pygame.Rect((200, 180), (1200, -1))),
                 object_id=get_text_box_theme(),
                 manager=MANAGER,
             )
         else:
             self.header = pygame_gui.elements.UITextBox(
                 str(self.the_cat.name) + " has no ceremonies to view.",
-                scale(pygame.Rect((200, 180), (1200, -1))),
+                ui_scale(pygame.Rect((200, 180), (1200, -1))),
                 object_id=get_text_box_theme(),
                 manager=MANAGER,
             )
@@ -52,20 +52,20 @@ class CeremonyScreen(Screens):
             self.life_text = ""
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((100, 300), (1400, 1000))),
+            ui_scale(pygame.Rect((100, 300), (1400, 1000))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
         self.text = pygame_gui.elements.UITextBox(
             self.life_text,
-            scale(pygame.Rect((0, 0), (1100, -1))),
+            ui_scale(pygame.Rect((0, 0), (1100, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft"),
             container=self.scroll_container,
             manager=MANAGER,
         )
         self.text.disable()
         self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (210, 60))),
+            ui_scale(pygame.Rect((50, 50), (210, 60))),
             "",
             object_id="#back_button",
             manager=MANAGER,

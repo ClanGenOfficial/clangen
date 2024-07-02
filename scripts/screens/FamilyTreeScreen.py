@@ -5,7 +5,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
-from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
+from scripts.utility import get_text_box_theme, ui_scale, shorten_text_to_fit
 from .Screens import Screens
 
 
@@ -169,19 +169,19 @@ class FamilyTreeScreen(Screens):
         self.current_group_name = None
         # prev/next and back buttons
         self.previous_cat_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
         )
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 120), (210, 60))),
+            ui_scale(pygame.Rect((50, 120), (210, 60))),
             "",
             object_id="#back_button",
             manager=MANAGER,
@@ -190,26 +190,26 @@ class FamilyTreeScreen(Screens):
         # our container for the family tree, this will center itself based on visible relation group buttons
         # it starts with just the center cat frame inside it, since that will always be visible
         self.family_tree = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((720, 450), (160, 180))), MANAGER
+            ui_scale(pygame.Rect((720, 450), (160, 180))), MANAGER
         )
 
         # now grab the other necessary UI elements
         self.previous_group_page = UIImageButton(
-            scale(pygame.Rect((941, 1281), (68, 68))),
+            ui_scale(pygame.Rect((941, 1281), (68, 68))),
             "",
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
         self.previous_group_page.disable()
         self.next_group_page = UIImageButton(
-            scale(pygame.Rect((1082, 1281), (68, 68))),
+            ui_scale(pygame.Rect((1082, 1281), (68, 68))),
             "",
             object_id="#arrow_right_button",
             manager=MANAGER,
         )
         self.next_group_page.disable()
         self.relation_backdrop = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((628, 950), (841, 342))),
+            ui_scale(pygame.Rect((628, 950), (841, 342))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/familytree_relationbackdrop.png"
@@ -223,7 +223,7 @@ class FamilyTreeScreen(Screens):
         if not game.switches["root_cat"]:
             game.switches["root_cat"] = Cat.all_cats[game.switches["cat"]]
         self.root_cat_frame = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((129, 950), (452, 340))),
+            ui_scale(pygame.Rect((129, 950), (452, 340))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/familytree_bigcatbox.png"
@@ -233,7 +233,7 @@ class FamilyTreeScreen(Screens):
             manager=MANAGER,
         )
         self.cat_elements["root_cat_image"] = UISpriteButton(
-            scale(pygame.Rect((462, 1151), (100, 100))),
+            ui_scale(pygame.Rect((462, 1151), (100, 100))),
             game.switches["root_cat"].sprite,
             cat_id=game.switches["root_cat"].ID,
             manager=MANAGER,
@@ -243,7 +243,7 @@ class FamilyTreeScreen(Screens):
         self.root_cat_frame.disable()
 
         self.center_cat_frame = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), (160, 180))),
+            ui_scale(pygame.Rect((0, 0), (160, 180))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/familytree_smallcatbox.png"
@@ -270,7 +270,7 @@ class FamilyTreeScreen(Screens):
 
         self.cat_elements["screen_title"] = pygame_gui.elements.UITextBox(
             f"{self.the_cat.name}'s Family Tree",
-            scale(pygame.Rect((300, 50), (1000, 100))),
+            ui_scale(pygame.Rect((300, 50), (1000, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -341,13 +341,13 @@ class FamilyTreeScreen(Screens):
 
         self.family_tree.kill()
         self.family_tree = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((800 - x_dim / 2, 550 - y_dim / 2), (x_dim, y_dim))),
+            ui_scale(pygame.Rect((800 - x_dim / 2, 550 - y_dim / 2), (x_dim, y_dim))),
             MANAGER,
         )
 
         # creating the center frame, cat, and name
         self.cat_elements["the_cat_image"] = UISpriteButton(
-            scale(pygame.Rect((150, 969), (300, 300))),
+            ui_scale(pygame.Rect((150, 969), (300, 300))),
             self.the_cat.sprite,
             cat_id=self.the_cat.ID,
             manager=MANAGER,
@@ -356,12 +356,12 @@ class FamilyTreeScreen(Screens):
         short_name = shorten_text_to_fit(name, 260, 22)
         self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(
             f"Viewing {short_name}'s Lineage",
-            scale(pygame.Rect((150, 1282), (300, 150))),
+            ui_scale(pygame.Rect((150, 1282), (300, 150))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
         self.center_cat_frame = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((x_pos, y_pos), (160, 180))),
+            ui_scale(pygame.Rect((x_pos, y_pos), (160, 180))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/familytree_smallcatbox.png"
@@ -373,7 +373,7 @@ class FamilyTreeScreen(Screens):
         )
         self.center_cat_frame.disable()
         self.cat_elements["center_cat_image"] = UISpriteButton(
-            scale(pygame.Rect((x_pos + 30, y_pos + 20), (100, 100))),
+            ui_scale(pygame.Rect((x_pos + 30, y_pos + 20), (100, 100))),
             self.the_cat.sprite,
             cat_id=self.the_cat.ID,
             manager=MANAGER,
@@ -383,7 +383,7 @@ class FamilyTreeScreen(Screens):
         short_name = shorten_text_to_fit(name, 114, 22)
 
         self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(
-            scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))),
+            ui_scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))),
             short_name,
             object_id="#text_box_22_horizcenter",
             manager=MANAGER,
@@ -392,7 +392,7 @@ class FamilyTreeScreen(Screens):
 
         if self.parents:
             self.siblings_button = UIImageButton(
-                scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
+                ui_scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
                 "",
                 object_id="#siblings_button",
                 manager=MANAGER,
@@ -401,7 +401,7 @@ class FamilyTreeScreen(Screens):
             if self.siblings:
                 if self.siblings_mates or self.siblings_kits:
                     self.sibling_mates_button = UIImageButton(
-                        scale(pygame.Rect((464 + x_pos, 65 + y_pos), (418, 60))),
+                        ui_scale(pygame.Rect((464 + x_pos, 65 + y_pos), (418, 60))),
                         "",
                         object_id="#siblingmates_button",
                         manager=MANAGER,
@@ -409,14 +409,14 @@ class FamilyTreeScreen(Screens):
                     )
                 if self.siblings_kits:
                     self.sibling_kits_button = UIImageButton(
-                        scale(pygame.Rect((406 + x_pos, 97 + y_pos), (252, 164))),
+                        ui_scale(pygame.Rect((406 + x_pos, 97 + y_pos), (252, 164))),
                         "",
                         object_id="#siblingkits_button",
                         manager=MANAGER,
                         container=self.family_tree,
                     )
             self.parents_button = UIImageButton(
-                scale(pygame.Rect((136 + x_pos, -196 + y_pos), (176, 288))),
+                ui_scale(pygame.Rect((136 + x_pos, -196 + y_pos), (176, 288))),
                 "",
                 object_id="#parents_button",
                 manager=MANAGER,
@@ -425,7 +425,7 @@ class FamilyTreeScreen(Screens):
             self.family_tree.add_element(self.parents_button)
             if self.parents_siblings:
                 self.parents_siblings_button = UIImageButton(
-                    scale(pygame.Rect((308 + x_pos, -196 + y_pos), (436, 60))),
+                    ui_scale(pygame.Rect((308 + x_pos, -196 + y_pos), (436, 60))),
                     "",
                     object_id="#parentsiblings_button",
                     manager=MANAGER,
@@ -433,7 +433,7 @@ class FamilyTreeScreen(Screens):
                 )
                 if self.cousins:
                     self.cousins_button = UIImageButton(
-                        scale(pygame.Rect((504 + x_pos, -139 + y_pos), (170, 164))),
+                        ui_scale(pygame.Rect((504 + x_pos, -139 + y_pos), (170, 164))),
                         "",
                         object_id="#cousins_button",
                         manager=MANAGER,
@@ -441,7 +441,7 @@ class FamilyTreeScreen(Screens):
                     )
             if self.grandparents:
                 self.grandparents_button = UIImageButton(
-                    scale(pygame.Rect((94 + x_pos, -355 + y_pos), (260, 164))),
+                    ui_scale(pygame.Rect((94 + x_pos, -355 + y_pos), (260, 164))),
                     "",
                     object_id="#grandparents_button",
                     manager=MANAGER,
@@ -450,7 +450,7 @@ class FamilyTreeScreen(Screens):
 
         if self.mates or self.kits:
             self.mates_button = UIImageButton(
-                scale(pygame.Rect((-276 + x_pos, 65 + y_pos), (288, 60))),
+                ui_scale(pygame.Rect((-276 + x_pos, 65 + y_pos), (288, 60))),
                 "",
                 object_id="#mates_button",
                 manager=MANAGER,
@@ -458,7 +458,7 @@ class FamilyTreeScreen(Screens):
             )
         if self.kits:
             self.kits_button = UIImageButton(
-                scale(pygame.Rect((-118 + x_pos, 97 + y_pos), (116, 164))),
+                ui_scale(pygame.Rect((-118 + x_pos, 97 + y_pos), (116, 164))),
                 "",
                 object_id="#kits_button",
                 manager=MANAGER,
@@ -466,7 +466,7 @@ class FamilyTreeScreen(Screens):
             )
             if self.kits_mates or self.grandkits:
                 self.kits_mates_button = UIImageButton(
-                    scale(pygame.Rect((-477 + x_pos, 198 + y_pos), (364, 60))),
+                    ui_scale(pygame.Rect((-477 + x_pos, 198 + y_pos), (364, 60))),
                     "",
                     object_id="#kitsmates_button",
                     manager=MANAGER,
@@ -474,7 +474,7 @@ class FamilyTreeScreen(Screens):
                 )
             if self.grandkits:
                 self.grandkits_button = UIImageButton(
-                    scale(pygame.Rect((-282 + x_pos, 233 + y_pos), (202, 164))),
+                    ui_scale(pygame.Rect((-282 + x_pos, 233 + y_pos), (202, 164))),
                     "",
                     object_id="#grandkits_button",
                     manager=MANAGER,
@@ -491,7 +491,7 @@ class FamilyTreeScreen(Screens):
         if not self.current_group:
             self.relation_elements["no_cats_notice"] = pygame_gui.elements.UITextBox(
                 "None",
-                scale(pygame.Rect((550, 1080), (900, 60))),
+                ui_scale(pygame.Rect((550, 1080), (900, 60))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
@@ -528,7 +528,7 @@ class FamilyTreeScreen(Screens):
                     info_text += ", ".join(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
-                scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
+                ui_scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
                 _kitty.sprite,
                 cat_id=_kitty.ID,
                 manager=MANAGER,
@@ -563,7 +563,7 @@ class FamilyTreeScreen(Screens):
 
         if self.current_group_name == "grandparents":
             self.tabs["grandparents_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1164, 890), (256, 60))),
+                ui_scale(pygame.Rect((1164, 890), (256, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/grandparents_tab.png"
@@ -574,7 +574,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "parents":
             self.tabs["parents_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1246, 890), (174, 60))),
+                ui_scale(pygame.Rect((1246, 890), (174, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/parents_tab.png"
@@ -585,7 +585,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "parents_siblings":
             self.tabs["parents_siblings_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1123, 890), (296, 60))),
+                ui_scale(pygame.Rect((1123, 890), (296, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/parentsibling_tab.png"
@@ -596,7 +596,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "cousins":
             self.tabs["cousins_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1254, 890), (166, 60))),
+                ui_scale(pygame.Rect((1254, 890), (166, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/cousins_tab.png"
@@ -607,7 +607,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "siblings":
             self.tabs["siblings_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1256, 890), (164, 60))),
+                ui_scale(pygame.Rect((1256, 890), (164, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/siblings_tab.png"
@@ -618,7 +618,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "siblings_mates":
             self.tabs["siblings_mates_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1146, 890), (274, 60))),
+                ui_scale(pygame.Rect((1146, 890), (274, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/siblingsmate_tab.png"
@@ -629,7 +629,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "siblings_kits":
             self.tabs["siblings_kits_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1170, 890), (250, 60))),
+                ui_scale(pygame.Rect((1170, 890), (250, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/siblingkits_tab.png"
@@ -640,7 +640,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "mates":
             self.tabs["mates_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1270, 890), (150, 60))),
+                ui_scale(pygame.Rect((1270, 890), (150, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/mates_tab.png"
@@ -651,7 +651,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "kits":
             self.tabs["kits_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1306, 890), (114, 60))),
+                ui_scale(pygame.Rect((1306, 890), (114, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/kits_tab.png"
@@ -662,7 +662,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "kits_mates":
             self.tabs["kits_mates_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1196, 890), (224, 60))),
+                ui_scale(pygame.Rect((1196, 890), (224, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/kitsmate_tab.png"
@@ -673,7 +673,7 @@ class FamilyTreeScreen(Screens):
             )
         elif self.current_group_name == "grandkits":
             self.tabs["grandkits_tab"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((1220, 890), (200, 60))),
+                ui_scale(pygame.Rect((1220, 890), (200, 60))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/grandkits_tab.png"

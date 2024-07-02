@@ -20,10 +20,6 @@
             "selected_border": "#776045",
             "active_border": "#776045"
         },
-        "font": {
-            "name": "notosans",
-            "size": "15"
-        },
         "misc": {
             "border_width": "12",
             "shadow_width": "0"

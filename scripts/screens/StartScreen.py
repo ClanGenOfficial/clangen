@@ -36,7 +36,7 @@ from scripts.game_structure.game_essentials import (
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
-from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
+from scripts.utility import ui_scale, quit
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
@@ -180,28 +180,29 @@ class StartScreen(Screens):
         # Create buttons
 
         self.continue_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 620), (400, 60))),
+            ui_scale(pygame.Rect((140, 620), (400, 60))),
             "continue",
-            image_dict=get_button_dict("general", 200),
+            image_dict=get_button_dict("general", 400, screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 710), (400, 60))),
+            ui_scale(pygame.Rect((140, 710), (400, 60))),
             "switch clan",
-            image_dict=get_button_dict("general", 200, screen_scale),
+            image_dict=get_button_dict("general", 400, screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
+            anchors={"top_target": self.continue_button},
         )
         self.new_clan_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 800), (400, 60))),
+            ui_scale(pygame.Rect((140, 800), (400, 60))),
             "new clan",
             image_dict=get_button_dict("general", 200, screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.settings_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 890), (400, 60))),
+            ui_scale(pygame.Rect((140, 890), (400, 60))),
             "settings",
             image_dict=get_button_dict("general", 200, screen_scale),
             object_id=ObjectID(
@@ -210,7 +211,7 @@ class StartScreen(Screens):
             manager=MANAGER,
         )
         self.quit = UISurfaceImageButton(
-            scale(pygame.Rect((140, 980), (400, 60))),
+            ui_scale(pygame.Rect((140, 980), (400, 60))),
             "quit",
             image_dict=get_button_dict("general", 200, screen_scale),
             object_id=ObjectID(
@@ -220,14 +221,14 @@ class StartScreen(Screens):
         )
 
         self.social_buttons["twitter_button"] = UIImageButton(
-            scale(pygame.Rect((25, 1295), (80, 80))),
+            ui_scale(pygame.Rect((25, 1295), (80, 80))),
             "",
             object_id="#twitter_button",
             manager=MANAGER,
             tool_tip_text="Check out our Twitter!",
         )
         self.social_buttons["tumblr_button"] = UIImageButton(
-            scale(pygame.Rect((10, 1295), (80, 80))),
+            ui_scale(pygame.Rect((10, 1295), (80, 80))),
             "",
             object_id="#tumblr_button",
             manager=MANAGER,
@@ -236,7 +237,7 @@ class StartScreen(Screens):
         )
 
         self.social_buttons["discord_button"] = UIImageButton(
-            scale(pygame.Rect((15, 1295), (80, 80))),
+            ui_scale(pygame.Rect((15, 1295), (80, 80))),
             "",
             object_id="#discord_button",
             manager=MANAGER,
@@ -248,7 +249,7 @@ class StartScreen(Screens):
         ).convert_alpha()
 
         self.error_box = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((259, 300), (1180, 802))),
+            ui_scale(pygame.Rect((259, 300), (1180, 802))),
             pygame.transform.scale(errorimg, (1180, 802)),
             manager=MANAGER,
         )
@@ -257,7 +258,7 @@ class StartScreen(Screens):
 
         self.error_label = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((275, 370), (770, 720))),
+            ui_scale(pygame.Rect((275, 370), (770, 720))),
             object_id="#text_box_22_horizleft",
             starting_height=1,
             manager=MANAGER,
@@ -267,14 +268,14 @@ class StartScreen(Screens):
             "Please join the Discord server and ask for technical support. "
             "We'll be happy to help! Please include the error message and the traceback below (if available). "
             '<br><a href="https://discord.gg/clangen">Discord</a>',  # pylint: disable=line-too-long
-            scale(pygame.Rect((1055, 430), (350, 600))),
+            ui_scale(pygame.Rect((1055, 430), (350, 600))),
             object_id="#text_box_22_horizleft",
             starting_height=3,
             manager=MANAGER,
         )
 
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((1054, 1023), (356, 60))),
+            ui_scale(pygame.Rect((1054, 1023), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
@@ -285,7 +286,7 @@ class StartScreen(Screens):
         )
 
         self.closebtn = UIImageButton(
-            scale(pygame.Rect((1386, 430), (44, 44))),
+            ui_scale(pygame.Rect((1386, 430), (44, 44))),
             "",
             starting_height=2,  # Hover affect works, and now allows it to be clicked more easily.
             object_id="#exit_window_button",
@@ -299,7 +300,7 @@ class StartScreen(Screens):
         self.closebtn.hide()
 
         self.update_button = UIImageButton(
-            scale(pygame.Rect((1154, 50), (382.5, 75))),
+            ui_scale(pygame.Rect((1154, 50), (382.5, 75))),
             "",
             object_id="#update_button",
             manager=MANAGER,
@@ -358,7 +359,7 @@ class StartScreen(Screens):
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game contains mild depictions of gore, canon-typical violence, and animal abuse.",
-            scale(pygame.Rect((100, 1244), (1400, 60))),
+            ui_scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark",
             manager=MANAGER,
             anchors={"centerx": "centerx"},

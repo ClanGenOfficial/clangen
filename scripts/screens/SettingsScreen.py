@@ -15,7 +15,7 @@ from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     get_text_box_theme,
-    scale,
+    ui_scale,
     quit,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
@@ -192,25 +192,25 @@ class SettingsScreen(Screens):
         self.settings_changed = False
 
         self.general_settings_button = UIImageButton(
-            scale(pygame.Rect((350, 200), (300, 60))),
+            ui_scale(pygame.Rect((350, 200), (300, 60))),
             "",
             object_id="#general_settings_button",
             manager=MANAGER,
         )
         self.info_button = UIImageButton(
-            scale(pygame.Rect((650, 200), (300, 60))),
+            ui_scale(pygame.Rect((650, 200), (300, 60))),
             "",
             object_id="#info_settings_button",
             manager=MANAGER,
         )
         self.language_button = UIImageButton(
-            scale(pygame.Rect((950, 200), (300, 60))),
+            ui_scale(pygame.Rect((950, 200), (300, 60))),
             "",
             object_id="#lang_settings_button",
             manager=MANAGER,
         )
         self.save_settings_button = UIImageButton(
-            scale(pygame.Rect((654, 1100), (292, 60))),
+            ui_scale(pygame.Rect((654, 1100), (292, 60))),
             "",
             object_id="#save_settings_button",
             manager=MANAGER,
@@ -218,7 +218,7 @@ class SettingsScreen(Screens):
 
         if game.settings["fullscreen"]:
             self.fullscreen_toggle = UIImageButton(
-                scale(pygame.Rect((1234, 50), (316, 72))),
+                ui_scale(pygame.Rect((1234, 50), (316, 72))),
                 "",
                 object_id="#toggle_fullscreen_button",
                 manager=MANAGER,
@@ -228,7 +228,7 @@ class SettingsScreen(Screens):
             )
         else:
             self.fullscreen_toggle = UIImageButton(
-                scale(pygame.Rect((1234, 50), (316, 72))),
+                ui_scale(pygame.Rect((1234, 50), (316, 72))),
                 "",
                 object_id="#toggle_fullscreen_button",
                 manager=MANAGER,
@@ -238,7 +238,7 @@ class SettingsScreen(Screens):
             )
 
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((50, 1290), (356, 60))),
+            ui_scale(pygame.Rect((50, 1290), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
@@ -252,7 +252,7 @@ class SettingsScreen(Screens):
 
         self.update_save_button()
         self.main_menu_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (305, 60))),
+            ui_scale(pygame.Rect((50, 50), (305, 60))),
             "",
             object_id="#main_menu_button",
             manager=MANAGER,
@@ -310,7 +310,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text[
             "container_general"
         ] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((0, 440), (1400, 600))),
+            ui_scale(pygame.Rect((0, 440), (1400, 600))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -319,7 +319,7 @@ class SettingsScreen(Screens):
         for code, desc in settings_dict["general"].items():
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                scale(pygame.Rect((450, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((450, n * 78), (1000, 78))),
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -334,7 +334,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             """Change the general settings of your game here.\n"""
             """More settings are available in the settings page of your Clan.""",
-            scale(pygame.Rect((200, 320), (1200, 200))),
+            ui_scale(pygame.Rect((200, 320), (1200, 200))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -356,14 +356,14 @@ class SettingsScreen(Screens):
         self.checkboxes_text[
             "info_container"
         ] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((200, 300), (1200, 1000))),
+            ui_scale(pygame.Rect((200, 300), (1200, 1000))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
 
         self.checkboxes_text["info_text_box"] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((0, 0), (1150, -1))),
+            ui_scale(pygame.Rect((0, 0), (1150, -1))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text["info_container"],
             manager=MANAGER,
@@ -377,7 +377,7 @@ class SettingsScreen(Screens):
             if not tooltip:
                 self.tooltip[f"tip{i}"] = (
                     UIImageButton(
-                        scale(pygame.Rect((400, i * 52 + y_pos), (400, 52))),
+                        ui_scale(pygame.Rect((400, i * 52 + y_pos), (400, 52))),
                         "",
                         object_id="#blank_button",
                         container=self.checkboxes_text["info_container"],
@@ -388,7 +388,7 @@ class SettingsScreen(Screens):
             else:
                 self.tooltip[f"tip{i}"] = (
                     UIImageButton(
-                        scale(pygame.Rect((400, i * 52 + y_pos), (400, 52))),
+                        ui_scale(pygame.Rect((400, i * 52 + y_pos), (400, 52))),
                         "",
                         object_id="#blank_button",
                         container=self.checkboxes_text["info_container"],
@@ -413,7 +413,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "Change the language of the game here. This has not been implemented yet.",
-            scale(pygame.Rect((200, 320), (1200, 100))),
+            ui_scale(pygame.Rect((200, 320), (1200, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -432,19 +432,19 @@ class SettingsScreen(Screens):
         # CHECKBOXES (ehhh) FOR LANGUAGES
         if self.sub_menu == "language":
             self.checkboxes["english"] = UIImageButton(
-                scale(pygame.Rect((620, 400), (360, 102))),
+                ui_scale(pygame.Rect((620, 400), (360, 102))),
                 "",
                 object_id="#english_lang_button",
                 manager=MANAGER,
             )
             self.checkboxes["spanish"] = UIImageButton(
-                scale(pygame.Rect((620, 502), (360, 74))),
+                ui_scale(pygame.Rect((620, 502), (360, 74))),
                 "",
                 object_id="#spanish_lang_button",
                 manager=MANAGER,
             )
             self.checkboxes["german"] = UIImageButton(
-                scale(pygame.Rect((620, 576), (360, 74))),
+                ui_scale(pygame.Rect((620, 576), (360, 74))),
                 "",
                 object_id="#german_lang_button",
                 manager=MANAGER,
@@ -465,7 +465,7 @@ class SettingsScreen(Screens):
                 else:
                     box_type = "@unchecked_checkbox"
                 self.checkboxes[code] = UIImageButton(
-                    scale(pygame.Rect((340, n * 78), (68, 68))),
+                    ui_scale(pygame.Rect((340, n * 78), (68, 68))),
                     "",
                     object_id=box_type,
                     container=self.checkboxes_text["container_" + self.sub_menu],

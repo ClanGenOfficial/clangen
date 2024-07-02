@@ -720,6 +720,8 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     manager.get_theme().load_theme("resources/theme/window_base_small.json")
     manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
 
+    manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
+
     manager.preload_fonts(
         [
             {"name": "notosans", "point_size": 11, "style": "bold"},

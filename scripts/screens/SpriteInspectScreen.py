@@ -8,11 +8,11 @@ from scripts.game_structure.game_essentials import game, MANAGER, offset
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import (
     get_text_box_theme,
-    scale_dimentions,
+    scale_dimensions,
     generate_sprite,
     shorten_text_to_fit,
 )
-from scripts.utility import scale
+from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.windows import SaveAsImage
 
@@ -132,70 +132,72 @@ class SpriteInspectScreen(Screens):
 
     def screen_switches(self):
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
         )
         self.previous_cat_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 120), (210, 60))),
+            ui_scale(pygame.Rect((50, 120), (210, 60))),
             "",
             object_id="#back_button",
             manager=MANAGER,
         )
 
         self.previous_life_stage = UIImageButton(
-            scale(pygame.Rect((150, 550), (76, 100))),
+            ui_scale(pygame.Rect((150, 550), (76, 100))),
             "",
             object_id="#arrow_right_fancy",
             starting_height=2,
         )
 
         self.next_life_stage = UIImageButton(
-            scale(pygame.Rect((1374, 550), (76, 100))),
+            ui_scale(pygame.Rect((1374, 550), (76, 100))),
             "",
             object_id="#arrow_left_fancy",
             starting_height=2,
         )
 
         self.save_image_button = UIImageButton(
-            scale(pygame.Rect((50, 190), (270, 60))), "", object_id="#save_image_button"
+            ui_scale(pygame.Rect((50, 190), (270, 60))),
+            "",
+            object_id="#save_image_button",
         )
 
         # Toggle Text:
         self.platform_shown_text = pygame_gui.elements.UITextBox(
             "Show Platform",
-            scale(pygame.Rect((300, 1160), (-1, 100))),
+            ui_scale(pygame.Rect((300, 1160), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.scars_shown_text = pygame_gui.elements.UITextBox(
             "Show Scar(s)",
-            scale(pygame.Rect((700, 1160), (-1, 100))),
+            ui_scale(pygame.Rect((700, 1160), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.acc_shown_text = pygame_gui.elements.UITextBox(
             "Show Accessory",
-            scale(pygame.Rect((1090, 1160), (-1, 100))),
+            ui_scale(pygame.Rect((1090, 1160), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
             "Show as Living",
-            scale(pygame.Rect((500, 1260), (-1, 100))),
+            ui_scale(pygame.Rect((500, 1260), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_not_working_text = pygame_gui.elements.UITextBox(
             "Show as Healthy",
-            scale(pygame.Rect((900, 1260), (-1, 100))),
+            ui_scale(pygame.Rect((900, 1260), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
@@ -217,8 +219,8 @@ class SpriteInspectScreen(Screens):
         self.the_cat = Cat.fetch_cat(game.switches["cat"])
 
         self.cat_elements["platform"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((240, 200), (1120, 980))),
-            pygame.transform.scale(self.get_platform(), scale_dimentions((1120, 701))),
+            ui_scale(pygame.Rect((240, 200), (1120, 980))),
+            pygame.transform.scale(self.get_platform(), scale_dimensions((1120, 701))),
             manager=MANAGER,
         )
         self.set_background_visablity()
@@ -260,7 +262,7 @@ class SpriteInspectScreen(Screens):
 
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
             short_name,
-            scale(pygame.Rect((50, 120), (-1, 80))),
+            ui_scale(pygame.Rect((50, 120), (-1, 80))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
@@ -272,7 +274,7 @@ class SpriteInspectScreen(Screens):
         if game.settings["fullscreen"]:
             self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
                 cat_name,
-                scale(
+                ui_scale(
                     pygame.Rect(
                         (800 - name_text_size.width, 120),
                         (name_text_size.width * 2, 80),
@@ -284,7 +286,7 @@ class SpriteInspectScreen(Screens):
         else:
             self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
                 cat_name,
-                scale(pygame.Rect((800 - name_text_size.width, 120), (-1, 80))),
+                ui_scale(pygame.Rect((800 - name_text_size.width, 120), (-1, 80))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"),
                 manager=MANAGER,
             )
@@ -295,7 +297,7 @@ class SpriteInspectScreen(Screens):
         else:
             x_pos = 740 - name_text_size.width
         self.cat_elements["favourite_button"] = UIImageButton(
-            scale(pygame.Rect((x_pos, 127), (56, 56))),
+            ui_scale(pygame.Rect((x_pos, 127), (56, 56))),
             "",
             object_id="#fav_star",
             manager=MANAGER,
@@ -304,7 +306,7 @@ class SpriteInspectScreen(Screens):
         )
 
         self.cat_elements["not_favourite_button"] = UIImageButton(
-            scale(pygame.Rect((x_pos, 127), (56, 56))),
+            ui_scale(pygame.Rect((x_pos, 127), (56, 56))),
             "",
             object_id="#not_fav_star",
             manager=MANAGER,
@@ -374,7 +376,7 @@ class SpriteInspectScreen(Screens):
 
         if not cat_value_to_allow:
             self.checkboxes[name] = UIImageButton(
-                scale(pygame.Rect(location, (102, 102))),
+                ui_scale(pygame.Rect(location, (102, 102))),
                 "",
                 object_id=disabled_object_id,
                 starting_height=2,
@@ -382,14 +384,14 @@ class SpriteInspectScreen(Screens):
             self.checkboxes[name].disable()
         elif stored_bool:
             self.checkboxes[name] = UIImageButton(
-                scale(pygame.Rect(location, (102, 102))),
+                ui_scale(pygame.Rect(location, (102, 102))),
                 "",
                 object_id="@checked_checkbox",
                 starting_height=2,
             )
         else:
             self.checkboxes[name] = UIImageButton(
-                scale(pygame.Rect(location, (102, 102))),
+                ui_scale(pygame.Rect(location, (102, 102))),
                 "",
                 object_id="@unchecked_checkbox",
                 starting_height=2,
@@ -410,8 +412,8 @@ class SpriteInspectScreen(Screens):
         )
 
         self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((450, 200), (700, 700))),
-            pygame.transform.scale(self.cat_image, scale_dimentions((700, 700))),
+            ui_scale(pygame.Rect((450, 200), (700, 700))),
+            pygame.transform.scale(self.cat_image, scale_dimensions((700, 700))),
         )
 
     def determine_previous_and_next_cat(self):

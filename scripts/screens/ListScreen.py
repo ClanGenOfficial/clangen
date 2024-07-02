@@ -11,7 +11,7 @@ from scripts.game_structure.ui_elements import (
     UICatListDisplay,
 )
 from scripts.screens.Screens import Screens
-from scripts.utility import scale, get_text_box_theme
+from scripts.utility import ui_scale, get_text_box_theme
 
 
 class ListScreen(Screens):
@@ -215,7 +215,7 @@ class ListScreen(Screens):
 
         # SCREEN CONTAINER - everything should come back to here
         self.list_screen_container = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((0, 0), (1600, 1400))),
+            ui_scale(pygame.Rect((0, 0), (1600, 1400))),
             object_id="#list_screen",
             starting_height=1,
             manager=MANAGER,
@@ -224,7 +224,7 @@ class ListScreen(Screens):
 
         # BAR CONTAINER
         self.cat_list_bar = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((209, 268), (1400, 800))),
+            ui_scale(pygame.Rect((209, 268), (1400, 800))),
             object_id="#cat_list_bar",
             starting_height=3,
             manager=MANAGER,
@@ -236,7 +236,7 @@ class ListScreen(Screens):
 
         # FAVORITE CAT TOGGLE
         self.cat_list_bar_elements["fav_toggle"] = UIImageButton(
-            scale(pygame.Rect((0, 0), (76, 68))),
+            ui_scale(pygame.Rect((0, 0), (76, 68))),
             "",
             object_id="#fav_cat_toggle_on"
             if game.clan.clan_settings["show fav"]
@@ -250,7 +250,7 @@ class ListScreen(Screens):
 
         # SEARCH BAR
         self.cat_list_bar_elements["search_bar_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((72, 0), (276, 68))),
+            ui_scale(pygame.Rect((72, 0), (276, 68))),
             pygame.image.load("resources/images/search_bar.png").convert_alpha(),
             container=self.cat_list_bar,
             object_id="#search_bar",
@@ -261,7 +261,7 @@ class ListScreen(Screens):
         self.cat_list_bar_elements[
             "search_bar_entry"
         ] = pygame_gui.elements.UITextEntryLine(
-            scale(pygame.Rect((90, 9), (245, 55))),
+            ui_scale(pygame.Rect((90, 9), (245, 55))),
             object_id="#search_entry_box",
             placeholder_text="name search",
             container=self.cat_list_bar,
@@ -270,7 +270,7 @@ class ListScreen(Screens):
 
         # SHOW LIVING/DEAD
         self.cat_list_bar_elements["view_button"] = UIImageButton(
-            scale(pygame.Rect((344, 0), (206, 68))),
+            ui_scale(pygame.Rect((344, 0), (206, 68))),
             "",
             object_id="#show_dead_button"
             if self.death_status != "dead"
@@ -288,7 +288,7 @@ class ListScreen(Screens):
 
         # CHOOSE GROUP DROPDOWN
         self.cat_list_bar_elements["choose_group_button"] = UIImageButton(
-            scale(pygame.Rect((546, 0), (380, 68))),
+            ui_scale(pygame.Rect((546, 0), (380, 68))),
             "",
             container=self.cat_list_bar,
             object_id="#choose_group_button",
@@ -298,7 +298,7 @@ class ListScreen(Screens):
 
         # living groups
         self.living_groups_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((546, 64), (0, 0))),
+            ui_scale(pygame.Rect((546, 64), (0, 0))),
             container=self.cat_list_bar,
             object_id="#choose_group_container",
             manager=MANAGER,
@@ -308,7 +308,7 @@ class ListScreen(Screens):
         y_pos = 0
         for object_id in ["#view_your_clan_button", "#view_cotc_button"]:
             self.choose_group_buttons[object_id.strip("#")] = UIImageButton(
-                scale(pygame.Rect((0, y_pos), (380, 68))),
+                ui_scale(pygame.Rect((0, y_pos), (380, 68))),
                 "",
                 container=self.living_groups_container,
                 object_id=object_id,
@@ -332,7 +332,7 @@ class ListScreen(Screens):
 
         # dead groups
         self.dead_groups_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((546, 64), (0, 0))),
+            ui_scale(pygame.Rect((546, 64), (0, 0))),
             container=self.cat_list_bar,
             object_id="#choose_group_container",
             manager=MANAGER,
@@ -347,7 +347,7 @@ class ListScreen(Screens):
             "#view_dark_forest_button",
         ]:
             self.choose_group_buttons[object_id.strip("#")] = UIImageButton(
-                scale(pygame.Rect((0, y_pos), (380, 68))),
+                ui_scale(pygame.Rect((0, y_pos), (380, 68))),
                 "",
                 container=self.dead_groups_container,
                 object_id=object_id,
@@ -358,7 +358,7 @@ class ListScreen(Screens):
             y_pos += 64
 
         self.choose_dead_dropdown = UIDropDownContainer(
-            scale(pygame.Rect((546, 0), (0, 0))),
+            ui_scale(pygame.Rect((546, 0), (0, 0))),
             container=self.cat_list_bar,
             object_id="#choose_living_dropdown",
             starting_height=1,
@@ -372,7 +372,7 @@ class ListScreen(Screens):
 
         # SORT BY
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
-            scale(pygame.Rect((922, 0), (276, 68))),
+            ui_scale(pygame.Rect((922, 0), (276, 68))),
             "",
             container=self.cat_list_bar,
             object_id=f"#filter_by_{game.sort_type}_button",
@@ -381,7 +381,7 @@ class ListScreen(Screens):
         )
 
         self.sort_by_button_container = pygame_gui.elements.UIAutoResizingContainer(
-            scale(pygame.Rect((1070, 64), (0, 0))),
+            ui_scale(pygame.Rect((1070, 64), (0, 0))),
             container=self.cat_list_bar,
             object_id="#sort_by_button_container",
             starting_height=2,
@@ -398,7 +398,7 @@ class ListScreen(Screens):
             "#filter_death_button",
         ]:
             self.sort_by_buttons[object_id.strip("#")] = UIImageButton(
-                scale(pygame.Rect((0, y_pos), (128, 68))),
+                ui_scale(pygame.Rect((0, y_pos), (128, 68))),
                 "",
                 object_id=object_id,
                 container=self.sort_by_button_container,
@@ -408,7 +408,7 @@ class ListScreen(Screens):
             y_pos += 64
 
         self.sort_by_dropdown = UIDropDownContainer(
-            scale(pygame.Rect((1070, 62), (0, 0))),
+            ui_scale(pygame.Rect((1070, 62), (0, 0))),
             container=self.cat_list_bar,
             object_id="#sort_by_dropdown",
             starting_height=2,
@@ -450,7 +450,7 @@ class ListScreen(Screens):
         # CAT DISPLAY
         # first/prev/next/last page buttons
         self.display_container_elements["first_page_button"] = UIImageButton(
-            scale(pygame.Rect((570, 1200), (68, 68))),
+            ui_scale(pygame.Rect((570, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
             starting_height=2,
@@ -458,7 +458,7 @@ class ListScreen(Screens):
             manager=MANAGER,
         )
         self.display_container_elements["previous_page_button"] = UIImageButton(
-            scale(pygame.Rect((620, 1200), (68, 68))),
+            ui_scale(pygame.Rect((620, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
             starting_height=2,
@@ -466,7 +466,7 @@ class ListScreen(Screens):
             manager=MANAGER,
         )
         self.display_container_elements["last_page_button"] = UIImageButton(
-            scale(pygame.Rect((962, 1200), (68, 68))),
+            ui_scale(pygame.Rect((962, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
             object_id="#arrow_double_right_button",
@@ -474,7 +474,7 @@ class ListScreen(Screens):
             manager=MANAGER,
         )
         self.display_container_elements["next_page_button"] = UIImageButton(
-            scale(pygame.Rect((912, 1200), (68, 68))),
+            ui_scale(pygame.Rect((912, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
             object_id="#arrow_right_button",
@@ -485,7 +485,7 @@ class ListScreen(Screens):
         self.display_container_elements[
             "page_entry"
         ] = pygame_gui.elements.UITextEntryLine(
-            scale(pygame.Rect((740, 1208), (60, 55))),
+            ui_scale(pygame.Rect((740, 1208), (60, 55))),
             container=self.list_screen_container,
             placeholder_text=str(self.current_page),
             object_id=get_text_box_theme("#page_entry_box")
@@ -495,7 +495,7 @@ class ListScreen(Screens):
         )
         self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((730, 1204), (200, 60))),
+            ui_scale(pygame.Rect((730, 1204), (200, 60))),
             container=self.list_screen_container,
             object_id=get_text_box_theme("#text_box_30_horizleft")
             if self.death_status == "living"
@@ -595,7 +595,7 @@ class ListScreen(Screens):
 
         if not self.cat_display:
             self.cat_display = UICatListDisplay(
-                scale(pygame.Rect((30, 170), (2000, 1000))),
+                ui_scale(pygame.Rect((30, 170), (2000, 1000))),
                 object_id="#cat_list_display",
                 starting_height=1,
                 cat_list=self.current_listed_cats,

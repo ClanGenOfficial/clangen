@@ -1978,19 +1978,6 @@
              "normal_text": "#ffffff",
              "hovered_text": "#ffffff",
              "disabled_text": "#ffffff"
-        },
-        "font": {
-            "name": "clangen",
-            "size": "20"
-        },
-        "misc": {
-            "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "6"
-        }
-    },
-    "#tailing_letters": {
-        "misc": {
-            "text_vert_alignment_padding": "5"
         }
     },
     "#switch_clan_button": {
