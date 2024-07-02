@@ -3,7 +3,7 @@ import pygame_gui.elements
 
 from .Screens import Screens
 
-from scripts.utility import get_text_box_theme, scale, mentor_skill_compatibility, get_mentor_compatibility, shorten_text_to_fit, scale_dimentions
+from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit, scale_dimentions
 from scripts.cat.cats import Cat
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import image_cache
