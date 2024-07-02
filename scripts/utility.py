@@ -2345,17 +2345,21 @@ def shorten_text_to_fit(
 
 def ui_scale(rect):
     # offset can be negative to allow for correct anchoring
-    rect[0] = round(rect[0] * (screen_scale-1))
-    rect[1] = round(rect[1] * (screen_scale-1))
+    rect[0] = round(rect[0] * screen_scale)
+    rect[1] = round(rect[1] * screen_scale)
     # if the dimensions are negative, it's dynamically scaled, ignore
-    rect[2] = round(rect[2] * (screen_scale-1)) if rect[2] > 0 else rect[2]
-    rect[3] = round(rect[3] * (screen_scale-1)) if rect[3] > 0 else rect[3]
+    rect[2] = round(rect[2] * screen_scale) if rect[2] > 0 else rect[2]
+    rect[3] = round(rect[3] * screen_scale) if rect[3] > 0 else rect[3]
 
     return rect
 
 
 def ui_scale_dimensions(dim: Tuple[int, int]):
-    return round(dim[0] * (screen_scale-1)), round(dim[1] * screen_scale)
+    return round(dim[0] * screen_scale), round(dim[1] * screen_scale)
+
+
+def ui_scale_value(dim: int):
+    return round(dim * screen_scale)
 
 
 def scale_dimensions(dim):

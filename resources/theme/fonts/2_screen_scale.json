@@ -120,7 +120,11 @@
     },
     "@heading": {
         "font": {
-            "size": "36"
+            "name": "notosans",
+            "size": "24"
+        },
+        "misc": {
+            "text_vert_alignment": "center"
         }
     }
 }

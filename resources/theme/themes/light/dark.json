@@ -1,0 +1,29 @@
+{
+    "defaults": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE",
+            "link_text": "#2E8B57",
+            "link_hover": "#556B2F",
+            "link_selected": "#556B2F"
+        }
+    },
+    "#page_entry_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#796045",
+            "normal_border": "#EFE5CE",
+            "normal_text": "#EFE5CE",
+            "selected_text": "#EFE5CE"
+        }
+    },
+    "text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE",
+            "link_text": "#2E8B57",
+            "link_hover": "#556B2F",
+            "link_selected": "#556B2F"
+        }
+    }
+}

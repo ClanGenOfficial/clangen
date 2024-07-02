@@ -149,8 +149,8 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": False,
-        "visualdebugmode": False,
+        "showbounds": True,
+        "visualdebugmode": True,
         "showfps": False,
     }
 
@@ -631,8 +631,8 @@ screen_x = 800
 screen_y = 700
 screen_scale = 1
 
-debug_force_screen_size = None
-# (2560, 1440)
+debug_force_screen_size = (2560, 1440)
+
 
 if game.settings["fullscreen"]:
     if debug_force_screen_size is not None:
@@ -712,13 +712,13 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     #
     # else:
 
-    manager.get_theme().load_theme("resources/theme/defaults_small.json")
-    manager.get_theme().load_theme("resources/theme/buttons_small.json")
-    manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
-    manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
-    manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-    manager.get_theme().load_theme("resources/theme/window_base_small.json")
-    manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
+    manager.get_theme().load_theme("resources/theme/all.json")
+    # manager.get_theme().load_theme("resources/theme/buttons_small.json")
+    # manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
+    # manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
+    # manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
+    # manager.get_theme().load_theme("resources/theme/window_base_small.json")
+    # manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
 
     manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
 

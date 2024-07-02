@@ -169,7 +169,7 @@
     "#text_box_30": {
         "prototype": "#text_box"
     },
-    "#text_box_current_version": {
+    "text_box.#current_version": {
         "prototype": "#text_box",
         "colours": {
             "normal_text": "#222222"
