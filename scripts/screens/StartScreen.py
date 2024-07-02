@@ -32,6 +32,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
     offset,
+    screen_scale,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
@@ -179,38 +180,42 @@ class StartScreen(Screens):
         # Create buttons
 
         self.continue_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 620), (384, 70))),
+            scale(pygame.Rect((140, 620), (400, 60))),
             "continue",
-            image_dict=get_button_dict("general", 192),
+            image_dict=get_button_dict("general", 200),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 710), (384, 70))),
+            scale(pygame.Rect((140, 710), (400, 60))),
             "switch clan",
-            image_dict=get_button_dict("general", 192),
+            image_dict=get_button_dict("general", 200, screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.new_clan_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 800), (384, 70))),
+            scale(pygame.Rect((140, 800), (400, 60))),
             "new clan",
-            image_dict=get_button_dict("general", 192),
+            image_dict=get_button_dict("general", 200, screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.settings_button = UISurfaceImageButton(
-            scale(pygame.Rect((140, 890), (384, 70))),
+            scale(pygame.Rect((140, 890), (400, 60))),
             "settings",
-            image_dict=get_button_dict("general", 192),
-            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
+            image_dict=get_button_dict("general", 200, screen_scale),
+            object_id=ObjectID(
+                class_id="@startscreen_main", object_id="#tailing_letters"
+            ),
             manager=MANAGER,
         )
         self.quit = UISurfaceImageButton(
-            scale(pygame.Rect((140, 980), (384, 70))),
+            scale(pygame.Rect((140, 980), (400, 60))),
             "quit",
-            image_dict=get_button_dict("general", 192),
-            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
+            image_dict=get_button_dict("general", 200, screen_scale),
+            object_id=ObjectID(
+                class_id="@startscreen_main", object_id="#tailing_letters"
+            ),
             manager=MANAGER,
         )
 

@@ -20,22 +20,19 @@ buttonstyles = {
 
 def generate_button(base: pygame.Surface, width: int, scale=1):
 
-    height = base.size[1]
+    height = base.height
     left = base.subsurface((0, 0), (height, height))
     middle = base.subsurface((height, 0), (height, height))
     right = base.subsurface((height * 2, 0), (height, height))
     width_bookends = height * 2
-    width_middle = middle.size[0]
-    total_count = 0
-    while width_bookends + (total_count * width_middle) < width:
-        total_count += 1
 
     if width - width_bookends > 0:
         middle = pygame.transform.scale(middle, (width - width_bookends, middle.height))
     else:
         middle = pygame.transform.scale(middle, (1, middle.height))
-    new_width = width_bookends + middle.width
-    surface = pygame.Surface((new_width, left.size[0]), pygame.SRCALPHA)
+    surface = pygame.Surface(
+        (left.width * 2 + middle.width, left.height), pygame.SRCALPHA
+    )
     surface.convert_alpha()
     surface.fblits(
         (

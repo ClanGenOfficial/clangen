@@ -1981,11 +1981,16 @@
         },
         "font": {
             "name": "clangen",
-            "size": "22"
+            "size": "20"
         },
         "misc": {
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "7"
+            "text_vert_alignment_padding": "6"
+        }
+    },
+    "#tailing_letters": {
+        "misc": {
+            "text_vert_alignment_padding": "5"
         }
     },
     "#switch_clan_button": {
