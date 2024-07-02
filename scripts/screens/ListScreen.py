@@ -5,7 +5,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UINamedCatListDisplay
+from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer, UICatListDisplay
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme
 
@@ -171,6 +171,7 @@ class ListScreen(Screens):
                 self.change_screen("camp screen")
             elif event.key == pygame.K_RIGHT:
                 self.change_screen("patrol screen")
+
     def screen_switches(self):
 
         self.set_disabled_menu_buttons(["catlist_screen"])
@@ -376,6 +377,7 @@ class ListScreen(Screens):
             visible=False,
             manager=MANAGER
         )
+        self.sc_bg.disable()
         self.ur_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
@@ -405,6 +407,7 @@ class ListScreen(Screens):
             scale(pygame.Rect((570, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
+            starting_height=2,
             object_id="#arrow_double_left_button",
             manager=MANAGER,
         )
@@ -412,6 +415,7 @@ class ListScreen(Screens):
             scale(pygame.Rect((620, 1200), (68, 68))),
             "",
             container=self.list_screen_container,
+            starting_height=2,
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
@@ -420,6 +424,7 @@ class ListScreen(Screens):
             "",
             container=self.list_screen_container,
             object_id="#arrow_double_right_button",
+            starting_height=2,
             manager=MANAGER,
         )
         self.display_container_elements["next_page_button"] = UIImageButton(
@@ -427,6 +432,7 @@ class ListScreen(Screens):
             "",
             container=self.list_screen_container,
             object_id="#arrow_right_button",
+            starting_height=2,
             manager=MANAGER,
         )
         # page number
@@ -448,14 +454,13 @@ class ListScreen(Screens):
             manager=MANAGER,
         )  # Text will be filled in later
 
-
-
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
 
     def exit_screen(self):
         self.cat_display.clear_display()
+        self.cat_display.kill()
         self.cat_display = None
         self.list_screen_container.kill()
 
@@ -525,9 +530,8 @@ class ListScreen(Screens):
         self.display_container_elements["page_number"].set_text(f"/{self.all_pages}")
 
         if not self.cat_display:
-            self.cat_display = UINamedCatListDisplay(
+            self.cat_display = UICatListDisplay(
                 scale(pygame.Rect((30, 170), (2000, 1000))),
-                container=self.list_screen_container,
                 object_id="#cat_list_display",
                 starting_height=1,
                 cat_list=self.current_listed_cats,
@@ -542,7 +546,8 @@ class ListScreen(Screens):
                 current_page=self.current_page,
                 text_theme=get_text_box_theme("#text_box_30_horizcenter") if self.death_status == "living"
                 else "#text_box_30_horizcenter_light",
-                manager=MANAGER
+                manager=MANAGER,
+                include_names=True
             )
         else:
             self.cat_display.text_theme = (
