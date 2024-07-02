@@ -965,6 +965,7 @@ def get_personality_compatibility(cat1, cat2):
 
     return None
 
+
 def get_cats_of_romantic_interest(cat):
     """Returns a list of cats, those cats are love interest of the given cat"""
     cats = []
