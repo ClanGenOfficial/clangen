@@ -1181,14 +1181,14 @@ class ProfileScreen(Screens):
                 self.no_moons = UIImageButton(
                     scale(pygame.Rect((104, 1028), (68, 68))),
                     "",
-                    object_id="#unchecked_checkbox",
+                    object_id="@unchecked_checkbox",
                     tool_tip_text="Show the Moon that certain history events occurred on",
                     manager=MANAGER,
                 )
                 self.show_moons = UIImageButton(
                     scale(pygame.Rect((104, 1028), (68, 68))),
                     "",
-                    object_id="#checked_checkbox",
+                    object_id="@checked_checkbox",
                     tool_tip_text="Stop showing the Moon that certain history events occurred on",
                     manager=MANAGER,
                 )
@@ -2365,14 +2365,14 @@ class ProfileScreen(Screens):
                 self.no_moons = UIImageButton(
                     scale(pygame.Rect((104, 1028), (68, 68))),
                     "",
-                    object_id="#unchecked_checkbox",
+                    object_id="@unchecked_checkbox",
                     tool_tip_text="Show the Moon that certain history events occurred on",
                     manager=MANAGER,
                 )
                 self.show_moons = UIImageButton(
                     scale(pygame.Rect((104, 1028), (68, 68))),
                     "",
-                    object_id="#checked_checkbox",
+                    object_id="@checked_checkbox",
                     tool_tip_text="Stop showing the Moon that certain history events occurred on",
                     manager=MANAGER,
                 )
@@ -2419,7 +2419,7 @@ class ProfileScreen(Screens):
                     self.save_text = UIImageButton(
                         scale(pygame.Rect((104, 1028), (68, 68))),
                         "",
-                        object_id="#unchecked_checkbox",
+                        object_id="@unchecked_checkbox",
                         tool_tip_text="lock and save text",
                         manager=MANAGER,
                     )
@@ -2434,7 +2434,7 @@ class ProfileScreen(Screens):
                     self.edit_text = UIImageButton(
                         scale(pygame.Rect((104, 1028), (68, 68))),
                         "",
-                        object_id="#checked_checkbox_smalltooltip",
+                        object_id="@checked_checkbox_smalltooltip",
                         tool_tip_text="edit text",
                         manager=MANAGER,
                     )

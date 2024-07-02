@@ -216,20 +216,20 @@ class MakeClanScreen(Screens):
         # Logic for when to quick start clan
         elif event.ui_element == self.elements["next_step"]:
             game.settings["game_mode"] = self.game_mode
-            if "#checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
+            if "@checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
                 self.random_quick_start()
                 self.save_clan()
                 self.open_clan_saved_screen()
             else:
                 self.open_name_clan()
         elif event.ui_element == self.elements["random_clan_checkbox"]:
-            if "#checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
+            if "@checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
                 self.elements["random_clan_checkbox"].change_object_id(
-                    "#unchecked_checkbox"
+                    "@unchecked_checkbox"
                 )
             else:
                 self.elements["random_clan_checkbox"].change_object_id(
-                    "#checked_checkbox"
+                    "@checked_checkbox"
                 )
 
     def handle_game_mode_key(self, event):
@@ -1226,7 +1226,7 @@ class MakeClanScreen(Screens):
         self.elements["random_clan_checkbox"] = UIImageButton(
             scale(pygame.Rect((1120, 1240), (68, 68))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             manager=MANAGER,
             tool_tip_text="When checked, a completely random Clan starting in Newleaf will be generated.",
         )

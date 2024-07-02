@@ -461,9 +461,9 @@ class SettingsScreen(Screens):
             n = 0
             for code, desc in settings_dict[self.sub_menu].items():
                 if game.settings[code]:
-                    box_type = "#checked_checkbox"
+                    box_type = "@checked_checkbox"
                 else:
-                    box_type = "#unchecked_checkbox"
+                    box_type = "@unchecked_checkbox"
                 self.checkboxes[code] = UIImageButton(
                     scale(pygame.Rect((340, n * 78), (68, 68))),
                     "",

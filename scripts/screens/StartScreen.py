@@ -20,6 +20,7 @@ from html import escape
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
@@ -32,13 +33,14 @@ from scripts.game_structure.game_essentials import (
     MANAGER,
     offset,
 )
-from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import scale, quit  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
+from ..ui.generate_button import generate_button, get_button_dict
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -176,34 +178,39 @@ class StartScreen(Screens):
         self.hide_menu_buttons()
         # Create buttons
 
-        self.continue_button = UIImageButton(
+        self.continue_button = UISurfaceImageButton(
             scale(pygame.Rect((140, 620), (384, 70))),
-            "",
-            object_id="#continue_button",
+            "continue",
+            image_dict=get_button_dict("general", 192),
+            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
-        self.switch_clan_button = UIImageButton(
+        self.switch_clan_button = UISurfaceImageButton(
             scale(pygame.Rect((140, 710), (384, 70))),
-            "",
-            object_id="#switch_clan_button",
+            "switch clan",
+            image_dict=get_button_dict("general", 192),
+            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
-        self.new_clan_button = UIImageButton(
+        self.new_clan_button = UISurfaceImageButton(
             scale(pygame.Rect((140, 800), (384, 70))),
-            "",
-            object_id="#new_clan_button",
+            "new clan",
+            image_dict=get_button_dict("general", 192),
+            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
-        self.settings_button = UIImageButton(
+        self.settings_button = UISurfaceImageButton(
             scale(pygame.Rect((140, 890), (384, 70))),
-            "",
-            object_id="#settings_button",
+            "settings",
+            image_dict=get_button_dict("general", 192),
+            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
-        self.quit = UIImageButton(
+        self.quit = UISurfaceImageButton(
             scale(pygame.Rect((140, 980), (384, 70))),
-            "",
-            object_id="#quit_button",
+            "quit",
+            image_dict=get_button_dict("general", 192),
+            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
 
@@ -215,19 +222,21 @@ class StartScreen(Screens):
             tool_tip_text="Check out our Twitter!",
         )
         self.social_buttons["tumblr_button"] = UIImageButton(
-            scale(pygame.Rect((115, 1295), (80, 80))),
+            scale(pygame.Rect((10, 1295), (80, 80))),
             "",
             object_id="#tumblr_button",
             manager=MANAGER,
             tool_tip_text="Check out our Tumblr!",
+            anchors={"left_target": self.social_buttons["twitter_button"]},
         )
 
         self.social_buttons["discord_button"] = UIImageButton(
-            scale(pygame.Rect((205, 1295), (80, 80))),
+            scale(pygame.Rect((15, 1295), (80, 80))),
             "",
             object_id="#discord_button",
             manager=MANAGER,
             tool_tip_text="Join our Discord!",
+            anchors={"left_target": self.social_buttons["tumblr_button"]},
         )
         errorimg = image_cache.load_image(
             "resources/images/errormsg.png"
@@ -343,10 +352,11 @@ class StartScreen(Screens):
                     write_file.write(get_version_info().version_number)
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            "Warning: this game includes some mild descriptions of gore, violence, and animal abuse",
+            "Warning: this game contains mild depictions of gore, canon-typical violence, and animal abuse.",
             scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark",
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
 
         if game.clan is not None and game.switches["error_message"] == "":

@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 import ujson
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.ui_elements import UIImageButton
@@ -10,7 +11,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from scripts.utility import scale, get_text_box_theme, get_alive_status_cats
 
 
-with open('resources/clansettings.json', 'r', encoding='utf-8') as f:
+with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
 
 
@@ -34,14 +35,18 @@ class WarriorDenScreen(Screens):
         self.save_button = None
         self.active_code = None
         self.original_focus_code = None
-        self.other_clan_settings = ["sabotage other clans", "aid other clans", "raid other clans"]
+        self.other_clan_settings = [
+            "sabotage other clans",
+            "aid other clans",
+            "raid other clans",
+        ]
         self.not_classic_codes = ["hunting", "raid other clans", "hoarding"]
 
     def handle_event(self, event):
         """
         Here are button presses / events are handled.
         """
-        if game.switches['window_open']:
+        if game.switches["window_open"]:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
@@ -61,22 +66,39 @@ class WarriorDenScreen(Screens):
                         game.clan.switch_setting(code)
                         self.active_code = code
                         # only enable the save button if a focus switch is possible
-                        if game.clan.last_focus_change is None or \
-                                game.clan.last_focus_change + game.config["focus"]["duration"] <= game.clan.age:
+                        if (
+                            game.clan.last_focus_change is None
+                            or game.clan.last_focus_change
+                            + game.config["focus"]["duration"]
+                            <= game.clan.age
+                        ):
                             self.save_button.enable()
 
                         # deactivate save button if the focus didn't change or if rank prevents it
-                        if self.active_code == self.original_focus_code and self.save_button.is_enabled:
+                        if (
+                            self.active_code == self.original_focus_code
+                            and self.save_button.is_enabled
+                        ):
                             self.save_button.disable()
                         if "mediator" in description and self.save_button.is_enabled:
                             # only create the mediator list if needed to check
-                            mediator_list = list(filter(
-                                lambda x: x.status == "mediator" and not x.dead and not x.outside, Cat.all_cats_list
-                            ))
+                            mediator_list = list(
+                                filter(
+                                    lambda x: x.status == "mediator"
+                                    and not x.dead
+                                    and not x.outside,
+                                    Cat.all_cats_list,
+                                )
+                            )
                             if len(mediator_list) < 1:
                                 self.save_button.disable()
-                        elif "medicine cat" in description and self.save_button.is_enabled:
-                            meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"])
+                        elif (
+                            "medicine cat" in description
+                            and self.save_button.is_enabled
+                        ):
+                            meds = get_alive_status_cats(
+                                Cat, ["medicine cat", "medicine cat apprentice"]
+                            )
                             if len(meds) < 1:
                                 self.save_button.disable()
 
@@ -100,33 +122,39 @@ class WarriorDenScreen(Screens):
         Handle everything when it is switched to that screen.
         """
         self.hide_menu_buttons()
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "", object_id="#back_button"
-                                         , manager=MANAGER)
-        self.help_button = UIImageButton(scale(pygame.Rect(
-            (1450, 50), (68, 68))),
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((50, 50), (210, 60))),
             "",
-            object_id="#help_button", manager=MANAGER,
+            object_id=ObjectID("#back_button", "@image_button"),
+            manager=MANAGER,
+        )
+        self.help_button = UIImageButton(
+            scale(pygame.Rect((1450, 50), (68, 68))),
+            "",
+            object_id=ObjectID("#help_button", "@image_button"),
+            manager=MANAGER,
             tool_tip_text="This screen allows you to manage your warriors more effectively! You can give them a "
-                          "specific focus, which will provide some benefits (and possibly some negatives) to your "
-                          "Clan.  Some focuses are not available in classic mode.  Click on each focus to see a "
-                          "description of what they will do.  Focuses that target other Clans will allow you to "
-                          "choose which Clans you target.  Your focus can only be changed every 3 moons, "
-                          "so choose carefully.",
-
+            "specific focus, which will provide some benefits (and possibly some negatives) to your "
+            "Clan.  Some focuses are not available in classic mode.  Click on each focus to see a "
+            "description of what they will do.  Focuses that target other Clans will allow you to "
+            "choose which Clans you target.  Your focus can only be changed every 3 moons, "
+            "so choose carefully.",
         )
 
-        self.focus_frame = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                             ((100, 380), (1400, 920))),
-                                                       pygame.image.load(
-                                                           "resources/images/warrior_den_frame.png").convert_alpha(),
-                                                       object_id="#focus_frame",
-                                                       starting_height=1,
-                                                       manager=MANAGER)
+        self.focus_frame = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((100, 380), (1400, 920))),
+            pygame.image.load("resources/images/warrior_den_frame.png").convert_alpha(),
+            object_id="#focus_frame",
+            starting_height=1,
+            manager=MANAGER,
+        )
 
-        self.save_button = UIImageButton(scale(pygame.Rect((300, 1184), (278, 60))),
-                                         "",
-                                         object_id="#change_focus_button",
-                                         manager=MANAGER)
+        self.save_button = UIImageButton(
+            scale(pygame.Rect((300, 1184), (278, 60))),
+            "",
+            object_id=ObjectID("#change_focus_button", "@image_button"),
+            manager=MANAGER,
+        )
         self.save_button.disable()
         self.create_buttons()
         self.create_top_info()
@@ -146,11 +174,13 @@ class WarriorDenScreen(Screens):
         else:
             image = "base_image"
 
-        self.base_image = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                            ((885, 169), (528, 696))),
-                                                      pygame.image.load(
-                                                          f"resources/images/warrior_den/{image}.png").convert_alpha(),
-                                                      manager=MANAGER)
+        self.base_image = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((885, 169), (528, 696))),
+            pygame.image.load(
+                f"resources/images/warrior_den/{image}.png"
+            ).convert_alpha(),
+            manager=MANAGER,
+        )
 
         # check for a focus visual already onscreen and kill it so we can update the visual. if it isn't onscreen,
         # then we display the visual of the old focus (this should trigger when the screen is first opened)
@@ -158,19 +188,23 @@ class WarriorDenScreen(Screens):
             self.focus_information["focus_visual"].kill()
 
             path = settings_dict["clan_focus"][self.active_code][3]
-            self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                                       ((885, 169), (528, 696))),
-                                                                                 pygame.image.load(
-                                                                                     f"resources/images/warrior_den/{path}.png").convert_alpha(),
-                                                                                 manager=MANAGER)
+            self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((885, 169), (528, 696))),
+                pygame.image.load(
+                    f"resources/images/warrior_den/{path}.png"
+                ).convert_alpha(),
+                manager=MANAGER,
+            )
 
         else:
             path = settings_dict["clan_focus"][self.original_focus_code][3]
-            self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                                       ((885, 169), (528, 696))),
-                                                                                 pygame.image.load(
-                                                                                     f"resources/images/warrior_den/{path}.png").convert_alpha(),
-                                                                                 manager=MANAGER)
+            self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((885, 169), (528, 696))),
+                pygame.image.load(
+                    f"resources/images/warrior_den/{path}.png"
+                ).convert_alpha(),
+                manager=MANAGER,
+            )
 
     def exit_screen(self):
         """
@@ -215,7 +249,7 @@ class WarriorDenScreen(Screens):
         self.focus["button_container"] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((200, 520), (700, 800))),
             allow_scroll_x=False,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         # n increments the y placement
@@ -223,13 +257,14 @@ class WarriorDenScreen(Screens):
 
         for code, desc in settings_dict["clan_focus"].items():
 
-            self.focus_buttons[code] = UIImageButton(scale(pygame.Rect(
-                (0, n * 62), (500, 56))),
+            self.focus_buttons[code] = UIImageButton(
+                scale(pygame.Rect((0, n * 62), (500, 56))),
                 "",
-                object_id=desc[4],
+                object_id=ObjectID(desc[4], "@image_button"),
                 container=self.focus["button_container"],
                 starting_height=2,
-                manager=MANAGER)
+                manager=MANAGER,
+            )
 
             if game.clan.clan_settings[code]:
                 self.focus_buttons[code].disable()
@@ -276,7 +311,11 @@ class WarriorDenScreen(Screens):
         next_change = "0 moons"
         if game.clan.last_focus_change:
             last_change_text = "moon " + str(game.clan.last_focus_change)
-            moons = game.clan.last_focus_change + game.config["focus"]["duration"] - game.clan.age
+            moons = (
+                game.clan.last_focus_change
+                + game.config["focus"]["duration"]
+                - game.clan.age
+            )
             if moons == 1:
                 next_change = f"{moons} moon"
             elif moons > 0:
@@ -288,15 +327,17 @@ class WarriorDenScreen(Screens):
             f"<b>Current Focus:</b> {name}{desc}<br><b>Focus Last Changed:</b> {last_change_text}<br>(next change in {next_change})",
             scale(pygame.Rect((100, 145), (710, 80))),
             wrap_to_height=True,
-            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter_spacing_95"),
-            manager=MANAGER
+            # object_id=get_text_box_theme(
+            #     "#text_box_30_horizcenter_vertcenter_spacing_95"
+            # ),
+            manager=MANAGER,
         )
         self.focus_text = pygame_gui.elements.UITextBox(
             f"What should your warriors focus on?",
             scale(pygame.Rect((184, 428), (544, 30))),
             wrap_to_height=True,
-            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
-            manager=MANAGER
+            # object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+            manager=MANAGER,
         )
 
     def create_side_info(self):
@@ -309,11 +350,12 @@ class WarriorDenScreen(Screens):
 
         # create the new info text
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
-            f"<b>Selected information:</b><br>" + settings_dict["clan_focus"][self.active_code][1],
+            f"<b>Selected information:</b><br>"
+            + settings_dict["clan_focus"][self.active_code][1],
             scale(pygame.Rect((830, 932), (636, 260))),
             wrap_to_height=True,
             object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
-            manager=MANAGER
+            manager=MANAGER,
         )
 
     def save_focus(self):

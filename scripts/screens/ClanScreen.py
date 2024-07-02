@@ -221,7 +221,7 @@ class ClanScreen(Screens):
         )
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(
-            scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="#checked_checkbox"
+            scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="@checked_checkbox"
         )
 
         self.save_button = UIImageButton(
@@ -459,7 +459,7 @@ class ClanScreen(Screens):
                 scale(pygame.Rect((50, 1282), (68, 68))),
                 "",
                 starting_height=2,
-                object_id="#checked_checkbox",
+                object_id="@checked_checkbox",
             )
             self.warrior_den_label.show()
             self.clearing_label.show()
@@ -473,7 +473,7 @@ class ClanScreen(Screens):
                 scale(pygame.Rect((50, 1282), (68, 68))),
                 "",
                 starting_height=2,
-                object_id="#unchecked_checkbox",
+                object_id="@unchecked_checkbox",
             )
             self.warrior_den_label.hide()
             self.clearing_label.hide()

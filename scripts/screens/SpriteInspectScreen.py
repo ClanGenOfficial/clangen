@@ -348,7 +348,7 @@ class SpriteInspectScreen(Screens):
             "override_dead_lineart",
             self.override_dead_lineart,
             self.the_cat.dead,
-            disabled_object_id="#checked_checkbox",
+            disabled_object_id="@checked_checkbox",
         )
 
         # "Show as healthy"
@@ -357,7 +357,7 @@ class SpriteInspectScreen(Screens):
             "override_not_working",
             self.override_not_working,
             self.the_cat.not_working(),
-            disabled_object_id="#checked_checkbox",
+            disabled_object_id="@checked_checkbox",
         )
 
     def make_one_checkbox(
@@ -366,7 +366,7 @@ class SpriteInspectScreen(Screens):
         name: str,
         stored_bool: bool,
         cat_value_to_allow=True,
-        disabled_object_id="#unchecked_checkbox",
+        disabled_object_id="@unchecked_checkbox",
     ):
         """Makes a single checkbox. So I don't have to copy and paste this 5 times.
         if cat_value_to_allow evaluates to False, then the unchecked checkbox is always used the the checkbox
@@ -384,14 +384,14 @@ class SpriteInspectScreen(Screens):
             self.checkboxes[name] = UIImageButton(
                 scale(pygame.Rect(location, (102, 102))),
                 "",
-                object_id="#checked_checkbox",
+                object_id="@checked_checkbox",
                 starting_height=2,
             )
         else:
             self.checkboxes[name] = UIImageButton(
                 scale(pygame.Rect(location, (102, 102))),
                 "",
-                object_id="#unchecked_checkbox",
+                object_id="@unchecked_checkbox",
                 starting_height=2,
             )
 

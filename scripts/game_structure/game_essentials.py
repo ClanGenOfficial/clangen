@@ -631,7 +631,8 @@ screen_x = 800
 screen_y = 700
 screen_scale = 1
 
-debug_force_screen_size = (2560, 1440)
+debug_force_screen_size = None
+# (2560, 1440)
 
 if game.settings["fullscreen"]:
     if debug_force_screen_size is not None:
@@ -685,6 +686,9 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
         italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
         bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
+    )
+    manager.add_font_paths(
+        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
     # if res[0] > 800:

@@ -388,18 +388,18 @@ class RelationshipScreen(Screens):
         self.checkboxes = {}
 
         if game.clan.clan_settings["show dead relation"]:
-            checkbox_type = "#checked_checkbox"
+            checkbox_type = "@checked_checkbox"
         else:
-            checkbox_type = "#unchecked_checkbox"
+            checkbox_type = "@unchecked_checkbox"
 
         self.checkboxes["show_dead"] = UIImageButton(
             scale(pygame.Rect((156, 1010), (68, 68))), "", object_id=checkbox_type
         )
 
         if game.clan.clan_settings["show empty relation"]:
-            checkbox_type = "#checked_checkbox"
+            checkbox_type = "@checked_checkbox"
         else:
-            checkbox_type = "#unchecked_checkbox"
+            checkbox_type = "@unchecked_checkbox"
 
         self.checkboxes["show_empty"] = UIImageButton(
             scale(pygame.Rect((156, 1100), (68, 68))), "", object_id=checkbox_type

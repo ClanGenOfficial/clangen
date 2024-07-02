@@ -1,5 +1,5 @@
 {
-    "#image_button": {
+    "@image_button": {
         "colours": {
             "normal_bg": "#00000000",
             "hovered_bg": "#00000000",
@@ -27,7 +27,6 @@
         }
     },
     "#blank_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/blank.png"
@@ -44,7 +43,6 @@
         }
     },
     "#blank_button_small": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/blank.png"
@@ -61,7 +59,6 @@
         }
     },
     "#retire_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/retire.png"
@@ -78,7 +75,6 @@
         }
     },
     "#unknown_residence_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/unknown.png"
@@ -95,7 +91,6 @@
         }
     },
     "#mediate_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/mediate.png"
@@ -112,7 +107,6 @@
         }
     },
     "#sabotage_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sabotage.png"
@@ -129,7 +123,6 @@
         }
     },
     "#mediation_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/mediation.png"
@@ -146,7 +139,6 @@
         }
     },
     "#quit_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/quit.png"
@@ -163,7 +155,6 @@
         }
     },
     "#switch_mediator_app_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_mediator_app.png"
@@ -180,7 +171,6 @@
         }
     },
     "#switch_mediator_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_mediator.png"
@@ -197,7 +187,6 @@
         }
     },
     "#manage_roles_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/manage_roles.png"
@@ -214,7 +203,6 @@
         }
     },
     "#toggle_fullscreen_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/toggle_fullscreen.png"
@@ -231,7 +219,6 @@
         }
     },
     "#open_data_directory_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/data_directory.png"
@@ -245,7 +232,6 @@
         }
     },
     "#greenleaf_toggle_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/greenleaf_toggle.png"
@@ -262,7 +248,6 @@
         }
     },
     "#newleaf_toggle_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/newleaf_toggle.png"
@@ -279,7 +264,6 @@
         }
     },
     "#leafbare_toggle_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/leafbare_toggle.png"
@@ -296,7 +280,6 @@
         }
     },
     "#leaffall_toggle_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/leaffall_toggle.png"
@@ -313,7 +296,6 @@
         }
     },
     "#grandparents_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/grandparents.png"
@@ -330,7 +312,6 @@
         }
     },
     "#cousins_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cousins.png"
@@ -347,7 +328,6 @@
         }
     },
     "#grandkits_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/grandkits.png"
@@ -364,7 +344,6 @@
         }
     },
     "#kits_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/kits.png"
@@ -381,7 +360,6 @@
         }
     },
     "#kitsmates_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/kitsmates.png"
@@ -398,7 +376,6 @@
         }
     },
     "#mates_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/mates.png"
@@ -415,7 +392,6 @@
         }
     },
     "#parents_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/parents.png"
@@ -432,7 +408,6 @@
         }
     },
     "#parentsiblings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/parentsiblings.png"
@@ -449,7 +424,6 @@
         }
     },
     "#siblingkits_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/siblingkits.png"
@@ -466,7 +440,6 @@
         }
     },
     "#siblingmates_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/siblingmates.png"
@@ -483,7 +456,6 @@
         }
     },
     "#siblings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/siblings.png"
@@ -500,7 +472,6 @@
         }
     },
     "#log_icon": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/log_icon.png"
@@ -517,7 +488,6 @@
         }
     },
     "#tumblr_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/tumblr.png"
@@ -534,7 +504,6 @@
         }
     },
     "#twitter_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/twitter.png"
@@ -551,7 +520,6 @@
         }
     },
     "#discord_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/discord.png"
@@ -568,7 +536,6 @@
         }
     },
     "#arrow_left_fancy": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_right_fancy.png"
@@ -585,7 +552,6 @@
         }
     },
     "#arrow_right_fancy": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_left_fancy.png"
@@ -602,7 +568,6 @@
         }
     },
     "#magnify_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/magnify.png"
@@ -619,7 +584,6 @@
         }
     },
     "#save_image_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/save_image.png"
@@ -636,7 +600,6 @@
         }
     },
     "#image_small_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/image_small.png"
@@ -653,7 +616,6 @@
         }
     },
     "#image_medium_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/image_medium.png"
@@ -670,7 +632,6 @@
         }
     },
     "#image_large_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/image_large.png"
@@ -687,7 +648,6 @@
         }
     },
     "#mates_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/mates_tab.png"
@@ -704,7 +664,6 @@
         }
     },
     "#offspring_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/offspring_tab.png"
@@ -721,7 +680,6 @@
         }
     },
     "#potential_mates_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/potential_mates_tab.png"
@@ -738,7 +696,6 @@
         }
     },
     "#adoptive_parents": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/adoptive_parents.png"
@@ -755,7 +712,6 @@
         }
     },
     "#set_adoptive_parent": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/set_adoptive_parent.png"
@@ -772,7 +728,6 @@
         }
     },
     "#unset_adoptive_parent": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/unset_adoptive_parent.png"
@@ -786,7 +741,6 @@
         }
     },
     "#adoptive_parents_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/adoptive_parents_tab.png"
@@ -803,7 +757,6 @@
         }
     },
     "#birth_parents_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/birth_parents_tab.png"
@@ -820,7 +773,6 @@
         }
     },
     "#potential_parents_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/potential_parents_tab.png"
@@ -837,7 +789,6 @@
         }
     },
     "#role_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/role_settings.png"
@@ -854,7 +805,6 @@
         }
     },
     "#clan_stats_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_stats.png"
@@ -871,7 +821,6 @@
         }
     },
     "#switch_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_focus.png"
@@ -888,7 +837,6 @@
         }
     },
     "#view_profile_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/view_profile.png"
@@ -905,7 +853,6 @@
         }
     },
     "#begin_anew_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/begin_anew.png"
@@ -922,7 +869,6 @@
         }
     },
     "#delete_it_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/delete_it.png"
@@ -939,7 +885,6 @@
         }
     },
     "#go_back_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/go_back.png"
@@ -956,7 +901,6 @@
         }
     },
     "#not_yet_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/not_yet.png"
@@ -973,7 +917,6 @@
         }
     },
     "#cancel_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cancel.png"
@@ -990,7 +933,6 @@
         }
     },
     "#fav_star": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/fav_star.png"
@@ -1007,7 +949,6 @@
         }
     },
     "#not_fav_star": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/fav_star_unavailable.png"
@@ -1024,7 +965,6 @@
         }
     },
     "#fav_cat_toggle_on": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/fav_cat.png"
@@ -1041,7 +981,6 @@
         }
     },
     "#fav_cat_toggle_off": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/fav_cat_unavailable.png"
@@ -1058,7 +997,6 @@
         }
     },
     "#help_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/help.png"
@@ -1075,7 +1013,6 @@
         }
     },
     "#leader_ceremony_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/leader_ceremony.png"
@@ -1092,7 +1029,6 @@
         }
     },
     "#guide_sc_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/guide_sc.png"
@@ -1109,7 +1045,6 @@
         }
     },
     "#filter_by_rank_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filtered_by_rank.png"
@@ -1126,7 +1061,6 @@
         }
     },
     "#filter_by_exp_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filtered_by_exp.png"
@@ -1143,7 +1077,6 @@
         }
     },
     "#filter_by_id_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filtered_by_id.png"
@@ -1160,7 +1093,6 @@
         }
     },
     "#filter_by_death_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filtered_by_death.png"
@@ -1177,7 +1109,6 @@
         }
     },
     "#filter_by_age_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filtered_by_age.png"
@@ -1194,7 +1125,6 @@
         }
     },
     "#filter_by_reverse_age_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filtered_by_age_reverse.png"
@@ -1211,7 +1141,6 @@
         }
     },
     "#filter_rank_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filter_rank.png"
@@ -1228,7 +1157,6 @@
         }
     },
     "#filter_age_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filter_age.png"
@@ -1245,7 +1173,6 @@
         }
     },
     "#filter_reverse_age_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filter_age_reverse.png"
@@ -1262,7 +1189,6 @@
         }
     },
     "#filter_id_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filter_id.png"
@@ -1279,7 +1205,6 @@
         }
     },
     "#filter_exp_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filter_exp.png"
@@ -1296,7 +1221,6 @@
         }
     },
     "#filter_death_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filter_death.png"
@@ -1313,7 +1237,6 @@
         }
     },
     "#med_den_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/med_den.png"
@@ -1330,7 +1253,6 @@
         }
     },
     "#clearing_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clearing.png"
@@ -1347,7 +1269,6 @@
         }
     },
     "#in_den_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/med_den_in_den.png"
@@ -1364,7 +1285,6 @@
         }
     },
     "#out_den_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/med_den_out_den.png"
@@ -1381,7 +1301,6 @@
         }
     },
     "#minor_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/med_den_minor.png"
@@ -1398,7 +1317,6 @@
         }
     },
     "#med_cat_den_hover": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/med_cat_den/base.png"
@@ -1415,7 +1333,6 @@
         }
     },
     "#med_cat_den_hover_big": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/med_cat_den/base.png"
@@ -1432,7 +1349,6 @@
         }
     },
     "#med_den_log_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/med_den_log.png"
@@ -1449,7 +1365,6 @@
         }
     },
     "#hurt_sick_cats_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/hurt_sick_cats.png"
@@ -1466,7 +1381,6 @@
         }
     },
     "#add_one_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/add_1.png"
@@ -1483,7 +1397,6 @@
         }
     },
     "#add_three_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/add_3.png"
@@ -1500,7 +1413,6 @@
         }
     },
     "#add_six_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/add_6.png"
@@ -1517,7 +1429,6 @@
         }
     },
     "#add_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/add_cat.png"
@@ -1534,7 +1445,6 @@
         }
     },
     "#paw_patrol_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/button_paw.png"
@@ -1551,7 +1461,6 @@
         }
     },
     "#claws_patrol_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/button_claws.png"
@@ -1568,7 +1477,6 @@
         }
     },
     "#herb_patrol_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/button_herb.png"
@@ -1585,7 +1493,6 @@
         }
     },
     "#mouse_patrol_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/button_mouse.png"
@@ -1602,7 +1509,6 @@
         }
     },
     "#patrol_next_page": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/patrol_arrow_r.png"
@@ -1619,7 +1525,6 @@
         }
     },
     "#patrol_last_page": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/patrol_arrow_l.png"
@@ -1636,7 +1541,6 @@
         }
     },
     "#patrol_cats_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/patrol2.png"
@@ -1653,7 +1557,6 @@
         }
     },
     "#skills_cats_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/skills_traits.png"
@@ -1670,7 +1573,6 @@
         }
     },
     "#remove_all_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/remove_all.png"
@@ -1687,7 +1589,6 @@
         }
     },
     "#patrol_select_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/patrol_select.png"
@@ -1704,7 +1605,6 @@
         }
     },
     "#remove_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/remove_cat.png"
@@ -1721,7 +1621,6 @@
         }
     },
     "#start_patrol_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/go_patrol.png"
@@ -1738,7 +1637,6 @@
         }
     },
     "#proceed_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/proceed.png"
@@ -1755,7 +1653,6 @@
         }
     },
     "#not_proceed_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/do_not_proceed.png"
@@ -1772,7 +1669,6 @@
         }
     },
     "#antagonize_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/antagonize.png"
@@ -1789,7 +1685,6 @@
         }
     },
     "#return_to_clan": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/back_to_clan.png"
@@ -1806,7 +1701,6 @@
         }
     },
     "#patrol_again": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/patrol_again.png"
@@ -1823,7 +1717,6 @@
         }
     },
     "#confirm_mentor_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_mentor2.png"
@@ -1840,7 +1733,6 @@
         }
     },
     "#remove_mentor_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/remove_mentor2.png"
@@ -1857,7 +1749,6 @@
         }
     },
     "#relation_list_previous": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/relationship_list_arrow_l.png"
@@ -1874,7 +1765,6 @@
         }
     },
     "#relation_list_next": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/relationship_list_arrow_r.png"
@@ -1891,7 +1781,6 @@
         }
     },
     "#confirm_mate_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/its_official.png"
@@ -1908,7 +1797,6 @@
         }
     },
     "#break_up_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/break_up.png"
@@ -1925,7 +1813,6 @@
         }
     },
     "#events_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cat_icon.png"
@@ -1942,7 +1829,6 @@
         }
     },
     "#arrow_mns_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_mns.png"
@@ -1959,7 +1845,6 @@
         }
     },
     "#arrow_mns_closed_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_mns_closed.png"
@@ -1976,7 +1861,6 @@
         }
     },
     "#mns_bg": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/moons_n_seasons.png"
@@ -1993,7 +1877,6 @@
         }
     },
     "#mns_bg_closed": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/moons_n_seasons_closed.png"
@@ -2010,7 +1893,6 @@
         }
     },
     "#mns_image_moon": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/icon_moon.png"
@@ -2027,7 +1909,6 @@
         }
     },
     "#mns_image_newleaf": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/icon_newleaf.png"
@@ -2044,7 +1925,6 @@
         }
     },
     "#mns_image_greenleaf": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/icon_greenleaf.png"
@@ -2061,7 +1941,6 @@
         }
     },
     "#mns_image_leafbare": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/icon_leafbare.png"
@@ -2078,7 +1957,6 @@
         }
     },
     "#mns_image_leaffall": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/icon_leaffall.png"
@@ -2094,25 +1972,23 @@
             }
         }
     },
-    "#continue_button": {
-        "prototype": "#image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/continue.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/continue_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/continue_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/continue_unavailable.png"
-            }
+    "@startscreen_main": {
+        "prototype": "@image_button",
+        "colours": {
+             "normal_text": "#ffffff",
+             "hovered_text": "#ffffff",
+             "disabled_text": "#ffffff"
+        },
+        "font": {
+            "name": "clangen",
+            "size": "22"
+        },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "7"
         }
     },
     "#switch_clan_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_clan.png"
@@ -2129,7 +2005,6 @@
         }
     },
     "#new_clan_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/new_clan.png"
@@ -2143,7 +2018,6 @@
         }
     },
     "#settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/settings.png"
@@ -2157,7 +2031,6 @@
         }
     },
     "#update_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/update_available.png"
@@ -2168,7 +2041,6 @@
         }
     },
     "#new_update_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/new_update.png"
@@ -2176,7 +2048,6 @@
         }
     },
     "#done_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/done.png"
@@ -2193,7 +2064,6 @@
         }
     },
     "#back_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/back.png"
@@ -2210,7 +2080,6 @@
         }
     },
     "#exit_window_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/exit_window_button.png"
@@ -2227,7 +2096,6 @@
         }
     },
     "#timeskip_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/timeskip_moon.png"
@@ -2244,7 +2112,6 @@
         }
     },
     "#events_menu_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/events.png"
@@ -2261,7 +2128,6 @@
         }
     },
     "#camp_menu_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/camp.png"
@@ -2278,7 +2144,6 @@
         }
     },
     "#catlist_menu_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/catlist.png"
@@ -2295,7 +2160,6 @@
         }
     },
     "#patrol_menu_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/patrol.png"
@@ -2312,7 +2176,6 @@
         }
     },
     "#main_menu_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/main_menu.png"
@@ -2329,7 +2192,6 @@
         }
     },
     "#smallquit_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/smallquit.png"
@@ -2346,7 +2208,6 @@
         }
     },
     "#allegiances_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/allegiances.png"
@@ -2363,7 +2224,6 @@
         }
     },
     "#clan_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_settings.png"
@@ -2380,7 +2240,6 @@
         }
     },
     "#clan_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_events.png"
@@ -2397,7 +2256,6 @@
         }
     },
     "#relationship_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_relationships.png"
@@ -2414,7 +2272,6 @@
         }
     },
     "#all_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_all.png"
@@ -2431,7 +2288,6 @@
         }
     },
     "#birth_death_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_birth_death.png"
@@ -2448,7 +2304,6 @@
         }
     },
     "#ceremony_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_ceremonies.png"
@@ -2465,7 +2320,6 @@
         }
     },
     "#health_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_health.png"
@@ -2482,7 +2336,6 @@
         }
     },
     "#misc_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_misc.png"
@@ -2499,7 +2352,6 @@
         }
     },
     "#other_clans_events_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/event_other_clans.png"
@@ -2516,7 +2368,6 @@
         }
     },
     "#save_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/save_clan.png"
@@ -2533,7 +2384,6 @@
         }
     },
     "#your_clan_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/your_clan.png"
@@ -2550,7 +2400,6 @@
         }
     },
     "#outside_clan_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/outside_clan.png"
@@ -2567,7 +2416,6 @@
         }
     },
     "#arrow_right_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_right.png"
@@ -2584,7 +2432,6 @@
         }
     },
     "#arrow_left_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_left.png"
@@ -2601,7 +2448,6 @@
         }
     },
     "#arrow_double_right_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_double_right.png"
@@ -2618,7 +2464,6 @@
         }
     },
     "#arrow_double_left_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/arrow_double_left.png"
@@ -2635,7 +2480,6 @@
         }
     },
     "#to_living_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/to_living.png"
@@ -2652,7 +2496,6 @@
         }
     },
     "#to_dead_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/to_dead.png"
@@ -2669,7 +2512,6 @@
         }
     },
     "#starclan_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sc_toggle.png"
@@ -2686,7 +2528,6 @@
         }
     },
     "#dark_forest_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/df_toggle.png"
@@ -2703,7 +2544,6 @@
         }
     },
     "#previous_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/previous_cat.png"
@@ -2720,7 +2560,6 @@
         }
     },
     "#next_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/next_cat.png"
@@ -2737,7 +2576,6 @@
         }
     },
     "#relations_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/relations.png"
@@ -2754,7 +2592,6 @@
         }
     },
     "#family_tree_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/family_tree.png"
@@ -2771,7 +2608,6 @@
         }
     },
     "#see_relationships_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/see_relationships.png"
@@ -2788,7 +2624,6 @@
         }
     },
     "#choose_mate_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/choose_mate.png"
@@ -2805,7 +2640,6 @@
         }
     },
     "#change_mentor_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_mentor.png"
@@ -2822,7 +2656,6 @@
         }
     },
     "#close_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/close.png"
@@ -2839,7 +2672,6 @@
         }
     },
     "#roles_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/roles.png"
@@ -2856,7 +2688,6 @@
         }
     },
     "#promote_leader_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/promote_leader.png"
@@ -2873,7 +2704,6 @@
         }
     },
     "#promote_deputy_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/promote_deputy.png"
@@ -2890,7 +2720,6 @@
         }
     },
     "#switch_med_app_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_med_app.png"
@@ -2907,7 +2736,6 @@
         }
     },
     "#switch_warrior_app_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_warrior_app.png"
@@ -2924,7 +2752,6 @@
         }
     },
     "#switch_med_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_med_cat.png"
@@ -2941,7 +2768,6 @@
         }
     },
     "#switch_warrior_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/switch_warrior.png"
@@ -2958,7 +2784,6 @@
         }
     },
     "#personal_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/personal.png"
@@ -2975,7 +2800,6 @@
         }
     },
     "#specify_gender_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/specify_gender.png"
@@ -2992,7 +2816,6 @@
         }
     },
     "#change_trans_male_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_trans_male.png"
@@ -3009,7 +2832,6 @@
         }
     },
     "#change_trans_female_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_trans_female.png"
@@ -3026,7 +2848,6 @@
         }
     },
     "#change_cis_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_cis.png"
@@ -3043,7 +2864,6 @@
         }
     },
     "#change_nonbi_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_nonbi.png"
@@ -3060,7 +2880,6 @@
         }
     },
     "#cat_toggles_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cat_toggles.png"
@@ -3077,7 +2896,6 @@
         }
     },
     "#change_name_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_name.png"
@@ -3094,7 +2912,6 @@
         }
     },
     "#remove_accessory_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/remove_accessory.png"
@@ -3111,7 +2928,6 @@
         }
     },
     "#dangerous_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/dangerous.png"
@@ -3128,7 +2944,6 @@
         }
     },
     "#kill_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/kill_cat.png"
@@ -3145,7 +2960,6 @@
         }
     },
     "#exile_cat_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/exile_cat.png"
@@ -3162,7 +2976,6 @@
         }
     },
     "#destroy_accessory_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/destroy_accessory.png"
@@ -3179,7 +2992,6 @@
         }
     },
     "#exile_df_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/exile_df.png"
@@ -3196,7 +3008,6 @@
         }
     },
     "#backstory_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/backstory.png"
@@ -3213,7 +3024,6 @@
         }
     },
     "#conditions_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/conditions.png"
@@ -3230,7 +3040,6 @@
         }
     },
     "#cat_tab_3_blank_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cat_tab_3_blank.png"
@@ -3241,7 +3050,6 @@
         }
     },
     "#cat_tab_4_blank_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cat_tab_4_blank.png"
@@ -3252,7 +3060,6 @@
         }
     },
     "#sub_tab_1_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sub_tab1.png"
@@ -3269,7 +3076,6 @@
         }
     },
     "#sub_tab_2_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sub_tab2.png"
@@ -3286,7 +3092,6 @@
         }
     },
     "#sub_tab_3_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sub_tab3.png"
@@ -3303,7 +3108,6 @@
         }
     },
     "#sub_tab_4_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sub_tab4.png"
@@ -3320,7 +3124,6 @@
         }
     },
     "#alert_hover_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/alert_mark.png"
@@ -3333,8 +3136,8 @@
             }
         }
     },
-    "#checked_checkbox": {
-        "prototype": "#image_button",
+    "@checked_checkbox": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/checkmark_on.png"
@@ -3350,8 +3153,8 @@
             }
         }
     },
-    "#unchecked_checkbox": {
-        "prototype": "#image_button",
+    "@unchecked_checkbox": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/checkmark_off.png"
@@ -3367,8 +3170,7 @@
             }
         }
     },
-    "#checked_checkbox_smalltooltip": {
-        "prototype": "#image_button",
+    "@checked_checkbox_smalltooltip": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/checkmark_on.png"
@@ -3381,8 +3183,7 @@
             }
         }
     },
-    "#unchecked_checkbox_smalltooltip": {
-        "prototype": "#image_button",
+    "@unchecked_checkbox_smalltooltip": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/checkmark_off.png"
@@ -3396,7 +3197,6 @@
         }
     },
     "#general_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/general_settings.png"
@@ -3413,7 +3213,6 @@
         }
     },
     "#relation_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/relation_settings.png"
@@ -3430,7 +3229,6 @@
         }
     },
     "#info_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/info.png"
@@ -3447,7 +3245,6 @@
         }
     },
     "#lang_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/language.png"
@@ -3464,7 +3261,6 @@
         }
     },
     "#save_settings_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/save_settings.png"
@@ -3481,7 +3277,6 @@
         }
     },
     "#english_lang_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/english.png"
@@ -3498,7 +3293,6 @@
         }
     },
     "#spanish_lang_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/spanish.png"
@@ -3515,7 +3309,6 @@
         }
     },
     "#german_lang_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/german.png"
@@ -3532,7 +3325,6 @@
         }
     },
     "#classic_mode_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/classic_mode.png"
@@ -3549,7 +3341,6 @@
         }
     },
     "#expanded_mode_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/expanded_mode.png"
@@ -3566,7 +3357,6 @@
         }
     },
     "#cruel_mode_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cruel_season.png"
@@ -3580,7 +3370,6 @@
         }
     },
     "#previous_step_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/last_step.png"
@@ -3597,7 +3386,6 @@
         }
     },
     "#next_step_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/next_step.png"
@@ -3614,7 +3402,6 @@
         }
     },
     "#random_dice_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/random_dice.png"
@@ -3631,7 +3418,6 @@
         }
     },
     "#reset_name_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/reset_name.png"
@@ -3648,7 +3434,6 @@
         }
     },
     "#nine_lives_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/grant_lives.png"
@@ -3662,7 +3447,6 @@
         }
     },
     "#support_leader_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/support_leader.png"
@@ -3676,7 +3460,6 @@
         }
     },
     "#aid_clan_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/aid_clan.png"
@@ -3690,7 +3473,6 @@
         }
     },
     "#recruit_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/recruit.png"
@@ -3707,7 +3489,6 @@
         }
     },
     "#done_arrow_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/done_creation.png"
@@ -3724,7 +3505,6 @@
         }
     },
     "#forest_biome_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/forest.png"
@@ -3741,7 +3521,6 @@
         }
     },
     "#mountain_biome_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/mountain.png"
@@ -3758,7 +3537,6 @@
         }
     },
     "#plains_biome_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/plains.png"
@@ -3775,7 +3553,6 @@
         }
     },
     "#classic_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/classic_camp.png"
@@ -3792,7 +3569,6 @@
         }
     },
     "#gully_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/gully_camp.png"
@@ -3809,7 +3585,6 @@
         }
     },
     "#grotto_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/grotto_camp.png"
@@ -3826,7 +3601,6 @@
         }
     },
     "#beach_biome_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/beach.png"
@@ -3843,7 +3617,6 @@
         }
     },
     "#random_background_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/random_bg.png"
@@ -3860,7 +3633,6 @@
         }
     },
     "#cliff_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cliff_camp.png"
@@ -3877,7 +3649,6 @@
         }
     },
     "#cave_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cave_camp.png"
@@ -3894,7 +3665,6 @@
         }
     },
     "#crystal_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/crystal_camp.png"
@@ -3911,7 +3681,6 @@
         }
     },
     "#ruins_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/ruins_camp.png"
@@ -3928,7 +3697,6 @@
         }
     },
     "#grasslands_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/grasslands_camp.png"
@@ -3945,7 +3713,6 @@
         }
     },
     "#tunnel_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/tunnel_camp.png"
@@ -3962,7 +3729,6 @@
         }
     },
     "#tidepool_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/tidepool_camp.png"
@@ -3979,7 +3745,6 @@
         }
     },
     "#tidal_cave_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/tidal_cave_camp.png"
@@ -3996,7 +3761,6 @@
         }
     },
     "#shipwreck_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/shipwreck_camp.png"
@@ -4012,8 +3776,7 @@
             }
         }
     },
-	"#wasteland_tab": {
-        "prototype": "#image_button",
+    "#wasteland_tab": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/wastelands_camp.png"
@@ -4029,8 +3792,7 @@
             }
         }
     },
-	"#lakeside_tab": {
-        "prototype": "#image_button",
+    "#lakeside_tab": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/lakeside_camp.png"
@@ -4047,7 +3809,6 @@
         }
     },
     "#continue_button_small": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/continue_small.png"
@@ -4064,7 +3825,6 @@
         }
     },
     "#freshkill_pile_empty": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/freshkillpile_empty.png"
@@ -4081,7 +3841,6 @@
         }
     },
     "#freshkill_pile_verylow": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/freshkillpile_verylow.png"
@@ -4098,7 +3857,6 @@
         }
     },
     "#freshkill_pile_low": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/freshkillpile_low.png"
@@ -4115,7 +3873,6 @@
         }
     },
     "#freshkill_pile_average": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/freshkillpile_average.png"
@@ -4132,7 +3889,6 @@
         }
     },
     "#freshkill_pile_good": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/freshkillpile_good.png"
@@ -4149,7 +3905,6 @@
         }
     },
     "#freshkill_pile_full": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/freshkillpile_full.png"
@@ -4166,7 +3921,6 @@
         }
     },
     "#freshkill_hungry": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/freshkill_pile_hungry.png"
@@ -4183,7 +3937,6 @@
         }
     },
     "#freshkill_satisfied": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/freshkill_pile_satisfied.png"
@@ -4200,7 +3953,6 @@
         }
     },
     "#tactic": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/freshkill_pile_tactic.png"
@@ -4217,7 +3969,6 @@
         }
     },
     "#freshkill_feed_one": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/feed_one.png"
@@ -4234,7 +3985,6 @@
         }
     },
     "#freshkill_feed_max": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/feed_max.png"
@@ -4251,7 +4001,6 @@
         }
     },
     "#freshkill_feed_hungry": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/feed_all_hungry.png"
@@ -4267,8 +4016,7 @@
             }
         }
     },
-	"#freshkill_pile_button": {
-        "prototype": "#image_button",
+    "#freshkill_pile_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/freshkill_pile.png"
@@ -4285,7 +4033,6 @@
         }
     },
     "#add_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/add_button.png"
@@ -4302,7 +4049,6 @@
         }
     },
     "#save_button_pronoun": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/save_button.png"
@@ -4319,7 +4065,6 @@
         }
     },
     "#test_set_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/test_set_button.png"
@@ -4336,7 +4081,6 @@
         }
     },
     "#load_presets_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/load_presets.png"
@@ -4353,7 +4097,6 @@
         }
     },
     "#save_as_preset_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/save_as_preset.png"
@@ -4370,7 +4113,6 @@
         }
     },
     "#add_pronouns_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/add_pronouns.png"
@@ -4387,7 +4129,6 @@
         }
     },
     "#customize_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/customize.png"
@@ -4404,7 +4145,6 @@
         }
     },
     "#singular_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/singular.png"
@@ -4421,7 +4161,6 @@
         }
     },
     "#plural_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/plural.png"
@@ -4437,8 +4176,7 @@
             }
         }
     },
-	"#choose_group_button": {
-        "prototype": "#image_button",
+    "#choose_group_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/choose_group.png"
@@ -4454,8 +4192,7 @@
             }
         }
     },
-	"#show_dead_button": {
-        "prototype": "#image_button",
+    "#show_dead_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/show_dead.png"
@@ -4471,8 +4208,7 @@
             }
         }
     },
-	"#show_living_button": {
-        "prototype": "#image_button",
+    "#show_living_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/show_living.png"
@@ -4488,8 +4224,7 @@
             }
         }
     },
-	"#view_cotc_button": {
-        "prototype": "#image_button",
+    "#view_cotc_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/view_cotc.png"
@@ -4505,8 +4240,7 @@
             }
         }
     },
-	"#view_dark_forest_button": {
-        "prototype": "#image_button",
+    "#view_dark_forest_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/view_dark_forest.png"
@@ -4522,8 +4256,7 @@
             }
         }
     },
-	"#view_starclan_button": {
-        "prototype": "#image_button",
+    "#view_starclan_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/view_starclan.png"
@@ -4539,8 +4272,7 @@
             }
         }
     },
-	"#view_unknown_residence_button": {
-        "prototype": "#image_button",
+    "#view_unknown_residence_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/view_unknown_residence.png"
@@ -4556,8 +4288,7 @@
             }
         }
     },
-	"#view_your_clan_button": {
-        "prototype": "#image_button",
+    "#view_your_clan_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/view_your_clan.png"
@@ -4574,7 +4305,6 @@
         }
     },
     "#warrior_den_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/warrior_den.png"
@@ -4591,7 +4321,6 @@
         }
     },
     "#entreat_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/entreat_focus.png"
@@ -4608,7 +4337,6 @@
         }
     },
     "#help_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/help_focus.png"
@@ -4625,7 +4353,6 @@
         }
     },
     "#herb_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/herb_focus.png"
@@ -4642,7 +4369,6 @@
         }
     },
     "#hoard_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/hoard_focus.png"
@@ -4659,7 +4385,6 @@
         }
     },
     "#hunting_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/hunting_focus.png"
@@ -4676,7 +4401,6 @@
         }
     },
     "#raid_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/raid_focus.png"
@@ -4693,7 +4417,6 @@
         }
     },
     "#rest_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/rest_focus.png"
@@ -4710,7 +4433,6 @@
         }
     },
     "#sabotage_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/sabotage_focus.png"
@@ -4727,7 +4449,6 @@
         }
     },
     "#threaten_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/threaten_focus.png"
@@ -4744,7 +4465,6 @@
         }
     },
     "#usual_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/usual_focus.png"
@@ -4761,7 +4481,6 @@
         }
     },
     "#change_focus_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/change_focus.png"
@@ -4778,7 +4497,6 @@
         }
     },
     "#dens_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/dens.png"
@@ -4794,8 +4512,7 @@
             }
         }
     },
-	"#vertical_slider_down_arrow_button": {
-        "prototype": "#image_button",
+    "#vertical_slider_down_arrow_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/vertical_slider_down.png"
@@ -4811,8 +4528,7 @@
             }
         }
     },
-	"#vertical_slider_up_arrow_button": {
-        "prototype": "#image_button",
+    "#vertical_slider_up_arrow_button": {
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/vertical_slider_up.png"
@@ -4829,7 +4545,6 @@
         }
     },
     "#lead_den_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/leader_den.png"
@@ -4846,7 +4561,6 @@
         }
     },
     "#clans_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clans_tab.png"
@@ -4863,7 +4577,6 @@
         }
     },
     "#outsiders_tab": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/outsiders_tab.png"
@@ -4880,7 +4593,6 @@
         }
     },
     "#clan_antagonize": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_antagonize.png"
@@ -4897,7 +4609,6 @@
         }
     },
     "#clan_appease": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_appease.png"
@@ -4914,7 +4625,6 @@
         }
     },
     "#clan_befriend": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_befriend.png"
@@ -4931,7 +4641,6 @@
         }
     },
     "#clan_declare": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_declare.png"
@@ -4948,7 +4657,6 @@
         }
     },
     "#clan_offend": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_offend.png"
@@ -4965,7 +4673,6 @@
         }
     },
     "#clan_praise": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_praise.png"
@@ -4982,7 +4689,6 @@
         }
     },
     "#clan_provoke": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/clan_provoke.png"
@@ -4999,7 +4705,6 @@
         }
     },
     "#other_clan_select_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/blank.png"
@@ -5016,7 +4721,6 @@
         }
     },
     "#outsider_hunt": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/outsider_hunt.png"
@@ -5033,7 +4737,6 @@
         }
     },
     "#outsider_drive": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/outsider_drive.png"
@@ -5050,7 +4753,6 @@
         }
     },
     "#outsider_search": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/outsider_search.png"
@@ -5067,7 +4769,6 @@
         }
     },
     "#outsider_invite": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/outsider_invite.png"
@@ -5084,7 +4785,6 @@
         }
     },
     "#symbol_select_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/blank.png"
@@ -5101,7 +4801,6 @@
         }
     },
     "#filters_tab_button": {
-        "prototype": "#image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/filters_tab.png"

@@ -29,22 +29,22 @@
             "rect_width": "300"
         }
     },
-    "#checked_checkbox_smalltooltip.tool_tip": {
+    "@checked_checkbox_smalltooltip.tool_tip": {
         "misc": {
             "rect_width": "200"
         }
     },
-    "#unchecked_checkbox_smalltooltip.tool_tip": {
+    "@unchecked_checkbox_smalltooltip.tool_tip": {
         "misc": {
             "rect_width": "200"
         }
     },
-    "#checked_checkbox.tool_tip": {
+    "@checked_checkbox.tool_tip": {
         "misc": {
             "rect_width": "400"
         }
     },
-    "#unchecked_checkbox.tool_tip": {
+    "@unchecked_checkbox.tool_tip": {
         "misc": {
             "rect_width": "400"
         }

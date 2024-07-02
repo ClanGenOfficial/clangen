@@ -90,13 +90,13 @@ class SymbolFilterWindow(UIWindow):
             self.checkbox[tag] = UIImageButton(
                 scale(pygame.Rect((x_pos, y_pos), (68, 68))),
                 "",
-                object_id="#checked_checkbox",
+                object_id="@checked_checkbox",
                 container=self.filter_container,
                 starting_height=2,
                 manager=MANAGER,
             )
             if tag in game.switches["disallowed_symbol_tags"]:
-                self.checkbox[tag].change_object_id("#unchecked_checkbox")
+                self.checkbox[tag].change_object_id("@unchecked_checkbox")
 
             self.checkbox_text[tag] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x_pos + 80, y_pos + 6), (-1, -1))),
@@ -111,7 +111,7 @@ class SymbolFilterWindow(UIWindow):
                     self.checkbox[s_tag] = UIImageButton(
                         scale(pygame.Rect((x_pos + 70, y_pos), (68, 68))),
                         "",
-                        object_id="#checked_checkbox",
+                        object_id="@checked_checkbox",
                         container=self.filter_container,
                         starting_height=2,
                         manager=MANAGER,
@@ -120,7 +120,7 @@ class SymbolFilterWindow(UIWindow):
                     if tag in game.switches["disallowed_symbol_tags"]:
                         self.checkbox[s_tag].disable()
                     if s_tag in game.switches["disallowed_symbol_tags"]:
-                        self.checkbox[s_tag].change_object_id("#unchecked_checkbox")
+                        self.checkbox[s_tag].change_object_id("@unchecked_checkbox")
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
                         scale(pygame.Rect((x_pos + 150, y_pos + 6), (-1, -1))),
@@ -146,8 +146,8 @@ class SymbolFilterWindow(UIWindow):
                         # find out what state the checkbox was in when clicked
                         object_ids = element.get_object_ids()
                         # handle checked checkboxes becoming unchecked
-                        if "#checked_checkbox" in object_ids:
-                            self.checkbox[tag].change_object_id("#unchecked_checkbox")
+                        if "@checked_checkbox" in object_ids:
+                            self.checkbox[tag].change_object_id("@unchecked_checkbox")
                             # add tag to disallowed list
                             if tag not in game.switches["disallowed_symbol_tags"]:
                                 game.switches["disallowed_symbol_tags"].append(tag)
@@ -155,17 +155,20 @@ class SymbolFilterWindow(UIWindow):
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
                                     self.checkbox[s_tag].change_object_id(
-                                        "#unchecked_checkbox"
+                                        "@unchecked_checkbox"
                                     )
                                     self.checkbox[s_tag].disable()
-                                    if s_tag not in game.switches["disallowed_symbol_tags"]:
+                                    if (
+                                        s_tag
+                                        not in game.switches["disallowed_symbol_tags"]
+                                    ):
                                         game.switches["disallowed_symbol_tags"].append(
                                             s_tag
                                         )
 
                         # handle unchecked checkboxes becoming checked
-                        elif "#unchecked_checkbox" in object_ids:
-                            self.checkbox[tag].change_object_id("#checked_checkbox")
+                        elif "@unchecked_checkbox" in object_ids:
+                            self.checkbox[tag].change_object_id("@checked_checkbox")
                             # remove tag from disallowed list
                             if tag in game.switches["disallowed_symbol_tags"]:
                                 game.switches["disallowed_symbol_tags"].remove(tag)
@@ -173,7 +176,7 @@ class SymbolFilterWindow(UIWindow):
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
                                     self.checkbox[s_tag].change_object_id(
-                                        "#checked_checkbox"
+                                        "@checked_checkbox"
                                     )
                                     self.checkbox[s_tag].enable()
                                     if s_tag in game.switches["disallowed_symbol_tags"]:
@@ -359,7 +362,7 @@ class DeleteCheck(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
-                game.switches['window_open'] = False
+                game.switches["window_open"] = False
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + "clan.json"):
@@ -517,7 +520,7 @@ class ChangeCatName(UIWindow):
         self.toggle_spec_block_on = UIImageButton(
             scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             tool_tip_text=f"Remove the cat's special suffix",
             manager=MANAGER,
             container=self,
@@ -526,7 +529,7 @@ class ChangeCatName(UIWindow):
         self.toggle_spec_block_off = UIImageButton(
             scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))),
             "",
-            object_id="#checked_checkbox",
+            object_id="@checked_checkbox",
             tool_tip_text="Re-enable the cat's special suffix",
             manager=MANAGER,
             container=self,
@@ -852,7 +855,7 @@ class PronounCreation(UIWindow):
         self.buttons["singular_unchecked"] = UIImageButton(
             scale(pygame.Rect((225, 570), (68, 68))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             starting_height=2,
             visible=False,
             manager=MANAGER,
@@ -861,7 +864,7 @@ class PronounCreation(UIWindow):
         self.buttons["singular_checked"] = UIImageButton(
             scale(pygame.Rect((225, 570), (68, 68))),
             "",
-            object_id="#checked_checkbox",
+            object_id="@checked_checkbox",
             starting_height=2,
             visible=False,
             manager=MANAGER,
@@ -871,7 +874,7 @@ class PronounCreation(UIWindow):
         self.buttons["plural_unchecked"] = UIImageButton(
             scale(pygame.Rect((455, 570), (68, 68))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             starting_height=2,
             visible=False,
             manager=MANAGER,
@@ -880,7 +883,7 @@ class PronounCreation(UIWindow):
         self.buttons["plural_checked"] = UIImageButton(
             scale(pygame.Rect((455, 570), (68, 68))),
             "",
-            object_id="#checked_checkbox",
+            object_id="@checked_checkbox",
             starting_height=2,
             visible=False,
             manager=MANAGER,
@@ -1052,7 +1055,7 @@ class KillCat(UIWindow):
         self.one_life_check = UIImageButton(
             scale(pygame.Rect((50, 300), (68, 68))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             tool_tip_text=process_text(
                 "If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives",
                 cat_dict,
@@ -1063,7 +1066,7 @@ class KillCat(UIWindow):
         self.all_lives_check = UIImageButton(
             scale(pygame.Rect((50, 300), (68, 68))),
             "",
-            object_id="#checked_checkbox",
+            object_id="@checked_checkbox",
             tool_tip_text=process_text(
                 "If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives",
                 cat_dict,
@@ -1357,13 +1360,13 @@ class UpdateAvailablePopup(UIWindow):
         self.box_unchecked = UIImageButton(
             scale(pygame.Rect((15, 366), (68, 68))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             container=self,
         )
         self.box_checked = UIImageButton(
             scale(pygame.Rect((15, 366), (68, 68))),
             "",
-            object_id="#checked_checkbox",
+            object_id="@checked_checkbox",
             container=self,
         )
         self.box_text = UITextBoxTweaked(
@@ -1948,13 +1951,13 @@ class ChangeCatToggles(UIWindow):
 
         # Prevent Fading
         if self.the_cat == game.clan.instructor:
-            box_type = "#checked_checkbox"
+            box_type = "@checked_checkbox"
             tool_tip = "The afterlife guide can never fade."
         elif self.the_cat.prevent_fading:
-            box_type = "#checked_checkbox"
+            box_type = "@checked_checkbox"
             tool_tip = "Prevents cat from fading away after being dead for 202 moons."
         else:
-            box_type = "#unchecked_checkbox"
+            box_type = "@unchecked_checkbox"
             tool_tip = "Prevents cat from fading away after being dead for 202 moons."
 
         # Fading
@@ -1971,10 +1974,10 @@ class ChangeCatToggles(UIWindow):
 
         # No Kits
         if self.the_cat.no_kits:
-            box_type = "#checked_checkbox"
+            box_type = "@checked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
         else:
-            box_type = "#unchecked_checkbox"
+            box_type = "@unchecked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
 
         self.checkboxes["prevent_kits"] = UIImageButton(
@@ -1987,10 +1990,10 @@ class ChangeCatToggles(UIWindow):
 
         # No Retire
         if self.the_cat.no_retire:
-            box_type = "#checked_checkbox"
+            box_type = "@checked_checkbox"
             tool_tip = "Allow cat to retiring automatically."
         else:
-            box_type = "#unchecked_checkbox"
+            box_type = "@unchecked_checkbox"
             tool_tip = "Prevent cat from retiring automatically."
 
         self.checkboxes["prevent_retire"] = UIImageButton(
@@ -2003,10 +2006,10 @@ class ChangeCatToggles(UIWindow):
 
         # No mates
         if self.the_cat.no_mates:
-            box_type = "#checked_checkbox"
+            box_type = "@checked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
         else:
-            box_type = "#unchecked_checkbox"
+            box_type = "@unchecked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
 
         self.checkboxes["prevent_mates"] = UIImageButton(
@@ -2094,9 +2097,9 @@ class SelectFocusClans(UIWindow):
 
         n = 0
         for clan in game.clan.all_clans:
-            box_type = "#unchecked_checkbox"
+            box_type = "@unchecked_checkbox"
             if clan.name in game.clan.clans_in_focus:
-                box_type = "#checked_checkbox"
+                box_type = "@checked_checkbox"
 
             self.checkboxes[clan.name] = UIImageButton(
                 scale(pygame.Rect(150, n * 55 + 70, 68, 68)),
@@ -2123,9 +2126,9 @@ class SelectFocusClans(UIWindow):
             if event.ui_element in self.checkboxes.values():
                 for clan_name, value in self.checkboxes.items():
                     if value == event.ui_element:
-                        if value.object_ids[1] == "#unchecked_checkbox":
+                        if value.object_ids[1] == "@unchecked_checkbox":
                             game.clan.clans_in_focus.append(clan_name)
-                        if value.object_ids[1] == "#checked_checkbox":
+                        if value.object_ids[1] == "@checked_checkbox":
                             game.clan.clans_in_focus.remove(clan_name)
                         self.refresh_checkboxes()
                 if len(game.clan.clans_in_focus) < 1 and self.save_button.is_enabled:

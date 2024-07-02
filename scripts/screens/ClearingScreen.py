@@ -88,7 +88,9 @@ class ClearingScreen(Screens):
                     ].current_score
                     amount = max_amount - current_amount
                 game.clan.freshkill_pile.feed_cat(self.focus_cat_object, amount, 0)
-                Condition_Events.handle_nutrient(self.focus_cat_object, game.clan.freshkill_pile.nutrition_info)
+                Condition_Events.handle_nutrient(
+                    self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
+                )
                 self.update_cats_list()
                 self.update_nutrition_cats()
                 self.update_focus_cat()
@@ -656,12 +658,12 @@ class ClearingScreen(Screens):
     def create_checkboxes(self):
         self.delete_checkboxes()
 
-        self.tactic_text["container_general"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((280, 900), (460, 350))),
-                allow_scroll_x=False,
-                manager=MANAGER,
-            )
+        self.tactic_text[
+            "container_general"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((280, 900), (460, 350))),
+            allow_scroll_x=False,
+            manager=MANAGER,
         )
 
         n = 0
@@ -685,12 +687,12 @@ class ClearingScreen(Screens):
             (400 / 1600 * screen_x, (n * 60 + x_val + 40) / 1600 * screen_y)
         )
 
-        self.additional_text["container_general"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((720, 900), (655, 350))),
-                allow_scroll_x=False,
-                manager=MANAGER,
-            )
+        self.additional_text[
+            "container_general"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((720, 900), (655, 350))),
+            allow_scroll_x=False,
+            manager=MANAGER,
         )
 
         n = 0
@@ -766,9 +768,9 @@ class ClearingScreen(Screens):
             if code == "ration prey":
                 continue
             if game.clan.clan_settings[code]:
-                box_type = "#checked_checkbox"
+                box_type = "@checked_checkbox"
             else:
-                box_type = "#unchecked_checkbox"
+                box_type = "@unchecked_checkbox"
 
             # Handle nested
             disabled = False
@@ -801,9 +803,9 @@ class ClearingScreen(Screens):
         for code, desc in settings_dict["freshkill_tactics"].items():
             if code == "ration prey":
                 if game.clan.clan_settings[code]:
-                    box_type = "#checked_checkbox"
+                    box_type = "@checked_checkbox"
                 else:
-                    box_type = "#unchecked_checkbox"
+                    box_type = "@unchecked_checkbox"
 
                 # Handle nested
                 disabled = False
@@ -836,7 +838,7 @@ class ClearingScreen(Screens):
             for key, value in self.tactic_boxes.items():
                 if (
                     value == event.ui_element
-                    and value.object_ids[1] == "#unchecked_checkbox"
+                    and value.object_ids[1] == "@unchecked_checkbox"
                 ):
                     game.clan.switch_setting(key)
                     active_key = key
@@ -849,7 +851,7 @@ class ClearingScreen(Screens):
                 if (
                     active_key
                     and key != active_key
-                    and value.object_ids[1] == "#checked_checkbox"
+                    and value.object_ids[1] == "@checked_checkbox"
                 ):
                     game.clan.switch_setting(key)
                     self.settings_changed = True

@@ -890,7 +890,7 @@ class MediationScreen(Screens):
             self.romantic_checkbox = UIImageButton(
                 scale(pygame.Rect((642, 635), (68, 68))),
                 "",
-                object_id="#checked_checkbox",
+                object_id="@checked_checkbox",
                 tool_tip_text="Allow effects on romantic like, if possible. ",
                 manager=MANAGER,
             )
@@ -898,7 +898,7 @@ class MediationScreen(Screens):
             self.romantic_checkbox = UIImageButton(
                 scale(pygame.Rect((642, 635), (68, 68))),
                 "",
-                object_id="#unchecked_checkbox",
+                object_id="@unchecked_checkbox",
                 tool_tip_text="Allow effects on romantic like, if possible. ",
                 manager=MANAGER,
             )

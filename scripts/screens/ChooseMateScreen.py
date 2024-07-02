@@ -456,9 +456,9 @@ class ChooseMateScreen(Screens):
             self.checkboxes["kits_selected_pair"].kill()
 
         if self.kits_selected_pair:
-            theme = "#checked_checkbox"
+            theme = "@checked_checkbox"
         else:
-            theme = "#unchecked_checkbox"
+            theme = "@unchecked_checkbox"
 
         self.checkboxes["kits_selected_pair"] = UIImageButton(
             scale(pygame.Rect((1106, 124), (68, 68))),
@@ -574,9 +574,9 @@ class ChooseMateScreen(Screens):
             self.checkboxes["single_only"].kill()
 
         if self.single_only:
-            theme = "#checked_checkbox"
+            theme = "@checked_checkbox"
         else:
-            theme = "#unchecked_checkbox"
+            theme = "@unchecked_checkbox"
 
         self.checkboxes["single_only"] = UIImageButton(
             scale(pygame.Rect((1106, 85), (68, 68))),
@@ -589,9 +589,9 @@ class ChooseMateScreen(Screens):
             self.checkboxes["have_kits_only"].kill()
 
         if self.have_kits_only:
-            theme = "#checked_checkbox"
+            theme = "@checked_checkbox"
         else:
-            theme = "#unchecked_checkbox"
+            theme = "@unchecked_checkbox"
 
         self.checkboxes["have_kits_only"] = UIImageButton(
             scale(pygame.Rect((1106, 254), (68, 68))),

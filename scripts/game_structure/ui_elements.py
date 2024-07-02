@@ -1,10 +1,11 @@
-from typing import Union, Tuple
 import html
+from copy import copy
+from typing import Union, Tuple, Optional, Dict, Iterable, Callable
 
 import pygame
 import pygame_gui
-from pygame_gui.core import UIContainer
-from pygame_gui.core.gui_type_hints import RectLike
+from pygame_gui.core import UIContainer, IContainerLikeInterface, UIElement, ObjectID
+from pygame_gui.core.gui_type_hints import RectLike, Coordinate
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
@@ -13,13 +14,120 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
-
 from scripts.utility import scale, shorten_text_to_fit
+
+
+class UISurfaceImageButton(pygame_gui.elements.UIButton):
+    """Subclass of the button class that allows you to pass in surfaces for the images directly."""
+
+    def __init__(
+        self,
+        relative_rect: Union[RectLike, Coordinate],
+        text: str,
+        image_dict: Dict[str, pygame.Surface],
+        manager: Optional[IUIManagerInterface] = None,
+        container: Optional[IContainerLikeInterface] = None,
+        tool_tip_text: Union[str, None] = None,
+        starting_height: int = 1,
+        parent_element: UIElement = None,
+        object_id: Union[ObjectID, str, None] = None,
+        anchors: Dict[str, Union[str, UIElement]] = None,
+        allow_double_clicks: bool = False,
+        generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
+        visible: int = 1,
+        *,
+        command: Union[Callable, Dict[int, Callable]] = None,
+        tool_tip_object_id: Optional[ObjectID] = None,
+        text_kwargs: Optional[Dict[str, str]] = None,
+        tool_tip_text_kwargs: Optional[Dict[str, str]] = None,
+        max_dynamic_width: Optional[int] = None,
+    ):
+        super().__init__(
+            relative_rect,
+            text,
+            manager,
+            container,
+            tool_tip_text,
+            starting_height,
+            parent_element,
+            object_id,
+            anchors,
+            allow_double_clicks,
+            generate_click_events_from,
+            visible,
+            command=command,
+            tool_tip_object_id=tool_tip_object_id,
+            text_kwargs=text_kwargs,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
+            max_dynamic_width=max_dynamic_width,
+        )
+        self.normal_image = image_dict["normal"]
+        self.hovered_image = (
+            pygame.transform.scale(image_dict["hovered"], self.relative_rect.size)
+            if "hovered" in image_dict
+            else self.normal_image
+        )
+        self.selected_image = (
+            pygame.transform.scale(image_dict["selected"], self.relative_rect.size)
+            if "selected" in image_dict
+            else self.normal_image
+        )
+        self.disabled_image = (
+            pygame.transform.scale(image_dict["disabled"], self.relative_rect.size)
+            if "disabled" in image_dict
+            else self.normal_image
+        )
+        self.rebuild()
+
+    def set_any_images(self, images: Dict[str, pygame.Surface]):
+        for name, surface in images.items():
+            if name == "normal":
+                self.normal_image = surface
+                self.set_dimensions(self.normal_image.size)
+                self.normal_image = surface
+            elif name == "hovered":
+                self.hovered_image = surface
+            elif name == "selected":
+                self.selected_image = surface
+            elif name == "disabled":
+                self.disabled_image = surface
 
 
 class UIImageButton(pygame_gui.elements.UIButton):
     """Subclass of pygame_gui's button class. This allows for auto-scaling of the
     button image."""
+
+    def __init__(
+        self,
+        relative_rect: Union[RectLike, Coordinate],
+        text: str,
+        manager: Optional[IUIManagerInterface] = None,
+        container: Optional[IContainerLikeInterface] = None,
+        tool_tip_text: Union[str, None] = None,
+        starting_height: int = 1,
+        parent_element: UIElement = None,
+        object_id: Union[ObjectID, str, None] = None,
+        anchors: Dict[str, Union[str, UIElement]] = None,
+        allow_double_clicks: bool = False,
+        generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
+        visible: int = 1,
+    ):
+        super().__init__(
+            relative_rect=relative_rect,
+            text=text,
+            manager=manager,
+            container=container,
+            tool_tip_text=tool_tip_text,
+            starting_height=starting_height,
+            parent_element=parent_element,
+            object_id=ObjectID(class_id="@image_button", object_id=object_id)
+            if not isinstance(object_id, ObjectID)
+            else object_id,
+            anchors=anchors,
+            allow_double_clicks=allow_double_clicks,
+            generate_click_events_from=generate_click_events_from,
+            visible=visible,
+        )
 
     def _set_any_images_from_theme(self):
         changed = False
@@ -244,7 +352,12 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
             starting_height=1,
             parent_element=self,
             object_id="#vertical_slider_up_arrow_button",
-            anchors={"left": "left", "right": "right", "top": "top", "bottom": "top"},
+            anchors={
+                "left": "left",
+                "right": "right",
+                "top": "top",
+                "bottom": "top",
+            },
         )
 
         self.bottom_button.kill()
@@ -681,9 +794,9 @@ class UICheckbox(UIImageButton):
         relative_rect = scale(pygame.Rect(position, (68, 68)))
 
         if check:
-            object_id = "#checked_checkbox"
+            object_id = "@checked_checkbox"
         else:
-            object_id = "#unchecked_checkbox"
+            object_id = "@unchecked_checkbox"
 
         super().__init__(
             relative_rect=relative_rect,
@@ -701,14 +814,14 @@ class UICheckbox(UIImageButton):
         switches the checkbox into the "checked" state
         """
         self.checked = True
-        self.change_object_id("#checked_checkbox")
+        self.change_object_id("@checked_checkbox")
 
     def uncheck(self):
         """
         switches the checkbox into the "unchecked" state
         """
         self.checked = False
-        self.change_object_id("#unchecked_checkbox")
+        self.change_object_id("@unchecked_checkbox")
 
 
 class UICatListDisplay(UIContainer):

@@ -415,9 +415,9 @@ class ClanSettingsScreen(Screens):
         n = 0
         for code, desc in settings_dict[self.sub_menu].items():
             if game.clan.clan_settings[code]:
-                box_type = "#checked_checkbox"
+                box_type = "@checked_checkbox"
             else:
-                box_type = "#unchecked_checkbox"
+                box_type = "@unchecked_checkbox"
 
             # Handle nested
             disabled = False

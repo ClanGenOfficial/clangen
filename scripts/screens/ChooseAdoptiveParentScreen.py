@@ -444,9 +444,9 @@ class ChooseAdoptiveParentScreen(Screens):
             self.checkboxes["mates_current_parents"].kill()
 
         if self.mates_current_parents:
-            theme = "#checked_checkbox"
+            theme = "@checked_checkbox"
         else:
-            theme = "#unchecked_checkbox"
+            theme = "@unchecked_checkbox"
 
         self.checkboxes["mates_current_parents"] = UIImageButton(
             scale(pygame.Rect((1106, 113), (68, 68))),
@@ -461,9 +461,9 @@ class ChooseAdoptiveParentScreen(Screens):
             self.checkboxes["unrelated_only"].kill()
 
         if self.unrelated_only:
-            theme = "#checked_checkbox"
+            theme = "@checked_checkbox"
         else:
-            theme = "#unchecked_checkbox"
+            theme = "@unchecked_checkbox"
 
         self.checkboxes["unrelated_only"] = UIImageButton(
             scale(pygame.Rect((1106, 263), (68, 68))),
