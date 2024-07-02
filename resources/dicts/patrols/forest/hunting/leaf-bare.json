@@ -996,7 +996,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "This is bad. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c, there's barely any warmth left in {PRONOUN/r_c/poss} pelt, and p_l can't wake {PRONOUN/r_c/object}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/'re/'s} left with an impossible decision - leave r_c there in the snow, or risk everyone else. p_l chooses r_c, and the warmth of {PRONOUN/r_c/poss} Clanmates curling around {PRONOUN/r_c/object} saves r_c's life, though none of the patrol can escape the consequences of the cold.",
+                "text": "This is bad. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c, there's barely any warmth left in {PRONOUN/r_c/poss} pelt, and p_l can't wake {PRONOUN/r_c/object}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} left with an impossible decision - leave r_c there in the snow, or risk everyone else. p_l chooses r_c, and the warmth of {PRONOUN/r_c/poss} Clanmates curling around {PRONOUN/r_c/object} saves r_c's life, though none of the patrol can escape the consequences of the cold.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

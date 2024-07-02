@@ -860,11 +860,11 @@ class Romantic_Events:
 
         if "[r_c_mates]" in mate_string:
             mate_names = [
-                str(cat_from.fetch_cat(mate_id).name)
-                for mate_id in cat_from.mate
-                if cat_from.fetch_cat(mate_id) is not None
-                and not cat_from.fetch_cat(mate_id).dead
-                and not cat_from.fetch_cat(mate_id).outside
+                str(cat_to.fetch_cat(mate_id).name)
+                for mate_id in cat_to.mate
+                if cat_to.fetch_cat(mate_id) is not None
+                and not cat_to.fetch_cat(mate_id).dead
+                and not cat_to.fetch_cat(mate_id).outside
             ]
             mate_name_string = mate_names[0]
             if len(mate_names) == 2:

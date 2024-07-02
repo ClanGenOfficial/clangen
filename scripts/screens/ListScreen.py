@@ -4,7 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, MANAGER, game_screen_size
+from scripts.game_structure.game_essentials import game, MANAGER, game_screen_size, screen
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UIDropDownContainer,
@@ -17,6 +17,7 @@ from scripts.utility import ui_scale, get_text_box_theme
 class ListScreen(Screens):
     current_page = 1
     previous_search_text = ""
+    clan_name = "ErrorClan"
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -49,6 +50,7 @@ class ListScreen(Screens):
         self.df_bg = None
         self.ur_bg = None
         self.sc_bg = None
+        self.clan_name = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -209,9 +211,16 @@ class ListScreen(Screens):
                 self.change_screen("patrol screen")
 
     def screen_switches(self):
+        self.clan_name = game.clan.name + "Clan"
 
         self.set_disabled_menu_buttons(["catlist_screen"])
         self.show_menu_buttons()
+        screen.fill(
+            game.config["theme"]["dark_mode_background"]
+            if game.settings["dark mode"]
+            else game.config["theme"]["light_mode_background"]
+        )
+        MANAGER.update(1)
 
         # SCREEN CONTAINER - everything should come back to here
         self.list_screen_container = pygame_gui.core.UIContainer(
@@ -453,7 +462,6 @@ class ListScreen(Screens):
             ui_scale(pygame.Rect((285, 600), (34, 34))),
             "",
             container=self.list_screen_container,
-            starting_height=2,
             object_id="#arrow_double_left_button",
             manager=MANAGER,
         )
@@ -461,7 +469,6 @@ class ListScreen(Screens):
             ui_scale(pygame.Rect((310, 600), (34, 34))),
             "",
             container=self.list_screen_container,
-            starting_height=2,
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
@@ -470,7 +477,6 @@ class ListScreen(Screens):
             "",
             container=self.list_screen_container,
             object_id="#arrow_double_right_button",
-            starting_height=2,
             manager=MANAGER,
             anchors={
                 "left_target": self.display_container_elements["previous_page_button"]
@@ -481,7 +487,6 @@ class ListScreen(Screens):
             "",
             container=self.list_screen_container,
             object_id="#arrow_right_button",
-            starting_height=2,
             manager=MANAGER,
         )
         # page number
@@ -506,13 +511,16 @@ class ListScreen(Screens):
             manager=MANAGER,
         )  # Text will be filled in later
 
+        # this speeds up the load time 1000%
+        # don't ask why
+        MANAGER.update(1)
+
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
 
     def exit_screen(self):
         self.cat_display.clear_display()
-        self.cat_display.kill()
         self.cat_display = None
         self.list_screen_container.kill()
 
@@ -560,9 +568,11 @@ class ListScreen(Screens):
 
         search_text = search_text.strip()
         if search_text not in ["", "name search"]:
-            for cat in self.full_cat_list:
-                if search_text.lower() in str(cat.name).lower():
-                    self.current_listed_cats.append(cat)
+            self.current_listed_cats = [
+                cat
+                for cat in self.full_cat_list
+                if search_text.lower() in str(cat.name).lower()
+            ]
         else:
             self.current_listed_cats = self.full_cat_list.copy()
 
@@ -598,7 +608,8 @@ class ListScreen(Screens):
 
         if not self.cat_display:
             self.cat_display = UICatListDisplay(
-                ui_scale(pygame.Rect((15, 85), (1000, 500))),
+                ui_scale(pygame.Rect((0, 0), (600, 400))),
+                container=self.list_screen_container,
                 object_id="#cat_list_display",
                 starting_height=1,
                 cat_list=self.current_listed_cats,
@@ -611,11 +622,16 @@ class ListScreen(Screens):
                 first_button=self.display_container_elements["first_page_button"],
                 last_button=self.display_container_elements["last_page_button"],
                 current_page=self.current_page,
+                show_names=True,
                 text_theme=get_text_box_theme("#text_box_30_horizcenter")
                 if self.death_status == "living"
                 else "#text_box_30_horizcenter_light",
                 manager=MANAGER,
                 include_names=True,
+                anchors={
+                    "top_target": self.cat_list_bar_elements["search_bar_entry"],
+                    "centerx": "centerx",
+                },
             )
         else:
             self.cat_display.text_theme = (
@@ -635,19 +651,19 @@ class ListScreen(Screens):
         """
         if self.current_group == "clan":
             self.set_bg("default")
-            self.update_heading_text(f"{game.clan.name}Clan")
+            self.update_heading_text(self.clan_name)
         elif self.current_group == "cotc":
             self.set_bg("default")
-            self.update_heading_text(f"Cats Outside the Clan")
+            self.update_heading_text("Cats Outside the Clan")
         elif self.current_group == "sc":
             self.set_bg("sc")
-            self.update_heading_text(f"StarClan")
+            self.update_heading_text("StarClan")
         elif self.current_group == "ur":
             self.set_bg("ur")
-            self.update_heading_text(f"Unknown Residence")
+            self.update_heading_text("Unknown Residence")
         elif self.current_group == "df":
             self.set_bg("df")
-            self.update_heading_text(f"Dark Forest")
+            self.update_heading_text("Dark Forest")
 
     def get_cat_list(self):
         """
@@ -673,10 +689,9 @@ class ListScreen(Screens):
         """
         self.current_group = "clan"
         self.death_status = "living"
-        self.full_cat_list = []
-        for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
-                self.full_cat_list.append(the_cat)
+        self.full_cat_list = [
+            cat for cat in Cat.all_cats_list if not cat.dead and not cat.outside
+        ]
 
     def get_cotc_cats(self):
         """
