@@ -537,7 +537,7 @@ class ChooseMentorScreen(Screens):
 
     def update_cat_list(self):
         """Updates the cat sprite buttons."""
-        valid_mentors = self.chunks(self.get_valid_mentors(), 30)
+        valid_mentors = self.chunks(self.get_valid_mentors(), 24)
 
         # clamp current page to a valid page number
         self.current_page = max(1, min(self.current_page, len(valid_mentors)))
@@ -575,7 +575,7 @@ class ChooseMentorScreen(Screens):
                 manager=MANAGER,
             )
             pos_x += 120
-            if pos_x >= 1100:
+            if pos_x >= 900:
                 pos_x = 0
                 pos_y += 120
             i += 1
