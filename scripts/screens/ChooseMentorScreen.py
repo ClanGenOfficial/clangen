@@ -54,19 +54,11 @@ class ChooseMentorScreen(Screens):
         self.the_cat = None
         self.show_only_no_current_app_mentors = False
         self.show_only_no_former_app_mentors = False
-        '''        
-        self.show_only_same_skill_mentors = False
-        self.show_only_similar_personality_mentors = False
-        '''
         self.filter_container = None
         self.filter_seperator = None
         self.checkboxes = {}
         self.no_current_app_text = None
         self.no_former_app_text = None
-        '''
-        self.same_skill_text = None
-        self.similar_personality_text = None
-        '''
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -116,16 +108,6 @@ class ChooseMentorScreen(Screens):
                 self.show_only_no_former_app_mentors = not self.show_only_no_former_app_mentors
                 self.update_buttons()
                 self.update_cat_list()
-                '''
-            elif event.ui_element == self.checkboxes.get("show_same_skill"):
-                self.show_only_same_skill_mentors = not self.show_only_same_skill_mentors
-                self.update_buttons()
-                self.update_cat_list()
-            elif event.ui_element == self.checkboxes.get("similar_personality"):
-                self.show_only_similar_personality_mentors = not self.show_only_similar_personality_mentors
-                self.update_buttons()
-                self.update_cat_list()
-                '''
 
     def screen_switches(self):
         self.the_cat = Cat.all_cats[game.switches["cat"]]
@@ -288,37 +270,6 @@ class ChooseMentorScreen(Screens):
             container=self.filter_container,
             tool_tip_text='Only show mentors who have not had an apprentice'
         )
-        checkbox_y += checkbox_spacing
-        '''
-        self.same_skill_text = pygame_gui.elements.UITextBox(
-            "Matching skills",
-            scale(pygame.Rect((checkbox_x - 70, checkbox_y), (200, -1))),
-            object_id="#text_box_26_horizcenter",
-            container=self.filter_container
-        )
-        self.checkboxes["show_same_skill"] = UIImageButton(
-            scale(pygame.Rect((checkbox_x, checkbox_y + checkbox_spacing), (68, 68))),
-            "",
-            object_id="#unchecked_checkbox",
-            container=self.filter_container,
-            tool_tip_text='Only show mentors with matching skills'
-        )
-        checkbox_y += checkbox_spacing
-        
-        self.similar_personality_text = pygame_gui.elements.UITextBox(
-            "Similar personalities",
-            scale(pygame.Rect((checkbox_x - 70, checkbox_y), (200, -1))),
-            object_id="#text_box_26_horizcenter",
-            container=self.filter_container
-        )
-        self.checkboxes["show_similar_personality"] = UIImageButton(
-            scale(pygame.Rect((checkbox_x, checkbox_y + checkbox_spacing), (68, 68))),
-            "",
-            object_id="#unchecked_checkbox",
-            container=self.filter_container,
-            tool_tip_text='Only show mentors who have similar personalities'
-        )
-        '''
         self.update_apprentice()  # Draws the current apprentice
         self.update_selected_cat()  # Updates the image and details of selected cat
         self.update_cat_list()
@@ -373,22 +324,10 @@ class ChooseMentorScreen(Screens):
         del self.no_current_app_text
         self.no_former_app_text.kill()
         del self.no_former_app_text
-        '''
-        self.same_skill_text.kill()
-        del self.same_skill_text
-        self.similar_personality_text.kill()
-        del self.similar_personality_text
-        '''
         self.checkboxes["show_no_current_app"].kill()
         del self.checkboxes["show_no_current_app"]
         self.checkboxes["show_no_former_app"].kill()
         del self.checkboxes["show_no_former_app"]
-        '''
-        self.checkboxes["show_same_skill"].kill()
-        del self.checkboxes["show_same_skill"]
-        self.checkboxes["show_similar_personality"].kill()
-        del self.checkboxes["show_similar_personality"]
-        '''
 
     def update_apprentice(self):
         """Updates the apprentice focused on."""
@@ -670,10 +609,6 @@ class ChooseMentorScreen(Screens):
             ("show_no_current_app", self.checkboxes["show_no_current_app"], self.show_only_no_current_app_mentors),
             ("show_no_former_app", self.checkboxes["show_no_former_app"], self.show_only_no_former_app_mentors)
         ]
-        '''
-        ("show_same_skill", self.checkboxes["show_same_skill"], self.show_only_same_skill_mentors),
-        ("show_similar_personality", self.checkboxes["show_similar_personality"], self.show_only_similar_personality_mentors)
-        '''
         for name, checkbox, is_checked in checkboxes:
             checkbox.kill()
             theme = "#checked_checkbox" if is_checked else "#unchecked_checkbox"
@@ -713,16 +648,6 @@ class ChooseMentorScreen(Screens):
                 if self.show_only_no_current_app_mentors and cat.apprentice:
                     is_valid = False
 
-                '''
-                # Check for same skills filter
-                if self.show_only_same_skill_mentors and not mentor_skill_compatibility(cat, self.the_cat):
-                    is_valid = False
-
-                # Check for similar personality filter
-                if self.show_only_similar_personality_mentors and not get_mentor_compatibility(cat, self.the_cat):
-                    is_valid = False
-                    '''
-
                 # Add to valid or invalid list based on checks
                 if is_valid:
                     valid_warrior_mentors.append(cat)
@@ -743,16 +668,6 @@ class ChooseMentorScreen(Screens):
                 if self.show_only_no_current_app_mentors and cat.apprentice:
                     is_valid = False
 
-                '''
-                # Check same skills filter
-                if self.show_only_same_skill_mentors and not mentor_skill_compatibility(cat, self.the_cat):
-                    is_valid = False
-
-                # Check similar personality filter
-                if self.show_only_similar_personality_mentors and not get_mentor_compatibility(cat, self.the_cat):
-                    is_valid = False
-                    '''
-
                 # Add to valid or invalid list based on checks
                 if is_valid:
                     valid_medcat_mentors.append(cat)
@@ -771,16 +686,6 @@ class ChooseMentorScreen(Screens):
                 # Check for no current apprentices filter
                 if self.show_only_no_current_app_mentors and cat.apprentice:
                     is_valid = False
-
-                '''
-                # Check for same skills filter
-                if self.show_only_same_skill_mentors and not mentor_skill_compatibility(cat, self.the_cat):
-                    is_valid = False
-
-                # Check for similar personality filter
-                if self.show_only_similar_personality_mentors and not get_mentor_compatibility(cat, self.the_cat):
-                    is_valid = False
-                    '''
 
                 # Add to valid or invalid list based on checks
                 if is_valid:
