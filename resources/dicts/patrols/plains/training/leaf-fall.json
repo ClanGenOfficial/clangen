@@ -66,7 +66,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 60,
-        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves a jaunty flag, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
+        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} tail waves a jaunty reed, twitching a little in {PRONOUN/p_l/poss} excitement, scattering dewdrops whenever it hits the grass.",
         "decline_text": "The warriors get intercepted by a hunting patrol who need extra paws, and the possibility of a romantic afternoon evaporates.",
         "chance_of_success": 60,
         "relationship_constraint": ["mates_with_pl"],
@@ -93,7 +93,7 @@
                 ]
             },
             {
-                "text": "Standing in the middle of the field of clovers {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} brought them to, p_l bunts up softly against both of {PRONOUN/p_l/subject} mates. The bond they all share is the greatest luck p_l has or will ever have, {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, and {PRONOUN/p_l/subject} wanted to declare that here, where the four-leaf clover grows.",
+                "text": "Standing in the middle of the field of clovers {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} brought them to, p_l bunts up softly against both of {PRONOUN/p_l/poss} mates. The bond they all share is the greatest luck p_l has or will ever have, {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, and {PRONOUN/p_l/subject} wanted to declare that here, where the four-leaf clover grows.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -114,7 +114,7 @@
                 ]
             },
             {
-                "text": "They emerge into the vast clover fields, a known romantic spot, with p_l near-bouncing with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much, they're so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} hope {PRONOUN/p_l/poss} mates never <i>leaf</i> them!",
+                "text": "They emerge into the vast clover fields, a known romantic spot, and p_l bounces with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} hope {PRONOUN/p_l/poss} mates never <i>leaf</i> {PRONOUN/p_l/object}!",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["childish", "playful", "charismatic", "flamboyant", "bold"],
@@ -138,7 +138,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay, they're all still here together in the sunshine.",
+                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay; they're all still here together in the sunshine.",
                 "exp": 0,
                 "weight": 20
             },
@@ -165,11 +165,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1", "STORY,1"],
-        "intro_text": "r_c bats an insect aside as the patrol ambles along. p_l hums - did you know there's an insect who can blot out the sun?",
-        "decline_text": "p_l, worried that the apprentices aren't giving the patrol the focus is deserves, calls it off early.",
+        "intro_text": "r_c bats an insect aside as the patrol ambles along. p_l hums - does r_c know there's an insect who can blot out the sun?",
+        "decline_text": "The cats decide training is more important than a story today.",
         "success_outcomes": [
                 {
-                    "text": "It was generations ago, far before s_c's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near ever grass seed on the plains, and the prairie was left battered for seasons afterward.",
+                    "text": "It was generations ago, far before s_c's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
@@ -193,7 +193,7 @@
                     ]
                 },
                 {
-                    "text": "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c tells the patrol. Each winter, the moon needs to journey to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land to renew the grass.",
+                    "text": "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land to renew the grass.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",

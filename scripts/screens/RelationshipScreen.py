@@ -10,7 +10,7 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.image_button import (
+from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
     UIRelationStatusBar,
@@ -194,6 +194,7 @@ class RelationshipScreen(Screens):
                 )
                 self.update_checkboxes()
                 self.apply_cat_filter()
+                self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
                 game.clan.clan_settings["show empty relation"] = (
                     not game.clan.clan_settings["show empty relation"]

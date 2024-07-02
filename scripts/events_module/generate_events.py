@@ -236,6 +236,7 @@ class GenerateEvents:
             for sub in sub_types:
                 if sub not in event.sub_type:
                     wrong_type = True
+
                     continue
             for sub in event.sub_type:
                 if sub not in sub_types:
@@ -287,27 +288,28 @@ class GenerateEvents:
             if game.clan.game_mode in ["classic", "expanded"] and "cruel_season" in event.tags:
                 continue
 
-            # make complete leader death less likely until the leader is over 150 moons
-            if "all_lives" in event.tags:
-                if int(cat.moons) < 150 and int(random.random() * 5):
+            # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
+            if cat.status == "leader":
+                if "all_lives" in event.tags and "murder" not in event.sub_type:
+                    if int(cat.moons) < 150 and int(random.random() * 5):
+                        continue
+
+                leader_lives = game.clan.leader_lives
+
+                # make sure that 'some lives' and "lives_remain" events don't show up if the leader doesn't have
+                # multiple lives to spare
+                if "some_lives" in event.tags and leader_lives <= 3:
+                    continue
+                if "lives_remain" in event.tags and leader_lives < 2:
                     continue
 
-            leader_lives = game.clan.leader_lives
-
-            # make sure that 'some lives' and "lives_remain" events don't show up if the leader doesn't have multiple
-            # lives to spare
-            if "some_lives" in event.tags and leader_lives <= 3:
-                continue
-            if "lives_remain" in event.tags and leader_lives < 2:
-                continue
-
-            # check leader life count
-            if "high_lives" in event.tags and leader_lives not in [7, 8, 9]:
-                continue
-            elif "mid_lives" in event.tags and leader_lives not in [4, 5, 6]:
-                continue
-            elif "low_lives" in event.tags and leader_lives not in [1, 2, 3]:
-                continue
+                # check leader life count
+                if "high_lives" in event.tags and leader_lives not in [7, 8, 9]:
+                    continue
+                elif "mid_lives" in event.tags and leader_lives not in [4, 5, 6]:
+                    continue
+                elif "low_lives" in event.tags and leader_lives not in [1, 2, 3]:
+                    continue
 
             discard = False
             for rank in Cat_class.rank_sort_order:
@@ -357,56 +359,56 @@ class GenerateEvents:
                         continue
 
                 # check cat trait and skill
-                has_trait = False
-                if event.m_c["trait"]:
-                    if cat.personality.trait in event.m_c["trait"]:
-                        has_trait = True
+                if int(random.random() * trait_skill_bypass) or prevent_bypass:  # small chance to bypass
+                    has_trait = False
+                    if event.m_c["trait"]:
+                        if cat.personality.trait in event.m_c["trait"]:
+                            has_trait = True
 
-                has_skill = False
-                if event.m_c["skill"]:
-                    for _skill in event.m_c["skill"]:
-                        split = _skill.split(",")
+                    has_skill = False
+                    if event.m_c["skill"]:
+                        for _skill in event.m_c["skill"]:
+                            split = _skill.split(",")
 
-                        if len(split) < 2:
-                            print("Cat skill incorrectly formatted", _skill)
+                            if len(split) < 2:
+                                print("Cat skill incorrectly formatted", _skill)
+                                continue
+
+                            if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                                has_skill = True
+                                break
+
+                    if event.m_c["trait"] and event.m_c["skill"]:
+                        if not has_trait or has_skill:
+                            continue
+                    elif event.m_c["trait"]:
+                        if not has_trait:
+                            continue
+                    elif event.m_c["skill"]:
+                        if not has_skill:
                             continue
 
-                        if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                            has_skill = True
-                            break
+                    # check cat negate trait and skill
+                    has_trait = False
+                    if event.m_c["not_trait"]:
+                        if cat.personality.trait in event.m_c["not_trait"]:
+                            has_trait = True
 
-                if event.m_c["trait"] and event.m_c["skill"]:
-                    if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
+                    has_skill = False
+                    if event.m_c["not_skill"]:
+                        for _skill in event.m_c["not_skill"]:
+                            split = _skill.split(",")
+
+                            if len(split) < 2:
+                                print("Cat skill incorrectly formatted", _skill)
+                                continue
+
+                            if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                                has_skill = True
+                                break
+
+                    if has_trait or has_skill:
                         continue
-                elif event.m_c["trait"]:
-                    if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                        continue
-                elif event.m_c["skill"]:
-                    if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                        continue
-
-                # check cat negate trait and skill
-                has_trait = False
-                if event.m_c["not_trait"]:
-                    if cat.personality.trait in event.m_c["not_trait"]:
-                        has_trait = True
-
-                has_skill = False
-                if event.m_c["not_skill"]:
-                    for _skill in event.m_c["not_skill"]:
-                        split = _skill.split(",")
-
-                        if len(split) < 2:
-                            print("Cat skill incorrectly formatted", _skill)
-                            continue
-
-                        if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                            has_skill = True
-                            break
-
-                # There is a small chance to bypass the skill or trait requirements.
-                if (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                    continue
 
                 # check backstory
                 if event.m_c["backstory"]:
@@ -425,57 +427,57 @@ class GenerateEvents:
                                                     event_id=event.event_id):
                         continue
 
-                # check random_cat trait and skill
-                has_trait = False
-                if event.r_c["trait"]:
-                    if random_cat.personality.trait in event.r_c["trait"]:
-                        has_trait = True
+                # check cat trait and skill
+                if int(random.random() * trait_skill_bypass) or prevent_bypass:  # small chance to bypass
+                    has_trait = False
+                    if event.r_c["trait"]:
+                        if random_cat.personality.trait in event.r_c["trait"]:
+                            has_trait = True
 
-                has_skill = False
-                if event.r_c["skill"]:
-                    for _skill in event.r_c["skill"]:
-                        split = _skill.split(",")
+                    has_skill = False
+                    if event.r_c["skill"]:
+                        for _skill in event.r_c["skill"]:
+                            split = _skill.split(",")
 
-                        if len(split) < 2:
-                            print("random_cat skill incorrectly formatted", _skill)
+                            if len(split) < 2:
+                                print("random_cat skill incorrectly formatted", _skill)
+                                continue
+
+                            if random_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                                has_skill = True
+                                break
+
+                    if event.r_c["trait"] and event.r_c["skill"]:
+                        if not has_trait or has_skill:
+                            continue
+                    elif event.r_c["trait"]:
+                        if not has_trait:
+                            continue
+                    elif event.r_c["skill"]:
+                        if not has_skill:
                             continue
 
-                        if random_cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                            has_skill = True
-                            break
+                    # check cat negate trait and skill
+                    has_trait = False
+                    if event.r_c["not_trait"]:
+                        if random_cat.personality.trait in event.r_c["not_trait"]:
+                            has_trait = True
 
-                if event.r_c["trait"] and event.r_c["skill"]:
-                    if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
+                    has_skill = False
+                    if event.r_c["not_skill"]:
+                        for _skill in event.r_c["not_skill"]:
+                            split = _skill.split(",")
+
+                            if len(split) < 2:
+                                print("random_cat skill incorrectly formatted", _skill)
+                                continue
+
+                            if random_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                                has_skill = True
+                                break
+
+                    if has_trait or has_skill:
                         continue
-                elif event.r_c["trait"]:
-                    if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                        continue
-                elif event.r_c["skill"]:
-                    if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                        continue
-
-                # check random_cat negate trait and skill
-                has_trait = False
-                if event.r_c["not_trait"]:
-                    if random_cat.personality.trait in event.r_c["not_trait"]:
-                        has_trait = True
-
-                has_skill = False
-                if event.r_c["not_skill"]:
-                    for _skill in event.r_c["not_skill"]:
-                        split = _skill.split(",")
-
-                        if len(split) < 2:
-                            print("random_cat skill incorrectly formatted", _skill)
-                            continue
-
-                        if random_cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                            has_skill = True
-                            break
-
-                # There is a small chance to bypass the skill or trait requirements.
-                if (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
-                    continue
 
                 # check backstory
                 if event.r_c["backstory"]:

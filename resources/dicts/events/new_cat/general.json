@@ -236,15 +236,14 @@
           },
           "r_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
-            "status": ["any"],
-            "relationship_status": ["mates"]
+            "status": ["any"]
         },
         "new_cat": [
             [
                 "old_name",
                 "loner",
                 "status:warrior",
-                "mate:m_c,r_c" 
+                "mate:m_c,r_c"
             ]
         ],
         "relationships": [
@@ -648,7 +647,7 @@
         }
     },
     {
-        "event_id": "gen_new_cat_war_any2",
+        "event_id": "gen_new_cat_war_anydefect1",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
@@ -672,7 +671,7 @@
         }
     },
     {
-        "event_id": "gen_new_cat_war_any2",
+        "event_id": "gen_new_cat_war_anydefect2",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
