@@ -632,7 +632,6 @@ class ListScreen(Screens):
                 if self.death_status == "living"
                 else "#text_box_30_horizcenter_light",
                 manager=MANAGER,
-                include_names=True,
                 anchors={
                     "top_target": self.cat_list_bar_elements["search_bar_entry"],
                     "centerx": "centerx",
