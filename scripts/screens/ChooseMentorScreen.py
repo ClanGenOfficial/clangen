@@ -5,7 +5,6 @@ from .Screens import Screens
 
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit, scale_dimentions
 from scripts.cat.cats import Cat
-from scripts.cat.skills import SkillPath
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
