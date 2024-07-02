@@ -387,7 +387,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "Trailing behind the patrol, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -632,8 +632,8 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "As r_c trails behind p_l, there's a mighty crash above {PRONOUN/r_c/object}. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -812,8 +812,8 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "intro_text": "As r_c trails behind p_l, there's a mighty crash above {PRONOUN/r_c/object}. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -993,7 +993,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c is training alone out in the forest when suddenly, a mighty crash sounds from above. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1072,7 +1072,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall!",
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall!",
                 "exp": 20,
                 "weight": 5
             },
@@ -1139,17 +1139,17 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall!",
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall!",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable water source could be important during times of drought.",
+                "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable water source could be important during times of drought.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1202,17 +1202,17 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall! Purring, they take the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable water source could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
+                "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable water source could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1265,17 +1265,17 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+                "text": "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
                 "exp": 20,
                 "weight": 20
             },
             {
-                "text": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a moment of peace, relaxing and enjoying the view.",
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall! Purring, they take the opportunity for a moment of peace, relaxing and enjoying the view.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable water source could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
+                "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable water source could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1861,7 +1861,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "r_c approaches p_l, asking if {PRONOUN/p_l/subject} wouldn't mind showing r_c {PRONOUN/p_l/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object}?",
+        "intro_text": "r_c approaches p_l, asking if {PRONOUN/p_l/subject} wouldn't mind showing r_c {PRONOUN/p_l/poss} hunting techniques and perhaps doing some training with {PRONOUN/r_c/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "relationship_constraint": ["not_mates"],
@@ -1950,7 +1950,7 @@
                 ]
             },
             {
-                "text": "p_l spots r_c looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse.",
+                "text": "p_l spots r_c looking at them a little bit too admiringly, and ends the training session early with a diplomatic and completely made-up excuse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1978,7 +1978,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} begin {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_10", "not_mates"],
