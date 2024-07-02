@@ -224,7 +224,7 @@ class Screens:
         )
 
         self.bgs = {"default": bg}
-        self.blur_bgs = {"default": pygame.transform.scale(bg, screen.size)}
+        self.blur_bgs = {"default": pygame.transform.scale(bg, screen.get_size())}
         self.active_bg: Optional[pygame.Surface] = None
 
     def loading_screen_start_work(
@@ -597,11 +597,11 @@ class Screens:
             self.bgs[name] = pygame.transform.scale(bg, game_screen_size)
             if blur_bgs is not None and name in blur_bgs:
                 self.blur_bgs[name] = pygame.transform.scale(
-                    blur_bgs[name], screen.size
+                    blur_bgs[name], screen.get_size()
                 )
                 continue
             self.blur_bgs[name] = pygame.transform.scale(
-                pygame.transform.box_blur(bg, radius), screen.size
+                pygame.transform.box_blur(bg, radius), screen.get_size()
             )
 
     def set_bg(self, bg: Optional[str]):

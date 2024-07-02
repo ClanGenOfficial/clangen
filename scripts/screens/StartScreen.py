@@ -64,7 +64,7 @@ class StartScreen(Screens):
                         pygame.image.load(
                             "resources/images/menu_logoless.png"
                         ).convert(),
-                        screen.size,
+                        screen.get_size(),
                     ),
                     10,
                 )

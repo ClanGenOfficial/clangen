@@ -678,7 +678,7 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         res,
         offset,
         screen_scale,
-        "resources/theme/defaults.json",
+        "resources/theme/all.json",
         enable_live_theme_updates=False,
     )
     manager.add_font_paths(
@@ -713,14 +713,6 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     #
     # else:
 
-    manager.get_theme().load_theme("resources/theme/all.json")
-    # manager.get_theme().load_theme("resources/theme/buttons_small.json")
-    # manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
-    # manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
-    # manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-    # manager.get_theme().load_theme("resources/theme/window_base_small.json")
-    # manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
-
     manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
 
     manager.preload_fonts(
@@ -732,10 +724,6 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
             {"name": "notosans", "point_size": 15, "style": "italic"},
         ]
     )
-
-    manager.get_theme().load_theme("resources/theme/windows.json")
-    manager.get_theme().load_theme("resources/theme/image_buttons.json")
-
     return manager
 
 
