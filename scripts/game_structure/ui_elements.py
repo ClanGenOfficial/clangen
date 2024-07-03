@@ -248,7 +248,7 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
             object_id=object_id,
             anchors=anchors,
             visible=visible)
-        
+
         self.scroll_wheel_speed = 100
         self.sliding_button.change_layer(starting_height)
         if game.settings["fullscreen"]:

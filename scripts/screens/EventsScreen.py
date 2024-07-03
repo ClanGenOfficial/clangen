@@ -14,7 +14,9 @@ from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme, short
 
 
 class EventsScreen(Screens):
-    event_display_type = "all"
+    current_display = "all"
+    selected_display = "all"
+
     all_events = ""
     ceremony_events = ""
     birth_death_events = ""
@@ -26,6 +28,7 @@ class EventsScreen(Screens):
         "<center>See which events are currently happening in the Clan.</center>"
     )
     display_events = []
+    tabs = ["all", "ceremony", "birth_death", "relationship", "health", "other_clans", "misc"]
 
     def __init__(self, name):
         super().__init__(name)
@@ -55,6 +58,7 @@ class EventsScreen(Screens):
         if game.switches["window_open"]:
             return
 
+        # ON HOVER
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             element = event.ui_element
             if element in self.event_buttons.values():
@@ -66,7 +70,8 @@ class EventsScreen(Screens):
                         y_pos = self.alert[ele].get_relative_rect()[1]
                         self.alert[ele].set_relative_position((x_pos, y_pos))
 
-        if event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
+        # ON UNHOVER
+        elif event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele in self.event_buttons:
@@ -77,15 +82,17 @@ class EventsScreen(Screens):
                         y_pos = self.alert[ele].get_relative_rect()[1]
                         self.alert[ele].set_relative_position((x_pos, y_pos))
 
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
+        # ON START BUTTON PRESS
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele, val in self.event_buttons.items():
                     if val == element:
-                        self.handle_tab_event(ele)
+                        self.handle_tab_switch(ele)
                         break
 
-        if event.type == pygame_gui.UI_BUTTON_PRESSED:  # everything else on button press to prevent blinking
+        # ON FULL BUTTON PRESS
+        elif event.type == pygame_gui.UI_BUTTON_PRESSED:  # everything else on button press to prevent blinking
             element = event.ui_element
             if element == self.timeskip_button:
                 self.events_thread = self.loading_screen_start_work(
@@ -101,23 +108,72 @@ class EventsScreen(Screens):
                 self.save_scroll_position()
                 self.menu_button_pressed(event)
 
+        # KEYBIND CONTROLS
+        elif game.settings["keybinds"]:
+            # ON PRESSING A KEY
+            if event.type == pygame.KEYDOWN:
+                # LEFT ARROW
+                if event.key == pygame.K_LEFT:
+                    self.change_screen("patrol screen")
+                # RIGHT ARROW
+                elif event.key == pygame.K_RIGHT:
+                    self.change_screen("camp screen")
+                # DOWN AND UP ARROW
+                elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                    self.handle_tab_select(event.key)
+
+
     def save_scroll_position(self):
         """
         adds current event display vert scroll bar position to game.switches["saved_scroll_positions"] dict
         """
         if self.event_display.vert_scroll_bar:
-            game.switches["saved_scroll_positions"][self.event_display_type] = (
+            game.switches["saved_scroll_positions"][self.current_display] = (
                     self.event_display.vert_scroll_bar.scroll_position
                     / self.event_display.vert_scroll_bar.scrollable_height
             )
 
-    def handle_tab_event(self, display_type):
+    def handle_tab_select(self, event):
+
+        # find next tab based on current tab
+        current_index = self.tabs.index(self.selected_display)
+        if event == pygame.K_DOWN:
+            next_index = current_index + 1
+            wrap_index = 0
+        else:
+            next_index = current_index - 1
+            wrap_index = -1
+
+        # unselect the currently selected display
+        # unless it matches the current display, we don't want to mess with the state of that button
+        if self.current_display != self.selected_display:
+            self.event_buttons[self.selected_display].unselect()
+            x_pos = int(self.alert[self.selected_display].get_relative_rect()[0] + 10)
+            y_pos = self.alert[self.selected_display].get_relative_rect()[1]
+            self.alert[self.selected_display].set_relative_position((x_pos, y_pos))
+
+        # find the new selected display
+        try:
+            self.selected_display = self.tabs[next_index]
+        except IndexError:
+            self.selected_display = self.tabs[wrap_index]
+
+        # select the new selected display
+        # unless it matches the current display, we don't want to mess with the state of that button
+        if self.current_display != self.selected_display:
+            self.event_buttons[self.selected_display].select()
+            x_pos = int(self.alert[self.selected_display].get_relative_rect()[0] - 10)
+            y_pos = self.alert[self.selected_display].get_relative_rect()[1]
+            self.alert[self.selected_display].set_relative_position((x_pos, y_pos))
+
+
+    def handle_tab_switch(self, display_type):
         """
         saves current tab scroll position, removes alert, and then switches to the new tab
         """
         self.save_scroll_position()
 
-        self.event_display_type = display_type
+        self.current_display = display_type
         self.update_list_buttons()
 
         if display_type == "all":
@@ -223,7 +279,7 @@ class EventsScreen(Screens):
         )
 
         y_pos = 0
-        for event_type in ["all", "ceremony", "birth_death", "relationship", "health", "other_clans", "misc"]:
+        for event_type in self.tabs:
             self.event_buttons[f"{event_type}"] = UIImageButton(
                 scale(pygame.Rect((30, 38 + y_pos), (300, 60))),
                 "",
@@ -247,7 +303,7 @@ class EventsScreen(Screens):
 
             y_pos += 100
 
-        self.event_buttons[self.event_display_type].disable()
+        self.event_buttons[self.current_display].disable()
 
         self.make_event_scrolling_container()
         self.open_involved_cat_button = None
@@ -471,9 +527,9 @@ class EventsScreen(Screens):
             (self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
 
         # set saved scroll position
-        if game.switches["saved_scroll_positions"].get(self.event_display_type):
+        if game.switches["saved_scroll_positions"].get(self.current_display):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                game.switches["saved_scroll_positions"][self.event_display_type]
+                game.switches["saved_scroll_positions"][self.current_display]
             )
 
     def update_list_buttons(self):
@@ -483,7 +539,7 @@ class EventsScreen(Screens):
         for ele in self.event_buttons:
             self.event_buttons[ele].enable()
 
-        self.event_buttons[self.event_display_type].disable()
+        self.event_buttons[self.current_display].disable()
 
     def on_use(self):
         self.loading_screen_on_use(self.events_thread, self.timeskip_done)
@@ -499,7 +555,7 @@ class EventsScreen(Screens):
 
         self.update_display_events_lists()
 
-        self.event_display_type = "all"
+        self.current_display = "all"
         self.event_buttons["all"].disable()
 
         for tab in self.event_buttons:
