@@ -1049,7 +1049,7 @@ class Pregnancy_Events:
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
-        if clan.clan_settings["single parentage"]:
+        if not clan.clan_settings["single parentage"]:
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance if affairs are not allowed

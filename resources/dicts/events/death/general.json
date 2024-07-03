@@ -4129,7 +4129,7 @@
         },
         "history": [{
             "cats": ["m_c"],
-            "reg_death": "m_c died saving r_c from a monster",
+            "reg_death": "m_c died saving r_c from a monster.",
             "lead_death": "saved r_c from a monster"
         }],
         "relationships": [

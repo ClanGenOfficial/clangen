@@ -721,28 +721,6 @@ class UICheckbox(UIImageButton):
 
 
 class UICatListDisplay(UIContainer):
-    """
-    Creates and displays a list of click-able cat sprites.
-    :param relative_rect: The starting size and relative position of the container.
-    :param container: The container this container is within. Defaults to None (which is the root
-                      container for the UI)
-    :param starting_height: The starting layer height of this container above its container.
-                            Defaults to 1.
-    :param object_id: An object ID for this element.
-    :param manager: The UI manager for this element. If not provided or set to None,
-                    it will try to use the first UIManager that was created by your application.
-    :param cat_list: the list of cat objects that need to display
-    :param cats_displayed: the number of cats to display on one page
-    :param x_px_between: the pixel space between each cat sprite
-    :param columns: the number of cats in a row before a new row is created
-    :param next_button: the next_button ui_element
-    :param prev_button: the prev_button ui_element
-    :param current_page: the currently displayed page of the cat list
-    :param tool_tip_name: should a tooltip displaying the cat's name be added to each cat sprite, default False
-    :param visible: Whether the element is visible by default. Warning - container visibility
-                    may override this.
-    """
-
     def __init__(
         self,
         relative_rect: RectLike,
@@ -767,6 +745,28 @@ class UICatListDisplay(UIContainer):
         text_theme="#cat_list_text",
         y_px_between: int = None,
     ):
+        """
+        Creates and displays a list of click-able cat sprites.
+        :param relative_rect: The starting size and relative position of the container.
+        :param container: The container this container is within. Defaults to None (which is the root
+                          container for the UI)
+        :param starting_height: The starting layer height of this container above its container.
+                                Defaults to 1.
+        :param object_id: An object ID for this element.
+        :param manager: The UI manager for this element. If not provided or set to None,
+                        it will try to use the first UIManager that was created by your application.
+        :param cat_list: the list of cat objects that need to display
+        :param cats_displayed: the number of cats to display on one page
+        :param x_px_between: the pixel space between each column of cats
+        :param y_px_between: the pixel space between each row of cats. Optional, defaults to x_px_between
+        :param columns: the number of cats in a row before a new row is created
+        :param next_button: the next_button ui_element
+        :param prev_button: the prev_button ui_element
+        :param current_page: the currently displayed page of the cat list
+        :param tool_tip_name: should a tooltip displaying the cat's name be added to each cat sprite, default False
+        :param visible: Whether the element is visible by default. Warning - container visibility
+                        may override this.
+        """
 
         super().__init__(
             relative_rect=relative_rect,
@@ -880,18 +880,7 @@ class UICatListDisplay(UIContainer):
 
         show_fav = game.clan.clan_settings["show fav"]
 
-        i = -1
-        for row in range(self.rows):
-            for column in range(self.columns):
-                container = self.boxes[row][column]
-                i += 1
-                try:
-                    kitty = display_cats[i]
-                except IndexError:
-                    break
-
-                self.create_cat_button(i, kitty, container)
-
+        # FAVOURITE ICON
         if show_fav:
             i = -1
             for row in range(self.rows):
@@ -901,10 +890,23 @@ class UICatListDisplay(UIContainer):
                     try:
                         kitty = display_cats[i]
                     except IndexError:
-                        return
+                        break
                     if kitty.favourite:
                         self.create_favor_indicator(i, container)
 
+        # CAT SPRITE
+        i = -1
+        for row in range(self.rows):
+            for column in range(self.columns):
+                container = self.boxes[row][column]
+                i += 1
+                try:
+                    kitty = display_cats[i]
+                except IndexError:
+                    break
+                self.create_cat_button(i, kitty, container)
+
+        # CAT NAME
         if self.show_names:
             i = -1
             for row in range(self.rows):
@@ -914,7 +916,7 @@ class UICatListDisplay(UIContainer):
                     try:
                         kitty = display_cats[i]
                     except IndexError:
-                        return
+                        break
                     self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
                         scale(
                             pygame.Rect(
@@ -940,7 +942,7 @@ class UICatListDisplay(UIContainer):
             container=container,
             object_id=f"#sprite{str(i)}",
             tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
-            starting_height=2,
+            starting_height=1,
             anchors={"centerx": "centerx"},
         )
 
@@ -951,7 +953,7 @@ class UICatListDisplay(UIContainer):
             object_id=f"favor_circle{i}",
             container=container,
             starting_height=1,
-            anchors={"center": "center"},
+            anchors={"centerx": "centerx"},
         )
 
     def _update_arrow_buttons(self):
