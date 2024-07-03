@@ -24,6 +24,9 @@
         ],
         "random_status_constraint": [
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -38,6 +41,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -53,6 +59,9 @@
             "mediator apprentice",
             "apprentice",
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -78,5 +87,4 @@
             "vengeful"
         ]
     }
-    
 ]
