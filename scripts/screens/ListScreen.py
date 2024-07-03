@@ -208,8 +208,8 @@ class ListScreen(Screens):
                     self.menu_buttons["clearing"],
                     self.menu_buttons["med_cat_den"],
                     self.menu_buttons["warrior_den"]
-                    
                 )
+                
                 if event.ui_element not in excluded_buttons:
                     self.current_group = "clan"
                     self.death_status = "living"
