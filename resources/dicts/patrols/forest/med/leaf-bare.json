@@ -2299,7 +2299,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and [VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
+        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and {VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
         "decline_text": "It's probably fine to let the patrol go without telling the story, the bush has been pointed out and {PRONOUN/p_l/poss} Clanmates warned.",
         "success_outcomes": [
             {
