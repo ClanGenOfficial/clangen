@@ -3,6 +3,8 @@ from typing import Tuple
 
 import pygame
 
+from scripts.game_structure.game_essentials import screen_scale
+
 
 class ButtonStyles(Enum):
     MAINMENU = "mainmenu"
@@ -57,6 +59,20 @@ buttonstyles = {
             "resources/images/generated_buttons/menu_middle_disabled.png"
         ).convert_alpha(),
     },
+    "rounded_rect": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/rounded_rect_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/rounded_rect_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/rounded_rect_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/rounded_rect_disabled.png"
+        ).convert_alpha(),
+    },
 }
 
 buttonstyles["menu_right"] = {
@@ -72,7 +88,6 @@ buttonstyles["menu_right"] = {
 
 
 def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
-
     height = base.height
     vertical_scale = dimensions[1] / height
     if vertical_scale < 0:
@@ -90,21 +105,44 @@ def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
         height = middle.get_height()
     width_bookends = height * 2
 
+    # if we need the middle segment
     if dimensions[0] - width_bookends > 0:
         middle = pygame.transform.scale(
             middle, (dimensions[0] - width_bookends, middle.get_height())
         )
-    else:
-        middle = pygame.transform.scale(middle, (1, middle.get_height()))
-    surface = pygame.Surface(dimensions, pygame.SRCALPHA)
-    surface.convert_alpha()
-    surface.fblits(
-        (
-            (left, (0, 0)),
-            (middle, (left.get_width(), 0)),
-            (right, (left.get_width() + middle.get_width(), 0)),
+        surface = pygame.Surface(dimensions, pygame.SRCALPHA)
+        surface.convert_alpha()
+        surface.fblits(
+            (
+                (left, (0, 0)),
+                (middle, (left.get_width(), 0)),
+                (right, (left.get_width() + middle.get_width(), 0)),
+            )
         )
-    )
+    else:
+        # if it's too small for us to put middle in there, just don't :)
+        excess_width = left.get_width() * 2 - dimensions[0]
+        surface = pygame.Surface(dimensions, pygame.SRCALPHA)
+        surface.convert_alpha()
+        surface.blits(
+            (
+                (
+                    left,
+                    (0, 0),
+                    pygame.Rect((0, 0), (height - excess_width / 2, height)),
+                ),
+                (
+                    right,
+                    (height - excess_width / 2, 0),
+                    pygame.Rect(
+                        excess_width / 2,
+                        0,
+                        height - excess_width / 2,
+                        height,
+                    ),
+                ),
+            )
+        )
 
     if scale != 1:
         surface = pygame.transform.scale(
@@ -113,7 +151,9 @@ def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
     return surface
 
 
-def get_button_dict(style: ButtonStyles, dimensions: Tuple[int, int], scale=1):
+def get_button_dict(style: ButtonStyles, dimensions: Tuple[int, int], scale=None):
+    if scale is None:
+        scale = screen_scale
     return {
         "normal": generate_button(
             buttonstyles[style.value]["normal"], dimensions, scale
