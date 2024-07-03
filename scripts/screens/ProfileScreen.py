@@ -1689,7 +1689,8 @@ class ProfileScreen(Screens):
                         else:
                             life_text = "lost the rest of {PRONOUN/m_c/poss} lives"
                     else:
-                        life_text = "lost a life"
+                        life_names = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eigth"]
+                        life_text = "lost {PRONOUN/m_c/poss} " + life_names[index] + " life"
                 elif death_number > 1:
                     #for retired leaders
                     if index == death_number - 1 and self.the_cat.dead:
@@ -1715,15 +1716,8 @@ class ProfileScreen(Screens):
                     all_deaths.append(text)
 
             if self.the_cat.status == "leader" or death_number > 1:
-                if death_number > 2:
-                    filtered_deaths = [
-                        death for death in all_deaths if death is not None
-                    ]
-                    deaths = (
-                        f"{', '.join(filtered_deaths[0:-1])}, and {filtered_deaths[-1]}"
-                    )
-                elif death_number == 2:
-                    deaths = " and ".join(all_deaths)
+                if death_number > 1:
+                    deaths = str("\n" + str(self.the_cat.name) + " ").join(all_deaths)
                 else:
                     deaths = all_deaths[0]
 

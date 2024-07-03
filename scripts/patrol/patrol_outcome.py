@@ -525,7 +525,18 @@ class PatrolOutcome:
                 old_injuries = list(_cat.injuries.keys())
                 old_illnesses = list(_cat.illnesses.keys())
                 old_perm_cond = list(_cat.permanent_condition.keys())
+
+                if set(possible_injuries).issubset(old_injuries + old_illnesses + old_perm_cond):
+                    print("WARNING: All possible conditions are already on this cat! (poor kitty)")
+                    continue
+
                 give_injury = choice(possible_injuries)
+                # If the cat already has this injury, reroll it to get something new
+                while give_injury in old_injuries \
+                        or give_injury in old_illnesses \
+                        or give_injury in old_perm_cond:
+                    give_injury = choice(possible_injuries)
+
                 if give_injury in INJURIES:
                     _cat.get_injured(give_injury, lethal=lethal)
                 elif give_injury in ILLNESSES:
@@ -758,7 +769,7 @@ class PatrolOutcome:
                 else:
                     results.append(f"{cat.name} joined the Clan.")
 
-        # TODO: it hink this is handled in the create_new_cat_block?
+        # TODO: i think this is handled in the create_new_cat_block?
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed
         # and give the condition

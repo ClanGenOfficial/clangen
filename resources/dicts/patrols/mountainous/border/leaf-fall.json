@@ -1,7 +1,7 @@
 [
     {
     "patrol_id": "mtn_bord_leaf-fall_goatfight1",
-    "biome": "mountainous",
+    "biome": ["mountainous"],
     "season": ["leaf-fall"],
     "types": ["border"],
     "tags": [],

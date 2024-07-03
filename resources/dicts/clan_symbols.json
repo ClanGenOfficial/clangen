@@ -528,8 +528,8 @@
     "tags0": ["animal", "mammal"]
   },
   "Dove": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bird"]
   },
   "Doe": {
     "variants": 0,
@@ -616,7 +616,7 @@
     "tags0": ["animal", "bird"]
   }, 
   "Fallen": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["miscellaneous"]
   }, 
   "Falling": {
@@ -677,7 +677,7 @@
   },
   "Fire": {
     "variants": 0,
-    "tags0": []
+    "tags0": ["element", "fire"]
   },
   "Fish": {
     "variants": 1, 
@@ -688,8 +688,8 @@
     "tags0": []
   },
   "Flame": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "fire"]
   },
   "Flare": {
     "variants": 0,
@@ -792,8 +792,8 @@
     "tags0": []
   },
   "Frost": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "water"]
   },
   "Frozen": {
     "variants": 0,
@@ -816,8 +816,8 @@
     "tags0": []
   }, 
   "Fuzz": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["descriptor"]
   }, 
   "Fuzzy": {
     "variants": 0,
@@ -1028,8 +1028,8 @@
     "tags0": []
   },
   "Ice": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "water"]
   },
   "Icicle": {
     "variants": 0,
@@ -1232,8 +1232,8 @@
     "tags0": []
   },
   "Midnight": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["miscellaneous"]
   },
   "Milk": {
     "variants": 0,
@@ -1393,8 +1393,8 @@
     "tags0": []
   },
   "Owl": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bird"]
   },
   "Pansy": {
     "variants": 1,
@@ -1637,8 +1637,8 @@
     "tags0": ["animal", "bug"]
   }, 
   "Roar": {
-    "variants": 0, 
-    "tags0": []
+    "variants": 1, 
+    "tags0": ["animal", "mammal"]
   },
   "Rock": {
     "variants": 0,
@@ -1877,8 +1877,8 @@
     "tags0": []
   }, 
   "Soft": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["descriptor"]
   }, 
   "Song": {
     "variants": 0,

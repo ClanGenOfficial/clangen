@@ -1,7 +1,7 @@
 [
     {
         "patrol_id": "wtlnd_med_greenleaf_daisy_lorestoryhealinglocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -66,7 +66,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_gatheringelder_lorehealingstorylocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -176,7 +176,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_juniper_lorestoryhealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -241,7 +241,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_lungwort_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -314,7 +314,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_mallow_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -384,7 +384,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_marigold_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -449,7 +449,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_oakleaves_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -514,7 +514,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_ragwort_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -532,7 +532,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort impacts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
+                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort imparts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["ragwort"],
@@ -608,7 +608,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_raspberry_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -679,7 +679,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_tansy_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -799,7 +799,7 @@
     },
     {
         "patrol_id": "wtlnd_med_greenleaf_thyme_risingclanref_storylorehealerlocked1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],

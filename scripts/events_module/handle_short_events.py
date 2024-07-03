@@ -6,20 +6,20 @@ from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import FreshkillPile, FRESHKILL_EVENT_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR
+from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relation_events import Relation_Events
+from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, \
     history_text_adjust, get_warring_clan, unpack_rel_block, change_clan_reputation, create_new_cat_block, \
     get_leader_life_notice, get_alive_status_cats, get_living_clan_cat_count, adjust_list_text
-from scripts.game_structure.game_essentials import game
-from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
 #                               Death Event Class                              #
 # ---------------------------------------------------------------------------- #
 
-class HandleShortEvents():
+class HandleShortEvents:
     """Handles generating and executing ShortEvents"""
 
     def __init__(self):
@@ -133,7 +133,8 @@ class HandleShortEvents():
             # print(f"CHOSEN: {self.chosen_event.event_id}")
         except IndexError:
             # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
-            print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name}")
+            print(f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name} "
+                  f"and {self.random_cat.name if self.random_cat else 'no random cat'}")
             return
 
         self.text = self.chosen_event.text
@@ -154,6 +155,10 @@ class HandleShortEvents():
 
         # create new cats (must happen here so that new cats can be included in further changes)
         self.handle_new_cats()
+
+        # give accessory
+        if self.chosen_event.new_accessory:
+            self.handle_accessories()
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
@@ -223,10 +228,6 @@ class HandleShortEvents():
                     self.handle_freshkill_supply(block, freshkill_pile)
                 else:  # if freshkill isn't being adjusted, then it must be a herb supply
                     self.handle_herb_supply(block)
-
-        # give accessory
-        if self.chosen_event.new_accessory:
-            self.handle_accessories()
 
         if "clan_wide" in self.chosen_event.tags:
             self.involved_cats.clear()
@@ -298,33 +299,33 @@ class HandleShortEvents():
         if extra_text and extra_text not in self.chosen_event.text:
             self.chosen_event.text = self.chosen_event.text + " " + extra_text
 
-    def handle_accessories(self):
+    def handle_accessories(self, pelts=Pelt):
         """
         handles giving accessories to the main_cat
         """
         if "misc" not in self.types:
             self.types.append("misc")
         acc_list = []
-        possible_accs = self.chosen_event.new_accessory
+        possible_accs = getattr(self.chosen_event, 'new_accessory', [])
         if "WILD" in possible_accs:
-            acc_list.extend(Pelt.wild_accessories)
+            acc_list.extend(pelts.wild_accessories)
         if "PLANT" in possible_accs:
-            acc_list.extend(Pelt.plant_accessories)
+            acc_list.extend(pelts.plant_accessories)
         if "COLLAR" in possible_accs:
-            acc_list.extend(Pelt.collars)
+            acc_list.extend(pelts.collars)
 
         for acc in possible_accs:
             if acc not in ["WILD", "PLANT", "COLLAR"]:
                 acc_list.append(acc)
 
-        if "NOTAIL" in self.main_cat.pelt.scars or "HALFTAIL" in self.main_cat.pelt.scars:
-            for acc in Pelt.tail_accessories:
-                try:
-                    acc_list.remove(acc)
-                except ValueError:
-                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+        if hasattr(self.main_cat.pelt, "scars"):
+            if "NOTAIL" in self.main_cat.pelt.scars or "HALFTAIL" in self.main_cat.pelt.scars:
+                for acc in pelts.tail_accessories:
+                    if acc in acc_list:
+                        acc_list.remove(acc)
 
-        self.main_cat.pelt.accessory = random.choice(acc_list)
+        if acc_list:
+            self.main_cat.pelt.accessory = random.choice(acc_list)
 
     def handle_death(self):
         """
@@ -426,22 +427,16 @@ class HandleShortEvents():
                 if self.chosen_event.m_c["dies"]:
                     # find history
                     if self.main_cat.status == "leader":
-                        death_history = block.get('lead_death')
+                        death_history = history_text_adjust(block.get('lead_death'),
+                                                            self.other_clan_name, game.clan, self.random_cat)
                     else:
-                        death_history = block.get('reg_death')
+                        death_history = history_text_adjust(block.get('reg_death'),
+                                                            self.other_clan_name, game.clan, self.random_cat)
 
                     # handle murder
                     if "murder" in self.chosen_event.sub_type:
                         revealed = False
-                        death_history = history_text_adjust(death_history,
-                                                            self.other_clan_name, game.clan,
-                                                            [Cat.fetch_cat(cat) for cat in self.involved_cats
-                                                             if cat != self.main_cat.ID][0])
                         History.add_murders(self.main_cat, self.random_cat, revealed, death_history)
-                    else:
-                        death_history = history_text_adjust(death_history,
-                                                            self.other_clan_name, game.clan, self.main_cat)
-
                     History.add_death(self.main_cat, death_history, other_cat=self.random_cat)
 
             # random_cat history
