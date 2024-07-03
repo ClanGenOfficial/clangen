@@ -123,13 +123,13 @@ class WarriorDenScreen(Screens):
         """
         self.hide_menu_buttons()
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (210, 60))),
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
             "",
             object_id=ObjectID("#back_button", "@image_button"),
             manager=MANAGER,
         )
         self.help_button = UIImageButton(
-            ui_scale(pygame.Rect((1450, 50), (68, 68))),
+            ui_scale(pygame.Rect((725, 25), (34, 34))),
             "",
             object_id=ObjectID("#help_button", "@image_button"),
             manager=MANAGER,
@@ -142,7 +142,7 @@ class WarriorDenScreen(Screens):
         )
 
         self.focus_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((100, 380), (1400, 920))),
+            ui_scale(pygame.Rect((50, 190), (700, 460))),
             pygame.image.load("resources/images/warrior_den_frame.png").convert_alpha(),
             object_id="#focus_frame",
             starting_height=1,
@@ -150,7 +150,7 @@ class WarriorDenScreen(Screens):
         )
 
         self.save_button = UIImageButton(
-            ui_scale(pygame.Rect((300, 1184), (278, 60))),
+            ui_scale(pygame.Rect((150, 592), (139, 30))),
             "",
             object_id=ObjectID("#change_focus_button", "@image_button"),
             manager=MANAGER,
@@ -175,7 +175,7 @@ class WarriorDenScreen(Screens):
             image = "base_image"
 
         self.base_image = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((885, 169), (528, 696))),
+            ui_scale(pygame.Rect((442, 84), (264, 348))),
             pygame.image.load(
                 f"resources/images/warrior_den/{image}.png"
             ).convert_alpha(),
@@ -189,7 +189,7 @@ class WarriorDenScreen(Screens):
 
             path = settings_dict["clan_focus"][self.active_code][3]
             self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((885, 169), (528, 696))),
+                ui_scale(pygame.Rect((442, 84), (264, 348))),
                 pygame.image.load(
                     f"resources/images/warrior_den/{path}.png"
                 ).convert_alpha(),
@@ -199,7 +199,7 @@ class WarriorDenScreen(Screens):
         else:
             path = settings_dict["clan_focus"][self.original_focus_code][3]
             self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((885, 169), (528, 696))),
+                ui_scale(pygame.Rect((442, 84), (264, 348))),
                 pygame.image.load(
                     f"resources/images/warrior_den/{path}.png"
                 ).convert_alpha(),
@@ -247,7 +247,7 @@ class WarriorDenScreen(Screens):
         create the buttons for the different focuses
         """
         self.focus["button_container"] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((200, 520), (700, 800))),
+            ui_scale(pygame.Rect((100, 260), (350, 400))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -325,7 +325,7 @@ class WarriorDenScreen(Screens):
 
         self.focus_information["current_focus"] = pygame_gui.elements.UITextBox(
             f"<b>Current Focus:</b> {name}{desc}<br><b>Focus Last Changed:</b> {last_change_text}<br>(next change in {next_change})",
-            ui_scale(pygame.Rect((100, 145), (710, 80))),
+            ui_scale(pygame.Rect((50, 72), (355, 40))),
             wrap_to_height=True,
             # object_id=get_text_box_theme(
             #     "#text_box_30_horizcenter_vertcenter_spacing_95"
@@ -334,7 +334,7 @@ class WarriorDenScreen(Screens):
         )
         self.focus_text = pygame_gui.elements.UITextBox(
             f"What should your warriors focus on?",
-            ui_scale(pygame.Rect((184, 428), (544, 30))),
+            ui_scale(pygame.Rect((92, 214), (272, 15))),
             wrap_to_height=True,
             # object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
@@ -352,7 +352,7 @@ class WarriorDenScreen(Screens):
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
             f"<b>Selected information:</b><br>"
             + settings_dict["clan_focus"][self.active_code][1],
-            ui_scale(pygame.Rect((830, 932), (636, 260))),
+            ui_scale(pygame.Rect((415, 466), (318, 130))),
             wrap_to_height=True,
             object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,

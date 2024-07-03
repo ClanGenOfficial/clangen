@@ -132,40 +132,40 @@ class SpriteInspectScreen(Screens):
 
     def screen_switches(self):
         self.next_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((622, 25), (153, 30))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
         )
         self.previous_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 120), (210, 60))),
+            ui_scale(pygame.Rect((25, 60), (105, 30))),
             "",
             object_id="#back_button",
             manager=MANAGER,
         )
 
         self.previous_life_stage = UIImageButton(
-            ui_scale(pygame.Rect((150, 550), (76, 100))),
+            ui_scale(pygame.Rect((75, 275), (38, 50))),
             "",
             object_id="#arrow_right_fancy",
             starting_height=2,
         )
 
         self.next_life_stage = UIImageButton(
-            ui_scale(pygame.Rect((1374, 550), (76, 100))),
+            ui_scale(pygame.Rect((687, 275), (38, 50))),
             "",
             object_id="#arrow_left_fancy",
             starting_height=2,
         )
 
         self.save_image_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 190), (270, 60))),
+            ui_scale(pygame.Rect((25, 95), (135, 30))),
             "",
             object_id="#save_image_button",
         )
@@ -219,7 +219,7 @@ class SpriteInspectScreen(Screens):
         self.the_cat = Cat.fetch_cat(game.switches["cat"])
 
         self.cat_elements["platform"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((240, 200), (1120, 980))),
+            ui_scale(pygame.Rect((120, 100), (560, 490))),
             pygame.transform.scale(self.get_platform(), scale_dimensions((1120, 701))),
             manager=MANAGER,
         )
@@ -412,7 +412,7 @@ class SpriteInspectScreen(Screens):
         )
 
         self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((450, 200), (700, 700))),
+            ui_scale(pygame.Rect((225, 100), (350, 350))),
             pygame.transform.scale(self.cat_image, scale_dimensions((700, 700))),
         )
 

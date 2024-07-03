@@ -120,7 +120,7 @@ class ChooseMentorScreen(Screens):
 
         self.heading = pygame_gui.elements.UITextBox(
             "Choose a new mentor for " + str(self.the_cat.name),
-            ui_scale(pygame.Rect((300, 50), (1000, 80))),
+            ui_scale(pygame.Rect((150, 25), (500, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             manager=MANAGER,
         )
@@ -130,28 +130,28 @@ class ChooseMentorScreen(Screens):
             "profile. Apprentices without a mentor will have one automatically "
             "assigned next moon. An apprentice's mentor can have an influence on "
             "their trait and skill later in life.\nChoose your mentors wisely",
-            ui_scale(pygame.Rect((360, 105), (880, 185))),
+            ui_scale(pygame.Rect((180, 52), (440, 92))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
         if self.mentor is not None:
             self.current_mentor_text = pygame_gui.elements.UITextBox(
                 f"{self.the_cat.name}'s current mentor is " f"{self.mentor.name}",
-                ui_scale(pygame.Rect((460, 260), (680, 60))),
+                ui_scale(pygame.Rect((230, 130), (340, 30))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 manager=MANAGER,
             )
         else:
             self.current_mentor_text = pygame_gui.elements.UITextBox(
                 f"{self.the_cat.name} does not have a mentor",
-                ui_scale(pygame.Rect((460, 260), (680, 60))),
+                ui_scale(pygame.Rect((230, 130), (340, 30))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 manager=MANAGER,
             )
 
         # Layout Images:
         self.mentor_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((80, 226), (562, 394))),
+            ui_scale(pygame.Rect((40, 113), (281, 197))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/choosing_cat1_frame_ment.png"
@@ -161,7 +161,7 @@ class ChooseMentorScreen(Screens):
             manager=MANAGER,
         )
         self.app_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((960, 226), (562, 394))),
+            ui_scale(pygame.Rect((480, 113), (281, 197))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/choosing_cat2_frame_ment.png"
@@ -172,7 +172,7 @@ class ChooseMentorScreen(Screens):
         )
 
         self.mentor_icon = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((630, 320), (343, 228))),
+            ui_scale(pygame.Rect((315, 160), (171, 114))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/mentor.png").convert_alpha(),
                 (343, 228),
@@ -181,48 +181,48 @@ class ChooseMentorScreen(Screens):
         )
 
         self.previous_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "",
             object_id="#previous_cat_button",
         )
         self.next_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((622, 25), (153, 30))),
             "",
             object_id="#next_cat_button",
         )
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"
+            ui_scale(pygame.Rect((25, 645), (105, 30))), "", object_id="#back_button"
         )
         self.confirm_mentor = UIImageButton(
-            ui_scale(pygame.Rect((652, 620), (296, 60))),
+            ui_scale(pygame.Rect((326, 310), (148, 30))),
             "",
             object_id="#confirm_mentor_button",
         )
         self.remove_mentor = UIImageButton(
-            ui_scale(pygame.Rect((652, 620), (296, 60))),
+            ui_scale(pygame.Rect((326, 310), (148, 30))),
             "",
             object_id="#remove_mentor_button",
         )
         self.current_mentor_warning = pygame_gui.elements.UITextBox(
             "Current mentor selected",
-            ui_scale(pygame.Rect((600, 670), (400, 60))),
+            ui_scale(pygame.Rect((300, 335), (200, 30))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
             manager=MANAGER,
         )
         self.no_mentor_warning = pygame_gui.elements.UITextBox(
             "<font color=#FF0000>No mentor selected</font>",
-            ui_scale(pygame.Rect((600, 670), (400, 60))),
+            ui_scale(pygame.Rect((300, 335), (200, 30))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
         )
         self.previous_page_button = UIImageButton(
-            ui_scale(pygame.Rect((630, 1158), (68, 68))),
+            ui_scale(pygame.Rect((315, 579), (34, 34))),
             "",
             object_id="#relation_list_previous",
             manager=MANAGER,
         )
         self.next_page_button = UIImageButton(
-            ui_scale(pygame.Rect((902, 1158), (68, 68))),
+            ui_scale(pygame.Rect((451, 579), (34, 34))),
             "",
             object_id="#relation_list_next",
             manager=MANAGER,
@@ -230,12 +230,12 @@ class ChooseMentorScreen(Screens):
 
         # Create a container for the checkboxes
         self.filter_container = pygame_gui.core.UIContainer(
-            ui_scale(pygame.Rect((170, 720), (1260, 452))), manager=MANAGER
+            ui_scale(pygame.Rect((85, 360), (630, 226))), manager=MANAGER
         )
 
         # Add a vertical separator
         self.filter_seperator = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((995, 15), (20, 420))),
+            ui_scale(pygame.Rect((497, 7), (10, 210))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
                 ui_scale_dimensions((20, 420)),
@@ -358,8 +358,10 @@ class ChooseMentorScreen(Screens):
                 f"{self.the_cat.name} does not have a mentor"
             )
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((1200, 300), (300, 300))),
-            pygame.transform.scale(self.the_cat.sprite, (300, 300)),
+            ui_scale(pygame.Rect((600, 150), (150, 150))),
+            pygame.transform.scale(
+                self.the_cat.sprite, ui_scale_dimensions((150, 150))
+            ),
             manager=MANAGER,
         )
 
@@ -374,7 +376,7 @@ class ChooseMentorScreen(Screens):
         )
         self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
             info,
-            ui_scale(pygame.Rect((980, 325), (210, 250))),
+            ui_scale(pygame.Rect((490, 162), (105, 125))),
             object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
         )
@@ -384,7 +386,7 @@ class ChooseMentorScreen(Screens):
         self.apprentice_details[
             "apprentice_name"
         ] = pygame_gui.elements.ui_label.UILabel(
-            ui_scale(pygame.Rect((1240, 230), (235, 65))),
+            ui_scale(pygame.Rect((620, 115), (117, 32))),
             short_name,
             object_id="#text_box_34_horizcenter",
             manager=MANAGER,
@@ -507,8 +509,10 @@ class ChooseMentorScreen(Screens):
         if self.selected_mentor:
 
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((100, 300), (300, 300))),
-                pygame.transform.scale(self.selected_mentor.sprite, (300, 300)),
+                ui_scale(pygame.Rect((50, 150), (150, 150))),
+                pygame.transform.scale(
+                    self.selected_mentor.sprite, ui_scale_dimensions((150, 150))
+                ),
                 manager=MANAGER,
             )
 
@@ -529,7 +533,7 @@ class ChooseMentorScreen(Screens):
                 info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
             self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(
                 info,
-                ui_scale(pygame.Rect((420, 325), (210, 250))),
+                ui_scale(pygame.Rect((210, 162), (105, 125))),
                 object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                 manager=MANAGER,
             )
@@ -537,7 +541,7 @@ class ChooseMentorScreen(Screens):
             name = str(self.selected_mentor.name)  # get name
             short_name = shorten_text_to_fit(name, 239, 34)
             self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((130, 230), (235, 65))),
+                ui_scale(pygame.Rect((65, 115), (117, 32))),
                 short_name,
                 object_id="#text_box_34_horizcenter",
                 manager=MANAGER,

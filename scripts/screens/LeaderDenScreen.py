@@ -17,6 +17,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     get_alive_status_cats,
     get_living_clan_cat_count,
+    ui_scale_dimensions,
 )
 
 
@@ -126,13 +127,13 @@ class LeaderDenScreen(Screens):
 
         # BACK AND HELP
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (210, 60))),
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
             "",
             object_id="#back_button",
             manager=MANAGER,
         )
         self.help_button = UIImageButton(
-            ui_scale(pygame.Rect((1450, 50), (68, 68))),
+            ui_scale(pygame.Rect((725, 25), (34, 34))),
             "",
             object_id="#help_button",
             manager=MANAGER,
@@ -147,7 +148,7 @@ class LeaderDenScreen(Screens):
         # LEADER DEN BG AND LEADER SPRITE
         try:
             self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 0), (1400, 900))),
+                ui_scale(pygame.Rect((0, 0), (700, 450))),
                 pygame.image.load(
                     f"resources/images/lead_den_bg/{game.clan.biome.lower()}/{game.clan.camp_bg.lower()}.png"
                 ).convert_alpha(),
@@ -157,7 +158,7 @@ class LeaderDenScreen(Screens):
             )
         except FileNotFoundError:
             self.screen_elements["bg_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 0), (1400, 900))),
+                ui_scale(pygame.Rect((0, 0), (700, 450))),
                 pygame.image.load(
                     f"resources/images/lead_den_bg/{game.clan.biome.lower()}/camp1.png"
                 ).convert_alpha(),
@@ -167,8 +168,10 @@ class LeaderDenScreen(Screens):
             )
 
         self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((460, 460), (300, 300))),
-            pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
+            ui_scale(pygame.Rect((230, 230), (150, 150))),
+            pygame.transform.scale(
+                game.clan.leader.sprite, ui_scale_dimensions((150, 150))
+            ),
             object_id="#lead_cat_image",
             starting_height=3,
             manager=MANAGER,
@@ -221,8 +224,10 @@ class LeaderDenScreen(Screens):
 
             if self.helper_cat:
                 self.screen_elements["helper_image"] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((520, 410), (300, 300))),
-                    pygame.transform.scale(self.helper_cat.sprite, (300, 300)),
+                    ui_scale(pygame.Rect((260, 205), (150, 150))),
+                    pygame.transform.scale(
+                        self.helper_cat.sprite, ui_scale_dimensions((150, 150))
+                    ),
                     object_id="#helper_cat_image",
                     starting_height=2,
                     manager=MANAGER,
@@ -333,13 +338,13 @@ class LeaderDenScreen(Screens):
         handles the creation of focus_frame_container
         """
         self.focus_frame_container = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((1019, 122), (0, 0))),
+            ui_scale(pygame.Rect((509, 61), (0, 0))),
             object_id="#focus_frame_container",
             starting_height=3,
             manager=MANAGER,
         )
         self.focus_frame_elements["frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((0, 63), (480, 728))),
+            ui_scale(pygame.Rect((0, 31), (240, 364))),
             pygame.image.load(
                 "resources/images/lead_den_focus_frame.png"
             ).convert_alpha(),
@@ -349,7 +354,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         self.focus_frame_elements["clans_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((60, 4), (138, 68))),
+            ui_scale(pygame.Rect((30, 2), (69, 34))),
             "",
             object_id="#clans_tab",
             container=self.focus_frame_container,
@@ -358,7 +363,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_frame_elements["clans_tab"].disable()
         self.focus_frame_elements["outsiders_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((222, 4), (204, 68))),
+            ui_scale(pygame.Rect((111, 2), (102, 34))),
             "",
             object_id="#outsiders_tab",
             container=self.focus_frame_container,
@@ -374,14 +379,14 @@ class LeaderDenScreen(Screens):
         """
         self.other_clan_selection_container = (
             pygame_gui.elements.UIAutoResizingContainer(
-                ui_scale(pygame.Rect((132, 902), (100, 100))),
+                ui_scale(pygame.Rect((66, 451), (50, 50))),
                 object_id="#other_clan_selection_container",
                 starting_height=1,
                 manager=MANAGER,
             )
         )
         self.other_clan_selection_elements["frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((0, 0), (1324, 388))),
+            ui_scale(pygame.Rect((0, 0), (662, 194))),
             pygame.image.load(
                 "resources/images/lead_den_clan_frame.png"
             ).convert_alpha(),
@@ -444,14 +449,14 @@ class LeaderDenScreen(Screens):
 
     def create_outsider_selection_box(self):
         self.outsider_selection_container = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((118, 910), (0, 0))),
+            ui_scale(pygame.Rect((59, 455), (0, 0))),
             object_id="#outsider_selection_container",
             starting_height=1,
             manager=MANAGER,
             visible=False,
         )
         self.outsider_selection_elements["page_left"] = UIImageButton(
-            ui_scale(pygame.Rect((0, 140), (68, 68))),
+            ui_scale(pygame.Rect((0, 70), (34, 34))),
             "",
             object_id="#arrow_left_button",
             container=self.outsider_selection_container,
@@ -459,7 +464,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         self.outsider_selection_elements["page_right"] = UIImageButton(
-            ui_scale(pygame.Rect((1292, 140), (68, 68))),
+            ui_scale(pygame.Rect((646, 70), (34, 34))),
             "",
             object_id="#arrow_right_button",
             container=self.outsider_selection_container,
@@ -467,7 +472,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         self.outsider_selection_elements["frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((56, 0), (1248, 348))),
+            ui_scale(pygame.Rect((28, 0), (624, 174))),
             pygame.image.load(
                 "resources/images/lead_den_outsider_frame.png"
             ).convert_alpha(),
@@ -539,7 +544,7 @@ class LeaderDenScreen(Screens):
         )
 
         self.focus_clan_elements[f"clan_symbol"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((138, 134), (200, 200))),
+            ui_scale(pygame.Rect((69, 67), (100, 100))),
             pygame.transform.scale(
                 clan_symbol_sprite(self.focus_clan, force_light=True), (200, 200)
             ),
@@ -576,7 +581,7 @@ class LeaderDenScreen(Screens):
         )
 
         self.focus_frame_elements["negative_interaction"] = UIImageButton(
-            ui_scale(pygame.Rect((118, 531), (242, 60))),
+            ui_scale(pygame.Rect((59, 265), (121, 30))),
             "",
             object_id="#clan_befriend",
             container=self.focus_clan_container,
@@ -585,7 +590,7 @@ class LeaderDenScreen(Screens):
             visible=False,
         )
         self.focus_frame_elements["positive_interaction"] = UIImageButton(
-            ui_scale(pygame.Rect((118, 611), (242, 60))),
+            ui_scale(pygame.Rect((59, 305), (121, 30))),
             "",
             object_id="#clan_provoke",
             container=self.focus_clan_container,
@@ -730,8 +735,10 @@ class LeaderDenScreen(Screens):
             )
 
         self.focus_outsider_elements["cat_sprite"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((90, 50), (300, 300))),
-            pygame.transform.scale(self.focus_cat.sprite, (300, 300)),
+            ui_scale(pygame.Rect((45, 25), (150, 150))),
+            pygame.transform.scale(
+                self.focus_cat.sprite, ui_scale_dimensions((150, 150))
+            ),
             object_id="#focus_cat_sprite",
             container=self.focus_outsider_container,
             starting_height=1,
@@ -773,7 +780,7 @@ class LeaderDenScreen(Screens):
         else:
             self.focus_outsider_button_container = (
                 pygame_gui.elements.UIAutoResizingContainer(
-                    ui_scale(pygame.Rect((118, 505), (0, 0))),
+                    ui_scale(pygame.Rect((59, 252), (0, 0))),
                     object_id="#focus_outsider_button_container",
                     container=self.focus_outsider_container,
                     starting_height=1,
@@ -902,7 +909,7 @@ class LeaderDenScreen(Screens):
 
         # container for all the cat sprites and names
         self.outsider_cat_list_container = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((80, 54), (0, 0))),
+            ui_scale(pygame.Rect((40, 27), (0, 0))),
             container=self.outsider_selection_container,
             starting_height=3,
             object_id="#outsider_cat_list",

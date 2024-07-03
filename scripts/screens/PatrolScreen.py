@@ -7,7 +7,12 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
-from scripts.utility import get_text_box_theme, ui_scale, shorten_text_to_fit
+from scripts.utility import (
+    get_text_box_theme,
+    ui_scale,
+    shorten_text_to_fit,
+    ui_scale_dimensions,
+)
 from .Screens import Screens
 
 
@@ -265,14 +270,14 @@ class PatrolScreen(Screens):
 
             if self.selected_cat in self.current_patrol:
                 self.elements["add_remove_cat"] = UIImageButton(
-                    ui_scale(pygame.Rect((672, 920), (254, 60))),
+                    ui_scale(pygame.Rect((336, 460), (127, 30))),
                     "",
                     object_id="#remove_cat_button",
                     manager=MANAGER,
                 )
             elif self.selected_cat is None or len(self.current_patrol) >= 6:
                 self.elements["add_remove_cat"] = UIImageButton(
-                    ui_scale(pygame.Rect((700, 920), (196, 60))),
+                    ui_scale(pygame.Rect((350, 460), (98, 30))),
                     "",
                     object_id="#add_cat_button",
                     manager=MANAGER,
@@ -280,7 +285,7 @@ class PatrolScreen(Screens):
                 self.elements["add_remove_cat"].disable()
             else:
                 self.elements["add_remove_cat"] = UIImageButton(
-                    ui_scale(pygame.Rect((700, 920), (196, 60))),
+                    ui_scale(pygame.Rect((350, 460), (98, 30))),
                     "",
                     object_id="#add_cat_button",
                     manager=MANAGER,
@@ -342,7 +347,7 @@ class PatrolScreen(Screens):
 
             self.elements["info"] = pygame_gui.elements.UITextBox(
                 text,
-                ui_scale(pygame.Rect((500, 1050), (600, 800))),
+                ui_scale(pygame.Rect((250, 525), (300, 400))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
@@ -434,11 +439,11 @@ class PatrolScreen(Screens):
         self.elements["info"] = pygame_gui.elements.UITextBox(
             "Choose up to six cats to take on patrol.\n"
             "Smaller patrols help cats gain more experience, but larger patrols are safer.",
-            ui_scale(pygame.Rect((375, 190), (850, 200))),
+            ui_scale(pygame.Rect((187, 95), (425, 100))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
         )
         self.elements["cat_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((600, 330), (400, 550))),
+            ui_scale(pygame.Rect((300, 165), (200, 275))),
             pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha(),
             manager=MANAGER,
         )
@@ -462,7 +467,7 @@ class PatrolScreen(Screens):
 
         # Buttons
         self.elements["add_remove_cat"] = UIImageButton(
-            ui_scale(pygame.Rect((700, 920), (196, 60))),
+            ui_scale(pygame.Rect((350, 460), (98, 30))),
             "",
             object_id="#add_cat_button",
             manager=MANAGER,
@@ -472,25 +477,25 @@ class PatrolScreen(Screens):
 
         # Randomizing buttons
         self.elements["random"] = UIImageButton(
-            ui_scale(pygame.Rect((646, 990), (68, 68))),
+            ui_scale(pygame.Rect((323, 495), (34, 34))),
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
         )
         self.elements["add_one"] = UIImageButton(
-            ui_scale(pygame.Rect((726, 990), (68, 68))),
+            ui_scale(pygame.Rect((363, 495), (34, 34))),
             "",
             object_id="#add_one_button",
             manager=MANAGER,
         )
         self.elements["add_three"] = UIImageButton(
-            ui_scale(pygame.Rect((806, 990), (68, 68))),
+            ui_scale(pygame.Rect((403, 495), (34, 34))),
             "",
             object_id="#add_three_button",
             manager=MANAGER,
         )
         self.elements["add_six"] = UIImageButton(
-            ui_scale(pygame.Rect((886, 990), (68, 68))),
+            ui_scale(pygame.Rect((443, 495), (34, 34))),
             "",
             object_id="#add_six_button",
             manager=MANAGER,
@@ -498,28 +503,28 @@ class PatrolScreen(Screens):
 
         # patrol type buttons - disabled for now
         self.elements["paw"] = UIImageButton(
-            ui_scale(pygame.Rect((646, 1120), (68, 68))),
+            ui_scale(pygame.Rect((323, 560), (34, 34))),
             "",
             object_id="#paw_patrol_button",
             manager=MANAGER,
         )
         self.elements["paw"].disable()
         self.elements["mouse"] = UIImageButton(
-            ui_scale(pygame.Rect((726, 1120), (68, 68))),
+            ui_scale(pygame.Rect((363, 560), (34, 34))),
             "",
             object_id="#mouse_patrol_button",
             manager=MANAGER,
         )
         self.elements["mouse"].disable()
         self.elements["claws"] = UIImageButton(
-            ui_scale(pygame.Rect((806, 1120), (68, 68))),
+            ui_scale(pygame.Rect((403, 560), (34, 34))),
             "",
             object_id="#claws_patrol_button",
             manager=MANAGER,
         )
         self.elements["claws"].disable()
         self.elements["herb"] = UIImageButton(
-            ui_scale(pygame.Rect((886, 1120), (68, 68))),
+            ui_scale(pygame.Rect((443, 560), (34, 34))),
             "",
             object_id="#herb_patrol_button",
             manager=MANAGER,
@@ -528,14 +533,14 @@ class PatrolScreen(Screens):
 
         # Able cat page buttons
         self.elements["last_page"] = UIImageButton(
-            ui_scale(pygame.Rect((150, 924), (68, 68))),
+            ui_scale(pygame.Rect((75, 462), (34, 34))),
             "",
             object_id="#patrol_last_page",
             starting_height=2,
             manager=MANAGER,
         )
         self.elements["next_page"] = UIImageButton(
-            ui_scale(pygame.Rect((482, 924), (68, 68))),
+            ui_scale(pygame.Rect((241, 462), (34, 34))),
             "",
             object_id="#patrol_next_page",
             starting_height=2,
@@ -544,7 +549,7 @@ class PatrolScreen(Screens):
 
         # Tabs for the current patrol
         self.elements["patrol_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((1010, 920), (160, 70))),
+            ui_scale(pygame.Rect((505, 460), (80, 35))),
             "",
             starting_height=2,
             object_id="#patrol_cats_tab",
@@ -552,7 +557,7 @@ class PatrolScreen(Screens):
         )
         self.elements["patrol_tab"].disable()  # We start on the patrol_cats_tab
         self.elements["skills"] = UIImageButton(
-            ui_scale(pygame.Rect((1180, 920), (308, 70))),
+            ui_scale(pygame.Rect((590, 460), (154, 35))),
             "",
             starting_height=2,
             object_id="#skills_cats_tab",
@@ -561,7 +566,7 @@ class PatrolScreen(Screens):
 
         # Remove all button
         self.elements["remove_all"] = UIImageButton(
-            ui_scale(pygame.Rect((1120, 1254), (248, 70))),
+            ui_scale(pygame.Rect((560, 627), (124, 35))),
             "",
             starting_height=2,
             object_id="#remove_all_button",
@@ -571,7 +576,7 @@ class PatrolScreen(Screens):
         # Text box for skills and traits. Hidden for now, and with no text in it
         self.elements["skills_box"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((1020, 1020), (480, 180))),
+            ui_scale(pygame.Rect((510, 510), (240, 90))),
             visible=False,
             object_id="#text_box_22_horizcenter_spacing_95",
             manager=MANAGER,
@@ -579,7 +584,7 @@ class PatrolScreen(Screens):
 
         # Start Patrol Button
         self.elements["patrol_start"] = UIImageButton(
-            ui_scale(pygame.Rect((666, 1200), (270, 60))),
+            ui_scale(pygame.Rect((333, 600), (135, 30))),
             "",
             object_id="#start_patrol_button",
             manager=MANAGER,
@@ -591,14 +596,14 @@ class PatrolScreen(Screens):
             current_amount = round(game.clan.freshkill_pile.total_amount, 2)
             self.elements["current_prey"] = pygame_gui.elements.UITextBox(
                 f"current prey: {current_amount}",
-                ui_scale(pygame.Rect((600, 1260), (400, 800))),
+                ui_scale(pygame.Rect((300, 630), (200, 400))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
             needed_amount = round(game.clan.freshkill_pile.amount_food_needed(), 2)
             self.elements["needed_prey"] = pygame_gui.elements.UITextBox(
                 f"needed prey: {needed_amount}",
-                ui_scale(pygame.Rect((600, 1295), (400, 800))),
+                ui_scale(pygame.Rect((300, 647), (200, 400))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
@@ -627,7 +632,7 @@ class PatrolScreen(Screens):
 
         # Layout images
         self.elements["event_bg"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((762, 330), (708, 540))),
+            ui_scale(pygame.Rect((381, 165), (354, 270))),
             pygame.transform.scale(
                 pygame.image.load(
                     "resources/images/patrol_event_frame.png"
@@ -638,7 +643,7 @@ class PatrolScreen(Screens):
         )
         self.elements["event_bg"].disable()
         self.elements["info_bg"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((180, 912), (840, 408))),
+            ui_scale(pygame.Rect((90, 456), (420, 204))),
             pygame.transform.scale(
                 pygame.image.load("resources/images/patrol_info.png").convert_alpha(),
                 (840, 408),
@@ -646,7 +651,7 @@ class PatrolScreen(Screens):
             manager=MANAGER,
         )
         self.elements["image_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((130, 280), (640, 640))),
+            ui_scale(pygame.Rect((65, 140), (320, 320))),
             pygame.transform.scale(
                 pygame.image.load(
                     "resources/images/patrol_sprite_frame.png"
@@ -657,8 +662,10 @@ class PatrolScreen(Screens):
         )
 
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((150, 300), (600, 600))),
-            pygame.transform.scale(self.patrol_obj.get_patrol_art(), (600, 600)),
+            ui_scale(pygame.Rect((75, 150), (300, 300))),
+            pygame.transform.scale(
+                self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
+            ),
         )
 
         # Prepare Intro Text
@@ -666,7 +673,7 @@ class PatrolScreen(Screens):
         # intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(
             self.display_text,
-            ui_scale(pygame.Rect((770, 345), (670, 500))),
+            ui_scale(pygame.Rect((385, 172), (335, 250))),
             object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
             manager=MANAGER,
         )
@@ -696,7 +703,7 @@ class PatrolScreen(Screens):
             f"patrol members: {self.get_list_text(members)} \n"
             f"patrol skills: {self.get_list_text(skills)} \n"
             f"patrol traits: {self.get_list_text(traits)}",
-            ui_scale(pygame.Rect((210, 920), (480, 400))),
+            ui_scale(pygame.Rect((105, 460), (240, 200))),
             object_id="#text_box_22_horizleft",
             manager=MANAGER,
         )
@@ -720,14 +727,14 @@ class PatrolScreen(Screens):
 
         ##################### Buttons:
         self.elements["proceed"] = UIImageButton(
-            ui_scale(pygame.Rect((1100, 866), (344, 60))),
+            ui_scale(pygame.Rect((550, 433), (172, 30))),
             "",
             object_id="#proceed_button",
             starting_height=2,
             manager=MANAGER,
         )
         self.elements["not_proceed"] = UIImageButton(
-            ui_scale(pygame.Rect((1100, 922), (344, 60))),
+            ui_scale(pygame.Rect((550, 461), (172, 30))),
             "",
             object_id="#not_proceed_button",
             starting_height=2,
@@ -735,7 +742,7 @@ class PatrolScreen(Screens):
         )
 
         self.elements["antagonize"] = UIImageButton(
-            ui_scale(pygame.Rect((1100, 980), (344, 72))),
+            ui_scale(pygame.Rect((550, 490), (172, 36))),
             "",
             object_id="#antagonize_button",
             manager=MANAGER,
@@ -774,13 +781,13 @@ class PatrolScreen(Screens):
         self.patrol_stage = "patrol_complete"
 
         self.elements["clan_return"] = UIImageButton(
-            ui_scale(pygame.Rect((800, 274), (324, 60))),
+            ui_scale(pygame.Rect((400, 137), (162, 30))),
             "",
             object_id="#return_to_clan",
             manager=MANAGER,
         )
         self.elements["patrol_again"] = UIImageButton(
-            ui_scale(pygame.Rect((1120, 274), (324, 60))),
+            ui_scale(pygame.Rect((560, 137), (162, 30))),
             "",
             object_id="#patrol_again",
             manager=MANAGER,
@@ -795,7 +802,7 @@ class PatrolScreen(Screens):
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((1100, 1000), (344, 300))),
+            ui_scale(pygame.Rect((550, 500), (172, 150))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
@@ -881,7 +888,7 @@ class PatrolScreen(Screens):
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                pygame.transform.scale(cat.sprite, (100, 100)),
+                pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))),
                 cat_object=cat,
                 manager=MANAGER,
             )
@@ -901,7 +908,7 @@ class PatrolScreen(Screens):
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(
                     ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                    pygame.transform.scale(cat.sprite, (100, 100)),
+                    pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))),
                     cat_object=cat,
                     manager=MANAGER,
                 )
@@ -1000,8 +1007,10 @@ class PatrolScreen(Screens):
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((640, 350), (300, 300))),
-                pygame.transform.scale(self.selected_cat.sprite, (300, 300)),
+                ui_scale(pygame.Rect((320, 175), (150, 150))),
+                pygame.transform.scale(
+                    self.selected_cat.sprite, ui_scale_dimensions((150, 150))
+                ),
                 manager=MANAGER,
             )
 
@@ -1010,7 +1019,7 @@ class PatrolScreen(Screens):
 
             self.elements["selected_name"] = pygame_gui.elements.UITextBox(
                 short_name,
-                ui_scale(pygame.Rect((600, 650), (400, 60))),
+                ui_scale(pygame.Rect((300, 325), (200, 30))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
@@ -1028,7 +1037,7 @@ class PatrolScreen(Screens):
                     if game.clan.clan_settings["showxp"]
                     else ""
                 ),
-                ui_scale(pygame.Rect((600, 700), (400, 150))),
+                ui_scale(pygame.Rect((300, 350), (200, 75))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 manager=MANAGER,
             )
@@ -1041,11 +1050,13 @@ class PatrolScreen(Screens):
                     self.selected_cat.mate[self.selected_mate_index]
                 )
                 self.elements["mate_frame"] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((280, 380), (332, 340))), self.mate_frame
+                    ui_scale(pygame.Rect((140, 190), (166, 170))), self.mate_frame
                 )
                 self.elements["mate_image"] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((300, 400), (200, 200))),
-                    pygame.transform.scale(self.mate.sprite, (200, 200)),
+                    ui_scale(pygame.Rect((150, 200), (100, 100))),
+                    pygame.transform.scale(
+                        self.mate.sprite, ui_scale_dimensions((100, 100))
+                    ),
                     manager=MANAGER,
                 )
                 # Check for name length
@@ -1054,17 +1065,17 @@ class PatrolScreen(Screens):
                     short_name = name[0:9]
                     name = short_name + ".."
                 self.elements["mate_name"] = pygame_gui.elements.ui_label.UILabel(
-                    ui_scale(pygame.Rect((306, 600), (190, 60))),
+                    ui_scale(pygame.Rect((153, 300), (95, 30))),
                     name,
                     object_id=get_text_box_theme(),
                 )
                 self.elements["mate_info"] = pygame_gui.elements.UITextBox(
                     "mate",
-                    ui_scale(pygame.Rect((300, 650), (200, 60))),
+                    ui_scale(pygame.Rect((150, 325), (100, 30))),
                     object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 )
                 self.elements["mate_button"] = UIImageButton(
-                    ui_scale(pygame.Rect((296, 712), (208, 52))),
+                    ui_scale(pygame.Rect((148, 356), (104, 26))),
                     "",
                     object_id="#patrol_select_button",
                     manager=MANAGER,
@@ -1076,13 +1087,13 @@ class PatrolScreen(Screens):
                 # Buttons to cycle between mates
                 if len(self.selected_cat.mate) > 1:
                     self.elements["cycle_mate_left_button"] = UIImageButton(
-                        ui_scale(pygame.Rect((296, 780), (68, 68))),
+                        ui_scale(pygame.Rect((148, 390), (34, 34))),
                         "",
                         object_id="#arrow_left_button",
                         manager=MANAGER,
                     )
                     self.elements["cycle_mate_right_button"] = UIImageButton(
-                        ui_scale(pygame.Rect((436, 780), (68, 68))),
+                        ui_scale(pygame.Rect((218, 390), (34, 34))),
                         "",
                         object_id="#arrow_right_button",
                         manager=MANAGER,
@@ -1096,7 +1107,7 @@ class PatrolScreen(Screens):
                 or self.selected_cat.apprentice != []
             ):
                 self.elements["app_mentor_frame"] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((990, 380), (332, 340))),
+                    ui_scale(pygame.Rect((495, 190), (166, 170))),
                     self.app_frame,
                     manager=MANAGER,
                 )
@@ -1132,25 +1143,27 @@ class PatrolScreen(Screens):
                     self.elements[
                         "app_mentor_name"
                     ] = pygame_gui.elements.ui_label.UILabel(
-                        ui_scale(pygame.Rect((1106, 600), (190, 60))),
+                        ui_scale(pygame.Rect((553, 300), (95, 30))),
                         name,
                         object_id=get_text_box_theme(),
                         manager=MANAGER,
                     )
                     self.elements["app_mentor_info"] = pygame_gui.elements.UITextBox(
                         relation,
-                        ui_scale(pygame.Rect((1100, 650), (200, 60))),
+                        ui_scale(pygame.Rect((550, 325), (100, 30))),
                         object_id=get_text_box_theme("#text_box_22_horizcenter"),
                     )
                     self.elements["app_mentor_image"] = pygame_gui.elements.UIImage(
-                        ui_scale(pygame.Rect((1100, 400), (200, 200))),
-                        pygame.transform.scale(self.app_mentor.sprite, (200, 200)),
+                        ui_scale(pygame.Rect((550, 200), (100, 100))),
+                        pygame.transform.scale(
+                            self.app_mentor.sprite, ui_scale_dimensions((100, 100))
+                        ),
                         manager=MANAGER,
                     )
 
                     # Button to switch to that cat
                     self.elements["app_mentor_button"] = UIImageButton(
-                        ui_scale(pygame.Rect((1096, 712), (208, 52))),
+                        ui_scale(pygame.Rect((548, 356), (104, 26))),
                         "",
                         object_id="#patrol_select_button",
                         manager=MANAGER,
@@ -1162,13 +1175,13 @@ class PatrolScreen(Screens):
                     # Buttons to cycle between apprentices
                     if self.selected_cat.mentor == None:
                         self.elements["cycle_app_mentor_left_button"] = UIImageButton(
-                            ui_scale(pygame.Rect((1096, 780), (68, 68))),
+                            ui_scale(pygame.Rect((548, 390), (34, 34))),
                             "",
                             object_id="#arrow_left_button",
                             manager=MANAGER,
                         )
                         self.elements["cycle_app_mentor_right_button"] = UIImageButton(
-                            ui_scale(pygame.Rect((1236, 780), (68, 68))),
+                            ui_scale(pygame.Rect((618, 390), (34, 34))),
                             "",
                             object_id="#arrow_right_button",
                             manager=MANAGER,

@@ -2,22 +2,13 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.ui_elements import (
-    UISpriteButton,
-    UIImageButton,
-    UITextBoxTweaked,
-)
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
-    get_alive_status_cats,
-    shorten_text_to_fit,
     get_alive_clan_queens,
 )
 from .Screens import Screens
-from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
 class AllegiancesScreen(Screens):
@@ -34,7 +25,7 @@ class AllegiancesScreen(Screens):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
             f"{game.clan.name}Clan Allegiances",
-            ui_scale(pygame.Rect((390, 230), (800, 80))),
+            ui_scale(pygame.Rect((195, 115), (400, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             manager=MANAGER,
         )
@@ -46,7 +37,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((100, 330), (1430, 1000))),
+            ui_scale(pygame.Rect((50, 165), (715, 500))),
             allow_scroll_x=False,
             manager=MANAGER,
         )

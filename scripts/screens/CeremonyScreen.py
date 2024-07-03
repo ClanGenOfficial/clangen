@@ -9,11 +9,6 @@ from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import ui_scale
 from .Screens import Screens
-from scripts.utility import get_text_box_theme
-from scripts.cat.cats import Cat
-import pygame_gui
-from scripts.game_structure.ui_elements import UIImageButton
-from scripts.game_structure.game_essentials import game, screen_x, MANAGER
 from ..cat.history import History
 
 
@@ -52,7 +47,7 @@ class CeremonyScreen(Screens):
             self.life_text = ""
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((100, 300), (1400, 1000))),
+            ui_scale(pygame.Rect((50, 150), (700, 500))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -65,7 +60,7 @@ class CeremonyScreen(Screens):
         )
         self.text.disable()
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (210, 60))),
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
             "",
             object_id="#back_button",
             manager=MANAGER,

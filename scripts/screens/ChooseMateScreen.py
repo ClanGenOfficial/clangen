@@ -17,6 +17,7 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     scale_dimensions,
+    ui_scale_dimensions,
 )
 from .Screens import Screens
 
@@ -191,12 +192,12 @@ class ChooseMateScreen(Screens):
             " (unless affairs are toggled on.) Potential mates are listed below! The lines "
             "connecting the two cats may give a hint on their compatibility with one another "
             "and any existing romantic feelings will be shown with small hearts.",
-            ui_scale(pygame.Rect((360, 120), (880, 200))),
+            ui_scale(pygame.Rect((180, 60), (440, 100))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
         )
 
         self.the_cat_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((80, 226), (532, 394))),
+            ui_scale(pygame.Rect((40, 113), (266, 197))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/choosing_cat1_frame_mate.png"
@@ -205,7 +206,7 @@ class ChooseMateScreen(Screens):
             ),
         )
         self.mate_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((988, 226), (532, 394))),
+            ui_scale(pygame.Rect((494, 113), (266, 197))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/choosing_cat2_frame_mate.png"
@@ -215,33 +216,33 @@ class ChooseMateScreen(Screens):
         )
 
         self.previous_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "",
             object_id="#previous_cat_button",
         )
         self.next_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((622, 25), (153, 30))),
             "",
             object_id="#next_cat_button",
         )
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"
+            ui_scale(pygame.Rect((25, 645), (105, 30))), "", object_id="#back_button"
         )
 
         # Tab containers:
-        contain_rect = ui_scale(pygame.Rect((170, 800), (1260, 438)))
+        contain_rect = ui_scale(pygame.Rect((85, 400), (630, 219)))
 
         self.mates_container = pygame_gui.core.UIContainer(contain_rect, MANAGER)
 
         # All the perm elements the exist inside self.mates_container
         self.mates_next_page = UIImageButton(
-            ui_scale(pygame.Rect((732, 358), (68, 68))),
+            ui_scale(pygame.Rect((366, 179), (34, 34))),
             "",
             object_id="#relation_list_next",
             container=self.mates_container,
         )
         self.mates_last_page = UIImageButton(
-            ui_scale(pygame.Rect((460, 358), (68, 68))),
+            ui_scale(pygame.Rect((230, 179), (34, 34))),
             "",
             object_id="#relation_list_previous",
             container=self.mates_container,
@@ -251,19 +252,19 @@ class ChooseMateScreen(Screens):
 
         # All the perm elements the exist inside self.offspring_container
         self.offspring_next_page = UIImageButton(
-            ui_scale(pygame.Rect((732, 358), (68, 68))),
+            ui_scale(pygame.Rect((366, 179), (34, 34))),
             "",
             object_id="#relation_list_next",
             container=self.offspring_container,
         )
         self.offspring_last_page = UIImageButton(
-            ui_scale(pygame.Rect((460, 358), (68, 68))),
+            ui_scale(pygame.Rect((230, 179), (34, 34))),
             "",
             object_id="#relation_list_previous",
             container=self.offspring_container,
         )
         self.offspring_seperator = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((995, 0), (20, 352))),
+            ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
                 scale_dimensions((20, 352)),
@@ -282,19 +283,19 @@ class ChooseMateScreen(Screens):
 
         # All the perm elements the exist inside self.potential_container
         self.potential_next_page = UIImageButton(
-            ui_scale(pygame.Rect((732, 358), (68, 68))),
+            ui_scale(pygame.Rect((366, 179), (34, 34))),
             "",
             object_id="#relation_list_next",
             container=self.potential_container,
         )
         self.potential_last_page = UIImageButton(
-            ui_scale(pygame.Rect((460, 358), (68, 68))),
+            ui_scale(pygame.Rect((230, 179), (34, 34))),
             "",
             object_id="#relation_list_previous",
             container=self.potential_container,
         )
         self.potential_seperator = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((995, 0), (20, 352))),
+            ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
                 scale_dimensions((20, 352)),
@@ -324,7 +325,7 @@ class ChooseMateScreen(Screens):
 
         # This may be deleted and changed later.
         self.toggle_mate = UIImageButton(
-            ui_scale(pygame.Rect((646, 620), (306, 60))),
+            ui_scale(pygame.Rect((323, 310), (153, 30))),
             "",
             object_id="#confirm_mate_button",
         )
@@ -370,15 +371,14 @@ class ChooseMateScreen(Screens):
 
         # Different layout for a single mate - they are just big in the center
         if len(self.all_mates) == 1 and len(self.all_mates[0]) == 1:
-
             # TODO disable both next and previous page buttons
             self.mates_page = 0
             self.mates_last_page.disable()
             self.mates_next_page.disable()
             _mate = self.all_mates[0][0]
             self.mates_cat_buttons["cat"] = UISpriteButton(
-                ui_scale(pygame.Rect((480, 26), (300, 300))),
-                pygame.transform.scale(_mate.sprite, (300, 300)),
+                ui_scale(pygame.Rect((240, 13), (150, 150))),
+                pygame.transform.scale(_mate.sprite, ui_scale_dimensions((150, 150))),
                 cat_object=_mate,
                 manager=MANAGER,
                 container=self.mates_container,
@@ -407,7 +407,7 @@ class ChooseMateScreen(Screens):
         text = f"{self.mates_page + 1} / {max(1, total_pages)}"
         if not self.mate_page_display:
             self.mate_page_display = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((528, 370), (204, 48))),
+                ui_scale(pygame.Rect((264, 185), (102, 24))),
                 text,
                 container=self.mates_container,
                 object_id=get_text_box_theme(
@@ -463,7 +463,7 @@ class ChooseMateScreen(Screens):
             theme = "@unchecked_checkbox"
 
         self.checkboxes["kits_selected_pair"] = UIImageButton(
-            ui_scale(pygame.Rect((1106, 124), (68, 68))),
+            ui_scale(pygame.Rect((553, 62), (34, 34))),
             "",
             object_id=theme,
             container=self.offspring_container,
@@ -501,7 +501,7 @@ class ChooseMateScreen(Screens):
         text = f"{self.offspring_page + 1} / {max(1, total_pages)}"
         if not self.offspring_page_display:
             self.offspring_page_display = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((528, 370), (204, 48))),
+                ui_scale(pygame.Rect((264, 185), (102, 24))),
                 text,
                 container=self.offspring_container,
                 object_id=get_text_box_theme(
@@ -562,7 +562,7 @@ class ChooseMateScreen(Screens):
 
             self.no_kits_message = pygame_gui.elements.UITextBox(
                 text,
-                ui_scale(pygame.Rect((0, 0), (994, 352))),
+                ui_scale(pygame.Rect((0, 0), (497, 176))),
                 container=self.offspring_container,
                 object_id="#text_box_30_horizcenter_vertcenter",
             )
@@ -581,7 +581,7 @@ class ChooseMateScreen(Screens):
             theme = "@unchecked_checkbox"
 
         self.checkboxes["single_only"] = UIImageButton(
-            ui_scale(pygame.Rect((1106, 85), (68, 68))),
+            ui_scale(pygame.Rect((553, 42), (34, 34))),
             "",
             object_id=theme,
             container=self.potential_container,
@@ -596,7 +596,7 @@ class ChooseMateScreen(Screens):
             theme = "@unchecked_checkbox"
 
         self.checkboxes["have_kits_only"] = UIImageButton(
-            ui_scale(pygame.Rect((1106, 254), (68, 68))),
+            ui_scale(pygame.Rect((553, 127), (34, 34))),
             "",
             object_id=theme,
             container=self.potential_container,
@@ -640,7 +640,7 @@ class ChooseMateScreen(Screens):
         text = f"{self.potential_mates_page + 1} / {max(1, total_pages)}"
         if not self.potential_page_display:
             self.potential_page_display = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((528, 370), (204, 48))),
+                ui_scale(pygame.Rect((264, 185), (102, 24))),
                 text,
                 container=self.potential_container,
                 object_id=get_text_box_theme(
@@ -758,20 +758,22 @@ class ChooseMateScreen(Screens):
 
         self.current_cat_elements["heading"] = pygame_gui.elements.UITextBox(
             "Choose a mate for " + str(self.the_cat.name),
-            ui_scale(pygame.Rect((300, 50), (1000, 80))),
+            ui_scale(pygame.Rect((150, 25), (500, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
         )
 
         self.current_cat_elements["image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((100, 300), (300, 300))),
-            pygame.transform.scale(self.the_cat.sprite, (300, 300)),
+            ui_scale(pygame.Rect((50, 150), (150, 150))),
+            pygame.transform.scale(
+                self.the_cat.sprite, ui_scale_dimensions((150, 150))
+            ),
         )
         name = str(self.the_cat.name)  # get name
         if 11 <= len(name):  # check name length
             short_name = str(name)[0:9]
             name = short_name + "..."
         self.current_cat_elements["name"] = pygame_gui.elements.ui_label.UILabel(
-            ui_scale(pygame.Rect((130, 230), (240, 60))),
+            ui_scale(pygame.Rect((65, 115), (120, 30))),
             name,
             object_id="#text_box_34_horizcenter",
         )
@@ -793,7 +795,7 @@ class ChooseMateScreen(Screens):
                 info += "mate"
         self.current_cat_elements["info"] = pygame_gui.elements.UITextBox(
             info,
-            ui_scale(pygame.Rect((412, 350), (188, 200))),
+            ui_scale(pygame.Rect((206, 175), (94, 100))),
             object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
         )
@@ -894,7 +896,7 @@ class ChooseMateScreen(Screens):
         self.draw_compatible_line_affection()
         if self.selected_cat.ID in self.the_cat.mate:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((600, 376), (400, 156))),
+                ui_scale(pygame.Rect((300, 188), (200, 78))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_mates.png"
@@ -904,7 +906,7 @@ class ChooseMateScreen(Screens):
             )
         elif self.selected_cat.ID in self.the_cat.previous_mates:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((600, 376), (400, 156))),
+                ui_scale(pygame.Rect((300, 188), (200, 78))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_breakup.png"
@@ -914,7 +916,7 @@ class ChooseMateScreen(Screens):
             )
         else:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((600, 376), (400, 156))),
+                ui_scale(pygame.Rect((300, 188), (200, 78))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_maybe.png"
@@ -924,8 +926,10 @@ class ChooseMateScreen(Screens):
             )
 
         self.selected_cat_elements["image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((1200, 300), (300, 300))),
-            pygame.transform.scale(self.selected_cat.sprite, (300, 300)),
+            ui_scale(pygame.Rect((600, 150), (150, 150))),
+            pygame.transform.scale(
+                self.selected_cat.sprite, ui_scale_dimensions((150, 150))
+            ),
         )
 
         name = str(self.selected_cat.name)
@@ -933,7 +937,7 @@ class ChooseMateScreen(Screens):
             short_name = str(name)[0:9]
             name = short_name + "..."
         self.selected_cat_elements["name"] = pygame_gui.elements.ui_label.UILabel(
-            ui_scale(pygame.Rect((1240, 230), (220, 60))),
+            ui_scale(pygame.Rect((620, 115), (110, 30))),
             name,
             object_id="#text_box_34_horizcenter",
         )
@@ -956,7 +960,7 @@ class ChooseMateScreen(Screens):
 
         self.selected_cat_elements["info"] = pygame_gui.elements.UITextBox(
             info,
-            ui_scale(pygame.Rect((1000, 350), (188, 200))),
+            ui_scale(pygame.Rect((500, 175), (94, 100))),
             object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
         )
@@ -969,7 +973,7 @@ class ChooseMateScreen(Screens):
                 "no kit warning"
             ] = pygame_gui.elements.UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>",
-                ui_scale(pygame.Rect((550, 250), (498, 50))),
+                ui_scale(pygame.Rect((275, 125), (249, 25))),
                 object_id=get_text_box_theme(
                     "#text_box_22_horizcenter_vertcenter_spacing_95"
                 ),
@@ -982,13 +986,13 @@ class ChooseMateScreen(Screens):
 
         if self.selected_cat.ID in self.the_cat.mate:
             self.toggle_mate = UIImageButton(
-                ui_scale(pygame.Rect((646, 620), (306, 60))),
+                ui_scale(pygame.Rect((323, 310), (153, 30))),
                 "",
                 object_id="#break_up_button",
             )
         else:
             self.toggle_mate = UIImageButton(
-                ui_scale(pygame.Rect((646, 620), (306, 60))),
+                ui_scale(pygame.Rect((323, 310), (153, 30))),
                 "",
                 object_id="#confirm_mate_button",
             )
@@ -998,7 +1002,7 @@ class ChooseMateScreen(Screens):
 
         # Set the lines
         self.selected_cat_elements["compat_line"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((600, 380), (400, 156))),
+            ui_scale(pygame.Rect((300, 190), (200, 78))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/line_neutral.png"

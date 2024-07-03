@@ -9,10 +9,8 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
-    screen,
     screen_x,
     screen_y,
-    offset,
 )
 from scripts.game_structure.ui_elements import UISpriteButton, UIImageButton
 from scripts.game_structure.windows import SaveError
@@ -213,7 +211,7 @@ class ClanScreen(Screens):
 
         # Draw the toggle and text
         self.show_den_labels = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((50, 1282), (334, 68))),
+            ui_scale(pygame.Rect((25, 641), (167, 34))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/show_den_labels.png"),
                 (334, 68),
@@ -221,7 +219,7 @@ class ClanScreen(Screens):
         )
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(
-            ui_scale(pygame.Rect((50, 1282), (64, 64))),
+            ui_scale(pygame.Rect((25, 641), (32, 32))),
             "",
             object_id="@checked_checkbox",
         )
@@ -233,7 +231,7 @@ class ClanScreen(Screens):
         )
         self.save_button.enable()
         self.save_button_saved_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((686, 1286), (228, 60))),
+            ui_scale(pygame.Rect((343, 643), (114, 30))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/save_clan_saved.png"),
                 (228, 60),
@@ -241,7 +239,7 @@ class ClanScreen(Screens):
         )
         self.save_button_saved_state.hide()
         self.save_button_saving_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((686, 1286), (228, 60))),
+            ui_scale(pygame.Rect((343, 643), (114, 30))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/save_clan_saving.png"),
                 (228, 60),
@@ -460,7 +458,7 @@ class ClanScreen(Screens):
         self.label_toggle.kill()
         if game.clan.clan_settings["den labels"]:
             self.label_toggle = UIImageButton(
-                ui_scale(pygame.Rect((50, 1282), (68, 68))),
+                ui_scale(pygame.Rect((25, 641), (34, 34))),
                 "",
                 starting_height=2,
                 object_id="@checked_checkbox",
@@ -474,7 +472,7 @@ class ClanScreen(Screens):
             self.elder_den_label.show()
         else:
             self.label_toggle = UIImageButton(
-                ui_scale(pygame.Rect((50, 1282), (68, 68))),
+                ui_scale(pygame.Rect((25, 641), (34, 34))),
                 "",
                 starting_height=2,
                 object_id="@unchecked_checkbox",

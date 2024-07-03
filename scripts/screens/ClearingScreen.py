@@ -201,31 +201,31 @@ class ClearingScreen(Screens):
 
         self.hide_menu_buttons()
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (210, 60))),
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
             "",
             object_id="#back_button",
             manager=MANAGER,
         )
         self.stop_focus_button = UIImageButton(
-            ui_scale(pygame.Rect((1510, 310), (44, 44))),
+            ui_scale(pygame.Rect((755, 155), (22, 22))),
             "",
             object_id="#exit_window_button",
             manager=MANAGER,
         )
         self.feed_all_button = UIImageButton(
-            ui_scale(pygame.Rect((1250, 600), (320, 60))),
+            ui_scale(pygame.Rect((625, 300), (160, 30))),
             "",
             object_id="#freshkill_feed_hungry",
             manager=MANAGER,
         )
         self.feed_one_button = UIImageButton(
-            ui_scale(pygame.Rect((1300, 600), (222, 60))),
+            ui_scale(pygame.Rect((650, 300), (111, 30))),
             "",
             object_id="#freshkill_feed_one",
             manager=MANAGER,
         )
         self.feed_max_button = UIImageButton(
-            ui_scale(pygame.Rect((1296, 670), (230, 60))),
+            ui_scale(pygame.Rect((648, 335), (115, 30))),
             "",
             object_id="#freshkill_feed_max",
             manager=MANAGER,
@@ -235,7 +235,7 @@ class ClearingScreen(Screens):
         self.feed_max_button.hide()
 
         self.help_button = UIImageButton(
-            ui_scale(pygame.Rect((1450, 50), (68, 68))),
+            ui_scale(pygame.Rect((725, 25), (34, 34))),
             "",
             object_id="#help_button",
             manager=MANAGER,
@@ -248,39 +248,39 @@ class ClearingScreen(Screens):
             "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
         )
         self.last_page = UIImageButton(
-            ui_scale(pygame.Rect((660, 1272), (68, 68))),
+            ui_scale(pygame.Rect((330, 636), (34, 34))),
             "",
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
         self.next_page = UIImageButton(
-            ui_scale(pygame.Rect((952, 1272), (68, 68))),
+            ui_scale(pygame.Rect((476, 636), (34, 34))),
             "",
             object_id="#arrow_right_button",
             manager=MANAGER,
         )
         self.nutrition_title = pygame_gui.elements.UITextBox(
             "Nutrition Overview",
-            ui_scale(pygame.Rect((281, 820), (400, 60))),
+            ui_scale(pygame.Rect((140, 410), (200, 30))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.log_title = pygame_gui.elements.UITextBox(
             "Freshkill Pile Log",
-            ui_scale(pygame.Rect((281, 820), (400, 60))),
+            ui_scale(pygame.Rect((140, 410), (200, 30))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.tactic_title = pygame_gui.elements.UITextBox(
             "Feeding Tactic",
-            ui_scale(pygame.Rect((281, 820), (400, 60))),
+            ui_scale(pygame.Rect((140, 410), (200, 30))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.log_title.hide()
         self.tactic_title.hide()
         self.cat_bg = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((280, 880), (1120, 400))),
+            ui_scale(pygame.Rect((140, 440), (560, 200))),
             pygame.image.load("resources/images/sick_hurt_bg.png").convert_alpha(),
             manager=MANAGER,
         )
@@ -288,38 +288,38 @@ class ClearingScreen(Screens):
         log_text = game.freshkill_event_list.copy()
         self.log_box = pygame_gui.elements.UITextBox(
             f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
-            ui_scale(pygame.Rect((300, 900), (1080, 360))),
+            ui_scale(pygame.Rect((150, 450), (540, 180))),
             object_id="#text_box_26_horizleft_verttop_pad_14_0_10",
             manager=MANAGER,
         )
         self.log_box.hide()
         self.cats_tab = UIImageButton(
-            ui_scale(pygame.Rect((218, 924), (70, 150))),
+            ui_scale(pygame.Rect((109, 462), (35, 75))),
             "",
             object_id="#hurt_sick_cats_button",
             manager=MANAGER,
         )
         self.cats_tab.disable()
         self.log_tab = UIImageButton(
-            ui_scale(pygame.Rect((218, 1104), (70, 128))),
+            ui_scale(pygame.Rect((109, 552), (35, 64))),
             "",
             object_id="#med_den_log_button",
             manager=MANAGER,
         )
         self.tactic_tab = UIImageButton(
-            ui_scale(pygame.Rect((1392, 924), (70, 140))),
+            ui_scale(pygame.Rect((696, 462), (35, 70))),
             "",
             object_id="#tactic",
             manager=MANAGER,
         )
         self.hungry_tab = UIImageButton(
-            ui_scale(pygame.Rect((980, 818), (160, 70))),
+            ui_scale(pygame.Rect((490, 409), (80, 35))),
             "",
             object_id="#freshkill_hungry",
             manager=MANAGER,
         )
         self.satisfied_tab = UIImageButton(
-            ui_scale(pygame.Rect((1174, 818), (190, 70))),
+            ui_scale(pygame.Rect((587, 409), (95, 35))),
             "",
             object_id="#freshkill_satisfied",
             manager=MANAGER,
@@ -419,20 +419,20 @@ class ClearingScreen(Screens):
         name = str(self.focus_cat_object.name)
         short_name = shorten_text_to_fit(name, 275, 30)
         self.focus_name = pygame_gui.elements.ui_label.UILabel(
-            ui_scale(pygame.Rect((1170, 150), (450, 60))),
+            ui_scale(pygame.Rect((585, 75), (225, 30))),
             short_name,
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
         self.focus_info = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((1250, 190), (300, 240))),
+            ui_scale(pygame.Rect((625, 95), (150, 120))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             line_spacing=1,
             manager=MANAGER,
         )
         self.focus_cat = UISpriteButton(
-            ui_scale(pygame.Rect((1250, 290), (300, 300))),
+            ui_scale(pygame.Rect((625, 145), (150, 150))),
             self.focus_cat_object.sprite,
             cat_object=self.focus_cat_object,
             manager=MANAGER,
@@ -550,7 +550,7 @@ class ClearingScreen(Screens):
             self.info_messages.kill()
         self.info_messages = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((216, 620), (1100, 160))),
+            ui_scale(pygame.Rect((108, 310), (550, 80))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1,
         )
@@ -599,7 +599,7 @@ class ClearingScreen(Screens):
         needed_amount = round(game.clan.freshkill_pile.amount_food_needed(), 2)
         hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
         self.pile_base = UIImageButton(
-            ui_scale(pygame.Rect((500, 50), (600, 600))),
+            ui_scale(pygame.Rect((250, 25), (300, 300))),
             "",
             object_id=self.pile_size,
             tool_tip_text=hover_display,
@@ -661,7 +661,7 @@ class ClearingScreen(Screens):
         self.tactic_text[
             "container_general"
         ] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((280, 900), (460, 350))),
+            ui_scale(pygame.Rect((140, 450), (230, 175))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -690,7 +690,7 @@ class ClearingScreen(Screens):
         self.additional_text[
             "container_general"
         ] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((720, 900), (655, 350))),
+            ui_scale(pygame.Rect((360, 450), (327, 175))),
             allow_scroll_x=False,
             manager=MANAGER,
         )

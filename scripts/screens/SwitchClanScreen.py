@@ -106,7 +106,7 @@ class SwitchClanScreen(Screens):
             (440 / 1600 * screen_x, 750 / 1400 * screen_y),
         )
         self.main_menu = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "",
             object_id="#main_menu_button",
             manager=MANAGER,
@@ -114,14 +114,14 @@ class SwitchClanScreen(Screens):
         self.info = pygame_gui.elements.UITextBox(
             "Note: This will close the game.\n When you open it next, it should have the new Clan.",
             # pylint: disable=line-too-long
-            ui_scale(pygame.Rect((200, 1200), (1200, 140))),
+            ui_scale(pygame.Rect((100, 600), (600, 70))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((200, 200), (1200, 140))),
+            ui_scale(pygame.Rect((100, 100), (600, 70))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -170,20 +170,20 @@ class SwitchClanScreen(Screens):
                 y_pos = 378
 
         self.next_page_button = UIImageButton(
-            ui_scale(pygame.Rect((912, 1080), (68, 68))),
+            ui_scale(pygame.Rect((456, 540), (34, 34))),
             "",
             object_id="#arrow_right_button",
             manager=MANAGER,
         )
         self.previous_page_button = UIImageButton(
-            ui_scale(pygame.Rect((620, 1080), (68, 68))),
+            ui_scale(pygame.Rect((310, 540), (34, 34))),
             "",
             object_id="#arrow_left_button",
             manager=MANAGER,
         )
         self.page_number = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((680, 1080), (220, 70))),
+            ui_scale(pygame.Rect((340, 540), (110, 35))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
