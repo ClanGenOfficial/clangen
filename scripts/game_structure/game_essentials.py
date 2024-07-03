@@ -149,8 +149,8 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": True,
-        "visualdebugmode": True,
+        "showbounds": False,
+        "visualdebugmode": False,
         "showfps": False,
     }
 
@@ -692,38 +692,20 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
-    # if res[0] > 800:
-    #     manager.get_theme().load_theme("resources/theme/defaults.json")
-    #     manager.get_theme().load_theme("resources/theme/buttons.json")
-    #     manager.get_theme().load_theme("resources/theme/text_boxes.json")
-    #     manager.get_theme().load_theme("resources/theme/text_boxes_dark.json")
-    #     manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-    #     manager.get_theme().load_theme("resources/theme/window_base.json")
-    #     manager.get_theme().load_theme("resources/theme/tool_tips.json")
-    #
-    #     manager.preload_fonts(
-    #         [
-    #             {"name": "notosans", "point_size": 30, "style": "italic"},
-    #             {"name": "notosans", "point_size": 26, "style": "italic"},
-    #             {"name": "notosans", "point_size": 30, "style": "bold"},
-    #             {"name": "notosans", "point_size": 26, "style": "bold"},
-    #             {"name": "notosans", "point_size": 22, "style": "bold"},
-    #         ]
-    #     )
-    #
-    # else:
+    if screen_scale == 1:
+        manager.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
+        manager.preload_fonts(
+            [
+                {"name": "notosans", "point_size": 11, "style": "bold"},
+                {"name": "notosans", "point_size": 13, "style": "bold"},
+                {"name": "notosans", "point_size": 15, "style": "bold"},
+                {"name": "notosans", "point_size": 13, "style": "italic"},
+                {"name": "notosans", "point_size": 15, "style": "italic"},
+            ]
+        )
+    elif screen_scale == 2:
+        manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
 
-    manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
-
-    manager.preload_fonts(
-        [
-            {"name": "notosans", "point_size": 11, "style": "bold"},
-            {"name": "notosans", "point_size": 13, "style": "bold"},
-            {"name": "notosans", "point_size": 15, "style": "bold"},
-            {"name": "notosans", "point_size": 13, "style": "italic"},
-            {"name": "notosans", "point_size": 15, "style": "italic"},
-        ]
-    )
     return manager
 
 

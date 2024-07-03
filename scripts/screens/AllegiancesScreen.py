@@ -7,6 +7,7 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     get_alive_clan_queens,
+    ui_scale_dimensions,
 )
 from .Screens import Screens
 
@@ -24,7 +25,7 @@ class AllegiancesScreen(Screens):
     def screen_switches(self):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
-            f"{game.clan.name}Clan Allegiances",
+            f"<b>{game.clan.name}Clan Allegiances</b>",
             ui_scale(pygame.Rect((195, 115), (400, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             manager=MANAGER,
@@ -49,7 +50,7 @@ class AllegiancesScreen(Screens):
             self.ranks_boxes.append(
                 pygame_gui.elements.UITextBox(
                     x[0],
-                    ui_scale(pygame.Rect((0, y_pos), (300, -1))),
+                    ui_scale(pygame.Rect((0, y_pos), (150, -1))),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,
@@ -60,18 +61,27 @@ class AllegiancesScreen(Screens):
             self.names_boxes.append(
                 pygame_gui.elements.UITextBox(
                     x[1],
-                    ui_scale(pygame.Rect((300, y_pos), (1060, -1))),
+                    ui_scale(
+                        pygame.Rect(
+                            (0, -self.ranks_boxes[-1].get_relative_rect()[3]),
+                            (565, -1),
+                        )
+                    ),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,
+                    anchors={
+                        "top_target": self.ranks_boxes[-1],
+                        "left_target": self.ranks_boxes[-1],
+                    },
                 )
             )
             self.names_boxes[-1].disable()
 
-            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y
+            y_pos += 700 * self.names_boxes[-1].get_relative_rect()[3] / screen_y
 
         self.scroll_container.set_scrollable_area_dimensions(
-            (1360 / 1600 * screen_x, y_pos / 1400 * screen_y)
+            ui_scale_dimensions((780, 700))
         )
 
     def exit_screen(self):

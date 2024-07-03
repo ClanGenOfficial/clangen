@@ -32,41 +32,41 @@ class MakeClanScreen(Screens):
         pygame.image.load(
             "resources/images/pick_clan_screen/clan_name_frame.png"
         ).convert_alpha(),
-        (432, 100),
+        ui_scale_dimensions((216, 50)),
     )
     name_clan_img = pygame.transform.scale(
         pygame.image.load(
             "resources/images/pick_clan_screen/name_clan_light.png"
         ).convert_alpha(),
-        (1600, 1400),
+        ui_scale_dimensions((800, 700)),
     )
     leader_img = pygame.transform.scale(
         pygame.image.load(
             "resources/images/pick_clan_screen/leader_light.png"
         ).convert_alpha(),
-        (1600, 1400),
+        ui_scale_dimensions((800, 700)),
     )
     deputy_img = pygame.transform.scale(
         pygame.image.load(
             "resources/images/pick_clan_screen/deputy_light.png"
         ).convert_alpha(),
-        (1600, 1400),
+        ui_scale_dimensions((800, 700)),
     )
     medic_img = pygame.transform.scale(
         pygame.image.load(
             "resources/images/pick_clan_screen/med_light.png"
         ).convert_alpha(),
-        (1600, 1400),
+        ui_scale_dimensions((800, 700)),
     )
     clan_img = pygame.transform.scale(
         pygame.image.load(
             "resources/images/pick_clan_screen/clan_light.png"
         ).convert_alpha(),
-        (1600, 1400),
+        ui_scale_dimensions((800, 700)),
     )
     bg_preview_border = pygame.transform.scale(
         pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(),
-        (466, 416),
+        ui_scale_dimensions((233, 208)),
     )
 
     classic_mode_text = (

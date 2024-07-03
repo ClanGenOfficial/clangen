@@ -41,7 +41,7 @@ from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
-from ..ui.generate_button import generate_button, get_button_dict
+from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -182,42 +182,45 @@ class StartScreen(Screens):
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
             "continue",
-            image_dict=get_button_dict("general", 400, screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((70, 355), (200, 30))),
+            ui_scale(pygame.Rect((70, 15), (200, 30))),
             "switch clan",
-            image_dict=get_button_dict("general", 400, screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
             anchors={"top_target": self.continue_button},
         )
         self.new_clan_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((70, 400), (200, 30))),
+            ui_scale(pygame.Rect((70, 15), (200, 30))),
             "new clan",
-            image_dict=get_button_dict("general", 200, screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
+            anchors={"top_target": self.switch_clan_button},
         )
         self.settings_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((70, 445), (200, 30))),
+            ui_scale(pygame.Rect((70, 15), (200, 30))),
             "settings",
-            image_dict=get_button_dict("general", 200, screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
             object_id=ObjectID(
                 class_id="@startscreen_main", object_id="#tailing_letters"
             ),
             manager=MANAGER,
+            anchors={"top_target": self.new_clan_button},
         )
         self.quit = UISurfaceImageButton(
-            ui_scale(pygame.Rect((70, 490), (200, 30))),
+            ui_scale(pygame.Rect((70, 15), (200, 30))),
             "quit",
-            image_dict=get_button_dict("general", 200, screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
             object_id=ObjectID(
                 class_id="@startscreen_main", object_id="#tailing_letters"
             ),
             manager=MANAGER,
+            anchors={"top_target": self.settings_button},
         )
 
         self.social_buttons["twitter_button"] = UIImageButton(

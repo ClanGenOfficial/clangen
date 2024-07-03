@@ -6,7 +6,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, screen_x, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton
-from scripts.utility import get_text_box_theme
+from scripts.utility import get_text_box_theme, ui_scale_value
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..cat.history import History
@@ -29,14 +29,14 @@ class CeremonyScreen(Screens):
         if self.the_cat.status == "leader":
             self.header = pygame_gui.elements.UITextBox(
                 str(self.the_cat.name) + "'s Leadership Ceremony",
-                ui_scale(pygame.Rect((200, 180), (1200, -1))),
+                ui_scale(pygame.Rect((100, 90), (600, -1))),
                 object_id=get_text_box_theme(),
                 manager=MANAGER,
             )
         else:
             self.header = pygame_gui.elements.UITextBox(
                 str(self.the_cat.name) + " has no ceremonies to view.",
-                ui_scale(pygame.Rect((200, 180), (1200, -1))),
+                ui_scale(pygame.Rect((100, 90), (600, -1))),
                 object_id=get_text_box_theme(),
                 manager=MANAGER,
             )
@@ -53,7 +53,7 @@ class CeremonyScreen(Screens):
         )
         self.text = pygame_gui.elements.UITextBox(
             self.life_text,
-            ui_scale(pygame.Rect((0, 0), (1100, -1))),
+            ui_scale(pygame.Rect((0, 0), (650, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft"),
             container=self.scroll_container,
             manager=MANAGER,
@@ -66,7 +66,10 @@ class CeremonyScreen(Screens):
             manager=MANAGER,
         )
         self.scroll_container.set_scrollable_area_dimensions(
-            (1360 / 1600 * screen_x, self.text.rect[3])
+            (
+                self.scroll_container.get_relative_rect()[2],
+                self.text.rect[3],
+            )
         )
 
     def exit_screen(self):

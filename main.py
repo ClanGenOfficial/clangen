@@ -63,7 +63,7 @@ from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
 
-directory = os.path.dirname(__file__)
+directory = os.path.dirname(os.path.realpath("__file__"))
 if directory:
     os.chdir(directory)
 
@@ -172,9 +172,7 @@ import pygame
 
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-from scripts.screens.all_screens import (
-    start_screen,
-)  # pylint: disable=ungrouped-imports
+from scripts.screens.all_screens import start_screen
 
 # P Y G A M E
 clock = pygame.time.Clock()

@@ -1,0 +1,150 @@
+{
+    "defaults": {
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        }
+    },
+    "tool_tip": {
+        "misc": {
+            "rect_width": "200"
+        }
+    },
+    "tool_tip.text_box": {
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "8",
+            "shadow_width": "0",
+            "border_width": "2",
+            "line_spacing": "1"
+        }
+    },
+    "@checked_checkbox_smalltooltip.tool_tip": {
+        "misc": {
+            "rect_width": "100"
+        }
+    },
+    "@unchecked_checkbox_smalltooltip.tool_tip": {
+        "misc": {
+            "rect_width": "100"
+        }
+    },
+    "@checked_checkbox.tool_tip": {
+        "misc": {
+            "rect_width": "200"
+        }
+    },
+    "@unchecked_checkbox.tool_tip": {
+        "misc": {
+            "rect_width": "200"
+        }
+    },
+    "#fav_star.tool_tip": {
+        "misc": {
+            "rect_width": "150"
+        }
+    },
+    "#not_fav_star.tool_tip": {
+        "misc": {
+            "rect_width": "150"
+        }
+    },
+    "#fav_cat_toggle_on.tool_tip": {
+        "misc": {
+            "rect_width": "75"
+        }
+    },
+    "#fav_cat_toggle_off.tool_tip": {
+        "misc": {
+            "rect_width": "75"
+        }
+    },
+    "#help_button.tool_tip": {
+        "misc": {
+            "rect_width": "400"
+        }
+    },
+    "#leader_ceremony_button.tool_tip": {
+        "misc": {
+            "rect_width": "150"
+        }
+    },
+    "#med_cat_den_hover.tool_tip": {
+        "misc": {
+            "rect_width": "140"
+        }
+    },
+    "#med_cat_den_hover_big.tool_tip": {
+        "misc": {
+            "rect_width": "230"
+        }
+    },
+    "#blank_button.tool_tip": {
+        "misc": {
+            "rect_width": "350"
+        }
+    },
+    "#blank_button_small.tool_tip": {
+        "misc": {
+            "rect_width": "250"
+        }
+    },
+    "@mns_image.#moon.tool_tip": {
+        "misc": {
+            "rect_width": "120"
+        }
+    },
+    "@mns_image.tool_tip": {
+        "misc": {
+            "rect_width": "100"
+        }
+    },
+    "@startscreen_main": {
+        "font": {
+            "name": "clangen",
+            "size": "21"
+        },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "6"
+        }
+    },
+    "#tailing_letters": {
+        "misc": {
+            "text_vert_alignment_padding": "5"
+        }
+    },
+    "@heading": {
+        "prototype": "text_box",
+        "font": {
+            "name": "notosans",
+            "size": "18"
+        },
+        "misc": {
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
+    "button": {
+        "font": {
+            "name": "clangen",
+            "size": "16"
+        },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "9",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "@menu_left": {
+        "prototype": "@image_button",
+        "misc": {
+            "text_horiz_alignment": "left",
+            "text_horiz_alignment_padding": "20"
+        }
+    }
+}
