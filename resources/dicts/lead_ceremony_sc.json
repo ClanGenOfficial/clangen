@@ -560,7 +560,7 @@
           "virtue": ["devotion", "determination", "honesty", "justice"]
         },
         {
-          "text": "Tail lashing excitedly, m_c dips {PRONOUN/m_c/poss} head to r_c as {PRONOUN/r_c/subject} walk up. r_c returns the gesture and offers a life for [virtue], adding that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it, but it can't hurt.",
+          "text": "Tail lashing excitedly, m_c dips {PRONOUN/m_c/poss} head to r_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} up. r_c returns the gesture and offers a life for [virtue], adding that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it, but it can't hurt.",
           "virtue": ["devotion", "courage in the face of hardship", "compassion", "honor"]
         }
       ]

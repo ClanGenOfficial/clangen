@@ -4758,7 +4758,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
+                "text": "app1 confidently gathers them and prances back to camp, where {PRONOUN/app1/subject} {VERB/app1/are/is} then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
                 "exp": 0,
                 "weight": 20
             },
@@ -5616,7 +5616,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and [VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
+        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and {VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
         "decline_text": "It's probably fine to let the patrol go without telling the story, the bush has been pointed out and {PRONOUN/p_l/poss} Clanmates warned.",
         "success_outcomes": [
             {
@@ -6191,7 +6191,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort impacts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
+                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort imparts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["ragwort"],

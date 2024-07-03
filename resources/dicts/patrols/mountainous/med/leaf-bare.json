@@ -979,7 +979,7 @@
                 ]
             },
             {
-                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed.",
+                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide-eyed and impressed.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1323,7 +1323,7 @@
                 ]
             },
             {
-                "text": "It's not just spotting things that s_c is talented at - finding any plants in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in their wake, wide eyed and impressed.",
+                "text": "It's not just spotting things that s_c is talented at - finding any plants in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in their wake, wide-eyed and impressed.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
