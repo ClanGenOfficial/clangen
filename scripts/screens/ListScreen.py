@@ -2,6 +2,7 @@ from math import ceil
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import (
@@ -14,9 +15,11 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UIDropDownContainer,
     UICatListDisplay,
+    UISurfaceImageButton,
 )
 from scripts.screens.Screens import Screens
-from scripts.utility import ui_scale, get_text_box_theme
+from scripts.ui.generate_button import ButtonStyles, get_button_dict
+from scripts.utility import ui_scale, get_text_box_theme, ui_scale_value
 
 
 class ListScreen(Screens):
@@ -320,16 +323,20 @@ class ListScreen(Screens):
         )
 
         y_pos = 0
-        for object_id in ["#view_your_clan_button", "#view_cotc_button"]:
-            self.choose_group_buttons[object_id.strip("#")] = UIImageButton(
-                ui_scale(pygame.Rect((0, y_pos), (380, 68))),
-                "",
+        for text, object_id in (
+            ["Your Clan", "#view_your_clan_button"],
+            ["Cats Outside the Clan", "#view_cotc_button"],
+        ):
+            self.choose_group_buttons[object_id.strip("#")] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, y_pos), (190, 34))),
+                text,
+                get_button_dict(ButtonStyles.DROPDOWN, (190, 34)),
                 container=self.living_groups_container,
-                object_id=object_id,
+                object_id=ObjectID(class_id="@image_button", object_id=None),
                 starting_height=2,
                 manager=MANAGER,
             )
-            y_pos += 64
+            y_pos += 32
 
         self.choose_living_dropdown = UIDropDownContainer(
             self.living_groups_container.relative_rect,
@@ -361,7 +368,7 @@ class ListScreen(Screens):
             "#view_dark_forest_button",
         ]:
             self.choose_group_buttons[object_id.strip("#")] = UIImageButton(
-                ui_scale(pygame.Rect((0, y_pos), (380, 68))),
+                ui_scale(pygame.Rect((0, y_pos), (190, 34))),
                 "",
                 container=self.dead_groups_container,
                 object_id=object_id,
@@ -369,7 +376,7 @@ class ListScreen(Screens):
                 manager=MANAGER,
                 visible=False,
             )
-            y_pos += 64
+            y_pos += 32
 
         self.choose_dead_dropdown = UIDropDownContainer(
             ui_scale(pygame.Rect((273, 0), (0, 0))),
@@ -610,14 +617,14 @@ class ListScreen(Screens):
 
         if not self.cat_display:
             self.cat_display = UICatListDisplay(
-                ui_scale(pygame.Rect((0, 0), (300, 200))),
+                ui_scale(pygame.Rect((0, 0), (600, 400))),
                 container=self.list_screen_container,
                 object_id="#cat_list_display",
                 starting_height=1,
                 cat_list=self.current_listed_cats,
                 cats_displayed=20,
-                x_px_between=240,
-                y_px_between=200,
+                x_px_between=ui_scale_value(240),
+                y_px_between=ui_scale_value(200),
                 columns=5,
                 prev_button=self.display_container_elements["previous_page_button"],
                 next_button=self.display_container_elements["next_page_button"],

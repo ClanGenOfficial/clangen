@@ -13,7 +13,7 @@ class ButtonStyles(Enum):
     MENU_MIDDLE = "menu_middle"
     MENU_RIGHT = "menu_right"
     ROUNDED_RECT = "rounded_rect"
-    ROUNDED_RECT_LEFT_ARROW = "rounded_rect_left_arrow"
+    DROPDOWN = "dropdown"
 
 
 buttonstyles = {
@@ -29,6 +29,20 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/mainmenu_hovered.png"
+        ).convert_alpha(),
+    },
+    "squoval": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/general_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/general_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/general_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/general_disabled.png"
         ).convert_alpha(),
     },
     "menu_left": {
@@ -71,6 +85,20 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/rounded_rect_disabled.png"
+        ).convert_alpha(),
+    },
+    "dropdown": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/dropdown_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/dropdown_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/dropdown_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/dropdown_disabled.png"
         ).convert_alpha(),
     },
 }

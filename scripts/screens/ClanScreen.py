@@ -196,55 +196,37 @@ class ClanScreen(Screens):
         self.elder_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["elder den"], (103, 28))),
             "elders' den",
-            {
-                "normal": generate_button(
-                    buttonstyles[ButtonStyles.ROUNDED_RECT.value]["normal"],
-                    ui_scale_dimensions((103, 28)),
-                )
-            },
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (103, 28), screen_scale),
         )
+        self.elder_den_label.disable()
         self.nursery_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["nursery"], (80, 28))),
             "nursery",
-            {
-                "normal": generate_button(
-                    buttonstyles[ButtonStyles.ROUNDED_RECT.value]["normal"],
-                    ui_scale_dimensions((80, 28)),
-                )
-            },
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (80, 28), screen_scale),
         )
+        self.nursery_label.disable()
+
         self.clearing_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["clearing"], (81, 28))),
             "clearing",
-            {
-                "normal": generate_button(
-                    buttonstyles[ButtonStyles.ROUNDED_RECT.value]["normal"],
-                    ui_scale_dimensions((81, 28)),
-                )
-            }
-            if game.clan.game_mode == "classic"
-            else get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
         )
+        if game.clan.game_mode == "classic":
+            self.clearing_label.disable()
 
         self.app_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["apprentice den"], (147, 28))),
             "apprentices' den",
-            {
-                "normal": generate_button(
-                    buttonstyles[ButtonStyles.ROUNDED_RECT.value]["normal"],
-                    ui_scale_dimensions((147, 28)),
-                )
-            }
-            if game.clan.game_mode == "classic"
-            else get_button_dict(ButtonStyles.ROUNDED_RECT, (182, 28)),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (147, 28)),
         )
+        self.app_den_label.disable()
 
         # Draw the toggle and text
         self.show_den_labels = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((25, 641), (167, 34))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/show_den_labels.png"),
-                (334, 68),
+                ui_scale_dimensions((167, 34)),
             ),
         )
         self.show_den_labels.disable()

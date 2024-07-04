@@ -327,7 +327,7 @@ class EventsScreen(Screens):
 
         self.heading = pygame_gui.elements.UITextBox(
             "Timeskip to progress your Clan's life.",
-            ui_scale(pygame.Rect((680, 310), (500, -1))),
+            ui_scale(pygame.Rect((340, 155), (250, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             manager=MANAGER,
         )
@@ -356,7 +356,7 @@ class EventsScreen(Screens):
         # Set text for Clan age
         if game.clan.age == 1:
             self.clan_age.set_text(f"Clan age: {game.clan.age} moon")
-        if game.clan.age != 1:
+        else:
             self.clan_age.set_text(f"Clan age: {game.clan.age} moons")
 
         self.timeskip_button = UIImageButton(

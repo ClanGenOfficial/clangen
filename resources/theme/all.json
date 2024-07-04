@@ -727,7 +727,8 @@
         },
         "misc": {
             "shadow_width": "0",
-            "tool_tip_delay": "0"
+            "tool_tip_delay": "0",
+            "text_horiz_alignment": "center"
         }
     },
     "#blank_button": {

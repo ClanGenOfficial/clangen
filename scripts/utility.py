@@ -2308,7 +2308,7 @@ def shorten_text_to_fit(
         length_limit // 2 if not game.settings["fullscreen"] else length_limit
     )
     # Set the font size based on fullscreen settings if not provided
-    # Text box objects are named by their fullscreen text size so it's easier to do it this way
+    # Text box objects are named by their fullscreen text size, so it's easier to do it this way
     if font_size is None:
         font_size = 30
     font_size = font_size // 2 if not game.settings["fullscreen"] else font_size

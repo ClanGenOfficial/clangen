@@ -149,7 +149,7 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": False,
+        "showbounds": True,
         "visualdebugmode": False,
         "showfps": False,
     }
@@ -631,8 +631,7 @@ screen_x = 800
 screen_y = 700
 screen_scale = 1
 
-debug_force_screen_size = None
-# (2560, 1440)
+debug_force_screen_size = None  # (2560, 1440)
 
 
 if game.settings["fullscreen"]:

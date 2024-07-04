@@ -58,7 +58,7 @@ class Screens:
         get_button_dict(ButtonStyles.MENU_MIDDLE, ui_scale_dimensions((58, 30))),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@image_button", object_id="#camp_menu_button"),
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"left_target": menu_buttons["events_screen"]},
     )
@@ -67,7 +67,7 @@ class Screens:
         "Cat List",
         get_button_dict(ButtonStyles.MENU_MIDDLE, ui_scale_dimensions((88, 30))),
         visible=False,
-        object_id=ObjectID(class_id="@image_button", object_id="#catlist_menu_button"),
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"left_target": menu_buttons["camp_screen"]},
     )
@@ -77,7 +77,7 @@ class Screens:
         get_button_dict(ButtonStyles.MENU_RIGHT, ui_scale_dimensions((80, 30))),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@image_button", object_id="#patrol_menu_button"),
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"left_target": menu_buttons["catlist_screen"]},
     )
@@ -93,12 +93,13 @@ class Screens:
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (118, 30)))
     scale_rect.topright = (-25, 25)
-    menu_buttons["allegiances"] = UIImageButton(
+    menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
-        "",
+        "Allegiances",
+        get_button_dict(ButtonStyles.SQUOVAL, (118, 30), screen_scale),
         visible=False,
         manager=MANAGER,
-        object_id="#allegiances_button",
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"right": "right"},
     )
@@ -106,12 +107,13 @@ class Screens:
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
     scale_rect.topright = (-25, 5)
-    menu_buttons["clan_settings"] = UIImageButton(
+    menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
-        "",
+        "Settings",
+        get_button_dict(ButtonStyles.SQUOVAL, (85, 30), screen_scale),
         visible=False,
         manager=MANAGER,
-        object_id="#clan_settings_button",
+        object_id=None,
         starting_height=5,
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
@@ -119,7 +121,7 @@ class Screens:
         ui_scale(pygame.Rect((305, 25), (190, 35))),
         pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(),
-            (380, 70),
+            ui_scale_dimensions((190, 35)),
         ),
         visible=False,
         manager=MANAGER,
