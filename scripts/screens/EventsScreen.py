@@ -63,8 +63,6 @@ class EventsScreen(Screens):
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele in self.event_buttons:
-                    if ele == "all":
-                        continue
                     if self.event_buttons[ele] == element:
                         x_pos = int(self.alert[ele].get_relative_rect()[0] - 10)
                         y_pos = self.alert[ele].get_relative_rect()[1]
@@ -75,8 +73,6 @@ class EventsScreen(Screens):
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele in self.event_buttons:
-                    if ele == "all":
-                        continue
                     if self.event_buttons[ele] == element:
                         x_pos = int(self.alert[ele].get_relative_rect()[0] + 10)
                         y_pos = self.alert[ele].get_relative_rect()[1]
@@ -121,7 +117,8 @@ class EventsScreen(Screens):
                 # DOWN AND UP ARROW
                 elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                     self.handle_tab_select(event.key)
-
+                elif event.key == pygame.K_RETURN:
+                    self.handle_tab_switch(self.selected_display)
 
     def save_scroll_position(self):
         """
@@ -166,7 +163,6 @@ class EventsScreen(Screens):
             y_pos = self.alert[self.selected_display].get_relative_rect()[1]
             self.alert[self.selected_display].set_relative_position((x_pos, y_pos))
 
-
     def handle_tab_switch(self, display_type):
         """
         saves current tab scroll position, removes alert, and then switches to the new tab
@@ -191,8 +187,7 @@ class EventsScreen(Screens):
         elif display_type == "misc":
             self.display_events = self.misc_events
 
-        if display_type != "all":
-            self.alert[display_type].hide()
+        self.alert[display_type].hide()
 
         self.update_events_display()
 
@@ -289,7 +284,7 @@ class EventsScreen(Screens):
                 manager=MANAGER
             )
 
-            if event_type != "all":
+            if event_type:
                 self.alert[f"{event_type}"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((20, 48 + y_pos), (8, 44))),
                     pygame.transform.scale(
