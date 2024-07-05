@@ -162,6 +162,13 @@ class Screens():
             Last screen must be tracked to ensure a clear transition between screens."""
         # self.exit_screen()
         game.last_screen_forupdate = self.name
+        
+        # disable dens menu for the camp screen
+        if new_screen == 'camp screen':
+            dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing", ]
+            self.menu_buttons["dens"].hide()
+            for den in dens:
+                self.menu_buttons[den].hide()
 
         # This keeps track of the last list-like screen for the back button on cat profiles
         if self.name in ['camp screen', 'list screen', 'events screen']:
@@ -343,7 +350,6 @@ class Screens():
 
     def update_dens(self):
         dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing", ]
-
         for den in dens:
             # if dropdown is visible, hide
             if self.menu_buttons[den].visible:
