@@ -292,10 +292,7 @@ class Screens():
         self.update_mns()
         for name, button in self.menu_buttons.items():
             if name == 'dens':
-                if game.switches['cur_screen'] != 'camp screen':
-                    button.hide()
-                else:
-                    button.show()
+                button.hide()
             if name in ['moons_n_seasons', 'moons_n_seasons_arrow', 'med_cat_den', 'lead_den', 'clearing', 'warrior_den',
                         'dens_bar']:
                 continue
@@ -385,7 +382,6 @@ class Screens():
         try:
             if self.menu_buttons['dens']:
                 self.menu_buttons['dens'].kill()
-                del self.menu_buttons['dens']
             if self.menu_buttons['dens_bar']:
                 self.menu_buttons['dens_bar'].kill()
                 del self.menu_buttons['dens_bar']
