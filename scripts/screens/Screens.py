@@ -113,7 +113,7 @@ class Screens:
         get_button_dict(ButtonStyles.SQUOVAL, (85, 30), screen_scale),
         visible=False,
         manager=MANAGER,
-        object_id=None,
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )

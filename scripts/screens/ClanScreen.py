@@ -4,6 +4,7 @@ from copy import deepcopy
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
@@ -172,7 +173,7 @@ class ClanScreen(Screens):
             get_button_dict(
                 ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((121, 28)), screen_scale
             ),
-            object_id="#warrior_den_button",
+            object_id=ObjectID(class_id="@image_button", object_id=None),
             starting_height=2,
         )
         self.leader_den_label = UISurfaceImageButton(
@@ -181,7 +182,7 @@ class ClanScreen(Screens):
             get_button_dict(
                 ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((112, 28)), screen_scale
             ),
-            object_id="#lead_den_button",
+            object_id=ObjectID(class_id="@image_button", object_id=None),
             starting_height=2,
         )
         self.med_den_label = UISurfaceImageButton(
@@ -190,19 +191,21 @@ class ClanScreen(Screens):
             get_button_dict(
                 ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((151, 28)), screen_scale
             ),
-            object_id="#med_den_button",
+            object_id=ObjectID(class_id="@image_button", object_id=None),
             starting_height=2,
         )
         self.elder_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["elder den"], (103, 28))),
             "elders' den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (103, 28), screen_scale),
+            object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         self.elder_den_label.disable()
         self.nursery_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["nursery"], (80, 28))),
             "nursery",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (80, 28), screen_scale),
+            object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         self.nursery_label.disable()
 
@@ -210,6 +213,7 @@ class ClanScreen(Screens):
             ui_scale(pygame.Rect(self.layout["clearing"], (81, 28))),
             "clearing",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
+            object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         if game.clan.game_mode == "classic":
             self.clearing_label.disable()
@@ -218,6 +222,7 @@ class ClanScreen(Screens):
             ui_scale(pygame.Rect(self.layout["apprentice den"], (147, 28))),
             "apprentices' den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (147, 28)),
+            object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         self.app_den_label.disable()
 
@@ -228,6 +233,7 @@ class ClanScreen(Screens):
                 image_cache.load_image("resources/images/show_den_labels.png"),
                 ui_scale_dimensions((167, 34)),
             ),
+            object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(

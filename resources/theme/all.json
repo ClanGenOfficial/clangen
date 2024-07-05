@@ -6,10 +6,10 @@
             "disabled_bg": "#5C5850",
             "selected_bg": "#655934",
             "active_bg": "#655934",
-            "normal_text": "#EFE5CE",
-            "hovered_text": "#EFE5CE",
-            "selected_text": "#EFE5CE",
-            "disabled_text": "#EFE5CE",
+            "normal_text": "#000000",
+            "hovered_text": "#000000",
+            "selected_text": "#000000",
+            "disabled_text": "#000000",
             "link_text": "#B68727",
             "link_hover": "#EFE5CE",
             "link_selected": "#3A91A6",
@@ -448,7 +448,6 @@
             "text_horiz_alignment": "right"
         }
     },
-
     "text_box": {
         "colours": {
             "dark_bg": "#FFFF0000",
@@ -461,6 +460,14 @@
         "misc": {
             "border_width": "0",
             "shadow_width": "0"
+        }
+    },
+    "@heading": {
+        "prototype": "text_box",
+        "colours": {
+            "normal_text": "#EFE5CE",
+            "hovered_text": "#EFE5CE",
+            "disabled_text": "#EFE5CE"
         }
     },
     "#text_box": {
@@ -714,6 +721,10 @@
             "disabled_bg": "#00000000",
             "selected_bg": "#00000000",
             "active_bg": "#00000000",
+            "normal_text": "#EFE5CE",
+            "hovered_text": "#EFE5CE",
+            "selected_text": "#EFE5CE",
+            "disabled_text": "#EFE5CE",
             "link_text": "#00000000",
             "link_hover": "#00000000",
             "link_selected": "#00000000",
@@ -2680,9 +2691,9 @@
     "@startscreen_main": {
         "prototype": "@image_button",
         "colours": {
-            "normal_text": "#ffffff",
-            "hovered_text": "#ffffff",
-            "disabled_text": "#ffffff"
+            "normal_text": "#EFE5CE",
+            "hovered_text": "#EFE5CE",
+            "disabled_text": "#EFE5CE"
         }
     },
     "#switch_clan_button": {

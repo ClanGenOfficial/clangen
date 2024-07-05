@@ -2,7 +2,73 @@
     "defaults": {
         "font": {
             "name": "notosans",
+            "size": "13"
+        }
+    },
+    "#small_text": {
+        "prototype": "text_box",
+        "font": {
+            "name": "notosans",
+            "size": "11"
+        },
+        "misc": {
+            "line_spacing": "1"
+        }
+    },
+    "#small_text_xcenter": {
+        "prototype": "#small_text",
+        "misc": {
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#medium_text": {
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        }
+    },
+    "#medium_text_xycenter": {
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "text_vert_alignment": "center",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#medium_text_xcenter": {
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "text_horiz_alignment": "center",
+            "padding": "0,5"
+        }
+    },
+    "#medium_text_ycenter": {
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "text_vert_alignment": "center",
+            "padding": "5,0"
+        }
+    },
+    "#large_text": {
+        "font": {
+            "name": "notosans",
             "size": "15"
+        }
+    },
+    "#large_text_xcenter": {
+        "prototype": "#large_text",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "padding": "0,5"
         }
     },
     "tool_tip": {
@@ -110,7 +176,7 @@
         },
         "misc": {
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "6"
+            "text_vert_alignment_padding": "7"
         }
     },
     "#tailing_letters": {
@@ -119,14 +185,14 @@
         }
     },
     "@heading": {
-        "prototype": "text_box",
         "font": {
             "name": "clangen",
-            "size": "16"
+            "size": "18"
         },
         "misc": {
             "text_horiz_alignment": "center",
-            "text_vert_alignment": "center"
+            "text_vert_alignment": "center",
+            "padding": "0,0"
         }
     },
     "button": {

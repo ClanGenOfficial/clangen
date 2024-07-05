@@ -419,14 +419,14 @@ class ListScreen(Screens):
             "#filter_death_button",
         ]:
             self.sort_by_buttons[object_id.strip("#")] = UIImageButton(
-                ui_scale(pygame.Rect((0, y_pos), (128, 68))),
+                ui_scale(pygame.Rect((0, y_pos), (64, 34))),
                 "",
                 object_id=object_id,
                 container=self.sort_by_button_container,
                 starting_height=1,
                 manager=MANAGER,
             )
-            y_pos += 64
+            y_pos += 32
 
         self.sort_by_dropdown = UIDropDownContainer(
             ui_scale(pygame.Rect((535, 31), (0, 0))),

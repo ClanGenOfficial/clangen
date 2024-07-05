@@ -812,7 +812,7 @@ class EventsScreen(Screens):
                 if cat_ob:
                     # Shorten name if needed
                     name = str(cat_ob.name)
-                    short_name = shorten_text_to_fit(name, 195, 26)
+                    short_name = shorten_text_to_fit(name, 97, 13)
 
                     self.cat_profile_buttons.append(
                         IDImageButton(

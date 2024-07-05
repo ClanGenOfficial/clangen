@@ -417,7 +417,7 @@ class ClearingScreen(Screens):
             self.feed_max_button.enable()
 
         name = str(self.focus_cat_object.name)
-        short_name = shorten_text_to_fit(name, 275, 30)
+        short_name = shorten_text_to_fit(name, 165, 15)
         self.focus_name = pygame_gui.elements.ui_label.UILabel(
             ui_scale(pygame.Rect((585, 75), (225, 30))),
             short_name,
@@ -529,7 +529,7 @@ class ClearingScreen(Screens):
             )
 
             name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 185, 30)
+            short_name = shorten_text_to_fit(name, 92, 15)
             self.cat_names.append(
                 pygame_gui.elements.UITextBox(
                     short_name,

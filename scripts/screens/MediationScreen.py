@@ -301,7 +301,7 @@ class MediationScreen(Screens):
             )
 
             name = str(mediator.name)
-            short_name = shorten_text_to_fit(name, 240, 22)
+            short_name = shorten_text_to_fit(name, 120, 11)
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((x_value - 10, 480), (320, -1))),
                 short_name,
@@ -442,7 +442,7 @@ class MediationScreen(Screens):
         )
 
         name = str(cat.name)
-        short_name = shorten_text_to_fit(name, 250, 30)
+        short_name = shorten_text_to_fit(name, 125, 15)
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((x, y + 200), (400, 60))),
             short_name,
@@ -591,7 +591,7 @@ class MediationScreen(Screens):
 
         if other_cat:
             name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 136, 22)
+            short_name = shorten_text_to_fit(name, 68, 11)
 
             self.selected_cat_elements[
                 f"relation_heading{tag}"

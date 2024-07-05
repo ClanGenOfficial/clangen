@@ -287,7 +287,7 @@ class ChangeGenderScreen(Screens):
                 f"{pronounset['subject']}/{pronounset['object']}/"
                 f"{pronounset['inposs']}/{pronounset['self']}"
             )
-            short_name = shorten_text_to_fit(displayname, 360, 26)
+            short_name = shorten_text_to_fit(displayname, 180, 13)
 
             # Create block for each pronounset with dynamic ycoor
             block_rect = ui_scale(pygame.Rect((75, ycoor), (544, 88)))
@@ -380,7 +380,7 @@ class ChangeGenderScreen(Screens):
                 f"{pronounset['subject']}/{pronounset['object']}/"
                 f"{pronounset['inposs']}/{pronounset['self']}"
             )
-            short_name = shorten_text_to_fit(displayname, 280, 26)
+            short_name = shorten_text_to_fit(displayname, 140, 13)
 
             # Create block for each pronounset with dynamic ycoor
             block_rect = ui_scale(pygame.Rect((75, ycoor), (544, 88)))
@@ -459,7 +459,7 @@ class ChangeGenderScreen(Screens):
                 f"{pronounset['subject']}/{pronounset['object']}/"
                 f"{pronounset['inposs']}/{pronounset['self']}"
             )
-            short_name = shorten_text_to_fit(displayname, 280, 26)
+            short_name = shorten_text_to_fit(displayname, 140, 13)
 
             # Create block for each pronounset with dynamic ycoor
             block_rect = ui_scale(pygame.Rect((75, ycoor), (544, 88)))

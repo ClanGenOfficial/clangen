@@ -747,7 +747,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_outsider_elements["cat_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((18, 350), (440, -1))),
-            text=shorten_text_to_fit(str(self.focus_cat.name), 440, 30),
+            text=shorten_text_to_fit(str(self.focus_cat.name), 220, 15),
             object_id="#text_box_30_horizcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,

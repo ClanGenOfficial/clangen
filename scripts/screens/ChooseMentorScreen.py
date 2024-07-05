@@ -382,7 +382,7 @@ class ChooseMentorScreen(Screens):
         )
 
         name = str(self.the_cat.name)
-        short_name = shorten_text_to_fit(name, 239, 34)
+        short_name = shorten_text_to_fit(name, 115, 17)
         self.apprentice_details[
             "apprentice_name"
         ] = pygame_gui.elements.ui_label.UILabel(
@@ -539,7 +539,7 @@ class ChooseMentorScreen(Screens):
             )
 
             name = str(self.selected_mentor.name)  # get name
-            short_name = shorten_text_to_fit(name, 239, 34)
+            short_name = shorten_text_to_fit(name, 239, 17)
             self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
                 ui_scale(pygame.Rect((65, 115), (117, 32))),
                 short_name,

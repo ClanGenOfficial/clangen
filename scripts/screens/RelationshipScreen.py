@@ -737,7 +737,7 @@ class RelationshipScreen(Screens):
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
         name = str(the_relationship.cat_to.name)  # get name
-        short_name = shorten_text_to_fit(name, 210, 26)
+        short_name = shorten_text_to_fit(name, 105, 13)
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(
             short_name,
             ui_scale(pygame.Rect((pos_x - 10, pos_y - 50), (220, 60))),

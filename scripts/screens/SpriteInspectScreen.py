@@ -258,7 +258,7 @@ class SpriteInspectScreen(Screens):
             cat_name += (
                 " (dead)"  # A dead cat will have the (dead) sign next to their name
             )
-        short_name = shorten_text_to_fit(cat_name, 390, 40)
+        short_name = shorten_text_to_fit(cat_name, 195, 20)
 
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
             short_name,

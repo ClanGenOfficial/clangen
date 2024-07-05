@@ -2304,14 +2304,12 @@ def ceremony_text_adjust(
 def shorten_text_to_fit(
     name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"
 ):
-    length_limit = (
-        length_limit // 2 if not game.settings["fullscreen"] else length_limit
-    )
+    length_limit = length_limit * screen_scale
     # Set the font size based on fullscreen settings if not provided
     # Text box objects are named by their fullscreen text size, so it's easier to do it this way
     if font_size is None:
         font_size = 30
-    font_size = font_size // 2 if not game.settings["fullscreen"] else font_size
+    font_size = font_size * screen_scale
     # Create the font object
     font = pygame.font.Font(font_type, font_size)
 

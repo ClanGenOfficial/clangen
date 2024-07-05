@@ -203,7 +203,7 @@ class RoleScreen(Screens):
         )
 
         name = str(self.the_cat.name)
-        short_name = shorten_text_to_fit(name, 300, 26)
+        short_name = shorten_text_to_fit(name, 150, 13)
         self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((775, 140), (350, -1))),
             short_name,

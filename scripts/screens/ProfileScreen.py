@@ -21,6 +21,7 @@ from scripts.utility import (
     process_text,
     chunks,
     ui_scale_dimensions,
+    ui_scale_value,
 )
 from scripts.utility import get_text_box_theme, scale_dimensions, shorten_text_to_fit
 from .Screens import Screens
@@ -582,7 +583,7 @@ class ProfileScreen(Screens):
 
         # Info in string
         cat_name = str(self.the_cat.name)
-        cat_name = shorten_text_to_fit(cat_name, 425, 40)
+        cat_name = shorten_text_to_fit(cat_name, 212, 40)
         if self.the_cat.dead:
             cat_name += (
                 " (dead)"  # A dead cat will have the (dead) sign next to their name
@@ -602,54 +603,40 @@ class ProfileScreen(Screens):
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
-            ui_scale(pygame.Rect((50, 280), (-1, 80))),
-            object_id=get_text_box_theme("#text_box_40_horizcenter"),
+            ui_scale(pygame.Rect((0, 140), (-1, 40))),
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
-        name_text_size = self.profile_elements["cat_name"].get_relative_rect()
-        self.profile_elements["cat_name"].kill()
 
-        # don't like having to do this, but for some reason the usual scaling is not working here
-        if game.settings["fullscreen"]:
-            self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
-                cat_name,
-                ui_scale(
-                    pygame.Rect(
-                        (800 - name_text_size.width, 280),
-                        (name_text_size.width * 2, 80),
-                    )
-                ),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"),
-                manager=MANAGER,
-            )
-        else:
-            self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
-                cat_name,
-                ui_scale(pygame.Rect((800 - name_text_size.width, 280), (-1, 80))),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"),
-                manager=MANAGER,
-            )
+        #     pygame_gui.elements.UITextBox(
+        #     cat_name,
+        #     ui_scale(pygame.Rect((0, 140), (-1, 40))),
+        #     object_id=get_text_box_theme("#text_box_40_horizcenter"),
+        #     manager=MANAGER,
+        #     anchors={"centerx": "centerx"},
+        # )
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(
             self.the_cat.thought,
-            ui_scale(pygame.Rect((200, 340), (1200, -1))),
+            ui_scale(pygame.Rect((0, 170), (600, -1))),
             wrap_to_height=True,
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(
             self.generate_column1(self.the_cat),
             ui_scale(pygame.Rect((300, 230), (180, 190))),
-            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            object_id="#small_text",
             line_spacing=1,
             manager=MANAGER,
         )
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
             self.generate_column2(self.the_cat),
             ui_scale(pygame.Rect((490, 230), (250, 180))),
-            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            object_id="#small_text",
             line_spacing=1,
             manager=MANAGER,
         )
@@ -659,7 +646,7 @@ class ProfileScreen(Screens):
             self.profile_elements["background"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((55, 200), (240, 210))),
                 pygame.transform.scale(
-                    self.get_platform(), scale_dimensions((480, 420))
+                    self.get_platform(), ui_scale_dimensions((240, 210))
                 ),
                 manager=MANAGER,
             )
@@ -692,28 +679,24 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
-        # Fullscreen
-        if game.settings["fullscreen"]:
-            x_pos = 745 - name_text_size.width // 2
-        else:
-            x_pos = 740 - name_text_size.width
-
         self.profile_elements["favourite_button"] = UIImageButton(
-            ui_scale(pygame.Rect((x_pos, 287), (56, 56))),
+            ui_scale(pygame.Rect((5, 143), (28, 28))),
             "",
             object_id="#fav_star",
             manager=MANAGER,
             tool_tip_text="Remove favorite status",
             starting_height=2,
+            anchors={"right_target": self.profile_elements["cat_name"]},
         )
 
         self.profile_elements["not_favourite_button"] = UIImageButton(
-            ui_scale(pygame.Rect((x_pos, 287), (56, 56))),
+            ui_scale(pygame.Rect((5, 143), (28, 28))),
             "",
             object_id="#not_fav_star",
             manager=MANAGER,
             tool_tip_text="Mark as favorite",
             starting_height=2,
+            anchors={"right_target": self.profile_elements["cat_name"]},
         )
 
         if self.the_cat.favourite:

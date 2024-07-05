@@ -313,7 +313,7 @@ class MedDenScreen(Screens):
         self.meds_messages = UITextBoxTweaked(
             "",
             ui_scale(pygame.Rect((108, 310), (600, 80))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
+            object_id="#medium_text_xycenter",
             line_spacing=1,
         )
 
@@ -456,17 +456,17 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
             name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 275, 30)
+            short_name = shorten_text_to_fit(name, 137, 15)
             self.med_name = pygame_gui.elements.ui_label.UILabel(
                 ui_scale(pygame.Rect((525, 155), (225, 30))),
                 short_name,
-                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                object_id="#medium_text_xycenter",
                 manager=MANAGER,
             )
             self.med_info = UITextBoxTweaked(
                 "",
                 ui_scale(pygame.Rect((580, 185), (120, 120))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                object_id="#medium_text_xcenter",
                 line_spacing=1,
                 manager=MANAGER,
             )
@@ -544,7 +544,7 @@ class MedDenScreen(Screens):
             )
 
             name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 185, 30)
+            short_name = shorten_text_to_fit(name, 92, 15)
             self.cat_names.append(
                 pygame_gui.elements.UITextBox(
                     short_name,

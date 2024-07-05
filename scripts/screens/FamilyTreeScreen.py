@@ -353,7 +353,7 @@ class FamilyTreeScreen(Screens):
             manager=MANAGER,
         )
         name = str(self.the_cat.name)
-        short_name = shorten_text_to_fit(name, 260, 22)
+        short_name = shorten_text_to_fit(name, 130, 11)
         self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(
             f"Viewing {short_name}'s Lineage",
             ui_scale(pygame.Rect((75, 641), (150, 75))),
@@ -380,7 +380,7 @@ class FamilyTreeScreen(Screens):
             container=self.family_tree,
         )
         name = str(self.the_cat.name)
-        short_name = shorten_text_to_fit(name, 114, 22)
+        short_name = shorten_text_to_fit(name, 57, 11)
 
         self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(
             ui_scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))),

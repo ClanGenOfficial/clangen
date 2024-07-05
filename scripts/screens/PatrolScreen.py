@@ -19,24 +19,21 @@ from .Screens import Screens
 class PatrolScreen(Screens):
     able_box = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_able_cats.png").convert_alpha(),
-        (540, 402),
+        (270, 201),
     )
     patrol_box = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_cats.png").convert_alpha(),
-        (540, 402),
+        (270, 201),
     )
     cat_frame = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha(),
-        (400, 550),
+        (200, 225),
     )
     app_frame = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_app_frame.png").convert_alpha(),
         (332, 340),
     )
-    mate_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/patrol_mate_frame.png").convert_alpha(),
-        (332, 340),
-    )
+    mate_frame = pygame.transform.flip(app_frame, True, False)
 
     current_patrol = []
     patrol_stage = "choose_cats"  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
@@ -451,7 +448,7 @@ class PatrolScreen(Screens):
 
         # Frames
         self.elements["able_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((80, 920), self.able_box.get_size())),
+            ui_scale(pygame.Rect((40, 460), self.able_box.get_size())),
             self.able_box,
             starting_height=1,
             manager=MANAGER,
@@ -459,7 +456,7 @@ class PatrolScreen(Screens):
         self.elements["able_frame"].disable()
 
         self.elements["patrol_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((980, 920), self.patrol_box.get_size())),
+            ui_scale(pygame.Rect((490, 460), self.patrol_box.get_size())),
             self.patrol_box,
             manager=MANAGER,
         )
@@ -467,7 +464,7 @@ class PatrolScreen(Screens):
 
         # Buttons
         self.elements["add_remove_cat"] = UIImageButton(
-            ui_scale(pygame.Rect((350, 460), (98, 30))),
+            ui_scale(pygame.Rect((175, 230), (49, 15))),
             "",
             object_id="#add_cat_button",
             manager=MANAGER,
@@ -674,7 +671,7 @@ class PatrolScreen(Screens):
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(
             self.display_text,
             ui_scale(pygame.Rect((385, 172), (335, 250))),
-            object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
+            object_id="#medium_text",
             manager=MANAGER,
         )
         # Patrol Info
@@ -704,24 +701,24 @@ class PatrolScreen(Screens):
             f"patrol skills: {self.get_list_text(skills)} \n"
             f"patrol traits: {self.get_list_text(traits)}",
             ui_scale(pygame.Rect((105, 460), (240, 200))),
-            object_id="#text_box_22_horizleft",
+            object_id="#small_text",
             manager=MANAGER,
         )
 
         # Draw Patrol Cats
-        pos_x = 800
-        pos_y = 950
+        pos_x = 400
+        pos_y = 475
         for u in range(6):
             if u < len(self.patrol_obj.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                    ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                     self.patrol_obj.patrol_cats[u].sprite,
                     manager=MANAGER,
                 )
-                pos_x += 100
-                if pos_x > 900:
-                    pos_y += 100
-                    pos_x = 800
+                pos_x += 50
+                if pos_x > 450:
+                    pos_y += 50
+                    pos_x = 400
             else:
                 break
 
@@ -803,7 +800,7 @@ class PatrolScreen(Screens):
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((550, 500), (172, 150))),
-            object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
+            object_id="#small_text_xcenter",
             manager=MANAGER,
         )
         self.elements["patrol_results"].set_text(self.results_text)
@@ -871,51 +868,51 @@ class PatrolScreen(Screens):
                 self.elements["last_page"].enable()
 
         # Draw able cats.
-        pos_y = 1000
-        pos_x = 100
+        pos_y = 500
+        pos_x = 50
         i = 0
         for cat in display_cats:
             if game.clan.clan_settings["show fav"] and cat.favourite:
                 self.fav[str(i)] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                    ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                     pygame.transform.scale(
                         pygame.image.load(
                             f"resources/images/fav_marker.png"
                         ).convert_alpha(),
-                        (100, 100),
+                        ui_scale_dimensions((50, 50)),
                     ),
                 )
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))),
                 cat_object=cat,
                 manager=MANAGER,
             )
-            pos_x += 100
-            if pos_x >= 600:
-                pos_x = 100
-                pos_y += 100
+            pos_x += 50
+            if pos_x >= 300:
+                pos_x = 50
+                pos_y += 50
             i += 1
 
         if self.patrol_screen == "patrol_cats":
             # Hide Skills Info
             self.elements["skills_box"].hide()
             # Draw cats in patrol
-            pos_y = 1016
-            pos_x = 1050
+            pos_y = 508
+            pos_x = 525
             i = 0
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(
-                    ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                    ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                     pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))),
                     cat_object=cat,
                     manager=MANAGER,
                 )
-                pos_x += 150
-                if pos_x >= 1450:
-                    pos_x = 1050
-                    pos_y += 100
+                pos_x += 75
+                if pos_x >= 725:
+                    pos_x = 525
+                    pos_y += 50
                 i += 1
         elif self.patrol_screen == "skills":
             self.update_skills_tab()
@@ -1007,39 +1004,48 @@ class PatrolScreen(Screens):
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((320, 175), (150, 150))),
+                ui_scale(pygame.Rect((0, 175), (125, 125))),
                 pygame.transform.scale(
                     self.selected_cat.sprite, ui_scale_dimensions((150, 150))
                 ),
                 manager=MANAGER,
+                anchors={"centerx": "centerx"},
             )
 
             name = str(self.selected_cat.name)  # get name
-            short_name = shorten_text_to_fit(name, 350, 30)
+            short_name = shorten_text_to_fit(name, 172, 15)
 
             self.elements["selected_name"] = pygame_gui.elements.UITextBox(
                 short_name,
-                ui_scale(pygame.Rect((300, 325), (200, 30))),
-                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                ui_scale(pygame.Rect((0, 0), (200, 30))),
+                object_id="#medium_text_xcenter",
                 manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["selected_image"],
+                    "centerx": "centerx",
+                },
             )
 
             self.elements["selected_bio"] = pygame_gui.elements.UITextBox(
                 str(self.selected_cat.status)
-                + "\n"
+                + "<br />"
                 + str(self.selected_cat.personality.trait)
-                + "\n"
+                + "<br />"
                 + str(self.selected_cat.skills.skill_string(short=True))
-                + "\n"
+                + "<br />"
                 + str(self.selected_cat.experience_level)
                 + (
                     f" ({str(self.selected_cat.experience)})"
                     if game.clan.clan_settings["showxp"]
                     else ""
                 ),
-                ui_scale(pygame.Rect((300, 350), (200, 75))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
+                ui_scale(pygame.Rect((0, -5), (200, 110))),
+                object_id="#small_text_xcenter",
                 manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["selected_name"],
+                    "centerx": "centerx",
+                },
             )
 
             # Show Cat's Mate, if they have one

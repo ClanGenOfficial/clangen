@@ -688,7 +688,7 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
     )
     manager.add_font_paths(
-        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
+        font_name="clangen", regular_path="resources/fonts/clangen.otf"
     )
 
     if screen_scale == 1:
