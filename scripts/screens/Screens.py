@@ -381,7 +381,7 @@ class Screens():
         self.menu_buttons['heading'].set_text(text)
 
     def mns_ui_offset(self, shift):
-        """Shifts the UI by the given amount if the moons and seasons widget is enabled"""
+        """Shifts the dens UI up or down by the given amount - needed for positioning around the MnS widget"""
         try:
             if self.menu_buttons['dens']:
                 self.menu_buttons['dens'].kill()
