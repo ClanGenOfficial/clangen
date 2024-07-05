@@ -167,7 +167,20 @@ class Screens():
         if self.name in ['camp screen', 'list screen', 'events screen']:
             game.last_screen_forProfile = self.name
 
-        elif self.name not in ['list screen', 'profile screen', 'sprite inspect screen']:
+        if new_screen not in [
+            'list screen',
+            'profile screen',
+            'sprite inspect screen',
+            'ceremony screen',
+            'role screen',
+            'choose mate screen',
+            'choose mentor screen',
+            'choose adoptive parent screen',
+            'relationship screen',
+            'see kits screen',
+            "mediation screen",
+            "change gender screen"
+            ]:
             game.last_list_forProfile = None
 
         game.switches['cur_screen'] = new_screen
