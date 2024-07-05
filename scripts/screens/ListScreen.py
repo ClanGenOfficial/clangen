@@ -200,19 +200,6 @@ class ListScreen(Screens):
 
             # MENU BUTTONS
             else:
-                # If a button leads to a screen with a "back" button or doesn't change the screen, put it in this list
-                excluded_buttons = (
-                    self.menu_buttons["moons_n_seasons_arrow"],
-                    self.menu_buttons["dens"],
-                    self.menu_buttons["lead_den"],
-                    self.menu_buttons["clearing"],
-                    self.menu_buttons["med_cat_den"],
-                    self.menu_buttons["warrior_den"]
-                )
-                
-                if event.ui_element not in excluded_buttons:
-                    self.current_group = "clan"
-                    self.death_status = "living"
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
