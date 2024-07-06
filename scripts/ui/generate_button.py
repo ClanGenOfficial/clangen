@@ -3,7 +3,7 @@ from typing import Tuple
 
 import pygame
 
-from scripts.game_structure.game_essentials import screen_scale
+from scripts.utility import ui_scale_dimensions
 
 
 class ButtonStyles(Enum):
@@ -116,6 +116,7 @@ buttonstyles["menu_right"] = {
 
 
 def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
+    dimensions = ui_scale_dimensions(dimensions)
     height = base.height
     vertical_scale = dimensions[1] / height
     if vertical_scale < 0:
@@ -179,20 +180,10 @@ def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
     return surface
 
 
-def get_button_dict(style: ButtonStyles, dimensions: Tuple[int, int], scale=None):
-    if scale is None:
-        scale = screen_scale
+def get_button_dict(style: ButtonStyles, dimensions: Tuple[int, int]):
     return {
-        "normal": generate_button(
-            buttonstyles[style.value]["normal"], dimensions, scale
-        ),
-        "hovered": generate_button(
-            buttonstyles[style.value]["hovered"], dimensions, scale
-        ),
-        "selected": generate_button(
-            buttonstyles[style.value]["selected"], dimensions, scale
-        ),
-        "disabled": generate_button(
-            buttonstyles[style.value]["disabled"], dimensions, scale
-        ),
+        "normal": generate_button(buttonstyles[style.value]["normal"], dimensions),
+        "hovered": generate_button(buttonstyles[style.value]["hovered"], dimensions),
+        "selected": generate_button(buttonstyles[style.value]["selected"], dimensions),
+        "disabled": generate_button(buttonstyles[style.value]["disabled"], dimensions),
     }

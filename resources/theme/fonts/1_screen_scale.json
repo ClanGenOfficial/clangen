@@ -1,18 +1,15 @@
 {
     "defaults": {
         "font": {
-            "name": "notosans",
-            "size": "13"
+            "name": "noto_sans",
+            "size": "14"
         }
     },
     "#small_text": {
         "prototype": "text_box",
         "font": {
-            "name": "notosans",
-            "size": "11"
-        },
-        "misc": {
-            "line_spacing": "1"
+            "name": "noto_sans",
+            "size": "12"
         }
     },
     "#small_text_xcenter": {
@@ -23,14 +20,14 @@
     },
     "#medium_text": {
         "font": {
-            "name": "notosans",
-            "size": "13"
+            "name": "noto_sans",
+            "size": "14"
         }
     },
     "#medium_text_xycenter": {
         "font": {
-            "name": "notosans",
-            "size": "13"
+            "name": "noto_sans",
+            "size": "14"
         },
         "misc": {
             "text_vert_alignment": "center",
@@ -40,8 +37,8 @@
     },
     "#medium_text_xcenter": {
         "font": {
-            "name": "notosans",
-            "size": "13"
+            "name": "noto_sans",
+            "size": "14"
         },
         "misc": {
             "text_horiz_alignment": "center",
@@ -50,8 +47,8 @@
     },
     "#medium_text_ycenter": {
         "font": {
-            "name": "notosans",
-            "size": "13"
+            "name": "noto_sans",
+            "size": "14"
         },
         "misc": {
             "text_vert_alignment": "center",
@@ -60,8 +57,8 @@
     },
     "#large_text": {
         "font": {
-            "name": "notosans",
-            "size": "15"
+            "name": "noto_sans",
+            "size": "16"
         }
     },
     "#large_text_xcenter": {
@@ -78,7 +75,7 @@
     },
     "tool_tip.text_box": {
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "13"
         },
         "misc": {
@@ -172,7 +169,8 @@
     "@startscreen_main": {
         "font": {
             "name": "clangen",
-            "size": "21"
+            "size": "20",
+            "antialiased": "0"
         },
         "misc": {
             "text_vert_alignment": "top",
@@ -187,7 +185,8 @@
     "@heading": {
         "font": {
             "name": "clangen",
-            "size": "18"
+            "size": "18",
+            "antialiased": "0"
         },
         "misc": {
             "text_horiz_alignment": "center",
@@ -198,7 +197,8 @@
     "@heading_contrast": {
         "font": {
             "name": "clangen",
-            "size": "18"
+            "size": "18",
+            "antialiased": "0"
         },
         "misc": {
             "text_horiz_alignment": "center",
@@ -209,7 +209,8 @@
     "button": {
         "font": {
             "name": "clangen",
-            "size": "16"
+            "size": "16",
+            "antialiased": "0"
         },
         "misc": {
             "text_vert_alignment": "top",
@@ -217,11 +218,35 @@
             "text_horiz_alignment": "center"
         }
     },
-    "@menu_left": {
+    "@buttonstyles_roundedrect": {
+        "prototype": "@image_button",
+        "font": {
+            "name": "clangen",
+            "size": "16",
+            "antialiased": "0"
+        }
+    },
+    "@buttonstyles_menu": {
+        "prototype": "@image_button",
+        "font": {
+            "name": "clangen",
+            "size": "16",
+            "antialiased": "0"
+        }
+    },
+    "@buttonstyles_menu_left": {
         "prototype": "@image_button",
         "misc": {
             "text_horiz_alignment": "left",
             "text_horiz_alignment_padding": "20"
+        }
+    },
+    "@buttonstyles_squoval": {
+        "prototype": "@image_button",
+        "font": {
+            "name": "clangen",
+            "size": "16",
+            "antialiased": "0"
         }
     }
 }

@@ -14,7 +14,7 @@
             "padding": "(0,0)"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30"
         }
     },
@@ -27,7 +27,7 @@
             "link_selected": "#556B2F"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "35",
             "bold": "1"
         },
@@ -52,7 +52,7 @@
             "border_width": "0"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "26"
         }
     },
@@ -82,7 +82,7 @@
             "link_selected": "#556B2F"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30"
         },
         "misc": {
@@ -93,7 +93,7 @@
     "#text_box_14": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "14"
         }
     },
@@ -106,7 +106,7 @@
     "#text_box_22": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "22"
         }
     },
@@ -159,7 +159,7 @@
     "#text_box_26": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "26"
         }
     },
@@ -195,7 +195,7 @@
     "#text_box_30": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30"
         }
     },
@@ -205,14 +205,14 @@
             "normal_text": "#222222"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "24"
         }
     },
     "#update_popup_title": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30",
             "bold": "1"
         }
@@ -223,7 +223,7 @@
             "text_horiz_alignment": "center"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "40",
             "bold": "1"
         }
@@ -237,7 +237,7 @@
             "normal_text": "#222222"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "24"
         }
     },
@@ -325,7 +325,7 @@
     "#text_box_34": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "34"
         }
     },
@@ -350,7 +350,7 @@
     "#text_box_40": {
         "prototype": "#text_box",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "40"
         }
     },

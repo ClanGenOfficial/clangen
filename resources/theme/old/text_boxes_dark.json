@@ -8,7 +8,7 @@
             "link_selected": "#556B2F"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30"
         },
         "misc": {
@@ -38,7 +38,7 @@
     "#text_box_22_dark": {
         "prototype": "#default_dark",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": 22
         }
     },
@@ -84,7 +84,7 @@
     "#text_box_26_dark": {
         "prototype": "#default_dark",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": 26
         }
     },
@@ -106,7 +106,7 @@
     "#text_box_30_dark": {
         "prototype": "#default_dark",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": 30
         }
     },
@@ -168,7 +168,7 @@
     "#text_box_34_dark": {
         "prototype": "#default_dark",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": 34
         }
     },
@@ -187,7 +187,7 @@
     "#text_box_40_dark": {
         "prototype": "#default_dark",
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": 40
         }
     },

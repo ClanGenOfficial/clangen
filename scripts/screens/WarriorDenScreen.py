@@ -4,12 +4,17 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.utility import ui_scale, get_text_box_theme, get_alive_status_cats
-
+from scripts.ui.generate_button import ButtonStyles, get_button_dict
+from scripts.utility import (
+    ui_scale,
+    get_text_box_theme,
+    get_alive_status_cats,
+    ui_scale_dimensions,
+)
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
@@ -247,7 +252,7 @@ class WarriorDenScreen(Screens):
         create the buttons for the different focuses
         """
         self.focus["button_container"] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((100, 260), (350, 400))),
+            ui_scale(pygame.Rect((100, 260), (250, 300))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -257,10 +262,11 @@ class WarriorDenScreen(Screens):
 
         for code, desc in settings_dict["clan_focus"].items():
 
-            self.focus_buttons[code] = UIImageButton(
-                ui_scale(pygame.Rect((0, n * 62), (500, 56))),
-                "",
-                object_id=ObjectID(desc[4], "@image_button"),
+            self.focus_buttons[code] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, n * 30), (250, 28))),
+                desc[0],
+                get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
+                object_id=ObjectID(None, "@buttonstyles_roundedrect"),
                 container=self.focus["button_container"],
                 starting_height=2,
                 manager=MANAGER,
@@ -279,7 +285,7 @@ class WarriorDenScreen(Screens):
 
         # create scrollbar
         self.focus["button_container"].set_scrollable_area_dimensions(
-            (500 / 1600 * screen_x, (n * 62 + 200) / 1600 * screen_y)
+            ui_scale_dimensions((250, (n * 30 + 100)))
         )
 
     def create_top_info(self):
@@ -327,16 +333,14 @@ class WarriorDenScreen(Screens):
             f"<b>Current Focus:</b> {name}{desc}<br><b>Focus Last Changed:</b> {last_change_text}<br>(next change in {next_change})",
             ui_scale(pygame.Rect((50, 72), (355, 40))),
             wrap_to_height=True,
-            # object_id=get_text_box_theme(
-            #     "#text_box_30_horizcenter_vertcenter_spacing_95"
-            # ),
+            object_id="#medium_text_xcenter",
             manager=MANAGER,
         )
         self.focus_text = pygame_gui.elements.UITextBox(
             f"What should your warriors focus on?",
             ui_scale(pygame.Rect((92, 214), (272, 15))),
             wrap_to_height=True,
-            # object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+            object_id="#medium_text_xcenter",
             manager=MANAGER,
         )
 

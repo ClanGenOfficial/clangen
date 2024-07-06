@@ -49,7 +49,9 @@ class Screens:
         get_button_dict(ButtonStyles.MENU_LEFT, ui_scale_dimensions((82, 30))),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@menu_left", object_id="#events_menu_button"),
+        object_id=ObjectID(
+            class_id="@buttonstyles_menu_left", object_id="#events_menu_button"
+        ),
         starting_height=5,
     )
     menu_buttons["camp_screen"] = UISurfaceImageButton(
@@ -96,7 +98,7 @@ class Screens:
     menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
         "Allegiances",
-        get_button_dict(ButtonStyles.SQUOVAL, (118, 30), screen_scale),
+        get_button_dict(ButtonStyles.SQUOVAL, (118, 30)),
         visible=False,
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),
@@ -110,7 +112,7 @@ class Screens:
     menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
         "Settings",
-        get_button_dict(ButtonStyles.SQUOVAL, (85, 30), screen_scale),
+        get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
         visible=False,
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),

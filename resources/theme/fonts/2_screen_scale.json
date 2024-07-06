@@ -1,7 +1,7 @@
 {
     "defaults": {
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30"
         }
     },
@@ -12,7 +12,7 @@
     },
     "tool_tip.text_box": {
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "26"
         },
         "misc": {
@@ -120,7 +120,7 @@
     },
     "@heading": {
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "24"
         },
         "misc": {

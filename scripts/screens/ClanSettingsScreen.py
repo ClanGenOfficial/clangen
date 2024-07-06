@@ -31,12 +31,6 @@ class ClanSettingsScreen(Screens):
     Screen handles all Clan-specific settings
     """
 
-    text_size = {
-        "0": "small",
-        "1": "medium",
-        "2": "big",
-    }  # How text sizes will show up on the screen
-    bool = {True: "Yes", False: "No", None: "None"}
     sub_menu = "general"
 
     # This is set to the current settings when the screen is opened.

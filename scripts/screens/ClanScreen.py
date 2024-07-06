@@ -170,41 +170,35 @@ class ClanScreen(Screens):
         self.warrior_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["warrior den"], (121, 28))),
             "warriors' den",
-            get_button_dict(
-                ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((121, 28)), screen_scale
-            ),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((121, 28))),
             object_id=ObjectID(class_id="@image_button", object_id=None),
             starting_height=2,
         )
         self.leader_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["leader den"], (112, 28))),
             "leader's den",
-            get_button_dict(
-                ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((112, 28)), screen_scale
-            ),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((112, 28))),
             object_id=ObjectID(class_id="@image_button", object_id=None),
             starting_height=2,
         )
         self.med_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["medicine den"], (151, 28))),
             "medicine cat den",
-            get_button_dict(
-                ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((151, 28)), screen_scale
-            ),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((151, 28))),
             object_id=ObjectID(class_id="@image_button", object_id=None),
             starting_height=2,
         )
         self.elder_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["elder den"], (103, 28))),
             "elders' den",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, (103, 28), screen_scale),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (103, 28)),
             object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         self.elder_den_label.disable()
         self.nursery_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["nursery"], (80, 28))),
             "nursery",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, (80, 28), screen_scale),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (80, 28)),
             object_id=ObjectID(class_id="@image_button", object_id=None),
         )
         self.nursery_label.disable()

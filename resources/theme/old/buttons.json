@@ -71,7 +71,7 @@
             "active_border": "#776045"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "30"
         },
         "misc": {
@@ -133,7 +133,7 @@
             "text_shadow": "#00000000"
         },
         "font": {
-            "name": "notosans",
+            "name": "noto_sans",
             "size": "26"
         },
         "misc": {

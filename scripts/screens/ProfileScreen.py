@@ -583,7 +583,9 @@ class ProfileScreen(Screens):
 
         # Info in string
         cat_name = str(self.the_cat.name)
-        cat_name = shorten_text_to_fit(cat_name, 212, 40)
+        cat_name = shorten_text_to_fit(
+            cat_name, 140, 20, font_type="resources/fonts/clangen.otf"
+        )
         if self.the_cat.dead:
             cat_name += (
                 " (dead)"  # A dead cat will have the (dead) sign next to their name
@@ -603,8 +605,9 @@ class ProfileScreen(Screens):
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
-            ui_scale(pygame.Rect((0, 140), (-1, 40))),
+            ui_scale(pygame.Rect((0, 140), (150, 40))),
             manager=MANAGER,
+            object_id="@heading_contrast",
             anchors={"centerx": "centerx"},
         )
 
@@ -680,17 +683,20 @@ class ProfileScreen(Screens):
             self.profile_elements["med_den"].hide()
 
         self.profile_elements["favourite_button"] = UIImageButton(
-            ui_scale(pygame.Rect((5, 143), (28, 28))),
+            ui_scale(pygame.Rect((0, 143), (28, 28))),
             "",
             object_id="#fav_star",
             manager=MANAGER,
             tool_tip_text="Remove favorite status",
             starting_height=2,
-            anchors={"right_target": self.profile_elements["cat_name"]},
+            anchors={
+                "right": "right",
+                "right_target": self.profile_elements["cat_name"],
+            },
         )
 
         self.profile_elements["not_favourite_button"] = UIImageButton(
-            ui_scale(pygame.Rect((5, 143), (28, 28))),
+            ui_scale(pygame.Rect((0, 143), (28, 28))),
             "",
             object_id="#not_fav_star",
             manager=MANAGER,

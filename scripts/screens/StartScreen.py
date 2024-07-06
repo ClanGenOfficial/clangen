@@ -182,14 +182,14 @@ class StartScreen(Screens):
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
             "continue",
-            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "switch clan",
-            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
             anchors={"top_target": self.continue_button},
@@ -197,7 +197,7 @@ class StartScreen(Screens):
         self.new_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "new clan",
-            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id=ObjectID(class_id="@startscreen_main", object_id=None),
             manager=MANAGER,
             anchors={"top_target": self.switch_clan_button},
@@ -205,7 +205,7 @@ class StartScreen(Screens):
         self.settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "settings",
-            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id=ObjectID(
                 class_id="@startscreen_main", object_id="#tailing_letters"
             ),
@@ -215,7 +215,7 @@ class StartScreen(Screens):
         self.quit = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "quit",
-            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30), screen_scale),
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id=ObjectID(
                 class_id="@startscreen_main", object_id="#tailing_letters"
             ),
@@ -252,8 +252,8 @@ class StartScreen(Screens):
         ).convert_alpha()
 
         self.error_box = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((129, 150), (590, 401))),
-            pygame.transform.scale(errorimg, ui_scale_dimensions((590, 401))),
+            ui_scale(pygame.Rect((130, 150), (590, 400))),
+            pygame.transform.scale(errorimg, ui_scale_dimensions((590, 400))),
             manager=MANAGER,
         )
 

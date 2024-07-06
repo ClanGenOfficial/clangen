@@ -631,6 +631,7 @@ screen_x = 800
 screen_y = 700
 screen_scale = 1
 
+# nb. forcing screen size WILL make font crunchy
 debug_force_screen_size = None  # (2560, 1440)
 
 
@@ -681,25 +682,20 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         enable_live_theme_updates=False,
     )
     manager.add_font_paths(
-        font_name="notosans",
-        regular_path="resources/fonts/NotoSans-Medium.ttf",
-        bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
-        italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
-        bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
-    )
-    manager.add_font_paths(
-        font_name="clangen", regular_path="resources/fonts/clangen.otf"
+        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
     if screen_scale == 1:
         manager.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
         manager.preload_fonts(
             [
-                {"name": "notosans", "point_size": 11, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "bold"},
-                {"name": "notosans", "point_size": 15, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "italic"},
-                {"name": "notosans", "point_size": 15, "style": "italic"},
+                {"name": "noto_sans", "point_size": 12, "style": "bold"},
+                {"name": "noto_sans", "point_size": 14, "style": "bold"},
+                {"name": "noto_sans", "point_size": 16, "style": "bold"},
+                {"name": "noto_sans", "point_size": 14, "style": "italic"},
+                {"name": "noto_sans", "point_size": 16, "style": "italic"},
+                {"name": "noto_sans", "point_size": 18, "style": "italic"},
+                {"name": "clangen", "point_size": 18, "style": "regular"},
             ]
         )
     elif screen_scale == 2:

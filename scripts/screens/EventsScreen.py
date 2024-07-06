@@ -4,7 +4,11 @@ import pygame_gui
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.ui_elements import IDImageButton, UIImageButton
+from scripts.game_structure.ui_elements import (
+    IDImageButton,
+    UIImageButton,
+    UISurfaceImageButton,
+)
 from scripts.game_structure.windows import GameOver
 from scripts.utility import (
     get_living_clan_cat_count,
@@ -17,6 +21,7 @@ from scripts.utility import (
 from .Screens import Screens
 from ..cat.cats import Cat
 from ..game_structure import image_cache
+from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
 class EventsScreen(Screens):
@@ -359,10 +364,11 @@ class EventsScreen(Screens):
         else:
             self.clan_age.set_text(f"Clan age: {game.clan.age} moons")
 
-        self.timeskip_button = UIImageButton(
+        self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((310, 218), (180, 30))),
-            "",
-            object_id="#timeskip_button",
+            "Timeskip One Moon",
+            get_button_dict(ButtonStyles.SQUOVAL, (180, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
 
