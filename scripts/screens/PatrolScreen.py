@@ -812,7 +812,7 @@ class PatrolScreen(Screens):
             short_name = shorten_text_to_fit(name, 350, 30)
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
-                                                                           scale(pygame.Rect((600, 650), (400, 60))),
+                                                                           scale(pygame.Rect((600, 650), (400, 80))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),
                                                                            manager=MANAGER)
