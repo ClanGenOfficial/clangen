@@ -184,6 +184,7 @@ class Screens():
             game.last_list_forProfile = None
             self.current_group = "clan"
             self.death_status = "living"
+            self.current_page = 1
 
         game.switches['cur_screen'] = new_screen
         game.switch_screens = True
