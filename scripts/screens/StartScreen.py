@@ -361,11 +361,14 @@ class StartScreen(Screens):
                     write_file.write(get_version_info().version_number)
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            "Warning: this game contains mild depictions of gore, canon-typical violence, and animal abuse.",
-            ui_scale(pygame.Rect((50, 622), (700, 30))),
-            object_id="#default_dark",
+            "Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.",
+            ui_scale(pygame.Rect((0, 620), (800, 30))),
+            object_id="@heading",
             manager=MANAGER,
-            anchors={"centerx": "centerx"},
+            anchors={
+                "left": "left",
+                "right": "right",
+            },
         )
 
         if game.clan is not None and game.switches["error_message"] == "":

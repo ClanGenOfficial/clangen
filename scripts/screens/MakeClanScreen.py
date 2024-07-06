@@ -148,8 +148,8 @@ class MakeClanScreen(Screens):
         # Buttons that appear on every screen.
         self.menu_warning = pygame_gui.elements.UITextBox(
             "Note: going back to main menu resets the generated cats.",
-            ui_scale(pygame.Rect((50, 50), (1200, -1))),
-            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            ui_scale(pygame.Rect((25, 25), (600, -1))),
+            object_id="#small_text",
             manager=MANAGER,
         )
         self.main_menu = UIImageButton(
@@ -673,7 +673,7 @@ class MakeClanScreen(Screens):
                         pygame.image.load(
                             "resources/images/pick_clan_screen/clan_none_light.png"
                         ).convert_alpha(),
-                        (1600, 1400),
+                        ui_scale_dimensions((800, 700)),
                     )
                 )
                 self.elements["next_step"].disable()
@@ -683,7 +683,7 @@ class MakeClanScreen(Screens):
                         pygame.image.load(
                             "resources/images/pick_clan_screen/clan_one_light.png"
                         ).convert_alpha(),
-                        (1600, 1400),
+                        ui_scale_dimensions((800, 700)),
                     )
                 )
                 self.elements["next_step"].disable()
@@ -693,7 +693,7 @@ class MakeClanScreen(Screens):
                         pygame.image.load(
                             "resources/images/pick_clan_screen/clan_two_light.png"
                         ).convert_alpha(),
-                        (1600, 1400),
+                        ui_scale_dimensions((800, 700)),
                     )
                 )
                 self.elements["next_step"].disable()
@@ -703,7 +703,7 @@ class MakeClanScreen(Screens):
                         pygame.image.load(
                             "resources/images/pick_clan_screen/clan_three_light.png"
                         ).convert_alpha(),
-                        (1600, 1400),
+                        ui_scale_dimensions((800, 700)),
                     )
                 )
                 self.elements["next_step"].disable()
@@ -713,7 +713,7 @@ class MakeClanScreen(Screens):
                         pygame.image.load(
                             "resources/images/pick_clan_screen/clan_four_light.png"
                         ).convert_alpha(),
-                        (1600, 1400),
+                        ui_scale_dimensions((800, 700)),
                     )
                 )
                 self.elements["next_step"].enable()
@@ -726,7 +726,7 @@ class MakeClanScreen(Screens):
                         pygame.image.load(
                             "resources/images/pick_clan_screen/clan_full_light.png"
                         ).convert_alpha(),
-                        (1600, 1400),
+                        ui_scale_dimensions((800, 700)),
                     )
                 )
                 self.elements["select_cat"].disable()
@@ -794,7 +794,8 @@ class MakeClanScreen(Screens):
                 # refresh selected symbol image
                 self.elements["selected_symbol"].set_image(
                     pygame.transform.scale(
-                        sprites.sprites[self.symbol_selected], (200, 200)
+                        sprites.sprites[self.symbol_selected],
+                        ui_scale_dimensions((100, 100)),
                     ).convert_alpha()
                 )
                 symbol_name = self.symbol_selected.removeprefix("symbol")
@@ -934,21 +935,12 @@ class MakeClanScreen(Screens):
                     pygame.image.load(
                         self.get_camp_art_path(self.selected_camp_tab)
                     ).convert_alpha(),
-                    (900, 800),
+                    ui_scale_dimensions((450, 400)),
                 ),
                 manager=MANAGER,
             )
-            self.elements["art_frame"].kill()
-            self.elements["art_frame"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect(((334, 324), (932, 832)))),
-                pygame.transform.scale(
-                    pygame.image.load(
-                        "resources/images/bg_preview_border.png"
-                    ).convert_alpha(),
-                    (932, 832),
-                ),
-                manager=MANAGER,
-            )
+
+        self.draw_art_frame()
 
     def refresh_selected_cat_info(self, selected=None):
         # SELECTED CAT INFO
@@ -982,7 +974,7 @@ class MakeClanScreen(Screens):
         """Update the image of the cat selected in the middle. Info and image.
         Also updates the location of selected cats."""
 
-        column_poss = [100, 200]
+        column_poss = [50, 100]
 
         # updates selected cat info
         self.refresh_selected_cat_info(selected)
@@ -1006,7 +998,7 @@ class MakeClanScreen(Screens):
                 in [self.leader, self.deputy, self.med_cat] + self.members
             ):
                 self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(pygame.Rect((1300, 250 + 100 * u), (100, 100))),
+                    ui_scale(pygame.Rect((650, 130 + 50 * u), (50, 50))),
                     game.choose_cats[u].sprite,
                     cat_object=game.choose_cats[u],
                     manager=MANAGER,
@@ -1014,7 +1006,7 @@ class MakeClanScreen(Screens):
                 self.elements["cat" + str(u)].disable()
             else:
                 self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
+                    ui_scale(pygame.Rect((column_poss[0], 130 + 50 * u), (50, 50))),
                     game.choose_cats[u].sprite,
                     tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
                     cat_object=game.choose_cats[u],
@@ -1039,7 +1031,7 @@ class MakeClanScreen(Screens):
                 in [self.leader, self.deputy, self.med_cat] + self.members
             ):
                 self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(pygame.Rect((1400, 260 + 100 * (u - 6)), (100, 100))),
+                    ui_scale(pygame.Rect((700, 130 + 50 * (u - 6)), (50, 50))),
                     game.choose_cats[u].sprite,
                     cat_object=game.choose_cats[u],
                     manager=MANAGER,
@@ -1048,7 +1040,7 @@ class MakeClanScreen(Screens):
             else:
                 self.elements["cat" + str(u)] = UISpriteButton(
                     ui_scale(
-                        pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))
+                        pygame.Rect((column_poss[1], 130 + 50 * (u - 6)), (50, 50))
                     ),
                     game.choose_cats[u].sprite,
                     tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
@@ -1102,27 +1094,27 @@ class MakeClanScreen(Screens):
             if self.symbol_buttons:
                 self.symbol_buttons[ele].kill()
 
-        x_pos = 192
-        y_pos = 540
+        x_pos = 96
+        y_pos = 270
         for symbol in display_symbols:
             self.elements[f"{symbol}"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x_pos, y_pos), (100, 100))),
+                ui_scale(pygame.Rect((x_pos, y_pos), (50, 50))),
                 sprites.sprites[symbol],
                 object_id=f"#{symbol}",
                 starting_height=3,
                 manager=MANAGER,
             )
             self.symbol_buttons[f"{symbol}"] = UIImageButton(
-                ui_scale(pygame.Rect((x_pos - 24, y_pos - 24), (148, 148))),
+                ui_scale(pygame.Rect((x_pos - 12, y_pos - 12), (74, 74))),
                 "",
                 object_id=f"#symbol_select_button",
                 starting_height=4,
                 manager=MANAGER,
             )
-            x_pos += 140
-            if x_pos >= 1431:
-                x_pos = 192
-                y_pos += 140
+            x_pos += 70
+            if x_pos >= 715:
+                x_pos = 96
+                y_pos += 70
 
         if self.symbol_selected in self.symbol_buttons:
             self.symbol_buttons[self.symbol_selected].disable()
@@ -1190,7 +1182,7 @@ class MakeClanScreen(Screens):
         self.elements["permi_warning"] = pygame_gui.elements.UITextBox(
             "Your Clan's game mode is permanent and cannot be changed after Clan creation.",
             ui_scale(pygame.Rect((100, 581), (600, 40))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#medium_text_ycenter",
             manager=MANAGER,
         )
 
@@ -1236,21 +1228,26 @@ class MakeClanScreen(Screens):
         )
 
         self.elements["random_clan_checkbox_label"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((1200, 1246), (-1, -1))),
+            ui_scale(pygame.Rect((5, 628), (-1, -1))),
             "Quick Start",
             manager=MANAGER,
-            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            object_id="#medium_text",
+            anchors={
+                "left_target": self.elements["random_clan_checkbox"],
+            },
         )
         self.elements["mode_details"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((325, 160), (405, 461))),
-            object_id="#text_box_30_horizleft_pad_40_40",
+            object_id="#medium_text",
             manager=MANAGER,
         )
+        self.elements["mode_details"].padding = (40, 40)
+
         self.elements["mode_name"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((425, 135), (200, 27))),
-            object_id="#text_box_30_horizcenter_light",
+            object_id="@heading",
             manager=MANAGER,
         )
 
@@ -1318,8 +1315,8 @@ class MakeClanScreen(Screens):
         )
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(
             self.clan_name + "Clan",
-            ui_scale(pygame.Rect((292, 106), (216, 50))),
-            object_id="#text_box_30_horizcenter_light",
+            ui_scale(pygame.Rect((292, 100), (216, 50))),
+            object_id="@heading",
             manager=MANAGER,
         )
 
@@ -1338,34 +1335,34 @@ class MakeClanScreen(Screens):
         self.clan_name_header()
 
         # Roll_buttons
-        x_pos = 310
-        y_pos = 470
+        x_pos = 155
+        y_pos = 235
         self.elements["roll1"] = UIImageButton(
-            ui_scale(pygame.Rect((x_pos, y_pos), (68, 68))),
+            ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
         )
-        y_pos += 80
+        y_pos += 40
         self.elements["roll2"] = UIImageButton(
-            ui_scale(pygame.Rect((x_pos, y_pos), (68, 68))),
+            ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
         )
-        y_pos += 80
+        y_pos += 40
         self.elements["roll3"] = UIImageButton(
-            ui_scale(pygame.Rect((x_pos, y_pos), (68, 68))),
+            ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
         )
 
-        _tmp = 160
+        _tmp = 80
         if self.rolls_left == -1:
             _tmp += 5
         self.elements["dice"] = UIImageButton(
-            ui_scale(pygame.Rect((_tmp, 870), (68, 68))),
+            ui_scale(pygame.Rect((_tmp, 435), (34, 34))),
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
@@ -1401,14 +1398,14 @@ class MakeClanScreen(Screens):
             "",
             ui_scale(pygame.Rect((440, 250), (115, 125))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+            object_id="#small_text",
             manager=MANAGER,
         )
         self.elements["cat_name"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((150, 175), (500, 55))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#medium_text_xcenter",
             manager=MANAGER,
         )
 
@@ -1465,14 +1462,14 @@ class MakeClanScreen(Screens):
             "",
             ui_scale(pygame.Rect((440, 260), (115, 125))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+            object_id="#small_text",
             manager=MANAGER,
         )
         self.elements["cat_name"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((150, 175), (500, 55))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#medium_text_xcenter",
             manager=MANAGER,
         )
 
@@ -1528,14 +1525,14 @@ class MakeClanScreen(Screens):
             "",
             ui_scale(pygame.Rect((440, 260), (115, 125))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+            object_id="#small_text",
             manager=MANAGER,
         )
         self.elements["cat_name"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((150, 175), (500, 55))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#medium_text_xcenter",
             manager=MANAGER,
         )
 
@@ -1584,7 +1581,7 @@ class MakeClanScreen(Screens):
                 pygame.image.load(
                     "resources/images/pick_clan_screen/clan_none_light.png"
                 ).convert_alpha(),
-                (1600, 1400),
+                ui_scale_dimensions((800, 700)),
             ),
             manager=MANAGER,
         )
@@ -1596,14 +1593,14 @@ class MakeClanScreen(Screens):
             "",
             ui_scale(pygame.Rect((440, 260), (115, 125))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+            object_id="#small_text",
             manager=MANAGER,
         )
         self.elements["cat_name"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((150, 175), (500, 55))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#medium_text_xcenter",
             manager=MANAGER,
         )
 
@@ -1739,19 +1736,7 @@ class MakeClanScreen(Screens):
         )
 
         # art frame
-        self.elements["art_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect(((334, 324), (932, 832)))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/bg_preview_border.png"
-                ).convert_alpha(),
-                (932, 832),
-            ),
-            manager=MANAGER,
-        )
-
-        # camp art self.elements["camp_art"] = pygame_gui.elements.UIImage(scale(pygame.Rect((175,170),(450, 400))),
-        # pygame.image.load(self.get_camp_art_path(1)).convert_alpha(), visible=False)
+        self.draw_art_frame()
 
     def open_choose_symbol(self):
         # clear screen
@@ -1782,39 +1767,54 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.text["clan_name"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 0), (-1, -1))),
+            ui_scale(pygame.Rect((0, 0), (0, 30))),
             text=f"{self.clan_name}Clan",
             container=self.elements["text_container"],
-            object_id=get_text_box_theme("#text_box_40"),
+            object_id="@heading_contrast",
             manager=MANAGER,
+            anchors={"left": "left", "right": "right"},
         )
+        self.text["clan_name"].text_colour = (255, 255, 255)
+
         self.text["biome"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 50), (-1, -1))),
+            ui_scale(pygame.Rect((0, 5), (-1, -1))),
             text=f"{self.biome_selected}",
             container=self.elements["text_container"],
-            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            object_id="#medium_text",
             manager=MANAGER,
+            anchors={
+                "top_target": self.text["clan_name"],
+            },
         )
         self.text["leader"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 90), (-1, -1))),
+            ui_scale(pygame.Rect((0, 5), (-1, -1))),
             text=f"Leader name: {self.leader.name.prefix}star",
             container=self.elements["text_container"],
-            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            object_id="#medium_text",
             manager=MANAGER,
+            anchors={
+                "top_target": self.text["biome"],
+            },
         )
         self.text["recommend"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 160), (-1, -1))),
+            ui_scale(pygame.Rect((0, 5), (-1, -1))),
             text=f"Recommended Symbol: N/A",
             container=self.elements["text_container"],
-            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            object_id="#medium_text",
             manager=MANAGER,
+            anchors={
+                "top_target": self.text["leader"],
+            },
         )
         self.text["selected"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 200), (-1, -1))),
+            ui_scale(pygame.Rect((0, 15), (-1, -1))),
             text=f"Selected Symbol: N/A",
             container=self.elements["text_container"],
-            object_id=get_text_box_theme("#text_box_30_horizleft"),
+            object_id="#medium_text",
             manager=MANAGER,
+            anchors={
+                "top_target": self.text["recommend"],
+            },
         )
 
         self.elements["random_symbol_button"] = UIImageButton(
@@ -1887,7 +1887,8 @@ class MakeClanScreen(Screens):
             self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((573, 127), (100, 100))),
                 pygame.transform.scale(
-                    sprites.sprites[self.symbol_selected], (200, 200)
+                    sprites.sprites[self.symbol_selected],
+                    ui_scale_dimensions((100, 100)),
                 ).convert_alpha(),
                 object_id="#selected_symbol",
                 starting_height=2,
@@ -1902,7 +1903,8 @@ class MakeClanScreen(Screens):
             self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((573, 127), (100, 100))),
                 pygame.transform.scale(
-                    sprites.sprites["symbolADDER0"], (200, 200)
+                    sprites.sprites["symbolADDER0"],
+                    ui_scale_dimensions((100, 100)),
                 ).convert_alpha(),
                 object_id="#selected_symbol",
                 starting_height=2,
@@ -1918,7 +1920,8 @@ class MakeClanScreen(Screens):
         self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((350, 105), (100, 100))),
             pygame.transform.scale(
-                sprites.sprites[self.symbol_selected], (200, 200)
+                sprites.sprites[self.symbol_selected],
+                ui_scale_dimensions((100, 100)),
             ).convert_alpha(),
             object_id="#selected_symbol",
             starting_height=1,
@@ -1990,6 +1993,21 @@ class MakeClanScreen(Screens):
 
     def chunks(self, L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]
+
+    def draw_art_frame(self):
+        if "art_frame" in self.elements:
+            self.elements["art_frame"].kill()
+        self.elements["art_frame"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect(((0, 20), (466, 416)))),
+            pygame.transform.scale(
+                pygame.image.load(
+                    "resources/images/bg_preview_border.png"
+                ).convert_alpha(),
+                ui_scale_dimensions((466, 416)),
+            ),
+            manager=MANAGER,
+            anchors={"center": "center"},
+        )
 
 
 make_clan_screen = MakeClanScreen()

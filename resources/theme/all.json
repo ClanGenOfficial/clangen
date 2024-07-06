@@ -470,6 +470,14 @@
             "disabled_text": "#EFE5CE"
         }
     },
+    "@heading_contrast": {
+        "prototype": "text_box",
+        "colours": {
+            "normal_text": "#000000",
+            "hovered_text": "#000000",
+            "disabled_text": "#000000"
+        }
+    },
     "#text_box": {
         "colours": {
             "dark_bg": "#FFFF0000",
