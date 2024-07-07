@@ -248,5 +248,29 @@
             "size": "16",
             "antialiased": "0"
         }
+    },
+    "@buttonstyles_horizontal_tab": {
+        "prototype": "@image_button",
+        "font": {
+            "name": "clangen",
+            "size": "16",
+            "antialiased": "0"
+        }
+    },
+    "@buttonstyles_vertical_tab": {
+        "prototype": "@image_button",
+        "font": {
+            "name": "clangen",
+            "size": "16",
+            "antialiased": "0"
+        }
+    },
+    "@buttonstyles_dropdown": {
+        "prototype": "@image_button",
+        "font": {
+            "name": "clangen",
+            "size": "16",
+            "antialiased": "0"
+        }
     }
 }

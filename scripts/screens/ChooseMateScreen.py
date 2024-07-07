@@ -11,7 +11,11 @@ from scripts.game_structure.game_essentials import (
     MANAGER,
     offset,
 )
-from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISpriteButton,
+    UISurfaceImageButton,
+)
 from scripts.utility import (
     get_personality_compatibility,
     get_text_box_theme,
@@ -20,6 +24,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
 class ChooseMateScreen(Screens):
@@ -193,8 +198,10 @@ class ChooseMateScreen(Screens):
             "connecting the two cats may give a hint on their compatibility with one another "
             "and any existing romantic feelings will be shown with small hearts.",
             ui_scale(pygame.Rect((180, 60), (440, 100))),
-            object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
+            object_id="#small_text_xcenter",
         )
+        self.info.line_spacing = 0.95
+        self.info.rebuild()
 
         self.the_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((40, 113), (266, 197))),
@@ -972,11 +979,9 @@ class ChooseMateScreen(Screens):
             self.selected_cat_elements[
                 "no kit warning"
             ] = pygame_gui.elements.UITextBox(
-                f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>",
-                ui_scale(pygame.Rect((275, 125), (249, 25))),
-                object_id=get_text_box_theme(
-                    "#text_box_22_horizcenter_vertcenter_spacing_95"
-                ),
+                "This pair can't have biological kittens.",
+                ui_scale(pygame.Rect((275, 125), (249, 125))),
+                object_id=get_text_box_theme("#small_text_xcenter"),
             )
 
         if self.kits_selected_pair:
@@ -985,16 +990,18 @@ class ChooseMateScreen(Screens):
         self.toggle_mate.kill()
 
         if self.selected_cat.ID in self.the_cat.mate:
-            self.toggle_mate = UIImageButton(
+            self.toggle_mate = UISurfaceImageButton(
                 ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "",
-                object_id="#break_up_button",
+                "Break It Up",
+                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+                object_id="@buttonstyles_squoval",
             )
         else:
-            self.toggle_mate = UIImageButton(
+            self.toggle_mate = UISurfaceImageButton(
                 ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "",
-                object_id="#confirm_mate_button",
+                "It's Official!",
+                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+                object_id="@buttonstyles_squoval",
             )
 
     def draw_compatible_line_affection(self):

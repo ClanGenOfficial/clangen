@@ -14,6 +14,8 @@ class ButtonStyles(Enum):
     MENU_RIGHT = "menu_right"
     ROUNDED_RECT = "rounded_rect"
     DROPDOWN = "dropdown"
+    HORIZONTAL_TAB = "horizontal_tab"
+    VERTICAL_TAB = "vertical_tab"
 
 
 buttonstyles = {
@@ -28,7 +30,7 @@ buttonstyles = {
             "resources/images/generated_buttons/mainmenu_normal.png"
         ).convert_alpha(),
         "disabled": pygame.image.load(
-            "resources/images/generated_buttons/mainmenu_hovered.png"
+            "resources/images/generated_buttons/mainmenu_disabled.png"
         ).convert_alpha(),
     },
     "squoval": {
@@ -101,6 +103,34 @@ buttonstyles = {
             "resources/images/generated_buttons/dropdown_disabled.png"
         ).convert_alpha(),
     },
+    "horizontal_tab": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/horizontal_tab_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/horizontal_tab_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/horizontal_tab_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/horizontal_tab_disabled.png"
+        ).convert_alpha(),
+    },
+    "vertical_tab": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/vertical_tab_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/vertical_tab_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/vertical_tab_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/vertical_tab_disabled.png"
+        ).convert_alpha(),
+    },
 }
 
 buttonstyles["menu_right"] = {
@@ -115,7 +145,9 @@ buttonstyles["menu_right"] = {
 }
 
 
-def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
+def generate_button(
+    base: pygame.Surface, dimensions: Tuple[int, int], scale=1, special=None
+):
     dimensions = ui_scale_dimensions(dimensions)
     height = base.height
     vertical_scale = dimensions[1] / height
@@ -177,13 +209,40 @@ def generate_button(base: pygame.Surface, dimensions: Tuple[int, int], scale=1):
         surface = pygame.transform.scale(
             surface, (surface.get_width() * scale, surface.get_height() * scale)
         )
+
+    if special is not None and "convert_alpha" in special:
+        surface.set_colorkey("#000000")
     return surface
 
 
 def get_button_dict(style: ButtonStyles, dimensions: Tuple[int, int]):
     return {
-        "normal": generate_button(buttonstyles[style.value]["normal"], dimensions),
-        "hovered": generate_button(buttonstyles[style.value]["hovered"], dimensions),
-        "selected": generate_button(buttonstyles[style.value]["selected"], dimensions),
-        "disabled": generate_button(buttonstyles[style.value]["disabled"], dimensions),
+        "normal": generate_button(
+            buttonstyles[style.value]["normal"],
+            dimensions,
+            special=buttonstyles[style.value]["special"].keys()
+            if "special" in buttonstyles[style.value]
+            else None,
+        ),
+        "hovered": generate_button(
+            buttonstyles[style.value]["hovered"],
+            dimensions,
+            special=buttonstyles[style.value]["special"].keys()
+            if "special" in buttonstyles[style.value]
+            else None,
+        ),
+        "selected": generate_button(
+            buttonstyles[style.value]["selected"],
+            dimensions,
+            special=buttonstyles[style.value]["special"].keys()
+            if "special" in buttonstyles[style.value]
+            else None,
+        ),
+        "disabled": generate_button(
+            buttonstyles[style.value]["disabled"],
+            dimensions,
+            special=buttonstyles[style.value]["special"].keys()
+            if "special" in buttonstyles[style.value]
+            else None,
+        ),
     }

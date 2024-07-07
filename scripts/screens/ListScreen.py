@@ -304,11 +304,12 @@ class ListScreen(Screens):
             game.sort_type = "rank"
 
         # CHOOSE GROUP DROPDOWN
-        self.cat_list_bar_elements["choose_group_button"] = UIImageButton(
+        self.cat_list_bar_elements["choose_group_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((273, 0), (190, 34))),
-            "",
+            "choose group to view:",
+            get_button_dict(ButtonStyles.DROPDOWN, (190, 34)),
             container=self.cat_list_bar,
-            object_id="#choose_group_button",
+            object_id="@buttonstyles_dropdown",
             manager=MANAGER,
             starting_height=1,
         )
@@ -332,7 +333,7 @@ class ListScreen(Screens):
                 text,
                 get_button_dict(ButtonStyles.DROPDOWN, (190, 34)),
                 container=self.living_groups_container,
-                object_id=ObjectID(class_id="@image_button", object_id=None),
+                object_id=ObjectID(class_id="@buttonstyles_dropdown", object_id=None),
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -362,16 +363,17 @@ class ListScreen(Screens):
         )
 
         y_pos = 0
-        for object_id in [
-            "#view_starclan_button",
-            "#view_unknown_residence_button",
-            "#view_dark_forest_button",
-        ]:
-            self.choose_group_buttons[object_id.strip("#")] = UIImageButton(
+        for name, object_id in (
+            ["StarClan", "#view_starclan_button"],
+            ["Unknown Residence", "#view_unknown_residence_button"],
+            ["Dark Forest", "#view_dark_forest_button"],
+        ):
+            self.choose_group_buttons[object_id.strip("#")] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, y_pos), (190, 34))),
-                "",
+                name,
+                get_button_dict(ButtonStyles.DROPDOWN, (190, 34)),
                 container=self.dead_groups_container,
-                object_id=object_id,
+                object_id=ObjectID(None, "@buttonstyles_dropdown"),
                 starting_height=2,
                 manager=MANAGER,
                 visible=False,

@@ -18,12 +18,17 @@ from scripts.game_structure.game_essentials import (
     MANAGER,
     offset,
 )
-from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISpriteButton,
+    UISurfaceImageButton,
+)
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale
 from .Screens import Screens
 from ..cat.sprites import sprites
 from ..game_structure.windows import SymbolFilterWindow
+from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
 class MakeClanScreen(Screens):
@@ -1728,9 +1733,10 @@ class MakeClanScreen(Screens):
             tool_tip_text="Switch starting season to Leaf-bare.",
         )
         # Random background
-        self.elements["random_background"] = UIImageButton(
+        self.elements["random_background"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((255, 595), (290, 30))),
-            "",
+            "choose a random background",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (290, 30)),
             object_id="#random_background_button",
             manager=MANAGER,
         )

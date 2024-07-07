@@ -373,10 +373,11 @@ class EventsScreen(Screens):
         )
 
         # Sets up the buttons to switch between the event types.
-        self.all_events_button = UIImageButton(
+        self.all_events_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((60, 285), (150, 30))),
-            "",
-            object_id="#all_events_button",
+            "all events",
+            get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
+            object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
         self.ceremonies_events_button = UIImageButton(

@@ -7,8 +7,13 @@ from pygame_gui.core import UIContainer
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISpriteButton,
+    UISurfaceImageButton,
+)
 from scripts.screens.Screens import Screens
+from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.utility import (
     ui_scale,
     get_text_box_theme,
@@ -354,19 +359,22 @@ class LeaderDenScreen(Screens):
             starting_height=1,
             manager=MANAGER,
         )
-        self.focus_frame_elements["clans_tab"] = UIImageButton(
+        self.focus_frame_elements["clans_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((30, 2), (69, 34))),
-            "",
-            object_id="#clans_tab",
+            "Clans",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (69, 34)),
+            object_id="@buttonstyles_horizontal_tab",
             container=self.focus_frame_container,
             starting_height=2,
             manager=MANAGER,
         )
         self.focus_frame_elements["clans_tab"].disable()
-        self.focus_frame_elements["outsiders_tab"] = UIImageButton(
+
+        self.focus_frame_elements["outsiders_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((111, 2), (102, 34))),
-            "",
-            object_id="#outsiders_tab",
+            "Outsiders",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (102, 34)),
+            object_id="@buttonstyles_horizontal_tab",
             container=self.focus_frame_container,
             starting_height=2,
             manager=MANAGER,
@@ -584,7 +592,7 @@ class LeaderDenScreen(Screens):
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 15), (215, -1))),
             text=f"{self.focus_clan.name}Clan",
-            object_id="#text_box_30_horizcenter",
+            object_id="#medium_text_xcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
             anchors={
@@ -615,21 +623,23 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_frame_elements["negative_interaction"] = UIImageButton(
+        self.focus_frame_elements["negative_interaction"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 265), (121, 30))),
-            "",
-            object_id="#clan_befriend",
+            "provoke",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
             container=self.focus_clan_container,
             starting_height=3,
             manager=MANAGER,
             visible=False,
             anchors={"centerx": "centerx"},
         )
-        self.focus_frame_elements["positive_interaction"] = UIImageButton(
+        self.focus_frame_elements["positive_interaction"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 305), (121, 30))),
-            "",
-            object_id="#clan_provoke",
+            "befriend",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             container=self.focus_clan_container,
+            object_id="@buttonstyles_squoval",
             starting_height=3,
             manager=MANAGER,
             visible=False,
@@ -641,14 +651,10 @@ class LeaderDenScreen(Screens):
             self.focus_frame_elements["positive_interaction"].disable()
 
         interaction = OtherClan.interaction_dict[relation]
-        self.focus_frame_elements["negative_interaction"].change_object_id(
-            f"#clan_{interaction[0]}"
-        )
+        self.focus_frame_elements["negative_interaction"].set_text(f"{interaction[0]}")
         self.focus_frame_elements["negative_interaction"].show()
 
-        self.focus_frame_elements["positive_interaction"].change_object_id(
-            f"#clan_{interaction[1]}"
-        )
+        self.focus_frame_elements["positive_interaction"].set_text(f"{interaction[1]}")
         self.focus_frame_elements["positive_interaction"].show()
 
     def update_clan_interaction_choice(self, object_id):
@@ -759,90 +765,104 @@ class LeaderDenScreen(Screens):
 
         # clearing so we can reset
         if self.focus_outsider_container:
-            for ele in self.focus_outsider_elements:
-                self.focus_outsider_elements[ele].kill()
-            self.focus_outsider_elements = {}
-        else:
-            self.focus_outsider_container = pygame_gui.elements.UIAutoResizingContainer(
-                ui_scale(pygame.Rect((0, 0), (0, 0))),
-                object_id="#focus_outsider_container",
-                container=self.focus_frame_container,
-                starting_height=1,
-                manager=MANAGER,
-            )
+            self.focus_outsider_container.kill()
+
+        self.focus_outsider_container = UIContainer(
+            ui_scale(pygame.Rect((0, 0), (240, 398))),
+            object_id="#focus_outsider_container",
+            container=self.focus_frame_container,
+            starting_height=1,
+            manager=MANAGER,
+        )
 
         self.focus_outsider_elements["cat_sprite"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((45, 25), (150, 150))),
+            ui_scale(pygame.Rect((0, 67), (100, 100))),
             pygame.transform.scale(
-                self.focus_cat.sprite, ui_scale_dimensions((150, 150))
+                self.focus_cat.sprite, ui_scale_dimensions((100, 100))
             ),
             object_id="#focus_cat_sprite",
             container=self.focus_outsider_container,
             starting_height=1,
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
 
         self.focus_outsider_elements["cat_name"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((18, 350), (440, -1))),
+            ui_scale(pygame.Rect((0, 15), (215, -1))),
             text=shorten_text_to_fit(str(self.focus_cat.name), 220, 15),
-            object_id="#text_box_30_horizcenter",
+            object_id="#medium_text_xcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_outsider_elements["cat_sprite"],
+            },
         )
         self.focus_outsider_elements["cat_status"] = pygame_gui.elements.UILabel(
-            relative_rect=ui_scale(pygame.Rect((20, 390), (436, -1))),
+            relative_rect=ui_scale(pygame.Rect((0, 5), (218, -1))),
             text=f"{self.focus_cat.status}",
-            object_id="#text_box_22_horizcenter",
+            object_id="#medium_text_xcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_outsider_elements["cat_name"],
+            },
         )
         self.focus_outsider_elements["cat_trait"] = pygame_gui.elements.UILabel(
-            relative_rect=ui_scale(pygame.Rect((20, 420), (436, -1))),
+            relative_rect=ui_scale(pygame.Rect((0, 0), (218, -1))),
             text=f"{self.focus_cat.personality.trait}",
-            object_id="#text_box_22_horizcenter",
+            object_id="#medium_text_xcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_outsider_elements["cat_status"],
+            },
         )
         self.focus_outsider_elements["cat_skills"] = pygame_gui.elements.UILabel(
-            relative_rect=ui_scale(pygame.Rect((20, 450), (436, -1))),
+            relative_rect=ui_scale(pygame.Rect((0, 0), (218, -1))),
             text=f"Skills: {self.focus_cat.skills.skill_string(short=True)}",
-            object_id="#text_box_22_horizcenter",
+            object_id="#medium_text_xcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_outsider_elements["cat_trait"],
+            },
         )
 
         if self.focus_outsider_button_container:
-            self.focus_outsider_button_container.clear()
-            self.focus_outsider_button_container.show()
-        else:
-            self.focus_outsider_button_container = (
-                pygame_gui.elements.UIAutoResizingContainer(
-                    ui_scale(pygame.Rect((59, 252), (0, 0))),
-                    object_id="#focus_outsider_button_container",
-                    container=self.focus_outsider_container,
-                    starting_height=1,
-                    manager=MANAGER,
-                    visible=True,
-                )
-            )
+            self.focus_outsider_button_container.kill()
 
-        # for some reason this container gets divorced from its parent container sometimes
-        # so this is here to ensure it's attached to its container
-        self.focus_outsider_container.add_element(self.focus_outsider_button_container)
+        self.focus_outsider_button_container = UIContainer(
+            ui_scale(pygame.Rect((0, 5), (121, 65))),
+            object_id="#focus_outsider_button_container",
+            container=self.focus_outsider_container,
+            starting_height=1,
+            manager=MANAGER,
+            visible=True,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_outsider_elements["cat_skills"],
+            },
+        )
 
-        y_pos = 0
         self.focus_button["hunt_down"] = UIImageButton(
-            ui_scale(pygame.Rect((0, y_pos), (242, 60))),
+            ui_scale(pygame.Rect((0, 0), (121, 30))),
             "",
             object_id="#outsider_hunt",
             tool_tip_text="This cat will be killed if found.",
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
+            anchors={
+                "centerx": "centerx",
+            },
         )
-        y_pos += 70
+
         self.focus_button["drive_off"] = UIImageButton(
-            ui_scale(pygame.Rect((0, y_pos), (242, 60))),
+            ui_scale(pygame.Rect((0, 5), (121, 30))),
             "",
             object_id="#outsider_drive",
             tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in "
@@ -850,10 +870,14 @@ class LeaderDenScreen(Screens):
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_button["hunt_down"],
+            },
         )
-        y_pos += 70
+
         self.focus_button["invite_in"] = UIImageButton(
-            ui_scale(pygame.Rect((0, y_pos), (242, 60))),
+            ui_scale(pygame.Rect((0, 5), (121, 30))),
             "",
             object_id="#outsider_invite",
             tool_tip_text="This cat will join the Clan if found.",
@@ -861,6 +885,10 @@ class LeaderDenScreen(Screens):
             starting_height=3,
             manager=MANAGER,
             visible=False,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.focus_button["hunt_down"],
+            },
         )
 
         if (
@@ -964,7 +992,7 @@ class LeaderDenScreen(Screens):
 
         for cat in display_cats:
             self.outsider_cat_buttons[f"sprite{str(i)}"] = UISpriteButton(
-                ui_scale(pygame.Rect((10 + pos_x, 0 + pos_y), (100, 100))),
+                ui_scale(pygame.Rect((5 + pos_x, pos_y), (50, 50))),
                 cat.sprite,
                 cat_object=cat,
                 container=self.outsider_cat_list_container,
@@ -975,10 +1003,10 @@ class LeaderDenScreen(Screens):
             )
 
             # changing pos
-            pos_x += 120
-            if pos_x >= 1140:  # checks if row is full
+            pos_x += 60
+            if pos_x >= 590:  # checks if row is full
                 pos_x = 0
-                pos_y += 120
+                pos_y += 60
 
             i += 1
 

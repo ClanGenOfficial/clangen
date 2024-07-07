@@ -638,7 +638,7 @@ class ProfileScreen(Screens):
         )
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
             self.generate_column2(self.the_cat),
-            ui_scale(pygame.Rect((490, 230), (250, 180))),
+            ui_scale(pygame.Rect((490, 230), (250, 190))),
             object_id="#small_text",
             line_spacing=1,
             manager=MANAGER,
@@ -682,8 +682,10 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
+        favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
+        favorite_button_rect.topright = (-10, 143)
         self.profile_elements["favourite_button"] = UIImageButton(
-            ui_scale(pygame.Rect((0, 143), (28, 28))),
+            favorite_button_rect,
             "",
             object_id="#fav_star",
             manager=MANAGER,
@@ -694,16 +696,21 @@ class ProfileScreen(Screens):
                 "right_target": self.profile_elements["cat_name"],
             },
         )
+        self.profile_elements["favourite_button"].rebuild()
 
         self.profile_elements["not_favourite_button"] = UIImageButton(
-            ui_scale(pygame.Rect((0, 143), (28, 28))),
+            favorite_button_rect,
             "",
             object_id="#not_fav_star",
             manager=MANAGER,
             tool_tip_text="Mark as favorite",
             starting_height=2,
-            anchors={"right_target": self.profile_elements["cat_name"]},
+            anchors={
+                "right": "right",
+                "right_target": self.profile_elements["cat_name"],
+            },
         )
+        del favorite_button_rect
 
         if self.the_cat.favourite:
             self.profile_elements["favourite_button"].show()
@@ -1890,42 +1897,45 @@ class ProfileScreen(Screens):
         else:
             self.right_conditions_arrow.enable()
 
-        x_pos = 30
+        x_pos = 15
         for con in all_illness_injuries[self.conditions_page]:
 
             # Background Box
-            pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x_pos, 25), (280, 276))),
-                self.condition_details_box,
+            bg = pygame_gui.elements.UIPanel(
+                ui_scale(pygame.Rect((x_pos, 12), (140, 138))),
                 manager=MANAGER,
                 container=self.condition_container,
             )
+            bg.background_image = self.condition_details_box
+            bg.rebuild()
 
-            y_adjust = 60
+            y_adjust = 30
 
             name = UITextBoxTweaked(
                 con[0],
-                ui_scale(pygame.Rect((x_pos, 26), (272, -1))),
+                ui_scale(pygame.Rect((0, 5), (138, -1))),
                 line_spacing=0.90,
-                object_id="#text_box_30_horizcenter",
-                container=self.condition_container,
+                object_id="#medium_text_xcenter",
+                container=bg,
                 manager=MANAGER,
+                anchors={"centerx": "centerx"},
             )
 
             y_adjust = name.get_relative_rect().height
-            details_rect = ui_scale(pygame.Rect((x_pos, 0), (276, -1)))
+            details_rect = ui_scale(pygame.Rect((0, 0), (138, -1)))
             details_rect.y = y_adjust
 
             UITextBoxTweaked(
                 con[1],
                 details_rect,
                 line_spacing=0.90,
-                object_id="#text_box_22_horizcenter_pad_20_20",
-                container=self.condition_container,
+                object_id="#small_text_xcenter",
+                container=bg,
                 manager=MANAGER,
+                anchors={"centerx": "centerx"},
             )
 
-            x_pos += 304
+            x_pos += 152
 
         return
 
