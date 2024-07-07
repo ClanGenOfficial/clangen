@@ -165,13 +165,13 @@ class MedDenScreen(Screens):
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
                 ui_scale(pygame.Rect((140, 410), (200, 30))),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"),
+                object_id="#large_text_xcenter",
                 manager=MANAGER,
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
                 ui_scale(pygame.Rect((140, 410), (200, 30))),
-                object_id=get_text_box_theme("#text_box_40_horizcenter"),
+                object_id="#large_text_xcenter",
                 manager=MANAGER,
             )
             self.log_title.hide()
@@ -182,14 +182,10 @@ class MedDenScreen(Screens):
             )
             self.cat_bg.disable()
             log_text = game.herb_events_list.copy()
-            """if game.settings["fullscreen"]:
-                img_path = "resources/images/spacer.png"
-            else:
-                img_path = "resources/images/spacer_small.png"""
             self.log_box = pygame_gui.elements.UITextBox(
-                f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
+                f"{f'<br> <hr>'.join(log_text)}<br>",
                 ui_scale(pygame.Rect((150, 450), (540, 180))),
-                object_id="#text_box_26_horizleft_verttop_pad_14_0_10",
+                object_id="#medium_text",
                 manager=MANAGER,
             )
             self.log_box.hide()
@@ -466,7 +462,7 @@ class MedDenScreen(Screens):
             self.med_info = UITextBoxTweaked(
                 "",
                 ui_scale(pygame.Rect((580, 185), (120, 120))),
-                object_id="#medium_text_xcenter",
+                object_id="#small_text_xcenter",
                 line_spacing=1,
                 manager=MANAGER,
             )
@@ -519,8 +515,8 @@ class MedDenScreen(Screens):
             else:
                 self.last_page.enable()
 
-        pos_x = 350
-        pos_y = 920
+        pos_x = 175
+        pos_y = 460
         i = 0
         for cat in self.display_cats:
             condition_list = []
@@ -535,7 +531,7 @@ class MedDenScreen(Screens):
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 cat.sprite,
                 cat_object=cat,
                 manager=MANAGER,
@@ -548,16 +544,16 @@ class MedDenScreen(Screens):
             self.cat_names.append(
                 pygame_gui.elements.UITextBox(
                     short_name,
-                    ui_scale(pygame.Rect((pos_x - 60, pos_y + 100), (220, -1))),
+                    ui_scale(pygame.Rect((pos_x - 30, pos_y + 50), (110, -1))),
                     object_id="#text_box_30_horizcenter",
                     manager=MANAGER,
                 )
             )
 
-            pos_x += 200
-            if pos_x >= 1340:
-                pos_x = 350
-                pos_y += 160
+            pos_x += 100
+            if pos_x >= 670:
+                pos_x = 175
+                pos_y += 80
             i += 1
 
     def draw_med_den(self):
