@@ -618,7 +618,7 @@ class ProfileScreen(Screens):
             cat_name,
             ui_scale(pygame.Rect((0, 140), (250, 40))),
             manager=MANAGER,
-            object_id="@heading_contrast",
+            object_id="#text_box_34_horizcenter",
             anchors={"centerx": "centerx"},
         )
 

@@ -120,6 +120,13 @@
             "text_vert_alignment_padding": "6"
         }
     },
+    "#dev_watermark": {
+        "font": {
+            "name": "noto_sans",
+            "size": "22",
+            "bold": "1"
+        }
+    },
     "button": {
         "font": {
             "name": "clangen",

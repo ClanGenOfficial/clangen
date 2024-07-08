@@ -836,7 +836,7 @@ class LeaderDenScreen(Screens):
             self.focus_outsider_button_container.kill()
 
         self.focus_outsider_button_container = UIContainer(
-            ui_scale(pygame.Rect((0, 5), (121, 65))),
+            ui_scale(pygame.Rect((0, 5), (121, 121))),
             object_id="#focus_outsider_button_container",
             container=self.focus_outsider_container,
             starting_height=1,
@@ -887,7 +887,7 @@ class LeaderDenScreen(Screens):
             visible=False,
             anchors={
                 "centerx": "centerx",
-                "top_target": self.focus_button["hunt_down"],
+                "top_target": self.focus_button["drive_off"],
             },
         )
 

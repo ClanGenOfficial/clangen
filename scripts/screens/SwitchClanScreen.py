@@ -148,7 +148,7 @@ class SwitchClanScreen(Screens):
                 pygame_gui.elements.UIButton(
                     ui_scale(pygame.Rect((0, y_pos), (200, 40))),
                     clan + "Clan",
-                    object_id="@heading",
+                    object_id="#text_box_34_horizcenter_light",
                     manager=MANAGER,
                     anchors={"centerx": "centerx"},
                 )

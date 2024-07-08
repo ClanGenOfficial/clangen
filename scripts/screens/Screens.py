@@ -117,6 +117,7 @@ class Screens:
         starting_height=5,
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
+    del scale_rect
     menu_buttons["name_background"] = pygame_gui.elements.UIImage(
         ui_scale(pygame.Rect((305, 25), (190, 35))),
         pygame.transform.scale(
@@ -203,7 +204,7 @@ class Screens:
         ui_scale(pygame.Rect((305, 27), (195, 35))),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@heading", object_id=None),
+        object_id="#text_box_34_horizcenter_light",
         starting_height=5,
     )
 

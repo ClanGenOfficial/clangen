@@ -2,140 +2,140 @@
     "defaults": {
         "font": {
             "name": "noto_sans",
-            "size": "14"
+            "size": "24"
         }
     },
     "tool_tip": {
         "misc": {
-            "rect_width": "200"
+            "rect_width": "350"
         }
     },
     "tool_tip.text_box": {
         "font": {
             "name": "noto_sans",
-            "size": "13"
+            "size": "22"
         },
         "misc": {
             "shape": "rounded_rectangle",
-            "shape_corner_radius": "8",
+            "shape_corner_radius": "14",
             "shadow_width": "0",
-            "border_width": "2",
+            "border_width": "3",
             "line_spacing": "1"
         }
     },
     "@checked_checkbox_smalltooltip.tool_tip": {
         "misc": {
-            "rect_width": "100"
+            "rect_width": "175"
         }
     },
     "@unchecked_checkbox_smalltooltip.tool_tip": {
         "misc": {
-            "rect_width": "100"
+            "rect_width": "175"
         }
     },
     "@checked_checkbox.tool_tip": {
         "misc": {
-            "rect_width": "200"
+            "rect_width": "350"
         }
     },
     "@unchecked_checkbox.tool_tip": {
         "misc": {
-            "rect_width": "200"
+            "rect_width": "350"
         }
     },
     "#fav_star.tool_tip": {
         "misc": {
-            "rect_width": "150"
+            "rect_width": "262"
         }
     },
     "#not_fav_star.tool_tip": {
         "misc": {
-            "rect_width": "150"
+            "rect_width": "262"
         }
     },
     "#fav_cat_toggle_on.tool_tip": {
         "misc": {
-            "rect_width": "75"
+            "rect_width": "131"
         }
     },
     "#fav_cat_toggle_off.tool_tip": {
         "misc": {
-            "rect_width": "75"
+            "rect_width": "131"
         }
     },
     "#help_button.tool_tip": {
         "misc": {
-            "rect_width": "400"
+            "rect_width": "700"
         }
     },
     "#leader_ceremony_button.tool_tip": {
         "misc": {
-            "rect_width": "150"
+            "rect_width": "262"
         }
     },
     "#med_cat_den_hover.tool_tip": {
         "misc": {
-            "rect_width": "140"
+            "rect_width": "245"
         }
     },
     "#med_cat_den_hover_big.tool_tip": {
         "misc": {
-            "rect_width": "230"
+            "rect_width": "402"
         }
     },
     "#blank_button.tool_tip": {
         "misc": {
-            "rect_width": "350"
+            "rect_width": "612"
         }
     },
     "#blank_button_small.tool_tip": {
         "misc": {
-            "rect_width": "250"
+            "rect_width": "437"
         }
     },
     "@mns_image.#moon.tool_tip": {
         "misc": {
-            "rect_width": "120"
+            "rect_width": "210"
         }
     },
     "@mns_image.tool_tip": {
         "misc": {
-            "rect_width": "100"
+            "rect_width": "175"
         }
     },
     "@startscreen_main": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "20",
+            "size": "35",
             "antialiased": "0"
         },
         "misc": {
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "7"
+            "text_vert_alignment_padding": "12"
         }
     },
     "#tailing_letters": {
         "misc": {
-            "text_vert_alignment_padding": "5"
+            "text_vert_alignment_padding": "8"
         }
     },
     "#dev_watermark": {
         "font": {
             "name": "noto_sans",
-            "size": "18",
+            "size": "31",
             "bold": "1"
         }
     },
     "button": {
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         },
         "misc": {
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "9",
+            "text_vert_alignment_padding": "15",
             "text_horiz_alignment": "center"
         }
     },
@@ -143,7 +143,7 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         }
     },
@@ -151,7 +151,7 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         }
     },
@@ -159,7 +159,7 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         }
     },
@@ -167,14 +167,14 @@
         "prototype": "@image_button",
         "misc": {
             "text_horiz_alignment": "center",
-            "text_horiz_alignment_padding": "20"
+            "text_horiz_alignment_padding": "35"
         }
     },
     "@buttonstyles_squoval": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         }
     },
@@ -182,7 +182,7 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         }
     },
@@ -190,19 +190,19 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         },
         "misc": {
             "text_horiz_alignment": "left",
-            "text_horiz_alignment_padding": "50"
+            "text_horiz_alignment_padding": "87"
         }
     },
     "@buttonstyles_dropdown": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "16",
+            "size": "28",
             "antialiased": "0"
         },
         "misc": {
@@ -213,7 +213,7 @@
     "@text_box_14": {
         "prototype": "text_box",
         "font": {
-            "size": "7",
+            "size": "12",
             "name": "noto_sans"
         }
     },
@@ -228,7 +228,7 @@
     "@text_box_22": {
         "prototype": "text_box",
         "font": {
-            "size": "11",
+            "size": "19",
             "name": "noto_sans"
         }
     },
@@ -262,7 +262,7 @@
     "#text_box_22_horizcenter_pad_20_20": {
         "prototype": "#text_box_22_horizcenter",
         "misc": {
-            "padding": "10,10"
+            "padding": "17,17"
         }
     },
     "#text_box_22_horizleft": {
@@ -280,7 +280,7 @@
     "#text_box_26": {
         "prototype": "text_box",
         "font": {
-            "size": "13",
+            "size": "22",
             "name": "noto_sans"
         }
     },
@@ -302,21 +302,21 @@
         "misc": {
             "text_horiz_alignment": "left",
             "text_vert_alignment": "top",
-            "padding": "7, 0",
-            "text_vert_alignment_padding": "5"
+            "padding": "12, 0",
+            "text_vert_alignment_padding": "8"
         }
     },
     "#text_box_26_horizleft_pad_10_14": {
         "prototype": "#text_box_26",
         "misc": {
             "text_horiz_alignment": "left",
-            "padding": "5,7"
+            "padding": "8,12"
         }
     },
     "#text_box_30": {
         "prototype": "text_box",
         "font": {
-            "size": "15",
+            "size": "26",
             "name": "noto_sans"
         }
     },
@@ -404,7 +404,7 @@
     "#text_box_30_horizleft_pad_10_10": {
         "prototype": "#text_box_30_horizleft",
         "misc": {
-            "padding": "5,5"
+            "padding": "8,8"
         }
     },
     "#text_box_30_horizleft_pad_10_10_spacing_95": {
@@ -416,19 +416,19 @@
     "#text_box_30_horizleft_pad_0_8": {
         "prototype": "#text_box_30_horizleft",
         "misc": {
-            "padding": "0,4"
+            "padding": "0,7"
         }
     },
     "#text_box_30_horizleft_pad_40_40": {
         "prototype": "#text_box_30_horizleft",
         "misc": {
-            "padding": "20,20"
+            "padding": "35,35"
         }
     },
     "#text_box_34": {
         "prototype": "text_box",
         "font": {
-            "size": "17",
+            "size": "29",
             "name": "noto_sans"
         }
     },
@@ -453,7 +453,7 @@
     "#text_box_40": {
         "prototype": "text_box",
         "font": {
-            "size": "20",
+            "size": "35",
             "name": "noto_sans"
         }
     },

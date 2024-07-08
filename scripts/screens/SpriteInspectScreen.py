@@ -268,7 +268,7 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
             short_name,
             ui_scale(pygame.Rect((0, 60), (200, 40))),
-            object_id="@heading_contrast",
+            object_id="#text_box_34_horizcenter",
             manager=MANAGER,
             anchors={"centerx": "centerx"},
         )
