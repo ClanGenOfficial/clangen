@@ -204,7 +204,7 @@ class Screens:
         ui_scale(pygame.Rect((305, 27), (195, 35))),
         visible=False,
         manager=MANAGER,
-        object_id="#text_box_34_horizcenter_light",
+        object_id=ObjectID(class_id="@heading", object_id=None),
         starting_height=5,
     )
 
@@ -242,14 +242,15 @@ class Screens:
         self.work_done = {}
 
         bg = pygame.Surface(game_screen_size)
-        bg.fill(
-            game.config["theme"]["dark_mode_background"]
-            if game.settings["dark mode"]
-            else game.config["theme"]["light_mode_background"]
-        )
+        bg.fill(game.config["theme"]["light_mode_background"])
+        bg_dark = pygame.Surface(game_screen_size)
+        bg_dark.fill(game.config["theme"]["dark_mode_background"])
 
-        self.bgs = {"default": bg}
-        self.blur_bgs = {"default": pygame.transform.scale(bg, screen.get_size())}
+        self.bgs = {"default_light": bg, "default_dark": bg_dark}
+        self.blur_bgs = {
+            "default_light": pygame.transform.scale(bg, screen.get_size()),
+            "default_dark": pygame.transform.scale(bg_dark, screen.get_size()),
+        }
         self.active_bg: Optional[pygame.Surface] = None
 
     def loading_screen_start_work(
@@ -629,6 +630,10 @@ class Screens:
             )
 
     def set_bg(self, bg: Optional[str]):
+        if bg == "default":
+            self.active_bg = (
+                "default_dark" if game.settings["dark mode"] else "default_light"
+            )
         if bg in self.bgs:
             self.active_bg = bg
         if bg is None:
@@ -637,7 +642,7 @@ class Screens:
     def show_bg(self):
         """Blit the currently selected blur_bg and bg."""
         if self.active_bg is None:
-            self.active_bg = "default"
+            self.active_bg = "default_dark" if game.settings["dark mode"] else "default"
         if game.settings["fullscreen"]:
             screen.blit(self.blur_bgs[self.active_bg], (0, 0))
             screen.blit(

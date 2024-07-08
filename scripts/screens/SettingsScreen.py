@@ -144,6 +144,22 @@ class SettingsScreen(Screens):
                         game.switch_setting(key)
                     self.settings_changed = True
                     self.update_save_button()
+
+                    if event.ui_element is self.checkboxes["dark mode"]:
+                        if (
+                            "@unchecked_checkbox"
+                            in self.checkboxes["dark mode"].get_object_ids()
+                        ):
+                            self.set_bg("default_dark")
+                            MANAGER.get_theme().load_theme(
+                                "resources/theme/themes/dark.json"
+                            )
+                        else:
+                            self.set_bg("default")
+                            MANAGER.get_theme().load_theme(
+                                "resources/theme/themes/light.json"
+                            )
+
                     if (
                         self.sub_menu == "general"
                         and event.ui_element is self.checkboxes["discord"]
@@ -287,6 +303,13 @@ class SettingsScreen(Screens):
         del self.fullscreen_toggle
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
+
+        if self.settings_at_open["dark mode"]:
+            self.set_bg("default_dark")
+            MANAGER.get_theme().load_theme("resources/theme/themes/dark.json")
+        else:
+            self.set_bg("default")
+            MANAGER.get_theme().load_theme("resources/theme/themes/light.json")
 
         game.settings = self.settings_at_open
 

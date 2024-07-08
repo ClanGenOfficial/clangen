@@ -150,7 +150,7 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": True,
+        "showbounds": False,
         "visualdebugmode": False,
         "showfps": False,
     }
@@ -632,7 +632,8 @@ screen_scale = 1
 
 # nb. forcing screen size WILL make the clangen font crunchy
 # this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
-debug_force_screen_size = (2560, 1440)
+debug_force_screen_size = None
+# (2560, 1440)
 # (2304, 1296)
 # (1920, 1080)
 # (1664, 936)

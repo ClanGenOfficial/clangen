@@ -165,6 +165,7 @@ from scripts.utility import (
     get_text_box_theme,
     quit,
     ui_scale,
+    ui_scale_dimensions,
 )  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
 import pygame_gui
@@ -223,7 +224,10 @@ def loading_animation(scale: float = 1):
 
     images = []
     for i in range(1, 11):
-        im = pygame.image.load(f"resources/images/loading_animate/startup/{i}.png")
+        im = pygame.transform.scale_by(
+            pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
+            screen_scale,
+        )
         im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
         images.append(im)
 
@@ -274,32 +278,21 @@ del load_data
 
 start_screen.screen_switches()
 
-if game.settings["fullscreen"]:
-    version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((1500, 1350), (-1, -1)),
-        get_version_info().version_number[0:8],
-        object_id=get_text_box_theme(),
-    )
-    # Adjust position
-    version_number.set_position(
-        (
-            1600 - version_number.get_relative_rect()[2] - 8,
-            1400 - version_number.get_relative_rect()[3],
-        )
-    )
-else:
-    version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((700, 650), (-1, -1)),
-        get_version_info().version_number[0:8],
-        object_id=get_text_box_theme(),
-    )
-    # Adjust position
-    version_number.set_position(
+
+version_number = pygame_gui.elements.UILabel(
+    ui_scale(pygame.Rect((750, 650), (-1, -1))),
+    get_version_info().version_number[0:8],
+    object_id=get_text_box_theme(),
+)
+# Adjust position
+version_number.set_relative_position(
+    ui_scale_dimensions(
         (
             800 - version_number.get_relative_rect()[2] - 8,
             700 - version_number.get_relative_rect()[3],
         )
     )
+)
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
