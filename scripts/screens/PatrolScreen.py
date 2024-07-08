@@ -5,7 +5,11 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISpriteButton,
+    UISurfaceImageButton,
+)
 from scripts.patrol.patrol import Patrol
 from scripts.utility import (
     get_text_box_theme,
@@ -14,24 +18,25 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
 class PatrolScreen(Screens):
     able_box = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_able_cats.png").convert_alpha(),
-        (270, 201),
+        ui_scale_dimensions((270, 201)),
     )
     patrol_box = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_cats.png").convert_alpha(),
-        (270, 201),
+        ui_scale_dimensions((270, 201)),
     )
     cat_frame = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha(),
-        (200, 225),
+        ui_scale_dimensions((200, 225)),
     )
     app_frame = pygame.transform.scale(
         pygame.image.load("resources/images/patrol_app_frame.png").convert_alpha(),
-        (332, 340),
+        ui_scale_dimensions((166, 170)),
     )
     mate_frame = pygame.transform.flip(app_frame, True, False)
 
@@ -266,26 +271,32 @@ class PatrolScreen(Screens):
             self.elements["add_remove_cat"].kill()
 
             if self.selected_cat in self.current_patrol:
-                self.elements["add_remove_cat"] = UIImageButton(
-                    ui_scale(pygame.Rect((336, 460), (127, 30))),
-                    "",
-                    object_id="#remove_cat_button",
+                self.elements["add_remove_cat"] = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((0, 460), (127, 30))),
+                    "Remove Cat",
+                    get_button_dict(ButtonStyles.SQUOVAL, (127, 30)),
+                    object_id="@buttonstyles_squoval",
                     manager=MANAGER,
+                    anchors={"centerx": "centerx"},
                 )
             elif self.selected_cat is None or len(self.current_patrol) >= 6:
-                self.elements["add_remove_cat"] = UIImageButton(
-                    ui_scale(pygame.Rect((350, 460), (98, 30))),
-                    "",
-                    object_id="#add_cat_button",
+                self.elements["add_remove_cat"] = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((0, 460), (98, 30))),
+                    "Add Cat",
+                    get_button_dict(ButtonStyles.SQUOVAL, (98, 30)),
+                    object_id="@buttonstyles_squoval",
                     manager=MANAGER,
+                    anchors={"centerx": "centerx"},
                 )
                 self.elements["add_remove_cat"].disable()
             else:
-                self.elements["add_remove_cat"] = UIImageButton(
-                    ui_scale(pygame.Rect((350, 460), (98, 30))),
-                    "",
-                    object_id="#add_cat_button",
+                self.elements["add_remove_cat"] = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((0, 460), (98, 30))),
+                    "Add Cat",
+                    get_button_dict(ButtonStyles.SQUOVAL, (98, 30)),
+                    object_id="@buttonstyles_squoval",
                     manager=MANAGER,
+                    anchors={"centerx": "centerx"},
                 )
 
             # Update start patrol button
@@ -463,11 +474,13 @@ class PatrolScreen(Screens):
         self.elements["patrol_frame"].disable()
 
         # Buttons
-        self.elements["add_remove_cat"] = UIImageButton(
-            ui_scale(pygame.Rect((175, 230), (49, 15))),
-            "",
-            object_id="#add_cat_button",
+        self.elements["add_remove_cat"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 460), (98, 30))),
+            "Add Cat",
+            get_button_dict(ButtonStyles.SQUOVAL, (98, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
         # No cat is selected when the screen is opened, so the button is disabled
         self.elements["add_remove_cat"].disable()
@@ -580,11 +593,13 @@ class PatrolScreen(Screens):
         )
 
         # Start Patrol Button
-        self.elements["patrol_start"] = UIImageButton(
-            ui_scale(pygame.Rect((333, 600), (135, 30))),
-            "",
-            object_id="#start_patrol_button",
+        self.elements["patrol_start"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 600), (135, 30))),
+            "Go On Patrol",
+            get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
         self.elements["patrol_start"].disable()
 
@@ -671,7 +686,7 @@ class PatrolScreen(Screens):
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(
             self.display_text,
             ui_scale(pygame.Rect((385, 172), (335, 250))),
-            object_id="#medium_text",
+            object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
             manager=MANAGER,
         )
         # Patrol Info
@@ -701,7 +716,7 @@ class PatrolScreen(Screens):
             f"patrol skills: {self.get_list_text(skills)} \n"
             f"patrol traits: {self.get_list_text(traits)}",
             ui_scale(pygame.Rect((105, 460), (240, 200))),
-            object_id="#small_text",
+            object_id="#text_box_22_horizleft",
             manager=MANAGER,
         )
 
@@ -723,10 +738,11 @@ class PatrolScreen(Screens):
                 break
 
         ##################### Buttons:
-        self.elements["proceed"] = UIImageButton(
+        self.elements["proceed"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((550, 433), (172, 30))),
-            "",
-            object_id="#proceed_button",
+            "proceed",
+            get_button_dict(ButtonStyles.DROPDOWN, (172, 30)),
+            object_id="@buttonstyles_dropdown",
             starting_height=2,
             manager=MANAGER,
         )
@@ -800,7 +816,7 @@ class PatrolScreen(Screens):
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((550, 500), (172, 150))),
-            object_id="#small_text_xcenter",
+            object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
         self.elements["patrol_results"].set_text(self.results_text)
@@ -1018,7 +1034,7 @@ class PatrolScreen(Screens):
             self.elements["selected_name"] = pygame_gui.elements.UITextBox(
                 short_name,
                 ui_scale(pygame.Rect((0, 0), (200, 30))),
-                object_id="#medium_text_xcenter",
+                object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
                 anchors={
                     "top_target": self.elements["selected_image"],
@@ -1040,7 +1056,7 @@ class PatrolScreen(Screens):
                     else ""
                 ),
                 ui_scale(pygame.Rect((0, -5), (200, 110))),
-                object_id="#small_text_xcenter",
+                object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 manager=MANAGER,
                 anchors={
                     "top_target": self.elements["selected_name"],

@@ -17,6 +17,7 @@ from scripts.game_structure.windows import DeleteCheck
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
+    ui_scale_dimensions,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 
@@ -103,7 +104,7 @@ class SwitchClanScreen(Screens):
         """
         self.screen = pygame.transform.scale(
             pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
-            (440 / 1600 * screen_x, 750 / 1400 * screen_y),
+            ui_scale_dimensions((220, 368)),
         )
         self.main_menu = UIImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
@@ -140,12 +141,12 @@ class SwitchClanScreen(Screens):
         self.delete_buttons = [[]]
 
         i = 0
-        y_pos = 189
+        y_pos = 190
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
             self.clan_buttons[-1].append(
                 pygame_gui.elements.UIButton(
-                    ui_scale(pygame.Rect((0, y_pos), (200, 39))),
+                    ui_scale(pygame.Rect((0, y_pos), (200, 40))),
                     clan + "Clan",
                     object_id="@heading",
                     manager=MANAGER,
@@ -162,14 +163,14 @@ class SwitchClanScreen(Screens):
                 )
             )
 
-            y_pos += 41
+            y_pos += 40
             i += 1
             if i >= 8:
                 self.clan_buttons.append([])
                 self.clan_name.append([])
                 self.delete_buttons.append([])
                 i = 0
-                y_pos = 189
+                y_pos = 190
 
         self.next_page_button = UIImageButton(
             ui_scale(pygame.Rect((456, 540), (34, 34))),
@@ -238,5 +239,5 @@ class SwitchClanScreen(Screens):
         super().on_use()
         screen.blit(
             self.screen,
-            (580 / 1600 * screen_x + offset[0], 300 / 1400 * screen_y + offset[1]),
+            (580 / 1600 * screen_x + offset[0], 302 / 1400 * screen_y + offset[1]),
         )

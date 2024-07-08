@@ -26,8 +26,6 @@ from scripts.utility import update_sprite, ui_scale, ui_scale_value, ui_scale_di
 
 class Screens:
     game_screen = screen
-    game_x = screen_x
-    game_y = screen_y
     last_screen = ""
     # the size has to be increased by 20 to account for the fact that we want the inner dimension to be
     # game_screen_size
@@ -154,45 +152,50 @@ class Screens:
         starting_height=5,
         manager=MANAGER,
     )
-    menu_buttons["dens"] = UIImageButton(
+    menu_buttons["dens"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 5), (71, 30))),
-        "",
+        "Dens",
+        get_button_dict(ButtonStyles.SQUOVAL, (71, 30)),
         visible=False,
         manager=MANAGER,
-        object_id="#dens_button",
+        object_id="@buttonstyles_squoval",
         starting_height=6,
         anchors={"top_target": menu_buttons["main_menu"]},
     )
-    menu_buttons["lead_den"] = UIImageButton(
+    menu_buttons["lead_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 100), (112, 28))),
-        "",
+        "leader's den",
+        get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
         visible=False,
         manager=MANAGER,
-        object_id="#lead_den_button",
+        object_id="@buttonstyles_rounded_rect",
         starting_height=6,
     )
-    menu_buttons["med_cat_den"] = UIImageButton(
+    menu_buttons["med_cat_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 140), (151, 28))),
-        "",
+        "medicine cat den",
+        get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
+        object_id="@buttonstyles_rounded_rect",
         visible=False,
         manager=MANAGER,
-        object_id="#med_den_button",
         starting_height=6,
     )
-    menu_buttons["warrior_den"] = UIImageButton(
+    menu_buttons["warrior_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 180), (121, 28))),
-        "",
+        "warriors' den",
+        get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
+        object_id="@buttonstyles_rounded_rect",
         visible=False,
         manager=MANAGER,
-        object_id="#warrior_den_button",
         starting_height=6,
     )
-    menu_buttons["clearing"] = UIImageButton(
+    menu_buttons["clearing"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 220), (81, 28))),
-        "",
+        "clearing",
+        get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
         visible=False,
         manager=MANAGER,
-        object_id="#clearing_button",
+        object_id="@buttonstyles_rounded_rect",
         starting_height=6,
     )
     menu_buttons["heading"] = pygame_gui.elements.UITextBox(
@@ -450,7 +453,7 @@ class Screens:
                                         image_cache.load_image(
                                             "resources/images/vertical_bar.png"
                                         ).convert_alpha(),
-                                        (380, 70),
+                                        ui_scale_dimensions((10, 125)),
                                     ),
                                     visible=True,
                                     starting_height=1,

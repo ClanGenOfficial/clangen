@@ -17,6 +17,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     clan_symbol_sprite,
     ui_scale_dimensions,
+    ui_scale_value,
 )
 from .Screens import Screens
 from ..cat.cats import Cat
@@ -373,11 +374,10 @@ class EventsScreen(Screens):
         )
 
         # Sets up the buttons to switch between the event types.
-        self.all_events_button = UISurfaceImageButton(
+        self.all_events_button = UIImageButton(
             ui_scale(pygame.Rect((60, 285), (150, 30))),
-            "all events",
-            get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
-            object_id="@buttonstyles_vertical_tab",
+            "",
+            object_id="#all_events_button",
             manager=MANAGER,
         )
         self.ceremonies_events_button = UIImageButton(
@@ -688,16 +688,16 @@ class EventsScreen(Screens):
         box_length = self.event_container.get_relative_rect()[2]
         i = 0
         y = 0
-        padding = 70 / 1400 * screen_y
-        button_size = 68 / 1600 * screen_x
-        button_padding = 80 / 1400 * screen_x
+        padding = ui_scale_value(35)
+        button_size = ui_scale_value(34)
+        button_padding = ui_scale_value(40)
         for ev in self.display_events:
             if isinstance(ev.text, str):  # Check to make sure text is a string.
                 self.display_events_elements[
                     "event" + str(i)
                 ] = pygame_gui.elements.UITextBox(
                     ev.text,
-                    pygame.Rect((0, y), (box_length - 20, -1)),
+                    pygame.Rect((0, y), (box_length - ui_scale_value(20), -1)),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.event_container,
                     starting_height=2,
@@ -714,7 +714,7 @@ class EventsScreen(Screens):
                             pygame.Rect(
                                 (0, y),
                                 (
-                                    box_length + 100,
+                                    box_length + ui_scale_value(10),
                                     self.display_events_elements[
                                         "event" + str(i)
                                     ].get_relative_rect()[3]
@@ -732,7 +732,7 @@ class EventsScreen(Screens):
                             pygame.Rect(
                                 (0, y),
                                 (
-                                    box_length + 100,
+                                    box_length + ui_scale_value(10),
                                     self.display_events_elements[
                                         "event" + str(i)
                                     ].get_relative_rect()[3]
@@ -768,7 +768,7 @@ class EventsScreen(Screens):
                     )
                 )
 
-                y += 68 / 1600 * screen_y
+                y += ui_scale_value(34)
                 i += 1
             else:
                 print("Incorrectly formatted event:", ev.text, type(ev))

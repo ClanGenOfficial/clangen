@@ -165,13 +165,13 @@ class MedDenScreen(Screens):
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
                 ui_scale(pygame.Rect((140, 410), (200, 30))),
-                object_id="#large_text_xcenter",
+                object_id=get_text_box_theme("#text_box_40_horizcenter"),
                 manager=MANAGER,
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
                 ui_scale(pygame.Rect((140, 410), (200, 30))),
-                object_id="#large_text_xcenter",
+                object_id=get_text_box_theme("#text_box_40_horizcenter"),
                 manager=MANAGER,
             )
             self.log_title.hide()
@@ -183,9 +183,9 @@ class MedDenScreen(Screens):
             self.cat_bg.disable()
             log_text = game.herb_events_list.copy()
             self.log_box = pygame_gui.elements.UITextBox(
-                f"{f'<br> <hr>'.join(log_text)}<br>",
+                f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
                 ui_scale(pygame.Rect((150, 450), (540, 180))),
-                object_id="#medium_text",
+                object_id="#text_box_26_horizleft_verttop_pad_14_0_10",
                 manager=MANAGER,
             )
             self.log_box.hide()
@@ -309,7 +309,7 @@ class MedDenScreen(Screens):
         self.meds_messages = UITextBoxTweaked(
             "",
             ui_scale(pygame.Rect((108, 310), (600, 80))),
-            object_id="#medium_text_xycenter",
+            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1,
         )
 
@@ -456,13 +456,13 @@ class MedDenScreen(Screens):
             self.med_name = pygame_gui.elements.ui_label.UILabel(
                 ui_scale(pygame.Rect((525, 155), (225, 30))),
                 short_name,
-                object_id="#medium_text_xycenter",
+                object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
             self.med_info = UITextBoxTweaked(
                 "",
                 ui_scale(pygame.Rect((580, 185), (120, 120))),
-                object_id="#small_text_xcenter",
+                object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1,
                 manager=MANAGER,
             )

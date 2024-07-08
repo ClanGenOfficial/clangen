@@ -20,8 +20,9 @@ from scripts.utility import (
     get_personality_compatibility,
     get_text_box_theme,
     ui_scale,
-    scale_dimensions,
     ui_scale_dimensions,
+    ui_scale_dimensions,
+    ui_scale_blit,
 )
 from .Screens import Screens
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -30,7 +31,7 @@ from ..ui.generate_button import get_button_dict, ButtonStyles
 class ChooseMateScreen(Screens):
     list_frame = pygame.transform.scale(
         image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
-        (1300 / 1600 * screen_x, 388 / 1400 * screen_y),
+        ui_scale_dimensions((750, 194)),
     )
 
     def __init__(self, name=None):
@@ -198,7 +199,7 @@ class ChooseMateScreen(Screens):
             "connecting the two cats may give a hint on their compatibility with one another "
             "and any existing romantic feelings will be shown with small hearts.",
             ui_scale(pygame.Rect((180, 60), (440, 100))),
-            object_id="#small_text_xcenter",
+            object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
         )
         self.info.line_spacing = 0.95
         self.info.rebuild()
@@ -274,7 +275,7 @@ class ChooseMateScreen(Screens):
             ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                scale_dimensions((20, 352)),
+                ui_scale_dimensions((20, 352)),
             ),
             container=self.offspring_container,
         )
@@ -305,7 +306,7 @@ class ChooseMateScreen(Screens):
             ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                scale_dimensions((20, 352)),
+                ui_scale_dimensions((20, 352)),
             ),
             container=self.potential_container,
         )
@@ -1161,10 +1162,12 @@ class ChooseMateScreen(Screens):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(
             self.list_frame,
-            (150 / 1600 * screen_x + offset[0], 782 / 1400 * screen_y + offset[1]),
+            ui_scale_blit((75, 391)),
         )
 
-        self.loading_screen_on_use(self.work_thread, self.update_both, (700, 600))
+        self.loading_screen_on_use(
+            self.work_thread, self.update_both, ui_scale_dimensions((450, 300))
+        )
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""

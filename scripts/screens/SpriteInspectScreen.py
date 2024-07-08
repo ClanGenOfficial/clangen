@@ -8,7 +8,7 @@ from scripts.game_structure.game_essentials import game, MANAGER, offset
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
     get_text_box_theme,
-    scale_dimensions,
+    ui_scale_dimensions,
     generate_sprite,
     shorten_text_to_fit,
     ui_scale_dimensions,

@@ -54,7 +54,7 @@ class CeremonyScreen(Screens):
         self.text = pygame_gui.elements.UITextBox(
             self.life_text,
             ui_scale(pygame.Rect((0, 0), (650, -1))),
-            object_id="#medium_text",
+            object_id="#text_box_30_horizleft",
             container=self.scroll_container,
             manager=MANAGER,
         )

@@ -211,11 +211,11 @@ def load_data():
     finished_loading = True
 
 
-def loading_animation(screen_scale: float = 1):
+def loading_animation(scale: float = 1):
     global finished_loading
 
     # Load images, adjust color
-    color = pygame.Surface((200 * screen_scale, 210 * screen_scale))
+    color = pygame.Surface((200 * scale, 210 * scale))
     if game.settings["dark mode"]:
         color.fill(game.config["theme"]["light_mode_background"])
     else:
@@ -262,7 +262,7 @@ def loading_animation(screen_scale: float = 1):
 loading_thread = threading.Thread(target=load_data)
 loading_thread.start()
 
-loading_animation()
+loading_animation(screen_scale)
 
 # The loading thread should be done by now. This line
 # is just for safety. Plus some cleanup.
@@ -303,7 +303,7 @@ else:
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
-        ui_scale(pygame.Rect((1050, 1321), (600, 100))),
+        ui_scale(pygame.Rect((525, 660), (300, 50))),
         "Dev Build:",
         object_id="#dev_watermark",
     )

@@ -238,25 +238,25 @@ class ChooseMentorScreen(Screens):
             ui_scale(pygame.Rect((497, 7), (10, 210))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                ui_scale_dimensions((20, 420)),
+                ui_scale_dimensions((10, 210)),
             ),
             container=self.filter_container,
         )
 
         # Reposition and style checkboxes and labels
-        checkbox_x = 1106
-        checkbox_y = 15
-        checkbox_spacing = 100
+        checkbox_x = 653
+        checkbox_y = 7
+        checkbox_spacing = 50
 
         self.no_current_app_text = pygame_gui.elements.UITextBox(
             "No current apprentices",
-            ui_scale(pygame.Rect((checkbox_x - 70, checkbox_y + 20), (200, -1))),
+            ui_scale(pygame.Rect((checkbox_x - 45, checkbox_y + 10), (100, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.filter_container,
         )
         checkbox_y += checkbox_spacing
         self.checkboxes["show_no_current_app"] = UIImageButton(
-            ui_scale(pygame.Rect((checkbox_x, checkbox_y + 20), (68, 68))),
+            ui_scale(pygame.Rect((checkbox_x, checkbox_y + 10), (34, 34))),
             "",
             object_id="#unchecked_checkbox",
             container=self.filter_container,
@@ -266,13 +266,13 @@ class ChooseMentorScreen(Screens):
 
         self.no_former_app_text = pygame_gui.elements.UITextBox(
             "No former apprentices",
-            ui_scale(pygame.Rect((checkbox_x - 70, checkbox_y), (200, -1))),
+            ui_scale(pygame.Rect((checkbox_x - 45, checkbox_y), (100, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.filter_container,
         )
         checkbox_y += checkbox_spacing
         self.checkboxes["show_no_former_app"] = UIImageButton(
-            ui_scale(pygame.Rect((checkbox_x, checkbox_y), (68, 68))),
+            ui_scale(pygame.Rect((checkbox_x, checkbox_y), (34, 34))),
             "",
             object_id="#unchecked_checkbox",
             container=self.filter_container,
@@ -577,11 +577,11 @@ class ChooseMentorScreen(Screens):
         self.cat_list_buttons = {}
 
         pos_x = 0
-        pos_y = 40
+        pos_y = 20
         i = 0
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
+                ui_scale(pygame.Rect((100 + pos_x, 465 + pos_y), (50, 50))),
                 cat.sprite,
                 cat_object=cat,
                 manager=MANAGER,

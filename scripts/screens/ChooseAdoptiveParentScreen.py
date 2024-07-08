@@ -16,7 +16,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
-    scale_dimensions,
+    ui_scale_dimensions,
     ui_scale_dimensions,
 )
 from .Screens import Screens
@@ -203,7 +203,7 @@ class ChooseAdoptiveParentScreen(Screens):
             ui_scale(pygame.Rect((306, 160), (188, 129))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/adoption.png").convert_alpha(),
-                scale_dimensions((376, 258)),
+                ui_scale_dimensions((376, 258)),
             ),
             manager=MANAGER,
         )
@@ -262,7 +262,7 @@ class ChooseAdoptiveParentScreen(Screens):
             ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                scale_dimensions((20, 352)),
+                ui_scale_dimensions((20, 352)),
             ),
             container=self.potential_container,
         )

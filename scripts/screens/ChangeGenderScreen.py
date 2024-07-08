@@ -301,6 +301,7 @@ class ChangeGenderScreen(Screens):
             )
 
             # Create remove button for each pronounset with dynamic ycoor
+            # TODO: update this to use UISurfaceImageButton
             button_rect = ui_scale(pygame.Rect((550, ycoor + 18), (48, 48)))
             self.removalbuttons[f"cat_pronouns_{n}"] = CatButton(
                 button_rect,
@@ -394,6 +395,7 @@ class ChangeGenderScreen(Screens):
             )
 
             button_rect = ui_scale(pygame.Rect((425, ycoor + 14), (112, 56)))
+            # TODO: update this to use UISurfaceImageButton
             self.addbuttons[f"default_pronouns_{n}"] = CatButton(
                 button_rect,
                 "",

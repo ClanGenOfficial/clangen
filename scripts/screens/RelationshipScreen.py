@@ -42,25 +42,25 @@ class RelationshipScreen(Screens):
         image_cache.load_image(
             "resources/images/relationship_search.png"
         ).convert_alpha(),
-        (456 / 1600 * screen_x, 78 / 1400 * screen_y),
+        ui_scale_dimensions((228, 39)),
     )
     details_frame = pygame.transform.scale(
         image_cache.load_image(
             "resources/images/relationship_details_frame.png"
         ).convert_alpha(),
-        (508 / 1600 * screen_x, 688 / 1400 * screen_y),
+        ui_scale_dimensions((254, 344)),
     )
     toggle_frame = pygame.transform.scale(
         image_cache.load_image(
             "resources/images/relationship_toggle_frame.png"
         ).convert_alpha(),
-        (502 / 1600 * screen_x, 240 / 1400 * screen_y),
+        ui_scale_dimensions((251, 120)),
     )
     list_frame = pygame.transform.scale(
         image_cache.load_image(
             "resources/images/relationship_list_frame.png"
         ).convert_alpha(),
-        (1004 / 1600 * screen_x, 1000 / 1400 * screen_y),
+        ui_scale_dimensions((502, 500)),
     )
 
     def __init__(self, name=None):
@@ -505,7 +505,7 @@ class RelationshipScreen(Screens):
                         image_cache.load_image(
                             "resources/images/heart_big.png"
                         ).convert_alpha(),
-                        (44, 40),
+                        ui_scale_dimensions((22, 20)),
                     ),
                 )
             else:
@@ -520,7 +520,7 @@ class RelationshipScreen(Screens):
                             image_cache.load_image(
                                 "resources/images/dot_big.png"
                             ).convert_alpha(),
-                            (36, 36),
+                            ui_scale_dimensions((18, 18)),
                         ),
                     )
 
@@ -695,17 +695,17 @@ class RelationshipScreen(Screens):
         else:
             display_rel = []
 
-        pos_x = 580
-        pos_y = 300
+        pos_x = 290
+        pos_y = 150
         i = 0
         for rel in display_rel:
             self.generate_relation_block((pos_x, pos_y), rel, i)
 
             i += 1
-            pos_x += 244
-            if pos_x > 1400:
-                pos_y += 484
-                pos_x = 580
+            pos_x += 122
+            if pos_x > 700:
+                pos_y += 242
+                pos_x = 290
 
         self.page_number.set_text(f"{self.current_page} / {len(all_pages)}")
 
@@ -730,7 +730,7 @@ class RelationshipScreen(Screens):
         pos_y = pos[1]
 
         self.sprite_buttons["image" + str(i)] = UISpriteButton(
-            ui_scale(pygame.Rect((pos_x + 44, pos_y), (100, 100))),
+            ui_scale(pygame.Rect((pos_x + 22, pos_y), (50, 50))),
             the_relationship.cat_to.sprite,
             cat_object=the_relationship.cat_to,
         )
@@ -740,7 +740,7 @@ class RelationshipScreen(Screens):
         short_name = shorten_text_to_fit(name, 105, 13)
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(
             short_name,
-            ui_scale(pygame.Rect((pos_x - 10, pos_y - 50), (220, 60))),
+            ui_scale(pygame.Rect((pos_x - 5, pos_y - 25), (110, 30))),
             object_id="#text_box_26_horizcenter",
         )
 
@@ -768,7 +768,7 @@ class RelationshipScreen(Screens):
             ).convert_alpha()
 
         self.relation_list_elements["gender" + str(i)] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((pos_x + 160, pos_y + 10), (36, 36))),
+            ui_scale(pygame.Rect((pos_x + 80, pos_y + 5), (18, 18))),
             pygame.transform.scale(gender_icon, ui_scale_dimensions((18, 18))),
         )
 
@@ -782,7 +782,7 @@ class RelationshipScreen(Screens):
             self.relation_list_elements[
                 "mate_icon" + str(i)
             ] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((pos_x + 10, pos_y + 10), (22, 20))),
+                ui_scale(pygame.Rect((pos_x + 5, pos_y + 5), (11, 10))),
                 image_cache.load_image(
                     "resources/images/heart_big.png"
                 ).convert_alpha(),
@@ -809,7 +809,7 @@ class RelationshipScreen(Screens):
                 self.relation_list_elements[
                     "relation_icon" + str(i)
                 ] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((pos_x + 10, pos_y + 10), (18, 18))),
+                    ui_scale(pygame.Rect((pos_x + 5, pos_y + 5), (9, 9))),
                     image_cache.load_image(
                         "resources/images/dot_big.png"
                     ).convert_alpha(),
@@ -845,7 +845,7 @@ class RelationshipScreen(Screens):
             text = "romantic like:"
 
         # determine placing on screen
-        barbar = 44
+        barbar = 22
         bar_count = 0
 
         # fix text positioning on fullscreen
@@ -854,15 +854,15 @@ class RelationshipScreen(Screens):
         else:
             f_add = 0
 
-        rel_pos_x = pos_x + 6
-        text_pos_y = pos_y + f_add + 87
-        bar_pos_y = pos_y + 130
+        rel_pos_x = pos_x + 3
+        text_pos_y = pos_y + f_add + 43
+        bar_pos_y = pos_y + 65
 
         text_size_x = -1
-        text_size_y = 60
+        text_size_y = 30
 
-        bar_size_x = 188
-        bar_size_y = 20
+        bar_size_x = 94
+        bar_size_y = 10
 
         self.relation_list_elements[
             f"romantic_text{i}"
@@ -937,7 +937,7 @@ class RelationshipScreen(Screens):
         )
         self.relation_list_elements[f"dislike_bar{i}"] = UIRelationStatusBar(
             ui_scale(
-                pygame.Rect((rel_pos_x, bar_pos_y + (barbar * bar_count)), (188, 20))
+                pygame.Rect((rel_pos_x, bar_pos_y + (barbar * bar_count)), (94, 10))
             ),
             the_relationship.dislike,
             positive_trait=False,

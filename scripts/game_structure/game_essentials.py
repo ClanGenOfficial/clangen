@@ -625,14 +625,18 @@ game.load_settings()
 pygame.display.set_caption("Clan Generator")
 
 offset = (0, 0)
-offset_x = 0
-offset_y = 0
 screen_x = 800
 screen_y = 700
 screen_scale = 1
 
-# nb. forcing screen size WILL make font crunchy
-debug_force_screen_size = None  # (2560, 1440)
+# nb. forcing screen size WILL make the clangen font crunchy
+# this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
+debug_force_screen_size = None
+# (2560, 1440)
+# (2304, 1296)
+# (1920, 1080)
+# (1664, 936)
+# (1280, 720)
 
 
 if game.settings["fullscreen"]:
@@ -663,9 +667,7 @@ if game.settings["fullscreen"]:
             else pygame.FULLSCREEN | pygame.SCALED
         ),
     )
-    offset_x = (display_size[0] - screen_x) / 2
-    offset_y = (display_size[1] - screen_y) / 2
-    offset = (offset_x, offset_y)
+    offset = ((display_size[0] - screen_x) / 2, (display_size[1] - screen_y) / 2)
 else:
     screen = pygame.display.set_mode((screen_x, screen_y))
 
@@ -682,6 +684,13 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         enable_live_theme_updates=False,
     )
     manager.add_font_paths(
+        font_name="notosans",
+        regular_path="resources/fonts/NotoSans-Medium.ttf",
+        bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
+        italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
+        bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
+    )
+    manager.add_font_paths(
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
@@ -689,12 +698,11 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         manager.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
         manager.preload_fonts(
             [
-                {"name": "noto_sans", "point_size": 12, "style": "bold"},
-                {"name": "noto_sans", "point_size": 14, "style": "bold"},
-                {"name": "noto_sans", "point_size": 16, "style": "bold"},
-                {"name": "noto_sans", "point_size": 14, "style": "italic"},
-                {"name": "noto_sans", "point_size": 16, "style": "italic"},
-                {"name": "noto_sans", "point_size": 18, "style": "italic"},
+                {"name": "notosans", "point_size": 11, "style": "bold"},
+                {"name": "notosans", "point_size": 13, "style": "bold"},
+                {"name": "notosans", "point_size": 15, "style": "bold"},
+                {"name": "notosans", "point_size": 13, "style": "italic"},
+                {"name": "notosans", "point_size": 15, "style": "italic"},
                 {"name": "clangen", "point_size": 18, "style": "regular"},
             ]
         )

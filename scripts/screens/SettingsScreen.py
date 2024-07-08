@@ -10,16 +10,15 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     quit,
-    ui_scale_value,
     ui_scale_dimensions,
-)  # pylint: disable=redefined-builtin
+)
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
@@ -36,12 +35,6 @@ class SettingsScreen(Screens):
     TODO: DOCS
     """
 
-    text_size = {
-        "0": "small",
-        "1": "medium",
-        "2": "big",
-    }  # How text sizes will show up on the screen
-    bool = {True: "Yes", False: "No", None: "None"}
     sub_menu = "general"
 
     # This is set to the current settings when the screen is opened.

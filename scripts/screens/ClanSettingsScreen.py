@@ -15,6 +15,7 @@ from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
+    ui_scale_dimensions,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..housekeeping.datadir import get_data_dir
@@ -206,13 +207,13 @@ class ClanSettingsScreen(Screens):
 
         n = 0
         for code, desc in settings_dict["general"].items():
-            x_val = 450
+            x_val = 225
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
 
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                ui_scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((x_val, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -221,7 +222,7 @@ class ClanSettingsScreen(Screens):
             n += 1
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
-            (1360 / 1600 * screen_x, (n * 78 + 80) / 1400 * screen_y)
+            ui_scale_dimensions((780, n * 39 + 40))
         )
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
@@ -255,13 +256,13 @@ class ClanSettingsScreen(Screens):
         n = 0
         for code, desc in settings_dict["role"].items():
             # Handle nested
-            x_val = 450
+            x_val = 225
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
 
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                ui_scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((x_val, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_role"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -295,13 +296,13 @@ class ClanSettingsScreen(Screens):
 
         n = 0
         for code, desc in settings_dict["relation"].items():
-            x_val = 450
+            x_val = 225
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
 
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                ui_scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((x_val, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_relation"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -393,7 +394,7 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text["stat_box"] = pygame_gui.elements.UITextBox(
             text,
-            ui_scale(pygame.Rect((300, 400, 1060, 690))),
+            ui_scale(pygame.Rect((150, 200), (530, 345))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
         )
 
@@ -415,16 +416,16 @@ class ClanSettingsScreen(Screens):
 
             # Handle nested
             disabled = False
-            x_val = 340
+            x_val = 170
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
                 disabled = (
                     game.clan.clan_settings.get(desc[3][0], not desc[3][1])
                     != desc[3][1]
                 )
 
             self.checkboxes[code] = UIImageButton(
-                ui_scale(pygame.Rect((x_val, n * 78), (68, 68))),
+                ui_scale(pygame.Rect((x_val, n * 39), (34, 34))),
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container_" + self.sub_menu],

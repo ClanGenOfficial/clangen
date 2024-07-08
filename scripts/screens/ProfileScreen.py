@@ -13,21 +13,26 @@ from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UITextBoxTweaked,
+    UISurfaceImageButton,
+)
 from scripts.utility import (
     event_text_adjust,
     ui_scale,
     ACC_DISPLAY,
     process_text,
     chunks,
+    get_text_box_theme,
     ui_scale_dimensions,
-    ui_scale_value,
+    shorten_text_to_fit,
 )
-from scripts.utility import get_text_box_theme, scale_dimensions, shorten_text_to_fit
 from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
+from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
 # ---------------------------------------------------------------------------- #
@@ -467,58 +472,66 @@ class ProfileScreen(Screens):
             object_id="#magnify_button",
             manager=MANAGER,
         )
-        self.relations_tab_button = UIImageButton(
+        self.relations_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 420), (176, 30))),
-            "",
-            object_id="#relations_tab_button",
+            "relations",
+            get_button_dict(ButtonStyles.MENU_LEFT, (176, 30)),
+            object_id="@buttonstyles_menu_left",
             manager=MANAGER,
         )
-        self.roles_tab_button = UIImageButton(
+        self.roles_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 420), (176, 30))),
-            "",
-            object_id="#roles_tab_button",
+            "roles",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
         )
-        self.personal_tab_button = UIImageButton(
+        self.personal_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 420), (176, 30))),
-            "",
-            object_id="#personal_tab_button",
+            "personal",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
         )
-        self.dangerous_tab_button = UIImageButton(
+        self.dangerous_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((576, 420), (176, 30))),
-            "",
-            object_id="#dangerous_tab_button",
+            "dangerous",
+            get_button_dict(ButtonStyles.MENU_RIGHT, (176, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
         )
 
-        self.backstory_tab_button = UIImageButton(
+        self.backstory_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 622), (176, 30))),
-            "",
-            object_id="#backstory_tab_button",
+            "history",
+            get_button_dict(ButtonStyles.MENU_LEFT, (176, 30)),
+            object_id="@buttonstyles_menu_left",
             manager=MANAGER,
         )
 
-        self.conditions_tab_button = UIImageButton(
+        self.conditions_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 622), (176, 30))),
-            "",
-            object_id="#conditions_tab_button",
+            "conditions",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
         )
 
-        self.placeholder_tab_3 = UIImageButton(
+        self.placeholder_tab_3 = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 622), (176, 30))),
             "",
-            object_id="#cat_tab_3_blank_button",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_menu_middle",
             starting_height=1,
             manager=MANAGER,
         )
         self.placeholder_tab_3.disable()
 
-        self.placeholder_tab_4 = UIImageButton(
+        self.placeholder_tab_4 = UISurfaceImageButton(
             ui_scale(pygame.Rect((576, 622), (176, 30))),
             "",
-            object_id="#cat_tab_4_blank_button",
+            get_button_dict(ButtonStyles.MENU_RIGHT, (176, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
         )
         self.placeholder_tab_4.disable()
@@ -583,9 +596,7 @@ class ProfileScreen(Screens):
 
         # Info in string
         cat_name = str(self.the_cat.name)
-        cat_name = shorten_text_to_fit(
-            cat_name, 140, 20, font_type="resources/fonts/clangen.otf"
-        )
+        cat_name = shorten_text_to_fit(cat_name, 212, 20)
         if self.the_cat.dead:
             cat_name += (
                 " (dead)"  # A dead cat will have the (dead) sign next to their name
@@ -605,19 +616,11 @@ class ProfileScreen(Screens):
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
-            ui_scale(pygame.Rect((0, 140), (150, 40))),
+            ui_scale(pygame.Rect((0, 140), (250, 40))),
             manager=MANAGER,
             object_id="@heading_contrast",
             anchors={"centerx": "centerx"},
         )
-
-        #     pygame_gui.elements.UITextBox(
-        #     cat_name,
-        #     ui_scale(pygame.Rect((0, 140), (-1, 40))),
-        #     object_id=get_text_box_theme("#text_box_40_horizcenter"),
-        #     manager=MANAGER,
-        #     anchors={"centerx": "centerx"},
-        # )
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(
@@ -632,14 +635,14 @@ class ProfileScreen(Screens):
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(
             self.generate_column1(self.the_cat),
             ui_scale(pygame.Rect((300, 230), (180, 190))),
-            object_id="#small_text",
+            object_id=get_text_box_theme("#text_box_22_horizleft"),
             line_spacing=1,
             manager=MANAGER,
         )
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
             self.generate_column2(self.the_cat),
             ui_scale(pygame.Rect((490, 230), (250, 190))),
-            object_id="#small_text",
+            object_id=get_text_box_theme("#text_box_22_horizleft"),
             line_spacing=1,
             manager=MANAGER,
         )
@@ -666,10 +669,11 @@ class ProfileScreen(Screens):
         self.profile_elements["cat_image"].disable()
 
         # if cat is a med or med app, show button for their den
-        self.profile_elements["med_den"] = UIImageButton(
+        self.profile_elements["med_den"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((100, 380), (151, 28))),
-            "",
-            object_id="#med_den_button",
+            "medicine cat den",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
+            object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
             starting_height=2,
         )
@@ -683,7 +687,7 @@ class ProfileScreen(Screens):
             self.profile_elements["med_den"].hide()
 
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
-        favorite_button_rect.topright = (-10, 143)
+        favorite_button_rect.topright = ui_scale_dimensions((-10, 143))
         self.profile_elements["favourite_button"] = UIImageButton(
             favorite_button_rect,
             "",
@@ -1915,7 +1919,7 @@ class ProfileScreen(Screens):
                 con[0],
                 ui_scale(pygame.Rect((0, 5), (138, -1))),
                 line_spacing=0.90,
-                object_id="#medium_text_xcenter",
+                object_id="#text_box_30_horizcenter",
                 container=bg,
                 manager=MANAGER,
                 anchors={"centerx": "centerx"},
@@ -1929,7 +1933,7 @@ class ProfileScreen(Screens):
                 con[1],
                 details_rect,
                 line_spacing=0.90,
-                object_id="#small_text_xcenter",
+                object_id="#text_box_22_horizcenter_pad_20_20",
                 container=bg,
                 manager=MANAGER,
                 anchors={"centerx": "centerx"},

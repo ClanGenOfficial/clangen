@@ -5,7 +5,12 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
-from scripts.utility import get_text_box_theme, ui_scale, shorten_text_to_fit
+from scripts.utility import (
+    get_text_box_theme,
+    ui_scale,
+    shorten_text_to_fit,
+    ui_scale_dimensions,
+)
 from .Screens import Screens
 
 
@@ -214,7 +219,7 @@ class FamilyTreeScreen(Screens):
                 image_cache.load_image(
                     "resources/images/familytree_relationbackdrop.png"
                 ).convert_alpha(),
-                (841, 342),
+                ui_scale_dimensions((420, 171)),
             ),
             manager=MANAGER,
         )
@@ -228,7 +233,7 @@ class FamilyTreeScreen(Screens):
                 image_cache.load_image(
                     "resources/images/familytree_bigcatbox.png"
                 ).convert_alpha(),
-                (452, 340),
+                ui_scale_dimensions((425, 170)),
             ),
             manager=MANAGER,
         )
@@ -248,7 +253,7 @@ class FamilyTreeScreen(Screens):
                 image_cache.load_image(
                     "resources/images/familytree_smallcatbox.png"
                 ).convert_alpha(),
-                (160, 180),
+                ui_scale_dimensions((160, 180)),
             ),
             manager=MANAGER,
             container=self.family_tree,
@@ -283,8 +288,8 @@ class FamilyTreeScreen(Screens):
 
         # as the various groups are collected, the x_dim and y_dim are adjusted to account for the new button,
         # these affect the size and positioning of the UIContainer holding the family tree
-        x_dim = 160
-        y_dim = 180
+        x_dim = 80
+        y_dim = 90
 
         if not self.the_cat.inheritance:
             self.the_cat.create_inheritance_new_cat()
@@ -303,46 +308,47 @@ class FamilyTreeScreen(Screens):
 
         # collect grandparents
         if self.parents:
-            y_dim += 196
-            y_pos += 196
+            y_dim += 98
+            y_pos += 98
             if self.grandparents:
-                y_dim += 160
-                y_pos += 160
-
-            x_dim += 309
-            if self.siblings_mates:
-                x_dim += 417
-            if self.siblings_kits:
                 y_dim += 80
+                y_pos += 80
+
+            x_dim += 154
+            if self.siblings_mates:
+                x_dim += 208
+            if self.siblings_kits:
+                y_dim += 40
                 if not self.siblings_mates:
-                    x_dim += 417
+                    x_dim += 208
 
         # collect cousins
         if self.parents_siblings:
             if not self.siblings_mates and not self.siblings_kits:
-                x_dim += 433
+                x_dim += 216
 
         # collect mates
         if self.mates or self.kits:
-            x_pos += 276
-            x_dim += 280
+            x_pos += 138
+            x_dim += 140
         # collect kits
         if self.kits:
             if not self.siblings_kits:
-                y_dim += 80
+                y_dim += 40
             if self.kits_mates:
-                x_pos += 202
-                x_dim += 202
+                x_pos += 101
+                x_dim += 101
             if self.grandkits:
-                y_dim += 140
+                y_dim += 70
                 if not self.kits_mates:
-                    x_pos += 202
-                    x_dim += 202
+                    x_pos += 101
+                    x_dim += 101
 
         self.family_tree.kill()
         self.family_tree = pygame_gui.core.UIContainer(
-            ui_scale(pygame.Rect((800 - x_dim / 2, 550 - y_dim / 2), (x_dim, y_dim))),
+            ui_scale(pygame.Rect((0, 275 - y_dim / 2), (x_dim, y_dim))),
             MANAGER,
+            anchors={"centerx": "centerx"},
         )
 
         # creating the center frame, cat, and name
@@ -361,19 +367,19 @@ class FamilyTreeScreen(Screens):
             manager=MANAGER,
         )
         self.center_cat_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((x_pos, y_pos), (160, 180))),
+            ui_scale(pygame.Rect((x_pos, y_pos), (80, 90))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/familytree_smallcatbox.png"
                 ).convert_alpha(),
-                (160, 180),
+                ui_scale_dimensions((80, 90)),
             ),
             manager=MANAGER,
             container=self.family_tree,
         )
         self.center_cat_frame.disable()
         self.cat_elements["center_cat_image"] = UISpriteButton(
-            ui_scale(pygame.Rect((x_pos + 30, y_pos + 20), (100, 100))),
+            ui_scale(pygame.Rect((x_pos + 15, y_pos + 10), (50, 50))),
             self.the_cat.sprite,
             cat_id=self.the_cat.ID,
             manager=MANAGER,
@@ -383,7 +389,7 @@ class FamilyTreeScreen(Screens):
         short_name = shorten_text_to_fit(name, 57, 11)
 
         self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(
-            ui_scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))),
+            ui_scale(pygame.Rect((5 + x_pos, 45 + y_pos), (72, 50))),
             short_name,
             object_id="#text_box_22_horizcenter",
             manager=MANAGER,
@@ -392,7 +398,7 @@ class FamilyTreeScreen(Screens):
 
         if self.parents:
             self.siblings_button = UIImageButton(
-                ui_scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
+                ui_scale(pygame.Rect((76 + x_pos, 32 + y_pos), (158, 30))),
                 "",
                 object_id="#siblings_button",
                 manager=MANAGER,
@@ -401,7 +407,7 @@ class FamilyTreeScreen(Screens):
             if self.siblings:
                 if self.siblings_mates or self.siblings_kits:
                     self.sibling_mates_button = UIImageButton(
-                        ui_scale(pygame.Rect((464 + x_pos, 65 + y_pos), (418, 60))),
+                        ui_scale(pygame.Rect((232 + x_pos, 32 + y_pos), (209, 30))),
                         "",
                         object_id="#siblingmates_button",
                         manager=MANAGER,
@@ -409,14 +415,14 @@ class FamilyTreeScreen(Screens):
                     )
                 if self.siblings_kits:
                     self.sibling_kits_button = UIImageButton(
-                        ui_scale(pygame.Rect((406 + x_pos, 97 + y_pos), (252, 164))),
+                        ui_scale(pygame.Rect((203 + x_pos, 48 + y_pos), (126, 82))),
                         "",
                         object_id="#siblingkits_button",
                         manager=MANAGER,
                         container=self.family_tree,
                     )
             self.parents_button = UIImageButton(
-                ui_scale(pygame.Rect((136 + x_pos, -196 + y_pos), (176, 288))),
+                ui_scale(pygame.Rect((68 + x_pos, -98 + y_pos), (88, 144))),
                 "",
                 object_id="#parents_button",
                 manager=MANAGER,
@@ -425,7 +431,7 @@ class FamilyTreeScreen(Screens):
             self.family_tree.add_element(self.parents_button)
             if self.parents_siblings:
                 self.parents_siblings_button = UIImageButton(
-                    ui_scale(pygame.Rect((308 + x_pos, -196 + y_pos), (436, 60))),
+                    ui_scale(pygame.Rect((154 + x_pos, -98 + y_pos), (217, 30))),
                     "",
                     object_id="#parentsiblings_button",
                     manager=MANAGER,
@@ -433,7 +439,7 @@ class FamilyTreeScreen(Screens):
                 )
                 if self.cousins:
                     self.cousins_button = UIImageButton(
-                        ui_scale(pygame.Rect((504 + x_pos, -139 + y_pos), (170, 164))),
+                        ui_scale(pygame.Rect((252 + x_pos, -69 + y_pos), (85, 82))),
                         "",
                         object_id="#cousins_button",
                         manager=MANAGER,
@@ -441,7 +447,7 @@ class FamilyTreeScreen(Screens):
                     )
             if self.grandparents:
                 self.grandparents_button = UIImageButton(
-                    ui_scale(pygame.Rect((94 + x_pos, -355 + y_pos), (260, 164))),
+                    ui_scale(pygame.Rect((47 + x_pos, -177 + y_pos), (130, 82))),
                     "",
                     object_id="#grandparents_button",
                     manager=MANAGER,
@@ -450,7 +456,7 @@ class FamilyTreeScreen(Screens):
 
         if self.mates or self.kits:
             self.mates_button = UIImageButton(
-                ui_scale(pygame.Rect((-276 + x_pos, 65 + y_pos), (288, 60))),
+                ui_scale(pygame.Rect((-138 + x_pos, 32 + y_pos), (144, 30))),
                 "",
                 object_id="#mates_button",
                 manager=MANAGER,
@@ -458,7 +464,7 @@ class FamilyTreeScreen(Screens):
             )
         if self.kits:
             self.kits_button = UIImageButton(
-                ui_scale(pygame.Rect((-118 + x_pos, 97 + y_pos), (116, 164))),
+                ui_scale(pygame.Rect((-59 + x_pos, 48 + y_pos), (58, 82))),
                 "",
                 object_id="#kits_button",
                 manager=MANAGER,
@@ -466,7 +472,7 @@ class FamilyTreeScreen(Screens):
             )
             if self.kits_mates or self.grandkits:
                 self.kits_mates_button = UIImageButton(
-                    ui_scale(pygame.Rect((-477 + x_pos, 198 + y_pos), (364, 60))),
+                    ui_scale(pygame.Rect((-238 + x_pos, 99 + y_pos), (182, 30))),
                     "",
                     object_id="#kitsmates_button",
                     manager=MANAGER,
@@ -474,7 +480,7 @@ class FamilyTreeScreen(Screens):
                 )
             if self.grandkits:
                 self.grandkits_button = UIImageButton(
-                    ui_scale(pygame.Rect((-282 + x_pos, 233 + y_pos), (202, 164))),
+                    ui_scale(pygame.Rect((-141 + x_pos, 116 + y_pos), (101, 82))),
                     "",
                     object_id="#grandkits_button",
                     manager=MANAGER,
@@ -528,7 +534,7 @@ class FamilyTreeScreen(Screens):
                     info_text += ", ".join(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
+                ui_scale(pygame.Rect((324 + pos_x, 485 + pos_y), (50, 50))),
                 _kitty.sprite,
                 cat_id=_kitty.ID,
                 manager=MANAGER,
@@ -536,9 +542,9 @@ class FamilyTreeScreen(Screens):
                 starting_height=2,
             )
 
-            pos_x += 100
-            if pos_x > 700:
-                pos_y += 100
+            pos_x += 50
+            if pos_x > 450:
+                pos_y += 50
                 pos_x = 0
             i += 1
 
@@ -568,7 +574,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/grandparents_tab.png"
                     ).convert_alpha(),
-                    (256, 60),
+                    ui_scale_dimensions((128, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -579,7 +585,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/parents_tab.png"
                     ).convert_alpha(),
-                    (174, 60),
+                    ui_scale_dimensions((87, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -590,7 +596,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/parentsibling_tab.png"
                     ).convert_alpha(),
-                    (296, 60),
+                    ui_scale_dimensions((148, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -601,7 +607,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/cousins_tab.png"
                     ).convert_alpha(),
-                    (166, 60),
+                    ui_scale_dimensions((83, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -612,7 +618,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/siblings_tab.png"
                     ).convert_alpha(),
-                    (164, 60),
+                    ui_scale_dimensions((82, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -623,7 +629,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/siblingsmate_tab.png"
                     ).convert_alpha(),
-                    (274, 60),
+                    ui_scale_dimensions((137, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -634,7 +640,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/siblingkits_tab.png"
                     ).convert_alpha(),
-                    (250, 60),
+                    ui_scale_dimensions((125, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -645,7 +651,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/mates_tab.png"
                     ).convert_alpha(),
-                    (150, 60),
+                    ui_scale_dimensions((75, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -656,7 +662,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/kits_tab.png"
                     ).convert_alpha(),
-                    (114, 60),
+                    ui_scale_dimensions((57, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -667,7 +673,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/kitsmate_tab.png"
                     ).convert_alpha(),
-                    (224, 60),
+                    ui_scale_dimensions((112, 30)),
                 ),
                 manager=MANAGER,
             )
@@ -678,7 +684,7 @@ class FamilyTreeScreen(Screens):
                     image_cache.load_image(
                         "resources/images/grandkits_tab.png"
                     ).convert_alpha(),
-                    (200, 60),
+                    ui_scale_dimensions((100, 30)),
                 ),
                 manager=MANAGER,
             )

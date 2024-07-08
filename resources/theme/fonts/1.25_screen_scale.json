@@ -5,6 +5,69 @@
             "size": "14"
         }
     },
+    "#small_text": {
+        "prototype": "text_box",
+        "font": {
+            "name": "noto_sans",
+            "size": "12"
+        }
+    },
+    "#small_text_xcenter": {
+        "prototype": "#small_text",
+        "misc": {
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#medium_text": {
+        "font": {
+            "name": "noto_sans",
+            "size": "14"
+        }
+    },
+    "#medium_text_xycenter": {
+        "font": {
+            "name": "noto_sans",
+            "size": "14"
+        },
+        "misc": {
+            "text_vert_alignment": "center",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#medium_text_xcenter": {
+        "font": {
+            "name": "noto_sans",
+            "size": "14"
+        },
+        "misc": {
+            "text_horiz_alignment": "center",
+            "padding": "0,5"
+        }
+    },
+    "#medium_text_ycenter": {
+        "font": {
+            "name": "noto_sans",
+            "size": "14"
+        },
+        "misc": {
+            "text_vert_alignment": "center",
+            "padding": "5,0"
+        }
+    },
+    "#large_text": {
+        "font": {
+            "name": "noto_sans",
+            "size": "16"
+        }
+    },
+    "#large_text_xcenter": {
+        "prototype": "#large_text",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "padding": "0,5"
+        }
+    },
     "tool_tip": {
         "misc": {
             "rect_width": "200"

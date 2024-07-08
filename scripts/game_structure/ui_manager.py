@@ -5,7 +5,7 @@ from typing import Tuple, Optional, Union, List, Dict
 import pygame
 import pygame_gui
 from pygame_gui import PackageResource
-from pygame_gui.core import UIContainer, UIWindowStack, ObjectID
+from pygame_gui.core import UIWindowStack, ObjectID
 from pygame_gui.core.gui_type_hints import RectLike
 from pygame_gui.core.interfaces import (
     IUIElementInterface,
@@ -122,26 +122,3 @@ class UIManagerContainer(pygame_gui.core.UIContainer):
             object_id=object_id,
         )
         self.screen_scale = screen_scale
-
-    # def add_element(self, element: IUIElementInterface):
-    #     """
-    #     Add a UIElement to the container. The UI's relative_rect parameter will be relative to
-    #     this container.
-    #
-    #     :param element: A UIElement to add to this container.
-    #
-    #     """
-    #     element.rect = pygame.Rect(
-    #         element.rect[0] * self.screen_scale,
-    #         element.rect[1] * self.screen_scale,
-    #         element.rect[2],
-    #         element.rect[3],
-    #     )
-    #     element.change_layer(self._layer + element.get_starting_height())
-    #     self.elements.append(element)
-    #     self.calc_add_element_changes_thickness(element)
-    #     if not self.is_enabled:
-    #         element.disable()
-    #     if not self.visible:
-    #         if hasattr(element, "hide"):
-    #             element.hide()

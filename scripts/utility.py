@@ -24,9 +24,8 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import (
     game,
-    screen_x,
-    screen_y,
     screen_scale,
+    offset,
 )
 
 
@@ -2361,13 +2360,11 @@ def ui_scale_value(dim: int):
     return round(dim * screen_scale)
 
 
-def scale_dimensions(dim):
-    dim = list(dim)
-    dim[0] = round(dim[0] / 1600 * screen_x) if dim[0] > 0 else dim[0]
-    dim[1] = round(dim[1] / 1400 * screen_y) if dim[1] > 0 else dim[1]
-    dim = tuple(dim)
-
-    return dim
+def ui_scale_blit(coords: Tuple[int, int]):
+    """Used to scale where to blit an item, NOT the size of it (use ui_scale_dimensions or ui_scale for that)"""
+    return round(
+        coords[0] * screen_scale + offset[0], coords[1] * screen_scale + offset[1]
+    )
 
 
 def update_sprite(cat):

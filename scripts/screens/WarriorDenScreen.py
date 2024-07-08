@@ -154,10 +154,11 @@ class WarriorDenScreen(Screens):
             manager=MANAGER,
         )
 
-        self.save_button = UIImageButton(
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((150, 592), (139, 30))),
-            "",
-            object_id=ObjectID("#change_focus_button", "@image_button"),
+            "Change Focus",
+            get_button_dict(ButtonStyles.SQUOVAL, (139, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.save_button.disable()
@@ -266,7 +267,7 @@ class WarriorDenScreen(Screens):
                 ui_scale(pygame.Rect((0, n * 30), (250, 28))),
                 desc[0],
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
-                object_id=ObjectID(None, "@buttonstyles_roundedrect"),
+                object_id=ObjectID(None, "@buttonstyles_rounded_rect"),
                 container=self.focus["button_container"],
                 starting_height=2,
                 manager=MANAGER,

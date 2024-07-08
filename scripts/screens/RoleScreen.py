@@ -9,8 +9,12 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, shorten_text_to_fit, ui_scale_dimensions
-from scripts.utility import ui_scale
+from scripts.utility import (
+    get_text_box_theme,
+    shorten_text_to_fit,
+    ui_scale_dimensions,
+    ui_scale,
+)
 from .Screens import Screens
 
 
@@ -108,7 +112,7 @@ class RoleScreen(Screens):
             ui_scale(pygame.Rect((48, 350), (704, 10))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/bar.png"),
-                (1408 / 1600 * screen_x, 20 / 1400 * screen_y),
+                ui_scale_dimensions((704, 10)),
             ),
             manager=MANAGER,
         )
@@ -119,7 +123,7 @@ class RoleScreen(Screens):
                 pygame.image.load(
                     "resources/images/mediation_selection_bg.png"
                 ).convert_alpha(),
-                (1400, 300),
+                ui_scale_dimensions((704, 150)),
             ),
         )
 
@@ -280,7 +284,7 @@ class RoleScreen(Screens):
             ui_scale(pygame.Rect((82, 231), (78, 78))),
             pygame.transform.scale(
                 image_cache.load_image(icon_path),
-                (156 / 1600 * screen_x, 156 / 1400 * screen_y),
+                ui_scale_dimensions((78, 78)),
             ),
         )
 
