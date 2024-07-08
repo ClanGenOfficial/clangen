@@ -1020,7 +1020,7 @@ class PatrolScreen(Screens):
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 175), (125, 125))),
+                ui_scale(pygame.Rect((0, 175), (150, 150))),
                 pygame.transform.scale(
                     self.selected_cat.sprite, ui_scale_dimensions((150, 150))
                 ),

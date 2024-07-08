@@ -695,6 +695,8 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
+    manager.get_theme().load_theme("resources/theme/themes/dark.json")
+
     if screen_scale == 1:
         manager.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
     elif screen_scale == 1.25:

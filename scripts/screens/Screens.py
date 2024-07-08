@@ -204,7 +204,7 @@ class Screens:
         ui_scale(pygame.Rect((305, 27), (195, 35))),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@heading", object_id=None),
+        object_id="#text_box_34_horizcenter_light",
         starting_height=5,
     )
 
@@ -642,7 +642,9 @@ class Screens:
     def show_bg(self):
         """Blit the currently selected blur_bg and bg."""
         if self.active_bg is None:
-            self.active_bg = "default_dark" if game.settings["dark mode"] else "default"
+            self.active_bg = (
+                "default_dark" if game.settings["dark mode"] else "default_light"
+            )
         if game.settings["fullscreen"]:
             screen.blit(self.blur_bgs[self.active_bg], (0, 0))
             screen.blit(

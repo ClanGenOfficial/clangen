@@ -854,7 +854,7 @@ class UICatListDisplay(UIContainer):
         show_names: bool = False,
         tool_tip_name: bool = False,
         visible: bool = True,
-        text_theme="#cat_list_text",
+        text_theme=None,
         y_px_between: int = None,
     ):
         """

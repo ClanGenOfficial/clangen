@@ -1505,38 +1505,6 @@
             }
         }
     },
-    "#begin_anew_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/begin_anew.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/begin_anew_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/begin_anew_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/begin_anew.png"
-            }
-        }
-    },
-    "#not_yet_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/not_yet.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/not_yet_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/not_yet_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/not_yet.png"
-            }
-        }
-    },
     "#fav_star": {
         "images": {
             "normal_image": {
@@ -4164,22 +4132,6 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/add_button_unavailable.png"
-            }
-        }
-    },
-    "#test_set_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/test_set_button.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/test_set_button_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/test_set_button_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/test_set_button_unavailable.png"
             }
         }
     },

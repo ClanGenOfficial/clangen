@@ -151,14 +151,8 @@ class SettingsScreen(Screens):
                             in self.checkboxes["dark mode"].get_object_ids()
                         ):
                             self.set_bg("default_dark")
-                            MANAGER.get_theme().load_theme(
-                                "resources/theme/themes/dark.json"
-                            )
                         else:
                             self.set_bg("default")
-                            MANAGER.get_theme().load_theme(
-                                "resources/theme/themes/light.json"
-                            )
 
                     if (
                         self.sub_menu == "general"
@@ -271,6 +265,8 @@ class SettingsScreen(Screens):
         self.sub_menu = "general"
         self.open_general_settings()
 
+        self.set_bg("default")
+
         self.settings_at_open = game.settings.copy()
 
         self.refresh_checkboxes()
@@ -304,13 +300,6 @@ class SettingsScreen(Screens):
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
 
-        if self.settings_at_open["dark mode"]:
-            self.set_bg("default_dark")
-            MANAGER.get_theme().load_theme("resources/theme/themes/dark.json")
-        else:
-            self.set_bg("default")
-            MANAGER.get_theme().load_theme("resources/theme/themes/light.json")
-
         game.settings = self.settings_at_open
 
     def save_settings(self):
@@ -339,7 +328,7 @@ class SettingsScreen(Screens):
                 desc[0],
                 ui_scale(pygame.Rect((225, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_general"],
-                object_id="#medium_text",
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
             )
             self.checkboxes_text[code].disable()
@@ -383,7 +372,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text["info_text_box"] = pygame_gui.elements.UITextBox(
             self.info_text,
             ui_scale(pygame.Rect((0, 0), (575, -1))),
-            object_id="#large_text_xcenter",
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text["info_container"],
             manager=MANAGER,
             anchors={"centerx": "centerx"},

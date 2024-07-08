@@ -509,7 +509,7 @@ class ListScreen(Screens):
             placeholder_text=str(self.current_page),
             object_id=get_text_box_theme("#page_entry_box")
             if self.death_status == "living"
-            else "#page_entry_box_dark",
+            else ObjectID("@dark", "#page_entry_box"),
             manager=MANAGER,
         )
         self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
@@ -607,7 +607,7 @@ class ListScreen(Screens):
         self.display_container_elements["page_entry"].change_object_id(
             get_text_box_theme("#page_entry_box")
             if self.death_status == "living"
-            else "#page_entry_box_dark"
+            else ObjectID("@dark", "#page_entry_box")
         )
         self.display_container_elements["page_entry"].set_text(str(self.current_page))
         self.display_container_elements["page_number"].change_object_id(

@@ -16,6 +16,7 @@ from typing import List, Tuple
 
 import pygame
 import ujson
+from pygame_gui.core import ObjectID
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -2733,15 +2734,9 @@ def is_iterable(y):
 def get_text_box_theme(theme_name=""):
     """Updates the name of the theme based on dark or light mode"""
     if game.settings["dark mode"]:
-        if theme_name == "":
-            return "#default_dark"
-        else:
-            return theme_name + "_dark"
+        return ObjectID("@dark", theme_name)
     else:
-        if theme_name == "":
-            return "#text_box"
-        else:
-            return theme_name
+        return theme_name
 
 
 def quit(savesettings=False, clearevents=False):
