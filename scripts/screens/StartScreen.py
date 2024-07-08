@@ -204,7 +204,7 @@ class StartScreen(Screens):
         )
         self.settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            "settings",
+            "settings + info",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id=ObjectID(
                 class_id="@startscreen_main", object_id="#tailing_letters"
@@ -362,8 +362,8 @@ class StartScreen(Screens):
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.",
-            ui_scale(pygame.Rect((0, 620), (800, 30))),
-            object_id="@dark",
+            ui_scale(pygame.Rect((0, 600), (800, 40))),
+            object_id=ObjectID("#text_box_34_horizcenter", "@dark"),
             manager=MANAGER,
             anchors={
                 "left": "left",

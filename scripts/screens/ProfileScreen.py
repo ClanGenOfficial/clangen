@@ -621,7 +621,9 @@ class ProfileScreen(Screens):
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             anchors={"centerx": "centerx"},
         )
-        self.profile_elements["cat_name"].set_relative_position((0, 140))
+        self.profile_elements["cat_name"].set_relative_position(
+            ui_scale_dimensions((0, 140))
+        )
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(

@@ -92,7 +92,7 @@ class Screens:
 
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (118, 30)))
-    scale_rect.topright = (-25, 25)
+    scale_rect.topright = ui_scale_dimensions((-25, 25))
     menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
         "Allegiances",
@@ -106,7 +106,7 @@ class Screens:
 
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
-    scale_rect.topright = (-25, 5)
+    scale_rect.topright = ui_scale_dimensions((-25, 5))
     menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
         "Settings",

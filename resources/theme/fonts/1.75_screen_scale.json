@@ -5,6 +5,12 @@
             "size": "24"
         }
     },
+    "#search_entry_box": {
+        "font": {
+            "name": "noto_sans",
+            "size": "22"
+        }
+    },
     "tool_tip": {
         "misc": {
             "rect_width": "350"

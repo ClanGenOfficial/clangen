@@ -1,5 +1,6 @@
 {
     "@dark": {
+        "prototype": "defaults",
         "colours": {
             "normal_bg": "#655934",
             "hovered_bg": "#1E1809",

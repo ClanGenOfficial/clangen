@@ -2344,7 +2344,6 @@ def shorten_text_to_fit(
 
 def ui_scale(rect):
     # offset can be negative to allow for correct anchoring
-    # rect[0] = round((rect[0] * screen_scale) // 2 * 2)
     rect[0] = round(rect[0] * screen_scale)
     rect[1] = round(rect[1] * screen_scale)
     # if the dimensions are negative, it's dynamically scaled, ignore
