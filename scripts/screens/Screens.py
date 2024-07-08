@@ -44,7 +44,7 @@ class Screens:
     menu_buttons["events_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((246, 60), (82, 30))),
         "Events",
-        get_button_dict(ButtonStyles.MENU_LEFT, ui_scale_dimensions((82, 30))),
+        get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
         manager=MANAGER,
         object_id=ObjectID(
@@ -55,7 +55,7 @@ class Screens:
     menu_buttons["camp_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (58, 30))),
         "Camp",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, ui_scale_dimensions((58, 30))),
+        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),
@@ -65,7 +65,7 @@ class Screens:
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (88, 30))),
         "Cat List",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, ui_scale_dimensions((88, 30))),
+        get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
         visible=False,
         object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
@@ -74,7 +74,7 @@ class Screens:
     menu_buttons["patrol_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (80, 30))),
         "Patrol",
-        get_button_dict(ButtonStyles.MENU_RIGHT, ui_scale_dimensions((80, 30))),
+        get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
         visible=False,
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),

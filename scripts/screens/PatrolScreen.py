@@ -459,7 +459,7 @@ class PatrolScreen(Screens):
 
         # Frames
         self.elements["able_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((40, 460), self.able_box.get_size())),
+            ui_scale(pygame.Rect((40, 460), (270, 201))),
             self.able_box,
             starting_height=1,
             manager=MANAGER,
@@ -467,7 +467,7 @@ class PatrolScreen(Screens):
         self.elements["able_frame"].disable()
 
         self.elements["patrol_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((490, 460), self.patrol_box.get_size())),
+            ui_scale(pygame.Rect((490, 460), (270, 201))),
             self.patrol_box,
             manager=MANAGER,
         )
@@ -649,7 +649,7 @@ class PatrolScreen(Screens):
                 pygame.image.load(
                     "resources/images/patrol_event_frame.png"
                 ).convert_alpha(),
-                (708, 540),
+                ui_scale_dimensions((354, 270)),
             ),
             manager=MANAGER,
         )
@@ -658,7 +658,7 @@ class PatrolScreen(Screens):
             ui_scale(pygame.Rect((90, 456), (420, 204))),
             pygame.transform.scale(
                 pygame.image.load("resources/images/patrol_info.png").convert_alpha(),
-                (840, 408),
+                ui_scale_dimensions((420, 204)),
             ),
             manager=MANAGER,
         )
@@ -668,7 +668,7 @@ class PatrolScreen(Screens):
                 pygame.image.load(
                     "resources/images/patrol_sprite_frame.png"
                 ).convert_alpha(),
-                (640, 640),
+                ui_scale_dimensions((320, 320)),
             ),
             manager=MANAGER,
         )

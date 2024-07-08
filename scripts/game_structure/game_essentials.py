@@ -1,5 +1,6 @@
 import os
 from ast import literal_eval
+from math import floor
 from shutil import move as shutil_move
 
 import pygame
@@ -149,7 +150,7 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": True,
+        "showbounds": False,
         "visualdebugmode": False,
         "showfps": False,
     }
@@ -631,8 +632,7 @@ screen_scale = 1
 
 # nb. forcing screen size WILL make the clangen font crunchy
 # this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
-debug_force_screen_size = None
-# (2560, 1440)
+debug_force_screen_size = (2560, 1440)
 # (2304, 1296)
 # (1920, 1080)
 # (1664, 936)
@@ -696,18 +696,49 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
 
     if screen_scale == 1:
         manager.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 11, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "bold"},
-                {"name": "notosans", "point_size": 15, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "italic"},
-                {"name": "notosans", "point_size": 15, "style": "italic"},
-                {"name": "clangen", "point_size": 18, "style": "regular"},
-            ]
-        )
+    elif screen_scale == 1.25:
+        manager.get_theme().load_theme("resources/theme/fonts/1.25_screen_scale.json")
+    elif screen_scale == 1.5:
+        manager.get_theme().load_theme("resources/theme/fonts/1.5_screen_scale.json")
+    elif screen_scale == 1.75:
+        manager.get_theme().load_theme("resources/theme/fonts/1.75_screen_scale.json")
     elif screen_scale == 2:
         manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
+
+    manager.preload_fonts(
+        [
+            {
+                "name": "notosans",
+                "point_size": floor(11 * screen_scale),
+                "style": "bold",
+            },
+            {
+                "name": "notosans",
+                "point_size": floor(13 * screen_scale),
+                "style": "bold",
+            },
+            {
+                "name": "notosans",
+                "point_size": floor(15 * screen_scale),
+                "style": "bold",
+            },
+            {
+                "name": "notosans",
+                "point_size": floor(13 * screen_scale),
+                "style": "italic",
+            },
+            {
+                "name": "notosans",
+                "point_size": floor(15 * screen_scale),
+                "style": "italic",
+            },
+            {
+                "name": "clangen",
+                "point_size": floor(18 * screen_scale),
+                "style": "regular",
+            },
+        ]
+    )
 
     return manager
 

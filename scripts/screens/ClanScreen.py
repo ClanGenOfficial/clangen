@@ -162,21 +162,21 @@ class ClanScreen(Screens):
         self.warrior_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["warrior den"], (121, 28))),
             "warriors' den",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((121, 28))),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
         self.leader_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["leader den"], (112, 28))),
             "leader's den",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((112, 28))),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
         self.med_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["medicine den"], (151, 28))),
             "medicine cat den",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, ui_scale_dimensions((151, 28))),
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )

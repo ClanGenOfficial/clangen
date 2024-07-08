@@ -9,6 +9,7 @@ TODO: Docs
 import logging
 import re
 from itertools import combinations
+from math import floor
 from random import choice, choices, randint, random, sample, randrange
 from sys import exit as sys_exit
 from typing import List, Tuple
@@ -2308,7 +2309,7 @@ def shorten_text_to_fit(
     # Text box objects are named by their fullscreen text size, so it's easier to do it this way
     if font_size is None:
         font_size = 30
-    font_size = font_size * screen_scale
+    font_size = floor(font_size * screen_scale)
     # Create the font object
     font = pygame.font.Font(font_type, font_size)
 
