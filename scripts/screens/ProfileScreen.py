@@ -445,6 +445,7 @@ class ProfileScreen(Screens):
                 self.display_conditions_page()
 
     def screen_switches(self):
+        super().screen_switches()
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
         # Set up the menu buttons, which appear on all cat profile images.

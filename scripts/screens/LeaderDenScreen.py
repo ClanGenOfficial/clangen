@@ -120,6 +120,7 @@ class LeaderDenScreen(Screens):
         """
         Handle creating new elements when switching to this screen
         """
+        super().screen_switches()
         # just making sure these are set up ahead of time
         if "lead_den_interaction" not in game.clan.clan_settings:
             game.clan.clan_settings["lead_den_interaction"] = False

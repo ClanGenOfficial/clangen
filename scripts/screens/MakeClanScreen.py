@@ -138,6 +138,7 @@ class MakeClanScreen(Screens):
         self.menu_warning = None
 
     def screen_switches(self):
+        super().screen_switches()
         # Reset variables
         self.game_mode = "classic"
         self.clan_name = ""

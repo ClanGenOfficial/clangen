@@ -133,6 +133,7 @@ class SpriteInspectScreen(Screens):
         return super().handle_event(event)
 
     def screen_switches(self):
+        super().screen_switches()
         self.next_cat_button = UIImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
             "",
@@ -211,7 +212,6 @@ class SpriteInspectScreen(Screens):
             self.platform_shown = False
 
         self.cat_setup()
-        return super().screen_switches()
 
     def cat_setup(self):
         """Sets up all the elements related to the cat"""

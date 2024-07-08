@@ -103,6 +103,7 @@ class ChangeGenderScreen(Screens):
                 self.update_selected_cat()
 
     def screen_switches(self):
+        super().screen_switches()
         self.next_cat_button = UIImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
             "",

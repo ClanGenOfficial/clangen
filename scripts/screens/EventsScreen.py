@@ -315,6 +315,7 @@ class EventsScreen(Screens):
                 )
 
     def screen_switches(self):
+        super().screen_switches()
         # On first open, update display events list
         if not self.first_opened:
             self.first_opened = True

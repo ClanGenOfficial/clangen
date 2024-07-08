@@ -202,6 +202,7 @@ class ClearingScreen(Screens):
             self.tab_list = self.hungry_cats
 
     def screen_switches(self):
+        super().screen_switches()
         if game.clan.game_mode == "classic":
             self.change_screen(game.last_screen_forupdate)
             return

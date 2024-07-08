@@ -117,6 +117,7 @@ class MedDenScreen(Screens):
                 self.handle_tab_toggles()
 
     def screen_switches(self):
+        super().screen_switches()
         self.hide_menu_buttons()
         self.back_button = UIImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),

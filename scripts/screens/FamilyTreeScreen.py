@@ -169,6 +169,7 @@ class FamilyTreeScreen(Screens):
 
     def screen_switches(self):
         """Set up things that are always on the page"""
+        super().screen_switches()
 
         self.current_group = None
         self.current_group_name = None

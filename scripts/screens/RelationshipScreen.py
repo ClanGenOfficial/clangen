@@ -206,6 +206,7 @@ class RelationshipScreen(Screens):
                 self.update_cat_page()
 
     def screen_switches(self):
+        super().screen_switches()
 
         self.previous_cat_button = UIImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),

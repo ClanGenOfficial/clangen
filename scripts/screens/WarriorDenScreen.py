@@ -126,6 +126,7 @@ class WarriorDenScreen(Screens):
         """
         Handle everything when it is switched to that screen.
         """
+        super().screen_switches()
         self.hide_menu_buttons()
         self.back_button = UIImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),

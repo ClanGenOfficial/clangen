@@ -193,6 +193,7 @@ class ChooseMateScreen(Screens):
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
+        super().screen_switches()
         self.info = pygame_gui.elements.UITextBox(
             "If a cat has mates, then they will be loyal and only have kittens with their mates"
             " (unless affairs are toggled on.) Potential mates are listed below! The lines "

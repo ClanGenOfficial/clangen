@@ -195,6 +195,7 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        super().screen_switches()
         self.settings_changed = False
 
         self.general_settings_button = UISurfaceImageButton(

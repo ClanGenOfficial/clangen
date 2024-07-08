@@ -120,6 +120,7 @@ class MediationScreen(Screens):
                     self.update_selected_cats()
 
     def screen_switches(self):
+        super().screen_switches()
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:

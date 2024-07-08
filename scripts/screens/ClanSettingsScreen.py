@@ -127,6 +127,7 @@ class ClanSettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        super().screen_switches()
         self.settings_changed = False
         self.show_menu_buttons()
         self.set_disabled_menu_buttons(["stats"])

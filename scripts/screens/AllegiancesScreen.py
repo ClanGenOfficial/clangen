@@ -23,6 +23,7 @@ class AllegiancesScreen(Screens):
         super().on_use()
 
     def screen_switches(self):
+        super().screen_switches()
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
             f"<b>{game.clan.name}Clan Allegiances</b>",

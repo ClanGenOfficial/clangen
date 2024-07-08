@@ -23,6 +23,7 @@ class CeremonyScreen(Screens):
         self.the_cat = None
 
     def screen_switches(self):
+        super().screen_switches()
         self.hide_menu_buttons()
 
         self.the_cat = Cat.all_cats.get(game.switches["cat"])

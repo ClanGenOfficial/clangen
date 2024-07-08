@@ -115,6 +115,7 @@ class ChooseMentorScreen(Screens):
                 self.update_cat_list()
 
     def screen_switches(self):
+        super().screen_switches()
         self.the_cat = Cat.all_cats[game.switches["cat"]]
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 

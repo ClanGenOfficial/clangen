@@ -258,6 +258,7 @@ class PatrolScreen(Screens):
             self.change_screen("camp screen")
 
     def screen_switches(self):
+        super().screen_switches()
         self.set_disabled_menu_buttons(["patrol_screen"])
         self.update_heading_text(f"{game.clan.name}Clan")
         self.show_menu_buttons()

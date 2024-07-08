@@ -17,7 +17,6 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_dimensions,
 )
 from .Screens import Screens
 
@@ -161,6 +160,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
+        super().screen_switches()
 
         self.info = pygame_gui.elements.UITextBox(
             "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "

@@ -328,7 +328,7 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
-        pass
+        self.set_bg("default")
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.

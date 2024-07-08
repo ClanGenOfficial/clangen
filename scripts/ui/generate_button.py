@@ -3,6 +3,7 @@ from typing import Tuple
 
 import pygame
 
+from scripts.game_structure.game_essentials import screen_scale
 from scripts.utility import ui_scale_dimensions
 
 
@@ -145,9 +146,13 @@ buttonstyles["menu_right"] = {
 }
 
 
-def generate_button(
-    base: pygame.Surface, unscaled_dimensions: Tuple[int, int], scale=1, special=None
-):
+def generate_button(base: pygame.Surface, unscaled_dimensions: Tuple[int, int]):
+    """
+    Generate a surface of arbitrary length from a given input surface
+    :param base: the Surface to generate from
+    :param unscaled_dimensions: the UNSCALED dimensions of the final button
+    :return: A surface of the correct dimensions, scaled automatically
+    """
     unscaled_dimensions = ui_scale_dimensions(unscaled_dimensions)
     height = base.height
     vertical_scale = unscaled_dimensions[1] / height
@@ -205,44 +210,32 @@ def generate_button(
             )
         )
 
-    if scale != 1:
+    if screen_scale != 1:
         surface = pygame.transform.scale(
-            surface, (surface.get_width() * scale, surface.get_height() * scale)
+            surface,
+            (surface.get_width() * screen_scale, surface.get_height() * screen_scale),
         )
-
-    if special is not None and "convert_alpha" in special:
-        surface.set_colorkey("#000000")
     return surface
 
 
 def get_button_dict(style: ButtonStyles, unscaled_dimensions: Tuple[int, int]):
+    """
+    Return a dictionary of surfaces suitable for passing into a UISurfaceImageButton.
+    :param style: The ButtonStyles style required for the button
+    :param unscaled_dimensions: The UNSCALED dimensions of the button
+    :return: A dictionary of surfaces
+    """
     return {
         "normal": generate_button(
-            buttonstyles[style.value]["normal"],
-            unscaled_dimensions,
-            special=buttonstyles[style.value]["special"].keys()
-            if "special" in buttonstyles[style.value]
-            else None,
+            buttonstyles[style.value]["normal"], unscaled_dimensions
         ),
         "hovered": generate_button(
-            buttonstyles[style.value]["hovered"],
-            unscaled_dimensions,
-            special=buttonstyles[style.value]["special"].keys()
-            if "special" in buttonstyles[style.value]
-            else None,
+            buttonstyles[style.value]["hovered"], unscaled_dimensions
         ),
         "selected": generate_button(
-            buttonstyles[style.value]["selected"],
-            unscaled_dimensions,
-            special=buttonstyles[style.value]["special"].keys()
-            if "special" in buttonstyles[style.value]
-            else None,
+            buttonstyles[style.value]["selected"], unscaled_dimensions
         ),
         "disabled": generate_button(
-            buttonstyles[style.value]["disabled"],
-            unscaled_dimensions,
-            special=buttonstyles[style.value]["special"].keys()
-            if "special" in buttonstyles[style.value]
-            else None,
+            buttonstyles[style.value]["disabled"], unscaled_dimensions
         ),
     }
