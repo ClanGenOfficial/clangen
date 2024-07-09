@@ -189,9 +189,12 @@ class Screens():
         game.switches['cur_screen'] = new_screen
         game.switch_screens = True
         game.rpc.update_rpc.set()
-        if game.clan.clan_settings["moons and seasons"]:
-            shift = 155
-            if new_screen == 'events screen':
+        if game.clan:
+            if game.clan.clan_settings["moons and seasons"]:
+                shift = 155
+                if new_screen == 'events screen':
+                    shift = 0
+            else:
                 shift = 0
         else:
             shift = 0
