@@ -2363,8 +2363,8 @@ def ui_scale_value(dim: int):
 
 def ui_scale_blit(coords: Tuple[int, int]):
     """Used to scale where to blit an item, NOT the size of it (use ui_scale_dimensions or ui_scale for that)"""
-    return round(
-        coords[0] * screen_scale + offset[0], coords[1] * screen_scale + offset[1]
+    return floor(coords[0] * screen_scale + offset[0]), floor(
+        coords[1] * screen_scale + offset[1]
     )
 
 

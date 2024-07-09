@@ -2,24 +2,24 @@ import logging
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import (
     game,
     screen,
-    screen_x,
-    screen_y,
     MANAGER,
-    offset,
 )
-from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import DeleteCheck
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-)  # pylint: disable=redefined-builtin
+    ui_scale_blit,
+)
 from .Screens import Screens
+from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
 
@@ -123,7 +123,7 @@ class SwitchClanScreen(Screens):
         self.current_clan = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((0, 100), (600, 30))),
-            object_id="#medium_text_xcenter",
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             anchors={"centerx": "centerx"},
         )
@@ -145,10 +145,13 @@ class SwitchClanScreen(Screens):
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
             self.clan_buttons[-1].append(
-                pygame_gui.elements.UIButton(
+                UISurfaceImageButton(
                     ui_scale(pygame.Rect((0, y_pos), (200, 40))),
                     clan + "Clan",
-                    object_id="#text_box_34_horizcenter_light",
+                    get_button_dict(ButtonStyles.DROPDOWN, (200, 40)),
+                    object_id=ObjectID(
+                        "#text_box_34_horizcenter_light", "@buttonstyles_dropdown"
+                    ),
                     manager=MANAGER,
                     anchors={"centerx": "centerx"},
                 )
@@ -187,7 +190,7 @@ class SwitchClanScreen(Screens):
         self.page_number = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((0, 540), (110, 35))),
-            object_id="#medium_text_xcenter",
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             anchors={
                 "left": "left",
@@ -239,5 +242,5 @@ class SwitchClanScreen(Screens):
         super().on_use()
         screen.blit(
             self.screen,
-            (580 / 1600 * screen_x + offset[0], 302 / 1400 * screen_y + offset[1]),
+            ui_scale_blit((290, 151)),
         )

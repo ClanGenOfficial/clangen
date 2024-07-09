@@ -145,7 +145,10 @@ class SettingsScreen(Screens):
                     self.settings_changed = True
                     self.update_save_button()
 
-                    if event.ui_element is self.checkboxes["dark mode"]:
+                    if (
+                        self.sub_menu is "general"
+                        and event.ui_element is self.checkboxes["dark mode"]
+                    ):
                         if (
                             "@unchecked_checkbox"
                             in self.checkboxes["dark mode"].get_object_ids()
