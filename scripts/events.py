@@ -1208,7 +1208,7 @@ class Events:
 
         self.invite_new_cats(cat)
         self.other_interactions(cat)
-        # self.gain_accessories(cat)
+        self.gain_accessories(cat)
 
         # switches between the two death handles
         if random.getrandbits(1):
