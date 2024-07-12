@@ -671,7 +671,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_medcat_mentors
 
-        elif self.the_cat.status.is_mediator_app()":
+        elif self.the_cat.status.is_mediator_app():
             for cat in potential_mediator_mentors:
                 # Assume cat is valid initially
                 is_valid = True
