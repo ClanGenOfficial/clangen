@@ -1589,9 +1589,8 @@ class Cat:
             else:
                 while (
                     other_cat == self.ID
-                    and len(all_cats) > 1
                     or (all_cats.get(other_cat).dead and dead_chance != 1)
-                ):
+                ) and len(all_cats) > 1:
                     other_cat = choice(list(all_cats.keys()))
                     i += 1
                     if i > 100:
@@ -1658,7 +1657,10 @@ class Cat:
                 else:
                     pass
             else:
-                while other_cat == self.ID and len(all_cats) > 1:
+                while (
+                    other_cat == self.ID
+                    or (all_cats.get(other_cat).dead and dead_chance != 1)
+                ) and len(all_cats) > 1:
                     other_cat = choice(list(all_cats.keys()))
                     i += 1
                     if i > 100:
@@ -1729,10 +1731,8 @@ class Cat:
             else:
                 while (
                     other_cat == self.ID
-                    and len(all_cats) > 1
-                    or (other_cat not in self.relationships)
-                ):
-                    # or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):
+                    or (all_cats.get(other_cat).dead and dead_chance != 1)
+                ) and len(all_cats) > 1:
                     other_cat = choice(list(all_cats.keys()))
                     i += 1
                     if i > 100:
