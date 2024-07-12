@@ -1015,7 +1015,7 @@
                 ]
             },
             {
-                "text": "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way.",
+                "text": "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide-eyed and a little scared, in a fun way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1131,7 +1131,7 @@
                 ]
             },
             {
-                "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
+                "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["very_small"],

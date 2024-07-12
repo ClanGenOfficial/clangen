@@ -597,7 +597,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c is trailing behind p_l when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -769,7 +769,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c is trailing behind p_l when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -941,7 +941,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below them. r_c looks around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1082,7 +1082,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of boulders {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure their mental map is up to date.",
+                "text": "r_c heads off to map out a field of boulders {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure their mental map is up to date.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1145,7 +1145,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of boulders {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a field of boulders {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1208,7 +1208,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of boulders {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a field of boulders {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1513,7 +1513,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
+        "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques and perhaps doing some training with them?",
         "decline_text": "r_c declines gently, explaining that they have too much work to do.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1603,7 +1603,7 @@
                 ]
             },
             {
-                "text": "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse.",
+                "text": "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early with a diplomatic and completely made-up excuse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

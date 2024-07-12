@@ -5484,7 +5484,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort impacts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
+                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort imparts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["ragwort"],
@@ -5656,7 +5656,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Confidently gathering them and prancing back to camp, app1 is then informed that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} gathered cranberries, not raspberries, and this isn't going to help the Clan's elders with their problems.",
+                "text": "app1 confidently gathers them and prances back to camp, where {PRONOUN/app1/subject} {VERB/app1/are/is} then informed that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} gathered cranberries, not raspberries, and this isn't going to help the Clan's elders with their problems.",
                 "exp": 0,
                 "weight": 20
             },

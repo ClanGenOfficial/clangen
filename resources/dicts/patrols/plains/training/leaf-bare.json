@@ -14,7 +14,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1"],
-        "intro_text": "Many seasons ago, p_l begins, there was born a powerful, Stars-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
+        "intro_text": "Many seasons ago, p_l begins, a powerful, Stars-gifted cat was born, one coveted by the Clans around them. As an apprentice, they could not keep the peace, as all demanded their time and skill.",
         "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
         "success_outcomes": [
                 {
