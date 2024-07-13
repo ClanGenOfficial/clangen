@@ -4275,7 +4275,7 @@
                 "path": "resources/images/buttons/vertical_slider_down_hover.png"
             },
             "disabled_image": {
-                "path": "resources/images/buttons/vertical_slider_down_unavailable.png"
+                "path": "resources/images/buttons/vertical_slider_down_hover.png"
             }
         }
     },
@@ -4291,7 +4291,7 @@
                 "path": "resources/images/buttons/vertical_slider_up_hover.png"
             },
             "disabled_image": {
-                "path": "resources/images/buttons/vertical_slider_up_unavailable.png"
+                "path": "resources/images/buttons/vertical_slider_up_hover.png"
             }
         }
     },

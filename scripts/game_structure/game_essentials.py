@@ -138,6 +138,7 @@ class Game:
         "fps": 30,
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
+        "saved_scroll_positions": {},
     }
     all_screens = {}
     cur_events = {}
