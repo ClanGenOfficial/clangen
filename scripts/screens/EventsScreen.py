@@ -1,3 +1,5 @@
+from math import floor
+
 import pygame
 import pygame_gui
 
@@ -6,11 +8,24 @@ from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UIModifiedScrollingContainer, IDImageButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UIModifiedScrollingContainer,
+    IDImageButton,
+    UISurfaceImageButton,
+)
 from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
-from scripts.utility import scale, clan_symbol_sprite, get_text_box_theme, shorten_text_to_fit, \
-    get_living_clan_cat_count
+from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.utility import (
+    ui_scale,
+    clan_symbol_sprite,
+    get_text_box_theme,
+    shorten_text_to_fit,
+    get_living_clan_cat_count,
+    ui_scale_dimensions,
+    ui_scale_value,
+)
 
 
 class EventsScreen(Screens):
@@ -28,7 +43,15 @@ class EventsScreen(Screens):
         "<center>See which events are currently happening in the Clan.</center>"
     )
     display_events = []
-    tabs = ["all", "ceremony", "birth_death", "relationship", "health", "other_clans", "misc"]
+    tabs = [
+        "all",
+        "ceremony",
+        "birth_death",
+        "relationship",
+        "health",
+        "other_clans",
+        "misc",
+    ]
 
     def __init__(self, name):
         super().__init__(name)
@@ -79,7 +102,9 @@ class EventsScreen(Screens):
                         self.alert[ele].set_relative_position((x_pos, y_pos))
 
         # ON START BUTTON PRESS
-        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
+        elif (
+            event.type == pygame_gui.UI_BUTTON_START_PRESS
+        ):  # this happens on start press to prevent alert movement
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele, val in self.event_buttons.items():
@@ -88,7 +113,9 @@ class EventsScreen(Screens):
                         break
 
         # ON FULL BUTTON PRESS
-        elif event.type == pygame_gui.UI_BUTTON_PRESSED:  # everything else on button press to prevent blinking
+        elif (
+            event.type == pygame_gui.UI_BUTTON_PRESSED
+        ):  # everything else on button press to prevent blinking
             element = event.ui_element
             if element == self.timeskip_button:
                 self.events_thread = self.loading_screen_start_work(
@@ -126,8 +153,8 @@ class EventsScreen(Screens):
         """
         if self.event_display.vert_scroll_bar:
             game.switches["saved_scroll_positions"][self.current_display] = (
-                    self.event_display.vert_scroll_bar.scroll_position
-                    / self.event_display.vert_scroll_bar.scrollable_height
+                self.event_display.vert_scroll_bar.scroll_position
+                / self.event_display.vert_scroll_bar.scrollable_height
             )
 
     def handle_tab_select(self, event):
@@ -199,15 +226,17 @@ class EventsScreen(Screens):
             self.display_events = self.all_events
 
         self.event_screen_container = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((0, 0), (1600, 1400))),
+            ui_scale(pygame.Rect((0, 0), (800, 700))),
             object_id="#event_screen_container",
             starting_height=1,
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         self.clan_info["symbol"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((455, 210), (200, 200))),
-            pygame.transform.scale(clan_symbol_sprite(game.clan), (200, 200)),
+            ui_scale(pygame.Rect((227, 105), (100, 100))),
+            pygame.transform.scale(
+                clan_symbol_sprite(game.clan), ui_scale_dimensions((100, 100))
+            ),
             object_id=f"clan_symbol",
             starting_height=1,
             container=self.event_screen_container,
@@ -216,7 +245,7 @@ class EventsScreen(Screens):
 
         self.clan_info["heading"] = pygame_gui.elements.UITextBox(
             "Timeskip to progress your Clan's life.",
-            scale(pygame.Rect((680, 310), (500, -1))),
+            ui_scale(pygame.Rect((340, 155), (250, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             starting_height=1,
             container=self.event_screen_container,
@@ -225,7 +254,7 @@ class EventsScreen(Screens):
 
         self.clan_info["season"] = pygame_gui.elements.UITextBox(
             f"Current season: {game.clan.current_season}",
-            scale(pygame.Rect((680, 205), (1200, 80))),
+            ui_scale(pygame.Rect((340, 102), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
             container=self.event_screen_container,
@@ -233,7 +262,7 @@ class EventsScreen(Screens):
         )
         self.clan_info["age"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((680, 245), (1200, 80))),
+            ui_scale(pygame.Rect((340, 122), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
             container=self.event_screen_container,
@@ -246,24 +275,25 @@ class EventsScreen(Screens):
         if game.clan.age != 1:
             self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
 
-        self.timeskip_button = UIImageButton(
-            scale(pygame.Rect((620, 436), (360, 60))),
-            "",
-            object_id="#timeskip_button",
+        self.timeskip_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((310, 218), (180, 30))),
+            "Timeskip One Moon",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (180, 30)),
+            object_id="@buttonstyles_rounded_rect",
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
         )
 
         self.full_event_display_container = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((90, 532), (1400, 1400))),
+            ui_scale(pygame.Rect((45, 266), (700, 700))),
             object_id="#event_display_container",
             starting_height=1,
             container=self.event_screen_container,
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.events_frame = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((322, 0), (1068, 740))),
+            ui_scale(pygame.Rect((161, 0), (534, 370))),
             image_cache.load_image(
                 "resources/images/event_page_frame.png"
             ).convert_alpha(),
@@ -276,27 +306,28 @@ class EventsScreen(Screens):
         y_pos = 0
         for event_type in self.tabs:
             self.event_buttons[f"{event_type}"] = UIImageButton(
-                scale(pygame.Rect((30, 38 + y_pos), (300, 60))),
+                ui_scale(pygame.Rect((15, 19 + y_pos), (150, 30))),
                 "",
                 object_id=f"#{event_type}_events_button",
                 starting_height=1,
                 container=self.full_event_display_container,
-                manager=MANAGER
+                manager=MANAGER,
             )
 
             if event_type:
                 self.alert[f"{event_type}"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((20, 48 + y_pos), (8, 44))),
+                    ui_scale(pygame.Rect((10, 24 + y_pos), (4, 22))),
                     pygame.transform.scale(
-                        image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
+                        image_cache.load_image("resources/images/alert_mark.png"),
+                        ui_scale_dimensions((4, 22)),
                     ),
                     container=self.full_event_display_container,
                     object_id=f"alert_mark_{event_type}",
                     manager=MANAGER,
-                    visible=False
+                    visible=False,
                 )
 
-            y_pos += 100
+            y_pos += 50
 
         self.event_buttons[self.current_display].disable()
 
@@ -317,11 +348,11 @@ class EventsScreen(Screens):
             self.event_display.kill()
 
         self.event_display = UIModifiedScrollingContainer(
-            scale(pygame.Rect((432, 552), (1080, 700))),
+            ui_scale(pygame.Rect((216, 276), (540, 350))),
             object_id="#event_display",
             starting_height=3,
             manager=MANAGER,
-            allow_scroll_y=True
+            allow_scroll_y=True,
         )
 
     def make_cat_buttons(self, button_pressed):
@@ -342,35 +373,27 @@ class EventsScreen(Screens):
         if self.involved_cat_container:
             self.involved_cat_container.kill()
 
-        x_pos = 655
-        if game.settings["fullscreen"]:
-            y_pos = button_pressed.get_relative_rect()[1]
-        else:
-            y_pos = button_pressed.get_relative_rect()[1] * 2
+        x_pos = 327
+        y_pos = button_pressed.get_relative_rect()[1]
 
         self.involved_cat_container = UIModifiedScrollingContainer(
-            scale(pygame.Rect((20, y_pos), (890, 108))),
+            ui_scale(pygame.Rect((10, y_pos), (445, 54))),
             starting_height=3,
             object_id="#involved_cat_container",
             container=self.event_display,
             manager=MANAGER,
-            allow_scroll_x=True
+            allow_scroll_x=True,
         )
-
-        if game.settings["fullscreen"]:
-            fullscreen_modifier = 0
-        else:
-            fullscreen_modifier = 1
 
         for i, cat_id in enumerate(button_pressed.ids):
             cat_ob = Cat.fetch_cat(cat_id)
             if cat_ob:
                 # Shorten name if needed
                 name = str(cat_ob.name)
-                short_name = shorten_text_to_fit(name, 195, 26)
+                short_name = shorten_text_to_fit(name, 195, 13)
 
                 self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
-                    scale(pygame.Rect((x_pos, 4), (232, 60))),
+                    ui_scale(pygame.Rect((x_pos, 2), (116, 30))),
                     text=short_name,
                     ids=cat_id,
                     container=self.involved_cat_container,
@@ -379,14 +402,18 @@ class EventsScreen(Screens):
                     manager=MANAGER,
                 )
 
-                x_pos += -255
+                x_pos += -127
                 if x_pos < 0:
-                    x_pos += 54 * fullscreen_modifier
+                    x_pos += 27
                     if i > 2:
-                        x_pos += 73 * fullscreen_modifier
+                        x_pos += 36
 
         self.involved_cat_container.set_view_container_dimensions(
-            (self.involved_cat_container.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
+            (
+                self.involved_cat_container.get_relative_rect()[2],
+                self.event_display.get_relative_rect()[3],
+            )
+        )
 
     def exit_screen(self):
         self.event_display.kill()  # event display isn't put in the screen container due to lag issues
@@ -409,15 +436,11 @@ class EventsScreen(Screens):
         self.relation_events = [
             x for x in game.cur_events_list if "relation" in x.types
         ]
-        self.health_events = [
-            x for x in game.cur_events_list if "health" in x.types
-        ]
+        self.health_events = [x for x in game.cur_events_list if "health" in x.types]
         self.other_clans_events = [
             x for x in game.cur_events_list if "other_clans" in x.types
         ]
-        self.misc_events = [
-            x for x in game.cur_events_list if "misc" in x.types
-        ]
+        self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
 
     def update_events_display(self):
         """
@@ -455,23 +478,29 @@ class EventsScreen(Screens):
         for i, event_object in enumerate(self.display_events):
             # checking that text is a string
             if not isinstance(event_object.text, str):
-                print(f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}")
+                print(
+                    f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}"
+                )
                 continue
 
             # TEXT BOX
             self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
                 event_object.text,
-                scale(pygame.Rect((0, y_pos), (1018, -1))),
+                ui_scale(pygame.Rect((0, y_pos), (509, -1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft"),
                 starting_height=2,
                 container=self.event_display,
-                manager=MANAGER
+                manager=MANAGER,
             )
 
             if game.settings["fullscreen"]:
-                text_box_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3]
+                text_box_len = self.event_display_elements[
+                    f"event{i}"
+                ].get_relative_rect()[3]
             else:
-                text_box_len = self.event_display_elements[f"event{i}"].get_relative_rect()[3] * 2
+                text_box_len = (
+                    self.event_display_elements[f"event{i}"].get_relative_rect()[3] * 2
+                )
 
             # SHADING
             if i % 2 == 0:
@@ -482,36 +511,38 @@ class EventsScreen(Screens):
                     image_path += ".png"
 
                 if event_object.cats_involved:
-                    y_len = text_box_len + 125
+                    y_len = text_box_len + 72
                 else:
-                    y_len = text_box_len + 45
+                    y_len = text_box_len + 22
 
-                self.event_display_elements[f"shading{i}"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((0, y_pos), (1028, y_len))),
+                self.event_display_elements[
+                    f"shading{i}"
+                ] = pygame_gui.elements.UIImage(
+                    ui_scale(pygame.Rect((0, y_pos), (514, y_len))),
                     image_cache.load_image(image_path),
                     starting_height=1,
                     object_id=f"shading{i}",
                     container=self.event_display,
-                    manager=MANAGER
+                    manager=MANAGER,
                 )
                 self.event_display_elements[f"shading{i}"].disable()
 
             if event_object.cats_involved:
                 # INVOLVED CAT BUTTON
-                y_pos += text_box_len + 15
+                y_pos += text_box_len + 7
 
                 self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
-                    scale(pygame.Rect((928, y_pos), (68, 68))),
+                    ui_scale(pygame.Rect((464, y_pos), (34, 34))),
                     ids=event_object.cats_involved,
                     layer_starting_height=3,
                     object_id="#events_cat_button",
                     container=self.event_display,
-                    manager=MANAGER
+                    manager=MANAGER,
                 )
 
-                y_pos += 110
+                y_pos += 55
             else:
-                y_pos += text_box_len + 45
+                y_pos += text_box_len + 22
 
         # this HAS TO UPDATE before saved scroll position can be set
         self.event_display.scrollable_container.update(1)
@@ -519,7 +550,11 @@ class EventsScreen(Screens):
         # don't ask me why we have to redefine these dimensions, we just do
         # otherwise the scroll position save will break
         self.event_display.set_dimensions(
-            (self.event_display.get_relative_rect()[2], self.event_display.get_relative_rect()[3]))
+            (
+                self.event_display.get_relative_rect()[2],
+                self.event_display.get_relative_rect()[3],
+            )
+        )
 
         # set saved scroll position
         if game.switches["saved_scroll_positions"].get(self.current_display):
@@ -537,6 +572,7 @@ class EventsScreen(Screens):
         self.event_buttons[self.current_display].disable()
 
     def on_use(self):
+        super().on_use()
         self.loading_screen_on_use(self.events_thread, self.timeskip_done)
         pass
 
