@@ -6,6 +6,7 @@
             "disabled_bg": "#5C5850",
             "selected_bg": "#655934",
             "active_bg": "#655934",
+            "dark_bg": "#B19D74",
             "normal_text": "#000000",
             "hovered_text": "#000000",
             "selected_text": "#000000",
@@ -4478,6 +4479,15 @@
             "disabled_image": {
                 "path": "resources/images/buttons/filters_tab_hover.png"
             }
+        }
+    },
+    "event_panel": {
+        "colours": {
+            "dark_bg": "#c8bda5"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
         }
     }
 }

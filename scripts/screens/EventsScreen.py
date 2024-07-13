@@ -2,6 +2,7 @@ from math import floor
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
@@ -219,6 +220,7 @@ class EventsScreen(Screens):
         self.update_events_display()
 
     def screen_switches(self):
+        super().screen_switches()
         # On first open, update display events list
         if not self.first_opened:
             self.first_opened = True
@@ -348,8 +350,7 @@ class EventsScreen(Screens):
             self.event_display.kill()
 
         self.event_display = UIModifiedScrollingContainer(
-            ui_scale(pygame.Rect((216, 276), (540, 350))),
-            object_id="#event_display",
+            ui_scale(pygame.Rect((211, 276), (540, 350))),
             starting_height=3,
             manager=MANAGER,
             allow_scroll_y=True,
@@ -475,74 +476,114 @@ class EventsScreen(Screens):
 
         y_pos = 0
 
-        for i, event_object in enumerate(self.display_events):
-            # checking that text is a string
+        for event_object in self.display_events:
             if not isinstance(event_object.text, str):
                 print(
                     f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}"
                 )
+                self.display_events.remove(event_object)
                 continue
 
-            # TEXT BOX
-            self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
-                event_object.text,
-                ui_scale(pygame.Rect((0, y_pos), (509, -1))),
-                object_id=get_text_box_theme("#text_box_30_horizleft"),
-                starting_height=2,
-                container=self.event_display,
-                manager=MANAGER,
+        default_rect = ui_scale(
+            pygame.Rect(
+                (5, 0),
+                (
+                    self.event_display.get_relative_rect()[2]
+                    - 2
+                    - self.event_display.scroll_bar_width,
+                    100,
+                ),
             )
-
-            if game.settings["fullscreen"]:
-                text_box_len = self.event_display_elements[
-                    f"event{i}"
-                ].get_relative_rect()[3]
-            else:
-                text_box_len = (
-                    self.event_display_elements[f"event{i}"].get_relative_rect()[3] * 2
-                )
-
-            # SHADING
+        )
+        for i, event_object in enumerate(self.display_events):
+            self.event_display_elements[f"container{i}"] = pygame_gui.elements.UIPanel(
+                default_rect,
+                1,
+                MANAGER,
+                container=self.event_display,
+                element_id="event_panel",
+                object_id="#dark" if game.settings["dark mode"] else None,
+                margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
+                anchors={"top_target": self.event_display_elements[f"container{i-1}"]}
+                if i > 0
+                else {"top": "top"},
+            )
             if i % 2 == 0:
-                image_path = "resources/images/shading"
-                if game.settings["dark mode"]:
-                    image_path += "_dark.png"
-                else:
-                    image_path += ".png"
-
-                if event_object.cats_involved:
-                    y_len = text_box_len + 72
-                else:
-                    y_len = text_box_len + 22
-
-                self.event_display_elements[
-                    f"shading{i}"
-                ] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((0, y_pos), (514, y_len))),
-                    image_cache.load_image(image_path),
-                    starting_height=1,
-                    object_id=f"shading{i}",
-                    container=self.event_display,
-                    manager=MANAGER,
+                self.event_display_elements[f"container{i}"].background_colour = (
+                    pygame.Color(87, 76, 55)
+                    if game.settings["dark mode"]
+                    else pygame.Color(167, 148, 111)
                 )
-                self.event_display_elements[f"shading{i}"].disable()
+                self.event_display_elements[f"container{i}"].rebuild()
 
-            if event_object.cats_involved:
-                # INVOLVED CAT BUTTON
-                y_pos += text_box_len + 7
+        # for i, event_object in enumerate(self.display_events):
+        #     # TEXT BOX
+        #     self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
+        #         event_object.text,
+        #         ui_scale(pygame.Rect((0, 0), (509, -1))),
+        #         object_id=get_text_box_theme("#text_box_30_horizleft"),
+        #         starting_height=2,
+        #         parent_element=self.event_display_elements[f"container{i}"],
+        #         container=self.event_display_elements[f"container{i}"],
+        #         manager=MANAGER,
+        #         anchors={
+        #             "left": "left",
+        #             "right": "right",
+        #             "top": "top",
+        #             "bottom": "bottom",
+        #         },
+        #     )
 
-                self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
-                    ui_scale(pygame.Rect((464, y_pos), (34, 34))),
-                    ids=event_object.cats_involved,
-                    layer_starting_height=3,
-                    object_id="#events_cat_button",
-                    container=self.event_display,
-                    manager=MANAGER,
-                )
-
-                y_pos += 55
-            else:
-                y_pos += text_box_len + 22
+        # if game.settings["fullscreen"]:
+        #     text_box_len = self.event_display_elements[
+        #         f"event{i}"
+        #     ].get_relative_rect()[3]
+        # else:
+        #     text_box_len = (
+        #         self.event_display_elements[f"event{i}"].get_relative_rect()[3] * 2
+        #     )
+        #
+        # # SHADING
+        # if i % 2 == 0:
+        #     image_path = "resources/images/shading"
+        #     if game.settings["dark mode"]:
+        #         image_path += "_dark.png"
+        #     else:
+        #         image_path += ".png"
+        #
+        #     if event_object.cats_involved:
+        #         y_len = text_box_len + 72
+        #     else:
+        #         y_len = text_box_len + 22
+        #
+        #     self.event_display_elements[
+        #         f"shading{i}"
+        #     ] = pygame_gui.elements.UIImage(
+        #         ui_scale(pygame.Rect((0, y_pos), (514, y_len))),
+        #         image_cache.load_image(image_path),
+        #         starting_height=1,
+        #         object_id=f"shading{i}",
+        #         container=self.event_display,
+        #         manager=MANAGER,
+        #     )
+        #     self.event_display_elements[f"shading{i}"].disable()
+        #
+        # if event_object.cats_involved:
+        #     # INVOLVED CAT BUTTON
+        #     y_pos += text_box_len + 7
+        #
+        #     self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
+        #         ui_scale(pygame.Rect((464, y_pos), (34, 34))),
+        #         ids=event_object.cats_involved,
+        #         layer_starting_height=3,
+        #         object_id="#events_cat_button",
+        #         container=self.event_display,
+        #         manager=MANAGER,
+        #     )
+        #
+        #     y_pos += 55
+        # else:
+        #     y_pos += text_box_len + 22
 
         # this HAS TO UPDATE before saved scroll position can be set
         self.event_display.scrollable_container.update(1)
