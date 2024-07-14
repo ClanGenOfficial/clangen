@@ -28,11 +28,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
     screen,
-    screen_x,
-    screen_y,
     MANAGER,
-    offset,
-    screen_scale,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
@@ -363,7 +359,7 @@ class StartScreen(Screens):
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.",
             ui_scale(pygame.Rect((0, 600), (800, 40))),
-            object_id=ObjectID("#text_box_34_horizcenter", "@dark"),
+            object_id=ObjectID("#text_box_34_horizcenter", "#dark"),
             manager=MANAGER,
             anchors={
                 "left": "left",
