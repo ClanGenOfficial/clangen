@@ -213,6 +213,8 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         visible: int = 1,
         allow_scroll_x: bool = False,
         allow_scroll_y: bool = False,
+        should_grow_automatically=True,
+        anchors=None,
     ):
 
         super().__init__(
@@ -224,7 +226,8 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
             visible=visible,
             allow_scroll_x=allow_scroll_x,
             allow_scroll_y=allow_scroll_y,
-            should_grow_automatically=True,
+            should_grow_automatically=should_grow_automatically,
+            anchors=anchors,
         )
 
         if self.allow_scroll_y:
@@ -284,7 +287,7 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
                     "top": "bottom",
                     "bottom": "bottom",
                 },
-                visible=False,
+                visible=True,
             )
             self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
             self.horiz_scroll_bar.set_relative_position((0, 0))
@@ -762,6 +765,8 @@ class IDImageButton(UIImageButton):
         container=None,
         manager=None,
         layer_starting_height=1,
+        anchors=None,
+        parent_element=None,
     ):
 
         if ids:
@@ -776,6 +781,8 @@ class IDImageButton(UIImageButton):
             container=container,
             starting_height=layer_starting_height,
             manager=manager,
+            anchors=anchors,
+            parent_element=parent_element,
         )
         # This button will auto-disable if no ids are entered.
         if not self.ids:
