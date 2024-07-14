@@ -430,58 +430,58 @@ class EventsScreen(Screens):
         )
         del involved_cat_rect
 
-        # a helper function to pick the right anchors for the cat profiles
-        def determine_anchors(idx):
-            if scrollbar_needed:
-                return (
-                    {
-                        "left_target": self.cat_profile_buttons[
-                            f"profile_button{idx - 1}"
-                        ]
-                    }
-                    if idx > 0
-                    else {"left": "left"}
-                )
-            else:
-                return (
-                    {
-                        "left_target": self.cat_profile_buttons[
-                            f"profile_button{idx - 1}"
-                        ]
-                    }
-                    if idx > 0
-                    else {"right": "right"}
-                )
-
-        # a helper function to create the right rect for the cat profiles
-        def create_rect(idx):
-            rect = ui_scale(pygame.Rect((0 if idx == 0 else 5, 0), (120, 34)))
-            if scrollbar_needed:
-                rect.topleft = ui_scale_dimensions((0 if idx == 0 else 5, 0))
-            else:
-                rect.topright = ui_scale_dimensions((0 if idx == 0 else -125, 0))
-            return rect
-
         # make the cat profiles
-        for i, cat_id in enumerate(
-            button_pressed.ids if scrollbar_needed else reversed(button_pressed.ids)
-        ):
-            cat_ob = Cat.fetch_cat(cat_id)
-            if cat_ob:
-                # Shorten name if needed
-                name = str(cat_ob.name)
-                short_name = shorten_text_to_fit(name, 195, 13)
+        if scrollbar_needed:
+            for i, cat_id in enumerate(button_pressed.ids):
+                rect = ui_scale(pygame.Rect((0 if i == 0 else 5, 0), (120, 34)))
+                cat_ob = Cat.fetch_cat(cat_id)
+                if cat_ob:
+                    # Shorten name if needed
+                    name = str(cat_ob.name)
+                    short_name = shorten_text_to_fit(name, 195, 13)
 
-                self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
-                    create_rect(i),
-                    text=short_name,
-                    ids=cat_id,
-                    container=self.involved_cat_container,
-                    object_id="#events_cat_profile_button",
-                    layer_starting_height=1,
-                    manager=MANAGER,
-                    anchors=determine_anchors(i),
-                )
+                    self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
+                        rect,
+                        text=short_name,
+                        ids=cat_id,
+                        container=self.involved_cat_container,
+                        object_id="#events_cat_profile_button",
+                        layer_starting_height=1,
+                        manager=MANAGER,
+                        anchors={
+                            "left_target": self.cat_profile_buttons[
+                                f"profile_button{i - 1}"
+                            ]
+                        }
+                        if i > 0
+                        else {"left": "left"},
+                    )
+        else:
+            rect = ui_scale(pygame.Rect((0, 0), (120, 34)))
+            for i, cat_id in enumerate(reversed(button_pressed.ids)):
+                rect.topright = ui_scale_dimensions((0 if i == 0 else -125, 0))
+                cat_ob = Cat.fetch_cat(cat_id)
+                if cat_ob:
+                    # Shorten name if needed
+                    name = str(cat_ob.name)
+                    short_name = shorten_text_to_fit(name, 195, 13)
+
+                    self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
+                        rect,
+                        text=short_name,
+                        ids=cat_id,
+                        container=self.involved_cat_container,
+                        object_id="#events_cat_profile_button",
+                        layer_starting_height=1,
+                        manager=MANAGER,
+                        anchors={
+                            "left_target": self.cat_profile_buttons[
+                                f"profile_button{i - 1}"
+                            ]
+                        }
+                        if i > 0
+                        else {"right": "right"},
+                    )
 
         self.involved_cat_container.set_view_container_dimensions(
             (
