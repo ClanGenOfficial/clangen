@@ -1,8 +1,5 @@
-from math import floor
-
 import pygame
 import pygame_gui
-from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
@@ -360,6 +357,9 @@ class EventsScreen(Screens):
         # How much to increase the panel box size by in order to fit the catbuttons
         size_increase = 26
 
+        # whether or not we need a scrollbar
+        scrollbar_needed = len(button_pressed.ids) > 2
+
         # Check if the button you pressed doesn't have its cat profile buttons currently displayed.
         # if it does, clear the cat profile buttons
         if self.open_involved_cat_button == button_pressed:
@@ -401,7 +401,8 @@ class EventsScreen(Screens):
 
         container = button_pressed.parent_element
 
-        if len(button_pressed.ids) > 2:
+        # if a scrollbar is required, update the container to be bigge enough
+        if scrollbar_needed:
             container.set_dimensions(
                 (
                     container.relative_rect[2],
@@ -410,7 +411,7 @@ class EventsScreen(Screens):
             )
 
         involved_cat_rect = ui_scale(
-            pygame.Rect((0, 0), (455, 56 if len(button_pressed.ids) > 2 else 36))
+            pygame.Rect((0, 0), (455, 56 if scrollbar_needed else 36))
         )
         involved_cat_rect.topleft = (
             ui_scale_value(5),
@@ -424,11 +425,47 @@ class EventsScreen(Screens):
             starting_height=2,
             allow_scroll_x=True,
             allow_scroll_y=False,
+            should_grow_automatically=scrollbar_needed,  # true if we need a scrollbar, false otherwise
             anchors={"top_target": button_pressed},
         )
         del involved_cat_rect
 
-        for i, cat_id in enumerate(button_pressed.ids):
+        # a helper function to pick the right anchors for the cat profiles
+        def determine_anchors(idx):
+            if scrollbar_needed:
+                return (
+                    {
+                        "left_target": self.cat_profile_buttons[
+                            f"profile_button{idx - 1}"
+                        ]
+                    }
+                    if idx > 0
+                    else {"left": "left"}
+                )
+            else:
+                return (
+                    {
+                        "left_target": self.cat_profile_buttons[
+                            f"profile_button{idx - 1}"
+                        ]
+                    }
+                    if idx > 0
+                    else {"right": "right"}
+                )
+
+        # a helper function to create the right rect for the cat profiles
+        def create_rect(idx):
+            rect = ui_scale(pygame.Rect((0 if idx == 0 else 5, 0), (120, 34)))
+            if scrollbar_needed:
+                rect.topleft = ui_scale_dimensions((0 if idx == 0 else 5, 0))
+            else:
+                rect.topright = ui_scale_dimensions((0 if idx == 0 else -125, 0))
+            return rect
+
+        # make the cat profiles
+        for i, cat_id in enumerate(
+            button_pressed.ids if scrollbar_needed else reversed(button_pressed.ids)
+        ):
             cat_ob = Cat.fetch_cat(cat_id)
             if cat_ob:
                 # Shorten name if needed
@@ -436,19 +473,16 @@ class EventsScreen(Screens):
                 short_name = shorten_text_to_fit(name, 195, 13)
 
                 self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
-                    ui_scale(pygame.Rect((0 if i == 0 else 5, 0), (120, 34))),
+                    create_rect(i),
                     text=short_name,
                     ids=cat_id,
                     container=self.involved_cat_container,
                     object_id="#events_cat_profile_button",
                     layer_starting_height=1,
                     manager=MANAGER,
-                    anchors={
-                        "left_target": self.cat_profile_buttons[f"profile_button{i-1}"]
-                    }
-                    if i > 0
-                    else {"left": "left"},
+                    anchors=determine_anchors(i),
                 )
+
         self.involved_cat_container.set_view_container_dimensions(
             (
                 self.involved_cat_container.get_relative_rect()[2],
@@ -542,7 +576,7 @@ class EventsScreen(Screens):
                 element_id="event_panel",
                 object_id="#dark" if game.settings["dark mode"] else None,
                 margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
-                anchors={"top_target": self.event_display_elements[f"container{i-1}"]}
+                anchors={"top_target": self.event_display_elements[f"container{i - 1}"]}
                 if i > 0
                 else {"top": "top"},
             )
