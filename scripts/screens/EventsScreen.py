@@ -482,7 +482,7 @@ class EventsScreen(Screens):
                         if i > 0
                         else {"right": "right"},
                     )
-
+        del rect
         self.involved_cat_container.set_view_container_dimensions(
             (
                 self.involved_cat_container.get_relative_rect()[2],
