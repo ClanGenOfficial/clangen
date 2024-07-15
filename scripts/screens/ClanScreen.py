@@ -61,7 +61,7 @@ class ClanScreen(Screens):
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
-                    game.save_settings()
+                    game.save_settings(self)
                     game.switches["saved_clan"] = True
                     self.update_buttons_and_text()
                 except RuntimeError:
@@ -101,7 +101,7 @@ class ClanScreen(Screens):
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
-                game.save_settings()
+                game.save_settings(self)
                 game.switches["saved_clan"] = True
                 self.update_buttons_and_text()
 

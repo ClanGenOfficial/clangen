@@ -2743,7 +2743,7 @@ def quit(savesettings=False, clearevents=False):
     Quits the game, avoids a bunch of repeated lines
     """
     if savesettings:
-        game.save_settings()
+        game.save_settings(None)
     if clearevents:
         game.cur_events_list.clear()
     game.rpc.close_rpc.set()

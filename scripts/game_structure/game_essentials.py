@@ -1,4 +1,5 @@
 import os
+import traceback
 from ast import literal_eval
 from math import floor
 from shutil import move as shutil_move
@@ -345,13 +346,20 @@ class Game:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")
 
-    def save_settings(self):
+    def save_settings(self, currentscreen):
         """Save user settings for later use"""
         if os.path.exists(get_save_dir() + "/settings.txt"):
             os.remove(get_save_dir() + "/settings.txt")
 
         self.settings_changed = False
-        game.safe_save(get_save_dir() + "/settings.json", self.settings)
+        try:
+            game.safe_save(get_save_dir() + "/settings.json", self.settings)
+        except RuntimeError:
+            from scripts.game_structure.windows import SaveError
+
+            SaveError(traceback.format_exc())
+            if currentscreen is not None:
+                currentscreen.change_screen("start screen")
 
     def load_settings(self):
         """Load settings that user has saved from previous use"""
