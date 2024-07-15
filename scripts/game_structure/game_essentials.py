@@ -2,8 +2,10 @@ import os
 from ast import literal_eval
 from math import floor
 from shutil import move as shutil_move
+from typing import Tuple, Optional
 
 import pygame
+import pygame_gui
 import ujson
 
 import scripts.game_structure.ui_manager
@@ -626,14 +628,9 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-offset = (0, 0)
-screen_x = 800
-screen_y = 700
-screen_scale = 1
 
 # nb. forcing screen size WILL make the clangen font crunchy
 # this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
-debug_force_screen_size = None
 # (2560, 1440)
 # (2304, 1296)
 # (1920, 1080)
@@ -641,42 +638,104 @@ debug_force_screen_size = None
 # (1280, 720)
 
 
-if game.settings["fullscreen"]:
-    if debug_force_screen_size is not None:
-        display_size = debug_force_screen_size
+offset = (0, 0)
+screen_x = 800
+screen_y = 700
+screen_scale = 1
+game_screen_size = (800, 700)
+MANAGER: Optional[pygame_gui.UIManager] = None
+screen = None
+
+
+def toggle_fullscreen(
+    fullscreen=False,
+    debug_force_screen_size: Optional[Tuple[int, int]] = None,
+    ingame_switch=True,
+):
+    global offset
+    global screen_x
+    global screen_y
+    global screen_scale
+    global game_screen_size
+    global screen
+    global MANAGER
+
+    if fullscreen:
+        if debug_force_screen_size is not None:
+            display_size = debug_force_screen_size
+        else:
+            display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+
+        # These are the most options I can provide that have a good tradeoff for crunchiness
+        screen_sizes = {
+            2: (1600, 1400),
+            1.75: (1400, 1225),
+            1.5: (1200, 1050),
+            1.25: (1000, 875),
+            1: (800, 700),
+        }
+        for i, (x, y) in screen_sizes.items():
+            if x < display_size[0] and y < display_size[1]:
+                screen_x = x
+                screen_y = y
+                screen_scale = i
+                break
+        screen = pygame.display.set_mode(
+            display_size,
+            (
+                pygame.FULLSCREEN
+                if debug_force_screen_size is None
+                else pygame.FULLSCREEN | pygame.SCALED
+            ),
+        )
+        offset = (
+            floor((display_size[0] - screen_x) / 2),
+            floor((display_size[1] - screen_y) / 2),
+        )
+        game_screen_size = (screen_x, screen_y)
     else:
-        display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+        offset = (0, 0)
+        screen_x = 800
+        screen_y = 700
+        screen_scale = 1
+        game_screen_size = (800, 700)
+        screen = pygame.display.set_mode((screen_x, screen_y))
+    game_screen_size = (screen_x, screen_y)
 
-    # These are the most options I can provide that have a good tradeoff for crunchiness
-    screen_sizes = {
-        2: (1600, 1400),
-        1.75: (1400, 1225),
-        1.5: (1200, 1050),
-        1.25: (1000, 875),
-        1: (800, 700),
-    }
-    for i, (x, y) in screen_sizes.items():
-        if x < display_size[0] and y < display_size[1]:
-            screen_x = x
-            screen_y = y
-            screen_scale = i
-            break
-    screen = pygame.display.set_mode(
-        display_size,
-        (
-            pygame.FULLSCREEN
-            if debug_force_screen_size is None
-            else pygame.FULLSCREEN | pygame.SCALED
-        ),
-    )
-    offset = ((display_size[0] - screen_x) / 2, (display_size[1] - screen_y) / 2)
-else:
-    screen = pygame.display.set_mode((screen_x, screen_y))
+    if ingame_switch:
+        from scripts.screens.all_screens import AllScreens
 
-game_screen_size = (screen_x, screen_y)
+        MANAGER.clear_and_reset()
+        MANAGER.set_window_resolution(game_screen_size)
+        MANAGER.set_offset(offset)
+
+        if screen_scale == 1:
+            MANAGER.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
+        elif screen_scale == 1.25:
+            MANAGER.get_theme().load_theme(
+                "resources/theme/fonts/1.25_screen_scale.json"
+            )
+        elif screen_scale == 1.5:
+            MANAGER.get_theme().load_theme(
+                "resources/theme/fonts/1.5_screen_scale.json"
+            )
+        elif screen_scale == 1.75:
+            MANAGER.get_theme().load_theme(
+                "resources/theme/fonts/1.75_screen_scale.json"
+            )
+        elif screen_scale == 2:
+            MANAGER.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
+
+        AllScreens.rebuild_all_screens()
+    else:
+        MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
 
 
 def load_manager(res: tuple, offset: tuple, screen_scale: float):
+    global MANAGER
+    if MANAGER is not None:
+        MANAGER = None
+
     # initialize pygame_gui manager, and load themes
     manager = scripts.game_structure.ui_manager.UIManager(
         res,
@@ -747,4 +806,10 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     return manager
 
 
-MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
+toggle_fullscreen(
+    game.settings["fullscreen"], debug_force_screen_size=None, ingame_switch=False
+)
+
+
+def get_offset():
+    return offset

@@ -173,7 +173,7 @@ import pygame
 
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-from scripts.screens.all_screens import start_screen
+from scripts.screens.all_screens import AllScreens
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -276,7 +276,7 @@ del finished_loading
 del loading_animation
 del load_data
 
-start_screen.screen_switches()
+AllScreens.start_screen.screen_switches()
 
 
 version_number = pygame_gui.elements.UILabel(

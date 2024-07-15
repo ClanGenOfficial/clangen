@@ -1,5 +1,5 @@
-import os
 import io
+import os
 from typing import Tuple, Optional, Union, List, Dict
 
 import pygame
@@ -98,6 +98,15 @@ class UIManager(pygame_gui.UIManager):
         )
         tool_tip.find_valid_position(pygame.math.Vector2(position[0], position[1]))
         return tool_tip
+
+    def set_offset(self, offset: Tuple[int, int]):
+        """
+        Sets the screen offset.
+
+        :param offset: the offset to set
+        """
+        self.offset = offset
+        self.root_container.set_position(offset)
 
 
 class UIManagerContainer(pygame_gui.core.UIContainer):

@@ -10,12 +10,10 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
     screen,
-    screen_x,
-    screen_y,
     MANAGER,
-    offset,
     game_screen_size,
     screen_scale,
+    get_offset,
 )
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -24,19 +22,7 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.utility import update_sprite, ui_scale, ui_scale_value, ui_scale_dimensions
 
 
-class Screens:
-    game_screen = screen
-    last_screen = ""
-    # the size has to be increased by 20 to account for the fact that we want the inner dimension to be
-    # game_screen_size
-    game_frame: pygame.Surface = pygame.image.load_sized_svg(
-        "resources/images/border_gamescreen.svg",
-        (
-            game_screen_size[0] + ui_scale_value(20),
-            game_screen_size[1] + ui_scale_value(20),
-        ),
-    )
-
+def _menu_button_init():
     # menu buttons are used very often, so they are generated here.
     menu_buttons = dict()
 
@@ -207,6 +193,24 @@ class Screens:
         object_id="#text_box_34_horizcenter_light",
         starting_height=5,
     )
+    return menu_buttons
+
+
+class Screens:
+    game_screen = screen
+    last_screen = ""
+
+    # the size has to be increased by 20 to account for the fact that we want the inner dimension to be
+    # game_screen_size
+    game_frame: pygame.Surface = pygame.image.load_sized_svg(
+        "resources/images/border_gamescreen.svg",
+        (
+            game_screen_size[0] + ui_scale_value(20),
+            game_screen_size[1] + ui_scale_value(20),
+        ),
+    )
+
+    menu_buttons = _menu_button_init()
 
     def change_screen(self, new_screen):
         """Use this function when switching screens.
@@ -231,9 +235,18 @@ class Screens:
         game.rpc.update_rpc.set()
 
     def __init__(self, name=None):
+        self.game_frame: pygame.Surface = pygame.image.load_sized_svg(
+            "resources/images/border_gamescreen.svg",
+            (
+                game_screen_size[0] + ui_scale_value(20),
+                game_screen_size[1] + ui_scale_value(20),
+            ),
+        )
         self.name = name
         if name is not None:
             game.all_screens[name] = self
+        else:
+            Screens.menu_buttons = _menu_button_init()
 
         # Place to store the loading window(s)
         self.loading_window = {}
@@ -645,6 +658,7 @@ class Screens:
             self.active_bg = (
                 "default_dark" if game.settings["dark mode"] else "default_light"
             )
+        offset = get_offset()
         if game.settings["fullscreen"]:
             screen.blit(self.blur_bgs[self.active_bg], (0, 0))
             screen.blit(

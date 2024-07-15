@@ -10,13 +10,12 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game, MANAGER, toggle_fullscreen
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
-    quit,
     ui_scale_dimensions,
 )
 from .Screens import Screens
@@ -84,7 +83,16 @@ class SettingsScreen(Screens):
                 return
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting("fullscreen")
-                quit(savesettings=True, clearevents=False)
+                self.save_settings()
+                self.exit_screen()
+                try:
+                    game.save_settings()
+                except:
+                    SaveError(traceback.format_exc())
+                    self.change_screen("start screen")
+                self.settings_changed = False
+                toggle_fullscreen(game.settings["fullscreen"])
+                game.all_screens["settings screen"].screen_switches()
             elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":
                     subprocess.Popen(["open", "-R", get_data_dir()])
@@ -146,7 +154,7 @@ class SettingsScreen(Screens):
                     self.update_save_button()
 
                     if (
-                        self.sub_menu is "general"
+                        self.sub_menu == "general"
                         and event.ui_element is self.checkboxes["dark mode"]
                     ):
                         if (
