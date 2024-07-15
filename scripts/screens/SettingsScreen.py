@@ -82,10 +82,9 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting("fullscreen")
                 self.save_settings()
+                game.save_settings(self)
                 self.exit_screen()
 
-                game.save_settings(self)
-                self.settings_changed = False
                 toggle_fullscreen(game.settings["fullscreen"])
                 game.all_screens["settings screen"].screen_switches()
             elif event.ui_element == self.open_data_directory_button:
@@ -238,9 +237,9 @@ class SettingsScreen(Screens):
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             tool_tip_text=(
-                "This will close the game. "
-                "When you reopen, the game"
-                f" will be {screentext}. "
+                f"This will put the game into {screentext} mode."
+                "<br><br>"
+                "<b>Important:</b> This also saves all changed settings!"
             ),
         )
         del screentext
@@ -384,35 +383,20 @@ class SettingsScreen(Screens):
         self.checkboxes_text["info_text_box"].disable()
 
         i = 0
-        y_pos = 395
-        for tooltip in self.tooltip_text:
-            if not tooltip:
-                self.tooltip[f"tip{i}"] = (
-                    UIImageButton(
-                        ui_scale(pygame.Rect((0, i * 28 + y_pos), (200, 28))),
-                        "",
-                        object_id="#blank_button",
-                        container=self.checkboxes_text["info_container"],
-                        manager=MANAGER,
-                        starting_height=2,
-                        anchors={"centerx": "centerx"},
-                    ),
-                )
-            else:
-                self.tooltip[f"tip{i}"] = (
-                    UIImageButton(
-                        ui_scale(pygame.Rect((0, i * 28 + y_pos), (200, 28))),
-                        "",
-                        object_id="#blank_button",
-                        container=self.checkboxes_text["info_container"],
-                        manager=MANAGER,
-                        tool_tip_text=tooltip,
-                        starting_height=2,
-                        anchors={"centerx": "centerx"},
-                    ),
-                )
-
-            i += 1
+        y_pos = 343
+        for i, tooltip in enumerate(self.tooltip_text):
+            self.tooltip[f"tip{i}"] = (
+                UIImageButton(
+                    ui_scale(pygame.Rect((0, i * 26 + y_pos), (200, 26))),
+                    "",
+                    object_id="#blank_button",
+                    container=self.checkboxes_text["info_container"],
+                    manager=MANAGER,
+                    tool_tip_text=tooltip if tooltip else None,
+                    starting_height=2,
+                    anchors={"centerx": "centerx"},
+                ),
+            )
         self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
             ui_scale_dimensions((785, i * 28 + y_pos + 275))
         )

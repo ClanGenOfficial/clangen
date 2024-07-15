@@ -154,7 +154,7 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": False,
+        "showbounds": True,
         "visualdebugmode": False,
         "showfps": False,
     }
@@ -636,7 +636,6 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-
 # nb. forcing screen size WILL make the clangen font crunchy
 # this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
 # (2560, 1440)
@@ -717,26 +716,61 @@ def toggle_fullscreen(
         MANAGER.set_window_resolution(game_screen_size)
         MANAGER.set_offset(offset)
 
-        if screen_scale == 1:
-            MANAGER.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
-        elif screen_scale == 1.25:
-            MANAGER.get_theme().load_theme(
-                "resources/theme/fonts/1.25_screen_scale.json"
-            )
-        elif screen_scale == 1.5:
-            MANAGER.get_theme().load_theme(
-                "resources/theme/fonts/1.5_screen_scale.json"
-            )
-        elif screen_scale == 1.75:
-            MANAGER.get_theme().load_theme(
-                "resources/theme/fonts/1.75_screen_scale.json"
-            )
-        elif screen_scale == 2:
-            MANAGER.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
-
         AllScreens.rebuild_all_screens()
     else:
         MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
+
+    # handle screen scale theming changes
+    if screen_scale == 1:
+        MANAGER.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
+    elif screen_scale == 1.25:
+        MANAGER.get_theme().load_theme("resources/theme/fonts/1.25_screen_scale.json")
+    elif screen_scale == 1.5:
+        MANAGER.get_theme().load_theme("resources/theme/fonts/1.5_screen_scale.json")
+    elif screen_scale == 1.75:
+        MANAGER.get_theme().load_theme("resources/theme/fonts/1.75_screen_scale.json")
+    elif screen_scale == 2:
+        MANAGER.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
+
+    # preloading the associated fonts
+    if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+        f"notosans_bold_aa_{floor(11 * screen_scale)}"
+    ):
+        MANAGER.preload_fonts(
+            [
+                {
+                    "name": "notosans",
+                    "point_size": floor(11 * screen_scale),
+                    "style": "bold",
+                },
+                {
+                    "name": "notosans",
+                    "point_size": floor(13 * screen_scale),
+                    "style": "bold",
+                },
+                {
+                    "name": "notosans",
+                    "point_size": floor(15 * screen_scale),
+                    "style": "bold",
+                },
+                {
+                    "name": "notosans",
+                    "point_size": floor(13 * screen_scale),
+                    "style": "italic",
+                },
+                {
+                    "name": "notosans",
+                    "point_size": floor(15 * screen_scale),
+                    "style": "italic",
+                },
+                {
+                    "name": "clangen",
+                    "point_size": floor(18 * screen_scale),
+                    "style": "regular",
+                    "antialiased": False,
+                },
+            ]
+        )
 
 
 def load_manager(res: tuple, offset: tuple, screen_scale: float):
@@ -764,52 +798,6 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     )
 
     manager.get_theme().load_theme("resources/theme/themes/dark.json")
-
-    if screen_scale == 1:
-        manager.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
-    elif screen_scale == 1.25:
-        manager.get_theme().load_theme("resources/theme/fonts/1.25_screen_scale.json")
-    elif screen_scale == 1.5:
-        manager.get_theme().load_theme("resources/theme/fonts/1.5_screen_scale.json")
-    elif screen_scale == 1.75:
-        manager.get_theme().load_theme("resources/theme/fonts/1.75_screen_scale.json")
-    elif screen_scale == 2:
-        manager.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
-
-    manager.preload_fonts(
-        [
-            {
-                "name": "notosans",
-                "point_size": floor(11 * screen_scale),
-                "style": "bold",
-            },
-            {
-                "name": "notosans",
-                "point_size": floor(13 * screen_scale),
-                "style": "bold",
-            },
-            {
-                "name": "notosans",
-                "point_size": floor(15 * screen_scale),
-                "style": "bold",
-            },
-            {
-                "name": "notosans",
-                "point_size": floor(13 * screen_scale),
-                "style": "italic",
-            },
-            {
-                "name": "notosans",
-                "point_size": floor(15 * screen_scale),
-                "style": "italic",
-            },
-            {
-                "name": "clangen",
-                "point_size": floor(18 * screen_scale),
-                "style": "regular",
-            },
-        ]
-    )
 
     return manager
 

@@ -170,7 +170,7 @@ def _menu_button_init():
     menu_buttons["warrior_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 180), (121, 28))),
         "warriors' den",
-        get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
+        get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
         object_id="@buttonstyles_rounded_rect",
         visible=False,
         manager=MANAGER,
@@ -179,7 +179,7 @@ def _menu_button_init():
     menu_buttons["clearing"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 220), (81, 28))),
         "clearing",
-        get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
+        get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
         visible=False,
         manager=MANAGER,
         object_id="@buttonstyles_rounded_rect",
