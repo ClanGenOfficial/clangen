@@ -3,7 +3,6 @@ from typing import Tuple
 
 import pygame
 
-from scripts.game_structure.game_essentials import screen_scale
 from scripts.utility import ui_scale_dimensions
 
 
@@ -210,11 +209,6 @@ def generate_button(base: pygame.Surface, unscaled_dimensions: Tuple[int, int]):
             )
         )
 
-    if screen_scale != 1:
-        surface = pygame.transform.scale(
-            surface,
-            (surface.get_width() * screen_scale, surface.get_height() * screen_scale),
-        )
     return surface
 
 

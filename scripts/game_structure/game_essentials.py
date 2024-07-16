@@ -636,15 +636,6 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-# nb. forcing screen size WILL make the clangen font crunchy
-# this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
-# (2560, 1440)
-# (2304, 1296)
-# (1920, 1080)
-# (1664, 936)
-# (1280, 720)
-
-
 offset = (0, 0)
 screen_x = 800
 screen_y = 700
@@ -805,6 +796,15 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
 toggle_fullscreen(
     game.settings["fullscreen"], debug_force_screen_size=None, ingame_switch=False
 )
+
+
+# nb. forcing screen size WILL make the clangen font crunchy
+# this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
+# (2560, 1440)
+# (2304, 1296)
+# (1920, 1080)
+# (1664, 936)
+# (1280, 720)
 
 
 def get_offset():

@@ -1544,6 +1544,16 @@
             }
         }
     },
+    "container.#profile_condition_panel": {
+        "colours": {
+            "normal_border": "#2E2818"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "4,4,0,0",
+            "border_width": "2"
+        }
+    },
     "#leader_ceremony_button": {
         "images": {
             "normal_image": {

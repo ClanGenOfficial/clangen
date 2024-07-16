@@ -1905,19 +1905,16 @@ class ProfileScreen(Screens):
         else:
             self.right_conditions_arrow.enable()
 
-        x_pos = 15
+        x_pos = 13
         for con in all_illness_injuries[self.conditions_page]:
 
             # Background Box
             bg = pygame_gui.elements.UIPanel(
-                ui_scale(pygame.Rect((x_pos, 12), (140, 138))),
+                ui_scale(pygame.Rect((x_pos, 13), (142, 145))),
                 manager=MANAGER,
                 container=self.condition_container,
+                object_id="#profile_condition_panel",
             )
-            bg.background_image = self.condition_details_box
-            bg.rebuild()
-
-            y_adjust = 30
 
             name = UITextBoxTweaked(
                 con[0],
@@ -1926,7 +1923,7 @@ class ProfileScreen(Screens):
                 object_id="#text_box_30_horizcenter",
                 container=bg,
                 manager=MANAGER,
-                anchors={"centerx": "centerx"},
+                anchors={"left": "left", "right": "right"},
             )
 
             y_adjust = name.get_relative_rect().height

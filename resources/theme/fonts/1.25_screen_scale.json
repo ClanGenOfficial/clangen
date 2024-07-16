@@ -29,6 +29,12 @@
             "line_spacing": "1"
         }
     },
+    "container.#profile_condition_panel": {
+        "misc": {
+            "shape_corner_radius": "5,5,0,0",
+            "border_width": "2"
+        }
+    },
     "@checked_checkbox_smalltooltip.tool_tip": {
         "misc": {
             "rect_width": "125"
