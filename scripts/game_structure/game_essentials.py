@@ -3,7 +3,7 @@ import traceback
 from ast import literal_eval
 from math import floor
 from shutil import move as shutil_move
-from typing import Tuple, Optional
+from typing import Optional
 
 import pygame
 import pygame_gui
@@ -645,11 +645,7 @@ MANAGER: Optional[pygame_gui.UIManager] = None
 screen = None
 
 
-def toggle_fullscreen(
-    fullscreen=False,
-    debug_force_screen_size: Optional[Tuple[int, int]] = None,
-    ingame_switch=True,
-):
+def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     global offset
     global screen_x
     global screen_y
@@ -659,8 +655,8 @@ def toggle_fullscreen(
     global MANAGER
 
     if fullscreen:
-        if debug_force_screen_size is not None:
-            display_size = debug_force_screen_size
+        if game.config["theme"]["debug_force_screen_size"] is not None:
+            display_size = game.config["theme"]["debug_force_screen_size"]
         else:
             display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
 
@@ -682,7 +678,7 @@ def toggle_fullscreen(
             display_size,
             (
                 pygame.FULLSCREEN
-                if debug_force_screen_size is None
+                if game.config["theme"]["debug_force_screen_size"] is None
                 else pygame.FULLSCREEN | pygame.SCALED
             ),
         )
@@ -793,18 +789,7 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     return manager
 
 
-toggle_fullscreen(
-    game.settings["fullscreen"], debug_force_screen_size=None, ingame_switch=False
-)
-
-
-# nb. forcing screen size WILL make the clangen font crunchy
-# this is due to the fact we have disabled antialiasing to keep those crisp, clean edges
-# (2560, 1440)
-# (2304, 1296)
-# (1920, 1080)
-# (1664, 936)
-# (1280, 720)
+toggle_fullscreen(game.settings["fullscreen"], ingame_switch=False)
 
 
 def get_offset():
