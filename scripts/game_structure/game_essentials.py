@@ -653,7 +653,9 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     global game_screen_size
     global screen
     global MANAGER
-
+    old_offset = offset
+    old_scale = screen_scale
+    mouse_pos = pygame.mouse.get_pos()
     if fullscreen:
         if game.config["theme"]["debug_force_screen_size"] is not None:
             display_size = game.config["theme"]["debug_force_screen_size"]
@@ -699,6 +701,14 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     if ingame_switch:
         from scripts.screens.all_screens import AllScreens
 
+        if fullscreen:
+            mouse_pos = mouse_pos[0] + offset[0], mouse_pos[1] + offset[1]
+        else:
+            mouse_pos = (mouse_pos[0] / old_scale) - old_offset[0], (
+                mouse_pos[1] / old_scale
+            ) - old_offset[1]
+
+        pygame.mouse.set_pos(mouse_pos)
         MANAGER.clear_and_reset()
         MANAGER.set_window_resolution(game_screen_size)
         MANAGER.set_offset(offset)
