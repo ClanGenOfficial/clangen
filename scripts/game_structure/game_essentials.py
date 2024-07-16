@@ -154,7 +154,7 @@ class Game:
 
     debug_settings = {
         "showcoords": False,
-        "showbounds": False,
+        "showbounds": True,
         "visualdebugmode": False,
         "showfps": False,
     }
