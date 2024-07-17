@@ -294,8 +294,7 @@ class EventsScreen(Screens):
             image_cache.load_image(
                 "resources/images/event_page_frame.png"
             ).convert_alpha(),
-            object_id="#events_frame",
-            starting_height=2,
+            starting_height=8,
             container=self.full_event_display_container,
             manager=MANAGER,
         )
@@ -345,11 +344,12 @@ class EventsScreen(Screens):
             self.event_display.kill()
 
         self.event_display = UIModifiedScrollingContainer(
-            ui_scale(pygame.Rect((211, 275), (540, 350))),
-            starting_height=3,
+            ui_scale(pygame.Rect((211, 275), (543, 355))),
+            starting_height=1,
             manager=MANAGER,
             allow_scroll_y=True,
         )
+        self.events_frame.join_focus_sets(self.event_display)
 
     def make_cat_buttons(self, button_pressed):
         """Makes the buttons that take you to the profile."""
@@ -422,7 +422,7 @@ class EventsScreen(Screens):
             involved_cat_rect,
             container=container,
             manager=MANAGER,
-            starting_height=2,
+            starting_height=1,
             allow_scroll_x=True,
             allow_scroll_y=False,
             should_grow_automatically=scrollbar_needed,  # true if we need a scrollbar, false otherwise
@@ -556,16 +556,14 @@ class EventsScreen(Screens):
                 self.display_events.remove(event_object)
                 continue
 
-        default_rect = ui_scale(
-            pygame.Rect(
-                (5, 0),
-                (
-                    self.event_display.get_relative_rect()[2]
-                    - 2
-                    - self.event_display.scroll_bar_width,
-                    300,
-                ),
-            )
+        default_rect = pygame.Rect(
+            ui_scale_dimensions((5, 0)),
+            (
+                self.event_display.get_relative_rect()[2]
+                - ui_scale_value(2)
+                - self.event_display.scroll_bar_width,
+                ui_scale_value(300),
+            ),
         )
         for i, event_object in enumerate(self.display_events):
             self.event_display_elements[f"container{i}"] = pygame_gui.elements.UIPanel(

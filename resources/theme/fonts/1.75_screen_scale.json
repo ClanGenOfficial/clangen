@@ -119,8 +119,7 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "35",
-            "antialiased": "0"
+            "size": "35"
         },
         "misc": {
             "text_vert_alignment": "top",
@@ -142,8 +141,7 @@
     "button": {
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         },
         "misc": {
             "text_vert_alignment": "top",
@@ -155,24 +153,21 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         }
     },
     "@buttonstyles_menu_right": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         }
     },
     "@buttonstyles_menu_middle": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         }
     },
     "@buttonstyles_menu_left": {
@@ -186,24 +181,21 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         }
     },
     "@buttonstyles_horizontal_tab": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         }
     },
     "@buttonstyles_vertical_tab": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         },
         "misc": {
             "text_horiz_alignment": "left",
@@ -214,8 +206,7 @@
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
-            "size": "28",
-            "antialiased": "0"
+            "size": "28"
         },
         "misc": {
             "text_horiz_alignment": "center",

@@ -1,5 +1,5 @@
-from math import floor, ceil
 import html
+from math import floor, ceil
 from typing import Union, Tuple, Optional, Dict, Iterable, Callable
 
 import pygame
@@ -10,10 +10,10 @@ from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
-from pygame_gui.elements import UIAutoResizingContainer, UIHorizontalScrollBar
+from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, screen_scale
+from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
@@ -357,7 +357,7 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         return need_horiz_scroll_bar, need_vert_scroll_bar
 
     def _get_scroll_bar_width(self) -> int:
-        return ui_scale_value(24)
+        return ui_scale_value(20)
 
     def _get_scroll_bar_height(self) -> int:
         return ui_scale_value(20)
@@ -485,7 +485,9 @@ class UISpriteButton:
         # UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(
             relative_rect,
-            pygame.transform.scale(sprite, relative_rect.size),
+            pygame.transform.smoothscale(sprite, relative_rect.size)
+            if relative_rect.size > sprite.size
+            else pygame.transform.scale(sprite, relative_rect.size),
             visible=visible,
             manager=manager,
             container=container,

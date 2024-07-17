@@ -1,4 +1,5 @@
 from enum import Enum
+from math import floor
 from typing import Tuple
 
 import pygame
@@ -145,16 +146,15 @@ buttonstyles["menu_right"] = {
 }
 
 
-def generate_button(base: pygame.Surface, unscaled_dimensions: Tuple[int, int]):
+def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
     """
     Generate a surface of arbitrary length from a given input surface
     :param base: the Surface to generate from
-    :param unscaled_dimensions: the UNSCALED dimensions of the final button
+    :param scaled_dimensions: the SCALED dimensions of the final button
     :return: A surface of the correct dimensions, scaled automatically
     """
-    unscaled_dimensions = ui_scale_dimensions(unscaled_dimensions)
     height = base.height
-    vertical_scale = unscaled_dimensions[1] / height
+    vertical_scale = scaled_dimensions[1] / height
     if vertical_scale < 0:
         vertical_scale = 1 / -vertical_scale
 
@@ -171,11 +171,11 @@ def generate_button(base: pygame.Surface, unscaled_dimensions: Tuple[int, int]):
     width_bookends = height * 2
 
     # if we need the middle segment
-    if unscaled_dimensions[0] - width_bookends > 0:
+    if scaled_dimensions[0] - width_bookends > 0:
         middle = pygame.transform.scale(
-            middle, (unscaled_dimensions[0] - width_bookends, middle.get_height())
+            middle, (scaled_dimensions[0] - width_bookends, middle.get_height())
         )
-        surface = pygame.Surface(unscaled_dimensions, pygame.SRCALPHA)
+        surface = pygame.Surface(scaled_dimensions, pygame.SRCALPHA)
         surface.convert_alpha()
         surface.fblits(
             (
@@ -186,23 +186,30 @@ def generate_button(base: pygame.Surface, unscaled_dimensions: Tuple[int, int]):
         )
     else:
         # if it's too small for us to put middle in there, just don't :)
-        excess_width = left.get_width() * 2 - unscaled_dimensions[0]
-        surface = pygame.Surface(unscaled_dimensions, pygame.SRCALPHA)
+        excess_width = left.get_width() * 2 - scaled_dimensions[0]
+        surface = pygame.Surface(scaled_dimensions, pygame.SRCALPHA)
         surface.convert_alpha()
+        excess = height - excess_width / 2
+        if excess % 1 != 0:
+            left_excess = floor(excess) + 1
+            right_excess = floor(excess)
+        else:
+            left_excess = excess
+            right_excess = excess
         surface.blits(
             (
                 (
                     left,
                     (0, 0),
-                    pygame.Rect((0, 0), (height - excess_width / 2, height)),
+                    pygame.Rect((0, 0), (left_excess, height)),
                 ),
                 (
                     right,
-                    (height - excess_width / 2, 0),
+                    (left_excess, 0),
                     pygame.Rect(
-                        excess_width / 2,
+                        excess_width // 2,
                         0,
-                        height - excess_width / 2,
+                        right_excess,
                         height,
                     ),
                 ),
@@ -219,17 +226,18 @@ def get_button_dict(style: ButtonStyles, unscaled_dimensions: Tuple[int, int]):
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
+    scaled_dimensions = ui_scale_dimensions(unscaled_dimensions)
     return {
         "normal": generate_button(
-            buttonstyles[style.value]["normal"], unscaled_dimensions
+            buttonstyles[style.value]["normal"], scaled_dimensions
         ),
         "hovered": generate_button(
-            buttonstyles[style.value]["hovered"], unscaled_dimensions
+            buttonstyles[style.value]["hovered"], scaled_dimensions
         ),
         "selected": generate_button(
-            buttonstyles[style.value]["selected"], unscaled_dimensions
+            buttonstyles[style.value]["selected"], scaled_dimensions
         ),
         "disabled": generate_button(
-            buttonstyles[style.value]["disabled"], unscaled_dimensions
+            buttonstyles[style.value]["disabled"], scaled_dimensions
         ),
     }

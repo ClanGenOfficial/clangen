@@ -764,7 +764,6 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
                     "name": "clangen",
                     "point_size": floor(18 * screen_scale),
                     "style": "regular",
-                    "antialiased": False,
                 },
             ]
         )

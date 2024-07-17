@@ -46,7 +46,7 @@ def _menu_button_init():
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
-        anchors={"left_target": menu_buttons["events_screen"]},
+        anchors={"left": "left", "left_target": menu_buttons["events_screen"]},
     )
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (88, 30))),
@@ -55,7 +55,7 @@ def _menu_button_init():
         visible=False,
         object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
-        anchors={"left_target": menu_buttons["camp_screen"]},
+        anchors={"left": "left", "left_target": menu_buttons["camp_screen"]},
     )
     menu_buttons["patrol_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (80, 30))),
@@ -65,7 +65,7 @@ def _menu_button_init():
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
-        anchors={"left_target": menu_buttons["catlist_screen"]},
+        anchors={"left": "left", "left_target": menu_buttons["catlist_screen"]},
     )
     menu_buttons["main_menu"] = UIImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
@@ -104,8 +104,11 @@ def _menu_button_init():
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
     del scale_rect
+
+    heading_rect = ui_scale(pygame.Rect((0, 0), (190, 35)))
+    heading_rect.bottomleft = ui_scale_dimensions((0, 0))
     menu_buttons["name_background"] = pygame_gui.elements.UIImage(
-        ui_scale(pygame.Rect((305, 25), (190, 35))),
+        heading_rect,
         pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(),
             ui_scale_dimensions((190, 35)),
@@ -113,6 +116,11 @@ def _menu_button_init():
         visible=False,
         manager=MANAGER,
         starting_height=5,
+        anchors={
+            "bottom": "bottom",
+            "bottom_target": menu_buttons["camp_screen"],
+            "centerx": "centerx",
+        },
     )
     menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
         ui_scale(pygame.Rect((25, 60), (153, 75))),
@@ -185,14 +193,22 @@ def _menu_button_init():
         object_id="@buttonstyles_rounded_rect",
         starting_height=6,
     )
+    heading_rect = ui_scale(pygame.Rect((0, 0), (195, 35)))
+    heading_rect.bottomleft = ui_scale_dimensions((0, 0))
     menu_buttons["heading"] = pygame_gui.elements.UITextBox(
         "",
-        ui_scale(pygame.Rect((305, 27), (195, 35))),
+        heading_rect,
         visible=False,
         manager=MANAGER,
         object_id="#text_box_34_horizcenter_light",
         starting_height=5,
+        anchors={
+            "bottom": "bottom",
+            "bottom_target": menu_buttons["camp_screen"],
+            "centerx": "centerx",
+        },
     )
+    del heading_rect
     return menu_buttons
 
 
