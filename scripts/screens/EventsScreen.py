@@ -276,8 +276,8 @@ class EventsScreen(Screens):
         self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((310, 218), (180, 30))),
             "Timeskip One Moon",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, (180, 30)),
-            object_id="@buttonstyles_rounded_rect",
+            get_button_dict(ButtonStyles.SQUOVAL, (180, 30)),
+            object_id="@buttonstyles_squoval",
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
