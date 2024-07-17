@@ -125,9 +125,8 @@
         }
     },
     "#text_box_22_horizcenter_spacing_95": {
-        "prototype": "#text_box_22",
+        "prototype": "#text_box_22_horizcenter",
         "misc": {
-            "text_horiz_alignment": "center",
             "line_spacing": "0.95"
         }
     },
