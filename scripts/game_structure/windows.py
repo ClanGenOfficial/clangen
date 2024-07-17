@@ -11,6 +11,7 @@ from re import sub
 import pygame
 import pygame_gui
 from pygame_gui.elements import UIWindow
+from pygame_gui.windows import UIMessageWindow
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -2163,3 +2164,79 @@ class SelectFocusClans(UIWindow):
                     self.save_button.enable()
 
         return super().process_event(event)
+
+
+class ConfirmDisplayChanges(UIMessageWindow):
+    def __init__(self):
+        super().__init__(
+            ui_scale(pygame.Rect((275, 270), (250, 160))),
+            "This is a test!",
+            MANAGER,
+            object_id="#confirm_display_changes_window",
+            always_on_top=True,
+        )
+        game.switches["window_open"] = True
+        self.set_blocking(True)
+
+        self.dismiss_button.kill()
+        self.text_block.kill()
+
+        button_size = (-1, 30)
+        button_spacing = 10
+        button_vertical_space = (button_spacing * 2) + button_size[1]
+
+        dismiss_button_rect = ui_scale(pygame.Rect((0, 0), (150, 30)))
+        dismiss_button_rect.bottomright = ui_scale_dimensions(
+            (-button_spacing, -button_spacing)
+        )
+
+        self.dismiss_button = UISurfaceImageButton(
+            dismiss_button_rect,
+            "Confirm changes",
+            get_button_dict(ButtonStyles.SQUOVAL, (150, 30)),
+            MANAGER,
+            container=self,
+            object_id="@buttonstyles_squoval",
+            anchors={
+                "left": "right",
+                "top": "bottom",
+                "right": "right",
+                "bottom": "bottom",
+            },
+        )
+
+        text_block_rect = pygame.Rect(
+            0,
+            0,
+            self.get_container().get_size()[0],
+            self.get_container().get_size()[1] - button_vertical_space,
+        )
+        self.text_block = pygame_gui.elements.UITextBox(
+            "Do you want to keep these changes? Display changes will be reverted in 10 seconds.",
+            text_block_rect,
+            manager=MANAGER,
+            container=self,
+            anchors={
+                "left": "left",
+                "top": "top",
+                "right": "right",
+                "bottom": "bottom",
+            },
+        )
+        pygame.time.set_timer(pygame.USEREVENT + 10, 5000, loops=1)
+
+    def revert_changes(self):
+        self.text_block.set_text("Time's up!")
+        pygame.event.post(pygame.Event(pygame.USEREVENT + 11))
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.dismiss_button:
+                game.switches["window_open"] = False
+                self.kill()
+                return True
+        elif event.type == pygame.USEREVENT + 10:
+            self.revert_changes()
+            game.switches["window_open"] = False
+            self.kill()
+            return True
