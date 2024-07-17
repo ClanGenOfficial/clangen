@@ -486,7 +486,7 @@ class UISpriteButton:
         self.image = pygame_gui.elements.UIImage(
             relative_rect,
             pygame.transform.smoothscale(sprite, relative_rect.size)
-            if relative_rect.size > sprite.size
+            if relative_rect.height <= ui_scale_value(sprite.height)
             else pygame.transform.scale(sprite, relative_rect.size),
             visible=visible,
             manager=manager,

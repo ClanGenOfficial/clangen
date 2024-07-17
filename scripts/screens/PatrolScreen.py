@@ -902,7 +902,7 @@ class PatrolScreen(Screens):
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
-                pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))),
+                pygame.transform.smoothscale(cat.sprite, ui_scale_dimensions((50, 50))),
                 cat_object=cat,
                 manager=MANAGER,
             )
@@ -922,7 +922,9 @@ class PatrolScreen(Screens):
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(
                     ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
-                    pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))),
+                    pygame.transform.smoothscale(
+                        cat.sprite, ui_scale_dimensions((50, 50))
+                    ),
                     cat_object=cat,
                     manager=MANAGER,
                 )
