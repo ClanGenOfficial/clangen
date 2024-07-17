@@ -16,7 +16,6 @@ class ButtonStyles(Enum):
     ROUNDED_RECT = "rounded_rect"
     DROPDOWN = "dropdown"
     HORIZONTAL_TAB = "horizontal_tab"
-    VERTICAL_TAB = "vertical_tab"
 
 
 buttonstyles = {
@@ -116,20 +115,6 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/horizontal_tab_disabled.png"
-        ).convert_alpha(),
-    },
-    "vertical_tab": {
-        "normal": pygame.image.load(
-            "resources/images/generated_buttons/vertical_tab_normal.png"
-        ).convert_alpha(),
-        "hovered": pygame.image.load(
-            "resources/images/generated_buttons/vertical_tab_hovered.png"
-        ).convert_alpha(),
-        "selected": pygame.image.load(
-            "resources/images/generated_buttons/vertical_tab_normal.png"
-        ).convert_alpha(),
-        "disabled": pygame.image.load(
-            "resources/images/generated_buttons/vertical_tab_disabled.png"
         ).convert_alpha(),
     },
 }

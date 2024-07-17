@@ -598,7 +598,7 @@ class ProfileScreen(Screens):
 
         # Info in string
         cat_name = str(self.the_cat.name)
-        cat_name = shorten_text_to_fit(cat_name, 212, 20)
+        cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
             cat_name += (
                 " (dead)"  # A dead cat will have the (dead) sign next to their name
@@ -618,7 +618,7 @@ class ProfileScreen(Screens):
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
-            ui_scale(pygame.Rect((0, 140), (-1, 40))),
+            ui_scale(pygame.Rect((0, 0), (-1, 40))),
             manager=MANAGER,
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             anchors={"centerx": "centerx"},

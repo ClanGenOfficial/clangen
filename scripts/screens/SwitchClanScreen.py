@@ -105,12 +105,16 @@ class SwitchClanScreen(Screens):
             pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
             ui_scale_dimensions((220, 368)),
         )
-        self.main_menu = UIImageButton(
+        self.main_menu = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "",
-            object_id="#main_menu_button",
+            "\u2B05\U0001F89E\u2513 Main Menu",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
+            object_id="@buttonstyles_squoval",
+            starting_height=1,
+            anchors={"centerx": "centerx"},
         )
+
         self.info = pygame_gui.elements.UITextBox(
             "Note: This will close the game.\n When you open it next, it should have the new Clan.",
             # pylint: disable=line-too-long

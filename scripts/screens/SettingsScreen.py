@@ -91,7 +91,6 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 self.prev_setting = game.settings["fullscreen"]
                 self.toggle_fullscreen()
-                pygame.time.delay(50)
                 ConfirmDisplayChanges()
             elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":
@@ -264,11 +263,13 @@ class SettingsScreen(Screens):
             self.open_data_directory_button.hide()
 
         self.update_save_button()
-        self.main_menu_button = UIImageButton(
+        self.main_menu_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (152, 30))),
-            "",
-            object_id="#main_menu_button",
+            "\u2B05\U0001F89E\u2513 Main Menu",
+            get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
             manager=MANAGER,
+            object_id="@buttonstyles_squoval",
+            starting_height=1,
         )
         self.sub_menu = "general"
         self.open_general_settings()

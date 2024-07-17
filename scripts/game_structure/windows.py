@@ -216,12 +216,15 @@ class SaveCheck(UIWindow):
         top_stack_menu_layer_height = 10000
         if self.isMainMenu:
             self.mm_btn.disable()
-            self.main_menu_button = UIImageButton(
-                ui_scale(pygame.Rect((78, 155), (152, 30))),
-                "",
-                object_id="#main_menu_button",
+            self.main_menu_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, 155), (152, 30))),
+                "\u2B05\U0001F89E\u2513 Main Menu",
+                get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
+                manager=MANAGER,
+                object_id="@buttonstyles_squoval",
                 starting_height=top_stack_menu_layer_height,
                 container=self,
+                anchors={"centerx": "centerx"},
             )
             self.message = (
                 "Would you like to save your game before exiting to the Main Menu? If you don't, progress "
@@ -246,20 +249,22 @@ class SaveCheck(UIWindow):
         )
 
         self.save_button = UIImageButton(
-            ui_scale(pygame.Rect((93, 115), (114, 30))),
+            ui_scale(pygame.Rect((0, 115), (114, 30))),
             "",
             object_id="#save_button",
             starting_height=top_stack_menu_layer_height,
             container=self,
+            anchors={"centerx": "centerx"},
         )
         self.save_button_saved_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((93, 115), (114, 30))),
+            ui_scale(pygame.Rect((0, 115), (114, 30))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/save_clan_saved.png"),
                 ui_scale_dimensions((114, 30)),
             ),
             starting_height=top_stack_menu_layer_height + 2,
             container=self,
+            anchors={"centerx": "centerx"},
         )
         self.save_button_saved_state.hide()
         self.save_button_saving_state = pygame_gui.elements.UIImage(
@@ -498,7 +503,7 @@ class ChangeCatName(UIWindow):
         self.done_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((161, 145), (77, 30))),
             "done",
-            get_button_dict(ButtonStyles.SQUOVAL, (111, 30)),
+            get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
             container=self,
@@ -2212,9 +2217,10 @@ class ConfirmDisplayChanges(UIMessageWindow):
             self.get_container().get_size()[1] - button_vertical_space,
         )
         self.text_block = pygame_gui.elements.UITextBox(
-            "Do you want to keep these changes? Display changes will be reverted in 10 seconds.",
+            "Do you want to keep these changes? Display changes will be reverted in 5 seconds.",
             text_block_rect,
             manager=MANAGER,
+            object_id="#text_box_30_horizcenter",
             container=self,
             anchors={
                 "left": "left",
@@ -2223,11 +2229,15 @@ class ConfirmDisplayChanges(UIMessageWindow):
                 "bottom": "bottom",
             },
         )
+        self.text_block.rebuild_from_changed_theme_data()
+        # make a timeout that will call in 10 seconds - if this window isn't closed,
+        # it'll be used to revert the change
         pygame.time.set_timer(pygame.USEREVENT + 10, 5000, loops=1)
 
     def revert_changes(self):
-        self.text_block.set_text("Time's up!")
+        """Add an event to the queue to revert the changes made to screen scaling"""
         pygame.event.post(pygame.Event(pygame.USEREVENT + 11))
+        pass
 
     def process_event(self, event: pygame.event.Event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:

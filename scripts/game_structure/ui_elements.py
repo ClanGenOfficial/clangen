@@ -49,19 +49,13 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
     ):
         self._normal_image = image_dict["normal"]
         self._hovered_image = (
-            pygame.transform.scale(image_dict["hovered"], relative_rect.size)
-            if "hovered" in image_dict
-            else self.normal_image
+            image_dict["hovered"] if "hovered" in image_dict else self.normal_image
         )
         self._selected_image = (
-            pygame.transform.scale(image_dict["selected"], relative_rect.size)
-            if "selected" in image_dict
-            else self.normal_image
+            image_dict["selected"] if "selected" in image_dict else self.normal_image
         )
         self._disabled_image = (
-            pygame.transform.scale(image_dict["disabled"], relative_rect.size)
-            if "disabled" in image_dict
-            else self.normal_image
+            image_dict["disabled"] if "disabled" in image_dict else self.normal_image
         )
         super().__init__(
             relative_rect,

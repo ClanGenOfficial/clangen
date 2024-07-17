@@ -115,7 +115,7 @@
             "rect_width": "100"
         }
     },
-    "@startscreen_main": {
+    "@buttonstyles_mainmenu": {
         "prototype": "@image_button",
         "font": {
             "name": "clangen",
@@ -124,11 +124,6 @@
         "misc": {
             "text_vert_alignment": "top",
             "text_vert_alignment_padding": "7"
-        }
-    },
-    "#tailing_letters": {
-        "misc": {
-            "text_vert_alignment_padding": "5"
         }
     },
     "#dev_watermark": {
@@ -161,6 +156,10 @@
         "font": {
             "name": "clangen",
             "size": "16"
+        },
+        "misc": {
+            "text_horiz_alignment": "center",
+            "text_horiz_alignment_padding": "10"
         }
     },
     "@buttonstyles_menu_middle": {
@@ -171,9 +170,12 @@
         }
     },
     "@buttonstyles_menu_left": {
-        "prototype": "@image_button",
+        "prototype": "@image_button"
+    },
+    "#events_button": {
+        "prototype": "@buttonstyles_menu_left",
         "misc": {
-            "text_horiz_alignment": "center",
+            "text_horiz_alignment": "left",
             "text_horiz_alignment_padding": "20"
         }
     },
@@ -196,10 +198,6 @@
         "font": {
             "name": "clangen",
             "size": "16"
-        },
-        "misc": {
-            "text_horiz_alignment": "left",
-            "text_horiz_alignment_padding": "50"
         }
     },
     "@buttonstyles_dropdown": {
@@ -211,7 +209,7 @@
         "misc": {
             "text_horiz_alignment": "center",
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "10"
+            "text_vert_alignment_padding": "12"
         }
     },
     "#window_base_theme": {

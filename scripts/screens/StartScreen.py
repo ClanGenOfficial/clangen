@@ -178,14 +178,14 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 310), (200, 30))),
             "continue",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
+            object_id=ObjectID(class_id="@buttonstyles_mainmenu", object_id=None),
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "switch clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
+            object_id=ObjectID(class_id="@buttonstyles_mainmenu", object_id=None),
             manager=MANAGER,
             anchors={"top_target": self.continue_button},
         )
@@ -193,7 +193,7 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "new clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@startscreen_main", object_id=None),
+            object_id=ObjectID(class_id="@buttonstyles_mainmenu", object_id=None),
             manager=MANAGER,
             anchors={"top_target": self.switch_clan_button},
         )
@@ -201,9 +201,7 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "settings + info",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(
-                class_id="@startscreen_main", object_id="#tailing_letters"
-            ),
+            object_id=ObjectID(class_id="@buttonstyles_mainmenu"),
             manager=MANAGER,
             anchors={"top_target": self.new_clan_button},
         )
@@ -211,9 +209,7 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "quit",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(
-                class_id="@startscreen_main", object_id="#tailing_letters"
-            ),
+            object_id=ObjectID(class_id="@buttonstyles_mainmenu"),
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
@@ -358,7 +354,7 @@ class StartScreen(Screens):
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.",
             ui_scale(pygame.Rect((0, 600), (800, 40))),
-            object_id=ObjectID("#text_box_34_horizcenter", "#dark"),
+            object_id=ObjectID("#text_box_30_horizcenter", "#dark"),
             manager=MANAGER,
             anchors={
                 "left": "left",

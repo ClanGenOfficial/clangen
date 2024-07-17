@@ -42,7 +42,7 @@ def _menu_button_init():
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
         manager=MANAGER,
-        object_id="@buttonstyles_menu_left",
+        object_id=ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
     menu_buttons["camp_screen"] = UISurfaceImageButton(
@@ -74,12 +74,13 @@ def _menu_button_init():
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["catlist_screen"]},
     )
-    menu_buttons["main_menu"] = UIImageButton(
+    menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
-        "",
+        "\u2B05\U0001F89E\u2513 Main Menu",
+        get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
         visible=False,
         manager=MANAGER,
-        object_id="#main_menu_button",
+        object_id="@buttonstyles_squoval",
         starting_height=5,
     )
 

@@ -2398,7 +2398,7 @@
             }
         }
     },
-    "@startscreen_main": {
+    "@buttonstyles_mainmenu": {
         "prototype": "@image_button",
         "colours": {
             "normal_text": "#EFE5CE",

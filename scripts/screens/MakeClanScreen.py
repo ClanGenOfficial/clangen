@@ -153,11 +153,14 @@ class MakeClanScreen(Screens):
             object_id=get_text_box_theme("#text_box_22_horizleft"),
             manager=MANAGER,
         )
-        self.main_menu = UIImageButton(
-            ui_scale(pygame.Rect((25, 50), (153, 30))),
-            "",
-            object_id="#main_menu_button",
+        self.main_menu = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
+            "\u2B05\U0001F89E\u2513 Main Menu",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            visible=False,
             manager=MANAGER,
+            object_id="@buttonstyles_squoval",
+            starting_height=1,
         )
         create_example_cats()
         # self.worldseed = randrange(10000)
@@ -1240,7 +1243,7 @@ class MakeClanScreen(Screens):
         self.elements["mode_details"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((325, 160), (405, 461))),
-            object_id="#medium_text",
+            object_id="#text_box_30_horizleft_pad_40_40",
             manager=MANAGER,
         )
         self.elements["mode_details"].padding = (40, 40)

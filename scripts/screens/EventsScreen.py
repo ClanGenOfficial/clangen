@@ -439,7 +439,7 @@ class EventsScreen(Screens):
                 if cat_ob:
                     # Shorten name if needed
                     name = str(cat_ob.name)
-                    short_name = shorten_text_to_fit(name, 195, 13)
+                    short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
                     self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
                         rect,
@@ -465,7 +465,7 @@ class EventsScreen(Screens):
                 if cat_ob:
                     # Shorten name if needed
                     name = str(cat_ob.name)
-                    short_name = shorten_text_to_fit(name, 195, 13)
+                    short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
                     self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
                         rect,
