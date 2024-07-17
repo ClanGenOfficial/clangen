@@ -47,6 +47,22 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         tool_tip_text_kwargs: Optional[Dict[str, str]] = None,
         max_dynamic_width: Optional[int] = None,
     ):
+        self._normal_image = image_dict["normal"]
+        self._hovered_image = (
+            pygame.transform.scale(image_dict["hovered"], relative_rect.size)
+            if "hovered" in image_dict
+            else self.normal_image
+        )
+        self._selected_image = (
+            pygame.transform.scale(image_dict["selected"], relative_rect.size)
+            if "selected" in image_dict
+            else self.normal_image
+        )
+        self._disabled_image = (
+            pygame.transform.scale(image_dict["disabled"], relative_rect.size)
+            if "disabled" in image_dict
+            else self.normal_image
+        )
         super().__init__(
             relative_rect,
             text,
@@ -66,36 +82,39 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             tool_tip_text_kwargs=tool_tip_text_kwargs,
             max_dynamic_width=max_dynamic_width,
         )
-        self.normal_image = image_dict["normal"]
-        self.hovered_image = (
-            pygame.transform.scale(image_dict["hovered"], self.relative_rect.size)
-            if "hovered" in image_dict
-            else self.normal_image
-        )
-        self.selected_image = (
-            pygame.transform.scale(image_dict["selected"], self.relative_rect.size)
-            if "selected" in image_dict
-            else self.normal_image
-        )
-        self.disabled_image = (
-            pygame.transform.scale(image_dict["disabled"], self.relative_rect.size)
-            if "disabled" in image_dict
-            else self.normal_image
-        )
         self.rebuild()
 
-    def set_any_images(self, images: Dict[str, pygame.Surface]):
-        for name, surface in images.items():
-            if name == "normal":
-                self.normal_image = surface
-                self.set_dimensions(self.normal_image.size)
-                self.normal_image = surface
-            elif name == "hovered":
-                self.hovered_image = surface
-            elif name == "selected":
-                self.selected_image = surface
-            elif name == "disabled":
-                self.disabled_image = surface
+    @property
+    def normal_image(self):
+        return self._normal_image
+
+    @normal_image.setter
+    def normal_image(self, val):
+        pass
+
+    @property
+    def hovered_image(self):
+        return self._hovered_image
+
+    @hovered_image.setter
+    def hovered_image(self, val):
+        pass
+
+    @property
+    def selected_image(self):
+        return self._selected_image
+
+    @selected_image.setter
+    def selected_image(self, val):
+        pass
+
+    @property
+    def disabled_image(self):
+        return self._disabled_image
+
+    @disabled_image.setter
+    def disabled_image(self, val):
+        pass
 
 
 class UIImageButton(pygame_gui.elements.UIButton):
@@ -456,7 +475,7 @@ class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
             visible=visible,
         )
 
-        self.button_width = 15
+        self.button_width = ui_scale_value(15)
         self.arrow_button_width = self.button_width
 
         self.rebuild()

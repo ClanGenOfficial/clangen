@@ -5,11 +5,6 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
-    screen,
-    screen_x,
-    screen_y,
-    MANAGER,
-    offset,
 )
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -21,10 +16,10 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_dimensions,
     ui_scale_blit,
 )
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 

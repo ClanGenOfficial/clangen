@@ -5,10 +5,6 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
-    screen,
-    screen_x,
-    screen_y,
-    MANAGER,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import (
@@ -18,6 +14,7 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
+from ..game_structure.screen_settings import screen_x, screen_y, MANAGER, screen
 
 
 class ChooseMentorScreen(Screens):

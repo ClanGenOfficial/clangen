@@ -15,7 +15,8 @@ from pygame_gui.elements import UIWindow
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
@@ -39,7 +40,6 @@ from scripts.utility import (
     ui_scale,
     quit,
     update_sprite,
-    ui_scale_dimensions,
     logger,
     process_text,
     ui_scale_dimensions,

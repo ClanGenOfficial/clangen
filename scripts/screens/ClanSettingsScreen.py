@@ -9,8 +9,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.utility import (
     get_text_box_theme,
@@ -18,6 +17,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 

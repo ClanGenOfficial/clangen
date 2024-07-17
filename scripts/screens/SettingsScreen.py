@@ -9,7 +9,7 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
-from scripts.game_structure.game_essentials import game, MANAGER, toggle_fullscreen
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
     get_text_box_theme,
@@ -17,6 +17,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -85,7 +86,10 @@ class SettingsScreen(Screens):
                 game.save_settings(self)
                 self.exit_screen()
 
-                toggle_fullscreen(game.settings["fullscreen"])
+                toggle_fullscreen(
+                    game.settings["fullscreen"],
+                    force_screen_size=game.config["theme"]["debug_force_screen_size"],
+                )
                 game.all_screens["settings screen"].screen_switches()
             elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":

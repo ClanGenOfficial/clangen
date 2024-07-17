@@ -7,11 +7,12 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, CatButton
 from scripts.utility import get_text_box_theme, shorten_text_to_fit, ui_scale_dimensions
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import PronounCreation
 
 with open("resources/dicts/pronouns.json", "r", encoding="utf-8") as f:

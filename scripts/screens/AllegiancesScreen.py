@@ -1,8 +1,10 @@
 import pygame
 import pygame_gui
 
+import scripts.game_structure.screen_settings
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import MANAGER
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -79,7 +81,11 @@ class AllegiancesScreen(Screens):
             )
             self.names_boxes[-1].disable()
 
-            y_pos += 700 * self.names_boxes[-1].get_relative_rect()[3] / screen_y
+            y_pos += (
+                700
+                * self.names_boxes[-1].get_relative_rect()[3]
+                / scripts.game_structure.screen_settings.screen_y
+            )
 
         self.scroll_container.set_scrollable_area_dimensions(
             ui_scale_dimensions((780, 700))

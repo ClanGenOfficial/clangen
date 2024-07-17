@@ -4,17 +4,16 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, MANAGER, offset
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
-    get_text_box_theme,
-    ui_scale_dimensions,
     generate_sprite,
     shorten_text_to_fit,
     ui_scale_dimensions,
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..game_structure.screen_settings import offset, MANAGER
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
 

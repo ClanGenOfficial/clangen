@@ -2,8 +2,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
@@ -18,6 +17,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from ..game_structure.screen_settings import MANAGER
 
 
 class MedDenScreen(Screens):

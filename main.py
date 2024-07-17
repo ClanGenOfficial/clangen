@@ -157,7 +157,8 @@ print("Running on commit " + get_version_info().version_number)
 # Load game
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
-from scripts.game_structure.game_essentials import game, MANAGER, screen, screen_scale
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class

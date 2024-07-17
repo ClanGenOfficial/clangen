@@ -9,7 +9,8 @@ import pygame_gui
 
 from scripts.debug_commands import commandList
 from scripts.debug_commands.utils import set_debug_class
-from scripts.game_structure.game_essentials import MANAGER, game
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import MANAGER
 from scripts.utility import get_text_box_theme
 
 

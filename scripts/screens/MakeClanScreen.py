@@ -4,19 +4,12 @@ from re import sub
 import pygame
 import pygame_gui
 
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
-from scripts.clan import Clan
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
-    screen,
-    screen_x,
-    screen_y,
-    MANAGER,
-    offset,
 )
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -25,8 +18,10 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale
+from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
 from ..cat.sprites import sprites
+from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
@@ -129,7 +124,7 @@ class MakeClanScreen(Screens):
     # used in symbol screen only - parent container is in element dict
     text = {}
 
-    def __init__(self, name=None):
+    def __init__(self, name="make_clan_screen"):
         super().__init__(name)
         # current page for symbol choosing
         self.current_page = 1

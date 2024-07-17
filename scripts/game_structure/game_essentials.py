@@ -1,16 +1,13 @@
 import os
 import traceback
 from ast import literal_eval
-from math import floor
 from shutil import move as shutil_move
-from typing import Optional
 
 import pygame
-import pygame_gui
 import ujson
 
-import scripts.game_structure.ui_manager
 from scripts.event_class import Single_Event
+from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
 pygame.init()
@@ -636,170 +633,8 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-offset = (0, 0)
-screen_x = 800
-screen_y = 700
-screen_scale = 1
-game_screen_size = (800, 700)
-MANAGER: Optional[pygame_gui.UIManager] = None
-screen = None
-
-
-def toggle_fullscreen(fullscreen=False, ingame_switch=True):
-    global offset
-    global screen_x
-    global screen_y
-    global screen_scale
-    global game_screen_size
-    global screen
-    global MANAGER
-    old_offset = offset
-    old_scale = screen_scale
-    mouse_pos = pygame.mouse.get_pos()
-    if fullscreen:
-        if game.config["theme"]["debug_force_screen_size"] is not None:
-            display_size = game.config["theme"]["debug_force_screen_size"]
-        else:
-            display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
-
-        # These are the most options I can provide that have a good tradeoff for crunchiness
-        screen_sizes = {
-            2: (1600, 1400),
-            1.75: (1400, 1225),
-            1.5: (1200, 1050),
-            1.25: (1000, 875),
-            1: (800, 700),
-        }
-        for i, (x, y) in screen_sizes.items():
-            if x < display_size[0] and y < display_size[1]:
-                screen_x = x
-                screen_y = y
-                screen_scale = i
-                break
-        screen = pygame.display.set_mode(
-            display_size,
-            (
-                pygame.FULLSCREEN
-                if game.config["theme"]["debug_force_screen_size"] is None
-                else pygame.FULLSCREEN | pygame.SCALED
-            ),
-        )
-        offset = (
-            floor((display_size[0] - screen_x) / 2),
-            floor((display_size[1] - screen_y) / 2),
-        )
-        game_screen_size = (screen_x, screen_y)
-    else:
-        offset = (0, 0)
-        screen_x = 800
-        screen_y = 700
-        screen_scale = 1
-        game_screen_size = (800, 700)
-        screen = pygame.display.set_mode((screen_x, screen_y))
-    game_screen_size = (screen_x, screen_y)
-
-    if ingame_switch:
-        from scripts.screens.all_screens import AllScreens
-
-        if fullscreen:
-            mouse_pos = mouse_pos[0] + offset[0], mouse_pos[1] + offset[1]
-        else:
-            mouse_pos = (mouse_pos[0] / old_scale) - old_offset[0], (
-                mouse_pos[1] / old_scale
-            ) - old_offset[1]
-
-        pygame.mouse.set_pos(mouse_pos)
-        MANAGER.clear_and_reset()
-        MANAGER.set_window_resolution(game_screen_size)
-        MANAGER.set_offset(offset)
-
-        AllScreens.rebuild_all_screens()
-    else:
-        MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
-
-    # handle screen scale theming changes
-    if screen_scale == 1:
-        MANAGER.get_theme().load_theme("resources/theme/fonts/1_screen_scale.json")
-    elif screen_scale == 1.25:
-        MANAGER.get_theme().load_theme("resources/theme/fonts/1.25_screen_scale.json")
-    elif screen_scale == 1.5:
-        MANAGER.get_theme().load_theme("resources/theme/fonts/1.5_screen_scale.json")
-    elif screen_scale == 1.75:
-        MANAGER.get_theme().load_theme("resources/theme/fonts/1.75_screen_scale.json")
-    elif screen_scale == 2:
-        MANAGER.get_theme().load_theme("resources/theme/fonts/2_screen_scale.json")
-
-    # preloading the associated fonts
-    if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
-        f"notosans_bold_aa_{floor(11 * screen_scale)}"
-    ):
-        MANAGER.preload_fonts(
-            [
-                {
-                    "name": "notosans",
-                    "point_size": floor(11 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(13 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(15 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(13 * screen_scale),
-                    "style": "italic",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(15 * screen_scale),
-                    "style": "italic",
-                },
-                {
-                    "name": "clangen",
-                    "point_size": floor(18 * screen_scale),
-                    "style": "regular",
-                },
-            ]
-        )
-
-
-def load_manager(res: tuple, offset: tuple, screen_scale: float):
-    global MANAGER
-    if MANAGER is not None:
-        MANAGER = None
-
-    # initialize pygame_gui manager, and load themes
-    manager = scripts.game_structure.ui_manager.UIManager(
-        res,
-        offset,
-        screen_scale,
-        "resources/theme/all.json",
-        enable_live_theme_updates=False,
-    )
-    manager.add_font_paths(
-        font_name="notosans",
-        regular_path="resources/fonts/NotoSans-Medium.ttf",
-        bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
-        italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
-        bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
-    )
-    manager.add_font_paths(
-        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
-    )
-
-    manager.get_theme().load_theme("resources/theme/themes/dark.json")
-
-    return manager
-
-
-toggle_fullscreen(game.settings["fullscreen"], ingame_switch=False)
-
-
-def get_offset():
-    return offset
+toggle_fullscreen(
+    game.settings["fullscreen"],
+    ingame_switch=False,
+    force_screen_size=game.config["theme"]["debug_force_screen_size"],
+)

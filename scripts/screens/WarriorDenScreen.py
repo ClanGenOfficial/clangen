@@ -4,14 +4,14 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
     ui_scale,
-    get_text_box_theme,
     get_alive_status_cats,
     ui_scale_dimensions,
 )

@@ -24,11 +24,8 @@ from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
-from scripts.game_structure.game_essentials import (
-    game,
-    screen_scale,
-    offset,
-)
+from scripts.game_structure.game_essentials import game
+import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
 
 
 # ---------------------------------------------------------------------------- #
@@ -2305,12 +2302,12 @@ def ceremony_text_adjust(
 def shorten_text_to_fit(
     name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"
 ):
-    length_limit = length_limit * screen_scale
+    length_limit = length_limit * scripts.game_structure.screen_settings.screen_scale
     # Set the font size based on fullscreen settings if not provided
     # Text box objects are named by their fullscreen text size, so it's easier to do it this way
     if font_size is None:
         font_size = 30
-    font_size = floor(font_size * screen_scale)
+    font_size = floor(font_size * scripts.game_structure.screen_settings.screen_scale)
     # Create the font object
     font = pygame.font.Font(font_type, font_size)
 
@@ -2344,27 +2341,41 @@ def shorten_text_to_fit(
 
 def ui_scale(rect):
     # offset can be negative to allow for correct anchoring
-    rect[0] = round(rect[0] * screen_scale)
-    rect[1] = round(rect[1] * screen_scale)
+    rect[0] = round(rect[0] * scripts.game_structure.screen_settings.screen_scale)
+    rect[1] = round(rect[1] * scripts.game_structure.screen_settings.screen_scale)
     # if the dimensions are negative, it's dynamically scaled, ignore
-    rect[2] = round(rect[2] * screen_scale) if rect[2] > 0 else rect[2]
-    rect[3] = round(rect[3] * screen_scale) if rect[3] > 0 else rect[3]
+    rect[2] = (
+        round(rect[2] * scripts.game_structure.screen_settings.screen_scale)
+        if rect[2] > 0
+        else rect[2]
+    )
+    rect[3] = (
+        round(rect[3] * scripts.game_structure.screen_settings.screen_scale)
+        if rect[3] > 0
+        else rect[3]
+    )
 
     return rect
 
 
 def ui_scale_dimensions(dim: Tuple[int, int]):
-    return round(dim[0] * screen_scale), round(dim[1] * screen_scale)
+    return round(dim[0] * scripts.game_structure.screen_settings.screen_scale), round(
+        dim[1] * scripts.game_structure.screen_settings.screen_scale
+    )
 
 
 def ui_scale_value(dim: int):
-    return round(dim * screen_scale)
+    return round(dim * scripts.game_structure.screen_settings.screen_scale)
 
 
 def ui_scale_blit(coords: Tuple[int, int]):
     """Used to scale where to blit an item, NOT the size of it (use ui_scale_dimensions or ui_scale for that)"""
-    return floor(coords[0] * screen_scale + offset[0]), floor(
-        coords[1] * screen_scale + offset[1]
+    return round(
+        coords[0] * scripts.game_structure.screen_settings.screen_scale
+        + scripts.game_structure.screen_settings.offset[0]
+    ), round(
+        coords[1] * scripts.game_structure.screen_settings.screen_scale
+        + scripts.game_structure.screen_settings.offset[1]
     )
 
 

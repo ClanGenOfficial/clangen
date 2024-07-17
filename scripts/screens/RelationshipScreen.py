@@ -5,11 +5,6 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
-    screen,
-    screen_x,
-    screen_y,
-    MANAGER,
-    offset,
 )
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -24,6 +19,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
 
 
 class RelationshipScreen(Screens):

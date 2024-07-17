@@ -3,9 +3,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-
-from ..events_module.condition_events import Condition_Events
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
@@ -19,6 +17,8 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..events_module.condition_events import Condition_Events
+from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:

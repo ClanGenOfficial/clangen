@@ -3,7 +3,7 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import (
     get_text_box_theme,
@@ -12,6 +12,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER
 
 
 class FamilyTreeScreen(Screens):

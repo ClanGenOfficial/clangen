@@ -5,24 +5,33 @@ import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 
+import scripts.game_structure.screen_settings
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import (
-    game,
-    screen,
-    MANAGER,
-    game_screen_size,
-    screen_scale,
-    get_offset,
-)
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
+from scripts.game_structure.screen_settings import (
+    MANAGER,
+    screen,
+)
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.utility import update_sprite, ui_scale, ui_scale_value, ui_scale_dimensions
+from scripts.utility import (
+    update_sprite,
+    ui_scale,
+    ui_scale_value,
+    ui_scale_dimensions,
+    ui_scale_blit,
+)
 
 
 def _menu_button_init():
+    """
+    This needs to exist to faciliate rebuilding the UI after a screen size change. A bit annoying but y'know.
+    :return: the menu button dictionary
+    """
+
     # menu buttons are used very often, so they are generated here.
     menu_buttons = dict()
 
@@ -33,9 +42,7 @@ def _menu_button_init():
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(
-            class_id="@buttonstyles_menu_left", object_id="#events_menu_button"
-        ),
+        object_id="@buttonstyles_menu_left",
         starting_height=5,
     )
     menu_buttons["camp_screen"] = UISurfaceImageButton(
@@ -44,7 +51,7 @@ def _menu_button_init():
         get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@image_button", object_id=None),
+        object_id="@buttonstyles_menu_middle",
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["events_screen"]},
     )
@@ -53,7 +60,7 @@ def _menu_button_init():
         "Cat List",
         get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
         visible=False,
-        object_id=ObjectID(class_id="@image_button", object_id=None),
+        object_id="@buttonstyles_menu_middle",
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["camp_screen"]},
     )
@@ -63,7 +70,7 @@ def _menu_button_init():
         get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@image_button", object_id=None),
+        object_id="@buttonstyles_menu_right",
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["catlist_screen"]},
     )
@@ -221,12 +228,16 @@ class Screens:
     game_frame: pygame.Surface = pygame.image.load_sized_svg(
         "resources/images/border_gamescreen.svg",
         (
-            game_screen_size[0] + ui_scale_value(20),
-            game_screen_size[1] + ui_scale_value(20),
+            scripts.game_structure.screen_settings.game_screen_size[0]
+            + ui_scale_value(20),
+            scripts.game_structure.screen_settings.game_screen_size[1]
+            + ui_scale_value(20),
         ),
     )
 
     menu_buttons = _menu_button_init()
+    for button in menu_buttons.values():
+        button.rebuild_from_changed_theme_data()
 
     def change_screen(self, new_screen):
         """Use this function when switching screens.
@@ -254,8 +265,10 @@ class Screens:
         self.game_frame: pygame.Surface = pygame.image.load_sized_svg(
             "resources/images/border_gamescreen.svg",
             (
-                game_screen_size[0] + ui_scale_value(20),
-                game_screen_size[1] + ui_scale_value(20),
+                scripts.game_structure.screen_settings.game_screen_size[0]
+                + ui_scale_value(20),
+                scripts.game_structure.screen_settings.game_screen_size[1]
+                + ui_scale_value(20),
             ),
         )
         self.name = name
@@ -270,9 +283,11 @@ class Screens:
         # Dictionary of work done, keyed by the target function name
         self.work_done = {}
 
-        bg = pygame.Surface(game_screen_size)
+        bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
         bg.fill(game.config["theme"]["light_mode_background"])
-        bg_dark = pygame.Surface(game_screen_size)
+        bg_dark = pygame.Surface(
+            scripts.game_structure.screen_settings.game_screen_size
+        )
         bg_dark.fill(game.config["theme"]["dark_mode_background"])
 
         self.bgs = {"default_light": bg, "default_dark": bg_dark}
@@ -648,7 +663,9 @@ class Screens:
         radius: int = 5,
     ):
         for name, bg in bgs.items():
-            self.bgs[name] = pygame.transform.scale(bg, game_screen_size)
+            self.bgs[name] = pygame.transform.scale(
+                bg, scripts.game_structure.screen_settings.game_screen_size
+            )
             if blur_bgs is not None and name in blur_bgs:
                 self.blur_bgs[name] = pygame.transform.scale(
                     blur_bgs[name], screen.get_size()
@@ -674,14 +691,13 @@ class Screens:
             self.active_bg = (
                 "default_dark" if game.settings["dark mode"] else "default_light"
             )
-        offset = get_offset()
         if game.settings["fullscreen"]:
             screen.blit(self.blur_bgs[self.active_bg], (0, 0))
             screen.blit(
                 self.game_frame,
-                (offset[0] - (10 * screen_scale), offset[1] - (10 * screen_scale)),
+                ui_scale_blit((-10, -10)),
             )
-        screen.blit(self.bgs[self.active_bg], offset)
+        screen.blit(self.bgs[self.active_bg], ui_scale_blit((0, 0)))
 
 
 # CAT PROFILES

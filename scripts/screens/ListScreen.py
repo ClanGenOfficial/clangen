@@ -7,10 +7,8 @@ from pygame_gui.core import ObjectID
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import (
     game,
-    MANAGER,
-    game_screen_size,
-    screen,
 )
+from scripts.game_structure.screen_settings import game_screen_size, MANAGER, screen
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UIDropDownContainer,

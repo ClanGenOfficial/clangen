@@ -7,8 +7,6 @@ from pygame_gui.core import ObjectID
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import (
     game,
-    screen,
-    MANAGER,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import DeleteCheck
@@ -19,6 +17,7 @@ from scripts.utility import (
     ui_scale_blit,
 )
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)

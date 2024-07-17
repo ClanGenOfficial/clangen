@@ -4,12 +4,13 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, screen_x, MANAGER
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton
-from scripts.utility import get_text_box_theme, ui_scale_value
+from scripts.utility import get_text_box_theme
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..cat.history import History
+from ..game_structure.screen_settings import MANAGER
 
 
 class CeremonyScreen(Screens):
