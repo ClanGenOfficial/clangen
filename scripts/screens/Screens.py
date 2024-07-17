@@ -400,7 +400,7 @@ class Screens():
         self.menu_buttons['heading'].set_text(text)
 
     def mns_ui_offset(self, x_shift, y_shift):
-        """x_shifts the dens UI up or down by the given amount - needed for positioning around the MnS widget"""
+        """shifts the dens UI by the given amount - needed for positioning around the MnS widget"""
         try:
             if self.menu_buttons['dens']:
                 self.menu_buttons['dens'].kill()
