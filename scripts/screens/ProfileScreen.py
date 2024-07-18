@@ -33,6 +33,7 @@ from ..cat.history import History
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
+from ..ui.add_text_arrow import make_text_arrow
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -450,16 +451,18 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
         # Set up the menu buttons, which appear on all cat profile images.
-        self.next_cat_button = UIImageButton(
+        self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "",
-            object_id="#next_cat_button",
+            "Next Cat " + make_text_arrow(3, arrow_right=True),
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.previous_cat_button = UIImageButton(
+        self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "",
-            object_id="#previous_cat_button",
+            make_text_arrow(2, arrow_right=False) + " Previous Cat",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(

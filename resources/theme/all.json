@@ -2398,8 +2398,16 @@
             }
         }
     },
-    "@buttonstyles_mainmenu": {
+    "buttonstyles_prototype": {
         "prototype": "@image_button",
+        "misc": {
+            "state_transitions": {
+                "hovered_normal": "0.1"
+            }
+        }
+    },
+    "@buttonstyles_mainmenu": {
+        "prototype": "buttonstyles_prototype",
         "colours": {
             "normal_text": "#EFE5CE",
             "hovered_text": "#EFE5CE",

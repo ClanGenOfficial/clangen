@@ -116,7 +116,7 @@
         }
     },
     "@buttonstyles_mainmenu": {
-        "prototype": "@image_button",
+        "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
             "size": "20"
@@ -145,14 +145,14 @@
         }
     },
     "@buttonstyles_rounded_rect": {
-        "prototype": "@image_button",
+        "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
             "size": "16"
         }
     },
     "@buttonstyles_menu_right": {
-        "prototype": "@image_button",
+        "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
             "size": "16"
@@ -163,14 +163,14 @@
         }
     },
     "@buttonstyles_menu_middle": {
-        "prototype": "@image_button",
+        "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
             "size": "16"
         }
     },
     "@buttonstyles_menu_left": {
-        "prototype": "@image_button"
+        "prototype": "buttonstyles_prototype"
     },
     "#events_button": {
         "prototype": "@buttonstyles_menu_left",
@@ -180,7 +180,7 @@
         }
     },
     "@buttonstyles_squoval": {
-        "prototype": "@image_button",
+        "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
             "size": "16"
@@ -201,7 +201,7 @@
         }
     },
     "@buttonstyles_dropdown": {
-        "prototype": "@image_button",
+        "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
             "size": "16"
