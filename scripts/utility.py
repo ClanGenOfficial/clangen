@@ -2328,7 +2328,7 @@ def shorten_text_to_fit(
                 break
             short_name += character
 
-    # If the name was truncated, add "…"
+    # If the name was truncated, add "..."
     if len(short_name) < len(name):
         short_name += "..."
 
