@@ -301,6 +301,7 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
                     "bottom": "bottom",
                 },
                 visible=True,
+                starting_height=10,
             )
             self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
             self.horiz_scroll_bar.set_relative_position((0, 0))
@@ -458,6 +459,7 @@ class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
         parent_element,
         anchors,
         visible,
+        starting_height=1,
     ):
         super().__init__(
             relative_rect,
@@ -471,6 +473,7 @@ class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
 
         self.button_width = ui_scale_value(15)
         self.arrow_button_width = self.button_width
+        self.sliding_button.change_layer(starting_height)
 
         self.rebuild()
 

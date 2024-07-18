@@ -7,6 +7,7 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
     UITextBoxTweaked,
+    UISurfaceImageButton,
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -18,6 +19,8 @@ from scripts.utility import (
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 
 class MedDenScreen(Screens):
@@ -119,10 +122,11 @@ class MedDenScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.hide_menu_buttons()
-        self.back_button = UIImageButton(
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            "",
-            object_id="#back_button",
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.next_med = UIImageButton(

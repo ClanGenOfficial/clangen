@@ -4,7 +4,11 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISpriteButton,
+    UISurfaceImageButton,
+)
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -13,6 +17,8 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 
 class FamilyTreeScreen(Screens):
@@ -175,22 +181,29 @@ class FamilyTreeScreen(Screens):
         self.current_group = None
         self.current_group_name = None
         # prev/next and back buttons
-        self.previous_cat_button = UIImageButton(
+        self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "",
-            object_id="#previous_cat_button",
+            get_arrow(1) + " Previous Cat",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.next_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "",
-            object_id="#next_cat_button",
+
+        next_cat_rect = ui_scale(pygame.Rect((0, 0), (153, 30)))
+        next_cat_rect.topright = ui_scale_dimensions((25, 25))
+        self.next_cat_button = UISurfaceImageButton(
+            next_cat_rect,
+            "Next Cat " + get_arrow(2.5, arrow_left=False),
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.back_button = UIImageButton(
+        del next_cat_rect
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
-            "",
-            object_id="#back_button",
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
 

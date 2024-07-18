@@ -5,12 +5,14 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_button import ButtonStyles, get_button_dict
+from ..ui.get_arrow import get_arrow
 
 
 class CeremonyScreen(Screens):
@@ -61,10 +63,11 @@ class CeremonyScreen(Screens):
             manager=MANAGER,
         )
         self.text.disable()
-        self.back_button = UIImageButton(
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            "",
-            object_id="#back_button",
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.scroll_container.set_scrollable_area_dimensions(

@@ -523,6 +523,5 @@ class SettingsScreen(Screens):
         toggle_fullscreen(
             screen_mode,
             force_screen_size=game.config["theme"]["debug_force_screen_size"],
-            font="opendyslexic" if game.settings["dyslexia"] else "clangen",
         )
         game.all_screens["settings screen"].screen_switches()

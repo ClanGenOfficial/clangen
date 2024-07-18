@@ -15,6 +15,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
     ui_scale,
     get_text_box_theme,
@@ -134,10 +135,11 @@ class LeaderDenScreen(Screens):
         self.hide_menu_buttons()
 
         # BACK AND HELP
-        self.back_button = UIImageButton(
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            "",
-            object_id="#back_button",
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.help_button = UIImageButton(

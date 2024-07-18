@@ -345,7 +345,7 @@ class EventsScreen(Screens):
             self.event_display.kill()
 
         self.event_display = UIModifiedScrollingContainer(
-            ui_scale(pygame.Rect((211, 275), (543, 355))),
+            ui_scale(pygame.Rect((211, 275), (543, 351))),
             starting_height=1,
             manager=MANAGER,
             allow_scroll_y=True,
@@ -423,7 +423,7 @@ class EventsScreen(Screens):
             involved_cat_rect,
             container=container,
             manager=MANAGER,
-            starting_height=1,
+            starting_height=3,
             allow_scroll_x=True,
             allow_scroll_y=False,
             should_grow_automatically=scrollbar_needed,  # true if we need a scrollbar, false otherwise

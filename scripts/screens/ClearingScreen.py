@@ -20,6 +20,7 @@ from .Screens import Screens
 from ..events_module.condition_events import Condition_Events
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import ButtonStyles, get_button_dict
+from ..ui.get_arrow import get_arrow
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
@@ -208,10 +209,11 @@ class ClearingScreen(Screens):
             return
 
         self.hide_menu_buttons()
-        self.back_button = UIImageButton(
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            "",
-            object_id="#back_button",
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.stop_focus_button = UIImageButton(

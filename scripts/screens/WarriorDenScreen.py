@@ -10,6 +10,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.game_structure.windows import SelectFocusClans
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
+from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
     ui_scale,
     get_alive_status_cats,
@@ -128,10 +129,11 @@ class WarriorDenScreen(Screens):
         """
         super().screen_switches()
         self.hide_menu_buttons()
-        self.back_button = UIImageButton(
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            "",
-            object_id=ObjectID("#back_button", "@image_button"),
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.help_button = UIImageButton(

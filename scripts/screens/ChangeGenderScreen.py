@@ -8,12 +8,18 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton, CatButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    CatButton,
+    UISurfaceImageButton,
+)
 from scripts.utility import get_text_box_theme, shorten_text_to_fit, ui_scale_dimensions
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import PronounCreation
+from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 with open("resources/dicts/pronouns.json", "r", encoding="utf-8") as f:
     pronouns_dict = ujson.load(f)
@@ -117,10 +123,11 @@ class ChangeGenderScreen(Screens):
             object_id="#previous_cat_button",
             manager=MANAGER,
         )
-        self.back_button = UIImageButton(
+        self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
-            "",
-            object_id="#back_button",
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.update_selected_cat()

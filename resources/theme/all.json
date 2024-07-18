@@ -276,7 +276,7 @@
             "active_border": "#2F2918"
         },
         "misc": {
-            "border_width": "2",
+            "border_width": "0",
             "shadow_width": "0"
         }
     },
@@ -2444,22 +2444,6 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/done_unavailable.png"
-            }
-        }
-    },
-    "#back_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/back.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/back_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/back_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/back_unavailable.png"
             }
         }
     },

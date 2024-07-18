@@ -10,6 +10,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
     UIRelationStatusBar,
+    UISurfaceImageButton,
 )
 from scripts.game_structure.windows import RelationshipLog
 from scripts.utility import (
@@ -20,6 +21,8 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
+from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 
 class RelationshipScreen(Screens):
@@ -214,8 +217,12 @@ class RelationshipScreen(Screens):
             "",
             object_id="#next_cat_button",
         )
-        self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((25, 645), (105, 30))), "", object_id="#back_button"
+        self.back_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 645), (105, 30))),
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
         )
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(
