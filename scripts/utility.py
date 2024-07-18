@@ -2315,7 +2315,7 @@ def shorten_text_to_fit(
     # Add dynamic name lengths by checking the actual width of the text
     total_width = 0
     short_name = ""
-    ellipsis_width = font.size("…")[0]
+    ellipsis_width = font.size("...")[0]
     for index, character in enumerate(name):
         char_width = font.size(character)[0]
 
@@ -2330,7 +2330,7 @@ def shorten_text_to_fit(
 
     # If the name was truncated, add "…"
     if len(short_name) < len(name):
-        short_name += "…"
+        short_name += "..."
 
     return short_name
 
