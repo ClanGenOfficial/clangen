@@ -10,6 +10,7 @@ from scripts.utility import (
     generate_sprite,
     shorten_text_to_fit,
     ui_scale_dimensions,
+    ui_scale_offset,
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
@@ -275,7 +276,7 @@ class SpriteInspectScreen(Screens):
         )
 
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (56, 56)))
-        favorite_button_rect.topright = ui_scale_dimensions((-5, 54))
+        favorite_button_rect.topright = ui_scale_offset((-5, 54))
         self.cat_elements["favourite_button"] = UIImageButton(
             favorite_button_rect,
             "",
@@ -316,12 +317,12 @@ class SpriteInspectScreen(Screens):
 
         # "Show Platform"
         self.make_one_checkbox(
-            ui_scale_dimensions((100, 575)), "platform_shown", self.platform_shown
+            ui_scale_offset((100, 575)), "platform_shown", self.platform_shown
         )
 
         # "Show Scars"
         self.make_one_checkbox(
-            ui_scale_dimensions((300, 575)),
+            ui_scale_offset((300, 575)),
             "scars_shown",
             self.scars_shown,
             self.the_cat.pelt.scars,
@@ -329,7 +330,7 @@ class SpriteInspectScreen(Screens):
 
         # "Show accessories"
         self.make_one_checkbox(
-            ui_scale_dimensions((500, 575)),
+            ui_scale_offset((500, 575)),
             "acc_shown",
             self.acc_shown,
             self.the_cat.pelt.accessory,
@@ -337,7 +338,7 @@ class SpriteInspectScreen(Screens):
 
         # "Show as living"
         self.make_one_checkbox(
-            ui_scale_dimensions((200, 625)),
+            ui_scale_offset((200, 625)),
             "override_dead_lineart",
             self.override_dead_lineart,
             self.the_cat.dead,
@@ -346,7 +347,7 @@ class SpriteInspectScreen(Screens):
 
         # "Show as healthy"
         self.make_one_checkbox(
-            ui_scale_dimensions((400, 625)),
+            ui_scale_offset((400, 625)),
             "override_not_working",
             self.override_not_working,
             self.the_cat.not_working(),

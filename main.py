@@ -166,7 +166,7 @@ from scripts.utility import (
     get_text_box_theme,
     quit,
     ui_scale,
-    ui_scale_dimensions,
+    ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
 import pygame_gui
@@ -287,7 +287,7 @@ version_number = pygame_gui.elements.UILabel(
 )
 # Adjust position
 version_number.set_relative_position(
-    ui_scale_dimensions(
+    ui_scale_offset(
         (
             800 - version_number.get_relative_rect()[2] - 8,
             700 - version_number.get_relative_rect()[3],

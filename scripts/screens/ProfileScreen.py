@@ -27,6 +27,7 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale_dimensions,
     shorten_text_to_fit,
+    ui_scale_offset,
 )
 from .Screens import Screens
 from ..cat.history import History
@@ -628,7 +629,7 @@ class ProfileScreen(Screens):
             anchors={"centerx": "centerx"},
         )
         self.profile_elements["cat_name"].set_relative_position(
-            ui_scale_dimensions((0, 140))
+            ui_scale_offset((0, 140))
         )
 
         # Write cat thought
@@ -696,7 +697,7 @@ class ProfileScreen(Screens):
             self.profile_elements["med_den"].hide()
 
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
-        favorite_button_rect.topright = ui_scale_dimensions((-10, 143))
+        favorite_button_rect.topright = ui_scale_offset((-10, 143))
         self.profile_elements["favourite_button"] = UIImageButton(
             favorite_button_rect,
             "",

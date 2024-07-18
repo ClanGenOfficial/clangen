@@ -45,6 +45,7 @@ from scripts.utility import (
     logger,
     process_text,
     ui_scale_dimensions,
+    ui_scale_offset,
 )
 
 
@@ -1740,7 +1741,7 @@ class SaveAsImage(UIWindow):
         self.scale_factor = 1
 
         button_layout_rect = ui_scale(pygame.Rect((0, 5), (22, 22)))
-        button_layout_rect.topright = ui_scale_dimensions((-1, 5))
+        button_layout_rect.topright = ui_scale_offset((-1, 5))
 
         self.close_button = UIImageButton(
             button_layout_rect,
@@ -1868,7 +1869,7 @@ class EventLoading(UIWindow):
     def __init__(self, pos):
 
         if pos is None:
-            pos = ui_scale_dimensions((800, 700))
+            pos = ui_scale_offset((800, 700))
 
         super().__init__(
             ui_scale(pygame.Rect(pos, (100, 100))),
@@ -2192,7 +2193,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
         button_vertical_space = (button_spacing * 2) + button_size[1]
 
         dismiss_button_rect = ui_scale(pygame.Rect((0, 0), (150, 30)))
-        dismiss_button_rect.bottomright = ui_scale_dimensions(
+        dismiss_button_rect.bottomright = ui_scale_offset(
             (-button_spacing, -button_spacing)
         )
 

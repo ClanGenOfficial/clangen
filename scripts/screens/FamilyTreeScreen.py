@@ -14,6 +14,7 @@ from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
     ui_scale_dimensions,
+    ui_scale_offset,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -190,7 +191,7 @@ class FamilyTreeScreen(Screens):
         )
 
         next_cat_rect = ui_scale(pygame.Rect((0, 0), (153, 30)))
-        next_cat_rect.topright = ui_scale_dimensions((25, 25))
+        next_cat_rect.topright = ui_scale_offset((25, 25))
         self.next_cat_button = UISurfaceImageButton(
             next_cat_rect,
             "Next Cat " + get_arrow(2.5, arrow_left=False),

@@ -2340,7 +2340,12 @@ def shorten_text_to_fit(
 # ---------------------------------------------------------------------------- #
 
 
-def ui_scale(rect):
+def ui_scale(rect: pygame.Rect):
+    """
+    Scales a pygame.Rect appropriately for the UI scaling currently in use.
+    :param rect: a pygame.Rect
+    :return: the same pygame.Rect, scaled for the current UI.
+    """
     # offset can be negative to allow for correct anchoring
     rect[0] = round(rect[0] * scripts.game_structure.screen_settings.screen_scale)
     rect[1] = round(rect[1] * scripts.game_structure.screen_settings.screen_scale)
@@ -2360,17 +2365,51 @@ def ui_scale(rect):
 
 
 def ui_scale_dimensions(dim: Tuple[int, int]):
-    return round(dim[0] * scripts.game_structure.screen_settings.screen_scale), round(
-        dim[1] * scripts.game_structure.screen_settings.screen_scale
+    """
+    Use to scale the dimensions of an item - WILL IGNORE NEGATIVE VALUES
+    :param dim: The dimensions to scale
+    :return: The scaled dimensions
+    """
+    return (
+        round(dim[0] * scripts.game_structure.screen_settings.screen_scale)
+        if dim[0] > 0
+        else dim[0],
+        round(dim[1] * scripts.game_structure.screen_settings.screen_scale)
+        if dim[1] > 0
+        else dim[1],
     )
 
 
-def ui_scale_value(dim: int):
-    return round(dim * scripts.game_structure.screen_settings.screen_scale)
+def ui_scale_offset(coords: Tuple[int, int]):
+    """
+    Use to scale the offset of an item (i.e. the first 2 values of a pygame.Rect).
+    Not to be confused with ui_scale_blit.
+    :param coords: The coordinates to scale
+    :return: The scaled coordinates
+    """
+    return (
+        round(coords[0] * scripts.game_structure.screen_settings.screen_scale),
+        round(coords[1] * scripts.game_structure.screen_settings.screen_scale),
+    )
+
+
+def ui_scale_value(val: int):
+    """
+    Use to scale a single value according to the UI scale. If you need this one,
+    you're probably doing something unusual. Try to avoid where possible.
+    :param val: The value to scale
+    :return: The scaled value
+    """
+    return round(val * scripts.game_structure.screen_settings.screen_scale)
 
 
 def ui_scale_blit(coords: Tuple[int, int]):
-    """Used to scale where to blit an item, NOT the size of it (use ui_scale_dimensions or ui_scale for that)"""
+    """
+    Use to scale WHERE to blit an item, not the SIZE of it. Considers the entire pygame window,
+    including offset if in fullscreen. Not to be confused with ui_scale_offset.
+    :param coords: The coordinates to blit to
+    :return: The scaled, correctly offset coordinates to blit to.
+    """
     return round(
         coords[0] * scripts.game_structure.screen_settings.screen_scale
         + scripts.game_structure.screen_settings.offset[0]

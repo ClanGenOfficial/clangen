@@ -24,6 +24,7 @@ from scripts.utility import (
     get_living_clan_cat_count,
     ui_scale_dimensions,
     ui_scale_value,
+    ui_scale_offset,
 )
 
 
@@ -460,7 +461,7 @@ class EventsScreen(Screens):
         else:
             rect = ui_scale(pygame.Rect((0, 0), (120, 34)))
             for i, cat_id in enumerate(reversed(button_pressed.ids)):
-                rect.topright = ui_scale_dimensions((0 if i == 0 else -125, 0))
+                rect.topright = ui_scale_offset((0 if i == 0 else -125, 0))
                 cat_ob = Cat.fetch_cat(cat_id)
                 if cat_ob:
                     # Shorten name if needed
@@ -558,7 +559,7 @@ class EventsScreen(Screens):
                 continue
 
         default_rect = pygame.Rect(
-            ui_scale_dimensions((5, 0)),
+            ui_scale_offset((5, 0)),
             (
                 self.event_display.get_relative_rect()[2]
                 - ui_scale_value(2)
@@ -600,7 +601,7 @@ class EventsScreen(Screens):
             )
 
         catbutton_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
-        catbutton_rect.topright = ui_scale_dimensions((-10, 5))
+        catbutton_rect.topright = ui_scale_offset((-10, 5))
         for i, event_object in enumerate(self.display_events):
             if not event_object.cats_involved:
                 continue

@@ -17,6 +17,7 @@ from scripts.utility import (
     ui_scale,
     ui_scale_dimensions,
     ui_scale_blit,
+    ui_scale_offset,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, screen
@@ -1167,7 +1168,7 @@ class ChooseMateScreen(Screens):
         )
 
         self.loading_screen_on_use(
-            self.work_thread, self.update_both, ui_scale_dimensions((450, 300))
+            self.work_thread, self.update_both, ui_scale_offset((450, 300))
         )
 
     def get_valid_mates(self):

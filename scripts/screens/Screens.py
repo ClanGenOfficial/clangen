@@ -24,6 +24,7 @@ from scripts.utility import (
     ui_scale_value,
     ui_scale_dimensions,
     ui_scale_blit,
+    ui_scale_offset,
 )
 
 
@@ -87,7 +88,7 @@ def _menu_button_init():
 
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (118, 30)))
-    scale_rect.topright = ui_scale_dimensions((-25, 25))
+    scale_rect.topright = ui_scale_offset((-25, 25))
     menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
         "Allegiances",
@@ -203,7 +204,7 @@ def _menu_button_init():
         starting_height=6,
     )
     heading_rect = ui_scale(pygame.Rect((0, 0), (195, 35)))
-    heading_rect.bottomleft = ui_scale_dimensions((0, 0))
+    heading_rect.bottomleft = ui_scale_offset((0, 0))
     menu_buttons["heading"] = pygame_gui.elements.UITextBox(
         "",
         heading_rect,
