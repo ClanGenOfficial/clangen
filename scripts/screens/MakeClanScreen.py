@@ -157,8 +157,7 @@ class MakeClanScreen(Screens):
         )
         self.main_menu = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 50), (153, 30))),
-            get_arrow(3),
-            " Main Menu",
+            get_arrow(3) + " Main Menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
