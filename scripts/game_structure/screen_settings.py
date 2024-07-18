@@ -82,16 +82,19 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
         from scripts.screens.all_screens import AllScreens
 
         if fullscreen:
-            mouse_pos = mouse_pos[0] + offset[0], mouse_pos[1] + offset[1]
+            mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
+                1
+            ] * screen_scale + offset[1]
         else:
-            mouse_pos = (mouse_pos[0] / old_scale) - old_offset[0], (
-                mouse_pos[1] / old_scale
-            ) - old_offset[1]
+            mouse_pos = (
+                (mouse_pos[0] - old_offset[0]) / old_scale,
+                (mouse_pos[1] - old_offset[1]) / old_scale,
+            )
 
-        pygame.mouse.set_pos(mouse_pos)
         MANAGER.clear_and_reset()
         MANAGER.set_window_resolution(game_screen_size)
         MANAGER.set_offset(offset)
+        pygame.mouse.set_pos(mouse_pos)
 
         AllScreens.rebuild_all_screens()
 
