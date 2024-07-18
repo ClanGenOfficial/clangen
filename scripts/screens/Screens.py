@@ -17,6 +17,7 @@ from scripts.game_structure.screen_settings import (
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
     update_sprite,
     ui_scale,
@@ -76,7 +77,7 @@ def _menu_button_init():
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
-        "\u2B05\U0001F89E\u2513 Main Menu",
+        get_arrow(3) + " Main Menu",
         get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
         visible=False,
         manager=MANAGER,

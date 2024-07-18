@@ -2479,22 +2479,6 @@
             }
         }
     },
-    "#main_menu_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/main_menu.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/main_menu_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/main_menu_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/main_menu_unavailable.png"
-            }
-        }
-    },
     "#smallquit_button": {
         "images": {
             "normal_image": {

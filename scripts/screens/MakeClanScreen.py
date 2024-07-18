@@ -25,6 +25,7 @@ from ..cat.sprites import sprites
 from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow
 from ..ui.generate_button import ButtonStyles, get_button_dict
+from ..ui.get_arrow import get_arrow
 
 
 class MakeClanScreen(Screens):
@@ -156,7 +157,8 @@ class MakeClanScreen(Screens):
         )
         self.main_menu = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 50), (153, 30))),
-            "\u2B05\U0001F89E\u2513 Main Menu",
+            get_arrow(3),
+            " Main Menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",

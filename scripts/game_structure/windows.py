@@ -37,6 +37,7 @@ from scripts.housekeeping.update import (
 )
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
+from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
     ui_scale,
     quit,
@@ -193,7 +194,7 @@ class SymbolFilterWindow(UIWindow):
 
 
 class SaveCheck(UIWindow):
-    def __init__(self, last_screen, isMainMenu, mm_btn):
+    def __init__(self, last_screen, is_main_menu, mm_btn):
         game.switches["window_open"] = True
         if game.is_close_menu_open:
             return
@@ -210,7 +211,7 @@ class SaveCheck(UIWindow):
         if game.clan:
             self.clan_name = f"{game.clan.name}Clan"
         self.last_screen = last_screen
-        self.isMainMenu = isMainMenu
+        self.isMainMenu = is_main_menu
         self.mm_btn = mm_btn
         # adding a variable for starting_height to make sure that this menu is always on top
         top_stack_menu_layer_height = 10000
@@ -218,7 +219,7 @@ class SaveCheck(UIWindow):
             self.mm_btn.disable()
             self.main_menu_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 155), (152, 30))),
-                "\u2B05\U0001F89E\u2513 Main Menu",
+                get_arrow(3) + " Main Menu",
                 get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_squoval",

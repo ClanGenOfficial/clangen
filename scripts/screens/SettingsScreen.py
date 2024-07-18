@@ -22,6 +22,7 @@ from ..game_structure.windows import ConfirmDisplayChanges
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 logger = logging.getLogger(__name__)
 
@@ -208,14 +209,14 @@ class SettingsScreen(Screens):
             ui_scale(pygame.Rect((175, 100), (150, 30))),
             "general settings",
             get_button_dict(ButtonStyles.MENU_LEFT, (150, 30)),
-            object_id="@image_button",
+            object_id="@buttonstyles_menu_left",
             manager=MANAGER,
         )
         self.info_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 100), (150, 30))),
             "info",
             get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
-            object_id="@image_button",
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
             anchors={"left_target": self.general_settings_button},
         )
@@ -223,7 +224,7 @@ class SettingsScreen(Screens):
             ui_scale(pygame.Rect((0, 100), (150, 30))),
             "language",
             get_button_dict(ButtonStyles.MENU_RIGHT, (150, 30)),
-            object_id="@image_button",
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             anchors={"left_target": self.info_button},
         )
@@ -265,7 +266,7 @@ class SettingsScreen(Screens):
         self.update_save_button()
         self.main_menu_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (152, 30))),
-            "\u2B05\U0001F89E\u2513 Main Menu",
+            get_arrow(3) + " Main Menu",
             get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
@@ -522,5 +523,6 @@ class SettingsScreen(Screens):
         toggle_fullscreen(
             screen_mode,
             force_screen_size=game.config["theme"]["debug_force_screen_size"],
+            font="opendyslexic" if game.settings["dyslexia"] else "clangen",
         )
         game.all_screens["settings screen"].screen_switches()

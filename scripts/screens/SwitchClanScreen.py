@@ -19,6 +19,7 @@ from scripts.utility import (
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 logger = logging.getLogger(__name__)
 
@@ -107,7 +108,7 @@ class SwitchClanScreen(Screens):
         )
         self.main_menu = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "\u2B05\U0001F89E\u2513 Main Menu",
+            get_arrow(3) + " Main Menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",

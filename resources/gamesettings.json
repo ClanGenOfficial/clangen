@@ -2,7 +2,7 @@
     ".": [
         "WARNING: This file is NOT where your settings are stored.",
         "This file is only used to display the settings in the game.",
-        "The file you are looking for is 'settings.txt' in your saves folder.",
+        "The file you are looking for is 'settings.json' in your saves folder.",
         "If you want to change your settings, edit that file instead.",
         "FORMAT:",
         {

@@ -73,8 +73,9 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
         MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
 
     # generate new theme
+    origin = "resources/theme/fonts/master_screen_scale.json"
     theme_location = "resources/theme/fonts/generated_screen_scale.json"
-    generate_screen_scale(theme_location, screen_scale)
+    generate_screen_scale(origin, theme_location, screen_scale)
     MANAGER.get_theme().load_theme(theme_location)
 
     if ingame_switch:

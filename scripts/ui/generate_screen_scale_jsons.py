@@ -31,8 +31,8 @@ def multiply_numbers(data, multiplier):
     return data
 
 
-def generate_screen_scale(output_file, multiplier):
-    with open("resources/theme/fonts/master_text_scale.json", "r") as readfile:
+def generate_screen_scale(input_file, output_file, multiplier):
+    with open(input_file, "r") as readfile:
         data = json.load(readfile)
 
     modified_data = multiply_numbers(data, multiplier)

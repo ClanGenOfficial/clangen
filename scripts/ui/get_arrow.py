@@ -2,13 +2,13 @@ from math import floor
 from typing import Union
 
 
-def make_text_arrow(arrow_length: Union[int, float], arrow_right=True):
+def get_arrow(arrow_length: Union[int, float], arrow_left=True):
     if arrow_length == 1:
-        return "\u2192" if arrow_right else "\u2190"
+        return "\u2192" if not arrow_left else "\u2190"
 
     arrow_body = "\U0001F89C"
     arrow_body_half = "\U0001F89E"
-    if arrow_right:
+    if not arrow_left:
         arrow_tail = "\u250F"
         arrow_head = "\u2B95"
     else:
@@ -22,7 +22,7 @@ def make_text_arrow(arrow_length: Union[int, float], arrow_right=True):
         )
 
     if arrow_length <= 2:
-        return arrow_tail + arrow_head if arrow_right else arrow_head + arrow_tail
+        return arrow_tail + arrow_head if not arrow_left else arrow_head + arrow_tail
 
     arrow_length = arrow_length - 2
     middle = ""
@@ -32,6 +32,6 @@ def make_text_arrow(arrow_length: Union[int, float], arrow_right=True):
 
     return (
         arrow_tail + arrow_body * arrow_length + middle + arrow_head
-        if arrow_right
+        if not arrow_left
         else arrow_head + arrow_body * arrow_length + middle + arrow_tail
     )
