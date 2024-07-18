@@ -1019,7 +1019,7 @@ class ChooseMateScreen(Screens):
                 image_cache.load_image(
                     "resources/images/line_neutral.png"
                 ).convert_alpha(),
-                (400, 156),
+                ui_scale_dimensions((400, 156)),
             ),
         )
         if get_personality_compatibility(self.the_cat, self.selected_cat) is True:
@@ -1028,7 +1028,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/line_compatible.png"
                     ).convert_alpha(),
-                    (400, 156),
+                    ui_scale_dimensions((400, 156)),
                 )
             )
         elif get_personality_compatibility(self.the_cat, self.selected_cat) is False:
@@ -1037,7 +1037,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/line_incompatible.png"
                     ).convert_alpha(),
-                    (400, 156),
+                    ui_scale_dimensions((400, 156)),
                 )
             )
 
@@ -1068,7 +1068,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/heart_big.png"
                     ).convert_alpha(),
-                    (44, 40),
+                    ui_scale_dimensions((44, 40)),
                 ),
             )
             x_pos += 54
@@ -1100,7 +1100,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/heart_big.png"
                     ).convert_alpha(),
-                    (44, 40),
+                    ui_scale_dimensions((44, 40)),
                 ),
             )
             x_pos -= 54
