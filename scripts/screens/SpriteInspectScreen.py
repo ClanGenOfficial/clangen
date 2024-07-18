@@ -11,6 +11,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_offset,
+    get_text_box_theme,
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
@@ -88,7 +89,7 @@ class SpriteInspectScreen(Screens):
                 else:
                     self.platform_shown = True
 
-                self.set_background_visablity()
+                self.set_background_visibility()
                 self.update_checkboxes()
             elif event.ui_element == self.checkboxes["scars_shown"]:
                 if self.scars_shown:
@@ -180,31 +181,31 @@ class SpriteInspectScreen(Screens):
         self.platform_shown_text = pygame_gui.elements.UITextBox(
             "Show Platform",
             ui_scale(pygame.Rect((150, 580), (-1, 50))),
-            object_id="#large_text_xcenter",
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.scars_shown_text = pygame_gui.elements.UITextBox(
             "Show Scar(s)",
             ui_scale(pygame.Rect((350, 580), (-1, 50))),
-            object_id="#large_text_xcenter",
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.acc_shown_text = pygame_gui.elements.UITextBox(
             "Show Accessory",
             ui_scale(pygame.Rect((545, 580), (-1, 50))),
-            object_id="#large_text_xcenter",
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
             "Show as Living",
             ui_scale(pygame.Rect((250, 630), (-1, 50))),
-            object_id="#large_text_xcenter",
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_not_working_text = pygame_gui.elements.UITextBox(
             "Show as Healthy",
             ui_scale(pygame.Rect((450, 630), (-1, 100))),
-            object_id="#large_text_xcenter",
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
 
@@ -230,7 +231,7 @@ class SpriteInspectScreen(Screens):
             ),
             manager=MANAGER,
         )
-        self.set_background_visablity()
+        self.set_background_visibility()
 
         # Gather list of current and previous life states
         # "young adult", "adult", and "senior adult" all look the same: collapse to adult
@@ -463,7 +464,7 @@ class SpriteInspectScreen(Screens):
         self.next_cat = next_cat
         self.previous_cat = previous_cat
 
-    def set_background_visablity(self):
+    def set_background_visibility(self):
         if "platform" not in self.cat_elements:
             return
 

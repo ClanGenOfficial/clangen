@@ -984,7 +984,9 @@ class ChooseMateScreen(Screens):
             ] = pygame_gui.elements.UITextBox(
                 "This pair can't have biological kittens.",
                 ui_scale(pygame.Rect((275, 125), (249, 125))),
-                object_id=get_text_box_theme("#small_text_xcenter"),
+                object_id=get_text_box_theme(
+                    "#text_box_22_horizcenter_vertcenter_spacing_95"
+                ),
             )
 
         if self.kits_selected_pair:
