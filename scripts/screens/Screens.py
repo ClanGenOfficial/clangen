@@ -297,6 +297,8 @@ class Screens:
             "default_light": pygame.transform.scale(bg, screen.get_size()),
             "default_dark": pygame.transform.scale(bg_dark, screen.get_size()),
         }
+        self.blur_bgs["default_light"].blit(self.game_frame, ui_scale_blit((-10, -10)))
+        self.blur_bgs["default_dark"].blit(self.game_frame, ui_scale_blit((-10, -10)))
         self.active_bg: Optional[pygame.Surface] = None
 
     def loading_screen_start_work(
@@ -668,14 +670,17 @@ class Screens:
             self.bgs[name] = pygame.transform.scale(
                 bg, scripts.game_structure.screen_settings.game_screen_size
             )
+
             if blur_bgs is not None and name in blur_bgs:
                 self.blur_bgs[name] = pygame.transform.scale(
                     blur_bgs[name], screen.get_size()
                 )
-                continue
-            self.blur_bgs[name] = pygame.transform.scale(
-                pygame.transform.box_blur(bg, radius), screen.get_size()
-            )
+            else:
+                self.blur_bgs[name] = pygame.transform.scale(
+                    pygame.transform.box_blur(bg, radius), screen.get_size()
+                )
+
+            self.blur_bgs[name].blit(self.game_frame, ui_scale_blit((-10, -10)))
 
     def set_bg(self, bg: Optional[str]):
         if bg == "default":
@@ -695,10 +700,6 @@ class Screens:
             )
         if game.settings["fullscreen"]:
             screen.blit(self.blur_bgs[self.active_bg], (0, 0))
-            screen.blit(
-                self.game_frame,
-                ui_scale_blit((-10, -10)),
-            )
         screen.blit(self.bgs[self.active_bg], ui_scale_blit((0, 0)))
 
 

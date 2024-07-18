@@ -8,7 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import (
     game,
 )
-from scripts.game_structure.screen_settings import game_screen_size, MANAGER, screen
+from scripts.game_structure.screen_settings import game_screen_size, MANAGER
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UIDropDownContainer,
@@ -222,12 +222,6 @@ class ListScreen(Screens):
 
         self.set_disabled_menu_buttons(["catlist_screen"])
         self.show_menu_buttons()
-        screen.fill(
-            game.config["theme"]["dark_mode_background"]
-            if game.settings["dark mode"]
-            else game.config["theme"]["light_mode_background"]
-        )
-        MANAGER.update(1)
 
         # SCREEN CONTAINER - everything should come back to here
         self.list_screen_container = pygame_gui.core.UIContainer(
