@@ -75,6 +75,20 @@ buttonstyles = {
             "resources/images/generated_buttons/menu_middle_disabled.png"
         ).convert_alpha(),
     },
+    "menu_right": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/menu_right_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/menu_right_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/menu_right_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/menu_right_disabled.png"
+        ).convert_alpha(),
+    },
     "rounded_rect": {
         "normal": pygame.image.load(
             "resources/images/generated_buttons/rounded_rect_normal.png"
@@ -117,17 +131,6 @@ buttonstyles = {
             "resources/images/generated_buttons/horizontal_tab_disabled.png"
         ).convert_alpha(),
     },
-}
-
-buttonstyles["menu_right"] = {
-    "normal": pygame.transform.flip(buttonstyles["menu_left"]["normal"], True, False),
-    "hovered": pygame.transform.flip(buttonstyles["menu_left"]["hovered"], True, False),
-    "selected": pygame.transform.flip(
-        buttonstyles["menu_left"]["selected"], True, False
-    ),
-    "disabled": pygame.transform.flip(
-        buttonstyles["menu_left"]["disabled"], True, False
-    ),
 }
 
 
