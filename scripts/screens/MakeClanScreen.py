@@ -3,6 +3,7 @@ from re import sub
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
@@ -154,10 +155,9 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.main_menu = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 25), (153, 30))),
+            ui_scale(pygame.Rect((25, 50), (153, 30))),
             "\u2B05\U0001F89E\u2513 Main Menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-            visible=False,
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
@@ -1320,7 +1320,7 @@ class MakeClanScreen(Screens):
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(
             self.clan_name + "Clan",
             ui_scale(pygame.Rect((292, 100), (216, 50))),
-            object_id="#text_box_30_horizcenter_light",
+            object_id=ObjectID("#text_box_30_horizcenter_vertcenter", "#dark"),
             manager=MANAGER,
         )
 
@@ -1973,7 +1973,7 @@ class MakeClanScreen(Screens):
             "",
             ui_scale(pygame.Rect((440, 220), (150, 125))),
             visible=False,
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_26_horizcenter"),
             manager=MANAGER,
         )
 
