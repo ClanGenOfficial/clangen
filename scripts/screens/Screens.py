@@ -17,7 +17,6 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SaveCheck, EventLoading
-from scripts.ui.generate_button import get_button_dict
 from scripts.utility import (
     update_sprite,
     ui_scale,
@@ -362,7 +361,7 @@ class Screens:
             ui_scale(pygame.Rect((14, 10), (24, 24))),
             "",
             manager=MANAGER,
-            object_id=ObjectID(class_id="@mns_image", object_id="#moon"),
+            object_id="#mns_image_moon",
             container=cls.menu_buttons["moons_n_seasons"],
         )
         cls.moons_n_seasons_text = pygame_gui.elements.UITextBox(
@@ -381,6 +380,8 @@ class Screens:
             season_image_id = "#mns_image_leafbare"
         elif game.clan.current_season == "Leaf-fall":
             season_image_id = "#mns_image_leaffall"
+        else:
+            season_image_id = MANAGER.get_universal_empty_surface()
 
         cls.moons_n_seasons_season = UIImageButton(
             ui_scale(pygame.Rect((14, 41), (24, 24))),
@@ -394,7 +395,7 @@ class Screens:
             ui_scale(pygame.Rect((42, 36), (100, 30))),
             container=cls.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
-            object_id="#text_box_30_horizleft_dark",
+            object_id=ObjectID("#text_box_30_horizleft", "#dark"),
         )
 
     # close moons and seasons UI (AKA narrow version)
@@ -437,13 +438,15 @@ class Screens:
         )
 
         if game.clan.current_season == "Newleaf":
-            season_image_id = ObjectID(class_id="@mns_image", object_id="#newleaf")
+            season_image_id = "#mns_image_newleaf"
         elif game.clan.current_season == "Greenleaf":
-            season_image_id = ObjectID(class_id="@mns_image", object_id="#greenleaf")
+            season_image_id = "#mns_image_greenleaf"
         elif game.clan.current_season == "Leaf-bare":
-            season_image_id = ObjectID(class_id="@mns_image", object_id="#leafbare")
+            season_image_id = "#mns_image_leafbare"
         elif game.clan.current_season == "Leaf-fall":
-            season_image_id = ObjectID(class_id="@mns_image", object_id="#leaffall")
+            season_image_id = "#mns_image_leaffall"
+        else:
+            season_image_id = MANAGER.get_universal_empty_surface()
 
         cls.moons_n_seasons_season = UIImageButton(
             ui_scale(pygame.Rect((14, 41), (24, 24))),
