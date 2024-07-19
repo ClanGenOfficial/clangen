@@ -130,7 +130,7 @@ class ClanSettingsScreen(Screens):
         super().screen_switches()
         self.settings_changed = False
         self.show_menu_buttons()
-        self.set_disabled_menu_buttons(["stats"])
+        self.set_disabled_menu_buttons(["clan_settings"])
 
         self.general_settings_button = UIImageButton(
             ui_scale(pygame.Rect((100, 140), (150, 30))),
