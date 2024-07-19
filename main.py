@@ -330,7 +330,7 @@ while True:
         game.all_screens[game.current_screen].handle_event(event)
 
         if event.type == pygame.QUIT:
-            # Dont display if on the start screen or there is no clan.
+            # Don't display if on the start screen or there is no clan.
             if (
                 game.switches["cur_screen"]
                 in [

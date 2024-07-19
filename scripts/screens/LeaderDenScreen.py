@@ -14,6 +14,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
 )
 from scripts.screens.Screens import Screens
+from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
@@ -395,10 +396,7 @@ class LeaderDenScreen(Screens):
         )
         self.other_clan_selection_elements["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 0), (662, 194))),
-            pygame.image.load(
-                "resources/images/lead_den_clan_frame.png"
-            ).convert_alpha(),
-            object_id="#lead_den_clan_frame",
+            get_box(BoxStyles.FRAME, (662, 194)),
             container=self.other_clan_selection_container,
             starting_height=1,
             manager=MANAGER,

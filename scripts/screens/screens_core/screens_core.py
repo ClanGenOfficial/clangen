@@ -4,7 +4,6 @@ import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 
-import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
@@ -12,7 +11,6 @@ from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
-    ui_scale_value,
     ui_scale,
     ui_scale_offset,
     ui_scale_dimensions,
@@ -28,12 +26,7 @@ def rebuild_core():
     global menu_buttons
     game_frame = get_box(
         BoxStyles.FRAME,
-        (
-            scripts.game_structure.screen_settings.game_screen_size[0]
-            + ui_scale_value(20),
-            scripts.game_structure.screen_settings.game_screen_size[1]
-            + ui_scale_value(20),
-        ),
+        (820, 720),
     )
 
     # menu buttons are used very often, so they are generated here.

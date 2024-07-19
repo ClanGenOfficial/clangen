@@ -7,7 +7,7 @@ from typing import Tuple, Dict, List
 import pygame
 
 import scripts.game_structure.screen_settings
-from scripts.utility import ui_scale_value
+from scripts.utility import ui_scale_value, ui_scale_dimensions
 
 
 class BoxStyles(Enum):
@@ -83,13 +83,23 @@ def get_tileset(style: BoxStyles) -> Tileset:
     return tilesets[screen_scale][style]
 
 
-@cache
-def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surface:
+def get_box(style: BoxStyles, unscaled_dimensions: Tuple[int, int]) -> pygame.Surface:
     """
     Generate a surface of arbitrary length and height from a given input surface
     :param style: the BoxStyles style to create from
-    :param scaled_dimensions: the SCALED dimensions of the final box
+    :param unscaled_dimensions: the SCALED dimensions of the final box
     :return: A surface of the correct dimensions
+    """
+    return _get_box(style, ui_scale_dimensions(unscaled_dimensions))
+
+
+@cache
+def _get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surface:
+    """
+    A wrapper for get_box that lets it be typehinted & still cache properly
+    :param style:
+    :param scaled_dimensions:
+    :return:
     """
 
     tileset = get_tileset(style)
@@ -112,22 +122,16 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
     )
 
     # not all requests will be clean multiples of the tile size. this fixes that.
-    extra_width = (tilecount[0] % 1) / tileset.height
-    extra_height = (tilecount[1] % 1) / tileset.height
+    extra_width = scaled_dimensions[0] % tileset.height
+    extra_height = scaled_dimensions[1] % tileset.height
 
     extra_width_tiles = (
         None
         if extra_width == 0
         else {
-            "top": tileset.top.subsurface(
-                ((0, 0), ((tileset.height * extra_width), tileset.height))
-            ),
-            "middle": tileset.middle.subsurface(
-                ((0, 0), ((tileset.height * extra_width), tileset.height))
-            ),
-            "bottom": tileset.bottom.subsurface(
-                ((0, 0), ((tileset.height * extra_width), tileset.height))
-            ),
+            "top": tileset.top.subsurface((0, 0), (extra_width, tileset.height)),
+            "middle": tileset.middle.subsurface((0, 0), (extra_width, tileset.height)),
+            "bottom": tileset.bottom.subsurface((0, 0), (extra_width, tileset.height)),
         }
     )
 
@@ -135,22 +139,18 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
         None
         if extra_height == 0
         else {
-            "top": tileset.left.subsurface(
-                (0, 0), ((tileset.height * extra_width), tileset.height)
-            ),
+            "left": tileset.left.subsurface((0, 0), (tileset.height, extra_height)),
             "middle": tileset.middle.subsurface(
-                ((0, 0), ((tileset.height * extra_width), tileset.height))
+                ((0, 0), (tileset.height, extra_height))
             ),
-            "bottom": tileset.right.subsurface(
-                ((0, 0), ((tileset.height * extra_width), tileset.height))
-            ),
+            "right": tileset.right.subsurface(((0, 0), (tileset.height, extra_height))),
         }
     )
 
     extra_corner_tile = (
         tileset.middle.subsurface(
             (0, 0),
-            ((tileset.height * extra_width), (tileset.height * extra_height)),
+            (extra_width, extra_height),
         )
         if extra_width != 0 and extra_height != 0
         else None
@@ -187,7 +187,7 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
         [tileset.topleft]
         + [tileset.top] * (tilecount[0] - 2)
         + (
-            extra_width_tiles["top"] + [tileset.topright]
+            [extra_width_tiles["top"]] + [tileset.topright]
             if extra_width_tiles is not None
             else [tileset.topright]
         )
@@ -200,7 +200,7 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
         [tileset.left]
         + [tileset.middle] * (tilecount[0] - 2)
         + (
-            extra_width_tiles["middle"] + [tileset.right]
+            [extra_width_tiles["middle"]] + [tileset.right]
             if extra_width_tiles is not None
             else [tileset.right]
         )
@@ -212,9 +212,9 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
             [extra_height_tiles["left"]]
             + [extra_height_tiles["middle"]] * (tilecount[0] - 2)
             + (
-                extra_corner_tile + extra_height_tiles["right"]
+                [extra_corner_tile] + [extra_height_tiles["right"]]
                 if extra_width_tiles is not None
-                else extra_height_tiles["right"]
+                else [extra_height_tiles["right"]]
             )
         )
         if extra_height_tiles is not None
@@ -226,7 +226,7 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
         [tileset.bottomleft]
         + [tileset.bottom] * (tilecount[0] - 2)
         + (
-            extra_width_tiles["bottom"] + [tileset.bottomright]
+            [extra_width_tiles["bottom"]] + [tileset.bottomright]
             if extra_width_tiles is not None
             else [tileset.bottomright]
         )
@@ -243,8 +243,10 @@ def get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surf
         coords = [(x, i * tileset.height) for x in row_x]
         row = tuple(zip(middle_row, coords))
         surface.fblits(row)
-    if extra_height_tiles is not None:
-        coords = [(x, tilecount[1] - 1 * tileset.height) for x in row_x]
+    if extra_row is not None:
+        coords = [
+            (x, scaled_dimensions[1] - tileset.height - extra_height) for x in row_x
+        ]
         extra_row = tuple(zip(extra_row, coords))
         surface.fblits(extra_row)
 
