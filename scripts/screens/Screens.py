@@ -6,7 +6,7 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
-import scripts.ui.screens_core.screens_core
+import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -34,8 +34,8 @@ class Screens:
     # Due to fullscreen shenanigans, this now lives here:
     # scripts/ui/screen_core/screen_core.py
 
-    menu_buttons = scripts.ui.screens_core.screens_core.menu_buttons
-    game_frame = scripts.ui.screens_core.screens_core.game_frame
+    menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
+    game_frame = scripts.screens.screens_core.screens_core.game_frame
 
     bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
     bg.fill(game.config["theme"]["light_mode_background"])
@@ -165,8 +165,8 @@ class Screens:
     def screen_switches(self):
         """Runs when this screen is switched to."""
         self.set_bg("default")
-        Screens.menu_buttons = scripts.ui.screens_core.screens_core.menu_buttons
-        Screens.game_frame = scripts.ui.screens_core.screens_core.game_frame
+        Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
+        Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.

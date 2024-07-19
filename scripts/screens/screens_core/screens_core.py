@@ -8,6 +8,7 @@ import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
+from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
@@ -25,8 +26,8 @@ menu_buttons = dict()
 def rebuild_core():
     global game_frame
     global menu_buttons
-    game_frame = pygame.image.load_sized_svg(
-        "resources/images/border_gamescreen.svg",
+    game_frame = get_box(
+        BoxStyles.FRAME,
         (
             scripts.game_structure.screen_settings.game_screen_size[0]
             + ui_scale_value(20),

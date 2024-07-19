@@ -8,6 +8,7 @@ import pygame
 import pygame_gui
 import ujson
 
+import scripts.screens.screens_core
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -21,7 +22,6 @@ from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..game_structure.windows import ConfirmDisplayChanges
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
-from ..ui import screens_core
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -525,5 +525,5 @@ class SettingsScreen(Screens):
             screen_mode,
             force_screen_size=game.config["theme"]["debug_force_screen_size"],
         )
-        screens_core.screens_core.rebuild_core()
+        scripts.screens.screens_core.screens_core.rebuild_core()
         game.all_screens["settings screen"].screen_switches()
