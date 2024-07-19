@@ -1,6 +1,7 @@
 from enum import Enum
+from functools import cache
 from math import floor
-from typing import Tuple
+from typing import Tuple, Dict
 
 import pygame
 
@@ -207,14 +208,28 @@ def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
     return surface
 
 
-def get_button_dict(style: ButtonStyles, unscaled_dimensions: Tuple[int, int]):
+def get_button_dict(
+    style: ButtonStyles, unscaled_dimensions: Tuple[int, int]
+) -> Dict[str, pygame.Surface]:
     """
     Return a dictionary of surfaces suitable for passing into a UISurfaceImageButton.
     :param style: The ButtonStyles style required for the button
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
-    scaled_dimensions = ui_scale_dimensions(unscaled_dimensions)
+    return _get_button_dict(style, ui_scale_dimensions(unscaled_dimensions))
+
+
+@cache
+def _get_button_dict(
+    style: ButtonStyles, scaled_dimensions: Tuple[int, int]
+) -> Dict[str, pygame.Surface]:
+    """
+    This wrapper exists so we can cache the values to make toggling quicker.
+    :param style: The ButtonStyles style required for the button
+    :param scaled_dimensions: The SCALED dimensions of the button
+    :return: A dictionary of surfaces
+    """
     return {
         "normal": generate_button(
             buttonstyles[style.value]["normal"], scaled_dimensions
