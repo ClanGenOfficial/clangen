@@ -115,17 +115,6 @@
             "rect_width": "100"
         }
     },
-    "@buttonstyles_mainmenu": {
-        "prototype": "buttonstyles_prototype",
-        "font": {
-            "name": "clangen",
-            "size": "20"
-        },
-        "misc": {
-            "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "7"
-        }
-    },
     "#dev_watermark": {
         "font": {
             "name": "notosans",
@@ -144,30 +133,35 @@
             "text_horiz_alignment": "center"
         }
     },
-    "@buttonstyles_rounded_rect": {
-        "prototype": "buttonstyles_prototype",
+    "buttonstyles_prototype": {
         "font": {
             "name": "clangen",
             "size": "16"
         }
     },
-    "@buttonstyles_menu_right": {
+    "@buttonstyles_mainmenu": {
         "prototype": "buttonstyles_prototype",
         "font": {
             "name": "clangen",
-            "size": "16"
+            "size": "20"
         },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "7"
+        }
+    },
+    "@buttonstyles_rounded_rect": {
+        "prototype": "buttonstyles_prototype"
+    },
+    "@buttonstyles_menu_right": {
+        "prototype": "buttonstyles_prototype",
         "misc": {
             "text_horiz_alignment": "center",
             "text_horiz_alignment_padding": "10"
         }
     },
     "@buttonstyles_menu_middle": {
-        "prototype": "buttonstyles_prototype",
-        "font": {
-            "name": "clangen",
-            "size": "16"
-        }
+        "prototype": "buttonstyles_prototype"
     },
     "@buttonstyles_menu_left": {
         "prototype": "buttonstyles_prototype"
@@ -180,32 +174,16 @@
         }
     },
     "@buttonstyles_squoval": {
-        "prototype": "buttonstyles_prototype",
-        "font": {
-            "name": "clangen",
-            "size": "16"
-        }
+        "prototype": "buttonstyles_prototype"
     },
     "@buttonstyles_horizontal_tab": {
-        "prototype": "@image_button",
-        "font": {
-            "name": "clangen",
-            "size": "16"
-        }
+        "prototype": "@image_button"
     },
     "@buttonstyles_vertical_tab": {
-        "prototype": "@image_button",
-        "font": {
-            "name": "clangen",
-            "size": "16"
-        }
+        "prototype": "@image_button"
     },
     "@buttonstyles_dropdown": {
         "prototype": "buttonstyles_prototype",
-        "font": {
-            "name": "clangen",
-            "size": "16"
-        },
         "misc": {
             "text_horiz_alignment": "center",
             "text_vert_alignment": "top",

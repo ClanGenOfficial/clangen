@@ -191,13 +191,14 @@ class FamilyTreeScreen(Screens):
         )
 
         next_cat_rect = ui_scale(pygame.Rect((0, 0), (153, 30)))
-        next_cat_rect.topright = ui_scale_offset((25, 25))
+        next_cat_rect.topright = ui_scale_offset((-25, 25))
         self.next_cat_button = UISurfaceImageButton(
             next_cat_rect,
             "Next Cat " + get_arrow(2.5, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            anchors={"right": "right"},
         )
         del next_cat_rect
         self.back_button = UISurfaceImageButton(
