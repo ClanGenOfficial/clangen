@@ -205,7 +205,7 @@ class ChooseMateScreen(Screens):
                 image_cache.load_image(
                     "resources/images/choosing_cat1_frame_mate.png"
                 ).convert_alpha(),
-                (532, 394),
+                ui_scale_dimensions((266, 197)),
             ),
         )
         self.mate_frame = pygame_gui.elements.UIImage(
@@ -214,7 +214,7 @@ class ChooseMateScreen(Screens):
                 image_cache.load_image(
                     "resources/images/choosing_cat2_frame_mate.png"
                 ).convert_alpha(),
-                (532, 394),
+                ui_scale_dimensions((266, 197)),
             ),
         )
 
@@ -274,7 +274,7 @@ class ChooseMateScreen(Screens):
             ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                ui_scale_dimensions((20, 352)),
+                ui_scale_dimensions((10, 176)),
             ),
             container=self.offspring_container,
         )
@@ -305,7 +305,7 @@ class ChooseMateScreen(Screens):
             ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                ui_scale_dimensions((20, 352)),
+                ui_scale_dimensions((10, 176)),
             ),
             container=self.potential_container,
         )
@@ -908,7 +908,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/heart_mates.png"
                     ).convert_alpha(),
-                    (400, 156),
+                    ui_scale_dimensions((200, 78)),
                 ),
             )
         elif self.selected_cat.ID in self.the_cat.previous_mates:
@@ -918,7 +918,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/heart_breakup.png"
                     ).convert_alpha(),
-                    (400, 156),
+                    ui_scale_dimensions((200, 78)),
                 ),
             )
         else:
@@ -928,7 +928,7 @@ class ChooseMateScreen(Screens):
                     image_cache.load_image(
                         "resources/images/heart_maybe.png"
                     ).convert_alpha(),
-                    (400, 156),
+                    ui_scale_dimensions((200, 78)),
                 ),
             )
 
