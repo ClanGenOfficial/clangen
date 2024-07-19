@@ -204,6 +204,7 @@ class ClearingScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        self.hide_menu_buttons()
         if game.clan.game_mode == "classic":
             self.change_screen(game.last_screen_forupdate)
             return

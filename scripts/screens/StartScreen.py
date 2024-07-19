@@ -170,8 +170,13 @@ class StartScreen(Screens):
         """
         TODO: DOCS
         """
+
+        super().screen_switches()
+
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
+
+        self.set_bg("bg")
         # Create buttons
 
         self.continue_button = UISurfaceImageButton(

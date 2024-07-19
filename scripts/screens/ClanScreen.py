@@ -106,6 +106,7 @@ class ClanScreen(Screens):
                 self.update_buttons_and_text()
 
     def screen_switches(self):
+        super().screen_switches()
         self.update_camp_bg()
         game.switches["cat"] = None
         if game.clan.biome + game.clan.camp_bg in game.clan.layouts:
