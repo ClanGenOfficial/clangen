@@ -132,7 +132,6 @@ class Game:
         "patrol_chosen": "general",
         "favorite_sub_tab": None,
         "root_cat": None,
-        "window_open": False,
         "skip_conditions": [],
         "show_history_moons": False,
         "fps": 30,

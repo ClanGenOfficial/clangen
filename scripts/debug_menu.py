@@ -127,11 +127,9 @@ class debugMode:
             self.console.show()
             self.console.command_entry.focus()
             self.console.set_blocking(True)
-            game.switches["window_open"] = True
         else:
             self.console.hide()
             self.console.set_blocking(False)
-            game.switches["window_open"] = False
 
     def update1(self, clock):
         """

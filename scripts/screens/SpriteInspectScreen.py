@@ -52,10 +52,6 @@ class SpriteInspectScreen(Screens):
         super().__init__(name)
 
     def handle_event(self, event):
-        # Don't handle the events if a window is open.
-        if game.switches["window_open"]:
-            return
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")

@@ -50,9 +50,7 @@ class ClanScreen(Screens):
         super().on_use()
 
     def handle_event(self, event):
-        if game.switches["window_open"]:
-            pass
-        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
                 try:
                     self.save_button_saving_state.show()

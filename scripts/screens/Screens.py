@@ -37,6 +37,20 @@ class Screens:
     menu_buttons = scripts.ui.screens_core.screens_core.menu_buttons
     game_frame = scripts.ui.screens_core.screens_core.game_frame
 
+    bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
+    bg.fill(game.config["theme"]["light_mode_background"])
+    bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
+    bg_dark.fill(game.config["theme"]["dark_mode_background"])
+
+    default_game_bgs = {"default_light": bg, "default_dark": bg_dark}
+    default_fullscreen_bgs = {
+        "default_light": pygame.transform.scale(bg, screen.get_size()),
+        "default_dark": pygame.transform.scale(bg_dark, screen.get_size()),
+    }
+    default_fullscreen_bgs["default_light"].blit(game_frame, ui_scale_blit((-10, -10)))
+    default_fullscreen_bgs["default_dark"].blit(game_frame, ui_scale_blit((-10, -10)))
+    active_bg: Optional[str] = None
+
     def change_screen(self, new_screen):
         """Use this function when switching screens.
         It will handle keeping track of the last screen and cur screen.
@@ -77,14 +91,8 @@ class Screens:
         )
         bg_dark.fill(game.config["theme"]["dark_mode_background"])
 
-        self.bgs = {"default_light": bg, "default_dark": bg_dark}
-        self.blur_bgs = {
-            "default_light": pygame.transform.scale(bg, screen.get_size()),
-            "default_dark": pygame.transform.scale(bg_dark, screen.get_size()),
-        }
-        self.blur_bgs["default_light"].blit(self.game_frame, ui_scale_blit((-10, -10)))
-        self.blur_bgs["default_dark"].blit(self.game_frame, ui_scale_blit((-10, -10)))
-        self.active_bg: Optional[pygame.Surface] = None
+        self.game_bgs = {}
+        self.fullscreen_bgs = {}
 
     def loading_screen_start_work(
         self, target: callable, thread_name: str = "work_thread", args: tuple = tuple()
@@ -96,7 +104,6 @@ class Screens:
             target=self._work_target, args=(target, args), name=thread_name, daemon=True
         )
 
-        game.switches["window_open"] = True
         work_thread.start()
 
         return work_thread
@@ -148,7 +155,6 @@ class Screens:
             self.work_done.pop(work_thread.name)
 
             final_actions()
-            game.switches["window_open"] = False
 
         return
 
@@ -165,7 +171,6 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
-        pass
 
     def exit_screen(self):
         """Runs when screen exits"""
@@ -223,9 +228,7 @@ class Screens:
     def menu_button_pressed(self, event):
         """This is a short-up to deal with menu button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
-        if game.switches["window_open"]:
-            pass
-        elif event.ui_element == Screens.menu_buttons["events_screen"]:
+        if event.ui_element == Screens.menu_buttons["events_screen"]:
             self.change_screen("events screen")
         elif event.ui_element == Screens.menu_buttons["camp_screen"]:
             self.change_screen("camp screen")
@@ -459,30 +462,28 @@ class Screens:
         radius: int = 5,
     ):
         for name, bg in bgs.items():
-            self.bgs[name] = pygame.transform.scale(
+            self.game_bgs[name] = pygame.transform.scale(
                 bg, scripts.game_structure.screen_settings.game_screen_size
             )
 
             if blur_bgs is not None and name in blur_bgs:
-                self.blur_bgs[name] = pygame.transform.scale(
+                self.fullscreen_bgs[name] = pygame.transform.scale(
                     blur_bgs[name], screen.get_size()
                 )
             else:
-                self.blur_bgs[name] = pygame.transform.scale(
+                self.fullscreen_bgs[name] = pygame.transform.scale(
                     pygame.transform.box_blur(bg, radius), screen.get_size()
                 )
 
-            self.blur_bgs[name].blit(self.game_frame, ui_scale_blit((-10, -10)))
+            self.fullscreen_bgs[name].blit(self.game_frame, ui_scale_blit((-10, -10)))
 
     def set_bg(self, bg: Optional[str]):
         if bg == "default":
             self.active_bg = (
                 "default_dark" if game.settings["dark mode"] else "default_light"
             )
-        if bg in self.bgs:
+        if bg in self.game_bgs or bg in self.default_game_bgs or bg is None:
             self.active_bg = bg
-        if bg is None:
-            self.active_bg = None
 
     def show_bg(self):
         """Blit the currently selected blur_bg and bg."""
@@ -490,9 +491,19 @@ class Screens:
             self.active_bg = (
                 "default_dark" if game.settings["dark mode"] else "default_light"
             )
+        if self.active_bg in self.game_bgs:
+            bg = self.game_bgs[self.active_bg]
+            blur_bg = self.fullscreen_bgs[self.active_bg]
+        elif self.active_bg in self.default_game_bgs:
+            bg = self.default_game_bgs[self.active_bg]
+            blur_bg = self.default_fullscreen_bgs[self.active_bg]
+        else:
+            raise Exception(
+                f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"
+            )
         if game.settings["fullscreen"]:
-            screen.blit(self.blur_bgs[self.active_bg], (0, 0))
-        screen.blit(self.bgs[self.active_bg], ui_scale_blit((0, 0)))
+            screen.blit(blur_bg, (0, 0))
+        screen.blit(bg, ui_scale_blit((0, 0)))
 
 
 # CAT PROFILES

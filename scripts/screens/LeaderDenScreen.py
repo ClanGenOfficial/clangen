@@ -71,12 +71,7 @@ class LeaderDenScreen(Screens):
         """
         Handles button presses / events
         """
-
-        # prevent interaction if a window is open
-        if game.switches["window_open"]:
-            pass
-
-        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.outsider_selection_elements["page_right"]:

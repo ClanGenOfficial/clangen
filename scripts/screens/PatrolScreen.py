@@ -70,9 +70,6 @@ class PatrolScreen(Screens):
         self.outcome_art = None
 
     def handle_event(self, event):
-        if game.switches["window_open"]:
-            return
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)

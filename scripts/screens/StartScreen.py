@@ -51,21 +51,6 @@ class StartScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.warning_label = None
-        self.add_bgs(
-            {"bg": pygame.image.load("resources/images/menu.png").convert()},
-            {
-                "bg": pygame.transform.box_blur(
-                    pygame.transform.scale(
-                        pygame.image.load(
-                            "resources/images/menu_logoless.png"
-                        ).convert(),
-                        screen.get_size(),
-                    ),
-                    10,
-                )
-            },
-        )
-        self.set_bg("bg")
 
         self.social_buttons = {}
 
@@ -172,11 +157,25 @@ class StartScreen(Screens):
         """
 
         super().screen_switches()
+        self.add_bgs(
+            {"bg": pygame.image.load("resources/images/menu.png").convert()},
+            {
+                "bg": pygame.transform.box_blur(
+                    pygame.transform.scale(
+                        pygame.image.load(
+                            "resources/images/menu_logoless.png"
+                        ).convert(),
+                        screen.get_size(),
+                    ),
+                    10,
+                )
+            },
+        )
+        self.set_bg("bg")
 
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
 
-        self.set_bg("bg")
         # Create buttons
 
         self.continue_button = UISurfaceImageButton(

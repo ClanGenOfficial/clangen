@@ -101,9 +101,6 @@ class ChooseMateScreen(Screens):
 
     def handle_event(self, event):
         """Handles events."""
-        if game.switches["window_open"]:
-            return
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element == self.back_button:

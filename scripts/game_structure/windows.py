@@ -57,7 +57,6 @@ class SymbolFilterWindow(UIWindow):
             window_display_title="Symbol Filters",
             object_id="#filter_window",
         )
-        game.switches["window_open"] = True
         self.set_blocking(True)
 
         self.possible_tags = {
@@ -142,11 +141,9 @@ class SymbolFilterWindow(UIWindow):
                 y_pos += 5
 
     def process_event(self, event):
-        super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                game.switches["window_open"] = False
                 self.kill()
 
             elif event.ui_element in self.checkbox.values():
@@ -192,11 +189,11 @@ class SymbolFilterWindow(UIWindow):
                                         game.switches["disallowed_symbol_tags"].remove(
                                             s_tag
                                         )
+        return super().process_event(event)
 
 
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, is_main_menu, mm_btn):
-        game.switches["window_open"] = True
         if game.is_close_menu_open:
             return
         game.is_close_menu_open = True
@@ -293,8 +290,6 @@ class SaveCheck(UIWindow):
         self.set_blocking(True)
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu_button:
                 if self.isMainMenu:
@@ -304,7 +299,6 @@ class SaveCheck(UIWindow):
                     game.switches["cur_screen"] = "start screen"
                     game.switch_screens = True
                     self.kill()
-                    game.switches["window_open"] = False
                 else:
                     game.is_close_menu_open = False
                     quit(savesettings=False, clearevents=False)
@@ -320,12 +314,12 @@ class SaveCheck(UIWindow):
                     self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:
                 game.is_close_menu_open = False
-                game.switches["window_open"] = False
                 self.kill()
                 if self.isMainMenu:
                     self.mm_btn.enable()
 
                 # only allow one instance of this window
+        return super().process_event(event)
 
 
 class DeleteCheck(UIWindow):
@@ -337,7 +331,6 @@ class DeleteCheck(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        game.switches["window_open"] = True
         self.clan_name = clan_name
         self.reloadscreen = reloadscreen
 
@@ -377,11 +370,8 @@ class DeleteCheck(UIWindow):
         self.delete_it_button.enable()
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
-                game.switches["window_open"] = False
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + "clan.json"):
@@ -394,12 +384,11 @@ class DeleteCheck(UIWindow):
                 self.reloadscreen("switch clan screen")
 
             elif event.ui_element == self.go_back_button:
-                game.switches["window_open"] = False
                 self.kill()
             elif event.ui_element == self.back_button:
-                game.switches["window_open"] = False
                 game.is_close_menu_open = False
                 self.kill()
+        return super().process_event(event)
 
 
 class GameOver(UIWindow):
@@ -411,7 +400,6 @@ class GameOver(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        game.switches["window_open"] = True
         self.clan_name = str(game.clan.name + "Clan")
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
@@ -450,18 +438,16 @@ class GameOver(UIWindow):
         self.begin_anew_button.enable()
 
     def process_event(self, event):
-        super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
                 game.last_screen_forupdate = game.switches["cur_screen"]
                 game.switches["cur_screen"] = "start screen"
                 game.switch_screens = True
-                game.switches["window_open"] = False
                 self.kill()
             elif event.ui_element == self.not_yet_button:
-                game.switches["window_open"] = False
                 self.kill()
+        return super().process_event(event)
 
 
 class ChangeCatName(UIWindow):
@@ -474,7 +460,6 @@ class ChangeCatName(UIWindow):
             object_id="#change_cat_name_window",
             resizable=False,
         )
-        game.switches["window_open"] = True
         self.the_cat = cat
         self.back_button = UIImageButton(
             ui_scale(pygame.Rect((370, 5), (22, 22))),
@@ -595,8 +580,6 @@ class ChangeCatName(UIWindow):
         self.set_blocking(True)
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
                 old_name = str(self.the_cat.name)
@@ -680,10 +663,10 @@ class ChangeCatName(UIWindow):
                 self.suffix_entry_box.rebuild()
                 self.suffix_entry_box.disable()
             elif event.ui_element == self.back_button:
-                game.switches["window_open"] = False
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()
                 self.kill()
+        return super().process_event(event)
 
 
 class PronounCreation(UIWindow):
@@ -696,7 +679,6 @@ class PronounCreation(UIWindow):
             object_id="#change_cat_gender_window",
             resizable=False,
         )
-        game.switches["window_open"] = True
         self.the_cat = cat
         self.conju = 1
         self.box_labels = {}
@@ -990,11 +972,9 @@ class PronounCreation(UIWindow):
         return True
 
     def process_event(self, event):
-        super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                game.switches["window_open"] = False
                 game.all_screens["change gender screen"].exit_screen()
                 game.all_screens["change gender screen"].screen_switches()
                 self.kill()
@@ -1025,6 +1005,7 @@ class PronounCreation(UIWindow):
                     manager=MANAGER,
                     container=self.demo_container,
                 )
+        return super().process_event(event)
 
     def get_sample_text(self, pronouns):
         text = ""
@@ -1057,7 +1038,6 @@ class KillCat(UIWindow):
             resizable=False,
         )
         self.history = History()
-        game.switches["window_open"] = True
         self.the_cat = cat
         self.take_all = False
         self.back_button = UIImageButton(
@@ -1229,7 +1209,6 @@ class KillCat(UIWindow):
                 self.the_cat.die()
                 self.history.add_death(self.the_cat, death_message)
                 update_sprite(self.the_cat)
-                game.switches["window_open"] = False
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()
                 self.kill()
@@ -1242,10 +1221,11 @@ class KillCat(UIWindow):
                 self.all_lives_check.show()
                 self.one_life_check.hide()
             elif event.ui_element == self.back_button:
-                game.switches["window_open"] = False
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()
                 self.kill()
+
+        return super().process_event(event)
 
 
 class UpdateWindow(UIWindow):
@@ -1303,11 +1283,11 @@ class UpdateWindow(UIWindow):
         self.cancel_button.enable()
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.cancel_button:
                 self.kill()
+
+        return super().process_event(event)
 
 
 class AnnounceRestart(UIWindow):
@@ -1346,7 +1326,6 @@ class UpdateAvailablePopup(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        game.switches["window_open"] = True
         self.last_screen = last_screen
 
         self.begin_update_title = UIImageButton(
@@ -1439,11 +1418,9 @@ class UpdateAvailablePopup(UIWindow):
         self.close_button.enable()
 
     def process_event(self, event):
-        super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
-                game.switches["window_open"] = False
                 self.x = UpdateWindow(
                     game.switches["cur_screen"], self.announce_restart_callback
                 )
@@ -1452,7 +1429,6 @@ class UpdateAvailablePopup(UIWindow):
                 event.ui_element == self.close_button
                 or event.ui_element == self.cancel_button
             ):
-                game.switches["window_open"] = False
                 self.kill()
             elif event.ui_element == self.box_unchecked:
                 self.box_unchecked.disable()
@@ -1470,6 +1446,7 @@ class UpdateAvailablePopup(UIWindow):
                 self.box_unchecked.show()
                 if os.path.exists(f"{get_cache_dir()}/suppress_update_popup"):
                     os.remove(f"{get_cache_dir()}/suppress_update_popup")
+        return super().process_event(event)
 
     def announce_restart_callback(self):
         self.x.kill()
@@ -1486,8 +1463,6 @@ class ChangelogPopup(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-
-        game.switches["window_open"] = True
 
         self.last_screen = last_screen
         self.changelog_popup_title = UITextBoxTweaked(
@@ -1571,12 +1546,10 @@ class ChangelogPopup(UIWindow):
         )
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.close_button:
-                game.switches["window_open"] = False
                 self.kill()
+        return super().process_event(event)
 
 
 class RelationshipLog(UIWindow):
@@ -1589,7 +1562,6 @@ class RelationshipLog(UIWindow):
             object_id="#relationship_log_window",
             resizable=False,
         )
-        game.switches["window_open"] = True
         self.hide_button_list = hide_button_list
         for button in self.hide_button_list:
             button.hide()
@@ -1671,7 +1643,6 @@ class RelationshipLog(UIWindow):
 
     def closing_process(self):
         """Handles to enable and kill all processes when a exit button is clicked."""
-        game.switches["window_open"] = False
         for button in self.disable_button_list:
             button.enable()
 
@@ -1684,11 +1655,10 @@ class RelationshipLog(UIWindow):
         self.kill()
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.closing_buttons:
                 self.closing_process()
+        return super().process_event(event)
 
 
 class SaveError(UIWindow):
@@ -1700,7 +1670,6 @@ class SaveError(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        game.switches["window_open"] = True
         self.changelog_popup_title = pygame_gui.elements.UITextBox(
             f"<strong>Saving Failed!</strong>\n\n{error_text}",
             ui_scale(pygame.Rect((20, 10), (445, 375))),
@@ -1717,12 +1686,10 @@ class SaveError(UIWindow):
         )
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.close_button:
-                game.switches["window_open"] = False
                 self.kill()
+        return super().process_event(event)
 
 
 class SaveAsImage(UIWindow):
@@ -1734,7 +1701,6 @@ class SaveAsImage(UIWindow):
         )
 
         self.set_blocking(True)
-        game.switches["window_open"] = True
 
         self.image_to_save = image_to_save
         self.file_name = file_name
@@ -1826,11 +1792,8 @@ class SaveAsImage(UIWindow):
         return f"{file_name + file_number}.png"
 
     def process_event(self, event) -> bool:
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.close_button:
-                game.switches["window_open"] = False
                 self.kill()
             elif event.ui_element == self.open_data_directory_button:
                 if system() == "Darwin":
@@ -1863,6 +1826,8 @@ class SaveAsImage(UIWindow):
                 self.small_size_button.enable()
                 self.medium_size_button.enable()
                 self.large_size_button.disable()
+
+        return super().process_event(event)
 
 
 class EventLoading(UIWindow):
@@ -1930,7 +1895,6 @@ class ChangeCatToggles(UIWindow):
             object_id="#change_cat_name_window",
             resizable=False,
         )
-        game.switches["window_open"] = True
         self.the_cat = cat
         self.set_blocking(True)
         self.back_button = UIImageButton(
@@ -2054,7 +2018,6 @@ class ChangeCatToggles(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                game.switches["window_open"] = False
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()
                 self.kill()
@@ -2084,7 +2047,6 @@ class SelectFocusClans(UIWindow):
             object_id="#change_cat_name_window",
             resizable=False,
         )
-        game.switches["window_open"] = True
         self.set_blocking(True)
         self.back_button = UIImageButton(
             ui_scale(pygame.Rect((270, 5), (22, 22))),
@@ -2144,12 +2106,10 @@ class SelectFocusClans(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 game.clan.clans_in_focus = []
-                game.switches["window_open"] = False
                 game.all_screens["warrior den screen"].exit_screen()
                 game.all_screens["warrior den screen"].screen_switches()
                 self.kill()
             if event.ui_element == self.save_button:
-                game.switches["window_open"] = False
                 game.all_screens["warrior den screen"].save_focus()
                 game.all_screens["warrior den screen"].exit_screen()
                 game.all_screens["warrior den screen"].screen_switches()
@@ -2182,7 +2142,6 @@ class ConfirmDisplayChanges(UIMessageWindow):
             object_id="#confirm_display_changes_window",
             always_on_top=True,
         )
-        game.switches["window_open"] = True
         self.set_blocking(True)
 
         self.dismiss_button.kill()
@@ -2236,7 +2195,8 @@ class ConfirmDisplayChanges(UIMessageWindow):
         # it'll be used to revert the change
         pygame.time.set_timer(pygame.USEREVENT + 10, 5000, loops=1)
 
-    def revert_changes(self):
+    @staticmethod
+    def revert_changes():
         """Add an event to the queue to revert the changes made to screen scaling"""
         pygame.event.post(pygame.Event(pygame.USEREVENT + 11))
         pass
@@ -2244,11 +2204,8 @@ class ConfirmDisplayChanges(UIMessageWindow):
     def process_event(self, event: pygame.event.Event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.dismiss_button:
-                game.switches["window_open"] = False
                 self.kill()
-                return True
         elif event.type == pygame.USEREVENT + 10:
             self.revert_changes()
-            game.switches["window_open"] = False
             self.kill()
-            return True
+        return super().process_event(event)

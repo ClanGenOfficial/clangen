@@ -186,10 +186,7 @@ class ProfileScreen(Screens):
     def handle_event(self, event):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-
-            if game.switches["window_open"]:
-                pass
-            elif event.ui_element == self.back_button:
+            if event.ui_element == self.back_button:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
@@ -252,14 +249,8 @@ class ProfileScreen(Screens):
             else:
                 self.handle_tab_events(event)
 
-            if game.switches["window_open"]:
-                pass
-
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if game.switches["window_open"]:
-                pass
-
-            elif event.key == pygame.K_LEFT:
+            if event.key == pygame.K_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
                     game.switches["cat"] = self.previous_cat

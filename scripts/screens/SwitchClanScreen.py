@@ -34,9 +34,7 @@ class SwitchClanScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if game.switches["window_open"]:
-                pass
-            elif event.ui_element == self.main_menu:
+            if event.ui_element == self.main_menu:
                 self.change_screen("start screen")
             elif event.ui_element == self.next_page_button:
                 self.page += 1
