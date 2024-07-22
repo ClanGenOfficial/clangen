@@ -37,18 +37,6 @@ class Screens:
     menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
     game_frame = scripts.screens.screens_core.screens_core.game_frame
 
-    bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-    bg.fill(game.config["theme"]["light_mode_background"])
-    bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-    bg_dark.fill(game.config["theme"]["dark_mode_background"])
-
-    default_game_bgs = {"default_light": bg, "default_dark": bg_dark}
-    default_fullscreen_bgs = {
-        "default_light": pygame.transform.scale(bg, screen.get_size()),
-        "default_dark": pygame.transform.scale(bg_dark, screen.get_size()),
-    }
-    default_fullscreen_bgs["default_light"].blit(game_frame, ui_scale_blit((-10, -10)))
-    default_fullscreen_bgs["default_dark"].blit(game_frame, ui_scale_blit((-10, -10)))
     active_bg: Optional[str] = None
 
     def change_screen(self, new_screen):
@@ -482,8 +470,14 @@ class Screens:
             self.active_bg = (
                 "default_dark" if game.settings["dark mode"] else "default_light"
             )
-        if bg in self.game_bgs or bg in self.default_game_bgs or bg is None:
+        elif (
+            bg in self.game_bgs
+            or bg in scripts.screens.screens_core.screens_core.default_game_bgs
+            or bg is None
+        ):
             self.active_bg = bg
+        else:
+            raise Exception(f"Unidentified background requested: '{bg}'")
 
     def show_bg(self):
         """Blit the currently selected blur_bg and bg."""
@@ -494,9 +488,15 @@ class Screens:
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
             blur_bg = self.fullscreen_bgs[self.active_bg]
-        elif self.active_bg in self.default_game_bgs:
-            bg = self.default_game_bgs[self.active_bg]
-            blur_bg = self.default_fullscreen_bgs[self.active_bg]
+        elif (
+            self.active_bg in scripts.screens.screens_core.screens_core.default_game_bgs
+        ):
+            bg = scripts.screens.screens_core.screens_core.default_game_bgs[
+                self.active_bg
+            ]
+            blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                self.active_bg
+            ]
         else:
             raise Exception(
                 f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"

@@ -2,7 +2,7 @@ from collections import namedtuple
 from enum import Enum
 from functools import cache
 from math import ceil
-from typing import Tuple, Dict, List
+from typing import Tuple, Dict, List, Union
 
 import pygame
 
@@ -13,6 +13,9 @@ from scripts.utility import ui_scale_value, ui_scale_dimensions
 class BoxStyles(Enum):
     FRAME = pygame.image.load(
         "resources/images/generated_boxes/frame.png"
+    ).convert_alpha()
+    ROUNDED_BOX = pygame.image.load(
+        "resources/images/generated_boxes/selection_box.png"
     ).convert_alpha()
 
 
@@ -94,7 +97,11 @@ def get_box(style: BoxStyles, unscaled_dimensions: Tuple[int, int]) -> pygame.Su
 
 
 @cache
-def _get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Surface:
+def _get_box(
+    style: BoxStyles,
+    scaled_dimensions: Tuple[int, int],
+    sides: Union[bool, Tuple[bool, bool, bool, bool]] = True,
+) -> pygame.Surface:
     """
     A wrapper for get_box that lets it be typehinted & still cache properly
     :param style:
@@ -102,7 +109,7 @@ def _get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Sur
     :return:
     """
 
-    tileset = get_tileset(style)
+    tileset = get_sides_tileset(style, sides)
 
     if (
         scaled_dimensions[0] < tileset.height * 3
@@ -253,3 +260,79 @@ def _get_box(style: BoxStyles, scaled_dimensions: Tuple[int, int]) -> pygame.Sur
     surface.fblits(bottom_row)
 
     return surface
+
+
+def get_sides_tileset(
+    style: BoxStyles, sides: Union[bool, Tuple[bool, bool, bool, bool]]
+):
+    if isinstance(sides, bool):
+        border_top = sides
+        border_right = sides
+        border_bottom = sides
+        border_left = sides
+    elif isinstance(sides, tuple):
+        border_top, border_right, border_bottom, border_left = sides
+    else:
+        raise Exception("invalid sides argument supplied")
+
+    tileset = get_tileset(style)
+
+    tiles_top = tileset.top if border_top else tileset.middle
+    tiles_topleft = (
+        tileset.topleft
+        if (border_top and border_left)
+        else tileset.top
+        if border_top
+        else tileset.left
+        if border_left
+        else tileset.middle
+    )
+
+    tiles_topright = (
+        tileset.topright
+        if (border_top and border_right)
+        else tileset.top
+        if border_top
+        else tileset.right
+        if border_right
+        else tileset.middle
+    )
+
+    tiles_middle = tileset.middle
+    tiles_left = tileset.left if border_left else tileset.middle
+    tiles_right = tileset.right if border_right else tileset.middle
+
+    tiles_bottom = tileset.bottom if border_bottom else tileset.middle
+
+    tiles_bottomleft = (
+        tileset.bottomleft
+        if (border_bottom and border_left)
+        else tileset.bottom
+        if border_bottom
+        else tileset.left
+        if border_left
+        else tileset.middle
+    )
+
+    tiles_bottomright = (
+        tileset.bottomright
+        if (border_bottom and border_right)
+        else tileset.bottom
+        if border_bottom
+        else tileset.right
+        if border_right
+        else tileset.middle
+    )
+
+    return Tileset(
+        tileset.height,
+        tiles_topleft,
+        tiles_top,
+        tiles_topright,
+        tiles_left,
+        tiles_middle,
+        tiles_right,
+        tiles_bottomleft,
+        tiles_bottom,
+        tiles_bottomright,
+    )

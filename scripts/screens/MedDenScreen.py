@@ -19,6 +19,7 @@ from scripts.utility import (
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -182,7 +183,7 @@ class MedDenScreen(Screens):
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((140, 440), (560, 200))),
-                pygame.image.load("resources/images/sick_hurt_bg.png").convert_alpha(),
+                get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
                 manager=MANAGER,
             )
             self.cat_bg.disable()

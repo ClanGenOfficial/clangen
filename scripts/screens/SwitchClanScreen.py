@@ -111,7 +111,6 @@ class SwitchClanScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
-            anchors={"centerx": "centerx"},
         )
 
         self.info = pygame_gui.elements.UITextBox(
@@ -124,7 +123,7 @@ class SwitchClanScreen(Screens):
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((0, 100), (600, 30))),
+            ui_scale(pygame.Rect((0, 100), (600, 40))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             anchors={"centerx": "centerx"},
@@ -151,9 +150,7 @@ class SwitchClanScreen(Screens):
                     ui_scale(pygame.Rect((0, y_pos), (200, 40))),
                     clan + "Clan",
                     get_button_dict(ButtonStyles.DROPDOWN, (200, 40)),
-                    object_id=ObjectID(
-                        "#text_box_34_horizcenter_light", "@buttonstyles_dropdown"
-                    ),
+                    object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
                     anchors={"centerx": "centerx"},
                 )

@@ -15,6 +15,7 @@ from scripts.utility import (
     ui_scale,
     get_alive_status_cats,
     ui_scale_dimensions,
+    get_text_box_theme,
 )
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
@@ -335,14 +336,16 @@ class WarriorDenScreen(Screens):
             f"<b>Current Focus:</b> {name}{desc}<br><b>Focus Last Changed:</b> {last_change_text}<br>(next change in {next_change})",
             ui_scale(pygame.Rect((50, 72), (355, 40))),
             wrap_to_height=True,
-            object_id="#medium_text_xcenter",
+            object_id=get_text_box_theme(
+                "#text_box_30_horizcenter_vertcenter_spacing_95"
+            ),
             manager=MANAGER,
         )
         self.focus_text = pygame_gui.elements.UITextBox(
             f"What should your warriors focus on?",
             ui_scale(pygame.Rect((92, 214), (272, 15))),
             wrap_to_height=True,
-            object_id="#medium_text_xcenter",
+            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
         )
 

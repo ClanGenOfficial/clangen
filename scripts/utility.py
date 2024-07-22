@@ -2781,7 +2781,7 @@ def is_iterable(y):
         return False
 
 
-def get_text_box_theme(theme_name=""):
+def get_text_box_theme(theme_name=None):
     """Updates the name of the theme based on dark or light mode"""
     if game.settings["dark mode"]:
         return ObjectID("#dark", theme_name)

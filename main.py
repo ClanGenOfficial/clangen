@@ -163,13 +163,9 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import (
-    get_text_box_theme,
     quit,
-    ui_scale,
-    ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from scripts.debug_menu import debugmode
-import pygame_gui
 import pygame
 
 
@@ -279,29 +275,7 @@ del load_data
 
 AllScreens.start_screen.screen_switches()
 
-
-version_number = pygame_gui.elements.UILabel(
-    ui_scale(pygame.Rect((750, 650), (-1, -1))),
-    get_version_info().version_number[0:8],
-    object_id=get_text_box_theme(),
-)
-# Adjust position
-version_number.set_relative_position(
-    ui_scale_offset(
-        (
-            800 - version_number.get_relative_rect()[2] - 8,
-            700 - version_number.get_relative_rect()[3],
-        )
-    )
-)
-
-if get_version_info().is_source_build or get_version_info().is_dev():
-    dev_watermark = pygame_gui.elements.UILabel(
-        ui_scale(pygame.Rect((525, 660), (300, 50))),
-        "Dev Build:",
-        object_id="#dev_watermark",
-    )
-
+# dev screen info now lives in scripts/screens/screens_core
 
 cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)

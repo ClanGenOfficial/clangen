@@ -204,6 +204,7 @@ class SaveCheck(UIWindow):
             resizable=False,
             always_on_top=True,
         )
+        self.set_blocking(True)
 
         self.clan_name = "UndefinedClan"
         if game.clan:

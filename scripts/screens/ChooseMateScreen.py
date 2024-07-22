@@ -16,23 +16,20 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_blit,
     ui_scale_offset,
+    shorten_text_to_fit,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import MANAGER, screen
+from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
 
 class ChooseMateScreen(Screens):
-    list_frame = pygame.transform.scale(
-        image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
-        ui_scale_dimensions((750, 194)),
-    )
-
     def __init__(self, name=None):
         super().__init__(name)
+        self.list_frame_image = None
         self.next_cat = None
         self.previous_cat = None
         self.next_cat_button = None
@@ -188,16 +185,23 @@ class ChooseMateScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         super().screen_switches()
+
+        self.list_frame_image = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((0, 391), (650, 194))),
+            get_box(BoxStyles.ROUNDED_BOX, (650, 194)),
+            manager=MANAGER,
+            anchors={"centerx": "centerx"},
+        )
+
         self.info = pygame_gui.elements.UITextBox(
             "If a cat has mates, then they will be loyal and only have kittens with their mates"
-            " (unless affairs are toggled on.) Potential mates are listed below! The lines "
+            " (unless affairs are toggled on). Potential mates are listed below! The lines "
             "connecting the two cats may give a hint on their compatibility with one another "
             "and any existing romantic feelings will be shown with small hearts.",
-            ui_scale(pygame.Rect((180, 60), (440, 100))),
+            ui_scale(pygame.Rect((0, 5), (375, 100))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
+            anchors={"centerx": "centerx"},
         )
-        self.info.line_spacing = 0.95
-        self.info.rebuild()
 
         self.the_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((40, 113), (266, 197))),
@@ -270,7 +274,7 @@ class ChooseMateScreen(Screens):
             object_id="#relation_list_previous",
             container=self.offspring_container,
         )
-        self.offspring_seperator = pygame_gui.elements.UIImage(
+        self.offspring_separator = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((497, 0), (10, 176))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
@@ -281,7 +285,7 @@ class ChooseMateScreen(Screens):
 
         self.with_selected_cat_text = pygame_gui.elements.UITextBox(
             "Offspring with selected cat",
-            ui_scale(pygame.Rect((1035, 25), (209, -1))),
+            ui_scale(pygame.Rect((510, 12), (120, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.offspring_container,
         )
@@ -313,14 +317,14 @@ class ChooseMateScreen(Screens):
         # Checkboxes and text
         self.single_only_text = pygame_gui.elements.UITextBox(
             "No mates",
-            ui_scale(pygame.Rect((1035, 22), (209, -1))),
+            ui_scale(pygame.Rect((517, 11), (104, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.potential_container,
         )
 
         self.have_kits_text = pygame_gui.elements.UITextBox(
             "Can have biological kits",
-            ui_scale(pygame.Rect((1035, 150), (209, -1))),
+            ui_scale(pygame.Rect((517, 75), (104, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.potential_container,
         )
@@ -429,21 +433,21 @@ class ChooseMateScreen(Screens):
         else:
             display_cats = []
 
-        pos_x = 30
+        pos_x = 15
         pos_y = 0
         i = 0
         for _mate in display_cats:
             self.mates_cat_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 _mate.sprite,
                 cat_object=_mate,
                 manager=MANAGER,
                 container=self.mates_container,
             )
-            pos_x += 120
-            if pos_x >= 1200:
-                pos_x = 30
-                pos_y += 120
+            pos_x += 60
+            if pos_x >= 600:
+                pos_x = 15
+                pos_y += 60
             i += 1
 
     def update_offspring_container(self):
@@ -523,7 +527,7 @@ class ChooseMateScreen(Screens):
         else:
             display_cats = []
 
-        pos_x = 30
+        pos_x = 15
         pos_y = 0
         i = 0
         for _off in display_cats:
@@ -545,7 +549,7 @@ class ChooseMateScreen(Screens):
                     info_text += ", ".join(add_info)
 
             self.offspring_cat_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 _off.sprite,
                 cat_object=_off,
                 manager=MANAGER,
@@ -553,10 +557,10 @@ class ChooseMateScreen(Screens):
                 tool_tip_text=info_text,
                 starting_height=2,
             )
-            pos_x += 120
-            if pos_x >= 990:
-                pos_x = 30
-                pos_y += 120
+            pos_x += 60
+            if pos_x >= 495:
+                pos_x = 15
+                pos_y += 60
             i += 1
 
         if self.no_kits_message:
@@ -569,7 +573,7 @@ class ChooseMateScreen(Screens):
 
             self.no_kits_message = pygame_gui.elements.UITextBox(
                 text,
-                ui_scale(pygame.Rect((0, 0), (497, 176))),
+                ui_scale(pygame.Rect((0, 0), (497, 120))),
                 container=self.offspring_container,
                 object_id="#text_box_30_horizcenter_vertcenter",
             )
@@ -662,21 +666,21 @@ class ChooseMateScreen(Screens):
         else:
             display_cats = []
 
-        pos_x = 30
+        pos_x = 15
         pos_y = 0
         i = 0
 
         for _off in display_cats:
             self.potential_mates_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 _off.sprite,
                 cat_object=_off,
                 container=self.potential_container,
             )
-            pos_x += 120
-            if pos_x >= 990:
-                pos_x = 30
-                pos_y += 120
+            pos_x += 60
+            if pos_x >= 495:
+                pos_x = 15
+                pos_y += 60
             i += 1
 
     def exit_screen(self):
@@ -695,6 +699,9 @@ class ChooseMateScreen(Screens):
         self.all_mates = []
         self.all_potential_mates = []
         self.all_offspring = []
+
+        self.list_frame_image.kill()
+        self.list_frame_image = None
 
         self.mates_cat_buttons = {}
         self.offspring_cat_buttons = {}
@@ -731,7 +738,7 @@ class ChooseMateScreen(Screens):
         self.toggle_mate = None
 
         self.potential_seperator = None
-        self.offspring_seperator = None
+        self.offspring_separator = None
         self.potential_last_page = None
         self.potential_next_page = None
         self.offspring_last_page = None
@@ -763,11 +770,28 @@ class ChooseMateScreen(Screens):
         self.offspring_page = 0
         self.potential_mates_page = 0
 
-        self.current_cat_elements["heading"] = pygame_gui.elements.UITextBox(
-            "Choose a mate for " + str(self.the_cat.name),
-            ui_scale(pygame.Rect((150, 25), (500, 40))),
-            object_id=get_text_box_theme("#text_box_34_horizcenter"),
+        heading_rect = ui_scale(pygame.Rect((0, 25), (400, -1)))
+        text = "Choose a mate for " + shorten_text_to_fit(
+            str(self.the_cat.name), 500, 18
         )
+        self.current_cat_elements["heading"] = pygame_gui.elements.UITextBox(
+            text,
+            heading_rect,
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
+            anchors={
+                "centerx": "centerx",
+            },
+        )
+
+        self.info.set_anchors(
+            {"centerx": "centerx", "top_target": self.current_cat_elements["heading"]}
+        )
+        self.info.set_relative_position((0, 10))
+
+        self.current_cat_elements["heading"].line_spacing = 0.95
+        self.current_cat_elements["heading"].redraw_from_chunks()
+
+        del heading_rect, text
 
         self.current_cat_elements["image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((50, 150), (150, 150))),
@@ -826,28 +850,28 @@ class ChooseMateScreen(Screens):
             self.tab_buttons[x].kill()
         self.tab_buttons = {}
 
-        button_x = 200
+        button_x = 100
         self.tab_buttons["potential"] = UIImageButton(
-            ui_scale(pygame.Rect((button_x, 722), (306, 78))),
+            ui_scale(pygame.Rect((button_x, 361), (153, 39))),
             "",
             object_id="#potential_mates_tab_button",
             starting_height=2,
         )
-        button_x += 320
+        button_x += 160
 
         mates_tab_shown = False
         if self.the_cat.mate:
             self.tab_buttons["mates"] = UIImageButton(
-                ui_scale(pygame.Rect((button_x, 722), (306, 78))),
+                ui_scale(pygame.Rect((button_x, 361), (153, 39))),
                 "",
                 object_id="#mates_tab_button",
                 starting_height=2,
             )
             mates_tab_shown = True
-            button_x += 320
+            button_x += 160
 
         self.tab_buttons["offspring"] = UIImageButton(
-            ui_scale(pygame.Rect((button_x, 722), (306, 78))),
+            ui_scale(pygame.Rect((button_x, 361), (153, 39))),
             "",
             object_id="#offspring_tab_button",
             starting_height=2,
@@ -901,36 +925,21 @@ class ChooseMateScreen(Screens):
             return
 
         self.draw_compatible_line_affection()
-        if self.selected_cat.ID in self.the_cat.mate:
-            self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((300, 188), (200, 78))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/heart_mates.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((200, 78)),
-                ),
-            )
-        elif self.selected_cat.ID in self.the_cat.previous_mates:
-            self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((300, 188), (200, 78))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/heart_breakup.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((200, 78)),
-                ),
-            )
-        else:
-            self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((300, 188), (200, 78))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/heart_maybe.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((200, 78)),
-                ),
-            )
+
+        self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((0, 188), (200, 78))),
+            pygame.transform.scale(
+                image_cache.load_image(
+                    "resources/images/heart_mates.png"
+                    if self.selected_cat.ID in self.the_cat.mate
+                    else "resources/images/heart_breakup.png"
+                    if self.selected_cat.ID in self.the_cat.previous_mates
+                    else "resources/images/heart_maybe.png"
+                ).convert_alpha(),
+                ui_scale_dimensions((200, 78)),
+            ),
+            anchors={"centerx": "centerx"},
+        )
 
         self.selected_cat_elements["image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((600, 150), (150, 150))),
@@ -972,20 +981,6 @@ class ChooseMateScreen(Screens):
             manager=MANAGER,
         )
 
-        if (
-            not game.clan.clan_settings["same sex birth"]
-            and self.the_cat.gender == self.selected_cat.gender
-        ):
-            self.selected_cat_elements[
-                "no kit warning"
-            ] = pygame_gui.elements.UITextBox(
-                "This pair can't have biological kittens.",
-                ui_scale(pygame.Rect((275, 125), (249, 125))),
-                object_id=get_text_box_theme(
-                    "#text_box_22_horizcenter_vertcenter_spacing_95"
-                ),
-            )
-
         if self.kits_selected_pair:
             self.update_offspring_container()
 
@@ -1006,37 +1001,48 @@ class ChooseMateScreen(Screens):
                 object_id="@buttonstyles_squoval",
             )
 
+        if (
+            not game.clan.clan_settings["same sex birth"]
+            and self.the_cat.gender == self.selected_cat.gender
+        ):
+            warning_rect = ui_scale(pygame.Rect((0, 0), (160, 45)))
+            warning_rect.bottomleft = ui_scale_offset((0, -5))
+            self.selected_cat_elements[
+                "no kit warning"
+            ] = pygame_gui.elements.UITextBox(
+                "This pair can't have biological kittens.",
+                warning_rect,
+                object_id=get_text_box_theme(
+                    "#text_box_22_horizcenter_vertcenter_spacing_95"
+                ),
+                anchors={
+                    "centerx": "centerx",
+                    "bottom": "bottom",
+                    "bottom_target": self.toggle_mate,
+                },
+            )
+            del warning_rect
+
     def draw_compatible_line_affection(self):
         """Draws the heart-line based on capability, and draws the hearts based on romantic love."""
 
         # Set the lines
         self.selected_cat_elements["compat_line"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((300, 190), (200, 78))),
+            ui_scale(pygame.Rect((0, 190), (200, 78))),
             pygame.transform.scale(
                 image_cache.load_image(
-                    "resources/images/line_neutral.png"
+                    "resources/images/line_compatible.png"
+                    if get_personality_compatibility(self.the_cat, self.selected_cat)
+                    else "resources/images/line_incompatible.png"
+                    if not get_personality_compatibility(
+                        self.the_cat, self.selected_cat
+                    )
+                    else "resources/images/line_neutral.png"
                 ).convert_alpha(),
-                ui_scale_dimensions((400, 156)),
+                ui_scale_dimensions((200, 78)),
             ),
+            anchors={"centerx": "centerx"},
         )
-        if get_personality_compatibility(self.the_cat, self.selected_cat) is True:
-            self.selected_cat_elements["compat_line"].set_image(
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/line_compatible.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((400, 156)),
-                )
-            )
-        elif get_personality_compatibility(self.the_cat, self.selected_cat) is False:
-            self.selected_cat_elements["compat_line"].set_image(
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/line_incompatible.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((400, 156)),
-                )
-            )
 
         # Set romantic hearts of current cat towards mate or selected cat.
         if self.the_cat.dead:
@@ -1057,18 +1063,18 @@ class ChooseMateScreen(Screens):
         else:
             heart_number = 0
 
-        x_pos = 420
+        x_pos = 210
         for i in range(0, heart_number):
             self.selected_cat_elements["heart1" + str(i)] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x_pos, 570), (44, 40))),
+                ui_scale(pygame.Rect((x_pos, 285), (22, 20))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_big.png"
                     ).convert_alpha(),
-                    ui_scale_dimensions((44, 40)),
+                    ui_scale_dimensions((22, 20)),
                 ),
             )
-            x_pos += 54
+            x_pos += 27
 
         # Set romantic hearts of mate/selected cat towards current_cat.
         if self.selected_cat.dead:
@@ -1089,18 +1095,18 @@ class ChooseMateScreen(Screens):
         else:
             heart_number = 0
 
-        x_pos = 1136
+        x_pos = 568
         for i in range(0, heart_number):
             self.selected_cat_elements["heart2" + str(i)] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x_pos, 570), (44, 40))),
+                ui_scale(pygame.Rect((x_pos, 285), (22, 20))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_big.png"
                     ).convert_alpha(),
-                    ui_scale_dimensions((44, 40)),
+                    ui_scale_dimensions((22, 20)),
                 ),
             )
-            x_pos -= 54
+            x_pos -= 27
 
     def get_previous_next_cat(self):
         is_instructor = False
@@ -1160,11 +1166,6 @@ class ChooseMateScreen(Screens):
 
     def on_use(self):
         super().on_use()
-        # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(
-            self.list_frame,
-            ui_scale_blit((75, 391)),
-        )
 
         self.loading_screen_on_use(
             self.work_thread, self.update_both, ui_scale_offset((450, 300))

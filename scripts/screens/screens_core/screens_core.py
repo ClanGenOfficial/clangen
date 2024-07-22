@@ -4,9 +4,12 @@ import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 
+import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
+from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.get_arrow import get_arrow
@@ -14,16 +17,29 @@ from scripts.utility import (
     ui_scale,
     ui_scale_offset,
     ui_scale_dimensions,
+    ui_scale_blit,
+    get_text_box_theme,
 )
 
 game_frame: Optional[pygame.Surface] = None
 
 menu_buttons = dict()
 
+default_game_bgs = None
+default_fullscreen_bgs = None
+
+version_number = None
+dev_watermark = None
+
 
 def rebuild_core():
     global game_frame
     global menu_buttons
+    global default_game_bgs
+    global default_fullscreen_bgs
+    global version_number
+    global dev_watermark
+
     game_frame = get_box(
         BoxStyles.FRAME,
         (820, 720),
@@ -205,7 +221,7 @@ def rebuild_core():
         heading_rect,
         visible=False,
         manager=MANAGER,
-        object_id="#text_box_34_horizcenter_light",
+        object_id=ObjectID("#text_box_34_horizcenter", "#dark"),
         starting_height=5,
         anchors={
             "bottom": "bottom",
@@ -214,6 +230,48 @@ def rebuild_core():
         },
     )
     del heading_rect
+
+    bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
+    bg.fill(game.config["theme"]["light_mode_background"])
+    bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
+    bg_dark.fill(game.config["theme"]["dark_mode_background"])
+
+    default_game_bgs = {"default_light": bg, "default_dark": bg_dark}
+    default_fullscreen_bgs = {
+        "default_light": pygame.transform.scale(
+            bg, scripts.game_structure.screen_settings.screen.get_size()
+        ),
+        "default_dark": pygame.transform.scale(
+            bg_dark, scripts.game_structure.screen_settings.screen.get_size()
+        ),
+    }
+    default_fullscreen_bgs["default_light"].blit(game_frame, ui_scale_blit((-10, -10)))
+    default_fullscreen_bgs["default_dark"].blit(game_frame, ui_scale_blit((-10, -10)))
+
+    version_number = pygame_gui.elements.UILabel(
+        ui_scale(pygame.Rect((50, 50), (-1, -1))),
+        get_version_info().version_number[0:8],
+        object_id=get_text_box_theme(),
+        anchors={"bottom": "bottom", "right": "right"},
+    )
+    # Adjust position
+    version_number.set_relative_position(
+        ui_scale_offset(
+            (
+                800 - version_number.get_relative_rect()[2],
+                700 - version_number.get_relative_rect()[3],
+            )
+        )
+    )
+
+    if get_version_info().is_source_build or get_version_info().is_dev():
+        dev_watermark = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((525, 660), (300, 50))),
+            "Dev Build: " + version_number.text,
+            object_id="#dev_watermark",
+        )
+        version_number.kill()
+        version_number = None
 
 
 rebuild_core()

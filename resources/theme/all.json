@@ -348,7 +348,7 @@
         },
         "misc": {
             "border_width": "0",
-            "shadow_width": "0",
+            "shadow_width": "1",
             "text_horiz_alignment": "center",
             "text_vert_alignment": "center"
         }
@@ -393,10 +393,10 @@
             "shadow_width": "0"
         }
     },
-    "@text_box_14": {
+    "#text_box_14": {
         "prototype": "text_box"
     },
-    "@text_box_14_horizleft": {
+    "#text_box_14_horizleft": {
         "prototype": "@text_box_14",
         "misc": {
             "border_width": "0",
@@ -404,7 +404,7 @@
             "text_horiz_alignment": "left"
         }
     },
-    "@text_box_22": {
+    "#text_box_22": {
         "prototype": "text_box"
     },
     "#text_box_22_horizcenter": {

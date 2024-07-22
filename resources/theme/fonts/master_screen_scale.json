@@ -235,14 +235,14 @@
     "#confirm_display_changes_window": {
         "prototype": "#window_base_theme"
     },
-    "@text_box_14": {
+    "#text_box_14": {
         "prototype": "text_box",
         "font": {
             "size": "7",
             "name": "notosans"
         }
     },
-    "@text_box_14_horizleft": {
+    "#text_box_14_horizleft": {
         "prototype": "@text_box_14",
         "misc": {
             "border_width": "0",
@@ -250,7 +250,7 @@
             "text_horiz_alignment": "left"
         }
     },
-    "@text_box_22": {
+    "#text_box_22": {
         "prototype": "text_box",
         "font": {
             "size": "11",
@@ -268,6 +268,9 @@
         "colours": {
             "normal_text": "#ae1515"
         }
+    },
+    "label": {
+        "prototype": "#text_box_22"
     },
     "#text_box_22_horizcenter_spacing_95": {
         "prototype": "@text_box_22",
@@ -463,10 +466,11 @@
             "text_horiz_alignment": "center"
         }
     },
-    "#text_box_34_horizcenter_light": {
-        "prototype": "#text_box_34_horizcenter",
-        "colours": {
-            "normal_text": "#EFE5CE"
+    "#text_box_34_horizcenter_vertcenter": {
+        "prototype": "#text_box_34",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
         }
     },
     "#text_box_34_horizleft": {
