@@ -108,12 +108,12 @@ def rebuild_core():
         manager=MANAGER,
         object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
-        anchors={"right": "right"},
+        anchors={"top": "top", "right": "right"},
     )
 
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
-    scale_rect.topright = ui_scale_dimensions((-25, 5))
+    scale_rect.topright = ui_scale_offset((-25, 5))
     menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
         "Settings",

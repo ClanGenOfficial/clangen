@@ -1127,6 +1127,8 @@ class UICatListDisplay(UIContainer):
         # CAT NAME
         if self.show_names:
             i = -1
+            rect = pygame.Rect((0, 0), (self.boxes[0][0].rect[2], ui_scale_value(30)))
+            rect.bottomleft = (0, 0)
             for row in range(self.rows):
                 for column in range(self.columns):
                     container = self.boxes[row][column]
@@ -1136,18 +1138,14 @@ class UICatListDisplay(UIContainer):
                     except IndexError:
                         break
                     self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
-                        ui_scale(
-                            pygame.Rect(
-                                (0, 5),
-                                (self.x_px_between / 2, 30),
-                            )
-                        ),
+                        rect,
                         shorten_text_to_fit(str(kitty.name), 110, 15),
                         container=container,
                         object_id=self.text_theme,
                         anchors={
-                            "centerx": "centerx",
-                            "top_target": self.cat_sprites[f"sprite{i}"],
+                            "left": "left",
+                            "right": "right",
+                            "bottom": "bottom",
                         },
                     )
 

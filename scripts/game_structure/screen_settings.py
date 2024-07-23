@@ -33,20 +33,14 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
         else:
             display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
 
-        # These are the most options I can provide that have a good tradeoff for crunchiness
-        screen_sizes = {
-            2: (1600, 1400),
-            1.75: (1400, 1225),
-            1.5: (1200, 1050),
-            1.25: (1000, 875),
-            1: (800, 700),
-        }
-        for i, (x, y) in screen_sizes.items():
-            if x < display_size[0] and y < display_size[1]:
-                screen_x = x
-                screen_y = y
-                screen_scale = i
-                break
+        x = display_size[0] // 200
+        y = display_size[1] // 175
+
+        # this means screen scales in multiples of 200 x 175 which has a reasonable tradeoff for crunch
+        screen_scale = min(x, y) / 4
+        screen_x = 800 * screen_scale
+        screen_y = 700 * screen_scale
+
         screen = pygame.display.set_mode(
             display_size,
             (
@@ -80,6 +74,7 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
 
     if ingame_switch:
         from scripts.screens.all_screens import AllScreens
+        import scripts.debug_menu
 
         if fullscreen:
             mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
@@ -97,6 +92,7 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
         pygame.mouse.set_pos(mouse_pos)
 
         AllScreens.rebuild_all_screens()
+        scripts.debug_menu.debugmode.rebuild_console()
 
     # preloading the associated fonts
     if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
