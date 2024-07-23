@@ -7,6 +7,8 @@ from typing import List
 import pygame
 import pygame_gui
 
+import scripts.game_structure.screen_settings
+import scripts.game_structure.screen_settings
 from scripts.debug_commands import commandList
 from scripts.debug_commands.utils import set_debug_class
 from scripts.game_structure.game_essentials import game
@@ -98,9 +100,25 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
 class debugMode:
     def __init__(self):
 
+        self.coords_display = None
+        self.fps_display = None
+        self.console = None
+
+        self.rebuild_console()
+
+    def rebuild_console(self):
+
         self.coords_display = pygame_gui.elements.UILabel(
-            pygame.Rect((0, 0), (-1, -1)), "(0, 0)", object_id=get_text_box_theme()
+            pygame.Rect((0, 0), (-1, -1)),
+            "(0, 0)",
+            object_id=get_text_box_theme(),
         )
+
+        self.coords_display.change_layer(9000)
+        self.coords_display.text_colour = (255, 0, 0)
+        self.coords_display.disable()
+        self.coords_display.rebuild()
+        self.coords_display.hide()
 
         self.fps_display = pygame_gui.elements.UILabel(
             pygame.Rect((0, 0), (-1, -1)), "0 fps", object_id=get_text_box_theme()
@@ -116,11 +134,6 @@ class debugMode:
             ),
             MANAGER,
         )
-
-        self.coords_display.text_colour = (255, 0, 0)
-        self.coords_display.disable()
-        self.coords_display.rebuild()
-        self.coords_display.hide()
 
     def toggle_console(self):
         if self.console.visible == 0:
@@ -142,11 +155,11 @@ class debugMode:
                 self.coords_display.show()
 
             _ = pygame.mouse.get_pos()
-            if game.settings["fullscreen"]:
-                self.coords_display.set_text(f"({_[0]}, {_[1]})")
-            else:
-                self.coords_display.set_text(f"({_[0]*2}, {_[1]*2})")
-            self.coords_display.set_position(_)
+            self.coords_display.set_text(
+                f"({round(_[0] - scripts.game_structure.screen_settings.offset[0] // scripts.game_structure.screen_settings.screen_scale)}, "
+                f"{round(_[1] - scripts.game_structure.screen_settings.offset[1] // scripts.game_structure.screen_settings.screen_scale)})"
+            )
+            self.coords_display.set_position((_[0] + 10, _[1] + 10))
             del _
         else:
             if self.coords_display.visible == 1:
