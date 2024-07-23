@@ -16,9 +16,10 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
+    ui_scale_blit,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
+from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -26,7 +27,7 @@ from ..ui.get_arrow import get_arrow
 class ChooseAdoptiveParentScreen(Screens):
     list_frame = pygame.transform.scale(
         image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
-        (1300 / 1600 * screen_x, 388 / 1400 * screen_y),
+        ui_scale_dimensions((650, 194)),
     )
 
     def __init__(self, name=None):
@@ -273,14 +274,14 @@ class ChooseAdoptiveParentScreen(Screens):
         # Checkboxes and text
         self.mates_current_parents_text = pygame_gui.elements.UITextBox(
             "Mates of current parents",
-            ui_scale(pygame.Rect((1030, 10), (219, -1))),
+            ui_scale(pygame.Rect((515, 5), (110, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.potential_container,
         )
 
         self.unrelated_only_text = pygame_gui.elements.UITextBox(
             "Not closely related",
-            ui_scale(pygame.Rect((1030, 170), (219, -1))),
+            ui_scale(pygame.Rect((515, 85), (110, -1))),
             object_id="#text_box_26_horizcenter",
             container=self.potential_container,
         )
@@ -348,14 +349,15 @@ class ChooseAdoptiveParentScreen(Screens):
                 cat_object=birth_parents[0],
                 manager=MANAGER,
                 container=self.birth_container,
+                tool_tip_text=str(birth_parents[0].name),
             )
             if birth_parents[0].faded:
                 self.birth_parents_buttons["cat"].disable()
         elif len(birth_parents) >= 2:
-            x_pos = 300
+            x_pos = 150
             for i, _par in enumerate(birth_parents):
                 self.birth_parents_buttons["cat" + str(i)] = UISpriteButton(
-                    ui_scale(pygame.Rect((x_pos, 26), (300, 300))),
+                    ui_scale(pygame.Rect((x_pos, 13), (150, 150))),
                     pygame.transform.scale(
                         _par.sprite, ui_scale_dimensions((150, 150))
                     ),
@@ -367,7 +369,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 )
                 if _par.faded:
                     self.birth_parents_buttons["cat" + str(i)].disable()
-                x_pos += 330
+                x_pos += 115
 
     def update_adoptive_parents_container(self):
         """Updates everything in the mates container, including the list of current mates, checkboxes
@@ -429,12 +431,12 @@ class ChooseAdoptiveParentScreen(Screens):
         else:
             display_cats = []
 
-        pos_x = 30
+        pos_x = 15
         pos_y = 0
         i = 0
         for _off in display_cats:
             self.adoptive_parents_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 _off.sprite,
                 cat_object=_off,
                 manager=MANAGER,
@@ -443,10 +445,10 @@ class ChooseAdoptiveParentScreen(Screens):
             )
             if _off.faded:
                 self.adoptive_parents_buttons["cat" + str(i)].disable()
-            pos_x += 120
-            if pos_x >= 1200:
-                pos_x = 30
-                pos_y += 120
+            pos_x += 60
+            if pos_x >= 600:
+                pos_x = 15
+                pos_y += 60
             i += 1
 
     def update_potential_parents_container(self):
@@ -536,21 +538,21 @@ class ChooseAdoptiveParentScreen(Screens):
         else:
             display_cats = []
 
-        pos_x = 30
+        pos_x = 15
         pos_y = 0
         i = 0
 
         for _off in display_cats:
             self.potential_parents_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 _off.sprite,
                 cat_object=_off,
                 container=self.potential_container,
             )
-            pos_x += 120
-            if pos_x >= 990:
-                pos_x = 30
-                pos_y += 120
+            pos_x += 60
+            if pos_x >= 495:
+                pos_x = 15
+                pos_y += 60
             i += 1
 
     def exit_screen(self):
@@ -696,30 +698,30 @@ class ChooseAdoptiveParentScreen(Screens):
             self.tab_buttons[x].kill()
         self.tab_buttons = {}
 
-        button_x = 200
+        button_x = 100
         self.tab_buttons["potential"] = UIImageButton(
-            ui_scale(pygame.Rect((button_x, 722), (306, 78))),
+            ui_scale(pygame.Rect((button_x, 361), (153, 39))),
             "",
             object_id="#potential_parents_tab_button",
             starting_height=2,
         )
-        button_x += 320
+        button_x += 160
 
         adoptive_parents_shown = False
         if self.the_cat.adoptive_parents:
             self.tab_buttons["adoptive"] = UIImageButton(
-                ui_scale(pygame.Rect((button_x, 722), (306, 78))),
+                ui_scale(pygame.Rect((button_x, 361), (153, 39))),
                 "",
                 object_id="#adoptive_parents_tab_button",
                 starting_height=2,
             )
             adoptive_parents_shown = True
-            button_x += 320
+            button_x += 160
 
         birth_parents_shown = False
         if self.the_cat.parent1 or self.the_cat.parent2:
             self.tab_buttons["birth"] = UIImageButton(
-                ui_scale(pygame.Rect((button_x, 722), (306, 78))),
+                ui_scale(pygame.Rect((button_x, 361), (153, 39))),
                 "",
                 object_id="#birth_parents_tab_button",
                 starting_height=2,
@@ -841,10 +843,7 @@ class ChooseAdoptiveParentScreen(Screens):
         super().on_use()
 
         # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(
-            self.list_frame,
-            (150 / 1600 * screen_x + offset[0], 782 / 1400 * screen_y + offset[1]),
-        )
+        screen.blit(self.list_frame, ui_scale_blit((75, 391)))
 
         self.loading_screen_on_use(
             self.work_thread, self.update_after_change, (700, 600)
