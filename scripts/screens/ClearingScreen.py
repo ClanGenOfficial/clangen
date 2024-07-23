@@ -275,19 +275,19 @@ class ClearingScreen(Screens):
         )
         self.nutrition_title = pygame_gui.elements.UITextBox(
             "Nutrition Overview",
-            ui_scale(pygame.Rect((140, 410), (200, 30))),
+            ui_scale(pygame.Rect((140, 405), (200, 40))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.log_title = pygame_gui.elements.UITextBox(
             "Freshkill Pile Log",
-            ui_scale(pygame.Rect((140, 410), (200, 30))),
+            ui_scale(pygame.Rect((140, 405), (200, 40))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.tactic_title = pygame_gui.elements.UITextBox(
             "Feeding Tactic",
-            ui_scale(pygame.Rect((140, 410), (200, 30))),
+            ui_scale(pygame.Rect((140, 405), (200, 40))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
@@ -554,7 +554,7 @@ class ClearingScreen(Screens):
             )
 
             pos_x += 100
-            if pos_x >= 770:
+            if pos_x >= 670:
                 pos_x = 175
                 pos_y += 80
             i += 1
