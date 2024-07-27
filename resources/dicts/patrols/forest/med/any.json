@@ -2948,15 +2948,16 @@
     {
         "patrol_id": "fst_med_stumble1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
-        "tags": ["romance"],
+        "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 1]
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
         },
         "weight": 20,
         "intro_text": "r_c trips over a tree root while helping p_l to collect herbs.",
@@ -3127,9 +3128,9 @@
     {
         "patrol_id": "fst_med_stumble2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
-        "tags": ["romance"],
+        "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -3305,15 +3306,16 @@
     {
         "patrol_id": "fst_med_stumble3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
-        "tags": ["romance"],
+        "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 1]
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
         },
         "weight": 20,
         "intro_text": "p_l trips over a tree root while out collecting herbs with r_c.",
