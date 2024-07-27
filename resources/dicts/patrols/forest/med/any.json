@@ -2944,5 +2944,541 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_med_stumble1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romance"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "r_c trips over a tree root while helping p_l to collect herbs.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} quickly {VERB/r_c/pick/picks} {PRONOUN/r_c/self} up and {VERB/r_c/continue/continues} on.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Though p_l checks {PRONOUN/r_c/object} over and doesn't find any injuries, r_c insists that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c purrs the entire way home.",
+                "exp": 15,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": [
+                    "playful",
+                    "bold",
+                    "charismatic",
+                    "confident"
+                ],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Thankfully, r_c is able to pick {PRONOUN/r_c/self} up, {PRONOUN/r_c/poss} only injuries being the ones to {PRONOUN/r_c/poss} pride. StarClan, did that <i>really</i> have to happen in front of p_l?",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c checks r_c over and, upon confirming that there are no injuries, tells {PRONOUN/r_c/object} that {PRONOUN/r_c/object}{VERB/r_c/'re/'s} fine and to walk it off.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "cold",
+                    "grumpy",
+                    "strict"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l checks r_c over and, while the other cat is not seriously injured, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} definitely a little more battered than {PRONOUN/r_c/subject} {VERB/r_c/were/was} when they set out.",
+                "exp": 0,
+                "weight": 15,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <b><i>same</i></b> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
+                "exp": 0,
+                "weight": 15,
+                "stat_trait": [
+                    "oblivious"
+                ],
+                "can_have_stat": ["p_l"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <b><i>other</i></b> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "exp": 0,
+                "weight": 15,
+                "stat_trait": [
+                    "childish"
+                ],
+                "can_have_stat": ["p_l"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. The medicine cat tries to help {PRONOUN/p_l/poss} companion to stand, but it quickly becomes clear that that won't be happening. r_c will need to be carried back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after {PRONOUN/m_c/subject} tripped over a tree root.",
+                    "reg_death": "m_c died from injuries sustained after tripping over a tree root.",
+                    "lead_death": "died from injuries sustained after tripping over a tree root"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_med_stumble2",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romance"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "r_c trips over a tree root while out collecting herbs with p_l.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} quickly {VERB/r_c/pick/picks} {PRONOUN/r_c/self} up and {VERB/r_c/continue/continues} on.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Though p_l checks {PRONOUN/r_c/object} over and doesn't find any injuries, r_c insists that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c purrs the entire way home.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": [
+                    "playful",
+                    "bold",
+                    "charismatic",
+                    "confident"
+                ],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Thankfully, r_c is able to pick {PRONOUN/r_c/self} up, {PRONOUN/r_c/poss} only injuries being the ones to {PRONOUN/r_c/poss} pride. StarClan, did that <i>really</i> have to happen in front of p_l?",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c checks r_c over and, upon confirming that there are no injuries, tells {PRONOUN/r_c/object} that {PRONOUN/r_c/object}{VERB/r_c/'re/'s} fine and to walk it off.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "cold",
+                    "grumpy",
+                    "strict"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l checks r_c over and, while the other medicine cat is not seriously injured, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} definitely a little more battered than {PRONOUN/r_c/subject} {VERB/r_c/were/was} when they set out.",
+                "exp": 0,
+                "weight": 15,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <b><i>same</i></b> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their joint misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
+                "exp": 0,
+                "weight": 15,
+                "stat_trait": [
+                    "oblivious"
+                ],
+                "can_have_stat": ["p_l"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <b><i>other</i></b> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "exp": 0,
+                "weight": 15,
+                "stat_trait": [
+                    "childish"
+                ],
+                "can_have_stat": ["p_l"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. p_l tries to help {PRONOUN/p_l/poss} fellow medicine cat to stand, but it quickly becomes clear that that won't be happening. r_c will need to be carried back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after {PRONOUN/m_c/subject} tripped over a tree root.",
+                    "reg_death": "m_c died from injuries sustained after tripping over a tree root."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_med_stumble3",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romance"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "p_l trips over a tree root while out collecting herbs with r_c.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/pick/picks} {PRONOUN/p_l/self} up and {VERB/p_l/continue/continues} on.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Though p_l has no visible injuries, {PRONOUN/p_l/subject} {VERB/p_l/insist/insists} that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c's shoulder all the way back to camp. r_c complies, and p_l purrs the entire way home.",
+                "exp": 15,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
+                "exp": 15,
+                "weight": 20,
+                "stat_trait": [
+                    "playful",
+                    "bold",
+                    "charismatic",
+                    "confident"
+                ],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Thankfully, p_l doesn't fall far and is able to pick {PRONOUN/p_l/self} up, {PRONOUN/p_l/poss} only injuries being the ones to {PRONOUN/p_l/poss} pride. StarClan, did that <i>really</i> have to happen in front of r_c?",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c may not be a medicine cat, but even <i>{PRONOUN/s_c/subject}</i> can tell that p_l is fine. Already annoyed at having been woken up so early in the star-damned morning just to go pick herbs, s_c rather callously tells the medicine cat to get up and walk it off.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "cold",
+                    "grumpy",
+                    "strict"
+                ],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c hurries over to help p_l and, while the medicine cat is not seriously injured, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} definitely a little more battered than {PRONOUN/p_l/subject} {VERB/p_l/were/was} when they set out.",
+                "exp": 0,
+                "weight": 15,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "s_c sees p_l falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <b><i>same</i></b> tree root and {VERB/s_c/end/ends} up joining p_l on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
+                "exp": 0,
+                "weight": 15,
+                "stat_trait": [
+                    "oblivious"
+                ],
+                "can_have_stat": ["r_c"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only p_l could see {PRONOUN/p_l/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at p_l's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <b><i>other</i></b> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "exp": 0,
+                "weight": 15,
+                "stat_trait": [
+                    "childish"
+                ],
+                "can_have_stat": ["r_c"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l yowls out in pain, alerting r_c and causing {PRONOUN/r_c/object} to drop everything and rush over. r_c tries to help the medicine cat to stand, but it quickly becomes clear that that won't be happening. p_l will need to be carried back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after {PRONOUN/m_c/subject} tripped over a tree root.",
+                    "reg_death": "m_c died from injuries sustained after tripping over a tree root.",
+                    "lead_death": "died from injuries sustained after tripping over a tree root"
+                }
+            }
+        ]
     }
 ]
