@@ -46,7 +46,7 @@ def get_tileset(style: BoxStyles) -> Tileset:
     # scaling our image to the right scale for our UI
     height = ui_scale_value(style.value.height)
     # ceiling to the nearest multiple of 3
-    height = ceil((height / 3) * 3)
+    height = ceil(height / 3) * 3
 
     scaled_base = pygame.transform.scale(style.value, (height, height))
 
