@@ -64,5 +64,14 @@
         "amount": 10
       }
     ]
+  },
+  {
+    "event_id": "fst_misc_sparrow_accessory",
+    "location": ["any"],
+    "season": ["newleaf","greenleaf"],
+    "subtype": ["accessory"],
+    "weight": 20,
+    "event_text": "A small flock of sparrows has decided to start frequenting the branches high above camp and, much to the annoyance of most, have dropped pleanty of feathers everwhere as they preen. m_c thinks they're pretty though and decides to keep some",
+    "new_accessory": ["SPARROW FEATHERS"]
   }
 ]
