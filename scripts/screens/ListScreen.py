@@ -22,6 +22,16 @@ class ListScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.ur_bg_image = pygame.image.load("resources/images/urbg.png").convert()
+        self.sc_bg_image = pygame.image.load(
+            "resources/images/starclanbg.png"
+        ).convert_alpha()
+        self.df_bg_image = pygame.image.load(
+            "resources/images/darkforestbg.png"
+        ).convert_alpha()
+        self.search_bar_image = pygame.image.load(
+            "resources/images/search_bar.png"
+        ).convert_alpha()
         self.all_pages = None
         self.filter_options_visible = True
         self.group_options_visible = False
@@ -297,7 +307,7 @@ class ListScreen(Screens):
         # SEARCH BAR
         self.cat_list_bar_elements["search_bar_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((72, 0), (276, 68))),
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(),
+            self.search_bar_image,
             container=self.cat_list_bar,
             object_id="#search_bar",
             manager=MANAGER,
@@ -469,7 +479,7 @@ class ListScreen(Screens):
         self.sc_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
+                self.sc_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -481,7 +491,7 @@ class ListScreen(Screens):
         self.ur_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/urbg.png").convert(),
+                self.ur_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -493,7 +503,7 @@ class ListScreen(Screens):
         self.df_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
+                self.df_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
