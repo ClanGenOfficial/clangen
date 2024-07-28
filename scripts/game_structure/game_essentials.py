@@ -152,7 +152,7 @@ class Game:
         "showcoords": False,
         "showbounds": False,
         "visualdebugmode": False,
-        "showfps": True,
+        "showfps": False,
     }
 
     # Init Settings
