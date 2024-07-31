@@ -1,6 +1,7 @@
 import html
+from functools import lru_cache
 from math import floor, ceil
-from typing import Union, Tuple, Optional, Dict, Iterable, Callable
+from typing import Union, Tuple, Optional, Dict, Iterable, Callable, List
 
 import pygame
 import pygame_gui
@@ -1026,27 +1027,58 @@ class UICatListDisplay(UIContainer):
         if game.settings["dark mode"]:
             self._favor_circle.set_alpha(150)
 
-        cell_width = floor(self.relative_rect.width / self.columns)
-        cell_height = floor(self.relative_rect.height / self.rows)
-
-        for row in range(self.rows):
-            new_row = []
-            for column in range(self.columns):
-                ui_container = UIContainer(
-                    pygame.Rect(
-                        column * cell_width,
-                        row * cell_height,
-                        cell_width,
-                        cell_height,
-                    ),
-                    container=self,
-                    manager=self.ui_manager,
-                )
-                new_row.append(ui_container)
-            self.boxes.append(new_row)
+        self.generate_grid()
 
         self._chunk()
         self._display_cats()
+
+    def generate_grid(self):
+        """
+        A wrapper for the grid generation to speed it up significantly.
+        Must be done like this to avoid memory leak.
+        """
+        self.boxes = self._generate_grid_cached(
+            self.relative_rect.width // self.columns,
+            self.relative_rect.height // self.rows,
+            self.rows,
+            self.columns,
+            self.ui_manager,
+        )
+        for box in self.boxes:
+            box.set_container(self)
+            box.rebuild()
+
+    @staticmethod
+    @lru_cache(maxsize=5)
+    def _generate_grid_cached(cell_width, cell_height, rows, columns, manager):
+        boxes: List[Optional[UIContainer]] = [None] * (rows * columns)
+        for i, box in enumerate(boxes):
+            if i == 0:
+                anchors = {}
+            elif i % columns == 0:
+                # first item in a row excluding first
+                anchors = {"top_target": boxes[i - columns]}
+            elif i < columns:
+                # top row
+                anchors = {"left_target": boxes[i - 1]}
+            else:
+                # all other rows
+                anchors = {
+                    "left_target": boxes[i - 1],
+                    "top_target": boxes[i - columns],
+                }
+
+            boxes[i] = UIContainer(
+                pygame.Rect(
+                    0,
+                    0,
+                    cell_width,
+                    cell_height,
+                ),
+                anchors=anchors,
+                manager=manager,
+            )
+        return boxes
 
     def clear_display(self):
         [sprite.kill() for sprite in self.cat_sprites.values()]
@@ -1100,54 +1132,23 @@ class UICatListDisplay(UIContainer):
 
         # FAVOURITE ICON
         if show_fav:
-            i = -1
-            for row in range(self.rows):
-                for column in range(self.columns):
-                    container = self.boxes[row][column]
-                    i += 1
-                    try:
-                        kitty = display_cats[i]
-                    except IndexError:
-                        break
-                    if kitty.favourite:
-                        self.create_favor_indicator(i, container)
+            fav_indexes = [
+                display_cats.index(cat) for cat in display_cats if cat.favourite
+            ]
+            [self.create_favor_indicator(i, self.boxes[i]) for i in fav_indexes]
 
         # CAT SPRITE
-        i = -1
-        for row in range(self.rows):
-            for column in range(self.columns):
-                container = self.boxes[row][column]
-                i += 1
-                try:
-                    kitty = display_cats[i]
-                except IndexError:
-                    break
-                self.create_cat_button(i, kitty, container)
+        [
+            self.create_cat_button(i, kitty, self.boxes[i])
+            for i, kitty in enumerate(display_cats)
+        ]
 
         # CAT NAME
         if self.show_names:
-            i = -1
-            rect = pygame.Rect((0, 0), (self.boxes[0][0].rect[2], ui_scale_value(30)))
-            rect.bottomleft = (0, 0)
-            for row in range(self.rows):
-                for column in range(self.columns):
-                    container = self.boxes[row][column]
-                    i += 1
-                    try:
-                        kitty = display_cats[i]
-                    except IndexError:
-                        break
-                    self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
-                        rect,
-                        shorten_text_to_fit(str(kitty.name), 110, 15),
-                        container=container,
-                        object_id=self.text_theme,
-                        anchors={
-                            "left": "left",
-                            "right": "right",
-                            "bottom": "bottom",
-                        },
-                    )
+            [
+                self.create_name(i, kitty, self.boxes[i])
+                for i, kitty in enumerate(display_cats)
+            ]
 
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
@@ -1160,6 +1161,18 @@ class UICatListDisplay(UIContainer):
             tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
             starting_height=1,
             anchors={"centerx": "centerx"},
+        )
+
+    def create_name(self, i, kitty, container):
+        self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
+            pygame.Rect((0, 0), (container.rect[2], ui_scale_value(30))),
+            shorten_text_to_fit(str(kitty.name), 220, 30),
+            container=container,
+            object_id=self.text_theme,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.cat_sprites[f"sprite{i}"],
+            },
         )
 
     def create_favor_indicator(self, i, container):

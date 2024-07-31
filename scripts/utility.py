@@ -1355,8 +1355,11 @@ def gather_cat_objects(
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
             clan_cats = [
                 x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)
+
             ]
-            out_set.update(sample(clan_cats, randint(1, round(len(clan_cats) / 8))))
+            out_set.update(
+                sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
+            )
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
         elif abbr == "multi":
@@ -1889,7 +1892,7 @@ def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
                         text = " ".join(modify)
                         break
 
-        text = text.replace("o_c_n", str(other_clan_name) + "Clan")
+        text = text.replace("o_c_n", str(other_clan_name))
 
     if "c_n" in text:
         text = text.replace("c_n", clan.name)

@@ -111,6 +111,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -126,6 +129,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -157,9 +163,49 @@
             "elder"
         ],
         "main_backstory_constraint": [
-            "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2","loner1", "loner2", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2", "abandoned3", "abandoned4",
-            "otherclan1", "otherclan2", "otherclan3", "otherclan4","disgraced1", "disgraced2", "disgraced3", "retired_leader", "medicine_cat", "ostracized_warrior", "refugee1", "refugee2", "refugee4", "refugee5",
-            "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor4","wandering_healer1", "wandering_healer2", "guided2", "guided3", "guided4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"
+            "clan_founder",
+            "clanborn",
+            "halfclan1",
+            "halfclan2",
+            "outsider_roots1",
+            "outsider_roots2",
+            "loner1",
+            "loner2",
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "abandoned1",
+            "abandoned2",
+            "abandoned3",
+            "abandoned4",
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4",
+            "disgraced1",
+            "disgraced2",
+            "disgraced3",
+            "retired_leader",
+            "medicine_cat",
+            "ostracized_warrior",
+            "refugee1",
+            "refugee2",
+            "refugee4",
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor4",
+            "wandering_healer1",
+            "wandering_healer2",
+            "guided2",
+            "guided3",
+            "guided4",
+            "orphaned1",
+            "orphaned2",
+            "orphaned3",
+            "orphaned4",
+            "orphaned5",
+            "orphaned6"
         ]
     },
     {
@@ -182,7 +228,7 @@
             "leader",
             "elder"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -610,7 +656,12 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["otherclan1", "otherclan2", "otherclan3", "otherclan4"]
+        "main_backstory_constraint": [
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4"
+        ]
     },
     {
         "id": "gen_wandering_healer",
@@ -628,7 +679,10 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["wandering_healer1", "wandering_healer2"]
+        "main_backstory_constraint": [
+            "wandering_healer1",
+            "wandering_healer2"
+        ]
     },
     {
         "id": "gen_refugee_to_alive_leader",
@@ -647,8 +701,11 @@
             "deputy",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee1", "refugee4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee1",
+            "refugee4"
+        ],
+        "random_status_constraint": [
             "leader"
         ],
         "random_living_status": [
@@ -672,7 +729,13 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"]
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ]
     },
     {
         "id": "gen_tragedy_survivor_to_alive_gen",
@@ -695,8 +758,14 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ],
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -718,8 +787,14 @@
             "deputy",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ],
+        "random_status_constraint": [
             "leader"
         ],
         "random_living_status": [
@@ -740,7 +815,15 @@
             "Isn't ashamed of {PRONOUN/m_c/poss} past",
             "Isn't living with a paw in each world"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"]
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ]
     },
     {
         "id": "gen_former_kittypet_apprentice",
@@ -752,8 +835,21 @@
             "Wants to play with {PRONOUN/r_c/poss} old kittypet toys",
             "Avoids the Twoleg place to prove {PRONOUN/m_c/poss} loyalty"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
-        "main_status_constraint": ["apprentice"]
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_former_kittypet_apprentice_to_apprentice",
@@ -766,10 +862,27 @@
             "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} Clan roots",
             "Patiently answers r_c's slightly rude questions about kittypet life"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
-        "main_status_constraint": ["apprentice"],
-        "random_status_constraint": ["apprentice"],
-        "random_backstory_constraint": ["clanborn"]
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_backstory_constraint": [
+            "clanborn"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_former_kittypet_medcat",
@@ -780,9 +893,21 @@
             "Knows a great garden in the Twoleg place for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
         "main_status_constraint": [
-            "medicine cat"]
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_former_kittypet_deputy",
@@ -793,9 +918,18 @@
             "Wishes other cats would trust in the leader's choice of making {PRONOUN/m_c/object} deputy",
             "Wouldn't mind bragging about {PRONOUN/m_c/poss} position in the Clan to some old kittypet friends"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
         "main_status_constraint": [
-            "deputy"]
+            "deputy"
+        ]
     },
     {
         "id": "gen_former_kittypet_leader",
@@ -807,9 +941,18 @@
             "Looks back on {PRONOUN/m_c/poss} life as a kittypet, amazed at how different things are now",
             "Thinks about taking in some kittypets as apprentices"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
         "main_status_constraint": [
-            "leader"]
+            "leader"
+        ]
     },
     {
         "id": "med_cat_alive_kit",
@@ -821,9 +964,12 @@
         "main_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -879,7 +1025,7 @@
             "medicine cat apprentice",
             "mediator apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -903,7 +1049,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "relationship_constraint":[
+        "relationship_constraint": [
             "app/mentor"
         ]
     },
@@ -1116,7 +1262,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ]
     },
     {
         "id": "gen_formerly_a_rogue_apprentice_to_mentor",
@@ -1129,7 +1282,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
         "relationship_constraint": [
             "app/mentor"
         ]
@@ -1149,9 +1309,19 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1187,10 +1357,10 @@
         "main_trait_constraint": [
             "vengeful"
         ],
-        "random_living_status":[
+        "random_living_status": [
             "living"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice"
         ]
     },
@@ -1344,7 +1514,7 @@
         "main_trait_constraint": [
             "loving"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -1409,13 +1579,16 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
         ],
         "main_trait_constraint": [
             "calm"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1504,6 +1677,9 @@
         ],
         "main_trait_constraint": [
             "compassionate"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1638,6 +1814,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1655,6 +1834,9 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1687,6 +1869,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1705,6 +1890,9 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1724,6 +1912,9 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1746,6 +1937,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1767,6 +1961,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1788,7 +1985,6 @@
             "mediator apprentice"
         ]
     },
-
     {
         "id": "one_bad_eye_gen_to_alive_gen",
         "thoughts": [
@@ -1803,6 +1999,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1819,6 +2018,9 @@
         },
         "random_age_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1839,6 +2041,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1858,6 +2063,9 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1897,6 +2105,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1921,6 +2132,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1956,6 +2170,9 @@
         "random_status_constraint": [
             "medicine cat apprentice",
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1982,6 +2199,9 @@
             "adult",
             "senior adult",
             "senior"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2008,6 +2228,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2063,7 +2286,6 @@
             "any"
         ]
     },
-
     {
         "id": "missing_leg_gen_to_alive_gen",
         "thoughts": [
@@ -2087,9 +2309,11 @@
             "Is exaggerating the tale of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} leg to the kits"
         ],
         "perm_conditions": {
-            "m_c": ["lost a leg"]
+            "m_c": [
+                "lost a leg"
+            ]
         },
-        "main_age_constraint":[
+        "main_age_constraint": [
             "adolescent",
             "young adult",
             "adult",
