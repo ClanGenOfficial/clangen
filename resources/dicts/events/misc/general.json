@@ -3687,7 +3687,7 @@
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 5,
-    "event_text": "m_c thinks starclan is trying to warn {PRONOUN/m_c/object} about r_c.",
+    "event_text": "m_c thinks StarClan is trying to warn {PRONOUN/m_c/object} about r_c.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["medicine cat"],
