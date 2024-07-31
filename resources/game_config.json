@@ -421,8 +421,6 @@
 		"always_halloween": false
 	},
 	"theme": {
-		"debug_force_screen_size": null,
-		"comment": "format: [x, y] - forcing a screen scale will likely make things crunchy",
 		"dark_mode_background": [57, 50, 36],
 		"light_mode_background": [206, 194, 168]
 	},

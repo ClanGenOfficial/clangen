@@ -521,9 +521,6 @@ class SettingsScreen(Screens):
 
         if screen_mode is None:
             screen_mode = game.settings["fullscreen"]
-        toggle_fullscreen(
-            screen_mode,
-            force_screen_size=game.config["theme"]["debug_force_screen_size"],
-        )
+        toggle_fullscreen(screen_mode)
         scripts.screens.screens_core.screens_core.rebuild_core()
         game.all_screens["settings screen"].screen_switches()

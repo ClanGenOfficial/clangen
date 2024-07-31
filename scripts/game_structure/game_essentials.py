@@ -632,8 +632,4 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-toggle_fullscreen(
-    game.settings["fullscreen"],
-    ingame_switch=False,
-    force_screen_size=game.config["theme"]["debug_force_screen_size"],
-)
+toggle_fullscreen(game.settings["fullscreen"], ingame_switch=False)

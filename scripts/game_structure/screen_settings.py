@@ -16,7 +16,7 @@ MANAGER: Optional[pygame_gui.UIManager] = None
 screen = None
 
 
-def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=None):
+def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     global offset
     global screen_x
     global screen_y
@@ -28,10 +28,7 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
     old_scale = screen_scale
     mouse_pos = pygame.mouse.get_pos()
     if fullscreen:
-        if force_screen_size is not None:
-            display_size = force_screen_size
-        else:
-            display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+        display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
 
         x = display_size[0] // 200
         y = display_size[1] // 175
@@ -43,11 +40,7 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True, force_screen_size=No
 
         screen = pygame.display.set_mode(
             display_size,
-            (
-                pygame.FULLSCREEN
-                if force_screen_size is None
-                else pygame.FULLSCREEN | pygame.SCALED
-            ),
+            pygame.FULLSCREEN,
         )
         offset = (
             floor((display_size[0] - screen_x) / 2),
