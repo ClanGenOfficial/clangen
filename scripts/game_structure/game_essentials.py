@@ -138,6 +138,7 @@ class Game:
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
         "audio_mute": False,
+        "saved_scroll_positions": {},
     }
     all_screens = {}
     cur_events = {}
@@ -656,6 +657,7 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme("resources/theme/text_boxes.json")
         manager.get_theme().load_theme("resources/theme/text_boxes_dark.json")
         manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
+        manager.get_theme().load_theme("resources/theme/horizontal_scroll_bar.json")
         manager.get_theme().load_theme("resources/theme/window_base.json")
         manager.get_theme().load_theme("resources/theme/tool_tips.json")
 
@@ -674,7 +676,8 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme("resources/theme/buttons_small.json")
         manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
         manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
+        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar_small.json")
+        manager.get_theme().load_theme("resources/theme/horizontal_scroll_bar_small.json")
         manager.get_theme().load_theme("resources/theme/window_base_small.json")
         manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
         manager.get_theme().load_theme("resources/theme/horizontal_slider.json")
