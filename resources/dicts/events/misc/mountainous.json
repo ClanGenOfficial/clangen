@@ -58,7 +58,7 @@
     "event_text":  "r_c found a little patch of acc_plural and decided to gift them to m_c",
     "new_accessory": ["POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BULB WHITE"],
     "r_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        "age": ["any"]
     }
   }
 ]
