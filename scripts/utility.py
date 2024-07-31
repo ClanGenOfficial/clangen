@@ -1797,7 +1797,7 @@ def history_text_adjust(text,
                         text = " ".join(modify)
                         break
 
-        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
+        text = text.replace('o_c_n', str(other_clan_name))
 
     if "c_n" in text:
         text = text.replace("c_n", clan.name)
