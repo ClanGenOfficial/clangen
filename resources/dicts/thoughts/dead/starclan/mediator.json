@@ -8,6 +8,9 @@
             "Is eagerly listening to gossip surrounding another Clan",
             "Wants to solve the disagreements between c_n and the surrounding Clans",
             "Is theorizing with other StarClan cats on how to resolve the problems within the Clans"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -19,6 +22,9 @@
         ],
         "main_trait_constraint": [
             "childish"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -31,6 +37,9 @@
         ],
         "main_trait_constraint": [
             "troublesome"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -45,4 +54,3 @@
         ]
     }
 ]
-
