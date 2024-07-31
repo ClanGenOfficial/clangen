@@ -630,7 +630,9 @@ class EventsScreen(Screens):
                         + ui_scale_value(10)
                     )
                     if f"cat_button{i}" in self.involved_cat_buttons
-                    else 0,
+                    else self.event_display_elements[f"event{i}"].get_relative_rect()[
+                        3
+                    ],
                 )
             )
 
