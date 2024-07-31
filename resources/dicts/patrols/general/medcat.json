@@ -3267,7 +3267,6 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat apprentice": [-1, -1],
             "medicine cat": [1, 1]
         },
         "weight": 20,
@@ -3477,16 +3476,15 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat apprentice": [-1, -1],
             "medicine cat": [1, 1]
         },
         "weight": 20,
-        "intro_text": "While out collecting herbs with r_c, p_l can't help but notice just how hard {PRONOUN/p_l/poss} companion is pushing {PRONOUN/r_c/self}.",
+        "intro_text": "While out collecting herbs with r_c, p_l can't help but notice just how hard the warrior is pushing {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to keep {PRONOUN/p_l/poss} thoughts to {PRONOUN/p_l/self}.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Without a single word, p_l drapes {PRONOUN/p_l/poss} tail over r_c's shoulders, letting out a comforting purr as the other cat leans against {PRONOUN/p_l/object}.",
+                "text": "Without a single word, p_l drapes {PRONOUN/p_l/poss} tail over r_c's shoulders, letting out a comforting purr as the warrior leans against {PRONOUN/p_l/object}.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
