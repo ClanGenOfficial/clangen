@@ -3703,7 +3703,14 @@
             "mutual": true,
             "values": ["dislike"],
           "amount": 20
-        }
+        },
+        {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": false,
+        "values": ["trust", "comfort"],
+        "amount": -20
+      }
     ]
   },
   {
