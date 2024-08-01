@@ -1,25 +1,25 @@
 {
     "default": {
-        "leaderden": [344, 100],
-        "medicineden": [105, 200],
+        "leader den": [344, 100],
+        "medicine den": [105, 200],
         "nursery": [620, 200],
         "clearing": [317, 285],
-        "apprenticeden": [70, 410],
-        "warriorden": [615, 440],
-        "elderden": [348, 490],
-        "leaderplace": [
+        "apprentice den": [70, 410],
+        "warrior den": [615, 440],
+        "elder den": [348, 490],
+        "leader place": [
             [[375, 195], "xy"],
             [[460, 102], "xy"],
             [[475, 269], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[80, 270], "xy"],
             [[127, 285], "xy"],
             [[208, 273], "xy"],
             [[165, 330], "xy"],
             [[40, 184], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[585, 300], "xy"],
             [[600, 250], "xy"],
             [[650, 250], "xy"],
@@ -32,7 +32,7 @@
             [[630, 350], "xy"],
             [[680, 350], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[355, 320], "xy"],
             [[295, 350], "xy"],
             [[375, 370], "xy"],
@@ -41,7 +41,7 @@
             [[400, 420], "xy"],
             [[475, 410], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[70, 460], "xy"],
             [[125, 470], "xy"],
             [[165, 460], "xy"],
@@ -49,7 +49,7 @@
             [[150, 510], "xy"],
             [[35, 495], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[630, 490], "xy"],
             [[689, 500], "xy"],
             [[740, 526], "xy"],
@@ -59,7 +59,7 @@
             [[627, 550], "xy"],
             [[670, 535], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[445, 570], "xy"],
             [[350, 520], "xy"],
             [[400, 520], "xy"],
@@ -68,27 +68,27 @@
         ]
     },
     "Forestcamp2": {
-        "leaderden": [344, 94],
-        "medicineden": [80, 200],
+        "leader den": [344, 94],
+        "medicine den": [80, 200],
         "nursery": [620, 200],
         "clearing": [360, 294],
-        "apprenticeden": [82, 430],
-        "warriorden": [590, 430],
-        "elderden": [348, 490],
-        "leaderplace": [
+        "apprentice den": [82, 430],
+        "warrior den": [590, 430],
+        "elder den": [348, 490],
+        "leader place": [
             [[325, 124], "y"],
             [[382, 112], "y"],
             [[488, 116], "y"],
             [[403, 172], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[47, 234], "xy"],
             [[102, 257], "xy"],
             [[157, 257], "xy"],
             [[161, 314], "xy"],
             [[213, 303], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[560, 271], "xy"],
             [[614, 277], "xy"],
             [[659, 304], "xy"],
@@ -99,7 +99,7 @@
             [[658, 362], "xy"],
             [[712, 366], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[191, 134], "xy"],
             [[321, 202], "xy"],
             [[375, 227], "xy"],
@@ -114,7 +114,7 @@
             [[356, 390], "xy"],
             [[409, 391], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[223, 413], "xy"],
             [[189, 462], "xy"],
             [[129, 457], "xy"],
@@ -124,7 +124,7 @@
             [[43, 586], "xy"],
             [[96, 580], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[502, 453], "xy"],
             [[558, 483], "xy"],
             [[617, 514], "xy"],
@@ -134,7 +134,7 @@
             [[608, 581], "xy"],
             [[660, 572], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[364, 472], "xy"],
             [[310, 540], "xy"],
             [[364, 533], "xy"],
@@ -145,20 +145,20 @@
         ]
     },
     "Forestcamp3": {
-        "leaderden": [344, 94],
-        "medicineden": [80, 200],
+        "leader den": [344, 94],
+        "medicine den": [80, 200],
         "nursery": [620, 200],
         "clearing": [360, 294],
-        "apprenticeden": [82, 430],
-        "warriorden": [590, 430],
-        "elderden": [348, 490],
-        "leaderplace": [
+        "apprentice den": [82, 430],
+        "warrior den": [590, 430],
+        "elder den": [348, 490],
+        "leader place": [
             [[600, 40], "xy"],
             [[360, 115], "xy"],
             [[350, 160], "xy"],
             [[400, 155], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[150, 275], "xy"],
             [[100, 265], "xy"],
             [[200, 265], "xy"],
@@ -166,7 +166,7 @@
             [[200, 315], "xy"],
             [[165, 225], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[520, 175], "xy"],
             [[620, 210], "xy"],
             [[550, 250], "xy"],
@@ -178,7 +178,7 @@
             [[580, 350], "xy"],
             [[650, 350], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[250, 200], "xy"],
             [[375, 320], "xy"],
             [[250, 325], "xy"],
@@ -194,7 +194,7 @@
             [[400, 420], "xy"],
             [[450, 450], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[200, 420], "xy"],
             [[70, 470], "xy"],
             [[120, 470], "xy"],
@@ -203,7 +203,7 @@
             [[200, 520], "xy"],
             [[175, 570], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[700, 470], "xy"],
             [[600, 470], "xy"],
             [[550, 490], "xy"],
@@ -213,7 +213,7 @@
             [[550, 540], "xy"],
             [[650, 540], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[280, 455], "xy"],
             [[350, 520], "xy"],
             [[400, 520], "xy"],
@@ -223,32 +223,32 @@
         ]
     },
     "Forestcamp4": {
-        "leaderden": [325, 212],
-        "medicineden": [32, 250],
+        "leader den": [325, 212],
+        "medicine den": [32, 250],
         "nursery": [570, 475],
         "clearing": [350, 394],
-        "apprenticeden": [75, 480],
-        "warriorden": [640, 225],
-        "elderden": [300, 575],
-        "leaderplace": [
+        "apprentice den": [75, 480],
+        "warrior den": [640, 225],
+        "elder den": [300, 575],
+        "leader place": [
             [[275, 175], "xy"],
             [[285, 250], "xy"],
             [[350, 260], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[75, 300], "xy"],
             [[65, 350], "xy"],
             [[200, 312], "xy"],
             [[200, 270], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[600, 630], "xy"],
             [[625, 500], "xy"],
             [[545, 480], "xy"],
             [[537, 505], "xy"],
             [[660, 555], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[250, 275], "xy"],
             [[300, 325], "xy"],
             [[350, 325], "xy"],
@@ -265,21 +265,21 @@
             [[450, 435], "xy"],
             [[525, 360], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[200, 550], "xy"],
             [[200, 575], "xy"],
             [[100, 575], "xy"],
             [[137, 550], "xy"],
             [[37, 575], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[675, 267], "xy"],
             [[675, 317], "xy"],
             [[725, 297], "xy"],
             [[725, 347], "xy"],
             [[575, 307], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[280, 587], "xy"],
             [[325, 590], "xy"],
             [[280, 625], "xy"],
@@ -287,21 +287,21 @@
         ]
     },
     "Mountainouscamp1": {
-        "leaderden": [399, 94],
-        "medicineden": [61, 169],
+        "leader den": [399, 94],
+        "medicine den": [61, 169],
         "nursery": [635, 184],
         "clearing": [360, 294],
-        "apprenticeden": [82, 401],
-        "warriorden": [590, 430],
-        "elderden": [348, 490],
-        "leaderplace": [
+        "apprentice den": [82, 401],
+        "warrior den": [590, 430],
+        "elder den": [348, 490],
+        "leader place": [
             [[384, 123], "xy"],
             [[437, 138], "xy"],
             [[321, 154], "xy"],
             [[324, 99], "xy"],
             [[379, 172], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[13, 203], "xy"],
             [[67, 233], "xy"],
             [[121, 238], "xy"],
@@ -312,7 +312,7 @@
             [[109, 294], "xy"],
             [[163, 305], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[569, 58], "xy"],
             [[594, 111], "xy"],
             [[484, 254], "xy"],
@@ -329,7 +329,7 @@
             [[729, 252], "xy"],
             [[705, 350], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[274, 308], "xy"],
             [[329, 324], "xy"],
             [[381, 324], "xy"],
@@ -342,7 +342,7 @@
             [[308, 428], "xy"],
             [[362, 428], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[28, 425], "xy"],
             [[83, 443], "xy"],
             [[136, 443], "xy"],
@@ -352,7 +352,7 @@
             [[131, 497], "xy"],
             [[184, 512], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[514, 444], "xy"],
             [[568, 461], "xy"],
             [[623, 467], "xy"],
@@ -365,7 +365,7 @@
             [[731, 505], "xy"],
             [[741, 594], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[312, 522], "xy"],
             [[364, 529], "xy"],
             [[415, 531], "xy"],
@@ -377,20 +377,20 @@
         ]
     },
     "Mountainouscamp2": {
-        "leaderden": [399, 93],
-        "medicineden": [34, 186],
+        "leader den": [399, 93],
+        "medicine den": [34, 186],
         "nursery": [589, 163],
         "clearing": [360, 294],
-        "apprenticeden": [82, 430],
-        "warriorden": [590, 430],
-        "elderden": [348, 490],
-        "leaderplace": [
+        "apprentice den": [82, 430],
+        "warrior den": [590, 430],
+        "elder den": [348, 490],
+        "leader place": [
             [[347, 111], "x"],
             [[363, 161], "xy"],
             [[413, 155], "xy"],
             [[420, 241], "x"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[7, 329], "xy"],
             [[98, 262], "xy"],
             [[150, 250], "xy"],
@@ -399,7 +399,7 @@
             [[152, 300], "xy"],
             [[203, 326], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[554, 237], "x"],
             [[640, 220], "xy"],
             [[607, 270], "xy"],
@@ -412,7 +412,7 @@
             [[636, 370], "xy"],
             [[735, 370], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[180, 131], "x"],
             [[264, 126], "xy"],
             [[292, 210], "xy"],
@@ -430,7 +430,7 @@
             [[429, 425], "xy"],
             [[365, 428], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[68, 458], "xy"],
             [[119, 460], "xy"],
             [[170, 464], "xy"],
@@ -440,7 +440,7 @@
             [[162, 581], "xy"],
             [[213, 567], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[536, 428], "y"],
             [[546, 480], "xy"],
             [[548, 530], "xy"],
@@ -454,7 +454,7 @@
             [[703, 517], "xy"],
             [[700, 567], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[326, 519], "xy"],
             [[376, 519], "xy"],
             [[428, 519], "xy"],
@@ -465,20 +465,20 @@
         ]
     },
     "Mountainouscamp3": {
-        "leaderden": [478, 95],
-        "medicineden": [35, 150],
+        "leader den": [478, 95],
+        "medicine den": [35, 150],
         "nursery": [689, 175],
         "clearing": [399, 250],
-        "apprenticeden": [38, 412],
-        "warriorden": [613, 393],
-        "elderden": [336, 444],
-        "leaderplace": [
+        "apprentice den": [38, 412],
+        "warrior den": [613, 393],
+        "elder den": [336, 444],
+        "leader place": [
             [[524, 257], "xy"],
             [[398, 105], "xy"],
             [[339, 136], "xy"],
             [[408, 157], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[179, 178], ""],
             [[79, 255], "xy"],
             [[200, 297], "xy"],
@@ -486,7 +486,7 @@
             [[235, 237], "xy"],
             [[134, 303], ""]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[618, 144], "x"],
             [[594, 251], "xy"],
             [[649, 244], "xy"],
@@ -497,7 +497,7 @@
             [[672, 313], "xy"],
             [[722, 336], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[321, 267], "x"],
             [[382, 285], "xy"],
             [[328, 320], "xy"],
@@ -506,7 +506,7 @@
             [[359, 373], "xy"],
             [[462, 403], ""]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[57, 421], "xy"],
             [[117, 437], "xy"],
             [[172, 434], "xy"],
@@ -515,7 +515,7 @@
             [[141, 469], "xy"],
             [[267, 447], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[558, 451], "y"],
             [[627, 434], "xy"],
             [[682, 462], "xy"],
@@ -526,7 +526,7 @@
             [[562, 547], "xy"],
             [[622, 566], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[363, 489], "xy"],
             [[308, 516], "xy"],
             [[393, 541], "xy"],
@@ -536,20 +536,20 @@
         ]
     },
     "Mountainouscamp4": {
-        "leaderden": [416, 139],
-        "medicineden": [125, 95],
+        "leader den": [416, 139],
+        "medicine den": [125, 95],
         "nursery": [622, 107],
         "clearing": [347, 312],
-        "apprenticeden": [73, 442],
-        "warriorden": [650, 425],
-        "elderden": [316, 491],
-        "leaderplace": [
+        "apprentice den": [73, 442],
+        "warrior den": [650, 425],
+        "elder den": [316, 491],
+        "leader place": [
             [[365, 121], "xy"],
             [[375, 177], "xy"],
             [[414, 224], "xy"],
             [[464, 205], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[176, 123], ""],
             [[112, 198], "xy"],
             [[110, 253], "xy"],
@@ -560,7 +560,7 @@
             [[189, 333], ""],
             [[171, 382], ""]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[530, 132], "x"],
             [[561, 212], "xy"],
             [[610, 198], "xy"],
@@ -568,7 +568,7 @@
             [[641, 251], "y"],
             [[651, 308], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[363, 246], "x"],
             [[295, 291], "xy"],
             [[420, 282], "xy"],
@@ -579,7 +579,7 @@
             [[381, 407], "xy"],
             [[441, 418], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[289, 401], "xy"],
             [[68, 485], "xy"],
             [[112, 490], "xy"],
@@ -588,7 +588,7 @@
             [[168, 544], "xy"],
             [[219, 535], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[518, 386], "y"],
             [[587, 436], "xy"],
             [[639, 466], "xy"],
@@ -599,7 +599,7 @@
             [[649, 527], "xy"],
             [[697, 545], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[428, 474], "xy"],
             [[308, 533], "xy"],
             [[369, 541], "xy"],
@@ -609,26 +609,26 @@
         ]
     },
     "Beachcamp1": {
-        "leaderden": [399, 94],
-        "medicineden": [61, 169],
+        "leader den": [399, 94],
+        "medicine den": [61, 169],
         "nursery": [617, 167],
         "clearing": [360, 294],
-        "apprenticeden": [82, 401],
-        "warriorden": [590, 430],
-        "elderden": [348, 473],
-        "leaderplace": [
+        "apprentice den": [82, 401],
+        "warrior den": [590, 430],
+        "elder den": [348, 473],
+        "leader place": [
             [[381, 129], "xy"],
             [[350, 179], "xy"],
             [[417, 186], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[82, 249], "xy"],
             [[137, 231], "xy"],
             [[102, 302], "xy"],
             [[161, 283], "xy"],
             [[219, 258], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[574, 51], "xy"],
             [[539, 203], ""],
             [[596, 219], "xy"],
@@ -641,7 +641,7 @@
             [[659, 344], "x"],
             [[709, 350], "x"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[284, 264], "xy"],
             [[352, 226], "xy"],
             [[421, 237], "xy"],
@@ -653,7 +653,7 @@
             [[443, 309], "x"],
             [[504, 340], ""]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[125, 372], ""],
             [[64, 476], "xy"],
             [[125, 455], "xy"],
@@ -662,7 +662,7 @@
             [[113, 523], "xy"],
             [[168, 511], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[563, 467], "xy"],
             [[624, 449], "xy"],
             [[690, 456], "xy"],
@@ -671,7 +671,7 @@
             [[702, 510], "xy"],
             [[650, 552], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[344, 500], "xy"],
             [[401, 500], "xy"],
             [[326, 567], "xy"],
@@ -679,26 +679,26 @@
         ]
     },
     "Beachcamp2": {
-        "leaderden": [320, 100],
-        "medicineden": [61, 169],
+        "leader den": [320, 100],
+        "medicine den": [61, 169],
         "nursery": [617, 167],
         "clearing": [350, 310],
-        "apprenticeden": [82, 440],
-        "warriorden": [590, 430],
-        "elderden": [340, 525],
-        "leaderplace": [
+        "apprentice den": [82, 440],
+        "warrior den": [590, 430],
+        "elder den": [340, 525],
+        "leader place": [
             [[381, 129], "xy"],
             [[350, 179], "xy"],
             [[417, 186], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[82, 249], "xy"],
             [[137, 231], "xy"],
             [[102, 302], "xy"],
             [[161, 283], "xy"],
             [[219, 258], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[574, 51], "xy"],
             [[539, 203], ""],
             [[596, 219], "xy"],
@@ -711,7 +711,7 @@
             [[659, 344], "x"],
             [[709, 350], "x"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[284, 264], "xy"],
             [[352, 226], "xy"],
             [[421, 237], "xy"],
@@ -723,7 +723,7 @@
             [[443, 309], "x"],
             [[504, 340], ""]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[125, 372], ""],
             [[64, 476], "xy"],
             [[125, 455], "xy"],
@@ -732,7 +732,7 @@
             [[113, 523], "xy"],
             [[168, 511], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[563, 467], "xy"],
             [[624, 449], "xy"],
             [[690, 456], "xy"],
@@ -741,7 +741,7 @@
             [[702, 510], "xy"],
             [[650, 552], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[344, 500], "xy"],
             [[401, 500], "xy"],
             [[326, 567], "xy"],
@@ -749,26 +749,26 @@
         ]
     },
     "Beachcamp3": {
-        "leaderden": [344, 94],
-        "medicineden": [80, 200],
+        "leader den": [344, 94],
+        "medicine den": [80, 200],
         "nursery": [620, 200],
         "clearing": [360, 294],
-        "apprenticeden": [82, 430],
-        "warriorden": [590, 430],
-        "elderden": [348, 490],
-        "leaderplace": [
+        "apprentice den": [82, 430],
+        "warrior den": [590, 430],
+        "elder den": [348, 490],
+        "leader place": [
             [[251, 142], "xy"],
             [[367, 137], "xy"],
             [[307, 124], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[131, 291], "xy"],
             [[203, 280], "xy"],
             [[287, 260], "xy"],
             [[202, 342], "xy"],
             [[271, 308], "xy"]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[523, 279], "xy"],
             [[582, 288], "xy"],
             [[633, 238], "xy"],
@@ -778,7 +778,7 @@
             [[684, 392], "xy"],
             [[483, 369], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[344, 314], "xy"],
             [[431, 311], "xy"],
             [[298, 370], "xy"],
@@ -786,7 +786,7 @@
             [[408, 377], "xy"],
             [[357, 421], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[25, 298], "xy"],
             [[59, 438], "xy"],
             [[113, 443], "xy"],
@@ -795,7 +795,7 @@
             [[87, 561], "xy"],
             [[201, 473], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[534, 408], "xy"],
             [[538, 529], "xy"],
             [[594, 500], "xy"],
@@ -804,7 +804,7 @@
             [[653, 533], "xy"],
             [[594, 556], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[262, 501], "xy"],
             [[316, 540], "xy"],
             [[405, 513], "xy"],
@@ -814,20 +814,20 @@
         ]
     },
     "Plainscamp2": {
-        "leaderden": [415, 94],
-        "medicineden": [11, 174],
+        "leader den": [415, 94],
+        "medicine den": [11, 174],
         "nursery": [620, 200],
         "clearing": [371, 264],
-        "apprenticeden": [106, 410],
-        "warriorden": [590, 430],
-        "elderden": [429, 490],
-        "leaderplace": [
+        "apprentice den": [106, 410],
+        "warrior den": [590, 430],
+        "elder den": [429, 490],
+        "leader place": [
             [[361, 110], "xy"],
             [[449, 146], ""],
             [[399, 161], "xy"],
             [[349, 170], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[68, 248], "xy"],
             [[119, 247], "xy"],
             [[170, 251], "xy"],
@@ -835,7 +835,7 @@
             [[145, 302], "xy"],
             [[55, 373], ""]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[505, 286], "xy"],
             [[556, 276], "xy"],
             [[607, 247], "xy"],
@@ -848,7 +848,7 @@
             [[624, 349], "xy"],
             [[670, 335], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[165, 135], "xy"],
             [[595, 15], "x"],
             [[267, 209], "y"],
@@ -867,7 +867,7 @@
             [[418, 347], "xy"],
             [[440, 397], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[64, 461], "xy"],
             [[115, 463], "xy"],
             [[167, 463], "xy"],
@@ -876,7 +876,7 @@
             [[140, 513], "xy"],
             [[191, 514], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[553, 487], "xy"],
             [[552, 539], "xy"],
             [[606, 463], "xy"],
@@ -887,7 +887,7 @@
             [[707, 514], "y"],
             [[687, 580], ""]
         ],
-        "elderplace": [
+        "elder place": [
             [[350, 519], "xy"],
             [[401, 523], "xy"],
             [[441, 582], "xy"],
@@ -897,19 +897,19 @@
         ]
     },
     "Plainscamp3": {
-        "leaderden": [375, 102],
-        "medicineden": [95, 155],
+        "leader den": [375, 102],
+        "medicine den": [95, 155],
         "nursery": [620, 200],
         "clearing": [365, 255],
-        "apprenticeden": [100, 392],
-        "warriorden": [590, 415],
-        "elderden": [429, 490],
-        "leaderplace": [
+        "apprentice den": [100, 392],
+        "warrior den": [590, 415],
+        "elder den": [429, 490],
+        "leader place": [
             [[600, 95], "xy"],
             [[497, 245], "xy"],
             [[475, 190], "xy"]
         ],
-        "medicineplace": [
+        "medicine place": [
             [[82, 205], "xy"],
             [[145, 205], "xy"],
             [[107, 262], "xy"],
@@ -917,7 +917,7 @@
             [[45, 314], "xy"],
             [[207, 314], ""]
         ],
-        "nurseryplace": [
+        "nursery place": [
             [[565, 287], "xy"],
             [[635, 262], "xy"],
             [[700, 240], "xy"],
@@ -926,7 +926,7 @@
             [[675, 330], "xy"],
             [[735, 315], "xy"]
         ],
-        "clearingplace": [
+        "clearing place": [
             [[282, 175], "xy"],
             [[335, 290], "xy"],
             [[392, 290], "xy"],
@@ -937,7 +937,7 @@
             [[457, 400], "xy"],
             [[375, 435], "xy"]
         ],
-        "apprenticeplace": [
+        "apprentice place": [
             [[20, 430], "xy"],
             [[102, 430], "xy"],
             [[142, 460], "xy"],
@@ -946,7 +946,7 @@
             [[200, 490], "xy"],
             [[130, 545], "xy"]
         ],
-        "warriorplace": [
+        "warrior place": [
             [[520, 432], "xy"],
             [[647, 492], "xy"],
             [[710, 445], "xy"],
@@ -956,7 +956,7 @@
             [[655, 605], "xy"],
             [[712, 565], "xy"]
         ],
-        "elderplace": [
+        "elder place": [
             [[340, 515], "xy"],
             [[270, 565], "xy"],
             [[425, 550], "xy"],
