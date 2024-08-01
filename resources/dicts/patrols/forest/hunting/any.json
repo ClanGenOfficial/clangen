@@ -2146,7 +2146,7 @@
                 ]
             },
             {
-                "text": "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+                "text": "Carelessly, app1 is seen by Twolegs and taken from c_n.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"],
@@ -2171,14 +2171,16 @@
         "patrol_art": "fst_hunt_gonetwolegtrap",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {},
+        "min_max_status": {
+            "deputy": [-1, -1]
+        },
         "weight": 20,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
         "decline_text": "Turning {PRONOUN/r_c/poss} nose up at the temptation, {PRONOUN/r_c/subject} {VERB/r_c/continue/continues} on {PRONOUN/r_c/poss} way.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Darting through quickly, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that the lovely smell is Twoleg mush, and keep running.",
+                "text": "Darting through quickly, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that the lovely smell is Twoleg mush, and {VERB/r_c/keep/keeps} running.",
                 "exp": 20,
                 "weight": 20
             },
@@ -2188,7 +2190,7 @@
                 "weight": 5
             },
             {
-                "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/investigate/investigates} carefully, and strip the cover of the bushes away from a Twoleg trap underneath.",
+                "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/investigate/investigates} carefully and {VERB/r_c/strip/strips} the cover of the bushes away from a Twoleg trap underneath.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -2211,7 +2213,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it {PRONOUN/r_c/subject} never expected to feel for a fox, as well as the heart stopping realization that it could easily have been {PRONOUN/r_c/object}.",
+                "text": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail. s_c feels sympathy {PRONOUN/r_c/subject} never expected to feel for a fox, as well as the heart-stopping realization that it could easily have been {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["adventurous", "bold", "confident", "daring", "playful"]
@@ -2227,7 +2229,9 @@
         "patrol_art": "fst_hunt_gonetwolegtrap",
         "min_cats": 2,
         "max_cats": 6,
-        "min_max_status": {},
+        "min_max_status": {
+            "deputy": [-1, -1]
+        },
         "weight": 20,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
         "decline_text": "Turning {PRONOUN/r_c/poss} nose up at the temptation, the patrol continues on their way.",
@@ -2244,7 +2248,7 @@
                 "weight": 5
             },
             {
-                "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/investigate/investigates} carefully, and the patrol helps {PRONOUN/r_c/object} strip the cover of the bushes away from a Twoleg trap underneath.",
+                "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/investigate/investigates} carefully. The patrol helps {PRONOUN/r_c/object} strip the cover of the bushes away from a Twoleg trap underneath.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -2267,7 +2271,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it {PRONOUN/r_c/subject} never expected to feel for a fox, as well as the heart stopping realization that it could easily have been {PRONOUN/r_c/object}.",
+                "text": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail. s_c feels sympathy {PRONOUN/r_c/subject} never expected to feel for a fox, as well as the heart-stopping realization that it could easily have been {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["adventurous", "bold", "confident", "daring", "playful"]
@@ -2302,20 +2306,20 @@
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath. s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trot across to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2391,20 +2395,20 @@
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath. s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trot across to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2480,20 +2484,20 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath. s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trot across with the patrol to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2564,20 +2568,20 @@
                 "prey": ["large"]
             },
             {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws, but a successful haul of lots of prey.",
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of lots of prey.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
             },
             {
-                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "text": "The patrol stops on the edge of the Thunderpath. s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"]
             },
             {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trot across with the patrol to hunt on the other side.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -2602,7 +2606,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}, and the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly.",
+                "text": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}. The monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
@@ -2668,7 +2672,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c skids to a halt and tries to sprint after it, but the bird {PRONOUN/r_c/subject} saw escapes {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/chatter/chatters} angrily at it, and it tries to poop on {PRONOUN/r_c/object}. Such is life.",
+                "text": "r_c skids to a halt and tries to sprint after it, but the bird {PRONOUN/r_c/subject} saw escapes {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/r_c/object}. Such is life.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -2706,7 +2710,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
+                "text": "app1 darts to the side, but whatever made the flash of movement is long gone. How frustrating!",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -2761,7 +2765,7 @@
                 ]
             },
             {
-                "text": "Nothing's going to escape {PRONOUN/s_c/poss} claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel {PRONOUN/s_c/subject} saw and bringing it down. {PRONOUN/s_c/subject/CAP} {VERB/s_c/purr/purrs} with satisfaction and {VERB/s_c/pad/pads} back to r_c, sharing in the excitement of the hunt with them.",
+                "text": "Nothing's going to escape {PRONOUN/s_c/poss} claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel {PRONOUN/s_c/subject} saw and bringing it down. {PRONOUN/s_c/subject/CAP} {VERB/s_c/purr/purrs} with satisfaction and {VERB/s_c/pad/pads} back to r_c, sharing in the excitement of the hunt with {PRONOUN/r_c/object}.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -2780,7 +2784,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c skids to a halt and tries to sprint after it, but the bird {PRONOUN/r_c/subject} saw escapes {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/chatter/chatters} angrily at it, and it tries to poop on {PRONOUN/r_c/object}. Such is life. p_l snickers at {PRONOUN/r_c/object} a bit too, but it's all in good fun.",
+                "text": "r_c skids to a halt and tries to sprint after it, but the bird {PRONOUN/r_c/subject} saw escapes {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/r_c/object}. Such is life. p_l snickers at {PRONOUN/r_c/object} a bit too, but it's all in good fun.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2847,7 +2851,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/app1/subject} saw escapes {PRONOUN/app1/poss} paws. {PRONOUN/app1/subject} {VERB/app1/chatter/chatters} angrily at it, and it tries to poop on {PRONOUN/app1/object}. Such is life. app2 snickers at {PRONOUN/app1/object} too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
+                "text": "app1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/app1/subject} saw escapes {PRONOUN/app1/poss} paws. {PRONOUN/app1/subject} {VERB/app1/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/app1/object}. Such is life. app2 snickers at {PRONOUN/app1/object} too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2894,7 +2898,7 @@
                 ]
             },
             {
-                "text": "The lizard drops its tail, and r_c dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together.",
+                "text": "The lizard drops its tail. r_c dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"],
@@ -2942,7 +2946,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch.",
+                "text": "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go... but neither is pleased to have missed an easy catch.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2966,7 +2970,7 @@
         "tags": ["rom_two_apps", "romantic"],
         "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
-        "max_cats": 3,
+        "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
@@ -2992,7 +2996,7 @@
                 ]
             },
             {
-                "text": "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations.",
+                "text": "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing. They don't leave each other's side for the rest of the patrol, apologies turning to chatter turning to whispered conversations.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"],
@@ -3120,7 +3124,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It leaps up onto a fallen log - whatever it is, with its bulbous head, long, spindly limbs, pale, hairless skin like a skink. r_c hisses, and its echo skitters off into the woods.",
+                "text": "It leaps up onto a fallen log - whatever it is, with its bulbous head; long, spindly limbs; and pale, hairless skin like a skink. r_c hisses, and its echo skitters off into the woods.",
                 "exp": 20,
                 "weight": 20
             }
