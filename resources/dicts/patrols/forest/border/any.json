@@ -68,7 +68,7 @@
                 "history_text": {
                     "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "rogues ambushed {PRONOUN/m_c?/poss} patrol"
+                    "lead_death": "rogues ambushed {PRONOUN/m_c/poss} patrol"
                 },
                 "relationships": [
                     {
