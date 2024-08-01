@@ -277,7 +277,7 @@
 			"m_c is charmed to hear that r_c really admires {PRONOUN/m_c/object}.",
 			"m_c is giving r_c a badger ride on {PRONOUN/m_c/poss} back!",
 			"m_c remembers how cute kits are because of time spent with r_c.",
-			"m_c is promising to take r_c outside of camp if {PRONOUN/r_c/subject} {VERB/r_c/behave/behaves}.",
+            "m_c is promising to take r_c outside of camp if {PRONOUN/r_c/subject} {VERB/r_c/behave/behas}.",
 			"m_c bats the moss-ball back to r_c when it flies in front of {PRONOUN/m_c/poss} paws.",
 			"m_c spends most of the afternoon describing the territory to r_c.",
 			"m_c purrs as r_c asks {PRONOUN/m_c/object} to show {PRONOUN/r_c/object} how to do a hunter's crouch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/oblige/obliges}, happy to show {PRONOUN/m_c/poss} skills.",

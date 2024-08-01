@@ -226,7 +226,7 @@
                         ]
                 },
                 {
-                    "text": "s_c chides app1 for {PRONOUN/app1/poss} skepticism. Rock scrambling is its own art form, in c_n's territory. What if app1 needs to cross an exposed area during a storm, or if a battle between clans occured in the tide pools? app1 concedes and pays attention as s_c teaches, gaining sure-footed confidence that will serve {PRONOUN/app1/object} well.",
+                    "text": "s_c chides app1 for {PRONOUN/app1/poss} skepticism. Rock scrambling is its own art form, in c_n's territory. What if app1 needs to cross an exposed area during a storm, or if a battle between clans occurred in the tide pools? app1 concedes and pays attention as s_c teaches, gaining sure-footed confidence that will serve {PRONOUN/app1/object} well.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -250,7 +250,7 @@
                         ]
                 },
                 {
-                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rool pools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
+                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rock pools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -274,7 +274,7 @@
                         ]
                 },
                 {
-                    "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll} have to prove it - and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
+                    "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll have to prove it - and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
                     "exp": 30,
                     "weight": 20,
                     "art": "fst_hunt_fun1",

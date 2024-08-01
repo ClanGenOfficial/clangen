@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -119,7 +119,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
+        "intro_text": "As r_c is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
         "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered; warning the Clan is more important than dying needlessly.",
         "chance_of_success": 20,
         "success_outcomes": [

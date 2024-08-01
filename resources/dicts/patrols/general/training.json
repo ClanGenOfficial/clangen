@@ -3421,7 +3421,7 @@
                 ]
             },
             {
-                "text": "s_c sees the patrol competing to scare each other and derails it completely. Instead {PRONOUN/s_c/subject} {VERB/s_c/spin/spins} a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear {PRONOUN/s_c/poss} words are, it's almost like {PRONOUN/s_c/subject} {VERB/s_c/know/knows} the StarClan cat, even though that's impossible.",
+                "text": "s_c sees the patrol competing to scare each other and derails it completely. Instead, {PRONOUN/s_c/subject} {VERB/s_c/spin/spins} a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear {PRONOUN/s_c/poss} words are, it's almost like {PRONOUN/s_c/subject} {VERB/s_c/know/knows} the StarClan cat, even though that's impossible.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["STAR,2"],
