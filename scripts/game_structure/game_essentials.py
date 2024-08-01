@@ -674,7 +674,9 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
         manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
         manager.get_theme().load_theme("resources/theme/vertical_scroll_bar_small.json")
-        manager.get_theme().load_theme("resources/theme/horizontal_scroll_bar_small.json")
+        manager.get_theme().load_theme(
+            "resources/theme/horizontal_scroll_bar_small.json"
+        )
         manager.get_theme().load_theme("resources/theme/window_base_small.json")
         manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
 
