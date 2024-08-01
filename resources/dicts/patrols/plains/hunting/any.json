@@ -52,7 +52,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to one.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to one.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -103,7 +103,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to as many as they can carry.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -2011,7 +2011,7 @@
                 "weight": 20
             },
             {
-                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
+                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing {PRONOUN/r_c/object} instantly.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
