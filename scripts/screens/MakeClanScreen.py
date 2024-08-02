@@ -791,7 +791,7 @@ class MakeClanScreen(Screens):
                         sprites.sprites[self.symbol_selected], (200, 200)
                     ).convert_alpha()
                 )
-                symbol_name = self.symbol_selected.removeprefix("symbol")
+                symbol_name = self.symbol_selected.replace("symbol", "")
                 self.text["selected"].set_text(f"Selected Symbol: {symbol_name}")
                 self.elements["selected_symbol"].show()
                 self.elements["done_button"].enable()
@@ -1864,7 +1864,7 @@ class MakeClanScreen(Screens):
                 )
 
         if self.symbol_selected:
-            symbol_name = self.symbol_selected.removeprefix("symbol")
+            symbol_name = self.symbol_selected.replace("symbol", "")
             self.text["selected"].set_text(f"Selected Symbol: {symbol_name}")
 
             self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
