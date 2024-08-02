@@ -177,7 +177,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The atmosphere in this place is eerie and r_c takes out {PRONOUN/r_c/poss} tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of {PRONOUN/r_c/poss} aggression remains.",
+                "text": "The atmosphere in this place is eerie and r_c takes out {PRONOUN/r_c/poss} tenseness on one of the white trunks. A few shallow scrapes are left on the surface, but little other evidence of {PRONOUN/r_c/poss} aggression remains.",
                 "exp": 0,
                 "weight": 20
             }
@@ -291,7 +291,7 @@
                 "stat_trait": ["bold", "ambitious", "childish", "impulsive"]
             },
             {
-                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator.",
+                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, r_c is quickly killed by the predator.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],

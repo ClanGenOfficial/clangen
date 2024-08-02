@@ -1476,7 +1476,7 @@
                 ]
             },
             {
-                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines, but compliments the loner's songs.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines but compliments the loner's songs.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
@@ -1534,7 +1534,7 @@
                 ]
             },
             {
-                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines}, but {VERB/r_c/compliment/compliments} the loner's songs.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} but {VERB/r_c/compliment/compliments} the loner's songs.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [

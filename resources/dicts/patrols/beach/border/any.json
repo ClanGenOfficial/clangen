@@ -504,7 +504,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c gets wet in the rain, but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but otherwise, the patrol is successful.",
                 "exp": 20,
                 "weight": 5
             },
@@ -573,7 +573,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c gets wet in the rain, but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but otherwise, the patrol is successful.",
                 "exp": 20,
                 "weight": 5
             },

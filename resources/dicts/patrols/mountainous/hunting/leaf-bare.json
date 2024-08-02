@@ -2050,7 +2050,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c calls out to the cat, only to be met with raucous cawing. Are they being laughed at? They decide to slink off, leaving it be.",
+                "text": "s_c calls out to the cat, only to be met with raucous cawing. {VERB/s_c/Are/Is} {PRONOUN/s_c/subject} being laughed at? {PRONOUN/s_c/subject/CAP} {VERB/s_c/decide/decides} to slink off, leaving it be.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "bold", "daring", "ambitious"]

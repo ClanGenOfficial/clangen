@@ -683,7 +683,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp.  Inside they find the o_c_n deputy conversing with your leader.  They tell p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n deputy conversing with your leader.  They tell p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -1356,7 +1356,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them.  How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. Trust, but verify.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. Trust, but verify.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1448,7 +1448,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy.  How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1510,7 +1510,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader.  How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],

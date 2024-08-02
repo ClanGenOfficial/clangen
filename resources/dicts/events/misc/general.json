@@ -1828,7 +1828,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 15,
-    "event_text": "m_c was seen chasing a kittypet off of the territory.",
+      "event_text": "m_c was seen chasing a kittypet from the territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
@@ -2079,7 +2079,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text":"m_c was seen chasing a rogue off of the territory.",
+      "event_text": "m_c was seen chasing a rogue from the territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]

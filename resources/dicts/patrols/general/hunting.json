@@ -1874,7 +1874,7 @@
     },
     "weight": 1,
     "intro_text": "app1 nervously creeps out towards c_n's dirtplace, profile low to the ground as {PRONOUN/app1/subject} {VERB/app1/sneak/sneaks} out of camp. Let's see what a night hunt feels like.",
-    "decline_text": "app1 thinks better of the plan, and returns to {PRONOUN/app1/poss} nest.",
+    "decline_text": "app1 thinks better of the plan and returns to {PRONOUN/app1/poss} nest.",
     "chance_of_success": 50,
     "success_outcomes": [
         {

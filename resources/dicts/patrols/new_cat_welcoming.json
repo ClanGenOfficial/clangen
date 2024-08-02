@@ -648,7 +648,7 @@
         },
         "weight": 20,
         "intro_text": "Padding along the border, p_l checks once - twice - three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
-        "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure, and retreats back to known territory.",
+        "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -999,7 +999,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
+        "intro_text": "r_c finds a loner offering healing skills in exchange for shelter.",
         "decline_text": "The patrol politely declines their offer.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1093,7 +1093,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l finds a loner who offers their healing skills in exchange for shelter.",
+        "intro_text": "p_l finds a loner offering healing skills in exchange for shelter.",
         "decline_text": "p_l politely declines their offer.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1452,7 +1452,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
+        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
         "success_outcomes": [
@@ -1475,7 +1475,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with {PRONOUN/n_c:0/poss} kits.",
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with {PRONOUN/n_c:0/poss} kits.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
@@ -1533,12 +1533,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
+        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
         "success_outcomes": [
             {
-                "text": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
+                "text": "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -1561,7 +1561,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
@@ -1626,7 +1626,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
+        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
         "success_outcomes": [
@@ -1649,7 +1649,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. p_l tries to make the queen eat some strengthening herbs, and slowly helps {PRONOUN/n_c:0/object} back to camp. Thankful for the help the queen joins c_n with their kits.",
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. p_l tries to make the queen eat some strengthening herbs and slowly helps {PRONOUN/n_c:0/object} back to camp. Thankful for the help, the queen joins c_n with {PRONOUN/n_c:0/poss} kits.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
@@ -1709,12 +1709,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
+        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
         "success_outcomes": [
             {
-                "text": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and starts thinking about what {PRONOUN/p_l/subject}'ll need to do to move them to camp.",
+                "text": "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and starts thinking about what {PRONOUN/p_l/subject}'ll need to do to move them to camp.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -1737,7 +1737,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
@@ -1895,7 +1895,7 @@
         "chance_of_success": 45,
         "success_outcomes": [
             {
-                "text": "p_l, sure that it is a sign of StarClan, follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l tries to comfort the poor kittens, curling around them to share {PRONOUN/p_l/poss} body heat, and wails until a passing patrol hears {PRONOUN/p_l/object}.",
+                "text": "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l tries to comfort the poor kittens, curling around them to share {PRONOUN/p_l/poss} body heat, and wails until a passing patrol hears {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -1918,7 +1918,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l vows to be the new kits' family, to make sure they'll grow up loved and accepted.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l vows to be the new kits' family, to make sure they'll grow up loved and accepted.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
@@ -2219,7 +2219,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, and they appear to be injured.",
+        "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -2272,7 +2272,7 @@
                 ]
             },
             {
-                "text": "The loner hisses defensively as the patrol comes closer. s_c speaks soothingly to the loner, assuring {PRONOUN/n_c:0/object} that they mean no harm and simply want to help. The loner seems distrustful, but allows p_l to help {PRONOUN/n_c:0/object} back to camp.",
+                "text": "The loner hisses defensively as the patrol comes closer. s_c speaks soothingly to the loner, assuring {PRONOUN/n_c:0/object} that they mean no harm and simply want to help. The loner seems distrustful but allows p_l to help {PRONOUN/n_c:0/object} back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -2310,7 +2310,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their hearts, the patrol goes back home, and tells no one of what they saw.",
+                "text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior who scolds them all for being willing to attack a hurt loner. With shame in their hearts, the patrol goes back home, and tells no one of what they saw.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -2318,7 +2318,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
+                "text": "The patrol launches an attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2,
@@ -2339,7 +2339,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound - a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, and they appear to be injured.",
+        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound - a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
         "decline_text": "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -2392,7 +2392,7 @@
                 ]
             },
             {
-                "text": "The loner hisses defensively as s_c comes closer. {PRONOUN/s_c/subject/CAP} {VERB/s_c/speak/speaks} soothingly to the loner, assuring {PRONOUN/n_c:0/object} that {PRONOUN/s_c/subject} {VERB/s_c/mean/means} no harm and simply {VERB/s_c/want/wants} to help. The loner seems distrustful, but allows p_l to help {PRONOUN/n_c:0/object} back to camp.",
+                "text": "The loner hisses defensively as s_c comes closer. {PRONOUN/s_c/subject/CAP} {VERB/s_c/speak/speaks} soothingly to the loner, assuring {PRONOUN/n_c:0/object} that {PRONOUN/s_c/subject} {VERB/s_c/mean/means} no harm and simply {VERB/s_c/want/wants} to help. The loner seems distrustful but allows p_l to help {PRONOUN/n_c:0/object} back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -2430,7 +2430,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l approaches the loner cautiously, intending to attack. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a StarClan warrior, who scolds {PRONOUN/p_l/object} for being willing to attack a hurt loner. With shame in {PRONOUN/p_l/poss} heart, p_l goes back home, and tells no one of what {PRONOUN/p_l/subject} saw.",
+                "text": "p_l approaches the loner cautiously, intending to attack. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a StarClan warrior who scolds {PRONOUN/p_l/object} for being willing to attack a hurt loner. With shame in {PRONOUN/p_l/poss} heart, p_l goes back home, and tells no one of what {PRONOUN/p_l/subject} saw.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -2438,7 +2438,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l launches into attack, only to find the loner that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been fighting is too weak to fight back. {PRONOUN/p_l/subject/CAP} {VERB/p_l/go/goes} home with blood on {PRONOUN/p_l/poss} paws.",
+                "text": "p_l launches an attack, only to find the loner that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been fighting is too weak to fight back. {PRONOUN/p_l/subject/CAP} {VERB/p_l/go/goes} home with blood on {PRONOUN/p_l/poss} paws.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2,

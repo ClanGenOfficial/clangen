@@ -293,7 +293,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c checks the area, it seems to be clear of o_c_n patrols. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leap/leaps} for the rabbit, easily killing it, but very quickly find that {PRONOUN/r_c/subject} should've double checked before trespassing. A o_c_n patrol rushes into view from where they were hiding and descends upon r_c, killing {PRONOUN/r_c/object} before anyone else can help. Was one rabbit worth this?",
+                "text": "r_c checks the area: it seems to be clear of o_c_n patrols. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leap/leaps} for the rabbit, easily killing it, but very quickly {VERB/r_c/find/finds} that {PRONOUN/r_c/subject} should've double checked before trespassing. A o_c_n patrol rushes into view from where they were hiding and descends upon r_c, killing {PRONOUN/r_c/object} before anyone else can help. Was one rabbit worth this?",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
