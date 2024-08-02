@@ -175,7 +175,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l advances threateningly towards the loner, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, {PRONOUN/r_c:0/subject} {VERB/r_c:0/make/makes} {PRONOUN/r_c:0/poss} getaway.",
+                "text": "p_l advances threateningly towards the loner, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} {PRONOUN/n_c:0/poss} getaway.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1,
@@ -357,10 +357,13 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l advances threateningly towards the kittypet, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, they make their getaway.",
+                "text": "p_l advances threateningly towards the kittypet, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} {PRONOUN/n_c:0/poss} getaway.",
                 "exp": 0,
                 "weight": 20,
-                "outsider_rep": -1
+                "outsider_rep": -1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
             }
         ],
         "antag_success_outcomes": [
