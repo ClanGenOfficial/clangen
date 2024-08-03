@@ -153,10 +153,12 @@ def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
     if vertical_scale == 0:
         pass
     else:
-        left = pygame.transform.scale_by(left, vertical_scale)
-        middle = pygame.transform.scale_by(middle, vertical_scale)
-        right = pygame.transform.scale_by(right, vertical_scale)
+        scale = (scaled_dimensions[1], scaled_dimensions[1])
+        left = pygame.transform.scale(left, scale)
+        middle = pygame.transform.scale(middle, scale)
+        right = pygame.transform.scale(right, scale)
         height = middle.get_height()
+    del vertical_scale
     width_bookends = height * 2
 
     # if we need the middle segment
@@ -170,7 +172,7 @@ def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
             (
                 (left, (0, 0)),
                 (middle, (left.get_width(), 0)),
-                (right, (left.get_width() + middle.get_width(), 0)),
+                (right, (scaled_dimensions[0] - height, 0)),
             )
         )
     else:

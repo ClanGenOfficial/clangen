@@ -51,7 +51,6 @@ from scripts.utility import (
 
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
-
         super().__init__(
             ui_scale(pygame.Rect((250, 175), (300, 450))),
             window_display_title="Symbol Filters",
@@ -94,7 +93,6 @@ class SymbolFilterWindow(UIWindow):
         x_pos = 15
         y_pos = 20
         for tag, subtags in self.possible_tags.items():
-            print(game.switches["disallowed_symbol_tags"])
             self.checkbox[tag] = UIImageButton(
                 ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
                 "",
@@ -107,17 +105,18 @@ class SymbolFilterWindow(UIWindow):
                 self.checkbox[tag].change_object_id("@unchecked_checkbox")
 
             self.checkbox_text[tag] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((x_pos + 40, y_pos + 3), (-1, -1))),
+                ui_scale(pygame.Rect((6, y_pos + 4), (-1, -1))),
                 text=str(tag),
                 container=self.filter_container,
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
+                anchors={"left_target": self.checkbox[tag]},
             )
-            y_pos += 45
+            y_pos += 35
             if subtags:
                 for s_tag in subtags:
                     self.checkbox[s_tag] = UIImageButton(
-                        ui_scale(pygame.Rect((x_pos + 45, y_pos), (34, 34))),
+                        ui_scale(pygame.Rect((x_pos + 35, y_pos), (34, 34))),
                         "",
                         object_id="@checked_checkbox",
                         container=self.filter_container,
@@ -131,17 +130,17 @@ class SymbolFilterWindow(UIWindow):
                         self.checkbox[s_tag].change_object_id("@unchecked_checkbox")
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
-                        ui_scale(pygame.Rect((x_pos + 75, y_pos + 3), (-1, -1))),
+                        ui_scale(pygame.Rect((6, y_pos + 4), (-1, -1))),
                         text=s_tag,
                         container=self.filter_container,
                         object_id="#text_box_30_horizleft",
                         manager=MANAGER,
+                        anchors={"left_target": self.checkbox[s_tag]},
                     )
                     y_pos += 30
                 y_pos += 5
 
     def process_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.kill()
@@ -439,7 +438,6 @@ class GameOver(UIWindow):
         self.begin_anew_button.enable()
 
     def process_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
                 game.last_screen_forupdate = game.switches["cur_screen"]
@@ -973,7 +971,6 @@ class PronounCreation(UIWindow):
         return True
 
     def process_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 game.all_screens["change gender screen"].exit_screen()
@@ -1192,7 +1189,6 @@ class KillCat(UIWindow):
                     self.death_entry_box.get_text(),
                 )
                 if self.the_cat.status == "leader":
-
                     if death_message.startswith("was"):
                         death_message = death_message.replace(
                             "was", "{VERB/m_c/were/was}", 1
@@ -1419,7 +1415,6 @@ class UpdateAvailablePopup(UIWindow):
         self.close_button.enable()
 
     def process_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
                 self.x = UpdateWindow(
@@ -1833,7 +1828,6 @@ class SaveAsImage(UIWindow):
 
 class EventLoading(UIWindow):
     def __init__(self, pos):
-
         if pos is None:
             pos = ui_scale_offset((800, 700))
 
@@ -1867,7 +1861,6 @@ class EventLoading(UIWindow):
         return frames
 
     def animate(self):
-
         i = 0
         while True:
             if self.end_animation:
@@ -1940,7 +1933,6 @@ class ChangeCatToggles(UIWindow):
         # Text
 
     def refresh_checkboxes(self):
-
         for x in self.checkboxes.values():
             x.kill()
         self.checkboxes = {}

@@ -86,14 +86,18 @@ def get_tileset(style: BoxStyles) -> Tileset:
     return tilesets[screen_scale][style]
 
 
-def get_box(style: BoxStyles, unscaled_dimensions: Tuple[int, int]) -> pygame.Surface:
+def get_box(
+    style: BoxStyles, unscaled_dimensions: Tuple[int, int], sides=True
+) -> pygame.Surface:
     """
     Generate a surface of arbitrary length and height from a given input surface
     :param style: the BoxStyles style to create from
     :param unscaled_dimensions: the SCALED dimensions of the final box
+    :param sides: Whether to render the sides of the box or just end it abruptly.
+        Tuple of booleans in order: Top, right, bottom, left. Also accepts a single boolean for all 4 values
     :return: A surface of the correct dimensions
     """
-    return _get_box(style, ui_scale_dimensions(unscaled_dimensions))
+    return _get_box(style, ui_scale_dimensions(unscaled_dimensions), sides)
 
 
 @cache

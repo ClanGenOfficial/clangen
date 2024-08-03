@@ -2404,8 +2404,8 @@ def ui_scale_value(val: int):
 
 def ui_scale_blit(coords: Tuple[int, int]):
     """
-    Use to scale WHERE to blit an item, not the SIZE of it. Considers the entire pygame window,
-    including offset if in fullscreen. Not to be confused with ui_scale_offset.
+    Use to scale WHERE to blit an item, not the SIZE of it. (0, 0) is the top left corner of the pygame_gui managed window,
+    this adds the offset from fullscreen etc. to make it blit in the right place. Not to be confused with ui_scale_offset.
     :param coords: The coordinates to blit to
     :return: The scaled, correctly offset coordinates to blit to.
     """
