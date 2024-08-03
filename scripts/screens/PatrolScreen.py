@@ -812,7 +812,7 @@ class PatrolScreen(Screens):
             short_name = shorten_text_to_fit(name, 350, 30)
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
-                                                                           scale(pygame.Rect((600, 650), (400, 60))),
+                                                                           scale(pygame.Rect((600, 650), (400, 80))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),
                                                                            manager=MANAGER)
@@ -844,12 +844,10 @@ class PatrolScreen(Screens):
                     , manager=MANAGER)
                 # Check for name length
                 name = str(self.mate.name)  # get name
-                if 10 <= len(name):  # check name length
-                    short_name = name[0:9]
-                    name = short_name + '..'
+                short_name = shorten_text_to_fit(name, 145, 22)
                 self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
                     scale(pygame.Rect((306, 600), (190, 60))),
-                    name,
+                    short_name,
                     object_id=get_text_box_theme())
                 self.elements['mate_info'] = pygame_gui.elements.UITextBox(
                     "mate",
@@ -901,12 +899,10 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 10 <= len(name):  # check name length
-                        short_name = name[0:9]
-                        name = short_name + '..'
+                    short_name = shorten_text_to_fit(name, 145, 22)
                     self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((1106, 600), (190, 60))),
-                        name,
+                        short_name,
                         object_id=get_text_box_theme(), manager=MANAGER)
                     self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(
                         relation,

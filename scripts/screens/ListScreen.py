@@ -1,12 +1,16 @@
 from math import ceil
+from typing import Union, Dict, Optional
 
 import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UIDropDownContainer
-from scripts.game_structure.ui.namedcatlistdisplay import UINamedCatListDisplay
+from scripts.game_structure.game_essentials import game, MANAGER, screen
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UIDropDownContainer,
+    UICatListDisplay,
+)
 from scripts.screens.Screens import Screens
 from scripts.utility import scale, get_text_box_theme
 
@@ -14,9 +18,20 @@ from scripts.utility import scale, get_text_box_theme
 class ListScreen(Screens):
     current_page = 1
     previous_search_text = ""
+    clan_name = "ErrorClan"
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.ur_bg_image = pygame.image.load("resources/images/urbg.png").convert()
+        self.sc_bg_image = pygame.image.load(
+            "resources/images/starclanbg.png"
+        ).convert_alpha()
+        self.df_bg_image = pygame.image.load(
+            "resources/images/darkforestbg.png"
+        ).convert_alpha()
+        self.search_bar_image = pygame.image.load(
+            "resources/images/search_bar.png"
+        ).convert_alpha()
         self.all_pages = None
         self.filter_options_visible = True
         self.group_options_visible = False
@@ -28,7 +43,22 @@ class ListScreen(Screens):
         self.list_screen_container = None
 
         self.cat_list_bar = None
-        self.cat_list_bar_elements = {}
+        self.cat_list_bar_elements: Dict[
+            str,
+            Union[
+                UIImageButton,
+                pygame_gui.elements.UIImage,
+                pygame_gui.elements.UITextEntryLine,
+                None,
+            ],
+        ] = {
+            "fav_toggle": None,
+            "search_bar_image": None,
+            "search_bar_entry": None,
+            "view_button": None,
+            "choose_group_button": None,
+            "sort_by_button": None,
+        }
 
         self.dead_groups_container = None
         self.choose_dead_dropdown = None
@@ -38,14 +68,36 @@ class ListScreen(Screens):
 
         self.sort_by_button_container = None
         self.sort_by_dropdown = None
-        self.sort_by_buttons = {}
+        self.sort_by_buttons: Dict[str, Optional[UIImageButton]] = {
+            "view_your_clan_button": None,
+            "view_cotc_button": None,
+            "view_starclan_button": None,
+            "view_unknown_residence_button": None,
+            "view_dark_forest_button": None,
+        }
 
         self.cat_display = None
-        self.display_container_elements = {}
+        self.display_container_elements: Dict[
+            str,
+            Union[
+                UIImageButton,
+                pygame_gui.elements.UITextEntryLine,
+                pygame_gui.elements.UITextBox,
+                None,
+            ],
+        ] = {
+            "first_page_button": None,
+            "previous_page_button": None,
+            "last_page_button": None,
+            "next_page_button": None,
+            "page_entry": None,
+            "page_number": None,
+        }
 
         self.df_bg = None
         self.ur_bg = None
         self.sc_bg = None
+        self.clan_name = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -206,9 +258,16 @@ class ListScreen(Screens):
                 self.change_screen("patrol screen")
 
     def screen_switches(self):
+        self.clan_name = game.clan.name + "Clan"
 
         self.set_disabled_menu_buttons(["catlist_screen"])
         self.show_menu_buttons()
+        screen.fill(
+            game.config["theme"]["dark_mode_background"]
+            if game.settings["dark mode"]
+            else game.config["theme"]["light_mode_background"]
+        )
+        MANAGER.update(1)
 
         # SCREEN CONTAINER - everything should come back to here
         self.list_screen_container = pygame_gui.core.UIContainer(
@@ -221,7 +280,7 @@ class ListScreen(Screens):
 
         # BAR CONTAINER
         self.cat_list_bar = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((209, 268), (1400, 800))),
+            scale(pygame.Rect((209, 268), (1200, 450))),
             object_id="#cat_list_bar",
             starting_height=3,
             manager=MANAGER,
@@ -248,7 +307,7 @@ class ListScreen(Screens):
         # SEARCH BAR
         self.cat_list_bar_elements["search_bar_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((72, 0), (276, 68))),
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(),
+            self.search_bar_image,
             container=self.cat_list_bar,
             object_id="#search_bar",
             manager=MANAGER,
@@ -420,7 +479,7 @@ class ListScreen(Screens):
         self.sc_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
+                self.sc_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -432,7 +491,7 @@ class ListScreen(Screens):
         self.ur_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/urbg.png").convert_alpha(),
+                self.ur_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -444,7 +503,7 @@ class ListScreen(Screens):
         self.df_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
+                self.df_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -506,6 +565,10 @@ class ListScreen(Screens):
             manager=MANAGER,
         )  # Text will be filled in later
 
+        # this speeds up the load time 1000%
+        # don't ask why
+        MANAGER.update(1)
+
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
@@ -558,9 +621,11 @@ class ListScreen(Screens):
 
         search_text = search_text.strip()
         if search_text not in ["", "name search"]:
-            for cat in self.full_cat_list:
-                if search_text.lower() in str(cat.name).lower():
-                    self.current_listed_cats.append(cat)
+            self.current_listed_cats = [
+                cat
+                for cat in self.full_cat_list
+                if search_text.lower() in str(cat.name).lower()
+            ]
         else:
             self.current_listed_cats = self.full_cat_list.copy()
 
@@ -595,8 +660,8 @@ class ListScreen(Screens):
         self.display_container_elements["page_number"].set_text(f"/{self.all_pages}")
 
         if not self.cat_display:
-            self.cat_display = UINamedCatListDisplay(
-                scale(pygame.Rect((30, 170), (2000, 1000))),
+            self.cat_display = UICatListDisplay(
+                scale(pygame.Rect((0, 0), (1200, 800))),
                 container=self.list_screen_container,
                 object_id="#cat_list_display",
                 starting_height=1,
@@ -610,12 +675,30 @@ class ListScreen(Screens):
                 first_button=self.display_container_elements["first_page_button"],
                 last_button=self.display_container_elements["last_page_button"],
                 current_page=self.current_page,
+                show_names=True,
                 text_theme=get_text_box_theme("#text_box_30_horizcenter")
                 if self.death_status == "living"
                 else "#text_box_30_horizcenter_light",
                 manager=MANAGER,
+                anchors={
+                    "top_target": self.cat_list_bar_elements["search_bar_entry"],
+                    "centerx": "centerx",
+                },
             )
         else:
+            if self.cat_display.prev_button is None:
+                self.cat_display.prev_button = self.display_container_elements[
+                    "previous_page_button"
+                ]
+                self.cat_display.next_button = self.display_container_elements[
+                    "next_page_button"
+                ]
+                self.cat_display.first_button = self.display_container_elements[
+                    "first_page_button"
+                ]
+                self.cat_display.last_button = self.display_container_elements[
+                    "last_page_button"
+                ]
             self.cat_display.text_theme = (
                 get_text_box_theme("#text_box_30_horizcenter")
                 if self.death_status == "living"
@@ -635,27 +718,27 @@ class ListScreen(Screens):
             self.df_bg.hide()
             self.ur_bg.hide()
             self.sc_bg.hide()
-            self.update_heading_text(f"{game.clan.name}Clan")
+            self.update_heading_text(self.clan_name)
         elif self.current_group == "cotc":
             self.df_bg.hide()
             self.ur_bg.hide()
             self.sc_bg.hide()
-            self.update_heading_text(f"Cats Outside the Clan")
+            self.update_heading_text("Cats Outside the Clan")
         elif self.current_group == "sc":
             self.df_bg.hide()
             self.ur_bg.hide()
             self.sc_bg.show()
-            self.update_heading_text(f"StarClan")
+            self.update_heading_text("StarClan")
         elif self.current_group == "ur":
             self.df_bg.hide()
             self.ur_bg.show()
             self.sc_bg.hide()
-            self.update_heading_text(f"Unknown Residence")
+            self.update_heading_text("Unknown Residence")
         elif self.current_group == "df":
             self.df_bg.show()
             self.ur_bg.hide()
             self.sc_bg.hide()
-            self.update_heading_text(f"Dark Forest")
+            self.update_heading_text("Dark Forest")
 
     def get_cat_list(self):
         """
@@ -681,10 +764,9 @@ class ListScreen(Screens):
         """
         self.current_group = "clan"
         self.death_status = "living"
-        self.full_cat_list = []
-        for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
-                self.full_cat_list.append(the_cat)
+        self.full_cat_list = [
+            cat for cat in Cat.all_cats_list if not cat.dead and not cat.outside
+        ]
 
     def get_cotc_cats(self):
         """
