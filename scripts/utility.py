@@ -602,7 +602,6 @@ def create_new_cat_block(
         # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
 
         for n_c in new_cats:
-
             # SET MATES
             for inter_cat in give_mates:
                 if n_c == inter_cat or n_c.ID in inter_cat.mate:
@@ -1355,7 +1354,6 @@ def gather_cat_objects(
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
             clan_cats = [
                 x for x in Cat.all_cats_list if not (x.dead or x.outside or x.exiled)
-
             ]
             out_set.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
@@ -1570,7 +1568,6 @@ def change_relationship_values(
     # pick out the correct cats
     for single_cat_from in cats_from:
         for single_cat_to in cats_to:
-
             # make sure we aren't trying to change a cat's relationship with themself
             if single_cat_from == single_cat_to:
                 continue
@@ -1781,7 +1778,6 @@ def get_special_snippet_list(
 
     # these lists don't get sense specific snippets, so is handled first
     if chosen_list in ["dream_list", "story_list"]:
-
         if (
             chosen_list == "story_list"
         ):  # story list has some biome specific things to collect
@@ -2720,7 +2716,6 @@ def generate_sprite(
             and game.clan.clan_settings["fading"]
             and dead
         ):
-
             stage = "0"
             if 80 >= cat.pelt.opacity > 45:
                 # Stage 1

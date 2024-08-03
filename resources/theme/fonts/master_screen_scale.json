@@ -128,9 +128,8 @@
             "size": "16"
         },
         "misc": {
-            "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "9",
-            "text_horiz_alignment": "center"
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
         }
     },
     "buttonstyles_prototype": {
@@ -144,21 +143,13 @@
         "font": {
             "name": "clangen",
             "size": "20"
-        },
-        "misc": {
-            "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "7"
         }
     },
     "@buttonstyles_rounded_rect": {
         "prototype": "buttonstyles_prototype"
     },
     "@buttonstyles_menu_right": {
-        "prototype": "buttonstyles_prototype",
-        "misc": {
-            "text_horiz_alignment": "center",
-            "text_horiz_alignment_padding": "10"
-        }
+        "prototype": "buttonstyles_prototype"
     },
     "@buttonstyles_menu_middle": {
         "prototype": "buttonstyles_prototype"
@@ -183,12 +174,7 @@
         "prototype": "@image_button"
     },
     "@buttonstyles_dropdown": {
-        "prototype": "buttonstyles_prototype",
-        "misc": {
-            "text_horiz_alignment": "center",
-            "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "12"
-        }
+        "prototype": "buttonstyles_prototype"
     },
     "#window_base_theme": {
         "misc": {
@@ -490,6 +476,12 @@
         "prototype": "#text_box_40",
         "misc": {
             "text_horiz_alignment": "center"
+        }
+    },
+    "#events_cat_profile_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
         }
     }
 }

@@ -128,12 +128,6 @@
             "hovered_text": "#EFE5CE",
             "text_shadow": "#00000000"
         },
-        "misc": {
-            "border_width": "0",
-            "shadow_width": "0",
-            "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "12"
-        },
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/cat_event_profile.png"
@@ -466,22 +460,6 @@
         "misc": {
             "text_vert_alignment": "center",
             "line_spacing": "0.95"
-        }
-    },
-    "#text_box_26_horizleft_verttop_pad_14_0_10": {
-        "prototype": "#text_box_26",
-        "misc": {
-            "text_horiz_alignment": "left",
-            "text_vert_alignment": "top",
-            "padding": "7, 0",
-            "text_vert_alignment_padding": "5"
-        }
-    },
-    "#text_box_26_horizleft_pad_10_14": {
-        "prototype": "#text_box_26",
-        "misc": {
-            "text_horiz_alignment": "left",
-            "padding": "5,7"
         }
     },
     "#text_box_30": {

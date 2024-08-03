@@ -29,6 +29,7 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     mouse_pos = pygame.mouse.get_pos()
     if fullscreen:
         display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+        # display_size = [3840, 2160]
 
         x = display_size[0] // 200
         y = display_size[1] // 175
@@ -153,7 +154,7 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
         bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
     )
     manager.add_font_paths(
-        font_name="clangen", regular_path="resources/fonts/clangen.otf"
+        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
     manager.get_theme().load_theme("resources/theme/themes/dark.json")

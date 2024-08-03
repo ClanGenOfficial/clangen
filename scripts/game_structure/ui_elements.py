@@ -1,6 +1,6 @@
 import html
 from functools import lru_cache
-from math import floor, ceil
+from math import ceil
 from typing import Union, Tuple, Optional, Dict, Iterable, Callable, List
 
 import pygame
@@ -230,7 +230,6 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         should_grow_automatically=True,
         anchors=None,
     ):
-
         super().__init__(
             relative_rect=relative_rect,
             manager=manager,
@@ -391,7 +390,6 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
         visible: int = 1,
         starting_height: int = 1,
     ):
-
         super().__init__(
             relative_rect=relative_rect,
             visible_percentage=visible_percentage,
@@ -497,7 +495,6 @@ class UISpriteButton:
         tool_tip_text=None,
         anchors=None,
     ):
-
         # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that
         # UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(
@@ -638,7 +635,6 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
         text_kwargs=None,
         allow_split_dashes: bool = True,
     ):
-
         self.line_spaceing = line_spacing
 
         super().__init__(
@@ -725,7 +721,6 @@ class UIRelationStatusBar:
         manager=None,
         style="bars",
     ):
-
         # Change the color of the bar depending on the value and if it's a negative or positive trait
         if percent_full > 49:
             if positive_trait:
@@ -787,7 +782,6 @@ class IDImageButton(UIImageButton):
         anchors=None,
         parent_element=None,
     ):
-
         if ids:
             self.ids = ids
         else:
@@ -903,7 +897,6 @@ class UICheckbox(UIImageButton):
         manager,
         check: bool = False,
     ):
-
         self.checked = check
 
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
