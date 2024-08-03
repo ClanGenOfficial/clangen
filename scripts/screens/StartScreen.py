@@ -182,14 +182,14 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 310), (200, 30))),
             "continue",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@buttonstyles_mainmenu", object_id=None),
+            object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "switch clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@buttonstyles_mainmenu", object_id=None),
+            object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
             anchors={"top_target": self.continue_button},
         )
@@ -197,7 +197,7 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "new clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@buttonstyles_mainmenu", object_id=None),
+            object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
             anchors={"top_target": self.switch_clan_button},
         )
@@ -205,7 +205,7 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "settings + info",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@buttonstyles_mainmenu"),
+            object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
             anchors={"top_target": self.new_clan_button},
         )
@@ -213,7 +213,7 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "quit",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
-            object_id=ObjectID(class_id="@buttonstyles_mainmenu"),
+            object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )

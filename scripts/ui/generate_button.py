@@ -225,7 +225,7 @@ def _get_button_dict(
     style: ButtonStyles, scaled_dimensions: Tuple[int, int]
 ) -> Dict[str, pygame.Surface]:
     """
-    This wrapper exists so we can cache the values to make toggling quicker.
+    This wrapper exists so that we can cache the values to make toggling quicker.
     :param style: The ButtonStyles style required for the button
     :param scaled_dimensions: The SCALED dimensions of the button
     :return: A dictionary of surfaces
