@@ -2307,7 +2307,7 @@ def shorten_text_to_fit(
     font_size = floor(font_size * scripts.game_structure.screen_settings.screen_scale)
 
     if font_type == "clangen":
-        font_type = "resources/fonts/clangen.otf"
+        font_type = "resources/fonts/clangen.ttf"
     # Create the font object
     font = pygame.font.Font(font_type, font_size)
 
