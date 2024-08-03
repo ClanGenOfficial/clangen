@@ -44,7 +44,6 @@ class MediationScreen(Screens):
         self.previous_search_text = ""
 
     def handle_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
@@ -307,7 +306,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
 
             self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x_value, 180), (300, 300))),
+                ui_scale(pygame.Rect((x_value, 90), (150, 150))),
                 pygame.transform.scale(
                     mediator.sprite, ui_scale_dimensions((150, 150))
                 ),
