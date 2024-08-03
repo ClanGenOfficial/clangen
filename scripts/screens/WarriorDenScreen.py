@@ -14,7 +14,6 @@ from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
     ui_scale,
     get_alive_status_cats,
-    ui_scale_dimensions,
     get_text_box_theme,
 )
 
@@ -254,25 +253,30 @@ class WarriorDenScreen(Screens):
         """
         create the buttons for the different focuses
         """
-        self.focus["button_container"] = pygame_gui.elements.UIScrollingContainer(
+        self.focus["button_container"] = pygame_gui.core.UIContainer(
             ui_scale(pygame.Rect((100, 260), (250, 300))),
-            allow_scroll_x=False,
             manager=MANAGER,
         )
 
         # n increments the y placement
         n = 0
 
-        for code, desc in settings_dict["clan_focus"].items():
-
+        for i, (code, desc) in enumerate(settings_dict["clan_focus"].items()):
             self.focus_buttons[code] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, n * 30), (250, 28))),
+                ui_scale(pygame.Rect((0, 2), (250, 28))),
                 desc[0],
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
                 object_id=ObjectID(None, "@buttonstyles_rounded_rect"),
                 container=self.focus["button_container"],
                 starting_height=2,
                 manager=MANAGER,
+                anchors={
+                    "top_target": self.focus_buttons[
+                        list(settings_dict["clan_focus"])[i - 1]
+                    ]
+                }
+                if i > 0
+                else {"top": "top"},
             )
 
             if game.clan.clan_settings[code]:
@@ -286,10 +290,10 @@ class WarriorDenScreen(Screens):
 
             n += 1
 
-        # create scrollbar
-        self.focus["button_container"].set_scrollable_area_dimensions(
-            ui_scale_dimensions((250, (n * 30 + 100)))
-        )
+        # # create scrollbar
+        # self.focus["button_container"].set_scrollable_area_dimensions(
+        #     ui_scale_dimensions((250, (len(settings_dict["clan_focus"]) * 30 + 100)))
+        # )
 
     def create_top_info(self):
         """
