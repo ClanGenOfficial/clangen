@@ -1293,7 +1293,8 @@ class MakeClanScreen(Screens):
         )
         self.elements["next_step"].disable()
         self.elements["name_entry"] = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((265, 597), (140, 29))), manager=MANAGER
+            ui_scale(pygame.Rect((265, 597), (140, 29))),
+            manager=MANAGER,
         )
         self.elements["name_entry"].set_allowed_characters(
             list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- ")
@@ -1725,12 +1726,12 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.text["clan_name"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 0), (0, 30))),
+            ui_scale(pygame.Rect((0, 0), (-1, -1))),
             text=f"{self.clan_name}Clan",
             container=self.elements["text_container"],
             object_id=get_text_box_theme("#text_box_40"),
             manager=MANAGER,
-            anchors={"left": "left", "right": "right"},
+            anchors={"left": "left"},
         )
         self.text["biome"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 5), (-1, -1))),

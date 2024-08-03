@@ -92,15 +92,11 @@ class LeaderDenScreen(Screens):
                         self.focus_clan = game.clan.all_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
-                object_id = self.focus_frame_elements[
-                    "negative_interaction"
-                ].get_object_ids()
-                self.update_clan_interaction_choice(object_id[2])
+                text = self.focus_frame_elements["negative_interaction"].text
+                self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["positive_interaction"]:
-                object_id = self.focus_frame_elements[
-                    "positive_interaction"
-                ].get_object_ids()
-                self.update_clan_interaction_choice(object_id[2])
+                text = self.focus_frame_elements["positive_interaction"].text
+                self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["clans_tab"]:
                 self.open_clans_tab()
             elif event.ui_element == self.focus_frame_elements["outsiders_tab"]:
@@ -657,7 +653,7 @@ class LeaderDenScreen(Screens):
     def update_clan_interaction_choice(self, object_id):
         """
         handles changing chosen clan interaction. updates notice text.
-        :param object_id: the object ID of the interaction button
+        :param object_id: the text in the button
         """
 
         interaction = object_id.replace("#clan_", "")
@@ -759,7 +755,6 @@ class LeaderDenScreen(Screens):
         return temper_int
 
     def update_outsider_focus(self):
-
         # clearing so we can reset
         if self.focus_outsider_container:
             self.focus_outsider_container.kill()
