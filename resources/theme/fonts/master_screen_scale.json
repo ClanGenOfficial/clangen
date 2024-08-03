@@ -151,6 +151,13 @@
     "@buttonstyles_menu_right": {
         "prototype": "buttonstyles_prototype"
     },
+    "#patrol_button": {
+        "prototype": "@buttonstyles_menu_right",
+        "misc": {
+            "text_horiz_alignment": "right",
+            "text_horiz_alignment_padding": "9"
+        }
+    },
     "@buttonstyles_menu_middle": {
         "prototype": "buttonstyles_prototype"
     },

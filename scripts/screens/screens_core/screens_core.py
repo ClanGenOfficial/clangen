@@ -83,7 +83,7 @@ def rebuild_core():
         get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
         visible=False,
         manager=MANAGER,
-        object_id="@buttonstyles_menu_right",
+        object_id="#patrol_button",
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["catlist_screen"]},
     )

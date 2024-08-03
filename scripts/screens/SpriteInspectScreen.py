@@ -265,15 +265,16 @@ class SpriteInspectScreen(Screens):
         short_name = shorten_text_to_fit(cat_name, 195, 20)
 
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
-            short_name,
-            ui_scale(pygame.Rect((0, 60), (200, 40))),
-            object_id="#text_box_34_horizcenter",
+            cat_name,
+            ui_scale(pygame.Rect((0, 0), (-1, 40))),
             manager=MANAGER,
+            object_id=get_text_box_theme("#text_box_34_horizcenter"),
             anchors={"centerx": "centerx"},
         )
+        self.cat_elements["cat_name"].set_relative_position(ui_scale_offset((0, 60)))
 
-        favorite_button_rect = ui_scale(pygame.Rect((0, 0), (56, 56)))
-        favorite_button_rect.topright = ui_scale_offset((-5, 54))
+        favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
+        favorite_button_rect.topright = ui_scale_offset((-10, 62))
         self.cat_elements["favourite_button"] = UIImageButton(
             favorite_button_rect,
             "",
@@ -365,7 +366,7 @@ class SpriteInspectScreen(Screens):
 
         if not cat_value_to_allow:
             self.checkboxes[name] = UIImageButton(
-                ui_scale(pygame.Rect(location, (50, 50))),
+                pygame.Rect(location, ui_scale_dimensions((50, 50))),
                 "",
                 object_id=disabled_object_id,
                 starting_height=2,
@@ -373,14 +374,14 @@ class SpriteInspectScreen(Screens):
             self.checkboxes[name].disable()
         elif stored_bool:
             self.checkboxes[name] = UIImageButton(
-                ui_scale(pygame.Rect(location, (50, 50))),
+                pygame.Rect(location, ui_scale_dimensions((50, 50))),
                 "",
                 object_id="@checked_checkbox",
                 starting_height=2,
             )
         else:
             self.checkboxes[name] = UIImageButton(
-                ui_scale(pygame.Rect(location, (50, 50))),
+                pygame.Rect(location, ui_scale_dimensions((50, 50))),
                 "",
                 object_id="@unchecked_checkbox",
                 starting_height=2,
