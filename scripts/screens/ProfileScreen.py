@@ -184,7 +184,6 @@ class ProfileScreen(Screens):
         self.profile_elements = {}
 
     def handle_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.close_current_tab()
@@ -1831,20 +1830,40 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = "conditions"
             self.conditions_page = 0
+
+            rect = ui_scale(pygame.Rect((0, 0), (624, 151)))
+            rect.bottomleft = ui_scale_offset((0, 0))
+            self.conditions_background = pygame_gui.elements.UIImage(
+                rect,
+                self.conditions_tab,
+                starting_height=2,
+                anchors={
+                    "bottom": "bottom",
+                    "bottom_target": self.conditions_tab_button,
+                    "centerx": "centerx",
+                },
+            )
+            del rect
+
+            rect = ui_scale(pygame.Rect((-5, 537), (34, 34)))
             self.right_conditions_arrow = UIImageButton(
-                ui_scale(pygame.Rect((709, 540), (34, 34))),
+                rect,
                 "",
                 object_id="#arrow_right_button",
                 manager=MANAGER,
+                anchors={"left_target": self.conditions_background},
             )
+            del rect
+
+            rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
+            rect.topright = ui_scale_offset((5, 537))
             self.left_conditions_arrow = UIImageButton(
-                ui_scale(pygame.Rect((59, 540), (34, 34))),
+                rect,
                 "",
                 object_id="#arrow_left_button",
+                anchors={"right": "right", "right_target": self.conditions_background},
             )
-            self.conditions_background = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((89, 471), (624, 151))), self.conditions_tab
-            )
+            del rect
 
             # This will be overwritten in update_disabled_buttons_and_text()
             self.update_disabled_buttons_and_text()
@@ -1904,7 +1923,6 @@ class ProfileScreen(Screens):
 
         x_pos = 13
         for con in all_illness_injuries[self.conditions_page]:
-
             # Background Box
             bg = pygame_gui.elements.UIPanel(
                 ui_scale(pygame.Rect((x_pos, 13), (142, 145))),
@@ -2212,7 +2230,6 @@ class ProfileScreen(Screens):
                 self.change_mentor_button.enable()
 
         elif self.open_tab == "personal":
-
             # Button to trans or cis the cats.
             if self.cis_trans_button:
                 self.cis_trans_button.kill()
@@ -2291,7 +2308,6 @@ class ProfileScreen(Screens):
 
         # Dangerous Tab
         elif self.open_tab == "dangerous":
-
             # Button to exile cat
             if self.exile_cat_button:
                 self.exile_cat_button.kill()
