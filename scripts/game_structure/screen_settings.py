@@ -1,11 +1,17 @@
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from scripts.screens.Screens import Screens
+
 from math import floor
-from typing import Optional
+from typing import Optional, Tuple
 
 import pygame
 import pygame_gui
 
 from scripts.game_structure.ui_manager import UIManager
 from scripts.ui.generate_screen_scale_jsons import generate_screen_scale
+
 
 offset = (0, 0)
 screen_x = 800
@@ -14,9 +20,12 @@ screen_scale = 1
 game_screen_size = (800, 700)
 MANAGER: Optional[pygame_gui.UIManager] = None
 screen = None
+curr_variable_dict = {}
 
 
-def toggle_fullscreen(fullscreen=False, ingame_switch=True):
+def set_display_mode(
+    fullscreen=None, source_screen: Optional["Screens"] = None, show_confirm_dialog=True
+):
     global offset
     global screen_x
     global screen_y
@@ -24,9 +33,20 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     global game_screen_size
     global screen
     global MANAGER
+    global curr_variable_dict
+
     old_offset = offset
     old_scale = screen_scale
     mouse_pos = pygame.mouse.get_pos()
+
+    from scripts.game_structure.game_essentials import game
+
+    if fullscreen is None:
+        fullscreen = game.settings["fullscreen"]
+
+    if source_screen is not None:
+        curr_variable_dict = source_screen.display_change_save()
+
     if fullscreen:
         display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
         # display_size = [3840, 2160]
@@ -57,8 +77,8 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
         screen = pygame.display.set_mode((screen_x, screen_y))
     game_screen_size = (screen_x, screen_y)
 
-    if not ingame_switch:
-        MANAGER = load_manager((screen_x, screen_y), offset, screen_scale=screen_scale)
+    if source_screen is None:
+        MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
 
     # generate new theme
     origin = "resources/theme/fonts/master_screen_scale.json"
@@ -66,9 +86,14 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
     generate_screen_scale(origin, theme_location, screen_scale)
     MANAGER.get_theme().load_theme(theme_location)
 
-    if ingame_switch:
+    if source_screen is not None:
         from scripts.screens.all_screens import AllScreens
+        import scripts.screens.screens_core.screens_core
         import scripts.debug_menu
+
+        game.save_settings(currentscreen=source_screen)
+        if source_screen is not None:
+            source_screen.exit_screen()
 
         if fullscreen:
             mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
@@ -86,7 +111,18 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
         pygame.mouse.set_pos(mouse_pos)
 
         AllScreens.rebuild_all_screens()
+
+        scripts.screens.screens_core.screens_core.rebuild_core()
         scripts.debug_menu.debugmode.rebuild_console()
+
+        if source_screen is not None:
+            screen_name = source_screen.name.replace(" ", "_")
+            new_screen: "Screens" = getattr(AllScreens, screen_name)
+            new_screen.screen_switches()
+            try:
+                new_screen.display_change_load(curr_variable_dict)
+            except KeyError:
+                pass
 
     # preloading the associated fonts
     if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
@@ -132,8 +168,40 @@ def toggle_fullscreen(fullscreen=False, ingame_switch=True):
             ]
         )
 
+    if source_screen is not None and show_confirm_dialog:
+        from scripts.game_structure.windows import ConfirmDisplayChanges
 
-def load_manager(res: tuple, offset: tuple, screen_scale: float):
+        ConfirmDisplayChanges(source_screen=source_screen)
+
+
+def toggle_fullscreen(
+    fullscreen: Optional[bool] = None,
+    source_screen: Optional["Screens"] = None,
+    show_confirm_dialog: bool = True,
+):
+    """
+    Swap between fullscreen modes. Wraps the necessary game save to store the new value.
+    :param fullscreen: Can be used to override the toggle to an explicit value. Leave as None to simply toggle.
+    :param source_screen: Screen requesting the fullscreen toggle.
+    :param show_confirm_dialog: True to show the confirm changes dialog, default True. Does nothing if source_screen is None.
+    :return:
+    """
+    from scripts.game_structure.game_essentials import game
+
+    if fullscreen is None:
+        fullscreen = not game.settings["fullscreen"]
+
+    game.settings["fullscreen"] = fullscreen
+    game.save_settings()
+
+    set_display_mode(
+        fullscreen=fullscreen,
+        source_screen=source_screen,
+        show_confirm_dialog=show_confirm_dialog,
+    )
+
+
+def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: float):
     global MANAGER
     if MANAGER is not None:
         MANAGER = None
@@ -141,8 +209,8 @@ def load_manager(res: tuple, offset: tuple, screen_scale: float):
     # initialize pygame_gui manager, and load themes
     manager = UIManager(
         res,
-        offset,
-        screen_scale,
+        screen_offset,
+        scale,
         "resources/theme/all.json",
         enable_live_theme_updates=False,
     )

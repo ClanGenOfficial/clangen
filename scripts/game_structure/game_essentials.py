@@ -342,7 +342,7 @@ class Game:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")
 
-    def save_settings(self, currentscreen):
+    def save_settings(self, currentscreen=None):
         """Save user settings for later use"""
         if os.path.exists(get_save_dir() + "/settings.txt"):
             os.remove(get_save_dir() + "/settings.txt")
@@ -451,7 +451,6 @@ class Game:
 
         copy_of_info = ""
         for cat in game.cat_to_fade:
-
             inter_cat = self.cat_class.all_cats[cat]
 
             # Add ID to list of faded cats.
@@ -496,7 +495,6 @@ class Game:
             with open(
                 get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt", "a"
             ) as write_file:
-
                 if not os.path.exists(
                     get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt"
                 ):
@@ -632,4 +630,4 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-toggle_fullscreen(game.settings["fullscreen"], ingame_switch=False)
+toggle_fullscreen(fullscreen=game.settings["fullscreen"])

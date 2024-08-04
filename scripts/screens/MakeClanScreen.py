@@ -18,58 +18,39 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
 )
 from scripts.patrol.patrol import Patrol
-from scripts.utility import get_text_box_theme, ui_scale
+from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
 from ..cat.sprites import sprites
-from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
+from ..game_structure.screen_settings import MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow
+from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
 
 
 class MakeClanScreen(Screens):
     # UI images
-    clan_frame_img = pygame.transform.scale(
-        pygame.image.load(
+    ui_images = {
+        "clan_frame": pygame.image.load(
             "resources/images/pick_clan_screen/clan_name_frame.png"
         ).convert_alpha(),
-        ui_scale_dimensions((216, 50)),
-    )
-    name_clan_img = pygame.transform.scale(
-        pygame.image.load(
+        "name_clan": pygame.image.load(
             "resources/images/pick_clan_screen/name_clan_light.png"
         ).convert_alpha(),
-        ui_scale_dimensions((800, 700)),
-    )
-    leader_img = pygame.transform.scale(
-        pygame.image.load(
+        "leader": pygame.image.load(
             "resources/images/pick_clan_screen/leader_light.png"
         ).convert_alpha(),
-        ui_scale_dimensions((800, 700)),
-    )
-    deputy_img = pygame.transform.scale(
-        pygame.image.load(
+        "deputy": pygame.image.load(
             "resources/images/pick_clan_screen/deputy_light.png"
         ).convert_alpha(),
-        ui_scale_dimensions((800, 700)),
-    )
-    medic_img = pygame.transform.scale(
-        pygame.image.load(
+        "medic": pygame.image.load(
             "resources/images/pick_clan_screen/med_light.png"
         ).convert_alpha(),
-        ui_scale_dimensions((800, 700)),
-    )
-    clan_img = pygame.transform.scale(
-        pygame.image.load(
+        "pick_clan": pygame.image.load(
             "resources/images/pick_clan_screen/clan_light.png"
         ).convert_alpha(),
-        ui_scale_dimensions((800, 700)),
-    )
-    bg_preview_border = pygame.transform.scale(
-        pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(),
-        ui_scale_dimensions((233, 208)),
-    )
+    }
 
     classic_mode_text = (
         "This mode is Clan Generator at it's most basic. "
@@ -136,6 +117,32 @@ class MakeClanScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+
+        self.clan_frame_img = pygame.transform.scale(
+            self.ui_images["clan_frame"],
+            ui_scale_dimensions((216, 50)),
+        )
+        self.name_clan_img = pygame.transform.scale(
+            self.ui_images["name_clan"],
+            ui_scale_dimensions((800, 700)),
+        )
+        self.leader_img = pygame.transform.scale(
+            self.ui_images["leader"],
+            ui_scale_dimensions((800, 700)),
+        )
+        self.deputy_img = pygame.transform.scale(
+            self.ui_images["deputy"],
+            ui_scale_dimensions((800, 700)),
+        )
+        self.medic_img = pygame.transform.scale(
+            self.ui_images["medic"],
+            ui_scale_dimensions((800, 700)),
+        )
+        self.clan_img = pygame.transform.scale(
+            self.ui_images["pick_clan"],
+            ui_scale_dimensions((800, 700)),
+        )
+
         # Reset variables
         self.game_mode = "classic"
         self.clan_name = ""
@@ -591,12 +598,7 @@ class MakeClanScreen(Screens):
                 self.elements["next_step"].enable()
 
             # Set the background for the name clan page - done here to avoid GUI layering issues
-            screen.blit(
-                pygame.transform.scale(
-                    MakeClanScreen.name_clan_img, (screen_x, screen_y)
-                ),
-                offset,
-            )
+            screen.blit(self.name_clan_img, ui_scale_blit((0, 0)))
 
         # refreshes symbol list when filters are changed
         # - done here bc refresh_symbol_list cannot be called from windows.py
@@ -1316,7 +1318,7 @@ class MakeClanScreen(Screens):
     def clan_name_header(self):
         self.elements["name_backdrop"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((292, 100), (216, 50))),
-            MakeClanScreen.clan_frame_img,
+            self.clan_frame_img,
             manager=MANAGER,
         )
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(
@@ -1333,7 +1335,7 @@ class MakeClanScreen(Screens):
 
         self.elements["background"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 414), (800, 286))),
-            MakeClanScreen.leader_img,
+            self.leader_img,
             manager=MANAGER,
         )
 
@@ -1445,7 +1447,7 @@ class MakeClanScreen(Screens):
 
         self.elements["background"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 414), (800, 286))),
-            MakeClanScreen.deputy_img,
+            self.deputy_img,
             manager=MANAGER,
         )
         self.elements["background"].disable()
@@ -1496,7 +1498,7 @@ class MakeClanScreen(Screens):
 
         self.elements["background"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 414), (800, 286))),
-            MakeClanScreen.medic_img,
+            self.medic_img,
             manager=MANAGER,
         )
         self.clan_name_header()
@@ -1662,7 +1664,7 @@ class MakeClanScreen(Screens):
             tool_tip_text="Switch starting season to Newleaf.",
         )
         self.tabs["greenleaf_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((625, 50), (39, 34))),
+            ui_scale(pygame.Rect((625, 25), (39, 34))),
             "",
             object_id="#greenleaf_toggle_button",
             manager=MANAGER,
@@ -1670,7 +1672,7 @@ class MakeClanScreen(Screens):
             anchors={"top_target": self.tabs["newleaf_tab"]},
         )
         self.tabs["leaffall_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((1250, 50), (39, 34))),
+            ui_scale(pygame.Rect((625, 25), (39, 34))),
             "",
             object_id="#leaffall_toggle_button",
             manager=MANAGER,
@@ -1678,7 +1680,7 @@ class MakeClanScreen(Screens):
             anchors={"top_target": self.tabs["greenleaf_tab"]},
         )
         self.tabs["leafbare_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((1250, 50), (39, 34))),
+            ui_scale(pygame.Rect((625, 25), (39, 34))),
             "",
             object_id="#leafbare_toggle_button",
             manager=MANAGER,
@@ -1785,10 +1787,8 @@ class MakeClanScreen(Screens):
 
         self.elements["symbol_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((540, 90), (169, 166))),
-            pygame.image.load(
-                f"resources/images/symbol_choice_frame.png"
-            ).convert_alpha(),
-            object_id="#symbol_choice_frame",
+            get_box(BoxStyles.FRAME, (169, 166), sides=(True, True, False, True)),
+            object_id="@boxstyles_frame",
             starting_height=1,
             manager=MANAGER,
         )
@@ -1816,9 +1816,7 @@ class MakeClanScreen(Screens):
         )
         self.elements["symbol_list_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((76, 250), (650, 370))),
-            pygame.image.load(
-                f"resources/images/symbol_list_frame.png"
-            ).convert_alpha(),
+            get_box(BoxStyles.ROUNDED_BOX, (650, 370)),
             object_id="#symbol_list_frame",
             starting_height=2,
             manager=MANAGER,
@@ -1955,12 +1953,7 @@ class MakeClanScreen(Screens):
             self.elements["art_frame"].kill()
         self.elements["art_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect(((0, 20), (466, 416)))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/bg_preview_border.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((466, 416)),
-            ),
+            get_box(BoxStyles.FRAME, (466, 416)),
             manager=MANAGER,
             anchors={"center": "center"},
         )

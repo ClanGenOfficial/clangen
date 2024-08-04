@@ -15,7 +15,7 @@ from scripts.utility import (
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
-from ..game_structure.screen_settings import offset, MANAGER
+from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
@@ -588,7 +588,7 @@ class SpriteInspectScreen(Screens):
         """Generates the image to save, with platform if needed."""
         if self.platform_shown:
             full_image = self.get_platform()
-            full_image.blit(self.cat_image, (15 + offset[0], 0 + offset[1]))
+            full_image.blit(self.cat_image, (15, 0))
             return full_image
         else:
             return self.cat_image

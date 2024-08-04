@@ -274,7 +274,7 @@ class ProfileScreen(Screens):
         # Relations Tab
         if self.open_tab == "relations":
             if event.ui_element == self.family_tree_button:
-                self.change_screen("see kits screen")
+                self.change_screen("family tree screen")
             elif event.ui_element == self.see_relationships_button:
                 self.change_screen("relationship screen")
             elif event.ui_element == self.choose_mate_button:

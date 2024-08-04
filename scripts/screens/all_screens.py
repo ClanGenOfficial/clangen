@@ -57,9 +57,9 @@ class AllScreens:
 
     allegiances_screen = AllegiancesScreen("allegiances screen")
     camp_screen = ClanScreen("camp screen")
-    catlist_screen = ListScreen("list screen")
+    list_screen = ListScreen("list screen")
     med_den_screen = MedDenScreen("med den screen")
-    freshkill_pile_screen = ClearingScreen("clearing screen")
+    clearing_screen = ClearingScreen("clearing screen")
     warrior_den_screen = WarriorDenScreen("warrior den screen")
     leader_den_screen = LeaderDenScreen("leader den screen")
 
@@ -78,7 +78,7 @@ class AllScreens:
         "choose adoptive parent screen"
     )
     relationship_screen = RelationshipScreen("relationship screen")
-    view_children_screen = FamilyTreeScreen("see kits screen")
+    family_tree_screen = FamilyTreeScreen("family tree screen")
     mediation_screen = MediationScreen("mediation screen")
     change_gender_screen = ChangeGenderScreen("change gender screen")
 
@@ -94,9 +94,9 @@ class AllScreens:
 
         cls.allegiances_screen = AllegiancesScreen("allegiances screen")
         cls.camp_screen = ClanScreen("camp screen")
-        cls.catlist_screen = ListScreen("list screen")
+        cls.list_screen = ListScreen("list screen")
         cls.med_den_screen = MedDenScreen("med den screen")
-        cls.freshkill_pile_screen = ClearingScreen("clearing screen")
+        cls.clearing_screen = ClearingScreen("clearing screen")
         cls.warrior_den_screen = WarriorDenScreen("warrior den screen")
         cls.leader_den_screen = LeaderDenScreen("leader den screen")
 
@@ -115,49 +115,6 @@ class AllScreens:
             "choose adoptive parent screen"
         )
         cls.relationship_screen = RelationshipScreen("relationship screen")
-        cls.view_children_screen = FamilyTreeScreen("see kits screen")
+        cls.family_tree_screen = FamilyTreeScreen("family tree screen")
         cls.mediation_screen = MediationScreen("mediation screen")
         cls.change_gender_screen = ChangeGenderScreen("change gender screen")
-
-
-# ---------------------------------------------------------------------------- #
-#                                 cat_screens.py                               #
-# ---------------------------------------------------------------------------- #
-#
-# profile_screen = ProfileScreen('profile screen')
-# ceremony_screen = CeremonyScreen('ceremony screen')
-# role_screen = RoleScreen('role screen')
-# sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
-#
-#
-# make_clan_screen = MakeClanScreen('make clan screen')
-#
-#
-# allegiances_screen = AllegiancesScreen('allegiances screen')
-# camp_screen = ClanScreen('camp screen')
-# catlist_screen = ListScreen('list screen')
-# med_den_screen = MedDenScreen('med den screen')
-# freshkill_pile_screen = ClearingScreen('clearing screen')
-# warrior_den_screen = WarriorDenScreen('warrior den screen')
-# leader_den_screen = LeaderDenScreen('leader den screen')
-#
-#
-# events_screen = EventsScreen('events screen')
-#
-#
-# settings_screen = SettingsScreen('settings screen')
-# clan_settings_screen = ClanSettingsScreen('clan settings screen')
-# start_screen = StartScreen('start screen')
-# switch_clan_screen = SwitchClanScreen('switch clan screen')
-#
-#
-# patrol_screen = PatrolScreen('patrol screen')
-#
-#
-# choose_mate_screen = ChooseMateScreen('choose mate screen')
-# choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
-# choose_adoptive_parent_screen = ChooseAdoptiveParentScreen('choose adoptive parent screen')
-# relationship_screen = RelationshipScreen('relationship screen')
-# view_children_screen = FamilyTreeScreen('see kits screen')
-# mediation_screen = MediationScreen("mediation screen")
-# change_gender_screen = ChangeGenderScreen("change gender screen")

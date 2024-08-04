@@ -15,9 +15,10 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
+    ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
-from ..game_structure.screen_settings import MANAGER
+from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 
@@ -60,7 +61,9 @@ class ClanSettingsScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.open_data_directory_button:
+            if event.ui_element == self.fullscreen_toggle:
+                toggle_fullscreen(source_screen=self)
+            elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":
                     subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == "Windows":
@@ -167,6 +170,24 @@ class ClanSettingsScreen(Screens):
             "and logs are stored.",
         )
 
+        screentext = "windowed" if game.settings["fullscreen"] else "fullscreen"
+        rect = ui_scale(pygame.Rect((0, 0), (158, 36)))
+        rect.bottomright = ui_scale_offset((-25, -25))
+        self.fullscreen_toggle = UIImageButton(
+            rect,
+            "",
+            object_id="#toggle_fullscreen_button",
+            manager=MANAGER,
+            starting_height=2,
+            tool_tip_text=(
+                f"This will put the game into {screentext} mode."
+                "<br><br>"
+                "<b>Important:</b> This also saves all changed settings!"
+            ),
+            anchors={"bottom": "bottom", "right": "right"},
+        )
+        del screentext, rect
+
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
 
@@ -190,6 +211,8 @@ class ClanSettingsScreen(Screens):
         self.clan_stats_button.kill()
         del self.clan_stats_button
         self.hide_menu_buttons()
+        self.fullscreen_toggle.kill()
+        del self.fullscreen_toggle
 
     def open_general_settings(self):
         """Opens and draws general_settings"""

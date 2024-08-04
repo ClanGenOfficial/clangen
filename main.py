@@ -22,6 +22,8 @@ import threading
 import time
 from importlib.util import find_spec
 
+import scripts.game_structure.screen_settings
+
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -281,8 +283,7 @@ cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 
-
-while True:
+while 1:
     time_delta = clock.tick(game.switches["fps"]) / 1000.0
     if game.switches["cur_screen"] not in ["start screen"]:
         if game.settings["dark mode"]:
@@ -334,10 +335,17 @@ while True:
 
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_F3:
-                debugmode.toggle_console()
-            elif event.key == pygame.K_F2:
+            if event.key == pygame.K_F2:
                 MANAGER.print_layer_debug()
+            elif event.key == pygame.K_F3:
+                debugmode.toggle_console()
+            elif event.key == pygame.K_F4:
+                scripts.game_structure.screen_settings.toggle_fullscreen(
+                    source_screen=getattr(
+                        AllScreens, game.switches["cur_screen"].replace(" ", "_")
+                    ),
+                    show_confirm_dialog=False,
+                )
 
         MANAGER.process_events(event)
 

@@ -234,6 +234,12 @@
             "name": "notosans"
         }
     },
+    "text_box": {
+        "font": {
+            "size": "13",
+            "name": "notosans"
+        }
+    },
     "#text_box_14": {
         "prototype": "text_box",
         "font": {

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 from re import sub
+from typing import Dict, Union
 
 import pygame
 import pygame_gui
@@ -42,7 +43,14 @@ class ChangeGenderScreen(Screens):
         self.buttons = {}
         self.next_cat = None
         self.previous_cat = None
-        self.elements = {}
+        self.elements: Dict[
+            str,
+            Union[
+                pygame_gui.elements.UIPanel,
+                pygame_gui.core.UIElement,
+                pygame_gui.core.IContainerLikeInterface,
+            ],
+        ] = {}
         self.windows = None
         self.removalboxes_text = {}
         self.removalbuttons = {}
@@ -153,6 +161,14 @@ class ChangeGenderScreen(Screens):
         )
 
         self.update_selected_cat()
+
+    def display_change_save(self):
+        return {
+            "cat_gender": self.selected_cat_elements["gender"].get_text(),
+        }
+
+    def display_change_load(self, variable_dict):
+        self.selected_cat_elements["gender"].text = variable_dict["cat_gender"]
 
     def get_new_identity(self):
         new_gender_identity = [""]

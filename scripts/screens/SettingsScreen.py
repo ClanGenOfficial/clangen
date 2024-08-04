@@ -8,7 +8,6 @@ import pygame
 import pygame_gui
 import ujson
 
-import scripts.screens.screens_core
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -18,8 +17,10 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
-from ..game_structure.windows import ConfirmDisplayChanges
+from ..game_structure.screen_settings import (
+    MANAGER,
+    set_display_mode,
+)
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -76,9 +77,6 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
-        if event.type == pygame.USEREVENT + 11:
-            self.toggle_fullscreen(self.prev_setting)
-            return
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == "Darwin":
                 subprocess.Popen(["open", "-u", event.link_target])
@@ -91,9 +89,12 @@ class SettingsScreen(Screens):
                 self.change_screen("start screen")
                 return
             if event.ui_element == self.fullscreen_toggle:
-                self.prev_setting = game.settings["fullscreen"]
-                self.toggle_fullscreen()
-                ConfirmDisplayChanges()
+                game.switch_setting("fullscreen")
+                self.save_settings()
+                game.save_settings(self)
+                set_display_mode(
+                    fullscreen=game.settings["fullscreen"], source_screen=self
+                )
             elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":
                     subprocess.Popen(["open", "-R", get_data_dir()])
@@ -512,15 +513,3 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         super().on_use()
-
-    def toggle_fullscreen(self, screen_mode=None):
-        game.switch_setting("fullscreen")
-        self.save_settings()
-        game.save_settings(self)
-        self.exit_screen()
-
-        if screen_mode is None:
-            screen_mode = game.settings["fullscreen"]
-        toggle_fullscreen(screen_mode)
-        scripts.screens.screens_core.screens_core.rebuild_core()
-        game.all_screens["settings screen"].screen_switches()

@@ -569,6 +569,7 @@ class ListScreen(Screens):
         self.cat_display.clear_display()
         self.cat_display = None
         self.list_screen_container.kill()
+        self.update_heading_text(self.clan_name)
 
     def on_use(self):
         super().on_use()

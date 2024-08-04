@@ -7,6 +7,7 @@ from platform import system
 from random import choice
 from re import search as re_search
 from re import sub
+from typing import TYPE_CHECKING
 
 import pygame
 import pygame_gui
@@ -47,6 +48,9 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_offset,
 )
+
+if TYPE_CHECKING:
+    from scripts.screens.Screens import Screens
 
 
 class SymbolFilterWindow(UIWindow):
@@ -426,7 +430,7 @@ class GameOver(UIWindow):
             object_id="@buttonstyles_squoval",
             container=self,
         )
-        self.not_yet_button = UIImageButton(
+        self.not_yet_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((159, 115), (111, 30))),
             "not yet",
             get_button_dict(ButtonStyles.SQUOVAL, (111, 30)),
@@ -1387,7 +1391,7 @@ class UpdateAvailablePopup(UIWindow):
             container=self,
         )
 
-        self.cancel_button = UIImageButton(
+        self.cancel_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((187, 185), (78, 30))),
             "cancel",
             get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
@@ -2127,7 +2131,7 @@ class SelectFocusClans(UIWindow):
 
 
 class ConfirmDisplayChanges(UIMessageWindow):
-    def __init__(self):
+    def __init__(self, source_screen: "Screens"):
         super().__init__(
             ui_scale(pygame.Rect((275, 270), (250, 160))),
             "This is a test!",
@@ -2144,7 +2148,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
         button_spacing = 10
         button_vertical_space = (button_spacing * 2) + button_size[1]
 
-        dismiss_button_rect = ui_scale(pygame.Rect((0, 0), (150, 30)))
+        dismiss_button_rect = ui_scale(pygame.Rect((0, 0), (140, 30)))
         dismiss_button_rect.bottomright = ui_scale_offset(
             (-button_spacing, -button_spacing)
         )
@@ -2152,7 +2156,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
         self.dismiss_button = UISurfaceImageButton(
             dismiss_button_rect,
             "Confirm changes",
-            get_button_dict(ButtonStyles.SQUOVAL, (150, 30)),
+            get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
             MANAGER,
             container=self,
             object_id="@buttonstyles_squoval",
@@ -2164,11 +2168,39 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
         )
 
+        revert_rect = ui_scale(pygame.Rect((0, 0), (75, 30)))
+        revert_rect.bottomleft = ui_scale_offset((button_spacing, -button_spacing))
+
+        self.revert_button = UISurfaceImageButton(
+            revert_rect,
+            "Revert",
+            get_button_dict(ButtonStyles.SQUOVAL, (75, 30)),
+            MANAGER,
+            container=self,
+            object_id="@buttonstyles_squoval",
+            anchors={
+                "left": "left",
+                "bottom": "bottom",
+            },
+        )
+
+        rect = ui_scale(pygame.Rect((0, 0), (22, 22)))
+        rect.topright = ui_scale_offset((-5, 7))
+        self.back_button = UIImageButton(
+            rect,
+            "",
+            object_id="#exit_window_button",
+            container=self,
+            visible=True,
+            anchors={"top": "top", "right": "right"},
+        )
+
         text_block_rect = pygame.Rect(
-            0,
-            0,
-            self.get_container().get_size()[0],
-            self.get_container().get_size()[1] - button_vertical_space,
+            ui_scale_offset((0, 22)),
+            (
+                self.get_container().get_size()[0],
+                self.get_container().get_size()[1] - button_vertical_space,
+            ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
             "Do you want to keep these changes? Display changes will be reverted in 5 seconds.",
@@ -2184,20 +2216,33 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
         )
         self.text_block.rebuild_from_changed_theme_data()
+
         # make a timeout that will call in 10 seconds - if this window isn't closed,
         # it'll be used to revert the change
         pygame.time.set_timer(pygame.USEREVENT + 10, 5000, loops=1)
 
-    @staticmethod
-    def revert_changes():
-        """Add an event to the queue to revert the changes made to screen scaling"""
-        pygame.event.post(pygame.Event(pygame.USEREVENT + 11))
-        pass
+        self.source_screen_name = source_screen.name.replace(" ", "_")
+
+    def revert_changes(self):
+        """Revert the changes made to screen scaling"""
+        from scripts.game_structure.screen_settings import toggle_fullscreen
+        from scripts.screens.all_screens import AllScreens
+
+        toggle_fullscreen(
+            not game.settings["fullscreen"],
+            source_screen=getattr(AllScreens, self.source_screen_name),
+            show_confirm_dialog=False,
+        )
 
     def process_event(self, event: pygame.event.Event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.dismiss_button:
+            if (
+                event.ui_element == self.back_button
+                or event.ui_element == self.dismiss_button
+            ):
                 self.kill()
+            elif event.ui_element == self.revert_button:
+                self.revert_changes()
         elif event.type == pygame.USEREVENT + 10:
             self.revert_changes()
             self.kill()
