@@ -163,11 +163,13 @@ class ChangeGenderScreen(Screens):
         self.update_selected_cat()
 
     def display_change_save(self):
-        return {
-            "cat_gender": self.selected_cat_elements["gender"].get_text(),
-        }
+        variable_dict = super().display_change_save()
+        variable_dict["cat_gender"] = self.selected_cat_elements["gender"].get_text()
+
+        return variable_dict
 
     def display_change_load(self, variable_dict):
+        super().display_change_load(variable_dict)
         self.selected_cat_elements["gender"].text = variable_dict["cat_gender"]
 
     def get_new_identity(self):

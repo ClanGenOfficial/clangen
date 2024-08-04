@@ -507,19 +507,28 @@ class Screens:
             screen.blit(blur_bg, (0, 0))
         screen.blit(bg, ui_scale_blit((0, 0)))
 
-    def display_change_save(self):
+    def display_change_save(self) -> Dict:
         """
         Used to save a dictionary of data to help rebuild the screen the way it was when we return.
         :return: A dictionary of data to be used later to rebuild the screen
         """
-        return {"heading": Screens.menu_buttons["heading"].html_text}
+        return {
+            "heading": scripts.screens.screens_core.screens_core.menu_buttons[
+                "heading"
+            ].html_text
+        }
 
     def display_change_load(self, variable_dict: Dict):
         """
         Used to load the screen back to how it was following a display change.
         :return: None
         """
-        Screens.menu_buttons["heading"].set_text(variable_dict["heading"])
+        try:
+            scripts.screens.screens_core.screens_core.menu_buttons["heading"].set_text(
+                variable_dict.pop("heading")
+            )
+        except TypeError:
+            pass
 
 
 # CAT PROFILES

@@ -24,7 +24,10 @@ curr_variable_dict = {}
 
 
 def set_display_mode(
-    fullscreen=None, source_screen: Optional["Screens"] = None, show_confirm_dialog=True
+    fullscreen=None,
+    source_screen: Optional["Screens"] = None,
+    show_confirm_dialog=True,
+    ingame_switch=True,
 ):
     global offset
     global screen_x
@@ -92,8 +95,7 @@ def set_display_mode(
         import scripts.debug_menu
 
         game.save_settings(currentscreen=source_screen)
-        if source_screen is not None:
-            source_screen.exit_screen()
+        source_screen.exit_screen()
 
         if fullscreen:
             mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
@@ -115,14 +117,16 @@ def set_display_mode(
         scripts.screens.screens_core.screens_core.rebuild_core()
         scripts.debug_menu.debugmode.rebuild_console()
 
-        if source_screen is not None:
-            screen_name = source_screen.name.replace(" ", "_")
-            new_screen: "Screens" = getattr(AllScreens, screen_name)
-            new_screen.screen_switches()
-            try:
-                new_screen.display_change_load(curr_variable_dict)
-            except KeyError:
-                pass
+        screen_name = source_screen.name.replace(" ", "_")
+        new_screen: "Screens" = getattr(AllScreens, screen_name)
+        new_screen.screen_switches()
+        if ingame_switch:
+            new_screen.display_change_load(curr_variable_dict)
+    if curr_variable_dict is not None and show_confirm_dialog:
+        from scripts.screens.all_screens import AllScreens
+
+        new_screen: "Screens" = getattr(AllScreens, game.switches["cur_screen"])
+        new_screen.display_change_load(curr_variable_dict)
 
     # preloading the associated fonts
     if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
@@ -178,12 +182,14 @@ def toggle_fullscreen(
     fullscreen: Optional[bool] = None,
     source_screen: Optional["Screens"] = None,
     show_confirm_dialog: bool = True,
+    ingame_switch: bool = True,
 ):
     """
     Swap between fullscreen modes. Wraps the necessary game save to store the new value.
     :param fullscreen: Can be used to override the toggle to an explicit value. Leave as None to simply toggle.
     :param source_screen: Screen requesting the fullscreen toggle.
     :param show_confirm_dialog: True to show the confirm changes dialog, default True. Does nothing if source_screen is None.
+    :param ingame_switch: Whether this was triggered by a user. Default True
     :return:
     """
     from scripts.game_structure.game_essentials import game
@@ -198,6 +204,7 @@ def toggle_fullscreen(
         fullscreen=fullscreen,
         source_screen=source_screen,
         show_confirm_dialog=show_confirm_dialog,
+        ingame_switch=ingame_switch,
     )
 
 

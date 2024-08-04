@@ -363,13 +363,13 @@
         "prototype": "#text_box_30"
     },
     "#changelog_popup_title": {
-        "prototype": "text_box",
+        "prototype": "#text_box_30",
         "misc": {
             "text_horiz_alignment": "center"
         }
     },
     "#changelog_popup_subtitle": {
-        "prototype": "text_box",
+        "prototype": "#text_box_26",
         "misc": {
             "text_horiz_alignment": "center"
         },

@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pygame.transform
 import pygame_gui.elements
 
@@ -104,7 +106,6 @@ class ChooseMateScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen("profile screen")
             elif event.ui_element == self.toggle_mate:
-
                 self.work_thread = self.loading_screen_start_work(self.change_mate)
 
             elif event.ui_element == self.previous_cat_button:
@@ -346,6 +347,29 @@ class ChooseMateScreen(Screens):
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
+
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+        variable_dict["selected_cat"] = self.selected_cat
+        variable_dict["the_cat"] = self.the_cat
+        variable_dict["kits_selected_pair"] = self.kits_selected_pair
+        variable_dict["single_only"] = self.single_only
+        variable_dict["have_kits_only"] = self.have_kits_only
+        variable_dict["open_tab"] = self.open_tab
+
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        self.update_both()
+        self.switch_tab()
 
     def change_mate(self):
         if not self.selected_cat:
@@ -883,7 +907,6 @@ class ChooseMateScreen(Screens):
         self.switch_tab()
 
     def switch_tab(self):
-
         if self.open_tab == "mates":
             self.mates_container.show()
             self.offspring_container.hide()

@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pygame.transform
 import pygame_gui.elements
 
@@ -302,6 +304,32 @@ class ChooseAdoptiveParentScreen(Screens):
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
+
+    def display_change_save(self):
+        variable_dict = super().display_change_save()
+
+        variable_dict["primary_cat"] = self.the_cat
+        variable_dict["selected_cat"] = self.selected_cat
+        variable_dict["adopted_page"] = self.adoptive_page
+        variable_dict["parent_mate_checkbox"] = self.mates_current_parents
+        variable_dict["not_related_checkbox"] = self.unrelated_only
+        variable_dict["open_tab"] = self.open_tab
+
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        self.selected_cat = variable_dict["selected_cat"]
+        self.the_cat = variable_dict["primary_cat"]
+
+        self.open_tab = variable_dict["open_tab"]
+
+        self.mates_current_parents = variable_dict["parent_mate_checkbox"]
+        self.unrelated_only = variable_dict["not_related_checkbox"]
+
+        self.update_current_cat_info(reset_selected_cat=False)
+        self.update_selected_cat()
 
     def change_adoptive_parent(self):
         """Make adoptive parent changes"""
@@ -736,7 +764,6 @@ class ChooseAdoptiveParentScreen(Screens):
         self.switch_tab()
 
     def switch_tab(self):
-
         if self.open_tab == "birth":
             self.birth_container.show()
             self.adoptive_container.hide()
