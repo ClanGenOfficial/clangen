@@ -865,7 +865,16 @@ def create_new_cat(
                     if age > leeway:
                         continue
                     possible_conditions.append(condition)
-
+                if "excess testosterone" in possible_conditions:
+                    possible_conditions.remove("excess testosterone")
+                if "testosterone deficiency" in possible_conditions:
+                    possible_conditions.remove("testosterone deficiency")
+                if "chimerism" in possible_conditions:
+                    possible_conditions.remove("chimerism")
+                if "mosaicism" in possible_conditions:
+                    possible_conditions.remove("mosaicism")
+                if "aneuploidy" in possible_conditions:
+                    possible_conditions.remove("aneuploidy")
                 if possible_conditions:
                     chosen_condition = choice(possible_conditions)
                     born_with = False

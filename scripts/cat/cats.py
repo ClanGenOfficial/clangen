@@ -82,7 +82,7 @@ class Cat:
         "leader",
     ]
 
-    gender_tags = {"female": "F", "male": "M"}
+    gender_tags = {"female": "F", "male": "M", 'intersex' : 'I'}
 
     # EX levels and ranges.
     # Ranges are inclusive to both bounds
@@ -296,9 +296,18 @@ class Cat:
         else:
             self.backstory = self.backstory
 
+        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
+
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            intersexchance = randint(1,100)
+            #probability that the cat will be intersex.. base chance around 5%
+            if intersexchance < 5 and example is False:
+                self.gender = "intersex"
+                intersex_condition = choice (["excess testosterone", "testosterone deficiency", "aneuploidy", "mosaicism", "chimerism"])
+                self.get_permanent_condition(intersex_condition, born_with=True)
+            else:
+                self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
 
         """if self.genderalign == "":
@@ -1987,8 +1996,9 @@ class Cat:
 
         for condition in PERMANENT:
             possible = PERMANENT[condition]
-            if possible["congenital"] in ["always", "sometimes"]:
-                possible_conditions.append(condition)
+            if possible["congenital"] in ['always', 'sometimes']:
+                if not(condition == "excess testosterone" or condition == "testosterone deficiency" or condition == "aneuploidy" or condition == "mosaicism" or condition == "chimerism"):
+                    possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
 
@@ -2025,7 +2035,10 @@ class Cat:
             "JAY FEATHERS",
         ]:
             self.pelt.accessory = None
-
+        intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
+        if self.gender != "intersex":
+            if name in intersex_exclusive:
+                return
         condition = PERMANENT[name]
         new_condition = False
         mortality = condition["mortality"][self.age]

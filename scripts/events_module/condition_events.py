@@ -433,7 +433,7 @@ class Condition_Events:
             "constantly dizzy",
             "recurring shock",
             "lasting grief",
-            "persistent headaches",
+            "persistent headaches", "testosterone deficiency", "excess testosterone", "aneuploidy", "mosaicism", "chimerism"
         ]
 
         got_condition = False
