@@ -173,6 +173,16 @@ class Sprites:
                 self.make_group('eyes', (col, row), f'eyes{color}')
                 self.make_group('eyes2', (col, row), f'eyes2{color}')
 
+        for row, colors in enumerate(beetle_eyes):
+            for col, color in enumerate(colors):
+                self.make_group('beetleeyes', (col, row), f'eyes{color}')
+                self.make_group('beetleeyes2', (col, row), f'eyes2{color}')
+
+        for row, colors in enumerate(beetle_more):
+            for col, color in enumerate(colors):
+                self.make_group('beetlemore', (col, row), f'eyes{color}')
+                self.make_group('beetlemore2', (col, row), f'eyes2{color}')
+
         # Define white patches
         white_patches = [
             ['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO', 'MOON', 'PHANTOM', 'POWDER',
