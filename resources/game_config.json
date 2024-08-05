@@ -12,10 +12,12 @@
 		"chance_for_neutral": 10,
 		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 15,
+		"influence_condition_events": 20,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
 			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
-			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
+			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate",
+			"influence_condition_events - how much an event with a condition can influence the relationship"
 		]
 	},
 	"mates":{
@@ -161,18 +163,12 @@
 		"primary_chance_unmated": 130,
 		"random_affair_chance": 50,
 		"unmated_random_affair_chance": 10,
-		"one_kit_possibility": {"young adult": 28, "adult": 24, "senior adult": 17, "senior": 15},
-            "two_kit_possibility": {"young adult": 32, "adult": 28, "senior adult": 10, "senior": 10},
-            "three_kit_possibility": {"young adult": 36, "adult": 32, "senior adult": 5, "senior": 3},
-            "four_kit_possibility": {"young adult": 32, "adult": 28, "senior adult": 4, "senior": 2},
-            "five_kit_possibility": {"young adult": 28, "adult": 24, "senior adult": 3, "senior": 1},
-            "six_kit_possibility": {"young adult": 24, "adult": 20, "senior adult": 2, "senior": 0},
-            "seven_kit_possibility": {"young adult": 20, "adult": 16, "senior adult": 1, "senior": 0},
-            "eight_kit_possibility": {"young adult": 16, "adult": 12, "senior adult": 0, "senior": 0},
-            "nine_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 0, "senior": 0},
-            "ten_kit_possibility": {"young adult": 8, "adult": 4, "senior adult": 0, "senior": 0},
-            "eleven_kit_possibility": {"young adult": 4, "adult": 2, "senior adult": 0, "senior": 0},
-            "max_kit_possibility": {"young adult": 1, "adult": 1, "senior adult": 0, "senior": 0},
+		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
+        "two_kit_possibility": {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3},
+        "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
+        "four_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 2, "senior": 0},
+        "five_kit_possibility": {"young adult": 6, "adult": 2, "senior adult": 0, "senior": 0},
+        "max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
@@ -260,15 +256,18 @@
 			"due to how it's written in the save files. So don't try to 'fix' it."
 		]
 	},
+	"event_generation": {
+		"debug_ensure_event_id": null
+	},
 	"death_related": {
-		"leader_death_chance": 125,
+		"leader_death_chance": 50,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
 		"cruel season_death_chance": 300,
 		"war_death_modifier_leader": 95,
 		"war_death_modifier": 250,
 		"base_random_murder_chance": 25,
-		"base_murder_kill_chance": 170,
+		"base_murder_kill_chance": 80,
 		"old_age_death_start": 150,
 		"old_age_death_curve": 4.5,
 		"comment": [
@@ -283,11 +282,11 @@
 		"classic_injury_chance": 450,
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
-		"permanent_condition_chance": 20,
+		"permanent_condition_chance": 15,
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": -1,
+		"rerolls": 3,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
@@ -299,6 +298,107 @@
 			"mediator apprentice": 25
 		},
 		"min_graduating_age": 10
+	},
+	"outside_ex":{
+		"base_adolescent_timeskip_ex":[[2, 10],[4, 5]],
+		"base_adult_timeskip_ex":[[4, 12],[6, 7]],
+		"base_senior_timeskip_ex":[[3, 9],[3, 4]]
+	},
+    "focus":{
+        "duration": 3,
+        "hunting":{
+            "warrior": 2,
+            "apprentice": 1,
+            "comment": "Defines how much a working warrior(leader/deputy) or apprentice gathers additionally."
+        },
+        "herb gathering" : {
+            "med": 3,
+            "med_apprentice" : 2,
+            "comment": "Defines how much a working warrior(leader/deputy) or (apprentice) medicine cat gathers additionally."
+        },
+        "outsiders" : {
+            "reputation": 5,
+            "comment": "Defines how much increase or decrease the reputation is."
+        },
+        "other clans" : {
+            "relation": 2,
+            "comment": "Defines how much increase or decrease the relation with other clans is."
+        },
+        "raid other clans" : {
+            "prey_warrior": 3,
+            "herb_medicine": 4,
+            "injury_chance_warrior": 18,
+            "injury_chance_medicine cat": 33,
+            "chance_increase_per_clan": 3,
+            "injuries": {
+                "claw-wound": 15,
+                "cat bite": 15,
+                "torn pelt": 15,
+                "torn ear": 15,
+                "bite-wound": 10,
+                "sprain": 10,
+                "bruises": 7,
+                "sore": 6,
+                "small cut": 4,
+                "cracked pads": 3
+            },
+            "relation": 3,
+            "comments": [
+                "prey_warrior - how much prey each working warrior(leader/deputy) will gather",
+                "herb_medicine - how much herb each working medicine cat will gather",
+                "injury chance of each warrior(leader/deputy) or medicine cat to get injured",
+                "chance_increase_per_clan - the more clan which are raided the more likely it is to get injured",
+                "injuries - list of injuries which can occur and to which distribution",
+                "relation - amount of decrease; Clan relation is between 0 and 30, therefore a smaller number is chosen",
+                "INFO: current sum of injuries is 100 - for easier understanding it should stay the same"
+            ]
+        },
+        "hoarding" : {
+            "prey_warrior": 1,
+            "herb_medicine": 2,
+            "injury_chance_warrior": 25,
+            "injury_chance_medicine cat": 35,
+            "injuries": {
+                "cracked pads": 15,
+                "sore": 15,
+                "bruises": 15,
+                "sprain": 12,
+                "small cut": 10,
+                "torn pelt": 10,
+                "torn ear": 10,
+                "claw-wound": 5,
+                "bite-wound": 5,
+                "cat bite": 3
+            },
+            "illness_chance": 35,
+            "illnesses": {
+                "running nose": 5,
+                "whitecough": 1
+            },
+            "comments": [
+                "prey_warrior - how much prey each working warrior(leader/deputy) will gather",
+                "herb_medicine - how much herb each working medicine cat will gather",
+                "injury chance of each warrior(leader/deputy) or medicine cat to get injured",
+                "injuries - list of injuries which can occur and to which distribution",
+                "illness chance of each warrior(leader/deputy) and medicine cat to get sick",
+                "illnesses - list of illnesses which can occur and to which distribution",
+                "INFO: a cat can get EITHER injured OR sick, not both - for simpler distribution (50/50 chance decide which condition will be used)",
+                "INFO: current sum of injuries is 100 - for easier understanding it should stay the same"
+            ]
+        },
+        "rest and recover": {
+            "injury_prevent": 4,
+            "illness_prevent": 6,
+            "outbreak_prevention": 2,
+			"moons_earlier_healed": 1,
+            "comments": [
+                "injury will be roughly prevented for every fourth cat",
+                "illness will be roughly prevented for every sixth cat - illness is not as easy preventable as injuries",
+                "Every second outbreak will be prevented",
+                "moons earlier healed - the moon amount where the cats are earlier healed"
+            ]
+        },
+        "comment": "'raid other clans' should be more dangerous than 'hoarding'!!!"
 	},
 	"save_load": {
 		"load_integrity_checks": true
