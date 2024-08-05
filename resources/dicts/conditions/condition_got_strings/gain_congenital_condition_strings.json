@@ -77,5 +77,25 @@
     "persistent headaches": [
       "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and {VERB/m_c/try/tries} to wriggle into the darkest corners of the medicine cat den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
         "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the medicine cat den, {PRONOUN/m_c/poss} head hurting too much to move."
+    ],
+    "testosterone deficiency": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "excess testosterone": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex. "
+    ],
+    "aneuploidy": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "mosaicism": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "chimerism": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
     ]
 }
