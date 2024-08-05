@@ -534,12 +534,6 @@
             "aggression": [0, 8],
             "stability": [0, 6]
         },
-        "stupid dumb idiot": {
-            "lawfulness": [0, 12],
-            "sociability": [0, 6],
-            "aggression": [0, 6],
-            "stability": [0, 6]
-        },
         "deceitful": {
             "lawfulness": [0, 6],
             "sociability": [6, 16],
