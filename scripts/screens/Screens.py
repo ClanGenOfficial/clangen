@@ -153,7 +153,6 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
-        self.set_bg("default")
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         Screens.update_heading_text(game.clan.name + "Clan")
@@ -498,11 +497,11 @@ class Screens:
             bg = self.game_bgs[self.active_bg]
 
             blur_bg = (
-                self.fullscreen_bgs[self.active_bg]
-                if self.fullscreen_bgs[self.active_bg] != "default"
-                else scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
                     get_current_season()
                 ]
+                if self.fullscreen_bgs[self.active_bg] == "default"
+                else self.fullscreen_bgs[self.active_bg]
             )
         elif (
             self.active_bg in scripts.screens.screens_core.screens_core.default_game_bgs
@@ -510,17 +509,34 @@ class Screens:
             bg = scripts.screens.screens_core.screens_core.default_game_bgs[
                 self.active_bg
             ]
-            blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                get_current_season()
-            ]
-
+            if self.name in [
+                "make clan screen",
+                "settings screen",
+                "switch clan screen",
+            ]:
+                blur_bg = (
+                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                        "default_dark"
+                        if game.settings["dark mode"]
+                        else "default_light"
+                    ]
+                )
+            else:
+                blur_bg = (
+                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                        get_current_season()
+                    ]
+                )
         else:
             raise Exception(
                 f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"
             )
+
         if game.settings["fullscreen"]:
-            screen.blit(blur_bg, (0, 0))
-        screen.blit(bg, ui_scale_blit((0, 0)))
+            temp = blur_bg.copy()
+            temp.set_alpha(100)
+            scripts.game_structure.screen_settings.screen.blit(temp, (0, 0))
+        scripts.game_structure.screen_settings.screen.blit(bg, ui_scale_blit((0, 0)))
 
     def display_change_save(self) -> Dict:
         """

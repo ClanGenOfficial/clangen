@@ -275,6 +275,10 @@ def rebuild_bgs():
         "default_dark": pygame.transform.scale(
             bg_dark, scripts.game_structure.screen_settings.screen.get_size()
         ),
+        "mainmenu_bg": pygame.transform.scale(
+            pygame.image.load("resources/images/menu_logoless.png").convert(),
+            scripts.game_structure.screen_settings.screen.get_size(),
+        ),
     }
 
     camp_bgs = get_camp_bgs()

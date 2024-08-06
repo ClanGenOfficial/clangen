@@ -129,11 +129,11 @@ class StartScreen(Screens):
             ) and self.continue_button.is_enabled:
                 self.change_screen("camp screen")
 
-    def on_use(self):
-        """
-        TODO: DOCS
-        """
-        super().on_use()
+    # def on_use(self):
+    #     """
+    #     TODO: DOCS
+    #     """
+    #     super().on_use()
 
     def exit_screen(self):
         """

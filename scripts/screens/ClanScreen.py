@@ -43,9 +43,7 @@ class ClanScreen(Screens):
         self.layout = None
 
     def on_use(self):
-        if game.clan.clan_settings["backgrounds"]:
-            self.show_bg()
-        else:
+        if not game.clan.clan_settings["backgrounds"]:
             self.active_bg = "default"
         super().on_use()
 
