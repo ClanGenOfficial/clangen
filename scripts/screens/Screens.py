@@ -156,6 +156,8 @@ class Screens:
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         Screens.update_heading_text(game.clan.name + "Clan")
+        if self.active_bg is not None and "default" in self.active_bg:
+            self.set_bg("default")
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
