@@ -135,7 +135,6 @@ class ClanScreen(Screens):
                     or game.config["fun"]["newborns_can_roam"]
                 )
             ):
-
                 i += 1
                 if i > self.max_sprites_displayed:
                     break
@@ -332,7 +331,13 @@ class ClanScreen(Screens):
                     pygame.image.load(all_backgrounds[3]).convert(),
                     ui_scale_dimensions((800, 700)),
                 ),
-            }
+            },
+            {
+                "Newleaf": "default",
+                "Greenleaf": "default",
+                "Leaf-bare": "default",
+                "Leaf-fall": "default",
+            },
         )
 
         self.set_bg(game.clan.current_season)

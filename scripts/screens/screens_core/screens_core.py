@@ -231,24 +231,6 @@ def rebuild_core():
         object_id="@buttonstyles_rounded_rect",
         starting_height=6,
     )
-
-    bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-    bg.fill(game.config["theme"]["light_mode_background"])
-    bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-    bg_dark.fill(game.config["theme"]["dark_mode_background"])
-
-    default_game_bgs = {"default_light": bg, "default_dark": bg_dark}
-    default_fullscreen_bgs = {
-        "default_light": pygame.transform.scale(
-            bg, scripts.game_structure.screen_settings.screen.get_size()
-        ),
-        "default_dark": pygame.transform.scale(
-            bg_dark, scripts.game_structure.screen_settings.screen.get_size()
-        ),
-    }
-    default_fullscreen_bgs["default_light"].blit(game_frame, ui_scale_blit((-10, -10)))
-    default_fullscreen_bgs["default_dark"].blit(game_frame, ui_scale_blit((-10, -10)))
-
     version_number = pygame_gui.elements.UILabel(
         ui_scale(pygame.Rect((50, 50), (-1, -1))),
         get_version_info().version_number[0:8],
@@ -273,6 +255,76 @@ def rebuild_core():
         )
         version_number.kill()
         version_number = None
+
+    rebuild_bgs()
+
+
+def rebuild_bgs():
+    global default_fullscreen_bgs
+    global default_game_bgs
+    bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
+    bg.fill(game.config["theme"]["light_mode_background"])
+    bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
+    bg_dark.fill(game.config["theme"]["dark_mode_background"])
+
+    default_game_bgs = {"default_light": bg, "default_dark": bg_dark}
+    default_fullscreen_bgs = {
+        "default_light": pygame.transform.scale(
+            bg, scripts.game_structure.screen_settings.screen.get_size()
+        ),
+        "default_dark": pygame.transform.scale(
+            bg_dark, scripts.game_structure.screen_settings.screen.get_size()
+        ),
+    }
+
+    camp_bgs = get_camp_bgs()
+    for name, camp_bg in camp_bgs.items():
+        default_fullscreen_bgs[name] = camp_bg
+
+    for name in default_fullscreen_bgs.keys():
+        default_fullscreen_bgs[name] = pygame.transform.box_blur(
+            default_fullscreen_bgs[name], 5
+        )
+        default_fullscreen_bgs[name].blit(game_frame, ui_scale_blit((-10, -10)))
+
+
+def get_camp_bgs():
+    light_dark = "dark" if game.settings["dark mode"] else "light"
+
+    camp_bg_base_dir = "resources/images/camp_bg/"
+    leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
+    available_biome = ["forest", "mountainous", "plains", "beach"]
+
+    try:
+        camp_nr = game.clan.camp_bg
+        biome = game.clan.biome
+    except AttributeError:
+        camp_nr = "camp1"
+        biome = available_biome[0]
+
+    all_backgrounds = []
+    for leaf in leaves:
+        platform_dir = f"{camp_bg_base_dir}/{biome}/{leaf}_{camp_nr}_{light_dark}.png"
+        all_backgrounds.append(platform_dir)
+
+    return {
+        "Newleaf": pygame.transform.scale(
+            pygame.image.load(all_backgrounds[0]).convert(),
+            scripts.game_structure.screen_settings.screen.get_size(),
+        ),
+        "Greenleaf": pygame.transform.scale(
+            pygame.image.load(all_backgrounds[1]).convert(),
+            scripts.game_structure.screen_settings.screen.get_size(),
+        ),
+        "Leaf-bare": pygame.transform.scale(
+            pygame.image.load(all_backgrounds[2]).convert(),
+            scripts.game_structure.screen_settings.screen.get_size(),
+        ),
+        "Leaf-fall": pygame.transform.scale(
+            pygame.image.load(all_backgrounds[3]).convert(),
+            scripts.game_structure.screen_settings.screen.get_size(),
+        ),
+    }
 
 
 rebuild_core()

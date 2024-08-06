@@ -1,5 +1,5 @@
 from threading import current_thread
-from typing import Dict, Optional
+from typing import Dict, Optional, Union
 
 import pygame
 import pygame_gui
@@ -22,6 +22,7 @@ from scripts.utility import (
     ui_scale,
     ui_scale_dimensions,
     ui_scale_blit,
+    get_current_season,
 )
 
 
@@ -447,7 +448,7 @@ class Screens:
     def add_bgs(
         self,
         bgs: Dict[str, pygame.Surface],
-        blur_bgs: Dict[str, pygame.Surface] = None,
+        blur_bgs: Dict[str, Union[pygame.Surface, str]] = None,
         radius: int = 5,
     ):
         for name, bg in bgs.items():
@@ -456,15 +457,22 @@ class Screens:
             )
 
             if blur_bgs is not None and name in blur_bgs:
-                self.fullscreen_bgs[name] = pygame.transform.scale(
-                    blur_bgs[name], screen.get_size()
-                )
+                if blur_bgs[name] == "default":
+                    self.fullscreen_bgs[name] = "default"
+                else:
+                    self.fullscreen_bgs[name] = pygame.transform.scale(
+                        blur_bgs[name], screen.get_size()
+                    )
+                    self.fullscreen_bgs[name].blit(
+                        self.game_frame, ui_scale_blit((-10, -10))
+                    )
             else:
-                self.fullscreen_bgs[name] = pygame.transform.scale(
-                    pygame.transform.box_blur(bg, radius), screen.get_size()
+                self.fullscreen_bgs[name] = pygame.transform.box_blur(
+                    pygame.transform.scale(bg, screen.get_size()), radius
                 )
-
-            self.fullscreen_bgs[name].blit(self.game_frame, ui_scale_blit((-10, -10)))
+                self.fullscreen_bgs[name].blit(
+                    self.game_frame, ui_scale_blit((-10, -10))
+                )
 
     def set_bg(self, bg: Optional[str]):
         if bg == "default":
@@ -488,7 +496,14 @@ class Screens:
             )
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
-            blur_bg = self.fullscreen_bgs[self.active_bg]
+
+            blur_bg = (
+                self.fullscreen_bgs[self.active_bg]
+                if self.fullscreen_bgs[self.active_bg] != "default"
+                else scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                    get_current_season()
+                ]
+            )
         elif (
             self.active_bg in scripts.screens.screens_core.screens_core.default_game_bgs
         ):
@@ -496,7 +511,7 @@ class Screens:
                 self.active_bg
             ]
             blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                self.active_bg
+                get_current_season()
             ]
 
         else:

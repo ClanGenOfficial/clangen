@@ -1467,20 +1467,22 @@ class ChangelogPopup(UIWindow):
         self.last_screen = last_screen
         self.changelog_popup_title = UITextBoxTweaked(
             f"<strong>What's New</strong>",
-            ui_scale(pygame.Rect((20, 10), (480, -1))),
+            ui_scale(pygame.Rect((0, 10), (500, -1))),
             line_spacing=1,
             object_id="#changelog_popup_title",
             container=self,
+            anchors={"centerx": "centerx"},
         )
 
         current_version_number = "{:.16}".format(get_version_info().version_number)
 
         self.changelog_popup_subtitle = UITextBoxTweaked(
             f"Version {current_version_number}",
-            ui_scale(pygame.Rect((20, 35), (480, -1))),
+            ui_scale(pygame.Rect((0, 35), (500, -1))),
             line_spacing=1,
             object_id="#changelog_popup_subtitle",
             container=self,
+            anchors={"centerx": "centerx"},
         )
 
         dynamic_changelog = False
