@@ -39,6 +39,6 @@ def generate_screen_scale(input_file, output_file, multiplier):
     modified_data = _multiply_numbers(data, multiplier)
 
     if not os.path.exists(output_file):
-        open(output_file, "w").close()
-    with open(output_file, "w") as writefile:
+        open(os.path.abspath(output_file), "w").close()
+    with open(os.path.abspath(output_file), "w") as writefile:
         json.dump(modified_data, writefile, indent=4)
