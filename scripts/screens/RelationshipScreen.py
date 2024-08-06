@@ -18,9 +18,10 @@ from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
     ui_scale_dimensions,
+    ui_scale_blit,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import offset, screen_x, screen_y, MANAGER, screen
+from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -36,31 +37,6 @@ class RelationshipScreen(Screens):
     current_page = 1
 
     inspect_cat = None
-
-    search_bar = pygame.transform.scale(
-        image_cache.load_image(
-            "resources/images/relationship_search.png"
-        ).convert_alpha(),
-        ui_scale_dimensions((228, 39)),
-    )
-    details_frame = pygame.transform.scale(
-        image_cache.load_image(
-            "resources/images/relationship_details_frame.png"
-        ).convert_alpha(),
-        ui_scale_dimensions((254, 344)),
-    )
-    toggle_frame = pygame.transform.scale(
-        image_cache.load_image(
-            "resources/images/relationship_toggle_frame.png"
-        ).convert_alpha(),
-        ui_scale_dimensions((251, 120)),
-    )
-    list_frame = pygame.transform.scale(
-        image_cache.load_image(
-            "resources/images/relationship_list_frame.png"
-        ).convert_alpha(),
-        ui_scale_dimensions((502, 500)),
-    )
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -79,6 +55,31 @@ class RelationshipScreen(Screens):
         self.next_cat_button = None
         self.previous_cat_button = None
         self.log_icon = None
+
+        self.search_bar_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relationship_search.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((228, 39)),
+        )
+        self.details_frame_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relationship_details_frame.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((254, 344)),
+        )
+        self.toggle_frame_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relationship_toggle_frame.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((251, 120)),
+        )
+        self.list_frame_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relationship_list_frame.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((502, 500)),
+        )
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -782,7 +783,6 @@ class RelationshipScreen(Screens):
             len(self.the_cat.mate) > 0
             and the_relationship.cat_to.ID in self.the_cat.mate
         ):
-
             self.relation_list_elements[
                 "mate_icon" + str(i)
             ] = pygame_gui.elements.UIImage(
@@ -1072,22 +1072,16 @@ class RelationshipScreen(Screens):
         super().on_use()
 
         # LOAD UI IMAGES
+        screen.blit(self.search_bar_image, ui_scale_blit((535, 90)))
         screen.blit(
-            RelationshipScreen.search_bar,
-            (1070 / 1600 * screen_x + offset[0], 180 / 1400 * screen_y + offset[1]),
+            self.details_frame_image,
+            ui_scale_blit((25, 130)),
         )
         screen.blit(
-            RelationshipScreen.details_frame,
-            (50 / 1600 * screen_x + offset[0], 260 / 1400 * screen_y + offset[1]),
+            self.toggle_frame_image,
+            ui_scale_blit((45, 479)),
         )
-        screen.blit(
-            RelationshipScreen.toggle_frame,
-            (90 / 1600 * screen_x + offset[0], 958 / 1400 * screen_y + offset[1]),
-        )
-        screen.blit(
-            RelationshipScreen.list_frame,
-            (546 / 1600 * screen_x + offset[0], 244 / 1400 * screen_y + offset[1]),
-        )
+        screen.blit(self.list_frame_image, ui_scale_blit((273, 122)))
 
         # Only update the postions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:

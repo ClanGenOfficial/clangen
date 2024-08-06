@@ -600,7 +600,7 @@ class EventsScreen(Screens):
         for i, event_object in enumerate(self.display_events):
             self.event_display_elements[f"container{i}"] = pygame_gui.elements.UIPanel(
                 default_rect,
-                1,
+                5,
                 MANAGER,
                 container=self.event_display,
                 element_id="event_panel",

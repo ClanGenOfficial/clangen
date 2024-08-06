@@ -95,7 +95,7 @@ saves/**
 #saves\settings.txt
 
 #User's generated theming (for screen scale)
-resources/theme/generated/generated_screen_scale.json
+resources/theme/generated/screen_scale.json
 
 # Logs
 logs/
