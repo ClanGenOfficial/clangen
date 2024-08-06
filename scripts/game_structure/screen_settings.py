@@ -84,8 +84,8 @@ def set_display_mode(
         MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
 
     # generate new theme
-    origin = "resources/theme/fonts/master_screen_scale.json"
-    theme_location = "resources/theme/fonts/generated_screen_scale.json"
+    origin = "resources/theme/master_screen_scale.json"
+    theme_location = "resources/theme/generated/screen_scale.json"
     generate_screen_scale(origin, theme_location, screen_scale)
     MANAGER.get_theme().load_theme(theme_location)
 
@@ -125,7 +125,9 @@ def set_display_mode(
     if curr_variable_dict is not None and show_confirm_dialog:
         from scripts.screens.all_screens import AllScreens
 
-        new_screen: "Screens" = getattr(AllScreens, game.switches["cur_screen"])
+        new_screen: "Screens" = getattr(
+            AllScreens, game.switches["cur_screen"].replace(" ", "_")
+        )
         new_screen.display_change_load(curr_variable_dict)
 
     # preloading the associated fonts

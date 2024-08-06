@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pygame.transform
 import pygame_gui.elements
 
@@ -16,6 +18,7 @@ from scripts.utility import (
     ui_scale,
     ui_scale_dimensions,
     shorten_text_to_fit,
+    ui_scale_blit,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import screen_x, screen_y, MANAGER, screen
@@ -252,7 +255,7 @@ class ChooseMentorScreen(Screens):
         )
 
         # Reposition and style checkboxes and labels
-        checkbox_x = 653
+        checkbox_x = 553
         checkbox_y = 7
         checkbox_spacing = 50
 
@@ -266,7 +269,7 @@ class ChooseMentorScreen(Screens):
         self.checkboxes["show_no_current_app"] = UIImageButton(
             ui_scale(pygame.Rect((checkbox_x, checkbox_y + 10), (34, 34))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             container=self.filter_container,
             tool_tip_text="Only show mentors with no current apprentices",
         )
@@ -282,7 +285,7 @@ class ChooseMentorScreen(Screens):
         self.checkboxes["show_no_former_app"] = UIImageButton(
             ui_scale(pygame.Rect((checkbox_x, checkbox_y), (34, 34))),
             "",
-            object_id="#unchecked_checkbox",
+            object_id="@unchecked_checkbox",
             container=self.filter_container,
             tool_tip_text="Only show mentors who have not had an apprentice",
         )
@@ -290,6 +293,33 @@ class ChooseMentorScreen(Screens):
         self.update_selected_cat()  # Updates the image and details of selected cat
         self.update_cat_list()
         self.update_buttons()
+
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+
+        variable_dict["selected_mentor"] = self.selected_mentor
+        variable_dict[
+            "show_only_no_current_app_mentors"
+        ] = self.show_only_no_current_app_mentors
+        variable_dict[
+            "show_only_no_former_app_mentors"
+        ] = self.show_only_no_former_app_mentors
+
+        variable_dict["current_page"] = self.current_page
+
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        self.update_buttons()
+        self.update_selected_cat()
 
     def exit_screen(self):
         for ele in self.cat_list_buttons:
@@ -515,7 +545,6 @@ class ChooseMentorScreen(Screens):
             self.selected_details[ele].kill()
         self.selected_details = {}
         if self.selected_mentor:
-
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((50, 150), (150, 150))),
                 pygame.transform.scale(
@@ -589,15 +618,15 @@ class ChooseMentorScreen(Screens):
         i = 0
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
-                ui_scale(pygame.Rect((100 + pos_x, 465 + pos_y), (50, 50))),
+                ui_scale(pygame.Rect((100 + pos_x, 365 + pos_y), (50, 50))),
                 cat.sprite,
                 cat_object=cat,
                 manager=MANAGER,
             )
-            pos_x += 120
-            if pos_x >= 900:
+            pos_x += 60
+            if pos_x >= 450:
                 pos_x = 0
-                pos_y += 120
+                pos_y += 60
             i += 1
 
     def update_buttons(self):
@@ -639,7 +668,7 @@ class ChooseMentorScreen(Screens):
         ]
         for name, checkbox, is_checked in checkboxes:
             checkbox.kill()
-            theme = "#checked_checkbox" if is_checked else "#unchecked_checkbox"
+            theme = "@checked_checkbox" if is_checked else "@unchecked_checkbox"
             self.checkboxes[name] = UIImageButton(
                 relative_rect=checkbox.relative_rect,
                 text="",
@@ -649,7 +678,6 @@ class ChooseMentorScreen(Screens):
             )
 
     def get_valid_mentors(self):
-
         potential_warrior_mentors = [
             cat
             for cat in Cat.all_cats_list
@@ -697,7 +725,6 @@ class ChooseMentorScreen(Screens):
 
         elif self.the_cat.status == "medicine cat apprentice":
             for cat in potential_medcat_mentors:
-
                 is_valid = True
 
                 # Check no former apprentices filter
@@ -735,8 +762,9 @@ class ChooseMentorScreen(Screens):
         return []
 
     def on_use(self):
-        # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(self.list_frame, (150 / 1600 * screen_x, 720 / 1400 * screen_y))
+        # Due to a bug in pygame, any image with buttons over it must be blitted
+        super().on_use()
+        screen.blit(self.list_frame, ui_scale_blit((75, 360)))
 
     def chunks(self, L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]

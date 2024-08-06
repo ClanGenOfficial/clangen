@@ -527,7 +527,7 @@ class Screens:
             scripts.screens.screens_core.screens_core.menu_buttons["heading"].set_text(
                 variable_dict.pop("heading")
             )
-        except TypeError:
+        except KeyError:
             pass
 
 

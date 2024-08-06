@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pygame.transform
 import pygame_gui.elements
 
@@ -280,6 +282,26 @@ class FamilyTreeScreen(Screens):
         # self.family_setup()
         self.create_family_tree()
         self.get_previous_next_cat()
+
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+
+        variable_dict["current_group"] = self.current_group
+        variable_dict["current_group_name"] = self.current_group_name
+
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        if self.current_group is not None:
+            self.handle_relation_groups()
 
     def create_family_tree(self):
         """

@@ -1,4 +1,5 @@
 from random import choice, sample
+from typing import Dict, Optional
 
 import pygame
 import pygame_gui
@@ -18,6 +19,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -65,8 +67,8 @@ class PatrolScreen(Screens):
         self.current_patrol = None
         self.display_text = ""
         self.results_text = ""
-        self.start_patrol_thread = None
-        self.proceed_patrol_thread = None
+        self.start_patrol_thread: Optional[PropagatingThread] = None
+        self.proceed_patrol_thread: Optional[PropagatingThread] = None
         self.outcome_art = None
 
     def handle_event(self, event):
@@ -235,7 +237,6 @@ class PatrolScreen(Screens):
             self.update_button()
 
     def handle_patrol_events_event(self, event):
-
         inp = None
         if event.ui_element == self.elements["proceed"]:
             inp = "proceed"
@@ -261,6 +262,31 @@ class PatrolScreen(Screens):
         self.update_heading_text(f"{game.clan.name}Clan")
         self.show_menu_buttons()
         self.open_choose_cats_screen()
+
+    def display_change_save(self) -> Dict:
+        if self.start_patrol_thread.is_alive():
+            self.start_patrol_thread.join()
+
+        if self.proceed_patrol_thread.is_alive():
+            self.proceed_patrol_thread.join()
+
+        variable_dict = super().display_change_save()
+
+        variable_dict["patrol_stage"] = self.patrol_stage
+        variable_dict["patrol_screen"] = self.patrol_screen
+        variable_dict["patrol_type"] = self.patrol_type
+
+        variable_dict["selected_cat"] = self.selected_cat
+        variable_dict["current_page"] = self.current_page
+        variable_dict["current_patrol"] = self.current_patrol
+        variable_dict["patrol_obj"] = self.patrol_obj
+        variable_dict["intro_image"] = self.intro_image
+
+        variable_dict["display_text"] = self.display_text
+        variable_dict["results_text"] = self.results_text
+        variable_dict["outcome_art"] = self.outcome_art
+
+        return variable_dict
 
     def update_button(self):
         """ " Updates button availabilities."""

@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pygame
 import pygame_gui
 import ujson
@@ -64,7 +66,7 @@ class ClearingScreen(Screens):
         self.additional_text = {}
         self.checkboxes = {}
 
-        self.tab_showing = self.hungry_tab
+        self.cat_tab_open = self.hungry_tab
         self.tab_list = self.hungry_cats
         self.pile_size = "#freshkill_pile_average"
 
@@ -138,16 +140,16 @@ class ClearingScreen(Screens):
                 self.current_page -= 1
                 self.update_nutrition_cats()
             elif event.ui_element == self.hungry_tab:
-                self.tab_showing.enable()
+                self.cat_tab_open.enable()
                 self.tab_list = self.hungry_cats
-                self.tab_showing = self.hungry_tab
+                self.cat_tab_open = self.hungry_tab
                 self.hungry_tab.disable()
                 self.update_cats_list()
                 self.update_nutrition_cats()
             elif event.ui_element == self.satisfied_tab:
-                self.tab_showing.enable()
+                self.cat_tab_open.enable()
                 self.tab_list = self.satisfied_cats
-                self.tab_showing = self.satisfied_tab
+                self.cat_tab_open = self.satisfied_tab
                 self.satisfied_tab.disable()
                 self.update_cats_list()
                 self.update_nutrition_cats()
@@ -197,7 +199,7 @@ class ClearingScreen(Screens):
                     self.hungry_cats.append(the_cat)
                 else:
                     self.satisfied_cats.append(the_cat)
-        if self.tab_showing == self.satisfied_tab:
+        if self.cat_tab_open == self.satisfied_tab:
             self.tab_list = self.satisfied_cats
         else:
             self.tab_list = self.hungry_cats
@@ -338,7 +340,7 @@ class ClearingScreen(Screens):
             object_id="#freshkill_satisfied",
             manager=MANAGER,
         )
-        self.tab_showing = self.hungry_tab
+        self.cat_tab_open = self.hungry_tab
         self.current_page = 1
         self.update_cats_list()
         self.update_nutrition_cats()
@@ -350,6 +352,46 @@ class ClearingScreen(Screens):
             self.feed_all_button.disable()
 
         self.draw_pile()
+
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+
+        variable_dict["open_tab"] = self.open_tab
+        variable_dict["current_page"] = self.current_page
+        variable_dict["focus_cat_object"] = self.focus_cat_object
+
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        if self.open_tab == "tactic":
+            self.log_tab.enable()
+            self.cats_tab.enable()
+            self.tactic_tab.disable()
+        elif self.open_tab == "log":
+            self.log_tab.disable()
+            self.cats_tab.enable()
+            self.tactic_tab.enable()
+        elif self.open_tab == "cats":
+            self.log_tab.enable()
+            self.cats_tab.disable()
+            self.tactic_tab.enable()
+
+        if len(self.hungry_cats) >= 1 and not self.feed_all_button.is_enabled:
+            self.feed_all_button.enable()
+        if len(self.hungry_cats) <= 0 and self.feed_all_button.is_enabled:
+            self.feed_all_button.disable()
+
+        self.handle_tab_toggles()
+        self.update_cats_list()
+        self.update_focus_cat()
 
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
@@ -520,7 +562,7 @@ class ClearingScreen(Screens):
                     condition_list.append("starving")
                 elif "malnourished" in cat.illnesses.keys():
                     condition_list.append("malnourished")
-            if self.tab_showing == self.hungry_tab:
+            if self.cat_tab_open == self.hungry_tab:
                 nutrition_info = game.clan.freshkill_pile.nutrition_info
                 if cat.ID in nutrition_info:
                     full_text = " nutrition: " + nutrition_info[cat.ID].nutrition_text

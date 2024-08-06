@@ -565,6 +565,14 @@ class ListScreen(Screens):
         self.get_cat_list()
         self.update_cat_list()
 
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+
+        variable_dict["current_group"] = self.current_group
+        variable_dict["death_status"] = self.death_status
+
+        return variable_dict
+
     def exit_screen(self):
         self.cat_display.clear_display()
         self.cat_display = None

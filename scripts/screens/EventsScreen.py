@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pygame
 import pygame_gui
 
@@ -155,7 +157,6 @@ class EventsScreen(Screens):
             )
 
     def handle_tab_select(self, event):
-
         # find next tab based on current tab
         current_index = self.tabs.index(self.selected_display)
         if event == pygame.K_DOWN:
@@ -187,11 +188,12 @@ class EventsScreen(Screens):
             y_pos = self.alert[self.selected_display].get_relative_rect()[1]
             self.alert[self.selected_display].set_relative_position((x_pos, y_pos))
 
-    def handle_tab_switch(self, display_type):
+    def handle_tab_switch(self, display_type, is_rescale=False):
         """
         saves current tab scroll position, removes alert, and then switches to the new tab
         """
-        self.save_scroll_position()
+        if not is_rescale:
+            self.save_scroll_position()
 
         self.current_display = display_type
         self.update_list_buttons()
@@ -334,6 +336,37 @@ class EventsScreen(Screens):
         self.set_disabled_menu_buttons(["events_screen"])
         self.update_heading_text(f"{game.clan.name}Clan")
         self.show_menu_buttons()
+
+    def display_change_save(self) -> Dict:
+        self.save_scroll_position()
+        variable_dict = super().display_change_save()
+
+        variable_dict["current_display"] = self.current_display
+
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        self.handle_tab_switch(self.current_display, is_rescale=True)
+        MANAGER.update(1)
+        # self.event_display.set_dimensions(
+        #     (
+        #         self.event_display.get_relative_rect()[2],
+        #         self.event_display.get_relative_rect()[3],
+        #     )
+        # )
+
+        if game.switches["saved_scroll_positions"].get(self.current_display):
+            self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
+                game.switches["saved_scroll_positions"][self.current_display]
+            )
 
     def make_event_scrolling_container(self):
         """

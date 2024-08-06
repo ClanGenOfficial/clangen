@@ -3,6 +3,7 @@ import logging
 import os
 import platform
 import subprocess
+from typing import Dict
 
 import pygame
 import pygame_gui
@@ -48,6 +49,15 @@ class ClanSettingsScreen(Screens):
     checkboxes = {}
     # Contains the text for the checkboxes.
     checkboxes_text = {}
+
+    def __init__(self, name):
+        super().__init__(name)
+        self.opens = {
+            "general": self.open_general_settings,
+            "relation": self.open_relation_settings,
+            "role": self.open_roles_settings,
+            "stats": self.open_clan_stats,
+        }
 
     def handle_event(self, event):
         """
@@ -100,13 +110,6 @@ class ClanSettingsScreen(Screens):
                     self.settings_changed = True
                     # self.update_save_button()
 
-                    opens = {
-                        "general": self.open_general_settings,
-                        "relation": self.open_relation_settings,
-                        "role": self.open_roles_settings,
-                        "stats": self.open_clan_stats,
-                    }
-
                     scroll_pos = None
                     if (
                         "container_general" in self.checkboxes_text
@@ -116,8 +119,8 @@ class ClanSettingsScreen(Screens):
                             "container_general"
                         ].vert_scroll_bar.start_percentage
 
-                    if self.sub_menu in opens:
-                        opens[self.sub_menu]()
+                    if self.sub_menu in self.opens:
+                        self.opens[self.sub_menu]()
 
                     if scroll_pos is not None:
                         self.checkboxes_text[
@@ -194,6 +197,22 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = "general"
         self.open_general_settings()
         self.refresh_checkboxes()
+
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+        variable_dict["sub_menu"] = self.sub_menu
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        self.opens[self.sub_menu]()
 
     def exit_screen(self):
         """
