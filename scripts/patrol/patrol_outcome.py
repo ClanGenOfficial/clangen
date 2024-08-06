@@ -4,7 +4,7 @@ import random
 import re
 from os.path import exists as path_exists
 from random import choice, choices
-from typing import List, Dict, Union, TYPE_CHECKING, Optional
+from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 
 import pygame
 
@@ -206,7 +206,7 @@ class PatrolOutcome:
 
         return outcome_list
 
-    def execute_outcome(self, patrol: "Patrol") -> tuple[str, str, Optional[str]]:
+    def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, Optional[str]]:
         """
         Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
