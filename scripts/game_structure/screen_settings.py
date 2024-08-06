@@ -10,7 +10,7 @@ import pygame
 import pygame_gui
 
 from scripts.game_structure.ui_manager import UIManager
-from scripts.ui.generate_screen_scale_jsons import generate_screen_scale
+from scripts.ui.generate_screen_scale_json import generate_screen_scale
 
 
 offset = (0, 0)

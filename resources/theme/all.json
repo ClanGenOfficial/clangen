@@ -2713,38 +2713,6 @@
             }
         }
     },
-    "#previous_cat_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/previous_cat.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/previous_cat_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/previous_cat_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/previous_cat_unavailable.png"
-            }
-        }
-    },
-    "#next_cat_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/next_cat.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/next_cat_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/next_cat_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/next_cat_unavailable.png"
-            }
-        }
-    },
     "#family_tree_button": {
         "images": {
             "normal_image": {

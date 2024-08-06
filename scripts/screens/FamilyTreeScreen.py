@@ -16,7 +16,6 @@ from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
     ui_scale_dimensions,
-    ui_scale_offset,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -184,25 +183,20 @@ class FamilyTreeScreen(Screens):
         self.current_group = None
         self.current_group_name = None
         # prev/next and back buttons
+        self.next_cat_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((622, 25), (153, 30))),
+            "Next Cat " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+        )
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            get_arrow(1) + " Previous Cat",
+            get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-
-        next_cat_rect = ui_scale(pygame.Rect((0, 0), (153, 30)))
-        next_cat_rect.topright = ui_scale_offset((-25, 25))
-        self.next_cat_button = UISurfaceImageButton(
-            next_cat_rect,
-            "Next Cat " + get_arrow(2.5, arrow_left=False),
-            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-            object_id="@buttonstyles_squoval",
-            manager=MANAGER,
-            anchors={"right": "right"},
-        )
-        del next_cat_rect
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
             get_arrow(2) + " Back",

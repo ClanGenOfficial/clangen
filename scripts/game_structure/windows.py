@@ -833,7 +833,7 @@ class PronounCreation(UIWindow):
         )
 
         self.boxes["self"] = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((550, 470), (200, 60))),
+            ui_scale(pygame.Rect((225, 235), (100, 30))),
             placeholder_text=self.the_cat.pronouns[0]["self"],
             manager=MANAGER,
             container=self,
@@ -842,7 +842,7 @@ class PronounCreation(UIWindow):
         # Save Confirmation
         self.pronoun_added = pygame_gui.elements.UITextBox(
             f"Pronoun saved and added to presets!",
-            ui_scale(pygame.Rect((550, 700), (800, 80))),
+            ui_scale(pygame.Rect((225, 350), (400, 40))),
             visible=False,
             object_id="#text_box_30_horizleft",
             manager=MANAGER,

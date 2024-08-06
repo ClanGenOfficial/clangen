@@ -3,7 +3,7 @@ import math
 import re
 
 
-def multiply_numbers_in_string(s, multiplier):
+def _multiply_numbers_in_string(s, multiplier):
     # Function to replace matched number with the floored multiplied value
     def replace(match):
         number = float(match.group())
@@ -14,20 +14,20 @@ def multiply_numbers_in_string(s, multiplier):
     return re.sub(r"(?<![#0x])(?<![#0X])-?\b\d+\.?\d*\b", replace, s)
 
 
-def multiply_numbers(data, multiplier):
+def _multiply_numbers(data, multiplier):
     if isinstance(data, dict):
         result = {}
-        blacklist = ["prototype", "line_spacing"]
+        blacklist = ["prototype", "line_spacing", "colours"]
         for key, value in data.items():
             if key in blacklist:
                 result[key] = value
             else:
-                result[key] = multiply_numbers(value, multiplier)
+                result[key] = _multiply_numbers(value, multiplier)
         return result
     elif isinstance(data, list):
-        return [multiply_numbers(element, multiplier) for element in data]
+        return [_multiply_numbers(element, multiplier) for element in data]
     elif isinstance(data, str):
-        return multiply_numbers_in_string(data, multiplier)
+        return _multiply_numbers_in_string(data, multiplier)
     return data
 
 
@@ -35,7 +35,7 @@ def generate_screen_scale(input_file, output_file, multiplier):
     with open(input_file, "r") as readfile:
         data = json.load(readfile)
 
-    modified_data = multiply_numbers(data, multiplier)
+    modified_data = _multiply_numbers(data, multiplier)
 
     with open(output_file, "w") as writefile:
         json.dump(modified_data, writefile, indent=4)

@@ -96,16 +96,18 @@ class RoleScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
 
-        self.next_cat_button = UIImageButton(
+        self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "",
-            object_id="#next_cat_button",
+            "Next Cat " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.previous_cat_button = UIImageButton(
+        self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "",
-            object_id="#previous_cat_button",
+            get_arrow(2, arrow_left=True) + " Previous Cat",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.back_button = UISurfaceImageButton(
@@ -218,9 +220,9 @@ class RoleScreen(Screens):
         name = str(self.the_cat.name)
         short_name = shorten_text_to_fit(name, 150, 13)
         self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((775, 140), (350, -1))),
+            ui_scale(pygame.Rect((387, 70), (175, -1))),
             short_name,
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30"),
         )
 
         text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.personality.trait}\n"

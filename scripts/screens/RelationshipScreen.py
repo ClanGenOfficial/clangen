@@ -208,18 +208,22 @@ class RelationshipScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
 
-        self.previous_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "",
-            object_id="#previous_cat_button",
-        )
-        self.next_cat_button = UIImageButton(
+        self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "",
-            object_id="#next_cat_button",
+            "Next Cat " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+        )
+        self.previous_cat_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
+            get_arrow(2, arrow_left=True) + " Previous Cat",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
         )
         self.back_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 645), (105, 30))),
+            ui_scale(pygame.Rect((25, 60), (105, 30))),
             get_arrow(2) + " Back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",

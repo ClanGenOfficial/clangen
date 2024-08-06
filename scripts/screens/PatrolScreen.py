@@ -19,35 +19,19 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..game_structure import image_cache
 from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
 class PatrolScreen(Screens):
-    able_box = pygame.transform.scale(
-        pygame.image.load("resources/images/patrol_able_cats.png").convert_alpha(),
-        ui_scale_dimensions((270, 201)),
-    )
-    patrol_box = pygame.transform.scale(
-        pygame.image.load("resources/images/patrol_cats.png").convert_alpha(),
-        ui_scale_dimensions((270, 201)),
-    )
-    cat_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha(),
-        ui_scale_dimensions((200, 225)),
-    )
-    app_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/patrol_app_frame.png").convert_alpha(),
-        ui_scale_dimensions((166, 170)),
-    )
-    mate_frame = pygame.transform.flip(app_frame, True, False)
-
     current_patrol = []
-    patrol_stage = "choose_cats"  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
+    patrol_stage = "choose_cats"  # Can be 'choose_cats', 'patrol_events' or 'patrol_complete'. Controls the stage of patrol.
     patrol_screen = "patrol_cats"  # Can be "patrol_cats" or "skills". Controls the tab on the select_cats stage
     patrol_type = (
-        "general"  # Can be 'general' or 'border' or 'training' or 'med' or 'hunting'
+        "general"  # Can be 'general', 'border', 'training', 'med', or 'hunting'
     )
     current_page = 1
     elements = {}  # hold elements for sub-page
@@ -58,6 +42,17 @@ class PatrolScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+
+        self.able_box = pygame.transform.scale(
+            image_cache.load_image("resources/images/patrol_able_cats.png"),
+            ui_scale_dimensions((270, 201)),
+        )
+        self.app_frame = pygame.transform.scale(
+            image_cache.load_image("resources/images/patrol_app_frame.png"),
+            ui_scale_dimensions((166, 170)),
+        )
+        self.mate_frame = pygame.transform.flip(self.app_frame, True, False)
+
         self.fav = {}
         self.normal_event_choice = None
         self.romantic_event_choice = None
@@ -264,10 +259,13 @@ class PatrolScreen(Screens):
         self.open_choose_cats_screen()
 
     def display_change_save(self) -> Dict:
-        if self.start_patrol_thread.is_alive():
+        if self.start_patrol_thread is not None and self.start_patrol_thread.is_alive():
             self.start_patrol_thread.join()
 
-        if self.proceed_patrol_thread.is_alive():
+        if (
+            self.proceed_patrol_thread is not None
+            and self.proceed_patrol_thread.is_alive()
+        ):
             self.proceed_patrol_thread.join()
 
         variable_dict = super().display_change_save()
@@ -287,6 +285,26 @@ class PatrolScreen(Screens):
         variable_dict["outcome_art"] = self.outcome_art
 
         return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        if self.patrol_stage == "choose_cats":
+            self.open_choose_cats_screen()
+            self.update_selected_cat()
+            self.update_cat_images_buttons()
+        elif self.patrol_stage == "patrol_events":
+            self.open_patrol_event_screen()
+        elif self.patrol_stage == "patrol_complete":
+            self.open_patrol_complete_screen()
+        else:
+            print("how'd that happen? Unidentified patrol stage.")
 
     def update_button(self):
         """ " Updates button availabilities."""
@@ -477,7 +495,7 @@ class PatrolScreen(Screens):
         )
         self.elements["cat_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((300, 165), (200, 275))),
-            pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha(),
+            get_box(BoxStyles.FRAME, (200, 275)),
             manager=MANAGER,
         )
         self.elements["cat_frame"].disable()
@@ -492,8 +510,8 @@ class PatrolScreen(Screens):
         self.elements["able_frame"].disable()
 
         self.elements["patrol_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((490, 460), (270, 201))),
-            self.patrol_box,
+            ui_scale(pygame.Rect((490, 490), (270, 140))),
+            get_box(BoxStyles.ROUNDED_BOX, (270, 140)),
             manager=MANAGER,
         )
         self.elements["patrol_frame"].disable()
@@ -670,12 +688,7 @@ class PatrolScreen(Screens):
         # Layout images
         self.elements["event_bg"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((381, 165), (354, 270))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/patrol_event_frame.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((354, 270)),
-            ),
+            get_box(BoxStyles.ROUNDED_BOX, (354, 270), sides=(True, True, True, False)),
             manager=MANAGER,
         )
         self.elements["event_bg"].disable()
@@ -700,7 +713,7 @@ class PatrolScreen(Screens):
 
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
-            pygame.transform.scale(
+            pygame.transform.smoothscale(
                 self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
             ),
         )
@@ -1266,10 +1279,12 @@ class PatrolScreen(Screens):
             self.proceed_patrol_thread, self.open_patrol_complete_screen, (350, 500)
         )
 
-    def chunks(self, L, n):
+    @staticmethod
+    def chunks(L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]
 
-    def get_list_text(self, patrol_list):
+    @staticmethod
+    def get_list_text(patrol_list):
         if not patrol_list:
             return "None"
         # Removes duplicates.
