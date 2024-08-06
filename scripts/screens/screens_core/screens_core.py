@@ -143,6 +143,23 @@ def rebuild_core():
             "centerx": "centerx",
         },
     )
+    heading_rect = ui_scale(pygame.Rect((0, 0), (193, 32)))
+    heading_rect.bottomleft = ui_scale_offset((0, 0))
+    menu_buttons["heading"] = pygame_gui.elements.UITextBox(
+        "",
+        heading_rect,
+        visible=False,
+        manager=MANAGER,
+        object_id=ObjectID("#text_box_34_horizcenter", "#dark"),
+        starting_height=5,
+        anchors={
+            "bottom": "bottom",
+            "bottom_target": menu_buttons["camp_screen"],
+            "centerx": "centerx",
+        },
+    )
+    del heading_rect
+
     menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
         ui_scale(pygame.Rect((25, 60), (153, 75))),
         visible=False,
@@ -214,22 +231,6 @@ def rebuild_core():
         object_id="@buttonstyles_rounded_rect",
         starting_height=6,
     )
-    heading_rect = ui_scale(pygame.Rect((0, 0), (195, 35)))
-    heading_rect.bottomleft = ui_scale_offset((0, 0))
-    menu_buttons["heading"] = pygame_gui.elements.UITextBox(
-        "",
-        heading_rect,
-        visible=False,
-        manager=MANAGER,
-        object_id=ObjectID("#text_box_34_horizcenter", "#dark"),
-        starting_height=5,
-        anchors={
-            "bottom": "bottom",
-            "bottom_target": menu_buttons["camp_screen"],
-            "centerx": "centerx",
-        },
-    )
-    del heading_rect
 
     bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
     bg.fill(game.config["theme"]["light_mode_background"])

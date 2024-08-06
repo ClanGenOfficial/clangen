@@ -371,10 +371,10 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         return need_horiz_scroll_bar, need_vert_scroll_bar
 
     def _get_scroll_bar_width(self) -> int:
-        return ui_scale_value(20)
+        return ui_scale_value(20) + 4
 
     def _get_scroll_bar_height(self) -> int:
-        return ui_scale_value(20)
+        return ui_scale_value(18) + 2
 
 
 class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
@@ -415,16 +415,15 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
             parent_element=self,
             object_id="#vertical_slider_up_arrow_button",
             anchors={
-                "left": "left",
-                "right": "right",
-                "top": "top",
-                "bottom": "top",
+                "centerx": "centerx",
             },
         )
 
         self.bottom_button.kill()
+        bottom_button_rect = ui_scale(pygame.Rect((0, 0), (16, 16)))
+        bottom_button_rect.bottomleft = (0, 0)
         self.bottom_button = UIImageButton(
-            ui_scale(pygame.Rect((0, -self.arrow_button_height), (16, 16))),
+            bottom_button_rect,
             text="",
             manager=self.ui_manager,
             container=self.button_container,
@@ -432,20 +431,15 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
             parent_element=self,
             object_id="#vertical_slider_down_arrow_button",
             anchors={
-                "left": "left",
-                "right": "right",
-                "top": "bottom",
                 "bottom": "bottom",
+                "centerx": "centerx",
             },
         )
+        del bottom_button_rect
 
     def set_visible_percentage(self, percentage: float):
         super().set_visible_percentage(percentage)
-        if game.settings["fullscreen"]:
-            speed = 30
-        else:
-            speed = 15
-        self.scroll_wheel_speed = (1 / self.visible_percentage) * speed
+        self.scroll_wheel_speed = (1 / self.visible_percentage) * ui_scale_value(15)
 
 
 class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):

@@ -485,7 +485,7 @@ class ListScreen(Screens):
         self.add_bgs(
             {
                 "ur": pygame.transform.scale(
-                    self.sc_bg_image,
+                    self.ur_bg_image,
                     game_screen_size,
                 ),
                 "df": pygame.transform.scale(

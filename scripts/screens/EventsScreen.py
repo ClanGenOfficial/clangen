@@ -17,6 +17,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
+from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.utility import (
     ui_scale,
@@ -292,9 +293,7 @@ class EventsScreen(Screens):
         )
         self.events_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((161, 0), (534, 370))),
-            image_cache.load_image(
-                "resources/images/event_page_frame.png"
-            ).convert_alpha(),
+            get_box(BoxStyles.FRAME, (534, 370)),
             starting_height=8,
             container=self.full_event_display_container,
             manager=MANAGER,
@@ -356,12 +355,6 @@ class EventsScreen(Screens):
 
         self.handle_tab_switch(self.current_display, is_rescale=True)
         MANAGER.update(1)
-        # self.event_display.set_dimensions(
-        #     (
-        #         self.event_display.get_relative_rect()[2],
-        #         self.event_display.get_relative_rect()[3],
-        #     )
-        # )
 
         if game.switches["saved_scroll_positions"].get(self.current_display):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
@@ -375,8 +368,15 @@ class EventsScreen(Screens):
         if self.event_display:
             self.event_display.kill()
 
+        rect = pygame.Rect(
+            ui_scale_offset((211, 275)),
+            (
+                self.events_frame.rect[2] + ui_scale_value(13),
+                self.events_frame.rect[3] - ui_scale_value(19),
+            ),
+        )
         self.event_display = UIModifiedScrollingContainer(
-            ui_scale(pygame.Rect((211, 275), (543, 351))),
+            rect,
             starting_height=1,
             manager=MANAGER,
             allow_scroll_y=True,
@@ -389,7 +389,7 @@ class EventsScreen(Screens):
         # How much to increase the panel box size by in order to fit the catbuttons
         size_increase = 26
 
-        # whether or not we need a scrollbar
+        # determine whether we need a scrollbar
         scrollbar_needed = len(button_pressed.ids) > 2
 
         # Check if the button you pressed doesn't have its cat profile buttons currently displayed.
@@ -592,7 +592,7 @@ class EventsScreen(Screens):
             ui_scale_offset((5, 0)),
             (
                 self.event_display.get_relative_rect()[2]
-                - ui_scale_value(2)
+                - ui_scale_value(10)
                 - self.event_display.scroll_bar_width,
                 ui_scale_value(300),
             ),

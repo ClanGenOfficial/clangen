@@ -57,22 +57,22 @@
     },
     "#fav_star.tool_tip": {
         "misc": {
-            "rect_width": "150"
+            "rect_width": "125"
         }
     },
     "#not_fav_star.tool_tip": {
         "misc": {
-            "rect_width": "150"
+            "rect_width": "125"
         }
     },
     "#fav_cat_toggle_on.tool_tip": {
         "misc": {
-            "rect_width": "75"
+            "rect_width": "125"
         }
     },
     "#fav_cat_toggle_off.tool_tip": {
         "misc": {
-            "rect_width": "75"
+            "rect_width": "125"
         }
     },
     "#help_button.tool_tip": {
@@ -107,7 +107,7 @@
     },
     "@mns_image.#moon.tool_tip": {
         "misc": {
-            "rect_width": "120"
+            "rect_width": "100"
         }
     },
     "@mns_image.tool_tip": {

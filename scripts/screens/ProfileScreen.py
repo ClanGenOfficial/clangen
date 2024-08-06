@@ -693,7 +693,7 @@ class ProfileScreen(Screens):
             "",
             object_id="#fav_star",
             manager=MANAGER,
-            tool_tip_text="Remove favorite status",
+            tool_tip_text="Remove favorite",
             starting_height=2,
             anchors={
                 "right": "right",
