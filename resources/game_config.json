@@ -422,7 +422,15 @@
 	},
 	"theme": {
 		"dark_mode_background": [57, 50, 36],
-		"light_mode_background": [206, 194, 168]
+		"light_mode_background": [206, 194, 168],
+		"vignette_alpha": {
+			"light": 10,
+			"dark": 50
+		},
+		"darken_background": {
+			"light": 30,
+			"dark": 100
+		}
 	},
 	"lock_season": false, 
 	"comment": "Forces the season to be locked at the Clan's starting_season"

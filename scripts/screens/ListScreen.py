@@ -494,7 +494,6 @@ class ListScreen(Screens):
                 ),
             },
             radius=10,
-            vignette_alpha=150,
         )
         self.add_bgs(
             {
@@ -504,7 +503,6 @@ class ListScreen(Screens):
                 ),
             },
             radius=2,
-            vignette_alpha=150,
         )
 
         # CAT DISPLAY

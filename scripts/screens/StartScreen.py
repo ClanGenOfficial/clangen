@@ -172,7 +172,6 @@ class StartScreen(Screens):
                     10,
                 )
             },
-            vignette_alpha=150,
         )
         self.set_bg("mainmenu_bg")
 

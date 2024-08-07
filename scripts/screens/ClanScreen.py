@@ -17,7 +17,11 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
 )
 from scripts.game_structure.windows import SaveError
-from scripts.utility import ui_scale, ui_scale_dimensions, get_current_season
+from scripts.utility import (
+    ui_scale,
+    ui_scale_dimensions,
+    get_current_season,
+)
 from .Screens import Screens
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
@@ -334,7 +338,6 @@ class ClanScreen(Screens):
                 "Leaf-bare": None,
                 "Leaf-fall": None,
             },
-            vignette_alpha=150,
         )
 
         self.set_bg(get_current_season())

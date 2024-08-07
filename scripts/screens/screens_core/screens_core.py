@@ -2,6 +2,7 @@ from typing import Optional
 
 import pygame
 import pygame_gui
+import ujson
 from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
@@ -19,11 +20,14 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_blit,
     get_text_box_theme,
+    ui_scale_value,
 )
 
 game_frame: Optional[pygame.Surface] = None
 core_vignette = pygame.image.load("resources/images/vignette.png")
 vignette: Optional[pygame.Surface] = None
+dropshadow: Optional[pygame.Surface] = None
+fade: Optional[pygame.Surface] = None
 
 menu_buttons = dict()
 
@@ -35,22 +39,11 @@ dev_watermark = None
 
 
 def rebuild_core():
-    global game_frame
-    global vignette
     global menu_buttons
     global default_game_bgs
     global default_fullscreen_bgs
     global version_number
     global dev_watermark
-
-    game_frame = get_box(
-        BoxStyles.FRAME,
-        (820, 720),
-    )
-    vignette = pygame.transform.scale(
-        core_vignette, scripts.game_structure.screen_settings.screen.size
-    ).convert_alpha()
-    vignette.set_alpha(200)
 
     # menu buttons are used very often, so they are generated here.
     menu_buttons = dict()
@@ -269,6 +262,48 @@ def rebuild_core():
 def rebuild_bgs():
     global default_fullscreen_bgs
     global default_game_bgs
+    global game_frame
+    global vignette
+    global dropshadow
+    global fade
+
+    game_frame = get_box(
+        BoxStyles.FRAME,
+        (820, 720),
+    )
+
+    vignette = pygame.transform.scale(
+        core_vignette, scripts.game_structure.screen_settings.screen.size
+    ).convert_alpha()
+
+    dropshadow = pygame.Surface(
+        scripts.game_structure.screen_settings.screen.size, flags=pygame.SRCALPHA
+    )
+
+    fade = pygame.Surface(scripts.game_structure.screen_settings.screen.size)
+
+    game_box = pygame.Surface(
+        (
+            scripts.game_structure.screen_settings.screen_x + ui_scale_value(30),
+            scripts.game_structure.screen_settings.screen_y + ui_scale_value(30),
+        ),
+        pygame.SRCALPHA,
+    )
+    feather_surface(game_box, 15)
+    dropshadow.blit(game_box, ui_scale_blit((-15, -15)))
+    del game_box
+    try:
+        vignette.set_alpha(
+            game.config["theme"]["darken_background"][
+                "dark" if game.settings["dark mode"] else "light"
+            ]
+        )
+    except AttributeError:
+        with open("resources/game_config.json", "r") as config:
+            config = ujson.load(config)
+            vignette.set_alpha(config["theme"]["darken_background"]["light"])
+            del config
+
     bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
     bg.fill(game.config["theme"]["light_mode_background"])
     bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
@@ -293,14 +328,11 @@ def rebuild_bgs():
         default_fullscreen_bgs[name] = camp_bg
 
     for name in default_fullscreen_bgs.keys():
-        vignette.set_alpha(0 if "default" in name else 100)
-        default_fullscreen_bgs[name] = pygame.transform.box_blur(
-            default_fullscreen_bgs[name], 5
-        )
-        default_fullscreen_bgs[name].blits(
-            (
-                (vignette, (0, 0), None),
-                (game_frame, ui_scale_blit((-10, -10))),
+        default_fullscreen_bgs[name] = (
+            process_blur_bg(default_fullscreen_bgs[name])
+            if "default" not in name
+            else process_blur_bg(
+                default_fullscreen_bgs[name], vignette_strength=0, fade_strength=0
             )
         )
 
@@ -342,6 +374,75 @@ def get_camp_bgs():
             scripts.game_structure.screen_settings.screen.get_size(),
         ),
     }
+
+
+def process_blur_bg(
+    bg,
+    blur_radius: Optional[int] = 5,
+    vignette_strength: Optional[int] = None,
+    fade_strength: Optional[int] = None,
+) -> pygame.Surface:
+    pygame.transform.scale(bg, scripts.game_structure.screen_settings.screen.size)
+
+    try:
+        vignette.set_alpha(
+            game.config["theme"]["darken_background"][
+                "dark" if game.settings["dark mode"] else "light"
+            ]
+        )
+        fade.set_alpha(
+            game.config["theme"]["darken_background"][
+                "dark" if game.settings["dark mode"] else "light"
+            ]
+        )
+        dropshadow.set_alpha(
+            game.config["theme"]["darken_background"][
+                "dark" if game.settings["dark mode"] else "light"
+            ]
+        )
+    except AttributeError:
+        with open("resources/game_config.json", "r") as config:
+            config = ujson.load(config)
+            dropshadow.set_alpha(config["theme"]["darken_background"]["light"])
+            vignette.set_alpha(config["theme"]["vignette_alpha"]["light"])
+            fade.set_alpha(game.config["theme"]["darken_background"]["light"])
+            del config
+
+    if vignette_strength is not None:
+        vignette.set_alpha(vignette_strength)
+    if fade_strength is not None:
+        fade.set_alpha(fade_strength)
+
+    bg = pygame.transform.scale(bg, scripts.game_structure.screen_settings.screen.size)
+    if blur_radius is not None:
+        bg = pygame.transform.box_blur(bg, blur_radius)
+
+    bg.blits(
+        (
+            (fade, (0, 0), None),
+            (vignette, (0, 0), None),
+            (dropshadow, (0, 0), None),
+            (game_frame, ui_scale_blit((-10, -10))),
+        )
+    )
+
+    return bg
+
+
+def feather_surface(surface, feather_width):
+    """
+    Run a per-pixel effect to make a fun fade-to-transparent border
+    :param surface: The surface to add a feathered edge to
+    :param feather_width: How fat to make the edge
+    :return: None
+    """
+    width, height = surface.get_size()
+    for x in range(width):
+        for y in range(height):
+            distance = min(x, y, width - x - 1, height - y - 1)
+            if distance < feather_width:
+                alpha = int(255 * (distance / feather_width))
+                surface.set_at((x, y), (0, 0, 0, alpha))
 
 
 rebuild_core()
