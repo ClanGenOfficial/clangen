@@ -131,7 +131,7 @@ class Sprites:
             'rosettecolours', 'smokecolours', 'tickedcolours', 'mackerelcolours', 'classiccolours',
             'sokokecolours', 'agouticolours', 'singlestripecolours', 'maskedcolours',
             'shadersnewwhite', 'lightingnew',
-            'whitepatches', 'tortiepatchesmasks',
+            'whitepatches', 'minkswhite', 'tortiepatchesmasks', 'minkstorties',
             'fademask', 'fadestarclan', 'fadedarkforest',
             'symbols'
         ]:
@@ -205,6 +205,26 @@ class Sprites:
              'CAKE', 'ROSINA', 'PRINCESS'],
             ['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE']
         ]
+        # Define mink's white patches
+        minks_white_patches = [
+            ['MINKONE', 'MINKTWO', 'MINKTHREE', 'MINKFOUR', 'MINKREDTAIL', 'MINKDELILAH', 'MINKHALF', 'MINKSTREAK',
+             'MINKMASK', 'MINKSMOKE'],
+            ['MINKMINIMALONE', 'MINKMINIMALTWO', 'MINKMINIMALTHREE', 'MINKMINIMALFOUR', 'MINKOREO', 'MINKSWOOP',
+             'MINKCHIMERA', 'MINKCHEST', 'MINKARMTAIL',
+             'MINKGRUMPYFACE'],
+            ['MINKMOTTLED', 'MINKSIDEMASK', 'MINKEYEDOT', 'MINKBANDANA', 'MINKPACMAN', 'MINKSTREAMSTRIKE',
+             'MINKSMUDGED', 'MINKDAUB', 'MINKEMBER', 'MINKBRIE'],
+            ['MINKORIOLE', 'MINKROBIN', 'MINKBRINDLE', 'MINKPAIGE', 'MINKROSETAIL', 'MINKSAFI', 'MINKDAPPLENIGHT',
+             'MINKBLANKET', 'MINKBELOVED', 'MINKBODY'],
+            ['MINKSHILOH', 'MINKFRECKLED', 'MINKHEARTBEAT']
+        ]
+
+        for row, patches in enumerate(white_patches):
+            for col, patch in enumerate(patches):
+                self.make_group('whitepatches', (col, row), f'white{patch}')
+        for row, minkpatches in enumerate(minks_white_patches):
+            for col, minkpatch in enumerate(minkpatches):
+                self.make_group('minkswhite', (col, row), f'white{minkpatch}')
 
         for row, patches in enumerate(white_patches):
             for col, patch in enumerate(patches):
@@ -239,6 +259,45 @@ class Sprites:
             ['SHILOH', 'FRECKLED', 'HEARTBEAT']
         ]
 
+
+# Define mink's tortie patches
+        minks_tortie_patches = [
+            ['MINKFULLWHITE', 'MINKANY', 'MINKTUXEDO', 'MINKLITTLE', 'MINKCOLOURPOINT', 'MINKVAN', 'MINKANYTWO',
+             'MINKMOON', 'MINKPHANTOM', 'MINKPOWDER',
+             'MINKBLEACHED', 'MINKSAVANNAH', 'MINKFADESPOTS', 'MINKPEBBLESHINE'],
+            ['MINKEXTRA', 'MINKONEEAR', 'MINKBROKEN', 'MINKLIGHTTUXEDO', 'MINKBUZZARDFANG', 'MINKRAGDOLL',
+             'MINKLIGHTSONG', 'MINKVITILIGO', 'MINKBLACKSTAR',
+             'MINKPIEBALD', 'MINKCURVED', 'MINKPETAL', 'MINKSHIBAINU', 'MINKOWL'],
+            ['MINKTIP', 'MINKFANCY', 'MINKFRECKLES', 'MINKRINGTAIL', 'MINKHALFFACE', 'MINKPANTSTWO', 'MINKGOATEE',
+             'MINKVITILIGOTWO', 'MINKPAWS', 'MINKMITAINE',
+             'MINKBROKENBLAZE', 'MINKSCOURGE', 'MINKDIVA', 'MINKBEARD'],
+            ['MINKTAIL', 'MINKBLAZE', 'MINKPRINCE', 'MINKBIB', 'MINKVEE', 'MINKUNDERS', 'MINKHONEY', 'MINKFAROFA',
+             'MINKDAMIEN', 'MINKMISTER', 'MINKBELLY',
+             'MINKTAILTIP', 'MINKTOES', 'MINKTOPCOVER'],
+            ['MINKAPRON', 'MINKCAPSADDLE', 'MINKMASKMANTLE', 'MINKSQUEAKS', 'MINKSTAR', 'MINKTOESTAIL', 'MINKRAVENPAW',
+             'MINKPANTS', 'MINKREVERSEPANTS',
+             'MINKSKUNK', 'MINKKARPATI', 'MINKHALFWHITE', 'MINKAPPALOOSA', 'MINKDAPPLEPAW'],
+            ['MINKHEART', 'MINKLILTWO', 'MINKGLASS', 'MINKMOORISH', 'MINKSEPIAPOINT', 'MINKMINKPOINT', 'MINKSEALPOINT',
+             'MINKMAO', 'MINKLUNA', 'MINKCHESTSPECK',
+             'MINKWINGS', 'MINKPAINTED', 'MINKHEARTTWO', 'MINKWOODPECKER'],
+            ['MINKBOOTS', 'MINKMISS', 'MINKCOW', 'MINKCOWTWO', 'MINKBUB', 'MINKBOWTIE', 'MINKMUSTACHE',
+             'MINKREVERSEHEART', 'MINKSPARROW', 'MINKVEST',
+             'MINKLOVEBUG', 'MINKTRIXIE', 'MINKSAMMY', 'MINKSPARKLE'],
+            ['MINKRIGHTEAR', 'MINKLEFTEAR', 'MINKESTRELLA', 'MINKSHOOTINGSTAR', 'MINKEYESPOT', 'MINKREVERSEEYE',
+             'MINKFADEBELLY', 'MINKFRONT',
+             'MINKBLOSSOMSTEP', 'MINKPEBBLE', 'MINKTAILTWO', 'MINKBUDDY', 'MINKBACKSPOT', 'MINKEYEBAGS'],
+            ['MINKBULLSEYE', 'MINKFINN', 'MINKDIGIT', 'MINKKROPKA', 'MINKFCTWO', 'MINKFCONE', 'MINKMIA', 'MINKSCAR',
+             'MINKBUSTER', 'MINKSMOKEY', 'MINKHAWKBLAZE',
+             'MINKCAKE', 'MINKROSINA', 'MINKPRINCESS'],
+            ['MINKLOCKET', 'MINKBLAZEMASK', 'MINKTEARS', 'MINKDOUGIE']
+        ]
+
+        for row, masks in enumerate(tortiepatchesmasks):
+            for col, mask in enumerate(masks):
+                self.make_group('tortiepatchesmasks', (col, row), f"tortiemask{mask}")
+        for row, minkmasks in enumerate(minks_tortie_patches):
+            for col, minkmask in enumerate(minkmasks):
+                self.make_group('minkstorties', (col, row), f"tortiemask{minkmask}")
         for row, masks in enumerate(tortiepatchesmasks):
             for col, mask in enumerate(masks):
                 self.make_group('tortiepatchesmasks', (col, row), f"tortiemask{mask}")
