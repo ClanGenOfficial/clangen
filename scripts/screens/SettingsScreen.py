@@ -155,13 +155,14 @@ class SettingsScreen(Screens):
                         self.sub_menu == "general"
                         and event.ui_element is self.checkboxes["dark mode"]
                     ):
+                        # has to be done manually since we haven't saved the new mode yet.
                         if (
                             "@unchecked_checkbox"
                             in self.checkboxes["dark mode"].get_object_ids()
                         ):
                             self.set_bg("default_dark")
                         else:
-                            self.set_bg("default")
+                            self.set_bg("default_light")
 
                     if (
                         self.sub_menu == "general"
@@ -277,7 +278,7 @@ class SettingsScreen(Screens):
         self.sub_menu = "general"
         self.open_general_settings()
 
-        self.set_bg("default")
+        self.set_bg(None)
 
         self.settings_at_open = game.settings.copy()
 

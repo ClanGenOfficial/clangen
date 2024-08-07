@@ -331,10 +331,10 @@ class ClanScreen(Screens):
                 ),
             },
             {
-                "Newleaf": "default",
-                "Greenleaf": "default",
-                "Leaf-bare": "default",
-                "Leaf-fall": "default",
+                "Newleaf": None,
+                "Greenleaf": None,
+                "Leaf-bare": None,
+                "Leaf-fall": None,
             },
         )
 

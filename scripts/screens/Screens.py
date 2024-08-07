@@ -63,6 +63,8 @@ class Screens:
         game.rpc.update_rpc.set()
 
     def __init__(self, name=None):
+        self.bg_transition_time = 7
+        self.bg_transition = False
         self.name = name
         if name is not None:
             game.all_screens[name] = self
@@ -156,8 +158,9 @@ class Screens:
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         Screens.update_heading_text(game.clan.name + "Clan")
-        if self.active_bg is not None and "default" in self.active_bg:
-            self.set_bg("default")
+        if self.active_bg is None:
+            self.set_bg(None)
+        self.bg_transition = True
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
@@ -449,55 +452,79 @@ class Screens:
     def add_bgs(
         self,
         bgs: Dict[str, pygame.Surface],
-        blur_bgs: Dict[str, Union[pygame.Surface, str]] = None,
+        blur_bgs: Dict[str, Union[pygame.Surface, None]] = None,
         radius: int = 5,
     ):
+        """
+        Add custom backgrounds to the Screen.
+        :param bgs: A dictionary of names and Surfaces representing the game window background
+        :param blur_bgs: A dictionary of names and Surfaces/None representing the fullscreen backdrop.
+        If a key is supplied with a None value, the default clan season background will be used.
+        If no matching key is supplied, the input bg will be appropriately scaled and blurred to fit. Optional.
+        :param radius: If a bg is missing a corresponding blur_bg value, this value determines how much to blur the bg to make the background. Default 10.
+        :return: None
+        """
+
+        # add the bg to the game bgs.
         for name, bg in bgs.items():
             self.game_bgs[name] = pygame.transform.scale(
                 bg, scripts.game_structure.screen_settings.game_screen_size
             )
 
+            # if blur_bgs exists
             if blur_bgs is not None and name in blur_bgs:
-                if blur_bgs[name] == "default":
+                if blur_bgs[name] is None:
                     self.fullscreen_bgs[name] = "default"
-                else:
-                    self.fullscreen_bgs[name] = pygame.transform.scale(
-                        blur_bgs[name], screen.get_size()
-                    )
-                    self.fullscreen_bgs[name].blit(
-                        self.game_frame, ui_scale_blit((-10, -10))
-                    )
-            else:
-                self.fullscreen_bgs[name] = pygame.transform.box_blur(
-                    pygame.transform.scale(bg, screen.get_size()), radius
+                    continue
+
+                # there's an input blur_bg here, so scale it
+                self.fullscreen_bgs[name] = pygame.transform.scale(
+                    blur_bgs[name], screen.get_size()
                 )
+
+                # blit the game frame over the top of that for performance
                 self.fullscreen_bgs[name].blit(
                     self.game_frame, ui_scale_blit((-10, -10))
                 )
+                continue
 
-    def set_bg(self, bg: Optional[str]):
-        if bg == "default":
+            # no blur_bg, so blur the input bg to become the fullscreen backing
+            self.fullscreen_bgs[name] = pygame.transform.box_blur(
+                pygame.transform.scale(bg, screen.get_size()), radius
+            )
+            # also blit the game frame over the top of that for performance
+            self.fullscreen_bgs[name].blit(self.game_frame, ui_scale_blit((-10, -10)))
+
+    def set_bg(self, bg: Optional[str] = None):
+        """
+        Set the currently active background for a screen.
+        :param bg: "default", or a key in either the game_bgs or default_game_bgs dictionaries.
+        :return: None
+        """
+        # if the input is default, select the right default for the display mode
+        if bg is None:
             self.active_bg = (
                 "default_dark" if game.settings["dark mode"] else "default_light"
             )
         elif (
             bg in self.game_bgs
             or bg in scripts.screens.screens_core.screens_core.default_game_bgs
-            or bg is None
         ):
             self.active_bg = bg
         else:
             raise Exception(f"Unidentified background requested: '{bg}'")
 
+        # enable the transition to get that sweet, sweet fullscreen fade.
+        self.bg_transition = True
+
     def show_bg(self):
-        """Blit the currently selected blur_bg and bg."""
-        if self.active_bg is None:
-            self.active_bg = (
-                "default_dark" if game.settings["dark mode"] else "default_light"
-            )
+        """Blit the currently selected blur_bg and bg. Must be called somewhere in on_use."""
+        # handle custom screen backgrounds (non-default)
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
 
+            # if the blur_bg associated with this is "default", select the blurred current season
+            # otherwise, select the custom blur_bg
             blur_bg = (
                 scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
                     get_current_season()
@@ -505,12 +532,16 @@ class Screens:
                 if self.fullscreen_bgs[self.active_bg] == "default"
                 else self.fullscreen_bgs[self.active_bg]
             )
+
+        # handle default screen backgrounds
         elif (
             self.active_bg in scripts.screens.screens_core.screens_core.default_game_bgs
         ):
             bg = scripts.screens.screens_core.screens_core.default_game_bgs[
                 self.active_bg
             ]
+
+            # if we're in the main menu, don't display the clan season BG. just show default mode-appropriate colour.
             if self.name in [
                 "make clan screen",
                 "settings screen",
@@ -524,6 +555,7 @@ class Screens:
                     ]
                 )
             else:
+                # otherwise, season bg as before
                 blur_bg = (
                     scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
                         get_current_season()
@@ -534,10 +566,27 @@ class Screens:
                 f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"
             )
 
+        # onto the actual blitting
+        # handle the blur bg
         if game.settings["fullscreen"]:
-            temp = blur_bg.copy()
-            temp.set_alpha(100)
-            scripts.game_structure.screen_settings.screen.blit(temp, (0, 0))
+            # enable the transition if required
+            if self.bg_transition:
+                # this determines how many frames the fade can show for
+                # in order to remove visual artifacts
+                self.bg_transition_time = 7
+                self.bg_transition = False
+
+            # actually run the transition
+            if self.bg_transition_time > 0:
+                temp = blur_bg.copy()
+                temp.set_alpha(100)  # this determines the actual fade rate
+                scripts.game_structure.screen_settings.screen.blit(temp, (0, 0))
+                self.bg_transition_time -= 1
+            else:
+                # if we've done the transition, just blit the full-alpha version on top to remove artifacts.
+                scripts.game_structure.screen_settings.screen.blit(blur_bg, (0, 0))
+
+        # now blit the foreground.
         scripts.game_structure.screen_settings.screen.blit(bg, ui_scale_blit((0, 0)))
 
     def display_change_save(self) -> Dict:

@@ -717,10 +717,10 @@ class ListScreen(Screens):
         sets the background and heading according to current group
         """
         if self.current_group == "clan":
-            self.set_bg("default")
+            self.set_bg(None)
             self.update_heading_text(self.clan_name)
         elif self.current_group == "cotc":
-            self.set_bg("default")
+            self.set_bg(None)
             self.update_heading_text("Cats Outside the Clan")
         elif self.current_group == "sc":
             self.set_bg("sc")

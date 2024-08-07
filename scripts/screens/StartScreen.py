@@ -160,9 +160,9 @@ class StartScreen(Screens):
         super().screen_switches()
         rebuild_bgs()
         self.add_bgs(
-            {"bg": pygame.image.load("resources/images/menu.png").convert()},
+            {"mainmenu_bg": pygame.image.load("resources/images/menu.png").convert()},
             {
-                "bg": pygame.transform.box_blur(
+                "mainmenu_bg": pygame.transform.box_blur(
                     pygame.transform.scale(
                         pygame.image.load(
                             "resources/images/menu_logoless.png"
@@ -173,7 +173,7 @@ class StartScreen(Screens):
                 )
             },
         )
-        self.set_bg("bg")
+        self.set_bg("mainmenu_bg")
 
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
