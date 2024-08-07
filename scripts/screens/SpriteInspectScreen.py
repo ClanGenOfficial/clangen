@@ -120,13 +120,13 @@ class SpriteInspectScreen(Screens):
                 self.make_cat_image()
                 self.update_checkboxes()
             elif event.ui_element == self.cat_elements["favourite_button"]:
-                self.the_cat.favourite = False
-                self.cat_elements["favourite_button"].hide()
-                self.cat_elements["not_favourite_button"].show()
-            elif event.ui_element == self.cat_elements["not_favourite_button"]:
-                self.the_cat.favourite = True
-                self.cat_elements["favourite_button"].show()
-                self.cat_elements["not_favourite_button"].hide()
+                self.the_cat.favourite = not self.the_cat.favourite
+                self.cat_elements["favourite_button"].change_object_id(
+                    "#fav_star" if self.the_cat.favourite else "#not_fav_star"
+                )
+                self.cat_elements["favourite_button"].set_tooltip(
+                    "Remove favorite" if self.the_cat.favourite else "Mark as favorite"
+                )
 
         return super().handle_event(event)
 
@@ -276,33 +276,19 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["cat_name"].set_relative_position(ui_scale_offset((0, 60)))
 
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
-        favorite_button_rect.topright = ui_scale_offset((-10, 62))
+        favorite_button_rect.topright = ui_scale_offset((-10, 63))
         self.cat_elements["favourite_button"] = UIImageButton(
             favorite_button_rect,
             "",
-            object_id="#fav_star",
+            object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="Remove favorite",
-            starting_height=2,
-            anchors={"right": "right", "right_target": self.cat_elements["cat_name"]},
-        )
-
-        self.cat_elements["not_favourite_button"] = UIImageButton(
-            favorite_button_rect,
-            "",
-            object_id="#not_fav_star",
-            manager=MANAGER,
-            tool_tip_text="Mark as favorite",
+            tool_tip_text="Remove favorite"
+            if self.the_cat.favourite
+            else "Mark as favorite",
             starting_height=2,
             anchors={"right": "right", "right_target": self.cat_elements["cat_name"]},
         )
         del favorite_button_rect
-        if self.the_cat.favourite:
-            self.cat_elements["favourite_button"].show()
-            self.cat_elements["not_favourite_button"].hide()
-        else:
-            self.cat_elements["favourite_button"].hide()
-            self.cat_elements["not_favourite_button"].show()
 
         # Write the checkboxes. The text is set up in switch_screens.
         self.update_checkboxes()

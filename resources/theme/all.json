@@ -1439,6 +1439,7 @@
         }
     },
     "#fav_star": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/fav_star.png"
@@ -1455,6 +1456,7 @@
         }
     },
     "#not_fav_star": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources/images/buttons/fav_star_unavailable.png"

@@ -2001,7 +2001,7 @@ class MakeClanScreen(Screens):
         # info for chosen cats:
         self.elements["cat_info"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((440, 220), (150, 125))),
+            ui_scale(pygame.Rect((440, 220), (175, 125))),
             visible=False,
             object_id=get_text_box_theme("#text_box_26_horizcenter"),
             manager=MANAGER,

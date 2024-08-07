@@ -238,13 +238,13 @@ class ProfileScreen(Screens):
             ):
                 self.change_screen("mediation screen")
             elif event.ui_element == self.profile_elements["favourite_button"]:
-                self.the_cat.favourite = False
-                self.profile_elements["favourite_button"].hide()
-                self.profile_elements["not_favourite_button"].show()
-            elif event.ui_element == self.profile_elements["not_favourite_button"]:
-                self.the_cat.favourite = True
-                self.profile_elements["favourite_button"].show()
-                self.profile_elements["not_favourite_button"].hide()
+                self.the_cat.favourite = not self.the_cat.favourite
+                self.profile_elements["favourite_button"].change_object_id(
+                    "#fav_star" if self.the_cat.favourite else "#not_fav_star"
+                )
+                self.profile_elements["favourite_button"].set_tooltip(
+                    "Remove favorite" if self.the_cat.favourite else "Mark as favorite"
+                )
             else:
                 self.handle_tab_events(event)
 
@@ -687,13 +687,15 @@ class ProfileScreen(Screens):
             self.profile_elements["med_den"].hide()
 
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
-        favorite_button_rect.topright = ui_scale_offset((-10, 143))
+        favorite_button_rect.topright = ui_scale_offset((-5, 146))
         self.profile_elements["favourite_button"] = UIImageButton(
             favorite_button_rect,
             "",
-            object_id="#fav_star",
+            object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="Remove favorite",
+            tool_tip_text="Remove favorite"
+            if self.the_cat.favourite
+            else "Mark as favorite",
             starting_height=2,
             anchors={
                 "right": "right",
@@ -701,27 +703,7 @@ class ProfileScreen(Screens):
             },
         )
         self.profile_elements["favourite_button"].rebuild()
-
-        self.profile_elements["not_favourite_button"] = UIImageButton(
-            favorite_button_rect,
-            "",
-            object_id="#not_fav_star",
-            manager=MANAGER,
-            tool_tip_text="Mark as favorite",
-            starting_height=2,
-            anchors={
-                "right": "right",
-                "right_target": self.profile_elements["cat_name"],
-            },
-        )
         del favorite_button_rect
-
-        if self.the_cat.favourite:
-            self.profile_elements["favourite_button"].show()
-            self.profile_elements["not_favourite_button"].hide()
-        else:
-            self.profile_elements["favourite_button"].hide()
-            self.profile_elements["not_favourite_button"].show()
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()

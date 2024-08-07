@@ -63,8 +63,9 @@ class Screens:
         game.rpc.update_rpc.set()
 
     def __init__(self, name=None):
-        self.bg_transition_time = 7
+        self.previous_season = ""
         self.bg_transition = False
+        self.bg_transition_time = 5
         self.name = name
         if name is not None:
             game.all_screens[name] = self
@@ -173,7 +174,6 @@ class Screens:
     # Functions to deal with the menu.
     #   The menu is used very often, so I don't want to keep
     #   recreating and killing it. Lots of changes for bugs there.
-    #
 
     @classmethod
     def hide_menu_buttons(cls):
@@ -520,6 +520,7 @@ class Screens:
     def show_bg(self):
         """Blit the currently selected blur_bg and bg. Must be called somewhere in on_use."""
         # handle custom screen backgrounds (non-default)
+        current_season = get_current_season()
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
 
@@ -527,11 +528,19 @@ class Screens:
             # otherwise, select the custom blur_bg
             blur_bg = (
                 scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                    get_current_season()
+                    current_season
                 ]
                 if self.fullscreen_bgs[self.active_bg] == "default"
                 else self.fullscreen_bgs[self.active_bg]
             )
+
+            # show transition if the season has just changed
+            if (
+                self.previous_season != current_season
+                and self.fullscreen_bgs[self.active_bg] == "default"
+            ):
+                self.bg_transition_time = 10  # doubled transition time for the Vibes
+                self.previous_season = current_season
 
         # handle default screen backgrounds
         elif (
@@ -558,9 +567,14 @@ class Screens:
                 # otherwise, season bg as before
                 blur_bg = (
                     scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        get_current_season()
+                        current_season
                     ]
                 )
+                if self.previous_season != current_season:
+                    self.bg_transition_time = (
+                        10  # doubled transition time for the Vibes
+                    )
+                    self.previous_season = current_season
         else:
             raise Exception(
                 f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"
@@ -573,13 +587,15 @@ class Screens:
             if self.bg_transition:
                 # this determines how many frames the fade can show for
                 # in order to remove visual artifacts
-                self.bg_transition_time = 7
+                self.bg_transition_time = 5
                 self.bg_transition = False
 
             # actually run the transition
             if self.bg_transition_time > 0:
                 temp = blur_bg.copy()
-                temp.set_alpha(100)  # this determines the actual fade rate
+                temp.set_alpha(
+                    255 // self.bg_transition_time
+                )  # this determines the actual fade rate
                 scripts.game_structure.screen_settings.screen.blit(temp, (0, 0))
                 self.bg_transition_time -= 1
             else:
