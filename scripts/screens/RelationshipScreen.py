@@ -222,12 +222,16 @@ class RelationshipScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
+
+        back_rect = ui_scale(pygame.Rect((0, 0), (105, 30)))
+        back_rect.bottomleft = (25, -25)
         self.back_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 60), (105, 30))),
+            back_rect,
             get_arrow(2) + " Back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            anchors={"bottom": "bottom", "left": "left"},
         )
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(
