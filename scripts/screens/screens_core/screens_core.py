@@ -330,7 +330,9 @@ def rebuild_bgs():
     for name in default_fullscreen_bgs.keys():
         default_fullscreen_bgs[name] = (
             process_blur_bg(default_fullscreen_bgs[name])
-            if "default" not in name
+            if "default" not in name or name == "mainmenu_bg"
+            else process_blur_bg(default_fullscreen_bgs[name], blur_radius=10)
+            if name == "mainmenu_bg"
             else process_blur_bg(
                 default_fullscreen_bgs[name], vignette_strength=0, fade_strength=0
             )

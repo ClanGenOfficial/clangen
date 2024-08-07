@@ -310,6 +310,13 @@
             "line_spacing": "0.95"
         }
     },
+    "#text_box_22_horizleft_vertbottom": {
+        "prototype": "#text_box_22",
+        "misc": {
+            "text_horiz_alignment": "left",
+            "text_vert_alignment": "bottom"
+        }
+    },
     "#text_box_26": {
         "prototype": "text_box",
         "font": {

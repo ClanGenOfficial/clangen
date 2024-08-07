@@ -535,23 +535,32 @@ class Screens:
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
 
-            # if the blur_bg associated with this is "default", select the blurred current season
-            # otherwise, select the custom blur_bg
-            blur_bg = (
-                scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                    current_season
-                ]
-                if self.fullscreen_bgs[self.active_bg] == "default"
-                else self.fullscreen_bgs[self.active_bg]
-            )
+            if self.name in ["start screen"]:
+                blur_bg = (
+                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                        "mainmenu_bg"
+                    ]
+                )
+            else:
+                # if the blur_bg associated with this is "default", select the blurred current season
+                # otherwise, select the custom blur_bg
+                blur_bg = (
+                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                        current_season
+                    ]
+                    if self.fullscreen_bgs[self.active_bg] == "default"
+                    else self.fullscreen_bgs[self.active_bg]
+                )
 
-            # show transition if the season has just changed
-            if (
-                self.previous_season != current_season
-                and self.fullscreen_bgs[self.active_bg] == "default"
-            ):
-                self.bg_transition_time = 10  # doubled transition time for the Vibes
-                self.previous_season = current_season
+                # show transition if the season has just changed
+                if (
+                    self.previous_season != current_season
+                    and self.fullscreen_bgs[self.active_bg] == "default"
+                ):
+                    self.bg_transition_time = (
+                        10  # doubled transition time for the Vibes
+                    )
+                    self.previous_season = current_season
 
         # handle default screen backgrounds
         elif (
@@ -569,9 +578,7 @@ class Screens:
             ]:
                 blur_bg = (
                     scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        "default_dark"
-                        if game.settings["dark mode"]
-                        else "default_light"
+                        "mainmenu_bg"
                     ]
                 )
             else:
