@@ -44,7 +44,7 @@ class ClanScreen(Screens):
 
     def on_use(self):
         if not game.clan.clan_settings["backgrounds"]:
-            self.active_bg = "default"
+            self.set_bg(None)
         super().on_use()
 
     def handle_event(self, event):
@@ -285,9 +285,7 @@ class ClanScreen(Screens):
         game.switches["saved_clan"] = False
 
     def update_camp_bg(self):
-        light_dark = "light"
-        if game.settings["dark mode"]:
-            light_dark = "dark"
+        light_dark = "dark" if game.settings["dark mode"] else "light"
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]

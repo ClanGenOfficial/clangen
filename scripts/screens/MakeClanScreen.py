@@ -1,10 +1,12 @@
 from random import choice, randrange
 from re import sub
+from typing import Optional
 
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 
+import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
@@ -117,6 +119,7 @@ class MakeClanScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        self.set_bg(None)
 
         self.clan_frame_img = pygame.transform.scale(
             self.ui_images["clan_frame"],
@@ -144,13 +147,13 @@ class MakeClanScreen(Screens):
         )
 
         # Reset variables
-        self.game_mode = "classic"
-        self.clan_name = ""
-        self.selected_camp_tab = 1
-        self.biome_selected = None
-        self.selected_season = "Newleaf"
+        self.game_mode: str = "classic"
+        self.clan_name: str = ""
+        self.selected_camp_tab: int = 1
+        self.biome_selected: Optional[str] = None
+        self.selected_season: str = "Newleaf"
         self.symbol_selected = None
-        self.leader = None  # To store the Clan leader before conformation
+        self.leader = None  # To store the Clan leader before confirmation
         self.deputy = None
         self.med_cat = None
         self.members = []
@@ -448,6 +451,7 @@ class MakeClanScreen(Screens):
 
     def handle_choose_background_event(self, event):
         if event.ui_element == self.elements["previous_step"]:
+            self.set_bg(None)
             self.open_choose_members()
         elif event.ui_element == self.elements["forest_biome"]:
             self.biome_selected = "Forest"
@@ -933,16 +937,39 @@ class MakeClanScreen(Screens):
         if "camp_art" in self.elements:
             self.elements["camp_art"].kill()
         if self.biome_selected:
+            src = pygame.image.load(
+                self.get_camp_art_path(self.selected_camp_tab)
+            ).convert_alpha()
             self.elements["camp_art"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((175, 170), (450, 400))),
                 pygame.transform.scale(
-                    pygame.image.load(
-                        self.get_camp_art_path(self.selected_camp_tab)
-                    ).convert_alpha(),
+                    src,
                     ui_scale_dimensions((450, 400)),
                 ),
                 manager=MANAGER,
             )
+
+            name = "_".join(
+                [
+                    str(self.biome_selected),
+                    str(self.selected_camp_tab),
+                    self.selected_season,
+                ]
+            )
+            if name not in self.game_bgs:
+                self.game_bgs[
+                    name
+                ] = scripts.screens.screens_core.screens_core.default_game_bgs[
+                    "default_dark" if game.settings["dark mode"] else "default_light"
+                ]
+                self.fullscreen_bgs[name] = pygame.transform.box_blur(
+                    pygame.transform.scale(src, screen.get_size()), 10
+                )
+                # also blit the game frame over the top of that for performance
+                self.fullscreen_bgs[name].blit(
+                    self.game_frame, ui_scale_blit((-10, -10))
+                )
+            self.set_bg(name)
 
         self.draw_art_frame()
 
@@ -1929,21 +1956,21 @@ class MakeClanScreen(Screens):
         Cat.grief_strings.clear()
         Cat.sort_cats()
 
-    def get_camp_art_path(self, campnum):
+    def get_camp_art_path(self, campnum) -> Optional[str]:
+        if not campnum:
+            return None
+
         leaf = self.selected_season.replace("-", "")
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         start_leave = leaf.casefold()
-        light_dark = "light"
-        if game.settings["dark mode"]:
-            light_dark = "dark"
+        light_dark = "dark" if game.settings["dark mode"] else "light"
 
         biome = self.biome_selected.lower()
 
-        if campnum:
-            return f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
-        else:
-            return None
+        return (
+            f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
+        )
 
     def chunks(self, L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]
