@@ -22,6 +22,8 @@ from scripts.utility import (
 )
 
 game_frame: Optional[pygame.Surface] = None
+core_vignette = pygame.image.load("resources/images/vignette.png")
+vignette: Optional[pygame.Surface] = None
 
 menu_buttons = dict()
 
@@ -34,6 +36,7 @@ dev_watermark = None
 
 def rebuild_core():
     global game_frame
+    global vignette
     global menu_buttons
     global default_game_bgs
     global default_fullscreen_bgs
@@ -44,6 +47,10 @@ def rebuild_core():
         BoxStyles.FRAME,
         (820, 720),
     )
+    vignette = pygame.transform.scale(
+        core_vignette, scripts.game_structure.screen_settings.screen.size
+    ).convert_alpha()
+    vignette.set_alpha(200)
 
     # menu buttons are used very often, so they are generated here.
     menu_buttons = dict()
@@ -286,10 +293,16 @@ def rebuild_bgs():
         default_fullscreen_bgs[name] = camp_bg
 
     for name in default_fullscreen_bgs.keys():
+        vignette.set_alpha(0 if "default" in name else 100)
         default_fullscreen_bgs[name] = pygame.transform.box_blur(
             default_fullscreen_bgs[name], 5
         )
-        default_fullscreen_bgs[name].blit(game_frame, ui_scale_blit((-10, -10)))
+        default_fullscreen_bgs[name].blits(
+            (
+                (vignette, (0, 0), None),
+                (game_frame, ui_scale_blit((-10, -10))),
+            )
+        )
 
 
 def get_camp_bgs():

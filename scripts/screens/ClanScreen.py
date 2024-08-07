@@ -334,6 +334,7 @@ class ClanScreen(Screens):
                 "Leaf-bare": None,
                 "Leaf-fall": None,
             },
+            vignette_alpha=150,
         )
 
         self.set_bg(get_current_season())

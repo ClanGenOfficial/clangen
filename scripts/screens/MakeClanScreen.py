@@ -578,6 +578,8 @@ class MakeClanScreen(Screens):
         self.menu_warning.kill()
         self.clear_all_page()
         self.rolls_left = game.config["clan_creation"]["rerolls"]
+        self.fullscreen_bgs = {}
+        self.game_bgs = {}
         return super().exit_screen()
 
     def on_use(self):
@@ -965,9 +967,14 @@ class MakeClanScreen(Screens):
                 self.fullscreen_bgs[name] = pygame.transform.box_blur(
                     pygame.transform.scale(src, screen.get_size()), 10
                 )
+                vignette = scripts.screens.screens_core.screens_core.vignette
+                vignette.set_alpha(200)
                 # also blit the game frame over the top of that for performance
-                self.fullscreen_bgs[name].blit(
-                    self.game_frame, ui_scale_blit((-10, -10))
+                self.fullscreen_bgs[name].blits(
+                    (
+                        (vignette, (0, 0)),
+                        (self.game_frame, ui_scale_blit((-10, -10))),
+                    )
                 )
             self.set_bg(name)
 

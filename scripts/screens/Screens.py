@@ -159,7 +159,7 @@ class Screens:
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         Screens.update_heading_text(game.clan.name + "Clan")
-        if self.active_bg is None:
+        if self.active_bg is None or "default" in self.active_bg:
             self.set_bg(None)
         self.bg_transition = True
 
@@ -454,6 +454,7 @@ class Screens:
         bgs: Dict[str, pygame.Surface],
         blur_bgs: Dict[str, Union[pygame.Surface, None]] = None,
         radius: int = 5,
+        vignette_alpha: int = 0,
     ):
         """
         Add custom backgrounds to the Screen.
@@ -461,9 +462,17 @@ class Screens:
         :param blur_bgs: A dictionary of names and Surfaces/None representing the fullscreen backdrop.
         If a key is supplied with a None value, the default clan season background will be used.
         If no matching key is supplied, the input bg will be appropriately scaled and blurred to fit. Optional.
-        :param radius: If a bg is missing a corresponding blur_bg value, this value determines how much to blur the bg to make the background. Default 10.
+        :param radius: If a bg is missing a corresponding blur_bg value, this value determines how much
+        to blur the bg to make the background. Default 10.
+        :param vignette_alpha: Change the strength of the vignette. Value must be between 0 and 255. Default 0 (disabled/none).
         :return: None
         """
+
+        # intialise the vignette strength
+        vignette = scripts.screens.screens_core.screens_core.vignette
+        if not (0 <= vignette_alpha <= 255):
+            raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
+        vignette.set_alpha(vignette_alpha)
 
         # add the bg to the game bgs.
         for name, bg in bgs.items():
@@ -482,9 +491,12 @@ class Screens:
                     blur_bgs[name], screen.get_size()
                 )
 
-                # blit the game frame over the top of that for performance
-                self.fullscreen_bgs[name].blit(
-                    self.game_frame, ui_scale_blit((-10, -10))
+                # blit the vignette & game frame over the top for performance
+                self.fullscreen_bgs[name].blits(
+                    (
+                        (vignette, (0, 0)),
+                        (self.game_frame, ui_scale_blit((-10, -10))),
+                    )
                 )
                 continue
 
@@ -492,8 +504,13 @@ class Screens:
             self.fullscreen_bgs[name] = pygame.transform.box_blur(
                 pygame.transform.scale(bg, screen.get_size()), radius
             )
-            # also blit the game frame over the top of that for performance
-            self.fullscreen_bgs[name].blit(self.game_frame, ui_scale_blit((-10, -10)))
+            # also blit the vignette & game frame over the top of that for performance
+            self.fullscreen_bgs[name].blits(
+                (
+                    (vignette, (0, 0)),
+                    (self.game_frame, ui_scale_blit((-10, -10))),
+                )
+            )
 
     def set_bg(self, bg: Optional[str] = None):
         """
