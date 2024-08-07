@@ -964,18 +964,9 @@ class MakeClanScreen(Screens):
                 ] = scripts.screens.screens_core.screens_core.default_game_bgs[
                     "default_dark" if game.settings["dark mode"] else "default_light"
                 ]
-                self.fullscreen_bgs[name] = pygame.transform.box_blur(
-                    pygame.transform.scale(src, screen.get_size()), 10
-                )
-                vignette = scripts.screens.screens_core.screens_core.vignette
-                vignette.set_alpha(200)
-                # also blit the game frame over the top of that for performance
-                self.fullscreen_bgs[name].blits(
-                    (
-                        (vignette, (0, 0)),
-                        (self.game_frame, ui_scale_blit((-10, -10))),
-                    )
-                )
+                self.fullscreen_bgs[
+                    name
+                ] = scripts.screens.screens_core.screens_core.process_blur_bg(src)
             self.set_bg(name)
 
         self.draw_art_frame()
