@@ -9,7 +9,6 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     get_alive_clan_queens,
-    ui_scale_dimensions,
 )
 from .Screens import Screens
 
@@ -86,10 +85,6 @@ class AllegiancesScreen(Screens):
                 * self.names_boxes[-1].get_relative_rect()[3]
                 / scripts.game_structure.screen_settings.screen_y
             )
-
-        self.scroll_container.set_scrollable_area_dimensions(
-            ui_scale_dimensions((780, 700))
-        )
 
     def exit_screen(self):
         for x in self.ranks_boxes:
