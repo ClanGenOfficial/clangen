@@ -1,4 +1,5 @@
 from random import choice, randrange
+from enum import Enum
 from re import sub
 
 import pygame
@@ -451,17 +452,6 @@ class MakeClanScreen(Screens):
             self.biome_selected = "Beach"
             self.selected_camp_tab = 1
             self.refresh_text_and_buttons()
-        elif event.ui_element == self.tabs["tab1"]:
-            self.selected_camp_tab = 1
-            self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab2"]:
-            self.selected_camp_tab = 2
-            self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab3"]:
-            self.selected_camp_tab = 3
-            self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab4"]:
-            self.selected_camp_tab = 4
             self.refresh_selected_camp()
         elif event.ui_element == self.tabs["newleaf_tab"]:
             self.selected_season = "Newleaf"
@@ -486,6 +476,12 @@ class MakeClanScreen(Screens):
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements["next_step"]:
             self.open_choose_symbol()
+        else:
+            for i in range(1, 5):
+                if event.ui_element == self.tabs["tab"+str(i)]:
+                    self.selected_camp_tab = i
+                    self.refresh_selected_camp()
+                    break
 
     def handle_choose_background_key(self, event):
         if event.key == pygame.K_RIGHT:
