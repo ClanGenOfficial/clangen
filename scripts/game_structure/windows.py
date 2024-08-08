@@ -833,7 +833,7 @@ class PronounCreation(UIWindow):
         )
 
         self.boxes["self"] = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((225, 235), (100, 30))),
+            ui_scale(pygame.Rect((275, 235), (100, 30))),
             placeholder_text=self.the_cat.pronouns[0]["self"],
             manager=MANAGER,
             container=self,

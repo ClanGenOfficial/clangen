@@ -200,6 +200,7 @@ def load_data():
             version_info = clan_class.load_clan()
             version_convert(version_info)
             game.load_events()
+            scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
             if not game.switches["error_message"]:

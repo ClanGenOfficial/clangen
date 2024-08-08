@@ -423,13 +423,18 @@
 	"theme": {
 		"dark_mode_background": [57, 50, 36],
 		"light_mode_background": [206, 194, 168],
-		"vignette_alpha": {
-			"light": 10,
-			"dark": 50
-		},
-		"darken_background": {
-			"light": 30,
-			"dark": 100
+		"fullscreen_background": {
+			"light": {
+				"vignette_alpha": 10,
+				"fade_color": [150, 150, 148],
+				"dropshadow_alpha": 30
+			},
+			"dark": {
+				"vignette_alpha": 50,
+				"fade_color": [100, 100, 100],
+				"dropshadow_alpha": 100,
+				"mainmenu_tint": [239, 229, 206]
+			}
 		}
 	},
 	"lock_season": false, 

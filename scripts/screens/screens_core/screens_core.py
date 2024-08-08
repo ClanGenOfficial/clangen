@@ -1,8 +1,7 @@
-from typing import Optional
+from typing import Optional, Tuple
 
 import pygame
 import pygame_gui
-import ujson
 from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
@@ -267,81 +266,91 @@ def rebuild_bgs():
     global dropshadow
     global fade
 
-    game_frame = get_box(
-        BoxStyles.FRAME,
-        (820, 720),
-    )
-
-    vignette = pygame.transform.scale(
-        core_vignette, scripts.game_structure.screen_settings.screen.size
-    ).convert_alpha()
-
-    dropshadow = pygame.Surface(
-        scripts.game_structure.screen_settings.screen.size, flags=pygame.SRCALPHA
-    )
-
-    fade = pygame.Surface(scripts.game_structure.screen_settings.screen.size)
-
-    game_box = pygame.Surface(
-        (
-            scripts.game_structure.screen_settings.screen_x + ui_scale_value(30),
-            scripts.game_structure.screen_settings.screen_y + ui_scale_value(30),
-        ),
-        pygame.SRCALPHA,
-    )
-    feather_surface(game_box, 15)
-    dropshadow.blit(game_box, ui_scale_blit((-15, -15)))
-    del game_box
-    try:
-        vignette.set_alpha(
-            game.config["theme"]["darken_background"][
-                "dark" if game.settings["dark mode"] else "light"
-            ]
+    if game_frame is None or game_frame.size != ui_scale_dimensions((820, 720)):
+        game_frame = get_box(
+            BoxStyles.FRAME,
+            (820, 720),
         )
-    except AttributeError:
-        with open("resources/game_config.json", "r") as config:
-            config = ujson.load(config)
-            vignette.set_alpha(config["theme"]["darken_background"]["light"])
-            del config
+
+        vignette = pygame.transform.scale(
+            core_vignette, scripts.game_structure.screen_settings.screen.size
+        ).convert_alpha()
+
+        dropshadow = pygame.Surface(
+            scripts.game_structure.screen_settings.screen.size, flags=pygame.SRCALPHA
+        )
+
+        fade = pygame.Surface(scripts.game_structure.screen_settings.screen.size)
+        fade.fill(pygame.Color(113, 113, 111))  # middle grey
+
+        game_box = pygame.Surface(
+            (
+                scripts.game_structure.screen_settings.screen_x + ui_scale_value(30),
+                scripts.game_structure.screen_settings.screen_y + ui_scale_value(30),
+            ),
+            pygame.SRCALPHA,
+        )
+        feather_surface(game_box, 15)
+        dropshadow.blit(game_box, ui_scale_blit((-15, -15)))
+        del game_box
 
     bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
     bg.fill(game.config["theme"]["light_mode_background"])
     bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
     bg_dark.fill(game.config["theme"]["dark_mode_background"])
 
-    default_game_bgs = {"default_light": bg, "default_dark": bg_dark}
-    default_fullscreen_bgs = {
-        "default_light": pygame.transform.scale(
-            bg, scripts.game_structure.screen_settings.screen.get_size()
-        ),
-        "default_dark": pygame.transform.scale(
-            bg_dark, scripts.game_structure.screen_settings.screen.get_size()
-        ),
-        "mainmenu_bg": pygame.transform.scale(
-            pygame.image.load("resources/images/menu_logoless.png").convert(),
-            scripts.game_structure.screen_settings.screen.get_size(),
-        ),
+    default_game_bgs = {
+        "light": {"default": bg},
+        "dark": {"default": bg_dark},
     }
 
-    camp_bgs = get_camp_bgs()
-    for name, camp_bg in camp_bgs.items():
-        default_fullscreen_bgs[name] = camp_bg
+    default_fullscreen_bgs = {
+        "light": {
+            "default": pygame.transform.scale(
+                bg, scripts.game_structure.screen_settings.screen.get_size()
+            ),
+            "mainmenu_bg": pygame.transform.scale(
+                pygame.image.load("resources/images/menu_logoless.png").convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+        },
+        "dark": {
+            "default": pygame.transform.scale(
+                bg_dark, scripts.game_structure.screen_settings.screen.get_size()
+            ),
+            "mainmenu_bg": pygame.transform.scale(
+                pygame.image.load("resources/images/menu_logoless.png").convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+        },
+    }
 
-    for name in default_fullscreen_bgs.keys():
-        default_fullscreen_bgs[name] = (
-            process_blur_bg(default_fullscreen_bgs[name])
-            if "default" not in name or name == "mainmenu_bg"
-            else process_blur_bg(default_fullscreen_bgs[name], blur_radius=10)
-            if name == "mainmenu_bg"
-            else process_blur_bg(
-                default_fullscreen_bgs[name], vignette_strength=0, fade_strength=0
-            )
-        )
+    for theme in ["light", "dark"]:
+        for name, bg in default_fullscreen_bgs[theme].items():
+            if name not in ["default", "mainmenu_bg"]:
+                default_fullscreen_bgs[theme][name] = process_blur_bg(
+                    default_fullscreen_bgs[theme][name], theme=theme
+                )
+            elif name == "default":
+                default_fullscreen_bgs[theme][name] = process_blur_bg(
+                    default_fullscreen_bgs[theme][name],
+                    theme=theme,
+                    vignette_strength=0,
+                    fade_color=None,
+                )
+            elif name == "mainmenu_bg":
+                default_fullscreen_bgs[theme][name] = process_blur_bg(
+                    default_fullscreen_bgs[theme][name], theme=theme, blur_radius=10
+                )
+
+    camp_bgs = get_camp_bgs()
+
+    for theme in ["light", "dark"]:
+        for name, camp_bg in camp_bgs[theme].items():
+            default_fullscreen_bgs[theme][name] = process_blur_bg(camp_bg, theme=theme)
 
 
 def get_camp_bgs():
-    light_dark = "dark" if game.settings["dark mode"] else "light"
-
     camp_bg_base_dir = "resources/images/camp_bg/"
     leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
     available_biome = ["forest", "mountainous", "plains", "beach"]
@@ -354,74 +363,84 @@ def get_camp_bgs():
         biome = available_biome[0]
 
     all_backgrounds = []
-    for leaf in leaves:
-        platform_dir = f"{camp_bg_base_dir}/{biome}/{leaf}_{camp_nr}_{light_dark}.png"
-        all_backgrounds.append(platform_dir)
+    for light_dark in ["light", "dark"]:
+        for leaf in leaves:
+            platform_dir = (
+                f"{camp_bg_base_dir}/{biome}/{leaf}_{camp_nr}_{light_dark}.png"
+            )
+            all_backgrounds.append(platform_dir)
 
     return {
-        "Newleaf": pygame.transform.scale(
-            pygame.image.load(all_backgrounds[0]).convert(),
-            scripts.game_structure.screen_settings.screen.get_size(),
-        ),
-        "Greenleaf": pygame.transform.scale(
-            pygame.image.load(all_backgrounds[1]).convert(),
-            scripts.game_structure.screen_settings.screen.get_size(),
-        ),
-        "Leaf-bare": pygame.transform.scale(
-            pygame.image.load(all_backgrounds[2]).convert(),
-            scripts.game_structure.screen_settings.screen.get_size(),
-        ),
-        "Leaf-fall": pygame.transform.scale(
-            pygame.image.load(all_backgrounds[3]).convert(),
-            scripts.game_structure.screen_settings.screen.get_size(),
-        ),
+        "light": {
+            "Newleaf": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[0]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+            "Greenleaf": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[1]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+            "Leaf-bare": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[2]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+            "Leaf-fall": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[3]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+        },
+        "dark": {
+            "Newleaf": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[4]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+            "Greenleaf": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[5]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+            "Leaf-bare": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[6]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+            "Leaf-fall": pygame.transform.scale(
+                pygame.image.load(all_backgrounds[7]).convert(),
+                scripts.game_structure.screen_settings.screen.get_size(),
+            ),
+        },
     }
 
 
 def process_blur_bg(
     bg,
+    theme: str = None,
     blur_radius: Optional[int] = 5,
     vignette_strength: Optional[int] = None,
-    fade_strength: Optional[int] = None,
+    fade_color: Optional[Tuple[int, int, int]] = None,
 ) -> pygame.Surface:
-    pygame.transform.scale(bg, scripts.game_structure.screen_settings.screen.size)
+    if theme is None:
+        theme = "dark" if game.settings["dark mode"] else "light"
 
-    try:
-        vignette.set_alpha(
-            game.config["theme"]["darken_background"][
-                "dark" if game.settings["dark mode"] else "light"
-            ]
-        )
-        fade.set_alpha(
-            game.config["theme"]["darken_background"][
-                "dark" if game.settings["dark mode"] else "light"
-            ]
-        )
-        dropshadow.set_alpha(
-            game.config["theme"]["darken_background"][
-                "dark" if game.settings["dark mode"] else "light"
-            ]
-        )
-    except AttributeError:
-        with open("resources/game_config.json", "r") as config:
-            config = ujson.load(config)
-            dropshadow.set_alpha(config["theme"]["darken_background"]["light"])
-            vignette.set_alpha(config["theme"]["vignette_alpha"]["light"])
-            fade.set_alpha(game.config["theme"]["darken_background"]["light"])
-            del config
+    fade.fill(game.config["theme"]["fullscreen_background"][theme]["fade_color"])
+    vignette.set_alpha(
+        game.config["theme"]["fullscreen_background"][theme]["vignette_alpha"]
+    )
+    dropshadow.set_alpha(
+        game.config["theme"]["fullscreen_background"][theme]["dropshadow_alpha"]
+    )
 
     if vignette_strength is not None:
         vignette.set_alpha(vignette_strength)
-    if fade_strength is not None:
-        fade.set_alpha(fade_strength)
 
-    bg = pygame.transform.scale(bg, scripts.game_structure.screen_settings.screen.size)
+    pygame.transform.scale(
+        bg, scripts.game_structure.screen_settings.screen.size
+    ).convert_alpha()
+
     if blur_radius is not None:
         bg = pygame.transform.box_blur(bg, blur_radius)
 
     bg.blits(
         (
-            (fade, (0, 0), None),
+            (fade, (0, 0), None, pygame.BLEND_MULT),
             (vignette, (0, 0), None),
             (dropshadow, (0, 0), None),
             (game_frame, ui_scale_blit((-10, -10))),

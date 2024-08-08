@@ -39,6 +39,7 @@ class Screens:
     game_frame = scripts.screens.screens_core.screens_core.game_frame
 
     active_bg: Optional[str] = None
+    theme: str = "light"
 
     def change_screen(self, new_screen):
         """Use this function when switching screens.
@@ -159,6 +160,7 @@ class Screens:
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         Screens.update_heading_text(game.clan.name + "Clan")
+        Screens.theme = "dark" if game.settings["dark mode"] else "light"
         if self.active_bg is None or "default" in self.active_bg:
             self.set_bg(None)
         self.bg_transition = True
@@ -471,9 +473,9 @@ class Screens:
         # intialise the vignette strength
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
-            vignette_alpha = game.config["theme"]["darken_background"][
+            vignette_alpha = game.config["theme"]["fullscreen_background"][
                 "dark" if game.settings["dark mode"] else "light"
-            ]
+            ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
             raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
         vignette.set_alpha(vignette_alpha)
@@ -512,14 +514,14 @@ class Screens:
         :param bg: "default", or a key in either the game_bgs or default_game_bgs dictionaries.
         :return: None
         """
+
         # if the input is default, select the right default for the display mode
         if bg is None:
-            self.active_bg = (
-                "default_dark" if game.settings["dark mode"] else "default_light"
-            )
+            self.active_bg = "default"
         elif (
             bg in self.game_bgs
-            or bg in scripts.screens.screens_core.screens_core.default_game_bgs
+            or bg
+            in scripts.screens.screens_core.screens_core.default_game_bgs[Screens.theme]
         ):
             self.active_bg = bg
         else:
@@ -528,45 +530,55 @@ class Screens:
         # enable the transition to get that sweet, sweet fullscreen fade.
         self.bg_transition = True
 
-    def show_bg(self):
-        """Blit the currently selected blur_bg and bg. Must be called somewhere in on_use."""
+    def show_bg(self, theme=None):
+        """Blit the currently selected blur_bg and bg. Must be called somewhere in on_use.
+        :param theme: Allows overriding the displayed theme (dark/light mode).
+        """
+
+        if theme is None:
+            theme = Screens.theme
+
+        # make the right string to pull the correct camp image
+        season = get_current_season()
+        season_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+            theme
+        ][season]
+
         # handle custom screen backgrounds (non-default)
-        current_season = get_current_season()
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
 
             if self.name in ["start screen"]:
                 blur_bg = (
                     scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        "mainmenu_bg"
-                    ]
+                        theme
+                    ]["mainmenu_bg"]
                 )
             else:
                 # if the blur_bg associated with this is "default", select the blurred current season
                 # otherwise, select the custom blur_bg
                 blur_bg = (
-                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        current_season
-                    ]
+                    season_bg
                     if self.fullscreen_bgs[self.active_bg] == "default"
                     else self.fullscreen_bgs[self.active_bg]
                 )
 
                 # show transition if the season has just changed
                 if (
-                    self.previous_season != current_season
+                    self.previous_season != season
                     and self.fullscreen_bgs[self.active_bg] == "default"
                 ):
                     self.bg_transition_time = (
                         10  # doubled transition time for the Vibes
                     )
-                    self.previous_season = current_season
+                    self.previous_season = season
 
         # handle default screen backgrounds
         elif (
-            self.active_bg in scripts.screens.screens_core.screens_core.default_game_bgs
+            self.active_bg
+            in scripts.screens.screens_core.screens_core.default_game_bgs[theme]
         ):
-            bg = scripts.screens.screens_core.screens_core.default_game_bgs[
+            bg = scripts.screens.screens_core.screens_core.default_game_bgs[theme][
                 self.active_bg
             ]
 
@@ -578,21 +590,17 @@ class Screens:
             ]:
                 blur_bg = (
                     scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        "mainmenu_bg"
-                    ]
+                        theme
+                    ]["mainmenu_bg"]
                 )
             else:
                 # otherwise, season bg as before
-                blur_bg = (
-                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        current_season
-                    ]
-                )
-                if self.previous_season != current_season:
+                blur_bg = season_bg
+                if self.previous_season != season:
                     self.bg_transition_time = (
                         10  # doubled transition time for the Vibes
                     )
-                    self.previous_season = current_season
+                    self.previous_season = season
         else:
             raise Exception(
                 f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"

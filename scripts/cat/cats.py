@@ -703,7 +703,6 @@ class Cat:
             # If major_chance is not 0, there is a chance for major grief
             grief_type = None
             if major_chance and not int(random() * major_chance):
-
                 grief_type = "major"
 
                 possible_strings = []
@@ -733,7 +732,6 @@ class Cat:
             elif (very_high_values or high_values) and (
                 family_relation != "general" or not int(random() * 5)
             ):
-
                 grief_type = "minor"
 
                 # These minor grief message will be applied as thoughts.
@@ -2877,7 +2875,6 @@ class Cat:
 
         # Effects on traits
         for trait in chosen_pos + neg_traits:
-
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
