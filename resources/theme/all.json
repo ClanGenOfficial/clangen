@@ -2443,22 +2443,6 @@
             }
         }
     },
-    "#smallquit_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/smallquit.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/smallquit_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/smallquit_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/smallquit_hover.png"
-            }
-        }
-    },
     "#relationship_events_button": {
         "images": {
             "normal_image": {

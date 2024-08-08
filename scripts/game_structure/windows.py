@@ -234,12 +234,15 @@ class SaveCheck(UIWindow):
                 "may be lost!"
             )
         else:
-            self.main_menu_button = UIImageButton(
-                ui_scale(pygame.Rect((78, 155), (152, 30))),
-                "",
-                object_id="#smallquit_button",
+            self.main_menu_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, 155), (152, 30))),
+                get_arrow(2) + " Quit Game",
+                get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
+                manager=MANAGER,
+                object_id="@buttonstyles_squoval",
                 starting_height=top_stack_menu_layer_height,
                 container=self,
+                anchors={"centerx": "centerx"},
             )
             self.message = "Would you like to save your game before exiting? If you don't, progress may be lost!"
 

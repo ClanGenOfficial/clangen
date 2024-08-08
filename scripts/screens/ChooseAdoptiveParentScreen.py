@@ -27,11 +27,6 @@ from ..ui.get_arrow import get_arrow
 
 
 class ChooseAdoptiveParentScreen(Screens):
-    list_frame = pygame.transform.scale(
-        image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
-        ui_scale_dimensions((650, 194)),
-    )
-
     def __init__(self, name=None):
         super().__init__(name)
         self.next_cat = None
@@ -74,6 +69,8 @@ class ChooseAdoptiveParentScreen(Screens):
         self.adoptive_container = None
         self.birth_container = None
         self.potential_container = None
+
+        self.list_frame = None
 
         self.center_icon = None
 
@@ -163,6 +160,13 @@ class ChooseAdoptiveParentScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         super().screen_switches()
+
+        self.list_frame = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/choosing_frame.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((650, 194)),
+        )
 
         self.info = pygame_gui.elements.UITextBox(
             "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "
