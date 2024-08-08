@@ -477,6 +477,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["next_step"]:
             self.open_choose_symbol()
         else:
+            # Runs through all of the tabs to select the one that matches.
             for i in range(1, 5):
                 if event.ui_element == self.tabs["tab"+str(i)]:
                     self.selected_camp_tab = i
