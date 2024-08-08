@@ -2302,11 +2302,11 @@ def get_pronouns(Cat):
     """ Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded) """
     if Cat.pronouns == []:
         return {
-            "subject": "it",
-            "object": "it",
-            "poss": "its",
-            "inposs": "its",
-            "self": "itself",
+            "subject": "they",
+            "object": "them",
+            "poss": "theirs",
+            "inposs": "theirs ",
+            "self": "themselves",
             "conju": 2
         }
     else:
