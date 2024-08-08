@@ -19,6 +19,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -228,12 +229,7 @@ class FamilyTreeScreen(Screens):
         self.next_group_page.disable()
         self.relation_backdrop = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((314, 475), (420, 171))),
-            pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/familytree_relationbackdrop.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((420, 171)),
-            ),
+            get_box(BoxStyles.ROUNDED_BOX, (420, 171)),
             manager=MANAGER,
         )
         self.relation_backdrop.disable()
@@ -262,12 +258,7 @@ class FamilyTreeScreen(Screens):
 
         self.center_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 0), (80, 90))),
-            pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/familytree_smallcatbox.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((160, 180)),
-            ),
+            get_box(BoxStyles.FRAME, (80, 90)),
             manager=MANAGER,
             container=self.family_tree,
         )
@@ -401,12 +392,7 @@ class FamilyTreeScreen(Screens):
         )
         self.center_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((x_pos, y_pos), (80, 90))),
-            pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/familytree_smallcatbox.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((80, 90)),
-            ),
+            get_box(BoxStyles.FRAME, (80, 90)),
             manager=MANAGER,
             container=self.family_tree,
         )

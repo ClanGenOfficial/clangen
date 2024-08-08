@@ -495,10 +495,7 @@ class LeaderDenScreen(Screens):
         )
         self.outsider_selection_elements["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((28, 0), (624, 174))),
-            pygame.image.load(
-                "resources/images/lead_den_outsider_frame.png"
-            ).convert_alpha(),
-            object_id="#lead_den_outsider_frame",
+            get_box(BoxStyles.ROUNDED_BOX, (624, 174)),
             container=self.outsider_selection_container,
             starting_height=2,
             manager=MANAGER,

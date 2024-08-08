@@ -22,6 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, screen
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -161,12 +162,7 @@ class ChooseAdoptiveParentScreen(Screens):
         """Sets up the elements that are always on the page"""
         super().screen_switches()
 
-        self.list_frame = pygame.transform.scale(
-            image_cache.load_image(
-                "resources/images/choosing_frame.png"
-            ).convert_alpha(),
-            ui_scale_dimensions((650, 194)),
-        )
+        self.list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 194))
 
         self.info = pygame_gui.elements.UITextBox(
             "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "

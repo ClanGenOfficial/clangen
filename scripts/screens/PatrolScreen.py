@@ -702,12 +702,7 @@ class PatrolScreen(Screens):
         )
         self.elements["image_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((65, 140), (320, 320))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/patrol_sprite_frame.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((320, 320)),
-            ),
+            get_box(BoxStyles.FRAME, (320, 320)),
             manager=MANAGER,
         )
 

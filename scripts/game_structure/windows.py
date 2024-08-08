@@ -37,6 +37,7 @@ from scripts.housekeeping.update import (
     get_latest_version_number,
 )
 from scripts.housekeeping.version import get_version_info
+from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.get_arrow import get_arrow
 from scripts.utility import (
@@ -254,9 +255,10 @@ class SaveCheck(UIWindow):
             container=self,
         )
 
-        self.save_button = UIImageButton(
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
-            "",
+            "Save",
+            get_button_dict(ButtonStyles.SQUOVAL, (114, 30)),
             object_id="#save_button",
             starting_height=top_stack_menu_layer_height,
             container=self,
@@ -691,7 +693,6 @@ class PronounCreation(UIWindow):
         self.elements = {}
         self.boxes = {}
         self.checkbox_label = {}
-        Demo_frame = "resources/images/demo_frame.png"
         self.back_button = UIImageButton(
             ui_scale(pygame.Rect((615, 10), (22, 22))),
             "",
@@ -717,10 +718,7 @@ class PronounCreation(UIWindow):
         # Add the Demo frame to the sub-container
         self.elements["demo_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 0), (207, 288))),
-            pygame.transform.scale(
-                pygame.image.load(Demo_frame).convert_alpha(),
-                ui_scale_dimensions((207, 288)),
-            ),
+            get_box(BoxStyles.FRAME, (207, 288)),
             manager=MANAGER,
             container=self.demo_container,
         )
@@ -1591,11 +1589,6 @@ class RelationshipLog(UIWindow):
         self.disable_button_list = disable_button_list
         for button in self.disable_button_list:
             button.disable()
-
-        """if game.settings["fullscreen"]:
-            img_path = "resources/images/spacer.png"
-        else:
-            img_path = "resources/images/spacer_small.png"""
 
         opposite_log_string = None
         if not relationship.opposite_relationship:

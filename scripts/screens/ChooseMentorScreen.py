@@ -21,7 +21,8 @@ from scripts.utility import (
     ui_scale_blit,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import screen_x, screen_y, MANAGER, screen
+from ..game_structure.screen_settings import MANAGER, screen
+from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -29,16 +30,13 @@ from ..ui.get_arrow import get_arrow
 class ChooseMentorScreen(Screens):
     selected_mentor = None
     current_page = 1
-    list_frame = pygame.transform.scale(
-        image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
-        (1300 / 1600 * screen_x, 452 / 1400 * screen_y),
-    )
     apprentice_details = {}
     selected_details = {}
     cat_list_buttons = {}
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.list_frame = None
         self.list_page = None
         self.next_cat = None
         self.previous_cat = None
@@ -157,6 +155,8 @@ class ChooseMentorScreen(Screens):
             )
 
         # Layout Images:
+        self.list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 226))
+
         self.mentor_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((40, 113), (281, 197))),
             pygame.transform.scale(

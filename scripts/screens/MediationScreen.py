@@ -21,6 +21,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -169,12 +170,7 @@ class MediationScreen(Screens):
 
         self.cat_bg = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((50, 470), (700, 150))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/mediation_selection_bg.png"
-                ).convert_alpha(),
-                (1400, 300),
-            ),
+            get_box(BoxStyles.ROUNDED_BOX, (700, 150)),
         )
         self.cat_bg.disable()
 

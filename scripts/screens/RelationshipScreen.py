@@ -22,6 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, screen
+from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -62,18 +63,13 @@ class RelationshipScreen(Screens):
             ).convert_alpha(),
             ui_scale_dimensions((228, 39)),
         )
-        self.details_frame_image = pygame.transform.scale(
-            image_cache.load_image(
-                "resources/images/relationship_details_frame.png"
-            ).convert_alpha(),
-            ui_scale_dimensions((254, 344)),
+        self.details_frame_image = get_box(
+            BoxStyles.ROUNDED_BOX, (254, 344), sides=(True, True, True, False)
         )
-        self.toggle_frame_image = pygame.transform.scale(
-            image_cache.load_image(
-                "resources/images/relationship_toggle_frame.png"
-            ).convert_alpha(),
-            ui_scale_dimensions((251, 120)),
+        self.toggle_frame_image = (
+            get_box(BoxStyles.ROUNDED_BOX, (251, 120), sides=(True, False, True, True)),
         )
+
         self.list_frame_image = pygame.transform.scale(
             image_cache.load_image(
                 "resources/images/relationship_list_frame.png"

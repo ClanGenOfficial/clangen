@@ -21,6 +21,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -130,12 +131,7 @@ class RoleScreen(Screens):
 
         self.blurb_background = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((50, 195), (700, 150))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/mediation_selection_bg.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((704, 150)),
-            ),
+            get_box(BoxStyles.ROUNDED_BOX, (700, 150)),
         )
 
         # LEADERSHIP

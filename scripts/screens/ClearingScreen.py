@@ -21,6 +21,7 @@ from scripts.utility import (
 from .Screens import Screens
 from ..events_module.condition_events import Condition_Events
 from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
 
@@ -297,7 +298,7 @@ class ClearingScreen(Screens):
         self.tactic_title.hide()
         self.cat_bg = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((140, 440), (560, 200))),
-            pygame.image.load("resources/images/sick_hurt_bg.png").convert_alpha(),
+            get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
             manager=MANAGER,
         )
         self.cat_bg.disable()

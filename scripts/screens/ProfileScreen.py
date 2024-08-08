@@ -34,6 +34,7 @@ from ..cat.history import History
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
+from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
 
@@ -123,14 +124,8 @@ def backstory_text(cat):
 # ---------------------------------------------------------------------------- #
 class ProfileScreen(Screens):
     # UI Images
-    backstory_tab = image_cache.load_image(
-        "resources/images/backstory_bg.png"
-    ).convert_alpha()
     conditions_tab = image_cache.load_image(
         "resources/images/conditions_tab_backdrop.png"
-    ).convert_alpha()
-    condition_details_box = image_cache.load_image(
-        "resources/images/condition_details_box.png"
     ).convert_alpha()
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
@@ -1116,7 +1111,10 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = "history"
             self.backstory_background = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((89, 465), (620, 157))), self.backstory_tab
+                ui_scale(pygame.Rect((89, 465), (620, 157))),
+                get_box(
+                    BoxStyles.ROUNDED_BOX, (620, 157), sides=(True, True, False, True)
+                ),
             )
             self.backstory_background.disable()
             self.sub_tab_1 = UIImageButton(
