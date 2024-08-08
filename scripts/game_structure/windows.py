@@ -259,7 +259,7 @@ class SaveCheck(UIWindow):
             ui_scale(pygame.Rect((0, 115), (114, 30))),
             "Save",
             get_button_dict(ButtonStyles.SQUOVAL, (114, 30)),
-            object_id="#save_button",
+            object_id="@buttonstyles_squoval",
             starting_height=top_stack_menu_layer_height,
             container=self,
             anchors={"centerx": "centerx"},
