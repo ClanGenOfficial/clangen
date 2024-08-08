@@ -1985,6 +1985,15 @@ def event_text_adjust(
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
     vowels = ["A", "E", "I", "O", "U"]
+    GENDER_NEUTRAL_PRONOUNS = {
+            "subject": "it",
+            "object": "it",
+            "poss": "its",
+            "inposs": "its",
+            "self": "itself",
+            "conju": 2
+        }
+
     if not text:
         text = "This should not appear, report as a bug please! Tried to adjust the text, but no text was provided."
         print("WARNING: Tried to adjust text, but no text was provided.")
@@ -2002,12 +2011,18 @@ def event_text_adjust(
     # random_cat
     if "r_c" in text:
         if random_cat:
-            replace_dict["r_c"] = (str(random_cat.name), choice(random_cat.pronouns))
+            if random_cat.pronouns == []:
+                replace_dict["r_c"] = (str(random_cat.name), GENDER_NEUTRAL_PRONOUNS)
+            else:
+                replace_dict["r_c"] = (str(random_cat.name), choice(random_cat.pronouns))
 
     # stat cat
     if "s_c" in text:
         if stat_cat:
-            replace_dict["s_c"] = (str(stat_cat.name), choice(stat_cat.pronouns))
+            if random_cat.pronouns == []:
+                replace_dict["s_c"] = (str(stat_cat.name), GENDER_NEUTRAL_PRONOUNS)
+            else:
+                replace_dict["s_c"] = (str(stat_cat.name), choice(stat_cat.pronouns))
 
     # other_cats
     if patrol_cats:
