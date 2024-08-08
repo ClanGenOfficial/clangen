@@ -144,6 +144,8 @@ class LeaderDenScreen(Screens):
             "out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite "
             "in a cat, they might join your Clan!",
         )
+        # This is here incase the leader comes back
+        self.no_gathering = False
         
         self.no_leader = False
         if not game.clan.leader:
