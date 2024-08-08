@@ -297,10 +297,11 @@ class ChooseAdoptiveParentScreen(Screens):
         self.potential_parents_page = 0
 
         # This may be deleted and changed later.
-        self.toggle_adoptive_parent = UIImageButton(
+        self.toggle_adoptive_parent = UISurfaceImageButton(
             ui_scale(pygame.Rect((303, 310), (192, 30))),
-            "",
-            object_id="#set_adoptive_parent",
+            "Set adoptive parent",
+            get_button_dict(ButtonStyles.SQUOVAL, (192, 30)),
+            object_id="@buttonstyles_squoval",
         )
 
         self.open_tab = "potential"
@@ -809,16 +810,18 @@ class ChooseAdoptiveParentScreen(Screens):
             )
             self.toggle_adoptive_parent.disable()
         elif self.selected_cat.ID in self.the_cat.adoptive_parents:
-            self.toggle_adoptive_parent = UIImageButton(
+            self.toggle_adoptive_parent = UISurfaceImageButton(
                 ui_scale(pygame.Rect((303, 310), (192, 30))),
-                "",
-                object_id="#unset_adoptive_parent",
+                "Unset adoptive parent",
+                get_button_dict(ButtonStyles.SQUOVAL, (192, 30)),
+                object_id="@buttonstyles_squoval",
             )
         else:
-            self.toggle_adoptive_parent = UIImageButton(
+            self.toggle_adoptive_parent = UISurfaceImageButton(
                 ui_scale(pygame.Rect((303, 310), (192, 30))),
-                "",
-                object_id="#set_adoptive_parent",
+                "Set adoptive parent",
+                get_button_dict(ButtonStyles.SQUOVAL, (192, 30)),
+                object_id="@buttonstyles_squoval",
             )
 
     def update_selected_cat(self):

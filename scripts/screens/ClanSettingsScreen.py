@@ -11,7 +11,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -22,6 +22,7 @@ from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
+from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
 
@@ -138,35 +139,40 @@ class ClanSettingsScreen(Screens):
         self.show_menu_buttons()
         self.set_disabled_menu_buttons(["clan_settings"])
 
-        self.general_settings_button = UIImageButton(
+        self.general_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((100, 140), (150, 30))),
-            "",
-            object_id="#general_settings_button",
+            "general settings",
+            get_button_dict(ButtonStyles.MENU_LEFT, (150, 30)),
+            object_id="@buttonstyles_menu_left",
             manager=MANAGER,
         )
-        self.relation_settings_button = UIImageButton(
+        self.relation_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((250, 140), (150, 30))),
-            "",
-            object_id="#relation_settings_button",
+            "relation settings",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
         )
-        self.role_settings_button = UIImageButton(
+        self.role_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 140), (150, 30))),
-            "",
-            object_id="#role_settings_button",
+            "role settings",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
         )
-        self.clan_stats_button = UIImageButton(
+        self.clan_stats_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((550, 140), (150, 30))),
-            "",
-            object_id="#clan_stats_button",
+            "clan stats",
+            get_button_dict(ButtonStyles.MENU_RIGHT, (150, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
         )
 
-        self.open_data_directory_button = UIImageButton(
+        self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (178, 30))),
-            "",
-            object_id="#open_data_directory_button",
+            "Open Data Directory",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
             tool_tip_text="Opens the data directory. "
             "This is where save files "

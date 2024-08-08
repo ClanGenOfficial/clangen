@@ -213,10 +213,11 @@ class ChooseMentorScreen(Screens):
             "",
             object_id="#confirm_mentor_button",
         )
-        self.remove_mentor = UIImageButton(
+        self.remove_mentor = UISurfaceImageButton(
             ui_scale(pygame.Rect((326, 310), (148, 30))),
-            "",
-            object_id="#remove_mentor_button",
+            "Remove Mentor",
+            get_button_dict(ButtonStyles.SQUOVAL, (148, 30)),
+            object_id="@buttonstyles_squoval",
         )
         self.current_mentor_warning = pygame_gui.elements.UITextBox(
             "Current mentor selected",

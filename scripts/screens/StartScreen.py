@@ -268,10 +268,11 @@ class StartScreen(Screens):
             manager=MANAGER,
         )
 
-        self.open_data_directory_button = UIImageButton(
+        self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((527, 511), (178, 30))),
-            "",
-            object_id="#open_data_directory_button",
+            "Open Data Directory",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
             starting_height=2,  # Layer 2 and repositioned so hover affect works.
             tool_tip_text="Opens the data directory. "
@@ -293,10 +294,11 @@ class StartScreen(Screens):
         self.open_data_directory_button.hide()
         self.closebtn.hide()
 
-        self.update_button = UIImageButton(
-            ui_scale(pygame.Rect((1154, 50), (382.5, 75))),
-            "",
-            object_id="#update_button",
+        self.update_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((577, 25), (153, 30))),
+            "Update Available!",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.update_button.visible = 0

@@ -84,7 +84,7 @@ class MediationScreen(Screens):
                 self.results.set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
-            elif event.ui_element == self.sabotoge_button:
+            elif event.ui_element == self.sabotage_button:
                 game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
                 game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
@@ -183,16 +183,18 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
-        self.mediate_button = UIImageButton(
+        self.mediate_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((280, 350), (105, 30))),
-            "",
-            object_id="#mediate_button",
+            "Mediate",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.sabotoge_button = UIImageButton(
+        self.sabotage_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 350), (109, 30))),
-            "",
-            object_id="#sabotage_button",
+            "Sabotage",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
 
@@ -321,11 +323,11 @@ class MediationScreen(Screens):
             if mediator.not_working():
                 text += "\nThis cat isn't able to work"
                 self.mediate_button.disable()
-                self.sabotoge_button.disable()
+                self.sabotage_button.disable()
             else:
                 text += "\nThis cat can work"
                 self.mediate_button.enable()
-                self.sabotoge_button.enable()
+                self.sabotage_button.enable()
 
             self.mediator_elements["details"] = pygame_gui.elements.UITextBox(
                 text,
@@ -895,10 +897,10 @@ class MediationScreen(Screens):
 
         if invalid_mediator or invalid_pair:
             self.mediate_button.disable()
-            self.sabotoge_button.disable()
+            self.sabotage_button.disable()
         else:
             self.mediate_button.enable()
-            self.sabotoge_button.enable()
+            self.sabotage_button.enable()
 
         if self.romantic_checkbox:
             self.romantic_checkbox.kill()
@@ -969,8 +971,8 @@ class MediationScreen(Screens):
         del self.cat_bg
         self.mediate_button.kill()
         del self.mediate_button
-        self.sabotoge_button.kill()
-        del self.sabotoge_button
+        self.sabotage_button.kill()
+        del self.sabotage_button
         self.last_med.kill()
         del self.last_med
         self.next_med.kill()

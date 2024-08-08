@@ -66,8 +66,8 @@ class RelationshipScreen(Screens):
         self.details_frame_image = get_box(
             BoxStyles.ROUNDED_BOX, (254, 344), sides=(True, True, True, False)
         )
-        self.toggle_frame_image = (
-            get_box(BoxStyles.ROUNDED_BOX, (251, 120), sides=(True, False, True, True)),
+        self.toggle_frame_image = get_box(
+            BoxStyles.ROUNDED_BOX, (251, 120), sides=(True, False, True, True)
         )
 
         self.list_frame_image = pygame.transform.scale(

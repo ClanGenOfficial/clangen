@@ -231,10 +231,11 @@ class SettingsScreen(Screens):
             manager=MANAGER,
             anchors={"left_target": self.info_button},
         )
-        self.save_settings_button = UIImageButton(
+        self.save_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 550), (150, 30))),
-            "",
-            object_id="#save_settings_button",
+            "Save Settings",
+            get_button_dict(ButtonStyles.SQUOVAL, (150, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
             anchors={"centerx": "centerx"},
         )
@@ -253,10 +254,11 @@ class SettingsScreen(Screens):
         )
         del screentext
 
-        self.open_data_directory_button = UIImageButton(
+        self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (178, 30))),
-            "",
-            object_id="#open_data_directory_button",
+            "Open Data Directory",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
             tool_tip_text="Opens the data directory. "
             "This is where save files "

@@ -1216,10 +1216,11 @@ class MakeClanScreen(Screens):
 
         # Create all the elements.
 
-        self.elements["classic_mode_button"] = UIImageButton(
+        self.elements["classic_mode_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((109, 240), (132, 30))),
-            "",
-            object_id="#classic_mode_button",
+            "Classic Mode",
+            get_button_dict(ButtonStyles.SQUOVAL, (132, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.elements["expanded_mode_button"] = UIImageButton(
@@ -1242,10 +1243,11 @@ class MakeClanScreen(Screens):
             starting_height=2,
         )
         self.elements["previous_step"].disable()
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 620), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1311,10 +1313,11 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 635), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1333,10 +1336,11 @@ class MakeClanScreen(Screens):
             object_id="#text_box_30_horizcenter_light",
             manager=MANAGER,
         )
-        self.elements["reset_name"] = UIImageButton(
+        self.elements["reset_name"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((455, 595), (134, 30))),
-            "",
-            object_id="#reset_name_button",
+            "reset name",
+            get_button_dict(ButtonStyles.SQUOVAL, (134, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
 
@@ -1453,10 +1457,11 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 400), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1505,10 +1510,11 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 400), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1555,10 +1561,11 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 400), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1586,10 +1593,11 @@ class MakeClanScreen(Screens):
 
         self.create_cat_info()
 
-        self.elements["select_cat"] = UIImageButton(
+        self.elements["select_cat"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((353, 360), (95, 30))),
-            "",
-            object_id="#recruit_button",
+            "Recruit",
+            get_button_dict(ButtonStyles.SQUOVAL, (95, 30)),
+            object_id="@buttonstyles_squoval",
             starting_height=2,
             visible=False,
             manager=MANAGER,
@@ -1603,10 +1611,11 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 400), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1632,10 +1641,11 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["next_step"] = UIImageButton(
+        self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 645), (147, 30))),
-            "",
-            object_id="#next_step_button",
+            "Next Step " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
         )
@@ -1737,10 +1747,11 @@ class MakeClanScreen(Screens):
             object_id="#previous_step_button",
             manager=MANAGER,
         )
-        self.elements["done_button"] = UIImageButton(
+        self.elements["done_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 645), (147, 30))),
-            "",
-            object_id="#done_arrow_button",
+            "Done " + get_arrow(3, arrow_left=True),
+            get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
         )
         self.elements["done_button"].disable()
@@ -1916,10 +1927,11 @@ class MakeClanScreen(Screens):
             starting_height=1,
             manager=MANAGER,
         )
-        self.elements["continue"] = UIImageButton(
+        self.elements["continue"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((346, 250), (102, 30))),
-            "",
-            object_id="#continue_button_small",
+            "continue",
+            get_button_dict(ButtonStyles.SQUOVAL, (102, 30)),
+            object_id="@buttonstyles_squoval",
         )
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox(
             "Your Clan has been created and saved!",

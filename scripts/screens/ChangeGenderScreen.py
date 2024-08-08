@@ -278,10 +278,11 @@ class ChangeGenderScreen(Screens):
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
         )
-        self.buttons["add_pronouns"] = UIImageButton(
-            ui_scale(pygame.Rect((320, 645), (162, 28))),
-            "",
-            object_id="#add_pronouns_button",
+        self.buttons["add_pronouns"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((320, 645), (162, 30))),
+            "Add New Pronouns",
+            get_button_dict(ButtonStyles.SQUOVAL, (162, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.selected_cat_elements["gender"] = pygame_gui.elements.UITextEntryLine(

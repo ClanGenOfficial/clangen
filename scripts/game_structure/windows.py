@@ -1577,7 +1577,7 @@ class RelationshipLog(UIWindow):
         )
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (105, 30))),
-            "back",
+            get_arrow(2) + "Back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
         )
@@ -1637,10 +1637,8 @@ class RelationshipLog(UIWindow):
                 container=self,
             )
 
-        self.set_blocking(True)
-
     def closing_process(self):
-        """Handles to enable and kill all processes when a exit button is clicked."""
+        """Handles to enable and kill all processes when an exit button is clicked."""
         for button in self.disable_button_list:
             button.enable()
 
@@ -1716,19 +1714,18 @@ class SaveAsImage(UIWindow):
             anchors={"right": "right", "top": "top"},
         )
 
-        self.save_as_image = UIImageButton(
+        self.save_as_image = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 90), (135, 30))),
-            "",
-            object_id="#save_image_button",
-            starting_height=2,
-            container=self,
-            anchors={"centerx": "centerx"},
+            "Save as Image",
+            get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
+            object_id="@buttonstyles_squoval",
         )
 
-        self.open_data_directory_button = UIImageButton(
+        self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 175), (178, 30))),
-            "",
-            object_id="#open_data_directory_button",
+            "Open Data Directory",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
             container=self,
             starting_height=2,
             tool_tip_text="Opens the data directory. "
