@@ -452,7 +452,6 @@ class MakeClanScreen(Screens):
             self.biome_selected = "Beach"
             self.selected_camp_tab = 1
             self.refresh_text_and_buttons()
-            self.refresh_selected_camp()
         elif event.ui_element == self.tabs["newleaf_tab"]:
             self.selected_season = "Newleaf"
             self.refresh_text_and_buttons()
