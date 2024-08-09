@@ -266,7 +266,10 @@ def rebuild_bgs():
     global dropshadow
     global fade
 
-    if game_frame is None or game_frame.size != ui_scale_dimensions((820, 720)):
+    if (
+        vignette is None
+        or scripts.game_structure.screen_settings.screen.size != vignette.size
+    ):
         game_frame = get_box(
             BoxStyles.FRAME,
             (820, 720),
@@ -417,6 +420,9 @@ def process_blur_bg(
     vignette_strength: Optional[int] = None,
     fade_color: Optional[Tuple[int, int, int]] = None,
 ) -> pygame.Surface:
+    global vignette
+    global fade
+    global dropshadow
     if theme is None:
         theme = "dark" if game.settings["dark mode"] else "light"
 

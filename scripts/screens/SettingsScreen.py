@@ -71,7 +71,7 @@ class SettingsScreen(Screens):
     def __init__(self, name="settings_screen"):
         super().__init__(name)
         self.prev_setting = None
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.theme = "dark" if game.settings["dark mode"] else "light"
 
     def handle_event(self, event):
         """
@@ -156,7 +156,7 @@ class SettingsScreen(Screens):
                         and event.ui_element is self.checkboxes["dark mode"]
                     ):
                         # has to be done manually since we haven't saved the new mode yet.
-                        self.toggled_theme = (
+                        self.theme = (
                             "dark"
                             if "@unchecked_checkbox"
                             in self.checkboxes["dark mode"].get_object_ids()
@@ -316,7 +316,7 @@ class SettingsScreen(Screens):
         del self.open_data_directory_button
 
         game.settings = self.settings_at_open
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.theme = "dark" if game.settings["dark mode"] else "light"
 
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
@@ -517,4 +517,4 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         # super().on_use()
-        self.show_bg(theme=self.toggled_theme)
+        self.show_bg(theme=self.theme)

@@ -255,10 +255,9 @@ class SaveCheck(UIWindow):
             container=self,
         )
 
-        self.save_button = UISurfaceImageButton(
+        self.save_button = UIImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
-            "Save",
-            get_button_dict(ButtonStyles.SQUOVAL, (114, 30)),
+            "",
             object_id="#save_button",
             starting_height=top_stack_menu_layer_height,
             container=self,
@@ -2224,7 +2223,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
         from scripts.screens.all_screens import AllScreens
 
         toggle_fullscreen(
-            not game.settings["fullscreen"],
+            None,
             source_screen=getattr(AllScreens, self.source_screen_name),
             show_confirm_dialog=False,
         )
