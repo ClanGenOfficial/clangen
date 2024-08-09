@@ -57,25 +57,10 @@ class RelationshipScreen(Screens):
         self.previous_cat_button = None
         self.log_icon = None
 
-        self.search_bar_image = pygame.transform.scale(
-            image_cache.load_image(
-                "resources/images/relationship_search.png"
-            ).convert_alpha(),
-            ui_scale_dimensions((228, 39)),
-        )
-        self.details_frame_image = get_box(
-            BoxStyles.ROUNDED_BOX, (254, 344), sides=(True, True, True, False)
-        )
-        self.toggle_frame_image = get_box(
-            BoxStyles.ROUNDED_BOX, (251, 120), sides=(True, False, True, True)
-        )
-
-        self.list_frame_image = pygame.transform.scale(
-            image_cache.load_image(
-                "resources/images/relationship_list_frame.png"
-            ).convert_alpha(),
-            ui_scale_dimensions((502, 500)),
-        )
+        self.search_bar_image = None
+        self.details_frame_image = None
+        self.toggle_frame_image = None
+        self.list_frame_image = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -232,6 +217,26 @@ class RelationshipScreen(Screens):
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((610, 97), (145, 23))), object_id="#search_entry_box"
+        )
+
+        self.search_bar_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relationship_search.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((228, 39)),
+        )
+        self.details_frame_image = get_box(
+            BoxStyles.ROUNDED_BOX, (230, 340), sides=(True, False, True, True)
+        )
+        self.toggle_frame_image = get_box(
+            BoxStyles.ROUNDED_BOX, (220, 120), sides=(True, False, True, True)
+        )
+
+        self.list_frame_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relationship_list_frame.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((502, 500)),
         )
 
         self.show_dead_text = pygame_gui.elements.UITextBox(
@@ -1079,11 +1084,11 @@ class RelationshipScreen(Screens):
         screen.blit(self.search_bar_image, ui_scale_blit((535, 90)))
         screen.blit(
             self.details_frame_image,
-            ui_scale_blit((25, 130)),
+            ui_scale_blit((43, 130)),
         )
         screen.blit(
             self.toggle_frame_image,
-            ui_scale_blit((45, 479)),
+            ui_scale_blit((53, 482)),
         )
         screen.blit(self.list_frame_image, ui_scale_blit((273, 122)))
 

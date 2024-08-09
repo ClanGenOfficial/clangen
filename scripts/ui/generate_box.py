@@ -42,6 +42,12 @@ class Tileset:
     bottomleft: pygame.Surface
     bottom: pygame.Surface
     bottomright: pygame.Surface
+
+    top_noborder: Optional[pygame.Surface] = None
+    right_noborder: Optional[pygame.Surface] = None
+    bottom_noborder: Optional[pygame.Surface] = None
+    left_noborder: Optional[pygame.Surface] = None
+
     topleft_notop: Optional[pygame.Surface] = None
     topleft_noleft: Optional[pygame.Surface] = None
     topright_notop: Optional[pygame.Surface] = None
@@ -90,20 +96,62 @@ def get_tileset(style: BoxStyles) -> Tileset:
     bottom = _get_tile_from_coords(scaled_base, (1, 2), tile_size)
     bottomright = _get_tile_from_coords(scaled_base, (2, 2), tile_size)
 
+    try:
+        topleft_notop = _get_tile_from_coords(scaled_base, (3, 0), tile_size)
+        topleft_noleft = _get_tile_from_coords(scaled_base, (3, 1), tile_size)
+        top_noborder = _get_tile_from_coords(scaled_base, (3, 2), tile_size)
+        topright_notop = _get_tile_from_coords(scaled_base, (4, 0), tile_size)
+        topright_noright = _get_tile_from_coords(scaled_base, (4, 1), tile_size)
+        right_noborder = _get_tile_from_coords(scaled_base, (4, 2), tile_size)
+        bottomleft_nobottom = _get_tile_from_coords(scaled_base, (5, 0), tile_size)
+        bottomleft_noleft = _get_tile_from_coords(scaled_base, (5, 1), tile_size)
+        bottom_noborder = _get_tile_from_coords(scaled_base, (5, 2), tile_size)
+        bottomright_nobottom = _get_tile_from_coords(scaled_base, (6, 0), tile_size)
+        bottomright_noright = _get_tile_from_coords(scaled_base, (6, 1), tile_size)
+        left_noborder = _get_tile_from_coords(scaled_base, (6, 2), tile_size)
+
+    except ValueError:
+        (
+            topleft_notop,
+            topleft_noleft,
+            topright_notop,
+            topright_noright,
+            bottomleft_nobottom,
+            bottomleft_noleft,
+            bottomright_nobottom,
+            bottomright_noright,
+            top_noborder,
+            left_noborder,
+            bottom_noborder,
+            right_noborder,
+        ) = [None] * 12
+
     if screen_scale not in tilesets:
         tilesets[screen_scale] = {}
 
     tilesets[screen_scale][style] = Tileset(
-        tile_edge_length,
-        topleft,
-        top,
-        topright,
-        left,
-        middle,
-        right,
-        bottomleft,
-        bottom,
-        bottomright,
+        height=tile_edge_length,
+        topleft=topleft,
+        top=top,
+        topright=topright,
+        left=left,
+        middle=middle,
+        right=right,
+        bottomleft=bottomleft,
+        bottom=bottom,
+        bottomright=bottomright,
+        top_noborder=top_noborder,
+        left_noborder=left_noborder,
+        bottom_noborder=bottom_noborder,
+        right_noborder=right_noborder,
+        topleft_notop=topleft_notop,
+        topleft_noleft=topleft_noleft,
+        topright_notop=topright_notop,
+        topright_noright=topright_noright,
+        bottomleft_nobottom=bottomleft_nobottom,
+        bottomleft_noleft=bottomleft_noleft,
+        bottomright_nobottom=bottomright_nobottom,
+        bottomright_noright=bottomright_noright,
     )
     return tilesets[screen_scale][style]
 
@@ -117,7 +165,10 @@ def _get_tile_from_coords(
 
 
 def get_box(
-    style: BoxStyles, unscaled_dimensions: Tuple[int, int], sides=True
+    style: BoxStyles,
+    unscaled_dimensions: Tuple[int, int],
+    sides=True,
+    use_extra_if_available: bool = True,
 ) -> pygame.Surface:
     """
     Generate a surface of arbitrary length and height from a given input surface
@@ -125,9 +176,13 @@ def get_box(
     :param unscaled_dimensions: the SCALED dimensions of the final box
     :param sides: Whether to render the sides of the box or just end it abruptly.
         Tuple of booleans in order: Top, right, bottom, left. Also accepts a single boolean for all 4 values
-    :return: A surface of the correct dimensions
+    :param use_extra_if_available: Whether to use the expanded tileset if the style has it. Default True.
+    :return: A surface
     """
-    return _get_box(style, ui_scale_dimensions(unscaled_dimensions), sides)
+    return pygame.transform.scale(
+        _get_box(style, unscaled_dimensions, sides, use_extra_if_available),
+        ui_scale_dimensions(unscaled_dimensions),
+    )
 
 
 @cache
@@ -135,6 +190,7 @@ def _get_box(
     style: BoxStyles,
     scaled_dimensions: Tuple[int, int],
     sides: Union[bool, Tuple[bool, bool, bool, bool]] = True,
+    use_extra_if_available=True,
 ) -> pygame.Surface:
     """
     A wrapper for get_box that lets it be typehinted & still cache properly
@@ -143,7 +199,9 @@ def _get_box(
     :return:
     """
 
-    tileset = get_sides_tileset(style, sides)
+    tileset = _build_needed_tileset(
+        style, sides, use_extra_if_available=use_extra_if_available
+    )
 
     if (
         scaled_dimensions[0] < tileset.height * 3
@@ -292,8 +350,10 @@ def _get_box(
     return surface
 
 
-def get_sides_tileset(
-    style: BoxStyles, sides: Union[bool, Tuple[bool, bool, bool, bool]]
+def _build_needed_tileset(
+    style: BoxStyles,
+    sides: Union[bool, Tuple[bool, bool, bool, bool]],
+    use_extra_if_available=True,
 ):
     if isinstance(sides, bool):
         border_top = sides
@@ -307,51 +367,99 @@ def get_sides_tileset(
 
     tileset = get_tileset(style)
 
-    tiles_top = tileset.top if border_top else tileset.middle
-    tiles_topleft = (
-        tileset.topleft
-        if (border_top and border_left)
-        else tileset.top
-        if border_top
-        else tileset.left
-        if border_left
-        else tileset.middle
+    tiles_top = _handle_edges(
+        {
+            "border": tileset.top,
+            "noborder": tileset.top_noborder,
+            "middle": tileset.middle,
+        },
+        border_top,
+        use_extra_if_available,
     )
 
-    tiles_topright = (
-        tileset.topright
-        if (border_top and border_right)
-        else tileset.top
-        if border_top
-        else tileset.right
-        if border_right
-        else tileset.middle
+    tiles_topleft = _handle_corners(
+        {
+            "all": tileset.topleft,
+            "middle": tileset.middle,
+            "side1": tileset.top,
+            "side2": tileset.left,
+            "noside1": tileset.topleft_notop,
+            "noside2": tileset.topleft_noleft,
+        },
+        border_top,
+        border_left,
+        use_extra_if_available,
+    )
+
+    tiles_topright = _handle_corners(
+        {
+            "all": tileset.topright,
+            "middle": tileset.middle,
+            "side1": tileset.top,
+            "side2": tileset.right,
+            "noside1": tileset.topright_notop,
+            "noside2": tileset.topright_noright,
+        },
+        border_top,
+        border_right,
+        use_extra_if_available,
     )
 
     tiles_middle = tileset.middle
-    tiles_left = tileset.left if border_left else tileset.middle
-    tiles_right = tileset.right if border_right else tileset.middle
-
-    tiles_bottom = tileset.bottom if border_bottom else tileset.middle
-
-    tiles_bottomleft = (
-        tileset.bottomleft
-        if (border_bottom and border_left)
-        else tileset.bottom
-        if border_bottom
-        else tileset.left
-        if border_left
-        else tileset.middle
+    tiles_left = _handle_edges(
+        {
+            "border": tileset.left,
+            "noborder": tileset.left_noborder,
+            "middle": tileset.middle,
+        },
+        border_left,
+        use_extra_if_available,
+    )
+    tiles_right = _handle_edges(
+        {
+            "border": tileset.right,
+            "noborder": tileset.right_noborder,
+            "middle": tileset.middle,
+        },
+        border_right,
+        use_extra_if_available,
     )
 
-    tiles_bottomright = (
-        tileset.bottomright
-        if (border_bottom and border_right)
-        else tileset.bottom
-        if border_bottom
-        else tileset.right
-        if border_right
-        else tileset.middle
+    tiles_bottom = _handle_edges(
+        {
+            "border": tileset.bottom,
+            "noborder": tileset.bottom_noborder,
+            "middle": tileset.middle,
+        },
+        border_bottom,
+        use_extra_if_available,
+    )
+    tiles_bottomleft = _handle_corners(
+        {
+            "all": tileset.bottomleft,
+            "middle": tileset.middle,
+            "side1": tileset.bottom,
+            "side2": tileset.left,
+            "noside1": tileset.bottomleft_nobottom,
+            "noside2": tileset.bottomleft_noleft,
+        },
+        border_bottom,
+        border_left,
+        use_extra_if_available,
+    )
+
+    tiles_bottomright = _handle_corners(
+        {
+            "all": tileset.bottomright,
+            "middle": tileset.middle,
+            "side1": tileset.bottom,
+            "side2": tileset.right,
+            "noside1": tileset.bottomright_nobottom,
+            "noside2": tileset.bottomright_noright,
+        },
+        border_bottom,
+        border_right,
+        use_extra_if_available,
     )
 
     return Tileset(
@@ -365,4 +473,35 @@ def get_sides_tileset(
         tiles_bottomleft,
         tiles_bottom,
         tiles_bottomright,
+    )
+
+
+def _handle_corners(tiles, border_side1, border_side2, use_extra_if_available):
+    if not border_side1 and not border_side2:
+        return tiles["middle"]
+    elif border_side1 and border_side2:
+        return tiles["all"]
+    elif not border_side1:
+        return (
+            tiles["noside1"]
+            if tiles["noside1"] is not None and use_extra_if_available
+            else tiles["side2"]
+        )
+    elif not border_side2:
+        return (
+            tiles["noside2"]
+            if tiles["noside2"] is not None and use_extra_if_available
+            else tiles["side1"]
+        )
+    else:
+        raise Exception("Something went wrong in _build_needed_tileset")
+
+
+def _handle_edges(tiles, show_border, use_extra_if_available):
+    if show_border:
+        return tiles["border"]
+    return (
+        tiles["noborder"]
+        if tiles["noborder"] is not None and use_extra_if_available
+        else tiles["middle"]
     )
