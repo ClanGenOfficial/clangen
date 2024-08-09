@@ -545,11 +545,19 @@ class Screens:
         # make the right string to pull the correct camp image
         try:
             season = get_current_season()
-            season_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                theme
-            ][season]
-        except AttributeError:  # We haven't initialised a clan (fresh install) so there's no current season.
-            season_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs["light"]["Newleaf"]
+            season_bg = (
+                scripts.screens.screens_core.screens_core.default_fullscreen_bgs[theme][
+                    season
+                ]
+            )
+        except (
+            AttributeError
+        ):  # We haven't initialised a clan (fresh install) so there's no current season.
+            season_bg = (
+                scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                    "light"
+                ]["Newleaf"]
+            )
 
         # handle custom screen backgrounds (non-default)
         if self.active_bg in self.game_bgs:
