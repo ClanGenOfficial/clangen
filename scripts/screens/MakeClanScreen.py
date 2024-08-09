@@ -945,7 +945,7 @@ class MakeClanScreen(Screens):
             self.elements["camp_art"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((175, 170), (450, 400))),
                 pygame.transform.scale(
-                    src,
+                    src.copy(),
                     ui_scale_dimensions((450, 400)),
                 ),
                 manager=MANAGER,
@@ -962,11 +962,14 @@ class MakeClanScreen(Screens):
                 self.game_bgs[
                     name
                 ] = scripts.screens.screens_core.screens_core.default_game_bgs[
-                    "default_dark" if game.settings["dark mode"] else "default_light"
+                    Screens.theme
+                ][
+                    "default"
                 ]
                 self.fullscreen_bgs[
                     name
                 ] = scripts.screens.screens_core.screens_core.process_blur_bg(src)
+
             self.set_bg(name)
 
         self.draw_art_frame()
@@ -1749,7 +1752,7 @@ class MakeClanScreen(Screens):
         )
         self.elements["done_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 645), (147, 30))),
-            "Done " + get_arrow(3, arrow_left=True),
+            "Done   " + get_arrow(3),
             get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
             object_id="@buttonstyles_menu_right",
             manager=MANAGER,
@@ -1939,6 +1942,8 @@ class MakeClanScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
+
+        scripts.screens.screens_core.screens_core.rebuild_bgs()
 
     def save_clan(self):
         game.mediated.clear()

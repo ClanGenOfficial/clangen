@@ -437,7 +437,7 @@ def process_blur_bg(
     if vignette_strength is not None:
         vignette.set_alpha(vignette_strength)
 
-    pygame.transform.scale(
+    bg = pygame.transform.scale(
         bg, scripts.game_structure.screen_settings.screen.size
     ).convert_alpha()
 
