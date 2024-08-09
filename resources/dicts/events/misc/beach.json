@@ -12,6 +12,258 @@
     }
   },
   {
+    "event_id": "bch_misc_seaweed1",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c grumbles incoherently as {PRONOUN/m_c/subject} {VERB/m_c/trudge/trudges} back to camp, soaked and with {PRONOUN/m_c/poss} tail knotted and wrapped with seaweed. Poor m_c.",
+    "accessories": ["SEAWEED"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_seaweed2",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c received a present, dried but vibrant acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} tail.",
+    "accessories": ["SEAWEED"],
+    "m_c": {
+      "status": ["kitten"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_seaweed3",
+    "location": ["beach"],
+    "season": ["greenleaf","leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c peeks out of their den, and finds that some seaweed managed to get into camp. m_c decides to use it as some cool decoration for {PRONOUN/m_c/poss} tail!",
+    "accessories": ["SEAWEED"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_seaweed4",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c, during a free sunny morning before dawn patrol, quietly wraps vibrant seaweed around m_c's tail.",
+    "accessories": ["SEAWEED"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_marigold1",
+    "location": ["beach"],
+    "season": ["greenleaf","leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject} {VERB/m_c/wears/wear} it with poise.",
+    "accessories": ["MARIGOLD"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_marigold2",
+    "location": ["beach"],
+    "season": ["greenleaf","newleaf"],
+    "weight": 20,
+    "event_text": "r_c, inbetween grooming m_c, tucks marigolds next to m_c's ear. m_c almost doesn't notice the next morning, and purrs a thank you to r_c when {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} by.",
+    "accessories": ["MARIGOLD"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_redsnail1",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c catches a cool snail that slid into camp! {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to keep the snail.",
+    "accessories": ["RED SNAIL"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_redsnail2",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c and m_c find a cute snail with a red, pointy shell while hanging out in camp together! m_c decides to keep it with {PRONOUN/m_c/object}.",
+    "accessories": ["RED SNAIL"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_reeds1",
+    "location": ["beach"],
+    "season": ["greenleaf","leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c's eyes sparkle as {PRONOUN/m_c/subject} {VERB/m_c/realizes/realize} something <i>wonderful</i> --- {PRONOUN/m_c/subject} can propagate the reeds on c_n territory, and decorate {PRONOUN/m_c/poss} nest with it! A week later, m_c is seen sleeping soundly with thick stalks of dark green reeds casting shadows on {PRONOUN/m_c/poss} pelt.",
+    "accessories": ["REEDS"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_reeds2",
+    "location": ["beach"],
+    "season": ["greenleaf","leaf-fall"],
+    "weight": 20,
+    "event_text": "r_c has a wonderful idea for decorating m_c's nest! m_c wakes up in the middle of the night with reeds brushing {PRONOUN/m_c/poss} face. Despite the slight scare it gave m_c, {PRONOUN/m_c/subject} {VERB/m_c/thanks/thank} r_c in the morning for the nice surprise. ",
+    "accessories": ["REEDS"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_frangipani1",
+    "location": ["beach"],
+    "season": ["greenleaf","leaf-fall"],
+    "weight": 20,
+    "event_text": "r_c, inbetween grooming m_c, tucks the prettiest frangipanis they could find next to m_c's ear. m_c almost doesn't notice the next morning, and purrs a thank you to r_c when {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} by.",
+    "accessories": ["FRANGIPANI"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_frangipani2",
+    "location": ["beach"],
+    "season": ["newleaf","leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c plucks a few pristine white flowers from the camp's nearby frangipani bush. {PRONOUN/m_c/subject} {VERB/m_c/wears/wear} it with geniune joy, brighter than the beachy sun.",
+    "accessories": ["FRANGIPANI"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_rabbit1",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c gently guides a rabbit into camp. Seems like m_c has found a new friend?",
+    "accessories": ["FAWN RABBIT", "FAWN AND WHITE RABBIT", "FAWN VITILIGO RABBIT", "WHITE RABBIT", "BROWN RABBIT", "BROWN AND WHITE RABBIT", "BROWN VITILIGO RABBIT", "TAN RABBIT", "TAN VITILIGO RABBIT", "TAN AND WHITE RABBIT"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_crab1",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c stares at a crab that wandered near the warrior's den. The crab stares back ominously. m_c squints at it, and the crab <i>(somehow)</i> squints back. Out of pure respect, m_c keeps the crab around {PRONOUN/m_c/object} when possible.",
+    "accessories": ["CRAB"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_crab2",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c decides to stop by the warrior's den, asking if m_c would like a crab. m_c nods with slight surprise, and r_c plops down the critter as it still attempts to crawl while on it's back. m_c doesn't crack {PRONOUN/m_c/poss} jaws into it's shell like expected. Instead, m_c flips it over and ogles it curiously. Seems like m_c has found a new friend...?",
+    "accessories": ["CRAB"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_crab3",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c curiously pokes and prods at a crab that wandered into camp. The crab, unbothered to m_c's antics, seems relaxed enough to keep as a pet. m_c cheerfully shows off {PRONOUN/m_c/poss} new friend!",
+    "accessories": ["CRAB"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_crab4",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c decides to stop by m_c while {PRONOUN/m_c/subject} are sunbathing in camp, asking if m_c would like a crab they caught. m_c nods, interested, and r_c plops down the critter as it still attempts to crawl while on it's back. m_c doesn't crack {PRONOUN/m_c/poss} jaws into it's shell like expected. Instead, m_c flips it over and ogles it curiously. Seems like m_c has found a new friend...?",
+    "accessories": ["CRAB"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "bch_misc_crab5",
+    "location": ["beach"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c decides to stop by the nursery, asking if m_c would like to try a crab. m_c nods with big eyes, and r_c plops down the critter as it still attempts to crawl while on it's back. m_c doesn't crack {PRONOUN/m_c/poss} jaws into it's shell like expected. Instead, m_c flips it over and ogles it curiously. Seems like m_c has found a new friend...?",
+    "accessories": ["CRAB"],
+    "m_c": {
+      "status": ["any"],
+      "age": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
     "event_id": "bch_misc_anyprophecymedcatprophet1",
     "location": ["beach"],
     "season": ["any"],

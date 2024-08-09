@@ -25,6 +25,336 @@
     }
   },
   {
+    "event_id": "mtn_misc_bluesnail1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, happily sharing how m_c managed to keep a snail as {PRONOUN/m_c/poss} pet.",
+    "accessories": ["BLUE SNAIL"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_bluesnail2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c and m_c go on a walk together! After a while, m_c and r_c run into a cute, slowly moving snail! m_c decides to keep it as a pet, and r_c cooes at the little thing as m_c carries it home.",
+    "accessories": ["BLUE SNAIL"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_westerncoachwhip1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step... and with a new noodly, harmless friend!",
+    "accessories": ["WESTERN COACHWHIP"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_westerncoachwhip2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers to show {PRONOUN/m_c/object} a cool, silly little snake {PRONOUN/r_c/subject} found! m_c takes {PRONOUN/r_c/poss} invitation. After seeing the weird, harmless thing, m_c decides to take it home with {PRONOUN/m_c/object}.",
+    "accessories": ["WESTERN COACHWHIP"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_smallanimal",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c gently guides a acc_singular into camp. Seems like m_c has found a new friend?",
+    "accessories": ["SMALLANIMAL"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"],
+      "trait": ["bold", "adventurous", "careful", "confident", "calm", "strange", "charismatic", "loving", "compassionate"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_smallanimal2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c and m_c, on a walk together, stumble upon an acc_singular. m_c tilts {PRONOUN/m_c/poss} head, and decides to take it home! r_c is charmed by m_c's generosity. ",
+    "accessories": ["SMALLANIMAL"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_ivy1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c finds paths and twists of healthy green ivy growing down just above the leader's den. Looking left and right for any cat paying attention to them, {PRONOUN/m_c/subject} quickly snap a pair of leaves off of one of the lower branches. m_c is seen wearing the ivy shortly after.",
+    "accessories": ["IVY"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_ivy2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c offers m_c some ivy {PRONOUN/r_c/subject} managed to find, telling {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} made sure it wasn't the itchy kind. m_c tilts {PRONOUN/m_c/poss} head and accepts {PRONOUN/r_c/poss} offer, wearing the pretty leaves with a little smile.",
+    "accessories": ["IVY"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_stick1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c gets smacked on the head by a falling stick! Grumbling, but liking the perfectly sized stick too much to destroy it out of rage, {PRONOUN/m_c/subject} {VERB/m_c/takes/take} it and {VERB/m_c/takes/take} to carry it around.",
+    "accessories": ["STICK"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_stick2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c offers m_c a stick that bonked them on the head earlier today, figuring that m_c could make some kind of use of it. m_c accepts, and carries it around with {PRONOUN/m_c/object}! ",
+    "accessories": ["STICK"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_dianthuswisteria1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c spots collections and clusters of gorgeous acc_singular, and decides to wear one of them!",
+    "accessories": ["DIANTHUS", "WISTERIA"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_dianthuswisteria2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c offers m_c acc_singular {PRONOUN/r_c/subject} found near camp, telling m_c that {PRONOUN/r_c/subject} thought that it'd look better on m_c than on {PRONOUN/r_c/self}.",
+    "accessories": ["DIANTHUS", "WISTERIA"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_yew1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c wonders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a fruity smelling acc_singular! m_c flaunts their new acc_singular with grace.",
+    "accessories": ["YEW"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_yew2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c and m_c decide to go for a short walk together! r_c blinks in surprise, before pointing out a yew tree {PRONOUN/r_c/subject} managed to spot from a ways away! m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/have/has} a good eye, and decides to tread over and wear the acc_singular! r_c compliments {PRONOUN/r_c/object}, and m_c grins, flustered. ",
+    "accessories": ["YEW"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_yew3",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c wanders around camp mindlessly with r_c's permission. m_c spots a fruity smelling acc_singular that rolled into camp! m_c flaunts their new acc_singular with grace.",
+    "accessories": ["YEW"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["kitten"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_yew4",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c brags about r_c giving them acc_singular to wear.",
+    "accessories": ["YEW"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["kitten"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_worm1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, and a dangling worm in their jaws...!?",
+    "accessories": ["WORM"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_worm2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c and m_c go on a walk together! After a while, m_c and r_c run into a light pink, squirmy little worm! m_c decides to keep it as a pet, and r_c cooes at the little thing as m_c carries it home.",
+    "accessories": ["WORM"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"],
+      "trait": ["strange", "thoughtful"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_rabbit1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c leaps and gracefully sweeps across the plains of c_n territory. m_c quickly scans the scenery around {PRONOUN/m_c/object} inbetween leaps, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
+    "new_accessory": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_rabbit2",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c and r_c both leap and gracefully sweep across the plains of c_n territory. m_c quickly scans the scenery around them both inbetween a shared leap, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
+    "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHTIE RABBIT", "GRAY VITILIGO RABBIT"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_rabbit3",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "r_c spots acc_singular near camp. Before r_c can rip {PRONOUN/r_c/poss} way through camp and to the acc_singular, m_c stops {PRONOUN/r_c/object} and tells {PRONOUN/r_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/want/wants} it as a pet. r_c opens {PRONOUN/r_c/poss} mouth to <i>hiss</i> at m_c, but the kit bounds over to the acc_singular. Guess it's too late to catch it...",
+    "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["kitten"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_rabbit4",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c's eyes dilate as {PRONOUN/m_c/subject} {VERB/m_c/focus/focuses} on a rabbit near the dirt-place. m_c has been taught all {PRONOUN/m_c/poss} life that hunting was the only thing that a warrior did near rabbits... but this one was so <i>cute</i>. m_c wanders towards it, and quickly befriends it!",
+    "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["kitten"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "mtn_misc_rat1",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c eyes a pink-nosed rat that wondered into the warrior's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a piece of grass.",
+    "accessories": ["RAT"],
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
     "event_id": "mtn_misc_anyomenmedcatomen1",
     "location": ["mountainous"],
     "season": ["any"],
