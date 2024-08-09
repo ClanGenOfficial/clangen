@@ -738,19 +738,21 @@ class PronounCreation(UIWindow):
             manager=MANAGER,
             container=self.demo_container,
         )
-        # Tittle
-        self.elements["Pronoun Creation"] = pygame_gui.elements.UITextBox(
-            "Pronoun Creation",
-            ui_scale(pygame.Rect((100, 15), (225, 32))),
-            object_id="#text_box_40_horizcenter",
+
+        self.elements["core_container"] = pygame_gui.core.UIContainer(
+            ui_scale(pygame.Rect((0, 0), (375, 400))),
             manager=MANAGER,
             container=self,
         )
 
-        self.elements["core_container"] = pygame_gui.core.UIContainer(
-            ui_scale(pygame.Rect((0, 0), (350, 300))),
+        # Tittle
+        self.elements["Pronoun Creation"] = pygame_gui.elements.UITextBox(
+            "Pronoun Creation",
+            ui_scale(pygame.Rect((0, 15), (225, 32))),
+            object_id="#text_box_40_horizcenter",
             manager=MANAGER,
-            container=self,
+            container=self.elements["core_container"],
+            anchors={"centerx": "centerx"},
         )
 
         # Adjusted positions for labels
@@ -795,7 +797,7 @@ class PronounCreation(UIWindow):
         )
         self.checkbox_label["singular_label"] = pygame_gui.elements.UITextBox(
             "Singular",
-            ui_scale(pygame.Rect((128, 265), (100, 30))),
+            ui_scale(pygame.Rect((128, 285), (100, 30))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self,
@@ -858,12 +860,13 @@ class PronounCreation(UIWindow):
         # Add buttons
         self.buttons = {}
         self.buttons["save_pronouns"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((125, 335), (73, 30))),
+            ui_scale(pygame.Rect((0, 335), (73, 30))),
             "save",
             get_button_dict(ButtonStyles.SQUOVAL, (73, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
-            container=self,
+            container=self.elements["core_container"],
+            anchors={"centerx": "centerx"},
         )
         # Creating Checkmarks
         self.buttons["singular_unchecked"] = UIImageButton(
