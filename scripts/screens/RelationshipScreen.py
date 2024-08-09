@@ -206,7 +206,7 @@ class RelationshipScreen(Screens):
         )
 
         back_rect = ui_scale(pygame.Rect((0, 0), (105, 30)))
-        back_rect.bottomleft = (25, -25)
+        back_rect.bottomleft = ui_scale_offset((25, -25))
         self.back_button = UISurfaceImageButton(
             back_rect,
             get_arrow(2) + " Back",

@@ -20,6 +20,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_value,
+    ui_scale_offset,
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
@@ -372,7 +373,7 @@ class ChangeGenderScreen(Screens):
 
             # Create remove button
             button_rect = ui_scale(pygame.Rect((0, 0), (24, 24)))
-            button_rect.topright = (-10, 0)
+            button_rect.topright = ui_scale_offset((-10, 0))
             self.removalbuttons[f"cat_pronouns_{n}"] = CatButton(
                 button_rect,
                 "",
@@ -487,7 +488,7 @@ class ChangeGenderScreen(Screens):
 
             # Create remove button for each pronounset with dynamic ycoor
             button_rect = ui_scale(pygame.Rect((0, 0), (24, 24)))
-            button_rect.topright = (-10, 0)
+            button_rect.topright = ui_scale_offset((-10, 0))
             self.deletebuttons[dict_name_core] = CatButton(
                 button_rect,
                 "",
