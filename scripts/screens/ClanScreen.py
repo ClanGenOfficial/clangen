@@ -228,11 +228,10 @@ class ClanScreen(Screens):
             object_id="@checked_checkbox",
         )
 
-        self.save_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((343, 643), (114, 30))),
-            "Save",
-            get_button_dict(ButtonStyles.SQUOVAL, (114, 30)),
-            object_id="@buttonstyles_squoval",
+        self.save_button = UIImageButton(
+            ui_scale(pygame.Rect(((343, 643), (114, 30)))),
+            "",
+            object_id="#save_button",
         )
         self.save_button.enable()
         self.save_button_saved_state = pygame_gui.elements.UIImage(
