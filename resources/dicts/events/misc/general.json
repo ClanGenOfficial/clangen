@@ -2647,9 +2647,10 @@
     "event_id": "gen_misc_acc1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
-    "accessories": ["FLOWER", "PLANT", "FRUIT", "PLANT2"],
+    "new_accessory": ["FLOWER", "PLANT", "FRUIT", "PLANT2"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2663,9 +2664,10 @@
     "event_id": "gen_misc_fruit1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a fruity smelling acc_singular! m_c flaunts their new acc_singular with grace.",
-    "accessories": ["FRUIT", "BLUE BERRIES", "BLUEBERRY"],
+    "new_accessory": ["FRUIT", "BLUE BERRIES", "BLUEBERRY"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2675,9 +2677,10 @@
     "event_id": "gen_misc_stick1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds a cool stick while on patrol! {PRONOUN/r_c/subject/CAP} {VERB/r_c/bring/brings} it back home to m_c, and tells {PRONOUN/m_c/object} it's a gift! m_c accepts it happily, and decides to carry it around.",
-    "accessories": ["STICK"],
+    "new_accessory": ["STICK"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2691,9 +2694,10 @@
     "event_id": "gen_misc_stick2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds a cool stick near the edge of camp! m_c decides it's cool enough to keep around.",
-    "accessories": ["STICK"],
+    "new_accessory": ["STICK"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -2703,9 +2707,10 @@
     "event_id": "gen_misc_stick3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds a cool stick! {PRONOUN/m_c/subject/CAP} decide to keep it with them around camp.",
-    "accessories": ["STICK"],
+    "new_accessory": ["STICK"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -2715,9 +2720,10 @@
     "event_id": "gen_misc_stick4",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c squints at m_c, not entirely sure if {PRONOUN/r_c/subject} {VERB/r_c/believe/believes} {PRONOUN/r_c/poss} eyes as {PRONOUN/r_c/subject} {VERB/r_c/watch/watches} m_c drag around a raggedy tree branch around the nursery den for the fifth time. r_c asks about it, and m_c replies that {PRONOUN/m_c/subject} just... really, <i>really</i> {VERB/m_c/like/likes} sticks, especially this one. r_c is left more confused than before.",
-    "accessories": ["STICK"],
+    "new_accessory": ["STICK"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2731,9 +2737,10 @@
     "event_id": "gen_misc_pumpkin1",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds a weird little pumpkin while on patrol! {PRONOUN/r_c/subject/CAP} {VERB/r_c/bring/brings} it back home to m_c, and tells {PRONOUN/m_c/object} it's a gift! m_c accepts it happily, and decides to roll it around.",
-    "accessories": ["PUMPKIN"],
+    "new_accessory": ["PUMPKIN"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2747,9 +2754,10 @@
     "event_id": "gen_misc_pumpkin2",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "Mysteriously, it seems like m_c has found a small pumpkin near camp. m_c decides to roll it around along with {PRONOUN/m_c/object} around camp.",
-    "accessories": ["PUMPKIN"],
+    "new_accessory": ["PUMPKIN"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2759,9 +2767,10 @@
     "event_id": "gen_misc_ivy1",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds a cool ivy-covered tree while on patrol! {PRONOUN/r_c/subject/CAP} {VERB/r_c/bring/brings} a pair of pretty leaves back home to m_c, and tells {PRONOUN/m_c/object} it's a gift! m_c accepts it happily, and decides to wear it.",
-    "accessories": ["IVY"],
+    "new_accessory": ["IVY"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2775,9 +2784,10 @@
     "event_id": "gen_misc_ivy2",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c tilts {PRONOUN/m_c/poss} head at the camp wall. Nobody's entirely sure why... until {PRONOUN/m_c/subject} {VERB/m_c/pluck/plucks} a few ivy leaves off of the wall, and wear it with pride.",
-    "accessories": ["IVY"],
+    "new_accessory": ["IVY"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2787,9 +2797,10 @@
     "event_id": "gen_misc_ivy3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "With an impressive leap, m_c manages to leap up with {PRONOUN/m_c/poss} stubby back legs and grab a pair of ivy leaves off of the clan camp's walls! m_c wears {PRONOUN/m_c/poss} new accomplishment with pride.",
-    "accessories": ["IVY"],
+    "new_accessory": ["IVY"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2799,9 +2810,10 @@
     "event_id": "gen_misc_rabbit1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c gently guides a rabbit into camp. Seems like m_c has found a new friend?",
-    "accessories": ["FAWN RABBIT", "FAWN AND WHITE RABBIT", "FAWN VITILIGO RABBIT", "WHITE RABBIT", "BROWN RABBIT", "BROWN AND WHITE RABBIT", "BROWN VITILIGO RABBIT", "TAN RABBIT", "TAN VITILIGO RABBIT", "TAN AND WHITE RABBIT"],
+    "new_accessory": ["FAWN RABBIT", "FAWN AND WHITE RABBIT", "FAWN VITILIGO RABBIT", "WHITE RABBIT", "BROWN RABBIT", "BROWN AND WHITE RABBIT", "BROWN VITILIGO RABBIT", "TAN RABBIT", "TAN VITILIGO RABBIT", "TAN AND WHITE RABBIT"],
     "m_c": {
       "status": ["any"],
       "age": ["any"]
@@ -2811,9 +2823,10 @@
     "event_id": "gen_misc_laceleaf1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds a patch of odd red orchids. {PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to take a pair of it's prettiest blooms for a gift to give to m_c! m_c decorates {PRONOUN/m_c/self} with the pretty flowers, cooing softly at how pretty {PRONOUN/m_c/subject} feel with them on.",
-    "accessories": ["LACELEAF"],
+    "new_accessory": ["LACELEAF"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2827,9 +2840,10 @@
     "event_id": "gen_misc_laceleaf2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c sneakily crawls out of camp on {PRONOUN/m_c/poss} stubbly little legs. Luckily, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} it back to camp a little while later in one piece, undetected by any patrols, and with a pretty flower! m_c also gets a massive scolding.",
-    "accessories": ["LACELEAF"],
+    "new_accessory": ["LACELEAF"],
     "m_c": {
       "status":["kitten"],
       "age": ["any"]
@@ -2839,9 +2853,10 @@
     "event_id": "gen_misc_allium1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds a pretty, smelly field of onions with pretty pink blooms. {PRONOUN/r_c/subject/CAP} {VERB/r_c/take/takes} a few, and {VERB/r_c/gift/gifts} the stalks to m_c! m_c wears them all with a big sunny smile.",
-    "accessories": ["ALLIUM"],
+    "new_accessory": ["ALLIUM"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2855,9 +2870,10 @@
     "event_id": "gen_misc_allium2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c manages to find a spare allium near the medicine den! {PRONOUN/m_c/subject/CAP} {VERB/m_c/purr/purrs} as {PRONOUN/m_c/subject} {VERB/m_c/tuck/tucks} it under {PRONOUN/m_c/poss} ears -- {PRONOUN/m_c/subject} look so fashionable!",
-    "accessories": ["ALLIUM"],
+    "new_accessory": ["ALLIUM"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2867,9 +2883,10 @@
     "event_id": "gen_misc_hesperis1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c gifted m_c bunches of pretty purple flowers! m_c wears them all with a big sunny smile.",
-    "accessories": ["HESPERIS"],
+    "new_accessory": ["HESPERIS"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2883,9 +2900,10 @@
     "event_id": "gen_misc_hesperis2",
     "location": ["any"],
     "season": ["greenleaf","leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds a pretty pink flower! {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} it with a smile.",
-    "accessories": ["HESPERIS"],
+    "new_accessory": ["HESPERIS"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2895,9 +2913,10 @@
     "event_id": "gen_misc_hesperiswisteria1",
     "location": ["any"],
     "season": ["greenleaf","leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds acc_singular! {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} the blooms with a smile.",
-    "accessories": ["HESPERIS", "WISTERIA"],
+    "new_accessory": ["HESPERIS", "WISTERIA"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2907,9 +2926,10 @@
     "event_id": "gen_misc_hesperiswisteria2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c ducks {PRONOUN/r_c/poss} head under the nursery's entrance, and offers m_c acc_singular to play with! m_c snatches it and tucks it next to {PRONOUN/m_c/poss} ear. m_c smugly flaunts it to anyone who asks about it.",
-    "accessories": ["HESPERIS", "WISTERIA"],
+    "new_accessory": ["HESPERIS", "WISTERIA"],
     "m_c": {
       "status":["kitten"],
       "age": ["any"]
@@ -2923,9 +2943,10 @@
     "event_id": "gen_misc_hesperiswisteria3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c begs r_c to get {PRONOUN/m_c/object} something from outside of the camp, yapping about wanting to go on patrol like r_c does! r_c caves, rolling {PRONOUN/r_c/poss} eyes, and brings m_c some acc_singular {PRONOUN/r_c/subject} managed to find.",
-    "accessories": ["HESPERIS", "WISTERIA"],
+    "new_accessory": ["HESPERIS", "WISTERIA"],
     "m_c": {
       "status":["kitten"],
       "age": ["any"]
@@ -2939,9 +2960,10 @@
     "event_id": "gen_misc_plant1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds a acc_singular in camp! r_c gives it to m_c, who decides to wear it!.",
-    "accessories": ["PLANT2"],
+    "new_accessory": ["PLANT2"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2955,9 +2977,10 @@
     "event_id": "gen_misc_plant2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds a acc_singular in camp! m_c decides to wear it.",
-    "accessories": ["PLANT2"],
+    "new_accessory": ["PLANT2"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2967,9 +2990,10 @@
     "event_id": "gen_misc_aliveinsect1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c carries in an acc_singular into the nursery, asking m_c if {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to play with it. m_c eye's sparkle with joy as {PRONOUN/m_c/subject} plead for the acc_singular! r_c drops it, expecting m_c to play with it, but instead, r_c watches m_c befriend the weird little thing.",
-    "accessories": ["ALIVEINSECT"],
+    "new_accessory": ["ALIVEINSECT"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2983,9 +3007,10 @@
     "event_id": "gen_misc_aliveinsect2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c peers at a little acc_singular. {PRONOUN/m_c/subject/CAP} {VERB/m_c/remember/remembers} r_c calling it a pest... but it's far too cute to m_c to resist befriending.",
-    "accessories": ["ALIVEINSECT"],
+    "new_accessory": ["ALIVEINSECT"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -2999,9 +3024,10 @@
     "event_id": "any_misc_smallanimal1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c spots acc_singular near camp. Before r_c can rip {PRONOUN/r_c/poss} way through camp and to the acc_singular, m_c stops {PRONOUN/r_c/object} and tells {PRONOUN/r_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/want/wants} it as a pet. r_c opens {PRONOUN/r_c/poss} mouth to <i>hiss</i> at m_c, but the kit bounds over to the acc_singular. Guess it's too late to catch it...",
-    "accessories": ["SMALLANIMAL"],
+    "new_accessory": ["SMALLANIMAL"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3015,9 +3041,10 @@
     "event_id": "any_misc_smallanimal2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c disappears for a short little while, effectively sending the clan into a blind panic! m_c reappears quickly though, and with a new friend!",
-    "accessories": ["SMALLANIMAL"],
+    "new_accessory": ["SMALLANIMAL"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3027,9 +3054,10 @@
     "event_id": "any_misc_nature1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c naps on the side of r_c's belly. {PRONOUN/r_c/subject/CAP} {VERB/r_c/huff/huffs} quietly at the little snoring kitten, and {VERB/r_c/begin/begins} to gently clean {PRONOUN/m_c/poss} fur... only to find acc_singular!? What in the world has m_c been getting into?" ,
-    "accessories": ["WILD", "HESPERIS", "WISTERIA", "PETALS", "DRY HERBS", "HERBS", "MOSS PELT"],
+    "new_accessory": ["WILD", "HESPERIS", "WISTERIA", "PETALS", "DRY HERBS", "HERBS", "MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3043,9 +3071,10 @@
     "event_id": "any_misc_worm1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c watches with exhausted eyes as m_c violently digs a hole off to the side of c_n camp, flinging dirt everywhere. m_c approaches less than a minute later, covered in dirt and with a long worm in their jaws. Mumbled, m_c asks if {PRONOUN/m_c/subject} can keep {PRONOUN/m_c/poss} new friend. Exasperated, r_c tells {PRONOUN/m_c/object} yes and to <i>not</i> dig holes in camp, and then tiredly walks over to clean up m_c's mess.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten","apprentice"]
@@ -3059,9 +3088,10 @@
     "event_id": "any_misc_worm2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds a worm in camp on a rainy day! m_c decides to keep it.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten","apprentice"]
@@ -3071,9 +3101,10 @@
     "event_id": "any_misc_worm3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c and r_c find a worm in camp on a rainy day! m_c decides to keep it.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3087,9 +3118,10 @@
     "event_id": "gen_misc_acorn1",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "In the cool autumn air, m_c and r_c go on a short stroll together... and it's not too long until an acorn thunks onto the back of m_c's head. At r_c's cackles at {PRONOUN/m_c/poss} disgruntled, embarrassed face, {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to take the acorn and wear it out of pure spite.",
-    "accessories": ["ACORN"],
+    "new_accessory": ["ACORN"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -3103,9 +3135,10 @@
     "event_id": "gen_misc_acorn2",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "After m_c gets bonked on the head by a towering oak tree's falling acorns, {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to take and wear one out of pure spite.",
-    "accessories": ["ACORN"],
+    "new_accessory": ["ACORN"],
     "m_c": {
       "status":["any"],
       "age": ["any"],
@@ -3116,9 +3149,10 @@
     "event_id": "gen_misc_acorn3",
     "location": ["any"],
     "season": ["leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c spots an oak tree dropping acorns, and decided to take and wear one.",
-    "accessories": ["ACORN"],
+    "new_accessory": ["ACORN"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -3128,9 +3162,10 @@
     "event_id": "gen_misc_moss1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c and r_c decide to go on a warm, sunkissed stroll together to fetch some moss. m_c finds a specifically enamouring patch of moss, to r_c's amusement, and decides to bring it back home with {PRONOUN/m_c/object}.",
-    "accessories": ["MOSS"],
+    "new_accessory": ["MOSS"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -3144,9 +3179,10 @@
     "event_id": "gen_misc_moss2",
     "location": ["any"],
     "season": ["newleaf","greenleaf"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "After a warm stroll in the leaf-broken sunlight, m_c comes back with moss in {PRONOUN/m_c/poss} jaws. {PRONOUN/m_c/subject/CAP} {VERB/m_c/seem/seems} oddly possessive over it.",
-    "accessories": ["MOSS"],
+    "new_accessory": ["MOSS"],
     "m_c": {
       "status":["any"],
       "age": ["any"],
@@ -3157,9 +3193,10 @@
     "event_id": "gen_misc_moss3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c meows softly, volunteering to go on a moss-gathering patrol with r_c. They have a nice time talking while walking to a moss patch, and m_c comes home with fresh moss in their jaws.",
-    "accessories": ["MOSS"],
+    "new_accessory": ["MOSS"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -3173,9 +3210,10 @@
     "event_id": "gen_misc_birdskull1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c almost steps on a pristine, white bird skull that {PRONOUN/m_c/subject} managed to miss seeing. {PRONOUN/m_c/subject/CAP} {VERB/m_c/takes/take} it with curious eyes, and {VERB/m_c/wears/wear} it proudly.",
-    "accessories": ["BIRD SKULL"],
+    "new_accessory": ["BIRD SKULL"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -3185,9 +3223,10 @@
     "event_id": "gen_misc_birdskull2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c proudly shows off something that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been working on for the past few days -- a clean, pristine white bird skull. {PRONOUN/m_c/subject/CAP} decide to wear it, and {PRONOUN/m_c/subject} do so proudly.",
-    "accessories": ["BIRD SKULL"],
+    "new_accessory": ["BIRD SKULL"],
     "m_c": {
       "status":["any"],
       "age": ["any"],
@@ -3198,9 +3237,10 @@
     "event_id": "gen_misc_birdskull3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c proudly shows off something that {PRONOUN/r_c/subject} {VERB/r_c/have/has} been working on for the past few days -- a clean, pristine white bird skull. m_c wears it with a purr, thanking them for the cool trinket.",
-    "accessories": ["BIRD SKULL"],
+    "new_accessory": ["BIRD SKULL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3214,9 +3254,10 @@
     "event_id": "gen_misc_birdskull4",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c pokes around in the fresh kill pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manages/manage} to scavenge a whole bird skull! ...Gross! r_c helps {PRONOUN/m_c/poss} wash it and properly clean it before m_c wears it around camp.",
-    "accessories": ["BIRD SKULL"],
+    "new_accessory": ["BIRD SKULL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -3231,9 +3272,10 @@
     "event_id": "gen_misc_birdskull5",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c yaps and yowls about wanting to hunt and catch birds with r_c! Poor r_c, after a full day of m_c's yapping, gifts m_c a leftover bird skull to hold {PRONOUN/m_c/object} off until {PRONOUN/m_c/poss} apprenticeship.",
-    "accessories": ["BIRD SKULL"],
+    "new_accessory": ["BIRD SKULL"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"],
@@ -3248,9 +3290,10 @@
     "event_id": "gen_misc_birdskull6",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c, in an act of pure morbid curiosity, pokes around in the fresh kill pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manages/manage} to scavenge a whole bird skull! Gross! r_c helps {PRONOUN/m_c/object} wash it and properly clean it before m_c wears it around camp.",
-    "accessories": ["BIRD SKULL"],
+    "new_accessory": ["BIRD SKULL"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3264,9 +3307,10 @@
     "event_id": "gen_misc_mosspelt1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c trudges around camp with {PRONOUN/m_c/poss} pelt somehow covered in muddy grime and moss. After being properly cleaned, m_c decides to keep the moss.",
-    "accessories": ["MOSS PELT"],
+    "new_accessory": ["MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3276,9 +3320,10 @@
     "event_id": "gen_misc_mosspelt2",
     "location": ["any"],
     "season": ["newleaf","greenleaf","leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c, while m_c dozes off in camp, proceeds to pelt m_c with moss! m_c wakes up and snaps at r_c, but... keeps the moss on anyway. Strange.",
-    "accessories": ["MOSS PELT"],
+    "new_accessory": ["MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3292,9 +3337,10 @@
     "event_id": "gen_misc_mosspelt3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c was playing with a big mossball earlier! Suddenly, they get a <i>wonderful</i> idea --- cover {PRONOUN/m_c/self} in moss to pretend that m_c is a mossball! r_c is aghast and horrified as they watch m_c roll around in muddy moss. ",
-    "accessories": ["MOSS PELT"],
+    "new_accessory": ["MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3308,9 +3354,10 @@
     "event_id": "gen_misc_mosspelt4",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c was playing with a big mossball earlier, reminiscent of their kittenhood days! Suddenly, they get a <i>wonderful</i> idea --- cover {PRONOUN/m_c/self} in moss to pretend that m_c is a mossball! r_c is aghast and horrified as they watch m_c roll around in muddy moss. ",
-    "accessories": ["MOSS PELT"],
+    "new_accessory": ["MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["apprentice"]
@@ -3324,9 +3371,10 @@
     "event_id": "gen_misc_crafted1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c proudly shows off something that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been working on for the past few days -- a perfectly crafted acc_singular! {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to wear it, and {PRONOUN/m_c/subject} do so proudly.",
-    "accessories": ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT"],
+    "new_accessory": ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3336,9 +3384,10 @@
     "event_id": "gen_misc_crafted2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c proudly shows off something that {PRONOUN/r_c/subject} {VERB/r_c/have/has} been working on for the past few days -- a perfectly crafted acc_singular, made as a gift for m_c! {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to wear it, purring softly.",
-    "accessories": ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT"],
+    "new_accessory": ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3352,9 +3401,10 @@
     "event_id": "gen_misc_smallanimal1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c, on a walk together, stumble upon an acc_singular. m_c tilts {PRONOUN/m_c/poss} head, and decides to take it home! r_c is charmed by m_c's generosity. ",
-    "accessories": ["SMALLANIMAL"],
+    "new_accessory": ["SMALLANIMAL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3368,9 +3418,10 @@
     "event_id": "gen_misc_fruit2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c decide to go for a short walk together! r_c blinks in surprise, before pointing out a cool acc_singular bush {PRONOUN/r_c/subject} managed to spot! m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/have/has} a good eye, and decides to take and wear the acc_singular! r_c compliments {PRONOUN/r_c/object}, and m_c grins, flustered. ",
-    "accessories": ["RASPBERRY", "BLUE BERRIES", "BLUEBERRY", "BLACKBERRY", "GOLDEN RASPBERRY"],
+    "new_accessory": ["RASPBERRY", "BLUE BERRIES", "BLUEBERRY", "BLACKBERRY", "GOLDEN RASPBERRY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3384,9 +3435,10 @@
     "event_id": "gen_misc_cherry1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c decide to go for a short walk together! r_c blinks in surprise, before pointing out a cherry tree {PRONOUN/r_c/subject} managed to spot from a ways away! m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/have/has} a good eye, and decides to tread over and wear the acc_singular! r_c compliments {PRONOUN/r_c/object}, and m_c grins, flustered. ",
-    "accessories": ["CHERRY"],
+    "new_accessory": ["CHERRY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3400,9 +3452,10 @@
     "event_id": "gen_misc_bee1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c decide to go for a short walk together! r_c calls from behind m_c, and m_c has to leap out of the way of a buzzing bee! m_c shifts to swipe at it... but r_c remarks that it seems oddly friendly. m_c decides to take it home with {PRONOUN/m_c/object}.",
-    "accessories": ["BEE"],
+    "new_accessory": ["BEE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3416,9 +3469,10 @@
     "event_id": "gen_misc_bee2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c tilts {PRONOUN/m_c/poss} head idly at a bee flying around {PRONOUN/m_c/poss} head. It doesn't seem to want to sting {PRONOUN/m_c/object}, so m_c assumes it wants to be {PRONOUN/m_c/poss} friend!.",
-    "accessories": ["BEE"],
+    "new_accessory": ["BEE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -3429,9 +3483,10 @@
     "event_id": "gen_misc_bee3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a bee! m_c claims it's {PRONOUN/m_c/poss} new pet.",
-    "accessories": ["BEE"],
+    "new_accessory": ["BEE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3441,9 +3496,10 @@
     "event_id": "gen_misc_leafbow1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c received a present, two weaved leaves that form a cute green bow from r_c! m_c decides to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-    "accessories": ["LEAF BOW"],
+    "new_accessory": ["LEAF BOW"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3457,9 +3513,10 @@
     "event_id": "gen_misc_leafbow2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "Over the past few days, m_c has been searching bushes with vigor. On an early morning, m_c reveals that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been braiding and weaving a bow made out of leaves for {PRONOUN/m_c/self}! m_c flaunts {PRONOUN/m_c/poss} work proudly.",
-    "accessories": ["LEAF BOW"],
+    "new_accessory": ["LEAF BOW"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3473,9 +3530,10 @@
     "event_id": "gen_misc_leafbow3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c weaves two leaves to make a pretty vibrant bow for m_c! m_c wears it with a bird-like chirp.",
-    "accessories": ["LEAF BOW"],
+    "new_accessory": ["LEAF BOW"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3489,9 +3547,10 @@
     "event_id": "gen_misc_deadinsect1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c leaps up at a flying bug {PRONOUN/m_c/subject} found around camp, and catches it with grace! {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} the acc_singular proudly.",
-    "accessories": ["DEADINSECT"],
+    "new_accessory": ["DEADINSECT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3501,9 +3560,10 @@
     "event_id": "gen_misc_deadinsect2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c <i>mrrps</i> at m_c, asking {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} wanted a pair of acc_singular that they found. m_c says yes, and thanks {PRONOUN/r_c/object} for the cool wings!",
-    "accessories": ["DEADINSECT"],
+    "new_accessory": ["DEADINSECT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3517,9 +3577,10 @@
     "event_id": "gen_misc_deadinsect3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c whines to r_c about a pretty insect {PRONOUN/m_c/subject} found fluttering near the nursery. r_c puts {PRONOUN/r_c/poss} tail on m_c's shoulder, and leaps to go catch it for m_c! m_c purrs, and decides to wear one of the acc_plural.",
-    "accessories": ["DEADINSECT"],
+    "new_accessory": ["DEADINSECT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3533,9 +3594,10 @@
     "event_id": "gen_misc_deadinsect4",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c leaps up on {PRONOUN/m_c/poss} little legs with a big, impressive leap, and catches an insect! {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} the acc_plural with pride.",
-    "accessories": ["DEADINSECT"],
+    "new_accessory": ["DEADINSECT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -3545,9 +3607,10 @@
     "event_id": "gen_misc_isopod1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c seems to have found a strange bug, and has decided to keep it as a pet.",
-    "accessories": ["ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD"],
+    "new_accessory": ["ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3557,9 +3620,10 @@
     "event_id": "gen_misc_isopod2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c seems to have found a strange bug, and calls m_c over to see it. Curiously enough. m_c has decided to keep it as a pet.",
-    "accessories": ["ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD"],
+    "new_accessory": ["ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3573,9 +3637,10 @@
     "event_id": "gen_misc_brownsnail1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c go on a walk together! After a while, m_c and r_c run into a cute, slowly moving snail! m_c decides to keep it as a pet, and r_c cooes at the little thing as m_c carries it home.",
-    "accessories": ["BROWN SNAIL"],
+    "new_accessory": ["BROWN SNAIL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3589,9 +3654,10 @@
     "event_id": "gen_misc_brownsnail2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, happily sharing how m_c managed to keep a snail as {PRONOUN/m_c/poss} pet.",
-    "accessories": ["BROWN SNAIL"],
+    "new_accessory": ["BROWN SNAIL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3601,9 +3667,10 @@
     "event_id": "gen_misc_grasssnake1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c waltzes back into camp... with a grass snake!? m_c promises that the snake is safe to be around, and that {PRONOUN/m_c/subject} will be the one to take care of it's needs.",
-    "accessories": ["GRASS SNAKE"],
+    "new_accessory": ["GRASS SNAKE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -3614,9 +3681,10 @@
     "event_id": "gen_misc_grasssnake2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step... and with a new noodly, harmless friend!",
-    "accessories": ["GRASS SNAKE", "KINGSNAKE"],
+    "new_accessory": ["GRASS SNAKE", "KINGSNAKE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3626,9 +3694,10 @@
     "event_id": "gen_misc_grasssnake3",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers to show {PRONOUN/m_c/object} a cool, silly little snake {PRONOUN/r_c/subject} found! m_c takes {PRONOUN/r_c/poss} invitation. After seeing the weird, harmless thing, m_c decides to take it home with {PRONOUN/m_c/object}.",
-    "accessories": ["GRASS SNAKE", "KINGSNAKE"],
+    "new_accessory": ["GRASS SNAKE", "KINGSNAKE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3642,9 +3711,10 @@
     "event_id": "gen_misc_ladybug1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c seems to have spotted acc_plural, and has decided to snag one up as a pet.",
-    "accessories": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
+    "new_accessory": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3654,9 +3724,10 @@
     "event_id": "gen_misc_ladybug2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c seems to have found a pack of acc_singular collecting near a bush, and calls m_c over to see the acc_plural. Curiously enough. m_c has decided to keep one as a pet.",
-    "accessories": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
+    "new_accessory": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3670,9 +3741,10 @@
     "event_id": "gen_misc_squirrel1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c waltzes onto camp with a squirrel following suit! {PRONOUN/m_c/subject} snap at any cat who attempts to snap at the poor thing, and m_c proudly states that it's {PRONOUN/m_c/poss} new pet.",
-    "accessories": ["GRAY SQUIRREL", "RED SQUIRREL", "INDIAN GIANT SQUIRREL"],
+    "new_accessory": ["GRAY SQUIRREL", "RED SQUIRREL", "INDIAN GIANT SQUIRREL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -3683,9 +3755,10 @@
     "event_id": "gen_misc_bird1",
     "location": ["any"],
     "season": ["newleaf","greenleaf","leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after they attempt to leave!",
-    "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
+    "new_accessory": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3699,9 +3772,10 @@
     "event_id": "gen_misc_bird2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c sneaks out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after they attempt to leave!",
-    "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
+    "new_accessory": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3711,9 +3785,10 @@
     "event_id": "gen_misc_flower1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step and a new flowery accessory!",
-    "accessories": ["FLOWER"],
+    "new_accessory": ["FLOWER"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3723,9 +3798,10 @@
     "event_id": "gen_misc_flower2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers {PRONOUN/m_c/object} a pretty flower! m_c takes it and decorates {PRONOUN/m_c/self} with it, purring out a thank you.",
-    "accessories": ["FLOWER"],
+    "new_accessory": ["FLOWER"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3739,9 +3815,10 @@
     "event_id": "gen_misc_daisy1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step and a new acc_singular accessory!",
-    "accessories": ["DAISY"],
+    "new_accessory": ["DAISY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3751,9 +3828,10 @@
     "event_id": "gen_misc_daisy2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers {PRONOUN/m_c/object} a pretty acc_singular! m_c takes it and decorates {PRONOUN/m_c/self} with it, purring out a thank you.",
-    "accessories": ["DAISY"],
+    "new_accessory": ["DAISY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3767,9 +3845,10 @@
     "event_id": "gen_misc_daisycorsage1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c received a present, gently weaved acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-    "accessories": ["DAISY CORSAGE"],
+    "new_accessory": ["DAISY CORSAGE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3783,36 +3862,38 @@
     "event_id": "gen_misc_daisycorsage2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "Over the past few days, m_c has been adamant on being near a nearby daisy patch. On an early morning, m_c reveals that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been braiding a daisy corsage for {PRONOUN/m_c/poss} tail! m_c flaunts {PRONOUN/m_c/poss} work proudly.",
-    "accessories": ["DAISY CORSAGE"],
+    "new_accessory": ["DAISY CORSAGE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
     }
   },
     {
-        "event_id": "gen_misc_any_accessorykitkit2",
-        "location": ["any"],
-        "season": ["newleaf","greenleaf"],
-        "sub_type": ["accessory"],
-        "weight": 20,
-        "event_text": "m_c, inbetween playfighting with r_c, collects scraps of daisies that sometimes get stuck in r_c's pelt. After quite a while, m_c {VERB/m_c/crafts/craft} a daisy corsage for {PRONOUN/m_c/poss} tail!",
-        "new_accessory": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT"],
-        "m_c": {
-            "age": ["kitten"]
-        },
-        "r_c": {
-          "age":["kitten"]
-        }
+      "event_id": "gen_misc_any_accessorykitkit2",
+      "location": ["any"],
+      "season": ["newleaf","greenleaf"],
+      "sub_type": ["accessory"],
+      "weight": 20,
+      "event_text": "m_c, inbetween playfighting with r_c, collects scraps of daisies that sometimes get stuck in r_c's pelt. After quite a while, m_c {VERB/m_c/crafts/craft} a daisy corsage for {PRONOUN/m_c/poss} tail!",
+      "new_accessory": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT"],
+      "m_c": {
+          "age": ["kitten"]
+      },
+      "r_c": {
+        "age":["kitten"]
+      }
     },
   {
     "event_id": "gen_misc_glory1",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step and a new acc_singular accessory!",
-    "accessories": ["BLUE GLORY", "PURPLE GLORY"],
+    "new_accessory": ["BLUE GLORY", "PURPLE GLORY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -3822,9 +3903,10 @@
     "event_id": "gen_misc_glory2",
     "location": ["any"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers {PRONOUN/m_c/object} a pretty acc_singular! m_c takes it and decorates {PRONOUN/m_c/self} with it, purring out a thank you.",
-    "accessories": ["BLUE GLORY", "PURPLE GLORY"],
+    "new_accessory": ["BLUE GLORY", "PURPLE GLORY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]

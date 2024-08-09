@@ -384,6 +384,47 @@ class Sprites:
             ["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]
         ]
 
+        plant2_data = [
+            ["CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]
+        ]
+
+        crafted_data = [
+            ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT", "BIRD SKULL", "LEAF BOW"]
+        ]
+
+        flower_data = [
+            ["DAISY", "DIANTHUS", "BLEEDING HEARTS", "FRANGIPANI", "BLUE GLORY", "CATNIP FLOWER", "BLANKET FLOWER", "ALLIUM", "LACELEAF", "PURPLE GLORY"],
+            ["YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA"]
+        ]
+
+        snake_data = [
+            ["GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]
+        ]
+
+        deadInsect_data = [
+            ["LUNAR MOTH", "ROSY MAPLE MOTH", "MONARCH BUTTERFLY", "DAPPLED MONARCH", "POLYPHEMUS MOTH", "MINT MOTH"]
+        ]
+
+        aliveInsect_data = [
+            ["BROWN SNAIL", "RED SNAIL", "WORM", "BLUE SNAIL", "ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD", "BEE", "RED LADYBUG"],
+            ["ORANGE LADYBUG", "YELLOW LADYBUG"]
+        ]
+
+        fruit_data = [
+            ["RASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]
+        ]
+
+        smallAnimal_data = [
+            ["GRAY SQUIRREL", "RED SQUIRREL", "CRAB", "WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "INDIAN GIANT SQUIRREL", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT"],
+            ["WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE"],
+            ["CUBAN TROGON", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "RAT", "WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "GRAY RABBIT"],
+            ["GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+        ]
+
+        tail2_data = [
+            ["SEAWEED", "DAISY CORSAGE"]
+        ]
+
         # medcatherbs
         for row, herbs in enumerate(medcatherbs_data):
             for col, herb in enumerate(herbs):
@@ -416,56 +457,41 @@ class Sprites:
                 self.make_group('nyloncollars', (col, row), f'collars{nyloncollar}')
 
         # ohdan's accessories :3
-        for a, i in enumerate([
-            "CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]):
-            sprites.make_group('plant2_accessories', (a, 0), f'acc_plant2{i}')
+        for row, plant2_accessories in enumerate(plant2_data):
+            for col, plant2_accessory in enumerate(plant2_accessories):
+                self.make_group('plant2_accessories', (col, row), f'acc_plant2{plant2_accessory}')
+
+        for row, crafted_accessories in enumerate(crafted_data):
+            for col, crafted_accessory in enumerate(crafted_accessories):
+                self.make_group('crafted_accessories', (col, row), f'acc_crafted{crafted_accessory}')
         
-        for a, i in enumerate([
-            "DAISY", "DIANTHUS", "BLEEDING HEARTS", "FRANGIPANI", "BLUE GLORY", "CATNIP FLOWER", "BLANKET FLOWER", "ALLIUM", "LACELEAF", "PURPLE GLORY"]):
-            sprites.make_group('flower_accessories', (a, 0), f'acc_flower{i}')
-        for a, i in enumerate([
-            "YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA"]):
-            sprites.make_group('flower_accessories', (a, 1), f'acc_flower{i}')
+        for row, flower_accessories in enumerate(flower_data):
+            for col, flower_accessory in enumerate(flower_accessories):
+                self.make_group('flower_accessories', (col, row), f'acc_flower{flower_accessory}')
         
-        for a, i in enumerate([
-            "GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]):
-            sprites.make_group('snake_accessories', (a, 0), f'acc_snake{i}')
+        for row, snake_accessories in enumerate(snake_data):
+            for col, snake_accessory in enumerate(snake_accessories):
+                self.make_group('snake_accessories', (col, row), f'acc_snake{snake_accessory}')
+
+        for row, deadInsect_accessories in enumerate(deadInsect_data):
+            for col, deadInsect_accessory in enumerate(deadInsect_accessories):
+                self.make_group('deadInsect_accessories', (col, row), f'acc_deadInsect{deadInsect_accessory}')
             
-        for a, i in enumerate([
-            "GRAY SQUIRREL", "RED SQUIRREL", "CRAB", "WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "INDIAN GIANT SQUIRREL", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT"]):
-            sprites.make_group('smallAnimal_accessories', (a, 0), f'acc_smallAnimal{i}')
-        for a, i in enumerate([
-            "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE"]):
-            sprites.make_group('smallAnimal_accessories', (a, 1), f'acc_smallAnimal{i}')
-        for a, i in enumerate([
-            "CUBAN TROGON", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "RAT", "WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "GRAY RABBIT"]):
-            sprites.make_group('smallAnimal_accessories', (a, 2), f'acc_smallAnimal{i}')
-        for a, i in enumerate([
-            "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]):
-            sprites.make_group('smallAnimal_accessories', (a, 3), f'acc_smallAnimal{i}')
-            
-        for a, i in enumerate([
-            "LUNAR MOTH", "ROSY MAPLE MOTH", "MONARCH BUTTERFLY", "DAPPLED MONARCH", "POLYPHEMUS MOTH", "MINT MOTH"]):
-            sprites.make_group('deadInsect_accessories', (a, 0), f'acc_deadInsect{i}')
-            
-        for a, i in enumerate([
-            "BROWN SNAIL", "RED SNAIL", "WORM", "BLUE SNAIL", "ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD", "BEE", "RED LADYBUG"]):
-            sprites.make_group('aliveInsect_accessories', (a, 0), f'acc_aliveInsect{i}')
-        for a, i in enumerate([
-            "ORANGE LADYBUG", "YELLOW LADYBUG"]):
-            sprites.make_group('aliveInsect_accessories', (a, 1), f'acc_aliveInsect{i}')
-        
-        for a, i in enumerate([
-            "RASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]):
-            sprites.make_group('fruit_accessories', (a, 0), f'acc_fruit{i}')
-        
-        for a, i in enumerate([
-            "WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT", "BIRD SKULL", "LEAF BOW"]):
-            sprites.make_group('crafted_accessories', (a, 0), f'acc_crafted{i}')
-        
-        for a, i in enumerate([
-            "SEAWEED", "DAISY CORSAGE"]):
-            sprites.make_group('tail2_accessories', (a, 0), f'acc_tail{i}')
+        for row, aliveInsect_accessories in enumerate(aliveInsect_data):
+            for col, aliveInsect_accessory in enumerate(aliveInsect_accessories):
+                self.make_group('aliveInsect_accessories', (col, row), f'acc_aliveInsect{aliveInsect_accessory}')
+
+        for row, fruit_accessories in enumerate(fruit_data):
+            for col, fruit_accessory in enumerate(fruit_accessories):
+                self.make_group('fruit_accessories', (col, row), f'acc_fruit{fruit_accessory}')
+
+        for row, smallAnimal_accessories in enumerate(smallAnimal_data):
+            for col, smallAnimal_accessory in enumerate(smallAnimal_accessories):
+                self.make_group('smallAnimal_accessories', (col, row), f'acc_smallAnimal{smallAnimal_accessory}')
+
+        for row, tail2_accessories in enumerate(tail2_data):
+            for col, tail2_accessory in enumerate(tail2_accessories):
+                self.make_group('tail2_accessories', (col, row), f'acc_tail2{tail2_accessory}')
 
 
     def load_symbols(self):

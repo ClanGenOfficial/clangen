@@ -611,6 +611,21 @@
     "plural": "hesperis flowers",
     "singular": "hesperis"
 },
+"FLOWER2": {
+    "default": "flower",
+    "plural": "flowers",
+    "singular": "flower"
+},
+"DEADINSECT": {
+    "default": "dead insect",
+    "plural": "dead insects",
+    "singular": "dead insect"
+},
+"ALIVEINSECT": {
+    "default": "alive insect",
+    "plural": "alive insects",
+    "singular": "alive insect"
+},
 "MARIGOLD": {
     "default": "marigold",
     "plural": "marigold",
@@ -875,5 +890,15 @@
     "default": "bird skull",
     "plural": "bird skulls",
     "singular": "bird skull"
+  },
+  "FRUIT":{
+    "default": "fruit",
+    "plural": "fruits",
+    "singular": "fruit"
+  },
+  "PLANT2": {
+    "default": "plant",
+    "plural": "plants",
+    "singular": "plant"
   }
 }

@@ -714,7 +714,16 @@ class Pelt:
         if acc_display_choice == 1:
             self.accessory = choice([
                 choice(Pelt.plant_accessories),
-                choice(Pelt.wild_accessories)
+                choice(Pelt.wild_accessories),
+                choice(Pelt.flower_accessories),
+                choice(Pelt.plant2_accessories),
+                choice(Pelt.snake_accessories),
+                choice(Pelt.smallAnimal_accessories),
+                choice(Pelt.deadInsect_accessories),
+                choice(Pelt.aliveInsect_accessories),
+                choice(Pelt.fruit_accessories),
+                choice(Pelt.crafted_accessories),
+                choice(Pelt.tail2_accessories)
             ])
         else:
             self.accessory = None

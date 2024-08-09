@@ -2649,7 +2649,7 @@ def generate_sprite(
         elif cat.pelt.accessory in cat.pelt.crafted_accessories:
             new_sprite.blit(sprites.sprites['acc_crafted' + cat.pelt.accessory + cat_sprite], (0, 0))
         elif cat.pelt.accessory in cat.pelt.tail2_accessories:
-            new_sprite.blit(sprites.sprites['acc_tail' + cat.pelt.accessory + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites['acc_tail2' + cat.pelt.accessory + cat_sprite], (0, 0))
 
 
         # Apply fading fog

@@ -28,6 +28,7 @@
     "event_id": "pln_misc_rabbit1",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c leaps and gracefully sweeps across the plains of c_n territory. m_c quickly scans the scenery around {PRONOUN/m_c/object} inbetween leaps, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
     "new_accessory": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
@@ -40,9 +41,10 @@
     "event_id": "pln_misc_rabbit2",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c and r_c both leap and gracefully sweep across the plains of c_n territory. m_c quickly scans the scenery around them both inbetween a shared leap, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
-    "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHTIE RABBIT", "GRAY VITILIGO RABBIT"],
+    "new_accessory": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHTIE RABBIT", "GRAY VITILIGO RABBIT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -56,9 +58,10 @@
     "event_id": "pln_misc_rabbit3",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c spots acc_singular near camp. Before r_c can rip {PRONOUN/r_c/poss} way through camp and to the acc_singular, m_c stops {PRONOUN/r_c/object} and tells {PRONOUN/r_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/want/wants} it as a pet. r_c opens {PRONOUN/r_c/poss} mouth to <i>hiss</i> at m_c, but the kit bounds over to the acc_singular. Guess it's too late to catch it...",
-    "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
+    "new_accessory": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -72,9 +75,10 @@
     "event_id": "pln_misc_rabbit4",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c's eyes dilate as {PRONOUN/m_c/subject} {VERB/m_c/focus/focuses} on a rabbit near the dirt-place. m_c has been taught all {PRONOUN/m_c/poss} life that hunting was the only thing that a warrior did near rabbits... but this one was so <i>cute</i>. m_c wanders towards it, and quickly befriends it!",
-    "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
+    "new_accessory": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -88,9 +92,10 @@
     "event_id": "pln_misc_yellowprimrose1",
     "location": ["plains"],
     "season": ["greenleaf","newleaf"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c found a small little patch of bright yellow flowers in camp, and snagged one to decorate {PRONOUN/m_c/self} with!",
-    "accessories": ["YELLOW PRIMROSE"],
+    "new_accessory": ["YELLOW PRIMROSE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -100,9 +105,10 @@
     "event_id": "pln_misc_yellowprimrose2",
     "location": ["plains"],
     "season": ["greenleaf","newleaf"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c takes m_c by surprise, swiftly decorating m_c with pretty yellow blooms. Bewildered, m_c thanks {PRONOUN/r_c/object} for the gift.",
-    "accessories": ["YELLOW PRIMROSE"],
+    "new_accessory": ["YELLOW PRIMROSE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -116,9 +122,10 @@
     "event_id": "pln_misc_hesperis1",
     "location": ["plains"],
     "season": ["greenleaf","newleaf"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c purrs as {PRONOUN/m_c/subject} {VERB/m_c/stretch/stretches} smugly in the middle of camp, showing off the new purple blooms that decorate {PRONOUN/m_c/poss} pelt.",
-    "accessories": ["HESPERIS"],
+    "new_accessory": ["HESPERIS"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -128,9 +135,10 @@
     "event_id": "pln_misc_hesperis2",
     "location": ["plains"],
     "season": ["greenleaf","newleaf"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c, inbetween grooming m_c, gently dots m_c's fur with shades of purple flowers during a low sunset.",
-    "accessories": ["HESPERIS"],
+    "new_accessory": ["HESPERIS"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -144,9 +152,10 @@
     "event_id": "pln_misc_marigold1",
     "location": ["plains"],
     "season": ["greenleaf","leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject} {VERB/m_c/wears/wear} it with poise.",
-    "accessories": ["MARIGOLD"],
+    "new_accessory": ["MARIGOLD"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -156,9 +165,10 @@
     "event_id": "pln_misc_marigold2",
     "location": ["plains"],
     "season": ["greenleaf","leaf-fall"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c, inbetween grooming m_c, tucks marigolds next to m_c's ear. m_c almost doesn't notice the next morning, and purrs a thank you to r_c when {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} by.",
-    "accessories": ["MARIGOLD"],
+    "new_accessory": ["MARIGOLD"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -172,9 +182,10 @@
     "event_id": "pln_misc_bamboo1",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c's eyes sparkle as {PRONOUN/m_c/subject} {VERB/m_c/realizes/realize} something <i>wonderful</i> --- {PRONOUN/m_c/subject} can propagate the bamboo on the edges of c_n territory, and decorate {PRONOUN/m_c/poss} nest with it! A week later, m_c is seen sleeping soundly with leafy stalks of bamboo casting shadows on {PRONOUN/m_c/poss} pelt.",
-    "accessories": ["BAMBOO"],
+    "new_accessory": ["BAMBOO"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -184,9 +195,10 @@
     "event_id": "pln_misc_bamboo2",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c has a wonderful idea for decorating m_c's nest! m_c wakes up in the middle of the night with bamboo brushing {PRONOUN/m_c/poss} face. Despite the slight scare it gave m_c, {PRONOUN/m_c/subject} {VERB/m_c/thanks/thank} r_c in the morning for the nice surprise. ",
-    "accessories": ["BAMBOO"],
+    "new_accessory": ["BAMBOO"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -200,9 +212,10 @@
     "event_id": "pln_misc_worm",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c watches with exhausted eyes as m_c violently digs a hole off to the side of c_n camp, flinging dirt everywhere. m_c approaches less than a minute later, covered in dirt and with a long worm in their jaws. Mumbled, m_c asks if {PRONOUN/m_c/subject} can keep {PRONOUN/m_c/poss} new friend. Exasperated, r_c tells {PRONOUN/m_c/object} yes and to <i>not</i> dig holes in camp, and then tiredly walks over to clean up m_c's mess.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -216,9 +229,10 @@
     "event_id": "pln_misc_rat1",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wondered into the warrior's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a piece of grass.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -232,9 +246,10 @@
     "event_id": "pln_misc_rat2",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wondered into the nursery. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a piece of grass.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["kitten"]
@@ -248,9 +263,10 @@
     "event_id": "pln_misc_rat3",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wondered into the apprentice's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a piece of grass.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["apprentice"]
@@ -264,9 +280,10 @@
     "event_id": "pln_misc_smallanimal",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c gently guides a acc_singular into camp. Seems like m_c has found a new friend?",
-    "accessories": ["SMALLANIMAL"],
+    "new_accessory": ["SMALLANIMAL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -277,9 +294,10 @@
     "event_id": "pln_misc_smallanimal2",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c, on a walk together, stumble upon an acc_singular. m_c tilts {PRONOUN/m_c/poss} head, and decides to take it home! r_c is charmed by m_c's generosity. ",
-    "accessories": ["SMALLANIMAL"],
+    "new_accessory": ["SMALLANIMAL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -293,9 +311,10 @@
     "event_id": "pln_misc_mouse1",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c grins toothily at a acc_singular that wondered into camp! Instead of diving toward it like anyone would expect a cat to do, m_c decides to befriend it with seeds and nuts.",
-    "accessories": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"],
+    "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -305,9 +324,10 @@
     "event_id": "pln_misc_mouse2",
     "location": ["plains"],
     "season": ["any"],
+    "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunches/hunch} down to watch a mouse nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} pounce, and manages to.. befriend the mouse! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
-    "accessories": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"],
+    "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]

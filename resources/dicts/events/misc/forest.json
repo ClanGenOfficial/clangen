@@ -17,7 +17,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step... and with a new noodly, harmless friend!",
-    "accessories": ["BLUE RACER"],
+    "new_accessory": ["BLUE RACER"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -29,7 +29,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers to show {PRONOUN/m_c/object} a cool, silly little snake {PRONOUN/r_c/subject} found! m_c takes {PRONOUN/r_c/poss} invitation. After seeing the weird, harmless thing, m_c decides to take it home with {PRONOUN/m_c/object}.",
-    "accessories": ["BLUE RACER"],
+    "new_accessory": ["BLUE RACER"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -45,7 +45,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c trills softly as {PRONOUN/m_c/subject} eye a patch of clovers just outside of the nursery den. Suddenly, {PRONOUN/m_c/poss} eyes <i>snap</i> open with surprise -- a four leaved clover? m_c gladly snips it off and wears it proudly!",
-    "accessories": ["CLOVER"],
+    "new_accessory": ["CLOVER"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -57,7 +57,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c and m_c relax together in camp as the sun hits them both perfectly. r_c cracks open an eye, and points out a peculiar <i>four</i> leaved clover in a little patch near m_c's tail! m_c's eyes brim with happiness as {PRONOUN/m_c/subject} {VERB/m_c/wear/wears} the little thing!.",
-    "accessories": ["CLOVER"],
+    "new_accessory": ["CLOVER"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -73,7 +73,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c picks up some moss, and decides to carry it around with {PRONOUN/m_c/object}!",
-    "accessories": ["MOSS"],
+    "new_accessory": ["MOSS"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -85,7 +85,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c eyes a patch of pretty moss {PRONOUN/r_c/subject} found. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bring/brings} it to m_c who tilts {PRONOUN/m_c/poss} head at the unusal gift. r_c starts to tumble into an explanation, but m_c gently takes the moss with a gentle thank-you meow.",
-    "accessories": ["MOSS"],
+    "new_accessory": ["MOSS"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -101,7 +101,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c rolls around in moss in the early morning, and waltzes around camp covered in moss!",
-    "accessories": ["MOSS PELT"],
+    "new_accessory": ["MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -113,7 +113,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c wakes up groggily to r_c ominously pelting {PRONOUN/m_c/object} with moss..!? m_c hisses at r_c, telling {PRONOUN/r_c/object} to scurry off!",
-    "accessories": ["MOSS PELT"],
+    "new_accessory": ["MOSS PELT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -129,7 +129,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c seems to have spotted acc_plural, and has decided to snag one up as a pet.",
-    "accessories": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
+    "new_accessory": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -141,7 +141,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c seems to have found a pack of acc_singular collecting near a bush, and calls m_c over to see the acc_plural. Curiously enough. m_c has decided to keep one as a pet.",
-    "accessories": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
+    "new_accessory": ["RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -157,7 +157,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c and m_c go on a walk together! After a while, m_c and r_c run into a cute, slowly moving snail! m_c decides to keep it as a pet, and r_c cooes at the little thing as m_c carries it home.",
-    "accessories": ["BROWN SNAIL"],
+    "new_accessory": ["BROWN SNAIL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -173,7 +173,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, happily sharing how m_c managed to keep a snail as {PRONOUN/m_c/poss} pet.",
-    "accessories": ["BROWN SNAIL"],
+    "new_accessory": ["BROWN SNAIL"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -185,7 +185,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, and a dangling worm in their jaws...!?",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -197,7 +197,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c and m_c go on a walk together! After a while, m_c and r_c run into a light pink, squirmy little worm! m_c decides to keep it as a pet, and r_c cooes at the little thing as m_c carries it home.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -214,7 +214,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c watches with exhausted eyes as m_c violently digs a hole off to the side of c_n camp, flinging dirt everywhere. m_c approaches less than a minute later, covered in dirt and with a long worm in their jaws. Mumbled, m_c asks if {PRONOUN/m_c/subject} can keep {PRONOUN/m_c/poss} new friend. Exasperated, r_c tells {PRONOUN/m_c/object} yes and to <i>not</i> dig holes in camp, and then tiredly walks over to clean up m_c's mess.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -230,7 +230,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c finds a worm in camp on a rainy day! m_c decides to keep it.",
-    "accessories": ["WORM"],
+    "new_accessory": ["WORM"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -242,7 +242,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c tilts {PRONOUN/m_c/poss} head idly at a bee flying around {PRONOUN/m_c/poss} head. It doesn't seem to want to sting {PRONOUN/m_c/object}, so m_c assumes it wants to be {PRONOUN/m_c/poss} friend!.",
-    "accessories": ["BEE"],
+    "new_accessory": ["BEE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -255,7 +255,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a bee! m_c claims it's {PRONOUN/m_c/poss} new pet.",
-    "accessories": ["BEE"],
+    "new_accessory": ["BEE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -267,7 +267,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c and m_c decide to go for a short walk together! r_c calls from behind m_c, and m_c has to leap out of the way of a buzzing bee! m_c shifts to swipe at it... but r_c remarks that it seems oddly friendly. m_c decides to take it home with {PRONOUN/m_c/object}.",
-    "accessories": ["BEE"],
+    "new_accessory": ["BEE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -283,7 +283,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c <i>mrrps</i> at m_c, asking {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} wanted a pair of acc_singular that they found. m_c says yes, and thanks {PRONOUN/r_c/object} for the cool wings!",
-    "accessories": ["DEADINSECT"],
+    "new_accessory": ["DEADINSECT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -299,7 +299,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c leaps up at a flying bug {PRONOUN/m_c/subject} found around camp, and catches it with grace! {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} the acc_singular proudly.",
-    "accessories": ["DEADINSECT"],
+    "new_accessory": ["DEADINSECT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -311,7 +311,7 @@
     "season": ["newleaf","greenleaf","leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after they attempt to leave!",
-    "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
+    "new_accessory": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -327,7 +327,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c sneaks out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after they attempt to leave!",
-    "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
+    "new_accessory": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -339,7 +339,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wandered into the apprentice's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a few leftover acorns.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -355,7 +355,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wandered into the elder's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a few leftover acorns.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -371,7 +371,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wandered into the warrior's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a few leftover acorns.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -387,7 +387,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wandered into the apprentice's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a few leftover acorns.",
-    "accessories": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -403,7 +403,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c received a present, gently weaved acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-    "accessories": ["DAISY CORSAGE"],
+    "new_accessory": ["DAISY CORSAGE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -419,7 +419,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "Over the past few days, m_c has been adamant on being near a nearby daisy patch. On an early morning, m_c reveals that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been braiding a daisy corsage for {PRONOUN/m_c/poss} tail! m_c flaunts {PRONOUN/m_c/poss} work proudly.",
-    "accessories": ["DAISY CORSAGE"],
+    "new_accessory": ["DAISY CORSAGE"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -431,7 +431,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c notices bamboo growing in {PRONOUN/m_c/poss} nest!",
-    "accessories": ["BAMBOO"],
+    "new_accessory": ["BAMBOO"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -443,7 +443,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c has a wonderful idea for decorating m_c's nest! m_c wakes up in the middle of the night with bamboo brushing {PRONOUN/m_c/poss} face. Despite the slight spook it gave m_c, {PRONOUN/m_c/subject} {VERB/m_c/mews/mews} to r_c in the morning for the cool surprise!",
-    "accessories": ["BAMBOO"],
+    "new_accessory": ["BAMBOO"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -459,7 +459,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c's eyes sparkle as {PRONOUN/m_c/subject} {VERB/m_c/realizes/realize} something <i>wonderful</i> --- {PRONOUN/m_c/subject} can propagate the bamboo on the edges of c_n territory, and decorate {PRONOUN/m_c/poss} nest with it! A week later, m_c is seen sleeping soundly with leafy stalks of bamboo casting shadows on {PRONOUN/m_c/poss} pelt.",
-    "accessories": ["BAMBOO"],
+    "new_accessory": ["BAMBOO"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -475,7 +475,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c grins toothily at a acc_singular that wandered into camp! Instead of diving toward it like anyone would expect a cat to do, m_c decides to befriend it with seeds and nuts.",
-    "accessories": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
+    "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -487,7 +487,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunches/hunch} down to watch acc_singular nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} pounce, and manages to.. befriend the acc_singular! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
-    "accessories": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
+    "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
