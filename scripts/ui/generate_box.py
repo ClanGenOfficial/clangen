@@ -1,8 +1,9 @@
 from collections import namedtuple
+from dataclasses import dataclass
 from enum import Enum
 from functools import cache
 from math import ceil
-from typing import Tuple, Dict, List, Union
+from typing import Tuple, Dict, Union, Optional
 
 import pygame
 
@@ -10,30 +11,46 @@ import scripts.game_structure.screen_settings
 from scripts.utility import ui_scale_value, ui_scale_dimensions
 
 
+@dataclass
+class BoxData:
+    surface: pygame.Surface
+    tilecount: Tuple[int, int]
+
+
 class BoxStyles(Enum):
-    FRAME = pygame.image.load(
-        "resources/images/generated_boxes/frame.png"
-    ).convert_alpha()
-    ROUNDED_BOX = pygame.image.load(
-        "resources/images/generated_boxes/selection_box.png"
-    ).convert_alpha()
+    FRAME = BoxData(
+        pygame.image.load("resources/images/generated_boxes/frame.png").convert_alpha(),
+        (3, 3),
+    )
+    ROUNDED_BOX = BoxData(
+        pygame.image.load(
+            "resources/images/generated_boxes/selection_box.png"
+        ).convert_alpha(),
+        (7, 3),
+    )
 
 
-Tileset = namedtuple(
-    "Tileset",
-    [
-        "height",
-        "topleft",
-        "top",
-        "topright",
-        "left",
-        "middle",
-        "right",
-        "bottomleft",
-        "bottom",
-        "bottomright",
-    ],
-)
+@dataclass
+class Tileset:
+    height: int
+    topleft: pygame.Surface
+    top: pygame.Surface
+    topright: pygame.Surface
+    left: pygame.Surface
+    middle: pygame.Surface
+    right: pygame.Surface
+    bottomleft: pygame.Surface
+    bottom: pygame.Surface
+    bottomright: pygame.Surface
+    topleft_notop: Optional[pygame.Surface] = None
+    topleft_noleft: Optional[pygame.Surface] = None
+    topright_notop: Optional[pygame.Surface] = None
+    topright_noright: Optional[pygame.Surface] = None
+    bottomleft_nobottom: Optional[pygame.Surface] = None
+    bottomleft_noleft: Optional[pygame.Surface] = None
+    bottomright_nobottom: Optional[pygame.Surface] = None
+    bottomright_noright: Optional[pygame.Surface] = None
+
 
 tilesets: Dict[float, Dict[BoxStyles, Tileset]] = {}
 
@@ -43,30 +60,35 @@ def get_tileset(style: BoxStyles) -> Tileset:
     if screen_scale in tilesets and style.name in tilesets[screen_scale]:
         return tilesets[screen_scale][style]
 
-    # scaling our image to the right scale for our UI
-    height = ui_scale_value(style.value.get_height())
-    # ceiling to the nearest multiple of 3
-    height = ceil(height / 3) * 3
+    surface = style.value.surface
 
-    scaled_base = pygame.transform.scale(style.value, (height, height))
+    # ceiling to the nearest multiple of the tilecount
+    width = (
+        ceil(ui_scale_value(surface.get_width()) / style.value.tilecount[0])
+        * style.value.tilecount[0]
+    )
+    height = (
+        ceil(ui_scale_value(surface.get_height()) / style.value.tilecount[1])
+        * style.value.tilecount[1]
+    )
 
-    tile_edge_length = round(height / 3)
+    scaled_base = pygame.transform.scale(surface, (width, height))
+
+    tile_edge_length = round(height / style.value.tilecount[1])
     tile_size = (tile_edge_length, tile_edge_length)
 
     # make the tiles
-    topleft = scaled_base.subsurface((0, 0), tile_size)
-    top = scaled_base.subsurface((tile_edge_length, 0), tile_size)
-    topright = scaled_base.subsurface((2 * tile_edge_length, 0), tile_size)
+    topleft = _get_tile_from_coords(scaled_base, (0, 0), tile_size)
+    top = _get_tile_from_coords(scaled_base, (1, 0), tile_size)
+    topright = _get_tile_from_coords(scaled_base, (2, 0), tile_size)
 
-    left = scaled_base.subsurface((0, tile_edge_length), tile_size)
-    middle = scaled_base.subsurface((tile_edge_length, tile_edge_length), tile_size)
-    right = scaled_base.subsurface((2 * tile_edge_length, tile_edge_length), tile_size)
+    left = _get_tile_from_coords(scaled_base, (0, 1), tile_size)
+    middle = _get_tile_from_coords(scaled_base, (1, 1), tile_size)
+    right = _get_tile_from_coords(scaled_base, (2, 1), tile_size)
 
-    bottomleft = scaled_base.subsurface((0, 2 * tile_edge_length), tile_size)
-    bottom = scaled_base.subsurface((tile_edge_length, 2 * tile_edge_length), tile_size)
-    bottomright = scaled_base.subsurface(
-        (2 * tile_edge_length, 2 * tile_edge_length), tile_size
-    )
+    bottomleft = _get_tile_from_coords(scaled_base, (0, 2), tile_size)
+    bottom = _get_tile_from_coords(scaled_base, (1, 2), tile_size)
+    bottomright = _get_tile_from_coords(scaled_base, (2, 2), tile_size)
 
     if screen_scale not in tilesets:
         tilesets[screen_scale] = {}
@@ -84,6 +106,14 @@ def get_tileset(style: BoxStyles) -> Tileset:
         bottomright,
     )
     return tilesets[screen_scale][style]
+
+
+def _get_tile_from_coords(
+    tilemap: pygame.Surface, tile_coords: Tuple[int, int], tile_size: Tuple[int, int]
+):
+    return tilemap.subsurface(
+        (tile_coords[0] * tile_size[0], tile_coords[1] * tile_size[1]), tile_size
+    )
 
 
 def get_box(
@@ -167,9 +197,6 @@ def _get_box(
         else None
     )
 
-    # numpy would be so helpful here...
-    tilemap: List[List[pygame.Surface]] = []
-
     # okay, here's how the nine-tile system works. check the comments to see
     # which tile is being referred to in each part of this awful construction
 
@@ -249,7 +276,6 @@ def _get_box(
     surface = pygame.Surface(scaled_dimensions, flags=pygame.SRCALPHA)
     surface.fblits(top_row)
 
-    row = None
     for i in range(1, tilecount[1] - 1):
         coords = [(x, i * tileset.height) for x in row_x]
         row = tuple(zip(middle_row, coords))

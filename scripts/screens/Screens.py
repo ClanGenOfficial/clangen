@@ -675,7 +675,7 @@ class Screens:
         except AttributeError:
             with open("resources/gamesettings.json", "r") as read_file:
                 _settings = ujson.loads(read_file.read())
-                return _settings["dark mode"]
+                return "dark" if _settings["dark mode"] else "light"
 
 
 # CAT PROFILES
