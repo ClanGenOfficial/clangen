@@ -5790,6 +5790,7 @@
     },
     {
         "event_id": "gen_injury_crackedpads_any1",
+        "location": ["any"],
         "season": [
             "leaf-bare"
         ],
@@ -6633,12 +6634,13 @@
     },
     {
         "event_id": "gen_injury_beesting_multiany3",
+        "location": ["any"],
         "season": [
             "greenleaf",
             "newleaf"
         ],
         "weight": 20,
-        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} bend down and take a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} come home with a swollen face...",
+        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
         "m_c": {
             "age": [
                 "any"
