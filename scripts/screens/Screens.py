@@ -159,11 +159,12 @@ class Screens:
         """Runs when this screen is switched to."""
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
-        if getattr(game.clan, "name"):
+        try:
             Screens.update_heading_text(game.clan.name + "Clan")
-        else:
+            Screens.theme = "dark" if game.settings["dark mode"] else "light"
+        except AttributeError:
             Screens.update_heading_text("DebugClan")
-        Screens.theme = "dark" if game.settings["dark mode"] else "light"
+            Screens.theme = "light"
         if self.active_bg is None or "default" in self.active_bg:
             self.set_bg(None)
         self.bg_transition = True

@@ -315,7 +315,7 @@ class SettingsScreen(Screens):
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
 
-        game.settings = self.settings_at_open
+        self.settings_at_open = game.settings
         self.theme = "dark" if game.settings["dark mode"] else "light"
 
     def save_settings(self):
