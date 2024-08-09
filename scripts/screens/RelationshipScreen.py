@@ -19,6 +19,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_blit,
+    ui_scale_offset,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, screen
@@ -253,21 +254,28 @@ class RelationshipScreen(Screens):
         # Draw the checkboxes
         self.update_checkboxes()
 
-        self.previous_page_button = UIImageButton(
-            ui_scale(pygame.Rect((440, 616), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
-        )
-        self.next_page_button = UIImageButton(
-            ui_scale(pygame.Rect((580, 616), (34, 34))),
-            "",
-            object_id="#relation_list_next",
-        )
-
         self.page_number = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((445, 617), (150, 34))),
+            ui_scale(pygame.Rect((125, 617), (100, 34))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            anchors={"centerx": "centerx"},
+        )
+
+        rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
+        rect.topright = ui_scale_offset((-25, 616))
+        self.previous_page_button = UIImageButton(
+            rect,
+            "",
+            object_id="#relation_list_previous",
+            anchors={"right": "right", "top": "top", "right_target": self.page_number},
+        )
+        del rect
+
+        self.next_page_button = UIImageButton(
+            ui_scale(pygame.Rect((25, 616), (34, 34))),
+            "",
+            object_id="#relation_list_next",
+            anchors={"left_target": self.page_number},
         )
 
         self.switch_focus_button = UIImageButton(
@@ -861,14 +869,8 @@ class RelationshipScreen(Screens):
         barbar = 22
         bar_count = 0
 
-        # fix text positioning on fullscreen
-        if game.settings["fullscreen"]:
-            f_add = 5
-        else:
-            f_add = 0
-
         rel_pos_x = pos_x + 3
-        text_pos_y = pos_y + f_add + 43
+        text_pos_y = pos_y + 45
         bar_pos_y = pos_y + 65
 
         text_size_x = -1

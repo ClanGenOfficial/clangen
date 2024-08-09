@@ -22,6 +22,8 @@ MANAGER: Optional[pygame_gui.UIManager] = None
 screen = None
 curr_variable_dict = {}
 
+display_change_in_progress = False  # this acts as a lock to ensure we don't end up in a loop of fullscreen changes
+
 
 def set_display_mode(
     fullscreen=None,
@@ -29,6 +31,12 @@ def set_display_mode(
     show_confirm_dialog=True,
     ingame_switch=True,
 ):
+    global display_change_in_progress
+
+    # if we're already in the process of changing the display
+    if display_change_in_progress:
+        return
+
     global offset
     global screen_x
     global screen_y
@@ -37,6 +45,8 @@ def set_display_mode(
     global screen
     global MANAGER
     global curr_variable_dict
+
+    display_change_in_progress = True
 
     old_offset = offset
     old_scale = screen_scale
@@ -174,6 +184,7 @@ def set_display_mode(
             ]
         )
 
+    display_change_in_progress = False
     if source_screen is not None and show_confirm_dialog:
         from scripts.game_structure.windows import ConfirmDisplayChanges
 
@@ -194,6 +205,12 @@ def toggle_fullscreen(
     :param ingame_switch: Whether this was triggered by a user. Default True
     :return:
     """
+    global display_change_in_progress
+
+    # if we're already in the process of changing the display, do nothing
+    while display_change_in_progress:
+        continue
+
     from scripts.game_structure.game_essentials import game
 
     if fullscreen is None:

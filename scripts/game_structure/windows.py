@@ -747,6 +747,12 @@ class PronounCreation(UIWindow):
             container=self,
         )
 
+        self.elements["core_container"] = pygame_gui.core.UIContainer(
+            ui_scale(pygame.Rect((0, 0), (350, 300))),
+            manager=MANAGER,
+            container=self,
+        )
+
         # Adjusted positions for labels
         self.box_labels["subject"] = pygame_gui.elements.UITextBox(
             "Subject",
