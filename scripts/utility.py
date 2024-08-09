@@ -2443,11 +2443,9 @@ def clan_symbol_sprite(clan, return_string=False, force_light=False):
             return clan.chosen_symbol
         else:
             if game.settings["dark mode"] and not force_light:
-                return sprites.dark_mode_symbol(
-                    sprites.sprites[f"{clan.chosen_symbol}"]
-                )
+                return sprites.dark_mode_symbol(sprites.sprites[clan.chosen_symbol])
             else:
-                return sprites.sprites[f"{clan.chosen_symbol}"]
+                return sprites.sprites[clan.chosen_symbol]
     else:
         possible_sprites = []
         for sprite in sprites.clan_symbols:

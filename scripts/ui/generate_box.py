@@ -44,7 +44,7 @@ def get_tileset(style: BoxStyles) -> Tileset:
         return tilesets[screen_scale][style]
 
     # scaling our image to the right scale for our UI
-    height = ui_scale_value(style.value.height)
+    height = ui_scale_value(style.value.get_height())
     # ceiling to the nearest multiple of 3
     height = ceil(height / 3) * 3
 

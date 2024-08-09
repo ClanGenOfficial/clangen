@@ -142,7 +142,7 @@ def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
     :param scaled_dimensions: the SCALED dimensions of the final button
     :return: A surface of the correct dimensions, scaled automatically
     """
-    height = base.height
+    height = base.get_height()
     vertical_scale = scaled_dimensions[1] / height
     if vertical_scale < 0:
         vertical_scale = 1 / -vertical_scale

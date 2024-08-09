@@ -225,7 +225,7 @@ class MakeClanScreen(Screens):
             self.game_mode = "cruel season"
             self.refresh_text_and_buttons()
 
-        # Logic for when to quick start clan
+        # Logic for when to quick-start clan
         elif event.ui_element == self.elements["next_step"]:
             game.settings["game_mode"] = self.game_mode
             if "@checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
@@ -1752,7 +1752,7 @@ class MakeClanScreen(Screens):
         )
         self.elements["done_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 645), (147, 30))),
-            "Done   " + get_arrow(3),
+            "Done " + get_arrow(5, arrow_left=False),
             get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
             object_id="@buttonstyles_menu_right",
             manager=MANAGER,
@@ -1914,7 +1914,9 @@ class MakeClanScreen(Screens):
         self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((350, 105), (100, 100))),
             pygame.transform.scale(
-                sprites.sprites[self.symbol_selected],
+                sprites.dark_mode_symbol(sprites.sprites[self.symbol_selected])
+                if game.settings["dark mode"]
+                else sprites.sprites[self.symbol_selected],
                 ui_scale_dimensions((100, 100)),
             ).convert_alpha(),
             object_id="#selected_symbol",
@@ -2003,7 +2005,7 @@ class MakeClanScreen(Screens):
     def create_cat_info(self):
         self.elements["cat_name"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((0, 10), (250, 55))),
+            ui_scale(pygame.Rect((0, 10), (250, 60))),
             visible=False,
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
