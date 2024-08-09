@@ -523,7 +523,7 @@ class Screens:
         elif (
             bg in self.game_bgs
             or bg
-            in scripts.screens.screens_core.screens_core.default_game_bgs[Screens.theme]
+            in scripts.screens.screens_core.screens_core.default_game_bgs[self.theme]
         ):
             self.active_bg = bg
         else:

@@ -962,7 +962,7 @@ class MakeClanScreen(Screens):
                 self.game_bgs[
                     name
                 ] = scripts.screens.screens_core.screens_core.default_game_bgs[
-                    Screens.theme
+                    self.theme
                 ][
                     "default"
                 ]
