@@ -657,7 +657,7 @@ class Patrol:
         # Run the chosen outcome
         return final_event.execute_outcome(self)
 
-    def calculate_success(
+    def calculate_success( 
         self, success_outcome: PatrolOutcome, fail_outcome: PatrolOutcome
     ) -> Tuple[PatrolOutcome, bool]:
         """Returns both the chosen event, and a boolian that's True if success, and False is fail."""
@@ -715,6 +715,13 @@ class Patrol:
         print(skill_updates)
 
         success = int(random.random() * 120) < success_chance
+
+        # This is a debug option, this will forcefully change the outcome of a patrol
+        if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_outcome"], bool):
+            success = game.config["patrol_generation"]["debug_ensure_patrol_outcome"]
+            # Logging
+            print(f"The outcome of {self.patrol_event.patrol_id} was altered to {success}")
+
         return (success_outcome if success else fail_outcome, success)
 
     def update_resources(self, biome_dir, leaf):
