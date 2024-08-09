@@ -3,6 +3,7 @@ from typing import Dict, Optional, Union
 
 import pygame
 import pygame_gui
+import ujson
 from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
@@ -39,7 +40,6 @@ class Screens:
     game_frame = scripts.screens.screens_core.screens_core.game_frame
 
     active_bg: Optional[str] = None
-    theme: str = "light"
 
     def change_screen(self, new_screen):
         """Use this function when switching screens.
@@ -161,10 +161,8 @@ class Screens:
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         try:
             Screens.update_heading_text(game.clan.name + "Clan")
-            Screens.theme = "dark" if game.settings["dark mode"] else "light"
         except AttributeError:
             Screens.update_heading_text("DebugClan")
-            Screens.theme = "light"
         if self.active_bg is None or "default" in self.active_bg:
             self.set_bg(None)
         self.bg_transition = True
@@ -540,7 +538,7 @@ class Screens:
         """
 
         if theme is None:
-            theme = Screens.theme
+            theme = self.theme
 
         # make the right string to pull the correct camp image
         try:
@@ -669,6 +667,15 @@ class Screens:
             )
         except KeyError:
             pass
+
+    @property
+    def theme(self) -> str:
+        try:
+            return "dark" if game.settings["dark mode"] else "light"
+        except AttributeError:
+            with open("resources/gamesettings.json", "r") as read_file:
+                _settings = ujson.loads(read_file.read())
+                return _settings["dark mode"]
 
 
 # CAT PROFILES
