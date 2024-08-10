@@ -246,10 +246,9 @@ class Patrol:
         self.update_resources(biome_dir, leaf)
 
         possible_patrols = []
-
-        # Load in *ALL* the possible patrols when debug_override_patrol_stat_requirements is true.(May require longer loading time)
+        # This is for debugging purposes, load-in *ALL* the possible patrols when debug_override_patrol_stat_requirements is true. (May require longer loading time)
         if (game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]):
-            leaves = ["greenleaf", "leaf-bare", "leaf-fall", "newleaf"]
+            leaves = ["greenleaf", "leaf-bare", "leaf-fall", "newleaf", "any"]
             for biome in game.clan.BIOME_TYPES:
                 for leaf in leaves:
                     biome_dir = f"{biome.lower()}/"
@@ -271,7 +270,6 @@ class Patrol:
                     possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_HOSTILE))
                     possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_ALLIES))
                     possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
-            print("Loaded ALL patrol events.")
 
         # this next one is needed for Classic specifically
         patrol_type = (
@@ -373,7 +371,7 @@ class Patrol:
             possible_patrols, biome, camp, current_season, patrol_type
         )
 
-        # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, etc. 
+        # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc. 
         if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
             final_patrols = possible_patrols
             final_romance_patrols = possible_patrols
@@ -384,11 +382,13 @@ class Patrol:
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible,
         # make it the *only* possible patrol
         if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
+            
             for _pat in possible_patrols:
                 if (
                     _pat.patrol_id
                     == game.config["patrol_generation"]["debug_ensure_patrol_id"]
                 ):
+                    patrol_type = choice(_pat.types) if _pat.types != [] else "general"
                     final_patrols = [_pat]
                     print(
                         f"debug_ensure_patrol_id: "
@@ -401,7 +401,7 @@ class Patrol:
                 print(
                     f"debug_ensure_patrol_id: "
                     f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                    f"is not a possible {patrol_type} patrol."
+                    f"is not a possible patrol."
                 )
         return final_patrols, final_romance_patrols
 
