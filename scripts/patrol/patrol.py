@@ -241,11 +241,38 @@ class Patrol:
             else game.clan.clan_settings["disasters"]
         )
         season = current_season.lower()
-        biome_dir = f"{biome}/"
         leaf = f"{season}"
+        biome_dir = f"{biome}/"
         self.update_resources(biome_dir, leaf)
 
         possible_patrols = []
+
+        # Load in *ALL* the possible patrols when debug_override_patrol_stat_requirements is true.(May require longer loading time)
+        if (game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]):
+            leaves = ["greenleaf", "leaf-bare", "leaf-fall", "newleaf"]
+            for biome in game.clan.BIOME_TYPES:
+                for leaf in leaves:
+                    biome_dir = f"{biome.lower()}/"
+                    self.update_resources(biome_dir, leaf)
+                    possible_patrols.extend(self.generate_patrol_events(self.HUNTING))
+                    possible_patrols.extend(self.generate_patrol_events(self.HUNTING_SZN))
+                    possible_patrols.extend(self.generate_patrol_events(self.BORDER))
+                    possible_patrols.extend(self.generate_patrol_events(self.BORDER_SZN))
+                    possible_patrols.extend(self.generate_patrol_events(self.TRAINING))
+                    possible_patrols.extend(self.generate_patrol_events(self.TRAINING_SZN))
+                    possible_patrols.extend(self.generate_patrol_events(self.MEDCAT))
+                    possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_SZN))
+                    possible_patrols.extend(self.generate_patrol_events(self.HUNTING_GEN))
+                    possible_patrols.extend(self.generate_patrol_events(self.BORDER_GEN))
+                    possible_patrols.extend(self.generate_patrol_events(self.TRAINING_GEN))
+                    possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_GEN))
+                    possible_patrols.extend(self.generate_patrol_events(self.DISASTER))
+                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_WELCOMING))
+                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_HOSTILE))
+                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_ALLIES))
+                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
+            print("Loaded ALL patrol events.")
+
         # this next one is needed for Classic specifically
         patrol_type = (
             "med"
