@@ -357,7 +357,7 @@ class Patrol:
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible,
         # make it the *only* possible patrol
         if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
-            for _pat in final_patrols:
+            for _pat in possible_patrols:
                 if (
                     _pat.patrol_id
                     == game.config["patrol_generation"]["debug_ensure_patrol_id"]
@@ -366,37 +366,16 @@ class Patrol:
                     print(
                         f"debug_ensure_patrol_id: "
                         f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                        "is a possible normal patrol, and was set as the only "
-                        "normal patrol option"
+                        f"is a possible {patrol_type} patrol, and was set as the only "
+                        f"{patrol_type} patrol option"
                     )
                     break
             else:
                 print(
                     f"debug_ensure_patrol_id: "
                     f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                    "is not a possible normal patrol."
+                    f"is not a possible {patrol_type} patrol."
                 )
-
-            for _pat in final_romance_patrols:
-                if (
-                    _pat.patrol_id
-                    == game.config["patrol_generation"]["debug_ensure_patrol_id"]
-                ):
-                    final_romance_patrols = [_pat]
-                    print(
-                        f"debug_ensure_patrol_id: "
-                        f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                        "is a possible romantic patrol, and was set as the only "
-                        "romantic patrol option"
-                    )
-                    break
-            else:
-                print(
-                    f"debug_ensure_patrol_id: "
-                    f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                    "is not a possible romantic patrol."
-                )
-
         return final_patrols, final_romance_patrols
 
     def _check_constraints(self, patrol: PatrolEvent) -> bool:
