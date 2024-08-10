@@ -230,6 +230,8 @@ class Pelt:
                  senior_sprite: int = None,
                  para_adult_sprite: int = None,
                  reverse: bool = False,
+                 accessories:list=None,
+                 inventory:list=[]
                  ) -> None:
         self.name = name
         self.colour = colour
@@ -244,6 +246,8 @@ class Pelt:
         self.length = length
         self.points = points
         self.accessory = accessory
+        self.accessories = accessories if accessories is not None else []
+        self.inventory = inventory
         self.paralyzed = paralyzed
         self.opacity = opacity
         self.scars = scars if isinstance(scars, list) else []
@@ -263,6 +267,11 @@ class Pelt:
 
         self.reverse = reverse
         self.skin = skin
+
+        if inventory is None:
+            self.inventory = []
+        else:
+            self.inventory = inventory
 
     @staticmethod
     def generate_new_pelt(gender: str, parents: tuple = (), age: str = "adult"):

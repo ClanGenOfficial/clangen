@@ -53,6 +53,7 @@ class PatrolOutcome:
         dead_cats: List[str] = None,
         lost_cats: List[str] = None,
         injury: List[Dict] = None,
+        accessory: List[Dict] = None,
         history_reg_death: str = None,
         history_leader_death: str = None,
         history_scar: str = None,
@@ -79,6 +80,7 @@ class PatrolOutcome:
         self.dead_cats = dead_cats if dead_cats is not None else []
         self.lost_cats = lost_cats if lost_cats is not None else []
         self.injury = injury if injury is not None else []
+        self.accessory = accessory if accessory is not None else []
         self.history_reg_death = (
             history_reg_death
             if history_reg_death is not None
@@ -179,6 +181,7 @@ class PatrolOutcome:
                     dead_cats=_d.get("dead_cats"),
                     lost_cats=_d.get("lost_cats"),
                     injury=_d.get("injury"),
+                    accessory=_d.get("accessory"),
                     history_leader_death=(
                         _d["history_text"].get("lead_death")
                         if isinstance(_d.get("history_text"), dict)
@@ -229,6 +232,7 @@ class PatrolOutcome:
                                            other_clan=patrol.other_clan)
 
         # This order is important. 
+        results.append(self._handle_accessories(patrol))
         results.append(self._handle_death(patrol))
         results.append(self._handle_lost(patrol))
         results.append(self._handle_condition_and_scars(patrol))
@@ -769,7 +773,8 @@ class PatrolOutcome:
                 else:
                     results.append(f"{cat.name} joined the Clan.")
 
-        # TODO: i think this is handled in the create_new_cat_block?
+                cat.pelt.inventory = []
+
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed
         # and give the condition

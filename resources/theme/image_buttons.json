@@ -3229,6 +3229,23 @@
             }
         }
     },
+    "#accessories_tab_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/accessories.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/accessories_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/accessories_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/accessories_unavailable.png"
+            }
+        }
+    },
     "#cat_tab_3_blank_button": {
         "prototype": "#image_button",
         "images": {
@@ -4043,6 +4060,23 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/lakeside_camp_unavailable.png"
+            }
+        }
+    },
+    "#accessories_tab_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/accessories.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/accessories_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/accessories_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/accessories_unavailable.png"
             }
         }
     },

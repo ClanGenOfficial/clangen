@@ -19,6 +19,7 @@ import ujson
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
+from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.events_module.generate_events import OngoingEvent
@@ -901,6 +902,7 @@ class Clan:
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
+        self.load_accessories()
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches["error_message"] = ""
@@ -911,6 +913,76 @@ class Clan:
             "version_commit": clan_data.get("version_commit"),
             "source_build": clan_data.get("source_build"),
         }
+    
+    def load_accessories(self):
+        if game.clan.clan_settings['all accessories']:
+            for c in Cat.all_cats_list:
+                cat = c
+                age = cat.age
+                cat_sprite = str(cat.pelt.cat_sprites[cat.age])
+
+                # setting the cat_sprite (bc this makes things much easier)
+                if cat.not_working() and age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
+                    if age in ['kitten', 'adolescent']:
+                        cat_sprite = str(19)
+                    else:
+                        cat_sprite = str(18)
+                elif cat.pelt.paralyzed and age != 'newborn':
+                    if age in ['kitten', 'adolescent']:
+                        cat_sprite = str(17)
+                    else:
+                        if cat.pelt.length == 'long':
+                            cat_sprite = str(16)
+                        else:
+                            cat_sprite = str(15)
+                else:
+                    if age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
+                        age = 'senior'
+                    
+                    if game.config['fun']['all_cats_are_newborn']:
+                        cat_sprite = str(cat.pelt.cat_sprites['newborn'])
+                    else:
+                        cat_sprite = str(cat.pelt.cat_sprites[age])
+
+                possible_accs = ["WILD", "PLANT", "COLLAR", "FLOWER", "PLANT2", "SNAKE", "SMALLANIMAL", "DEADINSECT", "ALIVEINSECT", "FRUIT", "CRAFTED", "TAIL2"]
+                acc_list = []
+                if "WILD" in possible_accs:
+                    acc_list.extend(Pelt.wild_accessories)
+                if "PLANT" in possible_accs:
+                    acc_list.extend(Pelt.plant_accessories)
+                if "COLLAR" in possible_accs:
+                    acc_list.extend(Pelt.collars)
+                if "FLOWER" in possible_accs:
+                    acc_list.extend(Pelt.flower_accessories)
+                if "PLANT2" in possible_accs:
+                    acc_list.extend(Pelt.plant2_accessories)
+                if "SNAKE" in possible_accs:
+                    acc_list.extend(Pelt.snake_accessories)
+                if "SMALLANIMAL" in possible_accs:
+                    acc_list.extend(Pelt.smallAnimal_accessories)
+                if "DEADINSECT" in possible_accs:
+                    acc_list.extend(Pelt.deadInsect_accessories)
+                if "ALIVEINSECT" in possible_accs:
+                    acc_list.extend(Pelt.aliveInsect_accessories)
+                if "FRUIT" in possible_accs:
+                    acc_list.extend(Pelt.fruit_accessories)
+                if "CRAFTED" in possible_accs:
+                    acc_list.extend(Pelt.crafted_accessories)
+                if "TAIL2" in possible_accs:
+                    acc_list.extend(Pelt.tail2_accessories)
+                if "NOTAIL" in c.pelt.scars or "HALFTAIL" in c.pelt.scars:
+                    for acc in Pelt.tail_accessories + Pelt.tail2_accessories:
+                        if acc in acc_list:
+                            try:
+                                acc_list.remove(acc)
+                            except ValueError:
+                                print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+
+                if not c.pelt.inventory:
+                    c.pelt.inventory = []
+                for acc in acc_list:
+                    if acc not in c.pelt.inventory:
+                        c.pelt.inventory.append(acc)
 
     def load_clan_settings(self):
         if os.path.exists(

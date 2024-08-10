@@ -819,7 +819,7 @@ def create_new_cat(
 
         # give em a collar if they got one
         if accessory:
-            new_cat.pelt.accessory = accessory
+            new_cat.pelt.accessories.append(accessory)
 
         # give apprentice aged cat a mentor
         if new_cat.age == "adolescent":
@@ -2144,22 +2144,16 @@ def event_text_adjust(
     # special lists
     text, senses, list_type = find_special_list_types(text)
     if list_type:
-        sign_list = get_special_snippet_list(
-            list_type, amount=randint(1, 3), sense_groups=senses
-        )
+        sign_list = get_special_snippet_list(list_type, amount=randint(1, 3), sense_groups=senses)
         text = text.replace(list_type, str(sign_list))
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
-        text = text.replace(
-            "acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"])
-        )
+        text = text.replace("acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"]))
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
-        text = text.replace(
-            "acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"])
-        )
+        text = text.replace("acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"]))
 
     if "given_herb" in text:
         if "_" in chosen_herb:
