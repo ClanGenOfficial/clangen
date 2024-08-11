@@ -1,14 +1,14 @@
-from enum import Enum
 from functools import cache
 from math import floor
 from typing import Tuple, Dict
 
 import pygame
 
+from scripts.ui.generate_box import BoxStyles
 from scripts.utility import ui_scale_dimensions
 
 
-class ButtonStyles(Enum):
+class ButtonStyles(BoxStyles):
     MAINMENU = "mainmenu"
     SQUOVAL = "squoval"
     MENU_LEFT = "menu_left"
@@ -33,6 +33,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/mainmenu_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "squoval": {
         "normal": pygame.image.load(
@@ -47,6 +48,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/general_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "menu_left": {
         "normal": pygame.image.load(
@@ -61,6 +63,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/menu_left_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "menu_middle": {
         "normal": pygame.image.load(
@@ -75,6 +78,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/menu_middle_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "menu_right": {
         "normal": pygame.image.load(
@@ -89,6 +93,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/menu_right_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "rounded_rect": {
         "normal": pygame.image.load(
@@ -103,6 +108,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/rounded_rect_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "dropdown": {
         "normal": pygame.image.load(
@@ -117,6 +123,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/dropdown_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
     "horizontal_tab": {
         "normal": pygame.image.load(
@@ -131,6 +138,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/horizontal_tab_disabled.png"
         ).convert_alpha(),
+        "size": (3, 3),
     },
 }
 

@@ -203,13 +203,13 @@ def _get_box(
     )
 
     if (
-        scaled_dimensions[0] < tileset.height * 3
-        or scaled_dimensions[1] < tileset.height * 3
+        scaled_dimensions[0] < tileset.height * 2
+        or scaled_dimensions[1] < tileset.height * 2
     ):
         # this is smaller than the absolute minimum dimensions for this item. Raise an exception.
         raise Exception(
             f"Requested dimensions are too small! "
-            f"Minimum size {tileset.height * 3} x {tileset.height * 3}, requested size "
+            f"Minimum size {tileset.height * 2} x {tileset.height * 2}, requested size "
             f"{scaled_dimensions[0]} x {scaled_dimensions[1]}."
         )
 
@@ -333,10 +333,11 @@ def _get_box(
     surface = pygame.Surface(scaled_dimensions, flags=pygame.SRCALPHA)
     surface.fblits(top_row)
 
-    for i in range(1, tilecount[1] - 1):
-        coords = [(x, i * tileset.height) for x in row_x]
-        row = tuple(zip(middle_row, coords))
-        surface.fblits(row)
+    if tilecount[1] > 0:
+        for i in range(1, tilecount[1] - 1):
+            coords = [(x, i * tileset.height) for x in row_x]
+            row = tuple(zip(middle_row, coords))
+            surface.fblits(row)
     if extra_row is not None:
         coords = [
             (x, scaled_dimensions[1] - tileset.height - extra_height) for x in row_x
