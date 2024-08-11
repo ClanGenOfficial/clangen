@@ -460,8 +460,8 @@ class SettingsScreen(Screens):
             self.checkboxes["german"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
                 "german",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
-                object_id="@buttonstyles_ladder_middle",
+                get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
+                object_id="@buttonstyles_ladder_bottom",
                 manager=MANAGER,
                 anchors={"top_target": self.checkboxes["spanish"]},
             )

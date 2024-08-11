@@ -20,6 +20,7 @@ class ButtonStyles(Enum):
     HORIZONTAL_TAB = "horizontal_tab"
     LADDER_TOP = "ladder_top"
     LADDER_MIDDLE = "ladder_middle"
+    LADDER_BOTTOM = "ladder_bottom"
 
 
 buttonstyles = {
@@ -170,6 +171,21 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/ladder_middle_disabled.png"
+        ).convert_alpha(),
+        "ninetile": True,
+    },
+    "ladder_bottom": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/ladder_bottom_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/ladder_bottom_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/ladder_bottom_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/ladder_bottom_disabled.png"
         ).convert_alpha(),
         "ninetile": True,
     },

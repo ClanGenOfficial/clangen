@@ -2064,8 +2064,8 @@ class ProfileScreen(Screens):
             self.choose_mate_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 558), (172, 36))),
                 "choose mate",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
-                object_id="@buttonstyles_ladder_middle",
+                get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
+                object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2095,8 +2095,8 @@ class ProfileScreen(Screens):
             self.change_mentor_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 486), (172, 36))),
                 "change mentor",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
-                object_id="@buttonstyles_ladder_middle",
+                get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
+                object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2124,7 +2124,7 @@ class ProfileScreen(Screens):
             )
             self.cis_trans_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 0), (172, 52))),
-                "debug uwu",
+                "debug\nuwu",
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
                 object_id="@buttonstyles_ladder_middle",
                 text_layer_object_id="@buttonstyles_ladder_multiline",
@@ -2145,8 +2145,8 @@ class ProfileScreen(Screens):
             self.cat_toggles_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 0), (172, 36))),
                 "cat toggles",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
-                object_id="@buttonstyles_ladder_middle",
+                get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
+                object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
                 manager=MANAGER,
                 anchors={"top_target": self.specify_gender_button},
@@ -2185,8 +2185,8 @@ class ProfileScreen(Screens):
             self.destroy_accessory_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((578, 0), (172, 36))),
                 "destroy accessory",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
-                object_id="@buttonstyles_ladder_middle",
+                get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
+                object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
                 manager=MANAGER,
                 anchors={"top_target": self.kill_cat_button},

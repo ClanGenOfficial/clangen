@@ -197,6 +197,13 @@
             "text_vert_alignment_padding": "12"
         }
     },
+    "@buttonstyles_ladder_bottom": {
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "12"
+        }
+    },
     "@buttonstyles_ladder_multiline": {
         "prototype": "buttonstyles_prototype",
         "misc": {

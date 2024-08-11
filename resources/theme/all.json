@@ -2640,38 +2640,6 @@
             }
         }
     },
-    "#spanish_lang_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/spanish.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/spanish_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/spanish_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/spanish_unavailable.png"
-            }
-        }
-    },
-    "#german_lang_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/german.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/german_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/german_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/german_unavailable.png"
-            }
-        }
-    },
     "#expanded_mode_button": {
         "images": {
             "normal_image": {
