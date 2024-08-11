@@ -1,4 +1,3 @@
-from collections import namedtuple
 from dataclasses import dataclass
 from enum import Enum
 from functools import cache
@@ -24,7 +23,7 @@ class BoxStyles(Enum):
     )
     ROUNDED_BOX = BoxData(
         pygame.image.load(
-            "resources/images/generated_boxes/selection_box.png"
+            "resources/images/generated_boxes/rounded_box.png"
         ).convert_alpha(),
         (7, 3),
     )
