@@ -82,7 +82,9 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
 
         if text_is_multiline:
             temp_text = self.text
-            text_rect = pygame.Rect(relative_rect[0], relative_rect[1], -1, -1)
+            text_rect = pygame.Rect(
+                relative_rect[0], relative_rect[1], relative_rect[2], -1
+            )
             self.set_text("")
             self.text_layer = UITextBoxTweaked(
                 temp_text,

@@ -9,7 +9,6 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
-    UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
 )
@@ -135,63 +134,80 @@ class RoleScreen(Screens):
         )
 
         # LEADERSHIP
-        self.promote_leader = UIImageButton(
-            ui_scale(pygame.Rect((48, 360), (172, 36))),
-            "",
-            object_id="#promote_leader_button",
-            manager=MANAGER,
+        self.promote_leader = UISurfaceImageButton(
+            ui_scale(pygame.Rect((48, 0), (172, 36))),
+            "promote to leader",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_top",
+            anchors={"top_target": self.bar},
         )
-        self.promote_deputy = UIImageButton(
-            ui_scale(pygame.Rect((48, 396), (172, 36))),
-            "",
-            object_id="#promote_deputy_button",
-            manager=MANAGER,
+        self.promote_deputy = UISurfaceImageButton(
+            ui_scale(pygame.Rect((48, 0), (172, 36))),
+            "promote to deputy",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.promote_leader},
         )
 
         # ADULT CAT ROLES
-        self.switch_warrior = UIImageButton(
-            ui_scale(pygame.Rect((225, 360), (172, 36))),
-            "",
-            object_id="#switch_warrior_button",
-            manager=MANAGER,
+        self.switch_warrior = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "switch to warrior",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.bar},
         )
-        self.retire = UIImageButton(
-            ui_scale(pygame.Rect((225, 396), (172, 36))),
-            "",
-            object_id="#retire_button",
-            manager=MANAGER,
+        self.retire = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "retire",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_warrior},
         )
-        self.switch_med_cat = UIImageButton(
-            ui_scale(pygame.Rect((402, 360), (172, 52))),
-            "",
-            object_id="#switch_med_cat_button",
-            manager=MANAGER,
+        self.switch_med_cat = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 52))),
+            "switch to medicine\ncat",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.bar},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
-        self.switch_mediator = UIImageButton(
-            ui_scale(pygame.Rect((402, 412), (172, 36))),
-            "",
-            object_id="#switch_mediator_button",
-            manager=MANAGER,
+        self.switch_mediator = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 36))),
+            "switch to mediator",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_med_cat},
         )
 
         # In-TRAINING ROLES:
-        self.switch_warrior_app = UIImageButton(
-            ui_scale(pygame.Rect((579, 360), (172, 52))),
-            "",
-            object_id="#switch_warrior_app_button",
-            manager=MANAGER,
+        self.switch_warrior_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "switch to warrior\napprentice",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.bar},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
-        self.switch_med_app = UIImageButton(
-            ui_scale(pygame.Rect((579, 412), (172, 52))),
-            "",
-            object_id="#switch_med_app_button",
-            manager=MANAGER,
+        self.switch_med_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "switch to medicine\ncat apprentice",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_warrior_app},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
-        self.switch_mediator_app = UIImageButton(
-            ui_scale(pygame.Rect((579, 464), (172, 52))),
-            "",
-            object_id="#switch_mediator_app_button",
-            manager=MANAGER,
+        self.switch_mediator_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "switch to mediator\napprentice",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_med_app},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
 
         self.update_selected_cat()
