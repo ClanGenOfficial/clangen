@@ -449,17 +449,19 @@ class SettingsScreen(Screens):
                 object_id="#english_lang_button",
                 manager=MANAGER,
             )
-            self.checkboxes["spanish"] = UIImageButton(
+            self.checkboxes["spanish"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "",
-                object_id="#spanish_lang_button",
+                "spanish",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
+                object_id="@buttonstyles_ladder_middle",
                 manager=MANAGER,
                 anchors={"top_target": self.checkboxes["english"]},
             )
-            self.checkboxes["german"] = UIImageButton(
+            self.checkboxes["german"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "",
-                object_id="#german_lang_button",
+                "german",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
+                object_id="@buttonstyles_ladder_middle",
                 manager=MANAGER,
                 anchors={"top_target": self.checkboxes["spanish"]},
             )

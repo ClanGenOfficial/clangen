@@ -2117,8 +2117,8 @@ class ProfileScreen(Screens):
             self.change_name_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 450), (172, 36))),
                 "change name",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
-                object_id="@buttonstyles_ladder_middle",
+                get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
+                object_id="@buttonstyles_ladder_top",
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2166,6 +2166,14 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = "dangerous"
+            self.exile_cat_button = UIImageButton(
+                ui_scale(pygame.Rect((578, 450), (172, 36))),
+                "",
+                object_id="#exile_cat_button",
+                tool_tip_text="This cannot be reversed.",
+                starting_height=2,
+                manager=MANAGER,
+            )
             self.kill_cat_button = UIImageButton(
                 ui_scale(pygame.Rect((578, 486), (172, 36))),
                 "",
@@ -2174,19 +2182,19 @@ class ProfileScreen(Screens):
                 starting_height=2,
                 manager=MANAGER,
             )
-            self.destroy_accessory_button = UIImageButton(
-                ui_scale(pygame.Rect((578, 522), (172, 36))),
-                "",
-                object_id="#destroy_accessory_button",
-                tool_tip_text="This will permanently remove this cat's current accessory",
+            self.destroy_accessory_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((578, 0), (172, 36))),
+                "destroy accessory",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
                 manager=MANAGER,
+                anchors={"top_target": self.kill_cat_button},
             )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix!
-            self.exile_cat_button = None
             self.update_disabled_buttons_and_text()
 
     def update_disabled_buttons_and_text(self):
@@ -2251,13 +2259,7 @@ class ProfileScreen(Screens):
             elif self.the_cat.genderalign:
                 self.cis_trans_button.set_text("change to \ncisgender")
             else:
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_cis_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to \ncisgender")
                 self.cis_trans_button.disable()
 
         # Dangerous Tab
