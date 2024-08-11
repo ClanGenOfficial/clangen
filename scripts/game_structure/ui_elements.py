@@ -47,6 +47,8 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         text_kwargs: Optional[Dict[str, str]] = None,
         tool_tip_text_kwargs: Optional[Dict[str, str]] = None,
         max_dynamic_width: Optional[int] = None,
+        text_is_multiline: bool = False,
+        text_layer_object_id: Optional[Union[ObjectID, str]] = None,
     ):
         self._normal_image = image_dict["normal"]
         self._hovered_image = (
@@ -77,7 +79,33 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             tool_tip_text_kwargs=tool_tip_text_kwargs,
             max_dynamic_width=max_dynamic_width,
         )
-        self.rebuild()
+
+        if text_is_multiline:
+            temp_text = self.text
+            text_rect = pygame.Rect(relative_rect[0], relative_rect[1], -1, -1)
+            self.set_text("")
+            self.text_layer = UITextBoxTweaked(
+                temp_text,
+                text_rect,
+                object_id=text_layer_object_id
+                if text_layer_object_id is not None
+                else object_id,
+                starting_height=self.starting_height,
+                anchors=self.anchors,
+                line_spacing=1,
+            )
+            self.text_layer.disable()
+
+    def set_text(self, text: str, *, text_kwargs: Optional[Dict[str, str]] = None):
+        if hasattr(self, "text_layer"):
+            self.text_layer.set_text(text, text_kwargs=text_kwargs)
+        else:
+            super().set_text(text, text_kwargs=text_kwargs)
+
+    def kill(self):
+        if hasattr(self, "text_layer"):
+            self.text_layer.kill()
+        super().kill()
 
     @property
     def normal_image(self):

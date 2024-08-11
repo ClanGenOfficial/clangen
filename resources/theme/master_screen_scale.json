@@ -183,6 +183,26 @@
     "@buttonstyles_dropdown": {
         "prototype": "buttonstyles_prototype"
     },
+    "@buttonstyles_ladder_top": {
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "12"
+        }
+    },
+    "@buttonstyles_ladder_middle": {
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "12"
+        }
+    },
+    "@buttonstyles_ladder_multiline": {
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "padding": "7, 10"
+        }
+    },
     "#window_base_theme": {
         "misc": {
             "shape": "rounded_rectangle",

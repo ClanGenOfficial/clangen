@@ -2037,32 +2037,36 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = "relations"
-            self.family_tree_button = UIImageButton(
+            self.family_tree_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 450), (172, 36))),
-                "",
+                "family tree",
+                get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
+                object_id="@buttonstyles_ladder_top",
                 starting_height=2,
-                object_id="#family_tree_button",
                 manager=MANAGER,
             )
-            self.change_adoptive_parent_button = UIImageButton(
+            self.change_adoptive_parent_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 486), (172, 36))),
-                "",
+                "adoptive parents",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
-                object_id="#adoptive_parents",
                 manager=MANAGER,
             )
-            self.see_relationships_button = UIImageButton(
+            self.see_relationships_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 522), (172, 36))),
-                "",
+                "see relationships",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
-                object_id="#see_relationships_button",
                 manager=MANAGER,
             )
-            self.choose_mate_button = UIImageButton(
+            self.choose_mate_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 558), (172, 36))),
-                "",
+                "choose mate",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
-                object_id="#choose_mate_button",
                 manager=MANAGER,
             )
             self.update_disabled_buttons_and_text()
@@ -2080,18 +2084,20 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = "roles"
 
-            self.manage_roles = UIImageButton(
+            self.manage_roles = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 450), (172, 36))),
-                "",
-                object_id="#manage_roles_button",
+                "manage roles",
+                get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
+                object_id="@buttonstyles_ladder_top",
                 starting_height=2,
                 manager=MANAGER,
             )
-            self.change_mentor_button = UIImageButton(
+            self.change_mentor_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 486), (172, 36))),
-                "",
+                "change mentor",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
-                object_id="#change_mentor_button",
                 manager=MANAGER,
             )
             self.update_disabled_buttons_and_text()
@@ -2108,32 +2114,44 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = "personal"
-            self.change_name_button = UIImageButton(
+            self.change_name_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 450), (172, 36))),
-                "",
+                "change name",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
-                object_id="#change_name_button",
                 manager=MANAGER,
             )
-            self.specify_gender_button = UIImageButton(
-                ui_scale(pygame.Rect((402, 538), (172, 36))),
-                "",
+            self.cis_trans_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((402, 0), (172, 52))),
+                "debug uwu",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+                object_id="@buttonstyles_ladder_middle",
+                text_layer_object_id="@buttonstyles_ladder_multiline",
                 starting_height=2,
-                object_id="#specify_gender_button",
                 manager=MANAGER,
+                anchors={"top_target": self.change_name_button},
+                text_is_multiline=True,
             )
-            self.cat_toggles_button = UIImageButton(
-                ui_scale(pygame.Rect((402, 574), (172, 36))),
-                "",
+            self.specify_gender_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((402, 0), (172, 36))),
+                "specify gender",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
-                object_id="#cat_toggles_button",
                 manager=MANAGER,
+                anchors={"top_target": self.cis_trans_button},
+            )
+            self.cat_toggles_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((402, 0), (172, 36))),
+                "cat toggles",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
+                starting_height=2,
+                manager=MANAGER,
+                anchors={"top_target": self.specify_gender_button},
             )
 
-            # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
-            #   This it due to the image switch depending on the cat's status, and the location switch the close button
-            #    If you can think of a better way to do this, please fix!
-            self.cis_trans_button = None
             self.update_disabled_buttons_and_text()
 
     def toggle_dangerous_tab(self):
@@ -2211,71 +2229,27 @@ class ProfileScreen(Screens):
 
         elif self.open_tab == "personal":
             # Button to trans or cis the cats.
-            if self.cis_trans_button:
-                self.cis_trans_button.kill()
             if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_trans_female_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to trans\nfemale")
             elif (
                 self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
             ):
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_trans_male_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to trans\nmale")
             elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_nonbi_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to\nnonbinary")
             elif self.the_cat.genderalign not in [
                 "female",
                 "trans female",
                 "male",
                 "trans male",
             ]:
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_cis_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to \ncisgender")
             elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_cis_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to \ncisgender")
             elif self.the_cat.gender == "female" and self.the_cat.genderalign == "male":
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_cis_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to \ncisgender")
             elif self.the_cat.genderalign:
-                self.cis_trans_button = UIImageButton(
-                    ui_scale(pygame.Rect((402, 486), (172, 52))),
-                    "",
-                    starting_height=2,
-                    object_id="#change_cis_button",
-                    manager=MANAGER,
-                )
+                self.cis_trans_button.set_text("change to \ncisgender")
             else:
                 self.cis_trans_button = UIImageButton(
                     ui_scale(pygame.Rect((402, 486), (172, 52))),

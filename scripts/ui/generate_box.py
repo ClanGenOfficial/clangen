@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 from functools import cache
-from math import ceil
+from math import ceil, floor
 from typing import Tuple, Dict, Union, Optional
 
 import pygame
@@ -10,37 +10,47 @@ import scripts.game_structure.screen_settings
 from scripts.utility import ui_scale_value, ui_scale_dimensions
 
 
-@dataclass
+@dataclass(unsafe_hash=True)
 class BoxData:
+    name: str
     surface: pygame.Surface
     tilecount: Tuple[int, int]
 
 
 class BoxStyles(Enum):
-    FRAME = BoxData(
+    FRAME = "frame"
+    ROUNDED_BOX = "rounded_box"
+
+
+boxstyles = {
+    "frame": BoxData(
+        "frame",
         pygame.image.load("resources/images/generated_boxes/frame.png").convert_alpha(),
         (3, 3),
-    )
-    ROUNDED_BOX = BoxData(
+    ),
+    "rounded_box": BoxData(
+        "rounded_box",
         pygame.image.load(
             "resources/images/generated_boxes/rounded_box.png"
         ).convert_alpha(),
         (7, 3),
-    )
+    ),
+}
 
 
 @dataclass
 class Tileset:
-    height: int
-    topleft: pygame.Surface
-    top: pygame.Surface
-    topright: pygame.Surface
-    left: pygame.Surface
-    middle: pygame.Surface
-    right: pygame.Surface
-    bottomleft: pygame.Surface
-    bottom: pygame.Surface
-    bottomright: pygame.Surface
+    height: int = 0
+    ninetile: bool = True
+    topleft: pygame.Surface = None
+    top: pygame.Surface = None
+    topright: pygame.Surface = None
+    left: pygame.Surface = None
+    middle: pygame.Surface = None
+    right: pygame.Surface = None
+    bottomleft: pygame.Surface = None
+    bottom: pygame.Surface = None
+    bottomright: pygame.Surface = None
 
     top_noborder: Optional[pygame.Surface] = None
     right_noborder: Optional[pygame.Surface] = None
@@ -57,43 +67,47 @@ class Tileset:
     bottomright_noright: Optional[pygame.Surface] = None
 
 
-tilesets: Dict[float, Dict[BoxStyles, Tileset]] = {}
+tilesets: Dict[float, Dict[BoxData, Tileset]] = {}
 
 
-def get_tileset(style: BoxStyles) -> Tileset:
+def get_tileset(style: BoxData) -> Tileset:
     screen_scale = scripts.game_structure.screen_settings.screen_scale
     if screen_scale in tilesets and style.name in tilesets[screen_scale]:
         return tilesets[screen_scale][style]
 
-    surface = style.value.surface
+    surface = style.surface
 
     # ceiling to the nearest multiple of the tilecount
     width = (
-        ceil(ui_scale_value(surface.get_width()) / style.value.tilecount[0])
-        * style.value.tilecount[0]
+        ceil(ui_scale_value(surface.get_width()) / style.tilecount[0])
+        * style.tilecount[0]
     )
     height = (
-        ceil(ui_scale_value(surface.get_height()) / style.value.tilecount[1])
-        * style.value.tilecount[1]
+        ceil(ui_scale_value(surface.get_height()) / style.tilecount[1])
+        * style.tilecount[1]
     )
 
     scaled_base = pygame.transform.scale(surface, (width, height))
 
-    tile_edge_length = round(height / style.value.tilecount[1])
+    tile_edge_length = round(height / style.tilecount[1])
     tile_size = (tile_edge_length, tile_edge_length)
+    ninetile = True
 
     # make the tiles
     topleft = _get_tile_from_coords(scaled_base, (0, 0), tile_size)
     top = _get_tile_from_coords(scaled_base, (1, 0), tile_size)
     topright = _get_tile_from_coords(scaled_base, (2, 0), tile_size)
 
-    left = _get_tile_from_coords(scaled_base, (0, 1), tile_size)
-    middle = _get_tile_from_coords(scaled_base, (1, 1), tile_size)
-    right = _get_tile_from_coords(scaled_base, (2, 1), tile_size)
-
-    bottomleft = _get_tile_from_coords(scaled_base, (0, 2), tile_size)
-    bottom = _get_tile_from_coords(scaled_base, (1, 2), tile_size)
-    bottomright = _get_tile_from_coords(scaled_base, (2, 2), tile_size)
+    if style.tilecount[1] > 1:
+        left = _get_tile_from_coords(scaled_base, (0, 1), tile_size)
+        middle = _get_tile_from_coords(scaled_base, (1, 1), tile_size)
+        right = _get_tile_from_coords(scaled_base, (2, 1), tile_size)
+        bottomleft = _get_tile_from_coords(scaled_base, (0, 2), tile_size)
+        bottom = _get_tile_from_coords(scaled_base, (1, 2), tile_size)
+        bottomright = _get_tile_from_coords(scaled_base, (2, 2), tile_size)
+    else:
+        left, middle, right, bottomleft, bottom, bottomright = [None] * 6
+        ninetile = False
 
     try:
         topleft_notop = _get_tile_from_coords(scaled_base, (3, 0), tile_size)
@@ -130,6 +144,7 @@ def get_tileset(style: BoxStyles) -> Tileset:
 
     tilesets[screen_scale][style] = Tileset(
         height=tile_edge_length,
+        ninetile=ninetile,
         topleft=topleft,
         top=top,
         topright=topright,
@@ -164,20 +179,23 @@ def _get_tile_from_coords(
 
 
 def get_box(
-    style: BoxStyles,
+    style: Union[BoxStyles, BoxData],
     unscaled_dimensions: Tuple[int, int],
     sides=True,
     use_extra_if_available: bool = True,
 ) -> pygame.Surface:
     """
     Generate a surface of arbitrary length and height from a given input surface
-    :param style: the BoxStyles style to create from
+    :param style: the BoxStyles style to create from, or BoxData to draw from
     :param unscaled_dimensions: the SCALED dimensions of the final box
     :param sides: Whether to render the sides of the box or just end it abruptly.
         Tuple of booleans in order: Top, right, bottom, left. Also accepts a single boolean for all 4 values
     :param use_extra_if_available: Whether to use the expanded tileset if the style has it. Default True.
     :return: A surface
     """
+    if isinstance(style, BoxStyles):
+        style = boxstyles[style.value]
+
     return pygame.transform.scale(
         _get_box(style, unscaled_dimensions, sides, use_extra_if_available),
         ui_scale_dimensions(unscaled_dimensions),
@@ -186,7 +204,7 @@ def get_box(
 
 @cache
 def _get_box(
-    style: BoxStyles,
+    style: BoxData,
     scaled_dimensions: Tuple[int, int],
     sides: Union[bool, Tuple[bool, bool, bool, bool]] = True,
     use_extra_if_available=True,
@@ -202,15 +220,65 @@ def _get_box(
         style, sides, use_extra_if_available=use_extra_if_available
     )
 
-    if (
-        scaled_dimensions[0] < tileset.height * 2
-        or scaled_dimensions[1] < tileset.height * 2
-    ):
-        # this is smaller than the absolute minimum dimensions for this item. Raise an exception.
-        raise Exception(
-            f"Requested dimensions are too small! "
-            f"Minimum size {tileset.height * 2} x {tileset.height * 2}, requested size "
-            f"{scaled_dimensions[0]} x {scaled_dimensions[1]}."
+    tiny_box = False  # a flag to determine whether the box is technically too small
+    tiny_box_dimensions = {}
+
+    if scaled_dimensions[0] < tileset.height * 2:
+        tiny_box = True
+        new_x = scaled_dimensions[0] / 2
+        x_left = floor(new_x)
+        x_right = ceil(new_x)
+
+        tileset.topleft = tileset.topleft.subsurface(
+            pygame.Rect(0, 0, x_left, tileset.height)
+        )
+        tileset.left = tileset.left.subsurface(
+            pygame.Rect(0, 0, x_left, tileset.height)
+        )
+        tileset.bottomleft = tileset.bottomleft.subsurface(
+            pygame.Rect(0, 0, x_left, tileset.height)
+        )
+
+        tileset.topright = tileset.topright.subsurface(
+            pygame.Rect(tileset.height - x_right, 0, x_right, tileset.height)
+        )
+        tileset.right = tileset.right.subsurface(
+            pygame.Rect(tileset.height - x_right, 0, x_right, tileset.height)
+        )
+        tileset.bottomright = tileset.bottomright.subsurface(
+            pygame.Rect(tileset.height - x_right, 0, x_right, tileset.height)
+        )
+
+    if scaled_dimensions[1] < tileset.height * 2:
+        tiny_box = True
+        new_y = scaled_dimensions[1] / 2
+        y_top = floor(new_y)
+        y_bottom = ceil(new_y)
+        tileset.topleft = tileset.topleft.subsurface(
+            pygame.Rect(0, 0, tileset.topleft.width, y_top)
+        )
+        tileset.top = tileset.top.subsurface(
+            pygame.Rect(0, 0, tileset.topleft.width, y_top)
+        )
+        tileset.topright = tileset.topright.subsurface(
+            pygame.Rect(0, 0, tileset.topleft.width, y_top)
+        )
+
+        tileset.bottomleft = tileset.bottomleft.subsurface(
+            pygame.Rect(
+                0, tileset.height - y_bottom, tileset.bottomleft.width, y_bottom
+            )
+        )
+        tileset.bottom = tileset.bottom.subsurface(
+            pygame.Rect(
+                0, tileset.height - y_bottom, tileset.bottomleft.width, y_bottom
+            )
+        )
+
+        tileset.bottomright = tileset.bottomright.subsurface(
+            pygame.Rect(
+                0, tileset.height - y_bottom, tileset.bottomleft.width, y_bottom
+            )
         )
 
     # the number of tiles we need to make the desired size
@@ -220,16 +288,29 @@ def _get_box(
     )
 
     # not all requests will be clean multiples of the tile size. this fixes that.
-    extra_width = scaled_dimensions[0] % tileset.height
-    extra_height = scaled_dimensions[1] % tileset.height
+    # it's already handled in tinybox calculations so no need to redo it here if it's smol
+    extra_width = (
+        0
+        if tileset.topleft.width != tileset.height
+        else scaled_dimensions[0] % tileset.height
+    )
+    extra_height = (
+        0
+        if tileset.topleft.height != tileset.height
+        else scaled_dimensions[1] % tileset.height
+    )
 
     extra_width_tiles = (
         None
         if extra_width == 0
         else {
-            "top": tileset.top.subsurface((0, 0), (extra_width, tileset.height)),
-            "middle": tileset.middle.subsurface((0, 0), (extra_width, tileset.height)),
-            "bottom": tileset.bottom.subsurface((0, 0), (extra_width, tileset.height)),
+            "top": tileset.top.subsurface((0, 0), (extra_width, tileset.top.height)),
+            "middle": tileset.middle.subsurface(
+                (0, 0), (extra_width, tileset.middle.height)
+            ),
+            "bottom": tileset.bottom.subsurface(
+                (0, 0), (extra_width, tileset.bottom.height)
+            ),
         }
     )
 
@@ -326,21 +407,24 @@ def _get_box(
             else [tileset.bottomright]
         )
     )
-    coords = [(x, scaled_dimensions[1] - tileset.height) for x in row_x]
+
+    coords = [(x, scaled_dimensions[1] - tileset.bottomleft.height) for x in row_x]
     bottom_row = tuple(zip(bottom_row, coords))
 
     # ok time to build this ungodly contraption.
     surface = pygame.Surface(scaled_dimensions, flags=pygame.SRCALPHA)
+
     surface.fblits(top_row)
 
-    if tilecount[1] > 0:
+    if not tiny_box:
         for i in range(1, tilecount[1] - 1):
             coords = [(x, i * tileset.height) for x in row_x]
             row = tuple(zip(middle_row, coords))
             surface.fblits(row)
     if extra_row is not None:
         coords = [
-            (x, scaled_dimensions[1] - tileset.height - extra_height) for x in row_x
+            (x, scaled_dimensions[1] - tileset.bottomleft.height - extra_height)
+            for x in row_x
         ]
         extra_row = tuple(zip(extra_row, coords))
         surface.fblits(extra_row)
@@ -351,7 +435,7 @@ def _get_box(
 
 
 def _build_needed_tileset(
-    style: BoxStyles,
+    style: BoxData,
     sides: Union[bool, Tuple[bool, bool, bool, bool]],
     use_extra_if_available=True,
 ):
@@ -367,7 +451,9 @@ def _build_needed_tileset(
 
     tileset = get_tileset(style)
 
-    tiles_top = _handle_edges(
+    output = Tileset(height=tileset.height, ninetile=tileset.ninetile)
+
+    output.top = _handle_edges(
         {
             "border": tileset.top,
             "noborder": tileset.top_noborder,
@@ -377,7 +463,7 @@ def _build_needed_tileset(
         use_extra_if_available,
     )
 
-    tiles_topleft = _handle_corners(
+    output.topleft = _handle_corners(
         {
             "all": tileset.topleft,
             "middle": tileset.middle,
@@ -391,7 +477,7 @@ def _build_needed_tileset(
         use_extra_if_available,
     )
 
-    tiles_topright = _handle_corners(
+    output.topright = _handle_corners(
         {
             "all": tileset.topright,
             "middle": tileset.middle,
@@ -405,8 +491,11 @@ def _build_needed_tileset(
         use_extra_if_available,
     )
 
-    tiles_middle = tileset.middle
-    tiles_left = _handle_edges(
+    if not tileset.ninetile:
+        return output
+
+    output.middle = tileset.middle
+    output.left = _handle_edges(
         {
             "border": tileset.left,
             "noborder": tileset.left_noborder,
@@ -415,7 +504,7 @@ def _build_needed_tileset(
         border_left,
         use_extra_if_available,
     )
-    tiles_right = _handle_edges(
+    output.right = _handle_edges(
         {
             "border": tileset.right,
             "noborder": tileset.right_noborder,
@@ -425,7 +514,7 @@ def _build_needed_tileset(
         use_extra_if_available,
     )
 
-    tiles_bottom = _handle_edges(
+    output.bottom = _handle_edges(
         {
             "border": tileset.bottom,
             "noborder": tileset.bottom_noborder,
@@ -434,7 +523,7 @@ def _build_needed_tileset(
         border_bottom,
         use_extra_if_available,
     )
-    tiles_bottomleft = _handle_corners(
+    output.bottomleft = _handle_corners(
         {
             "all": tileset.bottomleft,
             "middle": tileset.middle,
@@ -448,7 +537,7 @@ def _build_needed_tileset(
         use_extra_if_available,
     )
 
-    tiles_bottomright = _handle_corners(
+    output.bottomright = _handle_corners(
         {
             "all": tileset.bottomright,
             "middle": tileset.middle,
@@ -462,18 +551,7 @@ def _build_needed_tileset(
         use_extra_if_available,
     )
 
-    return Tileset(
-        tileset.height,
-        tiles_topleft,
-        tiles_top,
-        tiles_topright,
-        tiles_left,
-        tiles_middle,
-        tiles_right,
-        tiles_bottomleft,
-        tiles_bottom,
-        tiles_bottomright,
-    )
+    return output
 
 
 def _handle_corners(tiles, border_side1, border_side2, use_extra_if_available):
