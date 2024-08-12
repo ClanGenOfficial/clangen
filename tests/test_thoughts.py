@@ -3,6 +3,7 @@ import unittest
 
 from scripts.cat.cats import Cat
 from scripts.cat.thoughts import Thoughts
+from scripts.enums import BIOME, SEASON
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -12,7 +13,7 @@ class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
         self.main = Cat(status="warrior")
         self.other = Cat(status="warrior")
-        self.biome = "Forest"
+        self.biome = BIOME.FOREST
         self.season = "Newleaf"
         self.camp = "camp2"
 
@@ -77,7 +78,7 @@ class TestsGetStatusThought(unittest.TestCase):
         medicine.status = "medicine cat"
         warrior.status = "warrior"
         medicine.trait = "bold"
-        biome = "Forest"
+        biome = BIOME.FOREST
         season = "Newleaf"
         camp = "camp2"
 
@@ -92,7 +93,7 @@ class TestsGetStatusThought(unittest.TestCase):
         cat = Cat(status="exiled", moons=40)
         cat.exiled = True
         cat.outside = True
-        biome = "Forest"
+        biome = BIOME.FOREST
         season = "Newleaf"
         camp = "camp2"
 
@@ -103,7 +104,7 @@ class TestsGetStatusThought(unittest.TestCase):
         # given
         cat = Cat(status="warrior", moons=40)
         cat.outside = True
-        biome = "Forest"
+        biome = BIOME.FOREST
         season = "Newleaf"
         camp = "camp2"
 
@@ -117,7 +118,7 @@ class TestFamilyThoughts(unittest.TestCase):
         # given
         parent = Cat(moons=40)
         kit = Cat(parent1=parent.ID, moons=4)
-        biome = "Forest"
+        biome = BIOME.FOREST
         season = "Newleaf"
         camp = "camp2"
 
