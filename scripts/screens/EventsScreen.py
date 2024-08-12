@@ -198,19 +198,19 @@ class EventsScreen(Screens):
         self.current_display = display_type
         self.update_list_buttons()
 
-        if display_type == "all":
+        if display_type == "all events":
             self.display_events = self.all_events
-        elif display_type == "ceremony":
+        elif display_type == "ceremonies":
             self.display_events = self.ceremony_events
-        elif display_type == "birth_death":
+        elif display_type == "births & deaths":
             self.display_events = self.birth_death_events
-        elif display_type == "relationship":
+        elif display_type == "relationships":
             self.display_events = self.relation_events
         elif display_type == "health":
             self.display_events = self.health_events
-        elif display_type == "other_clans":
+        elif display_type == "other clans":
             self.display_events = self.other_clans_events
-        elif display_type == "misc":
+        elif display_type == "miscellaneous":
             self.display_events = self.misc_events
 
         self.alert[display_type].hide()
@@ -711,11 +711,11 @@ class EventsScreen(Screens):
 
         self.update_display_events_lists()
 
-        self.current_display = "all"
-        self.event_buttons["all"].disable()
+        self.current_display = "all events"
+        self.event_buttons["all events"].disable()
 
         for tab in self.event_buttons:
-            if tab != "all":
+            if tab != "all events":
                 self.event_buttons[tab].enable()
 
         if not self.all_events:
@@ -726,19 +726,19 @@ class EventsScreen(Screens):
         self.display_events = self.all_events
 
         if self.ceremony_events:
-            self.alert["ceremony"].show()
+            self.alert["ceremonies"].show()
         else:
-            self.alert["ceremony"].hide()
+            self.alert["ceremonies"].hide()
 
         if self.birth_death_events:
             self.alert["birth_death"].show()
         else:
-            self.alert["birth_death"].hide()
+            self.alert["births & deaths"].hide()
 
         if self.relation_events:
-            self.alert["relationship"].show()
+            self.alert["relationships"].show()
         else:
-            self.alert["relationship"].hide()
+            self.alert["relationships"].hide()
 
         if self.health_events:
             self.alert["health"].show()
@@ -746,13 +746,13 @@ class EventsScreen(Screens):
             self.alert["health"].hide()
 
         if self.other_clans_events:
-            self.alert["other_clans"].show()
+            self.alert["other clans"].show()
         else:
-            self.alert["other_clans"].hide()
+            self.alert["other clans"].hide()
 
         if self.misc_events:
-            self.alert["misc"].show()
+            self.alert["miscellaneous"].show()
         else:
-            self.alert["misc"].hide()
+            self.alert["miscellaneous"].hide()
 
         self.update_events_display()

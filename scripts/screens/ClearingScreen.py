@@ -336,10 +336,11 @@ class ClearingScreen(Screens):
             object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
         )
-        self.satisfied_tab = UIImageButton(
+        self.satisfied_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((587, 409), (95, 35))),
-            "",
-            object_id="#freshkill_satisfied",
+            "Satisfied",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (95, 35)),
+            object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
         )
         self.cat_tab_open = self.hungry_tab
@@ -736,7 +737,7 @@ class ClearingScreen(Screens):
                 desc[0],
                 ui_scale(pygame.Rect((x_val, n * 45), (500, 39))),
                 container=self.tactic_text["container_general"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER,
             )
             n += 1
@@ -765,7 +766,7 @@ class ClearingScreen(Screens):
                     desc[0],
                     ui_scale(pygame.Rect((x_val, n * 30), (500, 39))),
                     container=self.additional_text["container_general"],
-                    object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                    object_id="#text_box_30_horizleft_pad_0_8",
                     manager=MANAGER,
                 )
                 n += 1
@@ -775,7 +776,7 @@ class ClearingScreen(Screens):
             "<b>Status-order + needed amount:</b>",
             ui_scale(pygame.Rect((x_val, n * 25 + 5), (500, 39))),
             container=self.additional_text["container_general"],
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+            object_id="#text_box_30_horizleft_pad_0_8",
             manager=MANAGER,
         )
 
@@ -787,7 +788,7 @@ class ClearingScreen(Screens):
                 f"{n}. {status}: {amount} prey",
                 ui_scale(pygame.Rect((x_val, n * 22 + 27), (500, 39))),
                 container=self.additional_text["container_general"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER,
             )
             n += 1

@@ -584,129 +584,18 @@ class FamilyTreeScreen(Screens):
     def update_tab(self):
         for ele in self.tabs:
             self.tabs[ele].kill()
-        self.tabs = {}
 
-        if self.current_group_name == "grandparents":
-            self.tabs["grandparents_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((582, 445), (128, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/grandparents_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((128, 30)),
-                ),
+        self.tabs = {
+            "label": UISurfaceImageButton(
+                ui_scale(pygame.Rect((561, 445), (148, 34))),
+                self.current_group_name.replace("_", "' "),
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (148, 34)),
+                object_id="@buttonstyles_horizontal_tab",
                 manager=MANAGER,
+                tab_movement={"disabled": True},
             )
-        elif self.current_group_name == "parents":
-            self.tabs["parents_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((623, 445), (87, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/parents_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((87, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "parents_siblings":
-            self.tabs["parents_siblings_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((561, 445), (148, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/parentsibling_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((148, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "cousins":
-            self.tabs["cousins_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((627, 445), (83, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/cousins_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((83, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "siblings":
-            self.tabs["siblings_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((628, 445), (82, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/siblings_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((82, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "siblings_mates":
-            self.tabs["siblings_mates_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((573, 445), (137, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/siblingsmate_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((137, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "siblings_kits":
-            self.tabs["siblings_kits_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((585, 445), (125, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/siblingkits_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((125, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "mates":
-            self.tabs["mates_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((635, 445), (75, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/mates_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((75, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "kits":
-            self.tabs["kits_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((653, 445), (57, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/kits_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((57, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "kits_mates":
-            self.tabs["kits_mates_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((598, 445), (112, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/kitsmate_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((112, 30)),
-                ),
-                manager=MANAGER,
-            )
-        elif self.current_group_name == "grandkits":
-            self.tabs["grandkits_tab"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((610, 445), (100, 30))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/grandkits_tab.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((100, 30)),
-                ),
-                manager=MANAGER,
-            )
+        }
+        self.tabs["label"].disable()
 
     def get_previous_next_cat(self):
         """Determines where the previous and next buttons should lead, and enables/disables them"""

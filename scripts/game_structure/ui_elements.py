@@ -62,7 +62,7 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 object_id.object_id is not None and "horiz" in object_id.object_id
             ) or (object_id.class_id is not None and "horiz" in object_id.class_id)
         else:
-            self._is_tab = "tab" in object_id
+            self._is_tab = object_id is not None and "tab" in object_id
             vert_tab = object_id is not None and "vert" in object_id
             horiz_tab = object_id is not None and "horiz" in object_id
 

@@ -16,6 +16,7 @@ def get_arrow(arrow_length: Union[int, float], arrow_left=True):
         arrow_head = "\u2B05"
 
     if 1 < arrow_length < 2:
+        arrow_length = 2
         print(
             "Invalid arrow length - due to limitations in the font, arrow lengths "
             "between 1 and 2 are impossible. Rounded up to length 2. Sorry!"
