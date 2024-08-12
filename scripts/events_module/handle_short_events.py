@@ -406,10 +406,13 @@ class HandleShortEvents:
             if self.main_cat not in self.dead_cats:
                 self.dead_cats.append(self.main_cat)  # got to include the cat that rolled for death in the first place
 
+            taken_cats = []
             for kitty in self.dead_cats:
                 if "lost" in self.chosen_event.tags:
                     kitty.gone()
-                    self.dead_cats.remove(kitty)
+                    taken_cats.append(kitty)
+            for kitty in taken_cats:
+                self.dead_cats.remove(kitty)
                 self.multi_cat.append(kitty)
                 if kitty.ID not in self.involved_cats:
                     self.involved_cats.append(kitty.ID)
