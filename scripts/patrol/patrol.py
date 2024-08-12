@@ -373,23 +373,21 @@ class Patrol:
 
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc. 
         if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
-            final_patrols = possible_patrols
-            final_romance_patrols = possible_patrols
+            final_patrols = final_romance_patrols = possible_patrols
             # Logging
-            print("Patrol filters regarding location, session, etc. have been removed.")
+            print("All patrol filters regarding location, session, etc. have been removed.")
 
 
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible,
         # make it the *only* possible patrol
         if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
-            
             for _pat in possible_patrols:
                 if (
                     _pat.patrol_id
                     == game.config["patrol_generation"]["debug_ensure_patrol_id"]
                 ):
                     patrol_type = choice(_pat.types) if _pat.types != [] else "general"
-                    final_patrols = [_pat]
+                    final_patrols = final_romance_patrols = [_pat]
                     print(
                         f"debug_ensure_patrol_id: "
                         f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
@@ -401,7 +399,7 @@ class Patrol:
                 print(
                     f"debug_ensure_patrol_id: "
                     f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                    f"is not a possible patrol."
+                    f"is not found."
                 )
         return final_patrols, final_romance_patrols
 
