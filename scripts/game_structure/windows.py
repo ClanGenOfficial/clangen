@@ -512,19 +512,21 @@ class ChangeCatName(UIWindow):
             container=self,
         )
 
-        self.random_prefix = UIImageButton(
+        self.random_prefix = UISurfaceImageButton(
             ui_scale(pygame.Rect((122 + x_pos, 48 + y_pos), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
             tool_tip_text="Randomize the prefix",
         )
 
-        self.random_suffix = UIImageButton(
+        self.random_suffix = UISurfaceImageButton(
             ui_scale(pygame.Rect((281 + x_pos, 48 + y_pos), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
             tool_tip_text="Randomize the suffix",

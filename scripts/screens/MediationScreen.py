@@ -249,15 +249,19 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
-        self.random1 = UIImageButton(
+        self.random1 = UISurfaceImageButton(
             ui_scale(pygame.Rect((198, 432), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
         )
-        self.random2 = UIImageButton(
+        self.random2 = UISurfaceImageButton(
             ui_scale(pygame.Rect((568, 432), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
         )
 
         self.search_bar_image = pygame_gui.elements.UIImage(

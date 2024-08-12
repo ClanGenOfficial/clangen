@@ -21,6 +21,7 @@ class ButtonStyles(Enum):
     LADDER_TOP = "ladder_top"
     LADDER_MIDDLE = "ladder_middle"
     LADDER_BOTTOM = "ladder_bottom"
+    ICON = "icon"
 
 
 buttonstyles = {
@@ -189,6 +190,22 @@ buttonstyles = {
         ).convert_alpha(),
         "ninetile": True,
     },
+    "icon": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/icon_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/icon_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/icon_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/icon_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": True,
+    },
 }
 
 
@@ -289,6 +306,29 @@ def _get_button_dict(
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
+    if (
+        "scale_only" in buttonstyles[style.value]
+        and buttonstyles[style.value]["scale_only"]
+    ):
+        return {
+            "normal": pygame.transform.scale(
+                buttonstyles[style.value]["normal"],
+                ui_scale_dimensions(unscaled_dimensions),
+            ),
+            "hovered": pygame.transform.scale(
+                buttonstyles[style.value]["hovered"],
+                ui_scale_dimensions(unscaled_dimensions),
+            ),
+            "selected": pygame.transform.scale(
+                buttonstyles[style.value]["selected"],
+                ui_scale_dimensions(unscaled_dimensions),
+            ),
+            "disabled": pygame.transform.scale(
+                buttonstyles[style.value]["disabled"],
+                ui_scale_dimensions(unscaled_dimensions),
+            ),
+        }
+
     if buttonstyles[style.value]["ninetile"]:
         return {
             "normal": get_box(

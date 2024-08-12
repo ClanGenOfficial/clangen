@@ -148,6 +148,13 @@
     "@buttonstyles_rounded_rect": {
         "prototype": "buttonstyles_prototype"
     },
+    "@buttonstyles_icon": {
+        "prototype": "@buttonstyles_rounded_rect",
+        "font": {
+            "name": "clangen",
+            "size": "22"
+        }
+    },
     "@buttonstyles_menu_right": {
         "prototype": "buttonstyles_prototype"
     },

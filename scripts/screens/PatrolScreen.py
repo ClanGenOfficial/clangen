@@ -529,57 +529,65 @@ class PatrolScreen(Screens):
         self.elements["add_remove_cat"].disable()
 
         # Randomizing buttons
-        self.elements["random"] = UIImageButton(
+        self.elements["random"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((323, 495), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
-        self.elements["add_one"] = UIImageButton(
+        self.elements["add_one"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((363, 495), (34, 34))),
-            "",
-            object_id="#add_one_button",
+            "+1",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
         )
-        self.elements["add_three"] = UIImageButton(
+        self.elements["add_three"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((403, 495), (34, 34))),
-            "",
-            object_id="#add_three_button",
+            "+3",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
         )
-        self.elements["add_six"] = UIImageButton(
+        self.elements["add_six"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((443, 495), (34, 34))),
-            "",
-            object_id="#add_six_button",
+            "+6",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
         )
 
         # patrol type buttons - disabled for now
-        self.elements["paw"] = UIImageButton(
+        self.elements["paw"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((323, 560), (34, 34))),
-            "",
-            object_id="#paw_patrol_button",
+            "\U0001F43E",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         self.elements["paw"].disable()
-        self.elements["mouse"] = UIImageButton(
+        self.elements["mouse"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((363, 560), (34, 34))),
-            "",
-            object_id="#mouse_patrol_button",
+            "\U0001F401",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         self.elements["mouse"].disable()
-        self.elements["claws"] = UIImageButton(
+        self.elements["claws"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((403, 560), (34, 34))),
-            "",
-            object_id="#claws_patrol_button",
+            "\U0001F485",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         self.elements["claws"].disable()
-        self.elements["herb"] = UIImageButton(
+        self.elements["herb"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((443, 560), (34, 34))),
-            "",
-            object_id="#herb_patrol_button",
+            "\U0001F33F",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         self.elements["herb"].disable()
@@ -1068,7 +1076,7 @@ class PatrolScreen(Screens):
 
             self.elements["selected_name"] = pygame_gui.elements.UITextBox(
                 short_name,
-                ui_scale(pygame.Rect((0, 0), (200, 30))),
+                ui_scale(pygame.Rect((0, 0), (200, 34))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
                 anchors={

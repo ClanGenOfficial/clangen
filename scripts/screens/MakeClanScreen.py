@@ -1294,10 +1294,11 @@ class MakeClanScreen(Screens):
         self.sub_screen = "name clan"
 
         # Create all the elements.
-        self.elements["random"] = UIImageButton(
+        self.elements["random"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 595), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
 
@@ -1377,34 +1378,38 @@ class MakeClanScreen(Screens):
         # Roll_buttons
         x_pos = 155
         y_pos = 235
-        self.elements["roll1"] = UIImageButton(
+        self.elements["roll1"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         y_pos += 40
-        self.elements["roll2"] = UIImageButton(
+        self.elements["roll2"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         y_pos += 40
-        self.elements["roll3"] = UIImageButton(
+        self.elements["roll3"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
 
         _tmp = 80
         if self.rolls_left == -1:
             _tmp += 5
-        self.elements["dice"] = UIImageButton(
+        self.elements["dice"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((_tmp, 435), (34, 34))),
-            "",
-            object_id="#random_dice_button",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         del _tmp
@@ -1815,12 +1820,11 @@ class MakeClanScreen(Screens):
             },
         )
 
-        self.elements["random_symbol_button"] = UIImageButton(
+        self.elements["random_symbol_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((496, 206), (34, 34))),
-            "",
-            object_id="#random_dice_button",
-            starting_height=1,
-            tool_tip_text="Select a random symbol!",
+            "\u2684",
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
 
