@@ -248,7 +248,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
     )
     manager.add_font_paths(
-        font_name="clangen", regular_path="resources/fonts/clangen1.ttf"
+        font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
     manager.get_theme().load_theme("resources/theme/themes/dark.json")

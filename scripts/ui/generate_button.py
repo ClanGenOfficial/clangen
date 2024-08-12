@@ -39,6 +39,7 @@ buttonstyles = {
             "resources/images/generated_buttons/mainmenu_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "squoval": {
         "normal": pygame.image.load(
@@ -54,6 +55,7 @@ buttonstyles = {
             "resources/images/generated_buttons/general_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "menu_left": {
         "normal": pygame.image.load(
@@ -69,6 +71,7 @@ buttonstyles = {
             "resources/images/generated_buttons/menu_left_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "menu_middle": {
         "normal": pygame.image.load(
@@ -84,6 +87,7 @@ buttonstyles = {
             "resources/images/generated_buttons/menu_middle_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "menu_right": {
         "normal": pygame.image.load(
@@ -99,6 +103,7 @@ buttonstyles = {
             "resources/images/generated_buttons/menu_right_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "rounded_rect": {
         "normal": pygame.image.load(
@@ -114,6 +119,7 @@ buttonstyles = {
             "resources/images/generated_buttons/rounded_rect_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "dropdown": {
         "normal": pygame.image.load(
@@ -129,6 +135,7 @@ buttonstyles = {
             "resources/images/generated_buttons/dropdown_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "horizontal_tab": {
         "normal": pygame.image.load(
@@ -144,6 +151,7 @@ buttonstyles = {
             "resources/images/generated_buttons/horizontal_tab_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
+        "scale_only": False,
     },
     "ladder_top": {
         "normal": pygame.image.load(
@@ -159,6 +167,7 @@ buttonstyles = {
             "resources/images/generated_buttons/ladder_top_disabled.png"
         ).convert_alpha(),
         "ninetile": True,
+        "scale_only": False,
     },
     "ladder_middle": {
         "normal": pygame.image.load(
@@ -174,6 +183,7 @@ buttonstyles = {
             "resources/images/generated_buttons/ladder_middle_disabled.png"
         ).convert_alpha(),
         "ninetile": True,
+        "scale_only": False,
     },
     "ladder_bottom": {
         "normal": pygame.image.load(
@@ -189,6 +199,7 @@ buttonstyles = {
             "resources/images/generated_buttons/ladder_bottom_disabled.png"
         ).convert_alpha(),
         "ninetile": True,
+        "scale_only": False,
     },
     "icon": {
         "normal": pygame.image.load(
@@ -306,10 +317,7 @@ def _get_button_dict(
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
-    if (
-        "scale_only" in buttonstyles[style.value]
-        and buttonstyles[style.value]["scale_only"]
-    ):
+    if buttonstyles[style.value]["scale_only"]:
         return {
             "normal": pygame.transform.scale(
                 buttonstyles[style.value]["normal"],
@@ -362,22 +370,22 @@ def _get_button_dict(
                 unscaled_dimensions,
             ),
         }
-    else:
-        return {
-            "normal": generate_button(
-                buttonstyles[style.value]["normal"],
-                ui_scale_dimensions(unscaled_dimensions),
-            ),
-            "hovered": generate_button(
-                buttonstyles[style.value]["hovered"],
-                ui_scale_dimensions(unscaled_dimensions),
-            ),
-            "selected": generate_button(
-                buttonstyles[style.value]["selected"],
-                ui_scale_dimensions(unscaled_dimensions),
-            ),
-            "disabled": generate_button(
-                buttonstyles[style.value]["disabled"],
-                ui_scale_dimensions(unscaled_dimensions),
-            ),
-        }
+
+    return {
+        "normal": generate_button(
+            buttonstyles[style.value]["normal"],
+            ui_scale_dimensions(unscaled_dimensions),
+        ),
+        "hovered": generate_button(
+            buttonstyles[style.value]["hovered"],
+            ui_scale_dimensions(unscaled_dimensions),
+        ),
+        "selected": generate_button(
+            buttonstyles[style.value]["selected"],
+            ui_scale_dimensions(unscaled_dimensions),
+        ),
+        "disabled": generate_button(
+            buttonstyles[style.value]["disabled"],
+            ui_scale_dimensions(unscaled_dimensions),
+        ),
+    }
