@@ -74,6 +74,21 @@
     "comment": ["just 'dry herb' sounds wrong, since the acc is visually multiple leaves on the cat. so i've structured",
       "this in a way that allows it to sound correct when used for the singular_acc abbreviation"]
   },
+  "DRY CATMINT": {
+    "default": "dried catmint",
+    "plural": "dry catmint",
+    "singular": "dry catmint"
+  },
+  "DRY NETTLES": {
+    "default": "dried nettles",
+    "plural": "dry nettles",
+    "singular": "dried nettle"
+  },
+  "DRY LAURELS": {
+    "default": "dried laurels",
+    "plural": "dry laurels",
+    "singular": "dried laurel"
+  },
   "OAK LEAVES": {
     "default": "oak leaves",
     "plural": "oak leaves",
@@ -159,10 +174,10 @@
     "plural": "heather",
     "singular": "heather"
   },
-  "HEART FLOWER": {
-    "default": "bleeding heart flowers",
-    "plural": "bleeding heart flowers",
-    "singular": "bleeding heart flower"
+  "SNAPDRAGON": {
+    "default": "snapdragon",
+    "plural": "snapdragons",
+    "singular": "snapdragon"
   },
   "GORSE": {
     "default": "gorse flowers",
