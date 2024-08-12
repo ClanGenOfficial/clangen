@@ -182,10 +182,24 @@
         "prototype": "buttonstyles_prototype"
     },
     "@buttonstyles_horizontal_tab": {
-        "prototype": "@image_button"
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "0",
+            "padding": "5, 5",
+            "state_transitions": {
+                "hovered_normal": "0"
+            }
+        }
     },
     "@buttonstyles_vertical_tab": {
-        "prototype": "@image_button"
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "padding": "5, 5",
+            "state_transitions": {
+                "hovered_normal": "0"
+            }
+        }
     },
     "@buttonstyles_dropdown": {
         "prototype": "buttonstyles_prototype"

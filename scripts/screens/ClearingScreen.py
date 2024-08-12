@@ -329,10 +329,11 @@ class ClearingScreen(Screens):
             object_id="#tactic",
             manager=MANAGER,
         )
-        self.hungry_tab = UIImageButton(
+        self.hungry_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((490, 409), (80, 35))),
-            "",
-            object_id="#freshkill_hungry",
+            "Hungry",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (80, 35)),
+            object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
         )
         self.satisfied_tab = UIImageButton(

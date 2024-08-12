@@ -49,7 +49,32 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         max_dynamic_width: Optional[int] = None,
         text_is_multiline: bool = False,
         text_layer_object_id: Optional[Union[ObjectID, str]] = None,
+        tab_movement: Dict[str, bool] = None,
     ):
+        if isinstance(object_id, ObjectID):
+            self._is_tab = (
+                object_id.object_id is not None and "tab" in object_id.object_id
+            ) or (object_id.class_id is not None and "tab" in object_id.class_id)
+            vert_tab = (
+                object_id.object_id is not None and "vert" in object_id.object_id
+            ) or (object_id.class_id is not None and "vert" in object_id.class_id)
+            horiz_tab = (
+                object_id.object_id is not None and "horiz" in object_id.object_id
+            ) or (object_id.class_id is not None and "horiz" in object_id.class_id)
+        else:
+            self._is_tab = "tab" in object_id
+            vert_tab = object_id is not None and "vert" in object_id
+            horiz_tab = object_id is not None and "horiz" in object_id
+
+        if self._is_tab:
+            if tab_movement is None:
+                tab_movement = {"hovered": vert_tab, "disabled": horiz_tab}
+            if "hovered" not in tab_movement:
+                tab_movement["disabled"] = True
+            if "disabled" not in tab_movement:
+                tab_movement["disabled"] = True
+        self.tab_movement = tab_movement
+
         self._normal_image = image_dict["normal"]
         self._hovered_image = (
             image_dict["hovered"] if "hovered" in image_dict else self.normal_image
@@ -80,11 +105,19 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             max_dynamic_width=max_dynamic_width,
         )
 
-        if text_is_multiline:
+        if text_is_multiline or self._is_tab:
             temp_text = self.text
-            text_rect = pygame.Rect(
-                relative_rect[0], relative_rect[1], relative_rect[2], -1
-            )
+            if self._is_tab and vert_tab:
+                text_rect = pygame.Rect(
+                    relative_rect[0] + ui_scale_value(10),
+                    relative_rect[1],
+                    relative_rect[2] - ui_scale_value(10),
+                    -1,
+                )
+            else:
+                text_rect = pygame.Rect(
+                    relative_rect[0], relative_rect[1], relative_rect[2], -1
+                )
             self.set_text("")
             self.text_layer = UITextBoxTweaked(
                 temp_text,
@@ -92,11 +125,30 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 object_id=text_layer_object_id
                 if text_layer_object_id is not None
                 else object_id,
+                container=container,
                 starting_height=self.starting_height,
                 anchors=self.anchors,
                 line_spacing=1,
             )
             self.text_layer.disable()
+            if self._is_tab:
+                text_layer_pos = self.text_layer.get_abs_rect()
+                self.text_layer_offset = (text_layer_pos[0], text_layer_pos[1])
+
+                if horiz_tab:
+                    self.text_layer_active_offset = (
+                        text_layer_pos[0],
+                        text_layer_pos[1] + ui_scale_value(4),
+                    )
+                elif vert_tab:
+                    self.text_layer_active_offset = (
+                        text_layer_pos[0] - ui_scale_value(10),
+                        text_layer_pos[1],
+                    )
+                else:
+                    raise Exception(
+                        "Unidentified tab type! Ensure tab name has 'horiz' or 'vert' in it!"
+                    )
 
     def set_text(self, text: str, *, text_kwargs: Optional[Dict[str, str]] = None):
         if hasattr(self, "text_layer"):
@@ -108,6 +160,39 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         if hasattr(self, "text_layer"):
             self.text_layer.kill()
         super().kill()
+
+    def hide(self):
+        if hasattr(self, "text_layer"):
+            self.text_layer.hide()
+        super().hide()
+
+    def show(self):
+        if hasattr(self, "text_layer"):
+            self.text_layer.show()
+        super().show()
+
+    def on_hovered(self):
+        if self._is_tab and self.tab_movement["hovered"]:
+            self.text_layer.set_position(self.text_layer_active_offset)
+        super().on_hovered()
+
+    def on_unhovered(self):
+        if self._is_tab and self.tab_movement["hovered"]:
+            self.text_layer.set_position(self.text_layer_offset)
+        super().on_unhovered()
+
+    def disable(self):
+        if self.hovered:
+            self.on_unhovered()
+        super().disable()
+        if self._is_tab and self.tab_movement["disabled"]:
+            self.text_layer.set_position(self.text_layer_active_offset)
+
+    def enable(self):
+        super().enable()
+        if self._is_tab and self.tab_movement["disabled"]:
+            self.drawable_shape.active_state.transition = None
+            self.text_layer.set_position(self.text_layer_offset)
 
     @property
     def normal_image(self):

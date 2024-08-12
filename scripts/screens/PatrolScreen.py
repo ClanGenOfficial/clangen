@@ -24,6 +24,7 @@ from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.icon import Icon
 
 
 class PatrolScreen(Screens):
@@ -531,7 +532,7 @@ class PatrolScreen(Screens):
         # Randomizing buttons
         self.elements["random"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((323, 495), (34, 34))),
-            "\u2684",
+            Icon.DICE,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
@@ -561,7 +562,7 @@ class PatrolScreen(Screens):
         # patrol type buttons - disabled for now
         self.elements["paw"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((323, 560), (34, 34))),
-            "\U0001F43E",
+            Icon.PAW,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
@@ -569,7 +570,7 @@ class PatrolScreen(Screens):
         self.elements["paw"].disable()
         self.elements["mouse"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((363, 560), (34, 34))),
-            "\U0001F401",
+            Icon.MOUSE,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
@@ -577,7 +578,7 @@ class PatrolScreen(Screens):
         self.elements["mouse"].disable()
         self.elements["claws"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((403, 560), (34, 34))),
-            "\U0001F485",
+            Icon.SCRATCHES,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
@@ -585,7 +586,7 @@ class PatrolScreen(Screens):
         self.elements["claws"].disable()
         self.elements["herb"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((443, 560), (34, 34))),
-            "\U0001F33F",
+            Icon.HERB,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,

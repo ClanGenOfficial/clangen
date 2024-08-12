@@ -732,20 +732,22 @@ class ChooseAdoptiveParentScreen(Screens):
         self.tab_buttons = {}
 
         button_x = 100
-        self.tab_buttons["potential"] = UIImageButton(
+        self.tab_buttons["potential"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((button_x, 361), (153, 39))),
-            "",
-            object_id="#potential_parents_tab_button",
+            "Potential Parents",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
+            object_id="@buttonstyles_horizontal_tab",
             starting_height=2,
         )
         button_x += 160
 
         adoptive_parents_shown = False
         if self.the_cat.adoptive_parents:
-            self.tab_buttons["adoptive"] = UIImageButton(
+            self.tab_buttons["adoptive"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((button_x, 361), (153, 39))),
-                "",
-                object_id="#adoptive_parents_tab_button",
+                "Adoptive Parents",
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
+                object_id="@buttonstyles_horizontal_tab",
                 starting_height=2,
             )
             adoptive_parents_shown = True
@@ -753,10 +755,11 @@ class ChooseAdoptiveParentScreen(Screens):
 
         birth_parents_shown = False
         if self.the_cat.parent1 or self.the_cat.parent2:
-            self.tab_buttons["birth"] = UIImageButton(
+            self.tab_buttons["birth"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((button_x, 361), (153, 39))),
-                "",
-                object_id="#birth_parents_tab_button",
+                "Birth Parents",
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
+                object_id="@buttonstyles_horizontal_tab",
                 starting_height=2,
             )
             birth_parents_shown = True

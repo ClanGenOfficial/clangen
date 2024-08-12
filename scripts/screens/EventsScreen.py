@@ -10,7 +10,6 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UIImageButton,
     UIModifiedScrollingContainer,
     IDImageButton,
     UISurfaceImageButton,
@@ -32,8 +31,8 @@ from scripts.utility import (
 
 
 class EventsScreen(Screens):
-    current_display = "all"
-    selected_display = "all"
+    current_display = "all events"
+    selected_display = "all events"
 
     all_events = ""
     ceremony_events = ""
@@ -47,13 +46,13 @@ class EventsScreen(Screens):
     )
     display_events = []
     tabs = [
-        "all",
-        "ceremony",
-        "birth_death",
-        "relationship",
+        "all events",
+        "ceremonies",
+        "births & deaths",
+        "relationships",
         "health",
-        "other_clans",
-        "misc",
+        "other clans",
+        "miscellaneous",
     ]
 
     def __init__(self, name):
@@ -301,10 +300,11 @@ class EventsScreen(Screens):
 
         y_pos = 0
         for event_type in self.tabs:
-            self.event_buttons[f"{event_type}"] = UIImageButton(
+            self.event_buttons[f"{event_type}"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((15, 19 + y_pos), (150, 30))),
-                "",
-                object_id=f"#{event_type}_events_button",
+                event_type,
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
+                object_id="@buttonstyles_vertical_tab",
                 starting_height=1,
                 container=self.full_event_display_container,
                 manager=MANAGER,
@@ -318,7 +318,7 @@ class EventsScreen(Screens):
                         ui_scale_dimensions((4, 22)),
                     ),
                     container=self.full_event_display_container,
-                    object_id=f"alert_mark_{event_type}",
+                    object_id=f"alert_mark_{event_type.replace(' ', '_')}",
                     manager=MANAGER,
                     visible=False,
                 )

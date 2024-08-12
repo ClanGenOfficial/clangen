@@ -374,6 +374,9 @@ class LeaderDenScreen(Screens):
             container=self.focus_frame_container,
             starting_height=2,
             manager=MANAGER,
+            tab_movement={
+                "hovered": False,
+            },
         )
 
         # TODO: create button images for Drive Off, Hunt Down, Search For, and Invite In
