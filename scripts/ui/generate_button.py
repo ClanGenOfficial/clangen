@@ -23,6 +23,10 @@ class ButtonStyles(Enum):
     LADDER_MIDDLE = "ladder_middle"
     LADDER_BOTTOM = "ladder_bottom"
     ICON = "icon"
+    ICON_TAB_TOP = "icon_tab_top"
+    ICON_TAB_LEFT = "icon_tab_left"
+    ICON_TAB_BOTTOM = "icon_tab_bottom"
+    ICON_TAB_RIGHT = "icon_tab_right"
 
 
 buttonstyles = {
@@ -153,6 +157,7 @@ buttonstyles = {
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,
+        "tab_movement": {"hovered": False, "disabled": True, "amount": (0, 4)},
     },
     "vertical_tab": {
         "normal": pygame.image.load(
@@ -169,6 +174,7 @@ buttonstyles = {
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (10, 0)},
     },
     "ladder_top": {
         "normal": pygame.image.load(
@@ -234,7 +240,51 @@ buttonstyles = {
         "ninetile": False,
         "scale_only": True,
     },
+    "icon_tab_top": {
+        "ninetile": True,
+        "scale_only": False,
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (0, -4)},
+    },
+    "icon_tab_left": {
+        "ninetile": True,
+        "scale_only": False,
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (4, 0)},
+    },
+    "icon_tab_bottom": {
+        "ninetile": True,
+        "scale_only": False,
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (0, 4)},
+    },
+    "icon_tab_right": {
+        "ninetile": True,
+        "scale_only": False,
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (-4, 0)},
+    },
 }
+
+
+def __separate_icon_tabs() -> Tuple[str, str, Dict[str, Dict[str, pygame.Surface]]]:
+    """
+    A separate helper method to build the icon tabs since I shoved them all in one file. It just made sense, ok?
+    :return: a generator for the tab, status and associated surface
+    """
+    source = pygame.image.load(
+        "resources/images/generated_buttons/icon_tab.png"
+    ).convert_alpha()
+    tab_size = source.width // 3
+    for y, fun_tab in enumerate(
+        ["icon_tab_top", "icon_tab_left", "icon_tab_bottom", "icon_tab_right"], start=0
+    ):
+        for x, fun_status in enumerate(["normal", "hovered", "disabled"], start=0):
+            yield fun_tab, fun_status, source.subsurface(
+                (x * tab_size, y * tab_size, tab_size, tab_size)
+            )
+
+
+for tab, status, butt_surface in __separate_icon_tabs():
+    if "normal" in buttonstyles[tab] and "selected" not in buttonstyles[tab]:
+        buttonstyles[tab]["selected"] = buttonstyles[tab]["normal"]
+    buttonstyles[tab][status] = butt_surface
 
 
 def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):

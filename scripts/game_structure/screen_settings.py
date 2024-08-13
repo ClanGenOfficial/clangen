@@ -1,5 +1,7 @@
 from typing import TYPE_CHECKING
 
+import ujson
+
 if TYPE_CHECKING:
     from scripts.screens.Screens import Screens
 
@@ -57,11 +59,20 @@ def set_display_mode(
     if fullscreen is None:
         fullscreen = game.settings["fullscreen"]
 
+    with open("resources/screen_config.json", "r") as read_config:
+        screen_config = ujson.load(read_config)
+
     if source_screen is not None:
         curr_variable_dict = source_screen.display_change_save()
 
     if fullscreen:
-        display_size = pygame.display.get_desktop_sizes()[0]  # the primary monitor
+        display_sizes = pygame.display.get_desktop_sizes()  # the primary display
+        screen_config["fullscreen_display"] = (
+            screen_config["fullscreen_display"]
+            if screen_config["fullscreen_display"] < len(display_sizes)
+            else 0
+        )
+        display_size = display_sizes[screen_config["fullscreen_display"]]
         # display_size = [3840, 2160]
 
         x = display_size[0] // 200
@@ -73,8 +84,7 @@ def set_display_mode(
         screen_y = 700 * screen_scale
 
         screen = pygame.display.set_mode(
-            display_size,
-            pygame.FULLSCREEN,
+            display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
         )
         offset = (
             floor((display_size[0] - screen_x) / 2),

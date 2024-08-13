@@ -51,29 +51,35 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         text_layer_object_id: Optional[Union[ObjectID, str]] = None,
         tab_movement: Dict[str, bool] = None,
     ):
-        if isinstance(object_id, ObjectID):
-            self._is_tab = (
-                object_id.object_id is not None and "tab" in object_id.object_id
-            ) or (object_id.class_id is not None and "tab" in object_id.class_id)
-            vert_tab = (
-                object_id.object_id is not None and "vert" in object_id.object_id
-            ) or (object_id.class_id is not None and "vert" in object_id.class_id)
-            horiz_tab = (
-                object_id.object_id is not None and "horiz" in object_id.object_id
-            ) or (object_id.class_id is not None and "horiz" in object_id.class_id)
-        else:
-            self._is_tab = object_id is not None and "tab" in object_id
-            vert_tab = object_id is not None and "vert" in object_id
-            horiz_tab = object_id is not None and "horiz" in object_id
+        ids = (
+            [object_id.object_id, object_id.class_id]
+            if isinstance(object_id, ObjectID)
+            else [object_id]
+        )
 
+        tab_data = None
+        self._is_tab = "tab" in ids if ids is not None else False
         if self._is_tab:
-            if tab_movement is None:
-                tab_movement = {"hovered": vert_tab, "disabled": horiz_tab}
-            if "hovered" not in tab_movement:
-                tab_movement["disabled"] = True
-            if "disabled" not in tab_movement:
-                tab_movement["disabled"] = True
-        self.tab_movement = tab_movement
+            for obj_id in ids:
+                obj_id.replace("@buttonstyles_", "")
+                try:
+                    from scripts.ui.generate_button import buttonstyles
+
+                    tab_data = buttonstyles[obj_id]["tab_movement"]
+                except KeyError:
+                    continue
+            if tab_data is None:
+                raise Exception(
+                    "Button is tab, but unable to find matching data! Ensure object_id is correct & that buttonstyles has tab_movement key"
+                )
+            self.tab_movement = {
+                "hovered": tab_data["hovered"]
+                if not hasattr(tab_movement, "hovered")
+                else tab_movement["hovered"],
+                "disabled": tab_data["disabled"]
+                if not hasattr(tab_movement, "disabled")
+                else tab_movement["disabled"],
+            }
 
         self._normal_image = image_dict["normal"]
         self._hovered_image = (
@@ -107,11 +113,11 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
 
         if text_is_multiline or self._is_tab:
             temp_text = self.text
-            if self._is_tab and vert_tab:
+            if self._is_tab and tab_data["amount"][1] != 0:
                 text_rect = pygame.Rect(
-                    relative_rect[0] + ui_scale_value(10),
+                    relative_rect[0] + ui_scale_value(tab_data["amount"][1]),
                     relative_rect[1],
-                    relative_rect[2] - ui_scale_value(10),
+                    relative_rect[2] - ui_scale_value(tab_data["amount"][1]),
                     -1,
                 )
             else:
@@ -134,21 +140,10 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             if self._is_tab:
                 text_layer_pos = self.text_layer.get_abs_rect()
                 self.text_layer_offset = (text_layer_pos[0], text_layer_pos[1])
-
-                if horiz_tab:
-                    self.text_layer_active_offset = (
-                        text_layer_pos[0],
-                        text_layer_pos[1] + ui_scale_value(4),
-                    )
-                elif vert_tab:
-                    self.text_layer_active_offset = (
-                        text_layer_pos[0] - ui_scale_value(10),
-                        text_layer_pos[1],
-                    )
-                else:
-                    raise Exception(
-                        "Unidentified tab type! Ensure tab name has 'horiz' or 'vert' in it!"
-                    )
+                self.text_layer_active_offset: Tuple[int, int] = (
+                    text_layer_pos[0] + ui_scale_value(tab_data["amount"][0]),
+                    text_layer_pos[1] + ui_scale_value(tab_data["amount"][1]),
+                )
 
     def set_text(self, text: str, *, text_kwargs: Optional[Dict[str, str]] = None):
         if hasattr(self, "text_layer"):

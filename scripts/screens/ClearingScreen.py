@@ -24,6 +24,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
@@ -310,10 +311,11 @@ class ClearingScreen(Screens):
             manager=MANAGER,
         )
         self.log_box.hide()
-        self.cats_tab = UIImageButton(
-            ui_scale(pygame.Rect((109, 462), (35, 75))),
-            "",
-            object_id="#hurt_sick_cats_button",
+        self.cats_tab = UISurfaceImageButton(
+            ui_scale(pygame.Rect((109, 462), (39, 34))),
+            Icon.CAT_HEAD,
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (39, 34)),
+            object_id="@buttonstyles_icon_tab_right",
             manager=MANAGER,
         )
         self.cats_tab.disable()
