@@ -141,15 +141,18 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 container=container,
                 starting_height=self.starting_height,
                 anchors=self.anchors,
-                line_spacing=1,
+                line_spacing=0.95,
             )
-            if self.text_layer.rect.height >= relative_rect[3]:
-                offset = (self.text_layer.rect.height - relative_rect[3]) // 2
-                current = self.text_layer.get_relative_rect()
-                self.text_layer.set_relative_position((current[0], current[1] - offset))
             self.text_layer.disable()
 
             if self._is_tab:
+                if self.text_layer.rect.height >= relative_rect[3]:
+                    offset = (self.text_layer.rect.height - relative_rect[3]) // 2
+                    current = self.text_layer.get_relative_rect()
+                    self.text_layer.set_relative_position(
+                        (current[0], current[1] - offset)
+                    )
+
                 text_layer_pos = self.text_layer.get_abs_rect()
                 self.text_layer_offset = (text_layer_pos[0], text_layer_pos[1])
                 self.text_layer_active_offset: Tuple[int, int] = (
@@ -741,7 +744,7 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
         html_text: str,
         relative_rect,
         manager=None,
-        line_spacing=1,
+        line_spacing: float = 1,
         wrap_to_height: bool = False,
         starting_height: int = 1,
         container=None,

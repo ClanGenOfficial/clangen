@@ -240,7 +240,7 @@
     "@buttonstyles_ladder_multiline": {
         "prototype": "buttonstyles_prototype",
         "misc": {
-            "padding": "7, 10"
+            "padding": "7, 9"
         }
     },
     "#window_base_theme": {

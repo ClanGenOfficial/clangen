@@ -731,7 +731,7 @@ class EventsScreen(Screens):
             self.alert["ceremonies"].hide()
 
         if self.birth_death_events:
-            self.alert["birth_death"].show()
+            self.alert["births & deaths"].show()
         else:
             self.alert["births & deaths"].hide()
 

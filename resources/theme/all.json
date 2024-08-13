@@ -660,22 +660,6 @@
             }
         }
     },
-    "#unknown_residence_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/unknown.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/unknown_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/unknown_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/unknown_unavailable.png"
-            }
-        }
-    },
     "#mediation_button": {
         "images": {
             "normal_image": {
@@ -2036,38 +2020,6 @@
             },
             "disabled_image": {
                 "path": "resources/images/buttons/save_clan_unavailable.png"
-            }
-        }
-    },
-    "#your_clan_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/your_clan.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/your_clan_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/your_clan_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/your_clan_unavailable.png"
-            }
-        }
-    },
-    "#outside_clan_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/outside_clan.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/outside_clan_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/outside_clan_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/outside_clan_unavailable.png"
             }
         }
     },
