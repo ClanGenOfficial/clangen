@@ -157,7 +157,7 @@ buttonstyles = {
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,
-        "tab_movement": {"hovered": False, "disabled": True, "amount": (0, 4)},
+        "tab_movement": {"hovered": False, "disabled": True, "amount": (0, -4)},
     },
     "vertical_tab": {
         "normal": pygame.image.load(
@@ -174,7 +174,7 @@ buttonstyles = {
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,
-        "tab_movement": {"hovered": True, "disabled": True, "amount": (10, 0)},
+        "tab_movement": {"hovered": True, "disabled": False, "amount": (10, 0)},
     },
     "ladder_top": {
         "normal": pygame.image.load(
@@ -248,7 +248,7 @@ buttonstyles = {
     "icon_tab_left": {
         "ninetile": True,
         "scale_only": False,
-        "tab_movement": {"hovered": True, "disabled": True, "amount": (4, 0)},
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (-4, 0)},
     },
     "icon_tab_bottom": {
         "ninetile": True,
@@ -258,7 +258,7 @@ buttonstyles = {
     "icon_tab_right": {
         "ninetile": True,
         "scale_only": False,
-        "tab_movement": {"hovered": True, "disabled": True, "amount": (-4, 0)},
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (4, 0)},
     },
 }
 

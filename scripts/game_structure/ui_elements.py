@@ -51,21 +51,28 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         text_layer_object_id: Optional[Union[ObjectID, str]] = None,
         tab_movement: Dict[str, bool] = None,
     ):
-        ids = (
-            [object_id.object_id, object_id.class_id]
-            if isinstance(object_id, ObjectID)
-            else [object_id]
-        )
+        if object_id is None:
+            ids = None
+        else:
+            ids = (
+                [object_id.object_id, object_id.class_id]
+                if isinstance(object_id, ObjectID)
+                else [object_id]
+            )
 
         tab_data = None
-        self._is_tab = "tab" in ids if ids is not None else False
+        if ids is not None:
+            self._is_tab = any(["tab" in temp for temp in ids if temp is not None])
+        else:
+            self._is_tab = False
         if self._is_tab:
             for obj_id in ids:
-                obj_id.replace("@buttonstyles_", "")
+                obj_id = obj_id.replace("@buttonstyles_", "")
                 try:
                     from scripts.ui.generate_button import buttonstyles
 
                     tab_data = buttonstyles[obj_id]["tab_movement"]
+                    break
                 except KeyError:
                     continue
             if tab_data is None:
@@ -113,11 +120,11 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
 
         if text_is_multiline or self._is_tab:
             temp_text = self.text
-            if self._is_tab and tab_data["amount"][1] != 0:
+            if self._is_tab and tab_data["amount"][0] != 0:
                 text_rect = pygame.Rect(
-                    relative_rect[0] + ui_scale_value(tab_data["amount"][1]),
-                    relative_rect[1],
-                    relative_rect[2] - ui_scale_value(tab_data["amount"][1]),
+                    relative_rect[0] + ui_scale_value(tab_data["amount"][0]),
+                    relative_rect[1] + ui_scale_value(tab_data["amount"][1]),
+                    relative_rect[2] - ui_scale_value(tab_data["amount"][0]),
                     -1,
                 )
             else:
@@ -136,13 +143,18 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 anchors=self.anchors,
                 line_spacing=1,
             )
+            if self.text_layer.rect.height >= relative_rect[3]:
+                offset = (self.text_layer.rect.height - relative_rect[3]) // 2
+                current = self.text_layer.get_relative_rect()
+                self.text_layer.set_relative_position((current[0], current[1] - offset))
             self.text_layer.disable()
+
             if self._is_tab:
                 text_layer_pos = self.text_layer.get_abs_rect()
                 self.text_layer_offset = (text_layer_pos[0], text_layer_pos[1])
                 self.text_layer_active_offset: Tuple[int, int] = (
-                    text_layer_pos[0] + ui_scale_value(tab_data["amount"][0]),
-                    text_layer_pos[1] + ui_scale_value(tab_data["amount"][1]),
+                    text_layer_pos[0] - ui_scale_value(tab_data["amount"][0]),
+                    text_layer_pos[1] - ui_scale_value(tab_data["amount"][1]),
                 )
 
     def set_text(self, text: str, *, text_kwargs: Optional[Dict[str, str]] = None):

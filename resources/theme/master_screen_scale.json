@@ -155,6 +155,18 @@
             "size": "22"
         }
     },
+    "@buttonstyles_icon_tab_top": {
+        "prototype": "@buttonstyles_icon"
+    },
+    "@buttonstyles_icon_tab_left": {
+        "prototype": "@buttonstyles_icon"
+    },
+    "@buttonstyles_icon_tab_bottom": {
+        "prototype": "@buttonstyles_icon"
+    },
+    "@buttonstyles_icon_tab_right": {
+        "prototype": "@buttonstyles_icon"
+    },
     "@buttonstyles_menu_right": {
         "prototype": "buttonstyles_prototype"
     },
