@@ -16,6 +16,13 @@ from .Screens import Screens
 class AllegiancesScreen(Screens):
     allegiance_list = []
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.names_boxes = None
+        self.ranks_boxes = None
+        self.scroll_container = None
+        self.heading = None
+
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.menu_button_pressed(event)
@@ -28,9 +35,10 @@ class AllegiancesScreen(Screens):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
             f"<b>{game.clan.name}Clan Allegiances</b>",
-            ui_scale(pygame.Rect((195, 115), (400, 40))),
-            object_id=get_text_box_theme("#text_box_34_horizcenter"),
+            ui_scale(pygame.Rect((0, 115), (400, 40))),
+            object_id=get_text_box_theme("#text_box_34_horizcenter_vertcenter"),
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
 
         # Set Menu Buttons.
@@ -75,6 +83,8 @@ class AllegiancesScreen(Screens):
                     anchors={
                         "top_target": self.ranks_boxes[-1],
                         "left_target": self.ranks_boxes[-1],
+                        "left": "left",
+                        "right": "right",
                     },
                 )
             )
@@ -98,8 +108,9 @@ class AllegiancesScreen(Screens):
         self.heading.kill()
         del self.heading
 
-    def generate_one_entry(self, cat, extra_details=""):
-        """Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
+    @staticmethod
+    def generate_one_entry(cat, extra_details=""):
+        """Extra Details will be placed after the cat description, but before the apprentice (if they have one)."""
         output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
         if len(cat.apprentice) > 0:
