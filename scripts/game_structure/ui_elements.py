@@ -708,6 +708,7 @@ class CatButton(UIImageButton):
         tool_tip_text=None,
         container=None,
         anchors=None,
+        auto_disable_if_no_data=False,
     ):
         self.cat_id = cat_id
         self.cat_object = cat_object
@@ -723,6 +724,8 @@ class CatButton(UIImageButton):
             container=container,
             anchors=anchors,
         )
+        if auto_disable_if_no_data and cat_id is None and cat_object is None:
+            self.disable()
 
     def return_cat_id(self):
         return self.cat_id
@@ -889,13 +892,14 @@ class UIRelationStatusBar:
         del self
 
 
-class IDImageButton(UIImageButton):
+class IDImageButton(UISurfaceImageButton):
     """Class to handle the "involved cats" button on the events page. It stores the IDs of the cat's involved."""
 
     def __init__(
         self,
         relative_rect,
-        text="",
+        text,
+        button_dict,
         ids=None,
         object_id=None,
         container=None,
@@ -912,6 +916,7 @@ class IDImageButton(UIImageButton):
         super().__init__(
             relative_rect,
             text,
+            image_dict=button_dict,
             object_id=object_id,
             container=container,
             starting_height=layer_starting_height,

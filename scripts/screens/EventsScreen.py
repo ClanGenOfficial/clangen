@@ -13,11 +13,13 @@ from scripts.game_structure.ui_elements import (
     UIModifiedScrollingContainer,
     IDImageButton,
     UISurfaceImageButton,
+    CatButton,
 )
 from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.icon import Icon
 from scripts.utility import (
     ui_scale,
     clan_symbol_sprite,
@@ -124,7 +126,7 @@ class EventsScreen(Screens):
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons.values():
                 self.save_scroll_position()
-                game.switches["cat"] = element.ids
+                game.switches["cat"] = element.cat_id
                 self.change_screen("profile screen")
             else:
                 self.save_scroll_position()
@@ -472,13 +474,13 @@ class EventsScreen(Screens):
                     name = str(cat_ob.name)
                     short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
-                    self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
+                    self.cat_profile_buttons[f"profile_button{i}"] = CatButton(
                         rect,
                         text=short_name,
-                        ids=cat_id,
+                        cat_id=cat_id,
                         container=self.involved_cat_container,
                         object_id="#events_cat_profile_button",
-                        layer_starting_height=1,
+                        starting_height=1,
                         manager=MANAGER,
                         anchors={
                             "left_target": self.cat_profile_buttons[
@@ -498,13 +500,13 @@ class EventsScreen(Screens):
                     name = str(cat_ob.name)
                     short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
-                    self.cat_profile_buttons[f"profile_button{i}"] = IDImageButton(
+                    self.cat_profile_buttons[f"profile_button{i}"] = CatButton(
                         rect,
                         text=short_name,
-                        ids=cat_id,
+                        cat_id=cat_id,
                         container=self.involved_cat_container,
                         object_id="#events_cat_profile_button",
-                        layer_starting_height=1,
+                        starting_height=1,
                         manager=MANAGER,
                         anchors={
                             "left_target": self.cat_profile_buttons[
@@ -638,9 +640,11 @@ class EventsScreen(Screens):
 
             self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
                 catbutton_rect,
+                Icon.CAT_HEAD,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
                 ids=event_object.cats_involved,
                 layer_starting_height=3,
-                object_id="#events_cat_button",
+                object_id="@buttonstyles_icon",
                 parent_element=self.event_display_elements[f"container{i}"],
                 container=self.event_display_elements[f"container{i}"],
                 manager=MANAGER,

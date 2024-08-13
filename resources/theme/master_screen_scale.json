@@ -152,7 +152,11 @@
         "prototype": "@buttonstyles_rounded_rect",
         "font": {
             "name": "clangen",
-            "size": "22"
+            "size": "21"
+        },
+        "misc": {
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
         }
     },
     "@buttonstyles_icon_tab_top": {
@@ -562,12 +566,6 @@
         "prototype": "#text_box_40",
         "misc": {
             "text_horiz_alignment": "center"
-        }
-    },
-    "#events_cat_profile_button": {
-        "misc": {
-            "border_width": "0",
-            "shadow_width": "0"
         }
     }
 }

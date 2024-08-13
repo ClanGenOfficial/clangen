@@ -124,8 +124,10 @@
             "normal_bg": "#655934",
             "hovered_bg": "#1E1809",
             "selected_bg": "#1E1809",
+            "active_bg": "#655934",
             "normal_text": "#EEE4CD",
             "hovered_text": "#EFE5CE",
+            "active_text": "#EEE4CD",
             "text_shadow": "#00000000"
         },
         "images": {
@@ -138,6 +140,10 @@
             "selected_image": {
                 "path": "resources/images/buttons/cat_event_profile.png"
             }
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
         }
     },
     "#window_base_theme": {
