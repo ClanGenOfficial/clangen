@@ -271,7 +271,7 @@ def __separate_icon_tabs() -> Tuple[str, str, Dict[str, Dict[str, pygame.Surface
     source = pygame.image.load(
         "resources/images/generated_buttons/icon_tab.png"
     ).convert_alpha()
-    tab_size = source.width // 3
+    tab_size = source.get_width() // 3
     for y, fun_tab in enumerate(
         ["icon_tab_top", "icon_tab_left", "icon_tab_bottom", "icon_tab_right"], start=0
     ):
