@@ -142,7 +142,8 @@ def rebuild_core():
             "centerx": "centerx",
         },
     )
-    heading_rect = ui_scale(pygame.Rect((0, 0), (190, 35)))
+    # it has to be at least 193 to make "cats outside the clan" fit
+    heading_rect = ui_scale(pygame.Rect((0, 0), (193, 35)))
     heading_rect.bottomleft = ui_scale_offset((0, 1))  # yes, this is intentional.
     menu_buttons["heading"] = pygame_gui.elements.UITextBox(
         "",
@@ -309,30 +310,58 @@ def rebuild_bgs():
         "dark": {"default": bg_dark},
     }
 
+    temp_screen_size = scripts.game_structure.screen_settings.screen.get_size()
+
     default_fullscreen_bgs = {
         "light": {
-            "default": pygame.transform.scale(
-                bg, scripts.game_structure.screen_settings.screen.get_size()
-            ),
+            "default": pygame.transform.scale(bg, temp_screen_size),
             "mainmenu_bg": pygame.transform.scale(
                 pygame.image.load("resources/images/menu_logoless.png").convert(),
-                scripts.game_structure.screen_settings.screen.get_size(),
+                temp_screen_size,
+            ),
+            "starclan": pygame.transform.scale(
+                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
+                temp_screen_size,
+            ),
+            "darkforest": pygame.transform.scale(
+                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
+                temp_screen_size,
+            ),
+            "unknown_residence": pygame.transform.scale(
+                pygame.image.load("resources/images/urbg.png").convert(),
+                temp_screen_size,
             ),
         },
         "dark": {
-            "default": pygame.transform.scale(
-                bg_dark, scripts.game_structure.screen_settings.screen.get_size()
-            ),
+            "default": pygame.transform.scale(bg_dark, temp_screen_size),
             "mainmenu_bg": pygame.transform.scale(
                 pygame.image.load("resources/images/menu_logoless.png").convert(),
-                scripts.game_structure.screen_settings.screen.get_size(),
+                temp_screen_size,
+            ),
+            "starclan": pygame.transform.scale(
+                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
+                temp_screen_size,
+            ),
+            "darkforest": pygame.transform.scale(
+                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
+                temp_screen_size,
+            ),
+            "unknown_residence": pygame.transform.scale(
+                pygame.image.load("resources/images/urbg.png").convert(),
+                temp_screen_size,
             ),
         },
     }
 
     for theme in ["light", "dark"]:
         for name, bg in default_fullscreen_bgs[theme].items():
-            if name not in ["default", "mainmenu_bg"]:
+            if name not in [
+                "default",
+                "mainmenu_bg",
+                "darkforest",
+                "unknown_residence",
+                "starclan",
+            ]:
                 default_fullscreen_bgs[theme][name] = process_blur_bg(
                     default_fullscreen_bgs[theme][name], theme=theme
                 )
@@ -343,9 +372,13 @@ def rebuild_bgs():
                     vignette_strength=0,
                     fade_color=None,
                 )
-            elif name == "mainmenu_bg":
+            elif name in ["mainmenu_bg", "darkforest", "unknown_residence"]:
                 default_fullscreen_bgs[theme][name] = process_blur_bg(
                     default_fullscreen_bgs[theme][name], theme=theme, blur_radius=10
+                )
+            elif name == "starclan":
+                default_fullscreen_bgs[theme][name] = process_blur_bg(
+                    default_fullscreen_bgs[theme][name], theme=theme, blur_radius=2
                 )
 
     camp_bgs = get_camp_bgs()

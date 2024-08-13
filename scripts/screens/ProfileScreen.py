@@ -534,6 +534,8 @@ class ProfileScreen(Screens):
         if game.last_screen_forProfile == "med den screen":
             self.toggle_conditions_tab()
 
+        self.set_cat_location_bg(self.the_cat)
+
     def clear_profile(self):
         """Clears all profile objects."""
         for ele in self.profile_elements:

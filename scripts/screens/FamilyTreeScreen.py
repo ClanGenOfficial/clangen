@@ -268,6 +268,8 @@ class FamilyTreeScreen(Screens):
         self.create_family_tree()
         self.get_previous_next_cat()
 
+        self.set_cat_location_bg(self.the_cat)
+
     def display_change_save(self) -> Dict:
         variable_dict = super().display_change_save()
 

@@ -164,6 +164,7 @@ class ChangeGenderScreen(Screens):
         )
 
         self.update_selected_cat()
+        self.set_cat_location_bg(self.the_cat)
 
     def display_change_save(self):
         variable_dict = super().display_change_save()

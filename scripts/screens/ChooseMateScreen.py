@@ -352,6 +352,8 @@ class ChooseMateScreen(Screens):
         # current cat
         self.update_current_cat_info()
 
+        self.set_cat_location_bg(self.the_cat)
+
     def display_change_save(self) -> Dict:
         variable_dict = super().display_change_save()
         variable_dict["selected_cat"] = self.selected_cat

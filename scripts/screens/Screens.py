@@ -64,6 +64,7 @@ class Screens:
         game.rpc.update_rpc.set()
 
     def __init__(self, name=None):
+        self.active_blur_bg = None
         self.previous_season = ""
         self.bg_transition = False
         self.bg_transition_time = 5
@@ -510,7 +511,7 @@ class Screens:
                 bg, blur_radius=radius, vignette_strength=vignette_alpha
             )
 
-    def set_bg(self, bg: Optional[str] = None):
+    def set_bg(self, bg: Optional[str] = None, blur_bg: Optional[str] = None):
         """
         Set the currently active background for a screen.
         :param bg: "default", or a key in either the game_bgs or default_game_bgs dictionaries.
@@ -528,6 +529,21 @@ class Screens:
             self.active_bg = bg
         else:
             raise Exception(f"Unidentified background requested: '{bg}'")
+
+        if blur_bg is None:
+            self.active_blur_bg = self.active_bg
+        elif (
+            blur_bg in self.fullscreen_bgs
+            or blur_bg
+            in scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                self.theme
+            ]
+        ):
+            self.active_blur_bg = blur_bg
+        else:
+            raise Exception(
+                f"Unidentified fullscreen background requested: '{blur_bg}'"
+            )
 
         # enable the transition to get that sweet, sweet fullscreen fade.
         self.bg_transition = True
@@ -561,32 +577,6 @@ class Screens:
         # handle custom screen backgrounds (non-default)
         if self.active_bg in self.game_bgs:
             bg = self.game_bgs[self.active_bg]
-
-            if self.name in ["start screen"]:
-                blur_bg = (
-                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        theme
-                    ]["mainmenu_bg"]
-                )
-            else:
-                # if the blur_bg associated with this is "default", select the blurred current season
-                # otherwise, select the custom blur_bg
-                blur_bg = (
-                    season_bg
-                    if self.fullscreen_bgs[self.active_bg] == "default"
-                    else self.fullscreen_bgs[self.active_bg]
-                )
-
-                # show transition if the season has just changed
-                if (
-                    self.previous_season != season
-                    and self.fullscreen_bgs[self.active_bg] == "default"
-                ):
-                    self.bg_transition_time = (
-                        10  # doubled transition time for the Vibes
-                    )
-                    self.previous_season = season
-
         # handle default screen backgrounds
         elif (
             self.active_bg
@@ -595,31 +585,40 @@ class Screens:
             bg = scripts.screens.screens_core.screens_core.default_game_bgs[theme][
                 self.active_bg
             ]
-
-            # if we're in the main menu, don't display the clan season BG. just show default mode-appropriate colour.
-            if self.name in [
-                "make clan screen",
-                "settings screen",
-                "switch clan screen",
-            ]:
-                blur_bg = (
-                    scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
-                        theme
-                    ]["mainmenu_bg"]
-                )
-            else:
-                # otherwise, season bg as before
-                blur_bg = season_bg
-                if self.previous_season != season:
-                    self.bg_transition_time = (
-                        10  # doubled transition time for the Vibes
-                    )
-                    self.previous_season = season
         else:
             raise Exception(
-                f"Selected background not recognised! '{self.active_bg}' not in default or custom bgs"
+                f"Selected game background not recognised! '{self.active_bg}' not in default or custom bgs"
             )
 
+        if self.active_blur_bg == "default" or self.active_blur_bg == season:
+            blur_bg = season_bg
+        elif self.name in [
+            "start screen",
+            "make clan screen",
+            "settings screen",
+            "switch clan screen",
+        ]:
+            # if we're in the main menu levels, display the main menu bg
+            blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                theme
+            ]["mainmenu_bg"]
+        elif self.active_blur_bg in self.fullscreen_bgs:
+            blur_bg = self.fullscreen_bgs[self.active_blur_bg]
+        elif (
+            self.active_blur_bg
+            in scripts.screens.screens_core.screens_core.default_fullscreen_bgs[theme]
+        ):
+            blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
+                theme
+            ][self.active_blur_bg]
+        else:
+            raise Exception(
+                f"Selected fullscreen background not recognised! '{self.active_blur_bg}' not in default or custom bgs"
+            )
+
+        if self.previous_season != season and self.active_blur_bg == season_bg:
+            self.bg_transition_time = 10  # doubled transition time for the Vibes
+            self.previous_season = season
         # onto the actual blitting
         # handle the blur bg
         if game.settings["fullscreen"]:
@@ -641,9 +640,21 @@ class Screens:
             else:
                 # if we've done the transition, just blit the full-alpha version on top to remove artifacts.
                 scripts.game_structure.screen_settings.screen.blit(blur_bg, (0, 0))
-
         # now blit the foreground.
         scripts.game_structure.screen_settings.screen.blit(bg, ui_scale_blit((0, 0)))
+
+    def set_cat_location_bg(self, cat, bg: str = "default"):
+        if cat.dead and not cat.faded:
+            blur_bg = (
+                "darkforest"
+                if cat.df
+                else "unknown_residence"
+                if cat.ID in game.clan.unknown_cats
+                else "starclan"
+            )
+            self.set_bg(bg=bg, blur_bg=blur_bg)
+        else:
+            self.set_bg(bg=bg)
 
     def display_change_save(self) -> Dict:
         """
