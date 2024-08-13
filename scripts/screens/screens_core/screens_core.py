@@ -268,7 +268,8 @@ def rebuild_bgs():
 
     if (
         vignette is None
-        or scripts.game_structure.screen_settings.screen.size != vignette.size
+        or scripts.game_structure.screen_settings.screen.get_size()
+        != vignette.get_size()
     ):
         game_frame = get_box(
             BoxStyles.FRAME,
@@ -276,14 +277,15 @@ def rebuild_bgs():
         )
 
         vignette = pygame.transform.scale(
-            core_vignette, scripts.game_structure.screen_settings.screen.size
+            core_vignette, scripts.game_structure.screen_settings.screen.get_size()
         ).convert_alpha()
 
         dropshadow = pygame.Surface(
-            scripts.game_structure.screen_settings.screen.size, flags=pygame.SRCALPHA
+            scripts.game_structure.screen_settings.screen.get_size(),
+            flags=pygame.SRCALPHA,
         )
 
-        fade = pygame.Surface(scripts.game_structure.screen_settings.screen.size)
+        fade = pygame.Surface(scripts.game_structure.screen_settings.screen.get_size())
         fade.fill(pygame.Color(113, 113, 111))  # middle grey
 
         game_box = pygame.Surface(
@@ -438,7 +440,7 @@ def process_blur_bg(
         vignette.set_alpha(vignette_strength)
 
     bg = pygame.transform.scale(
-        bg, scripts.game_structure.screen_settings.screen.size
+        bg, scripts.game_structure.screen_settings.screen.get_size()
     ).convert_alpha()
 
     if blur_radius is not None:

@@ -425,7 +425,7 @@ def _get_box(
             surface.fblits(row)
     if extra_row is not None:
         coords = [
-            (x, scaled_dimensions[1] - tileset.bottomleft.height - extra_height)
+            (x, scaled_dimensions[1] - tileset.bottomleft.get_height() - extra_height)
             for x in row_x
         ]
         extra_row = tuple(zip(extra_row, coords))
