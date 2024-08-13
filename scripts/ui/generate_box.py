@@ -40,7 +40,7 @@ boxstyles = {
 
 @dataclass
 class Tileset:
-    height: int = 0
+    edge_length: int = 0
     ninetile: bool = True
     topleft: pygame.Surface = None
     top: pygame.Surface = None
@@ -143,7 +143,7 @@ def get_tileset(style: BoxData) -> Tileset:
         tilesets[screen_scale] = {}
 
     tilesets[screen_scale][style] = Tileset(
-        height=tile_edge_length,
+        edge_length=tile_edge_length,
         ninetile=ninetile,
         topleft=topleft,
         top=top,
@@ -223,33 +223,33 @@ def _get_box(
     tiny_box = False  # a flag to determine whether the box is technically too small
     tiny_box_dimensions = {}
 
-    if scaled_dimensions[0] < tileset.height * 2:
+    if scaled_dimensions[0] < tileset.edge_length * 2:
         tiny_box = True
         new_x = scaled_dimensions[0] / 2
         x_left = floor(new_x)
         x_right = ceil(new_x)
 
         tileset.topleft = tileset.topleft.subsurface(
-            pygame.Rect(0, 0, x_left, tileset.height)
+            pygame.Rect(0, 0, x_left, tileset.edge_length)
         )
         tileset.left = tileset.left.subsurface(
-            pygame.Rect(0, 0, x_left, tileset.height)
+            pygame.Rect(0, 0, x_left, tileset.edge_length)
         )
         tileset.bottomleft = tileset.bottomleft.subsurface(
-            pygame.Rect(0, 0, x_left, tileset.height)
+            pygame.Rect(0, 0, x_left, tileset.edge_length)
         )
 
         tileset.topright = tileset.topright.subsurface(
-            pygame.Rect(tileset.height - x_right, 0, x_right, tileset.height)
+            pygame.Rect(tileset.edge_length - x_right, 0, x_right, tileset.edge_length)
         )
         tileset.right = tileset.right.subsurface(
-            pygame.Rect(tileset.height - x_right, 0, x_right, tileset.height)
+            pygame.Rect(tileset.edge_length - x_right, 0, x_right, tileset.edge_length)
         )
         tileset.bottomright = tileset.bottomright.subsurface(
-            pygame.Rect(tileset.height - x_right, 0, x_right, tileset.height)
+            pygame.Rect(tileset.edge_length - x_right, 0, x_right, tileset.edge_length)
         )
 
-    if scaled_dimensions[1] < tileset.height * 2:
+    if scaled_dimensions[1] < tileset.edge_length * 2:
         tiny_box = True
         new_y = scaled_dimensions[1] / 2
         y_top = floor(new_y)
@@ -266,38 +266,47 @@ def _get_box(
 
         tileset.bottomleft = tileset.bottomleft.subsurface(
             pygame.Rect(
-                0, tileset.height - y_bottom, tileset.bottomleft.get_width(), y_bottom
+                0,
+                tileset.edge_length - y_bottom,
+                tileset.bottomleft.get_width(),
+                y_bottom,
             )
         )
         tileset.bottom = tileset.bottom.subsurface(
             pygame.Rect(
-                0, tileset.height - y_bottom, tileset.bottomleft.get_width(), y_bottom
+                0,
+                tileset.edge_length - y_bottom,
+                tileset.bottomleft.get_width(),
+                y_bottom,
             )
         )
 
         tileset.bottomright = tileset.bottomright.subsurface(
             pygame.Rect(
-                0, tileset.height - y_bottom, tileset.bottomleft.get_width(), y_bottom
+                0,
+                tileset.edge_length - y_bottom,
+                tileset.bottomleft.get_width(),
+                y_bottom,
             )
         )
 
     # the number of tiles we need to make the desired size
     tilecount = (
-        scaled_dimensions[0] // tileset.height,
-        scaled_dimensions[1] // tileset.height,
+        scaled_dimensions[0] // tileset.edge_length,
+        scaled_dimensions[1] // tileset.edge_length,
     )
 
     # not all requests will be clean multiples of the tile size. this fixes that.
     # it's already handled in tinybox calculations so no need to redo it here if it's smol
     extra_width = (
         0
-        if tileset.topleft.get_width() != tileset.height
-        else scaled_dimensions[0] % tileset.height
+        if tileset.topleft.get_width() != tileset.edge_length
+        else scaled_dimensions[0] % tileset.edge_length
     )
     extra_height = (
         0
-        if tileset.topleft.get_height() != tileset.height
-        else scaled_dimensions[1] % tileset.height
+        if tileset.topleft.get_height() != tileset.edge_length
+        else scaled_dimensions[1] % tileset.edge_length
     )
 
     extra_width_tiles = (
@@ -320,11 +329,15 @@ def _get_box(
         None
         if extra_height == 0
         else {
-            "left": tileset.left.subsurface((0, 0), (tileset.height, extra_height)),
-            "middle": tileset.middle.subsurface(
-                ((0, 0), (tileset.height, extra_height))
+            "left": tileset.left.subsurface(
+                (0, 0), (tileset.edge_length, extra_height)
             ),
-            "right": tileset.right.subsurface(((0, 0), (tileset.height, extra_height))),
+            "middle": tileset.middle.subsurface(
+                ((0, 0), (tileset.edge_length, extra_height))
+            ),
+            "right": tileset.right.subsurface(
+                ((0, 0), (tileset.edge_length, extra_height))
+            ),
         }
     )
 
@@ -354,11 +367,11 @@ def _get_box(
     # asterisk = extra, cut-off tile to make up full desired size
 
     row_length = tilecount[0] + (1 if extra_width_tiles is not None else 0)
-    row_x = [x * tileset.height for x in range(row_length - 1)]
+    row_x = [x * tileset.edge_length for x in range(row_length - 1)]
     if extra_width_tiles is not None:
         row_x.append(row_x[-1] + extra_width)
     else:
-        row_x.append(row_x[-1] + tileset.height)
+        row_x.append(row_x[-1] + tileset.edge_length)
 
     # AB*C
     top_row = (
@@ -410,7 +423,9 @@ def _get_box(
         )
     )
 
-    coords = [(x, scaled_dimensions[1] - tileset.bottomleft.height) for x in row_x]
+    coords = [
+        (x, scaled_dimensions[1] - tileset.bottomleft.get_height()) for x in row_x
+    ]
     bottom_row = tuple(zip(bottom_row, coords))
 
     # ok time to build this ungodly contraption.
@@ -420,7 +435,7 @@ def _get_box(
 
     if not tiny_box:
         for i in range(1, tilecount[1] - 1):
-            coords = [(x, i * tileset.height) for x in row_x]
+            coords = [(x, i * tileset.edge_length) for x in row_x]
             row = tuple(zip(middle_row, coords))
             surface.fblits(row)
     if extra_row is not None:
@@ -453,7 +468,7 @@ def _build_needed_tileset(
 
     tileset = get_tileset(style)
 
-    output = Tileset(height=tileset.height, ninetile=tileset.ninetile)
+    output = Tileset(edge_length=tileset.edge_length, ninetile=tileset.ninetile)
 
     output.top = _handle_edges(
         {
