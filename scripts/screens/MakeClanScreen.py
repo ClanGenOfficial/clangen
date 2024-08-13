@@ -29,6 +29,7 @@ from ..game_structure.windows import SymbolFilterWindow
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class MakeClanScreen(Screens):
@@ -1699,33 +1700,37 @@ class MakeClanScreen(Screens):
             ui_scale(pygame.Rect((0, 0), (0, 0))), "", visible=False, manager=MANAGER
         )
 
-        self.tabs["newleaf_tab"] = UIImageButton(
+        self.tabs["newleaf_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((625, 275), (39, 34))),
-            "",
-            object_id="#newleaf_toggle_button",
+            Icon.NEWLEAF,
+            get_button_dict(ButtonStyles.ICON_TAB_LEFT, (39, 36)),
+            object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="Switch starting season to Newleaf.",
         )
-        self.tabs["greenleaf_tab"] = UIImageButton(
+        self.tabs["greenleaf_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((625, 25), (39, 34))),
-            "",
-            object_id="#greenleaf_toggle_button",
+            Icon.GREENLEAF,
+            get_button_dict(ButtonStyles.ICON_TAB_LEFT, (39, 36)),
+            object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="Switch starting season to Greenleaf.",
             anchors={"top_target": self.tabs["newleaf_tab"]},
         )
-        self.tabs["leaffall_tab"] = UIImageButton(
+        self.tabs["leaffall_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((625, 25), (39, 34))),
-            "",
-            object_id="#leaffall_toggle_button",
+            Icon.LEAFFALL,
+            get_button_dict(ButtonStyles.ICON_TAB_LEFT, (39, 36)),
+            object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="Switch starting season to Leaf-fall.",
             anchors={"top_target": self.tabs["greenleaf_tab"]},
         )
-        self.tabs["leafbare_tab"] = UIImageButton(
+        self.tabs["leafbare_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((625, 25), (39, 34))),
-            "",
-            object_id="#leafbare_toggle_button",
+            Icon.LEAFBARE,
+            get_button_dict(ButtonStyles.ICON_TAB_LEFT, (39, 36)),
+            object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="Switch starting season to Leaf-bare.",
             anchors={"top_target": self.tabs["leaffall_tab"]},

@@ -2135,38 +2135,6 @@
             }
         }
     },
-    "#starclan_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/sc_toggle.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/sc_toggle_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/sc_toggle_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/sc_toggle_unavailable.png"
-            }
-        }
-    },
-    "#dark_forest_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/df_toggle.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/df_toggle_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/df_toggle_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/df_toggle_unavailable.png"
-            }
-        }
-    },
     "#kill_cat_button": {
         "images": {
             "normal_image": {
@@ -2833,54 +2801,6 @@
             },
             "disabled_image": {
                 "path": "resources/images/freshkillpile_full.png"
-            }
-        }
-    },
-    "#freshkill_hungry": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/freshkill_pile_hungry.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/freshkill_pile_hungry_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/freshkill_pile_hungry_select.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/freshkill_pile_hungry_select.png"
-            }
-        }
-    },
-    "#freshkill_satisfied": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/freshkill_pile_satisfied.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/freshkill_pile_satisfied_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/freshkill_pile_satisfied_select.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/freshkill_pile_satisfied_select.png"
-            }
-        }
-    },
-    "#tactic": {
-        "images": {
-            "normal_image": {
-                "path": "resources/images/buttons/freshkill_pile_tactic.png"
-            },
-            "hovered_image": {
-                "path": "resources/images/buttons/freshkill_pile_tactic_hover.png"
-            },
-            "selected_image": {
-                "path": "resources/images/buttons/freshkill_pile_tactic.png"
-            },
-            "disabled_image": {
-                "path": "resources/images/buttons/freshkill_pile_tactic_select.png"
             }
         }
     },

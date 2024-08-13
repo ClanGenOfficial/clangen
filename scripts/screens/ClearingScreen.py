@@ -312,23 +312,25 @@ class ClearingScreen(Screens):
         )
         self.log_box.hide()
         self.cats_tab = UISurfaceImageButton(
-            ui_scale(pygame.Rect((109, 462), (39, 34))),
-            Icon.CAT_HEAD,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (39, 34)),
-            object_id="@buttonstyles_icon_tab_right",
+            ui_scale(pygame.Rect((40, 460), (100, 30))),
+            Icon.CAT_HEAD + " Cats",
+            get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
+            object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
         self.cats_tab.disable()
-        self.log_tab = UIImageButton(
-            ui_scale(pygame.Rect((109, 552), (35, 64))),
-            "",
-            object_id="#med_den_log_button",
+        self.log_tab = UISurfaceImageButton(
+            ui_scale(pygame.Rect((40, 500), (100, 30))),
+            Icon.NOTEPAD + " Log",
+            get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
+            object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
-        self.tactic_tab = UIImageButton(
-            ui_scale(pygame.Rect((696, 462), (35, 70))),
-            "",
-            object_id="#tactic",
+        self.tactic_tab = UISurfaceImageButton(
+            ui_scale(pygame.Rect((40, 540), (100, 30))),
+            Icon.MAGNIFY + " Tactics",
+            get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
+            object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
         self.hungry_tab = UISurfaceImageButton(
@@ -594,7 +596,7 @@ class ClearingScreen(Screens):
             self.cat_names.append(
                 pygame_gui.elements.UITextBox(
                     short_name,
-                    ui_scale(pygame.Rect((pos_x - 30, pos_y + 50), (110, 30))),
+                    ui_scale(pygame.Rect((pos_x - 30, pos_y + 50), (110, -1))),
                     object_id="#text_box_30_horizcenter",
                     manager=MANAGER,
                 )

@@ -174,7 +174,7 @@
         "prototype": "@buttonstyles_menu_right",
         "misc": {
             "text_horiz_alignment": "right",
-            "text_horiz_alignment_padding": "9"
+            "text_horiz_alignment_padding": "8"
         }
     },
     "@buttonstyles_menu_middle": {
@@ -187,7 +187,7 @@
         "prototype": "@buttonstyles_menu_left",
         "misc": {
             "text_horiz_alignment": "left",
-            "text_horiz_alignment_padding": "20"
+            "text_horiz_alignment_padding": "18"
         }
     },
     "@buttonstyles_squoval": {

@@ -22,8 +22,6 @@ import threading
 import time
 from importlib.util import find_spec
 
-import scripts.game_structure.screen_settings
-
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -173,6 +171,7 @@ import pygame
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import AllScreens
+import scripts.game_structure.screen_settings
 
 # P Y G A M E
 clock = pygame.time.Clock()

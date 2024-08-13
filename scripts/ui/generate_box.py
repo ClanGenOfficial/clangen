@@ -255,29 +255,29 @@ def _get_box(
         y_top = floor(new_y)
         y_bottom = ceil(new_y)
         tileset.topleft = tileset.topleft.subsurface(
-            pygame.Rect(0, 0, tileset.topleft.width, y_top)
+            pygame.Rect(0, 0, tileset.topleft.get_width(), y_top)
         )
         tileset.top = tileset.top.subsurface(
-            pygame.Rect(0, 0, tileset.topleft.width, y_top)
+            pygame.Rect(0, 0, tileset.topleft.get_width(), y_top)
         )
         tileset.topright = tileset.topright.subsurface(
-            pygame.Rect(0, 0, tileset.topleft.width, y_top)
+            pygame.Rect(0, 0, tileset.topleft.get_width(), y_top)
         )
 
         tileset.bottomleft = tileset.bottomleft.subsurface(
             pygame.Rect(
-                0, tileset.height - y_bottom, tileset.bottomleft.width, y_bottom
+                0, tileset.height - y_bottom, tileset.bottomleft.get_width(), y_bottom
             )
         )
         tileset.bottom = tileset.bottom.subsurface(
             pygame.Rect(
-                0, tileset.height - y_bottom, tileset.bottomleft.width, y_bottom
+                0, tileset.height - y_bottom, tileset.bottomleft.get_width(), y_bottom
             )
         )
 
         tileset.bottomright = tileset.bottomright.subsurface(
             pygame.Rect(
-                0, tileset.height - y_bottom, tileset.bottomleft.width, y_bottom
+                0, tileset.height - y_bottom, tileset.bottomleft.get_width(), y_bottom
             )
         )
 
@@ -291,12 +291,12 @@ def _get_box(
     # it's already handled in tinybox calculations so no need to redo it here if it's smol
     extra_width = (
         0
-        if tileset.topleft.width != tileset.height
+        if tileset.topleft.get_width() != tileset.height
         else scaled_dimensions[0] % tileset.height
     )
     extra_height = (
         0
-        if tileset.topleft.height != tileset.height
+        if tileset.topleft.get_height() != tileset.height
         else scaled_dimensions[1] % tileset.height
     )
 
@@ -304,12 +304,14 @@ def _get_box(
         None
         if extra_width == 0
         else {
-            "top": tileset.top.subsurface((0, 0), (extra_width, tileset.top.height)),
+            "top": tileset.top.subsurface(
+                (0, 0), (extra_width, tileset.top.get_height())
+            ),
             "middle": tileset.middle.subsurface(
-                (0, 0), (extra_width, tileset.middle.height)
+                (0, 0), (extra_width, tileset.middle.get_height())
             ),
             "bottom": tileset.bottom.subsurface(
-                (0, 0), (extra_width, tileset.bottom.height)
+                (0, 0), (extra_width, tileset.bottom.get_height())
             ),
         }
     )
