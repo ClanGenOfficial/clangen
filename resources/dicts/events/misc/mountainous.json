@@ -23,6 +23,20 @@
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]
     }
+ 
+  },
+  {
+    "event_id": "mtn_misc_bone3",
+    "location": ["mountainous"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "weight": 25,
+    "event_text": "m_c was walking through a meadow on a hill. When {PRONOUN/m_c/subject} was about to return, {PRONOUN/m_c/subject} noticed something sticking out of the ground. It was acc_singular . m_c decided to take {PRONOUN/m_c/poss} find back to the clan (even though it was very heavy).",
+    "new_accessory": ["DEER ANTLERS","RAM HORN","GOAT HORN","ROE SKULL"],
+    "m_c":{
+      "age": ["any"],
+      "status": ["any"]
+    }
   },
   {
     "event_id": "mtn_misc_anyomenmedcatomen1",
@@ -49,4 +63,4 @@
       "skill": ["LORE,1"]
     }
   }
-]
+ ]
