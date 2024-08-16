@@ -23,6 +23,19 @@
     }
   },
   {
+    "event_id": "bch_misc_stuff3",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "weight": 20,
+    "event_text": "m_c came back from the beach and brought something. In {PRONOUN/m_c/poss} mouth {PRONOUN/m_c/subject} had colorful transparent stones which {PRONOUN/m_c/subject} carried it to den.",
+    "new_accessory": ["SEA GLASS"],
+    "m_c":{
+      "age": ["any"],
+      "status": ["any"]
+    }
+  },
+  {
     "event_id": "bch_misc_anyomenmedcatomen1",
     "location": ["beach"],
     "season": ["any"],

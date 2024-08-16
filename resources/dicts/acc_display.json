@@ -418,5 +418,234 @@
     "default": "indigo nylon collar",
     "plural": "indigo nylon collars",
     "singular": "indigo nylon collar"
+
+  },
+  "SNAKE": {
+    "default": "snake skeleton",
+    "plural": "snake skeletons",
+    "singular": "snake skeleton"
+  },
+  "BAT WINGS": {
+    "default": "bat wings skeleton",
+    "plural": "bat wings skeleton",
+    "singular": "bat wing skeleton"
+  },
+  "CANIDAE SKULL": {
+    "default": "canidae skull",
+    "plural": "canidae skulls",
+    "singular": "canidae skull"
+  },
+  "DEER ANTLERS": {
+    "default": "deer antlers",
+    "plural": "deer antlers",
+    "singular": "deer antler"
+  },
+  "RAM HORN": {
+    "default": "ram horn",
+    "plural": "ram horns",
+    "singular": "ram horn"
+  },
+  "GOAT HORN": {
+    "default": "goat horn",
+    "plural": "goat horns",
+    "singular": "goat horn"
+  },
+  "OX SKULL": {
+    "default": "ox skull",
+    "plural": "ox skulls",
+    "singular": "ox skull"
+  },
+  "RAT SKULL": {
+    "default": "rat skull",
+    "plural": "rat skulls",
+    "singular": "rat skull"
+  },
+  "TEETH COLLAR": {
+    "default": "teeth collar",
+    "plural": "teeth collars",
+    "singular": "teeth collar"
+  },
+  "ROE SKULL": {
+    "default": "roe skull",
+    "plural": "roe skulls",
+    "singular": "roe skull"
+  },
+  "BIRD SKULL": {
+    "default": "bird skull necklace",
+    "plural": "bird skulls necklace",
+    "singular": "bird skull necklace"
+  },
+  "RIBS": {
+    "default": "ribs",
+    "plural": "ribs",
+    "singular": "rib"
+  },
+  "FISH BONES": {
+    "default": "fish bones",
+    "plural": "fish bones",
+    "singular": "fish bone"
+ 
+ },
+  "PEACOCK BUTTERFLY": {
+    "default": "peacock butterfly",
+    "plural": "peacock butterflies",
+    "singular": "peacock butterfly"
+    
+  },
+  "DEATH HEAD HAWKMOTH": {
+    "default": "death's-head hawkmoth",
+    "plural": "death's-head hawkmoths",
+    "singular": "death's-head hawkmoth"
+    
+  },
+  "GARDEN TIGER MOTH": {
+    "default": "garden tiger moth",
+    "plural": "garden tiger moths",
+    "singular": "garden tiger moth"
+
+},
+  "ATLAS MOTH": {
+    "default": "atlas moth",
+    "plural": "atlas moths",
+    "singular": "atlas moth"
+  
+ },
+  "CECOROPIA MOTH": {
+    "default": "cecropia moth",
+    "plural": "cecropia moths",
+    "singular": "cecropia moth"
+},
+  "WHITE ERMINE MOTH": {
+    "default": "white ermine moth",
+    "plural": "white ermine moths",
+    "singular": "white ermine moth"
+    
+ },
+  "IO MOTH": {
+    "default": "io moth",
+    "plural": "io moths",
+    "singular": "io moth"
+    
+ },
+  "COMET MOTH": {
+    "default": "comet moth",
+    "plural": "comet moths",
+    "singular": "comet moth"
+    
+ },
+  "JADE HAWKMOTH": {
+    "default": "jade hawkmoth",
+    "plural": "jade hawkmoths",
+    "singular": "jade hawkmoth"
+    
+},
+  "HUMMINGBIRD HAWKMOTH": {
+    "default": "hummingbird hawkmoth",
+    "plural": "hummingbird hawkmoths",
+    "singular": "hummingbird hawkmoth"
+    
+ },
+  "OWL BUTTERFLY": {
+    "default": "owl butterfly",
+    "plural": "owl butterflies",
+    "singular": "owl butterfly"
+},
+  "GLASSWING BUTTERFLY": {
+    "default": "glasswing butterfly",
+    "plural": "glasswing butterflies",
+    "singular": "glasswing butterfly"
+    
+ },
+  "QUEEN ALEXANDRA BIRDWING BUTTERFLY": {
+    "default": "Queen Alexandra's birdwing butterfly",
+    "plural": "birdwing butterflies",
+    "singular": "birdwing butterfly"
+    
+ },
+  "GREEN DRAGONTAIL BUTTERFLY": {
+    "default": "green dragontail butterfly",
+    "plural": "green dragontail butterflies",
+    "singular": "green dragontail butterfly"
+    
+ },
+  "MENELAUS BLUE MORPHO BUTTERFLY": {
+    "default": "menelaus blue morpho butterfly",
+    "plural": "blue morpho butterflies",
+    "singular": "blue morpho butterfly"
+    
+},
+  "DEAD LEAF BUTTERFLY": {
+    "default": "dead leaf butterfly",
+    "plural": "dead leaf butterflies",
+    "singular": "dead leaf butterfly"
+},
+  "OLD SILVER WATCH": {
+    "default": "old silver watch",
+    "plural": "old silver watches",
+    "singular": "old silver watch"
+},
+  "OLD GOLD WATCH": {
+    "default": "old gold watch",
+    "plural": "old gold watches",
+    "singular": "old gold watch"
+},
+  "GOLDEN KEY": {
+    "default": "golden key",
+    "plural": "golden keys",
+    "singular": "golden key"
+},
+  "SILVER KEY": {
+    "default": "silver key",
+    "plural": "silver keys",
+    "singular": "silver key"
+},
+  "DVD": {
+    "default": "dvd",
+    "plural": "dvd's",
+    "singular": "dvd"
+},
+  "OLD PENCIL": {
+    "default": "old pencil",
+    "plural": "old pencils",
+    "singular": "old pencil"
+},
+  "OLD BRUSH": {
+    "default": "old brush",
+    "plural": "old brushes",
+    "singular": "old brush"
+},
+  "BANANA PEEL": {
+    "default": "banana peel",
+    "plural": "banana peels",
+    "singular": "banana peel"
+    
+},
+  "BROKEN VHS TAPE": {
+    "default": "broken vhs tape",
+    "plural": "Broken vhs tapes",
+    "singular": "broken vhs tape"
+    
+},
+  "OLD NEWSPAPER": {
+    "default": "old newspaper",
+    "plural": "old newspapers",
+    "singular": "old newspaper"
+    
+},
+  "SEA GLASS": {
+    "default": "sea glass",
+    "plural": "sea glass",
+    "singular": "sea glass"
+ },
+  "BAUBLES": {
+    "default": "baubles",
+    "plural": "baubles",
+    "singular": "bauble"
+},
+  "MUD AND DIRT": {
+    "default": "mud and dirt",
+    "plural": "mud and dirt",
+    "singular": "mud and dirt"
+
   }
 }
