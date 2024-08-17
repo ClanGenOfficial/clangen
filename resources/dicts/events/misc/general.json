@@ -791,7 +791,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c returned to camp very late. {PRONOUN/m_c/poss/CAP} clanmates smelled the awful scent and moved away from {PRONOUN/m_c/object} . On top of that, m_c fur was all dirty and {PRONOUN/m_c/subject} carrying something. All m_c said was that {PRONOUN/m_c/subject} fallen into some black hole.",
-    "new_accessory": ["OLD PENCIL", "OLD BRUSH", "BANANA PEEL", "BROKEN VHS TAPE", "OLD NEWSPAPER", "MUD AND DIRT"],
+    "new_accessory": ["OLD PENCIL", "OLD BRUSH", "BANANA PEEL", "BROKEN VHS TAPE", "OLD NEWSPAPER", "MUD AND DIRT", "BAUBLES"],
     "m_c":{
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["any"]
