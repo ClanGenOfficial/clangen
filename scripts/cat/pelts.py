@@ -783,7 +783,7 @@ class Pelt:
             chance = 10 - len(par_points)
         else:
             chance = 40
-
+        # Chance of point is 1 / chance.
         if self.name != "Tortie" and not int(random.random() * chance):
             self.points = choice(Pelt.point_markings)
         else:
