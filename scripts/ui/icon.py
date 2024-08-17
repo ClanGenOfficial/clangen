@@ -6,8 +6,8 @@ class Icon(StrEnum):
 
     CAT_HEAD = "\U0001F431"
 
-    STARCLAN = "\u26FA"
-    DARKFOREST = "\U0002F4A7"
+    STARCLAN = "\u26EA"
+    DARKFOREST = "\U0001F4A7"
     CLAN_PLAYER = "\u2302"
     CLAN_OTHER = "\U0001F3F0"
     CLAN_UNKNOWN = "\U0001F3DA"
