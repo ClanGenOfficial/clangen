@@ -183,7 +183,7 @@ class LeaderDenScreen(Screens):
             object_id="#lead_cat_image",
             starting_height=3,
             manager=MANAGER,
-            )
+        )
 
         self.helper_cat = None
         if self.no_leader:
@@ -254,7 +254,7 @@ class LeaderDenScreen(Screens):
         self.create_outsider_selection_box()
 
         # NOTICE TEXT - leader intention and other clan impressions
-        if (self.no_leader):
+        if self.no_leader:
             self.leader_name = None
         else:
             self.leader_name = game.clan.leader.name

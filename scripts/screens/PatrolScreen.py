@@ -275,8 +275,8 @@ class PatrolScreen(Screens):
         self.show_menu_buttons()
 
         if (
-                self.in_progress_data is not None
-                and self.in_progress_data["current_moon"] == game.clan.age
+            self.in_progress_data is not None
+            and self.in_progress_data["current_moon"] == game.clan.age
         ):
             self.display_change_load(self.in_progress_data)
         else:
