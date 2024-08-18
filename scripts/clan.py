@@ -540,7 +540,7 @@ class Clan:
 
         game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
-        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt"):
+        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (self.name != 'current'):
             os.remove(get_save_dir() + f"/{self.name}clan.txt")
 
     def switch_setting(self, setting_name):
