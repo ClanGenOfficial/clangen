@@ -259,6 +259,17 @@
     ]
   },
   {
+    "event_id": "gen_misc_any_misc2",
+    "location": ["any"],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c went for a long walk this morning, deep in thought.",
+    "m_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["any"]
+    }
+  },
+  {
     "event_id": "gen_misc_any_collar_accessory1",
     "location": ["any"],
     "season": ["any"],
@@ -283,17 +294,6 @@
     "other_clan": {
         "current_rep": ["any"],
         "changed": -1
-    }
-  },
-  {
-    "event_id": "gen_misc_any_misc2",
-    "location": ["any"],
-    "season": ["any"],
-    "weight": 20,
-    "event_text": "m_c went for a long walk this morning, deep in thought.",
-    "m_c": {
-      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-      "status": ["any"]
     }
   },
   {
@@ -547,7 +547,7 @@
           "amount": 5
         }
     ]
-},
+  },
   {
     "event_id": "gen_misc_any_accessory1",
     "location": ["any"],
@@ -555,7 +555,7 @@
     "sub_type": ["accessory"],
     "weight": 10,
     "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
-    "new_accessory": ["HERBS","PETALS","DRY HERBS", "RED FEATHERS", "BLUE FEATHERS","JAY FEATHERS"],
+    "new_accessory": ["HERBS","PETALS","DRY HERBS", "DRY CATMINT", "DRY LAURELS", "DRY NETTLES", "RED FEATHERS", "BLUE FEATHERS","JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -712,7 +712,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c found a mysterious acc_singular growing in the frost and decided to wear it.",
-    "new_accessory": ["FORGET ME NOTS", "BLUEBELLS", "POPPY"],
+    "new_accessory": ["FORGET ME NOTS", "BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "POPPY", "ORANGE POPPY", "WHITE POPPY", "CYAN POPPY", "PINK POPPY"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -992,7 +992,7 @@
     "sub_type": ["accessory"],
     "weight": 15,
     "event_text": "m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN/m_c/poss} catch on {PRONOUN/m_c/poss} pelt.",
-    "new_accessory": ["CICADA WINGS"],
+    "new_accessory": ["CICADA WINGS", "BLACK CICADA"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
@@ -1259,7 +1259,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "m_c was playing with acc_plural earlier, and decides to wear some of them.",
-        "new_accessory": ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"],
+        "new_accessory": ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS"],
         "m_c": {
           "status": ["kitten"]
         }
@@ -1271,7 +1271,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "m_c sneaked out of camp, and brought back with them some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
-        "new_accessory": ["HOLLY", "JUNIPER"],
+        "new_accessory": ["HOLLY", "JUNIPER", "RASPBERRY"],
         "m_c": {
             "status": ["kitten"]
         }
@@ -1283,7 +1283,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "m_c caught an insect while sneaking outside of the camp and proudly wears its wings as a trophy of {PRONOUN/m_c/poss} journey.",
-        "new_accessory": ["MOTH WINGS", "CICADA WINGS"],
+        "new_accessory": ["MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "CICADA WINGS", "BLACK CICADA"],
         "m_c": {
           "status": ["kitten"]
         }
@@ -1407,7 +1407,7 @@
         "sub_type": ["accessory"],
         "weight": 10,
         "event_text": "No matter how hard r_c tries, there's always something stuck in m_c's fur.",
-        "new_accessory": ["HERBS", "PETALS", "DRY HERBS"],
+        "new_accessory": ["HERBS", "PETALS", "DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
         "m_c": {
           "age": ["kitten"],
           "relationship_status": ["child/parent"]
@@ -1652,7 +1652,7 @@
     "sub_type": ["accessory", "romance"],
     "weight": 20,
     "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
-    "new_accessory": ["BLUE BERRIES", "HOLLY"],
+    "new_accessory": ["BLUE BERRIES", "HOLLY", "RASPBERRY"],
     "m_c": {
       "age": ["adolescent"],
       "status": ["apprentice"]
@@ -1705,7 +1705,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c is nearly blindsided by r_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} into camp after a long training day, listening to the kit squeak about a type of feather. r_c leads m_c to the nursery, where {PRONOUN/r_c/subject} carefully put acc_plural in m_c's fur.",
-    "new_accessory": ["BLUE FEATHERS"],
+    "new_accessory": ["BLUE FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS", "JAY FEATHERS", "RED FEATHERS"],
     "m_c": {
         "age": ["adolescent"]
     },
@@ -3485,7 +3485,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "r_c feels so lucky to have {PRONOUN/r_c/poss} own sibling become a medicine cat apprentice. Knowing how time consuming it is to gather herbs, r_c spends a long time gathering up acc_plural to help out m_c. While m_c appreciates the efforts, none of these are particularly useful. Instead m_c uses the acc_plural to decorate {PRONOUN/m_c/poss} pelt.",
-    "new_accessory": ["HERBS", "DRY HERBS"],
+    "new_accessory": ["HERBS", "DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
     "m_c": {
       "status": ["medicine cat apprentice"],
       "relationship_status":["siblings"]
@@ -3641,5 +3641,82 @@
         "amount": 5
       }
     ]
+  },
+  {
+    "event_id": "gen_misc_any_patch_accessory",
+    "location": ["any"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "sub_type": ["accessory"],
+    "weight": 20,
+    "event_text":  "r_c found a little patch of acc_plural and decided to gift them to m_c",
+    "new_accessory": ["POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "LAVENDER", "HEATHER", "GORSE", "LILY OF THE VALLEY", "BLUEBELLS", "FORGET ME NOTS"],
+    "m_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "r_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    }
+  },
+  {
+    "event_id": "gen_misc_mate_accessory_bud",
+    "location": ["any"],
+    "season": ["newleaf","greenleaf"],
+    "subtype": ["accessory", "romance"],
+    "weight": 10,
+    "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as they see m_c wear the acc_singular {PRONOUN/r_c/subject} got {PRONOUN/m_c/object}",
+    "new_accessory": ["BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE"],
+    "m_c": {
+      "age": ["young adult", "adult", "senior adult"]
+    },
+    "r_c": {
+      "age": ["young adult", "adult", "senior adult"]
+    },
+    "relationships": [
+        {
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "comfort", "trust"],
+          "amount": 10
+        }
+    ]
+  },
+  {
+    "event_id": "gen_misc_any_medicine_omen_bloodthristy",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": ["skill_trait_required"],
+    "weight": 5,
+    "event_text": "m_c thinks starclan is trying to warn {PRONOUN/m_c/object} about r_c.",
+    "m_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["medicine cat"],
+      "skill": ["OMEN,0"]
+    },
+    "r_c": {
+      "trait": ["bloodthristy"]
+    },
+    "relationships": [
+        {
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["dislike"],
+          "amount": 20
+        }
+    ]
+  },
+  {
+    "event_id": "gen_misc_any_medicine_accessory_bug",
+    "location": ["any"],
+    "season": ["leaf-bare"],
+    "sub_type": ["accessory"],
+    "weight": 10,
+    "event_text": "m_c finds a stray acc_singular in its last moments of life leading them to a new herb gathering spot before {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently decends to the ground. Is it a sign from star clan, or a coincidence? m_c doesnt know but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
+    "new_accessory": ["BLACK CICADA", "CICADA WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
+    "m_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["medicine cat"]
+    }
   }
 ]
