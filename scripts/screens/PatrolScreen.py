@@ -44,6 +44,7 @@ class PatrolScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
 
+        self.in_progress_data = None
         self.able_box = pygame.transform.scale(
             image_cache.load_image("resources/images/patrol_able_cats.png"),
             ui_scale_dimensions((270, 201)),
@@ -248,8 +249,10 @@ class PatrolScreen(Screens):
 
     def handle_patrol_complete_events(self, event):
         if event.ui_element == self.elements["patrol_again"]:
+            self.in_progress_data = None
             self.open_choose_cats_screen()
         elif event.ui_element == self.elements["clan_return"]:
+            self.in_progress_data = None
             self.change_screen("camp screen")
 
     def screen_switches(self):
@@ -257,7 +260,15 @@ class PatrolScreen(Screens):
         self.set_disabled_menu_buttons(["patrol_screen"])
         self.update_heading_text(f"{game.clan.name}Clan")
         self.show_menu_buttons()
-        self.open_choose_cats_screen()
+
+        if (
+                self.in_progress_data is not None
+                and self.in_progress_data["current_moon"] == game.clan.age
+        ):
+            self.display_change_load(self.in_progress_data)
+        else:
+            self.in_progress_data = None
+            self.open_choose_cats_screen()
 
     def display_change_save(self) -> Dict:
         if self.start_patrol_thread is not None and self.start_patrol_thread.is_alive():
@@ -285,6 +296,8 @@ class PatrolScreen(Screens):
         variable_dict["results_text"] = self.results_text
         variable_dict["outcome_art"] = self.outcome_art
 
+        variable_dict["current_moon"] = game.clan.age
+
         return variable_dict
 
     def display_change_load(self, variable_dict: Dict):
@@ -299,10 +312,13 @@ class PatrolScreen(Screens):
         if self.patrol_stage == "choose_cats":
             self.open_choose_cats_screen()
             self.update_selected_cat()
+            self.current_patrol = variable_dict["current_patrol"]
             self.update_cat_images_buttons()
+            self.update_button()
         elif self.patrol_stage == "patrol_events":
             self.open_patrol_event_screen()
         elif self.patrol_stage == "patrol_complete":
+            self.open_patrol_event_screen()
             self.open_patrol_complete_screen()
         else:
             print("how'd that happen? Unidentified patrol stage.")
@@ -1269,6 +1285,7 @@ class PatrolScreen(Screens):
         self.fav = {}
 
     def exit_screen(self):
+        self.in_progress_data = self.display_change_save()
         self.clear_page()
         self.clear_cat_buttons()
         self.hide_menu_buttons()
