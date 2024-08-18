@@ -4,8 +4,6 @@ from re import sub
 import pygame
 import pygame_gui
 
-from scripts.utility import get_text_box_theme, scale
-from scripts.clan import Clan
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
@@ -958,7 +956,7 @@ class MakeClanScreen(Screens):
                 self.elements["cat_name"].set_text(str(selected.name))
             self.elements["cat_name"].show()
             self.elements["cat_info"].set_text(
-                selected.gender
+                selected.genderalign
                 + "\n"
                 + str(
                     selected.age
