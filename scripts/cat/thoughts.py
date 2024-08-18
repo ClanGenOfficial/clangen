@@ -323,8 +323,12 @@ class Thoughts:
     def get_chosen_thought(main_cat, other_cat, game_mode, biome, season, camp):
         # get possible thoughts
         try:
-            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
-            chosen_thought = choice(chosen_thought_group["thoughts"])
+            # checks if the cat is Rick Astley to give the rickroll thought, otherwise proceed as usual
+            if (main_cat.name.prefix+main_cat.name.suffix).replace(" ", "").lower() == "rickastley":
+                return "Never going to give r_c up, never going to let {PRONOUN/r_c/object} down, never going to run around and desert {PRONOUN/r_c/object}."
+            else:
+                chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
+                chosen_thought = choice(chosen_thought_group["thoughts"])
         except Exception:
             traceback.print_exc()
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
