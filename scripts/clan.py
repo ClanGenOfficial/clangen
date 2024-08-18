@@ -20,6 +20,7 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
+from scripts.enums import BIOME, SEASON
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure.game_essentials import game
@@ -39,7 +40,7 @@ class Clan:
 
     """
 
-    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
+    BIOME_TYPES = list(BIOME)
 
     CAT_TYPES = [
         "newborn",
@@ -93,7 +94,7 @@ class Clan:
         leader=None,
         deputy=None,
         medicine_cat=None,
-        biome="Forest",
+        biome=BIOME.FOREST,
         camp_bg=None,
         symbol=None,
         game_mode="classic",
