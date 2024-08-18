@@ -723,6 +723,7 @@ class CatButton(UIImageButton):
             tool_tip_text=tool_tip_text,
             container=container,
             anchors=anchors,
+            allow_double_clicks=True
         )
         if auto_disable_if_no_data and cat_id is None and cat_object is None:
             self.disable()

@@ -425,28 +425,31 @@ class Cat:
         self.genderalign = self.gender
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-        # newborns can't be trans, sorry babies
+
+        # GENDER IDENTITY
         if self.age in ["kitten", "newborn"]:
-            trans_chance = 0
-            nb_chance = 0
+            # newborns can't be trans, sorry babies
+            pass
+        elif nb_chance == 1:
+            self.genderalign = "nonbinary"
+        elif trans_chance == 1:
+            if self.gender == "female":
+                self.genderalign = "trans male"
+            else:
+                self.genderalign = "trans female"
+
+        # PRONOUNS
         if theythemdefault is True:
             self.pronouns = [self.default_pronouns[0].copy()]
-            if nb_chance == 1:
-                self.genderalign = "nonbinary"
-            elif trans_chance == 1:
-                if self.gender == "female":
-                    self.genderalign = "trans male"
-                else:
-                    self.genderalign = "trans female"
         else:
-            # Assigning pronouns based on gender and chance
-            if self.gender in ["female", "trans female"]:
+            # Assigning pronouns based on gender
+            if self.genderalign in ["female", "trans female"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.gender in ["male", "trans male"]:
+            elif self.genderalign in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]
             else:
-                self.pronouns = [self.default_pronouns[0].copy()]
                 self.genderalign = "nonbinary"
+                self.pronouns = [self.default_pronouns[0].copy()]
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(

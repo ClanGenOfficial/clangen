@@ -146,6 +146,12 @@ class LeaderDenScreen(Screens):
             "out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite "
             "in a cat, they might join your Clan!",
         )
+        # This is here incase the leader comes back
+        self.no_gathering = False
+
+        self.no_leader = False
+        if not game.clan.leader:
+            self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
         try:
@@ -177,10 +183,12 @@ class LeaderDenScreen(Screens):
             object_id="#lead_cat_image",
             starting_height=3,
             manager=MANAGER,
-        )
+            )
 
         self.helper_cat = None
-        if game.clan.leader.dead or game.clan.leader.exiled:
+        if self.no_leader:
+            self.no_gathering = True
+        elif game.clan.leader.dead or game.clan.leader.exiled:
             self.screen_elements["lead_image"].hide()
             self.no_gathering = True
         elif game.clan.leader.not_working():
@@ -246,7 +254,11 @@ class LeaderDenScreen(Screens):
         self.create_outsider_selection_box()
 
         # NOTICE TEXT - leader intention and other clan impressions
-        self.leader_name = game.clan.leader.name
+        if (self.no_leader):
+            self.leader_name = None
+        else:
+            self.leader_name = game.clan.leader.name
+
         self.clan_temper = game.clan.temperament
 
         self.screen_elements["clan_notice_text"] = pygame_gui.elements.UITextBox(
@@ -274,7 +286,7 @@ class LeaderDenScreen(Screens):
                 f" Outsiders do not concern themselves with a dead Clan. "
             )
         # if leader is dead and no one new is leading, give special notice
-        elif game.clan.leader.dead or game.clan.leader.exiled:
+        elif self.no_leader or game.clan.leader.dead or game.clan.leader.exiled:
             self.no_gathering = True
             self.screen_elements["clan_notice_text"].set_text(
                 f" With no one to lead, the Clan can't focus on what to say at the Gathering. "
