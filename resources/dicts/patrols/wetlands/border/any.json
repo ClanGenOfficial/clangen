@@ -1233,12 +1233,12 @@
                 "weight": 20
             },
             {
-                "text": "It's just an odd loner singing to themself. When {PRONOUN/n_c:0/subject} see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "text": "It's just an odd loner singing to themself. When {PRONOUN/n_c:0/subject} see the patrol they invite them to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
                 "exp": 30,
                 "weight": 5
             },
             {
-                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
@@ -1252,7 +1252,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1282,7 +1282,7 @@
                 "weight": 20
             },
             {
-                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too. Instead, r_c offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
                 "exp": 30,
                 "weight": 5
             },
@@ -1301,7 +1301,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],

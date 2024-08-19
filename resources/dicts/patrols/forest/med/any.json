@@ -310,7 +310,7 @@
                 ]
             },
             {
-                "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!",
+                "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],

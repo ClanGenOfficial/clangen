@@ -1973,7 +1973,7 @@
                 ]
             },
             {
-                "text": "r_c asks what they should do - but s_c doesn't care! {PRONOUN/s_c/subject/CAP} don't want to lead this, to be the <i>leader</i> here. Please, for this afternoon, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just another Clanmate. And it's such a welcome break from {PRONOUN/s_c/poss} responsibilities, laughing and playing with the other cats til dusk, carefree and unburdened.",
+                "text": "r_c asks what they should do - but s_c doesn't care! {PRONOUN/s_c/subject/CAP} don't want to lead this, to be the <i>leader</i> here. Please, for this afternoon, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just another Clanmate. And it's such a welcome break from {PRONOUN/s_c/poss} responsibilities, laughing and playing with the other cats till dusk, carefree and unburdened.",
                 "exp": 40,
                 "weight": 20,
                 "can_have_stat":["p_l"],
