@@ -475,6 +475,7 @@ class CatButton(UIImageButton):
             tool_tip_text=tool_tip_text,
             container=container,
             anchors=anchors,
+            allow_double_clicks=True
         )
 
     def return_cat_id(self):

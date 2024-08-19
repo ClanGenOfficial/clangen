@@ -1985,6 +1985,7 @@ def event_text_adjust(
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
     vowels = ["A", "E", "I", "O", "U"]
+
     if not text:
         text = "This should not appear, report as a bug please! Tried to adjust the text, but no text was provided."
         print("WARNING: Tried to adjust text, but no text was provided.")
@@ -2002,12 +2003,12 @@ def event_text_adjust(
     # random_cat
     if "r_c" in text:
         if random_cat:
-            replace_dict["r_c"] = (str(random_cat.name), choice(random_cat.pronouns))
+            replace_dict["r_c"] = (str(random_cat.name), get_pronouns(random_cat))
 
     # stat cat
     if "s_c" in text:
         if stat_cat:
-            replace_dict["s_c"] = (str(stat_cat.name), choice(stat_cat.pronouns))
+            replace_dict["s_c"] = (str(stat_cat.name), get_pronouns(stat_cat))
 
     # other_cats
     if patrol_cats:
@@ -2050,7 +2051,7 @@ def event_text_adjust(
 
     # mur_c (murdered cat for reveals)
     if "mur_c" in text:
-        replace_dict["mur_c"] = (str(victim_cat.name), choice(victim_cat.pronouns))
+        replace_dict["mur_c"] = (str(victim_cat.name), get_pronouns(victim_cat))
 
     # lead_name
     if "lead_name" in text:
@@ -2226,7 +2227,7 @@ def ceremony_text_adjust(
             else ("mentor_placeholder", None)
         ),
         "(deadmentor)": (
-            (str(dead_mentor.name), choice(dead_mentor.pronouns))
+            (str(dead_mentor.name), get_pronouns(dead_mentor))
             if dead_mentor
             else ("dead_mentor_name", None)
         ),
@@ -2276,26 +2277,40 @@ def ceremony_text_adjust(
     ):
         cat_dict["dead_par1"] = (
             str(dead_parents[0].name),
-            choice(dead_parents[0].pronouns),
+            get_pronouns(dead_parents[0]),
         )
         cat_dict["dead_par2"] = (
             str(dead_parents[1].name),
-            choice(dead_parents[1].pronouns),
+            get_pronouns(dead_parents[1]),
         )
     elif dead_parents:
         random_dead_parent = choice(dead_parents)
         cat_dict["dead_par1"] = (
             str(random_dead_parent.name),
-            choice(random_dead_parent.pronouns),
+            get_pronouns(random_dead_parent),
         )
         cat_dict["dead_par2"] = (
             str(random_dead_parent.name),
-            choice(random_dead_parent.pronouns),
+            get_pronouns(random_dead_parent),
         )
 
     adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text, random_living_parent, random_dead_parent
+
+def get_pronouns(Cat):
+    """ Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded) """
+    if Cat.pronouns == []:
+        return{
+            "subject": "they",
+            "object": "them",
+            "poss": "their",
+            "inposs": "theirs",
+            "self": "themself",
+            "conju": 1,
+        }
+    else:
+        return choice(Cat.pronouns)
 
 
 def shorten_text_to_fit(
