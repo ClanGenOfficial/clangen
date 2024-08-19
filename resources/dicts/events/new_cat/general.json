@@ -228,7 +228,7 @@
         "season": ["any"],
         "sub_type":["romance"],
         "weight": 5,
-        "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c/subject} {VERB/n_c/are/is} staying.",
+        "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} staying.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"],
@@ -251,7 +251,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-            "values": ["romantice", "trust"],
+              "values": ["romantic", "trust"],
             "amount": 55
           },
           {
@@ -265,7 +265,7 @@
             "cats_from": ["r_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-            "values": ["romantice", "trust"],
+              "values": ["romantic", "trust"],
             "amount": 55
           },
           {
