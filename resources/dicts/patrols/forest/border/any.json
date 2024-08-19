@@ -2234,7 +2234,7 @@
                 ]
             },
             {
-                "text": "The patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "text": "The patrol gathers their courage and valiantly tries to lead the dog away. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2335,7 +2335,7 @@
                 ]
             },
             {
-                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} - the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [

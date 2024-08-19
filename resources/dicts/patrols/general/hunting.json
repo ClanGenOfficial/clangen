@@ -3640,7 +3640,7 @@
     ],
     "fail_outcomes": [
    	 {
-   		 "text": "p_l decides to continue on without r_c and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face to face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!",
+         "text": "p_l decides to continue on without r_c and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face-to-face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!",
    		 "exp": 0,
    		 "weight": 20,
    		 "prey": ["small"]

@@ -2123,7 +2123,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. {PRONOUN/n_c:0/subject/CAP}{VERB/'re/'s} a bit intimidated, but after speaking to p_l for a little while, {PRONOUN/n_c:0/subject} {VERB/decide/decides} to join the Clan.",
+                "text": "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} a bit intimidated, but after speaking to p_l for a little while, {PRONOUN/n_c:0/subject} {VERB/n_c:0/decide/decides} to join the Clan.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -2177,7 +2177,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
+                "text": "p_l pads closer to the bush, intent on finding the source of the noise, only to come face-to-face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -2190,7 +2190,7 @@
                 "outsider_rep": -1
             },
             {
-                "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
+                "text": "p_l takes the lead in checking the source of the noise and comes face-to-face with a rogue hiding in the bush! The rogue takes a swipe at p_l but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
                 "exp": 0,
                 "weight": 10,
                 "new_cat": [

@@ -148,7 +148,7 @@
                 ]
             },
             {
-                "text": "The patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "text": "The patrol gathers their courage and valiantly tries to lead the dog away. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -217,7 +217,7 @@
                 ]
             },
             {
-                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, which cuts the patrol short. Everyone knows the dog could still be lurking on their borders.",
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} - the rest of the patrol needs to rescue {PRONOUN/s_c/object}, which cuts the patrol short. Everyone knows the dog could still be lurking on their borders.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
@@ -295,7 +295,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages back and forth, c_n is kept safe from the wandering dog.",
+                "text": "They decide that no cat is going to be surprised by this predator again. The patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages back and forth, c_n is kept safe from the wandering dog.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
