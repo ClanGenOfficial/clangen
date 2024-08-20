@@ -298,7 +298,7 @@
     "Acorn", "Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", "Canopy",
     "Cedar", "Civet", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Forest", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
     "Maple", "Moose", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Robin", "Robin", "Sap", "Skunk", "Sparrow", "Sprig",
-    "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Tarantula", "Thicket", "Twig", "Twig", "Wood", "Wolf", "Coati", "Termite", "Pinecone", "Morel, "Muskrat", "Hog", "Boar", "Camphor"
+    "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Tarantula", "Thicket", "Twig", "Twig", "Wood", "Wolf", "Coati", "Termite", "Pinecone", "Morel", "Muskrat", "Hog", "Boar", "Camphor"
     ],
     "Beach": [
     "Albatross", "Algae", "Anchovy", "Anemone", "Avocet", "Bass", "Barnacle", "Barracuda", "Beluga", "Brine", "Clam", "Coast",
@@ -306,8 +306,8 @@
     "Foam", "Gannet", "Gull", "Gull", "Hermit", "Jellyfish", "Lagoon", "Lake", "Marlin", "Nacre", "Ocean", "Octopus", "Palm", "Pearl", "Pearl",
     "Pearly", "Pelican", "Pool", "Pool", "Ripple", "Reef", "Ripple", "Sago", "Salmon", "Salt", "Sand", "Sand", "Sardine",  "Scale", "Scale", "Sea",
     "Seabass", "Seagull", "Shark", "Shell", "Shimmer", "Shimmer", "Shore", "Slug", "Snail", "Splash", "Squid",
-    "Tide", "Tidal", "Torrent", "Wave", "Wave", "Whale", "Coati", "Dune, "Dock", "Net", "Mussel", "Minnow", "Tuna", "Turtle", "Mackerel", "Scallop", "Puffer", "Puffin", "Tadpole", "Petrel", "Urchin", "Kelp", "Oyster", "Snapper", 
-    "Eel"
+    "Tide", "Tidal", "Torrent", "Wave", "Wave", "Whale", "Coati", "Dock", "Net", "Mussel", "Minnow", "Tuna", "Turtle", "Mackerel", "Scallop", "Puffer", "Puffin", "Tadpole", "Petrel", "Urchin", "Kelp", "Oyster", "Snapper", 
+    "Eel", "Dune"
     ],
     "Plains": [
     "Anise", "Barley", "Barley", "Bison", "Breeze", "Breeze", "Burrow", "Butterfly", "Cow", "Cow", "Dandelion", "Elk", "Ewe", "Field", "Field",
