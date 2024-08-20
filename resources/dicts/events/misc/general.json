@@ -1270,7 +1270,7 @@
         "season": ["any"],
         "sub_type": ["accessory"],
         "weight": 15,
-        "event_text": "m_c sneaked out of camp, and brought back with them some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
+        "event_text": "m_c snuck out of camp, and brought back with {PRONOUN/m_c/object} some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
         "new_accessory": ["HOLLY", "JUNIPER", "RASPBERRY"],
         "m_c": {
             "status": ["kitten"]
