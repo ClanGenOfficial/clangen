@@ -7382,7 +7382,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "battle-injury"
+                    "battle_injury"
                 ]
             }
         ],
