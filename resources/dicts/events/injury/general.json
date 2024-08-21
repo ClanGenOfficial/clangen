@@ -7366,7 +7366,7 @@
         }
     },
     {
-        "event_id": "gen_misc_war_showmercy1",
+        "event_id": "gen_injury_war_showmercy1",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
@@ -7397,8 +7397,42 @@
             }
         ],
         "other_clan": {
-            "current_rep": ["hostile"],
-            "changed": 1
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_predatorsaved",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by chasing off the predator attempting to make them their lunch.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"],
+            "age": ["adolescent", "young adult", "adult", "senior adult"]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small_bite_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after protecting an enemy warrior.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting an enemy warrior.",
+                "lead_death": "died from wounds after protecting an enemy warrior"
+            }
+        ],
+        "other_clan": {
+            "changed": 2
         }
     }
 ]
