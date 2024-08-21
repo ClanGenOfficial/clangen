@@ -32,7 +32,7 @@
         "otherclan2": "This cat was unhappy in {PRONOUN/m_c/poss} old Clan and decided to come here instead.",
         "otherclan3": "This cat's Clan stayed with the Clan after a disaster struck {PRONOUN/m_c/poss} old one, and decided to stay after the rest of {PRONOUN/m_c/poss} Clan returned home.",
         "otherclan4": "This cat grew up in another Clan, but chose to leave that life and join the Clan {PRONOUN/m_c/subject} now {VERB/m_c/live/lives} in.",
-      "stolenkit": "This cat was born into another Clan, but was stolen from them during war as a kit and subsequently raised in this Clan.",
+      "stolenkit": "This cat was born into another Clan, but was stolen from them as a kit and subsequently raised in this Clan.",
 
         "disgraced1": "This cat was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.",
         "disgraced2": "This cat was exiled from {PRONOUN/m_c/poss} old Clan for something {PRONOUN/m_c/subject} didn't do and came here to seek safety.",
