@@ -7216,44 +7216,6 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_medicine_accessory_bug",
-        "location": ["any"],
-        "season": ["leaf-bare"],
-        "sub_type": ["accessory"],
-        "weight": 10,
-        "event_text": "m_c finds a stray acc_singular in its last moments of life leading them to a new herb gathering spot before {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently decends to the ground. Is it a sign from star clan, or a coincidence? m_c doesnt know but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
-        "new_accessory": ["BLACK CICADA", "CICADA WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
-        "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-            "status": ["medicine cat"]
-        }
-    },
-    {
-        "event_id": "gen_injury_scratches_war_lostkit",
-        "location": ["any"],
-        "season": ["any"],
-        "sub_type": ["war"],
-        "weight": 10,
-        "event_text": "A o_c_n warrior is caught in the territory, m_c scruffed in their jaws. The warrior found the kit alone on the border and just wanted to bring {PRONOUN/m_c/object} home. No matter what their leader might say about c_n, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just an innocent kit. The warrior is escorted off the territory as m_c settles back into camp, only slightly dinged up from {PRONOUN/m_c/poss} adventure.",
-        "m_c": {
-            "status": ["kitten"]
-        },
-        "other_clan": {
-            "current_rep": ["hostile"],
-            "changed": 3
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "minor_injury"
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "gen_misc_war_skirmish_dog",
         "location": ["any"],
         "season": ["any"],
