@@ -1,3 +1,54 @@
 [
-
+    {
+        "event_id": "bch_new_cat_saviour_drowning1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "When m_c decided to take a midnight stroll to clear {PRONOUN/m_c/poss} head, the last thing {PRONOUN/m_c/subject} expected was to hear the gurgling yowls of a cat. Looking around wildly, m_c noticed flailing limbs struggling to keep afloat in the ocean. Diving headfirst into the water, {PRONOUN/m_c/subject} {VERB/m_c/bite/bites} into the flailing cat's scruff, who goes limp in m_c's jaws. After what seemed like forever, the two finally felt sand beneath their paws. m_c asks the loner if {PRONOUN/n_c:0/subject}'d like to join c_n, and {PRONOUN/n_c:0/subject} {VERB/n_c:0/nod/nods} excitedly. With gleaming eyes and profuse thank-you's, n_c:0 follows m_c to c_n's camp ",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "backstory:refugee2, refugee5, tragedy_survivor4",
+                "status:warrior"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 10
+          },
+          {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["romantic", "trust"],
+            "amount": 10
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    }
 ]
