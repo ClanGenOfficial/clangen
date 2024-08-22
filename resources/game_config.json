@@ -276,7 +276,7 @@
 		]
 	},
 	"event_generation": {
-		"debug_ensure_event_id": "bch_new_cat_saviour_drowning1"
+		"debug_ensure_event_id": null
 	},
 	"death_related": {
 		"leader_death_chance": 50,
