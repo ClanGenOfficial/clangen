@@ -40,7 +40,7 @@
             "cats_from": ["n_c:0"],
             "cats_to": ["m_c"],
             "mutual": true,
-            "values": ["romantic", "trust"],
+            "values": ["platonic", "trust"],
             "amount": 10
           }
         ],
