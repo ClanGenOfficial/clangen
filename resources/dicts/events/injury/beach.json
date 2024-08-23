@@ -457,8 +457,7 @@
         "weight": 20,
         "event_text": "m_c acts without thinking, diving into the cold waters to rescue a drowning o_c_n warrior. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "m_c": {
-            "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"],
-            "age": ["adolescent", "young adult", "adult", "senior adult"]
+            "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"]
         },
         "injury": [
             {
@@ -480,7 +479,7 @@
             }
         ],
         "other_clan": {
-            "changed": 2
+            "changed": 5
         }
     }
 ]

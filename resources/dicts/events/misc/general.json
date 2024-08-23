@@ -3812,31 +3812,142 @@
         ]
     },
     {
-        "event_id": "gen_misc_war_medcat_woundedenemy_pos",
+        "event_id": "gen_misc_any_medicine_accessory_bug",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "sub_type": ["accessory"],
+        "weight": 10,
+        "event_text": "m_c finds a stray acc_singular in its last moments of life leading them to a new herb gathering spot before {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently decends to the ground. Is it a sign from star clan, or a coincidence? m_c doesnt know but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
+        "new_accessory": ["BLACK CICADA", "CICADA WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_injury_scratches_war_lostkit",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 10,
+        "event_text": "A o_c_n warrior is caught in the territory, m_c scruffed in their jaws. The warrior found the kit alone on the border and just wanted to bring {PRONOUN/m_c/object} home. No matter what their leader might say about c_n, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just an innocent kit. The warrior is escorted off the territory as m_c settles back into camp, only slightly dinged up from {PRONOUN/m_c/poss} adventure.",
+        "m_c": {
+            "status": ["kitten"]
+        },
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": 3
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "minor_injury"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_medcat_woundedenemy1_pos",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 20,
-        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. It's just a few pieces of cobweb from the branches and a few moments of {PRONOUN/m_c/poss} time... nobody has to know.",
+        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. It's just a few pieces of cobweb and a few moments of {PRONOUN/m_c/poss} time... nobody has to know.",
         "m_c": {
-            "status": ["medicine cat", "medicine cat apprentice"]
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "trait": [
+                "righteous",
+                "compassionate",
+                "thoughtful",
+                "calm",
+                "faithful",
+                "loving",
+                "loyal",
+                "responsible",
+                "sincere"
+            ]
         },
         "other_clan": {
             "changed": 1
         }
     },
     {
-        "event_id": "gen_misc_war_medcat_woundedenemy_neg",
+        "event_id": "gen_misc_war_medcat_woundedenemy1_neg",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
         "weight": 20,
         "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. A few berries placed into their jaws with some soothing words... and that's one less o_c_n cat to deal with.",
         "m_c": {
-            "status": ["medicine cat", "medicine cat apprentice"]
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "trait": [
+                "fierce",
+                "bloodthirsty",
+                "cold",
+                "ambitious",
+                "confident",
+                "shameless",
+                "sneaky",
+                "vengeful",
+                "cunning",
+                "rebellious"
+            ]
         },
         "other_clan": {
             "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_medcat_woundedenemy2_pos",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "A severely injured o_c_n warrior stumbles upon m_c, out collecting herbs. It's clear that no amount of intervention will save them. m_c soothingly offers a pawful of small red berries to ease their journey to Silverpelt.",
+        "m_c": {
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "trait": [
+                "daring",
+                "bold",
+                "righteous",
+                "compassionate",
+                "thoughtful",
+                "calm",
+                "responsible",
+                "wise",
+                "cunning",
+                "sincere",
+                "rebellious"
+            ]
+        },
+        "other_clan": {
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_medcat_woundedenemy2_neg",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "A severely injured o_c_n warrior stumbles upon m_c, out collecting herbs. It's clear that no amount of intervention will save them. m_c tells them this with no small amount of personal satisfaction, watching passively as they slowly succumb.",
+        "m_c": {
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "trait": [
+                "bloodthirsty",
+                "cold",
+                "ambitious",
+                "shameless",
+                "sneaky",
+                "vengeful",
+                "cunning"
+            ]
+        },
+        "other_clan": {
+            "changed": -2
         }
     },
     {
@@ -3864,6 +3975,14 @@
                 "rebellious"
             ]
         },
+        "relationships": {
+            "cats_from": ["some_clan"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["platonic", "trust"],
+            "amount": -5,
+            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+        },
         "other_clan": {
             "changed": 2
         }
@@ -3889,6 +4008,14 @@
                 "oblivious"
             ]
         },
+        "relationships": {
+            "cats_from": ["some_clan"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["platonic", "trust"],
+            "amount": -5,
+            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+        },
         "other_clan": {
             "changed": 2
         }
@@ -3902,6 +4029,7 @@
         "event_text": "m_c is plagued by strange dreams where the leaders of o_c_n and c_n come together peacefully to trade fresh-kill.",
         "m_c": {
             "status": ["any"],
+            "skill": ["OMEN,0", "DREAM,0", "PROPHET,0", "CLAIRVOYANT,0"],
             "age": ["kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "other_clan": {

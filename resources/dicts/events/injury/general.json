@@ -7283,11 +7283,11 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": 1
+            "changed": 2
         }
     },
     {
-        "event_id": "gen_misc_war_medcat_assist2",
+        "event_id": "gen_misc_war_medcat_assist2_excess",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
@@ -7322,9 +7322,68 @@
                 "lead_death": "died from wounds after bringing herbs to a warring Clan"
             }
         ],
+        "supplies": [
+            {
+                "type": "any_herb",
+                "trigger": [
+                    "excess"
+                ],
+                "adjust": "reduce_eighth"
+            }
+        ],
         "other_clan": {
             "current_rep": ["hostile"],
             "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_misc_war_medcat_assist2_low",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "Despite the Clan's alarmingly low stock of herbs, m_c brings what scant amount they have to o_c_n, having heard of their crisis. However, with a full mouth, m_c takes a claw to the face before {PRONOUN/m_c/subject} can explain {PRONOUN/m_c/poss} intentions.",
+        "m_c": {
+            "status": ["medicine cat"]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "SNOUT",
+                    "FACE",
+                    "BRIDGE",
+                    "CHEEK"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after bringing herbs to a warring Clan.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after bringing herbs to a warring Clan.",
+                "lead_death": "died from wounds after bringing herbs to a warring Clan"
+            }
+        ],
+        "supplies": [
+            {
+                "type": "any_herb",
+                "trigger": [
+                    "low"
+                ],
+                "adjust": "reduce_full"
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": 4
         }
     },
     {
@@ -7372,6 +7431,40 @@
         "m_c": {
             "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"],
             "age": ["adolescent", "young adult", "adult", "senior adult"]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small_bite_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after protecting an enemy warrior.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting an enemy warrior.",
+                "lead_death": "died from wounds after protecting an enemy warrior"
+            }
+        ],
+        "other_clan": {
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_predatorsaved",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by chasing off the predator attempting to make them their lunch.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"]
         },
         "injury": [
             {

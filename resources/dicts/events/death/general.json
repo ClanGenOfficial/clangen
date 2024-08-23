@@ -6317,7 +6317,6 @@
         "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by distracting a predator - which instead turns on m_c.",
         "m_c": {
             "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"],
-            "age": ["adolescent", "young adult", "adult", "senior adult"],
             "dies": true
         },
         "history": [
@@ -6330,7 +6329,7 @@
             }
         ],
         "other_clan": {
-            "changed": 1
+            "changed": 5
         }
     }
 ]
