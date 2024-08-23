@@ -139,7 +139,7 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/dropdown_disabled.png"
         ).convert_alpha(),
-        "ninetile": False,
+        "ninetile": True,
         "scale_only": False,
     },
     "horizontal_tab": {
