@@ -579,7 +579,7 @@ class PatrolOutcome:
         if not isinstance(self.outsider_rep, int):
             return ""
 
-        change_clan_reputation(self.outsider_rep * 10)
+        change_clan_reputation(self.outsider_rep)
         if self.outsider_rep > 0:
             insert = "improved"
         elif self.outsider_rep == 0:
