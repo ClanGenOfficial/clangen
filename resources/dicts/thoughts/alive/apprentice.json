@@ -136,7 +136,7 @@
     {
         "id": "warrior_apprentice_to_harsher_mentor",
         "thoughts": [
-            "Has difficulties following r_c's lessons",
+            "Has difficulty following r_c's lessons",
             "Knows that r_c's training will make {PRONOUN/m_c/object} a stronger warrior",
             "Wishes r_c would let {PRONOUN/m_c/object} relax for a day",
             "Feels awkward around {PRONOUN/m_c/poss} mentor"
