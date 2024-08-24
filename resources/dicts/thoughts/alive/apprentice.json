@@ -516,7 +516,7 @@
             "Is worrying about something",
             "Says sorry more often than {PRONOUN/m_c/subject} need to",
             "Is hiding after receiving a compliment",
-            "Has had a good day, and actually feels confident in {PRONOUN/m_c/self} today"
+            "Has had a good day today, and actually feels confident in {PRONOUN/m_c/self}"
         ],
         "main_trait_constraint": [
             "insecure"
