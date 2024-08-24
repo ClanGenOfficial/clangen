@@ -448,5 +448,38 @@
                 "reg_death": "m_c died from water-inhalation after being dragged out to sea."
             }
         ]
-    }    
+    },
+    {
+        "event_id": "bch_injury_war_savedenemy1",
+        "location": ["beach"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "m_c acts without thinking, diving into the cold waters to rescue a drowning o_c_n warrior. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died from inhaling water after saving a drowning enemy warrior.",
+                "lead_death": "died from inhaling water after saving a drowning enemy warrior"
+            }
+        ],
+        "other_clan": {
+            "changed": 5
+        }
+    }
 ]
