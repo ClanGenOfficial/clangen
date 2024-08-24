@@ -3030,7 +3030,7 @@
             "prey": ["very_small"]
         },
         {
-            "text": "The only apprentice to catch anything is s_c. {PRONOUN/s_c/subject/CAP} {VERB/make/makes} sure everyone else knows it. Extensively.",
+            "text": "The only apprentice to catch anything is s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} sure everyone else knows it. Extensively.",
             "exp": 20,
             "weight": 20,
             "stat_skill": ["HUNTER,0"],
