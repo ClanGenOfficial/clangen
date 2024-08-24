@@ -456,7 +456,7 @@
             "Hides behind r_c during the Gathering",
             "Wonders how r_c can speak with others so easily",
             "Tries to do some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
-            "Hides away from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} {VERB/m_c/learn/learns} {PRONOUN/m_c/poss} mentor wants to take {PRONOUN/m_c/object} to the far edges of the territory today"
+            "Hides away from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} {VERB/m_c/learn/learns} {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to take them to the far edges of the territory today"
 
         ],
         "main_trait_constraint": [
