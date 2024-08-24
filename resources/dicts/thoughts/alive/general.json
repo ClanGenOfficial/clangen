@@ -2372,5 +2372,39 @@
             "newborn",
             "kitten"
         ]
+    },
+    
+    {
+        "id": "constantly_dizzy_gen_to_alive_gen",
+        "thoughts": [
+            "Stood up too fast again",
+            "Assures r_c {PRONOUN/m_c/poss} dizzy spell will end in a moment",
+            "Ignores the fuzzy spots on the edge of {PRONOUN/m_c/poss} vision",
+            "Feels like the world is moving a little too fast"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "constantly dizzy"
+            ]
+        },
+        "random_age_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "lasting_grief_gen_to_alive_gen",
+        "thoughts": [
+            "Worries about losing r_c too",
+            "Puts on a smile for r_c",
+            "Struggles to voice how {PRONOUN/m_c/subject} feel"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lasting grief"
+            ]
+        },
+        "random_age_constraint": [
+            "any"
+        ]
     }
 ]
