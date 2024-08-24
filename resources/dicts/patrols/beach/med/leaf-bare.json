@@ -2643,7 +2643,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. Luckily r_c's clanmates help to keep the chill from getting worse.",
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. Luckily r_c's Clanmates help to keep the chill from getting worse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2832,7 +2832,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. With r_c's clanmates by {PRONOUN/r_c/poss} side, the chill was prevented from seeping in.",
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. With r_c's Clanmates by {PRONOUN/r_c/poss} side, the chill was prevented from seeping in.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

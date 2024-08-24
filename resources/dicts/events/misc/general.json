@@ -894,7 +894,7 @@
     "location": ["any"],
     "season": ["newleaf"],
     "weight": 5,
-    "event_text": "m_c sits still as r_c helps remove some leftover Leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
+      "event_text": "m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
@@ -2550,7 +2550,7 @@
     "season": ["leaf-bare"],
     "sub_type": ["war"],
     "weight": 10,
-    "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this Leaf-bare's harsh weather.",
+      "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leaf-bare's harsh weather.",
     "m_c": {
       "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"]
@@ -3687,7 +3687,7 @@
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 5,
-    "event_text": "m_c thinks starclan is trying to warn {PRONOUN/m_c/object} about r_c.",
+      "event_text": "m_c thinks StarClan is trying to warn {PRONOUN/m_c/object} about r_c.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["medicine cat"],
@@ -3712,7 +3712,7 @@
     "season": ["leaf-bare"],
     "sub_type": ["accessory"],
     "weight": 10,
-    "event_text": "m_c finds a stray acc_singular in its last moments of life leading them to a new herb gathering spot before {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently decends to the ground. Is it a sign from star clan, or a coincidence? m_c doesnt know but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
+      "event_text": "m_c finds a stray acc_singular in its last moments of life leading them to a new herb gathering spot before {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently decends to the ground. Is it a sign from StarClan, or a coincidence? m_c doesnt know but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
     "new_accessory": ["BLACK CICADA", "CICADA WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],

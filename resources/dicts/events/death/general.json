@@ -4394,7 +4394,7 @@
         },
         "history": [{
             "cats": ["m_c"],
-            "reg_death": "m_c was killed by an o_c_n apprentice.",
+            "reg_death": "m_c was killed by a o_c_n apprentice.",
             "lead_death": "fought an apprentice from o_c_n"
         }],
         "other_clan": {
@@ -4413,7 +4413,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c died trying to save an o_c_n apprentice.",
+        "event_text": "m_c died trying to save a o_c_n apprentice.",
         "m_c": {
             "age": [
                 "young adult",

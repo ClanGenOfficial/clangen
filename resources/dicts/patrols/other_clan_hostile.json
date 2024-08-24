@@ -3561,7 +3561,7 @@
         "relationship_constraint": ["dislike_60"],
         "success_outcomes": [
             {
-                "text": "p_l has felt the glares r_c has sent {PRONOUN/p_l/poss} way all morning, and given them back just as vehemently when r_c's own back is turned. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of an o_c_n warrior falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl.",
+                "text": "p_l has felt the glares r_c has sent {PRONOUN/p_l/poss} way all morning, and given them back just as vehemently when r_c's own back is turned. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a o_c_n warrior falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [
@@ -3582,7 +3582,7 @@
                 ]
             },
             {
-                "text": "The hatred between them is no secret - r_c has said, in the past, that the world would be better off without p_l in it. But when o_c_n puts that to the test, battling against the border patrol, r_c puts {PRONOUN/r_c/poss} back to p_l like {PRONOUN/r_c/subject} would any of {PRONOUN/r_c/poss} other clanmates, fighting just as fiercely to protect {PRONOUN/p_l/poss} flank. Maybe p_l is insufferable, but fox-dung if {PRONOUN/r_c/subject}'ll let o_c_n take them!",
+                "text": "The hatred between them is no secret - r_c has said, in the past, that the world would be better off without p_l in it. But when o_c_n puts that to the test, battling against the border patrol, r_c puts {PRONOUN/r_c/poss} back to p_l like {PRONOUN/r_c/subject} would any of {PRONOUN/r_c/poss} other Clanmates, fighting just as fiercely to protect {PRONOUN/p_l/poss} flank. Maybe p_l is insufferable, but fox-dung if {PRONOUN/r_c/subject}'ll let o_c_n take them!",
                 "exp": 50,
                 "weight": 5,
                 "relationships": [
@@ -3677,7 +3677,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l and r_c might have their problems with each other, but they'll be damned to the dark forest if they let that get in the way of ripping apart o_c_n trespassers! They ambush the hostile patrol, and through they return back to camp bloodstained, none is their own.",
+                "text": "p_l and r_c might have their problems with each other, but they'll be damned to the Dark Forest if they let that get in the way of ripping apart o_c_n trespassers! They ambush the hostile patrol, and through they return back to camp bloodstained, none is their own.",
                 "exp": 50,
                 "weight": 20,
                 "other_clan_rep": -2
