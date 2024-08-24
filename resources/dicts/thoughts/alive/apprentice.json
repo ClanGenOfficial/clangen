@@ -164,8 +164,8 @@
     {
         "id": "warrior_apprentice_to_outgoing_mentor",
         "thoughts": [
-            "Gets dragged out of {PRONOUN/m_c/poss} nest for an all day out of camp training session",
-            "Eyes go wide at how r_c seems to know <i>everyone</i>",
+            "Gets dragged out of {PRONOUN/m_c/poss} nest for an all-day, out-of-camp training session",
+            "Is wide-eyed at how r_c seems to know <i>everyone</i>",
             "Finds r_c's energy contagious, and is excited to train today"
         ],
         "random_trait_constraint": [
@@ -189,7 +189,7 @@
         "thoughts": [
             "Has to seek r_c out for training",
             "Tries to start a conversation with r_c, it falls flat quickly",
-            "Accidentally startled {PRONOUN/m_c/poss} mentor",
+            "Accidentally startles {PRONOUN/m_c/poss} mentor",
             "Realizes that r_c pushes {PRONOUN/r_c/self} out of {PRONOUN/r_c/poss} comfort zone to help {PRONOUN/m_c/object}"
         ],
         "random_trait_constraint": [
@@ -353,8 +353,8 @@
         "thoughts": [
             "Feels worried about going on patrol today",
             "Asks {PRONOUN/m_c/poss} mentor if {PRONOUN/m_c/subject} {VERB/m_c/are/is} meant to be a warrior",
-            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/could/can} be doing better",
-            "m_c wishes {PRONOUN/m_c/subject} {VERB/m_c/are/is} more like r_c, {PRONOUN/m_c/poss} mentor is so cool"
+            "Thinks that {PRONOUN/m_c/subject} could be doing better",
+            "m_c wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} more like r_c, {PRONOUN/m_c/poss} mentor is so cool"
         ],
         "main_trait_constraint": [
             "insecure",
@@ -371,8 +371,8 @@
         "id": "insecure_nervous_warrior_apprentice_to_comforting_mentor",
         "thoughts": [
             "Seeks out r_c's comfort after a hard day",
-            "is glad to have r_c as {PRONOUN/m_c/inposs} mentor",
-            "Wouldn't trade {PRONOUN/m_c/inposs} mentor for anyone else in the clan",
+            "is glad to have r_c as {PRONOUN/m_c/poss} mentor",
+            "Wouldn't trade {PRONOUN/m_c/poss} mentor for anyone else in the Clan",
             "Is thankful for how patient r_c is with {PRONOUN/m_c/object}",
             "Is comforted by r_c after admitting to not thinking {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing good enough",
             "Asks r_c if {PRONOUN/r_c/subject} think that {PRONOUN/m_c/subject}'ll ever be strong warrior",
@@ -415,11 +415,11 @@
             "Runs off crying after getting a stern lecture by r_c",
             "Wishes r_c could be a bit more understanding",
             "Feels like r_c doesn't like {PRONOUN/m_c/object}",
-            "On a hard day, m_c is surprised when r_c gives {PRONOUN/m_c/object} the day off",
-            "Gets a lecture on being more confident when {PRONOUN/m_c/subject} complain about never succeeding in a move",
+            "Is surprised when r_c gives {PRONOUN/m_c/object} the day off on a hard day",
+            "Gets a lecture on being more confident when {PRONOUN/m_c/subject} {VERB/complain/complains} about never succeeding in a move",
             "Knows r_c is trying {PRONOUN/r_c/poss} best to help {PRONOUN/m_c/object}",
-            "Is found by r_c crying in {PRONOUN/m_c/poss} nest, and is comforted",
-            "m_c is surprised when {PRONOUN/m_c/poss} mentor brings {PRONOUN/m_c/object} {PRONOUN/m_c/poss} favorite prey",
+            "Is found crying in {PRONOUN/m_c/poss} nest by r_c, and is comforted",
+            "Is surprised when {PRONOUN/m_c/poss} mentor brings {PRONOUN/m_c/object} {PRONOUN/m_c/poss} favorite prey",
             "Gets lessons on posturing confidently from r_c",
             "Gets scared of {PRONOUN/m_c/poss} mentor after r_c snaps at {PRONOUN/m_c/object}",
             "r_c apologizes for snapping at m_c the other day"
@@ -453,7 +453,7 @@
         "id": "insecure_nervous_warrior_apprentice_to_outgoing_mentor",
         "thoughts": [
             "Wishes {PRONOUN/m_c/poss} mentor didn't encourage {PRONOUN/m_c/object} to speak with others so much",
-            "Hides behind r_c during the gathering",
+            "Hides behind r_c during the Gathering",
             "Wonders how r_c can speak with others so easily",
             "Tries to do some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
             "Hides away from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} {VERB/m_c/learn/learns} {PRONOUN/m_c/poss} mentor wants to take {PRONOUN/m_c/object} to the far edges of the territory today"
@@ -483,9 +483,9 @@
         "id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
         "thoughts": [
             "m_c looks at r_c... an awkward silence hangs between them",
-            "m_c feels understood by r_c",
-            "r_c and m_c share prey in comfortable silence",
-            "r_c teaches m_c some techniques {PRONOUN/r_c/subject} {VERB/r_c/use/uses} when being around others gets too much"
+            "Feels understood by r_c",
+            "Shares prey with r_c in comfortable silence",
+            "Is being taught some techniques r_c uses when being around others gets too much"
 
         ],
         "main_trait_constraint": [
@@ -546,11 +546,11 @@
         "id": "nervous_warrior_apprentice",
         "thoughts": [
             "Is scared to go on border patrol",
-            "Fled at hearing the distant barking of a dog",
+            "Fled upon hearing the distant barking of a dog",
             "Wonders if {PRONOUN/m_c/subject}'ll ever become a warrior",
             "Jumps at {PRONOUN/m_c/poss} own shadow",
             "Is nervous about something",
-            "Stumbled over {PRONOUN/m_c/inposs} words when talking with r_c",
+            "Stumbled over {PRONOUN/m_c/poss} words when talking with r_c",
             "Wishes that one day {PRONOUN/m_c/subject}'ll be brave enough to be the deputy, or even the leader...",
             "Is scared around water after a nightmare",
             "Is nervous about {PRONOUN/m_c/poss} upcoming assessment",
