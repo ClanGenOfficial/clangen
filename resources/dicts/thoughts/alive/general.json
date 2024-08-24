@@ -2380,7 +2380,8 @@
             "Stood up too fast again",
             "Assures r_c {PRONOUN/m_c/poss} dizzy spell will end in a moment",
             "Ignores the fuzzy spots on the edge of {PRONOUN/m_c/poss} vision",
-            "Feels like the world is moving a little too fast"
+            "Feels like the world is moving a little too fast",
+            "Tells r_c that {PRONOUN/m_c/subject} need to sit down for a second"
         ],
         "perm_conditions": {
             "m_c": [
