@@ -158,7 +158,10 @@ class SymbolFilterWindow(UIWindow):
                                         "#unchecked_checkbox"
                                     )
                                     self.checkbox[s_tag].disable()
-                                    if s_tag not in game.switches["disallowed_symbol_tags"]:
+                                    if (
+                                        s_tag
+                                        not in game.switches["disallowed_symbol_tags"]
+                                    ):
                                         game.switches["disallowed_symbol_tags"].append(
                                             s_tag
                                         )
@@ -359,7 +362,7 @@ class DeleteCheck(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
-                game.switches['window_open'] = False
+                game.switches["window_open"] = False
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + "clan.json"):
@@ -1846,7 +1849,7 @@ class EventLoading(UIWindow):
 
         self.set_blocking(True)
 
-        self.frames = self.load_images()
+        self.frames = self.load_animation()
         self.end_animation = False
 
         self.animated_image = pygame_gui.elements.UIImage(
@@ -1857,29 +1860,25 @@ class EventLoading(UIWindow):
         self.animation_thread.start()
 
     @staticmethod
-    def load_images():
+    def load_animation():
+        """Load time skip animation to self.frames"""
+
         frames = []
-        for i in range(0, 16):
+        for i in range(0, 15):
             frames.append(
                 pygame.image.load(f"resources/images/loading_animate/timeskip/{i}.png")
             )
-
         return frames
 
     def animate(self):
+        """Animate the time skip animation"""
 
         i = 0
-        while True:
-            if self.end_animation:
-                break
-
-            i += 1
-            if i >= len(self.frames):
-                i = 0
-
+        while not self.end_animation:
             self.animated_image.set_image(self.frames[i])
 
-            time.sleep(0.125)
+            i = (i + 1) % len(self.frames)
+            time.sleep(0.04)
 
     def kill(self):
         self.end_animation = True
