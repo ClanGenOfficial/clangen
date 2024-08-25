@@ -1864,7 +1864,7 @@ class EventLoading(UIWindow):
         """Load time skip animation to self.frames"""
 
         frames = []
-        for i in range(0, 15):
+        for i in range(0, 29):
             frames.append(
                 pygame.image.load(f"resources/images/loading_animate/timeskip/{i}.png")
             )
