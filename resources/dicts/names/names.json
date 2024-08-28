@@ -58,8 +58,8 @@
     },
   "pelt_suffixes": {
     "TwoColour": ["patch", "splash", "swan"],
-    "Tabby": ["stripe", "feather", "leaf", "nettle", "fern", "bramble", "tiger", "bracken", "streak", "ripple",],
-    "Marbled": ["stripe", "feather", "leaf", "shade", "bloom", "swirl", "bracken", "ripple",],
+    "Tabby": ["stripe", "feather", "leaf", "nettle", "fern", "bramble", "tiger", "bracken", "streak", "ripple"],
+    "Marbled": ["stripe", "feather", "leaf", "shade", "bloom", "swirl", "bracken", "ripple"],
     "Speckled": ["dapple", "speckle", "freckle", "fleck", "bloom", "tick", "spot", "spots", "seed"],
     "Bengal": ["dapple", "bloom", "blotch", "leopard"],
     "Tortie": ["dapple", "speckle", "spot", "bloom", "blotch"],
@@ -72,7 +72,7 @@
     "Sokoke": ["stripe", "feather", "leaf", "fern", "swirl", "breeze", "stream"],
     "Agouti": ["back", "pelt", "fur", "tail", "stripe", "breeze"],
     "Singlestripe": ["stripe", "streak", "back", "stem", "tail"],
-    "Masked": ["stripe", "mask", "mask", "shade", "nettle", "bramble", "tiger", "bracken", "streak", "ripple",]
+    "Masked": ["stripe", "mask", "mask", "shade", "nettle", "bramble", "tiger", "bracken", "streak", "ripple"]
   }, 
   "tortie_pelt_suffixes": {
     "solid": ["patch", "splash"],
