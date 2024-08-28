@@ -34,7 +34,20 @@
             "Hopes to have an easy training session",
             "Is relaxing in between training and patrols",
             "Has so much to learn",
-            "Wants to learn something new today"
+            "Wants to learn something new today",
+            "Is gossiping",
+            "Is acting angsty",
+            "Is relaxing in between training and patrols",
+            "Hopes to have an easy training session",
+            "Is dreading {PRONOUN/m_c/poss} apprentice duties",
+            "Turns out, prey is much harder to hunt then bugs",
+            "Fell into the nearby creek yesterday and is still feeling damp",
+            "Is having a hard time keeping up with {PRONOUN/m_c/poss} training",
+            "Is tasked with lining nests with fresh moss today",
+            "Is thinking about the time {PRONOUN/m_c/subject} caught a huge rabbit",
+            "Practices some battle moves",
+            "Is helping to reinforce the camp wall with brambles",
+            "Had quite the adventure today"
         ]
     },
     {
@@ -65,7 +78,8 @@
             "Asks r_c for some advice",
             "Asks r_c for hunting tips",
             "Asks r_c for advice on passing an assessment",
-            "Wonders if r_c was a good apprentice"
+            "Wonders if r_c was a good apprentice",
+            "Is watching r_c train"
         ],
         "random_status_constraint": [
             "warrior"
@@ -85,7 +99,8 @@
             "Hopes to be just like r_c as a warrior",
             "Admires r_c's knowledge and skills",
             "Wants to learn everything that r_c knows",
-            "Wants to make r_c proud today"
+            "Wants to make r_c proud today",
+            "Is asking r_c to show {PRONOUN/m_c/object} how to do something again"
         ],
         "relationship_constraint": [
             "app/mentor"
