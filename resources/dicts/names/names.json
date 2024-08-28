@@ -36,7 +36,7 @@
     "thistle", "thorn", "thrift", "throat", "thrush", "thud", "thunder", "timber", "toe", "tooth", "trail", "tree",
     "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish",
     "wisp", "zoom", 
-    "eater", "suckle", "twitch", "stretch", "tear", "rot", "mange", "wilt", "herb", "weed", "scruff", "hen", "bass", "possum", "caw", "grunt", "tuck", "stomp", "nuzzle", "swim", "cough", "fleck", "crack", "crunch", "trip", "flick", "fly", "fisher", "mist", "touch", "rubble", "stick", "spark", "steam", "snore", "shake", "ridge", "doe", "squeak", "sprig", 
+    "eater", "suckle", "twitch", "stretch", "tear", "rot", "mange", "wilt", "herb", "weed", "scruff", "hen", "bass", "possum", "caw", "grunt", "tuck", "stomp", "nuzzle", "swim", "cough", "fleck", "crack", "crunch", "trip", "flick", "fly", "fisher", "mist", "touch", "rubble", "stick", "spark", "steam", "snore", "shake", "ridge", "doe", "squeak", "sprig"
   ],
     "pelt_prefixes": {
     "TwoColour": ["Simple", "One", "Patch"],
@@ -124,7 +124,16 @@
     "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", "Wind", "Wing", "Wish", "Wisteria", "Wolf", "Wolverine", "Wood", "Worm", "Wren", "Yarrow", "Yew", "Zinnia", 
       "Twitch", "Possum", "Skunk", "Mange", "Rustle", "Path", "Quake", "Weak", "Rot", "Vole", "Owlet", "Scruff", "Skitter", "Turkey", "Stray", "Round", "Two", "Fungus", "Wilting", "Wilted", "Harrier", "Dead", "Dull", "Wing", "Flow", "Peony", "Orchid", "Blooming", "Stick", "Stinkbug", "Shiver", "Bent", "Squeak", "Brook", "Betony", "Basalm", "Clove", "Hen", "Mangle", "Twitch", "Trip", "Plump", "Float", "Fringe", "Simple", "Grit", "Lost", "Muskrat", "Matted", "Love", "Clump", "Thin", "Doe", "Pad", "Pea", "Cocoon", "Sprig", "Termite", "Lone", "Tangle", "Chamomile", "Lucky", "Mold", "Mint", "Maggot", "Perch"
   ],
-
+	"clan_prefixes": [
+    "Air", "Ashen", "Bat", "Bleak", "Bone", "Branch", "Burn", "Burnet", "Buttercup", "Canary", "Cinder", "Cloud",
+    "Cloudy", "Cotton", "Crocus", "Crow", "Dandelion", "Day", "Doe", "Dove", "Egg", "Ember", "Fig", "Fire", "Flame",
+    "Flare", "Flurry", "Freeze", "Frost", "Frozen", "Ghost", "Glint", "Gossamer", "Grackle", "Hawthorn", "Heather",
+    "Hickory", "Hollyhock", "Ibis", "Ice", "Icicle", "Icy", "Jasmine", "Larkspur", "Log", "Lyre", "Magpie", "Midnight",
+    "Mist", "Morel", "Mulberry", "Night", "Oleander", "Orchid", "Otter", "Owl", "Pebble", "Plox", "Pipit", "Plume",
+    "Privet", "Rime", "Rock", "Rue", "Saffron", "Scale", "Scrub", "Shade", "Shadow", "Shatter", "Smoke", "Snapdragon",
+    "Snow", "Snowy", "Soot", "Spindle", "Stag", "Stone", "Storm", "Sun", "Swan", "Teasel", "Tree", "Twig", "Twilight",
+    "Verbena", "Vervain", "Violet", "Vole", "Warbler", "Wisp"
+  ],
   "colour_prefixes": {
     "WHITE": [
     "White", "White", "Pale", "Snow", "Snowy", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Icicle", 
