@@ -36,7 +36,7 @@
     "thistle", "thorn", "thrift", "throat", "thrush", "thud", "thunder", "timber", "toe", "tooth", "trail", "tree",
     "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish",
     "wisp", "zoom", 
-    "eater", "suckle", "twitch", "stretch", "tear", "rot", "mange", "wilt", "herb", "weed", "scruff", "hen", "bass", "possum", "caw", "grunt", "tuck", "stomp", "nuzzle", "swim", "cough", "fleck", "crack", "crunch", "trip", "flick", "fly", "fisher", "mist", "touch", "rubble", "stick", "spark", "steam", "snore", "shake", "ridge", "doe", "squeak", "sprig", 
+    "eater", "suckle", "twitch", "stretch", "tear", "rot", "mange", "wilt", "herb", "weed", "scruff", "hen", "bass", "possum", "caw", "grunt", "tuck", "stomp", "nuzzle", "swim", "cough", "fleck", "crack", "crunch", "trip", "flick", "fly", "fisher", "mist", "touch", "rubble", "stick", "spark", "steam", "snore", "shake", "ridge", "doe", "squeak", "sprig", "Tortoise"
   ],
     "pelt_prefixes": {
     "TwoColour": ["Simple", "One", "Patch"],
@@ -74,6 +74,22 @@
     "Singlestripe": ["stripe", "streak", "back", "stem", "tail"],
     "Masked": ["stripe", "mask", "mask", "shade", "nettle", "bramble", "tiger", "bracken", "streak", "ripple",]
   }, 
+   "tortie_pelt_prefixes": {
+    "solid": ["Patch", "Splash"],
+    "tabby": ["Tiger", "Thistle"],
+    "bengal": ["Dappled", "Spotted", "Leopard"],
+    "marbled": ["Tiger", "Thistle"],
+    "ticked": ["Spotted", "Speckle"],
+    "smoke": ["Faded", "Dusk", "Dawn", "Smoke", "Hazy", "Misty", "Steam"],
+    "rosette": ["Dappled", "Speckle", "Spotted", "Leopard"],
+    "speckled": ["Dapple", "Speckle", "Spotted", "Freckle", "Speckled"],
+    "mackerel": ["Tiger", "Thistle", "Feather", "Fern", "Bramble", "Bracken"],
+    "classic": ["Tiger", "Thistle", "Feather", "Fern", "Bramble", "Bracken"],
+    "sokoke": ["Tiger", "Thistle", "Feather", "Fern", "Dapple", "Breeze"],
+    "agouti": ["Patch", "Splash"],
+    "singlestripe": ["Stripe", "Streak", "Stem"],
+    "masked": ["Masked", "Mask", "Bramble", "Tiger", "Shadow", "Bracken"]
+  },
   "tortie_pelt_suffixes": {
     "solid": ["patch", "splash"],
     "tabby": ["stripe", "feather", "leaf", "fern", "nettle", "bramble", "tiger", "bracken"],
@@ -540,9 +556,9 @@
     "Rtgame", "Markiplier", "Ludwig", "Matpat", "Vsause", "Linkus", "Jerma", "Caseoh", "Plink", "Spigg", "Spiff", "Pog", "Pogchamp", "Kappa",
     "Michael Meyers", "Freddy Krueger", "Jason Voorhees", "Hannibal", "Dracula",  
     "Coo", "Smokey", "Danger", "Yarn", "String", "Nutty", "Nuts", "Raid", "Alpha", "Beta", "Petrichor", "Amanita", "Gingko", "Junebug", "Pebbles", "Lint", "Buck", "Tundra", "Taiga", "Rascal", "Hubcap", "Terra", "Scrap", "Scraps", "Crumb", "Petal", "Husk", "Forrest", "Quill", "Honeybee", "Slug", "Vandal", "Missy", "Mini", "Dewdrop", "Bear", "Momma", "Stinky", "Wily", "Mousey", "Claws",
-     "Mason Jar", "Concrete", "Stringbean", "Dishwater", "Microwave", "Dyson Vacuum", "Car", "Coin", "Zoom call", "Fries", "Napkin", "Borger", "Ford F150", "Chernobyl", "Cookie dough", "Chips", "Apple Juice", "Fries", "Napkin", "Arrow", "Fursuit", "Fridge", "Bike", "Christmas", "Table", "Scrub", "Button", "Pizza Roll", "Hot Pocket", "Farmers Market", "Bus", "Pizza", "Backpack", "Bucket", "Staple", "Comet", "Bandaid",
+     "Mason Jar", "Concrete", "Stringbean", "Dishwater", "Microwave", "Dyson Vacuum", "Car", "Coin", "Zoom call", "Fries", "Napkin", "Borger", "Ford F150", "Chernobyl", "Cookie dough", "Chips", "Apple Juice", "Fries", "Napkin", "Arrow", "Fursuit", "Fridge", "Bike", "Christmas", "Table", "Scrub", "Button", "Pizza Roll", "Hot Pocket", "Farmers Market", "Bus", "Pizza", "Backpack", "Bucket", "Staple", "Comet", "Bandaid", "Cardboard",
     "Chico", "Val", "Lexi", "Chad", "Lucille", "Cody", "Shelly", "Skye", "Koda", "Catarina", "Aria", "Olive", "Azura", "Percy", "Elle", "Astro", "Astra", "Baxter", "Duke", "Jada", "Sierra", "Wes", "Waldo", "Sammy", "Mia", "Jessie", "Jean", "Jolene", "Julia", "Kyra", "Leila", "Maxie", "Magnus", "Harley", "Rocky", "Doug", "Elliot", "Clair", "Ezra", "Toby", "Minna", "Emily", "Taz", "Spike", "Otis", "Rosa", "Gwen", "Wilson", "Faye", "Rex", "Megan", "Darcy", "Gracie", "Billie", "Ciel", "Taylor", "Rosie", "Rambo", "Ramona", "Rio", "Silas", "Gunner", "Hugo", "Heidi", "Harper", "Tabatha", "Gloria",
-    "Macaron", "Velvet", "Mischief", "Flora", "Fauna", "Mimi", "Coffee", "Love", "Lovely lady", "Fuzzy baby", "Kiwi", "Diva", "Goober", "Baby girl", "Tiramisu", "Benji", "Roo", "Boo", "Goofball", "Yoda", "Jelly Bean", "Oddball", "Umbra", "Shasta", "Bedbug", "Prince", "Sox", "Kenya", "Marilyn Monroe",  "Gnocci", "Nebula", "Harmony", "Aztec", "Arlo", "Amos", "Bowie", "Tsunami", "Hostess", "Archer", "Custard", "Henna", "Ranger", "Dior", "Babushka", "Fuzzy One", "Bourbon", "Vegas", "Widget", "Pharoh", "Oreo", "Orion", "Orzo", "Biscuit", "Fluff", "Tinkerbell", "Titus", "Toffy", "Champion", "Champ", "Stinkbug", "Belladonna", "Sterling", "Shuffle", "Moonpie", "Latte", "Gremlin", "Senorita", "Everest", "Capybara", "Mimosa", "Radar", "Riptide", "Toro", "Sinastra", 
+    "Macaron", "Velvet", "Mischief", "Flora", "Fauna", "Mimi", "Coffee", "Love", "Lovely lady", "Fuzzy baby", "Kiwi", "Diva", "Goober", "Baby girl", "Tiramisu", "Benji", "Roo", "Boo", "Goofball", "Yoda", "Jelly Bean", "Oddball", "Umbra", "Shasta", "Bedbug", "Prince", "Sox", "Kenya", "Marilyn Monroe",  "Gnocci", "Nebula", "Harmony", "Aztec", "Arlo", "Amos", "Bowie", "Tsunami", "Hostess", "Archer", "Custard", "Henna", "Ranger", "Dior", "Babushka", "Fuzzy One", "Bourbon", "Vegas", "Widget", "Pharoh", "Oreo", "Orion", "Orzo", "Biscuit", "Fluff", "Tinkerbell", "Titus", "Toffy", "Champion", "Champ", "Stinkbug", "Belladonna", "Sterling", "Shuffle", "Moonpie", "Latte", "Gremlin", "Senorita", "Everest", "Capybara", "Mimosa", "Radar", "Riptide", "Toro", "Sinastra", "Figaro",
    "Rat man", "Dirt man", "Ed Sheeran", "Harambe", "Furry", "Santa", "Pimp Lucious", "Girlboss", "Gaslight", "Gatekeep", "Marketable Plushie", "Trick-or-Treat", "Zoom call", "Borger", "Honse", "The Sexy m&m", "Yaoi", "Freeloader", "Florida Man", "Mac n Cheese", "Macaroni", "Lil shit", "Professor Mittens", "DeviantArt", "Reddit Mod", "Costco", "Struggle", "Eepy", "Bottle cap", "Duolingo", "Dr Pepper", "Lobotomy Bill", "Spare Cat", "Oceangate", "Geneva Conventions", "Geneva Suggestions", "War Criminal", "War Crimes", "Nya", "Doge", "Criminal", "Abracadabra", "Fergalicious", "Ebony Dark'ness Dementia Raven Way", "Lover", "Lover Boy", "Pookie", "Loofa", "Classy", "Sassy Kathy", "Haribo", "Copycat", "Tiki", "Wii Theme", "Bill Nye", "Yen", "Bungle", "Gucci", "Disco", "Meow Mix", "Meow", "Beef", "1997 Toyota Corolla", "2014 Kia soul", "2002 Ford Explorer", "2010 Honda Accord", "Yippeee", "Target", "Monster Truck", "Caprisun", "Acotar", "Treat", "Inertia", "Fedex", "Squishmallow", "Halo", "Kimono", "Sappho", "Dorito", "Sprinkle", "Bonsai", "Bungee", "Humpty Dumpty", "Everglade", "Crab Rave", "Julius Ceasar", "Camellia", "Winslow", "Almond", "Oracle", "Equinox", "Cirrus", "Periwinkle", "Zen", "Birdie", "Five Guys", "Macarena", "Tortellini", "Zinnia", "Morning Glory", "Evergreen", "Synth", "Tabasco", "Butter", 
     "Pascal", "Nim", "Finley", "Geisha", "Gilroy", "Daffodil", "Fuzzy", "Kay" 
     ],
@@ -566,7 +582,7 @@
     "Snake", "Sparrow", "Spider", "Spoonbill", "Squid", "Squirrel", "Stag", "Starling", "Stoat", "Stork", "Swallow", "Swan", "Tadpole", "Taipan", "Puffer",
     "Lemming", "Petrel", "Harrier", "Cardinal", "Bullfrog", "Tarantula", "Tiger", "Toad", "Trout", "Turtle", "Viper", "Vixen", "Vole", "Vulture", "Warbler",
     "Wasp", "Weasel", "Weevil", "Whale", "Wolf", "Wolverine", "Worm", "Owlet", "Crayfish", "Crawdad", "Wren", "Marmot", "Mallard", "Puffin", "Possum", "Hog",
-    "Boar", "Tadpole", "Turkey", "Chicken", "Urchin", "Oyster", "Termite", "Tick", "Hen", "Stinkbug"
+    "Boar", "Tadpole", "Turkey", "Chicken", "Urchin", "Oyster", "Termite", "Tick", "Hen", "Stinkbug", "Tortoise"
 	],
 	"inappropriate_names": [
 		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone"
