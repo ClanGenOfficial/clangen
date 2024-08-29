@@ -122,7 +122,7 @@
     "Tansy", "Tempest", "Thorn", "Thrift", "Thrush", "Thunder", "Thyme", "Timber", "Tiny", "Toad", "Torn", "Tremble", "Trickle", "Trout", "Tuft", 
     "Tulip", "Tumble", "Turtle", "Valley", "Vine", "Vixen", "Wasp", "Weasel", "Web", "Weed", "Weevil", "Wet", "Wheat", "Whimsy", "Whirl", "Whisker", 
     "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", "Wind", "Wing", "Wish", "Wisteria", "Wolf", "Wolverine", "Wood", "Worm", "Wren", "Yarrow", "Yew", "Zinnia", 
-      "Twitch", "Possum", "Skunk", "Mange", "Rustle", "Path", "Quake", "Weak", "Rot", "Vole", "Owlet", "Scruff", "Skitter", "Turkey", "Stray", "Round", "Two", "Fungus", "Wilting", "Wilted", "Harrier", "Dead", "Dull", "Wing", "Flow", "Peony", "Orchid", "Blooming", "Stick", "Stinkbug", "Shiver", "Bent", "Squeak", "Brook", "Betony", "Basalm", "Clove", "Hen", "Mangle", "Twitch", "Trip", "Plump", "Float", "Fringe", "Simple", "Grit", "Lost", "Muskrat", "Matted", "Love", "Clump", "Thin", "Doe", "Pad", "Pea", "Cocoon", "Sprig", "Termite", "Lone", "Tangle", "Chamomile", "Lucky", "Mold", "Mint", "Maggot", "Perch"
+      "Twitch", "Possum", "Skunk", "Mange", "Rustle", "Path", "Quake", "Weak", "Rot", "Vole", "Owlet", "Scruff", "Skitter", "Turkey", "Stray", "Round", "Two", "Fungus", "Wilting", "Wilted", "Harrier", "Dead", "Dull", "Wing", "Flow", "Peony", "Orchid", "Blooming", "Stick", "Stinkbug", "Shiver", "Bent", "Squeak", "Brook", "Betony", "Basalm", "Clove", "Hen", "Mangle", "Twitch", "Trip", "Plump", "Float", "Fringe", "Simple", "Grit", "Lost", "Muskrat", "Matted", "Love", "Clump", "Thin", "Doe", "Pad", "Pea", "Cocoon", "Sprig", "Termite", "Lone", "Tangle", "Chamomile", "Lucky", "Mold", "Mint", "Maggot", "Perch", "Tortoise"
   ],
 	"clan_prefixes": [
     "Air", "Ashen", "Bat", "Bleak", "Bone", "Branch", "Burn", "Burnet", "Buttercup", "Canary", "Cinder", "Cloud",
@@ -575,7 +575,7 @@
     "Snake", "Sparrow", "Spider", "Spoonbill", "Squid", "Squirrel", "Stag", "Starling", "Stoat", "Stork", "Swallow", "Swan", "Tadpole", "Taipan", "Puffer",
     "Lemming", "Petrel", "Harrier", "Cardinal", "Bullfrog", "Tarantula", "Tiger", "Toad", "Trout", "Turtle", "Viper", "Vixen", "Vole", "Vulture", "Warbler",
     "Wasp", "Weasel", "Weevil", "Whale", "Wolf", "Wolverine", "Worm", "Owlet", "Crayfish", "Crawdad", "Wren", "Marmot", "Mallard", "Puffin", "Possum", "Hog",
-    "Boar", "Tadpole", "Turkey", "Chicken", "Urchin", "Oyster", "Termite", "Tick", "Hen", "Stinkbug"
+    "Boar", "Tadpole", "Turkey", "Chicken", "Urchin", "Oyster", "Termite", "Tick", "Hen", "Stinkbug", "Tortoise"
 	],
 	"inappropriate_names": [
 		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone"
