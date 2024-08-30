@@ -241,7 +241,7 @@
             "Is starting rumors about r_c",
             "Tells r_c that nobody likes {PRONOUN/r_c/object}",
             "Is scratching everything {PRONOUN/m_c/subject} can get {PRONOUN/m_c/poss} claws on",
-            "Is making r_c pretend to be prey for {PRONOUN/r_c/object} to hunt",
+            "Is making r_c pretend to be prey for {PRONOUN/m_c/object} to hunt",
             "Pounced on r_c",
             "Is in time out",
             "Is in time out"
