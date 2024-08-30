@@ -400,7 +400,7 @@
             "Picked up something nodody else got a good look at and is now running from several cats",
             "Is pretending to be a mouse and trying to get others to chase {PRONOUN/m_c/object}",
             "Nips at r_c and runs away giggling",
-            "rearranges all of the herbs as a prank"
+            "Rearranges all of the herbs as a prank"
         ],
         "main_trait_constraint": [
             "impulsive"
@@ -590,7 +590,7 @@
             "Yowls loudly in the middle of the clearing for absolutely no reason",
             "Begs for life-saving herbs to cure {PRONOUN/m_c/poss} minor scrape",
             "Is calling a Clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}",
-            "Is demanding r_c's attention even though {PRONOUN/r_c/subject} {VERB/r_c/are/is} busy",
+            "Is demanding r_c's attention even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} busy",
             "Is waiting by the camp entrance to see what the patrol brings back",
         ],
         "main_trait_constraint": [
