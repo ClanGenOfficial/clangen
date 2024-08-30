@@ -139,7 +139,6 @@
         "id": "gen_not_kit",
         "thoughts": [
             "Is thinking on {PRONOUN/m_c/poss} life choices",
-            "Wishes {PRONOUN/m_c/subject} had the energy {PRONOUN/m_c/subject} had as a kit",
             "Found a wonderful napping spot outside camp",
             "Had a nightmare involving a Twoleg trap",
             "Is humming a tune {PRONOUN/m_c/subject} heard near a Twoleg place",
@@ -246,6 +245,21 @@
             "leader"
         ]
     },
+	{
+        "id": "gen_adult_older",
+        "thoughts": [
+	"Wishes {PRONOUN/m_c/subject} had the energy {PRONOUN/m_c/subject} had as a kit"
+		
+	]
+	"main_status_constraint": [
+        	"warrior",
+        	"medicine cat",
+        	"mediator",
+        	"deputy",
+        	"leader",
+        	"elder"
+	]
+	},
     {
         "id": "gen_alive_not_working_insteadinthemedden",
         "not_working": true,
