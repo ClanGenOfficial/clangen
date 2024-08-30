@@ -214,7 +214,7 @@
             "Is begging r_c to play with {PRONOUN/m_c/object}",
             "Pounced on r_c",
             "Runs out of energy for several seconds then gets back up energized",
-            "Nips at r_c then runs away giggling",
+            "Nips at r_c, then runs away giggling",
             "Is trying to climb r_c"
         ],
         "main_trait_constraint": [
