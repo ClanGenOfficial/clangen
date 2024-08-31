@@ -82,6 +82,7 @@
             "Is tidying up camp",
             "Just can't find anything appetizing on the fresh-kill pile",
             "Has more energy then {PRONOUN/m_c/subject} know what to do with at the moment",
+            "Got caught in a sudden downpour and is not happy about it",
             "Woke up on the wrong side of the nest",
             "Is complaining about an itch {PRONOUN/m_c/subject} can't quite reach"
         ],
@@ -178,7 +179,7 @@
 	"Is unable to be scared, no matter how much the kits try",
         "Is keeping an eye on some rowdy kits"
 		
-	]
+	],
 	"main_status_constraint": [
 		"apprentice",
         	"medicine cat apprentice",
@@ -250,7 +251,7 @@
         "thoughts": [
 	"Wishes {PRONOUN/m_c/subject} had the energy {PRONOUN/m_c/subject} had as a kit"
 		
-	]
+	],
 	"main_status_constraint": [
         	"warrior",
         	"medicine cat",
@@ -260,59 +261,6 @@
         	"elder"
 	]
 	},
-    {
-        "id": "gen_alive_not_working_insteadinthemedden",
-        "not_working": true,
-        "thoughts": [
-            "Misses {PRONOUN/m_c/poss} own nest, despite the ones in the medicine den being... fine",
-            "Can't get the sharp smell of the herb stores out of {PRONOUN/m_c/poss} nose",
-            "Feeling confined and cooped up",
-            "Just wants to sleep",
-            "Wonders why recovering is so exhausting",
-            "Basking in the sun at the medicine den entrance",
-            "Feeling frustrated at {PRONOUN/m_c/poss} own exhaustion",
-            "Doesn't think {PRONOUN/m_c/subject} should have to sleep in the medicine den",
-            "Eats some prey because {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject} should, not because of hunger",
-            "Stands up for a second and feels lightheaded",
-            "Isn't having a fun time"
-        ]
-    },
-    {
-        "id": "gen_alive_not_working_insteadinthemedden_withmedcat",
-        "not_working": true,
-        "thoughts": [
-            "Watches r_c fuss around the herb stores, half-asleep",
-            "Isn't going to argue with r_c about {PRONOUN/m_c/poss} medical care",
-            "Argues with r_c about {PRONOUN/m_c/poss} medical care",
-            "Dutifully stretching out {PRONOUN/m_c/poss} limbs like r_c told {PRONOUN/m_c/object} to",
-            "Asks r_c for pain relief",
-            "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "gen_alive_not_working_insteadinthemedden_withmedcatapp",
-        "not_working": true,
-        "thoughts": [
-            "Laps up water r_c has brought {PRONOUN/m_c/object}",
-            "Grunts in pain as r_c changes {PRONOUN/m_c/poss} nest bedding",
-            "Wishes r_c would be a bit more quiet as {PRONOUN/r_c/subject} {VERB/r_c/work/works}",
-            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a good job",
-            "Asks r_c for pain relief",
-            "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
-        ],
-        "random_status_constraint": [
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
     {
     "id": "adventurous_gen",
     "thoughts": [
@@ -505,13 +453,15 @@
         ]
     },
 {
-        "id": "older_charismatic_gen",
+        "id": "older_liar_gen",
         "thoughts": [
 	"Has r_c very engaged in a very, very tall tale",
 	"Is proudly watching r_c plan how to hunt down a creature {PRONOUN/m_c/subject} made up"
 	],
 	"main_trait_constraint": [
-            "charismatic"
+        "charismatic",
+        "cunning",
+        "sneaky"
         ],
 	 "main_status_constraint": [
 	"apprentice",
@@ -523,10 +473,10 @@
         "elder"
         ],
 	"random_status_constraint": [
-            	"kit",
+        "kit",
 		"apprentice",
 		"medicine cat apprentice",
-            	"mediator apprentice"
+        "mediator apprentice"
         ]
 },
 {
@@ -1554,6 +1504,7 @@
         "thoughts": [
             "Play fought with r_c just like old times",
             "Reminisced with r_c on when they were kits",
+            "Took r_c's fresh_kill {PRONOUN/r_c/subject} were saving because {PRONOUN/r_c/subject} were saving it", 
             "Is waiting for r_c to return from {PRONOUN/r_c/poss} patrol",
             "Explored the territory with r_c"
         ],
@@ -1574,6 +1525,18 @@
         "relationship_constraint": [
 			"sibling"
 		]
+    },
+    {
+        "id": "parent_to_kit",
+        "thoughts":[
+            "Pulled r_c aside and started grooming {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} protests",
+            "Is purring as {PRONOUN/m_c/subject} listen to r_c talk about nothing in particular",
+            "Is comforting r_c after a hard day",
+            "Is so proud of r_c"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ]
     },
     {
         "id": "dead_sibling",
@@ -1998,6 +1961,24 @@
         ],
         "random_living_status": [
             "starclan"
+        ]
+    },
+    {
+        "id": "gen_to_dead_parent",
+        "thoughts":[
+            "Heard r_c humming a tune in {PRONOUN/m_c/poss} dream {PRONOUN/m_c/subject} remembered {PRONOUN/r_c/object} humming to {PRONOUN/m_c/object} in the nursery",
+            "Had a tearful visit from r_c in {PRONOUN/m_c/poss} dream last night",
+            "Wants to work hard knowing r_c is watching {PRONOUN/m_c/object}"
+        ],
+        "main_living_status": [
+            "starclan",
+            "darkforest"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
