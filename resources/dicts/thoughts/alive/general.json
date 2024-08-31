@@ -246,21 +246,6 @@
             "leader"
         ]
     },
-	{
-        "id": "gen_adult_older",
-        "thoughts": [
-	"Wishes {PRONOUN/m_c/subject} had the energy {PRONOUN/m_c/subject} had as a kit"
-		
-	],
-	"main_status_constraint": [
-        	"warrior",
-        	"medicine cat",
-        	"mediator",
-        	"deputy",
-        	"leader",
-        	"elder"
-	]
-	},
     {
     "id": "adventurous_gen",
     "thoughts": [
