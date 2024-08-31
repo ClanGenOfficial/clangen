@@ -13,7 +13,7 @@ from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
+from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
 from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text, chunks
 from scripts.utility import get_text_box_theme, scale_dimentions, shorten_text_to_fit
 from .Screens import Screens
@@ -634,14 +634,14 @@ class ProfileScreen(Screens):
             self.generate_column1(self.the_cat),
             scale(pygame.Rect((600, 460), (360, 380))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=0.95,
+            line_spacing=1,
             manager=MANAGER,
         )
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
             self.generate_column2(self.the_cat),
             scale(pygame.Rect((980, 460), (500, 360))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=0.95,
+            line_spacing=1,
             manager=MANAGER,
         )
 
@@ -1689,7 +1689,8 @@ class ProfileScreen(Screens):
                         else:
                             life_text = "lost the rest of {PRONOUN/m_c/poss} lives"
                     else:
-                        life_text = "lost a life"
+                        life_names = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eigth"]
+                        life_text = "lost {PRONOUN/m_c/poss} " + life_names[index] + " life"
                 elif death_number > 1:
                     #for retired leaders
                     if index == death_number - 1 and self.the_cat.dead:
@@ -1715,15 +1716,8 @@ class ProfileScreen(Screens):
                     all_deaths.append(text)
 
             if self.the_cat.status == "leader" or death_number > 1:
-                if death_number > 2:
-                    filtered_deaths = [
-                        death for death in all_deaths if death is not None
-                    ]
-                    deaths = (
-                        f"{', '.join(filtered_deaths[0:-1])}, and {filtered_deaths[-1]}"
-                    )
-                elif death_number == 2:
-                    deaths = " and ".join(all_deaths)
+                if death_number > 1:
+                    deaths = str("\n" + str(self.the_cat.name) + " ").join(all_deaths)
                 else:
                     deaths = all_deaths[0]
 

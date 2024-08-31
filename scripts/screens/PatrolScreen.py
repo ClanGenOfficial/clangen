@@ -5,7 +5,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
@@ -53,7 +53,11 @@ class PatrolScreen(Screens):
         if game.switches["window_open"]:
             return
         
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_DOUBLE_CLICKED:
+            if self.patrol_stage == "choose_cats":
+                self.handle_choose_cats_events(event)
+
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
             elif self.patrol_stage == 'patrol_events':
@@ -65,9 +69,9 @@ class PatrolScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_LEFT:
-                self.change_screen("starclan screen")
-            elif event.key == pygame.K_RIGHT:
-                self.change_screen('list screen')
+                self.change_screen("list screen")
+            # elif event.key == pygame.K_RIGHT:
+            # self.change_screen('list screen')
 
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
@@ -79,6 +83,14 @@ class PatrolScreen(Screens):
             self.selected_cat = event.ui_element.return_cat_object()
             self.update_selected_cat()
             self.update_button()
+            # Checks if the event was a double click, if it was it add/removes the cat from the patrol as long as the patrol isn't full (6 cats).
+            if event.type == pygame_gui.UI_BUTTON_DOUBLE_CLICKED:
+                if self.selected_cat in self.current_patrol:
+                    self.current_patrol.remove(self.selected_cat)
+                elif len(self.current_patrol) < 6:
+                    self.current_patrol.append(self.selected_cat)
+                self.update_cat_images_buttons()
+                self.update_button()
         elif event.ui_element == self.elements["add_remove_cat"]:
             if self.selected_cat in self.current_patrol:
                 self.current_patrol.remove(self.selected_cat)
@@ -812,7 +824,7 @@ class PatrolScreen(Screens):
             short_name = shorten_text_to_fit(name, 350, 30)
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
-                                                                           scale(pygame.Rect((600, 650), (400, 60))),
+                                                                           scale(pygame.Rect((600, 650), (400, 80))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),
                                                                            manager=MANAGER)
@@ -844,12 +856,10 @@ class PatrolScreen(Screens):
                     , manager=MANAGER)
                 # Check for name length
                 name = str(self.mate.name)  # get name
-                if 10 <= len(name):  # check name length
-                    short_name = name[0:9]
-                    name = short_name + '..'
+                short_name = shorten_text_to_fit(name, 145, 22)
                 self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
                     scale(pygame.Rect((306, 600), (190, 60))),
-                    name,
+                    short_name,
                     object_id=get_text_box_theme())
                 self.elements['mate_info'] = pygame_gui.elements.UITextBox(
                     "mate",
@@ -901,12 +911,10 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 10 <= len(name):  # check name length
-                        short_name = name[0:9]
-                        name = short_name + '..'
+                    short_name = shorten_text_to_fit(name, 145, 22)
                     self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((1106, 600), (190, 60))),
-                        name,
+                        short_name,
                         object_id=get_text_box_theme(), manager=MANAGER)
                     self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(
                         relation,

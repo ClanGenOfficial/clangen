@@ -8,7 +8,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton
+from scripts.game_structure.ui_elements import UISpriteButton, UIImageButton
 from scripts.game_structure.windows import SaveError
 from scripts.utility import scale
 from .Screens import Screens
@@ -85,7 +85,7 @@ class ClanScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_RIGHT:
-                self.change_screen('starclan screen')
+                self.change_screen('list screen')
             elif event.key == pygame.K_LEFT:
                 self.change_screen('events screen')
             elif event.key == pygame.K_SPACE:
@@ -342,7 +342,7 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
-            # Newborns are not meant to be placed. They are hiding. 
+            # Newborns are not meant to be placed. They are hiding.
             if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
                 if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
                     # Free them

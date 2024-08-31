@@ -1,7 +1,7 @@
 [
     {
-        "id": "gen_warrior_app",
-        "thoughts":[
+        "id": "warrior_apprentice_gen",
+        "thoughts": [
             "Feels worn out from training",
             "Wonders if {PRONOUN/m_c/subject}'ll be allowed to go night-hunting soon",
             "Is resting in the sun after a long day of training",
@@ -19,18 +19,6 @@
             "Practices {PRONOUN/m_c/poss} highest jump",
             "Practices {PRONOUN/m_c/poss} farthest leap",
             "Feels proud of {PRONOUN/m_c/self} for doing so well in training today",
-            "Is gossiping",
-            "Is acting angsty",
-            "Is dreading {PRONOUN/m_c/poss} apprentice duties",
-            "Fell into the nearby creek yesterday and is still feeling damp",
-            "Is having a hard time keeping up with {PRONOUN/m_c/poss} training",
-            "Was tasked with lining nests with fresh moss today",
-            "Is dreaming of someday making {PRONOUN/m_c/poss} Clan proud",
-            "Is thinking about the time {PRONOUN/m_c/subject} caught a huge rabbit",
-            "Practices some battle moves",
-            "Is helping to reinforce the camp wall with brambles",
-            "Is daydreaming about having a mate and kits someday",
-            "Had quite the adventure today",
             "Is thinking about how cool it will be when {PRONOUN/m_c/subject} {VERB/m_c/are/is} a warrior",
             "Wants to become a fierce warrior someday",
             "Wants to learn as many fighting techniques as {PRONOUN/m_c/subject} can",
@@ -50,7 +38,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_deputy",
+        "id": "warrior_apprentice_to_alive_deputy",
         "thoughts": [
             "Wants r_c to assign {PRONOUN/m_c/object} to the next patrol",
             "Is watching and learning from r_c",
@@ -62,10 +50,13 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "apprentice_alive_warrior",
+        "id": "warrior_apprentice_to_alive_warrior",
         "thoughts": [
             "Is watching and learning from r_c",
             "Is asking r_c questions about warrior life",
@@ -84,7 +75,7 @@
         ]
     },
     {
-        "id": "apprentice_alive_mentor",
+        "id": "warrior_apprentice_to_alive_mentor",
         "thoughts": [
             "Is trying to perfect the latest move that r_c taught {PRONOUN/m_c/object}",
             "Is asking r_c questions",
@@ -98,10 +89,13 @@
         ],
         "relationship_constraint": [
             "app/mentor"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "apprentice_alive_apprentice",
+        "id": "warrior_apprentice_to_alive_apprentice",
         "thoughts": [
             "Is learning how to hunt with r_c",
             "Teases r_c for missing an easy catch",
@@ -124,11 +118,14 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "apprentice_alive_elder",
-        "thoughts":[
+        "id": "warrior_apprentice_to_alive_elder",
+        "thoughts": [
             "Is dreading having to clean the elders' den later",
             "Is picking ticks off of r_c",
             "Listens to a story from r_c",
@@ -143,16 +140,19 @@
             "Is bringing r_c a nice piece of prey",
             "Is complaining about picking ticks out of the elders' pelts"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "elder"
         ],
-        "random_age_constraint":[
+        "random_age_constraint": [
             "senior"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "apprentice_alive_kits",
-        "thoughts":[
+        "id": "warrior_apprentice_to_alive_kits",
+        "thoughts": [
             "Leaves fresh-kill outside the nursery for the kits",
             "Is showing r_c the proper way to do a hunter's crouch",
             "Tries not to giggle as r_c fails at a hunting crouch",
@@ -166,12 +166,15 @@
             "Takes time to play with r_c in between training sessions",
             "Tries to teach r_c something new... but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not listening"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "apprentice_dead_warrior",
+        "id": "warrior_apprentice_to_dead_warrior",
         "thoughts": [
             "Wishes {PRONOUN/m_c/subject} could learn from r_c",
             "Wants to be a great warrior, just like r_c"
@@ -184,7 +187,7 @@
         ]
     },
     {
-        "id": "formerly_a_rogue_warrior_apprentice",
+        "id": "formerly_rogue_warrior_apprentice",
         "thoughts": [
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
             "Has some trouble adjusting",
@@ -194,7 +197,14 @@
             "Doesn't miss being a rogue",
             "Is happy to be training as a warrior instead of living as a rogue"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ]
     },
     {
         "id": "thoughtful_warrior_apprentice",
@@ -210,6 +220,9 @@
         ],
         "main_trait_constraint": [
             "thoughtful"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -263,6 +276,9 @@
         ],
         "main_trait_constraint": [
             "fierce"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -301,6 +317,9 @@
         ],
         "main_trait_constraint": [
             "confident"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -320,6 +339,9 @@
         ],
         "main_trait_constraint": [
             "bold"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -332,11 +354,14 @@
         "main_status_constraint": [
             "apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "warrior"
         ],
         "main_trait_constraint": [
             "bold"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -345,7 +370,7 @@
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
             "Drew blood during {PRONOUN/m_c/poss} battle training",
-            "Sinks {PRONOUN/m_c/poss} teeth into prey, pretending its another cat's pelt",
+            "Sinks {PRONOUN/m_c/poss} teeth into prey, pretending it's another cat's pelt",
             "Is caught playing with {PRONOUN/m_c/poss} prey instead of hunting",
             "Is cleaning blood from {PRONOUN/m_c/poss} claws",
             "Is hissing defiantly at r_c",
@@ -353,12 +378,14 @@
             "Is glaring at r_c",
             "Is covered in prey-blood after hunting",
             "Is clawing up moss for fun",
-            "Is asking what deathberries look like... for safety reasons of course",
+            "Is asking what deathberries look like - for safety reasons, of course...",
             "Hopes to get a scar from battle"
-
         ],
         "main_trait_constraint": [
             "bloodthirsty"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -395,8 +422,11 @@
         ],
         "main_trait_constraint": [
             "ambitious"
+        ],
+        "random_living_status": [
+            "living"
         ]
-    }, 
+    },
     {
         "id": "childish_warrior_apprentice",
         "thoughts": [
@@ -412,19 +442,21 @@
             "childish"
         ]
     },
-    { "id": "childish_apprentice_elder",
+    {
+        "id": "childish_apprentice_to_elder",
         "thoughts": [
             "Pouts about being asked to check the elders for ticks",
             "Is hiding instead of taking care of the elders",
             "Is listening to r_c tell stories instead of cleaning out the den"
         ],
-        "main_trait_constraint":[
+        "main_trait_constraint": [
             "childish"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
-           
-    
 ]

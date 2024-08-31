@@ -19,7 +19,7 @@
             "Is contemplating StarClan and why they would allow newborns to pass",
             "Is reflecting on r_c's pelt, and is sad {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/poss} eye color",
             "Was startled to meet a newborn kit while dreaming and ponders what it meant",
-            "Was spooked when {PRONOUN/m_c/subject} encountered a ghostly newborn while collecting herbs, which disappeared when noticed",
+            "Was spooked when {PRONOUN/m_c/subject} was out collecting herbs and encountered a ghostly newborn, which disappeared when noticed",
             "Is asking {PRONOUN/m_c/poss} mentor why StarClan allows newborns to join Silverpelt",
             "Is vowing to never let another newborn join StarClan's ranks"
         ],
@@ -37,7 +37,7 @@
             "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but it was just the wind",
             "Is questioning who would provide for r_c in StarClan",
             "Wonders if r_c would have played with the insects in the grass if {PRONOUN/r_c/subject} had time to grow up",
-            "Questions if r_c's spirit exists in the tall grasses",
+            "Questions if r_c's spirit exists in the tall grass",
             "Thought {PRONOUN/m_c/subject} saw r_c's spirit hanging around the nursery tunnel",
             "Wonders if r_c gets to venture out of the tunnels in StarClan",
             "Thought {PRONOUN/m_c/subject} saw r_c playing with the roots of the tree, but sadly shakes off the thought",
@@ -46,7 +46,7 @@
             "Wonders if the newborns in StarClan will ever get to play and run across open fields",
             "Prays to StarClan that the passed newborn kits get to feel the wind across their pelt"
         ],
-        "biome":[
+        "biome": [
             "Plains"
         ],
         "random_living_status": [
@@ -73,7 +73,7 @@
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to become a medicine cat",
             "Helps apply a poultice to a small wound",
-            "Is enjoying learning all of the herbs a medicine cat needs!",
+            "Is enjoying learning all the herbs a medicine cat needs!",
             "Is memorizing the names of all the herbs",
             "Is practicing applying cobwebs to wounds",
             "Is sorting out all the old herbs from the den",
@@ -120,6 +120,9 @@
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -137,10 +140,13 @@
         ],
         "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "medicine_cat_apprentice_to_medicine_cat1",
+        "id": "medicine_cat_apprentice_to_medicine_cat",
         "thoughts": [
             "Wants to help r_c gather fresh herbs",
             "Is watching r_c work",
@@ -152,6 +158,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -171,7 +180,7 @@
         ]
     },
     {
-        "id": "bloodthirsty_and_cold_medicine_cat_apprentice",
+        "id": "meanie_medicine_cat_apprentice",
         "thoughts": [
             "Is hoping {PRONOUN/m_c/poss} medicine cat name will end in -claw",
             "Wants to learn some battle moves... just in case",
@@ -209,10 +218,10 @@
         "id": "nice_medicine_cat_apprentice_to_meanie_med",
         "thoughts": [
             "Is unsure of r_c's treatment methods",
-            "Is wondering why r_c decided to be a medicine cat",
+            "Wonders why r_c decided to be a medicine cat",
             "Is worried r_c likes to hurt patients",
             "Is skeptical of StarClan's choice of r_c as a medicine cat",
-            "Is startled to find r_c has a stock pile of death berries"
+            "Is startled to find r_c has a stockpile of deathberries"
         ],
         "main_trait_constraint": [
             "thoughtful",
@@ -229,6 +238,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -236,12 +248,12 @@
         "thoughts": [
             "Is plotting the downfall of c_n with r_c",
             "Is meeting secretly with r_c to discuss a new 'treatment' method",
-            "Is helping r_c secretly gather death berries",
+            "Is helping r_c secretly gather deathberries",
             "Is delighted to find r_c feels the same way about weak cats",
-            "Is glad r_c is against sharing life saving herbs with enemy Clans",
+            "Is glad r_c is against sharing life-saving herbs with enemy Clans",
             "Is standing with r_c, both glaring over their newest vict-, erm, 'patients'",
-            "Is learning the best way to make a death look like a medical accident from r_c",
-            "Is discussing attacking other medicine cats at the next half moon with r_c"
+            "Is learning the best way to make a death look like an accident from r_c",
+            "Is discussing attacking other medicine cats at the next half-moon with r_c"
         ],
         "random_trait_constraint": [
             "bloodthirsty",
@@ -257,6 +269,9 @@
             "cold",
             "vengeful",
             "fierce"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
 ]

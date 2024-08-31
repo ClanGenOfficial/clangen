@@ -6,7 +6,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.screens.Screens import Screens
 from scripts.utility import (
     scale,
@@ -144,6 +144,12 @@ class LeaderDenScreen(Screens):
             "out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite "
             "in a cat, they might join your Clan!",
         )
+        # This is here incase the leader comes back
+        self.no_gathering = False
+        
+        self.no_leader = False
+        if not game.clan.leader:
+            self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
         try:
@@ -167,16 +173,19 @@ class LeaderDenScreen(Screens):
                 manager=MANAGER,
             )
 
-        self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
+        if not self.no_leader:
+            self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((460, 460), (300, 300))),
             pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
             object_id="#lead_cat_image",
             starting_height=3,
             manager=MANAGER,
-        )
+            )
 
         self.helper_cat = None
-        if game.clan.leader.dead or game.clan.leader.exiled:
+        if self.no_leader:
+            self.no_gathering = True
+        elif game.clan.leader.dead or game.clan.leader.exiled:
             self.screen_elements["lead_image"].hide()
             self.no_gathering = True
         elif game.clan.leader.not_working():
@@ -235,7 +244,11 @@ class LeaderDenScreen(Screens):
         self.create_outsider_selection_box()
 
         # NOTICE TEXT - leader intention and other clan impressions
-        self.leader_name = game.clan.leader.name
+        if (self.no_leader):
+            self.leader_name = None
+        else:
+            self.leader_name = game.clan.leader.name
+            
         self.clan_temper = game.clan.temperament
 
         self.screen_elements["clan_notice_text"] = pygame_gui.elements.UITextBox(
@@ -263,7 +276,7 @@ class LeaderDenScreen(Screens):
                 f" Outsiders do not concern themselves with a dead Clan. "
             )
         # if leader is dead and no one new is leading, give special notice
-        elif game.clan.leader.dead or game.clan.leader.exiled:
+        elif self.no_leader or game.clan.leader.dead or game.clan.leader.exiled:
             self.no_gathering = True
             self.screen_elements["clan_notice_text"].set_text(
                 f" Without no one to lead, the Clan can't focus on what to say at the Gathering. "
@@ -536,7 +549,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_clan_elements[f"clan_symbol"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((138, 134), (200, 200))),
-            pygame.transform.scale(clan_symbol_sprite(self.focus_clan), (200, 200)),
+            pygame.transform.scale(clan_symbol_sprite(self.focus_clan, force_light=True), (200, 200)),
             object_id="#clan_symbol",
             starting_height=1,
             container=self.focus_clan_container,
@@ -911,6 +924,7 @@ class LeaderDenScreen(Screens):
         pos_x = 0
         pos_y = 0
         i = 0
+
         for cat in display_cats:
             self.outsider_cat_buttons[f"sprite{str(i)}"] = UISpriteButton(
                 scale(pygame.Rect((10 + pos_x, 0 + pos_y), (100, 100))),

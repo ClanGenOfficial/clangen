@@ -32,5 +32,46 @@
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
     }
-  }    
+  },
+  {
+    "event_id": "fst_misc_ceremony_parent_child_acc1",
+    "location": ["forest:camp3"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "Like a seed just beginning to sprout, m_c is now on {PRONOUN/m_c/poss} journey to becoming a full warrior of c_n. With a proud gaze, r_c presents {PRONOUN/r_c/poss} kit with acc_singular. r_c knows that one day m_c will grow big and strong, just like a little seed can grow into a strong tree.",
+    "new_accessory": ["MAPLE SEED"],
+    "m_c": {
+      "status": ["apprentice"],
+      "relationship_status":["child/parent"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": false,
+        "values": ["respect"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_sparrow_accessory",
+    "location": ["any"],
+    "season": ["newleaf","greenleaf"],
+    "subtype": ["accessory"],
+    "weight": 20,
+    "event_text": "A small flock of sparrows has decided to start frequenting the branches high above camp and, much to the annoyance of most, have dropped pleanty of feathers everwhere as they preen. m_c thinks they're pretty though and decides to keep some",
+    "new_accessory": ["SPARROW FEATHERS"]
+  }
 ]

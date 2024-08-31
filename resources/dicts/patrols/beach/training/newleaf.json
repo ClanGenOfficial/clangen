@@ -14,12 +14,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the familiar sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
+        "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
         "decline_text": "They return to camp to report the new beach layout.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "As the cats watch, the silence is broken as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks {PRONOUN/p_l/poss} tail encouragingly. These are nosy-seals, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, and the beach full of 'boulders' suddenly seems far more intimidating.",
+                "text": "As the cats watch, the silence is broken when one of the massive boulders rears up and snorts. app1's fur stands on end and app2 looks seconds away from fleeing, but p_l flicks {PRONOUN/p_l/poss} tail encouragingly. These are nosy-seals, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, and the beach full of 'boulders' suddenly seems far more intimidating, but less disturbing.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -90,7 +90,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "When one of the boulders abruptly starts roaring, app1 shrieks and runs. It takes the rest of the patrol to find {PRONOUN/app1/object}, and the teaching moment is forgotten as the cats gather to comfort {PRONOUN/app1/object}.",
+                "text": "When one of the boulders abruptly starts roaring, app1 shrieks and bolts. It takes the rest of the patrol to find {PRONOUN/app1/object}, and the teaching moment is forgotten as the cats gather to comfort {PRONOUN/app1/object}.",
                 "exp": 0,
                 "weight": 20
             }
@@ -110,7 +110,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
+        "intro_text": "p_l suggests to r_c that the weather's perfect for a swim in the ocean together.",
         "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -129,7 +129,7 @@
                 ]
             },
             {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l can't keep a scowl on {PRONOUN/p_l/poss} face, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
                 "exp": 5,
                 "weight": 5,
                 "relationships": [
@@ -145,7 +145,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
+                "text": "r_c dips one paw in the water and hisses, announcing that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -159,7 +159,7 @@
                 ]
             },
             {
-                "text": "s_c tries {PRONOUN/s_c/poss} best to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/s_c/poss} own swimming to notice. Eventually, s_c gives up for now, discouraged.",
+                "text": "s_c tries to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/s_c/poss} own swimming to notice. s_c gives up, discouraged.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["ambitious", "childish", "insecure", "lonesome"],
@@ -191,11 +191,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1", "TEACHER,1", "SWIMMER,1", "RUNNER,1"],
-        "intro_text": "Okay, but, app1 knows how to <i>walk</i>. What're they <i>really</i> here to train to do?",
-        "decline_text": "Unable to convince app1 of the importance of training to keep {PRONOUN/app1/poss} footing, p_l gives up and takes them all home.",
+        "intro_text": "app1 doesn't understand what 'footing' training is supposed to mean. {PRONOUN/app1/subject/cap} {VERB/app1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?",
+        "decline_text": "Unable to convince app1 of the importance of training to keep {PRONOUN/app1/poss} footing, p_l gives up and takes the patrol home.",
         "success_outcomes": [
                 {
-                    "text": "s_c rolls {PRONOUN/s_c/poss} eyes. Yes, they <i>are</i> really here to walk and run and jump around the rockpools. It rained last night, and the rock is slippery, and this is perfect conditions. s_c tells the tale of a kit once saved by a warrior sprinting along the rocks in a storm, as app1 falls over and skids harmlessly into a pool.",
+                    "text": "s_c rolls {PRONOUN/s_c/poss} eyes. Yes, they <i>are</i> really here to walk and run and jump around the rockpools. It rained last night, and the rock is slippery, so these are perfect conditions. s_c tells the tale of a kit once saved by a warrior sprinting along the rocks in a storm, as app1 falls over and skids harmlessly into a pool.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -226,7 +226,7 @@
                         ]
                 },
                 {
-                    "text": "Hey now, s_c chides. Rock scrambling is it's own art form, in c_n's territory. What if app1 needs to cross an exposed area during a storm, or if a battle between clans occured in the tide pools? app1 conceeds, and pays attention as s_c teaches, gaining sure-footed confidence that will serve {PRONOUN/app1/object} well.",
+                    "text": "s_c chides app1 for {PRONOUN/app1/poss} skepticism. Rock scrambling is its own art form, in c_n's territory. What if app1 needs to cross an exposed area during a storm, or if a battle between clans occured in the tide pools? app1 concedes and pays attention as s_c teaches, gaining sure-footed confidence that will serve {PRONOUN/app1/object} well.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -250,7 +250,7 @@
                         ]
                 },
                 {
-                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rool pools are of deceptively difference depths, and s_c's going to teach app1 how to judge which ones are deep enough to dive into, and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
+                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rool pools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -274,7 +274,7 @@
                         ]
                 },
                 {
-                    "text": "app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, s_c asks, tail tip twitching. Alright, prove it - catch s_c. app1 scrambles after {PRONOUN/s_c/object}, leaping, sprinting, twisting. But s_c is always just out of reach, a fox-length away, calling encouragements and teasing taunts as app1 is left panting, exhausted, and admiring.",
+                    "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll} have to prove it - and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
                     "exp": 30,
                     "weight": 20,
                     "art": "fst_hunt_fun1",

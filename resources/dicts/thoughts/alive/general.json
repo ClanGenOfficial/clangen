@@ -103,14 +103,17 @@
         "not_working": true,
         "thoughts": [
             "Watches r_c fuss around the herb stores, half-asleep",
-            "Isn't goign to argue with r_c about {PRONOUN/m_c/poss} medical care",
-            "Is going to argue with r_c about {PRONOUN/m_c/poss} medical care",
+            "Isn't going to argue with r_c about {PRONOUN/m_c/poss} medical care",
+            "Argues with r_c about {PRONOUN/m_c/poss} medical care",
             "Dutifully stretching out {PRONOUN/m_c/poss} limbs like r_c told {PRONOUN/m_c/object} to",
             "Asks r_c for pain relief",
             "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -126,6 +129,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -157,9 +163,49 @@
             "elder"
         ],
         "main_backstory_constraint": [
-            "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2","loner1", "loner2", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2", "abandoned3", "abandoned4",
-            "otherclan1", "otherclan2", "otherclan3", "otherclan4","disgraced1", "disgraced2", "disgraced3", "retired_leader", "medicine_cat", "ostracized_warrior", "refugee1", "refugee2", "refugee4", "refugee5",
-            "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor4","wandering_healer1", "wandering_healer2", "guided2", "guided3", "guided4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"
+            "clan_founder",
+            "clanborn",
+            "halfclan1",
+            "halfclan2",
+            "outsider_roots1",
+            "outsider_roots2",
+            "loner1",
+            "loner2",
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "abandoned1",
+            "abandoned2",
+            "abandoned3",
+            "abandoned4",
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4",
+            "disgraced1",
+            "disgraced2",
+            "disgraced3",
+            "retired_leader",
+            "medicine_cat",
+            "ostracized_warrior",
+            "refugee1",
+            "refugee2",
+            "refugee4",
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor4",
+            "wandering_healer1",
+            "wandering_healer2",
+            "guided2",
+            "guided3",
+            "guided4",
+            "orphaned1",
+            "orphaned2",
+            "orphaned3",
+            "orphaned4",
+            "orphaned5",
+            "orphaned6"
         ]
     },
     {
@@ -182,7 +228,7 @@
             "leader",
             "elder"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -610,7 +656,12 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["otherclan1", "otherclan2", "otherclan3", "otherclan4"]
+        "main_backstory_constraint": [
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4"
+        ]
     },
     {
         "id": "gen_wandering_healer",
@@ -628,7 +679,10 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["wandering_healer1", "wandering_healer2"]
+        "main_backstory_constraint": [
+            "wandering_healer1",
+            "wandering_healer2"
+        ]
     },
     {
         "id": "gen_refugee_to_alive_leader",
@@ -647,8 +701,11 @@
             "deputy",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee1", "refugee4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee1",
+            "refugee4"
+        ],
+        "random_status_constraint": [
             "leader"
         ],
         "random_living_status": [
@@ -672,13 +729,19 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"]
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ]
     },
     {
         "id": "gen_tragedy_survivor_to_alive_gen",
         "thoughts": [
             "Leaves a conversation after it reminds {PRONOUN/m_c/object} of things {PRONOUN/m_c/subject}'d rather forget",
-            "A cat says something that reminds {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} lost home",
+            "Hears something that reminds {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} lost home",
             "Hisses at r_c when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} {PRONOUN/m_c/object} about where {PRONOUN/m_c/subject} used to live",
             "Is ignoring the gossip about {PRONOUN/m_c/poss} past",
             "Is comforted by {PRONOUN/m_c/poss} Clanmates' confidence in the safety of c_n",
@@ -695,8 +758,14 @@
             "leader",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ],
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -718,8 +787,14 @@
             "deputy",
             "elder"
         ],
-        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
-        "random_status_constraint":[
+        "main_backstory_constraint": [
+            "refugee5",
+            "tragedy_survivor1",
+            "tragedy_survivor2",
+            "tragedy_survivor3",
+            "tragedy_survivor4"
+        ],
+        "random_status_constraint": [
             "leader"
         ],
         "random_living_status": [
@@ -740,7 +815,15 @@
             "Isn't ashamed of {PRONOUN/m_c/poss} past",
             "Isn't living with a paw in each world"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"]
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ]
     },
     {
         "id": "gen_former_kittypet_apprentice",
@@ -752,8 +835,21 @@
             "Wants to play with {PRONOUN/r_c/poss} old kittypet toys",
             "Avoids the Twoleg place to prove {PRONOUN/m_c/poss} loyalty"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
-        "main_status_constraint": ["apprentice"]
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_former_kittypet_apprentice_to_apprentice",
@@ -766,10 +862,27 @@
             "Is jealous of how well r_c fits in, just because of {PRONOUN/r_c/poss} Clan roots",
             "Patiently answers r_c's slightly rude questions about kittypet life"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
-        "main_status_constraint": ["apprentice"],
-        "random_status_constraint": ["apprentice"],
-        "random_backstory_constraint": ["clanborn"]
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_backstory_constraint": [
+            "clanborn"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_former_kittypet_medcat",
@@ -780,9 +893,21 @@
             "Knows a great garden in the Twoleg place for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
         "main_status_constraint": [
-            "medicine cat"]
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_former_kittypet_deputy",
@@ -793,9 +918,18 @@
             "Wishes other cats would trust in the leader's choice of making {PRONOUN/m_c/object} deputy",
             "Wouldn't mind bragging about {PRONOUN/m_c/poss} position in the Clan to some old kittypet friends"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
         "main_status_constraint": [
-            "deputy"]
+            "deputy"
+        ]
     },
     {
         "id": "gen_former_kittypet_leader",
@@ -807,23 +941,35 @@
             "Looks back on {PRONOUN/m_c/poss} life as a kittypet, amazed at how different things are now",
             "Thinks about taking in some kittypets as apprentices"
         ],
-        "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
         "main_status_constraint": [
-            "leader"]
+            "leader"
+        ]
     },
     {
         "id": "med_cat_alive_kit",
         "thoughts": [
             "Is teaching kits about what plants to stay away from",
-            "Chased kits out of {PRONOUN/m_c/poss} den",
+            "Chases kits out of {PRONOUN/m_c/poss} den",
             "Is visiting the nursery to give r_c a checkup"
         ],
         "main_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -879,7 +1025,7 @@
             "medicine cat apprentice",
             "mediator apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "any"
         ],
         "random_living_status": [
@@ -903,7 +1049,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "relationship_constraint":[
+        "relationship_constraint": [
             "app/mentor"
         ]
     },
@@ -979,7 +1125,7 @@
             "Is awkwardly deflecting kits' questions about where kits come from",
             "Was put on kit-sitting duty",
             "Is showing off to the kits",
-            "Is telling off kits for being immature",
+            "Is telling kits off for being immature",
             "Is rambling on to kits about the importance of respecting their elders",
             "Makes fun of r_c for not being an apprentice yet",
             "Is playfighting with r_c",
@@ -1080,15 +1226,15 @@
         "thoughts": [
             "Wonders if one of the stars in the sky is r_c",
             "Remembers fondly when r_c would beg to be taught a new fighting move",
-            "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembered r_c is among the stars now",
+            "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembers r_c is among the stars now",
             "Misses r_c nagging {PRONOUN/m_c/object} about apprentice duties",
             "Is tearing up after finding r_c's old moss-ball",
             "Hopes that somehow, someway, the kits in StarClan are learning the hunting crouch",
             "Wonders if the kits get moss-balls in StarClan",
             "Hopes that the kits in StarClan get time to play games",
-            "Looks up at the night sky, and wonders which stars are long-gone kits",
+            "Looks up at the night sky and wonders which stars are long-gone kits",
             "Thought {PRONOUN/m_c/subject} saw a stray kit in front of the nursery, but it vanished",
-            "Walks in the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
+            "Walks into the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1116,7 +1262,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ]
     },
     {
         "id": "gen_formerly_a_rogue_apprentice_to_mentor",
@@ -1129,7 +1282,14 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
         "relationship_constraint": [
             "app/mentor"
         ]
@@ -1149,9 +1309,19 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1187,10 +1357,10 @@
         "main_trait_constraint": [
             "vengeful"
         ],
-        "random_living_status":[
+        "random_living_status": [
             "living"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice"
         ]
     },
@@ -1274,7 +1444,7 @@
         "id": "playful_apprentice",
         "thoughts": [
             "Won't stop making funny faces when {PRONOUN/m_c/poss} mentor's back is turned",
-            "Annoyed {PRONOUN/m_c/poss} mentor on accident the other day",
+            "Annoyed {PRONOUN/m_c/poss} mentor by accident the other day",
             "Successfully lightened a dreary mood while training"
         ],
         "main_status_constraint": [
@@ -1290,7 +1460,7 @@
         "id": "responsible_apprentice",
         "thoughts": [
             "Is licking {PRONOUN/m_c/poss} chest in embarrassment after being praised by {PRONOUN/m_c/poss} mentor",
-            "Is asking {PRONOUN/m_c/poss} mentor what {PRONOUN/m_c/subject} can do to be helpful around camp today"
+            "Is asking {PRONOUN/m_c/poss} mentor what {PRONOUN/m_c/subject} can do to help around camp today"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1344,7 +1514,7 @@
         "main_trait_constraint": [
             "loving"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -1384,7 +1554,7 @@
         ]
     },
     {
-        "id": "bold_apprentices",
+        "id": "bold_apprentice",
         "thoughts": [
             "Winked cheekily at another apprentice",
             "Is criticizing {PRONOUN/m_c/poss} mentor",
@@ -1409,17 +1579,20 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
         ],
         "main_trait_constraint": [
             "calm"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "careful_apprentices",
+        "id": "careful_apprentice",
         "thoughts": [
             "Is asking if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} more training"
         ],
@@ -1433,11 +1606,11 @@
         ]
     },
     {
-        "id": "charismatic_apprentices",
+        "id": "charismatic_apprentice_to_apprentice",
         "thoughts": [
             "Winked playfully at another apprentice from across the clearing!",
             "Is this moon's heartthrob to the other apprentices",
-            "Has recently given a wonderful speech to fellow apprentices, boosting morale"
+            "Recently gave a wonderful speech to fellow apprentices that boosted morale"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1456,7 +1629,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Managed to convince another apprentice to play moss-ball instead of finishing their duties"
+            "Manages to convince another apprentice to play moss-ball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1473,7 +1646,7 @@
         ]
     },
     {
-        "id": "cold_apprentices",
+        "id": "cold_apprentice",
         "thoughts": [
             "Is hoping {PRONOUN/m_c/poss} name will end in -claw",
             "Doesn't react when {PRONOUN/m_c/poss} mentor praises {PRONOUN/m_c/object} for a good catch"
@@ -1491,7 +1664,7 @@
         "thoughts": [
             "Is convincing r_c to take a moments rest, lest {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} burnt out",
             "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
-            "Made a suggestion to {PRONOUN/m_c/poss} mentor",
+            "Makes a suggestion to {PRONOUN/m_c/poss} mentor",
             "Is doing extra apprentice tasks around camp, to help lighten the load"
         ],
         "main_status_constraint": [
@@ -1504,13 +1677,16 @@
         ],
         "main_trait_constraint": [
             "compassionate"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
         "id": "daring_apprentices",
         "thoughts": [
             "Is itching to go and train",
-            "Is being scolded by for reckless behavior while training",
+            "Is being scolded by {PRONOUN/m_c/poss} mentor for reckless behavior while training",
             "Was chastised yesterday for sticking {PRONOUN/m_c/poss} head in an unknown burrow"
         ],
         "main_status_constraint": [
@@ -1542,8 +1718,8 @@
         "id": "insecure_apprentice",
         "thoughts": [
             "Doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
-            "Finds that today is going to be a better day than the last",
-            "Is making {PRONOUN/m_c/poss} friends laugh at the expense of {PRONOUN/m_c/self}",
+            "Thinks that today is going to be a better day than the last",
+            "Is making {PRONOUN/m_c/poss} friends laugh at {PRONOUN/m_c/poss} own expense",
             "Finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
             "Is complimenting another apprentice on their hunting crouch",
             "Is unsure that this is what {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to do"
@@ -1589,7 +1765,7 @@
         "thoughts": [
             "Has been asking {PRONOUN/m_c/poss} mentor for more training",
             "Is feeling proud of {PRONOUN/m_c/self}",
-            "Made sure to wake up early to train",
+            "Makes sure to wake up early to train",
             "Is daydreaming about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Is asking the Clan leader how {PRONOUN/m_c/subject} can help out around camp",
             "Has been asking {PRONOUN/m_c/poss} mentor for more training",
@@ -1638,12 +1814,15 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
         "id": "paralyzed_gen_to_alive_kit",
         "thoughts": [
-            "Is spinning an epic tale to the kits about how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} legs",
+            "Is spinning an epic tale to the kits about how {PRONOUN/m_c/subject} became paralyzed",
             "Couldn't escape in time before kits piled on {PRONOUN/m_c/object}!",
             "Takes r_c for a badger ride around camp"
         ],
@@ -1655,6 +1834,9 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1687,6 +1869,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1705,6 +1890,9 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1724,6 +1912,9 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1746,6 +1937,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1754,8 +1948,8 @@
             "Makes a sculpture out of mud",
             "Is memorizing the scents of {PRONOUN/m_c/poss} friends and family",
             "Wonders why the ground feels that way",
-            "Won a game of hide-and-seek, to the shock of {PRONOUN/m_c/poss} friends!",
-            "Accidentally head-butts r_c a bit too hard, but they both laugh it off"
+            "Won a game of hide-and-seek, to the surprise of {PRONOUN/m_c/poss} friends",
+            "Accidentally head-butts r_c a bit too hard but they both laugh it off"
         ],
         "perm_conditions": {
             "m_c": [
@@ -1767,6 +1961,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1788,13 +1985,12 @@
             "mediator apprentice"
         ]
     },
-
     {
         "id": "one_bad_eye_gen_to_alive_gen",
         "thoughts": [
-            "Was startled by r_c suddenly appearing on {PRONOUN/m_c/poss} blind side",
-            "Makes an eye-patch for {PRONOUN/m_c/object} from grass and leaves",
-            "Stumbles into a tree on accident"
+            "Was startled by r_c suddenly appearing on {PRONOUN/m_c/poss} bad side",
+            "Makes an eye-patch for {PRONOUN/m_c/self} from grass and leaves",
+            "Stumbles into a tree by accident"
         ],
         "perm_conditions": {
             "m_c": [
@@ -1803,6 +1999,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1819,6 +2018,9 @@
         },
         "random_age_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1839,6 +2041,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1858,6 +2063,9 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1882,12 +2090,12 @@
         "thoughts": [
             "Wishes {PRONOUN/m_c/subject} could hear the sounds of camp",
             "Teaches a new Clanmate how to do tail signals",
-            "Nearly hits the den's ceiling when r_c suddenly enters {PRONOUN/m_c/poss} line of sight",
+            "Nearly hits the den ceiling when r_c suddenly enters {PRONOUN/m_c/poss} line of sight",
             "Can identify {PRONOUN/m_c/poss} Clanmates just by the feel of their pawsteps",
-            "Recently discovered that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a stomping habit",
+            "Recently discovered that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a habit of stomping",
             "Is confused when r_c indicates birdsong",
             "Wonders what r_c sounds like",
-            "Knows what r_c is saying from {PRONOUN/r_c/poss} mouth movement",
+            "Knows what r_c is saying from {PRONOUN/r_c/poss} mouth movements",
             "Teases a Clanmate for trying to call {PRONOUN/m_c/object} out loud"
         ],
         "perm_conditions": {
@@ -1897,6 +2105,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1905,7 +2116,7 @@
             "Wonders if the clouds make noise",
             "Wonders if the sun makes noise",
             "Wonders what sound is like",
-            "Tries to ask r_c for something, but {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} understand",
+            "Tries to ask r_c for something, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} understand",
             "Is frustrated that other cats don't understand {PRONOUN/m_c/poss} signals",
             "Wishes {PRONOUN/m_c/subject} could talk to other cats",
             "Feels thunder boom and watches the others flinch",
@@ -1921,6 +2132,9 @@
         ],
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1956,6 +2170,9 @@
         "random_status_constraint": [
             "medicine cat apprentice",
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1982,6 +2199,9 @@
             "adult",
             "senior adult",
             "senior"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2008,6 +2228,9 @@
         },
         "random_age_constraint": [
             "any"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2031,7 +2254,7 @@
     {
         "id": "wasting_disease_leaf-fall_gen_to_alive_gen",
         "thoughts": [
-            "Dreads the potential illness that may arrive in leaf-bare"
+            "Dreads the potential illness that may arrive in Leaf-bare"
         ],
         "season": [
             "Leaf-fall"
@@ -2049,7 +2272,7 @@
         "id": "wasting_disease_adolescent_to_alive_gen",
         "thoughts": [
             "Is frustrated by everyone's concern for {PRONOUN/m_c/poss} health",
-            "Daydreams about someday being leader"
+            "Daydreams about being leader someday"
         ],
         "perm_conditions": {
             "m_c": [
@@ -2063,13 +2286,12 @@
             "any"
         ]
     },
-
     {
         "id": "missing_leg_gen_to_alive_gen",
         "thoughts": [
             "Tries to make a new leg out of a stick {PRONOUN/m_c/subject} found",
             "Shows {PRONOUN/m_c/subject} can still run and jump around like any other cat!",
-            "Groaned when someone said how sad {PRONOUN/m_c/subject} must be to have three legs"
+            "Groans when someone says how sad {PRONOUN/m_c/subject} must be to have three legs"
         ],
         "perm_conditions": {
             "m_c": [
@@ -2087,9 +2309,11 @@
             "Is exaggerating the tale of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} leg to the kits"
         ],
         "perm_conditions": {
-            "m_c": ["lost a leg"]
+            "m_c": [
+                "lost a leg"
+            ]
         },
-        "main_age_constraint":[
+        "main_age_constraint": [
             "adolescent",
             "young adult",
             "adult",

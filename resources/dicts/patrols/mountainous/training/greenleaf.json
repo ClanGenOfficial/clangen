@@ -13,12 +13,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
-        "decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
+        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
+        "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -39,7 +39,7 @@
                 ]
             },
             {
-                "text": "p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -60,7 +60,7 @@
                 ]
             },
             {
-                "text": "As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
+                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -85,7 +85,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
+                "text": "app1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -106,7 +106,7 @@
                 ]
             },
             {
-                "text": "p_l can't get app1 to take the training session seriously, and gives up before the apprentice can attract the eagles' attention.",
+                "text": "p_l can't get app1 to take the training session seriously and gives up before the apprentice can attract the eagles' attention.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -142,12 +142,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
-        "decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
+        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
+        "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -168,7 +168,7 @@
                 ]
             },
             {
-                "text": "p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -189,7 +189,7 @@
                 ]
             },
             {
-                "text": "As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of greenleaf, and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be.",
+                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -214,7 +214,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
+                "text": "app1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -235,7 +235,7 @@
                 ]
             },
             {
-                "text": "p_l can't get app1 to take the training session seriously, and gives up before the apprentice can attract the eagles' attention.",
+                "text": "p_l can't get app1 to take the training session seriously and gives up before the apprentice can attract the eagles' attention.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -272,12 +272,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
-        "decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
+        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
+        "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain, astonishing app2.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -298,7 +298,7 @@
                 ]
             },
             {
-                "text": "p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -319,7 +319,7 @@
                 ]
             },
             {
-                "text": "As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
+                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -344,7 +344,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",
+                "text": "app1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort {PRONOUN/app1/object}, but the patrol is called off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -365,7 +365,7 @@
                 ]
             },
             {
-                "text": "p_l can't get app1 or app2 to take the training session seriously, and gives up before the apprentices can attract the eagles' attention.",
+                "text": "p_l can't get app1 or app2 to take the training session seriously and gives up before the apprentices can attract the eagles' attention.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -402,12 +402,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
-        "decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
+        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
+        "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain, astonishing app2.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -428,7 +428,7 @@
                 ]
             },
             {
-                "text": "p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -449,7 +449,7 @@
                 ]
             },
             {
-                "text": "As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of greenleaf, and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be.",
+                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -474,7 +474,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",
+                "text": "app1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort {PRONOUN/app1/object}, but the patrol is called off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -495,7 +495,7 @@
                 ]
             },
             {
-                "text": "p_l can't get app1 or app2 to take the training session seriously, and gives up before the apprentices can attract the eagles' attention.",
+                "text": "p_l can't get app1 or app2 to take the training session seriously and gives up before the apprentices can attract the eagles' attention.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -532,11 +532,11 @@
         },
         "weight": 20,
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
-        "decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
+        "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 sticks their nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under their chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
+                "text": "app1 sticks {PRONOUN/app1/poss} nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under {PRONOUN/app1/poss} chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject/CAP} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -557,7 +557,7 @@
                 ]
             },
             {
-                "text": "They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
+                "text": "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -578,7 +578,7 @@
                 ]
             },
             {
-                "text": "s_c pulls app1's attention towards the flashing hummingbirds darting about. Once upon a time a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
+                "text": "s_c pulls app1's attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -603,7 +603,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
+                "text": "app1 won't stop {PRONOUN/app1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -640,11 +640,11 @@
         },
         "weight": 20,
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
-        "decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
+        "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 sticks their nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under their chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
+                "text": "app1 sticks {PRONOUN/app1/poss} nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under {PRONOUN/app1/poss} chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject/CAP} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -665,7 +665,7 @@
                 ]
             },
             {
-                "text": "They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
+                "text": "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -686,7 +686,7 @@
                 ]
             },
             {
-                "text": "app1 leaps into the meadows, running around maniacally as hummingbirds flit away before them. s_c watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using your claws and pluck a single shining feather.",
+                "text": "app1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/app1/object}. s_c watches {PRONOUN/app1/object} indulgently, and when {PRONOUN/app1/subject} {VERB/app1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -711,7 +711,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
+                "text": "app1 won't stop {PRONOUN/app1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -749,11 +749,11 @@
         },
         "weight": 20,
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
-        "decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
+        "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
+                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -774,7 +774,7 @@
                 ]
             },
             {
-                "text": "They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
+                "text": "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -795,7 +795,7 @@
                 ]
             },
             {
-                "text": "s_c pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
+                "text": "s_c pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -820,7 +820,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
+                "text": "app1 won't stop {PRONOUN/app1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -858,11 +858,11 @@
         },
         "weight": 20,
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
-        "decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
+        "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
+                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -883,7 +883,7 @@
                 ]
             },
             {
-                "text": "They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
+                "text": "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -904,7 +904,7 @@
                 ]
             },
             {
-                "text": "The apprentices leap into the meadows, running around maniacally as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using your claws and pluck a single shining feather.",
+                "text": "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -929,7 +929,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
+                "text": "app1 won't stop {PRONOUN/app1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1019,12 +1019,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1045,7 +1045,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1073,7 +1073,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip. Sudden pain sparks down {PRONOUN/s_c/poss} flank when the other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1112,12 +1112,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled feathered juveniles squabble, beating their wings frantically, clearly gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it, and {PRONOUN/app1/subject} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the little eagle makes it to the next tree over.",
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1138,7 +1138,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1166,7 +1166,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip. Sudden pain sparks down {PRONOUN/s_c/poss} flank when the other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1191,7 +1191,7 @@
                 }
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping on nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles}, spinning end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles} end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1226,11 +1226,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "As the cats practice hunting in the low-light, golden hued tones of the setting sun, p_l is reminded of the tale of How The Sunset Came To Be.",
+        "intro_text": "As the cats practice hunting in the dim light of the golden setting sun, p_l is reminded of the tale of How The Sunset Came To Be.",
         "decline_text": "The light is too weird to focus on both training <i>and</i> a story. It'll have to wait for another day.",
         "success_outcomes": [
                 {
-                    "text": "Long ago, the prettiest queen of the mountains ruled a harsh Clan, attacking those deemed unworthy and ugly. Her grandkit was beautiful not just in pelt but in heart and was killed by her treacherous kin for her kindness. She could not stop her grandmother in life, but in death she marked the skies with her pelt, bringing forth the first sunset.",
+                    "text": "Long ago, the prettiest queen of the mountains ruled a harsh Clan, attacking those deemed unworthy and ugly. Her granddaughter was beautiful not just in pelt but in heart and was killed by her treacherous kin for her kindness. She could not stop her grandmother in life, but in death she marked the skies with her pelt, bringing forth the first sunset.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [
@@ -1251,7 +1251,7 @@
                         ]
                 },
                 {
-                    "text": "s_c listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c can't help but send a silent thanks up to StarClan, evening gives c_n some of the best conditions to gather prey in the mountains.",
+                    "text": "s_c listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c can't help but send a silent thanks up to StarClan, since the evening grants c_n some of the best conditions to gather prey in the mountains.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -1420,7 +1420,7 @@
                         ]
                 },
                 {
-                    "text": "s_c wonders, if that was how they got sunset... then how did they get sunrise... perhaps {PRONOUN/s_c/subject}'ll ask p_l later back at camp.",
+                    "text": "s_c wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN/s_c/subject}'ll ask p_l later back at camp.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -1456,7 +1456,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "As p_l starts the story, r_c, practicing {PRONOUN/r_c/poss} moves, pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine den to disrupt the flow of a story.",
+                    "text": "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine den to disrupt the flow of a story.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [
@@ -1469,7 +1469,7 @@
                     ]
                 },
                 {
-                    "text": "Right as p_l gets to the good part, s_c interrupts by yawning and walking off. p_l feels disheartened, and doesn't continue.",
+                    "text": "Right as p_l gets to the good part, s_c interrupts by yawning and walking off. p_l feels disheartened and doesn't continue.",
                     "exp": 0,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -1496,7 +1496,7 @@
                         ]
                 },
                 {
-                    "text": "s_c says that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} not interested in nursery tales, and would rather sink {PRONOUN/s_c/poss} teeth into some good prey. p_l raises an eyebrow, letting {PRONOUN/s_c/object} go without comment.",
+                    "text": "s_c says that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} not interested in nursery tales and would rather sink {PRONOUN/s_c/poss} teeth into some good prey. p_l twitches {PRONOUN/p_l/poss} whiskers skeptically but lets {PRONOUN/s_c/object} go without comment.",
                     "exp": 0,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -1516,7 +1516,7 @@
                         ]
                 },
                 {
-                    "text": "s_c cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c/object}, and smoothly turns the conversation to happier things.",
+                    "text": "s_c cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c/object} and smoothly turns the conversation to happier things.",
                     "exp": 0,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -1538,7 +1538,7 @@
                         ]
                 },
                 {
-                    "text": "s_c finds this particular tale depressing, and walks away to train by {PRONOUN/s_c/self}.",
+                    "text": "s_c finds this particular tale depressing and pads away to train by {PRONOUN/s_c/self}.",
                     "exp": 0,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -1557,7 +1557,7 @@
                         ]
                 },
                 {
-                    "text": "Right as p_l gets to the good part, s_c interrupts, excitedly saying the ending {PRONOUN/s_c/self}, leaving p_l feeling quite put off.",
+                    "text": "Right as p_l gets to the good part, s_c interrupts, excitedly describing the ending {PRONOUN/s_c/self}. p_l feels quite put out.",
                     "exp": 0,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
