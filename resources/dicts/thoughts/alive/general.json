@@ -1496,7 +1496,7 @@
             "alive"
         ],
         "relationship_constraint": [
-			"sibling"
+			"siblings"
 		]
     },
     {
@@ -1523,7 +1523,7 @@
             "alive"
         ],
         "relationship_constraint": [
-			"sibling"
+			"siblings"
 		]
     },
     {
@@ -1535,7 +1535,7 @@
             "Is so proud of r_c"
         ],
         "relationship_constraint": [
-            "child/parent"
+            "parent/child"
         ]
     },
     {
@@ -1551,7 +1551,7 @@
             "any"
         ],
         "relationship_constraint":[
-            "sibling"
+            "siblings"
         ],
         "random_living_status": [
             "starclan"
