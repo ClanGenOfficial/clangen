@@ -1401,7 +1401,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol cautiously heads in the direction of the strange, motionless eyes. As they get closer to what seems to be some sort of pumpkin, a group of Twoleg kits springs out of nowhere and chases the frightened cats off! The patrol runs until the Twolegs stop following. Panting and defeated, they return to camp without much information about the strange face.",
+                "text": "The patrol cautiously heads in the direction of the strange, motionless eyes. As they get closer to what seems to be some sort of pumpkin, a group of Twoleg kits spring out of nowhere and chase the frightened cats off! The patrol runs until the Twolegs stop following. Panting and defeated, they return to camp without much information about the strange face.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1418,7 +1418,7 @@
                 ]
             },
             {
-                "text": "As r_c slowly creeps towards the disturbing face, s_c recklessly darts forward to get a closer look! {PRONOUN/s_c/subject/CAP} {VERB/s_c/crash/crashes} into some strange pumpkin, knocking it over and obscuring its eerie face. The patrol heads home without much left to investigate thanks to s_c's antics.",
+                "text": "As r_c slowly creeps towards the disturbing face, s_c recklessly darts forward to get a closer look! {PRONOUN/s_c/subject/CAP} {VERB/s_c/crash/crashes} into some strange pumpkin, knocking it over and obscuring its eerie face. The patrol heads home without much left to investigate, thanks to s_c's antics.",
                 "exp": 5,
                 "weight": 20,
                 "stat_trait": [

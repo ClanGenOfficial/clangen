@@ -61,6 +61,7 @@ def test():
         "o_c_n": _r,
         "lead_name": _r,
         "dep_name": _r,
+        "med_name": _r,
     }
 
     for x in range(0, 11):
@@ -124,14 +125,15 @@ def test_replacement_failure(path: str, repl_dict: dict) -> bool:
                 )
                 success = False
 
-            # This tests for any pronoun or verb that is incorrectly capitalised
+            # This tests for any pronoun or verb that is incorrectly capitalized
             # excludes ellipses (i.e. ... and . . .) but includes regular colons
-            # includes ? and ! always (e.g. "...!" is included)
+            # includes ? and ! always (e.g. "...!" is included).
+            # DOES NOT check the start of the string for capitalization
             elif (
                 re.search(r"(?<!\.\.)(?<!\.\s\.\s)\.\s+[a-z]", processed) is not None
                 or re.search(r"[?!]\s+[a-z]", processed) is not None
             ):
-                print(f'::error file={path}: Capitalisation errors in "{_str}"')
+                print(f'::error file={path}: Capitalization errors in "{_str}"')
                 success = False
 
     return success

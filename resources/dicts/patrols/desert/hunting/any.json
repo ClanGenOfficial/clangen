@@ -2348,7 +2348,7 @@
                 "weight": 20
             },
             {
-                "text": "Somehow hunting brings r_c to almost a meditative state, and not only are {PRONOUN/r_c/subject} fairly confident of their next steps having been given this vision, but {PRONOUN/r_c/subject} also bring back a good haul to the prey pile.",
+                "text": "Somehow hunting brings r_c to an almost meditative state, and not only are {PRONOUN/r_c/subject} fairly confident of their next steps having been given this vision, but {PRONOUN/r_c/subject} also bring back a good haul to the prey pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
