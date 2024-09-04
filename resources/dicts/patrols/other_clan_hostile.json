@@ -663,7 +663,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -809,7 +809,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -967,7 +967,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1100,7 +1100,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1230,7 +1230,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1398,7 +1398,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1544,7 +1544,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1702,7 +1702,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1836,7 +1836,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -1965,7 +1965,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -2133,7 +2133,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2279,7 +2279,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2437,7 +2437,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2571,7 +2571,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -2701,7 +2701,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -2869,7 +2869,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/object} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/object/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/object} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/object/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3015,7 +3015,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3173,7 +3173,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3307,7 +3307,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their deputy. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -3437,7 +3437,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object} and being led by their Clan leader. One of the patrol yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
