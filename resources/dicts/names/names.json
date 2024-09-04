@@ -146,12 +146,12 @@
     "White", "White", "Pale", "Snow", "Snowy", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Icicle", 
     "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Cotton", "Hawthorn", "Laurel", "Wisp",
     "Fringe", "Ibis", "Air", "Bright", "Rime", "Ghost", "Privet", "Egg", 
-    "Opal", "Dust", "Ghost", "Chicken", "Snowy", "Hail", "Gale", "Daisy", "Birch", "Sun", "Swan", "Skull"
+    "Opal", "Dust", "Ghost", "Chicken", "Snowy", "Hail", "Gale", "Daisy", "Birch", "Sun", "Swan", "Skull", "Skunk"
     ],
     "PALEGREY": [
     "Gray", "Gray", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze", "Daisy", "Blizzard",
     "Frozen", "Stone", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Tufted", "Pipit", "Azalea", "Opal", "Chicken", "Snowy",
-    "Fringe", "Mistle", "Icicle", "Rime", "Rubble", "Dust", "Stony", "Dust", "Ghost", "Chamomile", "Hail", "Egg", "Pale", "Minnow", "Gale", "Birch", "Ash", "Swan"
+    "Fringe", "Mistle", "Icicle", "Rime", "Rubble", "Dust", "Stony", "Dust", "Ghost", "Chamomile", "Hail", "Egg", "Pale", "Minnow", "Gale", "Birch", "Ash", "Swan", "Skunk"
     ],
     "SILVER": [
     "Gray", "Silver", "Silver", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Stony", "Smoke", "Smoky",
@@ -164,11 +164,11 @@
     "Lyre", "Rat", "Gull", "Pigeon", "Rime", "Rubble", "Dust", "Stony", "Shade", "Minnow"
     ],
     "DARKGREY": [
-    "Gray", "Gray", "Shade", "Raven", "Crow", "Stone", "Stone", "Dark", "Dark", "Night", "Cinder", "Ash", "Ashen", "Raccoon", "Flint", "Dusk",
+    "Gray", "Gray", "Shade", "Raven", "Crow", "Stone", "Stone", "Dark", "Dark", "Night", "Cinder", "Ash", "Ashen", "Raccoon", "Flint", "Dusk", "Skunk",
     "Smoke", "Smoky", "Shadow", "Bleak", "Rain", "Storm", "Stormy", "Pebble", "Mist", "Misty", "Warbler", "Wisp", "Onyx", "Stony", "Muck", "Soot"
     ],
     "GHOST": [
-    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie", "Onyx", "Raccoon", "Dusk",
+    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie", "Onyx", "Raccoon", "Dusk", "Skunk",
     "Night", "Shadow", "Scorch", "Bleak", "Storm", "Stormy", "Violet", "Bat", "Faded", "Silver", "Ghost", "Widow", "Muck", "Soot"
     ],
     "PALEGINGER": [
@@ -230,7 +230,7 @@
     ],
     "BLACK": [
     "Black", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Dark", "Grackle", "Night", "Shadow", "Scorch", "Midnight", "Pepper", 
-    "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky", "Char", "Charred", "Mulberry", "Night", "Evening", "Dusk", "Murk", "Ghost", "Onyx", "Widow", "Carrion", 
+    "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky", "Char", "Charred", "Mulberry", "Night", "Evening", "Dusk", "Murk", "Ghost", "Onyx", "Widow", "Carrion", "Skunk",
     "Soot", "Termite", "Raccoon", "Magpie", "Muck"
     ]
   },
