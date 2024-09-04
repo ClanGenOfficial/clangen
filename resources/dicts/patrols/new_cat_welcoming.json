@@ -670,7 +670,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. c_n would welcome {PRONOUN/n_c:0/object}, p_l is sure of it, but n_c:0 still isn't sure.",
+                "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject/CAP}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. c_n would welcome {PRONOUN/n_c:0/object}, p_l is sure of it, but n_c:0 still isn't sure.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -2135,7 +2135,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet turns and bristles, hissing at the patrol. s_c calls out a greeting to {PRONOUN/n_c:0/object} and engages {PRONOUN/n_c:0/object} in conversation, which seems to calm {PRONOUN/n_c:0/object} down. {PRONOUN/n_c:0/subject} even {VERB/n_c:0/agree/agrees} when s_c asks if {PRONOUN/n_c:0/subject}'d like to join the Clan!",
+                "text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet turns and bristles, hissing at the patrol. s_c calls out a greeting to {PRONOUN/n_c:0/object} and engages {PRONOUN/n_c:0/object} in conversation, which seems to calm {PRONOUN/n_c:0/object} down. {PRONOUN/n_c:0/subject/CAP} even {VERB/n_c:0/agree/agrees} when s_c asks if {PRONOUN/n_c:0/subject}'d like to join the Clan!",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],

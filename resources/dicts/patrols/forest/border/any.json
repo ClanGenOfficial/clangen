@@ -954,7 +954,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },

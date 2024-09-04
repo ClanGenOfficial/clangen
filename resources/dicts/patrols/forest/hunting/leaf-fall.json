@@ -469,7 +469,7 @@
         },
         "weight": 20,
         "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, they swear they could see a rat's tail.",
-        "decline_text": "It <i>could</i> be a single rat.. or it could be a swarm of them lying in wait. Either way, it's too risky for p_l to pursue.",
+        "decline_text": "It <i>could</i> be a single rat... or it could be a swarm of them lying in wait. Either way, it's too risky for p_l to pursue.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -2918,7 +2918,7 @@
                 ]
             },
             {
-                "text": "Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+                "text": "Of course s_c is unconcerned, s_c knows {PRONOUN/s_c/poss} own skills well, and mice? Not a challenge. After {PRONOUN/s_c/poss} fifth catch, the rest of the patrol are forced to admit {PRONOUN/s_c/subject} might have a point about not needing to worry.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -4520,7 +4520,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two f_tp_p, and watches p_l take down a f_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two f_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two f_tp_p, and watches p_l take down a f_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two f_mp_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],

@@ -1252,7 +1252,7 @@
                 "herbs": ["dandelion"]
             },
             {
-                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants.",
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to uncover a couple good dandelion plants.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["dandelion"]

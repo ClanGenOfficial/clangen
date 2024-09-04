@@ -449,7 +449,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c/subject} is sprayed!",
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c/subject/CAP} is sprayed!",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bold", "ambitious", "childish", "impulsive"]
@@ -2852,7 +2852,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/app1/subject} saw escapes {PRONOUN/app1/poss} paws. {PRONOUN/app1/subject} {VERB/app1/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/app1/object}. Such is life. app2 snickers at {PRONOUN/app1/object} too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
+                "text": "app1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/app1/subject} saw escapes {PRONOUN/app1/poss} paws. {PRONOUN/app1/subject/CAP} {VERB/app1/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/app1/object}. Such is life. app2 snickers at {PRONOUN/app1/object} too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3132,7 +3132,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c doesn't want to talk about it when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything..",
+                "text": "r_c doesn't want to talk about it when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything...",
                 "exp": 0,
                 "weight": 20,
                 "injury": [

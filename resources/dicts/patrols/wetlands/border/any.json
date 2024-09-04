@@ -826,7 +826,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't make it back to camp. {PRONOUN/s_c/poss} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -936,7 +936,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't make it back to camp. {PRONOUN/s_c/poss} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1782,7 +1782,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },

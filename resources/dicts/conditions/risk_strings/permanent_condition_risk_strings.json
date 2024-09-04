@@ -154,7 +154,7 @@
             "m_c growls as another wave of pain hits {PRONOUN/m_c/object}. It's on-and-off and herbs have been helping, but StarClan help {PRONOUN/m_c/object}, having so many headaches gets annoying."
         ],
         "severe headache": [
-            "r_c sees m_c headed towards the medicine cat den, wincing with every step. {PRONOUN/r_c/subject} {VERB/r_c/duck/ducks} inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
+            "r_c sees m_c headed towards the medicine cat den, wincing with every step. {PRONOUN/r_c/subject/CAP} {VERB/r_c/duck/ducks} inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
             "m_c wakes up with pounding head pain and horrible light sensitivity. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly as {PRONOUN/m_c/subject} can in {PRONOUN/m_c/poss} nest, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject} can work today."
         ]
     }

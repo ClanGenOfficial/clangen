@@ -832,7 +832,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The sunlight feels so warm on p_l's pelt, and {PRONOUN/p_l/subject} {VERB/p_l/stretch/stretches}, lazily lengthening into one long arc of cat. r_c's whiskers twitch with amusement as {PRONOUN/r_c/subject} studiously {VERB/r_c/avert/averts} {PRONOUN/r_c/poss} eyes.",
+                "text": "The sunlight feels so warm on p_l's pelt... {PRONOUN/p_l/subject/CAP} {VERB/p_l/stretch/stretches}, lazily lengthening into one long arc of cat. r_c's whiskers twitch with amusement as {PRONOUN/r_c/subject} studiously {VERB/r_c/avert/averts} {PRONOUN/r_c/poss} eyes.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -929,7 +929,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 nearly dozes off, but {PRONOUN/app1/subject} can't quite get to sleep, app2 shifting around. {VERB/app2/Are/Is} {PRONOUN/app2/subject} uncomfortable? app1 opens one of {PRONOUN/app1/poss} eyes to see {PRONOUN/app2/object} staring at {PRONOUN/app1/object}.",
+                "text": "app1 nearly dozes off, but {PRONOUN/app1/subject} can't quite get to sleep with app2 shifting around. {VERB/app2/Are/Is} {PRONOUN/app2/subject} uncomfortable? app1 opens one of {PRONOUN/app1/poss} eyes to see {PRONOUN/app2/object} staring at {PRONOUN/app1/object}.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1193,7 +1193,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Settling down, p_l wants to know how app1 is finding {PRONOUN/app1/poss} training - what do {PRONOUN/app1/subject} {VERB/app1/think/thinks} of the other young cats in the Clan? Any special friends, perhaps? app1 practically melts into the ground with embarrassment.",
+                "text": "Settling down, p_l wants to know how app1 is finding {PRONOUN/app1/poss} training - what {VERB/app1/do/does} {PRONOUN/app1/subject} think of the other young cats in the Clan? Any special friends, perhaps? app1 practically melts into the ground with embarrassment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1214,7 +1214,7 @@
                 ]
             },
             {
-                "text": "Settling down in the sunlight, p_l launches into an assessment of app1's progress, praising things, critiquing things, pointing out where {PRONOUN/app1/subject} {VERB/app1/need/needs} to improve. Strangely, p_l's kit doesn't seem thrilled with the topic.",
+                "text": "Settling down in the sunlight, p_l launches into an assessment of app1's progress: praising, critiquing, pointing out where {PRONOUN/app1/subject} {VERB/app1/need/needs} to improve. Strangely, p_l's kit doesn't seem thrilled with the topic.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["cold", "ambitious"],
@@ -1536,7 +1536,7 @@
                 ]
             },
             {
-                "text": "The cats take advantage of this rare opportunity to work on some highly advanced battle moves: ones that can only be practiced with claws out for traction and grip; ones that require a second warrior to catch the first in exactly the right way; ones that rely on complete precision. A talented fighter normally shines in such sessions, but this time, s_c is the crucial voice in the group, preventing mistakes, calling advice, and plotting out variations to try.",
+                "text": "The cats take advantage of this rare opportunity to work on some highly advanced battle moves: ones that can only be practiced with claws out for traction and grip; ones that require a second warrior to catch the first in exactly the right way; ones that rely on complete precision. A talented fighter normally shines in such sessions, but this time, s_c is the crucial voice in the group - preventing mistakes, calling advice, and plotting out variations to try.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["any"],
@@ -1934,7 +1934,7 @@
                 ]
             },
             {
-                "text": "The chance to stretch {PRONOUN/s_c/poss} legs and use {PRONOUN/s_c/poss} skills is rarer than s_c would like. s_c really values {PRONOUN/s_c/poss} abililty to teach, to participate in that moment when r_c finally <i>gets</i> it and {PRONOUN/r_c/poss} eyes light up in understanding. Perhaps s_c should make time for this more often.",
+                "text": "The chance to stretch {PRONOUN/s_c/poss} legs and use {PRONOUN/s_c/poss} skills is rarer than s_c would like. s_c really values {PRONOUN/s_c/poss} ability to teach, to participate in that moment when r_c finally <i>gets</i> it and {PRONOUN/r_c/poss} eyes light up in understanding. Perhaps s_c should make time for this more often.",
                 "exp": 60,
                 "weight": 20,
                 "can_have_stat":["p_l"],
@@ -2234,7 +2234,7 @@
                 ]
             },
             {
-                "text": "Try as s_c might, {PRONOUN/s_c/subject} just {VERB/s_c/don't/doesn't} manage to connect with {PRONOUN/s_c/poss} training group. Not that there's anything wrong with the moves they're all practising, but no one wants to talk about ladybugs, or consider the shape of clouds together. It's just... It's a little lonely, that's all.",
+                "text": "Try as s_c might, {PRONOUN/s_c/subject} just {VERB/s_c/don't/doesn't} manage to connect with {PRONOUN/s_c/poss} training group. Not that there's anything wrong with the moves they're all practicing, but no one wants to talk about ladybugs, or consider the shape of clouds together. It's just... It's a little lonely, that's all.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat":["p_l"],
@@ -4458,7 +4458,7 @@
                 "weight": 20
             },
             {
-                "text": "app1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/app1/poss} lack of experience, and while p_l smoothes everything over between everyone, the exercise is concluded early.",
+                "text": "app1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/app1/poss} lack of experience, and while p_l smooths everything over between everyone, the exercise is concluded early.",
                 "exp": 0,
                 "weight": 20
             },
@@ -4890,7 +4890,7 @@
                 ]
             },
             {
-                "text": "There's no deception to s_c, no guile. There are upsides and downsides to that honesty, but right now there's an embarassing side to that honesty; s_c hopes r_c either doesn't notice or isn't offended by the flustered heat radiating off {PRONOUN/s_c/poss} fur.",
+                "text": "There's no deception to s_c, no guile. There are upsides and downsides to that honesty, but right now there's an embarrassing side to that honesty; s_c hopes r_c either doesn't notice or isn't offended by the flustered heat radiating off {PRONOUN/s_c/poss} fur.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [
@@ -5125,7 +5125,7 @@
                 ]
             },
             {
-                "text": "s_c is the sort of cat that is driven by the need to be better, to keep moving forward, and they train hard together. After, s_c helps groom all the dust off r_c's coat, thanking {PRONOUN/s_c/poss} mate for indulging {PRONOUN/s_c/object} with a prodcuctive afternoon of tough exercises.",
+                "text": "s_c is the sort of cat that is driven by the need to be better, to keep moving forward, and they train hard together. After, s_c helps groom all the dust off r_c's coat, thanking {PRONOUN/s_c/poss} mate for indulging {PRONOUN/s_c/object} with a productive afternoon of tough exercises.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [
@@ -5279,7 +5279,7 @@
                 ]
             },
             {
-                "text": "s_c launches them all into a rolicking, leaping game, and the afternoon lights up with the cats' laughter.",
+                "text": "s_c launches them all into a rollicking, leaping game, and the afternoon lights up with the cats' laughter.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [
@@ -5394,7 +5394,7 @@
         "relationship_constraint": ["mates_with_pl"],
         "success_outcomes": [
             {
-                "text": "It's so lovely to get the chance to go out together in the suneshine, for p_l to feel the wind through {PRONOUN/p_l/poss} fur and hear the cats {PRONOUN/p_l/subject} {VERB/p_l/love/loves} chatting behind {PRONOUN/p_l/object}.",
+                "text": "It's so lovely to get the chance to go out together in the sunshine, for p_l to feel the wind through {PRONOUN/p_l/poss} fur and hear the cats {PRONOUN/p_l/subject} {VERB/p_l/love/loves} chatting behind {PRONOUN/p_l/object}.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -5466,7 +5466,7 @@
                 ]
             },
             {
-                "text": "s_c launches them all into a rolicking, leaping game, and the afternoon lights up with the cats' laughter.",
+                "text": "s_c launches them all into a rollicking, leaping game, and the afternoon lights up with the cats' laughter.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [
@@ -8049,7 +8049,7 @@
         "relationship_constraint": ["dislike_30", "romantic_30"],
         "success_outcomes": [
             {
-                "text": "Yes, it definitely is dumb, p_l decides, eye twitching. {PRONOUN/p_l/subject}'ll prove {PRONOUN/p_l/poss} point in combat instead! p_l tackles r_c, both cats going flying in a ball of fur and insults and unnecessary physical contact.",
+                "text": "Yes, it definitely is dumb, p_l decides, eye twitching. {PRONOUN/p_l/subject/CAP}'ll prove {PRONOUN/p_l/poss} point in combat instead! p_l tackles r_c, both cats going flying in a ball of fur and insults and unnecessary physical contact.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -9188,7 +9188,7 @@
                 ]
             },
             {
-                "text": "Once upon a time, there was a kittypet so stealthy - yes, a kittypet - that time itself didn't know they existed. When, after many long year,s the cat should have been taken in their sleep, time forgot. Instead, the cat just aged and aged and aged, their fur becoming thin and falling out until none was left, and the kittypet was left bald and wrinkly. It's said they're still out there, living with their Twolegs, and every so often you'll find a warrior who swears they've met them.",
+                "text": "Once upon a time, there was a kittypet so stealthy - yes, a kittypet - that time itself didn't know they existed. After many long years, the cat should have been taken in their sleep, but time forgot. Instead, the cat just aged and aged and aged, their fur becoming thin and falling out until none was left, and the kittypet was left bald and wrinkly. It's said they're still out there, living with their Twolegs, and every so often you'll find a warrior who swears they've met them.",
                 "exp": 30,
                 "weight": 10,
                 "relationships": [
@@ -9357,7 +9357,7 @@
                                 ]
                             },
                             {
-                                "text": "s_c would love to be as strong as silverpelt, to be able to move the souls of dead cats so easily...",
+                                "text": "s_c would love to be as strong as Silverpelt, to be able to move the souls of dead cats so easily...",
                                 "exp": 30,
                                 "weight": 20,
                                 "can_have_stat": ["not_pl_rc"],
@@ -9505,7 +9505,7 @@
         "decline_text": "No one is interested bringing up that frustrating fable today.",
             "success_outcomes": [
                 {
-                "text": "Smug, slimy, and unpleasant, the cats of the Whisker Grove stole from c_n and every other Clan - a bunch of pathetic pilfering poncy wastes of air. Everyone should despise them for being cowardly ungrateful thieves, and were one ever found in c_n's lands, they would be driven out.",
+                    "text": "Smug, slimy, and unpleasant, the cats of the Whisker Grove stole from c_n and every other Clan - a bunch of pathetic pilfering prissy wastes of air. Everyone should despise them for being cowardly ungrateful thieves, and were one ever found in c_n's lands, they would be driven out.",
                 "exp": 30,
                 "weight": 20,
                 "art": "scaryghost_INTRO",
@@ -9527,7 +9527,7 @@
                     ]
                 },
                 {
-                    "text": "The cats of the Whisker Grove are a bunch of dung-gargling scat scooters, s_c spits. They stole from c_n, the mouse-hearts, and it is rumored they're such such mange-pelted thieves that Silverpelt herself threw them out from StarClan.",
+                    "text": "The cats of the Whisker Grove are a bunch of dung-gargling scat scooters, s_c spits. They stole from c_n, the mouse-hearts, and it is rumored they're such mange-pelted thieves that Silverpelt herself threw them out from StarClan.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",
@@ -9558,7 +9558,7 @@
                         ]
                 },
                 {
-                    "text": "The cats of the Whisker Grove are repulsive, s_c says, and the rest of the patrol is surprised to here the quiet fury in {PRONOUN/s_c/poss} tone. s_c will never forgive those who steal from the kind and generous, who take other cats hard work and try to profit from it.",
+                    "text": "The cats of the Whisker Grove are repulsive, s_c says, and the rest of the patrol is surprised to hear the quiet fury in {PRONOUN/s_c/poss} tone. s_c will never forgive those who steal from the kind and generous, who take other cats hard work and try to profit from it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",
@@ -10036,7 +10036,7 @@
         "pl_skill_constraint": ["STAR,1", "GHOST,1", "DARK,1"],
         "success_outcomes": [
             {
-                "text": "The spirit beside {PRONOUN/p_l/object} calls to app1, a murmur that drifts in and out of p_l's hearing, making {PRONOUN/p_l/poss} ears twitch. It isn't bad advice though. After another fall, p_l pads forward to pass on the message. It can be difficult to interpret the words of those who've gone beyond, but seeing as the spirit has been sitting there yowling the same advice over and over again, p_l deciphers the otherwordly message.",
+                "text": "The spirit beside {PRONOUN/p_l/object} calls to app1, a murmur that drifts in and out of p_l's hearing, making {PRONOUN/p_l/poss} ears twitch. It isn't bad advice though. After another fall, p_l pads forward to pass on the message. It can be difficult to interpret the words of those who've gone beyond but seeing as the spirit has been sitting there yowling the same advice over and over again, p_l deciphers the otherworldly message.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -10115,7 +10115,7 @@
                 ]
             },
             {
-                "text": "As the leader of the patrol, p_l is a cat experienced at battlefield medicine duties. {PRONOUN/p_l/subject/CAP} have app1 cautiously stretch out the injured paw, first one way, then another, drawing answers out of app1 the entire time until p_l is satisfied that this was an almost torn claw. <i>Almost</i> is the key word there though; app1 will be perfectly fine.",
+                "text": "As the leader of the patrol, p_l is a cat experienced at battlefield medicine duties. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} app1 cautiously stretch out the injured paw, first one way, then another, drawing answers out of app1 the entire time until p_l is satisfied that this was an almost torn claw. <i>Almost</i> is the key word there though; app1 will be perfectly fine.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -10381,7 +10381,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "While the cats are out training, the subject of Twolegs comes up. r_c tells everyone to just not get caught by them. o_c1 suggests clawing their faces off - or their ankles if any cat has trouble reaching up that high. p_l laughs, and the patrol turns to {PRONOUN/p_l/object}.",
+        "intro_text": "While the cats are out training, the subject of Twolegs comes up. r_c tells everyone to just not get caught by them. r_c suggests clawing their faces off - or their ankles if any cat has trouble reaching up that high. p_l laughs, and the patrol turns to {PRONOUN/p_l/object}.",
         "decline_text": "Oh, nothing, don't worry about it.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["KITTYPET,0"],
@@ -10628,7 +10628,7 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
         "intro_text": "It's been a long day and a hard training session. Dusk slowly settles into night as the cats lie in the training grounds, warriors satisfied, apprentices utterly exhausted. p_l tilts {PRONOUN/p_l/poss} head back to stare up at the stars.",
-        "decline_text": "Time to head home for a bite to eat and a well deserved rest.",
+        "decline_text": "Time to head home for a bite to eat and a well-deserved rest.",
         "success_outcomes": [
             {
                     "text": "Do you see them, p_l asks, hush and reverent? All those who've gone before, the great silver pelt of StarClan spread before their eyes, thousands of cats who lived and loved and laughed, bright sparks one after another in succession from generation to generation to, well, <i>them</i>.",
@@ -10690,7 +10690,7 @@
                 "weight": 20
             },
             {
-                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. When p_l gets closer {PRONOUN/p_l/subject} {VERB/p_l/are/is} overwhelmed with the scent of Twolegs and smoke. Upon closer inspection it seems that these foolish Twoleg kits are trying to set fire to a pumpkin with an unsettling hollow face! p_l and r_c charge the Twoleg kits, hissing, spitting, and doing their best to scare them off. Thankfully the kits scatter before they set the pumpkin ablaze.",
+                "text": "The patrol cautiously heads in the direction of the strange, unmoving eyes. When p_l gets closer, {PRONOUN/p_l/subject} {VERB/p_l/are/is} overwhelmed with the scent of Twolegs and smoke. Upon closer inspection it seems that these foolish Twoleg kits are trying to set fire to a pumpkin with an unsettling hollow face! p_l and r_c charge the Twoleg kits, hissing, spitting, and doing their best to scare them off. Thankfully the kits scatter before they set the pumpkin ablaze.",
                 "exp": 10,
                 "weight": 5
             },
@@ -10721,7 +10721,7 @@
                 ]
             },
             {
-                "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c and run their cold, fur-less paws through {PRONOUN/s_c/subject} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
+                "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c and run their cold, furless paws through {PRONOUN/s_c/poss} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
                 "exp": 20,
                 "weight": 10,
                 "stat_skill": ["GHOST,1"]
@@ -10772,7 +10772,7 @@
     	},
     	"weight": 40,
     	"intro_text": "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning.",
-    	"decline_text": "It's just a moth, p_l tells {PRONOUN/p_l/self} and continues on {PRONOUN/p_l/poss} way.",
+        "decline_text": "It's just a moth, p_l tells {PRONOUN/p_l/self}, and continues on {PRONOUN/p_l/poss} way.",
     	"chance_of_success": 70,
     	"pl_skill_constraint": ["OMEN,3"],
     	"success_outcomes": [
@@ -10793,7 +10793,7 @@
     	],
     	"fail_outcomes": [
         	{
-            	"text": "Surely, surely it's nothing - but p_l can't deny {PRONOUN/p_l/poss} instincts. This Death's Head Moth is an omen, and {PRONOUN/p_l/subject} {VERB/p_l/take/takes} off running, sprinting towards the training arena where {PRONOUN/p_l/poss} Clanmates said they'd be. But it's too late. By the time p_l arrives, r_c is choking on {PRONOUN/r_c/poss} last breaths, victim of a terrible accident.",
+                "text": "Surely, <i>surely</i> it's nothing - but p_l can't deny {PRONOUN/p_l/poss} instincts. This Death's Head Moth is an omen, and {PRONOUN/p_l/subject} {VERB/p_l/take/takes} off running, sprinting towards the training arena where {PRONOUN/p_l/poss} Clanmates said they'd be. But it's too late. By the time p_l arrives, r_c is choking on {PRONOUN/r_c/poss} last breaths, victim of a terrible accident.",
             	"exp": 0,
             	"weight": 20,
                 "dead_cats": ["r_c"],
@@ -10819,8 +10819,8 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the Clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} {VERB/app2/are/is}n't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
-        "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} do not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
+        "intro_text": "{PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the Clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss/CAP} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} {VERB/app2/are/is}n't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
+        "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} do not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss/CAP} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -10959,7 +10959,7 @@
                 ]
             },
             {
-                "text": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} listen to app2 brag about why {PRONOUN/app2/subject} should be leader. app1 leaps onto {PRONOUN/app2/object}, and they tussle on the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness.",
+                "text": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} {VERB/app1/listen/listens} to app2 brag about why {PRONOUN/app2/subject} should be leader. app1 leaps onto {PRONOUN/app2/object}, and they tussle on the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty"],
@@ -11004,7 +11004,8 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 1],
-            "warrior": [1, 1]
+            "warrior": [1, 1],
+            "deputy": [-1, -1]
         },
         "weight": 20,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
@@ -11033,7 +11034,7 @@
                 ]
             },
             {
-                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/pick/picks} up p_l's scent within a few hours and {VERB/app1/follow/follows} the trail. When {PRONOUN/app1/subject} find p_l, the warrior is drinking from a stream. Yowling, app1 leaps at p_l and sweeps {PRONOUN/p_l/object} off {PRONOUN/p_l/poss} feet into the shallow water. p_l is winded, and after {PRONOUN/p_l/subject} stand up, {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} app1.",
+                "text": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/pick/picks} up p_l's scent within a few hours and {VERB/app1/follow/follows} the trail. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l, the warrior is drinking from a stream. Yowling, app1 leaps at p_l and sweeps {PRONOUN/p_l/object} off {PRONOUN/p_l/poss} feet into the shallow water. p_l is winded, and congratulates app1 after {PRONOUN/p_l/subject} {VERB/p_l/stand/stands} up.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -11054,7 +11055,7 @@
                 ]
             },
             {
-                "text": "app1 was already awake and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It's just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l, {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well - {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward anyway.",
+                "text": "app1 was already awake and raring to go. {PRONOUN/app1/subject/CAP} {VERB/app1/run/runs} off before the deputy can say anything. It's just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l, {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well - {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward anyway.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["RUNNER,0", "CLEVER,0"],
@@ -11121,7 +11122,7 @@
                 ]
             },
             {
-                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} wish that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1. app1 barely has time to yowl for help before the stranger pounces.",
+                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} {VERB/app1/wish/wishes} that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1. app1 barely has time to yowl for help before the stranger pounces.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["app1"],

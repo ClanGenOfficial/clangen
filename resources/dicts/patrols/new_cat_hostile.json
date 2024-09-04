@@ -680,7 +680,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. But c_n would never approve.",
+                "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject/CAP}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. But c_n would never approve.",
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
@@ -1904,7 +1904,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. {PRONOUN/p_l/subject} {VERB/p_l/are/is} filled with an unexpected sense of grief. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} to carry and bury them outside their borders.",
+                "text": "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} filled with an unexpected sense of grief. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} to carry and bury them outside their borders.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": 0

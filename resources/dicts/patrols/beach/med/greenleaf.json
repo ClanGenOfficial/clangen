@@ -5284,7 +5284,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth. {PRONOUN/p_l/subject} {VERB/p_l/have/has} a lot of sympathy for app1's disgusted expression.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't need {PRONOUN/p_l/object} to carry it in {PRONOUN/p_l/poss} mouth. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} a lot of sympathy for app1's disgusted expression.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"],
@@ -6514,7 +6514,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "This garlic will certainly restock the herb stores... which are close to p_l's nest. Yay... {PRONOUN/p_l/subject} {VERB/p_l/commiserate/commiserates} with app1, both cats sighing but accepting the stink in their den as a necessary evil.",
+                "text": "This garlic will certainly restock the herb stores... which are close to p_l's nest. Yay... {PRONOUN/p_l/subject/CAP} {VERB/p_l/commiserate/commiserates} with app1, both cats sighing but accepting the stink in their den as a necessary evil.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["wild_garlic"],

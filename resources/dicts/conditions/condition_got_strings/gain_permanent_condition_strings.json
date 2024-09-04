@@ -116,7 +116,7 @@
         "lost a leg": [
           "As m_c sleeps under the influence of poppyseed, r_c prepares for the grim task of removing {PRONOUN/m_c/poss} burned leg before the festering illness in it can spread to the rest of {PRONOUN/m_c/object}.",
             "r_c informs m_c that the harsh burn has rendered {PRONOUN/m_c/poss} leg nearly useless. It will be better in the long run to remove the limb entirely.",
-          "The absence of m_c's leg is just so much less painful than the horrible burns. {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} almost guilty, but it feels so much better now that it's impossible not to be relieved."
+            "The absence of m_c's leg is just so much less painful than the horrible burns. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} almost guilty, but it feels so much better now that it's impossible not to be relieved."
 
         ],
         "one bad eye": [

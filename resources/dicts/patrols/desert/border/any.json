@@ -178,7 +178,7 @@
                 ]
             },
             {
-                "text": "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger but leading the dog far away from c_n borders. {PRONOUN/s_c/poss} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, their purrs mixing with s_c's exhausted pants.",
+                "text": "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting {PRONOUN/s_c/self} almost to the point of danger but leading the dog far away from c_n borders. {PRONOUN/s_c/poss/CAP} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, their purrs mixing with s_c's exhausted pants.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [

@@ -2769,7 +2769,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two b_tp_dl_p and watches p_l take down a b_mp_a_s in an astonishing pounce. The rest of {PRONOUN/app1/poss} older siblings bring down two b_tp_a_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's b_tp_dl_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two b_tp_dl_p and watches p_l take down a b_mp_a_s in an astonishing pounce. The rest of {PRONOUN/app1/poss} older siblings bring down two b_tp_a_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's b_tp_dl_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
