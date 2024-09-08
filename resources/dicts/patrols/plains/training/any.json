@@ -2510,7 +2510,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "app1 seems a little nervous as the cats head out to train. {PRONOUN/app1/subject/CAP} know that obviously everyone goes to Starclan when they die, but, what if someone died beyond c_n's borders? What if they died even further away than the sunset?",
+        "intro_text": "app1 seems a little nervous as the cats head out to train. {PRONOUN/app1/subject/CAP} know that obviously everyone goes to StarClan when they die, but, what if someone died beyond c_n's borders? What if they died even further away than the sunset?",
         "decline_text": "p_l vaguely reassures app1 and urges {PRONOUN/app1/object} to hurry down to the training grounds.",
         "success_outcomes": [
                 {

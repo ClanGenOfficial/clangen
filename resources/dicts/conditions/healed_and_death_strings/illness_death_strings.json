@@ -24,7 +24,7 @@
     "m_c died to an infection.",
     "m_c succumbed to an infection.",
     "m_c was killed by {PRONOUN/m_c/poss} infected wound.",
-    "m_c's infection progressed too far and left {PRONOUN/m_c/subject} cold in their nest."
+    "m_c's infection progressed too far and left {PRONOUN/m_c/object} cold in {PRONOUN/m_c/poss} nest."
   ],
   "carrionplace disease": [
     "m_c died to carrionplace disease.",
