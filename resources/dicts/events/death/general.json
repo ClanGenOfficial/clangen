@@ -5882,7 +5882,7 @@
         "status": ["warrior", "deputy", "leader"],
         "skill": ["FIGHTER,2"]
     },
-    "history:": [
+      "history": [
       {
           "cats": ["m_c"],
           "reg_death": "m_c died after r_c killed {PRONOUN/m_c/object} during a battle with o_c_n.",
@@ -5926,7 +5926,7 @@
     "r_c": {
       "status": ["apprentice", "warrior", "deputy", "leader"]
     },
-    "history:": [
+      "history": [
       {
       "cats": ["m_c"],
       "reg_death": "m_c died when the o_c_n deputy killed them in battle, r_c allowed {PRONOUN/m_c/poss} death to happen.",
@@ -5955,7 +5955,7 @@
       "trait": ["sneaky", "lonesome", "cold", "strict", "careful", "cunning"],
       "skill": ["CLEVER,1", "INSIGHTFUL,2"]
     },
-    "history:": [
+      "history": [
       {
       "cats": ["m_c"],
       "reg_death": "m_c died when r_c lured {PRONOUN/m_c/object} into a Twoleg trap.",
@@ -5979,7 +5979,7 @@
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "trait": ["vengeful", "arrogant", "rebellious", "troublesome", "fierce"]
     },
-    "history:": [
+      "history": [
       {
       "cats": ["m_c"],
       "reg_death": "m_c died when r_c lured {PRONOUN/m_c/object} into a Twoleg trap.",
@@ -6004,7 +6004,7 @@
         "age": ["young adult", "adult", "senior adult", "senior"],
         "dies": true
     },
-    "history:": [
+      "history": [
         {
             "cats": ["m_c"],
             "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
