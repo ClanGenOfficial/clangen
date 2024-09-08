@@ -832,7 +832,7 @@
             "Trains all day long to prove {PRONOUN/m_c/self} to be as good as any other apprentice",
             "Is worried {PRONOUN/m_c/subject} will never fit in",
             "Refuses to let {PRONOUN/m_c/poss} past kittypet life hold {PRONOUN/m_c/object} back",
-            "Wants to play with {PRONOUN/r_c/poss} old kittypet toys",
+            "Wants to play with {PRONOUN/m_c/poss} old kittypet toys",
             "Avoids the Twoleg place to prove {PRONOUN/m_c/poss} loyalty"
         ],
         "main_backstory_constraint": [
@@ -887,8 +887,8 @@
     {
         "id": "gen_former_kittypet_medcat",
         "thoughts": [
-            "Uses knowledge from {PRONOUN/r_c/poss} time with Twolegs to improve a healing method",
-            "Wonders what {PRONOUN/r_c/poss} old vet would do for greencough",
+            "Uses knowledge from {PRONOUN/m_c/poss} time with Twolegs to improve a healing method",
+            "Wonders what {PRONOUN/m_c/poss} old vet would do for greencough",
             "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
             "Knows a great garden in the Twoleg place for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses"
