@@ -105,7 +105,7 @@
     {
         "id": "warrior_apprentice_to_comforting_mentor",
         "thoughts": [
-            "m_c feels comfortable talking with r_c",
+            "Feels comfortable talking with r_c",
             "Knows {PRONOUN/m_c/subject} can always come to r_c if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any issues",
             "Hopes that one day {PRONOUN/m_c/subject} will be as good as a mentor as r_c is",
             "Seeks r_c out after a nightmare",
@@ -354,7 +354,7 @@
             "Feels worried about going on patrol today",
             "Asks {PRONOUN/m_c/poss} mentor if {PRONOUN/m_c/subject} {VERB/m_c/are/is} meant to be a warrior",
             "Thinks that {PRONOUN/m_c/subject} could be doing better",
-            "m_c wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} more like r_c, {PRONOUN/m_c/poss} mentor is so cool"
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} more like r_c, {PRONOUN/m_c/poss} mentor is so cool"
         ],
         "main_trait_constraint": [
             "insecure",
@@ -371,7 +371,7 @@
         "id": "insecure_nervous_warrior_apprentice_to_comforting_mentor",
         "thoughts": [
             "Seeks out r_c's comfort after a hard day",
-            "is glad to have r_c as {PRONOUN/m_c/poss} mentor",
+            "Is glad to have r_c as {PRONOUN/m_c/poss} mentor",
             "Wouldn't trade {PRONOUN/m_c/poss} mentor for anyone else in the Clan",
             "Is thankful for how patient r_c is with {PRONOUN/m_c/object}",
             "Is comforted by r_c after admitting to not thinking {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing good enough",
@@ -422,7 +422,7 @@
             "Is surprised when {PRONOUN/m_c/poss} mentor brings {PRONOUN/m_c/object} {PRONOUN/m_c/poss} favorite prey",
             "Gets lessons on posturing confidently from r_c",
             "Gets scared of {PRONOUN/m_c/poss} mentor after r_c snaps at {PRONOUN/m_c/object}",
-            "r_c apologizes for snapping at m_c the other day"
+            "Is surprised when r_c apologizes for snapping at m_c the other day"
 
         ],
         "main_trait_constraint": [
@@ -482,7 +482,7 @@
     {
         "id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
         "thoughts": [
-            "m_c looks at r_c... an awkward silence hangs between them",
+            "Looks at r_c... an awkward silence hangs between them",
             "Feels understood by r_c",
             "Shares prey with r_c in comfortable silence",
             "Is being taught some techniques r_c uses when being around others gets too much"
