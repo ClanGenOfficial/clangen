@@ -252,7 +252,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "m_c, recognized for {PRONOUN/m_c/poss} steady composure, greeted r_c with a courteous nod as {PRONOUN/m_c/subject} approached. Approval alight in {PRONOUN/r_c/poss} expression, r_c bestows upon  m_c a life for [virtue], and as it settled within {PRONOUN/m_c/object}, {PRONOUN/m_c/subject} could feel a subtle, yet powerful shift within, one of fiery initiative.",
+          "text": "m_c, recognized for {PRONOUN/m_c/poss} steady composure, greeted r_c with a courteous nod as {PRONOUN/r_c/subject} approached. Approval alight in {PRONOUN/r_c/poss} expression, r_c bestows upon  m_c a life for [virtue]. As it settled within {PRONOUN/m_c/object}, {PRONOUN/m_c/subject} could feel a subtle, yet powerful shift within, one of fiery initiative.",
           "virtue": ["decisiveness", "initiative", "certainty", "clear judgment", "adaptability", "inspiration", "balance", "commitment", "cunning", "protection", "friendship", "instincts", "tireless energy", "strength", "innovation"]
         }
       ]
