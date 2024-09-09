@@ -378,7 +378,8 @@
         ],
 	"random_status_constraint": [
 		"leader"
-    },
+	]
+    }
     {
         "id": "bold_gen",
         "thoughts": [
