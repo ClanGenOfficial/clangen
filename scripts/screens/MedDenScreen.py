@@ -610,11 +610,18 @@ class MedDenScreen(Screens):
             )
 
         if game.clan.game_mode == 'classic':
-            # draw every herb in classic
+            num_drawn = 0
+            herb_amount = sum(game.clan.herbs.values())
+
+            # draw x different herbs where x is how many herbs you have
             herbs = {}
             for herb in HERBS:
                 # 2 so we have both cobwebs
                 herbs[herb] = 2
+                num_drawn += 1
+
+                if num_drawn >= herb_amount:
+                    break
         else:
             # otherwise draw the herbs you have
             herbs = game.clan.herbs
