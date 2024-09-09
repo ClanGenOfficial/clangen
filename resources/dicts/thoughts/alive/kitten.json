@@ -23,7 +23,7 @@
             "Is sleeping where r_c used to sleep",
             "Went to ask r_c to play only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
             "Is crying for r_c",
-            "Dosen't understand why r_c won't wake up"
+            "Doesn't understand why r_c won't wake up"
         ],
         "random_status_constraint": [
             "kitten"
@@ -52,7 +52,7 @@
         "id": "kit_med_parent",
         "thoughts": [
             "Is visiting the medicine den to see {PRONOUN/m_c/poss} parent, r_c",
-            "Is being teased for having codebreakers as parents",
+            "Is being teased for having boring medicine cats as parents",
             "Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c",
             "Wonders if StarClan hates {PRONOUN/m_c/object} for being a medicine cat's kit",
             "Is pretending to be r_c",
@@ -121,7 +121,7 @@
             "Wants to be big someday",
             "Wants to have fun",
             "Is playing pretend",
-            "Is going through an angsty phase much to {PRONOUN/m_c/poss} clanmates chagrin",
+            "Is going through an angsty phase much to {PRONOUN/m_c/poss} Clanmates chagrin",
             "Is fighting sleep... and failing",
             "Knocked {PRONOUN/m_c/self} over with a sneeze",
             "Wants a badger ride",
@@ -143,7 +143,7 @@
             "Is telling on r_c for climbing a bit too high",
             "Is telling on r_c for doing something bad",
             "Is inviting r_c to play",
-            "Dosen't want to play with r_c",
+            "Doesn't want to play with r_c",
             "Is pretending to be prey for r_c to hunt and chase"
         ],
         "main_status_constraint": [
@@ -307,7 +307,6 @@
             "Thinks {PRONOUN/m_c/subject} can outsmart a fox",
             "Wants to guard the nursery",
             "Is sure {PRONOUN/m_c/subject} could fight a badger",
-            "Is sneaking into the leader's nest",
             "Picks a fight with an apprentice so they can show their skills",
             "Sticks {PRONOUN/m_c/poss} paw into an old snake hole",
             "Is playing with a dead snake",
@@ -316,6 +315,33 @@
         ],
         "main_trait_constraint": [
             "daring"
+        ]
+    },
+    {
+        "id": "daring_kit",
+        "thoughts": [
+            "Picks a fight with an apprentice so they can show their skills"
+
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ],
+        "random_status_constraint" [
+        "apprentice"
+        ]
+    },
+    {
+        "id": "daring_kit",
+        "thoughts": [
+            "Is trying to challenge the leader but isn't being taken very seriously",
+            "Is sneaking into the leader's nest"
+
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ],
+        "random_status_constraint": [
+            "leader"
         ]
     },
     {
@@ -595,9 +621,6 @@
         ],
         "main_trait_constraint": [
             "attention-seeker"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -615,13 +638,25 @@
             "Wakes up early to sing with the birds",
             "Is practicing bird calls",
             "Is screaming because they can",
-            "Asked an elder for a story but keeps interrupting them"
+            "Is being told to be quiet again"
         ],
         "main_trait_constraint": [
             "noisy"
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "noisy_kit",
+        "thoughts": [
+            "Asked an elder for a story but keeps interrupting them"
+        ],
+        "main_trait_constraint": [
+            "noisy"
+        ],
+        "random_status_constraint": [
+            "elder"
         ]
     },
     {
