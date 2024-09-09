@@ -512,7 +512,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "m_c's ears perk up as {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} to hear a deep, resonant rumbling. Reciprocating the intense purr, m_c gently bumps heads with r_c, a warrior known for the endless love {PRONOUN/m_c/subject} {VERB/r_c/hold/holds} for {PRONOUN/r_c/poss} Clan. A warm, sweet feeling cascades over m_c as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
+          "text": "m_c's ears perk up as {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} to hear a deep, resonant rumbling. Reciprocating the intense purr, m_c gently bumps heads with r_c, a warrior known for the endless love {PRONOUN/r_c/subject} {VERB/r_c/hold/holds} for {PRONOUN/r_c/poss} Clan. A warm, sweet feeling cascades over m_c as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
           "virtue": ["compassion", "empathy", "devotion", "friendship", "forgiveness", "happiness", "hope", "kindness", "sympathy", "love", "offering second chances", "selflessness", "mercy", "strength", "unity"]
         },
         {
