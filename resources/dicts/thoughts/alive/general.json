@@ -379,7 +379,7 @@
 	"random_status_constraint": [
 		"leader"
 	]
-    }
+    },
     {
         "id": "bold_gen",
         "thoughts": [
@@ -669,6 +669,7 @@
         ],
 	"random_status_constaint": [
 		"elder"
+	]
     },
 	{
         "id": "compassionate_to_kit",
