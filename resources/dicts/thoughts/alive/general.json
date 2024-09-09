@@ -718,13 +718,13 @@
             "Is pestering other cats to challenges around camp",
             "Challenged a Clanmate to a staring contest",
             "Challenged a Clanmate to a staring contest and won",
-            "Challenged a clanmate to a staring contest and lost",
+            "Challenged a Clanmate to a staring contest and lost",
             "Has been a good sport about losing to a Clanmate",
             "Has been a bit of a bad sport about losing to a Clanmate",
             "Challenged a Clanmate to a race",
-            "Challenged {PRONOUN/m_c/poss} clanmates to a scavenger hunt",
-            "Challenged {PRONOUN/m_c/poss} clanmates to a scavenger hunt and won",
-            "Challenged {PRONOUN/m_c/poss} clanmates to a scavenger hunt and lost",
+            "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt",
+            "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and won",
+            "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and lost",
             "Makes every patrol into a competition",
             "Is lecturing about something someone said wrong offhandedly",
             "Puffs out {PRONOUN/m_c/poss} chest, feeling secure with the space {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up",
@@ -755,11 +755,11 @@
     {
         "id": "cunning_gen",
         "thoughts": [
-            "Convinced a clanmate to get {PRONOUN/m_c/object} something {PRONOUN/m_c/subject} easily could've gotten {PRONOUN/m_c/self}",
-            "Is always five steps ahead of {PRONOUN/m_c/poss} clanmates",
+            "Convinced a Clanmate to get {PRONOUN/m_c/object} something {PRONOUN/m_c/subject} easily could've gotten {PRONOUN/m_c/self}",
+            "Is always five steps ahead of {PRONOUN/m_c/poss} Clanmates",
             "Knows exactly how to get {PRONOUN/m_c/self} of a mess {PRONOUN/m_c/subject} orchestrated",
-            "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the clan",
-            "Got a clanmate to do {PRONOUN/m_c/poss} work never intending to pay {PRONOUN/r_c/object} back for it"
+            "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
+            "Got a Clanmate to do {PRONOUN/m_c/poss} work never intending to pay {PRONOUN/r_c/object} back for it"
         ],
         "main_trait_constraint": [
             "cunning"
@@ -798,7 +798,7 @@
             "Is letting a wound go untreated in hopes it gives {PRONOUN/m_c/object} a scar",
             "Is leaping from boulder to boulder out in the forest",
             "Is climbing to the top of a very tall tree!",
-            "Taunted a dog stuck behind a twoleg's fence",
+            "Taunted a dog stuck behind a Twoleg's fence",
             "Is walking along the edge of a very tall cliff",
             "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!"
         ],
@@ -820,18 +820,11 @@
     {
         "id": "gen_faithful",
         "thoughts": [
-            "Is giving thanks to StarClan",
-            "Is assuring some worried Clanmates that StarClan will guide them",
-            "Is pondering {PRONOUN/m_c/poss} warrior ancestors, and the protections they grant the Clan",
             "Would follow {PRONOUN/m_c/poss} Clanmates to the ends of the earth",
             "Feels safe within the walls of the camp",
-            "Is promising to always serve StarClan",
-            "Wonders if everyone thinks their own thoughts, or if StarClan puts thoughts in their heads",
-            "Prays to StarClan for the day to go well",
-            "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
-            "Prays to StarClan that next season will be a good one",
-            "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real",
-            "Goes to the medicine cat to ask for spiritual advice",
+	    "Promises to stick by a Clanmates side",
+	    "Refuses to reconsider a belief a Clanmate disagreed with",
+	    "Is debating a conflicting belief with a Clanmate", 
             "Wonders if StarClan can hear {PRONOUN/m_c/object}",
             "Leaves fresh-kill at the grave of a dead loved one"
         ],
@@ -840,14 +833,16 @@
         ]
     },
 	{
-        "id": "gen_faithful",
+        "id": "faithful_to_kit",
         "thoughts": [
-            "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real",
-            "Is scaring the kits with stories of the Dark forest"
+            "Urges a kit to follow {PRONOUN/r_c/poss} own beliefs"
         ],
         "main_trait_constraint": [
             "faithful"
-        ]
+        ],
+	"random_status_constraint": [
+		"kitten"
+	]
     },
     {
         "id": "fierce_warrior",
@@ -1011,7 +1006,7 @@
             "Is purring gently",
             "Needs a bit of time alone today",
             "Is talking with friends about recent celebrations",
-            "Purrs all night, so full of love for {PRONOUN/m_c/poss} fellow warriors",
+            "Purrs all night, so full of love for {PRONOUN/m_c/poss} fellow Clanmates",
             "Takes a Clanmate out to a beautiful spot in the territory, just for fun",
             "Wants to surprise a Clanmate with a gift",
             "Wishes others reciprocated {PRONOUN/m_c/poss} kindness more often"
@@ -1147,7 +1142,6 @@
             "Is finding ways to rebel against the instructions {PRONOUN/m_c/subject} were given",
             "Is doubting why things are done the way they are",
             "Taunted a dog stuck behind a Twoleg fence",
-            "Started an argument with the leader during a Clan meeting",
             "Is spreading doubt through {PRONOUN/m_c/poss} Clanmates over the way things are done",
             "Has simply decided not to do what {PRONOUN/m_c/subject} were told"
         ],
@@ -1155,12 +1149,23 @@
             "rebellious"
         ]
     },
+	{
+        "id": "rebellious_gen",
+        "thoughts": [
+            "Started an argument with the leader during a Clan meeting"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+	"random_status_constraint": [
+		"leader"
+	]
+    },
     {
         "id": "responsible_gen",
         "thoughts": [
             "Is planning to wake up early tomorrow",
             "Was the first to rise this morning",
-            "Reminds an apprentice to follow the code",
             "Gently reminds a Clanmate of something they forgot about",
             "Never forgets to thank StarClan for the food",
             "Roused the other cats awake at dawn",
@@ -1221,14 +1226,10 @@
     {
         "id": "righteous_warrior",
         "thoughts": [
-            "Is praying to StarClan for guidance",
             "Is reevaluating {PRONOUN/m_c/poss} morals",
             "Hopes to help guide {PRONOUN/m_c/poss} Clanmates down the right path",
             "Always cheers the loudest of any cat at naming ceremonies",
             "Silently judges a Clanmate from afar",
-            "Wonders if everyone thinks their own thoughts, or if StarClan puts thoughts in their heads",
-            "Is judging outsiders for not following StarClan",
-            "Calms {PRONOUN/m_c/self} down by thinking how StarClan will see to things",
             "Is teaching the kits about morals until they all fall asleep",
             "Reported a Clanmate for breaking the code",
             "Is appalled at a Clanmate blatantly lying" 
@@ -1247,7 +1248,7 @@
             "Is bragging about how great a hunter {PRONOUN/m_c/subject} are",
             "Announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} heading to the dirtplace",
             "Taunted a dog stuck behind a Twoleg fence",
-            "Is eating, chewing very loudly",
+            "Is eating and chewing very loudly",
             "Was found to be faking a bellyache, earning a stern lecture",
             "Stumbled into mud earlier and has yet to wash",
             "Was found napping in another cat's nest!",
@@ -1309,21 +1310,20 @@
             "Volunteered to guard the dirtplace...?",
             "Is telling stories that only make sense to {PRONOUN/m_c/object}",
             "Doesn't feel understood by {PRONOUN/m_c/poss} Clanmates",
-            "Wandered off alone.",
+            "Wandered off alone",
             "Is staring intently at something no other cat can see",
             "Is staring intently at a wall",
             "Has been distracted during recent Clan meetings",
             "Is making odd noises",
             "Is tearing up {PRONOUN/m_c/poss} food",
             "Is gnawing on a stick",
-            "Collects the bones of prey",
+            "Is collecting the bones of prey",
             "Is drawing symbols in the dirt with {PRONOUN/m_c/poss} claws",
             "Is sitting quietly on the far side of camp",
             "Paces back and forth",
-            "Wonders if everyone thinks their own thoughts or if starclan puts thoughts in their heads",
+            "Wonders if everyone thinks their own thoughts or if StarClan puts thoughts in their heads",
             "Is zoning out",
             "Found another secret exit out of camp... somehow",
-            "Is asking about these 'cameras' no other cat seems to notice",
             "Is barking like a dog - somehow",
             "Was found talking to a tree the other day",
             "Was walking on {PRONOUN/m_c/poss} forelimbs for a bit",
@@ -1401,7 +1401,7 @@
         "thoughts": [
             "Is offering helpful advice to a sad Clanmate",
             "Prepared the perfect gift for a friend",
-            "Noticed a Clanmate was tired and offersed to take on their chores",
+            "Noticed a Clanmate was tired and offered to take on their chores",
             "Gets an injured Clanmate a piece of fresh-kill",
             "Reassures an apprentice who's nervous to go on patrol"
         ],
@@ -1560,9 +1560,6 @@
         "thoughts": [
             "Is urging r_c to rest",
             "Brought r_c some prey",
-            "Wonders if {PRONOUN/m_c/subject}'ll still be accepted into StarClan after taking r_c as a mate",
-            "Hopes r_c will still be accepted into StarClan",
-            "Hopes StarClan will forgive {PRONOUN/m_c/object} and r_c for becoming mates",
             "Offers to help r_c with {PRONOUN/r_c/poss} patients"
         ],
         "main_status_constraint": [
@@ -2071,7 +2068,7 @@
     {
         "id": "gen_to_dead_parent",
         "thoughts":[
-            "Heard r_c humming a tune in {PRONOUN/m_c/poss} dream {PRONOUN/m_c/subject} remembered {PRONOUN/r_c/object} humming to {PRONOUN/m_c/object} in the nursery",
+            "Heard r_c humming a tune in {PRONOUN/m_c/poss} dream that {PRONOUN/m_c/subject} remembered r_c humming in the nursery",
             "Had a tearful visit from r_c in {PRONOUN/m_c/poss} dream last night",
             "Wants to work hard knowing r_c is watching {PRONOUN/m_c/object}"
         ],
@@ -3467,9 +3464,9 @@
     {
         "id": "gen_newleaf",
         "thoughts": [
-            "Enjoying the warmth of Newleaf",
-            "Is relieved Leaf-bare is finally over",
-            "Is soaking in the Newleaf warmth",
+            "Enjoying the warmth of newleaf",
+            "Is relieved leaf-bare is finally over",
+            "Is soaking in the newleaf warmth",
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
         ],
         "season": [
@@ -3497,7 +3494,7 @@
     {
         "id": "gen_greenleaf",
         "thoughts": [
-            "Enjoying the warmth of Greenleaf",
+            "Enjoying the warmth of greenleaf",
             "Is finding the buzzing of the cicadas annoying",
             "Can't sleep because of the bugs and the heat",
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}",
@@ -3542,10 +3539,10 @@
     {
         "id": "gen_leaffall_not_kit",
         "thoughts": [
-            "Is worried about the lack of prey Leaf-bare will bring",
+            "Is worried about the lack of prey leaf-bare will bring",
             "Is clearing the clearing of fallen leaves",
-            "Caught extra prey for Leaf-bare",
-            "Is not looking forward to the sparse hunting in Leaf-bare"
+            "Caught extra prey for leaf-bare",
+            "Is not looking forward to the sparse hunting in leaf-bare"
         ],
         "season": [
             "Leaf-fall"
@@ -3562,7 +3559,7 @@
         "thoughts": [
             "Sneezed when a snowflake landed on {PRONOUN/m_c/poss} nose",
             "Took a nap in the clearing and woke up under a blanket of snow",
-            "Can't wait for Newleaf",
+            "Can't wait for newleaf",
             "Can't stand this cold",
             "Is clearing the clearing of snow",
             "Pounced on some movement under the snow like a fox",
