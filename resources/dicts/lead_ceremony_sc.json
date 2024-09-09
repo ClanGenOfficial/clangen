@@ -337,7 +337,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "r_c approaches m_c with narrowed eyes, slightly unsettled by {PRONOUN/m_c/poss} aloofness. m_c is startled by the radiant warmth that surged through {PRONOUN/m_c/poss} chest as {PRONOUN/m_c/object} {VERB/r_c/are/is} granted a life for [virtue], and for the first time in a long while, a soft smile softens {PRONOUN/m_c/poss} cold demeanor.",
+          "text": "r_c approaches m_c with narrowed eyes, slightly unsettled by {PRONOUN/m_c/poss} aloofness. m_c is startled by the radiant warmth that surges through {PRONOUN/m_c/poss} chest as {PRONOUN/m_c/object} {VERB/r_c/are/is} granted a life for [virtue], and for the first time in a long while, a soft smile softens {PRONOUN/m_c/poss} cold demeanor.",
           "virtue": ["acceptance", "empathy", "kindness", "understanding", "warmth", "patience", "open-mindedness", "respect", "tolerance", "forgiveness", "friendship", "respect", "mercy", "perspective", "unity", "benevolence"]
         }
       ]
