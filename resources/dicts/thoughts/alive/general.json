@@ -740,10 +740,7 @@
         "thoughts": [
             "Is puffing {PRONOUN/m_c/poss} chest out",
             "Is lecturing about something someone said wrong offhandedly",
-            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the smartest cat in the Clan",
-            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the funniest cat around",
             "Is strutting around confidently",
-            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the fastest runner in the Clan",
             "Puffs out {PRONOUN/m_c/poss} chest, feeling secure with the space {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up",
             "Doesn't falter when challenged on {PRONOUN/m_c/poss} abilities",
             "Offers tips to every cat in the Clan"
@@ -1279,25 +1276,6 @@
             "sincere"
         ]
     },
-	{
-        "id": "sincere_mediator_questioning",
-        "thoughts": [
-        "Wonders if it's too late to become a mediator",
-	"Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead"
-        ],
-        "main_trait_constraint": [
-            "sincere"
-        ],
-	"main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "warrior",
-            "medicine cat",
-            "deputy",
-            "leader",
-            "elder"
-		]
-    },
     {
         "id": "strange_warrior",
         "thoughts": [
@@ -1509,9 +1487,59 @@
 		"Is tidying up some stray moss that blew into the clearing"
         ],
         "main_skill_constraint": [
-            "camp"
+            "CAMP,1"
         ]
     },
+	{
+        "id": "mediator_gen",
+        "thoughts": [
+            "Wonders if it's too late to become a mediator",
+	"Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead"
+        ],
+        "main_skill_constraint": [
+            "MEDIATOR,1"
+        ],
+	"main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "warrior",
+            "medicine cat",
+            "deputy",
+            "leader",
+            "elder"
+	]
+    },
+	{
+	"id: "starclan_gen",
+	"thoughts": [
+	"Is giving thanks to StarClan",
+	"Thought {PRONOUN/m_c/subject} saw a glimmer of stardust out of the corner of {PRONOUN/m_c/poss} eye",
+	"Is praying to StarClan for guidance",
+            "Is assuring some worried Clanmates that StarClan will guide them",
+            "Is pondering {PRONOUN/m_c/poss} warrior ancestors, and the protections they grant the Clan",
+            "Is promising to always serve StarClan",
+            "Wonders if everyone thinks their own thoughts, or if StarClan puts thoughts in their heads",
+            "Prays to StarClan for the day to go well",
+            "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
+            "Prays to StarClan that next season will be a good one",
+            "Goes to the medicine cat to ask for spiritual advice",
+	],
+	"main_skill_constraint": [
+		"STAR,1"
+	],
+	},
+	{
+	"id: "starclan2_to_kit",
+	"thoughts": [
+            "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real"
+	],
+	"main_skill_constraint": [
+		"STAR,2"
+	],
+	"random_status_constraint": [
+		"kitten"
+	]
+	},
     {
         "id": "gen_mate",
         "thoughts": [
