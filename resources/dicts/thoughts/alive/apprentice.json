@@ -34,7 +34,20 @@
             "Hopes to have an easy training session",
             "Is relaxing in between training and patrols",
             "Has so much to learn",
-            "Wants to learn something new today"
+            "Wants to learn something new today",
+            "Is gossiping",
+            "Is acting angsty",
+            "Is relaxing in between training and patrols",
+            "Hopes to have an easy training session",
+            "Is dreading {PRONOUN/m_c/poss} apprentice duties",
+            "Discovers that prey is much harder to hunt than bugs",
+            "Fell into the nearby creek yesterday and is still feeling damp",
+            "Is having a hard time keeping up with {PRONOUN/m_c/poss} training",
+            "Is tasked with lining nests with fresh moss today",
+            "Is thinking about the time {PRONOUN/m_c/subject} caught a huge rabbit",
+            "Practices some battle moves",
+            "Is helping to reinforce the camp wall with brambles",
+            "Had quite the adventure today"
         ]
     },
     {
@@ -65,7 +78,8 @@
             "Asks r_c for some advice",
             "Asks r_c for hunting tips",
             "Asks r_c for advice on passing an assessment",
-            "Wonders if r_c was a good apprentice"
+            "Wonders if r_c was a good apprentice",
+            "Is watching r_c train"
         ],
         "random_status_constraint": [
             "warrior"
@@ -85,13 +99,127 @@
             "Hopes to be just like r_c as a warrior",
             "Admires r_c's knowledge and skills",
             "Wants to learn everything that r_c knows",
-            "Wants to make r_c proud today"
+            "Wants to make r_c proud today",
+            "Appreciates r_c's words of wisdom",
+            "Listens to r_c's advice",
+            "Takes r_c's advice to heart",
+            "Keeps asking r_c difficult questions",
+            "Is annoyed at r_c for something minor",
+            "Asks to be taught a specific skill r_c is knowledgeable in",
+            "Tries to mimic {PRONOUN/m_c/poss} mentor, much to r_c's obvious endearment",
+            "Wonders if r_c is proud of {PRONOUN/m_c/object}",
+            "Is asking r_c to show {PRONOUN/m_c/object} how to do something again"
+
         ],
         "relationship_constraint": [
             "app/mentor"
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_comforting_mentor",
+        "thoughts": [
+            "Feels comfortable talking with r_c",
+            "Knows {PRONOUN/m_c/subject} can always come to r_c if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any issues",
+            "Hopes that one day {PRONOUN/m_c/subject} will be as good as a mentor as r_c is",
+            "Seeks r_c out after a nightmare",
+            "Wants to be as kind as r_c is",
+            "Is asked what {PRONOUN/m_c/subject} would like to focus on today for training",
+            "Knows that r_c is there for {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it"
+        ],
+        "random_trait_constraint": [
+            "charismatic",
+            "compassionate",
+            "thoughtful",
+            "confident",
+            "calm",
+            "faithful",
+            "loving",
+            "responsible",
+            "wise",
+            "cunning",
+            "sincere"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_harsher_mentor",
+        "thoughts": [
+            "Has difficulty following r_c's lessons",
+            "Knows that r_c's training will make {PRONOUN/m_c/object} a stronger warrior",
+            "Wishes r_c would let {PRONOUN/m_c/object} relax for a day",
+            "Feels awkward around {PRONOUN/m_c/poss} mentor"
+        ],
+        "random_trait_constraint": [
+            "troublesome",
+            "fierce",
+            "bloodthirsty",
+            "cold",
+            "strict",
+            "ambitious",
+            "vengeful",
+            "arrogant",
+            "grumpy",
+            "rebellious"
+
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_outgoing_mentor",
+        "thoughts": [
+            "Gets dragged out of {PRONOUN/m_c/poss} nest for an all-day, out-of-camp training session",
+            "Is wide-eyed at how r_c seems to know <i>everyone</i>",
+            "Finds r_c's energy contagious, and is excited to train today"
+        ],
+        "random_trait_constraint": [
+            "bold",
+            "daring",
+            "righteous",
+            "adventurous",
+            "flamboyant",
+            "arrogant"
+
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_withdrawn_mentor",
+        "thoughts": [
+            "Has to seek r_c out for training",
+            "Tries to start a conversation with r_c, it falls flat quickly",
+            "Accidentally startles {PRONOUN/m_c/poss} mentor",
+            "Realizes that r_c pushes {PRONOUN/r_c/self} out of {PRONOUN/r_c/poss} comfort zone to help {PRONOUN/m_c/object}"
+        ],
+        "random_trait_constraint": [
+            "gloomy",
+            "lonesome",
+            "nervous",
+            "insecure",
+            "grumpy"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -237,25 +365,218 @@
         ]
     },
     {
+        "id": "insecure_nervous_warrior_apprentice_to_mentor",
+        "thoughts": [
+            "Feels worried about going on patrol today",
+            "Asks {PRONOUN/m_c/poss} mentor if {PRONOUN/m_c/subject} {VERB/m_c/are/is} meant to be a warrior",
+            "Thinks that {PRONOUN/m_c/subject} could be doing better",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} more like r_c, {PRONOUN/m_c/poss} mentor is so cool"
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "insecure_nervous_warrior_apprentice_to_comforting_mentor",
+        "thoughts": [
+            "Seeks out r_c's comfort after a hard day",
+            "Is glad to have r_c as {PRONOUN/m_c/poss} mentor",
+            "Wouldn't trade {PRONOUN/m_c/poss} mentor for anyone else in the Clan",
+            "Is thankful for how patient r_c is with {PRONOUN/m_c/object}",
+            "Is comforted by r_c after admitting to not thinking {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing good enough",
+            "Asks r_c if {PRONOUN/r_c/subject} think that {PRONOUN/m_c/subject}'ll ever be strong warrior",
+            "Admits to r_c that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like a failure, and {PRONOUN/m_c/poss} mentor reassures {PRONOUN/m_c/subject}",
+            "Feels hurt when r_c doesn't notice {PRONOUN/m_c/object} struggling",
+            "Wonders if r_c really likes {PRONOUN/m_c/object}, or just pretends to",
+            "Doesn't feel worthy of being r_c's apprentice"
+
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ],
+        "random_trait_constraint": [
+            "charismatic",
+            "compassionate",
+            "thoughtful",
+            "confident",
+            "calm",
+            "faithful",
+            "loving",
+            "responsible",
+            "wise",
+            "cunning",
+            "sincere"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "insecure_nervous_warrior_apprentice_to_harsher_mentor",
+        "thoughts": [
+            "Seeks comfort from r_c, but doesn't get it",
+            "Feels like {PRONOUN/m_c/subject} will never live up to r_c's expectations",
+            "Hopes that training under r_c will help {PRONOUN/m_c/object} be as confident as {PRONOUN/m_c/poss} mentor",
+            "Runs off crying after getting a stern lecture by r_c",
+            "Wishes r_c could be a bit more understanding",
+            "Feels like r_c doesn't like {PRONOUN/m_c/object}",
+            "Is surprised when r_c gives {PRONOUN/m_c/object} the day off on a hard day",
+            "Gets a lecture on being more confident when {PRONOUN/m_c/subject} {VERB/m_c/complain/complains} about never succeeding in a move",
+            "Knows r_c is trying {PRONOUN/r_c/poss} best to help {PRONOUN/m_c/object}",
+            "Is found crying in {PRONOUN/m_c/poss} nest by r_c, and is comforted",
+            "Is surprised when {PRONOUN/m_c/poss} mentor brings {PRONOUN/m_c/object} {PRONOUN/m_c/poss} favorite prey",
+            "Gets lessons on posturing confidently from r_c",
+            "Gets scared of {PRONOUN/m_c/poss} mentor after r_c snaps at {PRONOUN/m_c/object}",
+            "Is surprised when r_c apologizes for snapping at m_c the other day"
+
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ],
+        "random_trait_constraint": [
+            "troublesome",
+            "fierce",
+            "bloodthirsty",
+            "cold",
+            "strict",
+            "ambitious",
+            "vengeful",
+            "arrogant",
+            "grumpy",
+            "rebellious"
+
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "insecure_nervous_warrior_apprentice_to_outgoing_mentor",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/poss} mentor didn't encourage {PRONOUN/m_c/object} to speak with others so much",
+            "Hides behind r_c during the Gathering",
+            "Wonders how r_c can speak with others so easily",
+            "Tries to do some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
+            "Hides away from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} {VERB/m_c/learn/learns} {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to take them to the far edges of the territory today"
+
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ],
+        "random_trait_constraint": [
+            "bold",
+            "daring",
+            "righteous",
+            "adventurous",
+            "flamboyant",
+            "arrogant"
+
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
+        "thoughts": [
+            "Looks at r_c... an awkward silence hangs between them",
+            "Feels understood by r_c",
+            "Shares prey with r_c in comfortable silence",
+            "Is being taught some techniques r_c uses when being around others gets too much"
+
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ],
+        "random_trait_constraint": [
+            "gloomy",
+            "lonesome",
+            "nervous",
+            "insecure",
+            "grumpy"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
         "id": "insecure_warrior_apprentice",
         "thoughts": [
-            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
-            "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
             "Doesn't think {PRONOUN/m_c/poss} hauls on hunting patrols have been substantial enough",
-            "Wishes {PRONOUN/m_c/subject} could do better",
             "Is sure {PRONOUN/m_c/subject} will fail {PRONOUN/m_c/poss} assessment",
-            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
-            "Is worried about being an apprentice forever",
+            "Thinks that {PRONOUN/m_c/subject}'ll mess up on a border patrol",
             "Isn't sure if anyone would trust {PRONOUN/m_c/object} to do a good job",
-            "Is fighting back tears after missing a catch",
-            "Is worried to lose in a real fight",
             "Is worrying about something",
             "Says sorry more often than {PRONOUN/m_c/subject} need to",
             "Is hiding after receiving a compliment",
-            "Is avoiding everyone today"
+            "Has had a good day today, and actually feels confident in {PRONOUN/m_c/self}"
         ],
         "main_trait_constraint": [
             "insecure"
+        ]
+    },
+    {
+        "id": "insecure_nervous_warrior_apprentice",
+        "thoughts": [
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
+            "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
+            "Is sure {PRONOUN/m_c/subject} will fail {PRONOUN/m_c/poss} assessment",
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
+            "Is worried about being an apprentice forever",
+            "Is fighting back tears after missing a catch",
+            "Is worried to lose in a real fight",
+            "Is avoiding everyone today",
+            "Believes {PRONOUN/m_c/subject} can do well today",
+            "Gives {PRONOUN/m_c/self} a stomachache by worrying so much",
+            "Is fretting about something so much that {PRONOUN/m_c/subject} {VERB/m_c/give/gives} {PRONOUN/m_c/self} a headache"
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ]
+    },
+    {
+        "id": "nervous_warrior_apprentice",
+        "thoughts": [
+            "Is scared to go on border patrol",
+            "Fled upon hearing the distant barking of a dog",
+            "Wonders if {PRONOUN/m_c/subject}'ll ever become a warrior",
+            "Jumps at {PRONOUN/m_c/poss} own shadow",
+            "Is nervous about something",
+            "Stumbled over {PRONOUN/m_c/poss} words when talking with r_c",
+            "Wishes that one day {PRONOUN/m_c/subject}'ll be brave enough to be the deputy, or even the leader...",
+            "Is scared around water after a nightmare",
+            "Is nervous about {PRONOUN/m_c/poss} upcoming assessment",
+            "Wishes to be like the warriors in the stories told to {PRONOUN/m_c/object} in the nursery"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
