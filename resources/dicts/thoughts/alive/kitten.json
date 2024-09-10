@@ -52,7 +52,7 @@
         "id": "kit_med_parent",
         "thoughts": [
             "Is visiting the medicine den to see {PRONOUN/m_c/poss} parent, r_c",
-            "Is being teased for having boring medicine cats as parents",
+            "Is wondering why r_c became a medicine cat and not a warrior",
             "Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c",
             "Wonders if StarClan hates {PRONOUN/m_c/object} for being a medicine cat's kit",
             "Is pretending to be r_c",
@@ -320,7 +320,7 @@
     {
         "id": "daring_kit",
         "thoughts": [
-            "Picks a fight with an apprentice so they can show their skills"
+            "Picks a fight with an apprentice so {PRONOUN/m_c/subject} can show {PRONOUN/m_c/poss} skills"
 
         ],
         "main_trait_constraint": [
@@ -650,7 +650,7 @@
     {
         "id": "noisy_kit",
         "thoughts": [
-            "Asked an elder for a story but keeps interrupting them"
+            "Asked r_c for a story but keeps interrupting {PRONOUN/r_c/object}"
         ],
         "main_trait_constraint": [
             "noisy"
