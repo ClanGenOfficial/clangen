@@ -10,7 +10,7 @@ Describe the project. Please be detailed.
 
 
 **Scope of Project**
-Please choose from following list, feel free to give further details:
+Please choose from the following list, feel free to give further details:
 - Requires Specific Skills (please specify skills)
 - Medium-sized Project (a new feature that is on the smaller size)
 - Large Project (substantial new feature, like a new page for a new purpose)

@@ -2469,7 +2469,7 @@
             "Trains all day long to prove {PRONOUN/m_c/self} to be as good as any other apprentice",
             "Is worried {PRONOUN/m_c/subject} will never fit in",
             "Refuses to let {PRONOUN/m_c/poss} past kittypet life hold {PRONOUN/m_c/object} back",
-            "Wants to play with {PRONOUN/r_c/poss} old kittypet toys",
+            "Wants to play with {PRONOUN/m_c/poss} old kittypet toys",
             "Avoids the Twoleg place to prove {PRONOUN/m_c/poss} loyalty"
         ],
         "main_backstory_constraint": [
@@ -2524,8 +2524,8 @@
     {
         "id": "gen_former_kittypet_medcat",
         "thoughts": [
-            "Uses knowledge from {PRONOUN/r_c/poss} time with Twolegs to improve a healing method",
-            "Wonders what {PRONOUN/r_c/poss} old vet would do for greencough",
+            "Uses knowledge from {PRONOUN/m_c/poss} time with Twolegs to improve a healing method",
+            "Wonders what {PRONOUN/m_c/poss} old vet would do for greencough",
             "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
             "Knows a great garden in the Twoleg place for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses"
@@ -4209,6 +4209,42 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ]
+    },
+    
+    {
+        "id": "constantly_dizzy_gen_to_alive_gen",
+        "thoughts": [
+            "Stood up too fast again",
+            "Assures r_c {PRONOUN/m_c/poss} dizzy spell will end in a moment",
+            "Ignores the fuzzy spots on the edge of {PRONOUN/m_c/poss} vision",
+            "Feels like the world is moving a little too fast",
+            "Tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to sit down for a second",
+            "Finds the sun to be too bright today"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "constantly dizzy"
+            ]
+        },
+        "random_living_constraint": [
+            "living"
+        ]
+    },
+    {
+        "id": "lasting_grief_gen_to_alive_gen",
+        "thoughts": [
+            "Worries about losing r_c too",
+            "Puts on a smile for r_c",
+            "Struggles to voice how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lasting grief"
+            ]
+        },
+        "random_living_constraint": [
+            "living"
         ]
     }
 ]

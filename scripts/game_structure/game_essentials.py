@@ -420,11 +420,7 @@ class Game:
             cat_data = inter_cat.get_save_dict()
             clan_cats.append(cat_data)
 
-            # Don't save conditions for classic condition. This
-            # should allow closing and reloading to clear conditions on
-            # classic, just in case a condition is accidently applied.
-            if game.game_mode != "classic":
-                inter_cat.save_condition()
+            inter_cat.save_condition()
 
             if inter_cat.history:
                 inter_cat.save_history(directory + "/history")
