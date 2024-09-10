@@ -224,11 +224,11 @@ class ProfileScreen(Screens):
             ):
                 self.change_screen("mediation screen")
             elif event.ui_element == self.profile_elements["favourite_button"]:
-                self.the_cat.favourite = False
+                self.the_cat.config.favorite = False
                 self.profile_elements["favourite_button"].hide()
                 self.profile_elements["not_favourite_button"].show()
             elif event.ui_element == self.profile_elements["not_favourite_button"]:
-                self.the_cat.favourite = True
+                self.the_cat.config.favorite = True
                 self.profile_elements["favourite_button"].show()
                 self.profile_elements["not_favourite_button"].hide()
             else:
@@ -705,7 +705,7 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
 
-        if self.the_cat.favourite:
+        if self.the_cat.config.favorite:
             self.profile_elements["favourite_button"].show()
             self.profile_elements["not_favourite_button"].hide()
         else:

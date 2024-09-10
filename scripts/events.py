@@ -1042,7 +1042,7 @@ class Events:
         """
         if (
             game.clan.clan_settings["fading"]
-            and not cat.prevent_fading
+                and not cat.config.prevent_fading
             and cat.ID != game.clan.instructor.ID
             and not cat.faded
         ):
@@ -1420,7 +1420,7 @@ class Events:
 
             # retiring to elder den
             if (
-                not cat.no_retire
+                    not cat.config.no_retire
                 and cat.status in ["warrior", "deputy"]
                 and len(cat.apprentice) < 1
                 and cat.moons > 114

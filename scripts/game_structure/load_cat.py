@@ -52,7 +52,6 @@ def json_load():
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
-
             new_cat = Cat(
                 ID=cat["ID"],
                 prefix=cat["name_prefix"],
@@ -182,9 +181,6 @@ def json_load():
             new_cat.patrol_with_mentor = (
                 cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             )
-            new_cat.no_kits = cat["no_kits"]
-            new_cat.no_mates = cat["no_mates"] if "no_mates" in cat else False
-            new_cat.no_retire = cat["no_retire"] if "no_retire" in cat else False
             new_cat.exiled = cat["exiled"]
             new_cat.driven_out = cat["driven_out"] if "driven_out" in cat else False
 
@@ -221,10 +217,14 @@ def json_load():
             new_cat.faded_offspring = (
                 cat["faded_offspring"] if "faded_offspring" in cat else []
             )
-            new_cat.prevent_fading = (
+
+            new_cat.config.no_kits = cat["no_kits"]
+            new_cat.config.no_mates = cat["no_mates"] if "no_mates" in cat else False
+            new_cat.config.no_retire = cat["no_retire"] if "no_retire" in cat else False
+            new_cat.config.prevent_fading = (
                 cat["prevent_fading"] if "prevent_fading" in cat else False
             )
-            new_cat.favourite = cat["favourite"] if "favourite" in cat else False
+            new_cat.config.favorite = cat["favourite"] if "favourite" in cat else False
 
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(
@@ -460,7 +460,7 @@ def csv_load(all_cats):
                 if len(attr) > 37:
                     the_cat.pelt.paralyzed = bool(attr[37])
                 if len(attr) > 38:
-                    the_cat.no_kits = bool(attr[38])
+                    the_cat.config.no_kits = bool(attr[38])
                 if len(attr) > 39:
                     the_cat.exiled = bool(attr[39])
                 if len(attr) > 40:

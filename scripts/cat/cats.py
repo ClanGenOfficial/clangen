@@ -13,6 +13,7 @@ from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
+from scripts.cat.cat_config import CatConfig
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -172,6 +173,7 @@ class Cat:
         """
 
         self.history = None
+        self.config = CatConfig()
 
         if (
             faded
@@ -226,21 +228,12 @@ class Cat:
         self.df = False
         self.experience_level = None
 
-        # Various behavior toggles
-        self.no_kits = False
-        self.no_mates = False
-        self.no_retire = False
-
-        self.prevent_fading = False  # Prevents a cat from fading
-
         self.faded_offspring = (
             []
         )  # Stores of a list of faded offspring, for relation tracking purposes
 
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
-
-        self.favourite = False
 
         self.specsuffix_hidden = specsuffix_hidden
         self.inheritance = None
@@ -2402,7 +2395,7 @@ class Cat:
             return False
 
         # No Mates Check
-        if not ignore_no_mates and (self.no_mates or other_cat.no_mates):
+        if not ignore_no_mates and (self.config.no_mates or other_cat.config.no_mates):
             return False
 
         # Inheritance check
@@ -3376,9 +3369,6 @@ class Cat:
                 "previous_mates": self.previous_mates,
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
-                "no_kits": self.no_kits,
-                "no_retire": self.no_retire,
-                "no_mates": self.no_mates,
                 "exiled": self.exiled,
                 "driven_out": self.driven_out,
                 "pelt_name": self.pelt.name,
@@ -3413,8 +3403,11 @@ class Cat:
                 "outside": self.outside,
                 "faded_offspring": self.faded_offspring,
                 "opacity": self.pelt.opacity,
-                "prevent_fading": self.prevent_fading,
-                "favourite": self.favourite,
+                "no_kits": self.config.no_kits,
+                "no_retire": self.config.no_retire,
+                "no_mates": self.config.no_mates,
+                "prevent_fading": self.config.prevent_fading,
+                "favourite": self.config.favorite,
             }
 
 

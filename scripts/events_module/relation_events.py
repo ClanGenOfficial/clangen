@@ -120,7 +120,7 @@ class Relation_Events:
 
         # If use_mate is falsey, or if the cat has been marked as "no_mates", only allow romantic
         # relations with current mates
-        if use_mate or cat.no_mates:
+        if use_mate or cat.config.no_mates:
             cat_to_choose_from = [
                 cat.all_cats[mate_id]
                 for mate_id in cat.mate

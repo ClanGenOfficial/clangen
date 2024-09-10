@@ -2666,7 +2666,7 @@ def generate_sprite(
         # Apply fading fog
         if (
                 cat.pelt.opacity <= 97
-                and not cat.prevent_fading
+                and not cat.config.prevent_fading
                 and game.clan.clan_settings["fading"]
                 and dead
         ):

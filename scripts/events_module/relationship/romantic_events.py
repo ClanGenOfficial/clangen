@@ -289,7 +289,7 @@ class Romantic_Events:
     def handle_mating_and_breakup(cat):
         """Handle events related to making new mates, and breaking up."""
 
-        if cat.no_mates:
+        if cat.config.no_mates:
             return
 
         Romantic_Events.handle_moving_on(cat)
@@ -349,7 +349,7 @@ class Romantic_Events:
                 continue
 
             cat_mate = Cat.fetch_cat(mate_id)
-            if cat_mate.no_mates:
+            if cat_mate.config.no_mates:
                 return
 
             # Move on from dead mates
@@ -359,7 +359,7 @@ class Romantic_Events:
                 and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside)
             ):
                 # randint is a slow function, don't call it unless we have to.
-                if not cat_mate.no_mates and random.random() > 0.5:
+                if not cat_mate.config.no_mates and random.random() > 0.5:
                     text = f"{cat.name} will always love {cat_mate.name} but has decided to move on."
                     game.cur_events_list.append(
                         Single_Event(text, "relation", [cat.ID, cat_mate.ID])
@@ -390,10 +390,10 @@ class Romantic_Events:
         if cat_from.ID not in cat_to.mate:
             return False
 
-        if cat_from.no_mates or cat_to.no_mates:
+        if cat_from.config.no_mates or cat_to.config.no_mates:
             return False
 
-        if cat_to.no_mates or cat_from.no_mates:
+        if cat_to.config.no_mates or cat_from.config.no_mates:
             return False
 
         if not Romantic_Events.check_if_breakup(cat_from, cat_to):
