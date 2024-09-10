@@ -16,7 +16,7 @@ from scripts.utility import (
     event_text_adjust,
     get_personality_compatibility,
     change_relationship_values,
-    get_alive_status_cats
+    get_alive_status_cats,
 )
 
 
@@ -242,7 +242,7 @@ class Pregnancy_Events:
             severity = random.choices(["minor", "major"], [3, 1], k=1)
             cat.get_injured("pregnant", severity=severity[0])
             text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
-            text = event_text_adjust(Cat, text, cat, clan=clan)
+            text = event_text_adjust(Cat, text, main_cat=cat, clan=clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
             if not other_cat and cat.gender == "male":
@@ -284,8 +284,9 @@ class Pregnancy_Events:
             pregnant_cat.get_injured("pregnant", severity=severity[0])
             text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
             text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
-            game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
-
+            game.cur_events_list.append(
+                Single_Event(text, "birth_death", pregnant_cat.ID)
+            )
 
     @staticmethod
     def handle_one_moon_pregnant(cat: Cat, clan=game.clan):
@@ -353,7 +354,9 @@ class Pregnancy_Events:
         involved_cats = [cat.ID]
 
         kits_amount = clan.pregnancy_data[cat.ID]["amount"]
-        if kits_amount == 0:  # safety check, sometimes pregnancies were ending up with 0 due to save rollbacks
+        if (
+            kits_amount == 0
+        ):  # safety check, sometimes pregnancies were ending up with 0 due to save rollbacks
             kits_amount = 1
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
         other_cat = Cat.all_cats.get(other_cat_id)
@@ -434,7 +437,9 @@ class Pregnancy_Events:
         ):  # chance for a cat to die during childbirth
             possible_events = events["birth"]["death"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
-            meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
+            meds = get_alive_status_cats(
+                Cat, ["medicine cat", "medicine cat apprentice"], sort=True
+            )
             mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
             if not meds or cat in meds or len(mate_is_med) > 0:
                 for event in possible_events:
@@ -465,7 +470,9 @@ class Pregnancy_Events:
                 History.add_possible_history(cat, "blood loss", death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
-                meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"])
+                meds = get_alive_status_cats(
+                    Cat, ["medicine cat", "medicine cat apprentice"]
+                )
                 mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
                 if not meds or cat in meds or len(mate_is_med) > 0:
                     for event in possible_events:
@@ -473,8 +480,8 @@ class Pregnancy_Events:
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-        if not cat.dead: 
-            #If they are dead in childbirth above, all condition are cleared anyway. 
+        if not cat.dead:
+            # If they are dead in childbirth above, all condition are cleared anyway.
             try:
                 cat.injuries.pop("pregnant")
             except:
@@ -484,7 +491,9 @@ class Pregnancy_Events:
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
 
-        print_event = event_text_adjust(Cat, print_event, main_cat=cat, random_cat=other_cat, clan=game.clan)
+        print_event = event_text_adjust(
+            Cat, print_event, main_cat=cat, random_cat=other_cat, clan=game.clan
+        )
 
         # display event
         game.cur_events_list.append(
@@ -756,19 +765,22 @@ class Pregnancy_Events:
                     if kits_amount == 1:
                         insert = "their kit is"
                     thought = f"Is glad that {insert} safe"
-                    blood_parent = create_new_cat(Cat,
-                                                  status=random.choice(["loner", "kittypet"]),
-                                                  alive=False,
-                                                  thought=thought,
-                                                  age=randint(15, 120),
-                                                  outside=True)[0]
+                    blood_parent = create_new_cat(
+                        Cat,
+                        status=random.choice(["loner", "kittypet"]),
+                        alive=False,
+                        thought=thought,
+                        age=randint(15, 120),
+                        outside=True,
+                    )[0]
                     blood_parent.thought = thought
 
                 kit = Cat(
                     parent1=blood_parent.ID,
                     moons=0,
                     backstory=backstory,
-                    status='newborn')
+                    status="newborn",
+                )
 
             elif cat and other_cat:
                 # Two parents provided
@@ -796,12 +808,9 @@ class Pregnancy_Events:
 
             # try to give them a permanent condition. 1/90 chance
             # don't delete the game.clan condition, this is needed for a test
-            if (
-                game.clan
-                and not int(
-                    random.random()
-                    * game.config["cat_generation"]["base_permanent_condition"]
-                )
+            if game.clan and not int(
+                random.random()
+                * game.config["cat_generation"]["base_permanent_condition"]
             ):
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
