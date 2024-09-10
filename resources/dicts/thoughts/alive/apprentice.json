@@ -100,7 +100,15 @@
             "Admires r_c's knowledge and skills",
             "Wants to learn everything that r_c knows",
             "Wants to make r_c proud today",
-            "Is asking r_c to show {PRONOUN/m_c/object} how to do something again"
+            "Is asking r_c to show {PRONOUN/m_c/object} how to do something again",
+            "Appreciates r_c's words of wisdom",
+            "Listens to r_c's advice",
+            "Takes r_c's advice to heart",
+            "Keeps asking r_c difficult questions",
+            "Is annoyed at r_c for something minor",
+            "Asks to be taught a specific skill r_c is knowledgeable in",
+            "Tries to mimic {PRONOUN/m_c/poss} mentor, much to r_c's obvious endearment",
+            "Wonders if r_c is proud of {PRONOUN/m_c/object}"
         ],
         "relationship_constraint": [
             "app/mentor"
