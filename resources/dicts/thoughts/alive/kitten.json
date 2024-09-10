@@ -571,7 +571,7 @@
             "Tries to scare r_c",
             "Is covered in mud",
             "Tried to sneak out of camp last night but got caught",
-            "Sneakily nips at r_c and runs away",
+            "Sneakily nips at r_c and runs away"
         ],
         "main_trait_constraint": [
             "unruly"
@@ -616,7 +616,7 @@
             "Begs for life-saving herbs to cure {PRONOUN/m_c/poss} minor scrape",
             "Is calling a Clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}",
             "Is demanding r_c's attention even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} busy",
-            "Is waiting by the camp entrance to see what the patrol brings back",
+            "Is waiting by the camp entrance to see what the patrol brings back"
         ],
         "main_trait_constraint": [
             "attention-seeker"
