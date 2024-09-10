@@ -2,7 +2,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-
+from scripts.clan import HERBS
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -323,6 +323,8 @@ class MedDenScreen(Screens):
             else:
                 insert = "medicine cats"
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+            if game.clan.game_mode == 'classic':
+                meds_cover = ''
 
             if len(self.meds) >= 1 and number == 0:
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
@@ -561,7 +563,11 @@ class MedDenScreen(Screens):
         if not herbs_stored:
             herb_list.append("Empty")
         if len(herb_list) <= 10:
-            herb_display = "<br>".join(sorted(herb_list))
+            # classic doesn't display herbs
+            if game.clan.game_mode == 'classic':
+                herb_display = None
+            else:
+                herb_display = "<br>".join(sorted(herb_list))
 
             self.den_base = UIImageButton(
                 scale(pygame.Rect((216, 190), (792, 448))),
@@ -590,7 +596,11 @@ class MedDenScreen(Screens):
             if added is False:
                 holding_pairs.extend(pair)
 
-            herb_display = "<br>".join(holding_pairs)
+            # classic doesn't display herbs
+            if game.clan.game_mode == 'classic':
+                herb_display = None
+            else:
+                herb_display = "<br>".join(holding_pairs)
             self.den_base = UIImageButton(
                 scale(pygame.Rect((216, 190), (792, 448))),
                 "",
@@ -599,7 +609,22 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
 
-        herbs = game.clan.herbs
+        if game.clan.game_mode == 'classic':
+            num_drawn = 0
+            herb_amount = sum(game.clan.herbs.values())
+
+            # draw x different herbs where x is how many herbs you have
+            herbs = {}
+            for herb in HERBS:
+                # 2 so we have both cobwebs
+                herbs[herb] = 2
+                num_drawn += 1
+
+                if num_drawn >= herb_amount:
+                    break
+        else:
+            # otherwise draw the herbs you have
+            herbs = game.clan.herbs
         for herb in herbs:
             if herb == "cobwebs":
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(
