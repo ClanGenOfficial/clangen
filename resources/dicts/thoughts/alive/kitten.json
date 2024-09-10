@@ -306,7 +306,7 @@
             "Thinks {PRONOUN/m_c/subject} can outsmart a fox",
             "Wants to guard the nursery",
             "Is sure {PRONOUN/m_c/subject} could fight a badger",
-            "Picks a fight with an apprentice so they can show their skills",
+            "Picks a fight with an apprentice so {PRONOUN/m_c/subject} can show {PRONOUN/m_c/poss} skills",
             "Sticks {PRONOUN/m_c/poss} paw into an old snake hole",
             "Is playing with a dead snake",
             "Isn't afraid of the dark at all"
