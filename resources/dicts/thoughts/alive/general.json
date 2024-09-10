@@ -1522,7 +1522,7 @@
             "Prays to StarClan for the day to go well",
             "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
             "Prays to StarClan that next season will be a good one",
-            "Goes to the medicine cat to ask for spiritual advice",
+            "Goes to the medicine cat to ask for spiritual advice"
 	],
 	"main_skill_constraint": [
 		"STAR,1"
