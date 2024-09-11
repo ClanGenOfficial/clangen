@@ -174,11 +174,11 @@ class LeaderDenScreen(Screens):
 
         if not self.no_leader:
             self.screen_elements["lead_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((460, 460), (300, 300))),
-            pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
-            object_id="#lead_cat_image",
-            starting_height=3,
-            manager=MANAGER,
+                scale(pygame.Rect((460, 460), (300, 300))),
+                pygame.transform.scale(game.clan.leader.sprite, (300, 300)),
+                object_id="#lead_cat_image",
+                starting_height=3,
+                manager=MANAGER,
             )
 
         self.helper_cat = None
@@ -187,7 +187,12 @@ class LeaderDenScreen(Screens):
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
-                meds = get_alive_status_cats(Cat, get_status=["medicine cat", "medicine cat apprentice"], working=True, sort=True)
+                meds = get_alive_status_cats(
+                    Cat,
+                    get_status=["medicine cat", "medicine cat apprentice"],
+                    working=True,
+                    sort=True,
+                )
                 if meds:
                     self.helper_cat = meds[0]
                 else:  # if no meds, mediator helps
@@ -261,19 +266,19 @@ class LeaderDenScreen(Screens):
         if not get_living_clan_cat_count(Cat):
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
-                f" No one is left to attend a Gathering. "
+                " No one is left to attend a Gathering. "
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                f" Outsiders do not concern themselves with a dead Clan. "
+                " Outsiders do not concern themselves with a dead Clan. "
             )
         # if leader is dead and no one new is leading, give special notice
         elif self.no_leader or game.clan.leader.dead or game.clan.leader.exiled:
-            self.no_gathering = True
+            self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
-                f" Without no one to lead, the Clan can't focus on what to say at the Gathering. "
+                " Without no one to lead, the Clan can't focus on what to say at the Gathering. "
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                f" Without no one to lead, the Clan can't concern themselves with Outsiders. "
+                " Without no one to lead, the Clan can't concern themselves with Outsiders. "
             )
         # if leader is sick but helper is available, give special notice
         elif game.clan.leader.not_working() and self.helper_cat:
@@ -538,9 +543,11 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
 
-        self.focus_clan_elements[f"clan_symbol"] = pygame_gui.elements.UIImage(
+        self.focus_clan_elements["clan_symbol"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((138, 134), (200, 200))),
-            pygame.transform.scale(clan_symbol_sprite(self.focus_clan, force_light=True), (200, 200)),
+            pygame.transform.scale(
+                clan_symbol_sprite(self.focus_clan, force_light=True), (200, 200)
+            ),
             object_id="#clan_symbol",
             starting_height=1,
             container=self.focus_clan_container,
@@ -551,21 +558,21 @@ class LeaderDenScreen(Screens):
         y_pos = 367
         relation = get_other_clan_relation(self.focus_clan.relations)
 
-        self.focus_clan_elements[f"clan_name"] = pygame_gui.elements.UILabel(
+        self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x_pos, y_pos), (439, -1))),
             text=f"{self.focus_clan.name}Clan",
             object_id="#text_box_30_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
         )
-        self.focus_clan_elements[f"clan_temper"] = pygame_gui.elements.UILabel(
+        self.focus_clan_elements["clan_temper"] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x_pos, y_pos + 50), (439, -1))),
             text=f"{self.focus_clan.temperament.strip()}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
         )
-        self.focus_clan_elements[f"clan_rel"] = pygame_gui.elements.UILabel(
+        self.focus_clan_elements["clan_rel"] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x_pos, y_pos + 80), (439, -1))),
             text=f"{relation}",
             object_id="#text_box_22_horizcenter",
