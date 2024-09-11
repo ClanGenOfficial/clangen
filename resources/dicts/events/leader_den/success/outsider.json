@@ -110,8 +110,7 @@
       "status": ["loner", "rogue", "kittypet"],
       "age": ["adolescent", "young adult", "adult", "senior adult"],
       "skill": [
-        "HUNTER,3",
-        "HUNTER,4"
+        "HUNTER,3"
       ],
       "new_thought": "Can't wait to help provide for {PRONOUN/m_c/poss} new Clan",
       "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
