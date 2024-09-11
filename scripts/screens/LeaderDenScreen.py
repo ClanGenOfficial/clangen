@@ -37,7 +37,7 @@ class LeaderDenScreen(Screens):
         self.leader_name = None
         self.clan_temper = None
         self.clan_rep = None
-        self.no_gathering = False
+        self.no_leader = False
 
         self.screen_elements = {}
 
@@ -145,10 +145,9 @@ class LeaderDenScreen(Screens):
             "in a cat, they might join your Clan!",
         )
         # This is here incase the leader comes back
-        self.no_gathering = False
-        
         self.no_leader = False
-        if not game.clan.leader:
+
+        if not game.clan.leader or game.clan.leader.dead or game.clan.leader.exiled:
             self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
@@ -183,12 +182,7 @@ class LeaderDenScreen(Screens):
             )
 
         self.helper_cat = None
-        if self.no_leader:
-            self.no_gathering = True
-        elif game.clan.leader.dead or game.clan.leader.exiled:
-            self.screen_elements["lead_image"].hide()
-            self.no_gathering = True
-        elif game.clan.leader.not_working():
+        if game.clan.leader.not_working():
             if game.clan.deputy:
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
@@ -244,11 +238,8 @@ class LeaderDenScreen(Screens):
         self.create_outsider_selection_box()
 
         # NOTICE TEXT - leader intention and other clan impressions
-        if (self.no_leader):
-            self.leader_name = None
-        else:
-            self.leader_name = game.clan.leader.name
-            
+        self.leader_name = None if self.no_leader else game.clan.leader.name
+
         self.clan_temper = game.clan.temperament
 
         self.screen_elements["clan_notice_text"] = pygame_gui.elements.UITextBox(
@@ -268,7 +259,7 @@ class LeaderDenScreen(Screens):
 
         # if no one is alive, give a special notice
         if not get_living_clan_cat_count(Cat):
-            self.no_gathering = True
+            self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 f" No one is left to attend a Gathering. "
             )
@@ -295,7 +286,7 @@ class LeaderDenScreen(Screens):
             )
         # if leader is sick but no helper is available, give special notice
         elif game.clan.leader.not_working():
-            self.no_gathering = True
+            self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. "
             )
@@ -601,9 +592,8 @@ class LeaderDenScreen(Screens):
             visible=False,
         )
 
-        if self.no_gathering:
-            self.focus_frame_elements["negative_interaction"].disable()
-            self.focus_frame_elements["positive_interaction"].disable()
+        if self.no_leader:
+            self.focus_clan_container.disable()
 
         interaction = OtherClan.interaction_dict[relation]
         self.focus_frame_elements["negative_interaction"].change_object_id(
@@ -839,7 +829,9 @@ class LeaderDenScreen(Screens):
         self.focus_button["invite_in"].show()
 
         self.focus_outsider_button_container.enable()
-        if self.focus_cat.age == "newborn":  # not allowed to do things to newborns
+        if (
+            self.focus_cat.age == "newborn" or self.no_leader
+        ):  # not allowed to do things to newborns
             self.focus_outsider_button_container.disable()
 
     def update_text(self, clan=True):
