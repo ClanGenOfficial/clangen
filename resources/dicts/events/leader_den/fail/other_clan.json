@@ -32,6 +32,26 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c catches the eye of the o_c_n leader. The two regard each other carefully, but when m_c fumbles {PRONOUN/m_c/poss} words later on the other leader scoffs.",
+    "rel_change": -3,
+    "m_c": {
+      "trait": ["nervous", "insecure"]
+    },
+    "player_clan_temper": ["cunning", "stoic", "logical", "wary"],
+    "other_clan_temper": ["cunning", "stoic", "logical", "wary"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "o_c_n's leader is loud and threatening at the Gathering. m_c holds {PRONOUN/m_c/poss} ground and shows no fear, but that appears to be a mistake when the other leader only becomes louder.",
+    "rel_change": 3,
+    "m_c": {
+      "trait": ["fierce", "bloodthirsty", "cold", "bold", "daring", "righteous", "strict", "ambitious", "confident", "calm", "vengeful", "wise", "arrogant", "competitive", "rebellious", "troublesome"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": ["bloodthirsty", "proud"]
+  },
+  {
     "interaction_type": "antagonize",
     "event_text": "During the Gathering, m_c makes scathing comments about o_c_n. o_c_n's leader is quite blatantly ignoring {PRONOUN/m_c/object} though.",
     "rel_change": 0,

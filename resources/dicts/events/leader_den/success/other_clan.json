@@ -72,6 +72,44 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "befriend",
+    "event_text": "m_c sidles up to the o_c_n leader during the Gathering and navigates the ensuing conversation with ease. The two seem to be good friends by the end of it.",
+    "rel_change": 5,
+    "m_c": {
+      "skill": ["SPEAKER,3", "MEDIATOR,3", "CLEVER,3"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "m_c sidles up to the o_c_n leader during the Gathering and {PRONOUN/m_c/poss} charming nature makes friendship a simple matter.",
+    "rel_change": 5,
+    "m_c": {
+      "trait": ["charismatic", "compassionate", "playful"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c catches the eye of the o_c_n leader. The two regard each other carefully and, later on, the other leader makes an offer of friendship.",
+    "rel_change": 5,
+    "m_c": {},
+    "player_clan_temper": ["cunning", "stoic", "logical", "wary"],
+    "other_clan_temper": ["cunning", "stoic", "logical", "wary"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "o_c_n's leader is loud and threatening at the Gathering. m_c holds {PRONOUN/m_c/poss} ground and shows no fear, earning a look of respect from the other leader.",
+    "rel_change": 3,
+    "m_c": {
+      "trait": ["fierce", "bloodthirsty", "cold", "bold", "daring", "righteous", "strict", "ambitious", "confident", "calm", "vengeful", "wise", "cunning", "arrogant", "competitive", "rebellious"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": ["bloodthirsty", "proud"]
+  },
+  {
     "interaction_type": "antagonize",
     "event_text": "During the Gathering, m_c has nothing but sharp comments and sarcastic quips to add whenever o_c_n's leader speaks.",
     "rel_change": -2,
