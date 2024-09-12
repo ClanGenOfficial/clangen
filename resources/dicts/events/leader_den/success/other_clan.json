@@ -118,6 +118,16 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "antagonize",
+    "event_text": "m_c spends the Gathering making thinly veiled comments about o_c_n's hunting abilities. By the end of it, the proud o_c_n leader is visibly annoyed.",
+    "rel_change": -2,
+    "m_c": {
+      "skill": ["HUNTER,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["proud"]
+  },
+  {
     "interaction_type": "appease",
     "event_text": "During the Gathering, m_c does their best to make peace with o_c_n's leader.",
     "rel_change": 2,
