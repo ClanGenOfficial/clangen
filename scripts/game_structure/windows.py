@@ -502,6 +502,7 @@ class ChangeCatName(UIWindow):
             manager=MANAGER,
             container=self,
             tool_tip_text="Randomize the prefix",
+            sound_id="dice_roll",
         )
 
         self.random_suffix = UIImageButton(
@@ -511,6 +512,7 @@ class ChangeCatName(UIWindow):
             manager=MANAGER,
             container=self,
             tool_tip_text="Randomize the suffix",
+            sound_id="dice_roll",
         )
 
         # 636
@@ -1725,6 +1727,7 @@ class SaveAsImage(UIWindow):
             starting_height=2,
             container=self,
             anchors={"centerx": "centerx"},
+            sound_id="save",
         )
 
         self.open_data_directory_button = UIImageButton(
