@@ -103,7 +103,7 @@
     "event_text": "o_c_n's leader looks at m_c with a soft sympathy, agreeing graciously to the stuttered offers of friendship.",
     "rel_change": 3,
     "m_c": {
-      "status": ["apprentice"],
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
       "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "sneaky", "cunning"]
     },
     "player_clan_temper": ["any"],
@@ -114,7 +114,7 @@
     "event_text": "o_c_n's leader seems impressed when the apprentice approaches them with confident overtures of friendship.",
     "rel_change": 3,
     "m_c": {
-      "status": ["apprentice"],
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
       "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
     },
     "player_clan_temper": ["any"],
@@ -125,7 +125,7 @@
     "event_text": "o_c_n's leader stands beside m_c during the Gathering, offering silent support to the apprentice and, later, accepting m_c's thanks.",
     "rel_change": 1,
     "m_c": {
-      "status": ["apprentice"],
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
       "trait": ["nervous", "insecure", "gloomy", "playful", "childish", "charismatic", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "careful", "calm", "faithful", "loving", "responsible", "shameless", "wise", "cunning", "sincere"]
     },
     "player_clan_temper": ["any"],
@@ -136,7 +136,7 @@
     "event_text": "o_c_n's leader stares down at m_c and regards {PRONOUN/m_c/poss} stuttered words skeptically, eventually turning away. Their dismissal seems harsh, but their actions throughout the rest of the Gathering have a distinct softness towards the struggling c_n.",
     "rel_change": 10,
     "m_c": {
-      "status": ["apprentice"],
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
       "trait": ["nervous", "insecure", "gloomy", "cunning"]
     },
     "player_clan_temper": ["any"],
@@ -147,7 +147,7 @@
     "event_text": "o_c_n's leader seems startled at the appearance of m_c leading a Clan. They may not say any words directly to the apprentice, but they don't aim any unnecessary jabs at them either.",
     "rel_change": 10,
     "m_c": {
-      "status": ["apprentice"]
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["gracious", "amiable", "mellow"]
@@ -157,7 +157,7 @@
     "event_text": "o_c_n's leader regards m_c's appearance at the head of c_n impassively. Later on in the Gathering, however, the leader announces their intent to end hostilities with c_n, citing that o_c_n isn't so cruel as to continue attacking an obviously beaten Clan.",
     "rel_change": 10,
     "m_c": {
-      "status": ["apprentice"]
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["stoic"]
@@ -167,7 +167,7 @@
     "event_text": "The leader of o_c_n laughs at the sight of c_n being led by m_c. The cat makes a comment on how piteous m_c's clan must be, to have an apprentice leading them, and eventually announces that it would be dishonorable for them to continue attacking such dregs.",
     "rel_change": 10,
     "m_c": {
-      "status": ["apprentice"]
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["bloodthirsty", "proud", "logical"]
@@ -177,7 +177,7 @@
     "event_text": "When c_n arrives at the Gathering and m_c takes {PRONOUN/m_c/poss} place with the Clan leaders, o_c_n's leader watches with gleaming eyes. They later announce their *sincere* sympathies for c_n's struggles and offer a paw of friendship. m_c can't help but feel that {PRONOUN/m_c/poss} acceptance has come with some hidden cost.",
     "rel_change": 10,
     "m_c": {
-      "status": ["apprentice"]
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["cunning"]
@@ -187,7 +187,7 @@
     "event_text": "When m_c joins the Clan leaders at the Gathering {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} off-put by the distinct looks of disapproval being aimed at o_c_n's leader. Later on, the leader stutters out their intent to lower hostilities with c_n.",
     "rel_change": 10,
     "m_c": {
-      "status": ["apprentice"]
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["wary"]
@@ -231,5 +231,25 @@
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["wary"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c dreams the night before the Gathering and hears the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} speak at the Gathering o_c_n's leader shows open disdain, only for clouds to begin covering the moon. The Gathering ends quickly as the enemy leader stutters a worried apology",
+    "rel_change": 10,
+    "m_c": {
+      "skill": ["STAR,4"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["wary"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c dreams the night before the Gathering and hears the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} speak at the Gathering o_c_n's leader shows open disdain, only for clouds to begin covering the moon. The Gathering ends quickly as the enemy leader blusters and the other Clans rally behind c_n.",
+    "rel_change": 8,
+    "m_c": {
+      "skill": ["STAR,4"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["bloodthirsty"]
   }
 ]
