@@ -275,10 +275,10 @@ class LeaderDenScreen(Screens):
         elif self.no_leader or game.clan.leader.dead or game.clan.leader.exiled:
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
-                " Without no one to lead, the Clan can't focus on what to say at the Gathering. "
+                " With no one to lead, the Clan can't focus on what to say at the Gathering. "
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                " Without no one to lead, the Clan can't concern themselves with Outsiders. "
+                " With no one to lead, the Clan can't concern themselves with Outsiders. "
             )
         # if leader is sick but helper is available, give special notice
         elif game.clan.leader.not_working() and self.helper_cat:
