@@ -124,7 +124,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "When c_n arrives at the Gathering and m_c takes {PRONOUN/m_c/poss} place with the Clan leaders, o_c_n's leader gasps and inquires as to what, exactly, happened to leave m_c as the only option to lead. Their words are sickly sweet and m_c finds {PRONOUN/m_c/self} unable to control the following narrative o_c_n spins. c_n is no better off at the end of it.",
+    "event_text": "When c_n arrives at the Gathering and m_c takes {PRONOUN/m_c/poss} place with the Clan leaders, o_c_n's leader gasps and inquires as to what happened to leave *m_c* as the only option to lead, the *poor dear*. Their words are sickly sweet; m_c finds {PRONOUN/m_c/self} unable to control the following narrative o_c_n spins. c_n is no better off at the end of it.",
     "rel_change": 0,
     "m_c": {
       "status": ["apprentice"]
@@ -141,5 +141,25 @@
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["wary"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c announces at the Gathering that {PRONOUN/m_c/subject} received a vision of prophecy_list_sight_sound. The leaders bustle to decide the meaning and, later on, o_c_n's leader hisses that this does not spell the end of hostilities between c_n and o_c_n.",
+    "rel_change": 0,
+    "m_c": {
+      "skill": ["PROPHET,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c pulls the o_c_n leader aside during the Gathering. The leader seems angry when they later return to the Gathering proper - nearby cats whisper that they heard m_c say something about the other leader's dreams. When m_c later offers peace to o_c_n, their leader only spits accusations of spies and trespasses.",
+    "rel_change": -2,
+    "m_c": {
+      "skill": ["DREAM,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["wary", "bloodthirsty", "proud"]
   }
 ]
