@@ -33,7 +33,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "During the Gathering, m_c catches the eye of the o_c_n leader. The two regard each other carefully, but, when m_c fumbles {PRONOUN/m_c/poss} words later, on the other leader scoffs.",
+    "event_text": "During the Gathering, m_c catches the eye of the o_c_n leader. The two regard each other carefully, but, when m_c fumbles {PRONOUN/m_c/poss} words later on, the other leader scoffs.",
     "rel_change": -3,
     "m_c": {
       "trait": ["nervous", "insecure"]
