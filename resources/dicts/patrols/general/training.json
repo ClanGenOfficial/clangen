@@ -9558,7 +9558,7 @@
                         ]
                 },
                 {
-                    "text": "The cats of the Whisker Grove are repulsive, s_c says, and the rest of the patrol is surprised to here the quiet fury in {PRONOUN/s_c/poss} tone. s_c will never forgive those who steal from the kind and generous, who take other cats hard work and try to profit from it.",
+                    "text": "The cats of the Whisker Grove are repulsive, s_c says, and the rest of the patrol is surprised to hear the quiet fury in {PRONOUN/s_c/poss} tone. s_c will never forgive those who steal from the kind and generous, who take other cats' hard work and try to profit from it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",

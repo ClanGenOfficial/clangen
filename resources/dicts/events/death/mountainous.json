@@ -30,7 +30,7 @@
       "age": ["kitten"],
       "dies": true
     },
-    "history:": [
+      "history": [
       {
       "cats": ["m_c"],
       "reg_death": "m_c was eaten by a mountain weasel when {PRONOUN/m_c/subject} tried to sneak out of camp."
