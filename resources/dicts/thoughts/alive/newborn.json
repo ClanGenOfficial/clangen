@@ -6,7 +6,12 @@
             "Tries to figure out all of the smells around {PRONOUN/m_c/object}",
             "Snoozes peacefully",
             "Tries to open {PRONOUN/m_c/poss} eyes, but it's all blurry",
-            "Head empty"
+            "Head empty",
+            "Almost rolled out of the nest",
+            "Tried suckling on a piece of bedding",
+            "Is squealing loudly",
+            "Mewls at someone nudging {PRONOUN/m_c/object}",
+            "Hisses at all the strange new smells"
         ],
         "main_age_constraint": [
             "newborn"
@@ -17,13 +22,36 @@
         "thoughts":[
             "Snuggles closer to r_c",
             "Smells r_c and immediately perks up",
-            "Mews at r_c as {PRONOUN/r_c/subject} {VERB/r_c/shift/shifts} in the nest"
+            "Mews at r_c as {PRONOUN/r_c/subject} {VERB/r_c/shift/shifts} in the nest",
+            "Squeaks pitifully as r_c checks on {PRONOUN/m_c/object}",
+            "Nuzzles up to r_c with a purr",
+            "Squeaks pitifully as r_c grooms {PRONOUN/m_c/object}"
         ],
         "main_age_constraint": [
             "newborn"
         ],
         "relationship_constraint": [
             "child/parent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_newborn_to_sibling",
+        "thoughts":[
+            "Tried suckling on r_c's tail",
+            "Is being buried under r_c",
+            "Was almost shoved out of the nest by r_c"
+        ],
+        "main_age_constraint": [
+            "newborn"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ],
+        "relationship_constraint": [
+            "sibling"
         ],
         "random_living_status": [
             "living"
