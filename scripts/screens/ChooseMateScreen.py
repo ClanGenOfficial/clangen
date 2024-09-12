@@ -100,6 +100,8 @@ class ChooseMateScreen(Screens):
             return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
@@ -185,6 +187,7 @@ class ChooseMateScreen(Screens):
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
+        self.show_mute_buttons()
         self.info = pygame_gui.elements.UITextBox(
             "If a cat has mates, then they will be loyal and only have kittens with their mates"
             " (unless affairs are toggled on.) Potential mates are listed below! The lines "
@@ -217,9 +220,10 @@ class ChooseMateScreen(Screens):
             scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
+            sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
+            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button", sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"

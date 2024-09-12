@@ -59,6 +59,8 @@ class MedDenScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.next_med:
@@ -111,6 +113,7 @@ class MedDenScreen(Screens):
                 self.handle_tab_toggles()
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.hide_menu_buttons()
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 50), (210, 60))),
