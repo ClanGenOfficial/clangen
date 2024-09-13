@@ -3,19 +3,22 @@
 		"id": "jel_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c is very helpful!"
+			"m_c thinks r_c is very helpful!",
+			"m_c offers to help r_c."
 		]
 	},
 	{
 		"id": "jel_de_med1",
 		"interactions": [
-			"m_c surprises r_c with something nice."
+			"m_c surprises r_c with something nice.",
+			"m_c was given a gift but gave it to r_c knowing {PRONOUN/r_c/subject} would like it more."
 		]
 	},
 	{
 		"id": "jel_de_med2",
 		"interactions": [
-			"m_c swaps favorite prey with r_c."
+			"m_c swaps favorite prey with r_c.",
+			"m_c offers r_c a piece of fresh kill they both like."
 		],
 		"reaction_random_cat": {
 			"jealousy": "decrease"
@@ -24,7 +27,8 @@
 	{
 		"id": "jel_de_med3",
 		"interactions": [
-			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} surprised when r_c asks for help."
+			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} surprised when r_c asks for help.",
+			"m_c catches r_c in a moment of weakness and offers support."
 		],
 		"main_status_constraint": [
 			"kitten",
@@ -45,7 +49,8 @@
 		"id": "jealousy_app_de_med1",
 		"interactions": [
 			"m_c has been listening to r_c talk about how hard training has been.",
-			"m_c comforts r_c after a hard day's training."
+			"m_c comforts r_c after a hard day's training.",
+			"m_c watches r_c train and acknowledges {PRONOUN/r_c/poss} effort."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -69,7 +74,8 @@
 		"id": "jealousy_app_de_med2",
 		"interactions": [
 			"m_c has been listening to r_c talk about how difficult herb memorization is.",
-			"m_c helps r_c wash mouse bile off of {PRONOUN/r_c/poss} paws."
+			"m_c helps r_c wash mouse bile off of {PRONOUN/r_c/poss} paws.",
+			"m_c helps r_c sort ragwort."
 		],
 		"main_status_constraint": [
 			"apprentice",
