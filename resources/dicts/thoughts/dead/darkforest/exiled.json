@@ -2,10 +2,9 @@
   {
     "id": "exiled_df_dead_thoughts",
     "thoughts": [
-      "Is thinking of the dissaproving glares of {PRONOUN/m_c/poss} old Clanmates when they exiled {PRONOUN/m_c/object} while {PRONOUN/m_c/subject} train",
+      "Thinks of the disapproving glares of {PRONOUN/m_c/poss} ex-Clanmates while {PRONOUN/m_c/subject} {VERB/m_c/train/trains}",
         "Is watching {PRONOUN/m_c/poss} old Clan with scorn, hoping for an opportunity to get back at them",
-        "Wants to make {PRONOUN/m_c/poss} old leader pay for exiling {PRONOUN/m_c/object}",
-        "Is planning on making c_n pay for exiling {PRONOUN/m_c/object}"
+        "Wants to make {PRONOUN/m_c/poss} old leader pay for exiling {PRONOUN/m_c/object}"
         ]
     },
     {
@@ -13,11 +12,13 @@
         "thoughts": [
             "Is imagining the tree {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} clawing at is one of {PRONOUN/m_c/poss} ex-Clanmates",
             "Trains extra hard, waiting for an opportunity to get {PRONOUN/m_c/poss} revenge",
+            "Is the first to volunteer for training",
             "Knows {PRONOUN/m_c/subject} {VERB/m_c/were/was} right to do what {PRONOUN/m_c/subject} did",
             "Is cursing {PRONOUN/m_c/poss} old Clan"
         ],
     "main_trait_constraint": [
         "bloodthirsty",
+        "faithful",
         "vengeful",
         "cold",
         "fierce",
@@ -42,7 +43,7 @@
         "loving",
         "patient",
         "thoughtful",
-        "Insecure",
+        "nervous",
         "wise",
         "sincere"
         ]
@@ -56,6 +57,7 @@
         ],
     "main_trait_constraint": [
         "sneaky",
+        "arrogant",
         "shameless",
         "wise",
         "cunning"
