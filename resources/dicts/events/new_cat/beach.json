@@ -1,3 +1,54 @@
 [
-
+    {
+        "event_id": "bch_new_cat_saviour_drowning1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c wandered out of camp, only to come back with a stranger. After explaining how m_c saved {PRONOUN/n_c:0/poss} life, the new cat introduces {PRONOUN/n_c:0/self} as n_c:0, and asks to join c_n.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "backstory:refugee2, refugee5, tragedy_survivor4",
+                "status:warrior"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 10
+          },
+          {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["platonic", "trust"],
+            "amount": 10
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    }
 ]

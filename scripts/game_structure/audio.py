@@ -191,7 +191,10 @@ class MusicManager:
         """
         Finds the clan's biome and returns the appropriate playlist
         """
-        biome = game.clan.biome
+        try:
+            biome = game.clan.biome
+        except AttributeError:
+            biome = "Forest"
         new_playlist = []
 
         if biome == "Forest":
