@@ -15,13 +15,15 @@ It then loads the settings, and then loads the start screen.
 
 
 """  # pylint: enable=line-too-long
+# DO NOT ADD YOUR IMPORTS HERE.
+# Scroll down to the "Load game" comment and add them there.
+# Side effects of imports WILL BREAK crucial setup logic for logging and init
 import os
 import shutil
 import sys
 import threading
 import time
 from importlib.util import find_spec
-from scripts.game_structure.audio import sound_manager, music_manager
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -150,6 +152,7 @@ print("Version Name: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 # Load game
+from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.game_essentials import game, MANAGER, screen

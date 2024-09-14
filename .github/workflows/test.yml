@@ -10,9 +10,9 @@ jobs:
       matrix:
         python-version: ['3.8', '3.11']
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           architecture: 'x64'
@@ -25,7 +25,7 @@ jobs:
       - name: Remove the zip
         run: rm tests/saves.zip
       - name: Install poetry
-        uses: abatilo/actions-poetry@v2
+        uses: abatilo/actions-poetry@v3
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -40,14 +40,14 @@ jobs:
   encoding_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Python 3.11 x64
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           architecture: 'x64'
       - name: Install poetry
-        uses: abatilo/actions-poetry@v2
+        uses: abatilo/actions-poetry@v3
         with:
           poetry-version: 1.4.1
       - name: Check file encoding
@@ -74,14 +74,14 @@ jobs:
   json_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Python 3.11 x64
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           architecture: 'x64'
       - name: Install poetry
-        uses: abatilo/actions-poetry@v2
+        uses: abatilo/actions-poetry@v3
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -91,14 +91,14 @@ jobs:
   pronoun_test:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         - name: Setup Python 3.11 x64
-          uses: actions/setup-python@v4
+          uses: actions/setup-python@v5
           with:
             python-version: '3.11'
             architecture: 'x64'
         - name: Install poetry
-          uses: abatilo/actions-poetry@v2
+          uses: abatilo/actions-poetry@v3
           with:
             poetry-version: 1.4.1
         - name: install dependencies
@@ -108,14 +108,14 @@ jobs:
   freshkill_test:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         - name: Setup Python 3.11 x64
-          uses: actions/setup-python@v4
+          uses: actions/setup-python@v5
           with:
             python-version: '3.11'
             architecture: 'x64'
         - name: Install poetry
-          uses: abatilo/actions-poetry@v2
+          uses: abatilo/actions-poetry@v3
           with:
             poetry-version: 1.4.1
         - name: install dependencies
