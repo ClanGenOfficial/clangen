@@ -107,7 +107,7 @@
 		"interactions": [
 			"m_c hisses at r_c for getting a bigger piece of prey.",
 			"m_c is upset that r_c always wins in their games.",
-            "m_c whines and cries when r_c gets more attention then {PRONOUN/m_c/subject} get more attention."
+            "m_c whines and cries when r_c gets more attention then {PRONOUN/m_c/subject}."
 		],
 		"main_status_constraint": [
 			"kitten"
