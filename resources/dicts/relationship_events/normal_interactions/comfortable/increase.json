@@ -28,7 +28,7 @@
 		"interactions": [
 			"m_c is asking r_c to check {PRONOUN/m_c/object} for ticks.",
 			"m_c is happy to see r_c is the cat who is helping {PRONOUN/m_c/object} today.",
-			"m_c didn't even have to ask r_c to check {PRONOUN/m_c/object} for ticks, {PRONOUN/r_c/subject} {VERB/r_c/were/was} on it the moment r_c started to scratch."
+			"m_c didn't even have to ask r_c to check {PRONOUN/m_c/object} for ticks, r_c was on it the moment m_c started to scratch."
 		],
 		"main_status_constraint": [
 			"elder"
