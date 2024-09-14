@@ -150,7 +150,7 @@
 		"interactions": [
 			"m_c wants to snuggle with r_c.",
 			"m_c is hiding under a bush from r_c, but {PRONOUN/m_c/subject} can't stop giggling.",
-			"m_c wonders aloud if r_c would play with {PRONOUN/m_c/object} within earshot of r_c glancing over at {PRONOUN/m_c/object} expectantly.",
+			"m_c plops down near r_c, sneaking glances at {PRONOUN/r_c/object} expectantly. r_c doesn't understand until m_c wonders aloud to {PRONOUN/m_c/self} if r_c would play with {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} asked.",
             "r_c woke up from a nap in the clearing to find m_c stuffing bedding scraps under {PRONOUN/r_c/object} to make {PRONOUN/r_c/object} a cozy nest."
 		],
 		"main_status_constraint": [
