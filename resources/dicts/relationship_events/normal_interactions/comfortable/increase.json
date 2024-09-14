@@ -95,7 +95,7 @@
 			"r_c offered help to m_c during a hard time.",
             "m_c offers to help with one of r_c's more tedious tasks.",
 			"m_c helps r_c with a tedious task and it makes the whole day a lot easier.",
-            "m_c had a nightmare and r_c offered to share {PRONOUN/r_c/poss} nest to comfort {PRONOUN/m_c/object}."
+            "m_c had a nightmare and r_c offered to share {PRONOUN/r_c/poss} nest to comfort m_c."
 		],
 		"random_trait_constraint": [
 			"empathetic"
