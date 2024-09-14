@@ -2,7 +2,20 @@
     {
         "id": "general_death_starclan_thoughts",
         "thoughts": [
-            "Is surprised to find {PRONOUN/m_c/self} walking the stars of Silverpelt"
+            "Is surprised to find {PRONOUN/m_c/self} walking the stars of Silverpelt",
+            "Is begging StarClan to send {PRONOUN/m_c/object} back",
+            "Is watching {PRONOUN/m_c/poss} own vigil",
+            "Wants to comfort a Clanmate grieving over {PRONOUN/m_c/object}"
         ]
+    },
+    {
+        "id": "elder_death_starclan_thoughts",
+        "thoughts": [
+            "Is amazed at how easily {PRONOUN/m_c/subject} can move now",
+            "Has accepted {PRONOUN/m_c/subject} lived a good life"
+        ],
+    "main_status_constraint": [
+        "elder"
+    ]
     }
 ]
