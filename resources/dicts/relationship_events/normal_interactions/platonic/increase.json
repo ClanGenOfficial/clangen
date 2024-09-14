@@ -352,7 +352,7 @@
 			"m_c plays moss-ball with r_c.",
 			"m_c proudly brought r_c a flower {PRONOUN/m_c/subject} found.",
 			"m_c decorates {PRONOUN/m_c/poss} nest with gifts that r_c brought {PRONOUN/m_c/object}.",
-            "m_c takes a nap with r_c."
+            "m_c took a nap with r_c."
 		],
 		"reaction_random_cat": {
 			"platonic": "increase"
@@ -529,7 +529,7 @@
 			"m_c stays awake all night whispering secrets to r_c.",
 			"m_c promises not to tell r_c's mentor that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been sneaking out of camp.",
 			"m_c and r_c tried sneaking out of camp without their mentors.",
-            "m_c and r_c successfully snuck out of camp without their mentors.",
+            "m_c and r_c successfully snuck out of camp without their mentors."
 		],
 		"relationship_constraint": [
 			"platonic_40"
