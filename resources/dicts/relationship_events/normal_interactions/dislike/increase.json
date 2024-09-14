@@ -10,7 +10,7 @@
             "r_c blocked m_c's way and didn't apologize.",
             "m_c made plans to share tongues with r_c but never showed up.",
             "m_c accidentially stepped on r_c's tail.",
-            "m_c laughed at r_c's for having messy fur right after waking up."
+            "m_c teased r_c's for having messy fur right after waking up."
 		]
 	},
 	{
@@ -288,7 +288,7 @@
 			"m_c punishes r_c with extra work.",
 			"m_c divides r_c into extra patrols.",
 			"m_c tells other cats that r_c is not doing well in {PRONOUN/r_c/poss} training.",
-			 "m_c gave r_c twice as much work as the other cats {PRONOUN/r_c/poss} age.",
+			 "m_c gave r_c twice as much work as the other cats {PRONOUN/r_c/poss} age."
 		],
 		"main_status_constraint": [
 			"deputy",
@@ -396,7 +396,7 @@
             "m_c told r_c {PRONOUN/r_c/subject} should just retire already.",
             "r_c wonders how easy it'd be to convince the rest of the clan to agree exiling r_c is a good move...",
             "r_c overheard m_c trying to convince the rest of the Clan to ditch r_c and make a new Clan without {PRONOUN/r_c/object}.",
-            "m_c believes r_c isn't doing {PRONOUN/r_c/poss} job good enough.",
+            "m_c believes r_c isn't doing {PRONOUN/r_c/poss} job good enough."
 		],
 		"relationship_constraint": [
 			"dislike_50"
@@ -508,7 +508,7 @@
             "m_c cries any time {PRONOUN/m_c/subject} {VERB/m_c/sees/see} r_c.",
             "m_c is scared of r_c but won't say why.",
             "m_c thinks r_c is scary.",
-            "m_c blamed r_c for something {PRONOUN/m_c/subject} did to avoid trouble.",
+            "m_c blamed r_c for something {PRONOUN/m_c/subject} did to avoid trouble."
 		],
 		"main_status_constraint": [
 			"kitten"
