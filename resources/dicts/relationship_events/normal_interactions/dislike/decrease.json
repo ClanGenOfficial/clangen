@@ -37,7 +37,7 @@
 		"interactions": [
 			"m_c covered for r_c on something minor.",
 			"m_c cheers r_c up after a small disagreement.",
-			"m_c, while grabbing food for {PRONOUN/m_c/self}, saw m_c grabbing a really tasty looking rabbit and offered to share it with {PRONOUN/r_c/object}."
+			"m_c, while grabbing food for {PRONOUN/m_c/self}, saw r_c grabbing a really tasty looking rabbit and asked to share it with {PRONOUN/r_c/object}."
 		],
 		"reaction_random_cat": {
 			"dislike": "decrease"
