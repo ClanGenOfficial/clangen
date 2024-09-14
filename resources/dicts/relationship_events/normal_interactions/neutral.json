@@ -105,7 +105,7 @@
 		"interactions": [
 			"r_c notices m_c sulking around camp again.",
             		"r_c sits quietly by m_c.",
-            		"r_c offers to share tongues with m_c but {PRONOUN/r_c/subject} pass.",
+            		"r_c offers to share tongues with m_c but {PRONOUN/m_c/subject} decline.",
 			"r_c meows hello to m_c, but {PRONOUN/m_c/subject} {VERB/m_c/look/looks} pretty glum still."
 		],
 		"main_trait_constraint": [
