@@ -43,7 +43,7 @@
 		"id": "comfort_inc_med1",
 		"interactions": [
 			"m_c helps r_c pick burrs out of {PRONOUN/r_c/poss} fur.",
-			"m_c came across r_c napping and left them be, making sure no one else woke {PRONOUN/r_c/object} either.",
+			"m_c came across r_c napping and left {PRONOUN/r_c/object} be, making sure no one else woke {PRONOUN/r_c/object} either.",
             "m_c takes {PRONOUN/m_c/poss} time grooming r_c's pelt and making it shine.",
             "m_c is sharing tongues with r_c."
 		]
