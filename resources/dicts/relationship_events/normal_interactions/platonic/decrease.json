@@ -29,7 +29,7 @@
 		"intensity": "medium",
 		"interactions": [
 			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back.",
-			"m_c interrupted r_c when {PRONOUN/r_c/subject} {VERB/r_c/was/were} very busy with an important task ruining {PRONOUN/r_c/poss} focus.",
+			"m_c interrupted r_c when {PRONOUN/r_c/subject} {VERB/r_c/was/were} very busy with an important task, ruining {PRONOUN/r_c/poss} focus.",
             "m_c realized r_c was only pretending to pay attention to {PRONOUN/m_c/object} when {PRONOUN/m_c/subject} {VERB/m_c/was/were} talking.",
             "m_c tried to talk to r_c but gave up, seeing how clearly {PRONOUN/r_c/subject} wanted to be doing anything else.",
             "m_c overheard r_c talking about {PRONOUN/m_c/object} but when pressed for details, r_c denied mentioning {PRONOUN/m_c/object} at all.",
