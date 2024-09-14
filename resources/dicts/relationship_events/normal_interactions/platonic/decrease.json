@@ -38,7 +38,7 @@
             "Lately, m_c's had some choice words for r_c about how {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been acting lately...",
             "m_c asked another cat to pass a message to r_c rather doing it {PRONOUN/m_c/self}.",
             "m_c was passive aggressive towards r_c for taking something {PRONOUN/r_c/subject} knew m_c had {PRONOUN/m_c/poss} eye on all day.",
-            "r_c is caught tossing out a gift m_c JUST gave {PRONOUN/m_c/object}.",
+            "r_c is caught tossing out a gift m_c <i>just</i> gave {PRONOUN/m_c/object}.",
             "m_c actively avoids r_c any chance {PRONOUN/m_c/subject} get."
 		]
 	},
