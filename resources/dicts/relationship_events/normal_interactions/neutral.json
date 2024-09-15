@@ -97,8 +97,11 @@
 			"m_c doesn't notice r_c twitching {PRONOUN/r_c/poss} whiskers at {PRONOUN/m_c/object}."
 		],
 		"main_trait_constraint": [
-		"id": "neutral_interaction8"
+			"oblivious"
 		]
+	},
+	{
+		"id": "neutral_interaction8",
 		"interactions": [
 			"r_c notices m_c sulking around camp again.",
             		"r_c sits quietly by m_c.",
