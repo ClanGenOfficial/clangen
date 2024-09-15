@@ -313,7 +313,18 @@
 		],
 		"main_status_constraint": [
 			"deputy",
-	@@ -159,7 +328,9 @@
+			"leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior"
+		],
+		"reaction_random_cat": {
+			"dislike": "increase"
+		}
+	},
+	{
+		"id": "dislike_med_inc_med1",
 		"interactions": [
 			"m_c gives r_c bitter herbs on purpose.",
 			"m_c accuses r_c of complaining over something trivial and wasting {PRONOUN/m_c/poss} time.",
