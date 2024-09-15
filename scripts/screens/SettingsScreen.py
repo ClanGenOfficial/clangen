@@ -377,7 +377,7 @@ class SettingsScreen(Screens):
 
         self.volume_elements["music_volume_slider"] = UIImageHorizontalSlider(
             scale(pygame.Rect((x_pos, y_pos), (400, 60))),
-            start_value=game.settings["music_volume"],
+            start_value=int(music_manager.volume * 100),
             value_range=(0, 100),
             click_increment=1,
             object_id='horizontal_slider',
@@ -404,7 +404,7 @@ class SettingsScreen(Screens):
 
         self.volume_elements["sound_volume_slider"] = UIImageHorizontalSlider(
             scale(pygame.Rect((x_pos, y_pos), (400, 60))),
-            start_value=game.settings["sound_volume"],
+            start_value=int(sound_manager.volume * 100),
             value_range=(0, 100),
             click_increment=1,
             object_id='horizontal_slider',
