@@ -23,7 +23,7 @@ class MusicManager:
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
         self.volume = game.settings["music_volume"] / 100
-        self.muted = game.settings["audio_mute"]
+        self.muted = False
         self.current_track = None
         self.queued_track = None
 
