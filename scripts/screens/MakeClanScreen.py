@@ -130,8 +130,8 @@ class MakeClanScreen(Screens):
         self.menu_warning = None
 
     def screen_switches(self):
-        self.show_mute_buttons()
         # Reset variables
+        self.show_mute_buttons()
         self.game_mode = "classic"
         self.clan_name = ""
         self.selected_camp_tab = 1
@@ -990,12 +990,12 @@ class MakeClanScreen(Screens):
             if "cat" + str(u) in self.elements:
                 self.elements["cat" + str(u)].kill()
             if game.choose_cats[u] == selected:
-                self.elements["cat" + str(u)] = self.elements[
-                    "cat" + str(u)
-                ] = UISpriteButton(
-                    scale(pygame.Rect((540, 400), (300, 300))),
-                    pygame.transform.scale(game.choose_cats[u].sprite, (300, 300)),
-                    cat_object=game.choose_cats[u],
+                self.elements["cat" + str(u)] = self.elements["cat" + str(u)] = (
+                    UISpriteButton(
+                        scale(pygame.Rect((540, 400), (300, 300))),
+                        pygame.transform.scale(game.choose_cats[u].sprite, (300, 300)),
+                        cat_object=game.choose_cats[u],
+                    )
                 )
             elif (
                 game.choose_cats[u]
@@ -1020,13 +1020,13 @@ class MakeClanScreen(Screens):
             if "cat" + str(u) in self.elements:
                 self.elements["cat" + str(u)].kill()
             if game.choose_cats[u] == selected:
-                self.elements["cat" + str(u)] = self.elements[
-                    "cat" + str(u)
-                ] = UISpriteButton(
-                    scale(pygame.Rect((540, 400), (300, 300))),
-                    pygame.transform.scale(game.choose_cats[u].sprite, (300, 300)),
-                    cat_object=game.choose_cats[u],
-                    manager=MANAGER,
+                self.elements["cat" + str(u)] = self.elements["cat" + str(u)] = (
+                    UISpriteButton(
+                        scale(pygame.Rect((540, 400), (300, 300))),
+                        pygame.transform.scale(game.choose_cats[u].sprite, (300, 300)),
+                        cat_object=game.choose_cats[u],
+                        manager=MANAGER,
+                    )
                 )
             elif (
                 game.choose_cats[u]
