@@ -92,7 +92,7 @@
                 "text": "The sunlight energizes the cats for their herb-gathering. s_c in particular points out a bunch of herb locations that weren't common knowledge.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "stat_skill": [
                     "CLEVER,1",
                     "INSIGHTFUL,1",
@@ -295,7 +295,7 @@
                     "SENSE,1",
                     "INSIGHTFUL,1"
                 ],
-                "herbs": ["many_herbs"]
+                "herbs": ["many_herbs", "random_herbs"]
             },
             {
                 "text": "r_c has a nice rest, and soon is sucessful in gathering some herbs.",
