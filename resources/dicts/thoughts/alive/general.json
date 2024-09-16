@@ -86,7 +86,7 @@
             "Is complaining about an itch {PRONOUN/m_c/subject} can't quite reach"
         ],
         "main_status_constraint": [
-            "kit",
+            "kitten",
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
@@ -117,7 +117,7 @@
             "Is playing a prank on r_c"
         ],
         "main_status_constraint": [
-            "kit",
+            "kitten",
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
@@ -191,7 +191,7 @@
         	"elder"
 	],
 	"random_status_constraint": [
-		"kit"
+		"kitten"
 		]
 	},
 	{
@@ -516,7 +516,7 @@
         "elder"
         ],
 	"random_status_constraint": [
-        "kit",
+        "kitten",
 	"apprentice",
 	"medicine cat apprentice",
         "mediator apprentice"
@@ -3547,7 +3547,7 @@
             "Greenleaf"
         ],
         "main_status_constraint": [
-            "kit"
+            "kitten"
         ]
     },
     {
@@ -3611,7 +3611,7 @@
             "Leaf-bare"
         ],
         "main_status_constraint": [
-            "kit",
+            "kitten",
             "elder"
         ]
     },
