@@ -11195,8 +11195,8 @@
                 "stat_trait": ["loving", "compassionate", "wise", "calm", "thoughtful", "faithful", "loyal", "sincere", "righteous"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
                     } ],
@@ -11209,14 +11209,14 @@
                 "stat_trait": ["bloodthirsty","vengeful","arrogant","troublesome"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["dislike","respect"],
                         "amount": 10
                     },
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["trust","platonic","comfort"],
                         "amount": -10
                     } ],
@@ -11229,8 +11229,8 @@
                 "stat_trait": ["cold","strict","grumpy","lonesome","gloomy"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
                     } ],
@@ -11243,8 +11243,8 @@
                 "stat_trait": ["fierce","bold","confident","competitive","ambitious","rebellious","daring","adventurous","cunning"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
                     } ],
@@ -11257,8 +11257,8 @@
                 "stat_trait": ["insecure","nervous","oblivious","careful","responsible"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
                     } ],
@@ -11271,8 +11271,8 @@
                 "stat_trait": ["charismatic","flamboyant","playful","childish","shameless","strange","sneaky"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
                     } ],
@@ -11286,8 +11286,8 @@
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": -10
                     } ],
