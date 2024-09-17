@@ -285,7 +285,7 @@
 		"id": "platonic_inc_med15",
 		"interactions": [
             "m_c and r_c mplayed around during patrol and got in a bit of trouble, but still returned to camp smiling.",
-            "m_c just barely missed a mouse but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
+            "m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
             "m_c and r_c got so into playing around they got seperated from the rest of the patrol earning themselves an earful back at camp."
 		],
 		"main_status_constraint": [
