@@ -694,7 +694,7 @@
 		"id": "platonic_inc_app",
 		"intensity": "low",
 		"interactions": [
-			"m_c drags r_c out of the medicine cat den saying how looking at herbs all day surely doesn't do good for {PRONOUN/r_c/object}.",
+			"m_c drags r_c out of the medicine cat den, saying that looking at herbs all day surely isn't good for {PRONOUN/r_c/object}.",
             "m_c spots r_c gathering herbs during {PRONOUN/m_c/poss} patrol and offers to help since {PRONOUN/m_c/poss} patrol hasn't been very eventful."
 		],
         "main_status_constraint": [
