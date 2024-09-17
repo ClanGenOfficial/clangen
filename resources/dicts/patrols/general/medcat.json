@@ -3603,7 +3603,14 @@
                         "cats_from": ["patrol"],
                         "mutual": true,
                         "values": ["platonic", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
                     }
                 ]
             },
@@ -3659,7 +3666,7 @@
                 ]
             },
 	    {
-                "text": "Tail lashing, s_c snaps that {PRONOUN/s_c/subject} didn't train app1 just for them to give up. s_c had <i>chosen</i> app1 to be {PRONOUN/s_c/poss} apprentice, so app1 better pull {PRONOUN/app1/self} together and deal with it!",
+                "text": "Tail lashing, s_c snaps that {PRONOUN/s_c/subject} didn't train app1 just for them to give up. s_c had <i>chosen</i> app1 to be {PRONOUN/s_c/poss} apprentice, so app1 better pull {PRONOUN/app1/self} together and deal with it! Snapped out of {PRONOUN/app1/poss} gloom, app1 looks at {PRONOUN/app1/poss} intelligent, imposing mentor, and realises {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} right - s_c wouldn't have chosen just anycat to be {PRONOUN/s_c/poss} apprentice. s_c knew app1 could be a great medicine cat, and now app1 realised it, too.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["arrogant", "bloodthirsty", "confident", "gloomy", "vengeful", "sneaky"],
@@ -3744,6 +3751,13 @@
                         "mutual": false,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ],
 	        "art": "gen_med_collectingmullein"
@@ -3762,6 +3776,13 @@
                         "mutual": false,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             },
@@ -3779,6 +3800,13 @@
                         "mutual": false,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             },
@@ -3796,6 +3824,13 @@
                         "mutual": false,
                         "values": ["platonic", "respect", "trust"],
                         "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
                     }
                 ]
             }
