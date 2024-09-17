@@ -3783,7 +3783,7 @@
                 ]
             },
             {
-                "text": "s_c suddenly pauses, brightly suggesting a game for them to play - every time they see a herb, p_l had to teach s_c it's uses, and at the end of the patrol, p_l could give {PRONOUN/s_c/object} a quiz. If s_c got more than half the questions right, {PRONOUN/s_c/subject} {VERB/s_c/win/wins}! Pleased at the opportunity to both impart {PRONOUN/p_l/poss} herbal knowledge and spend time with {PRONOUN/p_l/poss} parent, the patrol seems to fly by all too quickly, with both cats having a great time.",
+                "text": "s_c suddenly pauses, brightly suggesting a game for them to play - every time they see a herb, p_l had to teach s_c it's uses, and, at the end of the patrol, p_l could give {PRONOUN/s_c/object} a quiz. If s_c got more than half the questions right, {PRONOUN/s_c/subject} {VERB/s_c/win/wins}! Pleased at the opportunity to both impart {PRONOUN/p_l/poss} herbal knowledge and spend time with {PRONOUN/p_l/poss} parent, the patrol seems to fly by all too quickly, with both cats having a great time.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["childish", "competitive", "flamboyant", "playful", "troublesome"],
