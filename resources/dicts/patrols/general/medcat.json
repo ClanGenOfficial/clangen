@@ -3872,7 +3872,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to start a conversation about the herbs they're gathering, but after realising how uninterested r_c is, {PRONOUN/p_l/subject} quickly trails off. Disappointed, the pair continue the patrol in a relatively awkward silence.",
+                "text": "p_l tries to start a conversation about the herbs they're gathering, but after realising how uninterested r_c is, {PRONOUN/p_l/subject} quickly {VERB/p_l/trail/trails} off. Disappointed, the pair continue the patrol in a relatively awkward silence.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
