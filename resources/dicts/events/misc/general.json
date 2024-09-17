@@ -3137,8 +3137,8 @@
     "event_id": "gen_misc_herb_anyallyaid1",
     "location": ["any"],
     "season": ["any"],
-    "tags": ["clan_wide"],
-    "weight": 10,
+    "tags": [],
+    "weight": 20,
     "event_text": "The herb stores are low, m_c decides to ask o_c_n for aid in these hard times. Thankfully, the allied Clan is happy to share their excess herbs.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"]
@@ -3159,8 +3159,8 @@
     "event_id": "gen_misc_herb_anyallyaid2",
     "location": ["any"],
     "season": ["any"],
-    "tags": ["clan_wide", "clan:leader", "clan:medicine cat"],
-    "weight": 10,
+    "tags": ["clan:leader", "clan:medicine cat"],
+    "weight": 20,
     "event_text": "lead_name hears from med_name that the Clan is low on herbs. m_c is sent to bargain with o_c_n for whatever herbs they can spare.",
     "m_c": {
       "status": ["mediator", "mediator apprentice"]
@@ -3178,6 +3178,73 @@
     }
   },
   {
+    "event_id": "gen_misc_herb_anyallyaid3",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": ["clan:leader", "clan:medicine cat"],
+    "weight": 20,
+    "event_text": "lead_name hears from med_name that the Clan is low on herbs. m_c is sent to bargain with o_c_n for whatever herbs they can spare.",
+    "m_c": {
+      "status": ["warrior", "deputy"],
+      "skill": ["SPEAKER,2", "MEDIATOR,2"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_10"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["neutral"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anyallyaid4",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "weight": 20,
+    "event_text": "While at the Gathering, m_c pulls the o_c_n leader aside and requests herbs from their Clan. The other leader is happy to help.",
+    "m_c": {
+      "status": ["leader"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_10"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["ally"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anyallyaid5",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "weight": 20,
+    "event_text": "While at the Gathering, m_c speaks to the other medicine cats and expresses worry over {PRONOUN/m_c/poss} herb stores. The medicine cats offer to bring some extra herbs to c_n later, to help bolster {PRONOUN/m_c/poss} supply.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_20"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["ally", "neutral"],
+      "changed": 1
+    }
+  },
+  {
     "event_id": "gen_misc_herb_anywarsteal1",
     "location": ["any"],
     "season": ["any"],
@@ -3190,6 +3257,30 @@
           "type": "all_herb",
           "trigger": ["adequate", "full", "excess"],
           "adjust": "reduce_half"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["hostile"],
+      "changed": -2
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anywarsteal2",
+    "location": ["any"],
+    "season": ["any"],
+    "subtype": ["war"],
+    "tags": ["clan_wide"],
+    "weight": 5,
+    "event_text": "c_n breaks into the o_c_n camp and steals precious herbs from their medicine cat den.",
+    "m_c": {
+      "status": ["leader"],
+      "trait": ["arrogant", "bloodthirsty", "vengeful", "competitive", "bold", "troublesome", "fierce", "cold", "righteous", "daring", "shameless", "sneaky", "cunning", "rebellious"]
+    },
+    "supplies": [
+      {
+          "type": "all_herb",
+          "trigger": ["low", "adequate"],
+          "adjust": "increase_5"
       }
     ],
     "other_clan": {
