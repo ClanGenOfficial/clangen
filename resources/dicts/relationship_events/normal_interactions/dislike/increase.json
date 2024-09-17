@@ -307,7 +307,7 @@
         "intensity": "high",
 		"interactions": [
             "m_c pulls r_c aside and reminds {PRONOUN/r_c/object} {PRONOUN/m_c/subject} could easily exile {PRONOUN/r_c/object}.",
-            "m_c scolded r_c for not doing the hard task {PRONOUN/m_c/subject} assigned {PRONOUN/r_c/object} knowing it was a job for more then one cat.",
+            "m_c scolded r_c for not doing the hard task {PRONOUN/m_c/subject} assigned {PRONOUN/r_c/object} despite knowing it was a job for more then one cat.",
 			"m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
 			"m_c threatens r_c with never passing {PRONOUN/r_c/poss} assessment!"
 		],
