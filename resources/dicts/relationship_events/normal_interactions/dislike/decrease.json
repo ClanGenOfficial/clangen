@@ -5,7 +5,9 @@
 		"interactions": [
 			"m_c is surprised by r_c being thoughtful.",
 			"m_c and r_c agree about something trivial.",
-			"m_c is able to work together with r_c."
+			"m_c is able to work together with r_c.",
+			"m_c and r_c actually get along better today.",
+            "m_c and r_c were able to have a debate without it turning into an argument."
 		]
 	},
 	{
@@ -25,25 +27,43 @@
 		"interactions": [
 			"m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgment of r_c.",
 			"m_c spends some time with r_c and they both end up understanding each other a little better.",
-			"m_c is rethinking how {PRONOUN/m_c/subject} feel about r_c and gives {PRONOUN/r_c/object} another chance."
+			"m_c is rethinking how {PRONOUN/m_c/subject} feel about r_c and gives {PRONOUN/r_c/object} another chance.",
+			"m_c didn't see r_c at all today and admittedly was a little dissapointed.",
+            "m_c and r_c apologized over something petty they both did to each other."
 		]
 	},
 	{
 		"id": "dislike_de_med2",
 		"interactions": [
 			"m_c covered for r_c on something minor.",
-			"m_c cheers r_c up after a small disagreement."
+			"m_c cheers r_c up after a small disagreement.",
+			"m_c, while grabbing food for {PRONOUN/m_c/self}, saw r_c grabbing a really tasty looking rabbit and asked to share it with {PRONOUN/r_c/object}."
 		],
 		"reaction_random_cat": {
 			"dislike": "decrease"
 		}
 	},
 	{
+		"id": "dislike_de_med3",
+		"interactions": [
+            "m_c recently began looking forward to the little arguments {PRONOUN/m_c/subject} had with r_c.",
+            "m_c and r_c's bickering has gotten more playful as of late.",
+            "m_c was almost sad {PRONOUN/m_c/subject} didn't have a chance to argue with r_c today.",
+            "Even though r_c didn't like m_c, {PRONOUN/r_c/subject} didn't chase {PRONOUN/m_c/object} away when m_c sat down beside {PRONOUN/r_c/object}.",
+            "m_c and r_c, despite never getting along, put aside their differences and worked together surprisingly well during an emergency.",
+            "m_c recently has grown tired of disliking r_c."
+		],
+        "relationship_constraint": [
+			"dislike_20"
+		]
+	},
+	{
 		"id": "dislike_de_high1",
 		"intensity": "high",
 		"interactions": [
 			"m_c is surprised to hear r_c express an ideal {PRONOUN/m_c/subject} can agree with.",
-			"m_c and r_c realize they have more in common than previously thought."
+			"m_c and r_c realize they have more in common than previously thought.",
+			"m_c actually stood up for r_c when {PRONOUN/r_c/subject} were being scolded for something too harshly."
 		]
 	},
 	{
@@ -62,7 +82,7 @@
 		"id": "dislike_de_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c and r_c heckled another Clan at the gathering together."
+			"m_c and r_c heckled another Clan at the Gathering together."
 		],
 		"reaction_random_cat": {
 			"dislike": "decrease"
@@ -73,8 +93,6 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
 			"deputy",
 			"leader"
 		],
@@ -84,8 +102,6 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
 			"deputy",
 			"leader"
 		]
