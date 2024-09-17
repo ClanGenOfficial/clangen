@@ -2236,7 +2236,7 @@
 
         },
 	{
-            "text": "Sighing to {PRONOUN/p_l/self}, p_l brightly suggests a super exciting mission for app1. All they have to do is spot the closest bush in o_c_n territory, and sprint there and back as fast as they can. While a slightly risky decision on p_l's part, the tiny transgression thankfully goes unnoticed, and gives app1 the thrill they need to actually focus during the rest of the patrol. And besides, p_l reasons, what o_c_n doesn't know can't hurt them.",
+            "text": "Sighing to {PRONOUN/p_l/self}, p_l brightly suggests a super exciting mission for app1. All {PRONOUN/app1/subject} have to do is spot the closest bush in o_c_n territory, and sprint there and back as fast as {PRONOUN/app1/subject} can. While a slightly risky decision on p_l's part, the tiny transgression thankfully goes unnoticed, and gives app1 the thrill {PRONOUN/app1/subject} need to actually focus during the rest of the patrol. And besides, p_l reasons, what o_c_n doesn't know can't hurt them.",
             "exp": 5,
 	    "weight": 20,
 	    "relationships": [
