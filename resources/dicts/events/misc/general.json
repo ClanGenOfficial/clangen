@@ -3403,7 +3403,7 @@
     "location": ["any"],
     "season": ["greenleaf"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 15,
     "event_text": "As the herb stores are being inspected, it's noticed that some of the given_herb went bad. They'll need to be replaced.",
     "supplies": [
       {
@@ -3418,7 +3418,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 15,
+    "weight": 20,
     "event_text": "The Clan has gathered plenty of moss recently, time to refresh the dens!",
     "supplies": [
       {
