@@ -266,12 +266,14 @@
 			"comfortable": "increase",
             "platonic": "increase",
 			"trust": "increase",
-            "admiration": "increase"
+            "admiration": "increase",
+			"dislike": "decrease"
 		},
         "reaction_main_cat": {
 			"comfortable": "increase",
 			"trust": "increase",
-            "platonic": "increase"
+            "platonic": "increase",
+		"dislike": "decrease"
 		},
          "season": [
             "Newleaf",
