@@ -3314,7 +3314,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "Some sort of pest got into the herb stores and ruined much of the supplies.. c_n will have to clean it out and start over anew.",
+    "event_text": "Some sort of pest got into the herb stores and ruined much of the supplies. c_n will have to clean it out and start over anew.",
     "supplies": [
       {
           "type": "all_herb",
