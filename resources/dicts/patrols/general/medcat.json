@@ -3766,7 +3766,7 @@
                 ]
             },
             {
-                "text": "Though s_c may not always understand the path of a medicine cat, {PRONOUN/s_c/subject} wants p_l to know that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} proud of {PRONOUN/p_l/object} anyway, and is glad p_l is happy in their role. Surprised - but appreciative - of the reassurance, p_l smiles and promises s_c that just because they walk different paths doesn't mean {PRONOUN/p_l/subject}'ll stop needing s_c.",
+                "text": "Though s_c may not always understand the path of a medicine cat, {PRONOUN/s_c/subject} wants p_l to know that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} proud of {PRONOUN/p_l/object} anyway, and is glad p_l is happy in {PRONOUN/p_l/poss} role. Surprised - but appreciative - of the reassurance, p_l smiles and promises s_c that just because they walk different paths doesn't mean {PRONOUN/p_l/subject}'ll stop needing s_c.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["ambitious", "adventurous", "arrogant", "bloodthirsty", "bold", "daring", "confident", "cold", "cunning", "daring", "fierce", "oblivious", "shameless", "sneaky", "strict", "vengeful"],
