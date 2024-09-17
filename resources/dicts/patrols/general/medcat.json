@@ -3676,7 +3676,7 @@
                 ]
             },
 	    {
-                "text": "s_c gasps in over-exaggerated shock - is someone doubting the most awesome, smart, brilliant apprentice in c_n?! app1 can't help but smile as s_c continues {PRONOUN/s_c/poss} flabbergasted performance, soon devolving into full-on laughter.",
+                "text": "s_c gasps in over-exaggerated shock - is someone doubting the most awesome, smart, and brilliant apprentice in c_n?! app1 can't help but smile as s_c continues {PRONOUN/s_c/poss} flabbergasted performance, soon devolving into full-on laughter.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["charismatic", "flamboyant", "childish", "playful"],
