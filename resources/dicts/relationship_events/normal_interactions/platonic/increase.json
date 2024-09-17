@@ -239,7 +239,7 @@
 	{
 		"id": "platonic_inc_med13",
 		"interactions": [
-			"m_c, after seeing r_c down in the dumps on the other side of camp, bounded over and started messing around trying to cheer {PRONOUN/r_c/object} up."
+			"m_c, after seeing r_c down in the dumps on the other side of camp, bounded over and started messing around to try and cheer {PRONOUN/r_c/object} up."
 		],
 		"main_trait_constraint": [
 			"troublesome",
