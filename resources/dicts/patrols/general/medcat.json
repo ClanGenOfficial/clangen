@@ -3726,7 +3726,7 @@
         },
 	"relationship_constraint": ["child/parent"],
         "weight": 40,
-        "intro_text": "It's a rare occassion when r_c gets to actually patrol with {PRONOUN/r_c/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like foreve since they were alone together.",
+        "intro_text": "It's a rare occasion when r_c gets to actually patrol with {PRONOUN/r_c/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like forever since they were alone together.",
 	"decline_text": "Noticing storm clouds above, p_l decides to head back to camp before it starts raining. Their catch-up would have to wait.",
         "chance_of_success": 60,
         "success_outcomes": [
