@@ -11475,7 +11475,7 @@
                 "weight": 20
      },
      {
-                "text": "Though s_c reassures app1 {PRONOUN/app1/poss} battle move was great, app1 can tell {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just being kind. Honestly, app1 wished {PRONOUN/s_c/subject}'d just called {PRONOUN/app1/object} a mousebrain.",
+                "text": "Though s_c reassures app1 {PRONOUN/app1/poss} battle move was great, app1 can tell {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just being kind. Honestly, app1 wished {PRONOUN/s_c/subject}'d just call {PRONOUN/app1/object} a mousebrain.",
                 "exp": 0,
 		"stat_skill": ["calm", "careful", "compassionate", "loving", "insecure", "nervous", "thoughtful"],
                 "can_have_stat": ["app2"],
