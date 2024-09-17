@@ -35,7 +35,7 @@
             "m_c overheard r_c talking about {PRONOUN/m_c/object}, but when pressed for details, r_c denied mentioning {PRONOUN/m_c/object} at all.",
             "m_c got up and walked away when m_c sat nearby.",
             "m_c blatantly ignored r_c.",
-            "Lately, m_c's had some choice words for r_c about how {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been acting lately...",
+            "Lately, m_c's had some choice words for r_c about how {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been acting.",
             "m_c asked another cat to pass a message to r_c rather doing it {PRONOUN/m_c/self}.",
             "m_c was passive aggressive towards r_c for taking something {PRONOUN/r_c/subject} knew m_c had {PRONOUN/m_c/poss} eye on all day.",
             "r_c is caught tossing out a gift m_c <i>just</i> gave {PRONOUN/m_c/object}.",
