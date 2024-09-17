@@ -2330,7 +2330,7 @@
             "text": "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c:0/poss} name is n_c:0, and asking p_l not to hurt {PRONOUN/n_c:0/poss} friend. It takes p_l a while to realise {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c:0 walk away, {PRONOUN/n_c:0/poss} canine companion excitably following. The other warriors were not going to believe this!",
             "exp": 5,
 	    "new_cat": [
-		["kittypet", "meeting"]
+		["kittypet", "meeting", "exists"]
 		],
 	    "relationships": [
                 {
@@ -2348,8 +2348,16 @@
             "text": "s_c whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c not to hurt them. Any other day, s_c might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it.",
             "exp": 5,
 	    "new_cat": [
-		["kittypet", "meeting"]
+		["kittypet", "meeting", "exists"]
 		],
+	    "relationships": [
+	           {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "values": ["comfort"],
+                        "amount": -5
+                    }
+	    ],
 	    "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "cold", "grumpy"],
 	    "weight": 30,
             "art": "gen_bord_newcatkittypet1"
@@ -2362,7 +2370,7 @@
             "exp": 2,
 	    "weight": 20,
 	     "new_cat": [
-		["kittypet", "meeting"]
+		["kittypet", "meeting", "exists"]
 		],
 	    "relationships": [
                 {
@@ -2371,6 +2379,13 @@
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 5
+                    },
+		    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": -10
                     }
 		],
 	    "injury": [
@@ -2389,7 +2404,7 @@
             "exp": 2,
 	    "weight": 15,
 	     "new_cat": [
-		["kittypet", "meeting"]
+		["kittypet", "meeting", "exists"]
 		],
 	    "relationships": [
                 {
@@ -2402,9 +2417,15 @@
 		{
                         "cats_to": ["n_c:0"],
                         "cats_from": ["p_l"],
-                        "mutual": false,
                         "values": ["respect"],
                         "amount": 5
+                    },
+		    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+			"mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": -10
                     }
 		],
 	    "injury": [
@@ -2429,7 +2450,7 @@
 	"text": "p_l ignores the voice, swiping {PRONOUN/p_l/poss} claws across the dog's face. Out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} sees a kittypet halt in {PRONOUN/n_c:0/poss} tracks, letting out a cry of dismay. It only takes another snarl from p_l for both kittypet and dog to flee.",
             "exp": 5,
 	    "new_cat": [
-		["kittypet", "meeting"]
+		["kittypet", "meeting", "exists"]
 		],
 	    "relationships": [
                 {
@@ -2449,7 +2470,7 @@
 	"text": "p_l ignores the voice, and is about to swipe {PRONOUN/p_l/poss} claws across the dog's face when a kittypet barrels into {PRONOUN/p_l/object}. Having caught p_l by surprise, the kittypet is able to get a lucky blow, and the warrior is forced to retreat.",
             "exp": 0,
 	    "new_cat": [
-		["kittypet", "meeting"]
+		["kittypet", "meeting", "exists"]
 		],
 	    "relationships": [
                 {
