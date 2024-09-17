@@ -307,7 +307,7 @@
     {
 		"id": "platonic_inc_med16",
 		"interactions": [
-			"m_c shows r_c a secret place {PRONOUN/m_c/subject} like to go to be alone offering to let r_c use it too if {PRONOUN/r_c/subject} need to."
+			"m_c shows r_c a secret place {PRONOUN/m_c/subject} like to go to be alone, offering to let r_c use it too if {PRONOUN/r_c/subject} need to."
 		],
         "main_trait_constraint": [
 			"calm",
