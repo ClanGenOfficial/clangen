@@ -102,7 +102,7 @@
 	{
 		"id": "comfort_de_med7",
 		"interactions": [
-            "m_c told a poorly timed joke while r_c was telling {PRONOUN/m_c/object} some bad news."
+            "m_c made a poorly timed joke while r_c was telling {PRONOUN/m_c/object} some bad news."
 		],
 		"main_trait_constraint": [
 			"charismatic",
