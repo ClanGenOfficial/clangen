@@ -4,7 +4,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
-			"m_c offered r_c a paw with something but {PRONOUN/r_c/subject} turned it down thanking {PRONOUN/m_c/object} for the offer.",
+			"m_c offered r_c a paw with something but {PRONOUN/r_c/subject} turned it down, thanking {PRONOUN/m_c/object} for the offer.",
             "m_c offered r_c a paw with something.",
             "m_c told r_c a hard truth that {PRONOUN/r_c/subject} knew {PRONOUN/m_c/subject} needed to hear.",
             "r_c warned m_c of a prank.",
