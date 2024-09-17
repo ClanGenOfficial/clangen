@@ -308,7 +308,24 @@
 		"interactions": [
             "m_c pulls r_c aside and reminds {PRONOUN/r_c/object} {PRONOUN/m_c/subject} could easily exile {PRONOUN/r_c/object}.",
             "m_c scolded r_c for not doing the hard task {PRONOUN/m_c/subject} assigned {PRONOUN/r_c/object} despite knowing it was a job for more then one cat.",
-			"m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
+			"m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail."
+		],
+		"main_status_constraint": [
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior"
+		],
+		"reaction_random_cat": {
+			"dislike": "increase"
+		}
+	},
+	{
+		"id": "dislike_dep_leader_app_inc_high1",
+        "intensity": "high",
+		"interactions": [
 			"m_c threatens r_c with never passing {PRONOUN/r_c/poss} assessment!"
 		],
 		"main_status_constraint": [
@@ -322,6 +339,7 @@
 		"reaction_random_cat": {
 			"dislike": "increase"
 		}
+
 	},
 	{
 		"id": "dislike_med_inc_med1",
