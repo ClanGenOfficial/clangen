@@ -3625,7 +3625,7 @@
                 ]
             },
             {
-                "text": "Turning to face app1, s_c reminds {PRONOUN/app1/object} that {PRONOUN/app1/subject} was chosen by <i>StarClan</i> - their ancestors know that app1 is good enough, so {PRONOUN/app1/subject} should, too. Smiling, app1 nods, raising {PRONOUN/app1/poss} tail with a new-found confidence.",
+                "text": "Turning to face app1, s_c reminds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/were/was} chosen by <i>StarClan</i> - their ancestors know that app1 is good enough, so {PRONOUN/app1/subject} should, too. Smiling, app1 nods, raising {PRONOUN/app1/poss} tail with a new-found confidence.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["STAR,0"],
