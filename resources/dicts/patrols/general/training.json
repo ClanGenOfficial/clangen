@@ -11315,7 +11315,7 @@
         "decline_text": "p_l sternly tells app1 that training isn't the time to mess around, and to practice the move {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught.",
         "success_outcomes": [
             {
-                "text": "s_c leaps into the air, twisting {PRONOUN/s_c/poss} body at the right time, and flawlessly pinning app2 to the ground. Even p_l is impressed, but app2 in particular is giving s_c and awe-struck look.",
+                "text": "s_c leaps into the air, twisting {PRONOUN/s_c/poss} body at the right time, and flawlessly pinning app2 to the ground. Even p_l is impressed, but app2 in particular is giving s_c an awe-struck look.",
                 "exp": 10,
 		"stat_skill": ["FIGHTER,0"],
                 "can_have_stat": ["app1"],
