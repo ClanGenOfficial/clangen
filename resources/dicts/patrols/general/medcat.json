@@ -3628,6 +3628,13 @@
                         "mutual": false,
                         "values": ["platonic", "comfort", "trust"],
                         "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
                     }
                 ]
             },
@@ -3644,7 +3651,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
                     }
                 ]
             },
@@ -3661,7 +3675,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect", "trust"],
-                        "amount": 5
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
                     }
                 ]
             },
@@ -3678,7 +3699,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect", "trust"],
-                        "amount": 5
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
                     }
                 ]
             },
@@ -3695,7 +3723,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect", "trust"],
-                        "amount": 5
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
                     }
                 ]
             }
