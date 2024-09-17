@@ -33,7 +33,7 @@
 			"m_c brought r_c back to the nursery despite {PRONOUN/r_c/poss} whining protests.",
             		"m_c made r_c tidy up a mess {PRONOUN/r_c/subject} made and didn't let {PRONOUN/r_c/object} go until it was all done.",
 			"r_c heard m_c complaining about how {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} a kitsitter and shouldn't have to watch m_c.",
-            		"m_c sat r_c down for a boooring lecture on something {PRONOUN/r_c/subject} did wrong."
+            		"m_c sat r_c down for a <i>boooring</i> lecture on something {PRONOUN/r_c/subject} did wrong."
 		],
 		"main_status_constraint": [
 			"apprentice",
