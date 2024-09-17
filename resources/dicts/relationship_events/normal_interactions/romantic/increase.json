@@ -338,7 +338,7 @@
 		"id": "rom_inc_high6",
 		"intensity": "high",
 		"interactions": [
-			"m_c takes r_c out to look at the stars and explaining the constellations to {PRONOUN/r_c/object}.",
+			"m_c takes r_c out to look at the stars and explains the constellations to {PRONOUN/r_c/object}.",
             "m_c tells r_c romantic stories of old."
 		],
 		"main_trait_constraint": [
