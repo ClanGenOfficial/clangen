@@ -645,9 +645,9 @@ class PatrolOutcome:
         patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
         for _herb in specific_herbs:
             if large_bonus:
-                amount_gotten = 4
+                amount_gotten = 6
             else:
-                amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
+                amount_gotten = choices([2, 4, 6], [2, 3, 1], k=1)[0]
 
             amount_gotten = int(amount_gotten * patrol_size_modifier)
             amount_gotten = max(1, amount_gotten)
