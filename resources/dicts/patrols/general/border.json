@@ -2203,8 +2203,8 @@
 	    "herbs": ["catmint"],
             "relationships": [
                 {
-                    "cat_to": ["s_c"],
-                    "cat_from": ["app1"],
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1"],
                     "values": ["respect"],
                     "amount": 5
                 }
