@@ -172,7 +172,7 @@
 			"m_c wants to improve {PRONOUN/m_c/self} for r_c.",
             "m_c and r_c talked about the idea of their ideal mates and noticed each other having a few of those qualities...",
             "m_c can't imagine any cat other then r_c as {PRONOUN/m_c/poss} mate.",
-            "m_c can't stop purring remembering r_c's laugh."
+            "m_c can't stop purring when {PRONOUN/m_c/subject} remember r_c's laugh."
 		],
 		"relationship_constraint": [
 			"romantic_40",
