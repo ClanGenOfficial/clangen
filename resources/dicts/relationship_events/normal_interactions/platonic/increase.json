@@ -284,7 +284,7 @@
 	{
 		"id": "platonic_inc_med15",
 		"interactions": [
-            "m_c and r_c mplayed around during patrol and got in a bit of trouble, but still returned to camp smiling.",
+            "m_c and r_c played around during patrol and got in a bit of trouble, but still returned to camp smiling.",
             "m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
             "m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp."
 		],
@@ -636,7 +636,7 @@
 			"m_c considers r_c to be one of {PRONOUN/m_c/poss} closest friends.",
 			"m_c couldn't imagine how boring things would be without a friend like r_c.",
 			"m_c and r_c can't get enough of each others company.",
-            "m_c wonders if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} r_c's friend in every reality...",
+			"m_c wonders if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} r_c's friends in every reality...",
             "m_c thinks r_c is the best friend a cat could have."
 		],
 		"relationship_constraint": [
@@ -667,6 +667,7 @@
 			"m_c and r_c are inseparable, and can almost always be found with each other.",
 			"m_c goes to r_c any time {PRONOUN/m_c/subject} have any news to share.",
             "m_c knows r_c better then anyone.",
+			"m_c asks r_c if {PRONOUN/r_c/subject} thinks they're best friends in every universe...",
             "m_c tells r_c that {PRONOUN/m_c/subject} consider {PRONOUN/r_c/object} an invaluable member of the Clan."
 		],
 		"relationship_constraint": [
