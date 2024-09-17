@@ -23,7 +23,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c keeps {PRONOUN/m_c/poss} tail tucked around r_c.",
-            "m_c is keeping a close eye on r_c making sure {PRONOUN/r_c/subject} {VERB/r_c/isn't/aren't} causing any trouble."
+            "m_c is keeping a close eye on r_c to make sure {PRONOUN/r_c/subject} {VERB/r_c/isn't/aren't} causing any trouble."
 		],
 		"random_status_constraint": [
 			"kitten"
