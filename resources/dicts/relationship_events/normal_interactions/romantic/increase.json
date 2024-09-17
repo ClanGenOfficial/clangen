@@ -199,7 +199,7 @@
 		"id": "rom_inc_medium8",
 		"intensity": "medium",
 		"interactions": [
-			"m_c wonders why r_c keeps spending time with {PRONOUN/m_c/object} when others usually don't like {PRONOUN/m_c/poss} attitude but {PRONOUN/m_c/subject} won't object.",
+			"m_c wonders why r_c keeps spending time with {PRONOUN/m_c/object} when others usually don't like {PRONOUN/m_c/poss} attitude, but {PRONOUN/m_c/subject} certainly won't object.",
             "r_c offered to groom m_c and despite {PRONOUN/m_c/poss} grumbling, {PRONOUN/m_c/subject} awkwardly accepted."
 		],
 		"main_trait_constraint": [
