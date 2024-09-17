@@ -2192,6 +2192,7 @@
     },
     "weight": 20,
     "chance_of_success": 20,
+    "relationship_constraint": ["dislike_10"],
     "intro_text": "p_l can't help but think that app1 has been distracted on this patrol, trailing behind and admiring any aimless insect that hovers nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that app1 could do with a <i>special</i> mission to get {PRONOUN/app1/object} back on track.",
     "decline_text": "After a bit of thought, p_l decides that getting an apprentice to sneak across the border probably isn't the best idea... however irritating {PRONOUN/app1/subject} {VERB/app1/were/was} being.",
     "success_outcomes": [
