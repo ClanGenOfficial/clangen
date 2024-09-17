@@ -29,7 +29,7 @@
 		"interactions": [
 			"m_c told r_c to stop padding after {PRONOUN/m_c/object} like a lost kit.",
 			"m_c worries that r_c isn't being honest with their relationship.",
-			"m_c can't stand r_c's snoring in {PRONOUN/r_c/poss} nest.",
+			"m_c can't stand listening to r_c's snoring in {PRONOUN/r_c/poss} nest.",
 			"m_c tried flirting with r_c but {PRONOUN/r_c/subject} didn't have time for it and brushed m_c aside."
 		],
 		"relationship_constraint": [
