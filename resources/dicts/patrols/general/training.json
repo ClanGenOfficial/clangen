@@ -11525,7 +11525,7 @@
         "weight": 20,
         "chance_of_success": 50,
         "intro_text": "app1 seems distracted during training, constantly glancing in the direction of the border. Eventually, after p_l presses {PRONOUN/app1/object}, app1 admits that {PRONOUN/app1/subject} had a conversation with a kittypet on patrol yesterday, and didn't know whether being friends with a kittypet was disolyal to c_n.",
-        "decline_text": "p_l tells app1 that this was no time to be thinking about such things, and to focus on his training.",
+        "decline_text": "p_l tells app1 that this was no time to be thinking about such things, and to focus on {PRONOUN/app1/poss} training.",
         "success_outcomes": [
             {
                 "text": "Frowning, s_c sternly asks app1 if {PRONOUN/app1/subject}'d refuse to fight the kittypet if they trespassed, just because {PRONOUN/app1/subject}'d had a conversation with them? app1 quickly replies that {PRONOUN/app1/subject} would fight them, and s_c nods in approval - so long as app1 is willing to challenge the kittypet if they trespass onto c_n territory, that was all that mattered.",
