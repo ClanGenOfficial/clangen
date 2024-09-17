@@ -3824,7 +3824,7 @@
 	    "injury": [
                 {
                   "cats": ["r_c"],
-                  "injuries": ["claw-wound"],
+                  "injuries": ["torn pelt"],
                   "scars": ["CHEEK"],
                   "no_results": false
              
