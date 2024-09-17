@@ -321,7 +321,7 @@
 		"interactions": [
 			"m_c purrs for a long time at one of r_c's lame jokes.",
 			"m_c can't stop gushing over r_c.",
-            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} didn't seem to care, nuzzling into {PRONOUN/m_c/poss} neck, {PRONOUN/r_c/subject} were just happy m_c was back.",
+            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} didn't seem to care, nuzzling into m_c's neck, {PRONOUN/r_c/subject} were just happy m_c was back.",
             "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c {PRONOUN/r_c/poss} favorite prey."
 		],
 		"relationship_constraint": [
