@@ -2306,7 +2306,7 @@
     
   },
   {
-    "patrol_id": "gen_bord_kittypet_dog",
+    "patrol_id": "gen_bord_kittypet_friends_with_dog",
     "biome": ["any"],
     "season": ["any"],
     "types": ["border"],
