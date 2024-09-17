@@ -3354,12 +3354,12 @@
     "season": ["newleaf"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and have to be thrown out.",
+    "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and many herbs have to be thrown out.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
