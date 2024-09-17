@@ -148,7 +148,7 @@
 			"m_c feels bad that {PRONOUN/m_c/subject} caused a problem for r_c.",
 			"m_c convinces r_c to help {PRONOUN/m_c/object} pull a prank on a Clanmate.",
 			 "m_c made sure not to cause any trouble for r_c.",
-            "m_c pulled a prank on r_c {PRONOUN/m_c/subject} knew {PRONOUN/r_c/subject} would like."
+            "m_c pulled a prank on r_c that {PRONOUN/m_c/subject} knew r_c would appreciate."
 		],
 		"main_trait_constraint": [
 			"troublesome"
