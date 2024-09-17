@@ -2986,7 +2986,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 5,
+    "weight": 10,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
     "supplies": [
       {
@@ -3251,12 +3251,32 @@
     "subtype": ["war"],
     "tags": ["clan_wide"],
     "weight": 5,
-    "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and attempting to destroy. The Clan manages to recover some of the herbs, but the store was still badly damaged.",
+    "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and attempting to destroy the rest. The Clan manages to recover some of the herbs, but the store was still badly damaged.",
     "supplies": [
       {
           "type": "all_herb",
           "trigger": ["adequate", "full", "excess"],
           "adjust": "reduce_half"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["hostile"],
+      "changed": -2
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anywarsteal1",
+    "location": ["any"],
+    "season": ["any"],
+    "subtype": ["war"],
+    "tags": ["clan_wide"],
+    "weight": 5,
+    "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and destroying the rest.",
+    "supplies": [
+      {
+          "type": "all_herb",
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_full"
       }
     ],
     "other_clan": {
