@@ -56,7 +56,7 @@
 			"r_c is gossiping about m_c.",
 			"m_c is spreading a rumor about r_c.",
 			"m_c caught r_c slinking around the camp entrance in the middle of the night.",
-            "m_c catches r_c doing something sneaky and when asked, r_c refused to give a straight answer.",
+            "m_c catches r_c doing something sneaky and, when asked, r_c refused to give a straight answer.",
             "m_c catches r_c sneaking around.",
             "m_c catches r_c sneaking back into camp in the middle of the night."
 		],
