@@ -2296,6 +2296,12 @@
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": 10
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
+                        "values": ["platonic", "trust"],
+                        "amount": -10
                     }
 		],
 	    "art": "gen_battle_app_other_clan"
