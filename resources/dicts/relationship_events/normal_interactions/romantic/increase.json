@@ -136,7 +136,7 @@
             "m_c saw r_c in pain and was surprised how much it hurt {PRONOUN/m_c/subject} to see r_c like that.",
             "m_c talked generally about the idea of mates with r_c.",
             "m_c realizes {PRONOUN/m_c/poss} chest hurts when {PRONOUN/m_c/subject} see r_c in pain or upset...",
-            "m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more then just a crush on r_c."
+            "m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more than just a crush on r_c."
 		],
 		"relationship_constraint": [
 			"romantic_20",
