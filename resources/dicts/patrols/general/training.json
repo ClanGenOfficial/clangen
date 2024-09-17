@@ -11333,7 +11333,14 @@
 			"mutual": true,
                         "values": ["romantic", "platonic"],
                         "amount": 5
-                    } 
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
 		],
                 "weight": 40
             },
@@ -11349,7 +11356,15 @@
 			"mutual": true,
                         "values": ["comfort", "romantic"],
                         "amount": 5
-                    } ],
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+		],
                 "weight": 20
             },
             {
@@ -11364,7 +11379,15 @@
 			"mutual": true,
                         "values": ["romantic", "platonic", "respect", "trust"],
                         "amount": 10
-                    } ],
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+		],
                 "weight": 20
             },
             {
@@ -11379,7 +11402,15 @@
 			"mutual": true,
                         "values": ["romantic"],
                         "amount": 5
-                    } ],
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+		],
                 "weight": 20
             },
 	    {
@@ -11392,7 +11423,15 @@
 			"mutual": true,
                         "values": ["romantic"],
                         "amount": 5
-                    } ],
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+		],
                 "weight": 5
             }
         ],
