@@ -210,6 +210,7 @@ class Name:
         else:
             self.prefix = random.choice(self.names_dict["normal_prefixes"])
 
+        # This thing prevents any prefix duplications from happening.
         # Try statement stops this form running when initailizing.
         try:
             if self.prefix in names.prefix_history:
