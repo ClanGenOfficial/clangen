@@ -1,6 +1,8 @@
 {
   "announcement": [
-    "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits."
+    "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
+	  "m_c had been secretive for a while now and nobody could even begin to guess what about... until today that is when m_c announced {PRONOUN/m_c/poss} pregnancy!",
+          "The entire clan could see the signs way before m_c did. everyone urged {PRONOUN/m_c/object} to visit the medicine cat's den to no avail. The clan nearly gave up until finally, m_c announced {PRONOUN/m_c/poss} pregnancy."
   ],
   "litter_guess": [
     "m_c hopes the litter will be small - {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
@@ -16,7 +18,15 @@
     "All the old tales about queens fighting to the death to protect {PRONOUN/m_c/poss} babies suddenly make sense to m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} up to fighting the sun itself, powered by the love {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} for {PRONOUN/m_c/poss} yet-to-arrive litter.",
     "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed the whole Clan - {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit.",
     "m_c has begun hoarding little trinkets, stashing bits of fluff and feather and shiny smooth rocks into {PRONOUN/m_c/poss} birthing nest to stock it with kitten toys.",
-    "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick - surely these kittens are going to be talented warriors, because, well - ow."
+    "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick - surely these kittens are going to be talented warriors, because, well - ow.",
+	  "m_c thinks {PRONOUN/m_c/subject}'ll have a small litter.",
+      "m_c hopes {PRONOUN/m_c/subject}'ll have a small litter. No way could {PRONOUN/m_c/subject} handle too many kits.",
+    "m_c thinks {PRONOUN/m_c/subject}'ll have a large litter.",
+      "m_c hopes {PRONOUN/m_c/subject}'ll have a large litter. m_c always wanted a big family after all.",
+    "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have, nor {VERB/m_c/do/does} {PRONOUN/m_c/subject} care. As long as they're happy and healthy, that's all that matters.",
+      "m_c dosen't know or care how many kits {PRONOUN/m_c/subject}'ll have.",
+      "m_c, citing mothers' intuition, claims {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject}'ll have a small litter.",
+      "m_c, citing mothers' intuition, claims {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject}'ll have a big litter."
   ],
 
 
@@ -68,7 +78,8 @@
       "r_c has been impatient for the end of m_c's pregnancy, so when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} m_c has gone into labor, {PRONOUN/r_c/subject} {VERB/r_c/drop/drops} what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing and {VERB/r_c/sprint/sprints} for the nursery, where m_c is bringing a {insert} into the world.",
       "m_c is so, so grateful that {PRONOUN/m_c/poss} adorable {insert} is here - both thrilled to meet them, and thrilled that r_c can take a turn parenting while m_c finally takes a little break from the stuffy air of the nursery.",
       "m_c and r_c were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert} that they wonder what to name them.",
-      "With r_c purring against {PRONOUN/m_c/poss} back, m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to explode with love, looking at {PRONOUN/m_c/poss} tiny new {insert}."
+      "With r_c purring against {PRONOUN/m_c/poss} back, m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to explode with love, looking at {PRONOUN/m_c/poss} tiny new {insert}.",
+	    "While on a walk in the territory with r_c, m_c unexpectedly had {PRONOUN/m_c/object} {insert} with help from {PRONOUN/m_c/poss} mate."
       
     ],
     "dead_mate": [
@@ -90,7 +101,11 @@
       "m_c secretly had a {insert} with r_c.",
       "m_c hopes that {PRONOUN/m_c/poss} {insert} doesn't look too much like r_c, otherwise questions might follow.",
       "r_c goes to visit m_c in the nursery with {PRONOUN/m_c/poss} new {insert}, on a completely innocent mission to deliver food to the new parent.",
-      "The newly arrived {insert} that m_c has just given birth to looks suspiciously like r_c. "
+      "The newly arrived {insert} that m_c has just given birth to looks suspiciously like r_c. ",
+	    "No one wanted to ruin such a happy occasion but... it didn't take a genius to notice how m_c's {insert} looked suspiciously like r_c when they shouldn't...",
+	    "m_c can see it, m_c's mate can see it, r_c can see it, everyone in c_n can see the new {insert} look too much like r_c to be coincidence...",
+        "Ever since the birth, rumor's gone around that m_c's {insert} belong to r_c's and not {PRONOUN/m_c/poss} mate and while no one has confirmed anything, no one really has to when you just look at them...",
+        "m_c's mate is such a wonderful cat deserving of being a parent... so why's m_c's {insert} look more like r_c instead?"
     ],
     "death": [
       "Later, as the medicine cat wails with m_c's blood streaked through their pelt and a warrior comes to move the body for the vigil, no one knows what to do with the {insert}.",
@@ -101,7 +116,8 @@
       "However, m_c is too far gone for the herbs {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} given to choke down to fix this blood loss. The cats are helpless as m_c slowly slips to StarClan.",
       "Later - hours later, eons later - the {insert} mews. Outside, m_c's body cools, the toll of birth too much for {PRONOUN/m_c/object}.",
       "Though all looks fine, the Clan will wake tomorrow to discover m_c's body cold in the nursery, {PRONOUN/m_c/poss} {insert} mewing in vain for their parent.",
-      "Though birth is always considered a difficult and risky event, no one thought they'd lose m_c to it. Not after the {insert} was all born and seemed fine... they thought the blood loss was under control."
+      "Though birth is always considered a difficult and risky event, no one thought they'd lose m_c to it. Not after the {insert} was all born and seemed fine... they thought the blood loss was under control.",
+	    "Everyone knew m_c was the most excited of everyone to meet {PRONOUN/m_c/poss} kits... It was a cruel twist of fate however, as m_c's body lay cooling leaving the {insert} without {PRONOUN/m_c/object}."
     ],
     "difficult_birth": [
       "The birth was stressful and m_c lost a lot of blood.",
@@ -112,7 +128,9 @@
       "m_c wasn't expecting this birth to be so intensely painful.",
       "Though everyone says giving birth is difficult, m_c feels like this one has been worse than most.",
       "This will all be worth it, m_c groans, promises {PRONOUN/m_c/self} as the pains of afterbirth rock {PRONOUN/m_c/poss} exhausted and bleeding body.",
-      "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subject} {VERB/m_c/need/needs} them to stop the blood loss. "
+      "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subject} {VERB/m_c/need/needs} them to stop the blood loss.",
+	    "m_c wonders if {PRONOUN/m_c/poss} body will ever recover from the painful birth and blood loss.",
+	    "It took the medicine cat everything they had but m_c pulled through."
     ],
 	"outside_alone": [
 		"Rumors reach the Clan that m_c gave birth to a {insert}."
@@ -123,7 +141,9 @@
 	],
 	"outside_death": [
 		"Some say m_c didn't make it.",
-		"Some say m_c would have needed a medicine cat to survive."
+		"Some say m_c would have needed a medicine cat to survive.",
+		"Hopefully those kits have someone to care for them since m_c apparently didn't make it...",
+        	"If only m_c had a medicine cat with {PRONOUN/m_c/object}..."
 	],
 	"lead_death": [
 		"m_c lost one of {PRONOUN/m_c/poss} nine lives, but gave birth to a {insert}.",
