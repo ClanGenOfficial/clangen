@@ -11294,5 +11294,447 @@
                 "weight": 10
             }
         ]
+    },
+    {
+        "patrol_id": "gen_train_warriorapp_darkforest1ocked1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_darkforest",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+	    "normal adult": [1, 1],
+            "all apprentices": [1, 1]
+        },
+        "pl_skill_constraint": ["DARK,2"],
+        "weight": 40,
+        "intro_text": "p_l takes app1 to a shadowy place. Muck and gloom coats the ground, which terrifies app1. A sick, acrid stench wafts within the winds. Heavy pawsteps reverberate in the area, and app1 feels a chill run up {PRONOUN/app1/poss} spine.",
+        "decline_text": "app1, being encouraged by p_l, takes a few reluctant steps forward. Much to p_l's dismay and app1's deep relief, the spirit fades away, their bedraggled pelt replaced by a strangely hollow area.",
+        "chance_of_success": 80,
+        "success_outcomes": [
+            {
+                "text": "A shadowy figure approaches. Their paws are drenched in murk and their fur is unruly. They growl at p_l an order, almost if they had known each other for long. p_l nods curtly and brings app1 deeper into the territory, where they train and fight until app1's pelt is covered in scratches.",
+                "exp": 10,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["torn pelt"],
+                        "scars": ["TWO", "SIDE", "THROAT"]
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -10
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "p_l yowls at app1 to improve as {PRONOUN/app1/subject} {VERB/app1/struggle/struggles} to hold off the Dark Forest spirit. {PRONOUN/app1/subject} {VERB/app1/finish/finishes} the training, but not before gaining a few nasty wounds.",
+                "exp": 10,
+                "weight": 5,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["claw-wound", "cat bite"],
+                        "scars": ["TWO", "SIDE", "THROAT"]
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -10
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+	    {
+                "text": "p_l calls out a greeting to the spirit, and their wide, cloudy eyes, once unresponsive, light up. p_l introduces the spirit, {PRONOUN/p_l/poss} Dark Forest mentor, to app1. app1 might have been scared before, but the fact that {PRONOUN/app1/poss} mentor knows a spirit is something app1 now prides {PRONOUN/app1/self} on! app1 gladly trains with the spirit, and {PRONOUN/app1/subject} comes out of it with no injury but with better fighting skills.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 completes the training session, but stumbles out of the forest and collapses not far away from the sparring area.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest"
+                }
+            },
+	    {
+                "text": "app1 quickly bolts out of there. app1 attempts to follow {PRONOUN/r_c/object}, but by the time {PRONOUN/p_l/subject} {VERB/p_l/catches/catch} up, {PRONOUN/app1/subject} {VERB/app1/are/is} already gone.",
+                "exp": 0,
+                "weight": 20,
+		 "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_warriorapp_darkforestlocked2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_darkforest",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [1, 1],
+            "normal adult": [1, 1]
+        },
+        "pl_skill_constraint": ["DARK,2"],
+        "weight": 40,
+        "intro_text": "app1, right on p_l's heels, complains that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to do more basic training. p_l insists that this training session would be vastly different. As they arrive to their sparring area, a ragged, misty figure bearing dry scars waits in the area.",
+        "decline_text": "app1 takes a few steps forward right beside p_l, but the spirit fades so soon. A shame, p_l reflects, as {PRONOUN/p_l/subject} {VERB/p_l/take/takes} app1 out to undergo different training. app1's mood is also left soured, but for the reason that p_l's promise of different training was broken.",
+        "chance_of_success": 80,
+        "success_outcomes": [
+            {
+                "text": "p_l gives an encouraging nod to app1 as the spirit greets {PRONOUN/app1/object}, explaining that app1 has been chosen for a very.. <i>special</i> kind of training. It's hard, it's <i>painful</i>, but both p_l and the spirit insists that this is how real warriors fight, and app1 wants to be the very best warrior {PRONOUN/app1/subject} can be, so {PRONOUN/app1/subject} {VERB/app1/bear/bears} this harsh training.",
+                "exp": 10,
+                "weight": 5,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["claw-wound", "cat bite"],
+                        "scars": ["TWO", "SIDE", "THROAT"]
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+	    {
+                "text": "p_l gives an encouraging nod to app1 as the spirit greets {PRONOUN/app1/object}, explaining that app1 has been chosen for a very.. <i>special</i> kind of training. It's hard, it's <i>painful</i>, but both p_l and the spirit insists that this is how real warriors fight, and app1 wants to be the very best warrior {PRONOUN/app1/subject} can be, so {PRONOUN/app1/subject} {VERB/app1/bear/bears} this harsh training.",
+                "exp": 10,
+                "weight": 5,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["claw-wound", "cat bite"],
+                        "scars": ["TWO", "SIDE", "THROAT"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "This cat, this <i>spirit</i>, has a commanding presence. s_c softly encourages the apprentice to the battle, but also makes sure that app1 doesn't get too hurt by the spirit. The Dark Forest spirit argues that app1 would never find out how real warriors fight, but s_c betrays the spirit's dominating aura by insisting that app1's pelt was not to be dotted with wounds when they got back. Not just to keep suspicion low, but for app1 {PRONOUN/app1/self}.",
+                "exp": 10,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["sprain"],
+                        "scars": []
+                    }
+                ],
+		"stat_trait": ["compassionate", "thoughtful", "loving"],
+		"can_have_stat": ["p_l"],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "respect"],
+                        "amount": 15
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+	    {
+                "text": "Shaken by the look of the cat, app1 turns away and pelts off back to camp, despite p_l's protests.",
+                "exp": 0,
+                "weight": 10,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "app1 says that no, no, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to fight <i>that</i>. The spirit is offended, but surprisingly, s_c sympathizes with the apprentice, and brings {PRONOUN/app1/object} to do other safer training.",
+                "exp": 0,
+                "weight": 10,
+		"stat_trait": ["compassionate", "loving", "thoughtful"],
+		"can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 15
+                    }
+                ]
+            },
+	    {
+                "text": "app1 says that no, no, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to fight <i>that</i>. p_l scoffs, grasping at app1's pelt with {PRONOUN/p_l/poss} claws and dragging {PRONOUN/app1/object} back into the sparring area. This is for app1's own good, p_l insists. app1 is too soft.",
+                "exp": 0,
+                "weight": 10,
+		"stat_trait": ["bloodthirsty", "vengeful", "arrogant", "fierce"],
+		"can_have_stat": ["p_l"],
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["mangled tail"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["torn ear"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    },
+		    {
+                        "cats": ["app1"],
+                        "injuries": ["sprain"],
+                        "scars": []
+                    }
+		],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+                ]
+            }
+            {
+                "text": "app1 completes the training session, but stumbles out of the sparring area and collapses not far away.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "reg_death": "m_c died of {PRONOUN/m_c/poss} wounds from training in the Dark Forest.",
+		    "lead_death": "were killed after a training session in the Dark Forest"
+                }
+            }
+        ]
+    },    
+    {
+        "patrol_id": "gen_train_solodarkforest",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_darkforest2",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "pl_skill_constraint": ["DARK,2"],
+        "weight": 20,
+        "intro_text": "p_l stands at the entrance of a gloomy forest, draped in mud. A spirit waits, fur puffed up, claws unsheathed.",
+        "decline_text": "p_l turns tail and races away! {PRONOUN/p_l/poss} failure is jeered and laughed at by all the other Dark Forest spirits.",
+        "chance_of_success": 65,
+        "success_outcomes": [
+            {
+                "text": "p_l is met with a spirit who growls at {PRONOUN/p_l/object}. p_l pounces on them and wrestles them, and the two scuffle. p_l sinks {PRONOUN/p_l/poss} teeth in the Dark Forest spirit's neck, and they hiss, their body melting beneath p_l. Their pelt fades until there is no more, and p_l is alone, but not unhurt.",
+                "exp": 15,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["cat bite", "claw-wound"],
+                        "scars": ["BRIGHTHEART", "SIDE", "THREE", "MANTAIL", "RIGHTBLIND"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c was killed after training in the Dark Forest.",
+                    "lead_death": "after a brutal training session in the Dark Forest left them dead",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                }
+            },
+            {
+                "text": "p_l scowls as {PRONOUN/p_l/subject} feel the scratches along {PRONOUN/p_l/poss} fur ache. {PRONOUN/p_l/subject/CAP} swipe claws at the spirit's throat, causing them to die and fade. p_l ambles to camp with a stumble in {PRONOUN/p_l/poss} step, collapsing at camp.",
+                "exp": 10,
+                "weight": 5,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["claw-wound", "cat bite"],
+                        "scars": ["BRIGHTHEART", "THROAT", "THREE"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c was killed after a brutal training session in the Dark Forest.",
+                    "lead_death": "after a brutal training session in the Dark Forest left them dead",
+                    "scar": "m_c was scarred after a brutal training session in the Dark Forest."
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l fights the best {PRONOUN/p_l/subject} can, but {PRONOUN/p_l/subject} fail to hold off the large, ragged Dark Forest warrior, and {PRONOUN/p_l/subject} beg for an easy path to StarClan when {PRONOUN/p_l/subject} are on the ground, a paw on their face, {PRONOUN/p_l/poss} blood pooling beneath {PRONOUN/p_l/object}.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                       "reg_death": "m_c was killed after a brutal training session in the Dark Forest.",
+                       "lead_death": "after a brutal training session in the Dark Forest left them dead"
+                }
+            }
+        ]
     }
 ]
