@@ -539,17 +539,14 @@ class Screens:
             object_id="#text_box_30_horizleft_light",
         )
 
-        match game.clan.current_season:
-            case "Newleaf":
-                season_image_id = "#mns_image_newleaf"
-            case "Greenleaf":
-                season_image_id = "#mns_image_greenleaf"
-            case "Leaf-bare":
-                season_image_id = "#mns_image_leafbare"
-            case "Leaf-fall":
-                season_image_id = "#mns_image_leaffall"
-            case _:
-                print("Error! No matching season")
+        if game.clan.current_season == "Newleaf":
+            season_image_id = "#mns_image_newleaf"
+        elif game.clan.current_season == "Greenleaf":
+            season_image_id = "#mns_image_greenleaf"
+        elif game.clan.current_season == "Leaf-bare":
+            season_image_id = "#mns_image_leafbare"
+        elif game.clan.current_season == "Leaf-fall":
+            season_image_id = "#mns_image_leaffall"
 
         self.moons_n_seasons_season = UIImageButton(
             scale(pygame.Rect((28, 82), (48, 48))),
