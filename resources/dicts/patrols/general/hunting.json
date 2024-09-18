@@ -3860,6 +3860,85 @@
             "text": "Intrigued, the patrol agrees to the competition, everyone splitting up and catching as much prey as they can find. It makes for a fun afternoon, and every cat brings back an impressive haul.",
             "exp": 10,
 	    "prey": ["large"],
+            "weight": 10,
+	    "relationships": [
+		{
+            	"cats_to": ["patrol"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "While every cat brings back impressive catches, s_c's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner.",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_skill": ["HUNTER,2"],
+            "weight": 20,
+	    "relationships": [
+		{
+            	"cats_to": ["s_c"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "Every cat seems a little hesitant, until s_c agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c a grateful look, r_c organises the competition, and the patrol have a fun - and productive - afternoon!",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_trait": ["charismatic"],
+            "weight": 20,
+	    "relationships": [
+		{
+            	"cats_to": ["r_c"],
+            	"cats_from": ["s_c"],
+            	"mutual": true,
+            	"values": ["platonic"],
+            	"amount": 5
+		},
+		{
+            	"cats_to": ["s_c"],
+            	"cats_from": ["r_c"],
+            	"values": ["dislike", "jealousy"],
+            	"amount": -5
+		}
+	    ],
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an arguement on what prey is worth more. Luckily, s_c is there to smooth things over, coming  up with a comprimise that both cats grudgingly admit is fair.",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_skill": ["MEDIATOR,1"],
+	    "relationships": [
+		{
+            	"cats_to": ["s_c"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+            "weight": 20,
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind - and smart - enough to just give {PRONOUN/s_c/object} the win.",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_trait": ["competitive"],
+	    "relationships": [
+		{
+            	"cats_to": ["patrol"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
             "weight": 20,
 	    "art": "hunt_general_intro"
         }
@@ -3892,7 +3971,7 @@
             "text": "Realising the patrol's reluctance, r_c hastily dismisses the idea, and they continue the hunt in awkward silence.",
             "exp": 5,
 	    "prey": ["small"],
-            "weight": 20,
+            "weight": 10,
 	    "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -3924,7 +4003,49 @@
                         "amount": 5
                     }
                 ]
-        }
+        },
+	{
+            "text": "The competition is going great, every cat enjoying their respective hunts, until s_c gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c.",
+            "exp": 5,
+	    "prey": ["very_small"],
+	    "stat_trait": ["childish", "oblivious", "troublesome"],
+            "weight": 20,
+	    "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+        },
+	{
+            "text": "The <i>point</i> of the competition, an irritated r_c explains to s_c, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c grumbles, no cat made those rules clear to {PRONOUN/s_c/object}.",
+            "exp": 5,
+	    "prey": ["very_small"],
+	    "stat_trait": ["competitive"],
+            "weight": 20,
+	    "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+        },
     ]
 }
 
