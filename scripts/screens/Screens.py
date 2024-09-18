@@ -331,7 +331,7 @@ class Screens:
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able."""
         # Check if the setting for moons and seasons UI is on so stats button can be moved
-        self.update_mns()
+        self.update_moon_and_season()
         for name, button in self.menu_buttons.items():
             if name == "dens":
                 if (
@@ -405,11 +405,11 @@ class Screens:
         elif event.ui_element == self.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == self.menu_buttons["moons_n_seasons_arrow"]:
-            if game.switches["mns open"]:
-                game.switches["mns open"] = False
+            if game.switches["moon&season_open"]:
+                game.switches["moon&season_open"] = False
             else:
-                game.switches["mns open"] = True
-            self.update_mns()
+                game.switches["moon&season_open"] = True
+            self.update_moon_and_season()
         elif event.ui_element == self.menu_buttons["dens"]:
             self.update_dens()
         elif event.ui_element == self.menu_buttons["lead_den"]:
@@ -481,28 +481,28 @@ class Screens:
 
         # Update if moons and seasons UI is on
 
-    def update_mns(self):
-        """Updates the moons and seasons widget"""
+    def update_moon_and_season(self):
+        """Updates the moons and seasons widget."""
         if (
             game.clan.clan_settings["moons and seasons"]
             and game.switches["cur_screen"] != "events screen"
         ):
             self.menu_buttons["moons_n_seasons_arrow"].kill()
             self.menu_buttons["moons_n_seasons"].kill()
-            if game.switches["mns open"]:
+            if game.switches["moon&season_open"]:
                 if self.name == "events screen":
-                    self.mns_close()
+                    self.close_moon_and_season()
                 else:
-                    self.mns_open()
+                    self.open_moon_and_season()
             else:
-                self.mns_close()
+                self.close_moon_and_season()
         else:
             self.menu_buttons["moons_n_seasons"].hide()
             self.menu_buttons["moons_n_seasons_arrow"].hide()
 
     # Maximize moons and seasons widget
-    def mns_open(self):
-        """Opens moons and seasons widget"""
+    def open_moon_and_season(self):
+        """Opens the moons and seasons widget."""
         self.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
             scale(pygame.Rect((349, 161), (44, 68))),
             "",
@@ -567,8 +567,8 @@ class Screens:
         )
 
     # Minimize moons and seasons widget
-    def mns_close(self):
-        """Closes moons and seasons widget"""
+    def close_moon_and_season(self):
+        """Closes the moons and seasons widget."""
         self.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
             scale(pygame.Rect((143, 161), (44, 68))),
             "",

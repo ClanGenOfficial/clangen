@@ -139,7 +139,7 @@ class Game:
         "disallowed_symbol_tags": [],
         "audio_mute": False,
         "saved_scroll_positions": {},
-        "mns open": False,
+        "moon&season_open": False,
     }
     all_screens = {}
     cur_events = {}
@@ -147,7 +147,7 @@ class Game:
 
     # SETTINGS
     settings = {}
-    settings["mns open"] = False
+    settings["moon&season_open"] = False
     setting_lists = {}
 
     debug_settings = {
@@ -210,8 +210,6 @@ class Game:
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-
-
 
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
