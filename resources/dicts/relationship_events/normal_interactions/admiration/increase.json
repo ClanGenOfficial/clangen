@@ -14,7 +14,8 @@
 		"interactions": [
 			"m_c mews congratulations to r_c for a job well done.",
 			"m_c thinks r_c is being thoughtful of others.",
-			"m_c approves of r_c's recent efforts."
+			"m_c approves of r_c's recent efforts.",
+			"m_c spreads a positive rumor about r_c."
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
@@ -28,9 +29,11 @@
 			"m_c really looks up to r_c!",
 			"m_c is awed by how much r_c has done for the Clan.",
 			"m_c is really impressed by all of r_c's accomplishments.",
-			"m_c wants to hold an important position like r_c."
+			"m_c wants to hold an important position like r_c.",
+			"m_c wonders how r_c became the cat {PRONOUN/r_c/subject} are today."
 		],
 		"main_status_constraint": [
+			"kitten",
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice"
@@ -49,7 +52,8 @@
 			"m_c admires how brave r_c is.",
 			"m_c admires r_c's dedication.",
 			"m_c is impressed with r_c's willingness to help.",
-			"m_c notices that r_c is always one of the first to volunteer for a difficult task."
+			"m_c notices that r_c is always one of the first to volunteer for a difficult task.",
+			"m_c watches and tries to follow what r_c does each day to be more like {PRONOUN/r_c/object}."
 		]
 	},
 	{
@@ -114,7 +118,8 @@
 		"interactions": [
 			"m_c wants to become just like r_c someday!",
 			"m_c is pretending to be r_c.",
-			"m_c always wants to play as r_c in {PRONOUN/m_c/poss} games of pretend."
+			"m_c always wants to play as r_c in {PRONOUN/m_c/poss} games of pretend.",
+			"m_c keeps asking when {PRONOUN/m_c/subject} can be made r_c's apprentice."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -289,7 +294,9 @@
 		"id": "admire_kit_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really going to be the leader someday."
+			"m_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really going to be the leader someday.",
+			"m_c asks if {PRONOUN/m_c/subject} could be r_c's deputy when {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} leader.",
+            		"r_c plays as m_c's deputy."
 		],
 		"main_status_constraint": [
 			"kitten"

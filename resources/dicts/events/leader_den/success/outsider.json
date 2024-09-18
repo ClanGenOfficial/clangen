@@ -279,5 +279,36 @@
       ],
       "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
     }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "Patrol after patrol has been sent out in search of m_c, always returning without their lost Clanmate. Then, just as the Clan is about to give up all hope, m_c manages to track them down, resulting in a joyful reunion.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["lost"],
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "skill": [
+        "SENSE,1"
+      ],
+      "new_thought": "Is glad to have returned",
+      "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        }
+      ]
+    }
   }
 ]

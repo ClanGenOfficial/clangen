@@ -5,7 +5,8 @@
 		"interactions": [
 			"m_c is developing a crush on r_c.",
 			"m_c might be reading a little too far into r_c's kindness.",
-			"m_c never realized how much {PRONOUN/m_c/subject} {VERB/m_c/love/loves} spending time with r_c."
+			"m_c never realized how much {PRONOUN/m_c/subject} {VERB/m_c/love/loves} spending time with r_c.",
+			"m_c can't help but smile seeing r_c smile."
 		],
 		"relationship_constraint": [
 			"not_mates",
@@ -18,7 +19,11 @@
 		"interactions": [
 			"m_c is admiring r_c from afar...",
 			"m_c stayed up all night thinking of ways to impress r_c.",
-			"m_c thinks r_c is really funny."
+			"m_c thinks r_c is really funny.",
+			"m_c had a dream about r_c.",
+            "m_c thinks r_c has very soft fur.",
+            "m_c and r_c sunbathe together.",
+            "m_c and r_c take a nap together."
 		]
 	},
 	{
@@ -35,7 +40,8 @@
 		"id": "rom_inc_low4",
 		"intensity": "low",
 		"interactions": [
-			"m_c just noticed how beautiful r_c's eyes are."
+			"m_c just noticed how beautiful r_c's eyes are.",
+			"m_c can't help but admire r_c's pelt."
 		],
 		"relationship_constraint": [
 			"not_mates"
@@ -45,10 +51,13 @@
 		"id": "rom_inc_low5",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c is really charming."
+			"m_c thinks r_c is really charming.",
+			"m_c can't help but smile when around r_c."
 		],
 		"random_trait_constraint": [
-			"charming"
+			"charming",
+            "charismatic",
+            "flamboyant"
 		]
 	},
 	{
@@ -57,7 +66,8 @@
 		"interactions": [
 			"m_c laughs at bad jokes from r_c.",
 			"m_c made r_c laugh again and again.",
-			"m_c goes for a nice long walk with r_c."
+			"m_c goes for a nice long walk with r_c.",
+			"m_c nuzzles against r_c and purrs."
 		],
 		"reaction_random_cat": {
 			"dislike": "decrease",
@@ -69,10 +79,14 @@
 		"id": "rom_inc_medium2",
 		"intensity": "medium",
 		"interactions": [
-			"m_c ensnares r_c with a charming smile."
+			"m_c ensnares r_c with a charming smile.",
+			"m_c knows exactly what to say to make r_c blush.",
+            		"m_c charms r_c with endless compliments."
 		],
 		"main_trait_constraint": [
-			"charming"
+			"charming",
+            "flamboyant",
+            "charismatic"
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",
@@ -85,7 +99,8 @@
 		"intensity": "medium",
 		"interactions": [
 			"m_c is hoping that r_c notices {PRONOUN/m_c/object}.",
-			"m_c wonders what r_c thinks about mates."
+			"m_c wonders what r_c thinks about mates.",
+			"m_c hopes r_c likes {PRONOUN/m_c/object} as much as {PRONOUN/m_c/subject} like r_c."
 		],
 		"relationship_constraint": [
 			"not_mates",
@@ -109,7 +124,19 @@
 			"m_c gets flustered when r_c compliments {PRONOUN/m_c/poss} skill.",
 			"m_c feels {PRONOUN/m_c/poss} jaw drop when the sun catches just right on r_c's pelt.",
 			"m_c immediately thinks of r_c when the topic of mates is brought up.",
-			"m_c is nervous sitting next to r_c at the Clan meeting."
+			"m_c is nervous sitting next to r_c at the Clan meeting.",
+			"m_c and r_c talked about the idea of their ideal mates.",
+            "m_c thinks r_c has a beautiful smile.",
+            "m_c and r_c realized they both had similar values when it came to family.", 
+            "m_c promises to protect r_c.",
+            "Rumor around the Clan was that m_c and r_c are seeing each other and, while they did clear things up, neither cat seemed to mind...",
+            "m_c thinks r_c has a beautiful laugh.",
+            "m_c took a nap with r_c, happy to be able to spend this time with {PRONOUN/r_c/object}.",
+            "m_c urges r_c to take a break. {PRONOUN/m_c/subject/cap} don't want to see r_c overworking {PRONOUN/r_c/self}.",
+            "m_c saw r_c in pain and was surprised how much it hurt {PRONOUN/m_c/subject} to see r_c like that.",
+            "m_c talked generally about the idea of mates with r_c.",
+            "m_c realizes {PRONOUN/m_c/poss} chest hurts when {PRONOUN/m_c/subject} see r_c in pain or upset...",
+            "m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more than just a crush on r_c."
 		],
 		"relationship_constraint": [
 			"romantic_20",
@@ -123,7 +150,8 @@
 			"m_c brushes against r_c while correcting {PRONOUN/r_c/poss} stance and looks away with a purr.",
 			"m_c left a gift in r_c's nest for {PRONOUN/r_c/object} to find.",
 			"m_c picked out the best piece of prey to share with r_c.",
-			"m_c sees r_c stumble while hunting and thinks it's cute."
+			"m_c sees r_c stumble while hunting and thinks it's cute.",
+			"m_c overhears r_c tell another cat {PRONOUN/r_c/subject} kinda {VERB/r_c/like/likes} m_c."
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",
@@ -132,15 +160,19 @@
 		}
 	},
 	{
-		"id": "rom_inc_medium4",
+		"id": "rom_inc_medium6",
 		"intensity": "medium",
 		"interactions": [
-			"m_c wants to confess {PRONOUN/m_c/poss} love to r_c.",
+			"m_c wants, more then anything, to confess {PRONOUN/m_c/poss} love to r_c.",
 			"m_c is wondering what it would be like to grow old with r_c.",
 			"m_c is the first cat that r_c thinks of when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} good news.",
 			"m_c realizes {PRONOUN/m_c/poss} heart always flutters whenever {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c.",
 			"m_c feels like no one understands {PRONOUN/m_c/object} the way r_c does.",
-			"m_c would give it all to make r_c's dreams come true."
+			"m_c would give it all to make r_c's dreams come true.",
+			"m_c wants to improve {PRONOUN/m_c/self} for r_c.",
+            "m_c and r_c talked about the idea of their ideal mates and noticed each other having a few of those qualities...",
+            "m_c can't imagine any cat other than r_c as {PRONOUN/m_c/poss} mate.",
+            "m_c can't stop purring when {PRONOUN/m_c/subject} remember r_c's laugh."
 		],
 		"relationship_constraint": [
 			"romantic_40",
@@ -148,18 +180,52 @@
 		]
 	},
 	{
-		"id": "rom_inc_medium4",
+		"id": "rom_inc_medium7",
 		"intensity": "medium",
 		"interactions": [
 			"m_c thinks r_c is the most beautiful cat in the Clan.",
 			"m_c can't stop thinking about r_c.",
 			"m_c feels giddy about getting on the same patrol as r_c.",
 			"m_c wants r_c to understand how crazy {PRONOUN/m_c/subject} {VERB/m_c/are/is} about {PRONOUN/r_c/object}.",
-			"m_c thinks r_c has a lovely sense of humor."
+			"m_c thinks r_c has a lovely sense of humor.",
+			"If you were to ask m_c, no other cat is anywhere near as fun or interesting as r_c.",
+            "m_c had a lovely dream about r_c."
 		],
 		"relationship_constraint": [
 			"romantic_30"
 		]
+	},
+	{
+		"id": "rom_inc_medium8",
+		"intensity": "medium",
+		"interactions": [
+			"m_c wonders why r_c keeps spending time with {PRONOUN/m_c/object} when others usually don't like {PRONOUN/m_c/poss} attitude, but {PRONOUN/m_c/subject} certainly won't object.",
+            "r_c offered to groom m_c and, despite {PRONOUN/m_c/poss} grumbling, {PRONOUN/m_c/subject} awkwardly accepted."
+		],
+		"main_trait_constraint": [
+			"grumpy",
+            "strict",
+	    "insecure",
+            "arrogant",
+            "vengeful",
+            "righteous",
+            "rebellious",
+            "cold",
+            "gloomy",
+            "fierce",
+            "righteous",
+            "troublesome"
+		],
+        "reaction_random_cat": {
+			"romantic": "increase",
+			"dislike": "decrease",
+			"comfortable": "increase"
+		},
+		"reaction_main_cat": {
+			"romantic": "increase",
+			"dislike": "decrease",
+			"comfortable": "increase"
+		}
 	},
 	{
 		"id": "rom_inc_high1",
@@ -198,7 +264,8 @@
 			"m_c gave a pretty flower {PRONOUN/m_c/subject} found to r_c.",
 			"m_c picks some fragrant flowers for r_c.",
 			"m_c decorates r_c's nest with flowers to surprise {PRONOUN/r_c/object}!",
-			"m_c rolls around in some herbs after hearing r_c likes their smell."
+			"m_c rolls around in some herbs after hearing r_c likes their smell.",
+			"m_c gave r_c a sprig of catmint {PRONOUN/m_c/subject} found."
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",
@@ -231,7 +298,11 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c was caught enjoying a moonlit stroll with r_c last night...",
-			"m_c sneaks out at night to sleep in r_c's nest."
+			"m_c sneaks out at night to sleep in r_c's nest.",
+			"m_c and r_c were heard discussing kits.",
+            "m_c and r_c have been sickeningly lovey-dovey all day.",
+            "m_c and r_c snuck out of camp together.",
+            "m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
 		],
 		"relationship_constraint": [
 			"romantic_40",
@@ -248,10 +319,30 @@
 		"id": "rom_inc_high5",
 		"intensity": "high",
 		"interactions": [
-			"m_c purrs for a long time at one of r_c's lame jokes."
+			"m_c purrs for a long time at one of r_c's lame jokes.",
+			"m_c can't stop gushing over r_c.",
+            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} didn't seem to care, nuzzling into m_c's neck, {PRONOUN/r_c/subject} were just happy m_c was back.",
+            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c {PRONOUN/r_c/poss} favorite prey."
 		],
 		"relationship_constraint": [
 			"mates"
+		],
+		"reaction_random_cat": {
+			"romantic": "increase",
+			"dislike": "decrease",
+			"platonic": "increase",
+			"comfortable": "increase"
+		}
+	},
+	{
+		"id": "rom_inc_high6",
+		"intensity": "high",
+		"interactions": [
+			"m_c takes r_c out to look at the stars and explains the constellations to {PRONOUN/r_c/object}.",
+            "m_c tells r_c romantic stories of old."
+		],
+		"main_trait_constraint": [
+			"wise"
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",

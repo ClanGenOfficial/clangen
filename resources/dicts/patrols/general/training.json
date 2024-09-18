@@ -11126,7 +11126,7 @@
                 "weight": 10,
                 "dead_cats": ["app1"],
                 "history_text": {
-                    "death": "r_c was killed by another cat while doing {PRONOUN/r_c/poss} assessment as an apprentice."
+                    "death": "m_c was killed by another cat while doing {PRONOUN/m_c/poss} assessment as an apprentice."
                 },
                 "relationships": [
                     {

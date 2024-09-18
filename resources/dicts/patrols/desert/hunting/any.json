@@ -2764,8 +2764,8 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "r_c was permantly marked by the bite of a gila monster as an apprentice - but {PRONOUN/r_c/subject} survived.",
-                        "reg_death": "r_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice.",
+                        "scar": "m_c was permantly marked by the bite of a gila monster as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "reg_death": "m_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice.",
                         "lead_death": "from the bite of a gila monster encountered on a hunt as a foolish apprentice"
                         }
                 }

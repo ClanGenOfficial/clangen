@@ -3,7 +3,12 @@
 		"id": "trust_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face."
+			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
+			"m_c offered r_c a paw with something but {PRONOUN/r_c/subject} turned it down, thanking {PRONOUN/m_c/object} for the offer.",
+            "m_c offered r_c a paw with something.",
+            "m_c told r_c a hard truth that {PRONOUN/r_c/subject} knew {PRONOUN/m_c/subject} needed to hear.",
+            "r_c warned m_c of a prank.",
+            "m_c gave r_c a helpful suggestion."
 		]
 	},
 	{
@@ -12,7 +17,9 @@
 		"interactions": [
 			"r_c tells m_c to get {PRONOUN/m_c/poss} ailment treated as soon as possible.",
 			"r_c is chiding m_c for being so reckless.",
-			"r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings."
+			"r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings.",
+			"r_c brought m_c aside and pointed out a messy patch of fur {PRONOUN/m_c/subject} missed grooming that morning.",
+			"m_c recalled some of r_c's careful advice in a tough spot and was greatful when it proved useful!"
 		],
 		"random_trait_constraint": [
 			"careful"
@@ -36,7 +43,8 @@
 		"id": "trust_inc_med1",
 		"interactions": [
 			"m_c thinks about how r_c is always reliable.",
-			"m_c notices how r_c is being helpful around camp."
+			"m_c notices how r_c is being helpful around camp.",
+			"m_c heard an ugly rumor about r_c but {PRONOUN/m_c/subject} {VERB/m_c/stick/sticks} up for {PRONOUN/r_c/object} knowing it's not true."
 		]
 	},
 	{
@@ -51,11 +59,25 @@
 	{
 		"id": "trust_inc_med3",
 		"interactions": [
-			"r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger."
+			"r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger.",
+			 "r_c tells m_c {PRONOUN/r_c/subject} could easily fight off an entire Clan of cats to protect {PRONOUN/m_c/object}, {PRONOUN/r_c/subject} swear!"
 		],
 		"random_trait_constraint": [
-			"fierce"
-		]
+			"bold",
+            "arrogant",
+            "competitive",
+            "bloodthirsty",
+            "daring",
+            "fierce",
+            "responsible"
+		],
+        "random_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "trust_inc_med4",
@@ -77,32 +99,55 @@
 		]
 	},
 	{
-		"id": "trust_de_med3",
+		"id": "trust_inc_med6",
 		"interactions": [
 			"r_c is teaching m_c how to walk without making a sound.",
 			"r_c is showing m_c how to sneak up on {PRONOUN/m_c/poss} enemies.",
 			"r_c convinces m_c to help {PRONOUN/r_c/object} pull a prank on a Clanmate.",
-			"m_c is whispering quietly with r_c."
+			"m_c is whispering quietly with r_c.",
+			"r_c is teaching m_c to blend in with {PRONOUN/m_c/poss} surroundings seamlessly."
 		],
 		"random_trait_constraint": [
-			"sneaky"
+			"sneaky",
+			"careful"
 		]
 	},
 	{
-		"id": "trust_de_med3",
+		"id": "trust_inc_med7",
 		"interactions": [
 			"r_c is giving m_c advice.",
 			"r_c is teaching m_c something important."
 		],
 		"random_trait_constraint": [
-			"wise"
+			"wise",
+			"responsible",
+            		"thoughtful"
 		]
+	},
+	{
+		"id": "trust_inc_med8",
+		"interactions": [
+            "m_c urges r_c to rest, {PRONOUN/m_c/subject} can handle some of r_c's workload.",
+            "m_c reminded r_c of some work {PRONOUN/m_c/subject} forgot about."
+		],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader"
+        ]
 	},
 	{
 		"id": "trust_adult_inc_med1",
 		"interactions": [
 			"m_c is giving advice to r_c.",
-			"m_c is looking out for r_c's well-being."
+			"m_c is looking out for r_c's well-being.",
+			"m_c snuck r_c out of camp for a fun break from {PRONOUN/r_c/poss} duties and covered for {PRONOUN/r_c/object} when they were later questioned.",
+			"r_c reminds m_c of {PRONOUN/m_c/self} in {PRONOUN/m_c/poss} younger years."
 		],
 		"main_status_constraint": [
 			"elder",
@@ -157,7 +202,8 @@
 		"interactions": [
 			"m_c thinks {PRONOUN/m_c/subject} can tell r_c something important.",
 			"m_c feels safe with r_c around.",
-			"m_c knows that the advice r_c gave {PRONOUN/m_c/object} will be helpful."
+			"m_c knows that the advice r_c gave {PRONOUN/m_c/object} will be helpful.",
+			"m_c made a big mistake and knew {PRONOUN/m_c/subject} could trust r_c to help {PRONOUN/m_c/object}."
 		]
 	},
 	{
@@ -166,7 +212,9 @@
 		"interactions": [
 			"m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterwards.",
 			"m_c promises to always look out for r_c.",
-			"m_c tells r_c to count on {PRONOUN/m_c/object} in a difficult situation."
+			"m_c tells r_c to count on {PRONOUN/m_c/object} in a difficult situation.",
+			"m_c catches r_c in an embarrassing situation and promises not to say anything.",
+			"m_c overheard a big secret about r_c and assured {PRONOUN/r_c/object} {PRONOUN/r_c/poss} it was safe with {PRONOUN/m_c/object}."
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -192,7 +240,8 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c goes to r_c for advice about some recent troubles.",
-			"m_c asks r_c for help resolving an argument with a friend."
+			"m_c asks r_c for help resolving an argument with a friend.",
+			"r_c gives m_c advice on {PRONOUN/m_c/poss} love life."
 		],
 		"relationship_constraint": [
 			"trust_30"
@@ -273,7 +322,13 @@
 		"id": "trust_med_inc_high2",
 		"interactions": [
 			"m_c observes r_c carefully attending to any cat that needs help.",
-			"m_c feels like {PRONOUN/m_c/subject} can count on r_c to give {PRONOUN/m_c/object} the best treatment possible."
+			"m_c feels like {PRONOUN/m_c/subject} can count on r_c to give {PRONOUN/m_c/object} the best treatment possible.",
+			"m_c is relieved when r_c says {PRONOUN/m_c/poss} injury is nothing to be worried about.",
+            "m_c is relieved when r_c says {PRONOUN/m_c/poss} cough is nothing to be worried about.",
+            "m_c is relieved r_c doesn't judge {PRONOUN/m_c/object} for coming to {PRONOUN/r_c/object} with concerns that end up being nothing at all.",
+            "m_c went to r_c genuinely concerned about a rough looking scratch only to be embarrassed and ashamed when r_c wipes it away. Turns out it was a very convincing smear of dried mud. r_c, amused by it all, promised not to tell anyone.",
+            "r_c is extra careful treating m_c.",
+            "m_c knows if anything goes wrong {PRONOUN/m_c/subject} can depend on r_c always."
 		],
 		"random_status_constraint": [
 			"medicine cat apprentice",
