@@ -484,7 +484,7 @@ class Screens:
         ):
             self.menu_buttons["moons_n_seasons_arrow"].kill()
             self.menu_buttons["moons_n_seasons"].kill()
-            if game.settings["mns open"]:
+            if game.switches["mns open"]:
                 if self.name == "events screen":
                     self.mns_close()
                 else:
@@ -535,6 +535,18 @@ class Screens:
             manager=MANAGER,
             object_id="#text_box_30_horizleft_light",
         )
+
+        match game.clan.current_season:
+            case "Newleaf":
+                season_image_id = "#mns_image_newleaf"
+            case "Greenleaf":
+                season_image_id = "#mns_image_greenleaf"
+            case "Leaf-bare":
+                season_image_id = "#mns_image_leafbare"
+            case "Leaf-fall":
+                season_image_id = "#mns_image_leaffall"\
+            case _:
+                print("Error! No matching season")
 
         if game.clan.current_season == "Newleaf":
             season_image_id = "#mns_image_newleaf"

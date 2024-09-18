@@ -139,6 +139,7 @@ class Game:
         "disallowed_symbol_tags": [],
         "audio_mute": False,
         "saved_scroll_positions": {},
+        "mns open": False,
     }
     all_screens = {}
     cur_events = {}
