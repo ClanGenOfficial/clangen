@@ -210,6 +210,23 @@ class Name:
         else:
             self.prefix = random.choice(self.names_dict["normal_prefixes"])
 
+        # Try statement stops this form running when initailizing.
+        try:
+            if self.prefix in names.prefix_history:
+                # do this recurively until a name that isn't on the history list is chosses.
+                self.give_prefix(eyes, colour, biome)
+                # prevent infinite recursion
+                if len(names.prefix_history) > 0:
+                    names.prefix_history.pop(0)
+            else:
+                names.prefix_history.append(self.prefix)
+            # Set the maximun lenth to 8 just to be sure
+            if len(names.prefix_history) > 8:
+                # removing at zero so the oldest gets removed
+                names.prefix_history.pop(0)
+        except NameError:
+            pass
+
     # Generate possible suffix
     def give_suffix(self, pelt, biome, tortiepattern):
         """Generate possible suffix."""
@@ -255,3 +272,4 @@ class Name:
 
 
 names = Name()
+names.prefix_history = []
