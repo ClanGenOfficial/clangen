@@ -95,6 +95,8 @@ class ChooseAdoptiveParentScreen(Screens):
     def handle_event(self, event):
         """Handles events."""
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
@@ -161,7 +163,7 @@ class ChooseAdoptiveParentScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         super().screen_switches()
-
+        self.show_mute_buttons()
         self.list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 194))
 
         self.info = pygame_gui.elements.UITextBox(
@@ -216,6 +218,7 @@ class ChooseAdoptiveParentScreen(Screens):
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
@@ -223,6 +226,7 @@ class ChooseAdoptiveParentScreen(Screens):
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),

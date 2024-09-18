@@ -34,6 +34,8 @@ class RoleScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
@@ -95,12 +97,14 @@ class RoleScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        self.show_mute_buttons()
 
         self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
             "Next Cat " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.previous_cat_button = UISurfaceImageButton(
@@ -108,6 +112,7 @@ class RoleScreen(Screens):
             get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.back_button = UISurfaceImageButton(

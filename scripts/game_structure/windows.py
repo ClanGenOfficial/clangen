@@ -520,6 +520,7 @@ class ChangeCatName(UIWindow):
             manager=MANAGER,
             container=self,
             tool_tip_text="Randomize the prefix",
+            sound_id="dice_roll",
         )
 
         self.random_suffix = UISurfaceImageButton(
@@ -530,6 +531,7 @@ class ChangeCatName(UIWindow):
             manager=MANAGER,
             container=self,
             tool_tip_text="Randomize the suffix",
+            sound_id="dice_roll",
         )
 
         self.toggle_spec_block_on = UIImageButton(
@@ -1729,6 +1731,7 @@ class SaveAsImage(UIWindow):
             "Save as Image",
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="save",
         )
 
         self.open_data_directory_button = UISurfaceImageButton(

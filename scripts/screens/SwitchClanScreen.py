@@ -34,6 +34,8 @@ class SwitchClanScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.main_menu:
                 self.change_screen("start screen")
             elif event.ui_element == self.next_page_button:
@@ -100,6 +102,7 @@ class SwitchClanScreen(Screens):
         """
         TODO: DOCS
         """
+        self.show_mute_buttons()
         self.screen = pygame.transform.scale(
             pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
             ui_scale_dimensions((220, 368)),

@@ -113,7 +113,7 @@
     "partial hearing loss": {
         "deaf": [
             "r_c listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore.",
-            "m_c realizes one day that the noises around them are no longer just quiet, but functionally silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost too much of {PRONOUN/m_c/poss} hearing."
+            "m_c realizes one day that the noises around {PRONOUN/m_c/object} are no longer just quiet, but functionally silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost too much of {PRONOUN/m_c/poss} hearing."
         ]
     },
     "constant joint pain": {

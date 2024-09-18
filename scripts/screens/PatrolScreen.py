@@ -82,6 +82,8 @@ class PatrolScreen(Screens):
                 self.handle_patrol_complete_events(event)
 
             self.menu_button_pressed(event)
+            self.mute_button_pressed(event)
+
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if event.key == pygame.K_LEFT:
@@ -272,6 +274,7 @@ class PatrolScreen(Screens):
         super().screen_switches()
         self.set_disabled_menu_buttons(["patrol_screen"])
         self.update_heading_text(f"{game.clan.name}Clan")
+        self.show_mute_buttons()
         self.show_menu_buttons()
 
         if (
@@ -564,6 +567,7 @@ class PatrolScreen(Screens):
             Icon.DICE,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
+            sound_id="dice_roll",
             manager=MANAGER,
         )
         self.elements["add_one"] = UISurfaceImageButton(
@@ -571,6 +575,7 @@ class PatrolScreen(Screens):
             "+1",
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_rounded_rect",
+            sound_id="dice_roll",
             manager=MANAGER,
         )
         self.elements["add_three"] = UISurfaceImageButton(
@@ -578,6 +583,7 @@ class PatrolScreen(Screens):
             "+3",
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_rounded_rect",
+            sound_id="dice_roll",
             manager=MANAGER,
         )
         self.elements["add_six"] = UISurfaceImageButton(
@@ -585,6 +591,7 @@ class PatrolScreen(Screens):
             "+6",
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_rounded_rect",
+            sound_id="dice_roll",
             manager=MANAGER,
         )
 
@@ -743,7 +750,6 @@ class PatrolScreen(Screens):
             get_box(BoxStyles.FRAME, (320, 320)),
             manager=MANAGER,
         )
-
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
             pygame.transform.smoothscale(
@@ -829,6 +835,7 @@ class PatrolScreen(Screens):
             ui_scale(pygame.Rect((550, 490), (172, 36))),
             "",
             object_id="#antagonize_button",
+            sound_id="antagonize",
             manager=MANAGER,
         )
         if not self.patrol_obj.patrol_event.antag_success_outcomes:
@@ -836,7 +843,6 @@ class PatrolScreen(Screens):
 
     def run_patrol_proceed(self, user_input):
         """Proceeds the patrol - to be run in the seperate thread."""
-
         if user_input in ["nopro", "notproceed"]:
             (
                 self.display_text,
@@ -876,7 +882,6 @@ class PatrolScreen(Screens):
             object_id="#patrol_again",
             manager=MANAGER,
         )
-
         # Update patrol art, if needed.
         if (
             self.outcome_art is not None
@@ -1118,9 +1123,11 @@ class PatrolScreen(Screens):
             self.elements["selected_bio"] = pygame_gui.elements.UITextBox(
                 str(self.selected_cat.status)
                 + "<br />"
-                + str(self.selected_cat.personality.trait)
+                + str(
+                self.selected_cat.personality.trait)
                 + "<br />"
-                + str(self.selected_cat.skills.skill_string(short=True))
+                + str(
+                self.selected_cat.skills.skill_string(short=True))
                 + "<br />"
                 + str(self.selected_cat.experience_level)
                 + (
@@ -1304,7 +1311,7 @@ class PatrolScreen(Screens):
         self.hide_menu_buttons()
 
     def on_use(self):
-        super().on_use()
+super().on_use()
 
         self.loading_screen_on_use(
             self.start_patrol_thread, self.open_patrol_event_screen, (700, 500)

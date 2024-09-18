@@ -31,6 +31,7 @@ from scripts.game_structure.game_essentials import (
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
+from scripts.game_structure.audio import music_manager
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -65,6 +66,7 @@ class StartScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
             screens = {
                 self.continue_button: "camp screen",
                 self.switch_clan_button: "switch clan screen",
@@ -157,6 +159,11 @@ class StartScreen(Screens):
         """
 
         super().screen_switches()
+
+        # start menu music if it isn't already playing
+        # this is the only screen that has to check its own music, other screens handle that in the screen change
+        music_manager.check_music('start screen')
+
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game.settings["dark mode"]:
             bg.fill(
@@ -171,6 +178,7 @@ class StartScreen(Screens):
 
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
+        self.show_mute_buttons()
 
         # Create buttons
 

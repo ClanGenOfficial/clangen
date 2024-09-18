@@ -253,6 +253,8 @@ class ListScreen(Screens):
             # MENU BUTTONS
             else:
                 self.menu_button_pressed(event)
+                self.mute_button_pressed(event)
+
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
@@ -264,6 +266,7 @@ class ListScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        self.show_mute_buttons()
         self.clan_name = game.clan.name + "Clan"
 
         self.set_disabled_menu_buttons(["catlist_screen"])

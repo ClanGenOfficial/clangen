@@ -101,6 +101,8 @@ class ChooseMateScreen(Screens):
     def handle_event(self, event):
         """Handles events."""
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
@@ -186,6 +188,7 @@ class ChooseMateScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         super().screen_switches()
+        self.show_mute_buttons()
 
         self.list_frame_image = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 391), (650, 194))),
@@ -228,6 +231,7 @@ class ChooseMateScreen(Screens):
             "Next Cat " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.previous_cat_button = UISurfaceImageButton(
@@ -235,6 +239,7 @@ class ChooseMateScreen(Screens):
             get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.back_button = UISurfaceImageButton(

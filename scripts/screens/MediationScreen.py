@@ -46,6 +46,8 @@ class MediationScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.last_med:
@@ -123,6 +125,7 @@ class MediationScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        self.show_mute_buttons()
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:
@@ -255,6 +258,7 @@ class MediationScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         self.random2 = UISurfaceImageButton(
             ui_scale(pygame.Rect((568, 432), (34, 34))),
@@ -262,6 +266,7 @@ class MediationScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
 
         self.search_bar_image = pygame_gui.elements.UIImage(

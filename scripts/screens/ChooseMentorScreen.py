@@ -67,6 +67,8 @@ class ChooseMentorScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element in self.cat_list_buttons.values():
                 self.selected_mentor = event.ui_element.return_cat_object()
                 self.update_selected_cat()
@@ -120,6 +122,7 @@ class ChooseMentorScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        self.show_mute_buttons()
         self.the_cat = Cat.all_cats[game.switches["cat"]]
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
@@ -192,6 +195,7 @@ class ChooseMentorScreen(Screens):
             "Next Cat " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.previous_cat_button = UISurfaceImageButton(
@@ -199,6 +203,7 @@ class ChooseMentorScreen(Screens):
             get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.back_button = UISurfaceImageButton(

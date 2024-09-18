@@ -222,6 +222,7 @@ class EventsScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         # On first open, update display events list
+        self.show_mute_buttons()
         if not self.first_opened:
             self.first_opened = True
             self.update_display_events_lists()
@@ -284,6 +285,7 @@ class EventsScreen(Screens):
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
+            sound_id="timeskip",
         )
 
         self.full_event_display_container = pygame_gui.core.UIContainer(
