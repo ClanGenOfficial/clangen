@@ -4029,7 +4029,7 @@
             "text": "The <i>point</i> of the competition, an irritated r_c explains to s_c, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c grumbles, no cat made those rules clear to {PRONOUN/s_c/object}.",
             "exp": 5,
 	    "prey": ["very_small"],
-	    "stat_trait": ["competitive"],
+	    "stat_trait": ["competitive", "sneaky", "cunning"],
             "weight": 20,
 	    "relationships": [
                     {
