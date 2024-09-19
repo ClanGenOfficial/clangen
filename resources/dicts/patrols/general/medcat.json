@@ -3639,7 +3639,7 @@
                 ]
             },
 			{
-				"text": "It's completely okay to feel unsure in the path you've chosen. Being a medicine cat comes with so many ups and downs, it can be hard not to doubt yourself. Whatever choice app1 makes, p_l will support {PRONOUN/app1/object}. With glistening eyes, app1 huddles against {PRONOUN/app1/poss} mentor, thanking {PRONOUN/p_l/object} profusely for the support.",
+				"text": "p_l reassures app1 that it's completely okay to feel unsure in the path {PRONOUN/app1/subject} chose. Being a medicine cat comes with so many ups and downs, it can be hard not to doubt yourself. Whatever choice app1 makes, p_l will support {PRONOUN/app1/object}. With glistening eyes, app1 huddles against {PRONOUN/app1/poss} mentor, thanking {PRONOUN/p_l/object} profusely for the support.",
 				"exp": 20,
 				"weight": 20,
 				"herbs": ["random_herbs"],
