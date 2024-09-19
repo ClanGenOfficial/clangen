@@ -11261,7 +11261,8 @@
                         "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
-                    } ],
+                    }
+					],
                 "weight": 20
             },
             {
@@ -11275,7 +11276,8 @@
                         "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
-                    } ],
+                    }
+					],
                 "weight": 20
             },
 			{
