@@ -3591,7 +3591,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Smiling softly, s_c reasures app1 that {PRONOUN/s_c/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/s_c/subject} {VERB/s_c/were/was} an apprentice. s_c tells app1 a story from {PRONOUN/s_c/poss} own apprenticeship, when {PRONOUN/s_c/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/s_c/poss} mentor unhappy when all their patients started throwing up! Before long, app1 is laughing at s_c's own mishaps, {PRONOUN/app1/poss} own troubles forgotten.",
+                "text": "Smiling softly, s_c reassures app1 that {PRONOUN/s_c/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/s_c/subject} {VERB/s_c/were/was} an apprentice. s_c tells app1 a story from {PRONOUN/s_c/poss} own apprenticeship, when {PRONOUN/s_c/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/s_c/poss} mentor unhappy when all their patients started throwing up! Before long, app1 is laughing at s_c's own mishaps, {PRONOUN/app1/poss} own troubles forgotten.",
                 "exp": 20,
                 "weight": 20,
 		"stat_trait": ["childish", "bold", "oblivious", "playful", "shameless", "troublesome", "adventurous", "rebellious"],
