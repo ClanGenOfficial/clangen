@@ -3638,6 +3638,29 @@
                     }
                 ]
             },
+			{
+				"text": "It's completely okay to feel unsure in the path you've chosen. Being a medicine cat comes with so many ups and downs, it can be hard not to doubt yourself. Whatever choice app1 makes, p_l will support {PRONOUN/app1/object}. With glistening eyes, app1 huddles against {PRONOUN/app1/poss} mentor, thanking {PRONOUN/p_l/object} profusely for the support.",
+				"exp": 20,
+				"weight": 20,
+				"herbs": ["random_herbs"],
+				"relationships": [
+				{
+					"cats_to": ["patrol"],
+					"cats_from": ["patrol"],
+					"mutual": false,
+					"values": ["platonic",
+					"comfort", "trust"],
+					"amount": 10
+					},
+				{
+					"cats_to": ["patrol"],
+					"cats_from": ["patrol"],
+					"mutual": true,
+					"values": ["dislike", "jealousy"],
+					"amount": -10
+					}
+				]
+			},
             {
                 "text": "Turning to face app1, s_c reminds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/were/was} chosen by <i>StarClan</i> - their ancestors know that app1 is good enough, so {PRONOUN/app1/subject} should, too. Smiling, app1 nods, raising {PRONOUN/app1/poss} tail with a new-found confidence.",
                 "exp": 20,
@@ -3837,6 +3860,28 @@
                         "amount": 5
                     },
 		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+			{
+                "text": "Even as {PRONOUN/p_l/poss} kit grows, p_l will always see {PRONOUN/r_c/object} as a mewling kit, always hungry for milk. p_l gazes fondly at r_c as {PRONOUN/r_c/subject} {VERB/r_c/sniff/sniffs} around, looking for herbs. It's just so wonderful seeing your kit grow up. Of course, it can be sad, but that's why p_l cherishes every moment {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} with r_c.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+					{
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
