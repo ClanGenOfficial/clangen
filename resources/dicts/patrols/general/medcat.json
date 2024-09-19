@@ -3869,7 +3869,7 @@
                 ]
             },
 			{
-                "text": "Even as {PRONOUN/p_l/poss} kit grows, p_l will always see {PRONOUN/r_c/object} as a mewling kit, always hungry for milk. p_l gazes fondly at r_c as {PRONOUN/r_c/subject} {VERB/r_c/sniff/sniffs} around, looking for herbs. It's just so wonderful seeing your kit grow up. Of course, it can be sad, but that's why p_l cherishes every moment {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} with r_c.",
+                "text": "Even as {PRONOUN/r_c/poss} kit grows, r_c will always see p_l as a mewling kit, always hungry for milk. r_c gazes fondly at p_l as {PRONOUN/p_l/subject} {VERB/p_l/sniff/sniffs} around, looking for herbs. It's just so wonderful seeing your kit grow up. Of course, it can be sad, but that's why r_c cherishes every moment {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} with p_l.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
