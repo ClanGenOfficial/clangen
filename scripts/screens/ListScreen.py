@@ -566,6 +566,9 @@ class ListScreen(Screens):
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
+        game.last_list_forProfile = (
+            "clan"  # wipe the saved last_list to avoid inconsistencies
+        )
 
     def display_change_save(self) -> Dict:
         variable_dict = super().display_change_save()
