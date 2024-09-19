@@ -44,7 +44,7 @@ class MusicManager:
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
-        if game.settings["audio_mute"] or self.muted:
+        if self.muted:
             return
 
         self.biome_playlist = self.get_biome_music()
@@ -162,6 +162,7 @@ class MusicManager:
         pauses current music track
         """
         self.muted = True
+        game.switch_setting("audio_mute")
         pygame.mixer.music.pause()
 
     def unmute_music(self, screen):
@@ -170,6 +171,7 @@ class MusicManager:
         if necessary
         """
         self.muted = False
+        game.switch_setting("audio_mute")
         pygame.mixer.music.unpause()
         self.check_music(screen)
 
@@ -259,7 +261,7 @@ class _SoundManager:
     def play(self, sound, button=None):
         """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
         used instead"""
-        if game.settings["audio_mute"]:
+        if music_manager.muted:
             return
 
         if button and button.__class__ == UIImageButton:

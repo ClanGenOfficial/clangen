@@ -168,7 +168,7 @@
         "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
         "four_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 2, "senior": 0},
         "five_kit_possibility": {"young adult": 6, "adult": 2, "senior adult": 0, "senior": 0},
-        "max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
+		"max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
