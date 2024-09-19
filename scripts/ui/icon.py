@@ -2,6 +2,9 @@ from strenum import StrEnum
 
 
 class Icon(StrEnum):
+    SPEAKER = "\U0001F50A"
+    MUTE = "\U0001F507"
+
     DICE = "\u2684"
 
     CAT_HEAD = "\U0001F431"

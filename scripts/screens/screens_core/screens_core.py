@@ -13,6 +13,7 @@ from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.get_arrow import get_arrow
+from scripts.ui.icon import Icon
 from scripts.utility import (
     ui_scale,
     ui_scale_offset,
@@ -237,7 +238,7 @@ def rebuild_core():
 
     menu_buttons["mute_button"] = UISurfaceImageButton(
         mute_pos,
-        "M",
+        Icon.SPEAKER,
         get_button_dict(ButtonStyles.ICON, (34, 34)),
         visible=False,
         manager=MANAGER,
@@ -248,7 +249,7 @@ def rebuild_core():
 
     menu_buttons["unmute_button"] = UISurfaceImageButton(
         mute_pos,
-        "UM",
+        Icon.MUTE,
         get_button_dict(ButtonStyles.ICON, (34, 34)),
         visible=False,
         manager=MANAGER,
