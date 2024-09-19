@@ -3911,7 +3911,7 @@
 	    "art": "hunt_general_intro"
         },
 	{
-            "text": "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an arguement on what prey is worth more. Luckily, s_c is there to smooth things over, coming  up with a comprimise that both cats grudgingly admit is fair.",
+            "text": "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair.",
             "exp": 10,
 	    "prey": ["large"],
 	    "stat_skill": ["MEDIATOR,1"],
