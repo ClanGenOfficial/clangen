@@ -231,6 +231,32 @@ def rebuild_core():
         object_id="@buttonstyles_rounded_rect",
         starting_height=6,
     )
+
+    mute_pos = ui_scale(pygame.Rect((0, 0), (34, 34)))
+    mute_pos.bottomright = ui_scale_offset((-25, -25))
+
+    menu_buttons["mute_button"] = UISurfaceImageButton(
+        mute_pos,
+        "M",
+        get_button_dict(ButtonStyles.ICON, (34, 34)),
+        visible=False,
+        manager=MANAGER,
+        object_id="@buttonstyles_icon",
+        starting_height=6,
+        anchors={"right": "right", "bottom": "bottom"},
+    )
+
+    menu_buttons["unmute_button"] = UISurfaceImageButton(
+        mute_pos,
+        "UM",
+        get_button_dict(ButtonStyles.ICON, (34, 34)),
+        visible=False,
+        manager=MANAGER,
+        object_id="@buttonstyles_icon",
+        starting_height=6,
+        anchors={"right": "right", "bottom": "bottom"},
+    )
+
     version_number = pygame_gui.elements.UILabel(
         ui_scale(pygame.Rect((50, 50), (-1, -1))),
         get_version_info().version_number[0:8],

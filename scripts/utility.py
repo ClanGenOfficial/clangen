@@ -1953,7 +1953,8 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
 def event_text_adjust(
     Cat,
     text,
-    *,patrol_leader=None,
+    *,
+    patrol_leader=None,
     main_cat=None,
     random_cat=None,
     stat_cat=None,

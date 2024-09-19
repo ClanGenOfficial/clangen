@@ -21,6 +21,7 @@ import sys
 import threading
 import time
 from importlib.util import find_spec
+
 from scripts.game_structure.audio import sound_manager, music_manager
 
 if not getattr(sys, "frozen", False):
@@ -351,7 +352,6 @@ while 1:
         game.switch_screens = False
     if not pygame.mixer.music.get_busy() and not game.settings["audio_mute"]:
         music_manager.play_queued()
-
 
     debugmode.update1(clock)
     # END FRAME

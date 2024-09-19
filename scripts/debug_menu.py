@@ -78,7 +78,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                         )
                         raise e
                     break
-            if command in ["cls", "clear"]:
+            if command in ["self", "clear"]:
                 self._clear()
             elif not commandFound:
                 self.add_output_line_to_log(f"Command {command} not found")
@@ -99,7 +99,6 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
 
 class debugMode:
     def __init__(self):
-
         self.coords_display = None
         self.fps_display = None
         self.console = None
@@ -107,7 +106,6 @@ class debugMode:
         self.rebuild_console()
 
     def rebuild_console(self):
-
         self.coords_display = pygame_gui.elements.UILabel(
             pygame.Rect((0, 0), (-1, -1)),
             "(0, 0)",
@@ -188,7 +186,6 @@ class debugMode:
                 MANAGER.set_visual_debug_mode(False)
 
     def update2(self, screen):
-
         if game.debug_settings["showbounds"]:
             elements = MANAGER.ui_group.visible
             for surface in elements:

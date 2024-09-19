@@ -8,10 +8,9 @@ from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
-from scripts.game_structure.audio import music_manager
-from scripts.utility import update_sprite
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
+from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
@@ -162,6 +161,7 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
+        Screens.hide_mute_buttons()
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         try:
@@ -175,6 +175,9 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
+        out = Screens.mute_button_pressed(event)
+        if out:
+            return
 
     def exit_screen(self):
         """Runs when screen exits"""
@@ -217,6 +220,8 @@ class Screens:
                 "clearing",
                 "warrior_den",
                 "dens_bar",
+                "mute_button",
+                "unmute_button",
             ]:
                 continue
             else:
@@ -227,33 +232,36 @@ class Screens:
         """this hides the mute buttons, so they are no longer visible
         or interact-able. It does not delete the buttons from memory."""
 
-        cls.mute_button.hide()
-        cls.unmute_button.hide()
+        Screens.menu_buttons["mute_button"].hide()
+        Screens.menu_buttons["unmute_button"].hide()
 
     @classmethod
     def show_mute_buttons(cls):
         """This shows all mute buttons, and makes them interact-able."""
         if game.settings["audio_mute"]:
-            cls.unmute_button.show()
-            cls.mute_button.hide()
+            cls.menu_buttons["unmute_button"].show()
+            cls.menu_buttons["mute_button"].hide()
         else:
-            cls.unmute_button.hide()
-            cls.mute_button.show()
+            cls.menu_buttons["unmute_button"].hide()
+            cls.menu_buttons["mute_button"].show()
 
-    @classmethod
-    def mute_button_pressed(cls, event):
+    def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
-        if event.ui_element == self.mute_button:
+        if event.ui_element == Screens.menu_buttons["mute_button"]:
             game.switch_setting("audio_mute")
             music_manager.mute_music()
-            cls.mute_button.hide()
-            cls.unmute_button.show()
-        elif event.ui_element == self.unmute_button:
+            Screens.menu_buttons["mute_button"].hide()
+            Screens.menu_buttons["unmute_button"].show()
+            return True
+        elif event.ui_element == Screens.menu_buttons["unmute_button"]:
             game.switch_setting("audio_mute")
             music_manager.unmute_music(self.name)
-            cls.unmute_button.hide()
-            cls.mute_button.show()
+            Screens.menu_buttons["unmute_button"].hide()
+            Screens.menu_buttons["mute_button"].show()
+            return True
+        else:
+            return False
 
     @classmethod
     def set_disabled_menu_buttons(cls, disabled_buttons=()):

@@ -255,7 +255,6 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return

@@ -260,9 +260,8 @@ class UIImageButton(pygame_gui.elements.UIButton):
         allow_double_clicks: bool = False,
         generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
         visible: int = 1,
-        sound_id = None
+        sound_id=None,
     ):
-
         self.sound_id = sound_id
         super().__init__(
             relative_rect=relative_rect,
@@ -347,8 +346,10 @@ class UIImageButton(pygame_gui.elements.UIButton):
                 changed = True
 
         return changed
+
     def return_sound_id(self):
         return self.sound_id
+
 
 class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
     def __init__(
@@ -732,7 +733,7 @@ class CatButton(UIImageButton):
             tool_tip_text=tool_tip_text,
             container=container,
             anchors=anchors,
-            allow_double_clicks=True
+            allow_double_clicks=True,
         )
         if auto_disable_if_no_data and cat_id is None and cat_object is None:
             self.disable()
@@ -1344,76 +1345,83 @@ class UICatListDisplay(UIContainer):
                 self.first_button.enable()
                 self.last_button.enable()
 
+
 class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
     """
     a subclass of UIHorizontalSlider, this is really only meant for one size and appearance of slider, though could
     be modified to allow for more customizability.  As we currently only use horizontal sliders in one spot and I
-    don't forsee future additional sliders, I will leave it as is for now.
+    don't foresee future additional sliders, I will leave it as is for now.
     """
 
-    def __init__(self, relative_rect, start_value,
-                 value_range, click_increment=None, object_id=None,
-                 manager=None):
-        super().__init__(relative_rect=relative_rect, start_value=start_value, value_range=value_range,
-                         click_increment=click_increment, object_id=object_id, manager=manager)
+    def __init__(
+        self,
+        relative_rect,
+        start_value,
+        value_range,
+        click_increment=None,
+        object_id=None,
+        manager=None,
+        anchors=None,
+    ):
+        super().__init__(
+            relative_rect=relative_rect,
+            start_value=start_value,
+            value_range=value_range,
+            click_increment=click_increment,
+            object_id=object_id,
+            manager=manager,
+            anchors=anchors,
+        )
 
         # kill the sliding button that the UIHorizontalSlider class makes, then make it again
         self.sliding_button.kill()
-        sliding_x_pos = int(self.background_rect.width / 2 - self.sliding_button_width / 2)
-        self.sliding_button = UIImageButton(scale(pygame.Rect((sliding_x_pos, 0),
-                                                              (60,
-                                                               44))),
-                                            text='',
-                                            manager=self.ui_manager,
-                                            container=self.button_container,
-                                            starting_height=1,
-                                            parent_element=self,
-                                            object_id="#horizontal_slider_button",
-                                            anchors={'left': 'left',
-                                                     'right': 'left',
-                                                     'top': 'top',
-                                                     'bottom': 'bottom'},
-                                            visible=self.visible
-                                            )
+        sliding_x_pos = int(self.background_rect.width - self.sliding_button_width)
+        self.sliding_button = UIImageButton(
+            pygame.Rect((sliding_x_pos, 0), ui_scale_dimensions((30, 22))),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=1,
+            parent_element=self,
+            object_id="#horizontal_slider_button",
+            anchors={"left": "left", "right": "left", "top": "top", "bottom": "bottom"},
+            visible=self.visible,
+        )
 
         # reset start value, for some reason it defaults to 50 otherwise
         self.set_current_value(start_value)
         # set hold range manually since using UIImageButton breaks it?
-        self.sliding_button.set_hold_range((1600, 1400))
+        self.sliding_button.set_hold_range((800, 700))
 
         # kill and remake the left button
         self.left_button.kill()
-        self.left_button = UIImageButton(scale(pygame.Rect((0, 0),
-                                                           (40, 44))),
-                                         text='',
-                                         manager=self.ui_manager,
-                                         container=self.button_container,
-                                         starting_height=1,
-                                         parent_element=self,
-                                         object_id="#horizontal_slider_left_arrow_button",
-                                         anchors={'left': 'left',
-                                                  'right': 'left',
-                                                  'top': 'top',
-                                                  'bottom': 'bottom'},
-                                         visible=self.visible
-                                         )
+        self.left_button = UIImageButton(
+            ui_scale(pygame.Rect((0, 0), (20, 22))),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=1,
+            parent_element=self,
+            object_id="#horizontal_slider_left_arrow_button",
+            anchors={"left": "left", "right": "left", "top": "top", "bottom": "bottom"},
+            visible=self.visible,
+        )
 
         # kill and remake the right button
         self.right_button.kill()
-        self.right_button = UIImageButton(scale(pygame.Rect((-self.arrow_button_width, 0),
-                                                            (40, 44))),
-                                          text='',
-                                          manager=self.ui_manager,
-                                          container=self.button_container,
-                                          starting_height=1,
-                                          parent_element=self,
-                                          object_id="#horizontal_slider_right_arrow_button",
-                                          anchors={'left': 'right',
-                                                   'right': 'right',
-                                                   'top': 'top',
-                                                   'bottom': 'bottom'},
-                                          visible=self.visible
-                                          )
-
-
-
+        self.right_button = UIImageButton(
+            pygame.Rect((-self.arrow_button_width, 0), ui_scale_dimensions((20, 22))),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=1,
+            parent_element=self,
+            object_id="#horizontal_slider_right_arrow_button",
+            anchors={
+                "left": "right",
+                "right": "right",
+                "top": "top",
+                "bottom": "bottom",
+            },
+            visible=self.visible,
+        )

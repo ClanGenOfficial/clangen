@@ -98,7 +98,6 @@ class CeremonyScreen(Screens):
             else:
                 self.mute_button_pressed(event)
 
-
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")

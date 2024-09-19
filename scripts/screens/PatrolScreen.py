@@ -84,7 +84,6 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if event.key == pygame.K_LEFT:
                 self.change_screen("list screen")
@@ -1123,11 +1122,9 @@ class PatrolScreen(Screens):
             self.elements["selected_bio"] = pygame_gui.elements.UITextBox(
                 str(self.selected_cat.status)
                 + "<br />"
-                + str(
-                self.selected_cat.personality.trait)
+                + str(self.selected_cat.personality.trait)
                 + "<br />"
-                + str(
-                self.selected_cat.skills.skill_string(short=True))
+                + str(self.selected_cat.skills.skill_string(short=True))
                 + "<br />"
                 + str(self.selected_cat.experience_level)
                 + (
@@ -1311,7 +1308,7 @@ class PatrolScreen(Screens):
         self.hide_menu_buttons()
 
     def on_use(self):
-super().on_use()
+        super().on_use()
 
         self.loading_screen_on_use(
             self.start_patrol_thread, self.open_patrol_event_screen, (700, 500)

@@ -25,13 +25,13 @@ from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
+from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game_essentials import (
     game,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
-from scripts.game_structure.audio import music_manager
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -162,7 +162,7 @@ class StartScreen(Screens):
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
-        music_manager.check_music('start screen')
+        music_manager.check_music("start screen")
 
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game.settings["dark mode"]:
@@ -178,7 +178,7 @@ class StartScreen(Screens):
 
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
-        self.show_mute_buttons()
+        Screens.show_mute_buttons()
 
         # Create buttons
 

@@ -335,8 +335,8 @@ class MedDenScreen(Screens):
             else:
                 insert = "medicine cats"
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
-            if game.clan.game_mode == 'classic':
-                meds_cover = ''
+            if game.clan.game_mode == "classic":
+                meds_cover = ""
 
             if len(self.meds) >= 1 and number == 0:
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
@@ -580,7 +580,7 @@ class MedDenScreen(Screens):
             herb_list.append("Empty")
         if len(herb_list) <= 10:
             # classic doesn't display herbs
-            if game.clan.game_mode == 'classic':
+            if game.clan.game_mode == "classic":
                 herb_display = None
             else:
                 herb_display = "<br>".join(sorted(herb_list))
@@ -613,7 +613,7 @@ class MedDenScreen(Screens):
                 holding_pairs.extend(pair)
 
             # classic doesn't display herbs
-            if game.clan.game_mode == 'classic':
+            if game.clan.game_mode == "classic":
                 herb_display = None
             else:
                 herb_display = "<br>".join(holding_pairs)
@@ -625,7 +625,7 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
 
-        if game.clan.game_mode == 'classic':
+        if game.clan.game_mode == "classic":
             num_drawn = 0
             herb_amount = sum(game.clan.herbs.values())
 

@@ -234,7 +234,7 @@ class ClanScreen(Screens):
             ui_scale(pygame.Rect(((343, 643), (114, 30)))),
             "",
             object_id="#save_button",
-            sound_id="save"
+            sound_id="save",
         )
         self.save_button.enable()
         self.save_button_saved_state = pygame_gui.elements.UIImage(
