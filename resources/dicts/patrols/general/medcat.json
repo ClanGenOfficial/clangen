@@ -310,7 +310,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "The sunlight feels great, however r_c presses on, wanting to be able to take care of {PRONOUN/r_c/poss} clanmates.",
+                "text": "The sunlight feels great, however r_c presses on, wanting to be able to take care of {PRONOUN/r_c/poss} Clanmates.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait":[
@@ -350,7 +350,7 @@
                 ]
             },
             {
-                "text": "s_c laid in the patch of sun, huffing, {PRONOUN/s_c/subject} deserved a nice break, away from all {PRONOUN/s_c/poss} clanmates. {PRONOUN/s_c/subject/CAP} could always just say {PRONOUN/s_c/subject} failed to find any herbs after all.",
+                "text": "s_c laid in the patch of sun, huffing, {PRONOUN/s_c/subject} deserved a nice break, away from all {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/subject/CAP} could always just say {PRONOUN/s_c/subject} failed to find any herbs after all.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait":[

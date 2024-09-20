@@ -3733,7 +3733,7 @@
 	    ]
         },
 	{
-            "text": "However much s_c dislikes r_c, feeding the clan is more important. They manage to get through the patrol without any major disputes - and catch a decent amount of prey, too.",
+            "text": "However much s_c dislikes r_c, feeding the Clan is more important. They manage to get through the patrol without any major disputes - and catch a decent amount of prey, too.",
             "exp": 10,
             "weight": 40,
 	    "prey": ["medium"],
@@ -3831,7 +3831,7 @@
                 }
               ],
               "history_text": {
-                "scar": "m_c was scarred when a clanmate lashed out at {PRONOUN/m_c/object} while they were bickering on patrol.",
+                "scar": "m_c was scarred when a Clanmate lashed out at {PRONOUN/m_c/object} while they were bickering on patrol.",
                 "reg_death": "m_c died after a small injury progressed to something worse.",
                 "lead_death": "died after a small injury progressed to something worse"
               }

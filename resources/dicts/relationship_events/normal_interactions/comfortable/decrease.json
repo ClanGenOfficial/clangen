@@ -140,7 +140,7 @@
 			"m_c feels a chill after noticing r_c is nearby.",
 			"Watching r_c stalk silently around camp makes m_c feel uneasy.",
 			"m_c doesn't like the way r_c seems to overwhelm the camp with {PRONOUN/r_c/poss} presence.",
-			"Even though r_c is a respectable clanmate, m_c can't help but think {PRONOUN/r_c/subject} might be up to no good..."
+			"Even though r_c is a respectable Clanmate, m_c can't help but think {PRONOUN/r_c/subject} might be up to no good..."
 		],
 		"random_trait_constraint": [
 			"bloodthirsty",

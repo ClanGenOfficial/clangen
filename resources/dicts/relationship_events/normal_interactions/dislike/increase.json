@@ -396,7 +396,7 @@
             "m_c finds r_c to be an eyesore.",
             "m_c daydreams about killing r_c...",
             "m_c doesn't even pretend to hide how much {PRONOUN/m_c/subject} hate r_c.",
-            "m_c lunged at r_c but was held back by a clanmate.",
+            "m_c lunged at r_c but was held back by a Clanmate.",
             "m_c hopes r_c ends up in the Dark Forest.",
             "m_c prayed to StarClan for r_c's downfall to come quick."
 		]
@@ -410,9 +410,9 @@
 			"m_c accuses r_c of not putting the Clan first.",
 			"m_c accused r_c of leading the Clan toward the Dark Forest.",
             "m_c wonders what stupid decision r_c will make next that'll harm the Clan.",
-            "m_c said aloud how {PRONOUN/m_c/subject} couldn't wait for m_c to die so that someone better could become leader.",
+            "m_c said aloud how {PRONOUN/m_c/subject} couldn't wait for r_c to die so that someone better could become leader.",
             "m_c told r_c {PRONOUN/r_c/subject} should just retire already.",
-            "r_c wonders how easy it'd be to convince the rest of the clan to agree exiling r_c is a good move...",
+            "m_c wonders how easy it'd be to convince the rest of the Clan to agree exiling r_c is a good move...",
             "r_c overheard m_c trying to convince the rest of the Clan to ditch r_c and make a new Clan without {PRONOUN/r_c/object}.",
             "m_c believes r_c isn't doing {PRONOUN/r_c/poss} job good enough."
 		],
