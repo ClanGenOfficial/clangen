@@ -447,7 +447,7 @@ class RelationshipScreen(Screens):
             object_id=get_text_box_theme("#text_box_34_horizleft"),
         )
         self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(
-            self.the_cat.genderalign
+            self.the_cat.gender
             + " - "
             + str(self.the_cat.moons)
             + " moons - "
@@ -523,19 +523,19 @@ class RelationshipScreen(Screens):
                     )
 
             # Gender
-            if self.inspect_cat.genderalign == "female":
+            if self.inspect_cat.gender == "female":
                 gender_icon = image_cache.load_image(
                     "resources/images/female_big.png"
                 ).convert_alpha()
-            elif self.inspect_cat.genderalign == "male":
+            elif self.inspect_cat.gender == "male":
                 gender_icon = image_cache.load_image(
                     "resources/images/male_big.png"
                 ).convert_alpha()
-            elif self.inspect_cat.genderalign == "trans female":
+            elif self.inspect_cat.gender == "trans female":
                 gender_icon = image_cache.load_image(
                     "resources/images/transfem_big.png"
                 ).convert_alpha()
-            elif self.inspect_cat.genderalign == "trans male":
+            elif self.inspect_cat.gender == "trans male":
                 gender_icon = image_cache.load_image(
                     "resources/images/transmasc_big.png"
                 ).convert_alpha()
@@ -553,7 +553,7 @@ class RelationshipScreen(Screens):
             # Column One Details:
             col1 = ""
             # Gender-Align
-            col1 += self.inspect_cat.genderalign + "\n"
+            col1 += self.inspect_cat.gender + "\n"
 
             # Age
             col1 += f"{self.inspect_cat.moons} moons\n"
@@ -587,16 +587,16 @@ class RelationshipScreen(Screens):
             # Relation info:
             if related:
                 if self.the_cat.is_uncle_aunt(self.inspect_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.gender in ["female", "trans female"]:
                         col2 += "related: niece"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.gender in ["male", "trans male"]:
                         col2 += "related: nephew"
                     else:
                         col2 += "related: sibling's child\n"
                 elif self.inspect_cat.is_uncle_aunt(self.the_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.gender in ["female", "trans female"]:
                         col2 += "related: aunt"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.gender in ["male", "trans male"]:
                         col2 += "related: uncle"
                     else:
                         col2 += "related: parent's sibling"
@@ -743,19 +743,19 @@ class RelationshipScreen(Screens):
         )
 
         # Gender alignment
-        if the_relationship.cat_to.genderalign == "female":
+        if the_relationship.cat_to.gender == "female":
             gender_icon = image_cache.load_image(
                 "resources/images/female_big.png"
             ).convert_alpha()
-        elif the_relationship.cat_to.genderalign == "male":
+        elif the_relationship.cat_to.gender == "male":
             gender_icon = image_cache.load_image(
                 "resources/images/male_big.png"
             ).convert_alpha()
-        elif the_relationship.cat_to.genderalign == "trans female":
+        elif the_relationship.cat_to.gender == "trans female":
             gender_icon = image_cache.load_image(
                 "resources/images/transfem_big.png"
             ).convert_alpha()
-        elif the_relationship.cat_to.genderalign == "trans male":
+        elif the_relationship.cat_to.gender == "trans male":
             gender_icon = image_cache.load_image(
                 "resources/images/transmasc_big.png"
             ).convert_alpha()

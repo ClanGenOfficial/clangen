@@ -782,7 +782,7 @@ class ChooseMateScreen(Screens):
             + " moons\n"
             + self.the_cat.status
             + "\n"
-            + self.the_cat.genderalign
+            + self.the_cat.gender
             + "\n"
             + self.the_cat.personality.trait
         )
@@ -944,7 +944,7 @@ class ChooseMateScreen(Screens):
             + " moons\n"
             + self.selected_cat.status
             + "\n"
-            + self.selected_cat.genderalign
+            + self.selected_cat.gender
             + "\n"
             + self.selected_cat.personality.trait
         )
@@ -964,7 +964,7 @@ class ChooseMateScreen(Screens):
 
         if (
             not game.clan.clan_settings["same sex birth"]
-            and self.the_cat.gender == self.selected_cat.gender
+            and self.the_cat.sex == self.selected_cat.sex
         ):
             self.selected_cat_elements["no kit warning"] = (
                 pygame_gui.elements.UITextBox(
@@ -1168,7 +1168,7 @@ class ChooseMateScreen(Screens):
             and (
                 not self.have_kits_only
                 or game.clan.clan_settings["same sex birth"]
-                or i.gender != self.the_cat.gender
+                or i.sex != self.the_cat.sex
             )
         ]
 

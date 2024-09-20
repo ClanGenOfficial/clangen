@@ -342,7 +342,7 @@ class HandleShortEvents:
                     if (
                         sub_sub[0] != sub[0]
                         and (
-                            sub_sub[0].gender == "female"
+                            sub_sub[0].sex == "female"
                             or game.clan.clan_settings["same sex birth"]
                         )
                         and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)

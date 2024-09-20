@@ -650,7 +650,7 @@ class ChooseAdoptiveParentScreen(Screens):
             + " moons\n"
             + self.the_cat.status
             + "\n"
-            + self.the_cat.genderalign
+            + self.the_cat.gender
             + "\n"
             + self.the_cat.personality.trait
         )
@@ -811,7 +811,7 @@ class ChooseAdoptiveParentScreen(Screens):
             + " moons\n"
             + self.selected_cat.status
             + "\n"
-            + self.selected_cat.genderalign
+            + self.selected_cat.gender
             + "\n"
             + self.selected_cat.personality.trait
         )

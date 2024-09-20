@@ -67,12 +67,12 @@ class ChangeGenderScreen(Screens):
             elif event.ui_element == self.buttons["save"]:
                 if self.are_boxes_full():
                     gender_identity = self.get_new_identity()
-                    self.the_cat.genderalign = gender_identity
+                    self.the_cat.gender = gender_identity
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
                     self.selected_cat_elements["cat_gender"] = (
                         pygame_gui.elements.UITextBox(
-                            f"{self.the_cat.genderalign}",
+                            f"{self.the_cat.gender}",
                             scale(pygame.Rect((252, 500), (500, 500))),
                             object_id=get_text_box_theme(
                                 "#text_box_30_horizcenter_spacing_95"
@@ -188,11 +188,11 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER,
         )
 
-        # In what case would a cat have no genderalign? -key
-        if not self.the_cat.genderalign:
-            text = f"{self.the_cat.gender}"
+        # In what case would a cat have no gender? -key
+        if not self.the_cat.gender:
+            text = f"{self.the_cat.sex}"
         else:
-            text = f"{self.the_cat.genderalign}"
+            text = f"{self.the_cat.gender}"
 
         self.selected_cat_elements["cat_gender"] = pygame_gui.elements.UITextBox(
             text,
@@ -233,7 +233,7 @@ class ChangeGenderScreen(Screens):
         )
         self.selected_cat_elements["gender"] = pygame_gui.elements.UITextEntryLine(
             scale(pygame.Rect((700, 440), (330, 60))),
-            placeholder_text=self.the_cat.genderalign,
+            placeholder_text=self.the_cat.gender,
             manager=MANAGER,
         )
         self.buttons["save"] = UIImageButton(
