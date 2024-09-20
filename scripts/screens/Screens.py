@@ -198,7 +198,7 @@ class Screens:
     def show_menu_buttons(cls):
         """This shows all menu buttons, and makes them interact-able."""
         # Check if the setting for moons and seasons UI is on so stats button can be moved
-        cls.update_mns()
+        cls.update_moon_and_season()
         for name, button in cls.menu_buttons.items():
             if name == "dens":
                 if (
@@ -238,7 +238,8 @@ class Screens:
     @classmethod
     def show_mute_buttons(cls):
         """This shows all mute buttons, and makes them interact-able."""
-        if game.settings["audio_mute"]:
+
+        if music_manager.muted:
             cls.menu_buttons["unmute_button"].show()
             cls.menu_buttons["mute_button"].hide()
         else:
@@ -253,12 +254,14 @@ class Screens:
             music_manager.mute_music()
             Screens.menu_buttons["mute_button"].hide()
             Screens.menu_buttons["unmute_button"].show()
+            music_manager.mute_music()
             return True
         elif event.ui_element == Screens.menu_buttons["unmute_button"]:
             game.switch_setting("audio_mute")
             music_manager.unmute_music(self.name)
             Screens.menu_buttons["unmute_button"].hide()
             Screens.menu_buttons["mute_button"].show()
+            music_manager.unmute_music(self.name)
             return True
         else:
             return False
@@ -289,11 +292,11 @@ class Screens:
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            if game.switches["mns open"]:
-                game.switches["mns open"] = False
+            if game.switches["moon&season_open"]:
+                game.switches["moon&season_open"] = False
             else:
-                game.switches["mns open"] = True
-            self.update_mns()
+                game.switches["moon&season_open"] = True
+            self.update_moon_and_season()
         elif event.ui_element == Screens.menu_buttons["dens"]:
             self.update_dens()
         elif event.ui_element == Screens.menu_buttons["lead_den"]:
@@ -353,27 +356,29 @@ class Screens:
         # Update if moons and seasons UI is on
 
     @classmethod
-    def update_mns(cls):
+    def update_moon_and_season(cls):
+        """Updates the moons and seasons widget."""
         if (
             game.clan.clan_settings["moons and seasons"]
             and game.switches["cur_screen"] != "events screen"
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if game.settings["mns open"]:
+            if game.switches["moon&season_open"]:
                 if cls.name == "events screen":
-                    cls.mns_close()
+                    cls.close_moon_and_season()
                 else:
-                    cls.mns_open()
+                    cls.open_moon_and_season()
             else:
-                cls.mns_close()
+                cls.close_moon_and_season()
         else:
             cls.menu_buttons["moons_n_seasons"].hide()
             cls.menu_buttons["moons_n_seasons_arrow"].hide()
 
-    # open moons and seasons UI (AKA wide version)
+    # Maximize moons and seasons widget
     @classmethod
-    def mns_open(cls):
+    def open_moon_and_season(cls):
+        """Opens the moons and seasons widget."""
         cls.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
             ui_scale(pygame.Rect((174, 80), (22, 34))),
             "",
@@ -393,10 +398,7 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
 
-        if game.clan.age == 1:
-            moons_text = "moon"
-        else:
-            moons_text = "moons"
+        moons_text = "moon" if game.clan.age == 1 else "moons"
 
         cls.moons_n_seasons_moon = UIImageButton(
             ui_scale(pygame.Rect((14, 10), (24, 24))),
@@ -439,9 +441,10 @@ class Screens:
             object_id=ObjectID("#text_box_30_horizleft", "#dark"),
         )
 
-    # close moons and seasons UI (AKA narrow version)
+    # Minimize moons and seasons widget
     @classmethod
-    def mns_close(cls):
+    def close_moon_and_season(cls):
+        """Closes the moons and seasons widget."""
         cls.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
             ui_scale(pygame.Rect((71, 80), (22, 34))),
             "",

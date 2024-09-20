@@ -361,12 +361,12 @@ class SettingsScreen(Screens):
         self.sub_menu = "general"
         self.save_settings_button.show()
 
-        self.checkboxes_text[
-            "container_general"
-        ] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((0, 220), (700, 300))),
-            allow_scroll_x=False,
-            manager=MANAGER,
+        self.checkboxes_text["container_general"] = (
+            pygame_gui.elements.UIScrollingContainer(
+                ui_scale(pygame.Rect((0, 220), (700, 300))),
+                allow_scroll_x=False,
+                manager=MANAGER,
+            )
         )
 
         n = 0
@@ -423,7 +423,7 @@ class SettingsScreen(Screens):
 
         self.volume_elements["music_volume_slider"] = UIImageHorizontalSlider(
             ui_scale(pygame.Rect((0, 250), (200, 30))),
-            start_value=game.settings["music_volume"],
+            start_value=int(music_manager.volume * 100),
             value_range=(0, 100),
             click_increment=1,
             object_id="horizontal_slider",
@@ -449,7 +449,7 @@ class SettingsScreen(Screens):
 
         self.volume_elements["sound_volume_slider"] = UIImageHorizontalSlider(
             ui_scale(pygame.Rect((0, 15), (200, 30))),
-            start_value=game.settings["sound_volume"],
+            start_value=int(sound_manager.volume * 100),
             value_range=(0, 100),
             click_increment=1,
             object_id="horizontal_slider",

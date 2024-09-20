@@ -92,7 +92,7 @@
                 "text": "The sunlight energizes the cats for their herb-gathering. s_c in particular points out a bunch of herb locations that weren't common knowledge.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs"],
+                "herbs": ["many_herbs", "random_herbs"],
                 "stat_skill": [
                     "CLEVER,1",
                     "INSIGHTFUL,1",
@@ -295,7 +295,7 @@
                     "SENSE,1",
                     "INSIGHTFUL,1"
                 ],
-                "herbs": ["many_herbs"]
+                "herbs": ["many_herbs", "random_herbs"]
             },
             {
                 "text": "r_c has a nice rest, and soon is sucessful in gathering some herbs.",
@@ -3566,6 +3566,366 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_app_mentor_advice",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "gen_med_and_app",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat apprentice": [1, 1],
+            "medicine cat": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "While out collecting herbs, p_l notices how quiet and dejected app1 is acting. After p_l asks {PRONOUN/app1/object} what's wrong, app1 admits {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} feel cut out to be a medicine cat.",
+	"decline_text": "Unsure of what to say, p_l continues the herb patrol as usual, leaving app1 to {PRONOUN/app1/poss} sour mood.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Smiling softly, s_c reassures app1 that {PRONOUN/s_c/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/s_c/subject} {VERB/s_c/were/was} an apprentice. s_c tells app1 a story from {PRONOUN/s_c/poss} own apprenticeship, when {PRONOUN/s_c/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/s_c/poss} mentor unhappy when all their patients started throwing up! Before long, app1 is laughing at s_c's own mishaps, {PRONOUN/app1/poss} own troubles forgotten.",
+                "exp": 20,
+                "weight": 20,
+		"stat_trait": ["childish", "bold", "oblivious", "playful", "shameless", "troublesome", "adventurous", "rebellious"],
+		"can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remembers/remember} that c_n trust {PRONOUN/s_c/object} to heal them, and so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
+                "exp": 20,
+                "weight": 20,
+		"stat_trait": ["compassionate", "loving", "insecure", "nervous", "sincere", "careful", "wise", "calm", "thoughtful", "faithful", "righteous", "responsible"],
+		"can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
+                    }
+                ]
+            },
+			{
+				"text": "p_l reassures app1 that it's completely okay to feel unsure in the path {PRONOUN/app1/subject} chose. Being a medicine cat comes with so many ups and downs, it can be hard not to doubt yourself. Whatever choice app1 makes, p_l will support {PRONOUN/app1/object}. With glistening eyes, app1 huddles against {PRONOUN/app1/poss} mentor, thanking {PRONOUN/p_l/object} profusely for the support.",
+				"exp": 20,
+				"weight": 20,
+				"herbs": ["random_herbs"],
+				"relationships": [
+				{
+					"cats_to": ["patrol"],
+					"cats_from": ["patrol"],
+					"mutual": false,
+					"values": ["platonic",
+					"comfort", "trust"],
+					"amount": 10
+					},
+				{
+					"cats_to": ["patrol"],
+					"cats_from": ["patrol"],
+					"mutual": true,
+					"values": ["dislike", "jealousy"],
+					"amount": -10
+					}
+				]
+			},
+            {
+                "text": "Turning to face app1, s_c reminds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/were/was} chosen by <i>StarClan</i> - their ancestors know that app1 is good enough, so {PRONOUN/app1/subject} should, too. Smiling, app1 nods, raising {PRONOUN/app1/poss} tail with a new-found confidence.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["STAR,0"],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Fine, s_c tells app1. Medicine cats had to work hard to learn the skills they needed - if app1 didn't want to spend moons memorising herbs, trying {PRONOUN/app1/poss} best and making mistakes, then {PRONOUN/app1/subject} should go find an easier role. Walking away from app1, s_c is pleased to hear the apprentice eagerly bounding after {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["ambitious", "bold", "cold", "competitive", "cunning", "daring", "fierce", "grumpy", "strict", "strange", "sneaky", "lonesome"],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
+                    }
+                ]
+            },
+	    {
+                "text": "Tail lashing, s_c snaps that {PRONOUN/s_c/subject} didn't train app1 just for them to give up. s_c had <i>chosen</i> app1 to be {PRONOUN/s_c/poss} apprentice, so app1 better pull {PRONOUN/app1/self} together and deal with it! Snapped out of {PRONOUN/app1/poss} gloom, app1 looks at {PRONOUN/app1/poss} intelligent, imposing mentor, and realises {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} right - s_c wouldn't have chosen just anycat to be {PRONOUN/s_c/poss} apprentice. s_c knew app1 could be a great medicine cat, and now app1 realised it, too.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["arrogant", "bloodthirsty", "confident", "gloomy", "vengeful", "sneaky"],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
+                    }
+                ]
+            },
+	    {
+                "text": "s_c gasps in over-exaggerated shock - is someone doubting the most awesome, smart, and brilliant apprentice in c_n?! app1 can't help but smile as s_c continues {PRONOUN/s_c/poss} flabbergasted performance, soon devolving into full-on laughter.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["charismatic", "flamboyant", "childish", "playful"],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike", "jealousy"],
+                        "amount": -10
+                    }
+                ]
+            }
+
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l tries to reasure app1, but everything {PRONOUN/p_l/subject} {VERB/p_l/say/says} comes out all wrong. Eventually, app1 mumbles something about heading back to camp, trudging off with {PRONOUN/app1/poss} tail hung low.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_with_parent",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "normal adult": [1, 1],
+            "medicine cat": [1, 1]
+        },
+	"relationship_constraint": ["child/parent"],
+        "weight": 40,
+        "intro_text": "It's a rare occasion when r_c gets to actually patrol with {PRONOUN/r_c/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like forever since they were alone together.",
+	"decline_text": "Noticing storm clouds above, p_l decides to head back to camp before it starts raining. Their catch-up would have to wait.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Noticing a mullein patch, p_l begins to excitedly explain how useful a find it was, before pausing - s_c has no idea what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} talking about, {VERB/s_c/do/does} {PRONOUN/s_c/subject}? s_c admits that, no, not entirely, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} more than happy for p_l to explain it to {PRONOUN/s_c/object}! By the end of the patrol, not only is s_c a mullein-master, but {PRONOUN/s_c/object} and p_l's bond is renewed.",
+                "exp": 20,
+                "weight": 20,
+		"stat_trait": ["calm", "charismatic", "compassionate", "faithful", "insecure", "loving", "loyal", "nervous", "responsible", "righteous", "sincere", "thoughtful", "wise", "careful"],
+		"can_have_stat": ["r_c"],
+                "herbs": ["mullein"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ],
+	        "art": "gen_med_collectingmullein"
+            },
+            {
+                "text": "s_c purrs, brushing {PRONOUN/s_c/poss} pelt against p_l's - s_c may not be the most talkative cat, but {PRONOUN/s_c/subject} {VERB/s_c/want/wants} p_l to know that {PRONOUN/s_c/subject} {VERB/s_c/appreciate/appreciates} p_l's presence. p_l purrs back, draping {PRONOUN/p_l/poss} tail across {PRONOUN/p_l/poss} parent's shoulders and continuing the patrol in a comfortable silence.",
+                "exp": 20,
+                "weight": 20,
+		"stat_trait": ["calm", "gloomy", "grumpy", "strange", "lonesome"],
+		"can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Though s_c may not always understand the path of a medicine cat, {PRONOUN/s_c/subject} wants p_l to know that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} proud of {PRONOUN/p_l/object} anyway, and is glad p_l is happy in {PRONOUN/p_l/poss} role. Surprised - but appreciative - of the reassurance, p_l smiles and promises s_c that just because they walk different paths doesn't mean {PRONOUN/p_l/subject}'ll stop needing s_c.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["ambitious", "adventurous", "arrogant", "bloodthirsty", "bold", "daring", "confident", "cold", "cunning", "daring", "fierce", "oblivious", "shameless", "sneaky", "strict", "vengeful"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+			{
+                "text": "Even as {PRONOUN/r_c/poss} kit grows, r_c will always see p_l as a mewling kit, always hungry for milk. r_c gazes fondly at p_l as {PRONOUN/p_l/subject} {VERB/p_l/sniff/sniffs} around, looking for herbs. It's just so wonderful seeing your kit grow up. Of course, it can be sad, but that's why r_c cherishes every moment {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} with p_l.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    },
+					{
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c suddenly pauses, brightly suggesting a game for them to play - every time they see a herb, p_l had to teach s_c it's uses, and, at the end of the patrol, p_l could give {PRONOUN/s_c/object} a quiz. If s_c got more than half the questions right, {PRONOUN/s_c/subject} {VERB/s_c/win/wins}! Pleased at the opportunity to both impart {PRONOUN/p_l/poss} herbal knowledge and spend time with {PRONOUN/p_l/poss} parent, the patrol seems to fly by all too quickly, with both cats having a great time.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["childish", "competitive", "flamboyant", "playful", "troublesome"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l tries to start a conversation about the herbs they're gathering, but after realising how uninterested r_c is, {PRONOUN/p_l/subject} quickly {VERB/p_l/trail/trails} off. Disappointed, the pair continue the patrol in a relatively awkward silence.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
                         "amount": -5
                     }
                 ]

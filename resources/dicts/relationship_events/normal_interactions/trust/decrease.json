@@ -11,8 +11,23 @@
 		"id": "trust_de_low2",
 		"intensity": "low",
 		"interactions": [
-			"m_c shared a embarrassing story about r_c {PRONOUN/m_c/subject} {VERB/m_c/were/was} asked not to share..."
+			"m_c shared a embarrassing story about r_c {PRONOUN/m_c/subject} {VERB/m_c/were/was} asked not to share...",
+			"m_c laughed at r_c when they tripped and didn't even ask if {PRONOUN/m_c/subject} needed help up."
 		],
+		"reaction_random_cat": {
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "trust_de_low3",
+		"intensity": "low",
+		"interactions": [
+			"m_c keeps {PRONOUN/m_c/poss} tail tucked around r_c.",
+            "m_c is keeping a close eye on r_c to make sure {PRONOUN/r_c/subject} {VERB/r_c/isn't/aren't} causing any trouble."
+		],
+		"random_status_constraint": [
+			"kitten"
+        ],
 		"reaction_random_cat": {
 			"trust": "decrease"
 		}
@@ -21,13 +36,15 @@
 		"id": "trust_de_med1",
 		"interactions": [
 			"m_c caught r_c in a lie.",
-			"r_c let m_c down while m_c was counting on {PRONOUN/r_c/object}."
+			"r_c let m_c down while m_c was counting on {PRONOUN/r_c/object}.",
+			"r_c tripped m_c at the gathering in front of all the clans."
 		]
 	},
 	{
 		"id": "trust_de_med2",
 		"interactions": [
-			"m_c said {PRONOUN/m_c/subject}'d cover for r_c, but when it came time, {PRONOUN/m_c/subject} got r_c in trouble."
+			"m_c said {PRONOUN/m_c/subject}'d cover for r_c, but when it came time, {PRONOUN/m_c/subject} got r_c in trouble.",
+			"m_c told r_c {PRONOUN/r_c/subject} could tell {PRONOUN/m_c/object} anything but when r_c took up the offer, m_c got {PRONOUN/r_c/object} in trouble."
 		],
 		"reaction_random_cat": {
 			"trust": "decrease"
@@ -37,7 +54,11 @@
 		"id": "trust_de_med3",
 		"interactions": [
 			"r_c is gossiping about m_c.",
-			"m_c is spreading a rumor about r_c."
+			"m_c is spreading a rumor about r_c.",
+			"m_c caught r_c slinking around the camp entrance in the middle of the night.",
+            "m_c catches r_c doing something sneaky and, when asked, r_c refused to give a straight answer.",
+            "m_c catches r_c sneaking around.",
+            "m_c catches r_c sneaking back into camp in the middle of the night."
 		],
 		"random_trait_constraint": [
 			"sneaky"
@@ -47,7 +68,10 @@
 		"id": "trust_kit_de_med1",
 		"interactions": [
 			"m_c constantly pulling pranks on r_c.",
-			"m_c is relentlessly pestering r_c."
+			"m_c is relentlessly pestering r_c.",
+			"m_c keeps pouncing on r_c's tail despite being told to stop.",
+            "r_c hissed at m_c.",
+            "r_c caught m_c misbehaving even though {PRONOUN/m_c/subject} promised to be on {PRONOUN/m_c/poss} best behavior."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -72,7 +96,9 @@
 		"id": "trust_de_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c tries to scare r_c."
+			"m_c tries to scare r_c.",
+			"m_c dismisses r_c's reasonable concerns and fears and tells them to get over it.",
+            "m_c pulls a mean-spirited prank on r_c."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -90,7 +116,8 @@
 			"m_c accuses r_c of not taking care of cats properly.",
 			"m_c doesn't bother to ask r_c for help with a minor injury, worried that {PRONOUN/r_c/subject} might make it worse.",
 			"m_c complains that r_c doesn't seem to understand signs from StarClan very well.",
-			"m_c feels worse after r_c gave {PRONOUN/m_c/object} the wrong treatment for something minor."
+			"m_c feels worse after r_c gave {PRONOUN/m_c/object} the wrong treatment for something minor.",
+			"m_c doesn't trust r_c to treat {PRONOUN/m_c/object}."
 		],
 		"random_status_constraint": [
 			"medicine cat"
@@ -119,7 +146,13 @@
 			"m_c saw r_c bringing deathberries into the medicine den.",
 			"r_c was rough with m_c during a recent treatment.",
 			"m_c isn't sure why r_c became a medicine cat at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
-			"m_c wouldn't be surprised if r_c faked signs from StarClan..."
+			"m_c wouldn't be surprised if r_c faked signs from StarClan...",
+			"m_c makes absolutely sure r_c gave {PRONOUN/m_c/object} the right herbs.",
+            "m_c lashes {PRONOUN/m_c/poss} tail as r_c dismisses {PRONOUN/m_c/poss} health concerns as nothing serious.",
+            "r_c claimed m_c was lying about an injury and refused to even look at it.",
+            "r_c claimed m_c was lying about an illness and refused to even check.",
+            "r_c ignored m_c when {PRONOUN/m_c/subject} needed treatment.",
+            "m_c is doubting whether r_c has any connection to StarClan at all."
 		],
 		"random_status_constraint": [
 			"medicine cat"
@@ -138,7 +171,9 @@
 			"m_c growls frustratingly at r_c when {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} pay attention to m_c's health concerns... again.",
 			"m_c looks for r_c for treatment on a minor wound, only to find {PRONOUN/r_c/object} playing with catmint!",
 			"m_c hopes to never have a serious illness with r_c in charge of treatments...",
-			"m_c complains that r_c never takes {PRONOUN/r_c/poss} role of medicine cat seriously."
+			"m_c complains that r_c never takes {PRONOUN/r_c/poss} role of medicine cat seriously.",
+			"m_c can't keep r_c's attention long enough to tell {PRONOUN/r_c/subject} what {PRONOUN/m_c/object} need help with.",
+            "r_c didn't notice m_c when {PRONOUN/m_c/subject} needed treatment."
 		],
 		"random_status_constraint": [
 			"medicine cat"
@@ -156,7 +191,9 @@
 			"After hearing r_c's most recent demands, m_c is concerned about the future of the Clan.",
 			"m_c doesn't believe that r_c has the Clan's best interests in mind.",
 			"m_c doesn't understand how StarClan could grant a cat as cold and uncaring as r_c nine lives.",
-			"When it comes down to it, m_c doesn't think {PRONOUN/m_c/subject} could follow r_c's every order."
+			"When it comes down to it, m_c doesn't think {PRONOUN/m_c/subject} could follow r_c's every order.",
+			"m_c wonders if {PRONOUN/m_c/subject} could run away from the Clan if necessary...",
+            "m_c wonders if exile is really so bad given current Clan leadership..."
 		],
 		"random_status_constraint": [
 			"leader"

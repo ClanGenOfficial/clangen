@@ -2321,8 +2321,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c is scarred from a leaf-bare they endured as a young cat.",
-                    "reg_death": "r_c was killed by the cold of the mountain leaf-bare.",
+                    "scar": "m_c is scarred from a leaf-bare they endured as a young cat.",
+                    "reg_death": "m_c was killed by the cold of the mountain leaf-bare.",
                     "lead_death": "was killed by the cold of the mountain leaf-bare"
                 },
                 "prey": ["very_small"]
@@ -2563,8 +2563,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c is scarred from a leaf-bare they endured as a young cat.",
-                    "reg_death": "r_c was killed by the cold of the mountain leaf-bare.",
+                    "scar": "m_c is scarred from a leaf-bare they endured as a young cat.",
+                    "reg_death": "m_c was killed by the cold of the mountain leaf-bare.",
                     "lead_death": "was killed by the cold of the mountain leaf-bare"
                 },
                 "prey": ["very_small"]
@@ -2805,8 +2805,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c is scarred from a leaf-bare they endured as a young cat.",
-                    "reg_death": "r_c was killed by the cold of the mountain leaf-bare.",
+                    "scar": "m_c is scarred from a leaf-bare they endured as a young cat.",
+                    "reg_death": "m_c was killed by the cold of the mountain leaf-bare.",
                     "lead_death": "was killed by the cold of the mountain leaf-bare"
                 },
                 "prey": ["very_small"]
@@ -3047,8 +3047,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c is scarred from a leaf-bare they endured as a young cat.",
-                    "reg_death": "r_c was killed by the cold of the mountain leaf-bare.",
+                    "scar": "m_c is scarred from a leaf-bare they endured as a young cat.",
+                    "reg_death": "m_c was killed by the cold of the mountain leaf-bare.",
                     "lead_death": "was killed by the cold of the mountain leaf-bare"
                 },
                 "prey": ["very_small"]
@@ -3286,8 +3286,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c is scarred from a leaf-bare they endured as a young cat.",
-                    "reg_death": "r_c was killed by the cold of the mountain leaf-bare.",
+                    "scar": "m_c is scarred from a leaf-bare they endured as a young cat.",
+                    "reg_death": "m_c was killed by the cold of the mountain leaf-bare.",
                     "lead_death": "was killed by the cold of the mountain leaf-bare"
                 },
                 "prey": ["very_small"]
@@ -3823,9 +3823,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred by the cold of a harsh leaf-bare.",
-                    "reg_death": "r_c was killed by the cold of a harsh leaf-bare.",
-                    "lead_death": "were killed by cold that sunk its fangs in while r_c hunted to provide for c_n"
+                    "scar": "m_c was scarred by the cold of a harsh leaf-bare.",
+                    "reg_death": "m_c was killed by the cold of a harsh leaf-bare.",
+                    "lead_death": "were killed by cold that sunk its fangs in while m_c hunted to provide for c_n"
                 },
                 "prey": ["very_small"]
             }
@@ -4270,9 +4270,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred by the cold of a harsh leaf-bare.",
-                    "reg_death": "r_c was killed by the cold of a harsh leaf-bare.",
-                    "lead_death": "were killed by cold that sunk its fangs in while r_c hunted to provide for c_n"
+                    "scar": "m_c was scarred by the cold of a harsh leaf-bare.",
+                    "reg_death": "m_c was killed by the cold of a harsh leaf-bare.",
+                    "lead_death": "were killed by cold that sunk its fangs in while m_c hunted to provide for c_n"
                 },
                 "prey": ["very_small"]
             }
