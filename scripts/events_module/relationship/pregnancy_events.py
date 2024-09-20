@@ -245,7 +245,7 @@ class Pregnancy_Events:
             text = event_text_adjust(Cat, text, main_cat=cat, clan=clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
-            if not other_cat and cat.gender == "male":
+            if not other_cat and cat.sex == "male":
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
                 insert = "this should not display"
@@ -266,9 +266,9 @@ class Pregnancy_Events:
             pregnant_cat = cat
             second_parent = other_cat
             if (
-                cat.gender == "male"
+                cat.sex == "male"
                 and other_cat is not None
-                and other_cat.gender == "female"
+                and other_cat.sex == "female"
             ):
                 pregnant_cat = other_cat
                 second_parent = cat
@@ -562,7 +562,7 @@ class Pregnancy_Events:
             return False, False
 
         # Check to see if the pair can have kits.
-        if cat.gender == second_parent.gender:
+        if cat.sex == second_parent.sex:
             if same_sex_birth:
                 return True, False
             elif not same_sex_adoption:
@@ -592,11 +592,11 @@ class Pregnancy_Events:
             mate = cat.fetch_cat(mate)
 
         # if the sex does matter, choose the best solution to allow kits
-        if not samesex and mate and mate.gender == cat.gender:
+        if not samesex and mate and mate.sex == cat.sex:
             opposite_mate = [
                 cat.fetch_cat(mate_id)
                 for mate_id in cat.mate
-                if cat.fetch_cat(mate_id).gender != cat.gender
+                if cat.fetch_cat(mate_id).sex != cat.sex
             ]
             if len(opposite_mate) > 0:
                 mate = choice(opposite_mate)
@@ -645,7 +645,7 @@ class Pregnancy_Events:
                 i
                 for i in Cat.all_cats_list
                 if i.is_potential_mate(cat, for_love_interest=True)
-                and (samesex or i.gender != cat.gender)
+                and (samesex or i.sex != cat.sex)
                 and i.ID not in cat.mate
             ]
             if special_affair:
@@ -689,7 +689,7 @@ class Pregnancy_Events:
                 mate_relation, highest_romantic_relation
             )
             if not chance_love_affair or not int(random.random() * chance_love_affair):
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+                if samesex or cat.sex != highest_romantic_relation.cat_to.sex:
                     return highest_romantic_relation.cat_to
         elif highest_romantic_relation:
             # Love affair change if the cat doesn't have a mate:
@@ -697,7 +697,7 @@ class Pregnancy_Events:
                 highest_romantic_relation
             )
             if not chance_love_affair or not int(random.random() * chance_love_affair):
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+                if samesex or cat.sex != highest_romantic_relation.cat_to.sex:
                     return highest_romantic_relation.cat_to
 
         return None
@@ -726,7 +726,7 @@ class Pregnancy_Events:
         blood_parent = None
 
         ##### SELECT BACKSTORY #####
-        if cat and cat.gender == "female":
+        if cat and cat.sex == "female":
             backstory = choice(["halfclan1", "outsider_roots1"])
         elif cat:
             backstory = choice(["halfclan2", "outsider_roots2"])

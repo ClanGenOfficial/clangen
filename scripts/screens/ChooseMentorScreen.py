@@ -361,7 +361,7 @@ class ChooseMentorScreen(Screens):
         info = (
             self.the_cat.status
             + "\n"
-            + self.the_cat.genderalign
+            + self.the_cat.gender
             + "\n"
             + self.the_cat.personality.trait
             + "\n"
@@ -510,7 +510,7 @@ class ChooseMentorScreen(Screens):
             info = (
                 self.selected_mentor.status
                 + "\n"
-                + self.selected_mentor.genderalign
+                + self.selected_mentor.gender
                 + "\n"
                 + self.selected_mentor.personality.trait
                 + "\n"

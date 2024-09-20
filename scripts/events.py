@@ -2444,7 +2444,7 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
         # TODO: should figure out how to handle these as a ShortEvent, we don't want hardcoded text
-        if cat.genderalign == cat.gender:
+        if cat.gender == cat.sex:
             if cat.moons < 6:
                 return
 
@@ -2462,17 +2462,17 @@ class Events:
                 return
 
             if random.getrandbits(1):  # 50/50
-                if cat.gender == "male":
-                    cat.genderalign = "trans female"
+                if cat.sex == "male":
+                    cat.gender = "trans female"
                     cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
-                    cat.genderalign = "trans male"
+                    cat.gender = "trans male"
                     cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
-                cat.genderalign = "nonbinary"
+                cat.gender = "nonbinary"
                 cat.pronouns = [cat.default_pronouns[0].copy()]
 
-            if cat.gender == "male":
+            if cat.sex == "male":
                 gender = "tom"
             else:
                 gender = "she-cat"

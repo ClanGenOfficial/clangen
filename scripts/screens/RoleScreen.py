@@ -183,7 +183,7 @@ class RoleScreen(Screens):
         else:
             text += "moons  |  "
 
-        text += self.the_cat.genderalign + "\n"
+        text += self.the_cat.gender + "\n"
 
         if self.the_cat.mentor:
             text += "mentor: "

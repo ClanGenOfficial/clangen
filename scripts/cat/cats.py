@@ -135,7 +135,7 @@ class Cat:
     def __init__(
         self,
         prefix=None,
-        gender=None,
+        sex=None,
         status="newborn",
         backstory="clanborn",
         parent1=None,
@@ -154,7 +154,7 @@ class Cat:
         """Initialise the cat.
 
         :param prefix: Cat's prefix (e.g. Fire- for Fireheart)
-        :param gender: Cat's gender, default None
+        :param sex: Cat's sex(Birth assigned sex), default None
         :param status: Cat's age range, default "newborn"
         :param backstory: Cat's origin, default "clanborn"
         :param parent1: ID of parent 1, default None
@@ -187,7 +187,7 @@ class Cat:
         self._moons = None
 
         # Public attributes
-        self.gender = gender
+        self.sex = sex
         self.status = status
         self.backstory = backstory
         self.age = None
@@ -215,7 +215,7 @@ class Cat:
         self.driven_out = False
         self.dead_for = 0  # moons
         self.thought = ""
-        self.genderalign = None
+        self.gender = None
         self.birth_cooldown = 0
         self.illnesses = {}
         self.injuries = {}
@@ -305,12 +305,12 @@ class Cat:
             self.backstory = self.backstory
 
         # sex!?!??!?!?!??!?!?!?!??
-        if self.gender is None:
-            self.gender = choice(["female", "male"])
-        self.g_tag = self.gender_tags[self.gender]
+        if self.sex is None:
+            self.sex = choice(["female", "male"])
+        self.g_tag = self.gender_tags[self.sex]
 
-        """if self.genderalign == "":
-            self.genderalign = self.gender"""
+        """if self.gender == "":
+            self.gender = self.sex"""
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
@@ -421,7 +421,7 @@ class Cat:
         """
         # trans cat chances
         theythemdefault = game.settings["they them default"]
-        self.genderalign = self.gender
+        self.gender = self.sex
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
 
@@ -430,29 +430,29 @@ class Cat:
             # newborns can't be trans, sorry babies
             pass
         elif nb_chance == 1:
-            self.genderalign = "nonbinary"
+            self.gender = "nonbinary"
         elif trans_chance == 1:
-            if self.gender == "female":
-                self.genderalign = "trans male"
+            if self.sex == "female":
+                self.gender = "trans male"
             else:
-                self.genderalign = "trans female"
+                self.gender = "trans female"
 
         # PRONOUNS
         if theythemdefault is True:
             self.pronouns = [self.default_pronouns[0].copy()]
         else:
             # Assigning pronouns based on gender
-            if self.genderalign in ["female", "trans female"]:
+            if self.gender in ["female", "trans female"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.genderalign in ["male", "trans male"]:
+            elif self.gender in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]
             else:
-                self.genderalign = "nonbinary"
+                self.gender = "nonbinary"
                 self.pronouns = [self.default_pronouns[0].copy()]
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(
-            self.gender,
+            self.sex,
             [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i],
             self.age,
         )
@@ -3353,8 +3353,8 @@ class Cat:
                 "name_prefix": self.name.prefix,
                 "name_suffix": self.name.suffix,
                 "specsuffix_hidden": self.name.specsuffix_hidden,
-                "gender": self.gender,
-                "gender_align": self.genderalign,
+                "gender": self.sex,
+                "gender_align": self.gender,
                 "pronouns": self.pronouns,
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status,

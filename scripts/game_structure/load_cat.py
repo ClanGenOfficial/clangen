@@ -145,7 +145,7 @@ def json_load():
                 cat["adoptive_parents"] if "adoptive_parents" in cat else []
             )
 
-            new_cat.genderalign = cat["gender_align"]
+            new_cat.gender = cat["gender_align"]
             # new_cat.pronouns = cat["pronouns"]
             new_cat.pronouns = (
                 cat["pronouns"]
@@ -320,7 +320,7 @@ def csv_load(all_cats):
             # spec2(29) - moons(30) - mate(31)
             # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36)
             # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
-            # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
+            # gender(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
             if i.strip() != "":
                 attr = i.split(",")
                 for x in range(len(attr)):
@@ -464,7 +464,7 @@ def csv_load(all_cats):
                 if len(attr) > 39:
                     the_cat.exiled = bool(attr[39])
                 if len(attr) > 40:
-                    the_cat.genderalign = attr[40]
+                    the_cat.gender = attr[40]
                 if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
                     the_cat.former_apprentices = attr[41].split(";")
         game.switches["error_message"] = (
