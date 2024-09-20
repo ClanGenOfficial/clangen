@@ -82,16 +82,17 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_HORIZONTAL_SLIDER_MOVED:
-            if event.ui_element == self.volume_elements["music_volume_slider"]:
-                self.update_music_volume_indicator()
-                music_manager.change_volume(event.value)
-                self.settings_changed = True
-                self.update_save_button()
-            elif event.ui_element == self.volume_elements["sound_volume_slider"]:
-                self.update_sound_volume_indicator()
-                sound_manager.change_volume(event.value)
-                self.settings_changed = True
-                self.update_save_button()
+            if hasattr(event, "ui_element"):
+                if event.ui_element == self.volume_elements["music_volume_slider"]:
+                    self.update_music_volume_indicator()
+                    music_manager.change_volume(event.value)
+                    self.settings_changed = True
+                    self.update_save_button()
+                elif event.ui_element == self.volume_elements["sound_volume_slider"]:
+                    self.update_sound_volume_indicator()
+                    sound_manager.change_volume(event.value)
+                    self.settings_changed = True
+                    self.update_save_button()
 
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == "Darwin":
@@ -361,12 +362,12 @@ class SettingsScreen(Screens):
         self.sub_menu = "general"
         self.save_settings_button.show()
 
-        self.checkboxes_text["container_general"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                ui_scale(pygame.Rect((0, 220), (700, 300))),
-                allow_scroll_x=False,
-                manager=MANAGER,
-            )
+        self.checkboxes_text[
+            "container_general"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            ui_scale(pygame.Rect((0, 220), (700, 300))),
+            allow_scroll_x=False,
+            manager=MANAGER,
         )
 
         n = 0
