@@ -175,7 +175,7 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
-        out = Screens.mute_button_pressed(event)
+        out = self.mute_button_pressed(event)
         if out:
             return
 
