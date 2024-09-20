@@ -81,6 +81,10 @@ class EventsScreen(Screens):
         # ON START BUTTON PRESS
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
             element = event.ui_element
+            if element == self.timeskip_button:
+                self.events_thread = self.loading_screen_start_work(
+                    events_class.one_moon
+                )
             if element in self.event_buttons.values():
                 for ele, val in self.event_buttons.items():
                     if val == element:
@@ -90,11 +94,7 @@ class EventsScreen(Screens):
         # ON FULL BUTTON PRESS
         elif event.type == pygame_gui.UI_BUTTON_PRESSED:  # everything else on button press to prevent blinking
             element = event.ui_element
-            if element == self.timeskip_button:
-                self.events_thread = self.loading_screen_start_work(
-                    events_class.one_moon
-                )
-            elif element in self.involved_cat_buttons.values():
+            if element in self.involved_cat_buttons.values():
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons.values():
                 self.save_scroll_position()
