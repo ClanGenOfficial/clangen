@@ -11261,7 +11261,8 @@
                         "cats_from": ["app1"],
                         "values": ["platonic", "comfort", "respect", "trust"],
                         "amount": 10
-                    } ],
+                    }
+					],
                 "weight": 20
             },
             {
@@ -11269,6 +11270,19 @@
                 "exp": 10,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["charismatic","flamboyant","playful","childish","shameless","strange","sneaky"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "values": ["platonic", "comfort", "respect", "trust"],
+                        "amount": 10
+                    }
+					],
+                "weight": 20
+            },
+			{
+                "text": "p_l can empathize- it may seem impossible for app1 to find {PRONOUN/app1/poss} place in c_n, especially as an apprentice with {PRONOUN/app1/poss} whole future ahead. But it's important to breath. In, out, in, out. It's hard for app1 to calm down, and p_l knows this, but once app1 is calm enough, the two can begin to talk and figure out the best way for app1 to thrive and learn.",
+                "exp": 10,
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
