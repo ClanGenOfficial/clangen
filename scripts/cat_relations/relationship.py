@@ -124,22 +124,15 @@ class Relationship:
                 all_interactions, intensity, biome, season, game_mode
             )
 
+        # return if there are no possible interactions.
         if len(possible_interactions) <= 0:
             print(
-                "ERROR: No interaction with this conditions. ",
+                "WARNING: No interaction with this conditions.",
                 rel_type,
                 in_de_crease,
                 intensity,
             )
-            possible_interactions = [
-                SingleInteraction(
-                    "fall_back",
-                    "Any",
-                    "Any",
-                    "medium",
-                    ["Default string, this should never appear."],
-                )
-            ]
+            return
 
         # check if the current interaction id is already used and us another if so
         chosen_interaction = choice(possible_interactions)
