@@ -488,7 +488,7 @@
             "Spends all day chatting and laughing with {PRONOUN/m_c/poss} Clanmates",
             "Forgot where {PRONOUN/m_c/subject} put something, and every other cat offers to help {PRONOUN/m_c/object} find it",
             "Is a little exhausted from how many cats come to {PRONOUN/m_c/object} for things",
-            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone other's can talk to",
+            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone others can talk to",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be dazzling, but not too dazzling"
         ],
         "main_trait_constraint": [
@@ -1136,7 +1136,7 @@
     {
         "id": "rebellious_gen",
         "thoughts": [
-            "Is finding ways to rebel against the instructions {PRONOUN/m_c/subject} were given",
+            "Is finding ways to rebel against the instructions {PRONOUN/m_c/subject} {verb/m_c/were/was} given",
             "Is doubting why things are done the way they are",
             "Taunted a dog stuck behind a Twoleg fence",
             "Is spreading doubt through {PRONOUN/m_c/poss} Clanmates over the way things are done",
@@ -2100,14 +2100,14 @@
             "Had a tearful visit from r_c in {PRONOUN/m_c/poss} dream last night",
             "Wants to work hard knowing r_c is watching {PRONOUN/m_c/object}"
         ],
-        "main_living_status": [
+        "random_living_status": [
             "starclan",
             "darkforest"
         ],
         "relationship_constraint": [
             "child/parent"
         ],
-        "random_living_status": [
+        "main_living_status": [
             "living"
         ]
     },
@@ -2436,7 +2436,7 @@
             "Misses how {PRONOUN/m_c/poss} Twolegs kept their den at a comfy temperature at all times",
             "Misses not having to work for {PRONOUN/m_c/poss} food each day",
             "Wonders if {PRONOUN/m_c/poss} Twolegs miss {PRONOUN/m_c/object}",
-            "Thinks about how the kibble {PRONOUN/m_c/subject} used to eat doesn't even compare to the fresh-kill {PRONOUN/m_c/subject} eat now",
+            "Thinks about how the kibble {PRONOUN/m_c/subject} used to eat doesn't even compare to the fresh-kill {PRONOUN/m_c/subject} {verb/m_c/eat/eats} now",
             "Is trying to remember the taste of the food {PRONOUN/m_c/poss} Twolegs used to give {PRONOUN/m_c/object}",
             "Is ignoring gossip about {PRONOUN/m_c/poss} kittypet past",
             "Ignored a kittypet calling {PRONOUN/m_c/poss} old kittypet name",

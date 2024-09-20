@@ -563,7 +563,7 @@
                 ]
             },
             {
-                "text": "p_l eyes go wide, fur puffing up, and tell r_c that {PRONOUN/r_c/poss} dream is a warning of death and destruction, thoroughly freaking r_c out and bringing unease to the patrol.",
+                "text": "p_l's eyes go wide, fur puffing up, and tells r_c that {PRONOUN/r_c/poss} dream is a warning of death and destruction, thoroughly freaking r_c out and bringing unease to the patrol.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argueMM",
@@ -1024,7 +1024,7 @@
                 ]
             },
             {
-                "text": "p_l eyes go wide, fur puffing up, and tells the apprentice that {PRONOUN/app1/poss}'s dream is a warning of death and destruction, thoroughly freaking app1 out.",
+                "text": "p_l's eyes go wide, fur puffing up, and tells the apprentice that {PRONOUN/app1/poss}'s dream is a warning of death and destruction, thoroughly freaking app1 out.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argueMA",
