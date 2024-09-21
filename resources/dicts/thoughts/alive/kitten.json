@@ -71,12 +71,12 @@
         "thoughts": [
             "Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously",
             "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp"
-        ],
+	],
         "main_trait_constraint": [
             "bossy",
             "attention-seeker",
             "bullying",
-            "daring",
+            "fearless",
             "noisy",
             "troublesome"
         ]
@@ -290,11 +290,10 @@
         ]
     },
     {
-        "id": "daring_kit",
+        "id": "fearless_kit",
         "thoughts": [
             "Is attempting to pounce on the tail of r_c",
             "Tries to sneak out of camp with a patrol",
-            "Pounced on r_c",
             "Is boldly walking out of camp",
             "Is demanding others spar with {PRONOUN/m_c/object}",
             "Is taking the biggest piece of fresh-kill",
@@ -306,60 +305,8 @@
             "Thinks {PRONOUN/m_c/subject} can outsmart a fox",
             "Wants to guard the nursery",
             "Is sure {PRONOUN/m_c/subject} could fight a badger",
-            "Picks a fight with an apprentice so {PRONOUN/m_c/subject} can show {PRONOUN/m_c/poss} skills",
             "Sticks {PRONOUN/m_c/poss} paw into an old snake hole",
             "Is playing with a dead snake",
-            "Isn't afraid of the dark at all"
-
-        ],
-        "main_trait_constraint": [
-            "daring"
-        ]
-    },
-    {
-        "id": "daring_kit",
-        "thoughts": [
-            "Picks a fight with an apprentice so {PRONOUN/m_c/subject} can show {PRONOUN/m_c/poss} skills"
-
-        ],
-        "main_trait_constraint": [
-            "daring"
-        ],
-        "random_status_constraint": [
-        "apprentice"
-        ]
-    },
-    {
-        "id": "daring_kit",
-        "thoughts": [
-            "Is trying to challenge the leader but isn't being taken very seriously",
-            "Is sneaking into the leader's nest"
-
-        ],
-        "main_trait_constraint": [
-            "daring"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ]
-    },
-    {
-        "id": "fearless_kit",
-        "thoughts": [
-            "Is attempting to pounce on the tail of r_c",
-            "Tries to sneak out of camp with a patrol",
-            "Is boldly walking out of camp",
-            "Is taking the biggest piece of fresh-kill",
-            "Demands to be on the next border patrol",
-            "Isn't scared of anything",
-            "Is climbing way too high",
-            "Is telling other cats that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the deputy now",
-            "Wants to taste a toad",
-            "Thinks {PRONOUN/m_c/subject} can outsmart a fox",
-            "Wants to guard the nursery",
-            "Is sure {PRONOUN/m_c/subject} could fight a badger",
-            "Is sneaking into the leader's nest",
-            "Sticks {PRONOUN/m_c/poss} paw into an old snake hole",
             "Isn't afraid of the dark at all"
         ],
         "main_trait_constraint": [
@@ -367,6 +314,31 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "fearless_kit_to_apprentice",
+        "thoughts": [
+            "Picks a fight with an apprentice so {PRONOUN/m_c/subject} can show {PRONOUN/m_c/poss} skills"
+        ],
+        "main_trait_constraint": [
+            "fearless"
+        ],
+        "random_status_constraint": [
+        	"apprentice"
+        ]
+    },
+    {
+        "id": "fearless_kit_to_leader",
+        "thoughts": [
+            "Is trying to challenge the leader but isn't being taken very seriously",
+            "Is sneaking into the leader's nest"
+        ],
+        "main_trait_constraint": [
+            "fearless"
+        ],
+        "random_status_constraint": [
+            "leader"
         ]
     },
     {
