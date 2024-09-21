@@ -5,6 +5,7 @@ from typing import Tuple, Dict
 
 import pygame
 
+from scripts.game_structure.screen_settings import screen_scale
 from scripts.ui.generate_box import BoxData, get_box
 from scripts.utility import ui_scale_dimensions
 
@@ -363,7 +364,8 @@ def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
 
 
 def get_button_dict(
-    style: ButtonStyles, unscaled_dimensions: Tuple[int, int]
+    style: ButtonStyles,
+    unscaled_dimensions: Tuple[int, int],
 ) -> Dict[str, pygame.Surface]:
     """
     Return a dictionary of surfaces suitable for passing into a UISurfaceImageButton.
@@ -371,12 +373,12 @@ def get_button_dict(
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
-    return _get_button_dict(style, unscaled_dimensions)
+    return _get_button_dict(style, unscaled_dimensions, screen_scale)
 
 
 @cache
 def _get_button_dict(
-    style: ButtonStyles, unscaled_dimensions: Tuple[int, int]
+    style: ButtonStyles, unscaled_dimensions: Tuple[int, int], scale
 ) -> Dict[str, pygame.Surface]:
     """
     This wrapper exists so that we can cache the values to make toggling quicker.
@@ -384,6 +386,10 @@ def _get_button_dict(
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
+
+    # scale exists pretty much only to ensure we have a different cached version of the function for different scales
+    dontdeletethatpls = scale
+
     if buttonstyles[style.value]["scale_only"]:
         return {
             "normal": pygame.transform.scale(
