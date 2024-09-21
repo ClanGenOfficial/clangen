@@ -9,8 +9,8 @@
             "m_c was in the middle of an important conversation before r_c rudely interrupted {PRONOUN/m_c/object}.",
             "r_c blocked m_c's way and didn't apologize.",
             "m_c made plans to share tongues with r_c but never showed up.",
-            "m_c accidentially stepped on r_c's tail.",
-            "m_c teased r_c's for having messy fur right after waking up."
+            "m_c accidentally stepped on r_c's tail.",
+            "m_c teased r_c for having messy fur right after waking up."
 		]
 	},
 	{
@@ -144,7 +144,7 @@
             "m_c knocked r_c into a puddle with a rough shove before feigning an apology.",
             "m_c 'accidentally' tripped r_c.",
             "m_c gave r_c a grimace before walking away without a word.",
-            "m_c smirks when {PRONOUN/m_c/subject} see r_c all by {PRONOUN/r_c/self}.",
+            "m_c smirks when {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c all by {PRONOUN/r_c/self}.",
             "m_c enjoys watching things go wrong for r_c."
 		],
 		"main_trait_constraint": [
@@ -158,7 +158,7 @@
 			"r_c offends m_c with {PRONOUN/r_c/poss} brutal honesty.",
 			"r_c is boasting about {PRONOUN/r_c/poss} accomplishments to m_c, but m_c isn't impressed.",
 			"r_c gets really close to m_c's face while talking and grosses m_c out with {PRONOUN/r_c/poss} fox breath.",
-			"r_c doesn't understand why m_c lied to save a cats' feelings."
+			"r_c doesn't understand why m_c lied to save a cat's feelings."
 		],
 		"random_trait_constraint": [
 			"shameless",
@@ -224,7 +224,7 @@
 			"m_c had to nip r_c on the rump because {PRONOUN/r_c/subject} {VERB/r_c/were/was} being naughty.",
 			"m_c growls at r_c to get out from under {PRONOUN/m_c/poss} paws.",
 			"m_c snaps at r_c's annoying antics.",
-			"r_c wishes {PRONOUN/r_c/subject} {VERB/r_c/was/were} all grown up so m_c would take {PRONOUN/r_c/object} seriously.",
+			"r_c wishes {PRONOUN/r_c/subject} {VERB/r_c/were/was} all grown up so m_c would take {PRONOUN/r_c/object} seriously.",
             "r_c asked m_c to tell {PRONOUN/r_c/object} a story only to get hissed at instead.",
             "m_c took the toy r_c was playing with before telling {PRONOUN/m_c/object} to return to the nursery."
 		],
@@ -252,7 +252,7 @@
 			"m_c purposefully tripped r_c.",
             "m_c growls at r_c to get out of {PRONOUN/m_c/poss} way.",
 			"m_c snaps at r_c's annoying antics.",
-            "m_c snarls at r_c when asked to play. {PRONOUN/m_c/subject} will not spend {PRONOUN/m_c/poss} time playing stupid games."
+            "m_c snarls at r_c when asked to play. {PRONOUN/m_c/subject/CAP} will not spend {PRONOUN/m_c/poss} time playing stupid games."
 		],
 		"main_status_constraint": [
 			"kitten",

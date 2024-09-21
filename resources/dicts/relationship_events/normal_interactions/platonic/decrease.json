@@ -183,7 +183,7 @@
 		"interactions": [
 			"r_c is caught tossing out a gift m_c <i>just</i> gave {PRONOUN/m_c/object}.",
 			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back.",
-			"m_c interrupted r_c when {PRONOUN/r_c/subject} {VERB/r_c/was/were} very busy with an important task, ruining {PRONOUN/r_c/poss} focus.",
+			"m_c interrupted r_c when {PRONOUN/r_c/subject} {VERB/r_c/were/was} very busy with an important task, ruining {PRONOUN/r_c/poss} focus.",
 			"r_c purposefully pick the smallest prey for m_c when {PRONOUN/m_c/subject} asked for help.",
 			"r_c was found spreading rumors about m_c stealing stuff from {PRONOUN/r_c/object}.",
 			"r_c was caught hiding m_c's belongings.",
