@@ -64,14 +64,18 @@
         ],
         "relationship_constraint": [
             "child/parent"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
         "id": "guarding_kit",
         "thoughts": [
             "Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously",
-            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp"
-	],
+            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp",
+            "Wants to guard the nursery"
+		],
         "main_trait_constraint": [
             "bossy",
             "attention-seeker",
@@ -120,7 +124,7 @@
             "Wants to be big someday",
             "Wants to have fun",
             "Is playing pretend",
-            "Is going through an angsty phase much to {PRONOUN/m_c/poss} Clanmates chagrin",
+            "Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates chagrin",
             "Is fighting sleep... and failing",
             "Knocked {PRONOUN/m_c/self} over with a sneeze",
             "Wants a badger ride",
@@ -134,6 +138,9 @@
             "Can't wait to be a warrior",
             "Pricked {PRONOUN/m_c/self} on the brambles protecting camp",
             "Pounces on a shred of moss"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -174,6 +181,9 @@
             "adult",
             "senior adult",
             "senior"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -191,6 +201,9 @@
         "random_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -263,6 +276,9 @@
         ],
         "random_status_constraint":[
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -302,7 +318,6 @@
             "Is telling other cats that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the deputy now",
             "Wants to taste a toad",
             "Thinks {PRONOUN/m_c/subject} can outsmart a fox",
-            "Wants to guard the nursery",
             "Is sure {PRONOUN/m_c/subject} could fight a badger",
             "Sticks {PRONOUN/m_c/poss} paw into an old snake hole",
             "Is playing with a dead snake",
@@ -325,6 +340,9 @@
         ],
         "random_status_constraint": [
         	"apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -338,6 +356,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -376,7 +397,7 @@
         "thoughts": [
             "Is streaking across the clearing",
             "Is stuck in a tree... again",
-            "Is complaining of a tummy ache after eating too much",
+            "Is complaining of a tummyache after eating too much",
             "Is awfully close to getting a nip on the rump for misbehaving",
             "Is waiting for an opportunity to sprint out of sight",
             "Is tired of waiting to be an apprentice",
@@ -400,6 +421,9 @@
         ],
         "main_trait_constraint": [
             "impulsive"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -591,6 +615,9 @@
         ],
         "main_trait_constraint": [
             "attention-seeker"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -618,7 +645,7 @@
         ]
     },
     {
-        "id": "noisy_kit",
+        "id": "noisy_kit_to_elder",
         "thoughts": [
             "Asked r_c for a story but keeps interrupting {PRONOUN/r_c/object}"
         ],
@@ -627,6 +654,9 @@
         ],
         "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
