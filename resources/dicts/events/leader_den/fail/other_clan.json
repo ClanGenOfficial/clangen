@@ -26,6 +26,16 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "praise",
+    "event_text": "m_c attempts to use {PRONOUN/m_c/poss} honeyed words to get onto o_c_n's good side, only for the other leader to give {PRONOUN/m_c/object} a pointed and <i>very</i> knowing look.",
+    "rel_change": -3,
+    "m_c": {
+      "trait": ["cunning", "sneaky"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": ["logical"]
+  },
+  {
     "interaction_type": "provoke",
     "event_text": "During the Gathering, m_c attempts to make double-pawed comments about o_c_n's leader. Their leader, however, either doesn't care or is too oblivious to notice.",
     "rel_change": 0,

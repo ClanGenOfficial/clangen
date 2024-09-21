@@ -76,6 +76,43 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "praise",
+    "event_text": "Another leader during the Gathering makes scathing comments towards o_c_n. m_c skillfully redirects their words into praise for o_c_n; o_c_n's leader sends an appreciative, though appraising, glance to m_c.",
+    "rel_change": 4,
+    "m_c": {
+      "trait": ["cunning", "sneaky"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": ["cunning"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "Another leader during the Gathering makes scathing comments towards o_c_n. m_c skillfully redirects their words into praise for o_c_n; o_c_n's leader seems appreciative.",
+    "rel_change": 2,
+    "m_c": {
+      "trait": ["confident", "compassionate", "bold", "righteous", "loyal", "sincere"],
+      "skill": ["SPEAKER,3", "MEDIATOR,3"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": []
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "m_c speaks to {PRONOUN/m_c/poss} Clanmates before the Gathering, making it clear what tonight's goal is. When c_n arrives at the Gathering Place, they all disperse to find o_c_n cats and take advantage of their prideful nature.",
+    "rel_change": 3,
+    "m_c": {},
+    "player_clan_temper": ["cunning"],
+    "other_clan_temper": ["proud"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "m_c makes a point to praise o_c_n's strong and mighty warriors during the Gathering.",
+    "rel_change": 2,
+    "m_c": {},
+    "player_clan_temper": [],
+    "other_clan_temper": ["bloodthirsty"]
+  },
+  {
     "interaction_type": "provoke",
     "event_text": "During the Gathering, m_c has a lot to say about o_c_n's recent patrols near c_n borders, and none of it is good.",
     "rel_change": -2,
