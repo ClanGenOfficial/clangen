@@ -340,7 +340,7 @@ class ChooseMateScreen(Screens):
         if not self.selected_cat:
             return
 
-        if self.selected_cat.cat_id not in self.the_cat.mate:
+        if self.selected_cat.cat_id not in self.the_cat.current_mate:
             self.the_cat.set_mate(self.selected_cat)
 
         else:
@@ -358,7 +358,7 @@ class ChooseMateScreen(Screens):
         """Updates everything in the mates container, including the list of current mates,
         and the page"""
 
-        self.all_mates = self.chunks([Cat.fetch_cat(i) for i in self.the_cat.mate], 30)
+        self.all_mates = self.chunks([Cat.fetch_cat(i) for i in self.the_cat.current_mate], 30)
         self.update_mates_container_page()
 
     def update_mates_container_page(self):
@@ -786,9 +786,9 @@ class ChooseMateScreen(Screens):
             + "\n"
             + self.the_cat.personality.trait
         )
-        if self.the_cat.mate:
-            info += f"\n{len(self.the_cat.mate)} "
-            if len(self.the_cat.mate) > 1:
+        if self.the_cat.current_mate:
+            info += f"\n{len(self.the_cat.current_mate)} "
+            if len(self.the_cat.current_mate) > 1:
                 info += "mates"
             else:
                 info += "mate"
@@ -801,8 +801,8 @@ class ChooseMateScreen(Screens):
 
         if reset_selected_cat:
             self.selected_cat = None
-            if self.the_cat.mate:
-                self.selected_cat = Cat.fetch_cat(self.the_cat.mate[0])
+            if self.the_cat.current_mate:
+                self.selected_cat = Cat.fetch_cat(self.the_cat.current_mate[0])
             self.update_selected_cat()
 
         self.draw_tab_button()
@@ -828,7 +828,7 @@ class ChooseMateScreen(Screens):
         button_x += 320
 
         mates_tab_shown = False
-        if self.the_cat.mate:
+        if self.the_cat.current_mate:
             self.tab_buttons["mates"] = UIImageButton(
                 scale(pygame.Rect((button_x, 722), (306, 78))),
                 "",
@@ -893,7 +893,7 @@ class ChooseMateScreen(Screens):
             return
 
         self.draw_compatible_line_affection()
-        if self.selected_cat.cat_id in self.the_cat.mate:
+        if self.selected_cat.cat_id in self.the_cat.current_mate:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((600, 376), (400, 156))),
                 pygame.transform.scale(
@@ -948,9 +948,9 @@ class ChooseMateScreen(Screens):
             + "\n"
             + self.selected_cat.personality.trait
         )
-        if self.selected_cat.mate:
-            info += f"\n{len(self.selected_cat.mate)} "
-            if len(self.selected_cat.mate) > 1:
+        if self.selected_cat.current_mate:
+            info += f"\n{len(self.selected_cat.current_mate)} "
+            if len(self.selected_cat.current_mate) > 1:
                 info += "mates"
             else:
                 info += "mate"
@@ -981,7 +981,7 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate.kill()
 
-        if self.selected_cat.cat_id in self.the_cat.mate:
+        if self.selected_cat.cat_id in self.the_cat.current_mate:
             self.toggle_mate = UIImageButton(
                 scale(pygame.Rect((646, 620), (306, 60))),
                 "",
@@ -1163,8 +1163,8 @@ class ChooseMateScreen(Screens):
             and self.the_cat.is_potential_mate(
                 i, for_love_interest=False, age_restriction=False, ignore_no_mates=True
             )
-            and i.cat_id not in self.the_cat.mate
-            and (not self.single_only or not i.mate)
+            and i.cat_id not in self.the_cat.current_mate
+            and (not self.single_only or not i.current_mate)
             and (
                 not self.have_kits_only
                 or game.clan.clan_settings["same sex birth"]

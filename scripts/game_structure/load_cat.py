@@ -204,9 +204,9 @@ def json_load():
                     cat["skill"], new_cat.status, new_cat.moons
                 )
 
-            new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
-            if None in new_cat.mate:
-                new_cat.mate = [i for i in new_cat.mate if i is not None]
+            new_cat.current_mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
+            if None in new_cat.current_mate:
+                new_cat.current_mate = [i for i in new_cat.current_mate if i is not None]
             new_cat.previous_mates = (
                 cat["previous_mates"] if "previous_mates" in cat else []
             )
@@ -439,7 +439,7 @@ def csv_load(all_cats):
                     the_cat.moons = int(attr[30])
                     if len(attr) >= 31:
                         # assigning mate to cat, if any
-                        the_cat.mate = [attr[31]]
+                        the_cat.current_mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
@@ -528,15 +528,15 @@ def save_check():
         cat_ob = Cat.all_cats[cat]
 
         # Not-mutural mate relations
-        # if cat_ob.mate:
-        #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
+        # if cat_ob.current_mate:
+        #    _temp_ob = Cat.all_cats.get(cat_ob.current_mate)
         #    if _temp_ob:
         #        # Check if the mate's mate feild is set to none
-        #        if not _temp_ob.mate:
-        #            _temp_ob.mate = cat_ob.cat_id
+        #        if not _temp_ob.current_mate:
+        #            _temp_ob.current_mate = cat_ob.cat_id
         #    else:
         #        # Invalid mate
-        #        cat_ob.mate = None
+        #        cat_ob.current_mate = None
 
 
 def version_convert(version_info):

@@ -25,8 +25,8 @@ class RelationshipConstraints(unittest.TestCase):
         # given
         cat_from = Cat()
         cat_to = Cat()
-        cat_from.mate.append(cat_to.cat_id)
-        cat_to.mate.append(cat_from.cat_id)
+        cat_from.current_mate.append(cat_to.cat_id)
+        cat_to.current_mate.append(cat_from.cat_id)
         rel = Relationship(cat_from, cat_to, True, False)
     
         # then

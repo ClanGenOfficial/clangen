@@ -286,25 +286,25 @@ class TestMateFunctions(unittest.TestCase):
         cat2.set_mate(cat1)
 
         # then
-        self.assertEqual(cat1.mate[0], cat2.cat_id)
-        self.assertEqual(cat2.mate[0], cat1.cat_id)
+        self.assertEqual(cat1.current_mate[0], cat2.cat_id)
+        self.assertEqual(cat2.current_mate[0], cat1.cat_id)
 
     def test_unset_mate(self):
         # given
         cat1 = Cat()
         cat2 = Cat()
-        cat1.mate.append(cat2.cat_id)
-        cat2.mate.append(cat1.cat_id)
+        cat1.current_mate.append(cat2.cat_id)
+        cat2.current_mate.append(cat1.cat_id)
 
         # when
         cat1.unset_mate(cat2)
         cat2.unset_mate(cat1)
 
         # then
-        self.assertNotIn(cat2, cat1.mate)
-        self.assertNotIn(cat1, cat2.mate)
-        self.assertEqual(len(cat1.mate), 0)
-        self.assertEqual(len(cat2.mate), 0)
+        self.assertNotIn(cat2, cat1.current_mate)
+        self.assertNotIn(cat1, cat2.current_mate)
+        self.assertEqual(len(cat1.current_mate), 0)
+        self.assertEqual(len(cat2.current_mate), 0)
 
     def test_set_mate_relationship(self):
         # given
@@ -352,8 +352,8 @@ class TestMateFunctions(unittest.TestCase):
             cat2, cat1, family=False, mates=True, romantic_love=40, platonic_like=40, dislike=0, comfortable=40,
             trust=20, admiration=20, jealousy=20)
         old_relation2 = deepcopy(relation2)
-        cat1.mate.append(cat2.cat_id)
-        cat2.mate.append(cat1.cat_id)
+        cat1.current_mate.append(cat2.cat_id)
+        cat2.current_mate.append(cat1.cat_id)
         cat1.relationships[cat2.cat_id] = relation1
         cat2.relationships[cat1.cat_id] = relation2
 

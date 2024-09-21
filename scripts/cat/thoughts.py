@@ -23,10 +23,10 @@ class Thoughts:
         if "littermates" in constraint and not main_cat.is_littermate(random_cat):
             return False
 
-        if "mates" in constraint and random_cat.cat_id not in main_cat.mate:
+        if "mates" in constraint and random_cat.cat_id not in main_cat.current_mate:
             return False
 
-        if "not_mates" in constraint and random_cat.cat_id in main_cat.mate:
+        if "not_mates" in constraint and random_cat.cat_id in main_cat.current_mate:
             return False
 
         if "parent/child" in constraint and not main_cat.is_parent(random_cat):

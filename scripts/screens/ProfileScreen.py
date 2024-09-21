@@ -895,13 +895,13 @@ class ProfileScreen(Screens):
                 output += " moons"
 
         # MATE
-        if len(the_cat.mate) > 0:
+        if len(the_cat.current_mate) > 0:
             output += "\n"
             
             
             mate_names = []
             # Grab the names of only the first two, since that's all we will display
-            for _m in the_cat.mate[:2]:
+            for _m in the_cat.current_mate[:2]:
                 mate_ob = Cat.fetch_cat(_m)
                 if not isinstance(mate_ob, Cat):
                     continue
@@ -917,16 +917,16 @@ class ProfileScreen(Screens):
                 else:
                     mate_names.append(f"{str(mate_ob.name)}")
                     
-            if len(the_cat.mate) == 1:
+            if len(the_cat.current_mate) == 1:
                 output += "mate: " 
             else:
                 output += "mates: "
             
             output += ", ".join(mate_names)
             
-            if len(the_cat.mate) > 2:
-                output += f", and {len(the_cat.mate) - 2}"
-                if len(the_cat.mate) - 2 > 1:
+            if len(the_cat.current_mate) > 2:
+                output += f", and {len(the_cat.current_mate) - 2}"
+                if len(the_cat.current_mate) - 2 > 1:
                     output += " others"
                 else:
                     output += " other"

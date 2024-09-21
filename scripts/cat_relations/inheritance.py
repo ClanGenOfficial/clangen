@@ -306,7 +306,7 @@ class Inheritance:
 
     def init_mates(self):
         """Create a mate relationship"""
-        for relevant_id in self.cat.mate:
+        for relevant_id in self.cat.current_mate:
             mate_rel = RelationType.NOT_BLOOD
             # they might be related, but only if it is not an adoption
             if relevant_id in self.all_involved:
@@ -395,7 +395,7 @@ class Inheritance:
 
         # check for mates
         if inter_id in self.kits:
-            for mate_id in inter_cat.mate:
+            for mate_id in inter_cat.current_mate:
                 rel_type = RelationType.NOT_BLOOD
                 # they might be related, but only if it is not an adoption
                 if mate_id in self.all_involved:
@@ -468,7 +468,7 @@ class Inheritance:
             self.all_involved.append(inter_id)
             self.all_but_cousins.append(inter_id)
 
-            for mate_id in inter_cat.mate:
+            for mate_id in inter_cat.current_mate:
                 mate_rel = RelationType.NOT_BLOOD
                 # they might be related, but only if it is not an adoption
                 if mate_id in self.all_involved:

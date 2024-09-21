@@ -204,7 +204,7 @@ class Cat:
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = {}
-        self.mate = []
+        self.current_mate = []
         self.previous_mates = []
         self.pronouns = [self.default_pronouns[0].copy()]
         self.placement = None
@@ -374,7 +374,7 @@ class Cat:
         self.parent1 = None
         self.parent2 = None
         self.adoptive_parents = []
-        self.mate = []
+        self.current_mate = []
         self.status = status
         self.pronouns = []  # Needs to be set as a list
         self.moons = moons
@@ -1331,7 +1331,7 @@ class Cat:
                     "leader_sibling" in tags and giver_cat.cat_id not in self.get_siblings()
                 ):
                     continue
-                elif "leader_mate" in tags and giver_cat.cat_id not in self.mate:
+                elif "leader_mate" in tags and giver_cat.cat_id not in self.current_mate:
                     continue
                 elif (
                     "leader_former_mate" in tags
@@ -2465,11 +2465,11 @@ class Cat:
             return
 
         # Both cats must have mates for this to work
-        if len(self.mate) < 1 or len(other_cat.mate) < 1:
+        if len(self.current_mate) < 1 or len(other_cat.current_mate) < 1:
             return
 
         # AND they must be mates with each other.
-        if self.cat_id not in other_cat.mate or other_cat.cat_id not in self.mate:
+        if self.cat_id not in other_cat.current_mate or other_cat.cat_id not in self.current_mate:
             print(
                 f"Unsetting mates: These {self.name} and {other_cat.name} are not mates!"
             )
@@ -2481,12 +2481,12 @@ class Cat:
             if not self.dead:
                 if other_cat.cat_id not in self.relationships:
                     self.create_one_relationship(other_cat)
-                    self.relationships[other_cat.cat_id].mate = True
+                    self.relationships[other_cat.cat_id].current_mate = True
                 self_relationship = self.relationships[other_cat.cat_id]
                 self_relationship.romantic_love -= 40
                 self_relationship.comfortable -= 20
                 self_relationship.trust -= 10
-                self_relationship.mate = False
+                self_relationship.current_mate = False
                 if fight:
                     self_relationship.romantic_love -= 20
                     self_relationship.platonic_like -= 30
@@ -2494,18 +2494,18 @@ class Cat:
             if not other_cat.dead:
                 if self.cat_id not in other_cat.relationships:
                     other_cat.create_one_relationship(self)
-                    other_cat.relationships[self.cat_id].mate = True
+                    other_cat.relationships[self.cat_id].current_mate = True
                 other_relationship = other_cat.relationships[self.cat_id]
                 other_relationship.romantic_love -= 40
                 other_relationship.comfortable -= 20
                 other_relationship.trust -= 10
-                other_relationship.mate = False
+                other_relationship.current_mate = False
                 if fight:
                     self_relationship.romantic_love -= 20
                     other_relationship.platonic_like -= 30
 
-        self.mate.remove(other_cat.cat_id)
-        other_cat.mate.remove(self.cat_id)
+        self.current_mate.remove(other_cat.cat_id)
+        other_cat.current_mate.remove(self.cat_id)
 
         # Handle previous mates:
         if other_cat.cat_id not in self.previous_mates:
@@ -2520,10 +2520,10 @@ class Cat:
 
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
-        if other_cat.cat_id not in self.mate:
-            self.mate.append(other_cat.cat_id)
-        if self.cat_id not in other_cat.mate:
-            other_cat.mate.append(self.cat_id)
+        if other_cat.cat_id not in self.current_mate:
+            self.current_mate.append(other_cat.cat_id)
+        if self.cat_id not in other_cat.current_mate:
+            other_cat.current_mate.append(self.cat_id)
 
         # If the current mate was in the previous mate list, remove them.
         if other_cat.cat_id in self.previous_mates:
@@ -2540,22 +2540,22 @@ class Cat:
         if not self.dead:
             if other_cat.cat_id not in self.relationships:
                 self.create_one_relationship(other_cat)
-                self.relationships[other_cat.cat_id].mate = True
+                self.relationships[other_cat.cat_id].current_mate = True
             self_relationship = self.relationships[other_cat.cat_id]
             self_relationship.romantic_love += 20
             self_relationship.comfortable += 20
             self_relationship.trust += 10
-            self_relationship.mate = True
+            self_relationship.current_mate = True
 
         if not other_cat.dead:
             if self.cat_id not in other_cat.relationships:
                 other_cat.create_one_relationship(self)
-                other_cat.relationships[self.cat_id].mate = True
+                other_cat.relationships[self.cat_id].current_mate = True
             other_relationship = other_cat.relationships[self.cat_id]
             other_relationship.romantic_love += 20
             other_relationship.comfortable += 20
             other_relationship.trust += 10
-            other_relationship.mate = True
+            other_relationship.current_mate = True
 
     def create_inheritance_new_cat(self):
         """Creates the inheritance class for a new cat."""
@@ -2604,7 +2604,7 @@ class Cat:
         for cat_id in self.all_cats:
             the_cat = self.all_cats.get(cat_id)
             if the_cat.cat_id is not self.cat_id:
-                mates = the_cat.cat_id in self.mate
+                mates = the_cat.cat_id in self.current_mate
                 are_parents = False
                 parents = False
                 siblings = False
@@ -2851,7 +2851,7 @@ class Cat:
 
         # determine the traits to effect
         # Are they mates?
-        mates = rel1.cat_from.cat_id in rel1.cat_to.mate
+        mates = rel1.cat_from.cat_id in rel1.cat_to.current_mate
 
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
@@ -3372,7 +3372,7 @@ class Cat:
                 "patrol_with_mentor": (
                     self.patrol_with_mentor if self.patrol_with_mentor else 0
                 ),
-                "mate": self.mate,
+                "mate": self.current_mate,
                 "previous_mates": self.previous_mates,
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
