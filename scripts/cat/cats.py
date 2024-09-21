@@ -3335,7 +3335,7 @@ class Cat:
     def get_save_dict(self, faded=False):
         if faded:
             return {
-                "cat_id": self.cat_id,
+                "ID": self.cat_id,
                 "name_prefix": self.name.prefix,
                 "name_suffix": self.name.suffix,
                 "status": self.status,
@@ -3349,7 +3349,7 @@ class Cat:
             }
         else:
             return {
-                "cat_id": self.cat_id,
+                "ID": self.cat_id,
                 "name_prefix": self.name.prefix,
                 "name_suffix": self.name.suffix,
                 "specsuffix_hidden": self.name.specsuffix_hidden,

@@ -18,7 +18,7 @@ class OutsiderEvents:
         if "lead_den_outsider_event" in game.clan.clan_settings:
             if game.clan.clan_settings["lead_den_outsider_event"]:
                 info_dict = game.clan.clan_settings["lead_den_outsider_event"]
-                if cat.cat_id == info_dict["cat_ID"]:
+                if cat.cat_id == info_dict["ID"]:
                     return
 
         # killing outside cats

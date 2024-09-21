@@ -308,7 +308,7 @@ class Events:
         """
         if game.clan.clan_settings["lead_den_clan_event"]:
             info_dict = game.clan.clan_settings["lead_den_clan_event"]
-            gathering_cat = Cat.fetch_cat(info_dict["cat_ID"])
+            gathering_cat = Cat.fetch_cat(info_dict["ID"])
 
             # drop the event if the gathering cat is no longer available
             if gathering_cat.exiled or gathering_cat.dead or gathering_cat.outside:
@@ -353,7 +353,7 @@ class Events:
 
         if game.clan.clan_settings["lead_den_outsider_event"]:
             info_dict = game.clan.clan_settings["lead_den_outsider_event"]
-            outsider_cat = Cat.fetch_cat(info_dict["cat_ID"])
+            outsider_cat = Cat.fetch_cat(info_dict["ID"])
             involved_cats = [outsider_cat.cat_id]
             invited_cats = []
 

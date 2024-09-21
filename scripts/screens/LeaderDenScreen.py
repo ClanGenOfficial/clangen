@@ -522,7 +522,7 @@ class LeaderDenScreen(Screens):
 
         if game.clan.clan_settings["lead_den_outsider_event"]:
             current_setting = game.clan.clan_settings["lead_den_outsider_event"]
-            self.focus_cat = Cat.fetch_cat(current_setting["cat_ID"])
+            self.focus_cat = Cat.fetch_cat(current_setting["ID"])
             self.update_outsider_focus()
             self.update_outsider_interaction_choice(current_setting["interaction_type"])
 
@@ -646,7 +646,7 @@ class LeaderDenScreen(Screens):
             success = True
 
         game.clan.clan_settings["lead_den_clan_event"] = {
-            "cat_ID": gathering_cat.cat_id,
+            "ID": gathering_cat.cat_id,
             "other_clan": self.focus_clan.name,
             "player_clan_temper": self.clan_temper,
             "interaction_type": interaction_type,
@@ -992,7 +992,7 @@ class LeaderDenScreen(Screens):
             success = False
 
         game.clan.clan_settings["lead_den_outsider_event"] = {
-            "cat_ID": self.focus_cat.cat_id,
+            "ID": self.focus_cat.cat_id,
             "interaction_type": interaction_type,
             "success": success,
         }
