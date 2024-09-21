@@ -89,10 +89,10 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.switch_focus_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                game.switches["cat"] = self.inspect_cat.cat_id
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                game.switches["cat"] = self.inspect_cat.cat_id
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
@@ -113,11 +113,11 @@ class RelationshipScreen(Screens):
                 self.current_page += 1
                 self.update_cat_page()
             elif event.ui_element == self.log_icon:
-                if self.inspect_cat.ID not in self.the_cat.relationships:
+                if self.inspect_cat.cat_id not in self.the_cat.relationships:
                     return
                 if self.next_cat == 0 and self.previous_cat == 0:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -136,7 +136,7 @@ class RelationshipScreen(Screens):
                     )
                 elif self.next_cat == 0:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -154,7 +154,7 @@ class RelationshipScreen(Screens):
                     )
                 elif self.previous_cat == 0:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -172,7 +172,7 @@ class RelationshipScreen(Screens):
                     )
                 else:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -328,42 +328,42 @@ class RelationshipScreen(Screens):
         """'Determines where the next and previous buttons point too."""
 
         is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+        if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
             is_instructor = True
 
         previous_cat = 0
         next_cat = 0
         if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            previous_cat = game.clan.instructor.ID
+            previous_cat = game.clan.instructor.cat_id
 
         if is_instructor:
             next_cat = 1
 
         for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
+            if check_cat.cat_id == self.the_cat.cat_id:
                 next_cat = 1
             else:
                 if (
                     next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.cat_id != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    previous_cat = check_cat.ID
+                    previous_cat = check_cat.cat_id
 
                 elif (
                     next_cat == 1
-                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.cat_id != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    next_cat = check_cat.ID
+                    next_cat = check_cat.cat_id
 
                 elif int(next_cat) > 1:
                     break
@@ -496,7 +496,7 @@ class RelationshipScreen(Screens):
             related = False
             # Mate Heart
             # TODO: UI UPDATE IS NEEDED
-            if len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate:
+            if len(self.the_cat.mate) > 0 and self.inspect_cat.cat_id in self.the_cat.mate:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((90, 300), (44, 40))),
                     pygame.transform.scale(
@@ -574,11 +574,11 @@ class RelationshipScreen(Screens):
             # Mate
             if (
                 len(self.inspect_cat.mate) > 0
-                and self.the_cat.ID not in self.inspect_cat.mate
+                and self.the_cat.cat_id not in self.inspect_cat.mate
             ):
                 col2 += "has a mate\n"
             elif (
-                len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate
+                len(self.the_cat.mate) > 0 and self.inspect_cat.cat_id in self.the_cat.mate
             ):
                 col2 += f"{self.the_cat.name}'s mate\n"
             else:
@@ -774,7 +774,7 @@ class RelationshipScreen(Screens):
         # MATE
         if (
             len(self.the_cat.mate) > 0
-            and the_relationship.cat_to.ID in self.the_cat.mate
+            and the_relationship.cat_to.cat_id in self.the_cat.mate
         ):
 
             self.relation_list_elements["mate_icon" + str(i)] = (

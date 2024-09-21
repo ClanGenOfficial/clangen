@@ -164,7 +164,7 @@ class Patrol:
                 else:
                     self.patrol_statuses["normal adult"] = 1
 
-            game.patrolled.append(cat.ID)
+            game.patrolled.append(cat.cat_id)
 
         # PATROL LEADER AND RANDOM CAT CAN NOT CHANGE AFTER SET-UP
 
@@ -448,7 +448,7 @@ class Patrol:
 
         if (
             not love1.is_potential_mate(love2, for_love_interest=True)
-            and love1.ID not in love2.mate
+            and love1.cat_id not in love2.mate
         ):
             print("not a potential mate or current mate")
             return False
@@ -460,7 +460,7 @@ class Patrol:
 
         if (
             get_personality_compatibility(love1, love2) is True
-            or love1.ID in love2.mate
+            or love1.cat_id in love2.mate
         ):
             chance_of_romance_patrol -= 10
         else:
@@ -664,7 +664,7 @@ class Patrol:
 
         final_event, success = self.calculate_success(chosen_success, chosen_failure)
 
-        print(f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: {success}")
+        print(f"PATROL cat_id: {self.patrol_event.patrol_id} | SUCCESS: {success}")
 
         # Run the chosen outcome
         return final_event.execute_outcome(self)

@@ -67,31 +67,31 @@ class History:
         "lead_ceremony": full ceremony text,
         "possible_history": {
             "condition name": {
-                "involved": ID
+                "involved": cat_id
                 "death_text": text
                 "scar_text": text
                 },
             "condition name": {
-                "involved": ID
+                "involved": cat_id
                 "death_text": text
                 "scar_text": text
                 },
             },
         "died_by": [
             {
-                "involved": ID,
+                "involved": cat_id,
                 "text": text,
                 "moon": moon
             }
             ],
         "scar_events": [
             {
-                'involved': ID,
+                'involved': cat_id,
                 'text': text,
                 "moon": moon
             },
             {
-                'involved': ID,
+                'involved': cat_id,
                 "text": text,
                 "moon": moon
             }
@@ -99,22 +99,22 @@ class History:
         "murder": {
             "is_murderer": [
                     {
-                    "victim": ID,
+                    "victim": cat_id,
                     "revealed": bool,
                     "moon": moon the murder occurred
-                    "revealed_by": ID of the discoverer
+                    "revealed_by": cat_id of the discoverer
                     "revelation_moon": moon the murder was revealed
                     "revelation_text": revealed murder history
                     },
                 ]
             "is_victim": [
                     {
-                    "murderer": ID,
+                    "murderer": cat_id,
                     "revealed": bool,
                     "text": same text as the death history for this murder (revealed history)
                     "unrevealed_text": unrevealed death history
                     "moon": moon the murder occurred
-                    "revealed_by": ID of the discoverer
+                    "revealed_by": cat_id of the discoverer
                     "revelation_moon": moon the murder was revealed
                     "revelation_text": revealed death history
                     },
@@ -346,7 +346,7 @@ class History:
             if scar_text is not None:
                 cat.history.possible_history[condition]["scar_text"] = scar_text
             if other_cat is not None:
-                cat.history.possible_history[condition]["other_cat"] = other_cat.ID
+                cat.history.possible_history[condition]["other_cat"] = other_cat.cat_id
         else:
             # Use a default is none is provided.
             # Will probably sound weird, but it's better than nothing
@@ -361,7 +361,7 @@ class History:
             cat.history.possible_history[condition] = {
                 "death_text": death_text,
                 "scar_text": scar_text,
-                "other_cat": other_cat.ID if other_cat else None
+                "other_cat": other_cat.cat_id if other_cat else None
             }
 
     @staticmethod
@@ -391,7 +391,7 @@ class History:
         History.check_load(cat)
 
         if other_cat is not None:
-            other_cat = other_cat.ID
+            other_cat = other_cat.cat_id
         if condition in cat.history.possible_history:
             if cat.history.possible_history[condition]["death_text"]:
                 death_text = cat.history.possible_history[condition]["death_text"]
@@ -411,7 +411,7 @@ class History:
         History.check_load(cat)
 
         if other_cat is not None:
-            other_cat = other_cat.ID
+            other_cat = other_cat.cat_id
         if condition in cat.history.possible_history:
             if cat.history.possible_history[condition]["scar_text"]:
                 scar_text = cat.history.possible_history[condition]["scar_text"]
@@ -445,12 +445,12 @@ class History:
             cat.history.murder["is_victim"] = []
 
         other_cat.history.murder["is_murderer"].append({
-            "victim": cat.ID,
+            "victim": cat.cat_id,
             "revealed": revealed,
             "moon": game.clan.age
         })
         cat.history.murder["is_victim"].append({
-            "murderer": other_cat.ID,
+            "murderer": other_cat.cat_id,
             "revealed": revealed,
             "text": text,
             "unrevealed_text": unrevealed_text,
@@ -494,7 +494,7 @@ class History:
         Returns mentor influence dict, example of structure:
 
         "mentor_influence":{
-            "mentor": ID
+            "mentor": cat_id
             "skill": skill
             "second_skill": second skill
             "trait": {
@@ -544,7 +544,7 @@ class History:
         Returns the requested death/scars dict, example of single event structure:
 
         {
-        "involved": ID
+        "involved": cat_id
         "death_text": text
         "scar_text": text
         },
@@ -553,12 +553,12 @@ class History:
 
         {
         "condition name": {
-            "involved": ID
+            "involved": cat_id
             "death_text": text
             "scar_text": text
             },
         "condition name": {
-            "involved": ID
+            "involved": cat_id
             "death_text": text
             "scar_text": text
             },
@@ -584,12 +584,12 @@ class History:
 
         [
             {
-                'involved': ID,
+                'involved': cat_id,
                 'text': text,
                 "moon": moon
             },
             {
-                'involved': ID,
+                'involved': cat_id,
                 "text": text,
                 "moon": moon
             }
@@ -626,14 +626,14 @@ class History:
         "murder": {
             "is_murderer": [
                     {
-                    "victim": ID,
+                    "victim": cat_id,
                     "revealed": bool,
                     "moon": moon
                     },
                 ]
             "is_victim": [
                     {
-                    "murderer": ID,
+                    "murderer": cat_id,
                     "revealed": bool,
                     "text": same text as the death history for this murder (revealed history)
                     "unrevealed_text": unrevealed death history
@@ -668,7 +668,7 @@ class History:
             if "is_murderer" in murder_history:
                 murder_history = murder_history["is_murderer"][murder_index]
                 murder_history["revealed"] = True
-                murder_history["revealed_by"] = other_cat.ID if other_cat else None
+                murder_history["revealed_by"] = other_cat.cat_id if other_cat else None
                 murder_history["revelation_moon"] = game.clan.age
                 if not other_cat:
                     murder_history["revelation_text"] = \
@@ -679,7 +679,7 @@ class History:
 
                 victim_history = victim_history["is_victim"][0]
                 victim_history["revealed"] = True
-                victim_history["revealed_by"] = other_cat.ID if other_cat else None
+                victim_history["revealed_by"] = other_cat.cat_id if other_cat else None
                 victim_history["revelation_moon"] = game.clan.age
                 if not other_cat:
                     victim_history["revelation_text"] = \

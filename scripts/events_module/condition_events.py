@@ -143,12 +143,12 @@ class Condition_Events:
         if not FRESHKILL_ACTIVE:
             return
 
-        if cat.ID not in nutrition_info.keys():
-            print(f"WARNING: Could not find cat with ID {cat.ID}({cat.name}) in the nutrition information.")
+        if cat.cat_id not in nutrition_info.keys():
+            print(f"WARNING: Could not find cat with cat_id {cat.cat_id}({cat.name}) in the nutrition information.")
             return
 
         # get all events for a certain status of a cat
-        cat_nutrition = nutrition_info[cat.ID]
+        cat_nutrition = nutrition_info[cat.cat_id]
 
         event = None
         illness = None
@@ -180,12 +180,12 @@ class Condition_Events:
             # if the cat is the leader and isn't full dead
             # make them malnourished and refill nutrition slightly
             if cat.status == "leader" and game.clan.leader_lives > 0:
-                mal_score = nutrition_info[cat.ID].max_score / 100 * (MAL_PERCENTAGE + 1)
-                nutrition_info[cat.ID].current_score = round(mal_score, 2)
+                mal_score = nutrition_info[cat.cat_id].max_score / 100 * (MAL_PERCENTAGE + 1)
+                nutrition_info[cat.cat_id].current_score = round(mal_score, 2)
                 cat.get_ill("malnourished")
 
             types = ["birth_death"]
-            game.cur_events_list.append(Single_Event(event, types, [cat.ID]))
+            game.cur_events_list.append(Single_Event(event, types, [cat.cat_id]))
             return
 
         # heal cat if percentage is high enough and cat is ill
@@ -226,7 +226,7 @@ class Condition_Events:
         if event:
             event_text = event_text_adjust(Cat, event, main_cat=cat)
             types = ["health"]
-            game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
+            game.cur_events_list.append(Single_Event(event_text, types, [cat.cat_id]))
 
 
     @staticmethod
@@ -298,7 +298,7 @@ class Condition_Events:
             types = ["health"]
             if cat.dead:
                 types.append("birth_death")
-            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            game.cur_events_list.append(Single_Event(event_string, types, cat.cat_id))
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -329,9 +329,9 @@ class Condition_Events:
         # handle if the current cat is already injured
         if cat.is_injured():
             for injury in cat.injuries:
-                if injury == "pregnant" and cat.ID not in game.clan.pregnancy_data:
+                if injury == "pregnant" and cat.cat_id not in game.clan.pregnancy_data:
                     print(
-                        f"INFO: deleted pregnancy condition of {cat.ID} due no pregnancy data in the clan."
+                        f"INFO: deleted pregnancy condition of {cat.cat_id} due no pregnancy data in the clan."
                     )
                     del cat.injuries[injury]
                     return triggered
@@ -730,7 +730,7 @@ class Condition_Events:
             types = ["health"]
             if cat.dead:
                 types.append("birth_death")
-            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            game.cur_events_list.append(Single_Event(event_string, types, cat.cat_id))
 
         return triggered
     @staticmethod
@@ -852,7 +852,7 @@ class Condition_Events:
 
         if len(event_list) > 0:
             event_string = " ".join(event_list)
-            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
+            game.cur_events_list.append(Single_Event(event_string, event_types, cat.cat_id))
         return
 
     @staticmethod
@@ -908,7 +908,7 @@ class Condition_Events:
 
                 chance = int(retire_chances.get(cat.age))
                 if not int(random.random() * chance):
-                    retire_involved = [cat.ID]
+                    retire_involved = [cat.cat_id]
                     if cat.age == "adolescent":
                         event = (
                             f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
@@ -921,7 +921,7 @@ class Condition_Events:
                             and not game.clan.leader.outside
                             and cat.moons < 120
                         ):
-                            retire_involved.append(game.clan.leader.ID)
+                            retire_involved.append(game.clan.leader.cat_id)
                             event = (
                                 f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons "
                                 f"approaches them and promises them that no one would think less of them for "

@@ -182,7 +182,7 @@ class ChooseMateScreen(Screens):
                 if event.ui_element.cat_object.faded:
                     return
 
-                game.switches["cat"] = event.ui_element.cat_object.ID
+                game.switches["cat"] = event.ui_element.cat_object.cat_id
                 self.change_screen("profile screen")
 
     def screen_switches(self):
@@ -340,7 +340,7 @@ class ChooseMateScreen(Screens):
         if not self.selected_cat:
             return
 
-        if self.selected_cat.ID not in self.the_cat.mate:
+        if self.selected_cat.cat_id not in self.the_cat.mate:
             self.the_cat.set_mate(self.selected_cat)
 
         else:
@@ -522,7 +522,7 @@ class ChooseMateScreen(Screens):
         i = 0
         for _off in display_cats:
             info_text = f"{str(_off.name)}"
-            additional_info = self.the_cat.inheritance.get_cat_info(_off.ID)
+            additional_info = self.the_cat.inheritance.get_cat_info(_off.cat_id)
             if len(additional_info["type"]) > 0:  # types is always real
                 rel_types = [
                     str(rel_type.value) for rel_type in additional_info["type"]
@@ -893,7 +893,7 @@ class ChooseMateScreen(Screens):
             return
 
         self.draw_compatible_line_affection()
-        if self.selected_cat.ID in self.the_cat.mate:
+        if self.selected_cat.cat_id in self.the_cat.mate:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((600, 376), (400, 156))),
                 pygame.transform.scale(
@@ -903,7 +903,7 @@ class ChooseMateScreen(Screens):
                     (400, 156),
                 ),
             )
-        elif self.selected_cat.ID in self.the_cat.previous_mates:
+        elif self.selected_cat.cat_id in self.the_cat.previous_mates:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((600, 376), (400, 156))),
                 pygame.transform.scale(
@@ -981,7 +981,7 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate.kill()
 
-        if self.selected_cat.ID in self.the_cat.mate:
+        if self.selected_cat.cat_id in self.the_cat.mate:
             self.toggle_mate = UIImageButton(
                 scale(pygame.Rect((646, 620), (306, 60))),
                 "",
@@ -1030,8 +1030,8 @@ class ChooseMateScreen(Screens):
         if self.the_cat.dead:
             romantic_love = 0
         else:
-            if self.selected_cat.ID in self.the_cat.relationships:
-                relation = self.the_cat.relationships[self.selected_cat.ID]
+            if self.selected_cat.cat_id in self.the_cat.relationships:
+                relation = self.the_cat.relationships[self.selected_cat.cat_id]
             else:
                 relation = self.the_cat.create_one_relationship(self.selected_cat)
             romantic_love = relation.romantic_love
@@ -1062,8 +1062,8 @@ class ChooseMateScreen(Screens):
         if self.selected_cat.dead:
             romantic_love = 0
         else:
-            if self.the_cat.ID in self.selected_cat.relationships:
-                relation = self.selected_cat.relationships[self.the_cat.ID]
+            if self.the_cat.cat_id in self.selected_cat.relationships:
+                relation = self.selected_cat.relationships[self.the_cat.cat_id]
             else:
                 relation = self.selected_cat.create_one_relationship(self.the_cat)
             romantic_love = relation.romantic_love
@@ -1092,43 +1092,43 @@ class ChooseMateScreen(Screens):
 
     def get_previous_next_cat(self):
         is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+        if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
             is_instructor = True
 
         self.previous_cat = 0
         self.next_cat = 0
         if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            self.previous_cat = game.clan.instructor.ID
+            self.previous_cat = game.clan.instructor.cat_id
 
         if is_instructor:
             self.next_cat = 1
 
         for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
+            if check_cat.cat_id == self.the_cat.cat_id:
                 self.next_cat = 1
             if (
                 self.next_cat == 0
-                and check_cat.ID != self.the_cat.ID
+                and check_cat.cat_id != self.the_cat.cat_id
                 and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
+                and check_cat.cat_id != game.clan.instructor.cat_id
                 and not check_cat.exiled
                 and not check_cat.outside
                 and check_cat.age not in ["adolescent", "kitten", "newborn"]
                 and check_cat.df == self.the_cat.df
             ):
-                self.previous_cat = check_cat.ID
+                self.previous_cat = check_cat.cat_id
 
             elif (
                 self.next_cat == 1
-                and check_cat.ID != self.the_cat.ID
+                and check_cat.cat_id != self.the_cat.cat_id
                 and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
+                and check_cat.cat_id != game.clan.instructor.cat_id
                 and not check_cat.exiled
                 and not check_cat.outside
                 and check_cat.age not in ["adolescent", "kitten", "newborn"]
                 and check_cat.df == self.the_cat.df
             ):
-                self.next_cat = check_cat.ID
+                self.next_cat = check_cat.cat_id
 
             elif int(self.next_cat) > 1:
                 break
@@ -1163,7 +1163,7 @@ class ChooseMateScreen(Screens):
             and self.the_cat.is_potential_mate(
                 i, for_love_interest=False, age_restriction=False, ignore_no_mates=True
             )
-            and i.ID not in self.the_cat.mate
+            and i.cat_id not in self.the_cat.mate
             and (not self.single_only or not i.mate)
             and (
                 not self.have_kits_only

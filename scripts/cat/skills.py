@@ -475,7 +475,7 @@ class CatSkills:
             self.secondary.points += amount_effect
             path = self.secondary.path
 
-        return mentor.ID, path, amount_effect
+        return mentor.cat_id, path, amount_effect
 
     def progress_skill(self, the_cat):
         """

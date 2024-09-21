@@ -14,7 +14,7 @@ class AddCatCommand(Command):
     def callback(self, args: List[str]):
         cat = Cat()
         game.clan.add_cat(cat)
-        add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
+        add_output_line_to_log(f"Added {cat.name} with cat_id {cat.cat_id}")
 
 
 class RemoveCatCommand(Command):
@@ -25,14 +25,14 @@ class RemoveCatCommand(Command):
 
     def callback(self, args: List[str]):
         if len(args) == 0:
-            add_output_line_to_log("Please specify a cat name or ID")
+            add_output_line_to_log("Please specify a cat name or cat_id")
             return
         for cat in Cat.all_cats_list:
-            if str(cat.name).lower() == args[0].lower() or cat.ID == args[0]:
-                game.clan.remove_cat(cat.ID)
-                add_output_line_to_log(f"Removed {cat.name} with ID {cat.ID}")
+            if str(cat.name).lower() == args[0].lower() or cat.cat_id == args[0]:
+                game.clan.remove_cat(cat.cat_id)
+                add_output_line_to_log(f"Removed {cat.name} with cat_id {cat.cat_id}")
                 return
-        add_output_line_to_log(f"Could not find cat with name or ID {args[0]}")
+        add_output_line_to_log(f"Could not find cat with name or cat_id {args[0]}")
 
 
 class ListCatsCommand(Command):
@@ -42,7 +42,7 @@ class ListCatsCommand(Command):
 
     def callback(self, args: List[str]):
         for cat in Cat.all_cats_list:
-            add_output_line_to_log(f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old")
+            add_output_line_to_log(f"{cat.cat_id} - {cat.name}, {cat.status}, {cat.moons} moons old")
 
 
 class AgeCatsCommand(Command):
@@ -52,10 +52,10 @@ class AgeCatsCommand(Command):
 
     def callback(self, args: List[str]):
         if len(args) == 0:
-            add_output_line_to_log("Please specify a cat name or ID")
+            add_output_line_to_log("Please specify a cat name or cat_id")
             return
         for cat in Cat.all_cats_list:
-            if str(cat.name).lower() == args[0].lower() or cat.ID == args[0]:
+            if str(cat.name).lower() == args[0].lower() or cat.cat_id == args[0]:
                 if len(args) == 1:
                     add_output_line_to_log(f"{cat.name} is {cat.moons} moons old")
                     return

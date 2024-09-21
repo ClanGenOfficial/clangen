@@ -153,7 +153,7 @@ class ChangeGenderScreen(Screens):
 
     def get_sample_text(self, pronouns):
         text = ""
-        text += f"Demo: {pronouns['ID']} <br>"
+        text += f"Demo: {pronouns['cat_id']} <br>"
         subject = f"{pronouns['subject']} are quick. <br>"
         if pronouns["conju"] == 2:
             subject = f"{pronouns['subject']} is quick. <br>"
@@ -568,7 +568,7 @@ class ChangeGenderScreen(Screens):
         """Determines where the next and previous buttons point to."""
 
         is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+        if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
             is_instructor = True
 
         previous_cat = 0
@@ -579,36 +579,36 @@ class ChangeGenderScreen(Screens):
             and self.the_cat.df == game.clan.instructor.df
             and not (self.the_cat.outside or self.the_cat.exiled)
         ):
-            previous_cat = game.clan.instructor.ID
+            previous_cat = game.clan.instructor.cat_id
 
         if is_instructor:
             next_cat = 1
 
         for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
+            if check_cat.cat_id == self.the_cat.cat_id:
                 next_cat = 1
             else:
                 if (
                     next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.cat_id != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    previous_cat = check_cat.ID
+                    previous_cat = check_cat.cat_id
 
                 elif (
                     next_cat == 1
-                    and check_cat != self.the_cat.ID
+                    and check_cat != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    next_cat = check_cat.ID
+                    next_cat = check_cat.cat_id
 
                 elif int(next_cat) > 1:
                     break

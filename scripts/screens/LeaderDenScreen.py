@@ -646,7 +646,7 @@ class LeaderDenScreen(Screens):
             success = True
 
         game.clan.clan_settings["lead_den_clan_event"] = {
-            "cat_ID": gathering_cat.ID,
+            "cat_ID": gathering_cat.cat_id,
             "other_clan": self.focus_clan.name,
             "player_clan_temper": self.clan_temper,
             "interaction_type": interaction_type,
@@ -992,7 +992,7 @@ class LeaderDenScreen(Screens):
             success = False
 
         game.clan.clan_settings["lead_den_outsider_event"] = {
-            "cat_ID": self.focus_cat.ID,
+            "cat_ID": self.focus_cat.cat_id,
             "interaction_type": interaction_type,
             "success": success,
         }

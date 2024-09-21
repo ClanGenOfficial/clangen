@@ -30,19 +30,19 @@ class CanHaveKits(unittest.TestCase):
         cat1.no_kits = True
         cat2 = Cat(sex='male')
 
-        cat1.mate.append(cat2.ID)
-        cat2.mate.append(cat1.ID)
+        cat1.mate.append(cat2.cat_id)
+        cat2.mate.append(cat1.cat_id)
         relation1 = Relationship(cat1, cat2, mates=True, family=False, romantic_love=100)
         relation2 = Relationship(cat2, cat1, mates=True, family=False, romantic_love=100)
-        cat1.relationships[cat2.ID] = relation1
-        cat2.relationships[cat1.ID] = relation2
+        cat1.relationships[cat2.cat_id] = relation1
+        cat2.relationships[cat1.cat_id] = relation2
 
         # when
         check_if_can_have_kits.return_value = True
         Pregnancy_Events.handle_having_kits(cat=cat1, clan=test_clan)
 
         # then
-        self.assertNotIn(cat1.ID, test_clan.pregnancy_data.keys())
+        self.assertNotIn(cat1.cat_id, test_clan.pregnancy_data.keys())
 
 
 class SameSexAdoptions(unittest.TestCase):
@@ -51,8 +51,8 @@ class SameSexAdoptions(unittest.TestCase):
 
         cat1 = Cat(sex='female', age="adult", moons=40)
         cat2 = Cat(sex='female', age="adult", moons=40)
-        cat1.mate.append(cat2.ID)
-        cat2.mate.append(cat1.ID)
+        cat1.mate.append(cat2.cat_id)
+        cat2.mate.append(cat1.cat_id)
 
         # when
         single_parentage = False
@@ -85,7 +85,7 @@ class Pregnancy(unittest.TestCase):
         Pregnancy_Events.handle_zero_moon_pregnant(cat, None, clan)
 
         # then
-        self.assertIn(cat.ID, clan.pregnancy_data.keys())
+        self.assertIn(cat.cat_id, clan.pregnancy_data.keys())
 
     @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
     def test_pair(self, check_if_can_have_kits):
@@ -101,8 +101,8 @@ class Pregnancy(unittest.TestCase):
         Pregnancy_Events.handle_zero_moon_pregnant(cat1, cat2, clan)
 
         # then
-        self.assertIn(cat1.ID, clan.pregnancy_data.keys())
-        self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
+        self.assertIn(cat1.cat_id, clan.pregnancy_data.keys())
+        self.assertEqual(clan.pregnancy_data[cat1.cat_id]["second_parent"], cat2.cat_id)
 
 
 class Mates(unittest.TestCase):
@@ -115,8 +115,8 @@ class Mates(unittest.TestCase):
         relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         # when
         relationship1.platonic_like = 100
@@ -134,8 +134,8 @@ class Mates(unittest.TestCase):
         relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         # when
         relationship1.platonic_like = 100
@@ -153,8 +153,8 @@ class Mates(unittest.TestCase):
         relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         # when
         relationship1.romantic_love = 100
@@ -172,8 +172,8 @@ class Mates(unittest.TestCase):
         relationship2 = Relationship(cat2, cat1)
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         # when
         relationship1.romantic_love = 100

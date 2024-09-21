@@ -41,15 +41,15 @@ class TestRelativesFunction(unittest.TestCase):
 
     def test_is_parent(self):
         parent = Cat()
-        kit = Cat(parent1=parent.ID)
+        kit = Cat(parent1=parent.cat_id)
         self.assertFalse(kit.is_parent(kit))
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
 
     def test_is_sibling(self):
         parent = Cat()
-        kit1 = Cat(parent1=parent.ID)
-        kit2 = Cat(parent1=parent.ID)
+        kit1 = Cat(parent1=parent.cat_id)
+        kit2 = Cat(parent1=parent.cat_id)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
         self.assertTrue(kit2.is_sibling(kit1))
@@ -57,9 +57,9 @@ class TestRelativesFunction(unittest.TestCase):
 
     def test_is_uncle_aunt(self):
         grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        sibling1 = Cat(parent1=grand_parent.cat_id)
+        sibling2 = Cat(parent1=grand_parent.cat_id)
+        kit = Cat(parent1=sibling1.cat_id)
         self.assertFalse(sibling1.is_uncle_aunt(kit))
         self.assertFalse(sibling1.is_uncle_aunt(sibling2))
         self.assertFalse(kit.is_uncle_aunt(sibling2))
@@ -67,9 +67,9 @@ class TestRelativesFunction(unittest.TestCase):
 
     def test_is_grandparent(self):
         grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        sibling1 = Cat(parent1=grand_parent.cat_id)
+        sibling2 = Cat(parent1=grand_parent.cat_id)
+        kit = Cat(parent1=sibling1.cat_id)
         self.assertFalse(sibling1.is_grandparent(kit))
         self.assertFalse(sibling1.is_grandparent(sibling2))
         self.assertFalse(kit.is_grandparent(sibling2))
@@ -82,9 +82,9 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     def test_relation(self):
         grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        sibling1 = Cat(parent1=grand_parent.cat_id)
+        sibling2 = Cat(parent1=grand_parent.cat_id)
+        kit = Cat(parent1=sibling1.cat_id)
         self.assertFalse(kit.is_potential_mate(grand_parent))
         self.assertFalse(kit.is_potential_mate(sibling1))
         self.assertFalse(kit.is_potential_mate(sibling2))
@@ -96,9 +96,9 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     def test_relation_love_interest(self):
         grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        sibling1 = Cat(parent1=grand_parent.cat_id)
+        sibling2 = Cat(parent1=grand_parent.cat_id)
+        kit = Cat(parent1=sibling1.cat_id)
         self.assertFalse(kit.is_potential_mate(grand_parent, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling1, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling2, for_love_interest=True))
@@ -259,7 +259,7 @@ class TestPossibleMateFunction(unittest.TestCase):
     def test_possible_setting(self, settings):
         mentor = Cat(moons=50)
         former_appr = Cat(moons=20)
-        mentor.former_apprentices.append(former_appr.ID)
+        mentor.former_apprentices.append(former_appr.cat_id)
 
         # TODO: check how this mocking is working
         settings["romantic with former mentor"].return_value = False
@@ -286,15 +286,15 @@ class TestMateFunctions(unittest.TestCase):
         cat2.set_mate(cat1)
 
         # then
-        self.assertEqual(cat1.mate[0], cat2.ID)
-        self.assertEqual(cat2.mate[0], cat1.ID)
+        self.assertEqual(cat1.mate[0], cat2.cat_id)
+        self.assertEqual(cat2.mate[0], cat1.cat_id)
 
     def test_unset_mate(self):
         # given
         cat1 = Cat()
         cat2 = Cat()
-        cat1.mate.append(cat2.ID)
-        cat2.mate.append(cat1.ID)
+        cat1.mate.append(cat2.cat_id)
+        cat2.mate.append(cat1.cat_id)
 
         # when
         cat1.unset_mate(cat2)
@@ -315,8 +315,8 @@ class TestMateFunctions(unittest.TestCase):
         relation2 = Relationship(cat2, cat1)
         old_relation2 = deepcopy(relation1)
         
-        cat1.relationships[cat2.ID] = relation1
-        cat2.relationships[cat1.ID] = relation2
+        cat1.relationships[cat2.cat_id] = relation1
+        cat2.relationships[cat1.cat_id] = relation2
 
         # when
         cat1.set_mate(cat2)
@@ -352,10 +352,10 @@ class TestMateFunctions(unittest.TestCase):
             cat2, cat1, family=False, mates=True, romantic_love=40, platonic_like=40, dislike=0, comfortable=40,
             trust=20, admiration=20, jealousy=20)
         old_relation2 = deepcopy(relation2)
-        cat1.mate.append(cat2.ID)
-        cat2.mate.append(cat1.ID)
-        cat1.relationships[cat2.ID] = relation1
-        cat2.relationships[cat1.ID] = relation2
+        cat1.mate.append(cat2.cat_id)
+        cat2.mate.append(cat1.cat_id)
+        cat1.relationships[cat2.cat_id] = relation1
+        cat2.relationships[cat1.cat_id] = relation2
 
         # when
         cat1.unset_mate(cat2, breakup=True)
@@ -385,16 +385,16 @@ class TestUpdateMentor(unittest.TestCase):
         # given
         app = Cat(moons=7, status="apprentice")
         mentor = Cat(moons=20, status="warrior")
-        app.update_mentor(mentor.ID)
+        app.update_mentor(mentor.cat_id)
 
         # when
-        self.assertTrue(app.ID in mentor.apprentice)
-        self.assertFalse(app.ID in mentor.former_apprentices)
-        self.assertEqual(app.mentor, mentor.ID)
+        self.assertTrue(app.cat_id in mentor.apprentice)
+        self.assertFalse(app.cat_id in mentor.former_apprentices)
+        self.assertEqual(app.mentor, mentor.cat_id)
         app.exiled = True
         app.update_mentor()
 
         # then
-        self.assertFalse(app.ID in mentor.apprentice)
-        self.assertTrue(app.ID in mentor.former_apprentices)
+        self.assertFalse(app.cat_id in mentor.apprentice)
+        self.assertTrue(app.cat_id in mentor.former_apprentices)
         self.assertIsNone(app.mentor)

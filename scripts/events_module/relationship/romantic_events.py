@@ -132,15 +132,15 @@ class Romantic_Events:
         -------
         bool : if an event is triggered or not
         """
-        if cat_from.ID == cat_to.ID:
+        if cat_from.cat_id == cat_to.cat_id:
             return False
 
         relevant_dict = deepcopy(Romantic_Events.ROMANTIC_INTERACTIONS)
-        if cat_to.ID in cat_from.mate and not cat_to.dead:
+        if cat_to.cat_id in cat_from.mate and not cat_to.dead:
             relevant_dict = deepcopy(Romantic_Events.MATE_INTERACTIONS)
 
         # check if it should be a positive or negative interaction
-        relationship = cat_from.relationships[cat_to.ID]
+        relationship = cat_from.relationships[cat_to.cat_id]
         positive = Romantic_Events.check_if_positive_interaction(relationship)
 
         # get the possible interaction list and filter them
@@ -269,7 +269,7 @@ class Romantic_Events:
         if len(chosen_interaction.get_injuries) > 0:
             relevant_event_tabs.append("health")
         game.cur_events_list.append(
-            Single_Event(interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID])
+            Single_Event(interaction_str, relevant_event_tabs, [cat_to.cat_id, cat_from.cat_id])
         )
 
         # now add the age of the cats before the string is sent to the cats' relationship logs
@@ -277,7 +277,7 @@ class Romantic_Events:
             interaction_str + f" - {cat_from.name} was {cat_from.moons} moons old"
         )
 
-        if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
+        if not relationship.opposite_relationship and cat_from.cat_id != cat_to.cat_id:
             relationship.link_relationship()
             relationship.opposite_relationship.log.append(
                 interaction_str + f" - {cat_to.name} was {cat_to.moons} moons old"
@@ -321,7 +321,7 @@ class Romantic_Events:
         subset = random.sample(subset, max(int(len(subset) / 3), 1))
 
         for other_cat in subset:
-            relationship = cat.relationships.get(other_cat.ID)
+            relationship = cat.relationships.get(other_cat.cat_id)
             flag = Romantic_Events.handle_new_mates(cat, other_cat)
             if flag:
                 return
@@ -362,7 +362,7 @@ class Romantic_Events:
                 if not cat_mate.no_mates and random.random() > 0.5:
                     text = f"{cat.name} will always love {cat_mate.name} but has decided to move on."
                     game.cur_events_list.append(
-                        Single_Event(text, "relation", [cat.ID, cat_mate.ID])
+                        Single_Event(text, "relation", [cat.cat_id, cat_mate.cat_id])
                     )
                     cat.unset_mate(cat_mate)
 
@@ -376,7 +376,7 @@ class Romantic_Events:
             cat_from.set_mate(cat_to)
             game.cur_events_list.append(
                 Single_Event(
-                    mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]
+                    mate_string, ["relation", "misc"], [cat_from.cat_id, cat_to.cat_id]
                 )
             )
             return True
@@ -387,7 +387,7 @@ class Romantic_Events:
     def handle_breakup(cat_from: Cat, cat_to: Cat) -> bool:
         """Handles cats breaking up their relationship"""
 
-        if cat_from.ID not in cat_to.mate:
+        if cat_from.cat_id not in cat_to.mate:
             return False
 
         if cat_from.no_mates or cat_to.no_mates:
@@ -406,13 +406,13 @@ class Romantic_Events:
         # TODO : more varied breakup text.
         cat_from.unset_mate(cat_to, breakup=False)
 
-        if cat_to.ID in cat_from.relationships:
-            relationship_from = cat_from.relationships[cat_to.ID]
+        if cat_to.cat_id in cat_from.relationships:
+            relationship_from = cat_from.relationships[cat_to.cat_id]
         else:
             relationship_from = cat_from.create_one_relationship(cat_to)
 
-        if cat_from.ID in cat_to.relationships:
-            relationship_to = cat_to.relationships[cat_from.ID]
+        if cat_from.cat_id in cat_to.relationships:
+            relationship_to = cat_to.relationships[cat_from.cat_id]
         else:
             relationship_to = cat_to.create_one_relationship(cat_from)
 
@@ -436,7 +436,7 @@ class Romantic_Events:
         else:
             text = f"{cat_from.name} and {cat_to.name} broke up."
         game.cur_events_list.append(
-            Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID])
+            Single_Event(text, ["relation", "misc"], [cat_from.cat_id, cat_to.cat_id])
         )
         return True
 
@@ -511,14 +511,14 @@ class Romantic_Events:
             mate_string = Romantic_Events.get_mate_string(
                 "rejected", poly, cat_from, cat_to
             )
-            cat_from.relationships[cat_to.ID].romantic_love -= 10
-            cat_to.relationships[cat_from.ID].comfortable -= 10
+            cat_from.relationships[cat_to.cat_id].romantic_love -= 10
+            cat_to.relationships[cat_from.cat_id].comfortable -= 10
 
         mate_string = Romantic_Events.prepare_relationship_string(
             mate_string, cat_from, cat_to
         )
         game.cur_events_list.append(
-            Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID])
+            Single_Event(mate_string, ["relation", "misc"], [cat_from.cat_id, cat_to.cat_id])
         )
 
         if become_mate:
@@ -554,7 +554,7 @@ class Romantic_Events:
         Returns:
             bool (True or False)
         """
-        if cat_from.ID not in cat_to.mate:
+        if cat_from.cat_id not in cat_to.mate:
             return False
 
         # Moving on, not breakups, occur when one mate is dead or outside.
@@ -575,17 +575,17 @@ class Romantic_Events:
         if not cat_from.is_potential_mate(cat_to):
             return False, None
 
-        if cat_from.ID in cat_to.mate:
+        if cat_from.cat_id in cat_to.mate:
             return False, None
 
         # Gather relationships
-        if cat_to.ID in cat_from.relationships:
-            relationship_from = cat_from.relationships[cat_to.ID]
+        if cat_to.cat_id in cat_from.relationships:
+            relationship_from = cat_from.relationships[cat_to.cat_id]
         else:
             relationship_from = cat_from.create_one_relationship(cat_to)
 
-        if cat_from.ID in cat_to.relationships:
-            relationship_to = cat_to.relationships[cat_from.ID]
+        if cat_from.cat_id in cat_to.relationships:
+            relationship_to = cat_to.relationships[cat_from.cat_id]
         else:
             relationship_to = cat_to.create_one_relationship(cat_from)
 
@@ -767,23 +767,23 @@ class Romantic_Events:
                     continue
                 if (
                     mate_id in cat_from.relationships
-                    and cat_from.ID in mate_cat.relationships
+                    and cat_from.cat_id in mate_cat.relationships
                 ):
                     if not Romantic_Events.relationship_fulfill_condition(
                         cat_from.relationships[mate_id], current_mate_condition
                     ) or not Romantic_Events.relationship_fulfill_condition(
-                        mate_cat.relationships[cat_from.ID], current_mate_condition
+                        mate_cat.relationships[cat_from.cat_id], current_mate_condition
                     ):
                         all_mates_fulfill_current_mate_condition = False
 
                 if (
                     mate_id in cat_to.relationships
-                    and cat_to.ID in mate_cat.relationships
+                    and cat_to.cat_id in mate_cat.relationships
                 ):
                     if not Romantic_Events.relationship_fulfill_condition(
                         cat_to.relationships[mate_id], current_to_new_condition
                     ) or not Romantic_Events.relationship_fulfill_condition(
-                        mate_cat.relationships[cat_to.ID], current_to_new_condition
+                        mate_cat.relationships[cat_to.cat_id], current_to_new_condition
                     ):
                         all_mates_fulfill_current_to_new = False
         if (
@@ -807,23 +807,23 @@ class Romantic_Events:
                     continue
                 if (
                     mate_id in cat_to.relationships
-                    and cat_to.ID in mate_cat.relationships
+                    and cat_to.cat_id in mate_cat.relationships
                 ):
                     if not Romantic_Events.relationship_fulfill_condition(
                         cat_to.relationships[mate_id], current_mate_condition
                     ) or not Romantic_Events.relationship_fulfill_condition(
-                        mate_cat.relationships[cat_to.ID], current_mate_condition
+                        mate_cat.relationships[cat_to.cat_id], current_mate_condition
                     ):
                         all_mates_fulfill_current_mate_condition = False
 
                 if (
                     mate_id in cat_from.relationships
-                    and cat_from.ID in mate_cat.relationships
+                    and cat_from.cat_id in mate_cat.relationships
                 ):
                     if not Romantic_Events.relationship_fulfill_condition(
                         cat_from.relationships[mate_id], current_to_new_condition
                     ) or not Romantic_Events.relationship_fulfill_condition(
-                        mate_cat.relationships[cat_from.ID], current_to_new_condition
+                        mate_cat.relationships[cat_from.cat_id], current_to_new_condition
                     ):
                         all_mates_fulfill_current_to_new = False
         if (
@@ -925,13 +925,13 @@ class Romantic_Events:
             integer (number)
         """
         # Gather relationships
-        if cat_to.ID in cat_from.relationships:
-            relationship_from = cat_from.relationships[cat_to.ID]
+        if cat_to.cat_id in cat_from.relationships:
+            relationship_from = cat_from.relationships[cat_to.cat_id]
         else:
             relationship_from = cat_from.create_one_relationship(cat_to)
 
-        if cat_from.ID in cat_to.relationships:
-            relationship_to = cat_to.relationships[cat_from.ID]
+        if cat_from.cat_id in cat_to.relationships:
+            relationship_to = cat_to.relationships[cat_from.cat_id]
         else:
             relationship_to = cat_to.create_one_relationship(cat_from)
 

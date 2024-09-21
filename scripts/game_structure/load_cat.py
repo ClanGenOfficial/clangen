@@ -54,7 +54,7 @@ def json_load():
         try:
 
             new_cat = Cat(
-                ID=cat["ID"],
+                cat_id=cat["ID"],
                 prefix=cat["name_prefix"],
                 suffix=cat["name_suffix"],
                 specsuffix_hidden=(
@@ -341,7 +341,7 @@ def csv_load(all_cats):
                     "2There was an error loading cat # " + str(attr[0])
                 )
                 the_cat = Cat(
-                    ID=attr[0],
+                    cat_id=attr[0],
                     prefix=attr[1].split(":")[0],
                     suffix=attr[1].split(":")[1],
                     gender=attr[2],
@@ -490,9 +490,9 @@ def csv_load(all_cats):
                 f_app = Cat.all_cats.get(f_app_id)
                 former_apps.append(f_app)
             inter_cat.apprentice = [
-                a.ID for a in apps
+                a.cat_id for a in apps
             ]  # Switch back to IDs. I don't want to risk breaking everything.
-            inter_cat.former_apprentices = [a.ID for a in former_apps]
+            inter_cat.former_apprentices = [a.cat_id for a in former_apps]
             if not inter_cat.dead:
                 game.switches["error_message"] = (
                     "There was an error loading this clan's relationships. Last cat read was "
@@ -533,7 +533,7 @@ def save_check():
         #    if _temp_ob:
         #        # Check if the mate's mate feild is set to none
         #        if not _temp_ob.mate:
-        #            _temp_ob.mate = cat_ob.ID
+        #            _temp_ob.mate = cat_ob.cat_id
         #    else:
         #        # Invalid mate
         #        cat_ob.mate = None

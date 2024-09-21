@@ -176,7 +176,7 @@ class Clan:
 
         self.faded_ids = (
             []
-        )  # Stores ID's of faded cats, to ensure these IDs aren't reused.
+        )  # Stores cat_id's of faded cats, to ensure these IDs aren't reused.
         if self_run_init_functions:
             self.post_initialization_functions()
 
@@ -184,17 +184,17 @@ class Clan:
     def post_initialization_functions(self):
         if self.deputy is not None:
             self.deputy.status_change("deputy")
-            self.clan_cats.append(self.deputy.ID)
+            self.clan_cats.append(self.deputy.cat_id)
 
         if self.leader:
             self.leader.status_change("leader")
-            self.clan_cats.append(self.leader.ID)
+            self.clan_cats.append(self.leader.cat_id)
 
         if self.medicine_cat is not None:
-            self.clan_cats.append(self.medicine_cat.ID)
-            self.med_cat_list.append(self.medicine_cat.ID)
+            self.clan_cats.append(self.medicine_cat.cat_id)
+            self.med_cat_list.append(self.medicine_cat.cat_id)
             if self.medicine_cat.status != "medicine cat":
-                Cat.all_cats[self.medicine_cat.ID].status_change("medicine cat")
+                Cat.all_cats[self.medicine_cat.cat_id].status_change("medicine cat")
 
     def create_clan(self):
         """
@@ -239,7 +239,7 @@ class Clan:
                 and not_found
             ):
                 Cat.all_cats[i].example = True
-                self.remove_cat(Cat.all_cats[i].ID)
+                self.remove_cat(Cat.all_cats[i].cat_id)
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
@@ -283,8 +283,8 @@ class Clan:
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
-        if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
-            self.clan_cats.append(cat.ID)
+        if cat.cat_id in Cat.all_cats and cat.cat_id not in self.clan_cats:
+            self.clan_cats.append(cat.cat_id)
 
     def add_pronouns(self, pronouns):  # pronouns is a dict
         self.custom_pronouns.append(pronouns)
@@ -295,19 +295,19 @@ class Clan:
         It should not be removed from the list of cats in the clan
         """
         if (
-            cat.ID in Cat.all_cats
+            cat.cat_id in Cat.all_cats
             and cat.dead
-            and cat.ID not in self.starclan_cats
+            and cat.cat_id not in self.starclan_cats
             and cat.df is False
         ):
             # The dead-value must be set to True before the cat can go to starclan
-            self.starclan_cats.append(cat.ID)
-            if cat.ID in self.darkforest_cats:
-                self.darkforest_cats.remove(cat.ID)
-            if cat.ID in self.unknown_cats:
-                self.unknown_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
+            self.starclan_cats.append(cat.cat_id)
+            if cat.cat_id in self.darkforest_cats:
+                self.darkforest_cats.remove(cat.cat_id)
+            if cat.cat_id in self.unknown_cats:
+                self.unknown_cats.remove(cat.cat_id)
+            if cat.cat_id in self.med_cat_list:
+                self.med_cat_list.remove(cat.cat_id)
                 self.med_cat_predecessors += 1
 
     def add_to_darkforest(self, cat):  # Same as add_cat
@@ -315,14 +315,14 @@ class Clan:
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df:
-            self.darkforest_cats.append(cat.ID)
-            if cat.ID in self.starclan_cats:
-                self.starclan_cats.remove(cat.ID)
-            if cat.ID in self.unknown_cats:
-                self.unknown_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
+        if cat.cat_id in Cat.all_cats and cat.dead and cat.df:
+            self.darkforest_cats.append(cat.cat_id)
+            if cat.cat_id in self.starclan_cats:
+                self.starclan_cats.remove(cat.cat_id)
+            if cat.cat_id in self.unknown_cats:
+                self.unknown_cats.remove(cat.cat_id)
+            if cat.cat_id in self.med_cat_list:
+                self.med_cat_list.remove(cat.cat_id)
                 self.med_cat_predecessors += 1
             # update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
@@ -333,14 +333,14 @@ class Clan:
         It should not be removed from the list of cats in the clan
         :param cat: cat object
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.outside:
-            self.unknown_cats.append(cat.ID)
-            if cat.ID in self.starclan_cats:
-                self.starclan_cats.remove(cat.ID)
-            if cat.ID in self.darkforest_cats:
-                self.darkforest_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
+        if cat.cat_id in Cat.all_cats and cat.dead and cat.outside:
+            self.unknown_cats.append(cat.cat_id)
+            if cat.cat_id in self.starclan_cats:
+                self.starclan_cats.remove(cat.cat_id)
+            if cat.cat_id in self.darkforest_cats:
+                self.darkforest_cats.remove(cat.cat_id)
+            if cat.cat_id in self.med_cat_list:
+                self.med_cat_list.remove(cat.cat_id)
                 self.med_cat_predecessors += 1
 
     def add_to_clan(self, cat):
@@ -348,13 +348,13 @@ class Clan:
         TODO: DOCS
         """
         if (
-            cat.ID in Cat.all_cats
+            cat.cat_id in Cat.all_cats
             and not cat.outside
             and not cat.dead
-            and cat.ID in Cat.outside_cats
+            and cat.cat_id in Cat.outside_cats
         ):
             # The outside-value must be set to True before the cat can go to cotc
-            Cat.outside_cats.pop(cat.ID)
+            Cat.outside_cats.pop(cat.cat_id)
             cat.clan = str(game.clan.name)
 
     def add_to_outside(self, cat):  # same as add_cat
@@ -362,30 +362,30 @@ class Clan:
         Places the gone cat into cotc.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
+        if cat.cat_id in Cat.all_cats and cat.outside and cat.cat_id not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
-            Cat.outside_cats.update({cat.ID: cat})
+            Cat.outside_cats.update({cat.cat_id: cat})
 
-    def remove_cat(self, ID):  # ID is cat.ID
+    def remove_cat(self, cat_id):  # cat_id is cat.cat_id
         """
         This function is for completely removing the cat from the game,
         it's not meant for a cat that's simply dead
         """
 
-        if Cat.all_cats[ID] in Cat.all_cats_list:
-            Cat.all_cats_list.remove(Cat.all_cats[ID])
+        if Cat.all_cats[cat_id] in Cat.all_cats_list:
+            Cat.all_cats_list.remove(Cat.all_cats[cat_id])
 
-        if ID in Cat.all_cats:
-            Cat.all_cats.pop(ID)
+        if cat_id in Cat.all_cats:
+            Cat.all_cats.pop(cat_id)
 
-        if ID in self.clan_cats:
-            self.clan_cats.remove(ID)
-        if ID in self.starclan_cats:
-            self.starclan_cats.remove(ID)
-        if ID in self.unknown_cats:
-            self.unknown_cats.remove(ID)
-        if ID in self.darkforest_cats:
-            self.darkforest_cats.remove(ID)
+        if cat_id in self.clan_cats:
+            self.clan_cats.remove(cat_id)
+        if cat_id in self.starclan_cats:
+            self.starclan_cats.remove(cat_id)
+        if cat_id in self.unknown_cats:
+            self.unknown_cats.remove(cat_id)
+        if cat_id in self.darkforest_cats:
+            self.darkforest_cats.remove(cat_id)
 
     def __repr__(self):
         if self.name is not None:
@@ -405,7 +405,7 @@ class Clan:
         if leader:
             self.history.add_lead_ceremony(leader)
             self.leader = leader
-            Cat.all_cats[leader.ID].status_change("leader")
+            Cat.all_cats[leader.cat_id].status_change("leader")
             self.leader_predecessors += 1
             self.leader_lives = 9
         game.switches["new_leader"] = None
@@ -416,7 +416,7 @@ class Clan:
         """
         if deputy:
             self.deputy = deputy
-            Cat.all_cats[deputy.ID].status_change("deputy")
+            Cat.all_cats[deputy.cat_id].status_change("deputy")
             self.deputy_predecessors += 1
 
     def new_medicine_cat(self, medicine_cat):
@@ -425,9 +425,9 @@ class Clan:
         """
         if medicine_cat:
             if medicine_cat.status != "medicine cat":
-                Cat.all_cats[medicine_cat.ID].status_change("medicine cat")
-            if medicine_cat.ID not in self.med_cat_list:
-                self.med_cat_list.append(medicine_cat.ID)
+                Cat.all_cats[medicine_cat.cat_id].status_change("medicine cat")
+            if medicine_cat.cat_id not in self.med_cat_list:
+                self.med_cat_list.append(medicine_cat.cat_id)
             medicine_cat = self.med_cat_list[0]
             self.medicine_cat = Cat.all_cats[medicine_cat]
             self.med_cat_number = len(self.med_cat_list)
@@ -437,11 +437,11 @@ class Clan:
         Removes a med cat. Use when retiring, or switching to warrior
         """
         if medicine_cat:
-            if medicine_cat.ID in game.clan.med_cat_list:
-                game.clan.med_cat_list.remove(medicine_cat.ID)
+            if medicine_cat.cat_id in game.clan.med_cat_list:
+                game.clan.med_cat_list.remove(medicine_cat.cat_id)
                 game.clan.med_cat_number = len(game.clan.med_cat_list)
             if self.medicine_cat:
-                if medicine_cat.ID == self.medicine_cat.ID:
+                if medicine_cat.cat_id == self.medicine_cat.cat_id:
                     if game.clan.med_cat_list:
                         game.clan.medicine_cat = Cat.fetch_cat(
                             game.clan.med_cat_list[0]
@@ -472,7 +472,7 @@ class Clan:
             "gamemode": self.game_mode,
             "last_focus_change": self.last_focus_change,
             "clans_in_focus": self.clans_in_focus,
-            "instructor": self.instructor.ID,
+            "instructor": self.instructor.cat_id,
             "reputation": self.reputation,
             "mediated": game.mediated,
             "starting_season": self.starting_season,
@@ -485,7 +485,7 @@ class Clan:
 
         # LEADER DATA
         if self.leader:
-            clan_data["leader"] = self.leader.ID
+            clan_data["leader"] = self.leader.cat_id
             clan_data["leader_lives"] = self.leader_lives
         else:
             clan_data["leader"] = None
@@ -494,7 +494,7 @@ class Clan:
 
         # DEPUTY DATA
         if self.deputy:
-            clan_data["deputy"] = self.deputy.ID
+            clan_data["deputy"] = self.deputy.cat_id
         else:
             clan_data["deputy"] = None
 
@@ -502,7 +502,7 @@ class Clan:
 
         # MED CAT DATA
         if self.medicine_cat:
-            clan_data["med_cat"] = self.medicine_cat.ID
+            clan_data["med_cat"] = self.medicine_cat.cat_id
         else:
             clan_data["med_cat"] = None
         clan_data["med_cat_number"] = self.med_cat_number
@@ -1341,7 +1341,7 @@ class StarClan:
 
 
 clan_class = Clan()
-clan_class.remove_cat(cat_class.ID)
+clan_class.remove_cat(cat_class.cat_id)
 
 HERBS = None
 with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:

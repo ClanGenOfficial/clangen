@@ -563,13 +563,13 @@ class ProfileScreen(Screens):
             return
         if (
             self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
+            and game.clan.instructor.cat_id == self.the_cat.cat_id
             and self.the_cat.df is False
         ):
             is_sc_instructor = True
         elif (
             self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
+            and game.clan.instructor.cat_id == self.the_cat.cat_id
             and self.the_cat.df is True
         ):
             is_df_instructor = True
@@ -754,7 +754,7 @@ class ProfileScreen(Screens):
         """'Determines where the next and previous buttons point too."""
 
         is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+        if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
             is_instructor = True
 
         previous_cat = 0
@@ -766,7 +766,7 @@ class ProfileScreen(Screens):
             and self.the_cat.df == game.clan.instructor.df
             and not (self.the_cat.outside or self.the_cat.exiled)
         ):
-            previous_cat = game.clan.instructor.ID
+            previous_cat = game.clan.instructor.cat_id
 
         if is_instructor:
             current_cat_found = 1
@@ -775,30 +775,30 @@ class ProfileScreen(Screens):
             Cat.ordered_cat_list = Cat.all_cats_list
 
         for check_cat in Cat.ordered_cat_list:
-            if check_cat.ID == self.the_cat.ID:
+            if check_cat.cat_id == self.the_cat.cat_id:
                 current_cat_found = 1
             else:
                 if (
                     current_cat_found == 0
-                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.cat_id != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    previous_cat = check_cat.ID
+                    previous_cat = check_cat.cat_id
 
                 elif (
                     current_cat_found == 1
-                    and check_cat != self.the_cat.ID
+                    and check_cat != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    next_cat = check_cat.ID
+                    next_cat = check_cat.cat_id
                     break
 
                 elif int(next_cat) > 1:
@@ -1072,11 +1072,11 @@ class ProfileScreen(Screens):
                 "exiled",
             ]:
                 nutr = None
-                if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
-                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+                if the_cat.cat_id in game.clan.freshkill_pile.nutrition_info:
+                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.cat_id]
                 if not nutr:
                     game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
-                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.cat_id]
                 output += "nutrition: " + nutr.nutrition_text
                 if game.clan.clan_settings["showxp"]:
                     output += " (" + str(int(nutr.percentage)) + ")"
@@ -1228,7 +1228,7 @@ class ProfileScreen(Screens):
         notes = self.user_notes
 
         notes_directory = get_save_dir() + "/" + clanname + "/notes"
-        notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
+        notes_file_path = notes_directory + "/" + self.the_cat.cat_id + "_notes.json"
 
         if not os.path.exists(notes_directory):
             os.makedirs(notes_directory)
@@ -1239,7 +1239,7 @@ class ProfileScreen(Screens):
         ):
             return
 
-        new_notes = {str(self.the_cat.ID): notes}
+        new_notes = {str(self.the_cat.cat_id): notes}
 
         game.safe_save(notes_file_path, new_notes)
 
@@ -1248,7 +1248,7 @@ class ProfileScreen(Screens):
         clanname = game.clan.name
 
         notes_directory = get_save_dir() + "/" + clanname + "/notes"
-        notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
+        notes_file_path = notes_directory + "/" + self.the_cat.cat_id + "_notes.json"
 
         if not os.path.exists(notes_file_path):
             return
@@ -1257,11 +1257,11 @@ class ProfileScreen(Screens):
             with open(notes_file_path, "r") as read_file:
                 rel_data = ujson.loads(read_file.read())
                 self.user_notes = "Click the check mark to enter notes about your cat!"
-                if str(self.the_cat.ID) in rel_data:
-                    self.user_notes = rel_data.get(str(self.the_cat.ID))
+                if str(self.the_cat.cat_id) in rel_data:
+                    self.user_notes = rel_data.get(str(self.the_cat.cat_id))
         except Exception as e:
             print(
-                f"ERROR: there was an error reading the Notes file of cat #{self.the_cat.ID}.\n",
+                f"ERROR: there was an error reading the Notes file of cat #{self.the_cat.cat_id}.\n",
                 e,
             )
 
@@ -2288,7 +2288,7 @@ class ProfileScreen(Screens):
                 object_id = "#exile_df_button"
                 if self.the_cat.df:
                     object_id = "#guide_sc_button"
-                if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+                if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
                     self.exile_cat_button = UIImageButton(
                         scale(pygame.Rect((1156, 900), (344, 92))),
                         "",
@@ -2539,7 +2539,7 @@ class ProfileScreen(Screens):
                 biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)),
                 (240, 210),
             )
-        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+        elif the_cat.dead or game.clan.instructor.cat_id == the_cat.cat_id:
             biome_platforms = platformsheet.subsurface(
                 pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
             )

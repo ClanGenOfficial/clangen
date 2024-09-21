@@ -152,7 +152,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.selected_cat = event.ui_element.cat_object
                 self.update_selected_cat()
             elif event.ui_element in self.birth_parents_buttons.values():
-                game.switches["cat"] = event.ui_element.cat_object.ID
+                game.switches["cat"] = event.ui_element.cat_object.cat_id
                 self.change_screen("profile screen")
 
     def screen_switches(self):
@@ -301,12 +301,12 @@ class ChooseAdoptiveParentScreen(Screens):
         if not self.selected_cat:
             return
 
-        if self.selected_cat.ID not in self.the_cat.adoptive_parents:
-            self.the_cat.adoptive_parents.append(self.selected_cat.ID)
+        if self.selected_cat.cat_id not in self.the_cat.adoptive_parents:
+            self.the_cat.adoptive_parents.append(self.selected_cat.cat_id)
             self.the_cat.create_inheritance_new_cat()
 
         else:
-            self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
+            self.the_cat.adoptive_parents.remove(self.selected_cat.cat_id)
             self.the_cat.create_inheritance_new_cat()
             self.selected_cat.create_inheritance_new_cat()
 
@@ -762,7 +762,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 object_id="#set_adoptive_parent",
             )
             self.toggle_adoptive_parent.disable()
-        elif self.selected_cat.ID in self.the_cat.adoptive_parents:
+        elif self.selected_cat.cat_id in self.the_cat.adoptive_parents:
             self.toggle_adoptive_parent = UIImageButton(
                 scale(pygame.Rect((607, 620), (384, 60))),
                 "",
@@ -839,12 +839,12 @@ class ChooseAdoptiveParentScreen(Screens):
             if not (
                 inter_cat.dead or inter_cat.outside or inter_cat.exiled
             )  # Adoptive parents cant be dead or outside
-            and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
+            and inter_cat.cat_id != self.the_cat.cat_id  # Can't be your own adoptive parent
             and inter_cat.moons - self.the_cat.moons
             >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you
-            and inter_cat.ID
+            and inter_cat.cat_id
             not in self.the_cat.mate  # Can't set your mate your adoptive parent.
-            and inter_cat.ID
+            and inter_cat.cat_id
             not in self.the_cat.get_parents()  # Adoptive parents can't already be their parent
             and self.not_related_to_mate(
                 inter_cat
@@ -855,7 +855,7 @@ class ChooseAdoptiveParentScreen(Screens):
             )  # Toggle for only mates of current parents
             and (
                 not self.unrelated_only
-                or inter_cat.ID not in self.the_cat.get_relatives()
+                or inter_cat.cat_id not in self.the_cat.get_relatives()
             )
         ]  # Toggle for only not-closely-related.
 
@@ -871,48 +871,48 @@ class ChooseAdoptiveParentScreen(Screens):
             for mate_id in self.the_cat.mate:
                 mate = Cat.fetch_cat(mate_id)
                 mate_relatives = mate.get_relatives()
-                if possible_parent.ID in mate_relatives:
+                if possible_parent.cat_id in mate_relatives:
                     return False
 
         return True
 
     def get_previous_next_cat(self):
         is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+        if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
             is_instructor = True
 
         self.previous_cat = 0
         self.next_cat = 0
         if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            self.previous_cat = game.clan.instructor.ID
+            self.previous_cat = game.clan.instructor.cat_id
 
         if is_instructor:
             self.next_cat = 1
 
         for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
+            if check_cat.cat_id == self.the_cat.cat_id:
                 self.next_cat = 1
             if (
                 self.next_cat == 0
-                and check_cat.ID != self.the_cat.ID
+                and check_cat.cat_id != self.the_cat.cat_id
                 and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
+                and check_cat.cat_id != game.clan.instructor.cat_id
                 and not check_cat.exiled
                 and not check_cat.outside
                 and check_cat.df == self.the_cat.df
             ):
-                self.previous_cat = check_cat.ID
+                self.previous_cat = check_cat.cat_id
 
             elif (
                 self.next_cat == 1
-                and check_cat.ID != self.the_cat.ID
+                and check_cat.cat_id != self.the_cat.cat_id
                 and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
+                and check_cat.cat_id != game.clan.instructor.cat_id
                 and not check_cat.exiled
                 and not check_cat.outside
                 and check_cat.df == self.the_cat.df
             ):
-                self.next_cat = check_cat.ID
+                self.next_cat = check_cat.cat_id
 
             elif int(self.next_cat) > 1:
                 break
@@ -937,7 +937,7 @@ class ChooseAdoptiveParentScreen(Screens):
             ob = Cat.fetch_cat(x)
             if not isinstance(ob, Cat):
                 continue
-            if other_cat.ID in ob.mate:
+            if other_cat.cat_id in ob.mate:
                 return True
 
         return False

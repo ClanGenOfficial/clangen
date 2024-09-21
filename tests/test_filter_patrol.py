@@ -21,8 +21,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
     def test_sibling_patrol(self):
         # given
         parent = Cat()
-        cat1 = Cat(parent1=parent.ID)
-        cat2 = Cat(parent1=parent.ID)
+        cat1 = Cat(parent1=parent.cat_id)
+        cat2 = Cat(parent1=parent.cat_id)
         cat1.create_inheritance_new_cat()
         cat2.create_inheritance_new_cat()
 
@@ -65,8 +65,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         mate2 = Cat()
         cat1 = Cat()
 
-        mate1.mate.append(mate2.ID)
-        mate2.mate.append(mate1.ID)
+        mate1.mate.append(mate2.cat_id)
+        mate2.mate.append(mate1.cat_id)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -113,8 +113,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
     def test_parent_child_patrol(self):
         # given
         parent = Cat()
-        cat1 = Cat(parent1=parent.ID)
-        cat2 = Cat(parent1=parent.ID)
+        cat1 = Cat(parent1=parent.cat_id)
+        cat2 = Cat(parent1=parent.cat_id)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -168,8 +168,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
     def test_child_parent_patrol(self):
         # given
         parent = Cat()
-        cat1 = Cat(parent1=parent.ID)
-        cat2 = Cat(parent1=parent.ID)
+        cat1 = Cat(parent1=parent.cat_id)
+        cat2 = Cat(parent1=parent.cat_id)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -233,8 +233,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 
@@ -285,8 +285,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 
@@ -336,8 +336,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 
@@ -388,8 +388,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 
@@ -440,8 +440,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 
@@ -492,8 +492,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 
@@ -558,12 +558,12 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship3_1.opposite_relationship = relationship3_1
         relationship3_2.opposite_relationship = relationship2_3
 
-        cat1.relationships[cat2.ID] = relationship1_2
-        cat1.relationships[cat3.ID] = relationship1_3
-        cat2.relationships[cat1.ID] = relationship2_1
-        cat2.relationships[cat3.ID] = relationship2_3
-        cat3.relationships[cat1.ID] = relationship3_1
-        cat3.relationships[cat2.ID] = relationship3_2
+        cat1.relationships[cat2.cat_id] = relationship1_2
+        cat1.relationships[cat3.cat_id] = relationship1_3
+        cat2.relationships[cat1.cat_id] = relationship2_1
+        cat2.relationships[cat3.cat_id] = relationship2_3
+        cat3.relationships[cat1.cat_id] = relationship3_1
+        cat3.relationships[cat2.cat_id] = relationship3_2
 
         test_clan = Clan(name="test")
 
@@ -602,7 +602,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
                                                  patrol.patrol_leader))
 
         # when - different relationship values
-        cat3.relationships[cat2.ID].romantic_love = 5
+        cat3.relationships[cat2.cat_id].romantic_love = 5
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["romantic_10"]
 
@@ -633,8 +633,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
+        cat1.relationships[cat2.cat_id] = relationship1
+        cat2.relationships[cat1.cat_id] = relationship2
 
         test_clan = Clan(name="test")
 

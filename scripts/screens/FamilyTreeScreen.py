@@ -240,7 +240,7 @@ class FamilyTreeScreen(Screens):
         self.cat_elements["root_cat_image"] = UISpriteButton(
             scale(pygame.Rect((462, 1151), (100, 100))),
             game.switches["root_cat"].sprite,
-            cat_id=game.switches["root_cat"].ID,
+            cat_id=game.switches["root_cat"].cat_id,
             manager=MANAGER,
             tool_tip_text=f'Started viewing tree at {game.switches["root_cat"].name}',
         )
@@ -354,7 +354,7 @@ class FamilyTreeScreen(Screens):
         self.cat_elements["the_cat_image"] = UISpriteButton(
             scale(pygame.Rect((150, 969), (300, 300))),
             self.the_cat.sprite,
-            cat_id=self.the_cat.ID,
+            cat_id=self.the_cat.cat_id,
             manager=MANAGER,
         )
         name = str(self.the_cat.name)
@@ -380,7 +380,7 @@ class FamilyTreeScreen(Screens):
         self.cat_elements["center_cat_image"] = UISpriteButton(
             scale(pygame.Rect((x_pos + 30, y_pos + 20), (100, 100))),
             self.the_cat.sprite,
-            cat_id=self.the_cat.ID,
+            cat_id=self.the_cat.cat_id,
             manager=MANAGER,
             container=self.family_tree,
         )
@@ -535,7 +535,7 @@ class FamilyTreeScreen(Screens):
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
                 _kitty.sprite,
-                cat_id=_kitty.ID,
+                cat_id=_kitty.cat_id,
                 manager=MANAGER,
                 tool_tip_text=info_text,
                 starting_height=2,
@@ -692,42 +692,42 @@ class FamilyTreeScreen(Screens):
         """Determines where the previous and next buttons should lead, and enables/disables them"""
 
         is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+        if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
             is_instructor = True
 
         previous_cat = 0
         next_cat = 0
         if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            previous_cat = game.clan.instructor.ID
+            previous_cat = game.clan.instructor.cat_id
 
         if is_instructor:
             next_cat = 1
 
         for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
+            if check_cat.cat_id == self.the_cat.cat_id:
                 next_cat = 1
             else:
                 if (
                     next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.cat_id != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    previous_cat = check_cat.ID
+                    previous_cat = check_cat.cat_id
 
                 elif (
                     next_cat == 1
-                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.cat_id != self.the_cat.cat_id
                     and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.cat_id != game.clan.instructor.cat_id
                     and check_cat.outside == self.the_cat.outside
                     and check_cat.df == self.the_cat.df
                     and not check_cat.faded
                 ):
-                    next_cat = check_cat.ID
+                    next_cat = check_cat.cat_id
 
                 elif int(next_cat) > 1:
                     break

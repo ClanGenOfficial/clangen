@@ -445,7 +445,7 @@ class Game:
 
             inter_cat = self.cat_class.all_cats[cat]
 
-            # Add ID to list of faded cats.
+            # Add cat_id to list of faded cats.
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up

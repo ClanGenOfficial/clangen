@@ -130,14 +130,14 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
         return False
 
     if "mates" in constraint and (
-        relationship.cat_from.ID not in relationship.cat_to.mate
-        or relationship.cat_to.ID not in relationship.cat_from.mate
+        relationship.cat_from.cat_id not in relationship.cat_to.mate
+        or relationship.cat_to.cat_id not in relationship.cat_from.mate
     ):
         return False
 
     if "not_mates" in constraint and (
-        relationship.cat_from.ID in relationship.cat_to.mate
-        or relationship.cat_to.ID in relationship.cat_from.mate
+        relationship.cat_from.cat_id in relationship.cat_to.mate
+        or relationship.cat_to.cat_id in relationship.cat_from.mate
     ):
         return False
 

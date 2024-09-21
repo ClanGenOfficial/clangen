@@ -56,7 +56,7 @@ class Inheritance:
             self.update_all_related_inheritance()
 
         # SAVE INHERITANCE INTO ALL_INHERITANCES DICTIONARY
-        self.all_inheritances[cat.ID] = self
+        self.all_inheritances[cat.cat_id] = self
 
     def update_inheritance(self):
         """Update inheritance of the given cat."""
@@ -88,7 +88,7 @@ class Inheritance:
         self.init_mates()
 
         for inter_id, inter_cat in self.cat.all_cats.items():
-            if inter_id == self.cat.ID:
+            if inter_id == self.cat.cat_id:
                 continue
 
             # kits + their mates
@@ -105,7 +105,7 @@ class Inheritance:
 
         # since grand kits depending on kits, ALL KITS HAVE TO BE SET FIRST!
         for inter_id, inter_cat in self.cat.all_cats.items():
-            if inter_id == self.cat.ID:
+            if inter_id == self.cat.cat_id:
                 continue
 
             # grand kits
@@ -151,8 +151,8 @@ class Inheritance:
         self.update_inheritance()
         for inter_inheritances in self.all_inheritances.values():
             if (
-                self.cat.ID in inter_inheritances.other_mates
-                or self.cat.ID in inter_inheritances.all_involved
+                self.cat.cat_id in inter_inheritances.other_mates
+                or self.cat.cat_id in inter_inheritances.all_involved
             ):
                 inter_inheritances.update_inheritance()
 
@@ -199,8 +199,8 @@ class Inheritance:
 
     def remove_parent(self, cat):
         """Remove the cat the parent dictionary - used to 'update' the adoptive parents."""
-        if cat.ID in self.parents:
-            del self.parents[cat.ID]
+        if cat.cat_id in self.parents:
+            del self.parents[cat.cat_id]
             self.update_all_related_inheritance()
 
     def add_parent(self, parent, rel_type=RelationType.ADOPTIVE):
@@ -212,14 +212,14 @@ class Inheritance:
         :param RelationType rel_type: the type of relation, default `RelationType.ADOPTIVE`
         """
         # the default is adoptive, because there should only be 2 blood parents per default
-        self.parents[parent.ID] = {"type": rel_type, "additional": []}
+        self.parents[parent.cat_id] = {"type": rel_type, "additional": []}
         if (
             rel_type == RelationType.ADOPTIVE
-            and parent.ID not in self.cat.adoptive_parents
+            and parent.cat_id not in self.cat.adoptive_parents
         ):
-            self.cat.adoptive_parents.append(parent.ID)
-        self.all_involved.append(parent.ID)
-        self.all_but_cousins.append(parent.ID)
+            self.cat.adoptive_parents.append(parent.cat_id)
+        self.all_involved.append(parent.cat_id)
+        self.all_but_cousins.append(parent.cat_id)
         self.update_all_related_inheritance()
 
     # ---------------------------------------------------------------------------- #
@@ -361,12 +361,12 @@ class Inheritance:
             return
         # kits - blood
         inter_blood_parents = self.get_blood_parents(inter_cat)
-        if self.cat.ID in inter_blood_parents:
+        if self.cat.cat_id in inter_blood_parents:
             self.kits[inter_id] = {"type": RelationType.BLOOD, "additional": []}
             self.all_involved.append(inter_id)
             self.all_but_cousins.append(inter_id)
             if len(inter_blood_parents) > 1:
-                inter_blood_parents.remove(self.cat.ID)
+                inter_blood_parents.remove(self.cat.cat_id)
                 other_id = inter_blood_parents.pop()
                 other_cat = self.cat.fetch_cat(other_id)
                 self.kits[inter_id]["additional"].append(
@@ -374,7 +374,7 @@ class Inheritance:
                 )
 
         # kit - adoptive
-        if self.cat.ID in inter_cat.adoptive_parents:
+        if self.cat.cat_id in inter_cat.adoptive_parents:
             self.kits[inter_id] = {"type": RelationType.ADOPTIVE, "additional": []}
             self.all_involved.append(inter_id)
             self.all_but_cousins.append(inter_id)
@@ -500,12 +500,12 @@ class Inheritance:
                     add_info = ""
                     if len(parent_cats_names) > 0:
                         add_info = f"child of " + ", ".join(parent_cats_names)
-                    self.siblings_kits[_c.ID] = {
+                    self.siblings_kits[_c.cat_id] = {
                         "type": kit_rel_type,
                         "additional": [add_info],
                     }
-                    self.all_involved.append(_c.ID)
-                    self.all_but_cousins.append(_c.ID)
+                    self.all_involved.append(_c.cat_id)
+                    self.all_but_cousins.append(_c.cat_id)
 
     def init_parents_siblings(self, inter_id, inter_cat):
         """Create an aunt/uncle (pibling) relationship."""
