@@ -165,7 +165,7 @@
 		"interactions": [
 			"m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with r_c.",
 			"m_c had a friendly argument with r_c about which prey tastes the best.",
-			"m_c takes a nap with r_c after a long day of playing moss-ball.",
+			"m_c takes a nap with r_c after a long day of playing moss ball.",
 			"m_c and r_c had a friendly argument about which beetle would win in a fight."
 		],
 		"main_status_constraint": [

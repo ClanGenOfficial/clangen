@@ -107,7 +107,7 @@
             "Is worried r_c is overworking {PRONOUN/r_c/self}",
             "Is finding r_c annoying",
             "Can't keep up with r_c",
-            "Is playing mossball with r_c",
+            "Is playing moss ball with r_c",
             "Is eavesdropping on r_c",
             "Wants to get to know r_c better",
             "Is sharing tongues with r_c",
@@ -440,7 +440,7 @@
             "Is double-checking {PRONOUN/m_c/poss} nest for burrs",
             "Is slowly and methodically grooming {PRONOUN/m_c/self}",
             "Is chiding a younger cat for being so reckless",
-            "Is padding back and forth, across the camp",
+            "Is padding back and forth across the camp",
             "Is helping to reinforce the nursery walls",
             "Is helping to reinforce the camp walls",
             "Is patching up a hole in the camp wall",
@@ -1077,7 +1077,7 @@
         "id": "playful_warrior",
         "thoughts": [
             "Is playing tag with cats around camp",
-            "Is tossing mossballs around",
+            "Is tossing moss balls around",
             "Pounced on a stray leaf with satisfaction",
             "Seems to be playing with {PRONOUN/m_c/poss} food",
             "Is play-fighting with friends",
@@ -1120,7 +1120,7 @@
     {
         "id": "playful_warrior_to_living_kit",
         "thoughts": [
-            "Plays mossball with r_c",
+            "Plays moss ball with r_c",
             "Is pretending to not see r_c sneaking up on {PRONOUN/m_c/object}"
         ],
         "random_status_constraint": [
@@ -1242,7 +1242,7 @@
             "Is grooming intensely in clear view of everyone in camp",
             "Is snoring at a ridiculous volume",
             "Is lecturing about something someone said wrong offhandedly",
-            "Is bragging about how great a hunter {PRONOUN/m_c/subject} are",
+            "Is bragging about how great a hunter {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
             "Announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} heading to the dirtplace",
             "Taunted a dog stuck behind a Twoleg fence",
             "Is eating and chewing very loudly",
@@ -1478,7 +1478,7 @@
 	{
         "id": "campkeeper_gen",
         "thoughts": [
-            "Is padding back and forth, across the camp",
+            "Is padding back and forth across the camp",
             "Is helping to reinforce the nursery walls",
             "Is helping to reinforce the camp walls",
             "Is patching up a hole in the camp wall",
@@ -1634,7 +1634,7 @@
         "thoughts": [
             "Play fought with r_c just like old times",
             "Reminisced with r_c on when they were kits",
-            "Took r_c's fresh_kill {PRONOUN/r_c/subject} were saving specifically because {PRONOUN/r_c/subject} were saving it", 
+            "Took r_c's fresh-kill {PRONOUN/r_c/subject} {VERB/r_c/were/was} saving specifically because {PRONOUN/r_c/subject} {VERB/r_c/were/was} saving it", 
             "Is waiting for r_c to return from {PRONOUN/r_c/poss} patrol",
             "Explored the territory with r_c"
         ],
@@ -1660,7 +1660,7 @@
         "id": "parent_to_kit",
         "thoughts":[
             "Pulled r_c aside and started grooming {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} protests",
-            "Is purring as {PRONOUN/m_c/subject} listen to r_c talk about nothing in particular",
+            "Is purring as {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} to r_c talk about nothing in particular",
             "Is comforting r_c after a hard day",
             "Is so proud of r_c"
         ],
@@ -1692,7 +1692,7 @@
         "thoughts": [
             "Is thinking about how awful kittypet food must taste",
             "Is wondering what living with Twolegs must be like",
-            "Saw some kittypets playing with colorful mossballs",
+            "Saw some kittypets playing with colorful moss balls",
             "Saw a kittypet sitting calmly next to a dog!",
             "Almost got lost near some Twoleg nests",
             "Saw some wandering Twolegs today",
@@ -1772,7 +1772,7 @@
             "Is worried about r_c",
             "Is proud of r_c's growth",
             "Knows r_c will make a great Clanmate someday",
-            "Is playing mossball with r_c",
+            "Is playing moss ball with r_c",
             "Watches r_c pretend to hunt a mouse",
             "Catches r_c climbing a bit too high"
         ],
@@ -2006,7 +2006,7 @@
             "Wants to speak to r_c about something",
             "Is relieved r_c sided with {PRONOUN/m_c/object} during an argument",
             "Is upset r_c said {PRONOUN/m_c/subject} {VERB/m_c/were/was} wrong during an argument",
-            "Is thanking r_c for what they do for the Clan"
+            "Is thanking r_c for what {PRONOUN/r_c/subject} {VERB/r_c/do/does} do for the Clan"
         ],
         "main_status_constraint": [
             "warrior",
@@ -2185,7 +2185,7 @@
             "Is missing {PRONOUN/m_c/poss} late leader r_c",
             "Is wondering if r_c is proud of {PRONOUN/m_c/object}",
             "Is wondering if r_c approves from StarClan",
-            "Is hoping r_c is watching over them"
+            "Is hoping r_c is watching over {PRONOUN/m_c/object}"
         ],
         "main_status_constraint": [
             "any"
@@ -2220,7 +2220,7 @@
             "Is grateful for time spent with r_c",
             "Is reminiscing about r_c",
             "Smiles knowing r_c is reunited with {PRONOUN/r_c/poss} family now",
-            "Hopes r_c's joints feel better now that {PRONOUN/m_c/subject} {VERB/m_c/have/has} joined StarClan's ranks",
+            "Hopes r_c's joints feel better now that {PRONOUN/r_c/subject} {VERB/r_c/have/has} joined StarClan's ranks",
             "Is relieved r_c won't have to struggle anymore",
             "Is happy for {PRONOUN/m_c/poss} time spent with r_c"
         ],
@@ -2871,9 +2871,9 @@
             "Remembers fondly when r_c would beg to be taught a new fighting move",
             "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembers r_c is among the stars now",
             "Misses r_c nagging {PRONOUN/m_c/object} about apprentice duties",
-            "Is tearing up after finding r_c's old moss-ball",
+            "Is tearing up after finding r_c's old moss ball",
             "Hopes that somehow, someway, the kits in StarClan are learning the hunting crouch",
-            "Wonders if the kits get moss-balls in StarClan",
+            "Wonders if the kits get moss balls in StarClan",
             "Hopes that the kits in StarClan get time to play games",
             "Looks up at the night sky and wonders which stars are long-gone kits",
             "Thought {PRONOUN/m_c/subject} saw a stray kit in front of the nursery, but it vanished",
@@ -3142,7 +3142,7 @@
         "id": "lonesome_apprentice",
         "thoughts": [
             "Doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
-            "Is feeling cramped in the apprentice's den",
+            "Is feeling cramped in the apprentices' den",
             "Managed to perform a difficult task on {PRONOUN/m_c/poss} own"
         ],
         "main_status_constraint": [
@@ -3290,7 +3290,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Manages to convince another apprentice to play moss-ball instead of finishing their duties"
+            "Manages to convince another apprentice to play moss ball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -3659,7 +3659,7 @@
     {
         "id": "paralyzed_gen_to_alive_young",
         "thoughts": [
-            "Is playing moss-ball with the younger cats"
+            "Is playing moss ball with the younger cats"
         ],
         "perm_conditions": {
             "m_c": [

@@ -33,9 +33,9 @@
 		"interactions": [
 			"m_c feels like r_c was too rough while playing.",
 			"m_c doesn't think r_c was playing fair.",
-			"m_c accuses r_c of cheating during a game of hide-n-seek!",
+			"m_c accuses r_c of cheating during a game of hide and seek!",
 			"m_c told r_c {PRONOUN/m_c/subject} didn't want to play but r_c whined until {PRONOUN/m_c/subject} relented.",
-            		"m_c doesn't want to play with r_c."
+            "m_c doesn't want to play with r_c."
 		],
 		"main_status_constraint": [
 			"kitten"

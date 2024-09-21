@@ -248,7 +248,7 @@
             "Sneaks out of camp for some alone time",
             "Is being snappy about {PRONOUN/m_c/poss} exercises",
             "Enjoyed a walk around the camp with r_c!",
-            "Is the reigning moss-ball champion, and everyone knows it"
+            "Is the reigning moss ball champion, and everyone knows it"
         ],
         "perm_conditions": {
             "m_c": [

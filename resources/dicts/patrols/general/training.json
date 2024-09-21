@@ -3150,7 +3150,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "As app1 and app2 collect moss for the elder's den, app2 admits that the strange dreams {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been having is why {PRONOUN/app2/subject} kicked app1 in the night.",
+        "intro_text": "As app1 and app2 collect moss for the elders' den, app2 admits that the strange dreams {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been having is why {PRONOUN/app2/subject} kicked app1 in the night.",
         "decline_text": "The apprentices don't talk about the dreams.",
         "chance_of_success": 70,
         "success_outcomes": [

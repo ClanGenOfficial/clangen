@@ -349,7 +349,7 @@
 	{
 		"id": "platonic_kit_inc_med1",
 		"interactions": [
-			"m_c plays moss-ball with r_c.",
+			"m_c plays moss ball with r_c.",
 			"m_c proudly brought r_c a flower {PRONOUN/m_c/subject} found.",
 			"m_c decorates {PRONOUN/m_c/poss} nest with gifts that r_c brought {PRONOUN/m_c/object}.",
             "m_c took a nap with r_c."
@@ -370,7 +370,7 @@
 			"m_c is pretending to fight off badgers with r_c.",
 			"m_c is racing r_c back and forth across the camp clearing.",
 			"m_c hopes r_c will be {PRONOUN/m_c/poss} friend forever.",
-			"m_c let r_c win a game of mossball.",
+			"m_c let r_c win a game of moss ball.",
             "m_c and r_c are gagging at the idea of having mates when they grow up.",
             "m_c and r_c are seeing which one of them makes the best bird impression.",
             "m_c and r_c are trying to master how to croak like a frog together."
@@ -416,7 +416,7 @@
 			"m_c is giving r_c a badger ride on {PRONOUN/m_c/poss} back!",
 			"m_c remembers how cute kits are because of time spent with r_c.",
 			"m_c is promising to take r_c outside of camp if {PRONOUN/r_c/subject} {VERB/r_c/behave/behaves}.",
-			"m_c bats the moss-ball back to r_c when it flies in front of {PRONOUN/m_c/poss} paws.",
+			"m_c bats the moss ball back to r_c when it flies in front of {PRONOUN/m_c/poss} paws.",
 			"m_c spends most of the afternoon describing the territory to r_c.",
 			"m_c purrs as r_c asks {PRONOUN/m_c/object} to show {PRONOUN/r_c/object} how to do a hunter's crouch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/oblige/obliges}, happy to show {PRONOUN/m_c/poss} skills.",
 			"m_c whiskers twitch in amusement as r_c tells {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/hope/hopes} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} {PRONOUN/r_c/poss} mentor when {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} an apprentice.",
