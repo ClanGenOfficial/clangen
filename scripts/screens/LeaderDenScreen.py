@@ -69,6 +69,7 @@ class LeaderDenScreen(Screens):
             pass
 
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.outsider_selection_elements["page_right"]:

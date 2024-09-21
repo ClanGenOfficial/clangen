@@ -80,6 +80,7 @@ class EventsScreen(Screens):
 
         # ON START BUTTON PRESS
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:  # this happens on start press to prevent alert movement
+            self.mute_button_pressed(event)
             element = event.ui_element
             if element in self.event_buttons.values():
                 for ele, val in self.event_buttons.items():

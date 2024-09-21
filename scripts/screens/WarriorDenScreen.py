@@ -44,6 +44,7 @@ class WarriorDenScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             if event.ui_element in self.focus_buttons.values():
