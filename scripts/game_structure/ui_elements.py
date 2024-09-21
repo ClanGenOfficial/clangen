@@ -612,8 +612,8 @@ class UISpriteButton:
 
     def __init__(
         self,
-        relative_rect,
-        sprite,
+            relative_rect: pygame.Rect,
+            sprite: pygame.Surface,
         cat_id=None,
         visible=1,
         cat_object=None,
@@ -626,7 +626,10 @@ class UISpriteButton:
     ):
         input_sprite = pygame.transform.scale(sprite, relative_rect.size)
         # if downscaling, apply a light blur to get rid of crunchiness.
-        if relative_rect.height < sprite.height or relative_rect.width < sprite.width:
+        if (
+                relative_rect.height < sprite.get_height()
+                or relative_rect.width < sprite.get_width()
+        ):
             pygame.transform.box_blur(input_sprite, 1)
 
         self.image = pygame_gui.elements.UIImage(
