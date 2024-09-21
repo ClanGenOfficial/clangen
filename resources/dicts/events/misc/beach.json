@@ -53,12 +53,12 @@
     "season": ["leaf-bare"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged.",
+    "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores quite damaged.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
