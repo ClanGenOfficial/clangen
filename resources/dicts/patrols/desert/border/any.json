@@ -416,7 +416,7 @@
                 ]
             },
             {
-                "text": "The patrol fights bravely, but you only need to be unlucky once. One snap of the beast's huge jaws takes r_c out of the fight. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits.",
+                "text": "The patrol fights bravely, but you only need to be unlucky once. One snap of the beast's huge jaws takes r_c out of the fight. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine cat den awaits.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

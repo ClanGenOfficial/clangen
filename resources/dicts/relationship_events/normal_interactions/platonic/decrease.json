@@ -158,7 +158,7 @@
 		"interactions": [
 			"m_c snarls at r_c for coming too close to the herbs.",
 			"m_c shoos r_c away, not having time for curious little kits.",
-			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed {PRONOUN/r_c/object} nasty tasting herbs!",
+			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine cat den {PRONOUN/m_c/subject} will feed {PRONOUN/r_c/object} nasty tasting herbs!",
 			"r_c scrunches {PRONOUN/r_c/poss} nose at m_c and says {PRONOUN/m_c/subject} {VERB/m_c/smell/smells} weird."
 		],
 		"main_status_constraint": [

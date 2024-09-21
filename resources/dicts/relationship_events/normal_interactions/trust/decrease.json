@@ -143,7 +143,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c accuses r_c of treating cats incorrectly on purpose!",
-			"m_c saw r_c bringing deathberries into the medicine den.",
+			"m_c saw r_c bringing deathberries into the medicine cat den.",
 			"r_c was rough with m_c during a recent treatment.",
 			"m_c isn't sure why r_c became a medicine cat at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
 			"m_c wouldn't be surprised if r_c faked signs from StarClan...",

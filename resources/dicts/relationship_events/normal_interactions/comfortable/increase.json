@@ -201,7 +201,7 @@
 		"id": "comfort_med_inc_medium1",
 		"interactions": [
 			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
-			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet."
+			"m_c drops into the medicine cat den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet."
 		],
 		"random_status_constraint": [
 			"medicine cat",

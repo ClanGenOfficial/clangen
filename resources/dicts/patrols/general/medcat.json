@@ -704,7 +704,7 @@
                 "weight": 20
             },
             {
-                "text": "Somehow cobweb-gathering brings p_l to an almost-meditative state. Not only {VERB/p_l/are/is} {PRONOUN/p_l/subject} fairly confident of {PRONOUN/p_l/poss} next steps, having been given this vision, but {PRONOUN/p_l/subject} also {VERB/p_l/bring/brings} back a good haul to the medicine den stocks.",
+                "text": "Somehow cobweb-gathering brings p_l to an almost-meditative state. Not only {VERB/p_l/are/is} {PRONOUN/p_l/subject} fairly confident of {PRONOUN/p_l/poss} next steps, having been given this vision, but {PRONOUN/p_l/subject} also {VERB/p_l/bring/brings} back a good haul to the medicine cat den stocks.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["cobwebs"]
@@ -1893,7 +1893,7 @@
         },
         "weight": 5,
         "intro_text": "p_l eyes the warrior chosen to escort {PRONOUN/p_l/object} to fetch herbs, feeling a little bit giddy. Apprentices getting to boss around warriors is something that almost never happens, and p_l is going to make sure {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the most of it.",
-        "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes {PRONOUN/p_l/poss} tail in frustration, but doesn't protest, and heads back to the medicine cat's den alone.",
+        "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes {PRONOUN/p_l/poss} tail in frustration, but doesn't protest, and heads back to the medicine cat den alone.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -3306,7 +3306,7 @@
                 ]
             },
             {
-                "text": "The patrol continues on as normal, but when p_l returns to the medicine den later that day, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} something special waiting for {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} nest.",
+                "text": "The patrol continues on as normal, but when p_l returns to the medicine cat den later that day, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} something special waiting for {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} nest.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "SENSE,2"],
@@ -3410,7 +3410,7 @@
                 ]
             },
             {
-                "text": "The patrol continues on as normal, but when p_l returns to the medicine den later that day, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} something special waiting for {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} nest.",
+                "text": "The patrol continues on as normal, but when p_l returns to the medicine cat den later that day, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} something special waiting for {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} nest.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "SENSE,2"],

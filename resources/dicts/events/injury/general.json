@@ -5995,7 +5995,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "m_c fought a rogue and, while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine den afterwards.",
+        "event_text": "m_c fought a rogue and, while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine cat den afterwards.",
         "m_c": {
             "age": [
                 "senior",

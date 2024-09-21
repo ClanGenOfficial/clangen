@@ -24,7 +24,7 @@
             "Wants to spend time alone today",
             "Is eating some fresh-kill",
             "Is heading to the dirtplace",
-            "Is in the medicine den",
+            "Is in the medicine cat den",
             "Is having a good day",
             "Is having a hard day",
             "Is talking to {PRONOUN/m_c/self}",
@@ -2284,7 +2284,7 @@
         "id": "gen_wandering_healer",
         "thoughts": [
             "Is wondering how the cats {PRONOUN/m_c/subject} helped in the past are doing",
-            "Is helping out in the medicine den",
+            "Is helping out in the medicine cat den",
             "Has the urge to wander again",
             "Left the territory to gather an herb from a spot {PRONOUN/m_c/subject} used to use"
         ],
@@ -4042,7 +4042,7 @@
             "Is losing {PRONOUN/m_c/poss} appetite...",
             "Is spending each day as if it were {PRONOUN/m_c/poss} last",
             "Is losing fur",
-            "Spent all day in the medicine cats den",
+            "Spent all day in the medicine cat den",
             "Is taking it easy today",
             "Is feeling better today",
             "Laughed at a joke, but it turned into a coughing fit",
