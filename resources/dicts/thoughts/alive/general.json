@@ -2106,9 +2106,6 @@
         ],
         "relationship_constraint": [
             "child/parent"
-        ],
-        "main_living_status": [
-            "living"
         ]
     },
     {
