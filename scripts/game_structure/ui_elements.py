@@ -1284,7 +1284,7 @@ class UICatListDisplay(UIContainer):
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
             ui_scale(pygame.Rect((0, 15), (50, 50))),
-            kitty.sprite,
+            pygame.transform.smoothscale(kitty.sprite, ui_scale_dimensions((50, 50))),
             cat_object=kitty,
             cat_id=kitty.ID,
             container=container,
