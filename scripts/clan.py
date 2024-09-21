@@ -851,10 +851,7 @@ class Clan:
 
         if "other_clans" in clan_data:
             for other_clan in clan_data["other_clans"]:
-                if "chosen_symbol" not in other_clan:
-                    game.clan.all_clans.append(OtherClan(other_clan["name"], int(other_clan["relations"]), other_clan["temperament"]))
-                else:
-                    game.clan.all_clans.append(OtherClan(other_clan["name"], int(other_clan["relations"]), other_clan["temperament"], other_clan["chosen_symbol"]))
+                game.clan.all_clans.append(OtherClan(other_clan["name"], int(other_clan["relations"]), other_clan["temperament"], other_clan["chosen_symbol"]))
         else:
             if "other_clan_chosen_symbol" not in clan_data:
                 for name, relation, temper in zip(
