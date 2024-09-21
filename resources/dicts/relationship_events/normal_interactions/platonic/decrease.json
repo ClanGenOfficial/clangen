@@ -6,7 +6,6 @@
 			"m_c thinks r_c isn't very considerate of others.",
 			"m_c avoids r_c.",
 			"m_c noticed something r_c does that annoyed {PRONOUN/m_c/object}.",
-			"r_c splashes m_c as {PRONOUN/m_c/object} {VERB/m_c/pass/passes} a puddle.",
 			"m_c wasn't paying attention when r_c was talking to {PRONOUN/m_c/object}.",
 			"m_c settled to eat on the opposite side of camp from r_c."
 		]
