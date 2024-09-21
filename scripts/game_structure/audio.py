@@ -58,8 +58,7 @@ class MusicManager:
             and self.current_playlist != self.playlists["menu_playlist"]
         ):
             # print("menu screen")
-            if pygame.mixer.get_busy():
-                pygame.mixer.music.stop()
+            self.fade_out_music()
             self.play_playlist(self.playlists["menu_playlist"])
 
         # clan creation screen
@@ -68,8 +67,7 @@ class MusicManager:
             and self.current_playlist != self.playlists["creation_playlist"]
         ):
             # print("creation screen")
-            if pygame.mixer.get_busy():
-                pygame.mixer.music.stop()
+            self.fade_out_music()
             self.play_playlist(self.playlists["creation_playlist"])
 
         # other screens
@@ -78,8 +76,8 @@ class MusicManager:
             and screen not in creation_screens
             and self.current_playlist != self.biome_playlist
         ):
-            print("biome screen")
-            self.fade_music()
+            # print("biome screen")
+            self.fade_out_music()
             self.play_playlist(self.biome_playlist)
 
     def play_playlist(self, playlist):
@@ -89,17 +87,13 @@ class MusicManager:
         setting loops to number above zero will play the track that number of times before playing the queued track
         """
         self.current_playlist = playlist
+        self.queued_track = None  # clear queue
 
         if not self.current_playlist:  # don't play an empty playlist
             return
 
         self.number_of_tracks = len(self.current_playlist)
-        if self.number_of_tracks == 1:
-            self.play_music(random.choice(playlist), -1)
-        else:
-            self.play_music(random.choice(playlist))
 
-        self.queued_track = None  # clear queue
         self.queue_music()
 
     def play_music(self, track, loops=0):
@@ -111,7 +105,7 @@ class MusicManager:
         self.current_track = track
         pygame.mixer.music.load(self.current_track)
         pygame.mixer.music.set_volume(self.volume)
-        pygame.mixer.music.play(loops)
+        pygame.mixer.music.play(loops, fade_ms=1000)
         # print(f"playing music:{self.current_track}")
 
     def queue_music(self):
@@ -120,11 +114,11 @@ class MusicManager:
         current track
         """
         #  if playlist is empty or has a single track, don't attempt queueing
-        if self.number_of_tracks < 2:
+        if self.number_of_tracks == 0:
             return
 
         # otherwise we pick a new track and queue it
-        if self.current_track:
+        if self.current_track and self.number_of_tracks > 1:
             playlist_copy = self.current_playlist.copy()
             # print(f"playlist: {playlist_copy}, removing track: {self.current_track}")
             playlist_copy.remove(
@@ -135,10 +129,14 @@ class MusicManager:
         else:
             options = self.current_playlist
 
-        self.queued_track = random.choice(options)
-        print(
-            f"queueing music: current track is {self.current_track}, new track is {self.queued_track}"
-        )
+        try:
+            self.queued_track = random.choice(options)
+            print(
+                f"queueing music: current track is {self.current_track}, new track is {self.queued_track}"
+            )
+        except IndexError:
+            print("WARNING: playlist is empty")
+            self.queued_track = None
 
     def play_queued(self):
         """
@@ -150,7 +148,7 @@ class MusicManager:
         self.play_music(self.queued_track)
         self.queue_music()
 
-    def fade_music(self, fadeout=2000):
+    def fade_out_music(self, fadeout=2000):
         """
         fades the music out, by default the fade is 2 seconds
         """
