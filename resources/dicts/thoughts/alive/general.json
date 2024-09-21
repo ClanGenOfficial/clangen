@@ -1884,7 +1884,7 @@
         "thoughts": [
         "Recounts the gathering for r_c and {PRONOUN/r_c/poss} patients",
         "Brought r_c a berry to identify",
-        "Brought r_c a herb to identify"
+        "Brought r_c an herb to identify"
         ],
         "main_status_constraint": [
             "warrior",
@@ -2258,7 +2258,7 @@
             "Is remembering why {PRONOUN/m_c/subject} left {PRONOUN/m_c/poss} old Clan",
             "Is wondering how different life would be if {PRONOUN/m_c/subject} stayed with {PRONOUN/m_c/poss} old Clan",
             "Is missing {PRONOUN/m_c/poss} littermates",
-            "Dosen't regret {PRONOUN/m_c/poss} choice to leave {PRONOUN/m_c/poss} old Clan",
+            "Doesn't regret {PRONOUN/m_c/poss} choice to leave {PRONOUN/m_c/poss} old Clan",
             "Saw {PRONOUN/m_c/poss} parent at the border today",
             "Saw {PRONOUN/m_c/poss} littermate at the border today"
         ],

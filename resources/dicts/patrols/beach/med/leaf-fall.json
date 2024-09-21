@@ -5463,7 +5463,7 @@
                 "weight": 5
             },
             {
-                "text": "It takes little intelligence to recognize deathberries but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using {PRONOUN/s_c/poss} weight to snap off one of the bush's branches and then carefully carrying it back to camp, s_c manages to bring them safely home.",
+                "text": "It takes little intelligence to recognize deathberries, but a great deal to collect them. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using {PRONOUN/s_c/poss} weight to snap off one of the bush's branches and then carefully carrying it back to camp, s_c manages to bring them safely home.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
