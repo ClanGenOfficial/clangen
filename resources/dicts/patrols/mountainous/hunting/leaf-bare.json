@@ -2343,7 +2343,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with freshkill - c_n can use every bit of prey any cat can find in the harsh cold.",
+        "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with fresh-kill - c_n can use every bit of prey any cat can find in the harsh cold.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2585,7 +2585,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 20,
-        "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with freshkill - c_n can use every bit of prey any cat can find in the harsh cold.",
+        "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with fresh-kill - c_n can use every bit of prey any cat can find in the harsh cold.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2827,7 +2827,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 20,
-        "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with freshkill - c_n can use every bit of prey any cat can find in the harsh cold.",
+        "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with fresh-kill - c_n can use every bit of prey any cat can find in the harsh cold.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -3068,7 +3068,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with freshkill - c_n can use every bit of prey any cat can find in the harsh cold.",
+        "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. There's no more important season to come home with fresh-kill - c_n can use every bit of prey any cat can find in the harsh cold.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -4567,7 +4567,7 @@
                 ]
             },
             {
-                "text": "There's an injured kea, app1 explains, tripping over {PRONOUN/app1/poss} words a little. c_n could really use the freshkill. And p_l can't argue with that, which is how {PRONOUN/p_l/subject} find {PRONOUN/p_l/self} chilled through and damp, helping app1 haul the bird (which managed to die on its own) out of a gully, trying to think of a way to express {PRONOUN/p_l/poss} pride without encouraging this nonsense in the future.",
+                "text": "There's an injured kea, app1 explains, tripping over {PRONOUN/app1/poss} words a little. c_n could really use the fresh-kill. And p_l can't argue with that, which is how {PRONOUN/p_l/subject} find {PRONOUN/p_l/self} chilled through and damp, helping app1 haul the bird (which managed to die on its own) out of a gully, trying to think of a way to express {PRONOUN/p_l/poss} pride without encouraging this nonsense in the future.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
