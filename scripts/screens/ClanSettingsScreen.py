@@ -183,7 +183,7 @@ class ClanSettingsScreen(Screens):
 
         screentext = "windowed" if game.settings["fullscreen"] else "fullscreen"
         rect = ui_scale(pygame.Rect((0, 0), (158, 36)))
-        rect.bottomright = ui_scale_offset((-25, -5))
+        rect.bottomright = ui_scale_offset((-5, -25))
         self.fullscreen_toggle = UIImageButton(
             rect,
             "",
@@ -198,7 +198,7 @@ class ClanSettingsScreen(Screens):
             anchors={
                 "bottom": "bottom",
                 "right": "right",
-                "bottom_target": Screens.menu_buttons["mute_button"],
+                "right_target": Screens.menu_buttons["mute_button"],
             },
         )
         del screentext, rect

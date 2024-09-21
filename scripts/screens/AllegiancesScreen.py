@@ -28,7 +28,6 @@ class AllegiancesScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-
     def on_use(self):
         super().on_use()
 
@@ -51,7 +50,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((50, 165), (715, 500))),
+            ui_scale(pygame.Rect((50, 165), (715, 470))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
