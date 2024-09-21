@@ -5,7 +5,7 @@ from typing import Tuple, Dict
 
 import pygame
 
-from scripts.game_structure.screen_settings import screen_scale
+import scripts.game_structure.screen_settings
 from scripts.ui.generate_box import BoxData, get_box
 from scripts.utility import ui_scale_dimensions
 
@@ -373,7 +373,9 @@ def get_button_dict(
     :param unscaled_dimensions: The UNSCALED dimensions of the button
     :return: A dictionary of surfaces
     """
-    return _get_button_dict(style, unscaled_dimensions, screen_scale)
+    return _get_button_dict(
+        style, unscaled_dimensions, scripts.game_structure.screen_settings.screen_scale
+    )
 
 
 @cache
