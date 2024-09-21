@@ -6,7 +6,7 @@
 			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
 			"m_c offered r_c a paw with something but {PRONOUN/r_c/subject} turned it down, thanking {PRONOUN/m_c/object} for the offer.",
             "m_c offered r_c a paw with something.",
-            "m_c told r_c a hard truth that {PRONOUN/r_c/subject} knew {PRONOUN/m_c/subject} needed to hear.",
+            "m_c told r_c a hard truth that {PRONOUN/m_c/subject} knew {PRONOUN/r_c/subject} needed to hear.",
             "r_c warned m_c of a prank.",
             "m_c gave r_c a helpful suggestion."
 		]
@@ -19,7 +19,7 @@
 			"r_c is chiding m_c for being so reckless.",
 			"r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings.",
 			"r_c brought m_c aside and pointed out a messy patch of fur {PRONOUN/m_c/subject} missed grooming that morning.",
-			"m_c recalled some of r_c's careful advice in a tough spot and was greatful when it proved useful!"
+			"m_c recalled some of r_c's careful advice in a tough spot and was grateful when it proved useful!"
 		],
 		"random_trait_constraint": [
 			"careful"
@@ -60,7 +60,7 @@
 		"id": "trust_inc_med3",
 		"interactions": [
 			"r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger.",
-			 "r_c tells m_c {PRONOUN/r_c/subject} could easily fight off an entire Clan of cats to protect {PRONOUN/m_c/object}, {PRONOUN/r_c/subject} swear!"
+			 "r_c tells m_c {PRONOUN/r_c/subject} could easily fight off an entire Clan of cats to protect {PRONOUN/m_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears}!"
 		],
 		"random_trait_constraint": [
 			"bold",
@@ -128,7 +128,7 @@
 		"id": "trust_inc_med8",
 		"interactions": [
             "m_c urges r_c to rest, {PRONOUN/m_c/subject} can handle some of r_c's workload.",
-            "m_c reminded r_c of some work {PRONOUN/m_c/subject} forgot about."
+            "m_c reminded r_c of some work {PRONOUN/r_c/subject} forgot about."
 		],
         "main_status_constraint": [
             "apprentice",
@@ -146,7 +146,7 @@
 		"interactions": [
 			"m_c is giving advice to r_c.",
 			"m_c is looking out for r_c's well-being.",
-			"m_c snuck r_c out of camp for a fun break from {PRONOUN/r_c/poss} duties and covered for {PRONOUN/r_c/object} when they were later questioned.",
+			"m_c snuck r_c out of camp for a fun break from {PRONOUN/r_c/poss} duties and covered for {PRONOUN/r_c/object} when {PRONOUN/r_c/subject} {VERB/r_c/were/was} later questioned.",
 			"r_c reminds m_c of {PRONOUN/m_c/self} in {PRONOUN/m_c/poss} younger years."
 		],
 		"main_status_constraint": [
@@ -214,7 +214,7 @@
 			"m_c promises to always look out for r_c.",
 			"m_c tells r_c to count on {PRONOUN/m_c/object} in a difficult situation.",
 			"m_c catches r_c in an embarrassing situation and promises not to say anything.",
-			"m_c overheard a big secret about r_c and assured {PRONOUN/r_c/object} {PRONOUN/r_c/poss} it was safe with {PRONOUN/m_c/object}."
+			"m_c overheard a big secret about r_c and assured {PRONOUN/r_c/object} it was safe with {PRONOUN/m_c/object}."
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
