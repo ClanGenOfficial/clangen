@@ -207,7 +207,7 @@ def json_load():
             new_cat.current_mates = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
             if None in new_cat.current_mates:
                 new_cat.current_mates = [i for i in new_cat.current_mates if i is not None]
-            new_cat.previous_mates = (
+            new_cat.former_mates = (
                 cat["previous_mates"] if "previous_mates" in cat else []
             )
             new_cat.dead = cat["dead"]

@@ -314,7 +314,7 @@ class Inheritance:
             self.mates[relevant_id] = {"type": mate_rel, "additional": ["current mate"]}
             self.other_mates.append(relevant_id)
 
-        for relevant_id in self.cat.previous_mates:
+        for relevant_id in self.cat.former_mates:
             mate_rel = RelationType.NOT_BLOOD
             # they might be related, but only if it is not an adoption
             if relevant_id in self.all_involved:

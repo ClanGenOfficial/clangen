@@ -205,7 +205,7 @@ class Cat:
         self.former_apprentices = []
         self.relationships = {}
         self.current_mates = []
-        self.previous_mates = []
+        self.former_mates = []
         self.pronouns = [self.default_pronouns[0].copy()]
         self.placement = None
         self.example = example
@@ -1335,7 +1335,7 @@ class Cat:
                     continue
                 elif (
                     "leader_former_mate" in tags
-                    and giver_cat.cat_id not in self.previous_mates
+                    and giver_cat.cat_id not in self.former_mates
                 ):
                     continue
                 if "leader_mentor" in tags and giver_cat.cat_id not in self.former_mentor:
@@ -2508,10 +2508,10 @@ class Cat:
         other_cat.current_mates.remove(self.cat_id)
 
         # Handle previous mates:
-        if other_cat.cat_id not in self.previous_mates:
-            self.previous_mates.append(other_cat.cat_id)
-        if self.cat_id not in other_cat.previous_mates:
-            other_cat.previous_mates.append(self.cat_id)
+        if other_cat.cat_id not in self.former_mates:
+            self.former_mates.append(other_cat.cat_id)
+        if self.cat_id not in other_cat.former_mates:
+            other_cat.former_mates.append(self.cat_id)
 
         if other_cat.inheritance:
             other_cat.inheritance.update_all_mates()
@@ -2526,10 +2526,10 @@ class Cat:
             other_cat.current_mates.append(self.cat_id)
 
         # If the current mate was in the previous mate list, remove them.
-        if other_cat.cat_id in self.previous_mates:
-            self.previous_mates.remove(other_cat.cat_id)
-        if self.cat_id in other_cat.previous_mates:
-            other_cat.previous_mates.remove(self.cat_id)
+        if other_cat.cat_id in self.former_mates:
+            self.former_mates.remove(other_cat.cat_id)
+        if self.cat_id in other_cat.former_mates:
+            other_cat.former_mates.remove(self.cat_id)
 
         if other_cat.inheritance:
             other_cat.inheritance.update_all_mates()
@@ -3373,7 +3373,7 @@ class Cat:
                     self.patrol_with_mentor if self.patrol_with_mentor else 0
                 ),
                 "mate": self.current_mates,
-                "previous_mates": self.previous_mates,
+                "previous_mates": self.former_mates,
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
                 "no_kits": self.no_kits,

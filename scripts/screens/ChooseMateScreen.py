@@ -903,7 +903,7 @@ class ChooseMateScreen(Screens):
                     (400, 156),
                 ),
             )
-        elif self.selected_cat.cat_id in self.the_cat.previous_mates:
+        elif self.selected_cat.cat_id in self.the_cat.former_mates:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((600, 376), (400, 156))),
                 pygame.transform.scale(
