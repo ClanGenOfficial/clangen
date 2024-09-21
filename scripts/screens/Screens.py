@@ -169,14 +169,7 @@ class Screens:
             manager=MANAGER,
             object_id="#text_box_34_horizcenter_light",
             starting_height=5,
-        ),
-        "mute": UIImageButton(
-            scale(pygame.Rect((1482, 1282), (68, 68))),
-            "",
-            visible=False,
-            manager=MANAGER,
-            object_id="#mute_button",
-        ),
+        )
     }
     mute_button = UIImageButton(
         scale(pygame.Rect((1482, 1282), (68, 68))),
