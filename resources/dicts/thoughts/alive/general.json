@@ -3770,7 +3770,7 @@
             "Makes a sculpture out of mud",
             "Is memorizing the scents of {PRONOUN/m_c/poss} friends and family",
             "Wonders why the ground feels that way",
-            "Won a game of hide-and-seek, to the surprise of {PRONOUN/m_c/poss} friends",
+            "Won a game of hide and seek, to the surprise of {PRONOUN/m_c/poss} friends",
             "Accidentally head-butts r_c a bit too hard but they both laugh it off"
         ],
         "perm_conditions": {
