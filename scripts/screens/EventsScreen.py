@@ -305,7 +305,7 @@ class EventsScreen(Screens):
         y_pos = 0
         for event_type in self.tabs:
             self.event_buttons[f"{event_type}"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((8, 19 + y_pos), (150, 30))),
+                ui_scale(pygame.Rect((16, 19 + y_pos), (150, 30))),
                 event_type,
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
                 object_id="@buttonstyles_vertical_tab",
