@@ -591,7 +591,7 @@ class HandleShortEvents:
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
                                 History.add_death(
-                                    cat, "multi_lives", other_cat=self.random_cat
+                                    cat, "multi_lives"
                                 )
                                 self.current_lives -= 1
                     History.add_death(cat, death_history)
