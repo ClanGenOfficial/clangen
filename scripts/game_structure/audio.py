@@ -249,12 +249,17 @@ class _SoundManager:
         UIImageButtons have a sound_id parameter for assigning unique sounds to individual buttons
         :param event: the event that is taking place
         """
+        # This think make sounds play using UI_BUTTON_PRESSED, instead of UI_BUTTON_START_PRESS
+        try:
+            if event.ui_element.sound_id in ["timeskip"]:
+                if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                    self.play("button_press", event.ui_element)
+                else:
+                    return
+        except:
+            pass
 
-        if (
-            event.type == pygame_gui.UI_BUTTON_START_PRESS
-            and event.ui_element.sound_id
-            != "timeskip"  # Make sure timeskip doesn't play when UI_BUTTON_START_PRESS.
-        ):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.pressed = event.ui_element
             self.play("button_press", event.ui_element)
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -262,13 +267,6 @@ class _SoundManager:
                 if self.pressed != event.ui_element:
                     self.play("button_hover")
             self.pressed = None
-        # This ensure the time skip sound effect doesn't play immediately when the button is held because it uses UI_BUTTON_PRESSED.
-        elif (
-            event.type == pygame_gui.UI_BUTTON_PRESSED
-            and event.ui_element.sound_id == "timeskip"
-        ):
-            self.pressed = event.ui_element
-            self.play("button_press", event.ui_element)
 
     def play(self, sound, button=None):
         """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
