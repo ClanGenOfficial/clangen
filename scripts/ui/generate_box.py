@@ -71,9 +71,9 @@ tilesets: Dict[float, Dict[BoxData, Tileset]] = {}
 
 
 def get_tileset(style: BoxData) -> Tileset:
-    screen_scale = scripts.game_structure.screen_settings.screen_scale
-    if screen_scale in tilesets and style.name in tilesets[screen_scale]:
-        return tilesets[screen_scale][style]
+    temp_scale = scripts.game_structure.screen_settings.screen_scale
+    if temp_scale in tilesets and style.name in tilesets[temp_scale]:
+        return tilesets[temp_scale][style]
 
     surface = style.surface
 
@@ -139,10 +139,10 @@ def get_tileset(style: BoxData) -> Tileset:
             right_noborder,
         ) = [None] * 12
 
-    if screen_scale not in tilesets:
-        tilesets[screen_scale] = {}
+    if temp_scale not in tilesets:
+        tilesets[temp_scale] = {}
 
-    tilesets[screen_scale][style] = Tileset(
+    tilesets[temp_scale][style] = Tileset(
         edge_length=tile_edge_length,
         ninetile=ninetile,
         topleft=topleft,
@@ -167,7 +167,7 @@ def get_tileset(style: BoxData) -> Tileset:
         bottomright_nobottom=bottomright_nobottom,
         bottomright_noright=bottomright_noright,
     )
-    return tilesets[screen_scale][style]
+    return tilesets[temp_scale][style]
 
 
 def _get_tile_from_coords(
@@ -196,9 +196,12 @@ def get_box(
     if isinstance(style, BoxStyles):
         style = boxstyles[style.value]
 
-    return pygame.transform.scale(
-        _get_box(style, unscaled_dimensions, sides, use_extra_if_available),
+    return _get_box(
+        style,
         ui_scale_dimensions(unscaled_dimensions),
+        sides,
+        use_extra_if_available,
+        scale=scripts.game_structure.screen_settings.screen_scale,
     )
 
 
@@ -208,6 +211,8 @@ def _get_box(
     scaled_dimensions: Tuple[int, int],
     sides: Union[bool, Tuple[bool, bool, bool, bool]] = True,
     use_extra_if_available=True,
+    *,
+    scale
 ) -> pygame.Surface:
     """
     A wrapper for get_box that lets it be typehinted & still cache properly
@@ -215,6 +220,9 @@ def _get_box(
     :param scaled_dimensions:
     :return:
     """
+
+    # scale literally just exists for the sake of caching, just leave it be
+    notouchytouchyeverpls = scale
 
     tileset = _build_needed_tileset(
         style, sides, use_extra_if_available=use_extra_if_available
