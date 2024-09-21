@@ -79,7 +79,7 @@
             "Is regretting not going to sleep sooner...",
             "Is tidying up camp",
             "Just can't find anything appetizing on the fresh-kill pile",
-            "Has more energy then {PRONOUN/m_c/subject} know what to do with at the moment",
+            "Has more energy than {PRONOUN/m_c/subject} {VERB/m_c/know/knows} what to do with at the moment",
             "Got caught in a sudden downpour and is not happy about it",
             "Woke up on the wrong side of the nest",
 	    "Is feeling peckish",
@@ -146,7 +146,7 @@
             "Can't wait to take a nap later",
             "Saw a yappy little dog today",
             "Is sharpening {PRONOUN/m_c/poss} claws",
-            "Is hoping {PRONOUN/m_c/subject} find an opportunity to slip back to {PRONOUN/m_c/poss} nest",
+            "Is hoping {PRONOUN/m_c/subject} {VERB/m_c/find/finds} an opportunity to slip back to {PRONOUN/m_c/poss} nest",
             "Can't wait to take a nap later",
             "Had a nice chat with a cat from another Clan at the border",
             "Had a nice chat with a loner outside Clan territory",
@@ -229,7 +229,7 @@
             "Is wondering if {PRONOUN/m_c/subject} could handle r_c's position",
             "Is complaining about being sent on dawn patrol",
             "Is complaining about being sent on dusk patrol",
-            "Hopes to go to the next gathering",
+            "Hopes to go to the next Gathering",
             "Is reporting something to r_c",
             "Is worried r_c is overworking {PRONOUN/r_c/self}"
         ],
@@ -333,7 +333,7 @@
             "Is lecturing about something someone said wrong offhandedly",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
-            "Has simply decided not to do what {PRONOUN/m_c/subject} were told",
+            "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
             "Is bragging to everyone"
         ],
         "main_trait_constraint": [
@@ -370,7 +370,7 @@
 	{
         "id": "bloodthirsty_to_leader",
         "thoughts": [
-            "Wonders how easy it'd be to attack the leader from where {PRONOUN/r_c/subject} lay",
+            "Wonders how easy it'd be to attack the leader from where {PRONOUN/r_c/subject} {VERB/r_c/lay/lies}",
 	    "Is watching the leader closely while imagining the Clan under {PRONOUN/m_c/poss} rule"
         ],
         "main_trait_constraint": [
@@ -754,9 +754,9 @@
         "thoughts": [
             "Convinced a Clanmate to get {PRONOUN/m_c/object} something {PRONOUN/m_c/subject} easily could've gotten {PRONOUN/m_c/self}",
             "Is always five steps ahead of {PRONOUN/m_c/poss} Clanmates",
-            "Knows exactly how to get {PRONOUN/m_c/self} of a mess {PRONOUN/m_c/subject} orchestrated",
+            "Knows exactly how to get {PRONOUN/m_c/self} out of a mess {PRONOUN/m_c/subject} orchestrated",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
-            "Got a Clanmate to do {PRONOUN/m_c/poss} work never intending to pay {PRONOUN/r_c/object} back for it"
+            "Got a Clanmate to do {PRONOUN/m_c/poss} work, never intending to pay {PRONOUN/r_c/object} back for it"
         ],
         "main_trait_constraint": [
             "cunning"
@@ -872,7 +872,7 @@
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
             "Is playfully teasing {PRONOUN/m_c/poss} Clanmates",
             "Told a hilarious joke that spread around camp like a wildfire",
-            "Playfully flirted with cats from the other Clans at the gathering",
+            "Playfully flirted with cats from the other Clans at the Gathering",
             "Dazzles {PRONOUN/m_c/poss} Clanmates with {PRONOUN/m_c/poss} excellent skills",
             "Spent a long time grooming {PRONOUN/m_c/self} to catch as much attention as possible",
 	"Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again"
@@ -887,7 +887,7 @@
             "Is feeling down...",
             "Feels bad for staying in {PRONOUN/m_c/poss} nest a few minutes longer then usual",
             "Wonders if everyone laughs with {PRONOUN/m_c/object} or at {PRONOUN/m_c/object}...",
-            "Is keeping to {PRONOUN/m_c/self} not wanting to ruin {PRONOUN/m_c/poss} Clanmates moods with {PRONOUN/m_c/poss} gloominess",
+            "Is keeping to {PRONOUN/m_c/self}, not wanting to ruin {PRONOUN/m_c/poss} Clanmates moods with {PRONOUN/m_c/poss} gloominess",
             "Wants to be alone...",
             "Is sitting quietly on the far side of camp",
             "Apologized for something {PRONOUN/m_c/subject} didn't even need to apologize for",
@@ -900,7 +900,7 @@
     {
         "id": "grumpy_gen",
         "thoughts": [
-            "Is shooting glares at every cat {PRONOUN/m_c/subject} catch looking at {PRONOUN/m_c/object}",
+            "Is shooting glares at every cat {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} looking at {PRONOUN/m_c/object}",
             "Is grumbling about something or other to {PRONOUN/m_c/self}",
             "Is lecturing about something someone said wrong offhandedly",
             "Is complaining to anyone who will listen",
@@ -1089,7 +1089,7 @@
             "Is cracking jokes",
             "Taunted a dog stuck behind a Twoleg fence",
             "Is chasing {PRONOUN/m_c/poss} own tail, making others laugh",
-            "Is batting at a Clanmates tail",
+            "Is batting at a Clanmate's tail",
             "Is happily chasing a butterfly",
             "Is running after a colorful beetle",
             "Is letting out mrrows of laughter",
@@ -1140,7 +1140,7 @@
             "Is doubting why things are done the way they are",
             "Taunted a dog stuck behind a Twoleg fence",
             "Is spreading doubt through {PRONOUN/m_c/poss} Clanmates over the way things are done",
-            "Has simply decided not to do what {PRONOUN/m_c/subject} were told"
+            "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told"
         ],
         "main_trait_constraint": [
             "rebellious"
@@ -1826,7 +1826,7 @@
     {
         "id": "gen_to_alive_apprentice",
         "thoughts": [
-            "Lectures r_c on the warrior code",
+            "Lectures r_c on the Warrior Code",
             "Is on a walk in the territory with r_c",
             "Makes note of r_c's journey as an apprentice",
             "Is wondering if r_c will be chosen for the next Gathering",
@@ -1882,7 +1882,7 @@
     {
         "id": "gen_to_alive_med_cat2",
         "thoughts": [
-        "Recounts the gathering for r_c and {PRONOUN/r_c/poss} patients",
+        "Recounts the Gathering for r_c and {PRONOUN/r_c/poss} patients",
         "Brought r_c a berry to identify",
         "Brought r_c an herb to identify"
         ],
@@ -2286,7 +2286,7 @@
             "Is wondering how the cats {PRONOUN/m_c/subject} helped in the past are doing",
             "Is helping out in the medicine den",
             "Has the urge to wander again",
-            "Left the territory to gather an herb from a spot they used to use"
+            "Left the territory to gather an herb from a spot {PRONOUN/m_c/subject} used to use"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -2783,7 +2783,7 @@
         "id": "apprentice_dead_elder",
         "thoughts": [
             "Is wishing r_c was still here to tell {PRONOUN/m_c/object} stories",
-            "Went to change r_c's bedding and hear a story only to remember {PRONOUN/r_c/subject}{VERB/r_c/'s/'re} gone...",
+            "Went to change r_c's bedding and hear a story only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
             "Is missing r_c's stories...",
             "Is wondering who helps r_c with {PRONOUN/r_c/poss} ticks in StarClan"
         ],
@@ -2822,7 +2822,7 @@
         "id": "apprentice_dead_med_cats",
         "thoughts": [
             "Remembers how r_c healed {PRONOUN/m_c/object}",
-            "Hopes r_c is enjoying looking through StarClans' herb storage",
+            "Hopes r_c is enjoying looking through StarClan's herb storage",
             "Wishes {PRONOUN/m_c/subject} could be treated by r_c one last time..",
             "Misses the way r_c treated {PRONOUN/m_c/poss} injuries",
             "Is missing r_c's presence in the medicine cat den"
@@ -3110,9 +3110,9 @@
             "Gently reminds a Clanmate of something they forgot to do",
             "Never forgets to thank StarClan for the fresh-kill",
             "Volunteers to watch the kits",
-            "Offers to help everyone {PRONOUN/m_c/subject} come across",
+            "Offers to help everyone {PRONOUN/m_c/subject} {VERB/m_c/come/comes} across",
             "Is asking {PRONOUN/m_c/poss} mentor what {PRONOUN/m_c/subject} can do to be helpful around camp today",
-            "Is the first to offer to freshen the elders bedding"
+            "Is the first to offer to freshen the elders' bedding"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -3127,7 +3127,7 @@
         "id": "righteous_apprentice",
         "thoughts": [
             "Refused to follow {PRONOUN/m_c/poss} mentor's recent orders due to {PRONOUN/m_c/poss} own morals",
-            "Dutifully follows the warrior code"
+            "Dutifully follows the Warrior Code"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -3197,7 +3197,7 @@
             "Is hoping to not train today...",
             "Wants to ask for help with something but is too ashamed",
             "Is hoping {PRONOUN/m_c/subject} won't be a dissapointment to {PRONOUN/m_c/poss} Clan",
-            "Hopes the clans stay peaceful",
+            "Hopes the Clans stay peaceful",
             "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} back in the nursery",
             "Has agreed to {PRONOUN/m_c/poss} mentor's orders recently, despite {PRONOUN/m_c/poss} own doubts",
             "Managed to conquer a difficult task, despite feeling nervous",

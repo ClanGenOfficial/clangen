@@ -187,9 +187,9 @@
 			"r_c purposefully pick the smallest prey for m_c when {PRONOUN/m_c/subject} asked for help.",
 			"r_c was found spreading rumors about m_c stealing stuff from {PRONOUN/r_c/object}.",
 			"r_c was caught hiding m_c's belongings.",
-			"r_c publicly mocked m_c during a gathering.",
-			"m_c discovered r_c was sabotaging {PRONOUN/m_c/object} efforts at work.",
-			"m_c walked in on r_c destroying a memento {PRONOUN/m_c/object} cherished."
+			"r_c publicly mocked m_c during a Gathering.",
+			"m_c discovered r_c was sabotaging {PRONOUN/m_c/poss} efforts at work.",
+			"m_c walked in on r_c destroying a memento {PRONOUN/m_c/subject} cherished."
 		]
 	}
 ]
