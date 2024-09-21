@@ -64,17 +64,13 @@
         ],
         "relationship_constraint": [
             "child/parent"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
         "id": "guarding_kit",
         "thoughts": [
             "Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously",
-            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp",
-            "Wants to guard the nursery"
+            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp"
 	],
         "main_trait_constraint": [
             "bossy",
@@ -88,7 +84,7 @@
     {
         "id": "gen_kit",
         "thoughts": [
-            "Plays mossball by {PRONOUN/m_c/self}",
+            "Plays moss ball by {PRONOUN/m_c/self}",
             "Wonders who {PRONOUN/m_c/poss} mentor will be",
             "Wants to take a nap",
             "Tries to sneak out of camp",
@@ -124,7 +120,7 @@
             "Wants to be big someday",
             "Wants to have fun",
             "Is playing pretend",
-            "Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates chagrin",
+            "Is going through an angsty phase much to {PRONOUN/m_c/poss} Clanmates chagrin",
             "Is fighting sleep... and failing",
             "Knocked {PRONOUN/m_c/self} over with a sneeze",
             "Wants a badger ride",
@@ -138,9 +134,6 @@
             "Can't wait to be a warrior",
             "Pricked {PRONOUN/m_c/self} on the brambles protecting camp",
             "Pounces on a shred of moss"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -181,9 +174,6 @@
             "adult",
             "senior adult",
             "senior"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -302,7 +292,7 @@
     {
         "id": "fearless_kit",
         "thoughts": [
-            "Is attempting to pounce on r_c's tail",
+            "Is attempting to pounce on the tail of r_c",
             "Tries to sneak out of camp with a patrol",
             "Is boldly walking out of camp",
             "Is demanding others spar with {PRONOUN/m_c/object}",
@@ -313,6 +303,7 @@
             "Is telling other cats that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the deputy now",
             "Wants to taste a toad",
             "Thinks {PRONOUN/m_c/subject} can outsmart a fox",
+            "Wants to guard the nursery",
             "Is sure {PRONOUN/m_c/subject} could fight a badger",
             "Sticks {PRONOUN/m_c/poss} paw into an old snake hole",
             "Is playing with a dead snake",
@@ -335,9 +326,6 @@
         ],
         "random_status_constraint": [
         	"apprentice"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -351,9 +339,6 @@
         ],
         "random_status_constraint": [
             "leader"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -392,7 +377,7 @@
         "thoughts": [
             "Is streaking across the clearing",
             "Is stuck in a tree... again",
-            "Is complaining of a tummyache after eating too much",
+            "Is complaining of a tummy ache after eating too much",
             "Is awfully close to getting a nip on the rump for misbehaving",
             "Is waiting for an opportunity to sprint out of sight",
             "Is tired of waiting to be an apprentice",
@@ -416,9 +401,6 @@
         ],
         "main_trait_constraint": [
             "impulsive"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -488,7 +470,7 @@
             "Finds somewhere comfy to nap",
             "Was forgotten about...",
             "Is feeling at peace sitting alone watching the other kits play",
-            "Doesn't want to play",
+            "Dosen't want to play",
             "Is saying sorry for being loud when they barely even spoke up"
         ],
         "main_trait_constraint": [
@@ -610,9 +592,6 @@
         ],
         "main_trait_constraint": [
             "attention-seeker"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -640,7 +619,7 @@
         ]
     },
     {
-        "id": "noisy_kit_to_elder",
+        "id": "noisy_kit",
         "thoughts": [
             "Asked r_c for a story but keeps interrupting {PRONOUN/r_c/object}"
         ],
@@ -649,9 +628,6 @@
         ],
         "random_status_constraint": [
             "elder"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -765,9 +741,6 @@
             "deputy",
             "leader",
             "elder"
-        ],
-        "random_living_status": [
-            "living"
         ]
     }
 ]
