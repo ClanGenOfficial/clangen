@@ -175,9 +175,10 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
-        out = self.mute_button_pressed(event)
-        if out:
-            return
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            out = self.mute_button_pressed(event)
+            if out:
+                return
 
     def exit_screen(self):
         """Runs when screen exits"""
