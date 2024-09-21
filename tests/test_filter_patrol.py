@@ -65,8 +65,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         mate2 = Cat()
         cat1 = Cat()
 
-        mate1.current_mate.append(mate2.cat_id)
-        mate2.current_mate.append(mate1.cat_id)
+        mate1.current_mates.append(mate2.cat_id)
+        mate2.current_mates.append(mate1.cat_id)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")

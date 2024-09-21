@@ -141,8 +141,8 @@ class TestHighestRomance(unittest.TestCase):
         cat4 = Cat()
 
         # when
-        cat1.current_mate.append(cat2.cat_id)
-        cat2.current_mate.append(cat1.cat_id)
+        cat1.current_mates.append(cat2.cat_id)
+        cat2.current_mates.append(cat1.cat_id)
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
@@ -165,8 +165,8 @@ class TestHighestRomance(unittest.TestCase):
         cat4 = Cat()
 
         # when
-        cat1.current_mate.append(cat2.cat_id)
-        cat2.current_mate.append(cat1.cat_id)
+        cat1.current_mates.append(cat2.cat_id)
+        cat2.current_mates.append(cat1.cat_id)
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)

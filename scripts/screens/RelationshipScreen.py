@@ -496,7 +496,7 @@ class RelationshipScreen(Screens):
             related = False
             # Mate Heart
             # TODO: UI UPDATE IS NEEDED
-            if len(self.the_cat.current_mate) > 0 and self.inspect_cat.cat_id in self.the_cat.current_mate:
+            if len(self.the_cat.current_mates) > 0 and self.inspect_cat.cat_id in self.the_cat.current_mates:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((90, 300), (44, 40))),
                     pygame.transform.scale(
@@ -573,12 +573,12 @@ class RelationshipScreen(Screens):
 
             # Mate
             if (
-                len(self.inspect_cat.current_mate) > 0
-                and self.the_cat.cat_id not in self.inspect_cat.current_mate
+                len(self.inspect_cat.current_mates) > 0
+                and self.the_cat.cat_id not in self.inspect_cat.current_mates
             ):
                 col2 += "has a mate\n"
             elif (
-                len(self.the_cat.current_mate) > 0 and self.inspect_cat.cat_id in self.the_cat.current_mate
+                len(self.the_cat.current_mates) > 0 and self.inspect_cat.cat_id in self.the_cat.current_mates
             ):
                 col2 += f"{self.the_cat.name}'s mate\n"
             else:
@@ -773,8 +773,8 @@ class RelationshipScreen(Screens):
         related = False
         # MATE
         if (
-            len(self.the_cat.current_mate) > 0
-            and the_relationship.cat_to.cat_id in self.the_cat.current_mate
+            len(self.the_cat.current_mates) > 0
+            and the_relationship.cat_to.cat_id in self.the_cat.current_mates
         ):
 
             self.relation_list_elements["mate_icon" + str(i)] = (

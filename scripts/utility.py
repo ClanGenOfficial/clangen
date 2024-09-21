@@ -601,7 +601,7 @@ def create_new_cat_block(
         for n_c in new_cats:
             # SET MATES
             for inter_cat in give_mates:
-                if n_c == inter_cat or n_c.cat_id in inter_cat.current_mate:
+                if n_c == inter_cat or n_c.cat_id in inter_cat.current_mates:
                     continue
 
                 # this is some duplicate work, since this triggers inheritance re-calcs
@@ -920,7 +920,7 @@ def get_highest_romantic_relation(
     for rel in relationships:
         if rel.romantic_love < 0:
             continue
-        if exclude_mate and rel.cat_from.cat_id in rel.cat_to.current_mate:
+        if exclude_mate and rel.cat_from.cat_id in rel.cat_to.current_mates:
             continue
         if potential_mate and not rel.cat_to.is_potential_mate(
             rel.cat_from, for_love_interest=True
@@ -1124,13 +1124,13 @@ def filter_relationship_type(
             return False
 
         # then if cats don't have the needed number of mates
-        if not all(len(i.current_mate) >= (len(group) - 1) for i in group):
+        if not all(len(i.current_mates) >= (len(group) - 1) for i in group):
             return False
 
         # Now the expensive test.  We have to see if everone is mates with each other
         # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
         for x in combinations(group, 2):
-            if x[0].cat_id not in x[1].current_mate:
+            if x[0].cat_id not in x[1].current_mates:
                 return False
 
     # check if all cats are mates with p_l (they do not have to be mates with each other)
@@ -1143,14 +1143,14 @@ def filter_relationship_type(
         for cat in group:
             if cat.cat_id == patrol_leader.cat_id:
                 continue
-            if cat.cat_id not in patrol_leader.current_mate:
+            if cat.cat_id not in patrol_leader.current_mates:
                 return False
 
     # Check if all cats are not mates
     if "not_mates" in filter_types:
         # opposite of mate check
         for x in combinations(group, 2):
-            if x[0].cat_id in x[1].current_mate:
+            if x[0].cat_id in x[1].current_mates:
                 return False
 
     # Check if the cats are in a parent/child relationship
@@ -1572,7 +1572,7 @@ def change_relationship_values(
             # here we just double-check that the cats are allowed to be romantic with each other
             if (
                 single_cat_from.is_potential_mate(single_cat_to, for_love_interest=True)
-                or single_cat_to.cat_id in single_cat_from.current_mate
+                or single_cat_to.cat_id in single_cat_from.current_mates
             ):
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase

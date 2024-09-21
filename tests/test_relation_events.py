@@ -30,8 +30,8 @@ class CanHaveKits(unittest.TestCase):
         cat1.no_kits = True
         cat2 = Cat(sex='male')
 
-        cat1.current_mate.append(cat2.cat_id)
-        cat2.current_mate.append(cat1.cat_id)
+        cat1.current_mates.append(cat2.cat_id)
+        cat2.current_mates.append(cat1.cat_id)
         relation1 = Relationship(cat1, cat2, mates=True, family=False, romantic_love=100)
         relation2 = Relationship(cat2, cat1, mates=True, family=False, romantic_love=100)
         cat1.relationships[cat2.cat_id] = relation1
@@ -51,8 +51,8 @@ class SameSexAdoptions(unittest.TestCase):
 
         cat1 = Cat(sex='female', age="adult", moons=40)
         cat2 = Cat(sex='female', age="adult", moons=40)
-        cat1.current_mate.append(cat2.cat_id)
-        cat2.current_mate.append(cat1.cat_id)
+        cat1.current_mates.append(cat2.cat_id)
+        cat2.current_mates.append(cat1.cat_id)
 
         # when
         single_parentage = False

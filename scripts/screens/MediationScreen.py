@@ -475,7 +475,7 @@ class MediationScreen(Screens):
 
         related = False
         # MATE
-        if other_cat and len(cat.current_mate) > 0 and other_cat.cat_id in cat.current_mate:
+        if other_cat and len(cat.current_mates) > 0 and other_cat.cat_id in cat.current_mates:
             self.selected_cat_elements["mate_icon" + tag] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((x + 28, y + 28), (44, 40))),
                 pygame.transform.scale(
@@ -534,10 +534,10 @@ class MediationScreen(Screens):
         )
 
         mates = False
-        if len(cat.current_mate) > 0:
+        if len(cat.current_mates) > 0:
             col2 = "has a mate"
             if other_cat:
-                if other_cat.cat_id in cat.current_mate:
+                if other_cat.cat_id in cat.current_mates:
                     mates = True
                     col2 = f"{other_cat.name}'s mate"
         else:
