@@ -469,53 +469,53 @@ class ProfileScreen(Screens):
         self.relations_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 420), (176, 30))),
             "relations",
-            get_button_dict(ButtonStyles.MENU_LEFT, (176, 30)),
-            object_id="@buttonstyles_menu_left",
+            get_button_dict(ButtonStyles.PROFILE_LEFT, (176, 30)),
+            object_id="@buttonstyles_profile_left",
             manager=MANAGER,
         )
         self.roles_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 420), (176, 30))),
             "roles",
-            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
-            object_id="@buttonstyles_menu_middle",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
         self.personal_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 420), (176, 30))),
             "personal",
-            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
-            object_id="@buttonstyles_menu_middle",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
         self.dangerous_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((576, 420), (176, 30))),
             "dangerous",
-            get_button_dict(ButtonStyles.MENU_RIGHT, (176, 30)),
-            object_id="@buttonstyles_menu_right",
+            get_button_dict(ButtonStyles.PROFILE_RIGHT, (176, 30)),
+            object_id="@buttonstyles_profile_right",
             manager=MANAGER,
         )
 
         self.backstory_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 622), (176, 30))),
             "history",
-            get_button_dict(ButtonStyles.MENU_LEFT, (176, 30)),
-            object_id="@buttonstyles_menu_left",
+            get_button_dict(ButtonStyles.PROFILE_LEFT, (176, 30)),
+            object_id="@buttonstyles_profile_left",
             manager=MANAGER,
         )
 
         self.conditions_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 622), (176, 30))),
             "conditions",
-            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
-            object_id="@buttonstyles_menu_middle",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
 
         self.placeholder_tab_3 = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 622), (176, 30))),
             "",
-            get_button_dict(ButtonStyles.MENU_MIDDLE, (176, 30)),
-            object_id="@buttonstyles_menu_middle",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
+            object_id="@buttonstyles_profile_middle",
             starting_height=1,
             manager=MANAGER,
         )
@@ -524,8 +524,8 @@ class ProfileScreen(Screens):
         self.placeholder_tab_4 = UISurfaceImageButton(
             ui_scale(pygame.Rect((576, 622), (176, 30))),
             "",
-            get_button_dict(ButtonStyles.MENU_RIGHT, (176, 30)),
-            object_id="@buttonstyles_menu_right",
+            get_button_dict(ButtonStyles.PROFILE_RIGHT, (176, 30)),
+            object_id="@buttonstyles_profile_right",
             manager=MANAGER,
         )
         self.placeholder_tab_4.disable()

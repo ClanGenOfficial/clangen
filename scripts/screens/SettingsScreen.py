@@ -183,7 +183,7 @@ class SettingsScreen(Screens):
                             in self.checkboxes["dark mode"].get_object_ids()
                             else "light"
                         )
-                        self.set_bg("default")
+                        self.set_bg("default", "mainmenu_bg")
 
                     if (
                         self.sub_menu == "general"

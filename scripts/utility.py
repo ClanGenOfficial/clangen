@@ -2430,10 +2430,10 @@ def ui_scale_blit(coords: Tuple[int, int]):
     :param coords: The coordinates to blit to
     :return: The scaled, correctly offset coordinates to blit to.
     """
-    return round(
+    return floor(
         coords[0] * scripts.game_structure.screen_settings.screen_scale
         + scripts.game_structure.screen_settings.offset[0]
-    ), round(
+    ), floor(
         coords[1] * scripts.game_structure.screen_settings.screen_scale
         + scripts.game_structure.screen_settings.offset[1]
     )

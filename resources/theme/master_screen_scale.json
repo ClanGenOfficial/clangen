@@ -159,6 +159,9 @@
         "prototype": "@buttonstyles_menu_left",
         "misc": {"text_horiz_alignment": "left", "text_horiz_alignment_padding": "18"}
     },
+    "@buttonstyles_profile_right": {"prototype": "@buttonstyles_menu_right"},
+    "@buttonstyles_profile_middle": {"prototype": "@buttonstyles_menu_middle"},
+    "@buttonstyles_profile_left": {"prototype": "@buttonstyles_menu_left"},
     "@buttonstyles_squoval": {"prototype": "buttonstyles_prototype"},
     "@buttonstyles_horizontal_tab": {
         "prototype": "buttonstyles_prototype",

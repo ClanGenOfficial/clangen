@@ -16,6 +16,9 @@ class ButtonStyles(Enum):
     MENU_LEFT = "menu_left"
     MENU_MIDDLE = "menu_middle"
     MENU_RIGHT = "menu_right"
+    PROFILE_LEFT = "profile_left"
+    PROFILE_MIDDLE = "profile_middle"
+    PROFILE_RIGHT = "profile_right"
     ROUNDED_RECT = "rounded_rect"
     DROPDOWN = "dropdown"
     HORIZONTAL_TAB = "horizontal_tab"
@@ -107,6 +110,54 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/menu_right_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "profile_left": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/profile_left_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/profile_left_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/profile_left_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/profile_left_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "profile_middle": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/profile_middle_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/profile_middle_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/profile_middle_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/profile_middle_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "profile_right": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/profile_right_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/profile_right_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/profile_right_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/profile_right_disabled.png"
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,

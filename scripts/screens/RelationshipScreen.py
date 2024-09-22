@@ -1091,7 +1091,7 @@ class RelationshipScreen(Screens):
         screen.blit(self.search_bar_image, ui_scale_blit((535, 90)))
         screen.blit(
             self.details_frame_image,
-            ui_scale_blit((43, 130)),
+            ui_scale_blit((43, 133)),
         )
         screen.blit(
             self.toggle_frame_image,
