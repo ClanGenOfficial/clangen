@@ -1,9 +1,12 @@
 import logging
+from math import ceil
 
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
+from pygame_gui.elements import UIImage
 
+import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import (
     game,
@@ -14,10 +17,11 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_blit,
+    ui_scale_value,
+    ui_scale_offset,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import MANAGER, screen
+from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
 
@@ -74,6 +78,9 @@ class SwitchClanScreen(Screens):
         del self.info
         self.current_clan.kill()
         del self.current_clan
+
+        self.clans_frame.kill()
+        del self.clans_frame
 
         # del self.screen  # No need to keep that in memory.
 
@@ -146,38 +153,78 @@ class SwitchClanScreen(Screens):
         self.clan_name = [[]]
         self.delete_buttons = [[]]
 
+        # cursed math o clock!
+        # i am exceedingly sorry for this abomination
+        core_frame_dimensions = 375 - 49
+        core = ceil(ui_scale_value(core_frame_dimensions) / 8) * 8
+        item_height = core / 8
+        clan_frame_height = core + ui_scale_value(49)
+
+        self.clans_frame = UIImage(
+            pygame.Rect(
+                ui_scale_offset((0, 151)), (ui_scale_value(220), clan_frame_height)
+            ),
+            self.screen,
+            anchors={"centerx": "centerx"},
+            starting_height=0,
+        )
+        self.clans_frame.disable()
+
         i = 0
-        y_pos = 190
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
             self.clan_buttons[-1].append(
                 UISurfaceImageButton(
-                    ui_scale(pygame.Rect((0, y_pos), (200, 40))),
+                    pygame.Rect(
+                        (
+                            (0, 0)
+                            if len(self.clan_buttons[-1]) % 8 != 0
+                            else ui_scale_offset((0, 190))
+                        ),
+                        (ui_scale_value(200), item_height),
+                    ),
                     clan + "Clan",
-                    get_button_dict(ButtonStyles.DROPDOWN, (200, 40)),
+                    get_button_dict(
+                        ButtonStyles.DROPDOWN,
+                        (
+                            200,
+                            item_height
+                            / scripts.game_structure.screen_settings.screen_scale,
+                        ),
+                    ),
                     object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
-                    anchors={"centerx": "centerx"},
+                    anchors={
+                        "centerx": "centerx",
+                        "top_target": self.clan_buttons[-1][-1],
+                    }
+                    if len(self.clan_buttons[-1]) % 8 != 0
+                    else {"centerx": "centerx"},
                 )
             )
             self.delete_buttons[-1].append(
                 UIImageButton(
-                    ui_scale(pygame.Rect((470, y_pos + 8), (22, 22))),
+                    ui_scale(
+                        pygame.Rect(
+                            (470, (11 if len(self.clan_buttons[-1]) % 8 != 0 else 200)),
+                            (22, 22),
+                        )
+                    ),
                     "",
                     object_id="#exit_window_button",
                     manager=MANAGER,
                     starting_height=2,
+                    anchors={"top_target": self.clan_buttons[-1][-1]}
+                    if len(self.clan_buttons[-1]) % 8 != 0
+                    else None,
                 )
             )
 
-            y_pos += 40
             i += 1
             if i >= 8:
                 self.clan_buttons.append([])
                 self.clan_name.append([])
                 self.delete_buttons.append([])
-                i = 0
-                y_pos = 190
 
         self.next_page_button = UIImageButton(
             ui_scale(pygame.Rect((456, 540), (34, 34))),
@@ -242,7 +289,3 @@ class SwitchClanScreen(Screens):
         TODO: DOCS
         """
         super().on_use()
-        screen.blit(
-            self.screen,
-            ui_scale_blit((290, 151)),
-        )

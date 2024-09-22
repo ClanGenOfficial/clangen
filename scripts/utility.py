@@ -2391,10 +2391,10 @@ def ui_scale_dimensions(dim: Tuple[int, int]):
     :return: The scaled dimensions
     """
     return (
-        round(dim[0] * scripts.game_structure.screen_settings.screen_scale)
+        floor(dim[0] * scripts.game_structure.screen_settings.screen_scale)
         if dim[0] > 0
         else dim[0],
-        round(dim[1] * scripts.game_structure.screen_settings.screen_scale)
+        floor(dim[1] * scripts.game_structure.screen_settings.screen_scale)
         if dim[1] > 0
         else dim[1],
     )
@@ -2408,8 +2408,8 @@ def ui_scale_offset(coords: Tuple[int, int]):
     :return: The scaled coordinates
     """
     return (
-        round(coords[0] * scripts.game_structure.screen_settings.screen_scale),
-        round(coords[1] * scripts.game_structure.screen_settings.screen_scale),
+        floor(coords[0] * scripts.game_structure.screen_settings.screen_scale),
+        floor(coords[1] * scripts.game_structure.screen_settings.screen_scale),
     )
 
 
@@ -2420,7 +2420,7 @@ def ui_scale_value(val: int):
     :param val: The value to scale
     :return: The scaled value
     """
-    return round(val * scripts.game_structure.screen_settings.screen_scale)
+    return floor(val * scripts.game_structure.screen_settings.screen_scale)
 
 
 def ui_scale_blit(coords: Tuple[int, int]):
