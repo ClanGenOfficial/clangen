@@ -4678,7 +4678,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, the hasty attack makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and forces the patrol to help {PRONOUN/s_c/object} back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, the hasty attack makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and forces the patrol to help {PRONOUN/s_c/object} back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -4935,7 +4935,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, the hasty attack makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and forces the patrol to help {PRONOUN/s_c/object} back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, the hasty attack makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and forces the patrol to help {PRONOUN/s_c/object} back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -5400,7 +5400,7 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "m_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "scar": "m_c was permanently marked by the barb of a stingray as an apprentice - but {PRONOUN/m_c/subject} survived.",
                         "reg_death": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice."
                         }
                 }

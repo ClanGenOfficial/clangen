@@ -261,7 +261,7 @@
             "Is asking r_c how things have changed since {PRONOUN/m_c/subject} {VERB/m_c/were/was} a 'paw'",
             "Appreciates r_c's words of wisdom",
             "Doesn't mind taking care of the elders",
-            "Is cleaning out the elder's den today",
+            "Is cleaning out the elders' den today",
             "Hopes r_c is in a better mood today",
             "Asks r_c what it's like to be an elder",
             "Is doing {PRONOUN/m_c/poss} best to keep r_c happy",
@@ -290,7 +290,7 @@
             "Wonders if r_c can be {PRONOUN/m_c/poss} apprentice someday",
             "Wants to be a warrior before r_c is an apprentice",
             "Hopes r_c will be an apprentice with {PRONOUN/m_c/object}",
-            "Is letting r_c see the apprentice's den",
+            "Is letting r_c see the apprentices' den",
             "Takes time to play with r_c in between training sessions",
             "Tries to teach r_c something new... but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not listening"
         ],
@@ -338,7 +338,7 @@
         "id": "thoughtful_warrior_apprentice",
         "thoughts": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
-            "Wants to gather moss for the elder's den",
+            "Wants to gather moss for the elders' den",
             "Is making sure there's nothing around camp that needs to be done",
             "Asks r_c if {PRONOUN/r_c/subject} need anything before going on patrol",
             "Asks r_c if {PRONOUN/r_c/subject} need anything before going hunting",

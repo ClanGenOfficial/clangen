@@ -229,7 +229,7 @@
                 ]
             },
             {
-                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it but doesn't anticipate it turning on them instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine den.",
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it but doesn't anticipate it turning on them instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1542,7 +1542,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but with different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but with different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -1753,7 +1753,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -1964,7 +1964,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2175,7 +2175,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2384,7 +2384,7 @@
             "apprentice": [1, 6]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den, but with different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And outrunning the leaf-fall fueled dark waves that chase up and down the beach is endlessly entertaining!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -3674,7 +3674,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine den. The patrol brings the herbs back to camp, and they are put to good use.",
+                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine cat den. The patrol brings the herbs back to camp, and they are put to good use.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -3714,7 +3714,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their freshkill.",
+                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their fresh-kill.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

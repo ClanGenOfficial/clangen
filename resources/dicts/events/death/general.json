@@ -5780,12 +5780,12 @@
     "sub_type": ["mass_death"],
     "tags": ["classic"],
     "weight": 10,
-    "event_text": "multi_cat eat tainted freshkill and die.",
+    "event_text": "multi_cat eat tainted fresh-kill and die.",
     "history": [
       {
       "cats": ["multi_cat"],
-      "reg_death": "m_c died from tainted freshkill.",
-      "lead_death": "died to tainted freshkill"
+      "reg_death": "m_c died from tainted fresh-kill.",
+      "lead_death": "died to tainted fresh-kill"
       }
     ]
   },

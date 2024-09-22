@@ -4488,7 +4488,7 @@
                 "herbs": ["oak_leaves"]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} always happy to bring a good crop of {PRONOUN/p_l/object} back to the herb stores.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} always happy to bring a good crop of {PRONOUN/p_l/object} back to the herb stores.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"]
@@ -4553,7 +4553,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} always happy to bring a good crop of {PRONOUN/p_l/object} back to the herb stores. {PRONOUN/p_l/subject/CAP} {VERB/p_l/use/uses} the afternoon to give app1 the chance to lead {PRONOUN/p_l/poss} expedition, which makes the apprentice to swell with confidence.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} always happy to bring a good crop of {PRONOUN/p_l/object} back to the herb stores. {PRONOUN/p_l/subject/CAP} {VERB/p_l/use/uses} the afternoon to give app1 the chance to lead {PRONOUN/p_l/poss} expedition, which makes the apprentice to swell with confidence.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"],
@@ -4664,7 +4664,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} always happy to bring a good crop of {PRONOUN/p_l/object} back to the herb stores. {PRONOUN/p_l/poss/CAP} Clanmates are, as expected, a huge help carrying everything back home.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} always happy to bring a good crop of {PRONOUN/p_l/object} back to the herb stores. {PRONOUN/p_l/poss/CAP} Clanmates are, as expected, a huge help carrying everything back home.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"],
@@ -5463,7 +5463,7 @@
                 "weight": 5
             },
             {
-                "text": "It takes little intelligence to recognize deathberries but a great deal to collect {PRONOUN/s_c/object} anyway. If s_c can dry {PRONOUN/s_c/object} out, these berries will be sufficient for c_n for years to come. By using {PRONOUN/s_c/poss} weight to snap off one of the bush's branches and then carefully carrying it back to camp, s_c manages to bring {PRONOUN/s_c/object} safely home.",
+                "text": "It takes little intelligence to recognize deathberries, but a great deal to collect them. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using {PRONOUN/s_c/poss} weight to snap off one of the bush's branches and then carefully carrying it back to camp, s_c manages to bring them safely home.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]

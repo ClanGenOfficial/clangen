@@ -1051,7 +1051,7 @@
     "location": ["any"],
     "season": ["greenleaf", "newleaf"],
     "weight": 15,
-    "event_text": "m_c picks some flowers around the camp to bring back to the medicine den.",
+    "event_text": "m_c picks some flowers around the camp to bring back to the medicine cat den.",
     "m_c": {
       "status": ["kitten"]
     }
@@ -2160,7 +2160,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} abou {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
+    "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} about {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
     "m_c":{
       "status":["mediator", "mediator apprentice"]
     },
@@ -2550,7 +2550,7 @@
     "season": ["leaf-bare"],
     "sub_type": ["war"],
     "weight": 10,
-    "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this Leaf-bare's harsh weather.",
+    "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leaf-bare's harsh weather.",
     "m_c": {
       "age":["any"],
       "status": ["medicine cat apprentice", "medicine cat"]
@@ -2986,7 +2986,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 5,
+    "weight": 10,
     "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
     "supplies": [
       {
@@ -3134,6 +3134,137 @@
     }
   },
   {
+    "event_id": "gen_misc_herb_anyallyaid1",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "weight": 20,
+    "event_text": "The herb stores are low, m_c decides to ask o_c_n for aid in these hard times. Thankfully, the allied Clan is happy to share their excess herbs.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_10"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["ally"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anyallyaid2",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": ["clan:leader", "clan:medicine cat"],
+    "weight": 20,
+    "event_text": "lead_name hears from med_name that the Clan is low on herbs. m_c is sent to bargain with o_c_n for whatever herbs they can spare.",
+    "m_c": {
+      "status": ["mediator", "mediator apprentice"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_10"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["neutral"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anyallyaid3",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": ["clan:leader", "clan:medicine cat"],
+    "weight": 20,
+    "event_text": "lead_name hears from med_name that the Clan is low on herbs. m_c is sent to bargain with o_c_n for whatever herbs they can spare.",
+    "m_c": {
+      "status": ["warrior", "deputy"],
+      "skill": ["SPEAKER,2", "MEDIATOR,2"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_10"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["neutral"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anyallyaid4",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "weight": 20,
+    "event_text": "While at the Gathering, m_c pulls the o_c_n leader aside and requests herbs from their Clan. The other leader is happy to help.",
+    "m_c": {
+      "status": ["leader"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_10"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["ally"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anyallyaid5",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "weight": 20,
+    "event_text": "While at the Gathering, m_c speaks to the other medicine cats and expresses worry over {PRONOUN/m_c/poss} herb stores. The medicine cats offer to bring some extra herbs to c_n later, to help bolster {PRONOUN/m_c/poss} supply.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"]
+    },
+    "supplies": [
+      {
+          "type": "any_herb",
+          "trigger": ["low"],
+          "adjust": "increase_20"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["ally", "neutral"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anywarsteal1",
+    "location": ["any"],
+    "season": ["any"],
+    "subtype": ["war"],
+    "tags": ["clan_wide"],
+    "weight": 5,
+    "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and attempting to destroy the rest. The Clan manages to recover some of the herbs, but the store was still badly damaged.",
+    "supplies": [
+      {
+          "type": "all_herb",
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["hostile"],
+      "changed": -2
+    }
+  },
+  {
     "event_id": "gen_misc_herb_anywarsteal1",
     "location": ["any"],
     "season": ["any"],
@@ -3144,8 +3275,32 @@
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
+          "trigger": ["adequate", "full", "excess"],
           "adjust": "reduce_full"
+      }
+    ],
+    "other_clan": {
+      "current_rep": ["hostile"],
+      "changed": -2
+    }
+  },
+  {
+    "event_id": "gen_misc_herb_anywarsteal2",
+    "location": ["any"],
+    "season": ["any"],
+    "subtype": ["war"],
+    "tags": ["clan_wide"],
+    "weight": 5,
+    "event_text": "c_n breaks into the o_c_n camp and steals precious herbs from their medicine cat den.",
+    "m_c": {
+      "status": ["leader"],
+      "trait": ["arrogant", "bloodthirsty", "vengeful", "competitive", "bold", "troublesome", "fierce", "cold", "righteous", "daring", "shameless", "sneaky", "cunning", "rebellious"]
+    },
+    "supplies": [
+      {
+          "type": "all_herb",
+          "trigger": ["low", "adequate"],
+          "adjust": "increase_5"
       }
     ],
     "other_clan": {
@@ -3159,12 +3314,12 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "Some sort of pest got into the herb stores and completely destroyed them. c_n will have to clean it out and start over anew.",
+    "event_text": "Some sort of pest got into the herb stores and ruined much of the supplies. c_n will have to clean it out and start over anew.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
@@ -3174,12 +3329,12 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "Abnormally strong winds blew through the camp last night and scattered the herb store into a useless state.",
+    "event_text": "Abnormally strong winds blew through the camp last night and scattered the herb store into a useless state. The Clan manages to recover some of the herbs, but the resulting supply is much smaller than before.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
@@ -3193,8 +3348,8 @@
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
@@ -3204,12 +3359,12 @@
     "season": ["leaf-bare"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. They're useless now and will have to be replaced.",
+    "event_text": "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. Many of them are useless now and will have to be replaced.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
@@ -3219,12 +3374,12 @@
     "season": ["newleaf"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and have to be thrown out.",
+    "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and many herbs have to be thrown out.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
@@ -3234,12 +3389,12 @@
     "season": ["greenleaf"],
     "tags": ["clan_wide"],
     "weight": 1,
-    "event_text": "The persistent, dry heat managed to cause a small fire in the herb stores. While no one was injured, the herbs are little more than ashes now.",
+    "event_text": "The persistent, dry heat managed to cause a small fire in the herb stores. While no one was injured, many of the herbs are little more than ashes now.",
     "supplies": [
       {
           "type": "all_herb",
-          "trigger": ["always"],
-          "adjust": "reduce_full"
+          "trigger": ["adequate", "full", "excess"],
+          "adjust": "reduce_half"
       }
     ]
   },
@@ -3248,12 +3403,12 @@
     "location": ["any"],
     "season": ["greenleaf"],
     "tags": ["clan_wide"],
-    "weight": 10,
+    "weight": 15,
     "event_text": "As the herb stores are being inspected, it's noticed that some of the given_herb went bad. They'll need to be replaced.",
     "supplies": [
       {
           "type": "any_herb",
-          "trigger": ["full"],
+          "trigger": ["adequate", "full", "excess"],
           "adjust": "reduce_quarter"
       }
     ]
@@ -3263,7 +3418,7 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["clan_wide"],
-    "weight": 15,
+    "weight": 20,
     "event_text": "The Clan has gathered plenty of moss recently, time to refresh the dens!",
     "supplies": [
       {

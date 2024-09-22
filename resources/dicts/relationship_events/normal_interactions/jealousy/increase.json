@@ -125,7 +125,7 @@
 			"m_c looks at r_c and remembers how easy it was to be a kitten.",
 			"m_c is resentful that so much is expected of {PRONOUN/m_c/object}, yet no one expects anything of r_c.",
 			"m_c watches r_c, wondering why {PRONOUN/m_c/subject} wanted to grow up so bad.",
-            "m_c wishes {PRONOUN/m_c/subject} had all the time in the world to play mossball like r_c."
+            "m_c wishes {PRONOUN/m_c/subject} had all the time in the world to play moss ball like r_c."
 		],
 		"main_status_constraint": [
 			"apprentice",

@@ -33,9 +33,9 @@
 		"interactions": [
 			"m_c feels like r_c was too rough while playing.",
 			"m_c doesn't think r_c was playing fair.",
-			"m_c accuses r_c of cheating during a game of hide-n-seek!",
+			"m_c accuses r_c of cheating during a game of hide and seek!",
 			"m_c told r_c {PRONOUN/m_c/subject} didn't want to play but r_c whined until {PRONOUN/m_c/subject} relented.",
-            		"m_c doesn't want to play with r_c."
+            "m_c doesn't want to play with r_c."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -88,12 +88,12 @@
 		]
 	},
 	{
-		"id": "comfort_inc_med6",
+		"id": "comfort_de_med6",
 		"interactions": [
 			"r_c crashes into m_c while eager for the new day.",
 			"r_c rejects m_c's advice without letting {PRONOUN/m_c/object} finish.",
 			"r_c interrupts m_c during a conversation.",
-			"m_c asked r_c an uncomfortably invasive question."
+			"r_c asked m_c an uncomfortably invasive question."
 		],
 		"random_trait_constraint": [
 			"impulsive"
@@ -140,7 +140,7 @@
 			"m_c feels a chill after noticing r_c is nearby.",
 			"Watching r_c stalk silently around camp makes m_c feel uneasy.",
 			"m_c doesn't like the way r_c seems to overwhelm the camp with {PRONOUN/r_c/poss} presence.",
-			"Even though r_c is a respectable clanmate, m_c can't help but think {PRONOUN/r_c/subject} might be up to no good..."
+			"Even though r_c is a respectable Clanmate, m_c can't help but think {PRONOUN/r_c/subject} might be up to no good..."
 		],
 		"random_trait_constraint": [
 			"bloodthirsty",

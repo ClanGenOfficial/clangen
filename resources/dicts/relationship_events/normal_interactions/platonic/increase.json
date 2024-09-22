@@ -8,7 +8,7 @@
             "m_c and r_c sunbathed together.",
             "m_c stopped r_c to pick a stray leaf out of {PRONOUN/r_c/poss} fur {PRONOUN/r_c/subject} hadn't noticed.",
             "m_c and r_c had a chat and realized they had the same favorite nesting material.",
-            "r_c splashes m_c as {PRONOUN/m_c/subject} pass a puddle."
+            "r_c splashes m_c as {PRONOUN/m_c/subject} {VERB/m_c/pass/passes} a puddle."
 		]
 	},
 	{
@@ -191,7 +191,7 @@
 		"id": "platonic_inc_med11",
 		"interactions": [
 			"m_c is hiding behind a bush ready to pounce on r_c.",
-			"m_c laughed as a childish joke r_c made.",
+			"m_c laughed at a childish joke r_c made.",
             "m_c and r_c are making faces at each other across camp and laughing."
 		],
 		"random_trait_constraint": [
@@ -261,7 +261,7 @@
     {
 		"id": "platonic_inc_med14",
 		"interactions": [
-			"m_c, after seeing r_c down in the dumps on the other side of camp, settled beside {PRONOUN/m_c/object} offering a silent comfort that spoke louder than words."
+			"m_c, after seeing r_c down in the dumps on the other side of camp, settled beside {PRONOUN/r_c/object} offering a silent comfort that spoke louder than words."
 		],
 		"random_trait_constraint": [
 		    "calm",
@@ -307,7 +307,7 @@
     {
 		"id": "platonic_inc_med16",
 		"interactions": [
-			"m_c shows r_c a secret place {PRONOUN/m_c/subject} like to go to be alone, offering to let r_c use it too if {PRONOUN/r_c/subject} need to."
+			"m_c shows r_c a secret place {PRONOUN/m_c/subject} {VERB/m_c/like/likes} to go to be alone, offering to let r_c use it too if {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to."
 		],
         "main_trait_constraint": [
 			"calm",
@@ -349,7 +349,7 @@
 	{
 		"id": "platonic_kit_inc_med1",
 		"interactions": [
-			"m_c plays moss-ball with r_c.",
+			"m_c plays moss ball with r_c.",
 			"m_c proudly brought r_c a flower {PRONOUN/m_c/subject} found.",
 			"m_c decorates {PRONOUN/m_c/poss} nest with gifts that r_c brought {PRONOUN/m_c/object}.",
             "m_c took a nap with r_c."
@@ -370,7 +370,7 @@
 			"m_c is pretending to fight off badgers with r_c.",
 			"m_c is racing r_c back and forth across the camp clearing.",
 			"m_c hopes r_c will be {PRONOUN/m_c/poss} friend forever.",
-			"m_c let r_c win a game of mossball.",
+			"m_c let r_c win a game of moss ball.",
             "m_c and r_c are gagging at the idea of having mates when they grow up.",
             "m_c and r_c are seeing which one of them makes the best bird impression.",
             "m_c and r_c are trying to master how to croak like a frog together."
@@ -416,7 +416,7 @@
 			"m_c is giving r_c a badger ride on {PRONOUN/m_c/poss} back!",
 			"m_c remembers how cute kits are because of time spent with r_c.",
 			"m_c is promising to take r_c outside of camp if {PRONOUN/r_c/subject} {VERB/r_c/behave/behaves}.",
-			"m_c bats the moss-ball back to r_c when it flies in front of {PRONOUN/m_c/poss} paws.",
+			"m_c bats the moss ball back to r_c when it flies in front of {PRONOUN/m_c/poss} paws.",
 			"m_c spends most of the afternoon describing the territory to r_c.",
 			"m_c purrs as r_c asks {PRONOUN/m_c/object} to show {PRONOUN/r_c/object} how to do a hunter's crouch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/oblige/obliges}, happy to show {PRONOUN/m_c/poss} skills.",
 			"m_c whiskers twitch in amusement as r_c tells {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/hope/hopes} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} {PRONOUN/r_c/poss} mentor when {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} an apprentice.",
@@ -636,7 +636,7 @@
 			"m_c considers r_c to be one of {PRONOUN/m_c/poss} closest friends.",
 			"m_c couldn't imagine how boring things would be without a friend like r_c.",
 			"m_c and r_c can't get enough of each others company.",
-			"m_c wonders if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} r_c's friends in every reality...",
+			"m_c wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} r_c's friend in every reality...",
             "m_c thinks r_c is the best friend a cat could have."
 		],
 		"relationship_constraint": [
@@ -665,10 +665,10 @@
 			"m_c can't imagine {PRONOUN/m_c/poss} life if {PRONOUN/m_c/subject} never met r_c.",
 			"m_c thinks of r_c as {PRONOUN/m_c/poss} best friend.",
 			"m_c and r_c are inseparable, and can almost always be found with each other.",
-			"m_c goes to r_c any time {PRONOUN/m_c/subject} have any news to share.",
-            "m_c knows r_c better then anyone.",
-			"m_c asks r_c if {PRONOUN/r_c/subject} thinks they're best friends in every universe...",
-            "m_c tells r_c that {PRONOUN/m_c/subject} consider {PRONOUN/r_c/object} an invaluable member of the Clan."
+			"m_c goes to r_c any time {PRONOUN/m_c/subject} {VERB/m_c/have/has} any news to share.",
+            "m_c knows r_c better than anyone.",
+			"m_c asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} they're best friends in every universe...",
+            "m_c tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} {PRONOUN/r_c/object} an invaluable member of the Clan."
 		],
 		"relationship_constraint": [
 			"platonic_60"
