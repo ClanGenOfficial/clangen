@@ -567,5 +567,32 @@
         "misc": {
             "text_horiz_alignment": "center"
         }
+    },
+    "vertical_scroll_bar": {
+        "misc": {
+            "border_width": "2"
+        }
+    },
+    "vertical_scroll_bar.#sliding_button": {
+        "misc": {
+            "border_width": "2",
+            "shadow_width": "2"
+        }
+    }, "horizontal_scroll_bar": {
+    "misc": {
+        "border_width": "2"
+    }
+},
+    "horizontal_scroll_bar.#top_button": {
+        "misc": {
+            "border_width": "2",
+            "shadow_width": "0"
+        }
+    },
+    "horizontal_scroll_bar.#bottom_button": {
+        "misc": {
+            "border_width": "2",
+            "shadow_width": "0"
+        }
     }
 }

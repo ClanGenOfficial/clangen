@@ -298,10 +298,6 @@
             "hovered_bg": "#826657",
             "selected_bg": "#826657",
             "active_bg": "#826657"
-        },
-        "misc": {
-            "border_width": "2",
-            "shadow_width": "0"
         }
     },
     "tool_tip.text_box": {

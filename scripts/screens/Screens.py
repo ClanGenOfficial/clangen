@@ -162,6 +162,7 @@ class Screens:
     def screen_switches(self):
         """Runs when this screen is switched to."""
         Screens.hide_mute_buttons()
+        Screens.hide_menu_buttons()
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         try:
@@ -326,11 +327,14 @@ class Screens:
             else:  # else, show
                 if game.clan.game_mode != "classic":
                     cls.menu_buttons[den].show()
-                else:  # classic doesn't get access to clearing, so we can't show its button here
-                    if den == "clearing":
+                elif den == "clearing":
+                    if cls.menu_buttons["dens_bar"].get_relative_rect()[2:] != [
+                        10,
+                        125,
+                    ]:
                         # redraw this to be shorter
                         cls.menu_buttons["dens_bar"].kill()
-                        cls.menu_buttons.update(
+                        scripts.screens.screens_core.screens_core.menu_buttons.update(
                             {
                                 "dens_bar": pygame_gui.elements.UIImage(
                                     ui_scale(pygame.Rect((40, 60), (10, 125))),
@@ -346,8 +350,11 @@ class Screens:
                                 )
                             }
                         )
-                    else:
-                        cls.menu_buttons[den].show()
+                        cls.menu_buttons[
+                            den
+                        ] = scripts.screens.screens_core.screens_core.menu_buttons[den]
+                else:
+                    cls.menu_buttons[den].show()
 
     @classmethod
     def update_heading_text(cls, text):

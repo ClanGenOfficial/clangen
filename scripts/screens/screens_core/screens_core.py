@@ -177,7 +177,7 @@ def rebuild_core():
         starting_height=5,
     )
     menu_buttons["dens_bar"] = pygame_gui.elements.UIImage(
-        ui_scale(pygame.Rect((40, 60), (10, 160))),
+        ui_scale(pygame.Rect((40, 5), (10, 160))),
         pygame.transform.scale(
             image_cache.load_image("resources/images/vertical_bar.png").convert_alpha(),
             ui_scale_dimensions((380, 70)),
@@ -185,6 +185,7 @@ def rebuild_core():
         visible=False,
         starting_height=5,
         manager=MANAGER,
+        anchors={"top_target": menu_buttons["main_menu"]},
     )
     menu_buttons["dens"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 5), (71, 30))),
