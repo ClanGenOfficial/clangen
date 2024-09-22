@@ -102,12 +102,12 @@ def set_display_mode(
 
     if source_screen is None:
         MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
-
-    # generate new theme
-    origin = "resources/theme/master_screen_scale.json"
-    theme_location = "resources/theme/generated/screen_scale.json"
-    generate_screen_scale(origin, theme_location, screen_scale)
-    MANAGER.get_theme().load_theme(theme_location)
+    else:
+        # generate new theme
+        origin = "resources/theme/master_screen_scale.json"
+        theme_location = "resources/theme/generated/screen_scale.json"
+        generate_screen_scale(origin, theme_location, screen_scale)
+        MANAGER.get_theme().load_theme(theme_location)
 
     if source_screen is not None:
         from scripts.screens.all_screens import AllScreens
@@ -247,7 +247,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         res,
         screen_offset,
         scale,
-        "resources/theme/all.json",
+        None,
         enable_live_theme_updates=False,
     )
     manager.add_font_paths(
@@ -261,6 +261,13 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
+    generate_screen_scale(
+        "resources/theme/master_screen_scale.json",
+        "resources/theme/generated/screen_scale.json",
+        screen_scale,
+    )
+
+    manager.get_theme().load_theme("resources/theme/generated/screen_scale.json")
     manager.get_theme().load_theme("resources/theme/themes/dark.json")
 
     return manager
