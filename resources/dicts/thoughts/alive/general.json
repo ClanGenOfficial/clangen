@@ -177,7 +177,7 @@
             "Is sitting near the camp entrance, keeping an eye out for sneaky kits",
             "Is unable to be scared, no matter how much the kits try",
             "Is keeping an eye on some rowdy kits"
-    ],
+        ],
         "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
@@ -188,10 +188,10 @@
             "deputy",
             "leader",
             "elder"
-    ],
+        ],
         "random_status_constraint": [
             "kitten"
-    ]
+        ]
     },
     {
         "id": "working_cat",
@@ -222,7 +222,7 @@
             "living"
         ]
     },
-	{
+    {
         "id": "working_cat_to_leadership",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} could handle r_c's position",
@@ -375,7 +375,7 @@
             "bloodthirsty"
         ]
     },
-	{
+    {
         "id": "bloodthirsty_to_leader",
         "thoughts": [
             "Wonders how easy it'd be to attack the leader from where {PRONOUN/r_c/subject} {VERB/r_c/lay/lies}",
@@ -406,7 +406,7 @@
             "bold"
         ]
     },
-	{
+    {
         "id": "bold_to_kit",
         "thoughts": [
             "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes"
@@ -619,7 +619,7 @@
             "cold"
         ]
     },
-	{
+    {
         "id": "cold_gen_to_leader",
         "thoughts": [
             "Thinks the leader should be harsher on codebreakers"
@@ -700,7 +700,7 @@
             "compassionate"
         ]
     },
-	{
+    {
         "id": "compassionate_to_elder",
         "thoughts": [
             "Is listening to older cats gripe about their day"
@@ -725,7 +725,7 @@
             "living"
         ]
     },
-	{
+    {
         "id": "compassionate_to_kit",
         "thoughts": [
             "Smiles at some kit's cheap prank, knowing they'll grow out of it soon"
@@ -740,7 +740,7 @@
             "living"
         ]
     },
-	{
+    {
         "id": "compassionate_to_apprentices",
         "thoughts": [
             "Notices an apprentice struggling with a task and offers {PRONOUN/m_c/poss} help"
@@ -858,7 +858,7 @@
             "faithful"
         ]
     },
-	{
+    {
         "id": "faithful_to_kit",
         "thoughts": [
             "Urges a kit to follow {PRONOUN/r_c/poss} own beliefs"
@@ -1136,7 +1136,7 @@
             "rebellious"
         ]
     },
-	{
+    {
         "id": "rebellious_to_leader",
         "thoughts": [
             "Started an argument with the leader during a Clan meeting"
@@ -1507,7 +1507,7 @@
             "living"
         ]
     },
-	{
+    {
         "id": "campkeeper_gen",
         "thoughts": [
             "Is padding back and forth across the camp",
@@ -1522,7 +1522,7 @@
             "CAMP,1"
         ]
     },
-	{
+    {
         "id": "mediator_gen",
         "thoughts": [
             "Wonders if it's too late to become a mediator",
@@ -1570,6 +1570,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1612,8 +1615,8 @@
             "living"
         ],
         "relationship_constraint": [
-			"mates"
-		]
+            "mates"
+        ]
     },
     {
         "id": "gen_medicine_cat_mate",
@@ -1637,8 +1640,8 @@
             "living"
         ],
         "relationship_constraint": [
-			"mates"
-		]
+            "mates"
+        ]
     },
     {
         "id": "gen_sibling",
@@ -1658,8 +1661,8 @@
             "living"
         ],
         "relationship_constraint": [
-			"siblings"
-		]
+            "siblings"
+        ]
     },
     {
         "id": "gen_sibling_adult",
@@ -1685,8 +1688,8 @@
             "living"
         ],
         "relationship_constraint": [
-			"siblings"
-		]
+            "siblings"
+        ]
     },
     {
         "id": "parent_to_kit",
@@ -4244,7 +4247,6 @@
             "kitten"
         ]
     },
-    
     {
         "id": "constantly_dizzy_gen_to_alive_gen",
         "thoughts": [
