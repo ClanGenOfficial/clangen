@@ -9,6 +9,7 @@
             "active_bg": "#655934",
             "dark_bg": "#B19D74",
             "normal_text": "#000000",
+            "active_text": "#000000",
             "hovered_text": "#000000",
             "selected_text": "#000000",
             "disabled_text": "#000000",
@@ -122,6 +123,9 @@
     },
     "button": {
         "font": {"name": "clangen", "size": "16"},
+        "colours": {
+            "active_text": "#EFE5CE"
+        },
         "misc": {"text_horiz_alignment": "center", "text_vert_alignment": "center"}
     },
     "buttonstyles_prototype": {
@@ -521,7 +525,7 @@
             "active_bg": "#655934",
             "normal_text": "#EEE4CD",
             "hovered_text": "#EFE5CE",
-            "active_text": "#EEE4CD",
+            "active_text": "#EFE5CE",
             "text_shadow": "#00000000"
         },
         "images": {

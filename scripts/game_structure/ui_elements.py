@@ -209,6 +209,9 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             self.drawable_shape.active_state.transition = None
             self.text_layer.set_position(self.text_layer_offset)
 
+    def _set_active(self):
+        self.drawable_shape.set_active_state("hovered")
+
     @property
     def normal_image(self):
         return self._normal_image
