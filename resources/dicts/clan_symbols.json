@@ -560,9 +560,9 @@
     "tags0": ["element", "water"]
   }, 
   "Dry": {
-    "variants": 0,
-    "tags0": []
-  }, 
+    "variants": 1,
+    "tags0": ["element", "light"]
+  },
   "Duck": {
     "variants": 1,
     "tags0": ["animal", "bird"]
@@ -600,8 +600,8 @@
     "tags0": ["plant", "tree"]
   },
   "Ember": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "fire"]
   },
   "Ermine": {
     "variants": 3,
@@ -626,9 +626,10 @@
     "tags0": ["cat", "animal"]
   }, 
   "Fallow": {
-    "variants": 0,
-    "tags0": ["location", "descriptor"]
-  }, 
+    "variants": 2,
+    "tags0": ["animal", "mammal", "descriptor"],
+    "tags1": ["animal", "mammal"]
+  },
   "Fawn": {
     "variants": 0,
     "tags0": ["animal", "mammal"]
@@ -650,12 +651,12 @@
     "tags0": ["animal", "mammal"]
   }, 
   "Fickle": {
-    "variants": 0,
-    "tags0": ["miscellaneous", "descriptor"]
-  }, 
+    "variants": 1,
+    "tags0": ["plant"]
+  },
   "Fidget": {
-    "variants": 0,
-    "tags0": ["miscellaneous"]
+    "variants": 1,
+    "tags0": ["animal", "cat"]
   }, 
   "Fierce": {
     "variants": 1,
