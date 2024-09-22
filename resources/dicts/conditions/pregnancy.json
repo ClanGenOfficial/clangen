@@ -3,7 +3,7 @@
     "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
 	  "m_c had been secretive for a while now and nobody could even begin to guess what about... until today, that is when m_c announced {PRONOUN/m_c/poss} pregnancy!",
           "The entire Clan could see the signs way before m_c did. Everyone urged {PRONOUN/m_c/object} to visit the medicine den to no avail. The Clan nearly gave up until finally, m_c announced {PRONOUN/m_c/poss} pregnancy.",
-	  "m_c had been worried sick over the recent illness {PRONOUN/m_csubject} couldnt explain until a visit to the medicine den made everything all clear. m_c was pregnant!"
+	  "m_c's been worried sick over a recent illness {PRONOUN/m_csubject} couldn't explain until a recent visit to the medicine den made everything all clear. m_c's pregnant!"
   ],
   "litter_guess": [
     "m_c hopes the litter will be small - {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
@@ -20,14 +20,14 @@
     "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed the whole Clan - {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit.",
     "m_c has begun hoarding little trinkets, stashing bits of fluff and feather and shiny smooth rocks into {PRONOUN/m_c/poss} birthing nest to stock it with kitten toys.",
     "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick - surely these kittens are going to be talented warriors, because, well - ow.",
-	  "m_c thinks {PRONOUN/m_c/subject}'ll have a small litter.",
-      "m_c hopes {PRONOUN/m_c/subject}'ll have a small litter. No way could {PRONOUN/m_c/subject} handle too many kits.",
+    "m_c thinks {PRONOUN/m_c/subject}'ll have a small litter.",
+    "m_c hopes {PRONOUN/m_c/subject}'ll have a small litter. No way could {PRONOUN/m_c/subject} handle too many kits.",
     "m_c thinks {PRONOUN/m_c/subject}'ll have a large litter.",
-      "m_c hopes {PRONOUN/m_c/subject}'ll have a large litter. m_c always wanted a big family after all.",
+    "m_c hopes {PRONOUN/m_c/subject}'ll have a large litter. m_c always wanted a big family after all.",
     "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have, nor {VERB/m_c/do/does} {PRONOUN/m_c/subject} care. As long as they're happy and healthy, that's all that matters.",
-      "m_c dosen't know or care how many kits {PRONOUN/m_c/subject}'ll have.",
-      "m_c, citing mothers' intuition, claims {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject}'ll have a small litter.",
-      "m_c, citing mothers' intuition, claims {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject}'ll have a big litter."
+    "m_c dosen't know or care how many kits {PRONOUN/m_c/subject}'ll have.",
+    "m_c, citing mothers' intuition, claims {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject}'ll have a small litter.",
+    "m_c, citing mothers' intuition, claims {PRONOUN/m_c/subject} know {PRONOUN/m_c/subject}'ll have a big litter."
   ],
 
 
@@ -41,7 +41,9 @@
     " It's time to settle into the nursery and make sure everything is perfectly prepared.",
     " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} scolded into taking up a nest in the nursery, despite {PRONOUN/m_c/poss} best protests.",
     " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} keen to move into the nursery quickly, as though by doing so {PRONOUN/m_c/poss} litter will get the message and appear sooner.",
-	  " Despite {PRONOUN/m_c/object} protests, {PRONOUN/m_c/subject} has no choice but to settle in the nursery as nobody wants to let {PRONOUN/m_c/object} work til the kits arrive." 
+	  " Despite {PRONOUN/m_c/object} protests, {PRONOUN/m_c/subject} has no choice but to settle in the nursery as nobody wants to let {PRONOUN/m_c/object} work til the kits arrive.",
+	  " {PRONOUN/m_c/subject/CAP} couldn't settle into the nursery fast enough.",
+	  " So many things could happen to m_c and {PRONOUN/m_c/poss} kits if {PRONOUN/m_c/subject} kept working, no way did {PRONOUN/m_c/subject} want anything to happen to them so into the nursery {PRONOUN/m_c/subject} go."
   ],
   "minor_severity": [
     " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
@@ -53,7 +55,8 @@
     " Surely it's not time to move into the nursery, though.",
 	  " {PRONOUN/m_c/subject/CAP} couldn't imagine being trapped in the nursery yet though and insists {PRONOUN/m_c/subject} can keep working.",
 	  " {PRONOUN/m_c/subject/CAP} dare any cat to force {PRONOUN/m_c/object} into that stuffy old nursery and, to {PRONOUN/m_c/object} delight, no cat wanted to. Maybe next moon but not now.",
-	  " {PRONOUN/m_c/object/CAP} couldn't dare settle down and let others work while {PRONOUN/m_c/subject} rested! Things continue as usual for now."
+	  " {PRONOUN/m_c/object/CAP} wouldn't dare settle down and let others work while {PRONOUN/m_c/subject} rested! Things continue as usual for now.",
+	  " Theres so much that needs to be done though! {PRONOUN/m_c/subject/CAP} just can't settle down yet!"
   ],
   "comment": [
     "both the minor and major severity strings will appear in conjunction with either a litter guess or an announcement. Write them accordingly!",
