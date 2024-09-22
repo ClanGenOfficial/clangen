@@ -9,15 +9,5 @@
             "Is overwhelmed after meeting so many starry cats", 
             "Is regretting leaving {PRONOUN/m_c/poss} Clan without {PRONOUN/m_c/object}" 
         ]
-    },
-    {
-        "id": "elder_death_starclan_thoughts",
-        "thoughts": [
-            "Is amazed at how easily {PRONOUN/m_c/subject} can move now",
-            "Has accepted {PRONOUN/m_c/subject} lived a good life"
-        ],
-    "main_status_constraint": [
-        "elder"
-    ]
     }
 ]
