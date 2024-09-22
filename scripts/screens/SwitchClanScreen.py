@@ -102,6 +102,8 @@ class SwitchClanScreen(Screens):
         """
         TODO: DOCS
         """
+        super().screen_switches()
+        self.set_bg("default", "mainmenu_bg")
         self.show_mute_buttons()
         self.screen = pygame.transform.scale(
             pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
@@ -204,8 +206,6 @@ class SwitchClanScreen(Screens):
         self.page = 0
 
         self.update_page()
-
-        return super().screen_switches()
 
     def update_page(self):
         """

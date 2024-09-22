@@ -650,7 +650,6 @@ class Screens:
             blur_bg = season_bg
         elif self.name in [
             "start screen",
-            "make clan screen",
             "settings screen",
             "switch clan screen",
         ]:

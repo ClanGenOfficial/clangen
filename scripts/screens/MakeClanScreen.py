@@ -121,7 +121,7 @@ class MakeClanScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.set_bg(None)
+        self.set_bg("default", "mainmenu_bg")
 
         self.clan_frame_img = pygame.transform.scale(
             self.ui_images["clan_frame"],
@@ -914,31 +914,18 @@ class MakeClanScreen(Screens):
                 manager=MANAGER,
             )
 
-        if self.selected_camp_tab == 1:
-            self.tabs["tab1"].disable()
-            self.tabs["tab2"].enable()
-            self.tabs["tab3"].enable()
-            self.tabs["tab4"].enable()
-        elif self.selected_camp_tab == 2:
-            self.tabs["tab1"].enable()
-            self.tabs["tab2"].disable()
-            self.tabs["tab3"].enable()
-            self.tabs["tab4"].enable()
-        elif self.selected_camp_tab == 3:
-            self.tabs["tab1"].enable()
-            self.tabs["tab2"].enable()
-            self.tabs["tab3"].disable()
-            self.tabs["tab4"].enable()
-        elif self.selected_camp_tab == 4:
-            self.tabs["tab1"].enable()
-            self.tabs["tab2"].enable()
-            self.tabs["tab3"].enable()
-            self.tabs["tab4"].disable()
-        else:
-            self.tabs["tab1"].enable()
-            self.tabs["tab2"].enable()
-            self.tabs["tab3"].enable()
-            self.tabs["tab4"].enable()
+        self.tabs["tab1"].disable() if self.selected_camp_tab == 1 else self.tabs[
+            "tab1"
+        ].enable()
+        self.tabs["tab2"].disable() if self.selected_camp_tab == 2 else self.tabs[
+            "tab2"
+        ].enable()
+        self.tabs["tab3"].disable() if self.selected_camp_tab == 3 else self.tabs[
+            "tab3"
+        ].enable()
+        self.tabs["tab4"].disable() if self.selected_camp_tab == 4 else self.tabs[
+            "tab4"
+        ].enable()
 
         # I have to do this for proper layering.
         if "camp_art" in self.elements:
@@ -955,29 +942,34 @@ class MakeClanScreen(Screens):
                 ),
                 manager=MANAGER,
             )
-
-            name = "_".join(
-                [
-                    str(self.biome_selected),
-                    str(self.selected_camp_tab),
-                    self.selected_season,
-                ]
-            )
-            if name not in self.game_bgs:
-                self.game_bgs[
-                    name
-                ] = scripts.screens.screens_core.screens_core.default_game_bgs[
-                    self.theme
-                ][
-                    "default"
-                ]
-                self.fullscreen_bgs[
-                    name
-                ] = scripts.screens.screens_core.screens_core.process_blur_bg(src)
-
-            self.set_bg(name)
+            self.get_camp_bg(src)
 
         self.draw_art_frame()
+
+    def get_camp_bg(self, src=None):
+        if src is None:
+            src = pygame.image.load(
+                self.get_camp_art_path(self.selected_camp_tab)
+            ).convert_alpha()
+
+        name = "_".join(
+            [
+                str(self.biome_selected),
+                str(self.selected_camp_tab),
+                self.selected_season,
+            ]
+        )
+        if name not in self.game_bgs:
+            self.game_bgs[
+                name
+            ] = scripts.screens.screens_core.screens_core.default_game_bgs[self.theme][
+                "default"
+            ]
+            self.fullscreen_bgs[
+                name
+            ] = scripts.screens.screens_core.screens_core.process_blur_bg(src)
+
+        self.set_bg(name)
 
     def refresh_selected_cat_info(self, selected=None):
         # SELECTED CAT INFO
@@ -1158,6 +1150,10 @@ class MakeClanScreen(Screens):
     def random_quick_start(self):
         self.clan_name = self.random_clan_name()
         self.biome_selected = self.random_biome_selection()
+        if self.biome_selected in ["Forest", "Mountainous"]:
+            self.selected_camp_tab = randrange(1, 5)
+        else:
+            self.selected_camp_tab = randrange(1, 4)
         if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
             # Use recommended symbol if it exists
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
@@ -1961,6 +1957,8 @@ class MakeClanScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
+
+        self.get_camp_bg()
 
         scripts.screens.screens_core.screens_core.rebuild_bgs()
 

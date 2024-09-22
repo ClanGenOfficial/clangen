@@ -310,7 +310,7 @@ class SettingsScreen(Screens):
         self.sub_menu = "general"
         self.open_general_settings()
 
-        self.set_bg(None)
+        self.set_bg("default", "mainmenu_bg")
 
         self.settings_at_open = game.settings.copy()
 
