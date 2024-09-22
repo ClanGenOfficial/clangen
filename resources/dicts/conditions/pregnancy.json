@@ -2,7 +2,8 @@
   "announcement": [
     "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
 	  "m_c had been secretive for a while now and nobody could even begin to guess what about... until today, that is when m_c announced {PRONOUN/m_c/poss} pregnancy!",
-          "The entire Clan could see the signs way before m_c did. Everyone urged {PRONOUN/m_c/object} to visit the medicine den to no avail. The Clan nearly gave up until finally, m_c announced {PRONOUN/m_c/poss} pregnancy."
+          "The entire Clan could see the signs way before m_c did. Everyone urged {PRONOUN/m_c/object} to visit the medicine den to no avail. The Clan nearly gave up until finally, m_c announced {PRONOUN/m_c/poss} pregnancy.",
+	  "m_c had been worried sick over the recent illness {PRONOUN/m_csubject} couldnt explain until a visit to the medicine den made everything all clear. m_c was pregnant!"
   ],
   "litter_guess": [
     "m_c hopes the litter will be small - {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
