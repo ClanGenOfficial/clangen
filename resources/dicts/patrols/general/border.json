@@ -2317,7 +2317,7 @@
     "biome": ["any"],
     "season": ["any"],
     "types": ["border"],
-    "tags": [],
+    "tags": ["new_cat],
     "patrol_art": "gen_border_dogscent_clanmember",
     "min_cats": 1,
     "max_cats": 1,
