@@ -1051,7 +1051,7 @@
     "location": ["any"],
     "season": ["greenleaf", "newleaf"],
     "weight": 15,
-    "event_text": "m_c picks some flowers around the camp to bring back to the medicine den.",
+    "event_text": "m_c picks some flowers around the camp to bring back to the medicine cat den.",
     "m_c": {
       "status": ["kitten"]
     }
@@ -2160,7 +2160,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
-    "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} abou {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
+    "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} about {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
     "m_c":{
       "status":["mediator", "mediator apprentice"]
     },

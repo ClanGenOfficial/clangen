@@ -845,7 +845,7 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} go to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "success_outcomes": [
@@ -881,7 +881,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "success_outcomes": [
@@ -947,7 +947,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "success_outcomes": [
@@ -1013,7 +1013,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [

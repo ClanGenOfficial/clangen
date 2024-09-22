@@ -3879,7 +3879,7 @@
                 "herbs": ["oak_leaves"]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"]
@@ -3944,7 +3944,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expedition, which makes the apprentice to swell with confidence.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expedition, which makes the apprentice to swell with confidence.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"],
@@ -4055,7 +4055,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"],

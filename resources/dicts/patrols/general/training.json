@@ -29,7 +29,7 @@
                 ]
             },
             {
-                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
+                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat den.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["raspberry"],
@@ -185,7 +185,7 @@
                 "weight": 20
             },
             {
-                "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
+                "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat den.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["raspberry"]
@@ -3150,12 +3150,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "As app1 and app2 collect moss for the elder's den, app2 admits that the strange dreams {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been having is why {PRONOUN/app2/subject} kicked app1 in the night.",
+        "intro_text": "As app1 and app2 collect moss for the elders' den, app2 admits that the strange dreams {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been having is why {PRONOUN/app2/subject} kicked app1 in the night.",
         "decline_text": "The apprentices don't talk about the dreams.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It's alright, app1 assures app2. It wasn't on purpose - maybe {PRONOUN/app2/subject} could head to the medicine den after this. There are heaps of herbs to help app2 sleep, and this totally explains why {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been yawning so much during training.",
+                "text": "It's alright, app1 assures app2. It wasn't on purpose - maybe {PRONOUN/app2/subject} could head to the medicine cat den after this. There are heaps of herbs to help app2 sleep, and this totally explains why {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been yawning so much during training.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -9357,7 +9357,7 @@
                                 ]
                             },
                             {
-                                "text": "s_c would love to be as strong as silverpelt, to be able to move the souls of dead cats so easily...",
+                                "text": "s_c would love to be as strong as Silverpelt, to be able to move the souls of dead cats so easily...",
                                 "exp": 30,
                                 "weight": 20,
                                 "can_have_stat": ["not_pl_rc"],
@@ -10939,7 +10939,7 @@
                 "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
-                    "death": "r_c died when {PRONOUN/r_c/subject} distractedly ran onto the thunderpath as an apprentice."
+                    "death": "r_c died when {PRONOUN/r_c/subject} distractedly ran onto the Thunderpath as an apprentice."
                 },
                 "relationships": [
                     {
@@ -11008,7 +11008,7 @@
         },
         "weight": 20,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
-        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
+        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine cat den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
         "success_outcomes": [
             {

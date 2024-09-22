@@ -623,7 +623,7 @@
                     ]
                 },
                 {
-                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that they needed to tear a hole in silverpelt just to be able to stop them. s_c hopes to one day be that powerful.",
+                    "text": "s_c can't help but be overly fascinated as p_l speaks about how a warrior was so powerful that a hole needed to be torn in Silverpelt just to be able to stop them. s_c hopes to one day be that powerful.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],

@@ -58,9 +58,7 @@ class Thoughts:
 
         # This is checking for season
         if "season" in thought:
-            if season is None:
-                return False
-            elif season not in thought["season"]:
+            if season not in thought["season"]:
                 return False
 
         # This is for checking camp

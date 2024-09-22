@@ -1803,7 +1803,7 @@
         "apprentice": [1, 1]
     },
     "weight": 1,
-    "intro_text": "app1 doesn't want to be in the apprentice's den until {PRONOUN/app1/poss} muzzle grays - {PRONOUN/app1/subject} {VERB/app1/need/needs} to prove lead_name should pay attention to {PRONOUN/app1/object}.",
+    "intro_text": "app1 doesn't want to be in the apprentices' den until {PRONOUN/app1/poss} muzzle grays - {PRONOUN/app1/subject} {VERB/app1/need/needs} to prove lead_name should pay attention to {PRONOUN/app1/object}.",
     "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
     "chance_of_success": 50,
     "success_outcomes": [
@@ -3733,7 +3733,7 @@
 	    ]
         },
 	{
-            "text": "However much s_c dislikes r_c, feeding the clan is more important. They manage to get through the patrol without any major disputes - and catch a decent amount of prey, too.",
+            "text": "However much s_c dislikes r_c, feeding the Clan is more important. They manage to get through the patrol without any major disputes - and catch a decent amount of prey, too.",
             "exp": 10,
             "weight": 40,
 	    "prey": ["medium"],
@@ -3831,7 +3831,7 @@
                 }
               ],
               "history_text": {
-                "scar": "m_c was scarred when a clanmate lashed out at {PRONOUN/m_c/object} while they were bickering on patrol.",
+                "scar": "m_c was scarred when a Clanmate lashed out at {PRONOUN/m_c/object} while they were bickering on patrol.",
                 "reg_death": "m_c died after a small injury progressed to something worse.",
                 "lead_death": "died after a small injury progressed to something worse"
               }

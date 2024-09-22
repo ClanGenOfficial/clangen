@@ -100,7 +100,7 @@
     {
       "id": "insecure_deputy_to_leader",
         "thoughts": [
-            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} organizing sound right"
+            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} organizing sound right"
         ],
         "main_trait_constraint":[
             "insecure"

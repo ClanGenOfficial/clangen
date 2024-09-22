@@ -147,7 +147,7 @@
                 "weight": 20
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

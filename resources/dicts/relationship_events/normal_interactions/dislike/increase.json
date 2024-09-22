@@ -9,8 +9,8 @@
             "m_c was in the middle of an important conversation before r_c rudely interrupted {PRONOUN/m_c/object}.",
             "r_c blocked m_c's way and didn't apologize.",
             "m_c made plans to share tongues with r_c but never showed up.",
-            "m_c accidentially stepped on r_c's tail.",
-            "m_c teased r_c's for having messy fur right after waking up."
+            "m_c accidentally stepped on r_c's tail.",
+            "m_c teased r_c for having messy fur right after waking up."
 		]
 	},
 	{
@@ -144,7 +144,7 @@
             "m_c knocked r_c into a puddle with a rough shove before feigning an apology.",
             "m_c 'accidentally' tripped r_c.",
             "m_c gave r_c a grimace before walking away without a word.",
-            "m_c smirks when {PRONOUN/m_c/subject} see r_c all by {PRONOUN/r_c/self}.",
+            "m_c smirks when {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c all by {PRONOUN/r_c/self}.",
             "m_c enjoys watching things go wrong for r_c."
 		],
 		"main_trait_constraint": [
@@ -158,7 +158,7 @@
 			"r_c offends m_c with {PRONOUN/r_c/poss} brutal honesty.",
 			"r_c is boasting about {PRONOUN/r_c/poss} accomplishments to m_c, but m_c isn't impressed.",
 			"r_c gets really close to m_c's face while talking and grosses m_c out with {PRONOUN/r_c/poss} fox breath.",
-			"r_c doesn't understand why m_c lied to save a cats' feelings."
+			"r_c doesn't understand why m_c lied to save a cat's feelings."
 		],
 		"random_trait_constraint": [
 			"shameless",
@@ -224,7 +224,7 @@
 			"m_c had to nip r_c on the rump because {PRONOUN/r_c/subject} {VERB/r_c/were/was} being naughty.",
 			"m_c growls at r_c to get out from under {PRONOUN/m_c/poss} paws.",
 			"m_c snaps at r_c's annoying antics.",
-			"r_c wishes {PRONOUN/r_c/subject} {VERB/r_c/was/were} all grown up so m_c would take {PRONOUN/r_c/object} seriously.",
+			"r_c wishes {PRONOUN/r_c/subject} {VERB/r_c/were/was} all grown up so m_c would take {PRONOUN/r_c/object} seriously.",
             "r_c asked m_c to tell {PRONOUN/r_c/object} a story only to get hissed at instead.",
             "m_c took the toy r_c was playing with before telling {PRONOUN/m_c/object} to return to the nursery."
 		],
@@ -252,7 +252,7 @@
 			"m_c purposefully tripped r_c.",
             "m_c growls at r_c to get out of {PRONOUN/m_c/poss} way.",
 			"m_c snaps at r_c's annoying antics.",
-            "m_c snarls at r_c when asked to play. {PRONOUN/m_c/subject} will not spend {PRONOUN/m_c/poss} time playing stupid games."
+            "m_c snarls at r_c when asked to play. {PRONOUN/m_c/subject/CAP} will not spend {PRONOUN/m_c/poss} time playing stupid games."
 		],
 		"main_status_constraint": [
 			"kitten",
@@ -307,7 +307,7 @@
         "intensity": "high",
 		"interactions": [
             "m_c pulls r_c aside and reminds {PRONOUN/r_c/object} {PRONOUN/m_c/subject} could easily exile {PRONOUN/r_c/object}.",
-            "m_c scolded r_c for not doing the hard task {PRONOUN/m_c/subject} assigned {PRONOUN/r_c/object} despite knowing it was a job for more then one cat.",
+            "m_c scolded r_c for not doing the hard task {PRONOUN/m_c/subject} assigned {PRONOUN/r_c/object} despite knowing it was a job for more than one cat.",
 			"m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail."
 		],
 		"main_status_constraint": [
@@ -333,8 +333,7 @@
 			"leader"
 		],
 		"random_status_constraint": [
-			"apprentice",
-			"warrior"
+			"apprentice"
 		],
 		"reaction_random_cat": {
 			"dislike": "increase"
@@ -347,7 +346,7 @@
 			"m_c gives r_c bitter herbs on purpose.",
 			"m_c accuses r_c of complaining over something trivial and wasting {PRONOUN/m_c/poss} time.",
 			"m_c always tends to r_c last.",
-			"m_c ignores r_c any time {PRONOUN/r_c/subject} come for treatment.",
+			"m_c ignores r_c any time {PRONOUN/r_c/subject} {VERB/r_c/come/comes} for treatment.",
             "m_c is extra rough when treating r_c."
 		],
 		"main_status_constraint": [
@@ -389,14 +388,14 @@
 			"m_c shudders at the sound of r_c's voice.",
 			"m_c will do anything to avoid being anywhere near r_c.",
 			"m_c refuses to do any work with r_c.",
-			"m_c and r_c got into a loud screaming match with each other and had to be seperated.",
+			"m_c and r_c got into a loud screaming match with each other and had to be separated.",
             "m_c wants to claw r_c's face off.",
-            "m_c wonders if being a loner might just be better then being r_c's Clanmate...",
-            "m_c considers r_c a terrible influence on others.",
+            "m_c wonders if being a loner might just be better than being r_c's Clanmate...",
+            "m_c considers r_c to be a terrible influence on others.",
             "m_c finds r_c to be an eyesore.",
             "m_c daydreams about killing r_c...",
             "m_c doesn't even pretend to hide how much {PRONOUN/m_c/subject} hate r_c.",
-            "m_c lunged at r_c but was held back by a clanmate.",
+            "m_c lunged at r_c but was held back by a Clanmate.",
             "m_c hopes r_c ends up in the Dark Forest.",
             "m_c prayed to StarClan for r_c's downfall to come quick."
 		]
@@ -410,9 +409,9 @@
 			"m_c accuses r_c of not putting the Clan first.",
 			"m_c accused r_c of leading the Clan toward the Dark Forest.",
             "m_c wonders what stupid decision r_c will make next that'll harm the Clan.",
-            "m_c said aloud how {PRONOUN/m_c/subject} couldn't wait for m_c to die so that someone better could become leader.",
+            "m_c said aloud how {PRONOUN/m_c/subject} couldn't wait for r_c to die so that someone better could become leader.",
             "m_c told r_c {PRONOUN/r_c/subject} should just retire already.",
-            "r_c wonders how easy it'd be to convince the rest of the clan to agree exiling r_c is a good move...",
+            "m_c wonders how easy it'd be to convince the rest of the Clan to agree that exiling r_c is a good move...",
             "r_c overheard m_c trying to convince the rest of the Clan to ditch r_c and make a new Clan without {PRONOUN/r_c/object}.",
             "m_c believes r_c isn't doing {PRONOUN/r_c/poss} job good enough."
 		],
@@ -495,10 +494,10 @@
 		"id": "dislike_inc_high8",
 		"intensity": "high",
 		"interactions": [
-            "m_c and r_c nearly got into a serious fight in the middle of camp and had to be seperated by their Clanmates.",
-            "m_c insulted r_c's biggest insecurity directly to {PRONOUN/m_c/poss} face.",
+            "m_c and r_c nearly got into a serious fight in the middle of camp and had to be separated by their Clanmates.",
+            "m_c insulted r_c's biggest insecurity directly to {PRONOUN/r_c/poss} face.",
             "m_c called r_c an embarrassment to the Clan.",
-            "m_c threatens to send r_c directly to the Dark Forest where {PRONOUN/r_c/subject} belong.",
+            "m_c threatens to send r_c directly to the Dark Forest where {PRONOUN/r_c/subject} {VERB/r_c/belong/belongs}.",
             "m_c threatened to put r_c in {PRONOUN/r_c/poss} place next time they crossed paths."
 		],
 		"relationship_constraint": [
@@ -523,7 +522,7 @@
 			"m_c hisses at r_c, wary of {PRONOUN/r_c/object} for reasons nobody knows.",
             "m_c called r_c an insult {PRONOUN/m_c/subject} just learned and r_c is not amused.",
             "r_c snapped at m_c for annoying {PRONOUN/r_c/object}.",
-            "m_c cries any time {PRONOUN/m_c/subject} {VERB/m_c/sees/see} r_c.",
+            "m_c cries any time {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c.",
             "m_c is scared of r_c but won't say why.",
             "m_c thinks r_c is scary.",
             "m_c blamed r_c for something {PRONOUN/m_c/subject} did to avoid trouble."
@@ -542,7 +541,7 @@
 			"m_c and r_c always end up arguing over what games to play.",
 			"m_c is not playing fairly with r_c!",
 			"m_c was too rough with r_c while playing earlier and r_c still hasn't gotten over it.",
-            "m_c refuses to play what r_c wants to play, {PRONOUN/m_c/subject} only wants to play what {PRONOUN/m_c/subject} {VERB/m_c/wants/want}!"
+            "m_c refuses to play what r_c wants to play, {PRONOUN/m_c/subject} only {VERB/m_c/want/wants} to play what {PRONOUN/m_c/subject} {VERB/m_c/want/wants}!"
 		],
 		"main_status_constraint": [
 			"kitten"

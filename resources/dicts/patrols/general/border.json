@@ -413,7 +413,7 @@
                 ]
             },
             {
-                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits.",
+                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine cat den awaits.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1225,7 +1225,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred when {PRONOUN/p_l/subject} tried to sneak across the o_c_n border."
+                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border."
                 },
                 "relationships": [
                     {
@@ -1258,7 +1258,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred when {PRONOUN/p_l/subject} tried to sneak across the o_c_n border."
+                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border."
                 },
                 "relationships": [
                     {

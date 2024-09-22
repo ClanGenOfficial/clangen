@@ -100,7 +100,7 @@
 		"interactions": [
 			"m_c is hoping that r_c notices {PRONOUN/m_c/object}.",
 			"m_c wonders what r_c thinks about mates.",
-			"m_c hopes r_c likes {PRONOUN/m_c/object} as much as {PRONOUN/m_c/subject} like r_c."
+			"m_c hopes r_c likes {PRONOUN/m_c/object} as much as {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c."
 		],
 		"relationship_constraint": [
 			"not_mates",
@@ -132,10 +132,10 @@
             "Rumor around the Clan was that m_c and r_c are seeing each other and, while they did clear things up, neither cat seemed to mind...",
             "m_c thinks r_c has a beautiful laugh.",
             "m_c took a nap with r_c, happy to be able to spend this time with {PRONOUN/r_c/object}.",
-            "m_c urges r_c to take a break. {PRONOUN/m_c/subject/cap} don't want to see r_c overworking {PRONOUN/r_c/self}.",
-            "m_c saw r_c in pain and was surprised how much it hurt {PRONOUN/m_c/subject} to see r_c like that.",
+            "m_c urges r_c to take a break. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} want to see r_c overworking {PRONOUN/r_c/self}.",
+            "m_c saw r_c in pain and was surprised how much it hurt {PRONOUN/m_c/object} to see r_c like that.",
             "m_c talked generally about the idea of mates with r_c.",
-            "m_c realizes {PRONOUN/m_c/poss} chest hurts when {PRONOUN/m_c/subject} see r_c in pain or upset...",
+            "m_c realizes {PRONOUN/m_c/poss} chest hurts when {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c in pain or upset...",
             "m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more than just a crush on r_c."
 		],
 		"relationship_constraint": [
@@ -163,7 +163,7 @@
 		"id": "rom_inc_medium6",
 		"intensity": "medium",
 		"interactions": [
-			"m_c wants, more then anything, to confess {PRONOUN/m_c/poss} love to r_c.",
+			"m_c wants, more than anything, to confess {PRONOUN/m_c/poss} love to r_c.",
 			"m_c is wondering what it would be like to grow old with r_c.",
 			"m_c is the first cat that r_c thinks of when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} good news.",
 			"m_c realizes {PRONOUN/m_c/poss} heart always flutters whenever {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c.",
@@ -172,7 +172,7 @@
 			"m_c wants to improve {PRONOUN/m_c/self} for r_c.",
             "m_c and r_c talked about the idea of their ideal mates and noticed each other having a few of those qualities...",
             "m_c can't imagine any cat other than r_c as {PRONOUN/m_c/poss} mate.",
-            "m_c can't stop purring when {PRONOUN/m_c/subject} remember r_c's laugh."
+            "m_c can't stop purring when {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} r_c's laugh."
 		],
 		"relationship_constraint": [
 			"romantic_40",
@@ -321,8 +321,8 @@
 		"interactions": [
 			"m_c purrs for a long time at one of r_c's lame jokes.",
 			"m_c can't stop gushing over r_c.",
-            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} didn't seem to care, nuzzling into m_c's neck, {PRONOUN/r_c/subject} were just happy m_c was back.",
-            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c {PRONOUN/r_c/poss} favorite prey."
+            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} {VERB/r_c/doesn't/didn't} seem to care, nuzzling into m_c's neck, {PRONOUN/r_c/subject} were just happy m_c was back.",
+            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey."
 		],
 		"relationship_constraint": [
 			"mates"

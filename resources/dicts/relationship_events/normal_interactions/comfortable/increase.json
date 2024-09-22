@@ -93,8 +93,8 @@
 			"r_c is listening to m_c's troubles.",
 			"r_c noticed m_c was struggling, and offered to help {PRONOUN/m_c/object}.",
 			"r_c offered help to m_c during a hard time.",
-            "m_c offers to help with one of r_c's more tedious tasks.",
-			"m_c helps r_c with a tedious task and it makes the whole day a lot easier.",
+            "r_c offers to help with one of m_c's more tedious tasks.",
+			"r_c helps m_c with a tedious task and it makes the whole day a lot easier.",
             "m_c had a nightmare and r_c offered to share {PRONOUN/r_c/poss} nest to comfort m_c."
 		],
 		"random_trait_constraint": [
@@ -165,7 +165,7 @@
 		"interactions": [
 			"m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with r_c.",
 			"m_c had a friendly argument with r_c about which prey tastes the best.",
-			"m_c takes a nap with r_c after a long day playing moss-ball.",
+			"m_c takes a nap with r_c after a long day of playing moss ball.",
 			"m_c and r_c had a friendly argument about which beetle would win in a fight."
 		],
 		"main_status_constraint": [
@@ -201,7 +201,7 @@
 		"id": "comfort_med_inc_medium1",
 		"interactions": [
 			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
-			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet."
+			"m_c drops into the medicine cat den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet."
 		],
 		"random_status_constraint": [
 			"medicine cat",

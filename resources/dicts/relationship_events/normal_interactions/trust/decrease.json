@@ -12,7 +12,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c shared a embarrassing story about r_c {PRONOUN/m_c/subject} {VERB/m_c/were/was} asked not to share...",
-			"m_c laughed at r_c when they tripped and didn't even ask if {PRONOUN/m_c/subject} needed help up."
+			"m_c laughed at r_c when {PRONOUN/r_c/subject} tripped and didn't even ask if {PRONOUN/r_c/subject} needed help up."
 		],
 		"reaction_random_cat": {
 			"trust": "decrease"
@@ -23,7 +23,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c keeps {PRONOUN/m_c/poss} tail tucked around r_c.",
-            "m_c is keeping a close eye on r_c to make sure {PRONOUN/r_c/subject} {VERB/r_c/isn't/aren't} causing any trouble."
+            "m_c is keeping a close eye on r_c to make sure {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} causing any trouble."
 		],
 		"random_status_constraint": [
 			"kitten"
@@ -37,7 +37,7 @@
 		"interactions": [
 			"m_c caught r_c in a lie.",
 			"r_c let m_c down while m_c was counting on {PRONOUN/r_c/object}.",
-			"r_c tripped m_c at the gathering in front of all the clans."
+			"r_c tripped m_c at the Gathering in front of all the Clans."
 		]
 	},
 	{
@@ -67,7 +67,7 @@
 	{
 		"id": "trust_kit_de_med1",
 		"interactions": [
-			"m_c constantly pulling pranks on r_c.",
+			"m_c constantly pulls pranks on r_c.",
 			"m_c is relentlessly pestering r_c.",
 			"m_c keeps pouncing on r_c's tail despite being told to stop.",
             "r_c hissed at m_c.",
@@ -97,7 +97,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c tries to scare r_c.",
-			"m_c dismisses r_c's reasonable concerns and fears and tells them to get over it.",
+			"m_c dismisses r_c's reasonable concerns and fears and tells {PRONOUN/r_c/object} to get over it.",
             "m_c pulls a mean-spirited prank on r_c."
 		],
 		"relationship_constraint": [
@@ -143,7 +143,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c accuses r_c of treating cats incorrectly on purpose!",
-			"m_c saw r_c bringing deathberries into the medicine den.",
+			"m_c saw r_c bringing deathberries into the medicine cat den.",
 			"r_c was rough with m_c during a recent treatment.",
 			"m_c isn't sure why r_c became a medicine cat at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
 			"m_c wouldn't be surprised if r_c faked signs from StarClan...",
@@ -172,7 +172,7 @@
 			"m_c looks for r_c for treatment on a minor wound, only to find {PRONOUN/r_c/object} playing with catmint!",
 			"m_c hopes to never have a serious illness with r_c in charge of treatments...",
 			"m_c complains that r_c never takes {PRONOUN/r_c/poss} role of medicine cat seriously.",
-			"m_c can't keep r_c's attention long enough to tell {PRONOUN/r_c/subject} what {PRONOUN/m_c/object} need help with.",
+			"m_c can't keep r_c's attention long enough to tell {PRONOUN/r_c/object} what {PRONOUN/m_c/object} {VERB/m_c/need/needs} help with.",
             "r_c didn't notice m_c when {PRONOUN/m_c/subject} needed treatment."
 		],
 		"random_status_constraint": [

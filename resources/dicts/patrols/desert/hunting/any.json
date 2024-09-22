@@ -2487,7 +2487,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt. r_c slinks back to the apprentice's den, tail and ears low.",
+                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt. r_c slinks back to the apprentices' den, tail and ears low.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2764,7 +2764,7 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "m_c was permantly marked by the bite of a gila monster as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "scar": "m_c was permanently marked by the bite of a gila monster as an apprentice - but {PRONOUN/m_c/subject} survived.",
                         "reg_death": "m_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice.",
                         "lead_death": "from the bite of a gila monster encountered on a hunt as a foolish apprentice"
                         }

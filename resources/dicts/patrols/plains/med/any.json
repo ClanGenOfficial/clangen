@@ -851,7 +851,7 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} go to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -887,7 +887,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old, calling over app1, they set out to gather more.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old, calling over app1, they set out to gather more.",
         "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -953,7 +953,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more and they take a warrior with them to help.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. They need to go and gather some more and they take a warrior with them to help.",
         "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -1019,7 +1019,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather more so they call over some warriors to help them.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. They need to go and gather more so they call over some warriors to help them.",
         "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
         "chance_of_success": 40,
         "success_outcomes": [

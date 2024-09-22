@@ -421,7 +421,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c meets m_c's eyes with a smirk, sliding through the murk like a claw through freshkill to give a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} quiet praise to m_c's more reckless tendencies, encouraging the new leader to think with {PRONOUN/m_c/poss} claws, not {PRONOUN/m_c/poss} head.",
+          "text": "r_c meets m_c's eyes with a smirk, sliding through the murk like a claw through fresh-kill to give a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} quiet praise to m_c's more reckless tendencies, encouraging the new leader to think with {PRONOUN/m_c/poss} claws, not {PRONOUN/m_c/poss} head.",
           "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
         },
         {
