@@ -612,8 +612,8 @@ class UISpriteButton:
 
     def __init__(
         self,
-            relative_rect: pygame.Rect,
-            sprite: pygame.Surface,
+        relative_rect: pygame.Rect,
+        sprite: pygame.Surface,
         cat_id=None,
         visible=1,
         cat_object=None,
@@ -624,13 +624,16 @@ class UISpriteButton:
         tool_tip_text=None,
         anchors=None,
     ):
-        input_sprite = pygame.transform.scale(sprite, relative_rect.size)
-        # if downscaling, apply a light blur to get rid of crunchiness.
-        if (
-                relative_rect.height < sprite.get_height()
-                or relative_rect.width < sprite.get_width()
-        ):
-            pygame.transform.box_blur(input_sprite, 1)
+        input_sprite = sprite.premul_alpha()
+        # if it's going to be small on the screen, smoothscale out the crunch
+        input_sprite = (
+            pygame.transform.smoothscale(input_sprite, relative_rect.size)
+            if (
+                relative_rect.height <= ui_scale_value(sprite.get_height())
+                or relative_rect.width <= ui_scale_value(sprite.get_height())
+            )
+            else pygame.transform.scale(input_sprite, relative_rect.size)
+        )
 
         self.image = pygame_gui.elements.UIImage(
             relative_rect,
@@ -1287,7 +1290,7 @@ class UICatListDisplay(UIContainer):
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
             ui_scale(pygame.Rect((0, 15), (50, 50))),
-            pygame.transform.smoothscale(kitty.sprite, ui_scale_dimensions((50, 50))),
+            kitty.sprite,
             cat_object=kitty,
             cat_id=kitty.ID,
             container=container,
