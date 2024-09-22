@@ -72,8 +72,17 @@
             "Wonders if there's anyone here {PRONOUN/m_c/subject} can actually trust",
             "Tried crossing the border into StarClan to no avail"
         ],
-        "random_living_status": [
-            "living"
+        "main_trait_status": [
+            "careful",
+            "compassionate",
+            "loving",
+            "gloomy",
+            "nervous",
+            "playful",
+            "responsible",
+            "sincere",
+            "strange",
+            "thoughtful"
         ]
     },
     {
@@ -95,7 +104,41 @@
             "Is starting to like the lawlessness here",
             "Wants to lure new cats to train here",
             "Is cleaning the blood from {PRONOUN/m_c/poss} claws",
-            "Is the first to volunteer for training"
+            "Is the first to volunteer for training",
+            "Is trying to lure living cats to train in the Dark Forest"
+        ],
+        "main_trait_constraint": [
+            "arrogant",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "cunning",
+            "faithful",
+            "fierce",
+            "grumpy",
+            "insecure",
+            "rebellious",
+            "strict",
+            "strange",
+            "vengeful"
+    },
+    {
+        "id": "dark_forest_sneaky",
+        "thoughts": [
+            "Isn't surprised in the slightest as to why {PRONOUN/m_c/subject} ended up here",
+            "Easily avoided encountering another shadowy cat",
+            "Talked {PRONOUN/m_c/poss} way out of a training session",
+            "Tricked a shadowy cat into doing {PRONOUN/m_c/poss} bidding"
+        ],
+    "main_trait_constraint": [
+        "sneaky",
+        "arrogant",
+        "shameless",
+        "wise",
+        "cunning",
+        "charismatic",
+        "strange"
         ]
     }
 ]
