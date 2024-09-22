@@ -2342,7 +2342,7 @@
                     }
 		],
             "weight": 20,
-            "art": "gen_bord_newcatkittypet1"
+            "art": "gen_kittypet_friends_with_dog1"
         },
 	{
             "text": "s_c whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c not to hurt them. Any other day, s_c might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it.",
@@ -2360,7 +2360,7 @@
 	    ],
 	    "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "cold", "grumpy"],
 	    "weight": 30,
-            "art": "gen_bord_newcatkittypet1"
+            "art": "gen_kittypet_friends_with_dog1"
 
         },
         {
@@ -2415,7 +2415,7 @@
                 }
             ],
 
-            "art": "gen_bord_newcatkittypet1"
+            "art": "gen_kittypet_friends_with_dog1"
     
         },
 	{
@@ -2481,7 +2481,7 @@
                     }
 		],
 	    "weight": 10,
-            "art": "gen_bord_newcatkittypet1"
+            "art": "gen_kittypet_friends_with_dog1"
 	},
     {
         "text": "p_l lets out a vicious yowl, ignoring the now shrill voice calling out to {PRONOUN/p_l/object}, pleading with {PRONOUN/p_l/object} to stop as {PRONOUN/p_l/subject} {VERB/p_l/attack/attacks} the dog, violently tearing at the dog's pelt as it yaps and whines. After the tussle, the dog hauls itself towards the now teary-eyed kittypet, and p_l can't help but smirk at {PRONOUN/n_c:0/poss} terrified expression.",
