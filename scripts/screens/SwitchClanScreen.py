@@ -202,21 +202,22 @@ class SwitchClanScreen(Screens):
                     else {"centerx": "centerx"},
                 )
             )
+
+            # welcome to another bit of jank that I am embarrassed to put my name to!
             self.delete_buttons[-1].append(
                 UIImageButton(
-                    ui_scale(
-                        pygame.Rect(
-                            (470, (11 if len(self.clan_buttons[-1]) % 8 != 0 else 200)),
-                            (22, 22),
-                        )
+                    pygame.Rect(
+                        (
+                            ui_scale_value(470),
+                            -0.5 * (item_height + ui_scale_value(22)),
+                        ),
+                        ui_scale_dimensions((22, 22)),
                     ),
                     "",
                     object_id="#exit_window_button",
                     manager=MANAGER,
                     starting_height=2,
-                    anchors={"top_target": self.clan_buttons[-1][-1]}
-                    if len(self.clan_buttons[-1]) % 8 != 0
-                    else None,
+                    anchors={"top_target": self.clan_buttons[-1][-1]},
                 )
             )
 
