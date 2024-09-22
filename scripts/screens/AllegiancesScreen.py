@@ -9,6 +9,7 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     get_alive_clan_queens,
+    ui_scale_offset,
 )
 from .Screens import Screens
 
@@ -62,10 +63,13 @@ class AllegiancesScreen(Screens):
             self.ranks_boxes.append(
                 pygame_gui.elements.UITextBox(
                     x[0],
-                    ui_scale(pygame.Rect((0, y_pos), (150, -1))),
+                    ui_scale(pygame.Rect((0, 0), (150, -1))),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,
+                    anchors={"top_target": self.names_boxes[-1]}
+                    if len(self.names_boxes) > 0
+                    else None,
                 )
             )
             self.ranks_boxes[-1].disable()
@@ -73,11 +77,9 @@ class AllegiancesScreen(Screens):
             self.names_boxes.append(
                 pygame_gui.elements.UITextBox(
                     x[1],
-                    ui_scale(
-                        pygame.Rect(
-                            (0, -self.ranks_boxes[-1].get_relative_rect()[3]),
-                            (565, -1),
-                        )
+                    pygame.Rect(
+                        (0, -self.ranks_boxes[-1].get_relative_rect()[3]),
+                        ui_scale_offset((565, -1)),
                     ),
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
