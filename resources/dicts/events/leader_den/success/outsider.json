@@ -1,12 +1,12 @@
 [
   {
     "interaction_type": "hunt",
-    "event_text": "After a long search, m_c is found and killed where they stand.",
+    "event_text": "After a long search, m_c is found and killed where {PRONOUN/m_c/subject} {VERB/m_c/stand/stands}.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "exiled", "lost"],
-      "new_thought": "Is shocked that {PRONOUN/m_c/subject} were killed",
+      "new_thought": "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed",
       "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
     }
   },

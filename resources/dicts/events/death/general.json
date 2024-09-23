@@ -1577,7 +1577,7 @@
         ],
         "tags": [ "no_body", "all_lives" ],
         "weight": 20,
-        "event_text": "m_c couldn't miss today! Such a bright day, perfect for a walk. That was until m_c detected another scent, a foul one. {PRONOUN/m_c/subject/CAP} recoiled, but not before long claws slashed across their face. Later, c_n found only blood and the scent of a predator at the scene.",
+        "event_text": "m_c couldn't miss today! Such a bright day, perfect for a walk. That was until m_c detected another scent, a foul one. {PRONOUN/m_c/subject/CAP} recoiled, but not before long claws slashed across {PRONOUN/m_c/poss} face. Later, c_n found only blood and the scent of a predator at the scene.",
         "m_c": {
             "age": [ "adolescent", "young adult", "adult", "senior adult" ],
             "dies": true
@@ -2575,7 +2575,7 @@
         "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as they fall.",
+        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}.",
         "m_c": {
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "medicine cat", "mediator", "deputy"],
             "not_skill": [
@@ -2659,7 +2659,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky.",
+        "event_text": "r_c, guarding camp, yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
@@ -3604,7 +3604,7 @@
         },
         "history": [{
             "cats": ["m_c"],
-            "reg_death": "m_c died when they were struck by lightning.",
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} struck by lightning.",
             "lead_death": "{VERB/m_c/were/was} struck by lightning"
         }]
     },
@@ -5929,8 +5929,8 @@
       "history": [
       {
       "cats": ["m_c"],
-      "reg_death": "m_c died when the o_c_n deputy killed them in battle, r_c allowed {PRONOUN/m_c/poss} death to happen.",
-      "lead_death": "died when the o_c_n deputy attacked them and r_c took no action"
+      "reg_death": "m_c died when the o_c_n deputy killed {PRONOUN/m_c/object} in battle, r_c allowed {PRONOUN/m_c/poss} death to happen.",
+      "lead_death": "died when the o_c_n deputy attacked {PRONOUN/m_c/object} and r_c took no action"
       }
     ],
     "other_clan": {
