@@ -7009,9 +7009,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred after falling into an o_c_n trap.",
-                "reg_death": "m_c died after falling into an o_c_n trap.",
-                "lead_death": "died after falling into an o_c_n trap"
+                "scar": "m_c was scarred after falling into a o_c_n trap.",
+                "reg_death": "m_c died after falling into a o_c_n trap.",
+                "lead_death": "died after falling into a o_c_n trap"
             }
         ],
         "other_clan": {
@@ -7033,7 +7033,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "During a skirmish, m_c bounds into battle against an o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
+        "event_text": "During a skirmish, m_c bounds into battle against a o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
         "m_c": {
             "status": [
                 "apprentice",

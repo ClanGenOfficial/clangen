@@ -52,7 +52,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to one.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to one.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -103,7 +103,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to as many as they can carry.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
@@ -177,7 +177,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The atmosphere in this place is eerie and r_c takes out {PRONOUN/r_c/poss} tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of {PRONOUN/r_c/poss} aggression remains.",
+                "text": "The atmosphere in this place is eerie and r_c takes out {PRONOUN/r_c/poss} tenseness on one of the white trunks. A few shallow scrapes are left on the surface, but little other evidence of {PRONOUN/r_c/poss} aggression remains.",
                 "exp": 0,
                 "weight": 20
             }
@@ -226,7 +226,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bold", "ambitious", "childish", "impulsive"],
@@ -285,13 +285,13 @@
                 "weight": 20
             },
             {
-                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bold", "ambitious", "childish", "impulsive"]
             },
             {
-                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator.",
+                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, r_c is quickly killed by the predator.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -734,7 +734,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+                "text": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face-to-face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -747,7 +747,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -793,7 +793,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
+                "text": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face-to-face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
                 "exp": 0,
                 "weight": 20
             },
@@ -805,7 +805,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -816,7 +816,7 @@
                 }
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -865,7 +865,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+                "text": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face-to-face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
                 "exp": 0,
                 "weight": 20
             },
@@ -877,7 +877,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol and {PRONOUN/r_c/subject} {VERB/r_c/have/haves} the sudden realization that no one can help {PRONOUN/r_c/object} now. The wolverine kills the lone cat with little trouble.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with a snarling wolverine! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now. The wolverine kills the lone cat with little trouble.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -888,7 +888,7 @@
                 }
             },
             {
-                "text": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away.",
+                "text": "r_c heads toward the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2011,7 +2011,7 @@
                 "weight": 20
             },
             {
-                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
+                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing {PRONOUN/r_c/object} instantly.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
@@ -2772,7 +2772,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except what p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox dung!",
+                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except what p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox-dung!",
                 "exp": 0,
                 "weight": 20
             }

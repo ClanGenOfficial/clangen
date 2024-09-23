@@ -211,7 +211,7 @@
         ["a pawprint of red on rock"],
         ["destroyed herbs", "wilting herbs"],
         ["a bird's broken egg", "a perfectly intact yet hollow bird's egg"],
-        ["a dew covered spider's web"],
+        ["a dew-covered spider's web"],
         ["a torn collar"],
         ["the bones of fresh-kill", "a cracked mouse skull", "a cracked rabbit skull"],
         ["a shining beetle shell"],
@@ -295,7 +295,9 @@
     },
     "touch": {
       "general": [
-
+        ["the wind whistling past a claw raised in anger"],
+        ["the ache of fatigue as eyes close for good"],
+        ["an endless cold that seeps into their bones"]
       ],
       "forest": [
 

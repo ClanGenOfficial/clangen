@@ -465,7 +465,7 @@
                 ]
             },
             {
-                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -485,7 +485,7 @@
                 ]
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"]
@@ -493,7 +493,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -529,7 +529,7 @@
                 ]
             },
             {
-                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} see r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} and continues on {PRONOUN/r_c/poss} solo patrol.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} and continues on {PRONOUN/r_c/poss} solo patrol.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
@@ -1476,7 +1476,7 @@
                 ]
             },
             {
-                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines, but compliments the loner's songs.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines but compliments the loner's songs.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
@@ -1485,13 +1485,13 @@
                 ]
             },
             {
-                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"]
@@ -1499,7 +1499,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol walks into an ambush by a group of rogues, and everyone is slaughtered.",
+                "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -1534,7 +1534,7 @@
                 ]
             },
             {
-                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines}, but {VERB/r_c/compliment/compliments} the loner's songs.",
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} but {VERB/r_c/compliment/compliments} the loner's songs.",
                 "exp": 30,
                 "weight": 5,
                 "new_cat": [
@@ -1775,7 +1775,7 @@
                 ]
             },
             {
-                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
+                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. The rest of the patrol yowl at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"],
@@ -2001,7 +2001,7 @@
                 ]
             },
             {
-                "text": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
+                "text": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. The rest of the patrol yowl at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"],
@@ -2019,7 +2019,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under it's ice.",
+                "text": "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under its ice.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
@@ -2047,7 +2047,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2287,7 +2287,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the long grass! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2407,7 +2407,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 40,
         "success_outcomes": [

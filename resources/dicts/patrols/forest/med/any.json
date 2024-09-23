@@ -20,7 +20,7 @@
         "pl_skill_constraint": ["PROPHET,1"],
         "success_outcomes": [
             {
-                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far too important.",
+                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far too important.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -310,7 +310,7 @@
                 ]
             },
             {
-                "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!",
+                "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1306,7 +1306,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1503,7 +1503,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1591,7 +1591,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1679,7 +1679,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1767,7 +1767,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
