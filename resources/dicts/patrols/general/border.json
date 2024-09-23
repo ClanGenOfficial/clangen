@@ -2362,7 +2362,7 @@
 
         },
         {
-            "text": "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from... whatever this is, {PRONOUN/p_l/subject} {VERB/offer/offers} the kittypet a place to stay in c_n- this kittypet's skill in communicating with dogs may come in handy later.",
+            "text": "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from... whatever this is, {PRONOUN/p_l/subject} {VERB/p_l/offer/offers} the kittypet a place to stay in c_n- this kittypet's skill in communicating with dogs may come in handy later.",
             "exp": 10,
 	    "new_cat": [
 		["status:warrior", "backstory:kittypet1", "kittypet", "exists"]
