@@ -718,7 +718,7 @@
             "deputy",
             "leader"
         ],
-        "random_status_constaint": [
+        "random_status_constraint": [
             "elder"
         ],
         "random_living_status": [
