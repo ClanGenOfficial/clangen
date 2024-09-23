@@ -190,7 +190,7 @@
             "Whispers useful suggestions in r_c's ears",
             "Sends a vision of an undiscovered herb patch to r_c",
             "Lets {PRONOUN/m_c/poss} scent linger near r_c, if only for a moment",
-            "Lead r_c to a hidden patch of herbs the Clan is running low on"
+            "Led r_c to a hidden patch of herbs the Clan is running low on"
         ],
         "main_status_constraint": [
             "medicine cat",
@@ -272,7 +272,7 @@
         "id": "dead_parent_to_alive_child2",
         "thoughts":[
             "Snuck into r_c's dream to comfort {PRONOUN/r_c/object} after a hard day",
-            "Visited r_c's dream to tell {PRONOUN/r_c/object} just how immensely proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/subject}"
+            "Visited r_c's dream to tell {PRONOUN/r_c/object} just how immensely proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}"
         ],
         "random_living_status": [
             "starclan",
@@ -296,7 +296,7 @@
             "Regrets not joining a Clan if it meant being able to raise r_c",
             "Still doesn't trust Clan cats, but is happy r_c is safe",
             "Is just glad r_c was saved from meeting the same fate {PRONOUN/m_c/subject} did",
-            "Is so greatful to c_n for saving r_c"
+            "Is so grateful to c_n for saving r_c"
         ],
         "random_backstory_constraint": [
             "orphaned1",
@@ -320,7 +320,7 @@
             "Wants to let r_c know {PRONOUN/m_c/subject} {VERB/m_c/are/is} okay",
             "Wishes {PRONOUN/m_c/subject} could play with r_c",
             "Is watching r_c play",
-            "Is watching over r_c reminicing over the short time they had together"
+            "Is watching over r_c, reminiscing over the short time they had together"
         ],
         "main_age_constraint": [
             "newborn",
@@ -341,7 +341,7 @@
         "id": "dead_child_to_alive_child_sibling2",
         "thoughts":[
             "Snuck into r_c's dreams to play with {PRONOUN/r_c/object} one last time",
-            "Visits r_c in {PRONOUN/r_c/poss} to tell them to live for the both of them"
+            "Visits r_c in {PRONOUN/r_c/poss} dream to tell them to live for the both of them"
         ],
         "main_age_constraint": [
             "newborn",
@@ -458,7 +458,8 @@
             "Wishes {PRONOUN/m_c/subject} could tell r_c how proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}",
             "Celebrates r_c's successes with {PRONOUN/r_c/object}",
             "Is proud of who r_c has become",
-            "Wants to visit r_c in {PRONOUN/r_c/poss} dreams, as {PRONOUN/m_c/subject} miss being with {PRONOUN/r_c/object} so much",
+            "Wants to visit r_c in {PRONOUN/r_c/poss} dreams",
+            "Misses being with r_c so much",
             "Cheered when r_c finally perfected a move {PRONOUN/r_c/subject} practiced for moons"
         ],
         "relationship_constraint": [
