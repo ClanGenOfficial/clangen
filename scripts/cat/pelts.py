@@ -1081,7 +1081,7 @@ class Pelt:
             if len(additional_details) > 2:
                 color_name = f"{color_name} with {', '.join(additional_details[:-1])}, and {additional_details[-1]}"
             elif len(additional_details) == 2:
-                color_name = f"{color_name} with {additional_details[:-1]} and {additional_details[-1]}"
+                color_name = f"{color_name} with {' and '.join(additional_details)}"
             elif additional_details:
                 color_name = f"{color_name} with {additional_details[0]}"
 
