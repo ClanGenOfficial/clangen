@@ -138,6 +138,7 @@
         ],
          "random_trait_constraint": [
              "arrogant",
+             "cold",
              "bloodthirsty",
              "fierce",
              "sneaky",
@@ -189,7 +190,7 @@
             "Whispers useful suggestions in r_c's ears",
             "Sends a vision of an undiscovered herb patch to r_c",
             "Lets {PRONOUN/m_c/poss} scent linger near r_c, if only for a moment",
-            "Tells r_c where to find an herb c_n is low on"
+            "Lead r_c to a hidden patch of herbs the Clan is running low on"
         ],
         "main_status_constraint": [
             "medicine cat",
@@ -248,14 +249,12 @@
         ]
     },
     {
-        "id": "dead_parent_to_alive_child",
+        "id": "dead_parent_to_alive_child1",
         "thoughts":[
-            "Snuck into r_c's dream to comfort {PRONOUN/r_c/object} after a hard day",
-            "Can't stop fretting over r_c even though there's nothing {PRONOUN/m_c/subject} can do",
+            "Can't stop fretting over r_c, even though there's nothing {PRONOUN/m_c/subject} can do",
             "Is talking the ears off any cat willing to listen to {PRONOUN/m_c/object} go on and on and on about r_c",
             "Is feeling guilty watching r_c miss {PRONOUN/m_c/object}",
-            "Deeply regrets leaving r_c without {PRONOUN/m_c/object}",
-            "Visited r_c's dream to tell {PRONOUN/r_c/object} just how immensely proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/subject}"
+            "Deeply regrets leaving r_c without {PRONOUN/m_c/object}"
         ],
         "random_living_status": [
             "starclan",
@@ -270,10 +269,32 @@
         ]
     },
     {
+        "id": "dead_parent_to_alive_child2",
+        "thoughts":[
+            "Snuck into r_c's dream to comfort {PRONOUN/r_c/object} after a hard day",
+            "Visited r_c's dream to tell {PRONOUN/r_c/object} just how immensely proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/subject}"
+        ],
+        "random_living_status": [
+            "starclan",
+            "darkforest",
+            "unknownresidence"
+        ],
+        "main_skill_constrict": [
+            "STAR,1",
+            "DREAM,1"
+        ],
+        "relationship_constraint": [
+            "parent/child"
+        ],
+        "main_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "dead_outsider_parent_to_alive_child",
         "thoughts":[
             "Regrets not joining a Clan if it meant being able to raise r_c",
-            "Still doesn't trust Clan cats but is happy r_c is safe",
+            "Still doesn't trust Clan cats, but is happy r_c is safe",
             "Is just glad r_c was saved from meeting the same fate {PRONOUN/m_c/subject} did",
             "Is so greatful to c_n for saving r_c"
         ],
@@ -294,19 +315,42 @@
         ]
     },
     {
-        "id": "dead_child_to_alive_child_sibling",
+        "id": "dead_child_to_alive_child_sibling1",
         "thoughts":[
             "Wants to let r_c know {PRONOUN/m_c/subject} {VERB/m_c/are/is} okay",
             "Wishes {PRONOUN/m_c/subject} could play with r_c",
             "Is watching r_c play",
-            "Snuck into r_c's dreams to play with {PRONOUN/r_c/object} one last time",
-            "Visits r_c in {PRONOUN/r_c/poss} to tell them to live for the both of them",
             "Is watching over r_c reminicing over the short time they had together"
         ],
         "main_age_constraint": [
             "newborn",
             "kitten"
         ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "newborn",
+            "kitten"
+        ]
+    },
+     {
+        "id": "dead_child_to_alive_child_sibling2",
+        "thoughts":[
+            "Snuck into r_c's dreams to play with {PRONOUN/r_c/object} one last time",
+            "Visits r_c in {PRONOUN/r_c/poss} to tell them to live for the both of them"
+        ],
+        "main_age_constraint": [
+            "newborn",
+            "kitten"
+        ],
+         "main_skill_constraint": [
+             "DREAM,1",
+             "STAR,1"
+         ],
         "relationship_constraint": [
             "siblings"
         ],
@@ -408,15 +452,30 @@
         ]
     },
     {
-        "id": "gen_dead_to_alive_sibling",
+        "id": "gen_dead_to_alive_sibling1",
         "thoughts": [
             "Watches r_c grow and live the life {PRONOUN/m_c/subject} could never have",
             "Wishes {PRONOUN/m_c/subject} could tell r_c how proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}",
             "Celebrates r_c's successes with {PRONOUN/r_c/object}",
             "Is proud of who r_c has become",
-            "Visited r_c's dreams recently and is still buzzing about it",
-            "Wants to visit r_c in {PRONOUN/r_c/poss} dreams cause {PRONOUN/m_c/subject} miss being with {PRONOUN/r_c/object} so much",
+            "Wants to visit r_c in {PRONOUN/r_c/poss} dreams, as {PRONOUN/m_c/subject} miss being with {PRONOUN/r_c/object} so much",
             "Cheered when r_c finally perfected a move {PRONOUN/r_c/subject} practiced for moons"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_dead_to_alive_sibling2",
+        "thoughts": [
+            "Visited r_c's dreams recently and is still buzzing about it"
+        ],
+        "main_skill_constraint": [
+            "STAR,1",
+            "DREAM,1"
         ],
         "relationship_constraint": [
             "siblings"
