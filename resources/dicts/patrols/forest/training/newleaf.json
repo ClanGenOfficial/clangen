@@ -119,13 +119,13 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/cap} lean in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/subject}.",
+        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/object}.",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before either cat can head out of camp.",
         "chance_of_success": 80,
         "relationship_constraint": ["romantic_70", "mates"],
         "success_outcomes": [
             {
-                "text": "This is p_l's absolutely favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c/self}. All the more special for being there together.",
+                "text": "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c/self}. All the more special for being there together.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
