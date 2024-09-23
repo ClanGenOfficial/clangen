@@ -2362,7 +2362,7 @@
 
         },
         {
-            "text": "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from.. whatever this is, {PRONOUN/p_l/subject} offers the kittypet a place to stay in c_n- this kittypet's skill in communicating with dogs may come in handy later.",
+            "text": "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from... whatever this is, {PRONOUN/p_l/subject} {VERB/offer/offers} the kittypet a place to stay in c_n- this kittypet's skill in communicating with dogs may come in handy later.",
             "exp": 10,
 	    "new_cat": [
 		["status:warrior", "backstory:kittypet1", "kittypet", "exists"]
@@ -2383,7 +2383,7 @@
     ],
     "fail_outcomes": [
         {
-	"text": "Momentarily distracted, p_l doesn't have time to react as the increasingly-infuriating dog nips at {PRONOUN/p_l/poss} ear. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses}, lashing out at the dog just as an incredibly appologetic kittypet rushes over, leading the whimpering dog away. p_l stares after them in shock. Did that dog actually listen to the kittypet...? Perhaps better to head back to camp, and process this bizarre experience.",
+	"text": "Momentarily distracted, p_l doesn't have time to react as the increasingly-infuriating dog nips at {PRONOUN/p_l/poss} ear. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses}, lashing out at the dog just as an incredibly apologetic kittypet rushes over, leading the whimpering dog away. p_l stares after them in shock. Did that dog actually listen to the kittypet...? Perhaps better to head back to camp, and process this bizarre experience.",
             "exp": 2,
 	    "weight": 20,
 	     "new_cat": [
