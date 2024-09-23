@@ -2317,7 +2317,7 @@
     "biome": ["any"],
     "season": ["any"],
     "types": ["border"],
-    "tags": [],
+    "tags": ["new_cat"],
     "patrol_art": "gen_border_dogscent_clanmember",
     "min_cats": 1,
     "max_cats": 1,
@@ -2329,39 +2329,56 @@
         {
             "text": "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c:0/poss} name is n_c:0, and asking p_l not to hurt {PRONOUN/n_c:0/poss} friend. It takes p_l a while to realise {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c:0 walk away, {PRONOUN/n_c:0/poss} canine companion excitably following. The other warriors were not going to believe this!",
             "exp": 5,
-	    "new_cat": [
+	        "new_cat": [
 		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["n_c:0"],
+                    "mutual": true,
+                    "values": ["comfort"],
+                    "amount": 5
+                }
+		],
+            "weight": 20,
+            "art": "gen_kittypet_friends_with_dog1"
+        },
+	    {
+            "text": "s_c whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c not to hurt them. Any other day, s_c might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it.",
+            "exp": 5,
+	        "new_cat": ["kittypet", "meeting", "exists"],
+	        "relationships": [
+	            {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["n_c:0"],
+                    "values": ["comfort"],
+                    "amount": -5
+                }
+	    ],
+	    "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "cold", "grumpy"],
+	    "weight": 30,
+            "art": "gen_kittypet_friends_with_dog1"
+
+        },
+        {
+            "text": "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from.. whatever this is, {PRONOUN/p_l/subject} offers the kittypet a place to stay in c_n- this kittypet's skill in communicating with dogs may come in handy later.",
+            "exp": 10,
+	    "new_cat": [
+		["status:warrior", "backstory:kittypet1", "kittypet", "exists"]
 		],
 	    "relationships": [
                 {
                         "cats_to": ["p_l"],
                         "cats_from": ["n_c:0"],
                         "mutual": true,
-                        "values": ["comfort"],
-                        "amount": 5
+                        "values": ["platonic","trust"],
+                        "amount": 10
                     }
 		],
             "weight": 20,
-            "art": "gen_bord_newcatkittypet1"
-        },
-	{
-            "text": "s_c whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c not to hurt them. Any other day, s_c might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it.",
-            "exp": 5,
-	    "new_cat": [
-		["kittypet", "meeting", "exists"]
-		],
-	    "relationships": [
-	           {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["n_c:0"],
-                        "values": ["comfort"],
-                        "amount": -5
-                    }
-	    ],
-	    "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "cold", "grumpy"],
-	    "weight": 30,
-            "art": "gen_bord_newcatkittypet1"
-
+            "art": "gen_kittypet_friends_with_dog1",
+            "outsider_rep": 1
         }
     ],
     "fail_outcomes": [
@@ -2396,7 +2413,7 @@
                 }
             ],
 
-            "art": "gen_bord_newcatkittypet1"
+            "art": "gen_kittypet_friends_with_dog1"
     
         },
 	{
@@ -2462,8 +2479,27 @@
                     }
 		],
 	    "weight": 10,
-            "art": "gen_bord_newcatkittypet1"
-	}
+            "art": "gen_kittypet_friends_with_dog1"
+	},
+    {
+        "text": "p_l lets out a vicious yowl, ignoring the now shrill voice calling out to {PRONOUN/p_l/object}, pleading with {PRONOUN/p_l/object} to stop as {PRONOUN/p_l/subject} {VERB/p_l/attack/attacks} the dog, violently tearing at the dog's pelt as they yap and whine. After the tussle, the dog hauls themself towards the now teary-eyed kittypet, and p_l can't help but smirk at {PRONOUN/n_c:0/poss} terrified expression.",
+                "exp": 5,
+            "new_cat": [
+            ["kittypet", "meeting"]
+            ],
+            "relationships": [
+                    {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["n_c:0"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 20
+                        }
+            ],
+            "weight": 10,
+            "stat_trait": ["bloodthirsty", "vengeful"],
+                "art": "gen_kittypet_friends_with_dog1"
+        }
 	],
 	"antag_fail_outcomes": [
         {
