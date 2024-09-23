@@ -3547,7 +3547,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, throws {PRONOUN/s_c/self} to the attack. The fox hears {PRONOUN/s_c/object} coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
