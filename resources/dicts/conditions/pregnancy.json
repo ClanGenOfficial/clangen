@@ -26,8 +26,8 @@
     "m_c hopes {PRONOUN/m_c/subject}'ll have a large litter. m_c always wanted a big family after all.",
     "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have, nor {VERB/m_c/do/does} {PRONOUN/m_c/subject} care. As long as they're happy and healthy, that's all that matters.",
     "m_c dosen't know or care how many kits {PRONOUN/m_c/subject}'ll have.",
-    "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {PRONOUN/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a small litter.",
-    "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {PRONOUN/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a big litter."
+    "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a small litter.",
+    "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a big litter."
   ],
 
 
@@ -73,7 +73,8 @@
       "m_c doesn't feel ready to be a parent of this {insert}. But {PRONOUN/m_c/subject} {VERB/m_c/promise/promises} to the tiny flailing limbs by {PRONOUN/m_c/poss} side that {PRONOUN/m_c/subject}'ll do {PRONOUN/m_c/poss} best. {PRONOUN/m_c/subject/CAP} {VERB/m_c/swear/swears} on StarClan itself.",
       "No one knows who m_c has had {PRONOUN/m_c/poss} {insert} with, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} very happy watching over {PRONOUN/m_c/poss} little offspring in the nursery.",
       "Whenever someone asks whether m_c will be alright raising {PRONOUN/m_c/poss} {insert} alone, {PRONOUN/m_c/subject} just {VERB/m_c/smile/smiles} and {VERB/m_c/reply/replies} that everything is going to work out fine.",
-      "A {insert}! m_c welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with {PRONOUN/m_c/object}."
+      "A {insert}! m_c welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with {PRONOUN/m_c/object}.",
+	    "No cat can judge what two consenting adults do in private. Some ask whether m_c and r_c will become mates for the sake of their {insert} but most turn a blind eye to it, opting to allow the pair their privacy as new parents."
     ],
     "two_parents": [
       "m_c had a {insert} with r_c.",
@@ -125,7 +126,8 @@
       "Later - hours later, eons later - the {insert} mews. Outside, m_c's body cools, the toll of birth too much for {PRONOUN/m_c/object}.",
       "Though all looks fine, the Clan will wake tomorrow to discover m_c's body cold in the nursery, {PRONOUN/m_c/poss} {insert} mewing in vain for their parent.",
       "Though birth is always considered a difficult and risky event, no one thought they'd lose m_c to it. Not after the {insert} was all born and seemed fine... they thought the blood loss was under control.",
-	    "Everyone knew m_c was the most excited of everyone to meet {PRONOUN/m_c/poss} kits... It's a cruel twist of fate, however, as m_c's body lays cooling, leaving the {insert} without {PRONOUN/m_c/object}."
+	    "Everyone knew m_c was the most excited of everyone to meet {PRONOUN/m_c/poss} kits... It's a cruel twist of fate, however, as m_c's body lays cooling, leaving the {insert} without {PRONOUN/m_c/object}.",
+	    "There isn't a single dry eye in the nursery as m_c uses the last of {PRONOUN/m_c/poss} strength to name {PRONOUN/m_c/poss} beautiful {insert}."
     ],
     "difficult_birth": [
       "The birth was stressful and m_c lost a lot of blood.",
