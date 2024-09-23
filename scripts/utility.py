@@ -843,51 +843,45 @@ def create_new_cat(
                 new_cat.pelt.scars.remove(scar)
 
         # chance to give the new cat a permanent condition, higher chance for found kits and litters
-        if game.clan.game_mode != "classic":
-            if kit or litter:
-                chance = int(
-                    game.config["cat_generation"]["base_permanent_condition"] / 11.25
-                )
-            else:
-                chance = game.config["cat_generation"]["base_permanent_condition"] + 10
-            if not int(random() * chance):
-                possible_conditions = []
-                for condition in PERMANENT:
-                    if (kit or litter) and PERMANENT[condition]["congenital"] not in [
-                        "always",
-                        "sometimes",
-                    ]:
-                        continue
-                    # next part ensures that a kit won't get a condition that takes too long to reveal
-                    age = new_cat.moons
-                    leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
-                    if age > leeway:
-                        continue
-                    possible_conditions.append(condition)
+        if kit or litter:
+            chance = int(
+                game.config["cat_generation"]["base_permanent_condition"] / 11.25
+            )
+        else:
+            chance = game.config["cat_generation"]["base_permanent_condition"] + 10
+        if not int(random() * chance):
+            possible_conditions = []
+            for condition in PERMANENT:
+                if (kit or litter) and PERMANENT[condition]["congenital"] not in [
+                    "always",
+                    "sometimes",
+                ]:
+                    continue
+                # next part ensures that a kit won't get a condition that takes too long to reveal
+                age = new_cat.moons
+                leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
+                if age > leeway:
+                    continue
+                possible_conditions.append(condition)
 
-                if possible_conditions:
-                    chosen_condition = choice(possible_conditions)
-                    born_with = False
-                    if PERMANENT[chosen_condition]["congenital"] in [
-                        "always",
-                        "sometimes",
-                    ]:
-                        born_with = True
+            if possible_conditions:
+                chosen_condition = choice(possible_conditions)
+                born_with = False
+                if PERMANENT[chosen_condition]["congenital"] in [
+                    "always",
+                    "sometimes",
+                ]:
+                    born_with = True
 
-                    new_cat.get_permanent_condition(chosen_condition, born_with)
-                    if (
-                        new_cat.permanent_condition[chosen_condition]["moons_until"]
-                        == 0
-                    ):
-                        new_cat.permanent_condition[chosen_condition][
-                            "moons_until"
-                        ] = -2
+                new_cat.get_permanent_condition(chosen_condition, born_with)
+                if new_cat.permanent_condition[chosen_condition]["moons_until"] == 0:
+                    new_cat.permanent_condition[chosen_condition]["moons_until"] = -2
 
-                    # assign scars
-                    if chosen_condition in ["lost a leg", "born without a leg"]:
-                        new_cat.pelt.scars.append("NOPAW")
-                    elif chosen_condition in ["lost their tail", "born without a tail"]:
-                        new_cat.pelt.scars.append("NOTAIL")
+                # assign scars
+                if chosen_condition in ["lost a leg", "born without a leg"]:
+                    new_cat.pelt.scars.append("NOPAW")
+                elif chosen_condition in ["lost their tail", "born without a tail"]:
+                    new_cat.pelt.scars.append("NOTAIL")
 
         if outside:
             new_cat.outside = True
@@ -1951,6 +1945,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
 def event_text_adjust(
     Cat,
     text,
+    *,
     patrol_leader=None,
     main_cat=None,
     random_cat=None,
@@ -1991,11 +1986,16 @@ def event_text_adjust(
 
     # main_cat
     if "m_c" in text:
-        replace_dict["m_c"] = (str(main_cat.name), choice(main_cat.pronouns))
+        if main_cat:
+            replace_dict["m_c"] = (str(main_cat.name), choice(main_cat.pronouns))
 
     # patrol_lead
     if "p_l" in text:
-        replace_dict["p_l"] = (str(patrol_leader.name), choice(patrol_leader.pronouns))
+        if patrol_leader:
+            replace_dict["p_l"] = (
+                str(patrol_leader.name),
+                choice(patrol_leader.pronouns),
+            )
 
     # random_cat
     if "r_c" in text:

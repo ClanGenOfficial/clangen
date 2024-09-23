@@ -185,5 +185,185 @@
         }
       ]
     }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Some of c_n's best hunters challenge m_c to a hunt-off. The stakes are simple: if c_n wins, m_c leaves the territory; if m_c wins, then {PRONOUN/m_c/subject} will be allowed to hunt within the Clan's borders undisturbed. m_c wins by a landslide and, though they grumble about it, the c_n cats honor the agreement and leave {PRONOUN/m_c/object} alone.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Is feeling rather proud of {PRONOUN/m_c/self}",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "The cats of c_n have been scouring the territory for m_c, but {PRONOUN/m_c/poss} strong senses have helped {PRONOUN/m_c/object} to stay two pawsteps ahead of {PRONOUN/m_c/poss} pursuers.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "exiled"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "SENSE,1"
+      ],
+      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "The cats of c_n have set up an ambush, hoping to get rid of m_c once and for all. However, despite the Clancats' best efforts, m_c's strong senses have helped {PRONOUN/m_c/object} to evade the trap.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "exiled"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "SENSE,1"
+      ],
+      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 15
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Some of c_n's best hunters challenge m_c to a hunt-off. The stakes are simple: if c_n wins, then m_c leaves the territory. Well, m_c soon proves that with age comes experience, easily winning the contest before continuing on {PRONOUN/m_c/poss} merry way.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["senior"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Is feeling rather pleased after showing those whippersnappers a thing or two",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 10
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "The cats of c_n have been scouring the territory for m_c but, even in {PRONOUN/m_c/poss} advanced age, m_c's senses have remained sharp enough for {PRONOUN/m_c/object} to stay two pawsteps ahead of {PRONOUN/m_c/poss} pursuers.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "exiled"],
+      "age": ["senior"],
+      "skill": [
+        "SENSE,1"
+      ],
+      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "The cats of c_n have set up an ambush, hoping to get rid of m_c once and for all. However, even in {PRONOUN/m_c/poss} advanced age, m_c's senses are more than sharp enough to help {PRONOUN/m_c/object} evade the trap.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "exiled"],
+      "age": ["senior"],
+      "skill": [
+        "SENSE,1"
+      ],
+      "new_thought": "Isn't ready to join StarClan just yet",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 15
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 10
+        }
+      ]
+    }
   }
 ]

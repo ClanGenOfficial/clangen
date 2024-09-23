@@ -93,7 +93,7 @@
         ],
         "deaf": [
           "r_c does {PRONOUN/r_c/poss} best to communicate to m_c with rudimentary tail signals that m_c's hearing is permanently gone, the frostbite having damaged something deep within.",
-            "m_c watches as r_c talks to another cat in the medicine den, glancing towards {PRONOUN/m_c/object} every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than {PRONOUN/m_c/subject} realized.",
+            "m_c watches as r_c talks to another cat in the medicine cat den, glancing towards {PRONOUN/m_c/object} every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than {PRONOUN/m_c/subject} realized.",
             "m_c sits and watches the Clan going about their business and tries to get used to the stark silence. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows}, instinctively, that {PRONOUN/m_c/poss} hearing is never coming back. The frostbite must have scarred something deep within {PRONOUN/m_c/poss} ears."
 
         ]
@@ -148,9 +148,9 @@
           "m_c stumbles through camp, trying {PRONOUN/m_c/poss} best to learn the layout. It seems like {PRONOUN/m_c/poss} head injury has made {PRONOUN/m_c/object} go blind... and {PRONOUN/m_c/poss} vision doesn't seem to be returning any time soon."
         ],
         "constantly dizzy": [
-            "m_c stumbles through the medicine den, trying to walk a straight line as r_c instructed. r_c tells {PRONOUN/m_c/object} that the newfound lack of balance might be a permanent result of {PRONOUN/m_c/poss} head injury.",
+            "m_c stumbles through the medicine cat den, trying to walk a straight line as r_c instructed. r_c tells {PRONOUN/m_c/object} that the newfound lack of balance might be a permanent result of {PRONOUN/m_c/poss} head injury.",
           "m_c finds that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to concentrate to stay upright while standing. The newfound loss of balance is endlessly frustrating to {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/surmise/surmises} that it's likely been caused by {PRONOUN/m_c/poss} head injury.",
-            "Though {PRONOUN/m_c/poss} head injury has healed, m_c feels like a newborn kitten on {PRONOUN/m_c/poss} legs as {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} around the medicine den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sigh/sighs} and {VERB/m_c/accept/accepts} the fact that {PRONOUN/m_c/poss} balance will likely never be the same."
+            "Though {PRONOUN/m_c/poss} head injury has healed, m_c feels like a newborn kitten on {PRONOUN/m_c/poss} legs as {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} around the medicine cat den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sigh/sighs} and {VERB/m_c/accept/accepts} the fact that {PRONOUN/m_c/poss} balance will likely never be the same."
         ],
         "partial hearing loss": [
           "m_c tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/poss} hearing has gotten worse. r_c assesses {PRONOUN/m_c/object} and confirms it: {PRONOUN/m_c/poss} hearing is failing and it can only be due to the head injury {PRONOUN/m_c/subject} suffered.",
@@ -174,7 +174,7 @@
         ],
         "failing eyesight": [
           "r_c tells m_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lucky to have regained any eyesight at all. Hopefully, {PRONOUN/m_c/poss} sight won't degrade any further.",
-          "m_c stalks out of the medicine den and nearly runs into another cat - which only increases {PRONOUN/m_c/poss} frustration at the news that {PRONOUN/m_c/poss} eyesight won't be getting better.",
+          "m_c stalks out of the medicine cat den and nearly runs into another cat - which only increases {PRONOUN/m_c/poss} frustration at the news that {PRONOUN/m_c/poss} eyesight won't be getting better.",
           "m_c closes {PRONOUN/m_c/poss} eyes and opens them again a few moments later, trying to get a sense of just how bad {PRONOUN/m_c/poss} eyesight is now."
         ]
     },

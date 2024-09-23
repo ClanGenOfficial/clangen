@@ -16,8 +16,13 @@
         "",
         "<b>Thank you for playing!!</b>",
         "",
+        "<b>-Music-</b>",
+        "<i>Composed by Sharon Hurvitz</i>",
+        "Main Menu music: <i>Generations</i>",
+        "",
         "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a>",
         "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
+
     ],
     "contrib": {
         "anju": "-Senior Dev-<br>Creating the Original Game- Old Base Code (Clan creation, Clan screen, Timeskip, Mates and kits, StarClan), Base Sprites & Pelts, Patrol Arts, New Sprite Revisions, Shaders",
@@ -81,7 +86,7 @@
         "Salix": "Art",
         "sami(RAYTRAC3R)": "First implementation of biomes, gender system, and profile tabs, helped Ryos with tortie recode bugs",
         "Selkirks": "Bugfixes, pronoun tagging, thoughts, names",
-        "Sharon Hurvitz": "Menu music",
+        "Sharon Hurvitz": "Composer: Menu music, Audio Engineer: Sound Effects",
         "Shecker": "Code, cat toggles",
         "Shou": "Build workflow rewrite, initial lint/test workflows, bug/performance/refactoring fixes",
         "Silverstar": "Camp backgrounds, black and brown pelts, paralyzed and sick sprites, numerous patrol art, more eyes, misc code, patrols, and thoughts",
@@ -98,6 +103,7 @@
         "transfoxes": "Code, pronoun tagging",
         "Tybaxel": "Patrol sprites, Clan creation screen art",
         "wood pank": "Art",
-        "ZtheCorgi (Zabe)": "Nylon & indigo collars, various small bugfixes and proofreading"
+        "ZtheCorgi (Zabe)": "Nylon & indigo collars, various small bugfixes and proofreading",
+        "PoppyBlossom (Poppy)": "Code, Bugfixes & More!"
     }
 }

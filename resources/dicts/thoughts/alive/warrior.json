@@ -5,7 +5,7 @@
             "Is watching over the kits",
             "Begrudgingly allows kits to play with {PRONOUN/m_c/poss} tail",
             "Goes to help a kit that stumbled over their own paws",
-            "Was roped into playing mossball with the kits",
+            "Was roped into playing moss ball with the kits",
             "Somehow has a gaggle of kits following {PRONOUN/m_c/object}",
             "Is being begged by r_c to teach {PRONOUN/r_c/object} a few moves, despite r_c being a kit",
             "Somehow got roped up in watching r_c for the day",
@@ -912,7 +912,7 @@
         "id": "playful_warrior",
         "thoughts": [
             "Is playing tag with cats around camp",
-            "Is tossing moss-balls around",
+            "Is tossing moss balls around",
             "Pounced on a stray leaf with satisfaction",
             "Seems to be playing with {PRONOUN/m_c/poss} food",
             "Is play-fighting with friends",
@@ -938,7 +938,7 @@
     {
         "id": "playful_warrior_to_living_kit",
         "thoughts": [
-            "Plays moss-ball with a kit"
+            "Plays moss ball with a kit"
         ],
         "random_status_constraint": [
             "kitten"

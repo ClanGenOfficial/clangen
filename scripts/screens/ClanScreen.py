@@ -47,6 +47,7 @@ class ClanScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
             if event.ui_element == self.save_button:
                 try:
                     self.save_button_saving_state.show()
@@ -100,6 +101,7 @@ class ClanScreen(Screens):
                 self.update_buttons_and_text()
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.update_camp_bg()
         game.switches['cat'] = None
         if game.clan.biome + game.clan.camp_bg in game.clan.layouts:
@@ -196,7 +198,12 @@ class ClanScreen(Screens):
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="#checked_checkbox")
 
-        self.save_button = UIImageButton(scale(pygame.Rect(((686, 1286), (228, 60)))), "", object_id="#save_button")
+        self.save_button = UIImageButton(
+            scale(pygame.Rect(((686, 1286), (228, 60)))),
+            "",
+            object_id="#save_button",
+            sound_id="save"
+        )
         self.save_button.enable()
         self.save_button_saved_state = pygame_gui.elements.UIImage(
             scale(pygame.Rect((686, 1286), (228, 60))),
