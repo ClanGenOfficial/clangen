@@ -11660,7 +11660,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to think of a response, but, well... {PRONOUN/p_l/subject}'d never thought about it before. {PRONOUN/p_l/subject} {VERB/p_l/dismiss/dismisses} the topic, continuing with the training exercises.",
+                "text": "p_l tries to think of a response, but, well... {PRONOUN/p_l/subject}'d never thought about it before. {PRONOUN/p_l/subject/CAP} {VERB/p_l/dismiss/dismisses} the topic, continuing with the training exercises.",
                 "exp": 5,
                 "relationships": [
                     {
