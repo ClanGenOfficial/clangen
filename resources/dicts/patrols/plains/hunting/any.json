@@ -1303,7 +1303,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1448,7 +1448,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2843,8 +2843,8 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "r_c was permantly marked by the claws of a hare as an apprentice - but {PRONOUN/r_c/subject} survived.",
-                        "reg_death": "r_c died from the claws of a hare encountered on a hunt as a foolish apprentice.",
+                        "scar": "m_c was permantly marked by the claws of a hare as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "reg_death": "m_c died from the claws of a hare encountered on a hunt as a foolish apprentice.",
                         "lead_death": "from the claws of a hare encountered on a hunt as a foolish apprentice"
                         }
                 }

@@ -1380,7 +1380,7 @@
                 ]
             },
             {
-                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/m_c/subject} {VERB/m_c/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly - {PRONOUN/m_c/subject} can feel a mouse pinned under {PRONOUN/m_c/poss} paws!",
+                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/app1/subject} {VERB/app1/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly - {PRONOUN/app1/subject} can feel a mouse pinned under {PRONOUN/app1/poss} paws!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],

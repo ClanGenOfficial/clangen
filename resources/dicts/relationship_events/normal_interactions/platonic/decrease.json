@@ -3,7 +3,12 @@
 		"id": "platonic_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c isn't very considerate of others."
+			"m_c thinks r_c isn't very considerate of others.",
+			"m_c avoids r_c.",
+			"m_c noticed something r_c does that annoyed {PRONOUN/m_c/object}.",
+			"r_c splashes m_c as they pass a puddle.",
+			"m_c wasn't paying attention when r_c was talking to {PRONOUN/m_c/object}.",
+			"m_c settled to eat on the opposite side of camp from r_c."
 		]
 	},
 	{
@@ -11,7 +16,9 @@
 		"intensity": "medium",
 		"interactions": [
 			"m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
-			"m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}."
+			"m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}.",
+			"m_c rolls {PRONOUN/m_c/poss} eyes at r_c.",
+			"m_c sneered at r_c."
 		],
 		"reaction_random_cat": {
 			"platonic": "decrease"
@@ -19,15 +26,31 @@
 	},
 	{
 		"id": "platonic_de_med1",
-		"intensity": "high",
+		"intensity": "medium",
 		"interactions": [
-			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back."
+			"m_c realized r_c was only pretending to pay attention to {PRONOUN/m_c/object} when {PRONOUN/m_c/subject} {VERB/m_c/was/were} talking.",
+			"m_c tried to talk to r_c but gave up, seeing how clearly {PRONOUN/r_c/subject} wanted to be doing anything else.",
+			"m_c overheard r_c talking about {PRONOUN/m_c/object}, but when pressed for details, r_c denied mentioning {PRONOUN/m_c/object} at all.",
+			"m_c got up and walked away when m_c sat nearby.",
+			"m_c blatantly ignored r_c.",
+			"Lately, m_c's had some choice words for r_c about how {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been acting.",
+			"m_c asked another cat to pass a message to r_c rather doing it {PRONOUN/m_c/self}.",
+			"m_c was passive aggressive towards r_c for taking something {PRONOUN/r_c/subject} knew m_c had {PRONOUN/m_c/poss} eye on all day.",
+			"m_c actively avoids r_c any chance {PRONOUN/m_c/subject} get."
 		]
 	},
 	{
 		"id": "platonic_de_med2",
 		"interactions": [
-			"m_c is annoyed that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to pull ticks off of r_c today."
+			"m_c is annoyed that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to pull ticks off of r_c today.",
+			"m_c refreshes r_c's bedding last out of all the elders.",
+			"r_c wanted to thank m_c for doing a good job but m_c seemed irritated the entire time {PRONOUN/m_c/subject} had to be around {PRONOUN/r_c/object}.",
+			"m_c was supposed to pull ticks off r_c but {PRONOUN/m_c/subject} never came to do it, leaving {PRONOUN/m_c/object} to itch and itch all day.",
+			"m_c is stuck listening to r_c's complaints.",
+			"r_c swears m_c has been adding less and less bedding to {PRONOUN/r_c/poss} nest recently...",
+			"m_c added r_c's least favorite nesting material to {PRONOUN/r_c/poss} nest.",
+			"m_c hid thorns in r_c's bedding.",
+			"m_c is stuck listening to a boring story r_c is telling."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -49,7 +72,8 @@
 	{
 		"id": "platonic_de_med4",
 		"interactions": [
-			"r_c is not backing down in an argument with m_c."
+			"r_c is not backing down in an argument with m_c.",
+			"m_c is picking a fight over something r_c thought was already resolved."
 		],
 		"random_trait_constraint": [
 			"fierce"
@@ -58,7 +82,11 @@
 	{
 		"id": "platonic_de_med5",
 		"interactions": [
-			"m_c scorns r_c for not catching enough prey."
+			"m_c scorns r_c for not catching enough prey.",
+			"r_c criticized m_c's skills.",
+			"m_c can't stand r_c's constant nagging.",
+			"According to r_c, m_c just can't do anything right.",
+			"r_c criticized every single error m_c makes."
 		],
 		"random_trait_constraint": [
 			"strict"
@@ -130,7 +158,8 @@
 		"interactions": [
 			"m_c snarls at r_c for coming too close to the herbs.",
 			"m_c shoos r_c away, not having time for curious little kits.",
-			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed them nasty tasting herbs!"
+			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed them nasty tasting herbs!",
+			"r_c scrunches {PRONOUN/r_c/poss} nose at m_c and says {PRONOUN/m_c/subject} smell weird."
 		],
 		"main_status_constraint": [
 			"medicine cat",
@@ -147,5 +176,20 @@
 		"reaction_random_cat": {
 			"platonic": "decrease"
 		}
+	},
+	{
+		"id": "platonic_de_high4",
+		"intensity": "high",
+		"interactions": [
+			"r_c is caught tossing out a gift m_c <i>just</i> gave {PRONOUN/m_c/object}.",
+			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back.",
+			"m_c interrupted r_c when {PRONOUN/r_c/subject} {VERB/r_c/was/were} very busy with an important task, ruining {PRONOUN/r_c/poss} focus.",
+			"r_c purposefully pick the smallest prey for m_c when {PRONOUN/m_c/subject} asked for help.",
+			"r_c was found spreading rumors about m_c stealing stuff from {PRONOUN/r_c/object}.",
+			"r_c was caught hiding m_c's belongings.",
+			"r_c publicly mocked m_c during a gathering.",
+			"m_c discovered r_c was sabotaging {PRONOUN/m_c/object} efforts at work.",
+			"m_c walked in on r_c destroying a memento {PRONOUN/m_c/object} cherished."
+		]
 	}
 ]

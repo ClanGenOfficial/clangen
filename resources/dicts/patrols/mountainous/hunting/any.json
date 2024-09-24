@@ -1253,8 +1253,8 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "r_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/r_c/subject} survived.",
-                        "reg_death": "r_c died from the strike of a stingray encountered on a hunt as a foolish apprentice.",
+                        "scar": "m_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "reg_death": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice.",
                         "lead_death": "from the strike of a stingray encountered on a hunt as a foolish apprentice"
                         }
                 }

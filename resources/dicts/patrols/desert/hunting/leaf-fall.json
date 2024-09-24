@@ -1571,9 +1571,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries the scars of escaping a wildfire, brought on by lightning strikes in leaf-fall.",
-                    "reg_death": "r_c was killed by the damage {PRONOUN/r_c/subject} took escaping a wildfire out in the territory with {PRONOUN/r_c/poss} sibling.",
-                    "lead_death": "was killed by the damage {PRONOUN/r_c/subject} took escaping a wildfire out in the territory with {PRONOUN/r_c/poss} sibling"
+                    "scar": "m_c carries the scars of escaping a wildfire, brought on by lightning strikes in leaf-fall.",
+                    "reg_death": "m_c was killed by the damage {PRONOUN/m_c/subject} took escaping a wildfire out in the territory with {PRONOUN/m_c/poss} sibling.",
+                    "lead_death": "was killed by the damage {PRONOUN/m_c/subject} took escaping a wildfire out in the territory with {PRONOUN/m_c/poss} sibling"
                 },
                 "prey": ["very_small"]
             }
@@ -2005,9 +2005,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries the scars of escaping a wildfire, brought on by lightning strikes in leaf-fall.",
-                    "reg_death": "r_c was killed by the damage {PRONOUN/r_c/subject} took escaping a wildfire out in the territory with {PRONOUN/r_c/poss} siblings.",
-                    "lead_death": "was killed by the damage {PRONOUN/r_c/subject} took escaping a wildfire out in the territory with {PRONOUN/r_c/poss} siblings"
+                    "scar": "m_c carries the scars of escaping a wildfire, brought on by lightning strikes in leaf-fall.",
+                    "reg_death": "m_c was killed by the damage {PRONOUN/m_c/subject} took escaping a wildfire out in the territory with {PRONOUN/m_c/poss} siblings.",
+                    "lead_death": "was killed by the damage {PRONOUN/m_c/subject} took escaping a wildfire out in the territory with {PRONOUN/m_c/poss} siblings"
                 },
                 "prey": ["very_small"]
             }

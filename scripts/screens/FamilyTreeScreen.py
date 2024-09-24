@@ -72,6 +72,8 @@ class FamilyTreeScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
                 game.switches["root_cat"] = None
@@ -165,6 +167,7 @@ class FamilyTreeScreen(Screens):
     def screen_switches(self):
         """Set up things that are always on the page"""
 
+        self.show_mute_buttons()
         self.current_group = None
         self.current_group_name = None
         # prev/next and back buttons
@@ -173,12 +176,14 @@ class FamilyTreeScreen(Screens):
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 120), (210, 60))),

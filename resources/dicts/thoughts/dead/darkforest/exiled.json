@@ -1,3 +1,66 @@
 [
-    
+  {
+    "id": "exiled_df_dead_thoughts",
+    "thoughts": [
+      "Thinks of the disapproving glares of {PRONOUN/m_c/poss} ex-Clanmates while {PRONOUN/m_c/subject} {VERB/m_c/train/trains}",
+        "Is watching {PRONOUN/m_c/poss} old Clan with scorn, hoping for an opportunity to get back at them",
+        "Wants to make {PRONOUN/m_c/poss} old leader pay for exiling {PRONOUN/m_c/object}"
+        ]
+    },
+    {
+        "id": "exiled_df_evil",
+        "thoughts": [
+            "Is imagining the tree {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} clawing at is one of {PRONOUN/m_c/poss} ex-Clanmates",
+            "Trains extra hard, waiting for an opportunity to get {PRONOUN/m_c/poss} revenge",
+            "Is the first to volunteer for training",
+            "Knows {PRONOUN/m_c/subject} {VERB/m_c/were/was} right to do what {PRONOUN/m_c/subject} did",
+            "Is cursing {PRONOUN/m_c/poss} old Clan"
+        ],
+    "main_trait_constraint": [
+        "bloodthirsty",
+        "faithful",
+        "vengeful",
+        "cold",
+        "fierce",
+        "arrogant",
+        "ambitious"
+        ]
+    },
+    {
+        "id": "exiled_df_kind",
+        "thoughts": [
+            "Truly believes {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} misunderstood",
+            "Is sobbing quietly",
+            "Has lost all hope",
+            "Wants nothing more then to fade away",
+            "Is begging a shadowy cat for mercy to no avail",
+            "Is deeply regretting what {PRONOUN/m_c/subject} did to get exiled and end up here",
+            "Is reflecting on what {PRONOUN/m_c/subject} did and why {PRONOUN/m_c/subject} ended up in the Dark Forest"
+        ],
+    "main_trait_constraint": [
+        "compassionate",
+        "faithful",
+        "loving",
+        "patient",
+        "thoughtful",
+        "nervous",
+        "wise",
+        "sincere"
+        ]
+    },
+    {
+        "id": "exiled_df_sneaky",
+        "thoughts": [
+            "Isn't surprised in the slightest as to why {PRONOUN/m_c/subject} ended up here",
+            "Narrowly avoided encountering another shadowy cat",
+            "Talked {PRONOUN/m_c/poss} way out of a training session"
+        ],
+    "main_trait_constraint": [
+        "sneaky",
+        "arrogant",
+        "shameless",
+        "wise",
+        "cunning"
+        ]
+    }
 ]

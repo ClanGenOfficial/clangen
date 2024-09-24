@@ -1288,7 +1288,7 @@
         "decline_text": "The queue doesn't take as long as p_l or r_c were expecting, and the patrol is soon off to other things.",
         "success_outcomes": [
                 {
-                    "text": "Instead of working together, blood was spilled over every drop of water. Eventually, the medicine cats and mediators of the Clans were forced by Starclan to step in and end the carnage. But the damage was already done. We can learn from their mistakes - they had no choice but to live with them.",
+                    "text": "Instead of working together, blood was spilled over every drop of water. Eventually, the medicine cats and mediators of the Clans were forced by StarClan to step in and end the carnage. But the damage was already done. We can learn from their mistakes - they had no choice but to live with them.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [

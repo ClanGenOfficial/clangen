@@ -4,6 +4,11 @@
 		"interactions": [
 			"m_c saw r_c the other day, but didn't get a chance to meow hello.",
 			"m_c bickered about something trivial with r_c.",
+            		"m_c settles down to eat near r_c.",
+            		"m_c offered some fresh-kill to r_c but {PRONOUN/r_c/subject} {VERB/r_c/weren't/wasn't} hungry",
+            		"m_c watches r_c mill about camp.",
+            		"m_c was so busy {PRONOUN/m_c/subject} didn't have a chance to see r_c.",
+            		"m_c wonders what r_c is up to now.",
 			"m_c nods politely as r_c passes by.",
 			"m_c acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers."
 		]
@@ -25,13 +30,15 @@
 			"mediator apprentice",
 			"medicine cat apprentice",
 			"warrior",
-			"mediator"
+			"mediator",
+            		"mediator apprentice"
 		]
 	},
 	{
 		"id": "neutral_interaction3",
 		"interactions": [
 			"m_c is stuttering while speaking to r_c.",
+            		"r_c listens patiently as m_c talks to {PRONOUN/m_c/object}.",
 			"r_c asks m_c to speak up while chatting together.",
 			"m_c avoids facing r_c directly while talking."
 		],
@@ -49,13 +56,25 @@
 			"confident"
 		]
 	},
-	{
+    {
 		"id": "neutral_interaction5",
 		"interactions": [
-			"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
+			"m_c caught a glimpse of r_c during a patrol.",
+            		"m_c saw r_c stalking some prey on a hunting patrol.",
+            		"m_c and r_c's patrols happened to pass by each other.",
+            		"m_c hears a mouse squeak during a patrol and looks around right on time to spot r_c carrying a fat mouse back toward camp."
 		],
-		"main_trait_constraint": [
-			"bold"
+		"main_status_constraint": [
+			"apprentice",
+            		"warrior",
+            		"deputy",
+            		"leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+            		"warrior",
+            		"deputy",
+            		"leader"
 		]
 	},
 	{
@@ -73,6 +92,8 @@
 		"id": "neutral_interaction7",
 		"interactions": [
 			"m_c doesn't notice r_c leaving camp.",
+            		"m_c doesn't notice r_c nearly bumping into {PRONOUN/m_c/object}.",
+            		"m_c doesn't notice r_c call out to {PRONOUN/m_c/object}.",
 			"m_c doesn't notice r_c twitching {PRONOUN/r_c/poss} whiskers at {PRONOUN/m_c/object}."
 		],
 		"main_trait_constraint": [
@@ -83,11 +104,14 @@
 		"id": "neutral_interaction8",
 		"interactions": [
 			"r_c notices m_c sulking around camp again.",
+            		"r_c sits quietly by m_c.",
+            		"r_c offers to share tongues with m_c but {PRONOUN/m_c/subject} decline.",
 			"r_c meows hello to m_c, but {PRONOUN/m_c/subject} {VERB/m_c/look/looks} pretty glum still."
 		],
 		"main_trait_constraint": [
 			"gloomy",
-			"lonesome"
+			"lonesome",
+            		"quiet"
 		]
 	},
 	{
@@ -95,12 +119,36 @@
 		"interactions": [
 			"m_c always seems to avoid r_c's attempts at small talk.",
 			"r_c is amused at how m_c manages to look so grumpy all the time.",
-			"m_c avoids running into any cat, but r_c interrupts {PRONOUN/m_c/poss} peaceful silence.",
+            		"m_c pretends not to notice r_c.",
+			"m_c avoids running into any cat, but r_c interrupts {PRONOUN/m_c/poss} peaceful silence with something important.",
 			"m_c stares at r_c with an unreadable expression."
 		],
 		"main_trait_constraint": [
 			"grumpy",
 			"cold"
+		]
+	},
+    {
+		"id": "neutral_interaction10",
+		"interactions": [
+            		"m_c asked r_c to spar with {PRONOUN/m_c/object} but r_c had too much work to do to accept.",
+            		"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
+		],
+		"main_trait_constraint": [
+			"bloodthirsty",
+            		"bold"
+		],
+        "main_status_constraint": [
+			"apprentice",
+			"warrior",
+            		"deputy",
+            		"leader"
+		],
+        "random_status_constraint": [
+			"apprentice",
+			"warrior",
+            		"deputy",
+            		"leader"
 		]
 	}
 ]

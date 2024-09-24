@@ -1225,7 +1225,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to recline in their nests today instead.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -5400,8 +5400,8 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "r_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/r_c/subject} survived.",
-                        "reg_death": "r_c died from the strike of a stingray encountered on a hunt as a foolish apprentice."
+                        "scar": "m_c was permantly marked by the barb of a stingray as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "reg_death": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice."
                         }
                 }
             ]

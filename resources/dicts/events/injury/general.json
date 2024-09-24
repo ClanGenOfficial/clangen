@@ -645,7 +645,7 @@
             "clan:warrior"
         ],
         "weight": 20,
-        "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}'re found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
+        "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -1682,7 +1682,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut"
+                    "bruises"
                 ]
             }
         ]
@@ -5419,7 +5419,7 @@
     {
         "event_id": "gen_injury_crackedpads_anymultiage1",
         "location": [
-            "any"
+            "beach"
         ],
         "season": [
             "any"

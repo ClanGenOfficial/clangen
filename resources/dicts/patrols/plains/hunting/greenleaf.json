@@ -1421,8 +1421,8 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "r_c carries a scar from fighting with a swift fox.",
-                    "reg_death": "While scavenging alone, r_c was killed by a predator {PRONOUN/r_c/subject} didn't see.",
+                    "scar": "m_c carries a scar from fighting with a swift fox.",
+                    "reg_death": "While scavenging alone, m_c was killed by a predator {PRONOUN/m_c/subject} didn't see.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator"
                 }
             },
@@ -1438,8 +1438,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries a scar from fighting with a swift fox.",
-                    "reg_death": "While scavenging alone, r_c was killed by a predator {PRONOUN/r_c/subject} didn't see.",
+                    "scar": "m_c carries a scar from fighting with a swift fox.",
+                    "reg_death": "While scavenging alone, m_c was killed by a predator {PRONOUN/m_c/subject} didn't see.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator"
                 }
             },
@@ -1463,8 +1463,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries a scar from fighting with a swift fox.",
-                    "reg_death": "While scavenging alone, r_c was killed by a predator {PRONOUN/r_c/subject} didn't see.",
+                    "scar": "m_c carries a scar from fighting with a swift fox.",
+                    "reg_death": "While scavenging alone, m_c was killed by a predator {PRONOUN/m_c/subject} didn't see.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator"
                 }
             }

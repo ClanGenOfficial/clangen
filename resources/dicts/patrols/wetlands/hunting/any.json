@@ -964,7 +964,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -6142,8 +6142,8 @@
                         }
                     ],
                     "history_text": {
-                        "reg_death": "r_c died from the water {PRONOUN/r_c/subject} inhaled on a hunt as a foolish apprentice.",
-                        "lead_death": "from the water {PRONOUN/r_c/subject} inhaled on a hunt as a foolish apprentice"
+                        "reg_death": "m_c died from the water {PRONOUN/m_c/subject} inhaled on a hunt as a foolish apprentice.",
+                        "lead_death": "from the water {PRONOUN/m_c/subject} inhaled on a hunt as a foolish apprentice"
                         }
                 }
             ]

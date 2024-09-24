@@ -3,13 +3,15 @@
 		"id": "jel_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} pelt to shine like r_c's."
+			"m_c wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} pelt to shine like r_c's.",
+			"m_c wishes {PRONOUN/m_c/poss} claws looked as nice as r_c's."
 		]
 	},
 	{
 		"id": "jel_inc_med1",
 		"interactions": [
-			"m_c thinks the prey r_c is biting into on the other side of camp looks delicious."
+			"m_c thinks the prey r_c is biting into on the other side of camp looks delicious.",
+			 "m_c wishes {PRONOUN/m_c/subject} had it as easy as r_c did."
 		]
 	},
 	{
@@ -54,6 +56,40 @@
 		]
 	},
 	{
+		"id": "jel_inc_med4",
+		"interactions": [
+			"m_c is huffing in annoyance seeing that r_c caught more prey than {PRONOUN/m_c/object}.",
+            "During a border patrol, an o_c patrol stopped them and chatted up a storm with r_c, but more or less ignored m_c...",
+            "m_c feels like r_c is always trying to catch more prey than {PRONOUN/m_c/object}."
+		],
+        "main_status_constraint": [
+			"warrior",
+            "apprentice",
+            "deputy",
+            "leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+            "leader"
+		]
+	},
+	{
+		"id": "jel_inc_med5",
+		"interactions": [
+			"m_c has been giving r_c the cold shoulder after seeing {PRONOUN/r_c/object} having fun with another cat.",
+            "m_c doesn't like the idea of r_c having a mate that isn't {PRONOUN/m_c/object}.",
+            "m_c has been trying to monopolize r_c's time after seeing {PRONOUN/r_c/object} showing interest in spending time with another cat."
+		],
+        "relationship_constraint": [
+			"romantic_15"
+		],
+        "reaction_main_cat": {
+			"jealousy": "increase"
+		}
+	},
+	{
 		"id": "jealousy_kit_inc_med1",
 		"interactions": [
 			"m_c is jealous that r_c is getting more attention than {PRONOUN/m_c/object}.",
@@ -69,7 +105,9 @@
 	{
 		"id": "jealousy_kit_inc_med2",
 		"interactions": [
-			"m_c hisses at r_c for getting a bigger piece of prey."
+			"m_c hisses at r_c for getting a bigger piece of prey.",
+			"m_c is upset that r_c always wins in their games.",
+            "m_c whines and cries when r_c gets more attention than {PRONOUN/m_c/subject}."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -85,7 +123,9 @@
 		"id": "jealousy_kit_inc_med3",
 		"interactions": [
 			"m_c looks at r_c and remembers how easy it was to be a kitten.",
-			"m_c is resentful that so much is expected of {PRONOUN/m_c/object}, yet no one expects anything of r_c."
+			"m_c is resentful that so much is expected of {PRONOUN/m_c/object}, yet no one expects anything of r_c.",
+			"m_c watches r_c, wondering why {PRONOUN/m_c/subject} wanted to grow up so bad.",
+            "m_c wishes {PRONOUN/m_c/subject} had all the time in the world to play mossball like r_c."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -99,12 +139,14 @@
 			"platonic": "decrease"
 		}
 	},
+
 	{
 		"id": "jel_inc_high1",
 		"intensity": "high",
 		"interactions": [
 			"m_c is jealous that r_c gets to do cool super secret medicine cat things.",
-			"m_c thinks it's unfair that r_c always gets to go to Gatherings."
+			"m_c thinks it's unfair that r_c always gets to go to Gatherings.",
+			"m_c is jealous that r_c always smells of beautiful fragrant herbs."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -118,7 +160,9 @@
 		"id": "jel_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c is complaining that r_c never does anything helpful."
+			"m_c is complaining that r_c never does anything helpful.",
+			"m_c keeps comparing {PRONOUN/m_c/self} to r_c.",
+            "m_c hates how r_c has been getting lots of attention as of late."
 		]
 	},
 	{
@@ -130,5 +174,23 @@
 		"random_status_constraint": [
 			"elder"
 		]
+	},
+	{
+		"id": "jel_inc_med4",
+		"intensity": "high",
+		"interactions": [
+            "m_c watches r_c in annoyance wishing {PRONOUN/m_c/subject} were as youthful as {PRONOUN/r_c/object}."
+		],
+		"main_status_constraint": [
+			"elder"
+		],
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "deputy",
+            "warrior"
+            ]
 	}
 ]

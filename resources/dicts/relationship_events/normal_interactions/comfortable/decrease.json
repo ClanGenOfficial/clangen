@@ -14,7 +14,8 @@
 		"interactions": [
 			"m_c said something that rubbed r_c the wrong way.",
 			"m_c was being condescending towards r_c all day long.",
-			"r_c is upset after spending the day with m_c's bad attitude."
+			"r_c is upset after spending the day with m_c's bad attitude.",
+			"r_c encountered m_c at the dirtplace and made awkward eye contact."
 		],
 		"reaction_random_cat": {
 			"comfortable": "decrease"
@@ -32,7 +33,9 @@
 		"interactions": [
 			"m_c feels like r_c was too rough while playing.",
 			"m_c doesn't think r_c was playing fair.",
-			"m_c accuses r_c of cheating during a game of hide-n-seek!"
+			"m_c accuses r_c of cheating during a game of hide-n-seek!",
+			"m_c told r_c {PRONOUN/m_c/subject} didn't want to play but r_c whined until {PRONOUN/m_c/subject} relented.",
+            		"m_c doesn't want to play with r_c."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -53,8 +56,10 @@
 	{
 		"id": "comfort_de_med3",
 		"interactions": [
-			"r_c is following m_c around.",
-			"r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today."
+			"r_c is following m_c around a little too closely.",
+			"r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today.",
+			"m_c woke up to find r_c staring at {PRONOUN/m_c/object}.",
+            		"r_c caught m_c taking some bedding from {PRONOUN/m_c/poss} nest!"
 		],
 		"random_trait_constraint": [
 			"strange"
@@ -87,17 +92,33 @@
 		"interactions": [
 			"r_c crashes into m_c while eager for the new day.",
 			"r_c rejects m_c's advice without letting {PRONOUN/m_c/object} finish.",
-			"r_c interrupts m_c during a conversation."
+			"r_c interrupts m_c during a conversation.",
+			"m_c asked r_c an uncomfortably invasive question."
 		],
 		"random_trait_constraint": [
 			"impulsive"
 		]
 	},
 	{
+		"id": "comfort_de_med7",
+		"interactions": [
+            "m_c made a poorly timed joke while r_c was telling {PRONOUN/m_c/object} some bad news."
+		],
+		"main_trait_constraint": [
+			"charismatic",
+            "playful",
+            "troublesome",
+            "impulsive",
+            "childish",
+            "shameless"
+		]
+	},
+	{
 		"id": "comfort_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c bristles after being scolded by r_c."
+			"m_c bristles after being scolded by r_c.",
+			"m_c shied away from r_c when {PRONOUN/r_c/subject} tried touching noses in greeting."
 		]
 	},
 	{
@@ -134,7 +155,8 @@
 			"m_c doesn't like the way that r_c seems to enjoy {PRONOUN/r_c/poss} influence over the Clan.",
 			"Much to m_c's dismay, r_c has asked {PRONOUN/m_c/object} to do another difficult task.",
 			"m_c thinks that r_c is casting a dark shadow over the whole Clan's reputation.",
-			"m_c is worried that r_c might be sending the Clan down a dark path."
+			"m_c is worried that r_c might be sending the Clan down a dark path.",
+			"m_c has been wondering if StarClan has actually been guiding r_c or if it's really the Dark Forest's influence."
 		],
 		"random_trait_constraint": [
 			"bloodthirsty",
@@ -153,7 +175,9 @@
 			"m_c notices that r_c doesn't seem to care if {PRONOUN/r_c/poss} treatments hurt.",
 			"m_c overhears r_c complaining about giving herbs to cats that don't 'deserve' them.",
 			"m_c is startled at r_c's views on sharing herbs with other Clans.",
-			"m_c bristles after seeing r_c add more deathberries to {PRONOUN/r_c/poss} herb storage."
+			"m_c bristles after seeing r_c add more deathberries to {PRONOUN/r_c/poss} herb storage.",
+			"m_c stopped r_c before {PRONOUN/r_c/subject} gave the wrong herbs to another cat. The look in r_c's eyes as {PRONOUN/r_c/subject} did so scared m_c...",
+            "m_c has been wondering if StarClan has actually been guiding r_c or if it's really the Dark Forest's influence."
 		],
 		"random_trait_constraint": [
 			"bloodthirsty",
