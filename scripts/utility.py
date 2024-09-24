@@ -1824,13 +1824,15 @@ def find_special_list_types(text):
     for bit in words:
         if "_list" in bit:
             list_text = bit
+            # just getting rid of pesky punctuation
+            list_text = list_text.replace(".", "")
+            list_text = list_text.replace(",", "")
             break
 
     if not list_text:
         return text, None, None, None
 
     parts_of_tag = list_text.split("/")
-    list_text = parts_of_tag[0]
 
     try:
         cat_tag = parts_of_tag[1]
@@ -1850,25 +1852,18 @@ def find_special_list_types(text):
 
     if "_sight" in list_text:
         senses.append("sight")
-        text = text.replace("_sight", "")
     if "_sound" in list_text:
         senses.append("sound")
-        text = text.replace("_sight", "")
     if "_smell" in list_text:
-        text = text.replace("_smell", "")
         senses.append("smell")
     if "_emotional" in list_text:
-        text = text.replace("_emotional", "")
         senses.append("emotional")
     if "_touch" in list_text:
-        text = text.replace("_touch", "")
         senses.append("touch")
     if "_taste" in list_text:
-        text = text.replace("_taste", "")
         senses.append("taste")
 
-    if cat_tag:
-        text = text.replace(f"/{cat_tag}", "")
+    text = text.replace(list_text, list_type)
 
     return text, senses, list_type, cat_tag
 
@@ -2011,7 +2006,8 @@ def event_text_adjust(
             list_type, amount=randint(1, 3), sense_groups=senses
         )
         text = text.replace(list_type, str(sign_list))
-        text = text.replace("cat_tag", cat_tag)
+        if cat_tag:
+            text = text.replace("cat_tag", cat_tag)
 
     # main_cat
     if "m_c" in text:
