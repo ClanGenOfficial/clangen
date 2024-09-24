@@ -112,7 +112,7 @@
     },
     "lingering shock": {
         "recurring shock": [
-            "m_c demands to know when {PRONOUN/m_c/subject}'ll stop freezing in fear at what {PRONOUN/m_c/subject} {VERB/m_c/know/knows} are just memories. r_c doesn't have answers but {PRONOUN/r_c/subject} {VERB/r_c/comfort/comforts} {PRONOUN/r_c/poss} Clanmate, saying that forcing {PRONOUN/m_c/self} to be okay is just hurting {PRONOUN/m_c/su.",
+            "m_c demands to know when {PRONOUN/m_c/subject}'ll stop freezing in fear at what {PRONOUN/m_c/subject} {VERB/m_c/know/knows} are just memories. r_c doesn't have answers but {PRONOUN/r_c/subject} {VERB/r_c/comfort/comforts} {PRONOUN/r_c/poss} Clanmate, saying that forcing {PRONOUN/m_c/self} to be okay is just hurting {PRONOUN/m_c/object}.",
             "r_c tells m_c that {PRONOUN/r_c/subject} {VERB/r_c/have/has} no way to stop dreams or memories, only poppy seeds to help r_c sleep. Perhaps the memories will fade with time.",
             "m_c jumps, then realizes that it was just a leaf blowing in the wind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} exhausted, {PRONOUN/m_c/poss} memories like a trap that rears up to bite {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/relax/relaxes}."
         ]
