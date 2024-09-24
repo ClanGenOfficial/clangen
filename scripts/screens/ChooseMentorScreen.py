@@ -1,9 +1,6 @@
 import pygame.transform
 import pygame_gui.elements
 
-from .Screens import Screens
-
-from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit, scale_dimentions
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
@@ -15,6 +12,9 @@ from scripts.game_structure.game_essentials import (
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
+from scripts.utility import (
+    scale_dimentions,
+)
 from .Screens import Screens
 
 
@@ -102,11 +102,15 @@ class ChooseMentorScreen(Screens):
                 self.current_page -= 1
                 self.update_cat_list()
             elif event.ui_element == self.checkboxes["show_no_current_app"]:
-                self.show_only_no_current_app_mentors = not self.show_only_no_current_app_mentors
+                self.show_only_no_current_app_mentors = (
+                    not self.show_only_no_current_app_mentors
+                )
                 self.update_buttons()
                 self.update_cat_list()
             elif event.ui_element == self.checkboxes.get("show_no_former_app"):
-                self.show_only_no_former_app_mentors = not self.show_only_no_former_app_mentors
+                self.show_only_no_former_app_mentors = (
+                    not self.show_only_no_former_app_mentors
+                )
                 self.update_buttons()
                 self.update_cat_list()
 
@@ -184,7 +188,10 @@ class ChooseMentorScreen(Screens):
             sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button", sound_id="page_flip",
+            scale(pygame.Rect((1244, 50), (306, 60))),
+            "",
+            object_id="#next_cat_button",
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"
@@ -203,29 +210,30 @@ class ChooseMentorScreen(Screens):
             "Current mentor selected",
             scale(pygame.Rect((600, 670), (400, 60))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
-            manager=MANAGER)
+            manager=MANAGER,
+        )
         self.no_mentor_warning = pygame_gui.elements.UITextBox(
             "<font color=#FF0000>No mentor selected</font>",
             scale(pygame.Rect((600, 670), (400, 60))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
-            manager=MANAGER)
+            manager=MANAGER,
+        )
         self.previous_page_button = UIImageButton(
             scale(pygame.Rect((630, 1158), (68, 68))),
             "",
             object_id="#relation_list_previous",
-            manager=MANAGER
+            manager=MANAGER,
         )
         self.next_page_button = UIImageButton(
             scale(pygame.Rect((902, 1158), (68, 68))),
             "",
             object_id="#relation_list_next",
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         # Create a container for the checkboxes
         self.filter_container = pygame_gui.core.UIContainer(
-            scale(pygame.Rect((170, 720), (1260, 452))),
-            manager=MANAGER
+            scale(pygame.Rect((170, 720), (1260, 452))), manager=MANAGER
         )
 
         # Add a vertical separator
@@ -233,9 +241,9 @@ class ChooseMentorScreen(Screens):
             scale(pygame.Rect((995, 15), (20, 420))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/vertical_bar.png"),
-                scale_dimentions((20, 420))
+                scale_dimentions((20, 420)),
             ),
-            container=self.filter_container
+            container=self.filter_container,
         )
 
         # Reposition and style checkboxes and labels
@@ -247,7 +255,7 @@ class ChooseMentorScreen(Screens):
             "No current apprentices",
             scale(pygame.Rect((checkbox_x - 70, checkbox_y + 20), (200, -1))),
             object_id="#text_box_26_horizcenter",
-            container=self.filter_container
+            container=self.filter_container,
         )
         checkbox_y += checkbox_spacing
         self.checkboxes["show_no_current_app"] = UIImageButton(
@@ -255,15 +263,15 @@ class ChooseMentorScreen(Screens):
             "",
             object_id="#unchecked_checkbox",
             container=self.filter_container,
-            tool_tip_text='Only show mentors with no current apprentices'
+            tool_tip_text="Only show mentors with no current apprentices",
         )
         checkbox_y += checkbox_spacing
-        
+
         self.no_former_app_text = pygame_gui.elements.UITextBox(
             "No former apprentices",
             scale(pygame.Rect((checkbox_x - 70, checkbox_y), (200, -1))),
             object_id="#text_box_26_horizcenter",
-            container=self.filter_container
+            container=self.filter_container,
         )
         checkbox_y += checkbox_spacing
         self.checkboxes["show_no_former_app"] = UIImageButton(
@@ -271,7 +279,7 @@ class ChooseMentorScreen(Screens):
             "",
             object_id="#unchecked_checkbox",
             container=self.filter_container,
-            tool_tip_text='Only show mentors who have not had an apprentice'
+            tool_tip_text="Only show mentors who have not had an apprentice",
         )
         self.update_apprentice()  # Draws the current apprentice
         self.update_selected_cat()  # Updates the image and details of selected cat
@@ -376,74 +384,24 @@ class ChooseMentorScreen(Screens):
 
         name = str(self.the_cat.name)
         short_name = shorten_text_to_fit(name, 239, 34)
-        self.apprentice_details["apprentice_name"] = (
-            pygame_gui.elements.ui_label.UILabel(
-                scale(pygame.Rect((1240, 230), (235, 65))),
-                short_name,
-                object_id="#text_box_34_horizcenter",
-                manager=MANAGER,
-            )
+        self.apprentice_details[
+            "apprentice_name"
+        ] = pygame_gui.elements.ui_label.UILabel(
+            scale(pygame.Rect((1240, 230), (235, 65))),
+            short_name,
+            object_id="#text_box_34_horizcenter",
+            manager=MANAGER,
         )
 
-        self.find_next_previous_cats()  # Determine where the next and previous cat buttons lead
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats(
+            status=["apprentice", "medicine cat apprentice", "mediator apprentice"]
+        )
 
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
-
-    def find_next_previous_cats(self):
-        """Determines where the previous and next buttons lead"""
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        self.previous_cat = 0
-        self.next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            self.previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            self.next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                self.next_cat = 1
-
-            if (
-                self.next_cat == 0
-                and check_cat.ID != self.the_cat.ID
-                and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
-                and not check_cat.exiled
-                and check_cat.status
-                in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
-                and check_cat.df == self.the_cat.df
-            ):
-                self.previous_cat = check_cat.ID
-
-            elif (
-                self.next_cat == 1
-                and check_cat.ID != self.the_cat.ID
-                and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
-                and not check_cat.exiled
-                and check_cat.status
-                in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
-                and check_cat.df == self.the_cat.df
-            ):
-                self.next_cat = check_cat.ID
-
-            elif int(self.next_cat) > 1:
-                break
-
-        if self.next_cat == 1:
-            self.next_cat = 0
+        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
+        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
 
     def change_mentor(self, new_mentor=None):
         old_mentor = Cat.fetch_cat(self.the_cat.mentor)
@@ -500,7 +458,6 @@ class ChooseMentorScreen(Screens):
             self.selected_details[ele].kill()
         self.selected_details = {}
         if self.selected_mentor:
-
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((100, 300), (300, 300))),
                 pygame.transform.scale(self.selected_mentor.sprite, (300, 300)),
@@ -609,8 +566,16 @@ class ChooseMentorScreen(Screens):
 
         # Update checkboxes
         checkboxes = [
-            ("show_no_current_app", self.checkboxes["show_no_current_app"], self.show_only_no_current_app_mentors),
-            ("show_no_former_app", self.checkboxes["show_no_former_app"], self.show_only_no_former_app_mentors)
+            (
+                "show_no_current_app",
+                self.checkboxes["show_no_current_app"],
+                self.show_only_no_current_app_mentors,
+            ),
+            (
+                "show_no_former_app",
+                self.checkboxes["show_no_former_app"],
+                self.show_only_no_former_app_mentors,
+            ),
         ]
         for name, checkbox, is_checked in checkboxes:
             checkbox.kill()
@@ -620,18 +585,30 @@ class ChooseMentorScreen(Screens):
                 text="",
                 object_id=theme,
                 container=self.filter_container,
-                tool_tip_text=checkbox.tool_tip_text
+                tool_tip_text=checkbox.tool_tip_text,
             )
 
     def get_valid_mentors(self):
-        
-        potential_warrior_mentors = [cat for cat in Cat.all_cats_list if not (cat.dead or cat.outside) and cat.status in ['warrior', 'deputy', 'leader']]
+        potential_warrior_mentors = [
+            cat
+            for cat in Cat.all_cats_list
+            if not (cat.dead or cat.outside)
+            and cat.status in ["warrior", "deputy", "leader"]
+        ]
         valid_warrior_mentors = []
         invalid_warrior_mentors = []
-        potential_medcat_mentors = [cat for cat in Cat.all_cats_list if not (cat.dead or cat.outside) and cat.status == 'medicine cat']
+        potential_medcat_mentors = [
+            cat
+            for cat in Cat.all_cats_list
+            if not (cat.dead or cat.outside) and cat.status == "medicine cat"
+        ]
         valid_medcat_mentors = []
         invalid_medcat_mentors = []
-        potential_mediator_mentors = [cat for cat in Cat.all_cats_list if not (cat.dead or cat.outside) and cat.status == 'mediator']
+        potential_mediator_mentors = [
+            cat
+            for cat in Cat.all_cats_list
+            if not (cat.dead or cat.outside) and cat.status == "mediator"
+        ]
         valid_mediator_mentors = []
         invalid_mediator_mentors = []
 
@@ -657,10 +634,8 @@ class ChooseMentorScreen(Screens):
 
             return valid_warrior_mentors
 
-
         elif self.the_cat.status == "medicine cat apprentice":
             for cat in potential_medcat_mentors:
-
                 is_valid = True
 
                 # Check no former apprentices filter
