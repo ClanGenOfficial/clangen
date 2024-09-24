@@ -1056,7 +1056,7 @@
                 }
             },
             {
-                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den.",
+                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2467,7 +2467,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "As the patrol moves through the grass just after sunset, two moons rise in the sky...",
-        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the thunderpaths. The cats hide from its sight, trembling.",
+        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the Thunderpaths. The cats hide from its sight, trembling.",
         "success_outcomes": [
             {
                 "text": "Two whole moons! That's got to be lucky, the cats decide, sitting on a little rock still warm from the sun to stargaze.",
@@ -2618,12 +2618,12 @@
             ]
     },
     {
-        "patrol_id": "pln_train_thunderpathtraining_loreteacherinsightfullocked1",
+        "patrol_id": "pln_train_training_loreteacherinsightfullocked1",
         "biome": ["plains"],
         "season": ["any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "gen_hunt_thunderpath",
+        "patrol_art": "gen_hunt_",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2675,7 +2675,7 @@
                     ]
                 },
                 {
-                    "text": "See how fast the monsters go? No, app1, that's too close - s_c yanks {PRONOUN/app1/object} back unceremoniously, though app1 is fox-lengths away from the thunderpath. Still, app1 and app2 shiver with fear as the monster passes, the great metal body hurling itself down is set path incomprehensibly fast.",
+                    "text": "See how fast the monsters go? No, app1, that's too close - s_c yanks {PRONOUN/app1/object} back unceremoniously, though app1 is fox-lengths away from the Thunderpath. Still, app1 and app2 shiver with fear as the monster passes, the great metal body hurling itself down is set path incomprehensibly fast.",
                     "exp": 30,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1",
@@ -2713,7 +2713,7 @@
                     ]
                 },
                 {
-                    "text": "Now, this is important, s_c meows, commanding the apprentice's attention. The thunderpath <i>itself</i> is important. Monsters never leave it, not the fast, deadly, kind. Occasionally a vast lumbering metal beast has been spotted on the plains, but <i>those</i> are easily outrun. The fast monsters? Impossible. So remember, <i>the fast ones stay on the thunderpath</i>.",
+                    "text": "Now, this is important, s_c meows, commanding the apprentice's attention. The Thunderpath <i>itself</i> is important. Monsters never leave it, not the fast, deadly, kind. Occasionally a vast lumbering metal beast has been spotted on the plains, but <i>those</i> are easily outrun. The fast monsters? Impossible. So remember, <i>the fast ones stay on the Thunderpath</i>.",
                     "exp": 30,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1",
@@ -2806,13 +2806,13 @@
                         }
                     ],
                     "history_text": {
-                        "scar":"m_c was scarred from being dragged away from a thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
-                        "reg_death": "Being hauled away from the thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c",
-                        "lead_death": "being hauled away from the thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death"
+                        "scar":"m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
+                        "reg_death": "Being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c",
+                        "lead_death": "being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death"
                     }
                 },
                 {
-                    "text": "A monster approaches, vast and roaring, and the apprentices nerve breaks. They jolt away from the thunderpath, and p_l needs to put on speed to catch up to them and slow their flight. At least they ran <i>away</i> from the monster and not toward it, but preventing this jerky panic is what this trianing is all about.",
+                    "text": "A monster approaches, vast and roaring, and the apprentices nerve breaks. They jolt away from the Thunderpath, and p_l needs to put on speed to catch up to them and slow their flight. At least they ran <i>away</i> from the monster and not toward it, but preventing this jerky panic is what this trianing is all about.",
                     "exp": 0,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1"

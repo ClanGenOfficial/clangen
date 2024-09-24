@@ -2722,7 +2722,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "As the patrol moves through the grass just after sunset, two moons rise in the sky...",
-        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the thunderpaths. The cats hide from its sight, trembling.",
+        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the Thunderpaths. The cats hide from its sight, trembling.",
         "success_outcomes": [
             {
                 "text": "Two whole moons! That's got to be lucky, the cats decide, sitting on a little rock still warm from the sun to stargaze.",
@@ -2843,7 +2843,7 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "m_c was permantly marked by the claws of a hare as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "scar": "m_c was permanently marked by the claws of a hare as an apprentice - but {PRONOUN/m_c/subject} survived.",
                         "reg_death": "m_c died from the claws of a hare encountered on a hunt as a foolish apprentice.",
                         "lead_death": "from the claws of a hare encountered on a hunt as a foolish apprentice"
                         }

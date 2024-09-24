@@ -992,7 +992,7 @@
                 "weight": 20
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1456,7 +1456,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine den to disrupt the flow of a story.",
+                    "text": "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [

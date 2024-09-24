@@ -94,7 +94,7 @@
                         "scars": ["LEFTEAR"]
                     }
                 ],
-                "history_text": { "scar": "r_c was scarred by a sharp piece of twoleg garbage." }
+                "history_text": { "scar": "r_c was scarred by a sharp piece of Twoleg garbage." }
             }
         ]
     },
@@ -2100,7 +2100,7 @@
         } ],
         "fail_outcomes": [
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c/subject} {VERB/r_c/drag/drags} {PRONOUN/r_c/self} into the medicine den.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c/subject} {VERB/r_c/drag/drags} {PRONOUN/r_c/self} into the medicine cat den.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2126,7 +2126,7 @@
                 
             },
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, it fills {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, it fills {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine cat den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
                 "exp": 0,
                 "weight": 10,
                 "relationships": [
@@ -2266,7 +2266,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And the greenleaf sun is so warm and bright!",
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2474,7 +2474,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2682,7 +2682,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2890,7 +2890,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -3096,7 +3096,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -4384,7 +4384,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine den. The patrol brings the herbs back to camp and they are put to good use.",
+                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine cat den. The patrol brings the herbs back to camp and they are put to good use.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -4424,7 +4424,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their freshkill.",
+                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their fresh-kill.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

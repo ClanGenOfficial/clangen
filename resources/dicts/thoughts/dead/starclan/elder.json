@@ -8,7 +8,9 @@
             "Watches c_n with affection",
             "Is laughing at c_n mishaps",
             "Hopes c_n won't forget {PRONOUN/m_c/object}",
-            "Is reminiscing about the days gone by"
+            "Is reminiscing about the days gone by",
+            "Is amazed at how easily {PRONOUN/m_c/subject} can move now",
+            "Has accepted {PRONOUN/m_c/subject} lived a good life"
         ]
     },
     {

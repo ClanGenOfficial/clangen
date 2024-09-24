@@ -1473,8 +1473,8 @@
                         }
                     ],
                     "history_text": {
-                        "reg_death": "m_c got dehydrated trying to outrun the thunderpath-runner bird.",
-                        "lead_death": "got dehydrated trying to outrun the thunderpath-runner bird"
+                        "reg_death": "m_c got dehydrated trying to outrun the Thunderpath-runner bird.",
+                        "lead_death": "got dehydrated trying to outrun the Thunderpath-runner bird"
                     },
                     "relationships": [
                         {
