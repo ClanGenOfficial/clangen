@@ -919,7 +919,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is not willing to let any cat die to a badger. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} the patrol to continue on while {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} on an o_c_n patrol to come by, to give them a warning about the badger.",
+                "text": "p_l is not willing to let any cat die to a badger. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} the patrol to continue on while {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} on a o_c_n patrol to come by, to give them a warning about the badger.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [

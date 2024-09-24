@@ -337,7 +337,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject}{VERB/app1/'re/'s} really getting the hang of hunting!",
+                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
                 "exp": 40,
                 "weight": 5,
                 "prey": ["medium"]
@@ -450,7 +450,7 @@
                 ]
             },
             {
-                "text": "Of course s_c is unconcerned, s_c knows {PRONOUN/s_c/poss} own skills well, and mice? Not a challenge. After {PRONOUN/s_c/poss} fifth catch the rest of the patrol is forced to admit {PRONOUN/s_c/subject} might have a point about not needing to worry.",
+                "text": "Of course s_c is unconcerned, s_c knows {PRONOUN/s_c/poss} own skills well, and mice? Not a challenge. After {PRONOUN/s_c/poss} fifth catch, the rest of the patrol is forced to admit {PRONOUN/s_c/subject} might have a point about not needing to worry.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -653,7 +653,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 40,
                 "weight": 20,
                 "prey": ["medium"]
@@ -693,7 +693,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject} {VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1362,7 +1362,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}, tail-tip twitching, and scent the air for prey.",
+        "intro_text": "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, tail-tip twitching, and scent the air for prey.",
         "decline_text": "A cardinal would be paltry prey; the Clan needs more filling meals. p_l leaves it be, knowing {PRONOUN/p_l/subject} would expend too much precious energy trying to hunt the bird anyway.",
         "chance_of_success": 65,
         "success_outcomes": [
@@ -1373,7 +1373,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "p_l watches the cardinal, waiting for the right moment to strike, when it suddenly flits off of the low-hanging branch it was perched on. Without thinking, p_l leaps into the air and grabs the cardinal mid-flight with {PRONOUN/p_l/poss} front paws. {PRONOUN/p_l/subject} {VERB/p_l/pin/pins} it down and {VERB/p_l/kill/kills} it with a quick bite to the neck.",
+                "text": "p_l watches the cardinal, waiting for the right moment to strike, when it suddenly flits off of the low-hanging branch it was perched on. Without thinking, p_l leaps into the air and grabs the cardinal mid-flight with {PRONOUN/p_l/poss} front paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pin/pins} it down and {VERB/p_l/kill/kills} it with a quick bite to the neck.",
                 "exp": 15,
                 "weight": 5,
                 "prey": ["small"]
@@ -1640,7 +1640,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c <i>swears</i> {PRONOUN/r_c/subject} can smell something.",
-        "decline_text": "Nevermind..? Must have been the wind, blowing stale scent back at {PRONOUN/r_c/object}.",
+        "decline_text": "Nevermind...? Must have been the wind, blowing stale scent back at {PRONOUN/r_c/object}.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1732,7 +1732,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c takes a risk, hunting amongst the trees that have lost their leaves, rather than the still-lush evergreens. {PRONOUN/r_c/poss/CAP} judgment pays off, netting them a f_mp_s. {PRONOUN/r_c/subject/CAP}'ll have to discuss it with the others back at camp, maybe c_n has been overhunting the evergreen woods..?",
+                "text": "r_c takes a risk, hunting amongst the trees that have lost their leaves, rather than the still-lush evergreens. {PRONOUN/r_c/poss/CAP} judgment pays off, netting them a f_mp_s. {PRONOUN/r_c/subject/CAP}'ll have to discuss it with the others back at camp, maybe c_n has been overhunting the evergreen woods...?",
                 "exp": 25,
                 "weight": 5,
                 "prey": ["medium"]
@@ -2882,7 +2882,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's tripping over {PRONOUN/s_c/poss} own feet that saves {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up, and {VERB/s_c/settle/settles} down to wait a safe distance away until the fox leaves of its own accord.",
+                "text": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's tripping over {PRONOUN/s_c/poss} own feet that saves {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and {VERB/s_c/settle/settles} down to wait a safe distance away until the fox leaves of its own accord.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -3024,7 +3024,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject} {VERB/app1/'re/'s} really getting the hang of hunting!",
+                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
                 "exp": 40,
                 "weight": 5,
                 "prey": ["medium"]
@@ -3137,7 +3137,7 @@
                 ]
             },
             {
-                "text": "Of course s_c is unconcerned, s_c knows {PRONOUN/s_c/poss} own skills well, and mice? not a challenge. After {PRONOUN/s_c/poss} fifth catch the rest of the patrol is forced to admit {PRONOUN/s_c/subject} might have a point about not needing to worry.",
+                "text": "Of course s_c is unconcerned, s_c knows {PRONOUN/s_c/poss} own skills well, and mice? Not a challenge. After {PRONOUN/s_c/poss} fifth catch, the rest of the patrol is forced to admit {PRONOUN/s_c/subject} might have a point about not needing to worry.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -4560,7 +4560,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two f_tp_p, and watches p_l take down a f_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two f_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two f_tp_p, and watches p_l take down a f_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two f_mp_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],

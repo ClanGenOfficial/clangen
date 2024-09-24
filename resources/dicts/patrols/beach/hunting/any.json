@@ -52,7 +52,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to one.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to one.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"]
@@ -89,7 +89,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to as many as they can carry.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["huge"]
@@ -642,7 +642,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -711,7 +711,7 @@
                 ]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a huge, snarling dog! r_c yowls for {PRONOUN/r_c/poss} patrol, but the other cats aren't quick enough to stop the beast from snapping r_c up in its deadly jaws.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with a huge, snarling dog! r_c yowls for {PRONOUN/r_c/poss} patrol, but the other cats aren't quick enough to stop the beast from snapping r_c up in its deadly jaws.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -721,7 +721,7 @@
                 }
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -789,7 +789,7 @@
                 ]
             },
             {
-                "text": "r_c doesn't hesitate in checking the source of the noise and comes face to face with a huge, snarling dog! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol, and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now. The dog kills the lone cat with little trouble.",
+                "text": "r_c doesn't hesitate in checking the source of the noise and comes face-to-face with a huge, snarling dog! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol, and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now. The dog kills the lone cat with little trouble.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -799,7 +799,7 @@
                 }
             },
             {
-                "text": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away.",
+                "text": "r_c heads toward the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1019,7 +1019,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter delicious-smelling mush in little burrows. When some of the patrol investigates, doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out. Eventually the Twolegs notice, and the trapped cats are taken.",
+                "text": "The patrol mostly ignores the Twolegs. But, as they hunt, the cats encounter delicious-smelling mush in little burrows. When some of the patrol investigates, doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out. Eventually the Twolegs notice, and the trapped cats are taken.",
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["multi"]
@@ -1654,7 +1654,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1740,12 +1740,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}, and the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing them instantly.",
+                "text": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}: the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -3739,7 +3739,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's tripping over {PRONOUN/s_c/poss} own feet that saves {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up, and {VERB/s_c/settle/settles} down to wait a safe distance away until the fox leaves of its own accord.",
+                "text": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth. It's tripping over {PRONOUN/s_c/poss} own feet that saves {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and {VERB/s_c/settle/settles} down to wait a safe distance away until the fox leaves of its own accord.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -4316,7 +4316,7 @@
                 ]
             },
             {
-                "text": "s_c uses some of {PRONOUN/s_c/poss} best tricks to {VERB/s_c/sneak/sneaks} close to the red fox at the end of the scent trail,  {PRONOUN/s_c/poss} eyes on the fish the fox carries. The creature puts down its fresh-kill to start digging at a dune, and s_c takes the opportunity, grabbing the fish and pelting away. It's a good prize, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} proud to present it to the elders when {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} into camp, tired but satisfied.",
+                "text": "s_c uses some of {PRONOUN/s_c/poss} best tricks to {VERB/s_c/sneak/sneaks} close to the red fox at the end of the scent trail, {PRONOUN/s_c/poss} eyes on the fish the fox carries. The creature puts down its fresh-kill to start digging at a dune, and s_c takes the opportunity, grabbing the fish and pelting away. It's a good prize, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} proud to present it to the elders when {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} into camp, tired but satisfied.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1", "FIGHTER,1"],

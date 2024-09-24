@@ -2050,7 +2050,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c calls out to the cat, only to be met with raucous cawing. Are they being laughed at? They decide to slink off, leaving it be.",
+                "text": "s_c calls out to the cat, only to be met with raucous cawing. {VERB/s_c/Are/Is} {PRONOUN/s_c/subject} being laughed at? {PRONOUN/s_c/subject/CAP} {VERB/s_c/decide/decides} to slink off, leaving it be.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "bold", "daring", "ambitious"]
@@ -3519,7 +3519,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects a m_tp_s, and watches p_l take down a m_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two m_tp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's m_tp_s, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects a m_tp_s, and watches p_l take down a m_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two m_tp_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's m_tp_s, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],

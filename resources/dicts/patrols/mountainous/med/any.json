@@ -657,7 +657,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -745,7 +745,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -833,7 +833,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -921,7 +921,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1009,7 +1009,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2183,7 +2183,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2272,7 +2272,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2450,7 +2450,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2627,7 +2627,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],

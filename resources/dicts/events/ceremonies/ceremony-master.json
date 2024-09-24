@@ -799,7 +799,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c sits beside {PRONOUN/m_c/poss} new mentor (mentor) as the meeting comes to a close. {PRONOUN/m_c/subject} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why dead_par1 and dead_par2 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
+      "m_c sits beside {PRONOUN/m_c/poss} new mentor (mentor) as the meeting comes to a close. {PRONOUN/m_c/poss/CAP} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why dead_par1 and dead_par2 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
   ],
   "app_51": [
     [
@@ -1147,7 +1147,7 @@
       "arrogant",
       "rebellious"
     ],
-    "Right after {PRONOUN/m_c/poss} medicine cat apprentice ceremony, m_c declares that {PRONOUN/m_c/subject} won't hesitate to tell (mentor) if {PRONOUN/(mentor)/subject}{VERB/(mentor)/'re/'s} being a mousebrain. All the other cats immediately gasp and look to (mentor)'s reaction. They relax as {PRONOUN/(mentor)/subject} only {VERB/(mentor)/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
+      "Right after {PRONOUN/m_c/poss} medicine cat apprentice ceremony, m_c declares that {PRONOUN/m_c/subject} won't hesitate to tell (mentor) if {PRONOUN/(mentor)/subject}{VERB/(mentor)/'re/'s} being a mouse-brain. All the other cats immediately gasp and look to (mentor)'s reaction. They relax as {PRONOUN/(mentor)/subject} only {VERB/(mentor)/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
   ],
   "med_app_27": [
     [
@@ -1876,7 +1876,7 @@
       "general_backstory",
       "thoughtful"
     ],
-    "Even though this is {PRONOUN/m_c/poss} medicine cat naming ceremony, (old_name) can only think about {PRONOUN/m_c/poss} Clanmates back at camp. {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} if {PRONOUN/m_c/subject} can return early after {PRONOUN/m_c/subject} {VERB/m_c/get/gets} {PRONOUN/m_c/poss} name of m_c."
+      "Even though this is {PRONOUN/m_c/poss} medicine cat naming ceremony, (old_name) can only think about {PRONOUN/m_c/poss} Clanmates back at camp. {PRONOUN/m_c/subject/CAP} {VERB/m_c/ask/asks} if {PRONOUN/m_c/subject} can return early after {PRONOUN/m_c/subject} {VERB/m_c/get/gets} {PRONOUN/m_c/poss} name of m_c."
   ],
   "med_41": [
     [

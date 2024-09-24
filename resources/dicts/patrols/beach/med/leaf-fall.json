@@ -52,7 +52,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/haves} nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/has} nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -138,7 +138,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/haves} nothing in common.",
+                "text": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/has} nothing in common.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1275,7 +1275,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, when daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when {PRONOUN/p_l/subject} {VERB/p_l/have/haves} none.",
+                "text": "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, when daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when {PRONOUN/p_l/subject} {VERB/p_l/have/has} none.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["daisy"]
@@ -1340,7 +1340,7 @@
                 ]
             },
             {
-                "text": "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, when daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when {PRONOUN/p_l/subject} {VERB/p_l/have/haves} none, and p_l instructs app1 on the best ways of drying {PRONOUN/p_l/object} out for long term storage.",
+                "text": "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, when daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when {PRONOUN/p_l/subject} {VERB/p_l/have/has} none. p_l instructs app1 on the best ways of drying the leaves out for long term storage.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "daisy"],
@@ -1362,7 +1362,7 @@
                 ]
             },
             {
-                "text": "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that {PRONOUN/s_c/subject} {VERB/s_c/have/haves} trouble not dropping any on the way back to camp. At least with app1 here with {PRONOUN/s_c/object} the load is shared, and {PRONOUN/s_c/subject} purr in appreciation of the apprentice.",
+                "text": "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that {PRONOUN/s_c/subject} {VERB/s_c/have/has} trouble not dropping any on the way back to camp. At least with app1 here with {PRONOUN/s_c/object} the load is shared, and {PRONOUN/s_c/subject} {VERB/s_c/purr/purrs} in appreciation of the apprentice.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1451,7 +1451,7 @@
                 ]
             },
             {
-                "text": "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, when daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when {PRONOUN/p_l/subject} {VERB/p_l/have/haves} none, and the extra paws to collect the herb are deeply appreciated by p_l, who makes sure the patrol knows how much {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} helping.",
+                "text": "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, when daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when {PRONOUN/p_l/subject} {VERB/p_l/have/has} none, and the extra paws to collect the herb are deeply appreciated by p_l, who makes sure the patrol knows how much {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} helping.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "daisy"],
@@ -1473,7 +1473,7 @@
                 ]
             },
             {
-                "text": "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that {PRONOUN/s_c/subject} {VERB/s_c/have/haves} trouble not dropping any on the way back to camp. The patrol, filled with gossip and chatter on the way out, and daisy leaves on the trip back, makes for an easy, enjoyable afternoon.",
+                "text": "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that {PRONOUN/s_c/subject} {VERB/s_c/have/has} trouble not dropping any on the way back to camp. The patrol, filled with gossip and chatter on the way out, and daisy leaves on the trip back, makes for an easy, enjoyable afternoon.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -3459,7 +3459,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Lungwort doesn't help with many aliments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs til none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
+                "text": "Lungwort doesn't help with many aliments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs till none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_bord_story",

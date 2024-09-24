@@ -554,7 +554,7 @@
       "stubbornness", "authority"]
         },
         {
-          "text": "r_c dips {PRONOUN/r_c/poss} head in greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives}  a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/reassure/reassures}  m_c that {PRONOUN/m_c/subject} {VERB/m_c/are/is}  almost done.",
+            "text": "r_c dips {PRONOUN/r_c/poss} head in greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/reassure/reassures}  m_c that {PRONOUN/m_c/subject} {VERB/m_c/are/is} almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
         }
@@ -601,7 +601,7 @@
       "stubbornness", "authority"]
         },
         {
-          "text": "r_c only watches the new leader with a rather forlorn look before giving {PRONOUN/r_c/object} a life for [virtue]. m_c didn't even have a chance to talk to the dark forest cat before {PRONOUN/r_c/subject} vanished into smoke.",
+            "text": "r_c only watches the new leader with a rather forlorn look before giving {PRONOUN/r_c/object} a life for [virtue]. m_c didn't even have a chance to talk to the Dark Forest cat before {PRONOUN/r_c/subject} vanished into smoke.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
@@ -886,7 +886,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "Such a theatric attitude had no place in the Dark Forest. But the gloom-covered spirit of r_c gives m_c a life for [virtue] with silent contempt in {PRONOUN/r_c/poss}  eyes regardless of {PRONOUN/r_c/poss} feelings on the matter.",
+            "text": "Such a theatric attitude had no place in the Dark Forest. But the gloom-covered spirit of r_c gives m_c a life for [virtue] with silent contempt in {PRONOUN/r_c/poss} eyes regardless of {PRONOUN/r_c/poss} feelings on the matter.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
           "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
           "stubbornness", "authority"]

@@ -78,7 +78,7 @@
         "m_c picks {PRONOUN/m_c/self} up out of {PRONOUN/m_c/poss} nest and begins the day anew, a fresh conviction in {PRONOUN/m_c/poss} heart."
     ],
     "carrionplace disease": [
-      "The stench coming from m_c is finally fading. {PRONOUN/m_c/subject}{VERB/m_c/'ve/s} recovered from carrionplace disease.",
+        "The stench coming from m_c is finally fading. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/s} recovered from carrionplace disease.",
         "Against all odds, m_c has recovered from carrionplace disease."
     ],
 	"malnourished": [

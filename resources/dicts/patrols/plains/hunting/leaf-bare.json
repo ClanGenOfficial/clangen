@@ -1183,7 +1183,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l's patrol strolls through the plains, snow crunching under their paws. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
-        "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. They'll be tucked away in their burrows, which is.. a lot of work for a few thin squirrels.",
+        "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. They'll be tucked away in their burrows, which is... a lot of work for a few thin squirrels.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -2850,7 +2850,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],

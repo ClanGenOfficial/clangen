@@ -191,7 +191,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["LORE,1", "TEACHER,1", "SWIMMER,1", "RUNNER,1"],
-        "intro_text": "app1 doesn't understand what 'footing' training is supposed to mean. {PRONOUN/app1/subject/cap} {VERB/app1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?",
+        "intro_text": "app1 doesn't understand what 'footing' training is supposed to mean. {PRONOUN/app1/subject/CAP} {VERB/app1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?",
         "decline_text": "Unable to convince app1 of the importance of training to keep {PRONOUN/app1/poss} footing, p_l gives up and takes the patrol home.",
         "success_outcomes": [
                 {
@@ -250,7 +250,7 @@
                         ]
                 },
                 {
-                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rool pools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
+                    "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rock pools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -274,7 +274,7 @@
                         ]
                 },
                 {
-                    "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll} have to prove it - and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
+                    "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll have to prove it - and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
                     "exp": 30,
                     "weight": 20,
                     "art": "fst_hunt_fun1",
