@@ -2872,7 +2872,7 @@
     "season": ["any"],
      "sub_type": ["war"],
     "weight": 20,
-    "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice they make could mean the difference between victory and defeat.",
+    "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice {PRONOUN/m_c/subject} {VERB/m_c/make/makes} could mean the difference between victory and defeat.",
     "m_c":{
       "status":["leader"]
     }
