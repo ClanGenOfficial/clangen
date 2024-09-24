@@ -386,7 +386,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. r_c explains {PRONOUN/r_c/subject} {VERB/r_c/remember/remembers} clair_list. By the time they head back to camp, they have a good idea of what they should do with the information.",
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. r_c explains {PRONOUN/r_c/subject} {VERB/r_c/remember/remembers} clair_list/r_c. By the time they head back to camp, they have a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -415,7 +415,7 @@
                 ]
             },
             {
-                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list/r_c. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["random_herbs"],
@@ -437,7 +437,7 @@
                 ]
             },
             {
-                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list. p_l reassures r_c, but inwardly was left worried over what it could mean.",
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c. p_l reassures r_c, but inwardly was left worried over what it could mean.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -528,7 +528,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tells p_l of clair_list. However, p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
+                "text": "r_c tells p_l of clair_list/r_c. However, p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -744,17 +744,17 @@
         ],
         "fail_outcomes": [
             { 
-                "text": "As r_c reflects on clair_list from {PRONOUN/r_c/poss} vision, {PRONOUN/r_c/subject} still {VERB/r_c/find/finds} that {PRONOUN/r_c/subject} can't make sense of it.", 
+                "text": "As r_c reflects on clair_list/r_c from {PRONOUN/r_c/poss} vision, {PRONOUN/r_c/subject} still {VERB/r_c/find/finds} that {PRONOUN/r_c/subject} can't make sense of it.",
                 "exp": 0, 
                 "weight": 20
             },
             { 
-                "text": "Despite p_l's attempts, the vision containing glimpses of clair_list remains cryptic and elusive... just like the cobwebs.", 
+                "text": "Despite p_l's attempts, the vision containing glimpses of clair_list/p_l remains cryptic and elusive... just like the cobwebs.",
                 "exp": 0, 
                 "weight": 20
             },
             { 
-                "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher what clair_list could mean. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive. At least {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} collected cobwebs.", 
+                "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher what clair_list/p_l could mean. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive. At least {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} collected cobwebs.",
                 "exp": 0, 
                 "weight": 15,
                 "herbs": ["cobwebs"]
@@ -814,7 +814,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 speaks of clair_list, and p_l listens carefully. After app1 finishes speaking, the two cats have an in-depth conversation about app1's vision as they walk. By the time they head back to camp, p_l has a good idea of what they should do with the information.",
+                "text": "app1 speaks of clair_list/app1, and p_l listens carefully. After app1 finishes speaking, the two cats have an in-depth conversation about app1's vision as they walk. By the time they head back to camp, p_l has a good idea of what they should do with the information.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_talkingMA",
@@ -844,7 +844,7 @@
                 ]
             },
             {
-                "text": "app1 decides to inform p_l of {PRONOUN/app1/poss} dream, speaking of how {PRONOUN/app1/poss} saw flashes of clair_list. p_l doesn't take {PRONOUN/p_l/poss} responsibility lightly, and both of them work together to divine the vision's meaning as p_l helps app1 to learn how to interpret visions.",
+                "text": "app1 decides to inform p_l of {PRONOUN/app1/poss} dream, speaking of how {PRONOUN/app1/poss} saw flashes of clair_list/app1. p_l doesn't take {PRONOUN/p_l/poss} responsibility lightly, and both of them work together to divine the vision's meaning as p_l helps app1 to learn how to interpret visions.",
                 "exp": 20,
                 "weight": 5,
                 "art":"gen_train_talkingMA",
@@ -867,7 +867,7 @@
                 ]
             },
             {
-                "text": "s_c listens intently as app1 describes the dream, involving glimpses of clair_list, and tells app1 that {PRONOUN/s_c/subject} {VERB/s_c/have/has} seen the dream, too. s_c soothes the apprentice, explaining that this dream was nothing but a mild warning.",
+                "text": "s_c listens intently as app1 describes the dream, involving glimpses of clair_list/app1, and tells app1 that {PRONOUN/s_c/subject} {VERB/s_c/have/has} seen the dream, too. s_c soothes the apprentice, explaining that this dream was nothing but a mild warning.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -883,7 +883,7 @@
                 ]
             },
             {
-                "text": "p_l and app1 have an in-depth conversation about app1's vision as they walk. p_l listens to app1's dream of clair_list. p_l reassures app1, but inwardly is left worried over what it could mean. p_l knows that {PRONOUN/p_l/subject} can't shield app1 forever, but for now, p_l will take this burden for {PRONOUN/p_l/self}.",
+                "text": "p_l and app1 have an in-depth conversation about app1's vision as they walk. p_l listens to app1's dream of clair_list/app1. p_l reassures app1, but inwardly is left worried over what it could mean. p_l knows that {PRONOUN/p_l/subject} can't shield app1 forever, but for now, p_l will take this burden for {PRONOUN/p_l/self}.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -921,7 +921,7 @@
                 ]
             },
             {
-                "text": "After hearing of the dream with flashes of clair_list, s_c promises app1 that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that {PRONOUN/s_c/subject}'ll teach app1 how to interpret such visions.",
+                "text": "After hearing of the dream with flashes of clair_list/app1, s_c promises app1 that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that {PRONOUN/s_c/subject}'ll teach app1 how to interpret such visions.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_talkingMA",
@@ -946,7 +946,7 @@
                 ]
             },
             {
-                "text": "At first app1 doesn't speak up, however p_l notices the apprentice is distracted, and gently asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list app1 experienced in the dream, leaving app1 feeling relieved.",
+                "text": "At first app1 doesn't speak up, however p_l notices the apprentice is distracted, and gently asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list/app1 app1 experienced in the dream, leaving app1 feeling relieved.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -970,7 +970,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l shakes {PRONOUN/p_l/poss} head sadly as app1 describes the dream containing flashes of clair_list. p_l can't make sense of the vision.",
+                "text": "p_l shakes {PRONOUN/p_l/poss} head sadly as app1 describes the dream containing flashes of clair_list/app1. p_l can't make sense of the vision.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -984,7 +984,7 @@
                 ]
             },
             {
-                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of prophecy_list_sight... right?",
+                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of prophecy_list_sight/app1... right?",
                 "exp": 0,
                 "weight": 20
             },
@@ -1164,7 +1164,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "With a hesitant nod, s_c greets the StarClan cat, nerves slowly fading as the two converse. Before the StarClan cat leaves, they bring warning of prophecy_list.",
+                "text": "With a hesitant nod, s_c greets the StarClan cat, nerves slowly fading as the two converse. Before the StarClan cat leaves, they bring warning of prophecy_list/s_c.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["random_herbs"],

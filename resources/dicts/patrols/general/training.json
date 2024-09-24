@@ -704,7 +704,7 @@
                 ]
             },
             {
-                "text": "No one means to, but... well... the group drifts off into a nap. Untethered by normal limitations, s_c's spirit wanders from mindscape to mindscape, picking up dream_list like burrs on a pelt.",
+                "text": "No one means to, but... well... the group drifts off into a nap. Untethered by normal limitations, s_c's spirit wanders from mindscape to mindscape, picking up dream_list/s_c like burrs on a pelt.",
                 "exp": 30,
                 "weight": 40,
                 "can_have_stat": ["any"],
@@ -957,7 +957,7 @@
                 ]
             },
             {
-                "text": "No one means to, but... well... the pair drifts off into a nap, lured by the sun. Untethered by normal limitations, s_c's spirit wanders from {PRONOUN/s_c/poss} own mindscape, picking up dream_list from {PRONOUN/s_c/poss} sleeping training partner like burrs on a pelt.",
+                "text": "No one means to, but... well... the pair drifts off into a nap, lured by the sun. Untethered by normal limitations, s_c's spirit wanders from {PRONOUN/s_c/poss} own mindscape, picking up dream_list/s_c from {PRONOUN/s_c/poss} sleeping training partner like burrs on a pelt.",
                 "exp": 30,
                 "weight": 40,
                 "can_have_stat": ["any"],
@@ -10166,7 +10166,7 @@
         "relationship_constraint": ["platonic_40"],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} all close here, literally, and that gives p_l the confidence to open up. {PRONOUN/p_l/poss/CAP} pelt prickles with vulnerability as {PRONOUN/p_l/subject} {VERB/p_l/murmur/murmurs} of omen_list {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt recently, how {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been struggling to piece together what it could all mean. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} help, advice.",
+                "text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} all close here, literally, and that gives p_l the confidence to open up. {PRONOUN/p_l/poss/CAP} pelt prickles with vulnerability as {PRONOUN/p_l/subject} {VERB/p_l/murmur/murmurs} of omen_list/p_l {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt recently, how {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been struggling to piece together what it could all mean. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} help, advice.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -10180,7 +10180,7 @@
                 ]
             },
             {
-                "text": "It's not something {PRONOUN/p_l/subject} <i>{VERB/p_l/want/wants}</i> to talk about, but p_l gives in, knowing {PRONOUN/p_l/subject} should share {PRONOUN/p_l/poss} burden and gift. Recently, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt omen_list, though {PRONOUN/p_l/subject} can't yet tell what it means for c_n or {PRONOUN/p_l/poss} friends.",
+                "text": "It's not something {PRONOUN/p_l/subject} <i>{VERB/p_l/want/wants}</i> to talk about, but p_l gives in, knowing {PRONOUN/p_l/subject} should share {PRONOUN/p_l/poss} burden and gift. Recently, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt omen_list/p_l, though {PRONOUN/p_l/subject} can't yet tell what it means for c_n or {PRONOUN/p_l/poss} friends.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -10230,7 +10230,7 @@
         "pl_skill_constraint": ["DREAM,3"],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has been seeing dream_list_emotional, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
+                "text": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has been seeing dream_list_emotional/p_l, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -10244,7 +10244,7 @@
                 ]
             },
             {
-                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional {PRONOUN/p_l/subject} felt while asleep and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
+                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional/p_l {PRONOUN/p_l/subject} felt while asleep and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -10279,7 +10279,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "As p_l heads out with a group of Clanmates, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} a paw wrong, slipping on to {PRONOUN/p_l/poss} side. {PRONOUN/p_l/poss/CAP} breath whooshes from {PRONOUN/p_l/poss} lungs as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} hit with flashes of clair_list.",
+        "intro_text": "As p_l heads out with a group of Clanmates, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} a paw wrong, slipping on to {PRONOUN/p_l/poss} side. {PRONOUN/p_l/poss/CAP} breath whooshes from {PRONOUN/p_l/poss} lungs as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} hit with flashes of clair_list/p_l.",
         "decline_text": "It's nothing - not a vision, and it means <i>nothing</i>, p_l tells {PRONOUN/p_l/self} and gets up.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
@@ -10316,7 +10316,7 @@
             "normal adult": [1, 6]
         },
         "weight": 50,
-        "intro_text": "Among {PRONOUN/p_l/poss} friends and with a little sunshine to brighten {PRONOUN/p_l/poss} dark mood, p_l opens up about what's been shared with {PRONOUN/p_l/object} through the powers of the stars: prophecy_list.",
+        "intro_text": "Among {PRONOUN/p_l/poss} friends and with a little sunshine to brighten {PRONOUN/p_l/poss} dark mood, p_l opens up about what's been shared with {PRONOUN/p_l/object} through the powers of the stars: prophecy_list/p_l.",
         "decline_text": "No one wants to talk about it. p_l doesn't blame them and lets the conversation move on.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["PROPHET,1"],
