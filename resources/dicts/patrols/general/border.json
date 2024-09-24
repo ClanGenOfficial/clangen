@@ -1614,7 +1614,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The bickering gets to be too much and r_c storms back to camp irritated.",
+                "text": "The bickering gets to be too much and r_c storms back to camp, irritated.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1637,7 +1637,7 @@
                 ]
             },
             {
-                "text": "As the duo are patrolling, they are ambushed by a rogue! r_c is badly injured, and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "text": "As the duo are patrolling, they are ambushed by a rogue! r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"]
