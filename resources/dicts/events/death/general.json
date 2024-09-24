@@ -5968,8 +5968,8 @@
       "history": [
       {
       "cats": ["m_c"],
-      "reg_death": "m_c died when r_c lured {PRONOUN/m_c/object} into a Twoleg trap.",
-      "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
+      "reg_death": "m_c was murdered by r_c.",
+      "lead_death": "{VERB/m_c/were/was} murdered by r_c"
       }
     ]
   },
@@ -5993,11 +5993,11 @@
       "history": [
         {
             "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c"
         },
         {
             "cats": ["r_c"],
-            "reg_death": "r_c died when {PRONOUN/r_c/subject} tried to kill m_c and failed."
+            "reg_death": "r_c died after launching a failed assassination attempt on the Clan's leader."
         }
     ]
   }
