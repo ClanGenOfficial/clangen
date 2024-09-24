@@ -277,7 +277,7 @@
         "id": "bouncy_kit",
         "thoughts": [
             "Is pretending to be a rabbit and hopping about",
-            "Is pawing at r_c's tail from behind them",
+            "Is pawing at r_c's tail from behind {PRONOUN/r_c/object}",
             "Wants to play forever",
             "Is running circles around r_c",
             "Is trying to catch {PRONOUN/m_c/poss} tail",
