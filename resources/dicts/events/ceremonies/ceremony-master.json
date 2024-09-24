@@ -1924,7 +1924,7 @@
       "general_backstory",
       "vengeful"
     ],
-    "Medicine cat training had just felt right for (old_name), more like remembering then learning: like {PRONOUN/m_c/subject} had done this before. When it comes time for {PRONOUN/m_c/poss} naming ceremony, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to name {PRONOUN/m_c/self}, and chose m_c for {PRONOUN/m_c/poss} name. It feels right for {PRONOUN/m_c/object} to be called m_c."
+    "Medicine cat training had just felt right for (old_name), more like remembering than learning: like {PRONOUN/m_c/subject} had done this before. When it comes time for {PRONOUN/m_c/poss} naming ceremony, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to name {PRONOUN/m_c/self}, and {VERB/m_c/choose/chooses} m_c for {PRONOUN/m_c/poss} name. It feels right for {PRONOUN/m_c/object} to be called m_c."
   ],
   "med_45": [
     [
