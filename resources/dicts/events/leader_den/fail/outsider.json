@@ -6,7 +6,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was hunting for them",
+      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
       "relationships": [
         {
           "values": ["dislike"],
@@ -22,7 +22,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["exiled", "lost"],
-      "new_thought": "Heard rumors that their old Clan was hunting for them",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan was hunting for {PRONOUN/m_c/object}",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -93,7 +93,7 @@
     "rep_change": -1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was looking for them",
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -112,7 +112,7 @@
     "rep_change": -1,
     "m_c": {
       "status": ["exiled", "lost"],
-      "new_thought": "Heard rumors that their old Clan wants them gone",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan wants {PRONOUN/m_c/object} gone",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -131,7 +131,7 @@
     "rep_change": 1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was looking for them"
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
     }
   },
   {
@@ -141,7 +141,7 @@
     "rep_change": 1,
     "m_c": {
       "status": ["exiled"],
-      "new_thought": "Heard rumors that their old Clan was searching for them",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan was searching for {PRONOUN/m_c/object}",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -167,7 +167,7 @@
     "rep_change": 1,
     "m_c": {
       "status": ["lost"],
-      "new_thought": "Heard rumors that their old Clan has been searching for them",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan has been searching for {PRONOUN/m_c/object}",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -257,7 +257,7 @@
       "skill": [
         "SENSE,1"
       ],
-      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "new_thought": "Is beyond relieved that {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
       "relationships": [
         {
           "cats_from": ["m_c"],
