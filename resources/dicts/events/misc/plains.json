@@ -35,5 +35,29 @@
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
     }
+  },
+  {
+    "event_id": "pln_misc_blooming_accessory",
+    "location": ["any"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "sub_type": ["accessory"],
+    "weight": 20,
+    "event_text":  "The acc_plural are just absolutely blooming this season! m_c decides to keep some to remind {PRONOUN/m_c/object} of such a beautiful sight.",
+    "new_accessory": ["HEATHER", "GORSE"],
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    }
+  },
+  {
+    "event_id": "pln_misc_trip_accessory",
+    "location": ["any"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "sub_type": ["accessory"],
+    "weight": 20,
+    "event_text":  "m_c tripped and ended up with acc_plural all over {PRONOUN/m_c/object}! Oh hey, it actually doesn't look that bad...",
+    "new_accessory": ["CLOVER", "DAISY"],
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    }
   }
 ]

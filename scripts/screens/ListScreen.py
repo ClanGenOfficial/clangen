@@ -1,4 +1,5 @@
 from math import ceil
+from typing import Union, Dict, Optional
 
 import pygame
 import pygame_gui
@@ -21,6 +22,16 @@ class ListScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.ur_bg_image = pygame.image.load("resources/images/urbg.png").convert()
+        self.sc_bg_image = pygame.image.load(
+            "resources/images/starclanbg.png"
+        ).convert_alpha()
+        self.df_bg_image = pygame.image.load(
+            "resources/images/darkforestbg.png"
+        ).convert_alpha()
+        self.search_bar_image = pygame.image.load(
+            "resources/images/search_bar.png"
+        ).convert_alpha()
         self.all_pages = None
         self.filter_options_visible = True
         self.group_options_visible = False
@@ -32,7 +43,22 @@ class ListScreen(Screens):
         self.list_screen_container = None
 
         self.cat_list_bar = None
-        self.cat_list_bar_elements = {}
+        self.cat_list_bar_elements: Dict[
+            str,
+            Union[
+                UIImageButton,
+                pygame_gui.elements.UIImage,
+                pygame_gui.elements.UITextEntryLine,
+                None,
+            ],
+        ] = {
+            "fav_toggle": None,
+            "search_bar_image": None,
+            "search_bar_entry": None,
+            "view_button": None,
+            "choose_group_button": None,
+            "sort_by_button": None,
+        }
 
         self.dead_groups_container = None
         self.choose_dead_dropdown = None
@@ -42,10 +68,31 @@ class ListScreen(Screens):
 
         self.sort_by_button_container = None
         self.sort_by_dropdown = None
-        self.sort_by_buttons = {}
+        self.sort_by_buttons: Dict[str, Optional[UIImageButton]] = {
+            "view_your_clan_button": None,
+            "view_cotc_button": None,
+            "view_starclan_button": None,
+            "view_unknown_residence_button": None,
+            "view_dark_forest_button": None,
+        }
 
         self.cat_display = None
-        self.display_container_elements = {}
+        self.display_container_elements: Dict[
+            str,
+            Union[
+                UIImageButton,
+                pygame_gui.elements.UITextEntryLine,
+                pygame_gui.elements.UITextBox,
+                None,
+            ],
+        ] = {
+            "first_page_button": None,
+            "previous_page_button": None,
+            "last_page_button": None,
+            "next_page_button": None,
+            "page_entry": None,
+            "page_number": None,
+        }
 
         self.df_bg = None
         self.ur_bg = None
@@ -201,6 +248,8 @@ class ListScreen(Screens):
             # MENU BUTTONS
             else:
                 self.menu_button_pressed(event)
+                self.mute_button_pressed(event)
+
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
@@ -211,6 +260,7 @@ class ListScreen(Screens):
                 self.change_screen("patrol screen")
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.clan_name = game.clan.name + "Clan"
 
         self.set_disabled_menu_buttons(["catlist_screen"])
@@ -260,7 +310,7 @@ class ListScreen(Screens):
         # SEARCH BAR
         self.cat_list_bar_elements["search_bar_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((72, 0), (276, 68))),
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(),
+            self.search_bar_image,
             container=self.cat_list_bar,
             object_id="#search_bar",
             manager=MANAGER,
@@ -432,7 +482,7 @@ class ListScreen(Screens):
         self.sc_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/starclanbg.png").convert_alpha(),
+                self.sc_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -444,7 +494,7 @@ class ListScreen(Screens):
         self.ur_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/urbg.png").convert(),
+                self.ur_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -456,7 +506,7 @@ class ListScreen(Screens):
         self.df_bg = pygame_gui.elements.UIImage(
             scale(pygame.Rect((0, 0), (1600, 1400))),
             pygame.transform.scale(
-                pygame.image.load("resources/images/darkforestbg.png").convert_alpha(),
+                self.df_bg_image,
                 (1600, 1400),
             ),
             container=self.list_screen_container,
@@ -639,6 +689,19 @@ class ListScreen(Screens):
                 },
             )
         else:
+            if self.cat_display.prev_button is None:
+                self.cat_display.prev_button = self.display_container_elements[
+                    "previous_page_button"
+                ]
+                self.cat_display.next_button = self.display_container_elements[
+                    "next_page_button"
+                ]
+                self.cat_display.first_button = self.display_container_elements[
+                    "first_page_button"
+                ]
+                self.cat_display.last_button = self.display_container_elements[
+                    "last_page_button"
+                ]
             self.cat_display.text_theme = (
                 get_text_box_theme("#text_box_30_horizcenter")
                 if self.death_status == "living"

@@ -26,6 +26,8 @@ class AllegiancesScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.menu_button_pressed(event)
+            self.mute_button_pressed(event)
+
 
     def on_use(self):
         pass
@@ -41,6 +43,7 @@ class AllegiancesScreen(Screens):
 
         # Set Menu Buttons.
         self.show_menu_buttons()
+        self.show_mute_buttons()
         self.set_disabled_menu_buttons(["allegiances"])
         self.update_heading_text(f"{game.clan.name}Clan")
         allegiance_list = self.get_allegiances_text()

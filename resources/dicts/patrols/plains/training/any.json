@@ -684,7 +684,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "intro_text": "As r_c trails behind p_l, the ground trembles beneath {PRONOUN/r_c/poss}'s paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -854,7 +854,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind p_l, the ground trembles beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "intro_text": "As r_c trails behind p_l, the ground trembles beneath {PRONOUN/r_c/poss}'s paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the earth caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1056,7 +1056,7 @@
                 }
             },
             {
-                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den.",
+                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1170,7 +1170,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
                 "exp": 20,
                 "weight": 20,
                 "art": "fst_hunt_fun1"
@@ -1238,7 +1238,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20,
                 "art": "fst_hunt_fun1"
@@ -1307,7 +1307,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a thick field of tall grass {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "weight": 20,
                 "art": "fst_hunt_fun1"
@@ -1977,7 +1977,7 @@
                 ]
             },
             {
-                "text": "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
+                "text": "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape. p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",
@@ -2122,7 +2122,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2217,7 +2217,7 @@
                 ]
             },
             {
-                "text": "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly, and ends the training session early, diplomatically making up an excuse.",
+                "text": "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly, and ends the training session early with a diplomatic and completely made-up excuse.",
                 "exp": 0,
                 "weight": 20,
                 "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
@@ -2467,7 +2467,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "As the patrol moves through the grass just after sunset, two moons rise in the sky...",
-        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the thunderpaths. The cats hide from its sight, trembling.",
+        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the Thunderpaths. The cats hide from its sight, trembling.",
         "success_outcomes": [
             {
                 "text": "Two whole moons! That's got to be lucky, the cats decide, sitting on a little rock still warm from the sun to stargaze.",
@@ -2510,7 +2510,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "app1 seems a little nervous as the cats head out to train. {PRONOUN/app1/subject/CAP} know that obviously everyone goes to Starclan when they die, but, what if someone died beyond c_n's borders? What if they died even further away than the sunset?",
+        "intro_text": "app1 seems a little nervous as the cats head out to train. {PRONOUN/app1/subject/CAP} know that obviously everyone goes to StarClan when they die, but, what if someone died beyond c_n's borders? What if they died even further away than the sunset?",
         "decline_text": "p_l vaguely reassures app1 and urges {PRONOUN/app1/object} to hurry down to the training grounds.",
         "success_outcomes": [
                 {
@@ -2618,12 +2618,12 @@
             ]
     },
     {
-        "patrol_id": "pln_train_thunderpathtraining_loreteacherinsightfullocked1",
+        "patrol_id": "pln_train_training_loreteacherinsightfullocked1",
         "biome": ["plains"],
         "season": ["any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "gen_hunt_thunderpath",
+        "patrol_art": "gen_hunt_",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2675,7 +2675,7 @@
                     ]
                 },
                 {
-                    "text": "See how fast the monsters go? No, app1, that's too close - s_c yanks {PRONOUN/app1/object} back unceremoniously, though app1 is fox-lengths away from the thunderpath. Still, app1 and app2 shiver with fear as the monster passes, the great metal body hurling itself down is set path incomprehensibly fast.",
+                    "text": "See how fast the monsters go? No, app1, that's too close - s_c yanks {PRONOUN/app1/object} back unceremoniously, though app1 is fox-lengths away from the Thunderpath. Still, app1 and app2 shiver with fear as the monster passes, the great metal body hurling itself down is set path incomprehensibly fast.",
                     "exp": 30,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1",
@@ -2713,7 +2713,7 @@
                     ]
                 },
                 {
-                    "text": "Now, this is important, s_c meows, commanding the apprentice's attention. The thunderpath <i>itself</i> is important. Monsters never leave it, not the fast, deadly, kind. Occasionally a vast lumbering metal beast has been spotted on the plains, but <i>those</i> are easily outrun. The fast monsters? Impossible. So remember, <i>the fast ones stay on the thunderpath</i>.",
+                    "text": "Now, this is important, s_c meows, commanding the apprentice's attention. The Thunderpath <i>itself</i> is important. Monsters never leave it, not the fast, deadly, kind. Occasionally a vast lumbering metal beast has been spotted on the plains, but <i>those</i> are easily outrun. The fast monsters? Impossible. So remember, <i>the fast ones stay on the Thunderpath</i>.",
                     "exp": 30,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1",
@@ -2806,13 +2806,13 @@
                         }
                     ],
                     "history_text": {
-                        "scar":"m_c was scarred from being dragged away from a thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
-                        "reg_death": "Being hauled away from the thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c",
-                        "lead_death": "being hauled away from the thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death"
+                        "scar":"m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
+                        "reg_death": "Being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c",
+                        "lead_death": "being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death"
                     }
                 },
                 {
-                    "text": "A monster approaches, vast and roaring, and the apprentices nerve breaks. They jolt away from the thunderpath, and p_l needs to put on speed to catch up to them and slow their flight. At least they ran <i>away</i> from the monster and not toward it, but preventing this jerky panic is what this trianing is all about.",
+                    "text": "A monster approaches, vast and roaring, and the apprentices nerve breaks. They jolt away from the Thunderpath, and p_l needs to put on speed to catch up to them and slow their flight. At least they ran <i>away</i> from the monster and not toward it, but preventing this jerky panic is what this trianing is all about.",
                     "exp": 0,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1"

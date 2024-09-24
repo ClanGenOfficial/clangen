@@ -1057,7 +1057,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent holds drugged pleasure, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
+                "text": "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent can be very alluring, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"],
@@ -3118,7 +3118,7 @@
                 ]
             },
             {
-                "text": "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes  and just nearby a betony plant is patiently waiting for its stems to be collected. app1 carefully fixes the location in their mind, to return to next year.",
+                "text": "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes and just nearby a betony plant is patiently waiting for its stems to be collected. app1 carefully fixes the location in their mind, to return to next year.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "betony"],
@@ -3854,7 +3854,7 @@
                 "herbs": ["elder_leaves", "oak_leaves"]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den. Elder leaves work well alongside them, being great for easing the pains of a sprain and to p_l's excitement they come across a young elder tree. They're always happy to bring a good crop of them back to the herb stores.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den. Elder leaves work well alongside them, being great for easing the pains of a sprain and to p_l's excitement they come across a young elder tree. They're always happy to bring a good crop of them back to the herb stores.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "elder_leaves", "oak_leaves"]
@@ -3917,7 +3917,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Elder leaves work well alongside them, being great for easing the pains of a sprain and to p_l's excitement they come across a young elder tree.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores. Elder leaves work well alongside them, being great for easing the pains of a sprain and to p_l's excitement they come across a young elder tree.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "elder_leaves", "oak_leaves"],
@@ -4028,7 +4028,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Elder leaves work well alongside them, being great for easing the pains of a sprain and to p_l's excitement they come across a young elder tree. Their Clanmates are, as expected, a huge help carrying everything back home.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores. Elder leaves work well alongside them, being great for easing the pains of a sprain and to p_l's excitement they come across a young elder tree. Their Clanmates are, as expected, a huge help carrying everything back home.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "elder_leaves", "oak_leaves"],
@@ -6072,7 +6072,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Lungwort doesn't help with many aliments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs til none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
+                "text": "Lungwort doesn't help with many aliments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs till none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_bord_story",
@@ -6346,7 +6346,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort impacts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
+                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort imparts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["ragwort"],

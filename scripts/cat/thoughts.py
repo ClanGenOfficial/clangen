@@ -58,9 +58,7 @@ class Thoughts:
 
         # This is checking for season
         if "season" in thought:
-            if season is None:
-                return False
-            elif season not in thought["season"]:
+            if season not in thought["season"]:
                 return False
 
         # This is for checking camp
@@ -201,47 +199,43 @@ class Thoughts:
                 if outside_status and outside_status != 'clancat' and len(r_c_in) > 0:
                     return False
 
-            # makes sure thought is valid for game mode
-            if game_mode == "classic" and ('has_injuries' in thought or "perm_conditions" in thought):
-                return False
-            else:
-                if 'has_injuries' in thought:
-                    if "m_c" in thought['has_injuries']:
-                        if main_cat.injuries or main_cat.illnesses:
-                            injuries_and_illnesses = main_cat.injuries.keys() + main_cat.injuries.keys()
-                            if not [i for i in injuries_and_illnesses if i in thought['has_injuries']["m_c"]] and \
-                                    "any" not in thought['has_injuries']["m_c"]:
-                                return False
+            if 'has_injuries' in thought:
+                if "m_c" in thought['has_injuries']:
+                    if main_cat.injuries or main_cat.illnesses:
+                        injuries_and_illnesses = main_cat.injuries.keys() + main_cat.injuries.keys()
+                        if not [i for i in injuries_and_illnesses if i in thought['has_injuries']["m_c"]] and \
+                                "any" not in thought['has_injuries']["m_c"]:
+                            return False
+                    return False
+
+                if "r_c" in thought['has_injuries'] and random_cat:
+                    if random_cat.injuries or random_cat.illnesses:
+                        injuries_and_illnesses = random_cat.injuries.keys() + random_cat.injuries.keys()
+                        if not [i for i in injuries_and_illnesses if i in thought['has_injuries']["r_c"]] and \
+                                "any" not in thought['has_injuries']["r_c"]:
+                            return False
+                    return False
+
+            if "perm_conditions" in thought:
+                if "m_c" in thought["perm_conditions"]:
+                    if main_cat.permanent_condition:
+                        if not [i for i in main_cat.permanent_condition if
+                                i in thought["perm_conditions"]["m_c"]] and \
+                                "any" not in thought['perm_conditions']["m_c"]:
+                            return False
+                    else:
                         return False
 
-                    if "r_c" in thought['has_injuries'] and random_cat:
-                        if random_cat.injuries or random_cat.illnesses:
-                            injuries_and_illnesses = random_cat.injuries.keys() + random_cat.injuries.keys()
-                            if not [i for i in injuries_and_illnesses if i in thought['has_injuries']["r_c"]] and \
-                                    "any" not in thought['has_injuries']["r_c"]:
-                                return False
+                if "r_c" in thought["perm_conditions"] and random_cat:
+                    if random_cat.permanent_condition:
+                        if not [i for i in random_cat.permanent_condition if
+                                i in thought["perm_conditions"]["r_c"]] and \
+                                "any" not in thought['perm_conditions']["r_c"]:
+                            return False
+                    else:
                         return False
-
-                if "perm_conditions" in thought:
-                    if "m_c" in thought["perm_conditions"]:
-                        if main_cat.permanent_condition:
-                            if not [i for i in main_cat.permanent_condition if
-                                    i in thought["perm_conditions"]["m_c"]] and \
-                                    "any" not in thought['perm_conditions']["m_c"]:
-                                return False
-                        else:
-                            return False
-
-                    if "r_c" in thought["perm_conditions"] and random_cat:
-                        if random_cat.permanent_condition:
-                            if not [i for i in random_cat.permanent_condition if
-                                    i in thought["perm_conditions"]["r_c"]] and \
-                                    "any" not in thought['perm_conditions']["r_c"]:
-                                return False
-                        else:
-                            return False
-
-        if game_mode != "classic" and "perm_conditions" in thought:
+        
+        if "perm_conditions" in thought:
             if "m_c" in thought["perm_conditions"]:
                 if main_cat.permanent_condition:
                     if not [i for i in main_cat.permanent_condition if i in thought["perm_conditions"]["m_c"]] and \
@@ -323,8 +317,12 @@ class Thoughts:
     def get_chosen_thought(main_cat, other_cat, game_mode, biome, season, camp):
         # get possible thoughts
         try:
-            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
-            chosen_thought = choice(chosen_thought_group["thoughts"])
+            # checks if the cat is Rick Astley to give the rickroll thought, otherwise proceed as usual
+            if (main_cat.name.prefix+main_cat.name.suffix).replace(" ", "").lower() == "rickastley":
+                return "Never going to give r_c up, never going to let {PRONOUN/r_c/object} down, never going to run around and desert {PRONOUN/r_c/object}."
+            else:
+                chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
+                chosen_thought = choice(chosen_thought_group["thoughts"])
         except Exception:
             traceback.print_exc()
             chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."

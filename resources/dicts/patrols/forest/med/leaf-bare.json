@@ -1252,7 +1252,7 @@
                 "herbs": ["dandelion"]
             },
             {
-                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants.",
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to uncover a couple good dandelion plants.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["dandelion"]
@@ -2299,13 +2299,14 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and [VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
+        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and {VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
         "decline_text": "It's probably fine to let the patrol go without telling the story, the bush has been pointed out and {PRONOUN/p_l/poss} Clanmates warned.",
         "success_outcomes": [
             {
                     "text": "Two lovers met in leaf-bare at the border between their Clans, under the shelter of a bushy white-berried yew. One night, it was not love that met there, but a great battle between their rival Clans, one neither would stagger from alive. The yew drank of their blood, and in the colder moons, even now, you can see it shining in its deathberries.",
                     "exp": 40,
                     "weight": 20,
+                    "herbs": ["random_herbs"],
                     "relationships": [
                         {
                             "cats_to": ["p_l"],

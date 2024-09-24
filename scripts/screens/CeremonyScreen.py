@@ -30,6 +30,7 @@ class CeremonyScreen(Screens):
 
     def screen_switches(self):
         self.hide_menu_buttons()
+        self.show_mute_buttons()
 
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
         if self.the_cat.status == 'leader':
@@ -77,7 +78,10 @@ class CeremonyScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen('profile screen')
-        
+            else:
+                self.mute_button_pressed(event)
+
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen('profile screen')

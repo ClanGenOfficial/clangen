@@ -100,5 +100,215 @@
         }
       ]
     }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "There's one specific cat, m_c, that keeps regularly upstaging c_n's hunting patrols. However, instead of trying to drive {PRONOUN/m_c/object} out, c_n welcomes m_c with open paws.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Can't wait to help provide for {PRONOUN/m_c/poss} new Clan",
+      "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey...especially when said outsider is doing it as successfully as m_c is. The yowls that chase m_c to the c_n border and beyond are a clear warning: do not return.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "Some of c_n's best hunters challenge m_c to a hunt-off. The stakes are simple: if c_n wins, m_c leaves the territory; if m_c wins, then {PRONOUN/m_c/subject} will be allowed to hunt within the Clan's borders undisturbed. m_c wins by a landslide but, in a surprising twist, requests that {PRONOUN/m_c/poss} prize be the chance to join c_n.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Can't wait to help provide for {PRONOUN/m_c/poss} new Clan",
+      "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey, so they decide to...get rid of the issue. It may be brutal, but c_n needs to put c_n first.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed",
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "While {PRONOUN/m_c/subject} may have been cast out for a reason, there's no denying that m_c is a skilled hunter. The Clan could definitely learn a thing or two from {PRONOUN/m_c/object} so, after much deliberation, a decision is made to welcome m_c back to c_n.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["exiled"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Is happy to be back with c_n",
+      "kit_thought": "Is curious why {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been brought here",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Some of c_n's best hunters challenge m_c to a hunt-off. The stakes are simple: if c_n wins, m_c leaves the territory; if m_c wins, then {PRONOUN/m_c/subject} will be allowed to hunt within the Clan's borders undisturbed. It's a close contest but, in the end, the Clan cats claim victory, and m_c has no choice but to find somewhere else to call home.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "m_c may have been exiled from c_n, but that hasn't stopped {PRONOUN/m_c/object} from sneaking back into the territory to hunt. However, m_c's luck runs out when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} caught by a patrol, {PRONOUN/m_c/poss} former Clanmates not even giving {PRONOUN/m_c/object} a chance to run.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["exiled"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "new_thought": "Just wanted some fresh-kill",
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "m_c may have been exiled from c_n, but that hasn't stopped {PRONOUN/m_c/object} from sneaking back into the territory to hunt. However, m_c's luck runs out when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} caught by a patrol, with {PRONOUN/m_c/poss} former Clanmates chasing {PRONOUN/m_c/object} right back over the border.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["exiled"],
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "skill": [
+        "HUNTER,3"
+      ],
+      "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "Patrol after patrol has been sent out in search of m_c, always returning without their lost Clanmate. Then, just as the Clan is about to give up all hope, m_c manages to track them down, resulting in a joyful reunion.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["lost"],
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "skill": [
+        "SENSE,1"
+      ],
+      "new_thought": "Is glad to have returned",
+      "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": 5
+        }
+      ]
+    }
   }
 ]

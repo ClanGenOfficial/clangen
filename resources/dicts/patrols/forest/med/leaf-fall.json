@@ -1052,7 +1052,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent holds drugged pleasure, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
+                "text": "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent can be very alluring, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carrying it back to camp where it will protect the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"],
@@ -3379,7 +3379,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores  with app1 before the plants wither and die off.",
+        "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with app1 before the plants wither and die off.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -3883,7 +3883,7 @@
                 "herbs": ["oak_leaves"]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"]
@@ -3948,7 +3948,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expedition, which makes the apprentice to swell with confidence.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expedition, which makes the apprentice to swell with confidence.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"],
@@ -4059,7 +4059,7 @@
                 ]
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves"],
@@ -5616,7 +5616,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and [VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
+        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and {VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of How The Yew Got Its Color.",
         "decline_text": "It's probably fine to let the patrol go without telling the story, the bush has been pointed out and {PRONOUN/p_l/poss} Clanmates warned.",
         "success_outcomes": [
             {
@@ -5917,7 +5917,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Lungwort doesn't help with many aliments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs til none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
+                "text": "Lungwort doesn't help with many aliments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs till none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_bord_story",
@@ -6191,7 +6191,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort impacts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
+                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort imparts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["ragwort"],

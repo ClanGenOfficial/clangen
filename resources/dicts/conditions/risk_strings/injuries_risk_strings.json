@@ -34,7 +34,7 @@
     },
     "rat bite": {
         "an infected wound": [
-          "r_c talks as {PRONOUN/r_c/subject} {VERB/r_c/apply/applies} a strange paste to m_c's rat bite. {PRONOUN/r_c/subject} tells {PRONOUN/m_c/object} that this will be a daily routine because it's becoming infected.",
+            "r_c talks as {PRONOUN/r_c/subject} {VERB/r_c/apply/applies} a strange paste to m_c's rat bite. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tell/tells} {PRONOUN/m_c/object} that this will be a daily routine because it's becoming infected.",
           "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when {PRONOUN/m_c/inposs} starts to show signs of infection."
 
         ],
@@ -200,7 +200,7 @@
     },
     "broken back": {
         "an infected wound": [
-          "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body. {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
+            "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body. {PRONOUN/r_c/subject/CAP} {VERB/r_c/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
           "m_c can smell the infection from {PRONOUN/m_c/poss} back and feels the fever coming over {PRONOUN/m_c/self}. This injury feels less survivable by the day."
         ]
     },
