@@ -10,7 +10,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c looks at the small stream {PRONOUN/r_c/subject} {VERB/r_c/have/has} to cross to continue marking the border and {VERB/r_c/debate/debates} stopping for a quick swim to cool off.",
+        "intro_text": "r_c looks at the small stream {PRONOUN/r_c/subject} {VERB/r_c/have/has} to cross to continue marking the border, and {VERB/r_c/debate/debates} stopping for a quick swim to cool off.",
         "decline_text": "r_c decides to continue with the patrol instead.",
         "chance_of_success": 50,
         "success_outcomes": [
