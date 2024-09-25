@@ -50,11 +50,11 @@
     "a festering wound": [
         "m_c has died to a festering wound.",
         "A festering wound has killed m_c.",
-        "m_c's festering wound has finally killed her."
+        "m_c's festering wound has finally killed {PRONOUN/m_c/object}."
     ],
     "heat stroke": [
         "m_c died to heat stroke.",
-        "m_c's case of heat stroke has killed her."
+        "m_c's case of heat stroke has killed {PRONOUN/m_c/object}."
     ],
     "starving": [
         "m_c died to starvation.",
