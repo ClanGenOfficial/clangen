@@ -1382,11 +1382,23 @@ class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
             anchors=anchors,
         )
 
+        self.sliding_button_width = ui_scale_value(30)
+        self.arrow_button_width = ui_scale_value(self.arrow_button_width)
+
+        self.scrollable_width = (
+            self.background_rect.width
+            - self.sliding_button_width
+            - (2 * self.arrow_button_width)
+        )
+        self.right_limit_position = self.scrollable_width
+        self.scroll_position = self.scrollable_width / 2
+
         # kill the sliding button that the UIHorizontalSlider class makes, then make it again
         self.sliding_button.kill()
-        sliding_x_pos = int(self.background_rect.width - self.sliding_button_width)
         self.sliding_button = UIImageButton(
-            pygame.Rect((sliding_x_pos, 0), ui_scale_dimensions((30, 22))),
+            pygame.Rect(
+                (0, 0), (self.sliding_button_width, self.background_rect.height)
+            ),
             text="",
             manager=self.ui_manager,
             container=self.button_container,
@@ -1400,12 +1412,12 @@ class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
         # reset start value, for some reason it defaults to 50 otherwise
         self.set_current_value(start_value)
         # set hold range manually since using UIImageButton breaks it?
-        self.sliding_button.set_hold_range((800, 700))
+        self.sliding_button.set_hold_range((self.background_rect.width, 100))
 
         # kill and remake the left button
         self.left_button.kill()
         self.left_button = UIImageButton(
-            ui_scale(pygame.Rect((0, 0), (20, 22))),
+            pygame.Rect((0, 0), (self.arrow_button_width, self.background_rect.height)),
             text="",
             manager=self.ui_manager,
             container=self.button_container,
@@ -1419,7 +1431,10 @@ class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
         # kill and remake the right button
         self.right_button.kill()
         self.right_button = UIImageButton(
-            pygame.Rect((-self.arrow_button_width, 0), ui_scale_dimensions((20, 22))),
+            pygame.Rect(
+                (-self.arrow_button_width, 0),
+                (ui_scale_value(20), self.background_rect.height),
+            ),
             text="",
             manager=self.ui_manager,
             container=self.button_container,
