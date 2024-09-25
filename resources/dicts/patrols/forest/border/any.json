@@ -2050,7 +2050,7 @@
     },
     {
         "patrol_id": "fst_bord_bigfoot",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
@@ -2118,7 +2118,7 @@
     },
 	{
         "patrol_id": "fst_bord_dog1",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": [],
@@ -2282,7 +2282,7 @@
     },
 	{
         "patrol_id": "fst_bord_dog2",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": [
@@ -2517,7 +2517,7 @@
     },
 	{
         "patrol_id": "fst_bord_dog3",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": [
@@ -2752,7 +2752,7 @@
     },
 	{
         "patrol_id": "fst_bord_smalldog1",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": [],
@@ -2830,7 +2830,7 @@
     },
 	{
         "patrol_id": "fst_bord_smalldog2",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": [],
@@ -2943,7 +2943,7 @@
         ]
     },{
         "patrol_id": "fst_bord_smalldog3",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": [],
