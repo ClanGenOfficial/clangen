@@ -1,3 +1,51 @@
 [
-    
+  {
+    "id": "exiled_df_dead_thoughts",
+    "thoughts": [
+      "Thinks of the disapproving glares of {PRONOUN/m_c/poss} ex-Clanmates while {PRONOUN/m_c/subject} {VERB/m_c/train/trains}",
+      "Will never forget the looks of scorn on {PRONOUN/m_c/poss} Clanmates faces",
+      "Resents the Clan that exiled {PRONOUN/m_c/object}"
+        ]
+    },
+    {
+        "id": "exiled_df_evil",
+        "thoughts": [
+            "Is imagining the tree {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} clawing at is one of {PRONOUN/m_c/poss} ex-Clanmates",
+            "Trains extra hard, waiting for an opportunity to get {PRONOUN/m_c/poss} revenge",
+            "Knows {PRONOUN/m_c/subject} {VERB/m_c/were/was} right to do what {PRONOUN/m_c/subject} did",
+            "Wants to make {PRONOUN/m_c/poss} old leader pay for exiling {PRONOUN/m_c/object}",
+            "Is watching {PRONOUN/m_c/poss} old Clan with scorn, hoping for an opportunity to get back at them",
+            "Is cursing {PRONOUN/m_c/poss} old Clan"
+        ],
+    "main_trait_constraint": [
+        "bloodthirsty",
+        "faithful",
+        "vengeful",
+        "cold",
+        "strict",
+        "fierce",
+        "arrogant",
+        "ambitious"
+        ]
+    },
+    {
+        "id": "exiled_df_kind",
+        "thoughts": [
+          "Truly believes {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} misunderstood",
+          "Wonders if what {PRONOUN/m_c/subject} did was truly right...",
+          "Is begging StarClan for forgiveness",
+          "Wishes {PRONOUN/m_c/subject} could apologize to c_n for everything {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done",
+          "Is deeply regretting what {PRONOUN/m_c/subject} did to get exiled and end up here"
+        ],
+    "main_trait_constraint": [
+        "compassionate",
+        "faithful",
+        "loving",
+        "patient",
+        "thoughtful",
+        "nervous",
+        "wise",
+        "sincere"
+        ]
+    }
 ]

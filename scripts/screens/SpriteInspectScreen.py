@@ -53,6 +53,8 @@ class SpriteInspectScreen(Screens):
             return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
@@ -131,17 +133,20 @@ class SpriteInspectScreen(Screens):
         return super().handle_event(event)
 
     def screen_switches(self):
+        self.show_mute_buttons()
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.previous_cat_button = UIImageButton(
             scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 120), (210, 60))),
@@ -321,7 +326,10 @@ class SpriteInspectScreen(Screens):
         # Write the checkboxes. The text is set up in switch_screens.
         self.update_checkboxes()
 
-        self.determine_previous_and_next_cat()
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
         self.update_disabled_buttons()
 
     def update_checkboxes(self):
@@ -413,61 +421,6 @@ class SpriteInspectScreen(Screens):
             scale(pygame.Rect((450, 200), (700, 700))),
             pygame.transform.scale(self.cat_image, scale_dimentions((700, 700))),
         )
-
-    def determine_previous_and_next_cat(self):
-        """'Determines where the next and previous buttons point too."""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        if (
-            self.the_cat.dead
-            and not is_instructor
-            and self.the_cat.df == game.clan.instructor.df
-            and not (self.the_cat.outside or self.the_cat.exiled)
-        ):
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
-            else:
-                if (
-                    next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    previous_cat = check_cat.ID
-
-                elif (
-                    next_cat == 1
-                    and check_cat != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    next_cat = check_cat.ID
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
 
     def set_background_visablity(self):
         if "platform" not in self.cat_elements:

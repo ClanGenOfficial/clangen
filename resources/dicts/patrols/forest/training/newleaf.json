@@ -12,7 +12,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
         "relationship_constraint": ["romantic_20", "not_mates"],
@@ -119,13 +119,13 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/cap} lean in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/subject}.",
+        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/object}.",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before either cat can head out of camp.",
         "chance_of_success": 80,
         "relationship_constraint": ["romantic_70", "mates"],
         "success_outcomes": [
             {
-                "text": "This is p_l's absolutely favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c/self}. All the more special for being there together.",
+                "text": "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c/self}. All the more special for being there together.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -139,7 +139,7 @@
                 ]
             },
             {
-                "text": "Yes, the place is magical -  a beautiful, bubbling, calm stream, and the clouds clear and the light sparkles along it, making the forest shine with reflections. But as lovely as p_l's little secret is, it's improved beyond measure with the addition of r_c.",
+                "text": "Yes, the place is magical - a beautiful, bubbling, calm stream, and the clouds clear and the light sparkles along it, making the forest shine with reflections. But as lovely as p_l's little secret is, it's improved beyond measure with the addition of r_c.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -211,7 +211,7 @@
                 "weight": 20
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

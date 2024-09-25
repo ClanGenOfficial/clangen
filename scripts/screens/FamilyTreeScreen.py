@@ -72,6 +72,8 @@ class FamilyTreeScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
                 game.switches["root_cat"] = None
@@ -165,6 +167,7 @@ class FamilyTreeScreen(Screens):
     def screen_switches(self):
         """Set up things that are always on the page"""
 
+        self.show_mute_buttons()
         self.current_group = None
         self.current_group_name = None
         # prev/next and back buttons
@@ -173,12 +176,14 @@ class FamilyTreeScreen(Screens):
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 120), (210, 60))),
@@ -257,7 +262,14 @@ class FamilyTreeScreen(Screens):
         self.group_page_number = 1
         # self.family_setup()
         self.create_family_tree()
-        self.get_previous_next_cat()
+
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
+
+        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
+        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
 
     def create_family_tree(self):
         """
@@ -682,66 +694,6 @@ class FamilyTreeScreen(Screens):
                 ),
                 manager=MANAGER,
             )
-
-    def get_previous_next_cat(self):
-        """Determines where the previous and next buttons should lead, and enables/disables them"""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
-            else:
-                if (
-                    next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    previous_cat = check_cat.ID
-
-                elif (
-                    next_cat == 1
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    next_cat = check_cat.ID
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
-
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
 
     def chunks(self, L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]
