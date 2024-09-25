@@ -53,7 +53,7 @@
             		"m_c and r_c, despite never getting along, put aside their differences and worked together surprisingly well during an emergency.",
             		"m_c recently has grown tired of disliking r_c."
 		],
-        "relationship_constraint": [
+        	"relationship_constraint": [
 			"dislike_20"
 		]
 	},
