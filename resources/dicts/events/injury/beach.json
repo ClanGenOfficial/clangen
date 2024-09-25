@@ -297,7 +297,7 @@
         "season": ["leaf-fall", "leaf-bare"],
         "tags": ["clan:warrior"],
         "weight": 30,
-        "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} jump in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
+        "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} {VERB/m_c/jump/jumps} in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
         "m_c": {
             "status": ["kitten"],
             "trait": ["daring", "impulsive", "attention-seeker"]

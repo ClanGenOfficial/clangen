@@ -894,7 +894,7 @@
     "location": ["any"],
     "season": ["newleaf"],
     "weight": 5,
-      "event_text": "m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
+    "event_text": "m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
@@ -1828,7 +1828,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 15,
-      "event_text": "m_c was seen chasing a kittypet off of the territory.",
+    "event_text": "m_c was seen chasing a kittypet off of the territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
@@ -2079,7 +2079,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 10,
-      "event_text": "m_c was seen chasing a rogue off of the territory.",
+    "event_text": "m_c was seen chasing a rogue off of the territory.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["apprentice", "warrior", "deputy", "leader", "medicine cat"]
