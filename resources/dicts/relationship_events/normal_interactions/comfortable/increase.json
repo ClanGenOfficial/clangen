@@ -264,21 +264,21 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase",
-            "platonic": "increase",
+            		"platonic": "increase",
 			"trust": "increase",
-            "admiration": "increase",
+           	 	"admiration": "increase",
 			"dislike": "decrease"
 		},
-        "reaction_main_cat": {
+        	"reaction_main_cat": {
 			"comfortable": "increase",
 			"trust": "increase",
-            "platonic": "increase",
-		"dislike": "decrease"
+            		"platonic": "increase",
+			"dislike": "decrease"
 		},
-         "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall"
-        ]
+         	"season": [
+            		"Newleaf",
+            		"Greenleaf",
+            		"Leaf-fall"
+        	]
 	}
 ]
