@@ -78,8 +78,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred when they accidentally ran their leg into a rabbit burrow.",
-                "reg_death": "m_c died from wounds caused by when they accidentally ran into a rabbit burrow.",
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} accidentally ran {PRONOUN/m_c/poss} leg into a rabbit burrow.",
+                "reg_death": "m_c died from wounds caused by when {PRONOUN/m_c/subject} accidentally ran into a rabbit burrow.",
                 "lead_death": "died after stepping in a rabbit burrow"
             }
         ]

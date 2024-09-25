@@ -64,6 +64,8 @@ class ClearingScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             if event.ui_element == self.stop_focus_button:
@@ -197,6 +199,7 @@ class ClearingScreen(Screens):
             self.change_screen(game.last_screen_forupdate)
             return
 
+        self.show_mute_buttons()
         self.hide_menu_buttons()
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 50), (210, 60))),

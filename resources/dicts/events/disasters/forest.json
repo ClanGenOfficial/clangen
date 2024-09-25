@@ -71,7 +71,7 @@
             "moon1": [
                 "Even the trees look dry. The cats of c_n cart moss between camp and their water source, bringing back vital liquid to their youngest and oldest Clanmates. But there are murmurs of discontented gossip - what will they do if their water dries up?",
                 "The prey that cats bring back to the fresh-kill pile is beginning to look weak. Difficult to say what's taking its toll - the heat, or the difficulty of finding water.",
-                "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat's den with remedies against heat stroke and exhaustion."
+                "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat den with remedies against heat stroke and exhaustion."
             ],
             "moon2": [
                 "The drought continues. The cats of c_n pant in the shade, too hot to move, their tongues dry and tacky.",
@@ -309,7 +309,7 @@
                 "triggers_during": "end",
                 "chance": 0,
                 "trigger_events": [
-                    "A Twoleg was seen playing with fire, seemingly enjoying the dangerous plaything like a kit does a moss-ball and, just like a kit, they lost control of it. The forest is too dry in greenleaf to stop the fire, and it quickly spreads, the cats of c_n only able to run with the rest of the animals in the forest.",
+                    "A Twoleg was seen playing with fire, seemingly enjoying the dangerous plaything like a kit does a moss ball and, just like a kit, they lost control of it. The forest is too dry in greenleaf to stop the fire, and it quickly spreads, the cats of c_n only able to run with the rest of the animals in the forest.",
                     "The Twolegs seem to enjoy gathering around large fires, much to the terror of the Clan.  Though the fires seem to be put out before the Twolegs leave, it's no surprise when some embers persist and the forest begins to go up in flames."
                 ]
             },
@@ -500,7 +500,7 @@
                 "It's both exhausting and heartbreaking, tearing down the battered remnants of what used to be a safe and whole home. But c_n grits their teeth and yowl encouragement to each other. Nothing will drive them from the forest, and they're determined to make this their home again.",
                 "As dep_name roughly rips down the broken back of the nursery, pulling down the brambles that failed to protect it, something flutters down along with them. Feathers from the artfully made, carefully chosen kitten-nests inside, heartbreaking survivors of the devastation of c_n.",
                 "As lead_name surveys the camp, full of their cats hauling the tattered wreckage of their lives out to the dirt-place, they wonder if staying here was the right decision. How can anything be the same after this? How can any cat ever feel safe here again, on the ground that was supposed to be their greatest and safest shelter?",
-                "lead_name announced their plans confidently, what needed to happen to repair the camp. But they can't watch as the  shattered wreckage of the apprentice's den is torn down and carted away. Maybe it's a weakness. But they can't watch.",
+                "lead_name announced their plans confidently, what needed to happen to repair the camp. But they can't watch as the  shattered wreckage of the apprentices' den is torn down and carted away. Maybe it's a weakness. But they can't watch.",
                 "As c_n works in frenzied activity, dep_name is called over. One of the oldest of c_n's cats won't give up their nest, not even as broken and shattered as it is. They can't be convinced, and eventually dep_name has to take it from them, over their protests. They'll get a new one, a better one, a perfect one in their rebuilt home, dep_name vows. But it's still not enough. dep_name can't fix this.",
                 "To rebuild their shattered camp and their shattered lives, the Clan must clear out the wreckage of their old home. But it is its own sort of death to process, the loss of their home, their safety, their innocence."
             ],
