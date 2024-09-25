@@ -106,11 +106,11 @@
 		],
 		"main_trait_constraint": [
 			"charismatic",
-            "playful",
-            "troublesome",
-            "impulsive",
-            "childish",
-            "shameless"
+            		"playful",
+            		"troublesome",
+            		"impulsive",
+            		"childish",
+            		"shameless"
 		]
 	},
 	{
