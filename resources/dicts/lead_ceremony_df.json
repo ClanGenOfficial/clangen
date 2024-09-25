@@ -266,7 +266,7 @@
           "virtue": ["ambition", "certainty", "clear judgment", "confidence", "courage", "endurance", "farsightedness", "instincts", "cunningness", "shamelessness", "zealotry", "bloodlust", "authority"]
         },
         {
-          "text": "r_c's eerie composure approaches, {PRONOUN/r_c/poss} calmness tinged with a malevolent presence. {PRONOUN/r_c/poss/CAP} cool façade gleams at m_c, as {PRONOUN/r_c/subject} {VERB/r_c/extend/extends} an offer of a life, infused with the virtue of [virtue].",
+          "text": "r_c's eerie composure approaches, {PRONOUN/r_c/poss} calmness tinged with a malevolent presence. {PRONOUN/r_c/poss/CAP} cool facade gleams at m_c, as {PRONOUN/r_c/subject} {VERB/r_c/extend/extends} an offer of a life, infused with the virtue of [virtue].",
           "virtue": ["ambition", "certainty", "clear judgment", "confidence", "courage", "endurance", "farsightedness", "instincts", "cunningness", "shamelessness", "zealotry", "bloodlust", "authority"]
         }
       ]
