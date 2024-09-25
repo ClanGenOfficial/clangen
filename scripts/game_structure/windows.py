@@ -1732,6 +1732,8 @@ class SaveAsImage(UIWindow):
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
             sound_id="save",
+            container=self,
+            anchors={"centerx": "centerx"},
         )
 
         self.open_data_directory_button = UISurfaceImageButton(
