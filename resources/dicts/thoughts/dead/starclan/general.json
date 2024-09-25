@@ -341,7 +341,7 @@
         "id": "dead_child_to_alive_child_sibling2",
         "thoughts":[
             "Snuck into r_c's dreams to play with {PRONOUN/r_c/object} one last time",
-            "Visits r_c in {PRONOUN/r_c/poss} dream to tell them to live for the both of them"
+            "Visits r_c in {PRONOUN/r_c/poss} dream to tell {PRONOUN/r_c/object} to live for the both of them"
         ],
         "main_age_constraint": [
             "newborn",
@@ -379,7 +379,7 @@
     {
         "id": "dead_app_to_dead_other",
         "thoughts": [
-            "Is asking r_c questions about {PRONOUN/m_c/poss} life",
+            "Is asking r_c questions about {PRONOUN/r_c/poss} life",
             "Is listening to r_c's stories",
             "Wants to show r_c a new skill {PRONOUN/m_c/subject} learned"
         ],
