@@ -1138,7 +1138,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
+                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp without any burdock, prickling with frustration.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

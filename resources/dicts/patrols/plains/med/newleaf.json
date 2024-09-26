@@ -15,11 +15,11 @@
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for newleaf's fresh buds, and for carrying capacity should they find anything.",
-        "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+        "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -120,7 +120,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just an herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
@@ -958,7 +958,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
+                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp without any burdock, prickling with frustration.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
