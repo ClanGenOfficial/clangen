@@ -120,7 +120,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They can't think of anything that would work, but their hunt goes well regardless.",
+                "text": "{PRONOUN/r_c/subject/CAP} can't think of anything that would work, but {PRONOUN/r_c/poss} hunt goes well regardless.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1260,7 +1260,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much {PRONOUN/s_c/subject} {VERB/s_c/know/knows} about the strange animals and their weird behavior and enjoying getting to feel clever.",
+                "text": "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much {PRONOUN/s_c/subject} {VERB/s_c/know/knows} about the weird animals' behavior and enjoying getting to feel clever.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1275,7 +1275,7 @@
                 ]
             },
             {
-                "text": "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide-eyed and a little scared, in a fun way.",
+                "text": "It's a strange adventure, odd and thrilling. s_c takes the lead. Both {PRONOUN/s_c/subject} and r_c are wide-eyed and a little scared, in a fun way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1482,7 +1482,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. To {PRONOUN/r_c/poss} great fortune, this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1552,7 +1552,7 @@
                 "weight": 20
             },
             {
-                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+                "text": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/self}. {PRONOUN/r_c/poss/CAP} fur stands on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. To {PRONOUN/r_c/poss} great fortune, this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
                 "exp": 20,
                 "weight": 5
             },
@@ -1826,7 +1826,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit and die.",
+                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats scatter in all directions, and several of them get hit and die.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
@@ -1913,7 +1913,7 @@
                 "weight": 20
             },
             {
-                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
+                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats scatter in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
