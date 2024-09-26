@@ -2217,7 +2217,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
-            "Do you want to keep these changes? Display changes will be reverted in 5 seconds.",
+            "Do you want to keep these changes? Display changes will be reverted in 10 seconds.",
             text_block_rect,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
@@ -2233,7 +2233,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
 
         # make a timeout that will call in 10 seconds - if this window isn't closed,
         # it'll be used to revert the change
-        pygame.time.set_timer(pygame.USEREVENT + 10, 5000, loops=1)
+        pygame.time.set_timer(pygame.USEREVENT + 10, 10000, loops=1)
 
         self.source_screen_name = source_screen.name.replace(" ", "_")
 
