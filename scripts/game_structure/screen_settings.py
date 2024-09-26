@@ -21,8 +21,9 @@ screen_y = 700
 screen_scale = 1
 game_screen_size = (800, 700)
 MANAGER: Optional[pygame_gui.UIManager] = None
-screen = None
+screen: Optional[pygame.Surface] = None
 curr_variable_dict = {}
+WINDOW = None
 
 display_change_in_progress = False  # this acts as a lock to ensure we don't end up in a loop of fullscreen changes
 
@@ -32,6 +33,7 @@ def set_display_mode(
     source_screen: Optional["Screens"] = None,
     show_confirm_dialog=True,
     ingame_switch=True,
+    user_defined_dimensions=None,
 ):
     global display_change_in_progress
 
@@ -47,6 +49,7 @@ def set_display_mode(
     global screen
     global MANAGER
     global curr_variable_dict
+    global WINDOW
 
     display_change_in_progress = True
 
@@ -75,30 +78,29 @@ def set_display_mode(
         display_size = display_sizes[screen_config["fullscreen_display"]]
         # display_size = [3840, 2160]
 
-        x = display_size[0] // 200
-        y = display_size[1] // 175
-
-        # this means screen scales in multiples of 200 x 175 which has a reasonable tradeoff for crunch
-        screen_scale = min(x, y) / 4
-        screen_x = 800 * screen_scale
-        screen_y = 700 * screen_scale
+        determine_screen_scale(display_size[0], display_size[1])
 
         screen = pygame.display.set_mode(
             display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
         )
-        offset = (
-            floor((display_size[0] - screen_x) / 2),
-            floor((display_size[1] - screen_y) / 2),
-        )
-        game_screen_size = (screen_x, screen_y)
     else:
         offset = (0, 0)
         screen_x = 800
         screen_y = 700
         screen_scale = 1
         game_screen_size = (800, 700)
-        screen = pygame.display.set_mode((screen_x, screen_y))
-    game_screen_size = (screen_x, screen_y)
+        if user_defined_dimensions is not None:
+            determine_screen_scale(
+                user_defined_dimensions[0], user_defined_dimensions[1]
+            )
+        game_screen_size = (screen_x, screen_y)
+
+        screen = pygame.display.set_mode(
+            user_defined_dimensions
+            if user_defined_dimensions is not None
+            else game_screen_size,
+            pygame.RESIZABLE,
+        )
 
     if source_screen is None:
         MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
@@ -110,38 +112,44 @@ def set_display_mode(
         MANAGER.get_theme().load_theme(theme_location)
 
     if source_screen is not None:
-        from scripts.screens.all_screens import AllScreens
         import scripts.screens.screens_core.screens_core
-        import scripts.debug_menu
 
-        game.save_settings(currentscreen=source_screen)
-        source_screen.exit_screen()
-
-        if fullscreen:
-            mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
-                1
-            ] * screen_scale + offset[1]
-        else:
-            mouse_pos = (
-                (mouse_pos[0] - old_offset[0]) / old_scale,
-                (mouse_pos[1] - old_offset[1]) / old_scale,
-            )
-
-        MANAGER.clear_and_reset()
         MANAGER.set_window_resolution(game_screen_size)
         MANAGER.set_offset(offset)
-        pygame.mouse.set_pos(mouse_pos)
+        scripts.screens.screens_core.screens_core.rebuild_bgs()
+        if old_scale != screen_scale:
+            from scripts.screens.all_screens import AllScreens
+            import scripts.screens.screens_core.screens_core
+            import scripts.debug_menu
 
-        AllScreens.rebuild_all_screens()
+            game.save_settings(currentscreen=source_screen)
+            source_screen.exit_screen()
 
-        scripts.screens.screens_core.screens_core.rebuild_core()
-        scripts.debug_menu.debugmode.rebuild_console()
+            if fullscreen:
+                mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
+                    1
+                ] * screen_scale + offset[1]
+            else:
+                mouse_pos = (
+                    (mouse_pos[0] - old_offset[0]) / old_scale,
+                    (mouse_pos[1] - old_offset[1]) / old_scale,
+                )
 
-        screen_name = source_screen.name.replace(" ", "_")
-        new_screen: "Screens" = getattr(AllScreens, screen_name)
-        new_screen.screen_switches()
-        if ingame_switch:
-            new_screen.display_change_load(curr_variable_dict)
+            MANAGER.clear_and_reset()
+            MANAGER.set_window_resolution(game_screen_size)
+            MANAGER.set_offset(offset)
+            pygame.mouse.set_pos(mouse_pos)
+
+            AllScreens.rebuild_all_screens()
+
+            scripts.screens.screens_core.screens_core.rebuild_core()
+            scripts.debug_menu.debugmode.rebuild_console()
+
+            screen_name = source_screen.name.replace(" ", "_")
+            new_screen: "Screens" = getattr(AllScreens, screen_name)
+            new_screen.screen_switches()
+            if ingame_switch:
+                new_screen.display_change_load(curr_variable_dict)
     if curr_variable_dict is not None and show_confirm_dialog:
         from scripts.screens.all_screens import AllScreens
 
@@ -199,6 +207,22 @@ def set_display_mode(
         from scripts.game_structure.windows import ConfirmDisplayChanges
 
         ConfirmDisplayChanges(source_screen=source_screen)
+
+
+def determine_screen_scale(x, y):
+    global screen_scale, screen_x, screen_y, offset, game_screen_size
+    # this means screen scales in multiples of 200 x 175 which has a reasonable tradeoff for crunch
+    scalex = x // 200
+    scaley = y // 175
+    screen_scale = min(scalex, scaley) / 4
+    screen_x = 800 * screen_scale
+    screen_y = 700 * screen_scale
+
+    offset = (
+        floor((x - screen_x) / 2),
+        floor((y - screen_y) / 2),
+    )
+    game_screen_size = (screen_x, screen_y)
 
 
 def toggle_fullscreen(

@@ -676,7 +676,10 @@ class Screens:
             self.previous_season = season
         # onto the actual blitting
         # handle the blur bg
-        if game.settings["fullscreen"]:
+        if (
+            scripts.game_structure.screen_settings.game_screen_size
+            != scripts.game_structure.screen_settings.screen.size
+        ):
             # enable the transition if required
             if self.bg_transition:
                 # this determines how many frames the fade can show for

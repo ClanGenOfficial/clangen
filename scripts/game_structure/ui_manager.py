@@ -107,6 +107,7 @@ class UIManager(pygame_gui.UIManager):
         """
         self.offset = offset
         self.root_container.set_position(offset)
+        self.ui_window_stack.root_container.set_position(offset)
 
 
 class UIManagerContainer(pygame_gui.core.UIContainer):

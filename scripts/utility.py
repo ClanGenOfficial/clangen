@@ -2367,16 +2367,16 @@ def ui_scale(rect: pygame.Rect):
     :return: the same pygame.Rect, scaled for the current UI.
     """
     # offset can be negative to allow for correct anchoring
-    rect[0] = round(rect[0] * scripts.game_structure.screen_settings.screen_scale)
-    rect[1] = round(rect[1] * scripts.game_structure.screen_settings.screen_scale)
+    rect[0] = floor(rect[0] * scripts.game_structure.screen_settings.screen_scale)
+    rect[1] = floor(rect[1] * scripts.game_structure.screen_settings.screen_scale)
     # if the dimensions are negative, it's dynamically scaled, ignore
     rect[2] = (
-        round(rect[2] * scripts.game_structure.screen_settings.screen_scale)
+        floor(rect[2] * scripts.game_structure.screen_settings.screen_scale)
         if rect[2] > 0
         else rect[2]
     )
     rect[3] = (
-        round(rect[3] * scripts.game_structure.screen_settings.screen_scale)
+        floor(rect[3] * scripts.game_structure.screen_settings.screen_scale)
         if rect[3] > 0
         else rect[3]
     )
