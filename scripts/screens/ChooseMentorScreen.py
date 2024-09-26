@@ -18,13 +18,13 @@ from scripts.utility import (
     ui_scale,
     ui_scale_dimensions,
     shorten_text_to_fit,
-    ui_scale_blit,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import MANAGER, screen
+from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class ChooseMentorScreen(Screens):
@@ -158,7 +158,10 @@ class ChooseMentorScreen(Screens):
             )
 
         # Layout Images:
-        self.list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 226))
+        list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 226))
+        self.list_frame = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((75, 360), (650, 226))), list_frame, starting_height=1
+        )
 
         self.mentor_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((40, 113), (281, 197))),
@@ -213,10 +216,11 @@ class ChooseMentorScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.confirm_mentor = UIImageButton(
+        self.confirm_mentor = UISurfaceImageButton(
             ui_scale(pygame.Rect((326, 310), (148, 30))),
-            "",
-            object_id="#confirm_mentor_button",
+            "Confirm Mentor",
+            get_button_dict(ButtonStyles.SQUOVAL, (148, 30)),
+            object_id="@buttonstyles_squoval",
         )
         self.remove_mentor = UISurfaceImageButton(
             ui_scale(pygame.Rect((326, 310), (148, 30))),
@@ -236,17 +240,20 @@ class ChooseMentorScreen(Screens):
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
         )
-        self.previous_page_button = UIImageButton(
+
+        self.previous_page_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((315, 579), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
-            manager=MANAGER,
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            starting_height=0,
         )
-        self.next_page_button = UIImageButton(
+        self.next_page_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((451, 579), (34, 34))),
-            "",
-            object_id="#relation_list_next",
-            manager=MANAGER,
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            starting_height=0,
         )
 
         # Create a container for the checkboxes
@@ -344,6 +351,7 @@ class ChooseMentorScreen(Screens):
             self.selected_details[ele].kill()
         self.selected_details = {}
 
+        self.list_frame.kill()
         self.heading.kill()
         del self.heading
         self.info.kill()
@@ -774,7 +782,6 @@ class ChooseMentorScreen(Screens):
     def on_use(self):
         # Due to a bug in pygame, any image with buttons over it must be blitted
         super().on_use()
-        screen.blit(self.list_frame, ui_scale_blit((75, 360)))
 
     def chunks(self, L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]

@@ -22,6 +22,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class FamilyTreeScreen(Screens):
@@ -218,17 +219,18 @@ class FamilyTreeScreen(Screens):
         )
 
         # now grab the other necessary UI elements
-        self.previous_group_page = UIImageButton(
+        self.previous_group_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((470, 640), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
-            manager=MANAGER,
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
         self.previous_group_page.disable()
-        self.next_group_page = UIImageButton(
+        self.next_group_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((541, 640), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
         self.next_group_page.disable()

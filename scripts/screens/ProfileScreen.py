@@ -37,6 +37,7 @@ from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 # ---------------------------------------------------------------------------- #
@@ -460,11 +461,11 @@ class ProfileScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.inspect_button = UIImageButton(
+        self.inspect_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((741, 60), (34, 34))),
-            "",
-            object_id="#magnify_button",
-            manager=MANAGER,
+            Icon.MAGNIFY,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
         self.relations_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 420), (176, 30))),
@@ -1831,10 +1832,11 @@ class ProfileScreen(Screens):
             del rect
 
             rect = ui_scale(pygame.Rect((-5, 537), (34, 34)))
-            self.right_conditions_arrow = UIImageButton(
+            self.right_conditions_arrow = UISurfaceImageButton(
                 rect,
-                "",
-                object_id="#arrow_right_button",
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
                 manager=MANAGER,
                 anchors={"left_target": self.conditions_background},
             )
@@ -1842,10 +1844,11 @@ class ProfileScreen(Screens):
 
             rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
             rect.topright = ui_scale_offset((5, 537))
-            self.left_conditions_arrow = UIImageButton(
+            self.left_conditions_arrow = UISurfaceImageButton(
                 rect,
-                "",
-                object_id="#arrow_left_button",
+                Icon.ARROW_LEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
                 anchors={"right": "right", "right_target": self.conditions_background},
             )
             del rect

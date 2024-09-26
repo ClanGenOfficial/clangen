@@ -16,6 +16,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
+from scripts.ui.icon import Icon
 from scripts.utility import ui_scale, get_text_box_theme, ui_scale_value
 
 
@@ -86,6 +87,7 @@ class ListScreen(Screens):
             str,
             Union[
                 UIImageButton,
+                UISurfaceImageButton,
                 pygame_gui.elements.UITextEntryLine,
                 pygame_gui.elements.UITextBox,
                 None,
@@ -509,32 +511,36 @@ class ListScreen(Screens):
 
         # CAT DISPLAY
         # first/prev/next/last page buttons
-        self.display_container_elements["first_page_button"] = UIImageButton(
+        self.display_container_elements["first_page_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((285, 600), (34, 34))),
-            "",
+            Icon.ARROW_DOUBLELEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.list_screen_container,
-            object_id="#arrow_double_left_button",
             manager=MANAGER,
         )
-        self.display_container_elements["previous_page_button"] = UIImageButton(
+        self.display_container_elements["previous_page_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((310, 600), (34, 34))),
-            "",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.list_screen_container,
-            object_id="#arrow_left_button",
             manager=MANAGER,
         )
-        self.display_container_elements["last_page_button"] = UIImageButton(
+        self.display_container_elements["last_page_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((481, 600), (34, 34))),
-            "",
+            Icon.ARROW_DOUBLERIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.list_screen_container,
-            object_id="#arrow_double_right_button",
             manager=MANAGER,
         )
-        self.display_container_elements["next_page_button"] = UIImageButton(
+        self.display_container_elements["next_page_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((456, 600), (34, 34))),
-            "",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.list_screen_container,
-            object_id="#arrow_right_button",
             manager=MANAGER,
         )
         # page number

@@ -24,6 +24,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class MediationScreen(Screens):
@@ -201,15 +202,17 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
-        self.next_med = UIImageButton(
+        self.next_med = UISurfaceImageButton(
             ui_scale(pygame.Rect((476, 270), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
-        self.last_med = UIImageButton(
+        self.last_med = UISurfaceImageButton(
             ui_scale(pygame.Rect((280, 270), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
 
         self.next_page = UIImageButton(

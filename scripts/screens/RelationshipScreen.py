@@ -26,6 +26,7 @@ from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class RelationshipScreen(Screens):
@@ -268,18 +269,22 @@ class RelationshipScreen(Screens):
 
         rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
         rect.topright = ui_scale_offset((-25, 616))
-        self.previous_page_button = UIImageButton(
+        self.previous_page_button = UISurfaceImageButton(
             rect,
-            "",
-            object_id="#relation_list_previous",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
             anchors={"right": "right", "top": "top", "right_target": self.page_number},
         )
         del rect
 
-        self.next_page_button = UIImageButton(
+        self.next_page_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 616), (34, 34))),
-            "",
-            object_id="#relation_list_next",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
             anchors={"left_target": self.page_number},
         )
 
@@ -296,8 +301,11 @@ class RelationshipScreen(Screens):
         )
         self.view_profile_button.disable()
 
-        self.log_icon = UIImageButton(
-            ui_scale(pygame.Rect((222, 404), (34, 34))), "", object_id="#log_icon"
+        self.log_icon = UISurfaceImageButton(
+            ui_scale(pygame.Rect((222, 404), (34, 34))),
+            Icon.NOTEPAD,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
         self.log_icon.disable()
 
@@ -469,7 +477,7 @@ class RelationshipScreen(Screens):
             self.all_relations = list(self.the_cat.relationships.values()).copy()
 
         self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(
-            str(self.the_cat.name) + " Relationships",
+            str(self.the_cat.name) + "'s Relationships",
             ui_scale(pygame.Rect((75, 75), (400, 50))),
             object_id=get_text_box_theme("#text_box_34_horizleft"),
         )

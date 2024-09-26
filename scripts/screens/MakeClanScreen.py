@@ -1844,17 +1844,19 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
 
-        self.elements["page_left"] = UIImageButton(
+        self.elements["page_left"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((47, 414), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             starting_height=1,
             manager=MANAGER,
         )
-        self.elements["page_right"] = UIImageButton(
+        self.elements["page_right"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((719, 414), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             starting_height=1,
             manager=MANAGER,
         )

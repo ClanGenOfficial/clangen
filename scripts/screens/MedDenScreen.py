@@ -23,6 +23,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class MedDenScreen(Screens):
@@ -134,16 +135,18 @@ class MedDenScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.next_med = UIImageButton(
+        self.next_med = UISurfaceImageButton(
             ui_scale(pygame.Rect((645, 278), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
-        self.last_med = UIImageButton(
+        self.last_med = UISurfaceImageButton(
             ui_scale(pygame.Rect((600, 278), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
 
@@ -159,16 +162,17 @@ class MedDenScreen(Screens):
                 "<br><br>"
                 "Hover your mouse over the medicine den image to see what herbs your Clan has!",
             )
-            self.last_page = UIImageButton(
+            self.last_page = UISurfaceImageButton(
                 ui_scale(pygame.Rect((330, 636), (34, 34))),
-                "",
-                object_id="#arrow_left_button",
-                manager=MANAGER,
+                Icon.ARROW_LEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
             )
-            self.next_page = UIImageButton(
+            self.next_page = UISurfaceImageButton(
                 ui_scale(pygame.Rect((476, 636), (34, 34))),
-                "",
-                object_id="#arrow_right_button",
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
                 manager=MANAGER,
             )
 

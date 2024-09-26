@@ -26,6 +26,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class ChooseMateScreen(Screens):
@@ -256,32 +257,36 @@ class ChooseMateScreen(Screens):
         self.mates_container = pygame_gui.core.UIContainer(contain_rect, MANAGER)
 
         # All the perm elements the exist inside self.mates_container
-        self.mates_next_page = UIImageButton(
+        self.mates_next_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((366, 179), (34, 34))),
-            "",
-            object_id="#relation_list_next",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.mates_container,
         )
-        self.mates_last_page = UIImageButton(
+        self.mates_last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((230, 179), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.mates_container,
         )
 
         self.offspring_container = pygame_gui.core.UIContainer(contain_rect, MANAGER)
 
         # All the perm elements the exist inside self.offspring_container
-        self.offspring_next_page = UIImageButton(
+        self.offspring_next_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((366, 179), (34, 34))),
-            "",
-            object_id="#relation_list_next",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.offspring_container,
         )
-        self.offspring_last_page = UIImageButton(
+        self.offspring_last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((230, 179), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.offspring_container,
         )
         self.offspring_separator = pygame_gui.elements.UIImage(
@@ -303,16 +308,18 @@ class ChooseMateScreen(Screens):
         self.potential_container = pygame_gui.core.UIContainer(contain_rect, MANAGER)
 
         # All the perm elements the exist inside self.potential_container
-        self.potential_next_page = UIImageButton(
+        self.potential_next_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((366, 179), (34, 34))),
-            "",
-            object_id="#relation_list_next",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.potential_container,
         )
-        self.potential_last_page = UIImageButton(
+        self.potential_last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((230, 179), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.potential_container,
         )
         self.potential_seperator = pygame_gui.elements.UIImage(
@@ -885,31 +892,47 @@ class ChooseMateScreen(Screens):
             self.tab_buttons[x].kill()
         self.tab_buttons = {}
 
-        button_x = 100
-        self.tab_buttons["potential"] = UIImageButton(
-            ui_scale(pygame.Rect((button_x, 361), (153, 39))),
-            "",
-            object_id="#potential_mates_tab_button",
+        button_rect = ui_scale(pygame.Rect((0, 0), (153, 39)))
+        button_rect.bottomleft = ui_scale_offset((100, 8))
+        self.tab_buttons["potential"] = UISurfaceImageButton(
+            button_rect,
+            "Potential Mates",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
+            object_id="@buttonstyles_horizontal_tab",
             starting_height=2,
+            anchors={"bottom": "bottom", "bottom_target": self.list_frame_image},
         )
-        button_x += 160
 
         mates_tab_shown = False
+        button_rect.bottomleft = ui_scale_offset((7, 8))
         if self.the_cat.mate:
-            self.tab_buttons["mates"] = UIImageButton(
-                ui_scale(pygame.Rect((button_x, 361), (153, 39))),
-                "",
-                object_id="#mates_tab_button",
+            self.tab_buttons["mates"] = UISurfaceImageButton(
+                button_rect,
+                "Mates",
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
+                object_id="@buttonstyles_horizontal_tab",
                 starting_height=2,
+                anchors={
+                    "bottom": "bottom",
+                    "bottom_target": self.list_frame_image,
+                    "left_target": self.tab_buttons["potential"],
+                },
             )
             mates_tab_shown = True
-            button_x += 160
 
-        self.tab_buttons["offspring"] = UIImageButton(
-            ui_scale(pygame.Rect((button_x, 361), (153, 39))),
-            "",
-            object_id="#offspring_tab_button",
+        self.tab_buttons["offspring"] = UISurfaceImageButton(
+            button_rect,
+            "Offspring",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
+            object_id="@buttonstyles_horizontal_tab",
             starting_height=2,
+            anchors={
+                "bottom": "bottom",
+                "bottom_target": self.list_frame_image,
+                "left_target": self.tab_buttons["adoptive"]
+                if mates_tab_shown
+                else self.tab_buttons["potential"],
+            },
         )
 
         if self.open_tab == "mates" and not mates_tab_shown:

@@ -24,6 +24,7 @@ from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 logger = logging.getLogger(__name__)
 
@@ -227,17 +228,18 @@ class SwitchClanScreen(Screens):
                 self.clan_name.append([])
                 self.delete_buttons.append([])
 
-        self.next_page_button = UIImageButton(
+        self.next_page_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((456, 540), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
-        self.previous_page_button = UIImageButton(
+        self.previous_page_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((310, 540), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
-            manager=MANAGER,
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
         self.page_number = pygame_gui.elements.UITextBox(
             "",

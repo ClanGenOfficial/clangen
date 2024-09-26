@@ -17,6 +17,7 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.get_arrow import get_arrow
+from scripts.ui.icon import Icon
 from scripts.utility import (
     ui_scale,
     get_text_box_theme,
@@ -483,18 +484,20 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
             visible=False,
         )
-        self.outsider_selection_elements["page_left"] = UIImageButton(
+        self.outsider_selection_elements["page_left"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 70), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.outsider_selection_container,
             starting_height=1,
             manager=MANAGER,
         )
-        self.outsider_selection_elements["page_right"] = UIImageButton(
+        self.outsider_selection_elements["page_right"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((646, 70), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.outsider_selection_container,
             starting_height=1,
             manager=MANAGER,

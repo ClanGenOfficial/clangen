@@ -18,13 +18,14 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_blit,
+    ui_scale_offset,
 )
 from .Screens import Screens
-from ..game_structure.screen_settings import MANAGER, screen
+from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class ChooseAdoptiveParentScreen(Screens):
@@ -164,8 +165,12 @@ class ChooseAdoptiveParentScreen(Screens):
         """Sets up the elements that are always on the page"""
         super().screen_switches()
         self.show_mute_buttons()
-        self.list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 194))
+        list_frame = get_box(BoxStyles.ROUNDED_BOX, (650, 194))
 
+        self.list_frame = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((75, 391), (650, 194))), list_frame
+        )
+        del list_frame
         self.info = pygame_gui.elements.UITextBox(
             "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "
             "Adoptive and blood parents will be treated the same; this also applies to siblings. ",
@@ -242,16 +247,18 @@ class ChooseAdoptiveParentScreen(Screens):
         self.adoptive_container = pygame_gui.core.UIContainer(contain_rect, MANAGER)
 
         # All the perm elements the exist inside self.mates_container
-        self.adoptive_next_page = UIImageButton(
+        self.adoptive_next_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((366, 179), (34, 34))),
-            "",
-            object_id="#relation_list_next",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.adoptive_container,
         )
-        self.adoptive_last_page = UIImageButton(
+        self.adoptive_last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((230, 179), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.adoptive_container,
         )
 
@@ -260,16 +267,18 @@ class ChooseAdoptiveParentScreen(Screens):
         self.potential_container = pygame_gui.core.UIContainer(contain_rect, MANAGER)
 
         # All the perm elements the exist inside self.potential_container
-        self.potential_next_page = UIImageButton(
+        self.potential_next_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((366, 179), (34, 34))),
-            "",
-            object_id="#relation_list_next",
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.potential_container,
         )
-        self.potential_last_page = UIImageButton(
+        self.potential_last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((230, 179), (34, 34))),
-            "",
-            object_id="#relation_list_previous",
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             container=self.potential_container,
         )
         self.potential_seperator = pygame_gui.elements.UIImage(
@@ -613,6 +622,9 @@ class ChooseAdoptiveParentScreen(Screens):
         self.potential_parents_buttons = {}
         self.checkboxes = {}
 
+        self.list_frame.kill()
+        self.list_frame = None
+
         self.potential_container.kill()
         self.potential_container = None
         self.adoptive_container.kill()
@@ -735,36 +747,49 @@ class ChooseAdoptiveParentScreen(Screens):
             self.tab_buttons[x].kill()
         self.tab_buttons = {}
 
-        button_x = 100
+        button_rect = ui_scale(pygame.Rect((0, 0), (153, 39)))
+        button_rect.bottomleft = ui_scale_offset((100, 8))
         self.tab_buttons["potential"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((button_x, 361), (153, 39))),
+            button_rect,
             "Potential Parents",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
             object_id="@buttonstyles_horizontal_tab",
             starting_height=2,
+            anchors={"bottom": "bottom", "bottom_target": self.list_frame},
         )
-        button_x += 160
 
         adoptive_parents_shown = False
+        button_rect.bottomleft = ui_scale_offset((7, 8))
         if self.the_cat.adoptive_parents:
             self.tab_buttons["adoptive"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((button_x, 361), (153, 39))),
+                button_rect,
                 "Adoptive Parents",
                 get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
                 object_id="@buttonstyles_horizontal_tab",
                 starting_height=2,
+                anchors={
+                    "bottom": "bottom",
+                    "bottom_target": self.list_frame,
+                    "left_target": self.tab_buttons["potential"],
+                },
             )
             adoptive_parents_shown = True
-            button_x += 160
 
         birth_parents_shown = False
         if self.the_cat.parent1 or self.the_cat.parent2:
             self.tab_buttons["birth"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((button_x, 361), (153, 39))),
+                button_rect,
                 "Birth Parents",
                 get_button_dict(ButtonStyles.HORIZONTAL_TAB, (153, 39)),
                 object_id="@buttonstyles_horizontal_tab",
                 starting_height=2,
+                anchors={
+                    "bottom": "bottom",
+                    "bottom_target": self.list_frame,
+                    "left_target": self.tab_buttons["adoptive"]
+                    if adoptive_parents_shown
+                    else self.tab_buttons["potential"],
+                },
             )
             birth_parents_shown = True
 
@@ -810,10 +835,11 @@ class ChooseAdoptiveParentScreen(Screens):
     def update_toggle_button(self):
         self.toggle_adoptive_parent.kill()
         if not self.selected_cat:
-            self.toggle_adoptive_parent = UIImageButton(
+            self.toggle_adoptive_parent = UISurfaceImageButton(
                 ui_scale(pygame.Rect((303, 310), (192, 30))),
-                "",
-                object_id="#set_adoptive_parent",
+                "Set adoptive parent",
+                get_button_dict(ButtonStyles.SQUOVAL, (192, 30)),
+                object_id="@buttonstyles_squoval",
             )
             self.toggle_adoptive_parent.disable()
         elif self.selected_cat.ID in self.the_cat.adoptive_parents:
@@ -882,9 +908,6 @@ class ChooseAdoptiveParentScreen(Screens):
 
     def on_use(self):
         super().on_use()
-
-        # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(self.list_frame, ui_scale_blit((75, 391)))
 
         self.loading_screen_on_use(
             self.work_thread, self.update_after_change, (700, 600)

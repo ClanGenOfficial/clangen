@@ -268,17 +268,17 @@ class ClearingScreen(Screens):
             "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
             "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
         )
-        self.last_page = UIImageButton(
+        self.last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((330, 636), (34, 34))),
-            "",
-            object_id="#arrow_left_button",
-            manager=MANAGER,
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
-        self.next_page = UIImageButton(
+        self.next_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((476, 636), (34, 34))),
-            "",
-            object_id="#arrow_right_button",
-            manager=MANAGER,
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
         self.nutrition_title = pygame_gui.elements.UITextBox(
             "Nutrition Overview",

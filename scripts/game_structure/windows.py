@@ -40,6 +40,7 @@ from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.get_arrow import get_arrow
+from scripts.ui.icon import Icon
 from scripts.utility import (
     ui_scale,
     quit,
@@ -1593,8 +1594,11 @@ class RelationshipLog(UIWindow):
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
         )
-        self.log_icon = UIImageButton(
-            ui_scale(pygame.Rect((222, 404), (34, 34))), "", object_id="#log_icon"
+        self.log_icon = UISurfaceImageButton(
+            ui_scale(pygame.Rect((222, 404), (34, 34))),
+            Icon.NOTEPAD,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
         self.closing_buttons = [self.exit_button, self.back_button, self.log_icon]
 

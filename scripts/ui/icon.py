@@ -25,7 +25,7 @@ class Icon(StrEnum):
     LEAFFALL = "\U0001F342"
     LEAFBARE = "\u2744"
 
-    ARROW_DOUBLELEFT = "\u23FA"
+    ARROW_DOUBLELEFT = "\u23EA"
     ARROW_DOUBLERIGHT = "\u23E9"
     ARROW_LEFT = "\u2190"
     ARROW_RIGHT = "\u2192"
