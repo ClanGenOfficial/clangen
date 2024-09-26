@@ -3969,7 +3969,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's amazing that birds just leave these lying about! app1 finds a low hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
+                "text": "It's amazing that birds just leave these lying about! app1 finds a low-hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
                 "exp": 25,
                 "weight": 20,
                 "prey": ["medium"]
@@ -4060,7 +4060,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's amazing that birds just leave these lying about! app1 finds a low hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
+                "text": "It's amazing that birds just leave these lying about! app1 finds a low-hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
                 "exp": 25,
                 "weight": 20,
                 "prey": ["medium"]
