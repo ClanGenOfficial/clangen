@@ -1752,7 +1752,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "Off in the woods, app1 waits for app2 underneath the low hanging branches of a willow. The tip of {PRONOUN/app1/poss} tail twitches in excitement.",
+        "intro_text": "Off in the woods, app1 waits for app2 underneath the low-hanging branches of a willow. The tip of {PRONOUN/app1/poss} tail twitches in excitement.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
         "chance_of_success": 60,
         "success_outcomes": [
