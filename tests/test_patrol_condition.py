@@ -38,7 +38,7 @@ class TestCondition(unittest.TestCase):
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the"
                       " dandelions are only playing dead. If they can get their paws on a plant,"
                       " the roots will still hold fresh, milky-white sap.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
