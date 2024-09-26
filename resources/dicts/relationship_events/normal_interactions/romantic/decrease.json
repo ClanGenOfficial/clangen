@@ -29,7 +29,8 @@
 		"interactions": [
 			"m_c told r_c to stop padding after {PRONOUN/m_c/object} like a lost kit.",
 			"m_c worries that r_c isn't being honest with their relationship.",
-			"m_c can't stand r_c's snoring in {PRONOUN/r_c/poss} nest."
+			"m_c can't stand listening to r_c's snoring in {PRONOUN/r_c/poss} nest.",
+			"m_c tried flirting with r_c but {PRONOUN/r_c/subject} didn't have time for it and brushed m_c aside."
 		],
 		"relationship_constraint": [
 			"romantic_40",
@@ -45,7 +46,8 @@
 			"m_c worries that r_c will never feel the same way {PRONOUN/m_c/subject} {VERB/m_c/do/does}.",
 			"m_c noticed r_c flirting with someone else.",
 			"m_c heard r_c discussing potential mates but {PRONOUN/m_c/poss} name never came up.",
-			"m_c thinks {PRONOUN/m_c/poss} dreams might not come true with r_c."
+			"m_c thinks {PRONOUN/m_c/poss} dreams might not come true with r_c.",
+			"r_c was seen tossing out a gift m_c gave {PRONOUN/r_c/object}."
 		]
 	},
 	{
@@ -53,14 +55,18 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c feels ignored by r_c.",
-			"m_c didn't get the joke r_c was telling."
+			"m_c didn't get the joke r_c was telling.",
+			"m_c and r_c had a conversation where they realized they didn't have much in common.",
+			"m_c didn't realize r_c was flirting with {PRONOUN/m_c/object}."
 		]
 	},
 	{
 		"id": "rom_dec_medium4",
 		"intensity": "medium",
 		"interactions": [
-			"m_c had a disagreement with r_c over kits."
+			"m_c had a disagreement with r_c over kits.",
+			"m_c and r_c had a disagreement on how to raise kits.",
+            "m_c and r_c had a fight over if they would take a new mate if one of them died or went missing."
 		],
 		"relationship_constraint": [
 			"mates"

@@ -1,44 +1,44 @@
 {
-  "running nose": [
-    "m_c woke up with a running nose.",
-    "m_c has been sniffling constantly.",
-    "m_c has a running nose."
-  ],
-  "stomachache": [
-    "m_c has a stomachache.",
-    "m_c's belly has been upset all day."
-  ],
-  "fleas:": [
-    "m_c seems to have picked up some fleas.",
-    "m_c has been scratching and itching all day, it seems {PRONOUN/m_c/poss} have fleas."
-  ],
-  "heat exhaustion": [
-    "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat exhaustion."
-  ],
-  "heat stroke": [
-    "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat stroke."
-  ],
-  "kittencough": [
-    "m_c has gotten kittencough.",
-    "m_c is sick with kittencough."
-  ],
-  "whitecough": [
-    "m_c has gotten whitecough.",
-    "m_c is sick with whitecough."
-  ],
-  "greencough": [
-    "m_c has gotten greencough.",
-    "m_c is sick with greencough."
-  ],
-  "yellowcough": [
-    "m_c has gotten yellowcough.",
-    "m_c is sick with yellowcough."
-  ],
-  "malnourished": [
-    "m_c has become malnourished.",
-    "Lack of freshkill has left m_c malnourished."
-  ],
-  "starving": [
-    "m_c is starving."
-  ]
+    "running nose": [
+        "m_c woke up with a running nose.",
+        "m_c has been sniffling constantly.",
+        "m_c has a running nose."
+    ],
+    "stomachache": [
+        "m_c has a stomachache.",
+        "m_c's belly has been upset all day."
+    ],
+    "fleas:": [
+        "m_c seems to have picked up some fleas.",
+        "m_c has been scratching and itching all day, it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} fleas."
+    ],
+    "heat exhaustion": [
+        "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat exhaustion."
+    ],
+    "heat stroke": [
+        "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat stroke."
+    ],
+    "kittencough": [
+        "m_c has gotten kittencough.",
+        "m_c is sick with kittencough."
+    ],
+    "whitecough": [
+        "m_c has gotten whitecough.",
+        "m_c is sick with whitecough."
+    ],
+    "greencough": [
+        "m_c has gotten greencough.",
+        "m_c is sick with greencough."
+    ],
+    "yellowcough": [
+        "m_c has gotten yellowcough.",
+        "m_c is sick with yellowcough."
+    ],
+    "malnourished": [
+        "m_c has become malnourished.",
+        "Lack of fresh-kill has left m_c malnourished."
+    ],
+    "starving": [
+        "m_c is starving."
+    ]
 }

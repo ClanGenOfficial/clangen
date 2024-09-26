@@ -242,7 +242,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the long grass! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -351,7 +351,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the long grass! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!",
         "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/subject} far outnumbered; warning the Clan is more important than dying needlessly.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -717,7 +717,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
-        "decline_text": "{PRONOUN/app1/subject} {VERB/app1/decide/decides} not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1099,7 +1099,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
-        "decline_text": "They decide not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1418,7 +1418,7 @@
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
-        "decline_text": "They decide not to investigate.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -1662,7 +1662,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "As the patrol moves through the grass just after sunset, two moons rise in the sky...",
-        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the thunderpaths. The cats hide from its sight, trembling.",
+        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the Thunderpaths. The cats hide from its sight, trembling.",
         "success_outcomes": [
             {
                 "text": "Two whole moons! That's got to be lucky, the cats decide, sitting on a little rock still warm from the sun to stargaze.",
@@ -1729,7 +1729,7 @@
                     ]
                 },
                 {
-                    "text": "With a terrifying anger, the tom unsheathed his claws... but luckily for the molly, she was a StarClan cat in disguise, and with a burst of starlight, Starclan judged him, and turned him into a horrifying monster... a <i>coyote</i>.",
+                    "text": "With a terrifying anger, the tom unsheathed his claws... but luckily for the molly, she was a StarClan cat in disguise, and with a burst of starlight, StarClan judged him, and turned him into a horrifying monster... a <i>coyote</i>.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",

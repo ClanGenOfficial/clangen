@@ -43,7 +43,7 @@
             "Is eating kittypet kibble",
             "Stole some random kittypet's food",
             "Is eating dog food {PRONOUN/m_c/subject} found",
-            "Is putting {PRONOUN/m_c/poss} own scent on c_n's clearly marked borders"
+            "Is putting {PRONOUN/m_c/poss} own scent on c_n's clearly-marked borders"
         ],
         "main_trait_constraint": [
             "shameless"

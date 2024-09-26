@@ -31,7 +31,7 @@
                 "stat_skill": ["FIGHTER,1"]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -128,7 +128,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -315,7 +315,7 @@
                 "stat_skill": ["FIGHTER,1"]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -426,7 +426,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -662,7 +662,7 @@
                 "stat_skill": ["FIGHTER,1"]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -758,7 +758,7 @@
                 ]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [

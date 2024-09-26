@@ -18,7 +18,7 @@
         "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
         "success_outcomes": [
                 {
-                    "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leafbare in their anger before fleeing the clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
+                    "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the Clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",

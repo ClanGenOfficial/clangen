@@ -1183,7 +1183,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l's patrol strolls through the plains, snow crunching under their paws. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
-        "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. They'll be tucked away in their burrows, which is.. a lot of work for a few thin squirrels.",
+        "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. They'll be tucked away in their burrows, which is... a lot of work for a few thin squirrels.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1380,7 +1380,7 @@
                 ]
             },
             {
-                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/m_c/subject} {VERB/m_c/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly - {PRONOUN/m_c/subject} can feel a mouse pinned under {PRONOUN/m_c/poss} paws!",
+                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/app1/subject} {VERB/app1/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly - {PRONOUN/app1/subject} can feel a mouse pinned under {PRONOUN/app1/poss} paws!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1692,7 +1692,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1900,7 +1900,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2108,7 +2108,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2316,7 +2316,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2522,7 +2522,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold crunch of frost on the grass beneath their paws can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2850,7 +2850,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],

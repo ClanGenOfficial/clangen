@@ -52,7 +52,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to one.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to one.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -102,7 +102,7 @@
                 "weight": 20
             },
             {
-                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and helps themselves to as many as they can carry.",
+                "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry.",
                 "exp": 20,
                 "weight": 5
             }
@@ -964,7 +964,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "{PRONOUN/r_c/poss} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1407,7 +1407,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1479,12 +1479,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+                "text": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} freeze, and the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1617,7 +1617,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
                 "weight": 20
             },
@@ -3547,7 +3547,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, throws {PRONOUN/s_c/self} to the attack. The fox hears {PRONOUN/s_c/object} coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3597,7 +3597,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, recklessly {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat, bleeding, as the fox trots off with its dinner.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -3790,7 +3790,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -3982,7 +3982,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -4073,7 +4073,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
+                "text": "s_c hones in on the scent, and, as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the gray fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. The fox hears {PRONOUN/s_c/object} coming and makes a hasty retreat before the fight can start, taking its dinner with it.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -4105,7 +4105,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the gray fox with a dead fish hanging from its jaws, recklessly throws {PRONOUN/s_c/self} to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat, bleeding.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -5496,7 +5496,7 @@
                 ]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. The fox hears {PRONOUN/s_c/object} coming, and trots off with insulting nonchalance, unwilling to get into a fight.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -5544,7 +5544,7 @@
                 ]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} recklessly {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. But the fox is as desperate to keep its meal as s_c is to win it from them, and s_c has to retreat bleeding, as the fox trots off with its dinner.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -5736,7 +5736,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -5928,7 +5928,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine den.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help them back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -6019,7 +6019,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the gray fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. The fox hears {PRONOUN/s_c/object} coming and makes a hasty retreat before the fight can start, taking its dinner with it.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -6051,7 +6051,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
+                "text": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the gray fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} recklessly {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -6094,7 +6094,7 @@
         "weight": 40,
         "chance_of_success": 50,
         "pl_skill_constraint": ["LORE,1"],
-        "intro_text": "The water vole sitting on the bank will make a lovely addition to the freshkill pile, and app1 purrs as {PRONOUN/app1/subject} line up to knock it into the water.",
+        "intro_text": "The water vole sitting on the bank will make a lovely addition to the fresh-kill pile, and app1 purrs as {PRONOUN/app1/subject} line up to knock it into the water.",
         "decline_text": "app1 hesitates for too long, and the vole slips back into the river with nary a splash.",
         "success_outcomes": [
                 {
@@ -6142,8 +6142,8 @@
                         }
                     ],
                     "history_text": {
-                        "reg_death": "r_c died from the water {PRONOUN/r_c/subject} inhaled on a hunt as a foolish apprentice.",
-                        "lead_death": "from the water {PRONOUN/r_c/subject} inhaled on a hunt as a foolish apprentice"
+                        "reg_death": "m_c died from the water {PRONOUN/m_c/subject} inhaled on a hunt as a foolish apprentice.",
+                        "lead_death": "from the water {PRONOUN/m_c/subject} inhaled on a hunt as a foolish apprentice"
                         }
                 }
             ]

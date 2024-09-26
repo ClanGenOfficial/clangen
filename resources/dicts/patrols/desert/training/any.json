@@ -68,7 +68,7 @@
                 "weight": 20
             },
             {
-                "text": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak.  A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
+                "text": "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
                 "exp": 30,
                 "weight": 5
             },
@@ -1288,7 +1288,7 @@
         "decline_text": "The queue doesn't take as long as p_l or r_c were expecting, and the patrol is soon off to other things.",
         "success_outcomes": [
                 {
-                    "text": "Instead of working together, blood was spilled over every drop of water. Eventually, the medicine cats and mediators of the Clans were forced by Starclan to step in and end the carnage. But the damage was already done. We can learn from their mistakes - they had no choice but to live with them.",
+                    "text": "Instead of working together, blood was spilled over every drop of water. Eventually, the medicine cats and mediators of the Clans were forced by StarClan to step in and end the carnage. But the damage was already done. We can learn from their mistakes - they had no choice but to live with them.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [
@@ -1473,8 +1473,8 @@
                         }
                     ],
                     "history_text": {
-                        "reg_death": "m_c got dehydrated trying to outrun the thunderpath-runner bird.",
-                        "lead_death": "got dehydrated trying to outrun the thunderpath-runner bird"
+                        "reg_death": "m_c got dehydrated trying to outrun the Thunderpath-runner bird.",
+                        "lead_death": "got dehydrated trying to outrun the Thunderpath-runner bird"
                     },
                     "relationships": [
                         {

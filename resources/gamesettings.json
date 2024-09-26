@@ -87,6 +87,16 @@
         "fullscreen": [
             false,
             true
+        ],
+        "music_volume": [
+            100
+        ],
+        "sound_volume": [
+            100
+        ],
+        "audio_mute": [
+            false,
+            true
         ]
     }
 }

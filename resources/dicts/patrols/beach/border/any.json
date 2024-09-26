@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -72,7 +72,7 @@
                 }
             },
             {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and r_c is badly wounded, forcing the patrol to retreat.",
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -101,12 +101,12 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+        "intro_text": "As r_c is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
         "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered; warning the Clan is more important than playing the hero.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
+                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks. Eventually, r_c escapes the fray and pelts towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -183,7 +183,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the Clan cats!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues stalk out of the beach grass to confront the Clan cats!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -504,7 +504,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c gets wet in the rain, but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but otherwise, the patrol is successful.",
                 "exp": 20,
                 "weight": 5
             },
@@ -573,7 +573,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c gets wet in the rain, but otherwise the patrol is successful.",
+                "text": "r_c gets wet in the rain, but otherwise, the patrol is successful.",
                 "exp": 20,
                 "weight": 5
             },
