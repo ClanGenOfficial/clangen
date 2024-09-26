@@ -2812,7 +2812,7 @@
                     }
                 },
                 {
-                    "text": "A monster approaches, vast and roaring, and the apprentices nerve breaks. They jolt away from the Thunderpath, and p_l needs to put on speed to catch up to them and slow their flight. At least they ran <i>away</i> from the monster and not toward it, but preventing this jerky panic is what this trianing is all about.",
+                    "text": "A monster approaches, vast and roaring, and the apprentices' nerve breaks. They jolt away from the Thunderpath, and p_l needs to put on speed to catch up to them and slow their flight. At least they ran <i>away</i> from the monster and not toward it, but preventing this jerky panic is what this trianing is all about.",
                     "exp": 0,
                     "weight": 20,
                     "art": "pln_hunt_twolegsobject1"
