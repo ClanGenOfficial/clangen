@@ -66,7 +66,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -152,7 +152,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -1121,7 +1121,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 loses {PRONOUN/app1/poss} head over the catmint, and p_l is forced to cancel the gathering patrol to take {PRONOUN/app1/object} back to camp until {PRONOUN/app1/subject} {VERB/app1/regain/regains} {VERB/app1/poss} sense.",
+                "text": "app1 loses {PRONOUN/app1/poss} head over the catmint, and p_l is forced to cancel the gathering patrol to take {PRONOUN/app1/object} back to camp until {PRONOUN/app1/subject} {VERB/app1/regain/regains} {PRONOUN/app1/poss} sense.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1544,7 +1544,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and it's a potent cure for poison. Their leaves are weaker, but fast acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. Also as useful - but not a toy - is the wild garlic that p_l tracks down a few fox-lengths away from the dandelion patch they've found.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and is a potent cure for poison - their leaves are weaker, but fast acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. Also as useful - but not a toy - is the wild garlic that p_l tracks down a few fox-lengths away from the dandelion patch they've found.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion", "wild_garlic"]
