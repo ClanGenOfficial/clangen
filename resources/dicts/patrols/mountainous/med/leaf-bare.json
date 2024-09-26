@@ -1918,7 +1918,7 @@
                 "herbs": ["many_herbs", "wild_garlic"]
             },
             {
-                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject} {VERB/s_c/prove/proves} {PRONOUN/s_c/self} right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now.",
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} {VERB/s_c/prove/proves} {PRONOUN/s_c/self} right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2154,7 +2154,7 @@
                 ]
             },
             {
-                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject} {VERB/s_c/prove/proves} {PRONOUN/s_c/self} right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now.",
+                "text": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} {VERB/s_c/prove/proves} {PRONOUN/s_c/self} right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
