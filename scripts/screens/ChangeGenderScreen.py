@@ -19,7 +19,6 @@ with open("resources/dicts/pronouns.json", "r", encoding="utf-8") as f:
 
 
 class ChangeGenderScreen(Screens):
-
     def __init__(self, name=None):
         super().__init__(name)
         self.next_cat_button = None
@@ -70,15 +69,15 @@ class ChangeGenderScreen(Screens):
                     self.the_cat.genderalign = gender_identity
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
-                    self.selected_cat_elements["cat_gender"] = (
-                        pygame_gui.elements.UITextBox(
-                            f"{self.the_cat.genderalign}",
-                            scale(pygame.Rect((252, 500), (500, 500))),
-                            object_id=get_text_box_theme(
-                                "#text_box_30_horizcenter_spacing_95"
-                            ),
-                            manager=MANAGER,
-                        )
+                    self.selected_cat_elements[
+                        "cat_gender"
+                    ] = pygame_gui.elements.UITextBox(
+                        f"{self.the_cat.genderalign}",
+                        scale(pygame.Rect((252, 500), (500, 500))),
+                        object_id=get_text_box_theme(
+                            "#text_box_30_horizcenter_spacing_95"
+                        ),
+                        manager=MANAGER,
                     )
 
             elif event.ui_element == self.buttons["add_pronouns"]:
@@ -243,7 +242,10 @@ class ChangeGenderScreen(Screens):
             starting_height=2,
             manager=MANAGER,
         )
-        self.determine_previous_and_next_cat()
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
         self.pronoun_update()
         self.preset_update()
         self.update_disabled_buttons()
@@ -262,12 +264,12 @@ class ChangeGenderScreen(Screens):
 
     def pronoun_update(self):
         # List the various pronouns
-        self.removalboxes_text["container_general"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                relative_rect=scale(pygame.Rect((100, 660), (675, 540))),
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
-                manager=MANAGER,
-            )
+        self.removalboxes_text[
+            "container_general"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            relative_rect=scale(pygame.Rect((100, 660), (675, 540))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+            manager=MANAGER,
         )
 
         self.removalboxes_text["instr"] = pygame_gui.elements.UITextBox(
@@ -355,12 +357,12 @@ class ChangeGenderScreen(Screens):
 
     def preset_update(self):
         # List the various pronouns
-        self.removalboxes_text["container_general2"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                relative_rect=scale(pygame.Rect((795, 660), (675, 540))),
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
-                manager=MANAGER,
-            )
+        self.removalboxes_text[
+            "container_general2"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            relative_rect=scale(pygame.Rect((795, 660), (675, 540))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+            manager=MANAGER,
         )
 
         self.removalboxes_text["instr2"] = pygame_gui.elements.UITextBox(
@@ -410,14 +412,14 @@ class ChangeGenderScreen(Screens):
             # Create UITextBox for pronoun display and create tooltip for full pronoun display
             button_rect = scale(pygame.Rect((550, ycoor + 18), (48, 48)))
             text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.removalboxes_text[f"default_pronouns_{n}"] = (
-                pygame_gui.elements.UITextBox(
-                    short_name,
-                    text_box_rect,
-                    container=self.removalboxes_text["container_general2"],
-                    object_id="#text_box_30_horizleft_pad_0_8",
-                    manager=MANAGER,
-                )
+            self.removalboxes_text[
+                f"default_pronouns_{n}"
+            ] = pygame_gui.elements.UITextBox(
+                short_name,
+                text_box_rect,
+                container=self.removalboxes_text["container_general2"],
+                object_id="#text_box_30_horizleft_pad_0_8",
+                manager=MANAGER,
             )
 
             self.removalboxes_text[f"default_pronouns_{n}"].disable()
@@ -502,14 +504,14 @@ class ChangeGenderScreen(Screens):
                 self.addbuttons[f"custom_pronouns_{n}"].disable()
 
             text_box_rect = scale(pygame.Rect((100, ycoor + 4), (400, 78)))
-            self.removalboxes_text[f"custom_pronouns_{n}"] = (
-                pygame_gui.elements.UITextBox(
-                    short_name,
-                    text_box_rect,
-                    container=self.removalboxes_text["container_general2"],
-                    object_id="#text_box_30_horizleft_pad_0_8",
-                    manager=MANAGER,
-                )
+            self.removalboxes_text[
+                f"custom_pronouns_{n}"
+            ] = pygame_gui.elements.UITextBox(
+                short_name,
+                text_box_rect,
+                container=self.removalboxes_text["container_general2"],
+                object_id="#text_box_30_horizleft_pad_0_8",
+                manager=MANAGER,
             )
 
             self.removalboxes_text[f"custom_pronouns_{n}"].disable()
@@ -563,61 +565,6 @@ class ChangeGenderScreen(Screens):
         self.elements = {}
         self.removalbuttons = {}
         self.deletebuttons = {}
-
-    def determine_previous_and_next_cat(self):
-        """Determines where the next and previous buttons point to."""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        if (
-            self.the_cat.dead
-            and not is_instructor
-            and self.the_cat.df == game.clan.instructor.df
-            and not (self.the_cat.outside or self.the_cat.exiled)
-        ):
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
-            else:
-                if (
-                    next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    previous_cat = check_cat.ID
-
-                elif (
-                    next_cat == 1
-                    and check_cat != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    next_cat = check_cat.ID
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
 
     def exit_screen(self):
         # kill everything

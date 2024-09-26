@@ -444,12 +444,14 @@ class ProfileScreen(Screens):
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",
             object_id="#next_cat_button",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.previous_cat_button = UIImageButton(
             scale(pygame.Rect((50, 50), (306, 60))),
             "",
             object_id="#previous_cat_button",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
@@ -522,6 +524,7 @@ class ProfileScreen(Screens):
 
         self.build_profile()
 
+        self.hide_mute_buttons()  # no space for mute button on this screen
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
         if game.last_screen_forProfile == "med den screen":
             self.toggle_conditions_tab()
@@ -720,7 +723,10 @@ class ProfileScreen(Screens):
             self.profile_elements["not_favourite_button"].show()
 
         # Determine where the next and previous cat buttons lead
-        self.determine_previous_and_next_cat()
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
 
         # Disable and enable next and previous cat buttons as needed.
         if self.next_cat == 0:
@@ -753,66 +759,6 @@ class ProfileScreen(Screens):
             )
             if self.the_cat.dead or self.the_cat.outside:
                 self.profile_elements["mediation"].disable()
-
-    def determine_previous_and_next_cat(self):
-        """'Determines where the next and previous buttons point too."""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        current_cat_found = 0
-        if (
-            self.the_cat.dead
-            and not is_instructor
-            and self.the_cat.df == game.clan.instructor.df
-            and not (self.the_cat.outside or self.the_cat.exiled)
-        ):
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            current_cat_found = 1
-
-        if len(Cat.ordered_cat_list) == 0:
-            Cat.ordered_cat_list = Cat.all_cats_list
-
-        for check_cat in Cat.ordered_cat_list:
-            if check_cat.ID == self.the_cat.ID:
-                current_cat_found = 1
-            else:
-                if (
-                    current_cat_found == 0
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    previous_cat = check_cat.ID
-
-                elif (
-                    current_cat_found == 1
-                    and check_cat != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    next_cat = check_cat.ID
-                    break
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
 
     def generate_column1(self, the_cat):
         """Generate the left column information"""

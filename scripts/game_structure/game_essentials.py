@@ -137,7 +137,9 @@ class Game:
         "fps": 30,
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
+        "audio_mute": False,
         "saved_scroll_positions": {},
+        "moon&season_open": False,
     }
     all_screens = {}
     cur_events = {}
@@ -145,7 +147,7 @@ class Game:
 
     # SETTINGS
     settings = {}
-    settings["mns open"] = False
+    settings["moon&season_open"] = False
     setting_lists = {}
 
     debug_settings = {
@@ -208,6 +210,7 @@ class Game:
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
+
 
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
@@ -420,11 +423,7 @@ class Game:
             cat_data = inter_cat.get_save_dict()
             clan_cats.append(cat_data)
 
-            # Don't save conditions for classic condition. This
-            # should allow closing and reloading to clear conditions on
-            # classic, just in case a condition is accidently applied.
-            if game.game_mode != "classic":
-                inter_cat.save_condition()
+            inter_cat.save_condition()
 
             if inter_cat.history:
                 inter_cat.save_history(directory + "/history")
@@ -679,6 +678,7 @@ def load_manager(res: tuple):
         )
         manager.get_theme().load_theme("resources/theme/window_base_small.json")
         manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
+        manager.get_theme().load_theme("resources/theme/horizontal_slider.json")
 
         manager.preload_fonts(
             [

@@ -66,7 +66,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l  is <i> this </i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -152,7 +152,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l  is <i> this </i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -1444,7 +1444,7 @@
                 ]
             },
             {
-                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants. and a pawful of wild garlic bulbs. They make sure to check up on the pawpads of the warriors who helped them once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants and a pawful of wild garlic bulbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} sure to check up on the pawpads of the warriors who helped {PRONOUN/p_l/object} once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["wild_garlic", "dandelion"],

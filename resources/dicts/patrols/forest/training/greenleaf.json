@@ -12,7 +12,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
         "relationship_constraint": ["romantic_20", "not_mates"],
@@ -39,7 +39,7 @@
                 ]
             },
             {
-                "text": "All p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the buzz of excitement in their hearts merging with the buzz of life in the green-lit forest, shyly sharing glances between one another.",
+                "text": "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the buzz of excitement in their hearts merging with the buzz of life in the green-lit forest, shyly sharing glances between one another.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -147,7 +147,7 @@
                 "weight": 20
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
