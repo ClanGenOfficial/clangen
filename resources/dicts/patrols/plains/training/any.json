@@ -2433,7 +2433,7 @@
         "decline_text": "Look, app1 knows grass, and this is too weird to want to spend time in. {PRONOUN/app1/subject/CAP} {VERB/app1/head/heads} home without ever seeing the Fresno Nightcrawler.",
         "success_outcomes": [
             {
-                "text": "Okay, app1 knows that Twolegs have, well, two legs, but that is just <i>excessive</i>. the Twoleg that owns this weird green circle is almost nothing but leg! Friendly though, and they don't try to invade app1's space.",
+                "text": "Okay, app1 knows that Twolegs have, well, two legs, but that is just <i>excessive</i>. The Twoleg that owns this weird green circle is almost nothing but leg! Friendly though, and they don't try to invade app1's space.",
                 "exp": 0,
                 "weight": 20
             }
