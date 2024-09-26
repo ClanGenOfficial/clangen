@@ -2301,7 +2301,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. The massive nose, as big as s_c's entire head, wuffles closer, and s_c desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} {VERB/s_c/screw/screws} {PRONOUN/s_c/poss} eyes shut at the outraged yelp and {VERB/s_c/feel/feels} {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/crumple/crumples} to the ground, waiting for death to descend, and {VERB/s_c/wait/waits}, and... keeps waiting?",
+                "text": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. The massive nose, as big as s_c's entire head, wuffles closer, and s_c desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} {VERB/s_c/screw/screws} {PRONOUN/s_c/poss} eyes shut at the outraged yelp and {VERB/s_c/feel/feels} {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/crumple/crumples} to the ground, waiting for death to descend, and {VERB/s_c/wait/waits}, and... {VERB/s_c/keep/keeps} waiting?",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["nervous", "insecure", "grumpy", "calm"],
