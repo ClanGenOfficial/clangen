@@ -678,7 +678,7 @@ class Screens:
         # handle the blur bg
         if (
             scripts.game_structure.screen_settings.game_screen_size
-            != scripts.game_structure.screen_settings.screen.size
+            != scripts.game_structure.screen_settings.screen.get_size()
         ):
             # enable the transition if required
             if self.bg_transition:
