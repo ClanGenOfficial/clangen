@@ -929,7 +929,7 @@ class ChooseMateScreen(Screens):
             anchors={
                 "bottom": "bottom",
                 "bottom_target": self.list_frame_image,
-                "left_target": self.tab_buttons["adoptive"]
+                "left_target": self.tab_buttons["mates"]
                 if mates_tab_shown
                 else self.tab_buttons["potential"],
             },

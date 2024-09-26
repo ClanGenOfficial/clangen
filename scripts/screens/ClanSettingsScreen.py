@@ -149,25 +149,28 @@ class ClanSettingsScreen(Screens):
             manager=MANAGER,
         )
         self.relation_settings_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((250, 140), (150, 30))),
+            ui_scale(pygame.Rect((0, 140), (150, 30))),
             "relation settings",
             get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
             object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
+            anchors={"left_target": self.general_settings_button},
         )
         self.role_settings_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((400, 140), (150, 30))),
+            ui_scale(pygame.Rect((0, 140), (150, 30))),
             "role settings",
             get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
             object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
+            anchors={"left_target": self.relation_settings_button},
         )
         self.clan_stats_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((550, 140), (150, 30))),
+            ui_scale(pygame.Rect((0, 140), (150, 30))),
             "clan stats",
             get_button_dict(ButtonStyles.MENU_RIGHT, (150, 30)),
             object_id="@buttonstyles_menu_right",
             manager=MANAGER,
+            anchors={"left_target": self.role_settings_button},
         )
 
         self.open_data_directory_button = UISurfaceImageButton(

@@ -133,6 +133,7 @@ class ChangeGenderScreen(Screens):
             "Next Cat " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.previous_cat_button = UISurfaceImageButton(
@@ -140,6 +141,7 @@ class ChangeGenderScreen(Screens):
             get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
             manager=MANAGER,
         )
         self.back_button = UISurfaceImageButton(
@@ -276,7 +278,7 @@ class ChangeGenderScreen(Screens):
         self.selected_cat_elements["description"] = pygame_gui.elements.UITextBox(
             f"<br> You can set this to anything! "
             f"Gender identity does not affect gameplay.",
-            ui_scale(pygame.Rect((312, 132), (330, 75))),
+            ui_scale(pygame.Rect((332, 132), (290, 75))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
         )

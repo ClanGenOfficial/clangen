@@ -1174,10 +1174,11 @@ class PatrolScreen(Screens):
                     object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 )
                 self.elements["mate_button"] = UIImageButton(
-                    ui_scale(pygame.Rect((148, 356), (104, 26))),
+                    ui_scale(pygame.Rect((148, -4), (104, 26))),
                     "",
                     object_id="#patrol_select_button",
                     manager=MANAGER,
+                    anchors={"top_target": self.elements["mate_frame"]},
                 )
                 # Disable mate_button if the cat is not able to go on a patrol
                 if self.mate not in self.able_cats:
@@ -1264,10 +1265,11 @@ class PatrolScreen(Screens):
 
                     # Button to switch to that cat
                     self.elements["app_mentor_button"] = UIImageButton(
-                        ui_scale(pygame.Rect((548, 356), (104, 26))),
+                        ui_scale(pygame.Rect((548, -4), (104, 26))),
                         "",
                         object_id="#patrol_select_button",
                         manager=MANAGER,
+                        anchors={"top_target": self.elements["app_mentor_frame"]},
                     )
                     # Disable mate_button if the cat is not able to go on a patrol
                     if self.app_mentor not in self.able_cats:

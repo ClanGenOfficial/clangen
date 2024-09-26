@@ -1158,14 +1158,14 @@ class ProfileScreen(Screens):
             )
             self.sub_tab_4.disable()
             self.fav_tab = UIImageButton(
-                ui_scale(pygame.Rect((52, 480), (28, 28))),
+                ui_scale(pygame.Rect((55, 480), (28, 28))),
                 "",
                 object_id="#fav_star",
                 tool_tip_text="un-favorite this sub tab",
                 manager=MANAGER,
             )
             self.not_fav_tab = UIImageButton(
-                ui_scale(pygame.Rect((52, 480), (28, 28))),
+                ui_scale(pygame.Rect((55, 480), (28, 28))),
                 "",
                 object_id="#not_fav_star",
                 tool_tip_text="favorite this sub tab - it will be the default sub tab displayed when History is viewed",
