@@ -28,7 +28,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss/CAP} life.",
+                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["careful", "insecure", "nervous"],
