@@ -1,192 +1,168 @@
 {
     "claw-wound": {
         "an infected wound": [
-          "r_c fusses over {PRONOUN/m_c/poss} wound with a foul smelling herbal poultice. m_c hopes it'll fight off the infection growing in {PRONOUN/m_c/poss} claw-wound.",
-          "m_c itches uncomfortably, wishing {PRONOUN/m_c/poss} wound would close up and heal already. Instead, it seems to be getting worse."
-
+            "r_c fusses over the wound with a foul-smelling herbal poultice. m_c hopes it'll fight off the infection growing in {PRONOUN/m_c/poss} claw-wound.",
+            "m_c itches uncomfortably, wishing {PRONOUN/m_c/poss} wound would close up and heal already. Instead, it seems to be getting worse."
         ]
     },
     "bite-wound": {
         "an infected wound": [
-          "The bite wound feels hot - m_c winces as r_c cleans it. It's becoming infected.",
+            "The bite wound feels hot - m_c winces as r_c cleans it. It's becoming infected.",
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
-
         ]
     },
     "cat bite": {
         "an infected wound": [
-          "The cat bite feels hot - m_c winces as r_c cleans it. It's becoming infected.",
+            "The cat bite feels hot - m_c winces as r_c cleans it. It's becoming infected.",
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
         ]
     },
     "beak bite": {
         "an infected wound": [
-          "The beak wound feels hot - m_c winces as r_c cleans it. It's becoming infected.",
+            "The beak wound feels hot - m_c winces as r_c cleans it. It's becoming infected.",
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
         ]
     },
     "snake bite": {
         "an infected wound": [
-          "r_c mutters something about plantain as m_c carefully licks around {PRONOUN/m_c/poss} snake bite wound. It's not healing like it should.",
-          "Though the plantain leaves seem to be doing their job of healing the toxins, m_c's wound has started to feel warm to the touch."
-
+            "r_c mutters something about plantain as m_c carefully licks around {PRONOUN/m_c/poss} snake bite wound. It's not healing like it should.",
+            "Though the plantain leaves seem to be doing their job of healing the toxins, m_c's wound has started to feel warm to the touch."
         ]
     },
     "rat bite": {
         "an infected wound": [
-          "r_c talks as {PRONOUN/r_c/subject} {VERB/r_c/apply/applies} a strange paste to m_c's rat bite. {PRONOUN/r_c/subject} tells {PRONOUN/m_c/object} that this will be a daily routine because it's becoming infected.",
-          "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when {PRONOUN/m_c/inposs} starts to show signs of infection."
-
+            "r_c talks as {PRONOUN/r_c/subject} {VERB/r_c/apply/applies} a strange paste to m_c's rat bite. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tell/tells} {PRONOUN/m_c/object} that this will be a daily routine because it's becoming infected.",
+            "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when {PRONOUN/m_c/inposs} starts to show signs of infection."
         ],
         "a festering wound": [
-          "The worried look in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/examine/examines} m_c's acrid rat bite makes {PRONOUN/m_c/poss} heart sink.",
+            "The worried look in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/examine/examines} m_c's acrid rat bite makes {PRONOUN/m_c/poss} heart sink.",
             "m_c tries to ignore the smell coming from the site of {PRONOUN/m_c/poss} festering rat bite."
-
         ]
     },
     "tick bites": {
         "an infected wound": [
-          "r_c sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected.",
+            "r_c sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected.",
             "The tick on m_c was left for far too long. The area is now swollen and warm - definite signs of infection."
-
         ]
     },
     "broken jaw": {
         "an infected wound": [
-          "A meat paste for getting food and water into m_c's stomach, a herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient.",
+            "A meat paste for getting food and water into m_c's stomach, a herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient.",
             "m_c drifts in and out of consciousness as an infection grows in {PRONOUN/m_c/poss} broken jaw."
-
         ]
     },
     "broken bone": {
         "an infected wound": [
-          "Despite the enforced nest rest and how tightly {PRONOUN/m_c/poss} broken bone is bound, m_c's injury is beginning to look concerning to r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} already begun to plan what to do if the infection progresses any further.",
+            "Despite the enforced nest rest and how tightly {PRONOUN/m_c/poss} broken bone is bound, m_c's injury is beginning to look concerning to r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} already begun to plan what to do if the infection progresses any further.",
             "There seems to be an infection growing in m_c's broken bone."
-
         ]
     },
     "mangled leg": {
         "an infected wound": [
-          "r_c wonders if {PRONOUN/r_c/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen - and {PRONOUN/r_c/subject} {VERB/r_c/need/needs} more ideas.",
+            "r_c wonders if {PRONOUN/r_c/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen - and {PRONOUN/r_c/subject} {VERB/r_c/need/needs} more ideas.",
             "As if the injury wasn't bad enough, the skin around m_c's mangled leg has started to swell and feel feverish."
-
         ]
     },
     "mangled tail": {
         "an infected wound": [
-          "m_c's poor mangled tail is swollen and hot the touch: r_c searches the herb stores for those that fight infection.",
-            "As if the injury wasn't bad enough, the skin of m_c's mangled tail has started to swell and feel feverish."
-
+            "m_c's poor mangled tail is swollen and hot to the touch: r_c searches the herb stores for those that fight infection.",
+            "As if the injury wasn't bad enough, the skin on m_c's mangled tail has started to swell and feel feverish."
         ]
     },
     "cracked pads": {
         "an infected wound": [
-          "r_c spreads the last of the salve on m_c's cracked and swollen pads, sternly telling {PRONOUN/m_c/object} to stay off {PRONOUN/m_c/poss} paws unless {PRONOUN/m_c/subject}'d like the infection to get any worse.",
-          "m_c swears {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been washing {PRONOUN/m_c/poss} cracked pads, but they still seem to have become infected."
-
+            "r_c spreads the last of the salve on m_c's cracked and swollen pads, sternly telling {PRONOUN/m_c/object} to stay off {PRONOUN/m_c/poss} paws unless {PRONOUN/m_c/subject}'d like the infection to get any worse.",
+            "m_c swears {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been washing {PRONOUN/m_c/poss} cracked pads, but they still seem to have become infected."
         ]
     },
     "scrapes": {
         "an infected wound": [
-          "m_c hangs {PRONOUN/m_c/poss} head, embarrassed. {PRONOUN/m_c/subject/CAP} thought {PRONOUN/m_c/subject} could get away with not cleaning {PRONOUN/m_c/poss} scrapes with them being such minor wounds, but now the skin is irritated and infected - and r_c is clearly judging {PRONOUN/m_c/object} for not taking care of {PRONOUN/m_c/self}.",
+            "m_c hangs {PRONOUN/m_c/poss} head, embarrassed. {PRONOUN/m_c/subject/CAP} thought {PRONOUN/m_c/subject} could get away with not cleaning {PRONOUN/m_c/poss} scrapes since they're such minor wounds, but now the skin is irritated and infected - and r_c is clearly judging {PRONOUN/m_c/object} for not taking care of {PRONOUN/m_c/self}.",
             "The scrapes m_c had gotten seemed minor at first, but even the smallest wounds can get infected."
         ]
     },
     "small cut": {
         "an infected wound": [
             "r_c takes a closer look at m_c's little cut, concern on {PRONOUN/r_c/poss} face. It seems the cut wasn't kept clean enough and has become infected.",
-          "Rather than healing, the small cut m_c got has become angry and painful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that it could be infected."
-
+            "Rather than healing, the small cut m_c got has become angry and painful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that it could be infected."
         ]
     },
     "torn pelt": {
         "an infected wound": [
-          "r_c juices herbs over m_c's torn pelt. It should help m_c fight off the minor infection that's developing there.",
+            "r_c juices herbs over m_c's torn pelt. It should help m_c fight off the minor infection that's developing there.",
             "The tears in m_c's pelt seem to have become inflamed. It's most likely an infection."
-
         ]
     },
     "torn ear": {
         "an infected wound": [
-          "r_c examines {PRONOUN/m_c/poss} ear as m_c keeps twitching it involuntarily. The area is swollen and irritated, probably an infection developing from the tear.",
+            "r_c examines {PRONOUN/m_c/poss} ear as m_c keeps twitching it involuntarily. The area is swollen and irritated, probably an infection developing from the tear.",
             "m_c's torn ear has become inflamed and itchy. It's most likely infected."
-
         ]
     },
     "frostbite": {
         "running nose": [
             "It's minor compared to the frostbite, but r_c remembers to bring along herbs for m_c's running nose when {PRONOUN/r_c/subject} {VERB/r_c/go/goes} to check up on {PRONOUN/m_c/object}.",
             "As if frostbite wasn't a big enough worry, m_c has also developed a running nose.",
-            "m_c was out in the cold far too long and while the frostbite is the biggest concern, a running nose isn't a good sign either."
-
+            "m_c was out in the cold far too long. While the frostbite is the biggest concern, a running nose isn't a good sign either."
         ]
     },
     "recovering from birth": {
         "an infected wound": [
-          "r_c gently asks m_c to turn over and winces when {PRONOUN/m_c/subject} {VERB/m_c/do/does}. The strain of birth isn't healing as r_c had hoped it might: instead the area looks swollen and painful.",
-          "m_c tries not to hiss as {PRONOUN/m_c/poss} litter suckles. {PRONOUN/m_c/subject/CAP} {VERB/m_c/love/loves} them, {PRONOUN/m_c/subject} {VERB/m_c/do/does}, but giving birth was so painful and the area feels swollen and infected now."
-
+            "r_c gently asks m_c to turn over and winces when {PRONOUN/m_c/subject} {VERB/m_c/do/does}. The strain of birth isn't healing as r_c had hoped it might: instead, the area looks swollen and painful.",
+            "m_c tries not to hiss as {PRONOUN/m_c/poss} litter suckles. {PRONOUN/m_c/subject/CAP} {VERB/m_c/love/loves} them, {PRONOUN/m_c/subject} {VERB/m_c/do/does}, but giving birth was so painful and the area feels swollen and infected now."
         ]
     },
     "water in their lungs": {
         "running nose": [
-          "Some of the water m_c inhaled appears to be draining from {PRONOUN/m_c/poss} nose as well as coming up in hacking coughs. r_c puts {PRONOUN/m_c/object} on nest rest to help {PRONOUN/m_c/object} recover.",
+            "Some of the water m_c inhaled appears to be draining from {PRONOUN/m_c/poss} nose as well as coming up in those hacking coughs. r_c puts {PRONOUN/m_c/object} on nest rest to help {PRONOUN/m_c/object} recover.",
             "Along with a bit of coughing, m_c has developed a runny nose from the water in {PRONOUN/m_c/poss} lungs."
-
         ],
         "whitecough": [
-          "m_c hasn't managed to avoid whitecough, r_c tells {PRONOUN/m_c/object}. The water {PRONOUN/m_c/subject} inhaled must have been carrying illness with it. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} confined to camp while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}.",
-          "m_c's hacking no longer  seems to just be from the water {PRONOUN/m_c/subject} inhaled. It must have progressed into whitecough.",
+            "m_c hasn't managed to avoid whitecough, r_c tells {PRONOUN/m_c/object}. The water {PRONOUN/m_c/subject} inhaled must have been carrying illness with it. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} confined to camp while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}.",
+            "m_c's hacking no longer seems to be just from the water {PRONOUN/m_c/subject} inhaled. It must have progressed into whitecough.",
             "With {PRONOUN/m_c/poss} lungs already weakened by the water still in them, m_c is unable to fight off the whitecough that finds {PRONOUN/m_c/object}."
-
         ]
     },
     "burn": {
         "an infected wound": [
-          "The flesh of m_c's burn is far too warm. r_c applies a salve to try and help fight off the developing infection.",
-          "m_c has been feeling feverish. {PRONOUN/m_c/poss/CAP} burn looks a bit discolored, it must be developing an infection."
-
+            "The flesh of m_c's burn is far too warm. r_c applies a salve to try and help fight off the developing infection.",
+            "m_c has been feeling feverish. {PRONOUN/m_c/poss/CAP} burn looks a bit discolored, it must be developing an infection."
         ]
     },
     "severe burn": {
         "an infected wound": [
             "It's hard to tell with such a severe burn, but r_c is now certain than in addition to the burn damage, m_c is carrying an infection in the tissue as well.",
-          "m_c has been feeling feverish. {PRONOUN/m_c/poss/CAP} burn looks discolored and swollen: it must be developing an infection."
-
+            "m_c has been feeling feverish. {PRONOUN/m_c/poss/CAP} burn looks discolored and swollen: it must be developing an infection."
         ]
     },
     "shock": {
         "lingering shock": [
-          "r_c gives m_c the poppy seeds {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} for to help {PRONOUN/m_c/object} sleep, but it worries {PRONOUN/r_c/object} that m_c's shock has lingered so long.",
-          "m_c wakes again from another nightmare, feeling adrenaline rush through {PRONOUN/m_c/poss} veins as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to bolt. It feels like days since {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been able to sleep through the night and it's wearing {PRONOUN/m_c/object} down."
-
+            "r_c gives m_c the poppy seeds {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} for to help {PRONOUN/m_c/object} sleep, but it worries {PRONOUN/r_c/object} that m_c's shock has lingered so long.",
+            "m_c wakes again from another nightmare, feeling adrenaline rush through {PRONOUN/m_c/poss} veins as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to bolt. It feels like days since {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been able to sleep through the night and it's wearing {PRONOUN/m_c/object} down."
         ]
     },
     "shivering": {
         "frostbite": [
             "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite.",
-          "m_c says that {PRONOUN/m_c/poss} extremities feel like they're being pricked by claws. Numbness soon follows, both a sign of frostbite.",
-          "The skin on m_c's extremities is a worrying black and blue. One of {PRONOUN/m_c/poss} Clanmates spends some time licking at the cold bits of skin, but they seem to be frostbitten."
-
+            "m_c says that {PRONOUN/m_c/poss} extremities feel like they're being pricked by claws. Numbness soon follows, both a sign of frostbite.",
+            "The skin on m_c's extremities is worryingly black and blue. One of {PRONOUN/m_c/poss} Clanmates spends some time licking at the cold bits of skin, but they seem to be frostbitten."
         ]
     },
     "dehydrated": {
         "heat exhaustion": [
-          "r_c has managed to get some water into m_c, but m_c is showing signs of confusion and fatigue - clear indications of heat exhaustion.",
+            "r_c has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue - clear indications of heat exhaustion.",
             "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
-
         ]
     },
     "damaged eyes": {
         "an infected wound": [
             "r_c drips the juice of herbs into m_c's damaged eyes, not paying any attention to {PRONOUN/m_c/poss} protests. This infection needs to be stopped before it goes any further.",
             "m_c can't open {PRONOUN/m_c/poss} eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
-
         ]
     },
     "quilled by a porcupine": {
         "an infected wound": [
-          "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found its way in.",
+            "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found its way in.",
             "The wounds left behind on m_c by the porcupine quills have become infected.",
             "m_c is distraught to find that infection has set in on {PRONOUN/m_c/poss} quill wounds."
         ]
@@ -194,14 +170,14 @@
     "poisoned": {
         "redcough": [
             "r_c watches as the inevitable happens and m_c begins to cough and choke on {PRONOUN/m_c/poss} own blood. The end is coming quickly for {PRONOUN/m_c/object}.",
-          "m_c has been left weak and barely responsive from the poison... and now {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} begun to cough up blood. That can't be a good sign.",
-          "m_c hacks and sputters on {PRONOUN/m_c/poss} own blood. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} the end is soon."
+            "m_c has been left weak and barely responsive from the poison... and now {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} begun to cough up blood. That can't be a good sign.",
+            "m_c hacks and sputters on {PRONOUN/m_c/poss} own blood. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} the end is soon."
         ]
     },
     "broken back": {
         "an infected wound": [
-          "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body. {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
-          "m_c can smell the infection from {PRONOUN/m_c/poss} back and feels the fever coming over {PRONOUN/m_c/self}. This injury feels less survivable by the day."
+            "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body. {PRONOUN/r_c/subject/CAP} {VERB/r_c/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
+            "m_c can smell the infection from {PRONOUN/m_c/poss} back and feels the fever coming over {PRONOUN/m_c/self}. This injury feels less survivable by the day."
         ]
     },
     "head damage": {
@@ -210,7 +186,7 @@
             "m_c awakes with a dull, throbbing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury doesn't appear to be healing as {PRONOUN/m_c/subject} hoped. "
         ],
         "severe headache": [
-          "m_c yowls with pain, begging r_c for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches.",
+            "m_c yowls with pain, begging r_c for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches.",
             "m_c can't focus on anything but the searing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury must have rattled something deep in {PRONOUN/m_c/poss} skull."
         ]
     }

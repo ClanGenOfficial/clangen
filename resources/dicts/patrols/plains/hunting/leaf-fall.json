@@ -1385,7 +1385,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The squirrel doesn't notice p_l stalking up to them.. that is, until they've already pounced and have it between their jaws. It's a little late to do anything about it at that point, though.",
+                "text": "The squirrel doesn't notice p_l stalking up to them... that is, until they've already pounced and have it between their jaws. It's a little late to do anything about it at that point, though.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1616,7 +1616,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the cool air. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
-        "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
+        "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2114,7 +2114,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2322,7 +2322,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2530,7 +2530,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2738,7 +2738,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -2944,7 +2944,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Besides, hunting today will be easy, the grasslands are practically crawling with prey fattening up on the plant seed.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
@@ -3272,7 +3272,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
+                "text": "app1 collects two p_tp_p, and watches p_l take down a p_mp_s in an astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two p_mp_p. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's p_tp_p, making app1 grimace at what's got to be fake praise.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -4232,7 +4232,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine den. The patrol brings the herbs back to camp and they are put to good use.",
+                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine cat den. The patrol brings the herbs back to camp and they are put to good use.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -4272,7 +4272,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their freshkill.",
+                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their fresh-kill.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
