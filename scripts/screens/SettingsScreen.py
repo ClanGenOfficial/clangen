@@ -169,6 +169,11 @@ class SettingsScreen(Screens):
                         game.settings["language"] = key
                     else:
                         game.switch_setting(key)
+                        value.change_object_id(
+                            "@checked_checkbox"
+                            if game.settings[key]
+                            else "@unchecked_checkbox"
+                        )
                     self.settings_changed = True
                     self.update_save_button()
 
@@ -179,11 +184,12 @@ class SettingsScreen(Screens):
                         # has to be done manually since we haven't saved the new mode yet.
                         self.toggled_theme = (
                             "dark"
-                            if "@unchecked_checkbox"
+                            if "@checked_checkbox"
                             in self.checkboxes["dark mode"].get_object_ids()
                             else "light"
                         )
                         self.set_bg("default", "mainmenu_bg")
+                        self.open_general_settings()
 
                     if (
                         self.sub_menu == "general"
@@ -197,28 +203,6 @@ class SettingsScreen(Screens):
                         else:
                             print("Stopping Discord RPC")
                             game.rpc.close()
-
-                    opens = {
-                        "general": self.open_general_settings,
-                        "language": self.open_lang_settings,
-                    }
-
-                    scroll_pos = None
-                    if (
-                        "container_general" in self.checkboxes_text
-                        and self.checkboxes_text["container_general"].vert_scroll_bar
-                    ):
-                        scroll_pos = self.checkboxes_text[
-                            "container_general"
-                        ].vert_scroll_bar.start_percentage
-
-                    if self.sub_menu in opens:
-                        opens[self.sub_menu]()
-
-                    if scroll_pos is not None:
-                        self.checkboxes_text[
-                            "container_general"
-                        ].vert_scroll_bar.set_scroll_from_start_percentage(scroll_pos)
 
                     break
 
