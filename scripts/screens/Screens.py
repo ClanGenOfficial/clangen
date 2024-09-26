@@ -671,7 +671,11 @@ class Screens:
                 f"Selected fullscreen background not recognised! '{self.active_blur_bg}' not in default or custom bgs"
             )
 
-        if self.previous_season != season and self.active_blur_bg == season_bg:
+        if (
+            self.previous_season != season
+            and self.active_blur_bg == "default"
+            or self.active_blur_bg == season
+        ):
             self.bg_transition_time = 10  # doubled transition time for the Vibes
             self.previous_season = season
         # onto the actual blitting
