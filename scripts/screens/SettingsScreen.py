@@ -370,20 +370,23 @@ class SettingsScreen(Screens):
             manager=MANAGER,
         )
 
-        n = 0
-        for code, desc in settings_dict["general"].items():
+        for i, (code, desc) in enumerate(settings_dict["general"].items()):
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                ui_scale(pygame.Rect((225, n * 39), (500, 39))),
+                ui_scale(pygame.Rect((225, 34 if i < 0 else 0), (500, 34))),
                 container=self.checkboxes_text["container_general"],
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                object_id=get_text_box_theme("#text_box_30_horizleft_vertcenter"),
                 manager=MANAGER,
+                anchors={
+                    "top_target": self.checkboxes_text[list(self.checkboxes_text)[-1]]
+                }
+                if i > 0
+                else None,
             )
             self.checkboxes_text[code].disable()
-            n += 1
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
-            ui_scale_dimensions((680, (n * 39 + 40)))
+            ui_scale_dimensions((680, (len(settings_dict["general"].keys()) * 39 + 40)))
         )
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
@@ -588,20 +591,23 @@ class SettingsScreen(Screens):
                 self.checkboxes["german"].disable()
 
         else:
-            n = 0
-            for code, desc in settings_dict[self.sub_menu].items():
+            for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
                 if game.settings[code]:
                     box_type = "@checked_checkbox"
                 else:
                     box_type = "@unchecked_checkbox"
                 self.checkboxes[code] = UIImageButton(
-                    ui_scale(pygame.Rect((170, n * 40), (34, 34))),
+                    ui_scale(pygame.Rect((170, 34 if i < 0 else 0), (34, 34))),
                     "",
                     object_id=box_type,
                     container=self.checkboxes_text["container_" + self.sub_menu],
                     tool_tip_text=desc[1],
+                    anchors={
+                        "top_target": self.checkboxes_text[list(self.checkboxes)[-1]]
+                    }
+                    if i > 0
+                    else None,
                 )
-                n += 1
 
     def clear_sub_settings_buttons_and_text(self):
         """

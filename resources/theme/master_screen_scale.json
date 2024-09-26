@@ -372,6 +372,10 @@
         "prototype": "#text_box_30_horizleft",
         "misc": {"padding": "0,4"}
     },
+    "#text_box_30_horizleft_vertcenter": {
+        "prototype": "#text_box_30_horizleft",
+        "misc": {"text_vert_alignment": "center"}
+    },
     "#text_box_30_horizleft_pad_40_40": {
         "prototype": "#text_box_30_horizleft",
         "misc": {"padding": "20,20"}
