@@ -1116,11 +1116,17 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = "history"
+            rect = ui_scale(pygame.Rect((0, 0), (620, 157)))
+            rect.bottomleft = ui_scale_offset((89, 0))
             self.backstory_background = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((89, 465), (620, 157))),
+                rect,
                 get_box(
                     BoxStyles.ROUNDED_BOX, (620, 157), sides=(True, True, False, True)
                 ),
+                anchors={
+                    "bottom": "bottom",
+                    "bottom_target": self.conditions_tab_button,
+                },
             )
             self.backstory_background.disable()
             self.sub_tab_1 = UIImageButton(

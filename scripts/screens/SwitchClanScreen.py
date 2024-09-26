@@ -223,7 +223,7 @@ class SwitchClanScreen(Screens):
             )
 
             i += 1
-            if i >= 8:
+            if i % 8 == 0 and i != 0:
                 self.clan_buttons.append([])
                 self.clan_name.append([])
                 self.delete_buttons.append([])

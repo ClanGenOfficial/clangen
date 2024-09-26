@@ -1246,12 +1246,13 @@ class MakeClanScreen(Screens):
         )
         self.elements["previous_step"].disable()
         self.elements["next_step"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((400, 620), (147, 30))),
+            ui_scale(pygame.Rect((0, 620), (147, 30))),
             "Next Step " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.MENU_RIGHT, (147, 30)),
             object_id="@buttonstyles_menu_right",
             manager=MANAGER,
             starting_height=2,
+            anchors={"left_target": self.elements["previous_step"]},
         )
         self.elements["random_clan_checkbox"] = UIImageButton(
             ui_scale(pygame.Rect((560, 620), (34, 34))),
