@@ -2,9 +2,9 @@
     {
         "id": "apprentice_dark_forest_thoughts",
         "thoughts": [
-            "Wishes {PRONOUN/m_c/subject} finished {PRONOUN/m_c/poss} battle training",
+            "Wishes {PRONOUN/m_c/subject}'d finished {PRONOUN/m_c/poss} battle training",
             "Tries to imitate the battle moves of other Dark Forest cats",
-            "Wonders if it is {PRONOUN/m_c/poss} fault or {PRONOUN/m_c/poss} mentor's fault that they ended up here",
+            "Wonders if it is {PRONOUN/m_c/poss} fault or {PRONOUN/m_c/poss} mentor's fault that {PRONOUN/m_c/subject} ended up here",
             "Wishes {PRONOUN/m_c/subject} could put {PRONOUN/m_c/poss} hunting training to use",
             "Misses the elders' stories",
             "Regrets ever disrespecting {PRONOUN/m_c/poss} mentor",
