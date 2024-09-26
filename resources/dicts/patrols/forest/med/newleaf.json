@@ -2500,7 +2500,7 @@
                 ]
             },
             {
-                "text": "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... Really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful. {PRONOUN/p_l/subject} {VERB/p_l/make/makes} sure to send app1 off with both heaps of praise and a little sprig of juniper, to bring its pleasant scent to {PRONOUN/app1/poss} nest.",
+                "text": "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... Really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} sure to send app1 off with both heaps of praise and a little sprig of juniper, to bring its pleasant scent to {PRONOUN/app1/poss} nest.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "juniper"],
@@ -3270,7 +3270,7 @@
                 ]
             },
             {
-                "text": "s_c has a good eye for these things and finds an excellent patch of mallow. {PRONOUN/s_c/CAP} {VERB/s_c/control/controls} what is harvested, while {PRONOUN/s_c/poss} team works to efficiently carry the herb back to camp, deferring to s_c's expertise.",
+                "text": "s_c has a good eye for these things and finds an excellent patch of mallow. {PRONOUN/s_c/subject/CAP} {VERB/s_c/control/controls} what is harvested, while {PRONOUN/s_c/poss} team works to efficiently carry the herb back to camp, deferring to s_c's expertise.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
