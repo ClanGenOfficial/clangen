@@ -38,7 +38,7 @@ version_number = None
 dev_watermark = None
 
 
-def rebuild_core():
+def rebuild_core(*, should_rebuild_bgs=True):
     global menu_buttons
     global default_game_bgs
     global default_fullscreen_bgs
@@ -284,7 +284,8 @@ def rebuild_core():
         version_number.kill()
         version_number = None
 
-    rebuild_bgs()
+    if should_rebuild_bgs:
+        rebuild_bgs()
 
 
 def rebuild_bgs():

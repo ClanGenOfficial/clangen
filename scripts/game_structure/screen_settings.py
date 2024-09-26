@@ -142,7 +142,9 @@ def set_display_mode(
 
             AllScreens.rebuild_all_screens()
 
-            scripts.screens.screens_core.screens_core.rebuild_core()
+            scripts.screens.screens_core.screens_core.rebuild_core(
+                should_rebuild_bgs=False
+            )
             scripts.debug_menu.debugmode.rebuild_console()
 
             screen_name = source_screen.name.replace(" ", "_")

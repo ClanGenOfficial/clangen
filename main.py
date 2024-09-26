@@ -317,10 +317,12 @@ while 1:
                 SaveCheck(game.switches["cur_screen"], False, None)
 
         if event.type == pygame.WINDOWRESIZED:
+            if scripts.game_structure.screen_settings.display_change_in_progress:
+                continue
             newx = max(800, event.x)
             newy = max(700, event.y)
             scripts.game_structure.screen_settings.set_display_mode(
-                False,
+                game.settings["fullscreen"],
                 getattr(AllScreens, game.switches["cur_screen"].replace(" ", "_")),
                 show_confirm_dialog=False,
                 user_defined_dimensions=(newx, newy),
