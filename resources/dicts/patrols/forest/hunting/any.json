@@ -1836,7 +1836,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "A friendly Twolegs makes a 'psspsspss' noise and pours kittypet food on the ground for app1. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} always wondered what it might taste like... Dry, is the answer. It's strangely appealing.",
+                "text": "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for app1. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} always wondered what it might taste like... Dry, is the answer. It's strangely appealing.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["very_small"]
@@ -2064,7 +2064,7 @@
                 ]
             },
             {
-                "text": "A friendly Twolegs makes a 'psspsspss' noise and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience.",
+                "text": "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["very_small"],
