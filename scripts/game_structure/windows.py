@@ -1922,28 +1922,28 @@ class ChangeCatToggles(UIWindow):
         # Text
         self.text_1 = pygame_gui.elements.UITextBox(
             "Prevent fading",
-            ui_scale(pygame.Rect(55, 30, -1, 25)),
+            ui_scale(pygame.Rect(55, 25, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
 
         self.text_2 = pygame_gui.elements.UITextBox(
             "Prevent kits",
-            ui_scale(pygame.Rect(55, 55, -1, 25)),
+            ui_scale(pygame.Rect(55, 50, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
 
         self.text_3 = pygame_gui.elements.UITextBox(
             "Prevent retirement",
-            ui_scale(pygame.Rect(55, 80, -1, 25)),
+            ui_scale(pygame.Rect(55, 75, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
 
         self.text_4 = pygame_gui.elements.UITextBox(
             "Limit romantic interactions and mate changes",
-            ui_scale(pygame.Rect(55, 105, -1, 25)),
+            ui_scale(pygame.Rect(55, 100, -1, 32)),
             object_id="#text_box_30_horizleft_pad_0_8",
             container=self,
         )
