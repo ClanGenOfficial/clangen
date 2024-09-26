@@ -2584,7 +2584,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought and forces the rest of the patrol to save {PRONOUN/s_c/poss} tail. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats} as the increased maned wolf snarls, and the rest of the patrol tries not to do the same at s_c.",
+                "text": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought and forces the rest of the patrol to save {PRONOUN/s_c/poss} tail. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats} as the incensed maned wolf snarls, and the rest of the patrol tries not to do the same at s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
