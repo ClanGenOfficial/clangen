@@ -1917,7 +1917,7 @@
                 ]
             },
             {
-                "text": "A friendly Twolegs makes a 'psspsspss' noise and pours kittypet food on the ground for r_c. They fetch p_l and both cats investigate the food, loudly proclaiming how much better fresh-kill is... but both are a little thrilled by the experience.",
+                "text": "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for r_c. They fetch p_l and both cats investigate the food, loudly proclaiming how much better fresh-kill is... but both are a little thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["very_small"],
