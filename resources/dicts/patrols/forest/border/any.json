@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -119,7 +119,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As r_c is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
+        "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
         "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered; warning the Clan is more important than dying needlessly.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -234,7 +234,7 @@
                 ]
             },
             {
-                "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
+                "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of prey-rich plains outside of c_n territory.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -249,7 +249,7 @@
                 ]
             },
             {
-                "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
+                "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of prey-rich plains outside of c_n territory.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["bold", "confident"],
@@ -358,7 +358,6 @@
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -372,7 +371,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -402,7 +401,7 @@
                 }
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/s_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett: r_c leaps out of the way, but its claws catch {PRONOUN/s_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/s_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/s_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -450,7 +449,7 @@
                 ]
             },
             {
-                "text": "The patrol organizes and, once the sett is found, the cats lift a long skinny branch from the forest floor and shove the end into the mouth of the den. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
+                "text": "The patrol organizes and, once the sett is found, the cats lift a long, skinny branch from the forest floor and shove the end into the mouth of the den. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
                 "exp": 40,
                 "weight": 5,
                 "relationships": [
@@ -467,7 +466,7 @@
                 "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until {PRONOUN/s_c/subject} {VERB/s_c/come/comes} upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
                         "cats_to": ["s_c", "p_l"],
@@ -483,7 +482,6 @@
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -520,7 +518,7 @@
                 ]
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -548,7 +546,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end. . . including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end... including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -605,7 +603,7 @@
                 ]
             },
             {
-                "text": "The patrol organizes and, once the sett is found, the cats lift a long skinny branch from the forest floor and shove the end into the sett. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
+                "text": "The patrol organizes and, once the sett is found, the cats lift a long, skinny branch from the forest floor and shove the end into the sett. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
                 "exp": 40,
                 "weight": 5,
                 "relationships": [
@@ -622,7 +620,7 @@
                 "text": "s_c decides there has to be an easy way to figure out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
                         "cats_to": ["s_c", "p_l"],
@@ -638,7 +636,6 @@
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -675,7 +672,7 @@
                 ]
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -703,7 +700,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end. . . including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home safe in the end... including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -792,7 +789,7 @@
                 "weight": 20
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -809,7 +806,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} paws, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -853,7 +850,7 @@
                 "weight": 5
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees and breaking a branch onto the rogue's head that sends the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -906,7 +903,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} paws, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -947,7 +944,7 @@
                 "weight": 20
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting that {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
                 "weight": 5
             }
@@ -994,7 +991,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} paws, squealing with pain, and {VERB/app1/run/runs} for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1060,6 +1057,23 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue with a furious hiss and, together with p_l, drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1092,6 +1106,40 @@
                     "playful",
                     "righteous"
                 ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and p_l demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1119,7 +1167,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1134,7 +1182,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} paws, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1205,10 +1253,27 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees with r_c and breaking a branch onto the rogue's head. The startled intruder yowls as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with r_c to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1241,6 +1306,40 @@
                     "playful",
                     "righteous"
                 ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and p_l demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1283,7 +1382,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} paws, spitting with outrage, but the rogue that did it has already turned and run.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1342,7 +1441,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting that {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1438,7 +1537,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} paws, squealing with pain, and {VERB/app1/run/runs} for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1509,10 +1608,11 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws {PRONOUN/s_c/self} at the rogue and, together with r_c, drives them off c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws {PRONOUN/s_c/self} at the rogue and, together with the rest of the patrol, drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
+                "can_have_stat": ["any"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1545,6 +1645,7 @@
                     "playful",
                     "righteous"
                 ],
+                "can_have_stat": ["any"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1572,10 +1673,11 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
+                "can_have_stat": ["any"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1632,7 +1734,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by climbing into the trees with r_c and breaking a branch onto the rogue's head. The startled intruder yowls as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with {PRONOUN/s_c/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1743,7 +1845,7 @@
                 ]
             },
             {
-                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting that {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1859,9 +1961,7 @@
                     "charismatic",
                     "childish",
                     "playful",
-                    "empathetic",
-                    "loving",
-                    "patient"
+                    "loving"
                 ],
                 "relationships": [
                     {
@@ -1890,7 +1990,7 @@
                 ]
             },
             {
-                "text": "s_c takes p_l aside and reminds {PRONOUN/p_l/object} coldly to focus on their duties.",
+                "text": "s_c takes p_l aside and reminds {PRONOUN/p_l/object} coldly to focus on {PRONOUN/p_l/poss} duties.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1950,7 +2050,7 @@
     },
     {
         "patrol_id": "fst_bord_bigfoot",
-        "biome": ["any"],
+        "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
         "tags": ["halloween"],
@@ -1960,7 +2060,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol pads along the border, r_c nearly topples over, falling into a footprint twice as wide and three times as long as {PRONOUN/r_c/subject} {VERB/r_c/are/is}.",
-        "decline_text": "r_c scrambles back to {PRONOUN/r_c/poss} feet, ears twitching back in embarrassment. Whatever made these tracks is no cat, so it's not relevant for the border patrol's marking mission.",
+        "decline_text": "r_c scrambles back to {PRONOUN/r_c/poss} paws, ears twitching back in embarrassment. Whatever made these tracks is no cat, so it's not relevant for the border patrol's marking mission.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -2018,15 +2118,9 @@
     },
 	{
         "patrol_id": "fst_bord_dog1",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["any"],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -2087,11 +2181,9 @@
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "ambitious",
                     "compassionate",
                     "confident",
-                    "empathetic",
                     "faithful",
                     "fierce",
                     "loving",
@@ -2190,15 +2282,9 @@
     },
 	{
         "patrol_id": "fst_bord_dog2",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["any"],
+        "types": ["border"],
         "tags": [
             "patrol_rel",
             "pos_fail"
@@ -2213,7 +2299,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
+                "text": "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls, they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -2283,10 +2369,8 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "confident",
-                    "empathetic",
                     "faithful",
                     "fierce",
                     "loving",
@@ -2433,15 +2517,9 @@
     },
 	{
         "patrol_id": "fst_bord_dog3",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["any"],
+        "types": ["border"],
         "tags": [
             "patrol_rel",
             "pos_fail"
@@ -2526,10 +2604,8 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "confident",
-                    "empathetic",
                     "faithful",
                     "fierce",
                     "loving",
@@ -2676,66 +2752,28 @@
     },
 	{
         "patrol_id": "fst_bord_smalldog1",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["any"],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol comes across a small dog.",
-        "decline_text": "The patrol decides not to pursue the dog.",
+        "intro_text": "r_c comes across a small dog.",
+        "decline_text": "r_c decides not to pursue the dog.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
                 "text": "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe {PRONOUN/r_c/subject} should add dog herding to {PRONOUN/r_c/poss} list of accomplishments?",
                 "exp": 10,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ]
+                "weight": 20
             },
             {
                 "text": "r_c unsheathes {PRONOUN/r_c/poss} claws, puffs {PRONOUN/r_c/poss} fur out as far as it'll go, gathers {PRONOUN/r_c/poss} courage, and drives the small dog from the border.",
                 "exp": 10,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ]
+                "weight": 5
             },
             {
                 "text": "s_c unleashes all {PRONOUN/s_c/poss} battle experience, darting this way and that, ripping chunks of dog fur out as {PRONOUN/s_c/subject} {VERB/s_c/drive/drives} it into the distance.",
@@ -2743,46 +2781,14 @@
                 "weight": 20,
                 "stat_skill": [
                     "FIGHTER,1"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
                 ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.",
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatedly in a safe spot until the beast calms down.",
                 "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ]
+                "weight": 20
             },
             {
                 "text": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, {PRONOUN/r_c/subject} {VERB/r_c/have/has} {PRONOUN/r_c/poss} fangs sunk in the dog's throat. At least {PRONOUN/r_c/subject}'ll take the beast with {PRONOUN/r_c/object}.",
@@ -2795,26 +2801,10 @@
                     "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
                     "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
                     "lead_death": "killed in a fight with a small dog"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ]
+                }
             },
             {
-                "text": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again.",
+                "text": "Small, yappy, but... still a dog. r_c peers down from the tree where the animal has pinned {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2834,37 +2824,15 @@
                     "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
                     "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
                     "lead_death": "killed in a fight with a small dog"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ]
+                }
             }
         ]
     },
 	{
         "patrol_id": "fst_bord_smalldog2",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["any"],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
@@ -2975,15 +2943,9 @@
         ]
     },{
         "patrol_id": "fst_bord_smalldog3",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["any"],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,
