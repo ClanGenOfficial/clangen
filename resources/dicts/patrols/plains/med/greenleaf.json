@@ -1523,7 +1523,7 @@
                 ]
             },
             {
-                "text": "Greenleaf brings a veritable explosion of daisies raising little white and yellow flowers around every corner, and p_l barely even needs to leave camp to gather them. It gives them time to let app1 run off and play with {PRONOUN/app1/poss} friends, and seeing {PRONOUN/p_l/poss} apprentice getting to relax makes {PRONOUN/p_l/object} smile from {PRONOUN/p_l/object} favorite basking spot.",
+                "text": "Greenleaf brings a veritable explosion of daisies raising little white and yellow flowers around every corner, and p_l barely even needs to leave camp to gather them. It gives them time to let app1 run off and play with {PRONOUN/app1/poss} friends, and seeing {PRONOUN/p_l/poss} apprentice getting to relax makes {PRONOUN/p_l/object} smile from {PRONOUN/p_l/poss} favorite basking spot.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "daisy"],
