@@ -253,7 +253,7 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. {PRONOUN/p_l/poss} whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
+        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
         "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a Clanmate.",
         "chance_of_success": 30,
         "success_outcomes": [
