@@ -82,8 +82,8 @@
 		],
 		"random_trait_constraint": [
 			"charismatic",
-            "flamboyant",
-            "confident"
+            		"flamboyant",
+            		"confident"
 		]
 	},
 	{
@@ -698,7 +698,7 @@
 			"m_c drags r_c out of the medicine cat den, saying that looking at herbs all day surely isn't good for {PRONOUN/r_c/object}.",
             		"m_c spots r_c gathering herbs during {PRONOUN/m_c/poss} patrol and offers to help since {PRONOUN/m_c/poss} patrol hasn't been very eventful."
 		],
-        "main_status_constraint": [
+        	"main_status_constraint": [
             		"apprentice",
             		"warrior"
             ],
@@ -713,7 +713,7 @@
 		"interactions": [
 			"m_c grumbles while checking on r_c, but r_c appreciates the care and hard work m_c does anyways.",
 			"m_c complains when treating a very minor wound r_c has, but obviously cares very much even if {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} show it.",
-			"m_c rolls {PRONOUN/m_c/poss} eyes while listening to r_c's most recent complaint, but makes sure to thoroughly check {VERB/r_c/object} for any ailments.",
+			"m_c rolls {PRONOUN/m_c/poss} eyes while listening to r_c's most recent complaint, but makes sure to thoroughly check {PRONOUN/r_c/object} for any ailments.",
 			"r_c is a little hesitant to ask m_c to check on something minor, but knows that even though m_c can be grumpy sometimes, {PRONOUN/m_c/subject} always takes care of {PRONOUN/r_c/object}."
 		],
 		"main_status_constraint": [
