@@ -686,7 +686,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {PRONOUN/s_c/work/works} to remove the branches pinning {PRONOUN/s_c/poss} Clanmate. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/work/works} to remove the branches pinning {PRONOUN/s_c/poss} Clanmate. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -863,7 +863,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {PRONOUN/s_c/work/works} to remove the branches pinning {PRONOUN/s_c/poss} Clanmate. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/work/works} to remove the branches pinning {PRONOUN/s_c/poss} Clanmate. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
