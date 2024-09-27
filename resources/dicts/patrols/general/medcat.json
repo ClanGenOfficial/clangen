@@ -3945,7 +3945,7 @@
         },
         "weight": 20,
         "chance_of_success": 50,
-        "intro_text": "p_l and app2 leave camp together to gather herbs at the behest of p_l's mentor. A short ways out of camp, app2 stops p_l and asks, with a glint in {PRONOUN/app2/poss} eye, if p_l will show {PRONOUN/app2/object} where deathberries grow on c_n's territory.",
+        "intro_text": "p_l and app2 leave camp together to gather herbs and refresh c_n's stocks of some basic necessities. A short ways out of camp, app2 stops p_l and asks, with a glint in {PRONOUN/app2/poss} eye, if p_l will show {PRONOUN/app2/object} where deathberries grow on c_n's territory.",
         "decline_text": "p_l hastily makes up an excuse to return to camp, and app2's curiosity remains unsatisfied.",
         "success_outcomes": [
             {
@@ -4002,7 +4002,7 @@
                 "art": "gen_train_argueAM"
             },
             {
-                "text": "No way, does app2 want to get them both in trouble? s_c's mentor told them to go get <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
+                "text": "No way, does app2 want to get them both in trouble? They're looking for <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
                 "exp": 10,
                 "weight": 40,
                 "can_have_stat": "healer",
@@ -4028,7 +4028,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l hesitates. Maybe {PRONOUN/p_l/subject} {VERB/p_l/have/has} time to gather herbs <i>and</i> satisfy app2's curiosity? p_l leads {PRONOUN/app2/object} quickly to a sheltered copse where the yew grows. Before app2 can linger, p_l hustles {PRONOUN/app2/object} away again to more fruitful patches of herbs, but their detour has already wasted too much time and p_l's mentor expects them back.",
+                "text": "p_l hesitates. Maybe {PRONOUN/p_l/subject} {VERB/p_l/have/has} time to gather herbs <i>and</i> satisfy app2's curiosity? p_l leads {PRONOUN/app2/object} quickly to a sheltered copse where the yew grows. Before app2 can linger, p_l hustles {PRONOUN/app2/object} away again to more fruitful patches of herbs, but their detour has already wasted too much time; c_n is expecting them back.",
                 "exp": 0,
                 "weight": 20,
                 "relationship": [
