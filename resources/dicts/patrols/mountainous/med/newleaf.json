@@ -459,7 +459,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Sure enough, all along the trailing branches of the brambles, new leaves are poking towards the sun. This early in the season it's hard to differentiate between blackberry and raspberry plants, but either one would be useful. p_l carefully plucks them off, not taking too many - {PRONOUN/p_l/subject} {VERB/want/wants} this plant to supply the Clan in future moons too.",
+                "text": "Sure enough, all along the trailing branches of the brambles, new leaves are poking towards the sun. This early in the season it's hard to differentiate between blackberry and raspberry plants, but either one would be useful. p_l carefully plucks them off, not taking too many - {PRONOUN/p_l/subject} {VERB/p_l/want/wants} this plant to supply the Clan in future moons too.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry", "raspberry"]
@@ -508,7 +508,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Sure enough, all along the trailing branches of the brambles, new leaves are poking towards the sun. This early in the season it's hard to differentiate between blackberry and raspberry plants, but either one would be useful. p_l doesn't take too many, {PRONOUN/p_l/subject} {VERB/want/wants} this plant to supply the Clan in future moons too. They have a good conversation with app1 about why harvesting conservatively is important.",
+                "text": "Sure enough, all along the trailing branches of the brambles, new leaves are poking towards the sun. This early in the season it's hard to differentiate between blackberry and raspberry plants, but either one would be useful. p_l doesn't take too many, {PRONOUN/p_l/subject} {VERB/p_l/want/wants} this plant to supply the Clan in future moons too. They have a good conversation with app1 about why harvesting conservatively is important.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["blackberry", "raspberry"],
