@@ -342,7 +342,7 @@
             		"m_c tells r_c romantic stories of old."
 		],
 		"main_skill_trait": [
-			"STORY,2"
+			"STORY,3"
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",
