@@ -121,7 +121,7 @@
     {
         "id": "calm_medicine_cat_apprentice",
         "thoughts": [
-            "Calms down an apprentice who is panicking other their minor injury"
+            "Calms down an apprentice who is panicking over their minor injury"
         ],
         "main_trait_constraint": [
             "calm"
