@@ -91,7 +91,7 @@
     {
         "id": "bloodthirsty_medicine_cat_to_lead",
         "thoughts": [
-            "Talks to the leader about war",
+            "Talks to the leader about war"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -260,7 +260,7 @@
     {
         "id": "lonesome_medicine_cat_to_lead",
         "thoughts": [
-            "Wants to talk to the leader about having a new apprentice",
+            "Wants to talk to the leader about having a new apprentice"
         ],
         "main_trait_constraint": [
             "lonesome"
