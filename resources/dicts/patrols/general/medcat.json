@@ -3936,7 +3936,7 @@
         "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "running_app_med",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3960,7 +3960,8 @@
                         "values": [ "trust", "comfort" ],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "gen_train_argueAM"
             },
             {
                 "text": "p_l stops the patrol and stares at app2. app2 shuffles {PRONOUN/app2/poss} paws, avoiding eye contact. After a few heartbeats, app2 admits they should probably just get on with the job they were given.",
@@ -3974,7 +3975,8 @@
                         "values": [ "trust", "comfort" ],
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "fst_med_herblocation2"
             },
             {
                 "text": "s_c rolls {PRONOUN/s_c/poss} eyes. That kind of information is only for very <i>important</i> cats - which doesn't include app2, s_c is quick to inform {PRONOUN/app2/object}. Now run along and help gather herbs like a good little apprentice.",
@@ -3996,7 +3998,8 @@
                         "values": [ "dislike", "jealousy" ],
                         "amount": 10
                     }
-                ]
+                ],
+                "art": "gen_train_argueAM"
             },
             {
                 "text": "No way, does app2 want to get them both in trouble? s_c's mentor told them to go get <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
@@ -4018,7 +4021,8 @@
                         "values": [ "dislike" ],
                         "amount": 5
                     }
-                ]
+                ],
+                "art": "gen_train_argueAM"
 
             }
         ],
@@ -4122,10 +4126,11 @@
                         "values": [ "dislike" ],
                         "amount": 10
                     }
-                ]
+                ],
+                "art": "gen_train_argueAM"
             },
             {
-                "text": "p_l tentatively leads app2 to the deathberry bush, relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
+                "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
                 "exp": 0,
                 "weight": 40,
                 "stat_skill": [ "INSIGHTFUL,1", "HEALER,1" ],
@@ -4145,10 +4150,11 @@
                         "values": [ "dislike" ],
                         "amount": -10
                     }
-                ]
+                ],
+                "art": "gen_speaking_cat_app"
             },
             {
-                "text": "p_l tentatively leads app2 to the deathberry bush, relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
+                "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
                 "exp": 0,
                 "weight": 40,
                 "stat_trait": [ "thoughtful", "wise", "calm", "sincere" ],
@@ -4168,7 +4174,8 @@
                         "values": [ "dislike" ],
                         "amount": -10
                     }
-                ]
+                ],
+                "art": "gen_speaking_cat_app"
             },
             {
                 "text": "p_l is unsettled by the request, but leads {PRONOUN/app2/object} to the deathberry bushes anyway. When {PRONOUN/p_l/subject} {VERB/p_l/look/looks} back, p_l is startled to see app2's fur bushed out and {PRONOUN/app2/poss} eyes wide, staring at the berries. app2's a talented fighter, but none of {PRONOUN/app2/poss} skills can protect {PRONOUN/app2/object} from the threat of poison. With this insight into {PRONOUN/p_l/poss} Clanmate gained, p_l leads {PRONOUN/app2/object} away.",
