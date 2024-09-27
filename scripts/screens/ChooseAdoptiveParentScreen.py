@@ -10,8 +10,8 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
-from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.game_structure.propagating_thread import PropagatingThread
+from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import get_text_box_theme, scale, scale_dimentions
 from .Screens import Screens
 
@@ -212,7 +212,10 @@ class ChooseAdoptiveParentScreen(Screens):
             sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button", sound_id="page_flip",
+            scale(pygame.Rect((1244, 50), (306, 60))),
+            "",
+            object_id="#next_cat_button",
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"
@@ -605,17 +608,14 @@ class ChooseAdoptiveParentScreen(Screens):
         """Updates all elements with the current cat, as well as the selected cat.
         Called when the screen switched, and whenever the focused cat is switched"""
         self.the_cat = Cat.all_cats[game.switches["cat"]]
-        self.get_previous_next_cat()
 
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
 
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
+        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
 
         for ele in self.current_cat_elements:
             self.current_cat_elements[ele].kill()
@@ -721,7 +721,6 @@ class ChooseAdoptiveParentScreen(Screens):
         self.switch_tab()
 
     def switch_tab(self):
-
         if self.open_tab == "birth":
             self.birth_container.show()
             self.adoptive_container.hide()
@@ -823,7 +822,6 @@ class ChooseAdoptiveParentScreen(Screens):
         )
 
     def on_use(self):
-
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
 
@@ -875,60 +873,6 @@ class ChooseAdoptiveParentScreen(Screens):
                     return False
 
         return True
-
-    def get_previous_next_cat(self):
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        self.previous_cat = 0
-        self.next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            self.previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            self.next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                self.next_cat = 1
-            if (
-                self.next_cat == 0
-                and check_cat.ID != self.the_cat.ID
-                and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
-                and not check_cat.exiled
-                and not check_cat.outside
-                and check_cat.df == self.the_cat.df
-            ):
-                self.previous_cat = check_cat.ID
-
-            elif (
-                self.next_cat == 1
-                and check_cat.ID != self.the_cat.ID
-                and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
-                and not check_cat.exiled
-                and not check_cat.outside
-                and check_cat.df == self.the_cat.df
-            ):
-                self.next_cat = check_cat.ID
-
-            elif int(self.next_cat) > 1:
-                break
-
-        if self.next_cat == 1:
-            self.next_cat = 0
-
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
 
     @staticmethod
     def is_parent_mate(the_cat: Cat, other_cat: Cat):
