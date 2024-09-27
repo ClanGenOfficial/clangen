@@ -1,7 +1,6 @@
 import pygame
 import pygame_gui
 
-import scripts.game_structure.screen_settings
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
@@ -58,7 +57,6 @@ class AllegiancesScreen(Screens):
 
         self.ranks_boxes = []
         self.names_boxes = []
-        y_pos = 0
         for x in allegiance_list:
             self.ranks_boxes.append(
                 pygame_gui.elements.UITextBox(
@@ -94,12 +92,6 @@ class AllegiancesScreen(Screens):
             )
             self.names_boxes[-1].disable()
 
-            y_pos += (
-                700
-                * self.names_boxes[-1].get_relative_rect()[3]
-                / scripts.game_structure.screen_settings.screen_y
-            )
-
     def exit_screen(self):
         for x in self.ranks_boxes:
             x.kill()
@@ -117,18 +109,21 @@ class AllegiancesScreen(Screens):
         """Extra Details will be placed after the cat description, but before the apprentice (if they have one)."""
         output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
-        if len(cat.apprentice) > 0:
-            if len(cat.apprentice) == 1:
-                output += "\n      APPRENTICE: "
-            else:
-                output += "\n      APPRENTICES: "
-            output += ", ".join(
-                [
-                    str(Cat.fetch_cat(i).name).upper()
-                    for i in cat.apprentice
-                    if Cat.fetch_cat(i)
-                ]
-            )
+        if len(cat.apprentice) == 0:
+            return output
+
+        output += (
+            "\n      APPRENTICE: "
+            if len(cat.apprentice) == 1
+            else "\n      APPRENTICES: "
+        )
+        output += ", ".join(
+            [
+                str(Cat.fetch_cat(i).name).upper()
+                for i in cat.apprentice
+                if Cat.fetch_cat(i)
+            ]
+        )
 
         return output
 
