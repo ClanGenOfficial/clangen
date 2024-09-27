@@ -1049,7 +1049,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
+                "text": "Not only do they not find anything, but app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1539,7 +1539,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "text": "The ground is slippery with damp, and when p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [

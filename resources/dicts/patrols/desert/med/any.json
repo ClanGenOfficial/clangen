@@ -388,7 +388,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
+                "text": "Not only do they not find anything, but app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -743,7 +743,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
+                "text": "Not only do they not find anything, but app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1098,7 +1098,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
+                "text": "Not only do they not find anything, but app1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/app1/object}, and by the time they're back at camp, p_l wants to scream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

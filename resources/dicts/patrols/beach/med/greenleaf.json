@@ -1749,7 +1749,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, c_n cats don't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants.",
+                "text": "Unfortunately, c_n cats don't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1777,7 +1777,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} watching app1 playing with them just a few short moons ago.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and it's a potent cure for poison. Their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} watching app1 playing with them just a few short moons ago.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["dandelion"],
@@ -1847,7 +1847,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, c_n cats don't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future.",
+                "text": "Unfortunately, c_n cats don't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3075,7 +3075,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back at camp, p_l wants to screech.",
+                "text": "Not only do they not find anything, but app1 seems to not be taking in a single thing p_l tries to teach, and by the time {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back at camp, p_l wants to screech.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

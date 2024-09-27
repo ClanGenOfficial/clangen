@@ -997,7 +997,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The medicine cat carefully picks out catmint from its known hiding places, carrying it back to camp where it will be stored away from excitable warriors.",
+                "text": "p_l carefully picks out catmint from its known hiding places, carrying it back to camp where it will be stored away from excitable warriors.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"]
@@ -1620,7 +1620,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants.",
+                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1718,7 +1718,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't need to worry about protecting the dandelion patch for the future.",
+                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants. app1 actually starts an argument about it, insistent that {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't need to worry about protecting the dandelion patch for the future.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3120,7 +3120,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech.",
+                "text": "Not only do they not find anything, but app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
