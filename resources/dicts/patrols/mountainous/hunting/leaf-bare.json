@@ -3581,7 +3581,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Taking down a m_mp_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to {PRONOUN/app1/poss} older, fully named warrior siblings.",
+                "text": "Taking down a m_mp_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to {PRONOUN/app1/poss} older, fully-named warrior siblings.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -3880,7 +3880,7 @@
                 ]
             },
             {
-                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from mountain goats, not cats, with the way {PRONOUN/s_c/subject} keep {PRONOUN/s_c/poss} footing as {PRONOUN/s_c/subject} bound up the slopes.",
+                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from mountain goats, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/keep/keeps} {PRONOUN/s_c/poss} footing as {PRONOUN/s_c/subject} {VERB/s_c/bound/bounds} up the slopes.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1"],
@@ -4327,7 +4327,7 @@
                 ]
             },
             {
-                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from mountain goats, not cats, with the way {PRONOUN/s_c/subject} keep {PRONOUN/s_c/poss} footing as {PRONOUN/s_c/subject} bound up the slopes.",
+                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from mountain goats, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/keep/keeps} {PRONOUN/s_c/poss} footing as {PRONOUN/s_c/subject} {VERB/s_c/bound/bounds} up the slopes.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1"],
