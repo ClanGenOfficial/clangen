@@ -59,7 +59,7 @@
 			"r_c is following m_c around a little too closely.",
 			"r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today.",
 			"m_c woke up to find r_c staring at {PRONOUN/m_c/object}.",
-            		"m_c caught m_c taking some bedding from {PRONOUN/m_c/poss} nest!"
+            		"m_c caught r_c taking some bedding from {PRONOUN/m_c/poss} nest!"
 		],
 		"random_trait_constraint": [
 			"strange"
