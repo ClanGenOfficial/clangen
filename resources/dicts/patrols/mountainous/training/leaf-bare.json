@@ -18,7 +18,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their ear tips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows {PRONOUN/app1/object}, only to immediately hear a crack and sink up to {PRONOUN/app2/poss} ear tips in the fluffy stuff. Teasingly, app1 runs around near {PRONOUN/app2/object}, and it turns into a game of app2 romping through the snow trying to catch {PRONOUN/app1/object}.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "text": "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+                "text": "app1 finds a snowdrift, and over the course of an hour {PRONOUN/app1/subject} and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth.",
+                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into {PRONOUN/app1/poss} fur. s_c digs a little hollow, and invites {PRONOUN/app1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -59,7 +59,7 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": ["app2"],
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -78,12 +78,12 @@
                 "weight": 20
             },
             {
-                "text": "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing.",
+                "text": "As they play in the snow, app1 falls over {PRONOUN/app1/self} embarrassingly, and suddenly decides {PRONOUN/app1/subject} {VERB/app1/remember/remembers} that {PRONOUN/app1/subject} {VERB/app1/have/has} other things {PRONOUN/app1/subject} should be doing.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess their predawn adventure when they go to medicine cat den with a running nose.",
+                "text": "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess {PRONOUN/app1/poss} predawn adventure when {PRONOUN/app1/subject} {VERB/app1/go/goes} to medicine cat den with a running nose.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -398,7 +398,7 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place.",
-        "decline_text": "A happier story, the cats ask, please. No one wants difficulty sleeping tonight.",
+        "decline_text": "A happier story, the cats ask, please. No one wants trouble sleeping tonight.",
         "success_outcomes": [
                 {
                     "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",

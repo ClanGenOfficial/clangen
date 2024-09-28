@@ -1448,7 +1448,7 @@
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_bord_story",
-                "stat_skill": ["SPEAKER,1", "LORE,1", "STORY,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -1605,7 +1605,7 @@
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_bord_story",
-                "stat_skill": ["SPEAKER,1", "LORE,1", "STORY,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -1763,7 +1763,7 @@
                 "exp": 15,
                 "weight": 30,
                 "art": "pln_bord_tunnel",
-                "stat_skill": ["SPEAKER,1", "LORE,1", "STORY,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -1933,7 +1933,7 @@
                 "exp": 20,
                 "weight": 30,
                 "art": "pln_bord_tunnel",
-                "stat_skill": ["SPEAKER,1", "LORE,1", "STORY,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
