@@ -5339,7 +5339,7 @@
                 "herbs": ["ragwort"]
             },
             {
-                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouth.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouths.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"]

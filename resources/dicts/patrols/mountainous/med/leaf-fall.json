@@ -4481,7 +4481,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouth, and has a lot of sympathy for app1's disgusted expression. p_l lets them carry some burdock they found instead.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouths, and has a lot of sympathy for app1's disgusted expression. p_l lets them carry some burdock they found instead.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "burdock", "ragwort"],
@@ -4591,7 +4591,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely foul. p_l's pleased with their harvest, particularly the extra burdock, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouth - a sentiment that the patrol helping {PRONOUN/p_l/object} definitely shares... at length, very descriptively.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely foul. p_l's pleased with their harvest, particularly the extra burdock, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouths - a sentiment that the patrol helping {PRONOUN/p_l/object} definitely shares... at length, very descriptively.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "burdock", "ragwort"],
