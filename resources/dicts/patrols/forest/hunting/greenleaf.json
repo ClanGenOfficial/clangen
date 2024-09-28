@@ -118,7 +118,7 @@
                 ]
             },
             {
-                "text": "Though {PRONOUN/app1/subject}{VERB/app1/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased, and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
+                "text": "Though {PRONOUN/app1/subject}{VERB/app1/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],

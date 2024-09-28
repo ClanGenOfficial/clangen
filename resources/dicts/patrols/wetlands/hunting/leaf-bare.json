@@ -2429,7 +2429,7 @@
         "fail_outcomes": []
     },
     {
-        "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge3",
+        "patrol_id": "wtlnd_hunt_swiftfox_leafbare_scavenge3",
         "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2543,7 +2543,7 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge2",
+        "patrol_id": "wtlnd_hunt_swiftfox_leafbare_scavenge2",
         "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2832,7 +2832,7 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge1",
+        "patrol_id": "wtlnd_hunt_swiftfox_leafbare_scavenge1",
         "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2946,7 +2946,7 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge4",
+        "patrol_id": "wtlnd_hunt_swiftfox_leafbare_scavenge4",
         "biome": ["wetlands"],
         "season": ["leaf-bare"],
         "types": ["hunting"],

@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "fst_hunt_leaf-bare_snowstorm1",
+        "patrol_id": "fst_hunt_leafbare_snowstorm1",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -15,7 +15,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice underneath the leaf litter. Only a couple, but in this season, that's more than enough to count as a success. As p_l leads them home there's a sense of security and competence driving them onwards.",
+                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice underneath the leaf litter. Only a couple, but in this season, that's more than enough to count as a success. As p_l leads them home, a sense of security and competence drive them onwards.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -78,7 +78,7 @@
                 ]
             },
             {
-                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled.",
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp, r_c is cold and chilled.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -106,7 +106,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_leaf-bare_snowstorm2",
+        "patrol_id": "fst_hunt_leafbare_snowstorm2",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -155,7 +155,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_leaf-bare_snowstorm3",
+        "patrol_id": "fst_hunt_leafbare_snowstorm3",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -708,7 +708,7 @@
                 ]
             },
             {
-                "text": "Though {PRONOUN/app1/subject} {VERB/app1/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased, and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
+                "text": "Though {PRONOUN/app1/subject} {VERB/app1/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1811,7 +1811,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice underneath the leaf litter. Only a couple, but in this season, that's more than enough to count as a success. As p_l leads them home there's a sense of security and competence driving them onwards.",
+                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice underneath the leaf litter. Only a couple, but in this season, that's more than enough to count as a success. As p_l leads them home, a sense of security and competence drive them onwards.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -1874,7 +1874,7 @@
                 ]
             },
             {
-                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled.",
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp, r_c is cold and chilled.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2107,7 +2107,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fox_leaf-barescavenge1",
+        "patrol_id": "fst_hunt_fox_leafbare_scavenge1",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2251,7 +2251,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fox_leaf-barescavenge2",
+        "patrol_id": "fst_hunt_fox_leafbare_scavenge2",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2395,7 +2395,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fox_leaf-barescavenge3",
+        "patrol_id": "fst_hunt_fox_leafbare_scavenge3",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2557,7 +2557,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_foxgray_leaf-barescavenge1",
+        "patrol_id": "fst_hunt_foxgray_leafbare_scavenge1",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2690,7 +2690,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_foxgray_leaf-barescavenge2",
+        "patrol_id": "fst_hunt_foxgray_leafbare_scavenge2",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
@@ -2795,7 +2795,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_foxgray_leaf-barescavenge3",
+        "patrol_id": "fst_hunt_foxgray_leafbare_scavenge3",
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
