@@ -44,8 +44,8 @@
 		"interactions": [
 			"m_c helps r_c pick burrs out of {PRONOUN/r_c/poss} fur.",
 			"m_c came across r_c napping and left {PRONOUN/r_c/object} be, making sure no one else woke {PRONOUN/r_c/object} either.",
-            "m_c takes {PRONOUN/m_c/poss} time grooming r_c's pelt and making it shine.",
-            "m_c is sharing tongues with r_c."
+            		"m_c takes {PRONOUN/m_c/poss} time grooming r_c's pelt and making it shine.",
+            		"m_c is sharing tongues with r_c."
 		]
 	},
 	{
@@ -93,9 +93,9 @@
 			"r_c is listening to m_c's troubles.",
 			"r_c noticed m_c was struggling, and offered to help {PRONOUN/m_c/object}.",
 			"r_c offered help to m_c during a hard time.",
-            "r_c offers to help with one of m_c's more tedious tasks.",
+            		"r_c offers to help with one of m_c's more tedious tasks.",
 			"r_c helps m_c with a tedious task and it makes the whole day a lot easier.",
-            "m_c had a nightmare and r_c offered to share {PRONOUN/r_c/poss} nest to comfort m_c."
+            		"m_c had a nightmare and r_c offered to share {PRONOUN/r_c/poss} nest to comfort m_c."
 		],
 		"random_trait_constraint": [
 			"empathetic"
@@ -151,7 +151,7 @@
 			"m_c wants to snuggle with r_c.",
 			"m_c is hiding under a bush from r_c, but {PRONOUN/m_c/subject} can't stop giggling.",
 			"m_c plops down near r_c, sneaking glances at {PRONOUN/r_c/object} expectantly. r_c doesn't understand until m_c muses aloud to {PRONOUN/m_c/self} about whether or not r_c would play with {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} asked.",
-            "r_c woke up from a nap in the clearing to find m_c stuffing bedding scraps under {PRONOUN/r_c/object} to make {PRONOUN/r_c/object} a cozy nest."
+            		"r_c woke up from a nap in the clearing to find m_c stuffing bedding scraps under {PRONOUN/r_c/object} to make {PRONOUN/r_c/object} a cozy nest."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -264,21 +264,21 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase",
-            "platonic": "increase",
+            		"platonic": "increase",
 			"trust": "increase",
-            "admiration": "increase",
+           	 	"admiration": "increase",
 			"dislike": "decrease"
 		},
-        "reaction_main_cat": {
+        	"reaction_main_cat": {
 			"comfortable": "increase",
 			"trust": "increase",
-            "platonic": "increase",
-		"dislike": "decrease"
+            		"platonic": "increase",
+			"dislike": "decrease"
 		},
-         "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall"
-        ]
+         	"season": [
+            		"Newleaf",
+            		"Greenleaf",
+            		"Leaf-fall"
+        	]
 	}
 ]
