@@ -2516,7 +2516,7 @@
                 ]
             },
             {
-                "text": "s_c positions themselves down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat.",
+                "text": "s_c positions {PRONOUN/s_c/self} down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1", "FIGHTER,1"],

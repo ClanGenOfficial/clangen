@@ -359,7 +359,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
+                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -380,7 +380,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
+                "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -480,7 +480,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother red vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother red vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -790,7 +790,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+                "text": "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by {PRONOUN/s_c/self}. Now neither the fox nor her dependent cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -805,7 +805,7 @@
                 ]
             },
             {
-                "text": "A brilliant battle move by s_c knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} body to do it alone.",
+                "text": "A brilliant battle move by s_c knocks the red vixen {PRONOUN/s_c/subject} {VERB/s_c/find/finds} off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} body to do it alone.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -996,7 +996,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "The patrol decides not to pursue the fox.",
+        "decline_text": "r_c decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1014,7 +1014,7 @@
                 ]
             },
             {
-                "text": "This swift vixen is scouting out potential dens for greenleaf, r_c realizes. This could be bad, and r_c gives up on the hunt, instead following the vixen, yowling and hissing, using their persistence to warn her off from trying to live here.",
+                "text": "This swift vixen is scouting out potential dens for greenleaf, r_c realizes. This could be bad, and r_c gives up on the hunt, instead following the vixen, yowling and hissing, using {PRONOUN/r_c/poss} persistence to warn her off from trying to live here.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1028,7 +1028,7 @@
                 ]
             },
             {
-                "text": "s_c positions themselves down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat.",
+                "text": "s_c positions {PRONOUN/s_c/self} down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1", "FIGHTER,1"],
