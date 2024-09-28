@@ -3078,7 +3078,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As they wander through the sprouting newleaf plains, app1 trying not to let the bright flowers distract them, p_l awkwardly asks app1 how {PRONOUN/app1/subject} think {PRONOUN/app1/poss} training is going.",
+        "intro_text": "As they wander through the sprouting newleaf plains, app1 trying not to let the bright flowers distract them, p_l awkwardly asks app1 how {PRONOUN/app1/subject} {VERB/app1/think/thinks} {PRONOUN/app1/poss} training is going.",
         "decline_text": "app1 carefully talks around the subject, telling p_l nothing of importance.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
