@@ -1167,7 +1167,7 @@
                 ]
             },
             {
-                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
+                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the kid prize. But the fox values it just as dearly and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -1187,7 +1187,7 @@
                 ]
             },
             {
-                "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
+                "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
