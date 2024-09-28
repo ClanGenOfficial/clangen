@@ -698,7 +698,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "It takes every scrap of r_c's bravery and strength to drive away the red vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless along the coastline, before they start to compete for prey in leaf-bare.",
+                "text": "It takes every scrap of r_c's bravery and strength to drive away the red vixen - her near-grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless along the coastline, before they start to compete for prey in leaf-bare.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [

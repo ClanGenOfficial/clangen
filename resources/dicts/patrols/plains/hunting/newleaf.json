@@ -15,7 +15,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol's cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "The patrol's cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -151,7 +151,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "The patrol's cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "The patrol's cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -656,7 +656,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -805,7 +805,7 @@
                 ]
             },
             {
-                "text": "A brilliant battle move by s_c knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone.",
+                "text": "A brilliant battle move by s_c knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONUN/s_c/poss} body to do it alone.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -834,7 +834,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish and carries off the body to feed her litter.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],

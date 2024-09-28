@@ -15,7 +15,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol's cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "The patrol's cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half-full of venison and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -151,7 +151,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The patrol's cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "The patrol's cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half-full of venison and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -302,7 +302,7 @@
                 ]
             },
             {
-                "text": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up. They pounce onto the fox's back, digging in their claws. It's a wild ride through the plains until the fox bucks them off, but it wins them the fawn carcass.",
+                "text": "s_c uses every trick in {PRONOUN/s_c/poss} fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, biding {PRONOUN/s_c/poss} time until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the plains until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -466,7 +466,7 @@
                 ]
             },
             {
-                "text": "The patrol drives away the red fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
+                "text": "The patrol drives away the red fox and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -480,7 +480,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by {PRONOUN/s_c/self}. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -655,7 +655,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -683,7 +683,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
+                "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her cubs pose a threat to c_n.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -791,7 +791,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "It takes r_c's every scrap of bravery and strength to drive away the red vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
+                "text": "It takes r_c's every scrap of bravery and strength to drive away the red vixen - her near-grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [
@@ -805,7 +805,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+                "text": "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by {PRONOUN/s_c/self}. Now neither the fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -820,7 +820,7 @@
                 ]
             },
             {
-                "text": "A brilliant battle move by s_c at a critical moment knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone.",
+                "text": "A brilliant battle move by s_c at a critical moment knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONUN/s_c/poss} body to do it alone.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -849,7 +849,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish and carries off the body to feed her litter.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
