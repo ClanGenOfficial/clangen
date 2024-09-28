@@ -70,7 +70,7 @@
             },
             {
                 
-                "text": "s_c follows the scent all the way to the source - the wide, slavering jaws of the source. The huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.",
+                "text": "s_c follows the scent all the way to the source - the wide, slavering jaws of the source - and the huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.",
                 "exp": 40,
                 "weight": 5,
                 "stat_trait": [ "playful", "childish", "strange" ],
@@ -207,6 +207,29 @@
                     "righteous"
                 ],
                 "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. p_l reacts with amazement to s_c's unconventional technique.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 15
+                    },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
@@ -368,6 +391,29 @@
                     "righteous"
                 ],
                 "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. The patrol reacts with amazement to s_c's unconventional technique.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 15
+                    },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
