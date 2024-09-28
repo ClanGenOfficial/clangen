@@ -50,7 +50,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_L/gaze/gazes} into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because {PRONOUN/p_l/subject} really could have used some guidance from StarClan.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because {PRONOUN/p_l/subject} really could have used some guidance from StarClan.",
                 "exp": 0,
                 "weight": 20
             }
