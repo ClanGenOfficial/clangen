@@ -67,6 +67,22 @@
                         "amount": 15
                     }
                 ]
+            },
+            {
+                
+                "text": "s_c follows the scent all the way to the source - the wide, slavering jaws of the source. The huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.",
+                "exp": 40,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange" ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
