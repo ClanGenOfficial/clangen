@@ -770,7 +770,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads towards the grass to check on the noise when a rabbit bursts out! {PRONOUN/p_l/subject/CAP} {VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
+                "text": "p_l pads towards the grass to check on the noise when a rabbit bursts out! {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is}n't quick enough to catch it, but at least the noise was nothing dangerous.",
                 "exp": 0,
                 "weight": 20
             },
