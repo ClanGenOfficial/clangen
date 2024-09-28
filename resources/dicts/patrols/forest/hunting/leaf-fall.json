@@ -23,7 +23,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
+                "text": "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and {VERB/p_l/kill/kills} it with ease.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -164,7 +164,7 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 50,
         "success_outcomes": [

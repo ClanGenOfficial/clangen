@@ -10290,7 +10290,7 @@
                 "weight": 20
             },
             {
-                "text": "{PRONOUN/p_l/subject/CAP} don't know what it means - {PRONOUN/p_l/subject} <i>never</i> {VERB/p_l/know/knows} what it means, and p_l curses the stars as {PRONOUN/p_l/subject} {VERB/p_l/rise/rises} to {PRONOUN/p_l/poss} feet, apologizing profusely for disrupting the patrol.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/do/does}n't know what it means - {PRONOUN/p_l/subject} <i>never</i> {VERB/p_l/know/knows} what it means, and p_l curses the stars as {PRONOUN/p_l/subject} {VERB/p_l/rise/rises} to {PRONOUN/p_l/poss} feet, apologizing profusely for disrupting the patrol.",
                 "exp": 30,
                 "weight": 5
             }
