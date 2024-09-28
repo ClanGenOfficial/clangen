@@ -1202,7 +1202,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and uncomfortable.",
+                "text": "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and unsettled.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1803,7 +1803,7 @@
                 ]
             },
             {
-                "text": "app1 stalks a mouse to an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair heads back home, there's a happy bounce in app1's steps.",
+                "text": "app1 stalks a mouse to an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair heads back home, there's a happy bounce in app1's step.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
