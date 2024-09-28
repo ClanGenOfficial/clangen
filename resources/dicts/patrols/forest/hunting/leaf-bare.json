@@ -755,7 +755,7 @@
             "leader": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -5518,13 +5518,13 @@
             "normal adult": [1, 6]
         },
         "weight": 40,
-        "intro_text": "app1 has been acting weird all day, full of too quick answers and furtive glances. A parent usually knows, p_l having seen that look too often in app1's nursery days. So, when {PRONOUN/app1/subject} {VERB/app1/creep/creeps} out of camp and into the frosty chilled shadows of the forest at night, p_l is there waiting for {PRONOUN/app1/object}. app1 freezes, staring up with wide eyes.",
-        "decline_text": "A stern glance and wide swish of {PRONOUN/p_l/poss} tail is all that's needed to turn app1's nighttime wanderings around and head {PRONOUN/app1/object} back to the apprentices' den. p_l will have a talk with {PRONOUN/app1/subject} in the morning - leaf-bare isn't the season to take risks like this.",
+        "intro_text": "app1 has been acting weird all day, full of too-quick answers and furtive glances. A parent usually knows; p_l has seen that look too often in app1's nursery days. So, when {PRONOUN/app1/subject} {VERB/app1/creep/creeps} out of camp and into the frosty chilled shadows of the forest at night, p_l is there waiting for {PRONOUN/app1/object}. app1 freezes, staring up with wide eyes.",
+        "decline_text": "A stern glance and wide swish of {PRONOUN/p_l/poss} tail is all that's needed to turn app1's nighttime wanderings around and send {PRONOUN/app1/object} back to the apprentices' den. p_l will have a talk with {PRONOUN/app1/object} in the morning - leaf-bare isn't the season to take risks like this.",
         "chance_of_success": 40,
         "relationship_constraint": ["parent/child"],
         "success_outcomes": [
             {
-                "text": "app1 straightens - c_n <i>needs</i> food, and app1 is going to provide. {PRONOUN/app1/subject/CAP} stride forward, tail beckoning p_l as though this is a normal hunt, not an illicit adventure, and helplessly p_l follows, determined to keep app1 safe. But lead by {PRONOUN/p_l/poss} child, in the dark and cold, together they bring down a kiwi bird. p_l will cover for app1's shenanigans, just this once.",
+                "text": "app1 straightens - c_n <i>needs</i> food, and app1 is going to provide. {PRONOUN/app1/subject/CAP} {VERB/app1/stride/strides} forward, tail beckoning p_l as though this is a normal hunt, not an illicit adventure, and helplessly p_l follows, determined to keep app1 safe. WIth app1 in leading {PRONOUN/p_l/object} through the dark and cold, together they bring down a kiwi bird. p_l will cover for app1's shenanigans, just this once.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -5568,7 +5568,7 @@
                 ]
             },
             {
-                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} been tracking a night bird, app1 explains, and - look could p_l just help {PRONOUN/app1/object}? Which is how p_l finds {PRONOUN/p_l/self} setting up an ambush for the kiwi on a forest trail, at midnight, like an insane cat. Even worse, it <i>works,</i> both deeply impressing and worrying p_l. {PRONOUN/p_l/subject/CAP} don't want app1 encouraged to attempt these adventures.",
+                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} been tracking a night bird, app1 explains, and - look could p_l just help {PRONOUN/app1/object}? Which is how p_l finds {PRONOUN/p_l/self} setting up an ambush for the kiwi on a forest trail, at midnight, like a hare-brain. Even worse, it <i>works,</i> both deeply impressing and worrying p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/do/does}n't want app1 encouraged to attempt these adventures.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],
@@ -5594,7 +5594,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 bolts. p_l loses sight of {PRONOUN/app1/object} in the bushes, but doesn't lose {PRONOUN/app1/poss} scent - and good thing too. Apparently app1 has found the nest of a kiwi. p_l is only just in time to rescue {PRONOUN/app1/object} from getting the snot kicked out of {PRONOUN/app1/object} by the irate and far less helpless than predicted bird. Exhausted and panting, {PRONOUN/p_l/subject} curl around {PRONOUN/p_l/poss} kit, too tired to scold.",
+                "text": "app1 bolts. p_l loses sight of {PRONOUN/app1/object} in the bushes, but doesn't lose {PRONOUN/app1/poss} scent - and good thing too. Apparently app1 has found the nest of a kiwi. p_l is only just in time to rescue {PRONOUN/app1/object} from getting the snot kicked out of {PRONOUN/app1/object} by the irate and far-less-helpless-than-predicted bird. Exhausted and panting, {PRONOUN/p_l/subject} {VERB/p_l/curl/curls} around {PRONOUN/p_l/poss} kit, too tired to scold.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

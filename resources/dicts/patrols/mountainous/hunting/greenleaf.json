@@ -1202,7 +1202,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers away.",
+                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
