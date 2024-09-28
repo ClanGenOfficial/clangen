@@ -134,7 +134,7 @@
 		"interactions": [
 			"m_c keeps leaving all of the boring apprentice tasks for r_c to do by {PRONOUN/r_c/self}.",
 			"m_c tells r_c's mentor that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been sneaking out of camp without permission.",
-			"m_c has a disagreement with r_c over who is the better hunter.",
+			"m_c had a disagreement with r_c over who the better hunter is.",
 			"m_c accuses r_c of cheating; there's no way {PRONOUN/r_c/subject} could win so many practice fights fairly."
 		],
 		"main_status_constraint": [
@@ -183,7 +183,7 @@
 			"r_c is caught tossing out a gift m_c <i>just</i> gave {PRONOUN/r_c/object}.",
 			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back.",
 			"m_c interrupted r_c when {PRONOUN/r_c/subject} {VERB/r_c/were/was} very busy with an important task, ruining {PRONOUN/r_c/poss} focus.",
-			"r_c purposefully pick the smallest prey for m_c when {PRONOUN/m_c/subject} asked for help.",
+			"r_c purposefully picked the smallest prey for m_c when {PRONOUN/m_c/subject} asked for help.",
 			"r_c was found spreading rumors about m_c stealing stuff from {PRONOUN/r_c/object}.",
 			"r_c was caught hiding m_c's belongings.",
 			"r_c publicly mocked m_c during a Gathering.",

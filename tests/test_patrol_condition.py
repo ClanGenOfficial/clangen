@@ -58,7 +58,7 @@ class TestCondition(unittest.TestCase):
             {
                 "text": "It's not just spotting things that s_c is talented at - finding dandelions"
                         " in leaf-bare is hard enough, but finding good, non-wilted leaves is next to"
-                        " impossible, and it's a mark of s_c's unique skills that they manage it.",
+                        " impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],

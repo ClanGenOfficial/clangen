@@ -61,7 +61,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol wander near a Thunderpath, they watch Twolegs throw something from a monster. Intrigued, they wander over.",
+        "intro_text": "As the patrol wander near a Thunderpath, they watch a Twoleg throw something from a monster. Intrigued, they wander over.",
         "decline_text": "The patrol decides to avoid the Twoleg object.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -84,7 +84,7 @@
                 "weight": 20
             },
             {
-                "text": "As r_c pokes around the strange smelling whatever-it-is, {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} past a piece of metal that tears through {PRONOUN/r_c/poss} ear, sending {PRONOUN/r_c/object} skittering backwards with a yelp.",
+                "text": "As r_c pokes {PRONOUN/r_c/poss} head around the strange smelling whatever-it-is, {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} past a piece of metal that tears through {PRONOUN/r_c/poss} ear, sending {PRONOUN/r_c/object} skittering backwards with a yelp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -401,7 +401,8 @@
                 ]
             },
             {
-                "text": "s_c uses every trick in {PRONOUN/s_c/poss} fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the plains until the fox bucks {PRONOUN/s_c/object} off, but it wins them the fawn carcass.",
+                "text": "s_c uses every trick in {PRONOUN/s_c/poss} fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, biding {PRONOUN/s_c/poss} time until the perfect opportunity opens up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the plains until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
+
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
@@ -443,7 +444,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, there are no injuries.",
+                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} {VERB/r_c/sustain/sustains} no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1101,7 +1102,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of speed that shows where the small carnivore gets its name.",
+                "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon with speed that justifies its name.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1115,7 +1116,7 @@
                 ]
             },
             {
-                "text": "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and use the patrol switching to r_c's defense as their signal to flee.",
+                "text": "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and once the patrol switches to r_c's defense, the foxes flee into the plains.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1199,7 +1200,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of speed that shows where the small carnivore gets its name.",
+                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1213,7 +1214,7 @@
                 ]
             },
             {
-                "text": "As r_c descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee.",
+                "text": "As r_c descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, then both foxes take the chance to flee.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1251,8 +1252,7 @@
         "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "success_outcomes": [
-            {
-                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
+            {                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -1267,7 +1267,7 @@
                 ]
             },
             {
-                "text": "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the Clan cats gnaw off a leg, and take their bony prize back to camp for c_n.",
+                "text": "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the Clan cats gnaw off a leg and take their bony prize back to camp for c_n.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -1366,7 +1366,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only {PRONOUN/r_c/self} there, {PRONOUN/r_c/subject} can't bring back as much meat as {PRONOUN/r_c/subject}'d like.",
+                "text": "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss, both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only {PRONOUN/r_c/self} there, {PRONOUN/r_c/subject} can't bring back as much meat as {PRONOUN/r_c/subject}'d like.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"]
@@ -1529,8 +1529,8 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 has snuck out of camp alone, hoping {PRONOUN/app1/subject}'ll find a squirrel grown lazy in the heat of greenleaf. Running through everything {PRONOUN/app1/subject}'ve been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/app1/scent/scents} the air and {VERB/app1/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters.",
-        "decline_text": "They're focusing so hard, they don't notice a Clanmate is standing silently behind them, waiting for them to notice that they've been caught red-pawed. Oops!",
+        "intro_text": "app1 has snuck out of camp alone, hoping {PRONOUN/app1/subject}'ll find a squirrel grown lazy in the heat of greenleaf. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/app1/scent/scents} the air and {VERB/app1/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters.",
+        "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1540,7 +1540,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "app1 hears a quiet snuffling nearby, and slides into a hunting crouch. Slinking forward, {PRONOUN/app1/subject} {VERB/app1/find/finds} the source is a squirrel, foraging for food! {PRONOUN/app1/subject/CAP} {VERB/app1/stalk/stalks} carefully and {VERB/app1/catch/catches} it while it's distracted, heading home with {PRONOUN/app1/poss} head held high.",
+                "text": "app1 hears a quiet snuffling nearby and slides into a hunting crouch. Slinking forward, {PRONOUN/app1/subject} {VERB/app1/find/finds} the source is a squirrel, foraging for food! {PRONOUN/app1/subject/CAP} {VERB/app1/stalk/stalks} carefully and {VERB/app1/catch/catches} it while it's distracted, heading home with {PRONOUN/app1/poss} head held high.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1548,7 +1548,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, they don't end up finding anything, and they slink back to camp empty-pawed.",
+                "text": "Unfortunately, {PRONOUN/app1/subject} {VERB/app1/do/does}n't end up finding anything, and {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp empty-pawed.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1744,7 +1744,7 @@
                 ]
             },
             {
-                "text": "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. One really couldn't ask for a better hunt.",
+                "text": "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1759,7 +1759,7 @@
                 ]
             },
             {
-                "text": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind.",
+                "text": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1892,7 +1892,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path the mouse has trodded into the dirt at the base of the grass stalks - that's what it'll try to use as an escape path.",
+        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks - that's what it'll try to use as an escape path.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2065,7 +2065,7 @@
         "relationship_constraint": null,
         "pl_skill_constraint": null,
         "intro_text": "The patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?",
-        "decline_text": "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venoumous threat on their hunting path.",
+        "decline_text": "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venomous threat on their hunting path.",
         "success_outcomes": [
             { 
         "text": "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air s_c's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. ",
@@ -2084,7 +2084,7 @@
             ]
         },
         { 
-        "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps it's dripping fangs shut a single fur's length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path, that was too close!",
+        "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path - that was too close!",
                 "exp": 5,
                 "weight": 20, 
                 "prey": ["very small"],
@@ -2126,7 +2126,7 @@
                 
             },
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, it fills {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine cat den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, filling {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine cat den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
                 "exp": 0,
                 "weight": 10,
                 "relationships": [
@@ -2153,7 +2153,7 @@
     
             },
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c/poss} Clan finds {PRONOUN/r_c/poss} cold.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c/poss} Clan finds {PRONOUN/r_c/object} cold.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"]
@@ -3215,7 +3215,7 @@
         },
         "weight": 20,
         "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} {VERB/app1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
-        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
+        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in {PRONOUN/app1/poss} nest.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -3419,7 +3419,7 @@
         },
         "weight": 20,
         "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} {VERB/app1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
-        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
+        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in {PRONOUN/app1/poss} nest.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -3520,7 +3520,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 knows {PRONOUN/app1/poss} patrol is still bringing back a little prey for the fresh-kill pile, but... it's so disappointing. {PRONOUN/app1/subject/CAP} really wanted to prove how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} grown to their family.",
+                "text": "app1 knows {PRONOUN/app1/poss} patrol is still bringing back a little prey for the fresh-kill pile, but... it's so disappointing. {PRONOUN/app1/subject/CAP} really wanted to prove how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} grown to {PRONOUN/app1/poss} family.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3739,7 +3739,7 @@
                 ]
             },
             {
-                "text": "It's been a while since they've been on a patrol alone together, and after they catch a couple p_mp_p for the fresh-kill pile r_c spends a bit just chasing p_l around the plains, batting at each other in a moment of silliness.",
+                "text": "It's been a while since they've been on a patrol alone together, and after they catch a couple p_mp_p for the fresh-kill pile, r_c spends a bit just chasing p_l around the plains, batting at each other in a moment of silliness.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
@@ -4379,7 +4379,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} believe c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely admit to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} a medicine cat, and ask {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the plain's herbal properties, especially in the heat of greenleaf?",
+        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} a medicine cat, and ask {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the plain's herbal properties, especially in the heat of greenleaf?",
         "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
         "chance_of_success": 50,
         "success_outcomes": [

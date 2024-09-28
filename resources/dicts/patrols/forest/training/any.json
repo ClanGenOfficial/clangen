@@ -45,7 +45,7 @@
                 "text": "s_c struggles to take the lesson seriously, and eventually the training session ends early with no real progress made.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "playful"],
+                "stat_trait": ["troublesome", "childish", "playful"],
                 "can_have_stat": ["app"]
             },
             {
@@ -75,11 +75,11 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
-        "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
+        "decline_text": "Surely it must be nothing... Uneasily, r_c continues on.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, {PRONOUN/r_c/subject} manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
                 "exp": 40,
                 "weight": 20,
                 "relationships": [
@@ -93,7 +93,7 @@
                 ]
             },
             {
-                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This will be important information to report back at camp.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow. After a few moments, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This is important information to report back at camp.",
                 "exp": 40,
                 "weight": 5,
                 "relationships": [
@@ -126,7 +126,6 @@
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -134,7 +133,8 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "relationships": [
                     {
@@ -157,10 +157,12 @@
                     "ambitious",
                     "bloodthirsty",
                     "bold",
+                    "childish",
                     "confident",
                     "daring",
                     "fierce",
                     "insecure",
+                    "oblivious",
                     "playful",
                     "shameless",
                     "troublesome",
@@ -197,7 +199,7 @@
                 ]
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/s_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -236,11 +238,11 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
-        "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
+        "decline_text": "Surely it must be nothing... Uneasily, the patrol continues on.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
+                "text": "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? p_l comes up with a plan: stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
                 "exp": 40,
                 "weight": 20,
                 "relationships": [
@@ -254,7 +256,7 @@
                 ]
             },
             {
-                "text": "p_l organizes the patrol, and together they lift a long skinny branch from the forest floor, shoving the end into the sett. With half the branch's length to go there's an outraged explosion of fizzing from the depths of the burrow, and the patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
+                "text": "p_l organizes the patrol, and together they lift a long, skinny branch from the forest floor, shoving the end into the sett. With half the branch's length to go, there's an outraged explosion of fizzing from the depths of the burrow. The patrol retreats to report back to camp. With any luck, it's been injured, but no one wants to check.",
                 "exp": 40,
                 "weight": 5,
                 "relationships": [
@@ -268,7 +270,7 @@
                 ]
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -295,7 +297,8 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "relationships": [
                     {
@@ -332,10 +335,12 @@
                     "ambitious",
                     "bloodthirsty",
                     "bold",
+                    "childish",
                     "confident",
                     "daring",
                     "fierce",
                     "insecure",
+                    "oblivious",
                     "playful",
                     "shameless",
                     "troublesome",
@@ -352,7 +357,7 @@
                 ]
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home in one piece... including the badger.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -386,7 +391,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Trailing behind the patrol, there's a mighty crash above r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/trail/trails} behind the patrol, there's a mighty crash above r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c/subject} {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -444,7 +449,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -551,7 +555,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, s_c's glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -682,18 +686,18 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to them. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": ["s_c", "p_l", "p_l", "s_c"],
@@ -708,7 +712,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l works all day to free r_c and gets nothing else done.",
+                "text": "p_l works all day to free r_c, and the two of them get nothing else done.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -723,7 +727,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, s_c tells r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} pull {PRONOUN/r_c/self} out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, s_c tells r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/pull/pulls} {PRONOUN/r_c/self} out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -734,8 +738,7 @@
                     "shameless",
                     "strict",
                     "troublesome",
-                    "vengeful",
-                    "bossy"
+                    "vengeful"
                 ],
                 "relationships": [
                     {
@@ -860,14 +863,13 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to them. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -901,7 +903,7 @@
                 "art": "fst_train_stuck_outcome"
             },
             {
-                "text": "As s_c rarely has patience for other cats, s_c tells r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} pull {PRONOUN/r_c/self} out from under the branches.",
+                "text": "As s_c rarely has patience for other cats, s_c tells r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/pull/pulls} {PRONOUN/r_c/self} out from under the branches.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -1006,7 +1008,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Pinned under the branches, r_c yowls until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
+                "text": "Pinned under the branches, r_c yowls until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore. Thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
                 "exp": 0,
                 "weight": 20,
                 "art": "fst_train_stuck_outcome"
@@ -1071,7 +1073,7 @@
                 "weight": 5
             },
             {
-                "text": "There's nothing to worry about! s_c pads confidently through c_n territory, assured in {PRONOUN/r_c/poss} safety by the strength of c_n borders.",
+                "text": "There's nothing to worry about! s_c pads confidently through c_n territory, assured in {PRONOUN/r_c/poss} safety by the strength of c_n's borders.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1094,7 +1096,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, imagining what could be out there... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp.",
+                "text": "s_c shivers a little, imagining what could be out there... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"],
@@ -1171,7 +1173,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp.",
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["insecure", "lonesome", "nervous"]
@@ -1368,93 +1370,8 @@
                 "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a warrior who, in an impossible battle defending a nursery full of kits, sacrificed his body and let StarClan transform his back into an impenetrable wall of thorns to protect his Clan.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["STORY,1", "LORE,1"],
                 "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/object} to take the training session seriously.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_train_porcupine2",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "fst_train_porcupine",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
-        "decline_text": "When they get there, they can't find it, and the lesson fails.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "app1 watches the big bushy lump of a creature with wide eyes, tail twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
-                "exp": 15,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery. app1 looks a bit disbelieving, so p_l darts towards the porcupine, making it throw its back up at the cats in a full threat display, spines just as fluffed up as app1's pelt.",
-                "exp": 15,
-                "weight": 5,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1517,11 +1434,32 @@
                         "amount": 5
                     }
                 ]
+            },
+            {
+                "text": "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/object} to take the training session seriously.",
+                "exp": 0,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "fst_train_porcupine3",
+        "patrol_id": "fst_train_porcupine2",
         "biome": ["forest"],
         "season": ["any"],
         "types": ["training"],
@@ -1585,94 +1523,8 @@
                 "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a warrior who, in an impossible battle defending a nursery full of kits, sacrificed his body and let StarClan transform his back into an impenetrable wall of thorns to protect his Clan. app1 and app2 spend the walk back to c_n wondering what this ancient warrior was like.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["STORY,1", "LORE,1"],
                 "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_train_porcupine4",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "fst_train_porcupine",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
-        "decline_text": "When they get there, they can't find it, and the lesson fails.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "app1 and app2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
-                "exp": 15,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery. app1 looks a bit disbelieving, so p_l darts towards the porcupine, making it throw its back up at the cats in a full threat display, spines just as fluffed up as app2's pelt.",
-                "exp": 15,
-                "weight": 5,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1735,6 +1587,27 @@
                         "amount": 5
                     }
                 ]
+            },
+            {
+                "text": "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
+                "exp": 0,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
             }
         ]
     },
@@ -1752,7 +1625,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "Off in the woods, app1 waits for app2 underneath the low hanging branches of a willow. The tip of {PRONOUN/app1/poss} tail twitches in excitement.",
+        "intro_text": "Off in the woods, app1 waits for app2 underneath the low-hanging branches of a willow. The tip of {PRONOUN/app1/poss} tail twitches in excitement.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1826,7 +1699,7 @@
                 ]
             },
             {
-                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, {PRONOUN/app2/subject} {VERB/app2/trot/trots} up, asking why app1 wanted to meet there. app1 stutters out some nonsense about hunting and then runs off into the forest.",
+                "text": "app2 emerges into the hidden soft light under the willow tree. Seeing app1, {PRONOUN/app2/subject} {VERB/app2/trot/trots} up, asking why app1 wanted to meet there. Nerve breaking, app1 stutters out some nonsense about hunting and then runs off into the forest.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1875,7 +1748,7 @@
                 ]
             },
             {
-                "text": "It's a long but satisfying training session, and both cats get the chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sunset and smiles.",
+                "text": "It's a long, but satisfying training session, and both cats get the chance to test themselves and work on their skills. It ends with the two of them sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sunset, and smiles.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1972,7 +1845,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_10", "not_mates"],
@@ -2087,7 +1960,7 @@
                 "text": "c_n myths tell of the Clan their founders were descended from, who lived in a grove of redwood trees shielding them from the world. The Clan has taken lessons from it, about how to use the resources of the forest to keep themselves safe, and to this day they still live with tree trunks standing sentry around camp.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1", "TEACHER,1"],
+                "stat_skill": ["SPEAKER,1", "TEACHER,1", "LORE,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -2133,7 +2006,7 @@
                 "text": "Churlish and grumpy, app1 storms past p_l, not interested in hearing {PRONOUN/p_l/poss} dumb lesson.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome"],
+                "stat_trait": ["troublesome", "grumpy"],
                 "can_have_stat": ["app"],
                 "relationships": [
                     {
@@ -2245,7 +2118,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "app1 gathers {PRONOUN/app1/poss} strength, butt wiggling with excitement, legs tense, and throws {PRONOUN/app1/self} upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly.",
-        "decline_text": "What was that?! StarClan?! app1 is going home, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} like this!",
+        "decline_text": "What was that?! StarClan?! app1 is going home, {PRONOUN/app1/subject} {VERB/app1/do/does}n't like this!",
         "success_outcomes": [
             {
                 "text": "Well it's not like they can do better, app1 shouts back at the crows! Humph. Birdbrains.",
@@ -2255,7 +2128,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Who said that?! How dare they insult c_n's mightiest hunter! app1 yowls threats at the bushes as {PRONOUN/app1/subject} {VERB/app1/search/searches} for {PRONOUN/app1/poss} foe, as above, the crows laugh quietly to each other.",
+                "text": "Who said that?! How dare they insult c_n's mightiest hunter! app1 yowls threats at the bushes as {PRONOUN/app1/subject} {VERB/app1/search/searches} for {PRONOUN/app1/poss} foe. Above, the crows laugh quietly to each other.",
                 "exp": 0,
                 "weight": 20
             }
@@ -2278,7 +2151,7 @@
         "chance_of_success": 50,
         "pl_skill_constraint": ["LORE,1"],
         "intro_text": "app1 watches the shrew scurry below {PRONOUN/app1/object}, lining up a flawless pounce from the tree branches. {PRONOUN/app1/subject/CAP} {VERB/app1/purr/purrs} with amusement towards {PRONOUN/app1/poss} hapless prey.",
-        "decline_text": "This is too easy - r_c declines to chase it, wanting harder prey.",
+        "decline_text": "This is too easy - app1 declines to chase it, wanting harder prey.",
         "success_outcomes": [
                 {
                     "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. app1 isn't just being disrespectful - {PRONOUN/app1/subject}{VERB/app1/'re/'s} being stupid. That's a hero's shrew, it'd be able to hold ten of app1 on its spine without sweating, and inedible besides, like all shrews. app1 nods, and apologies. Every hunt deserves respect.",
