@@ -1459,7 +1459,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],

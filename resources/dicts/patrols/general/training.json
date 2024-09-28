@@ -2809,7 +2809,7 @@
                 ]
             },
             {
-                "text": "There's a teachable moment here, s_c announces. What, no, {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} talking about the substance of the argument - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} talking about letting an <i>argument</i> disrupt training. Does the patrol really think that's a wise move?",
+                "text": "There's a teachable moment here, s_c announces. What, no, {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't talking about the substance of the argument - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} talking about letting an <i>argument</i> disrupt training. Does the patrol really think that's a wise move?",
                 "exp": 20,
                 "weight": 20,
                 "can_have_stat": ["p_l"],
