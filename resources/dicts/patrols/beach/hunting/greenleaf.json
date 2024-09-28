@@ -2559,7 +2559,7 @@
             "normal adult": [1, 6]
         },
         "weight": 40,
-        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} {VERB/app1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in {PRONOUN/app1/poss} nest.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
@@ -2763,7 +2763,7 @@
             "normal adult": [1, 6]
         },
         "weight": 40,
-        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} {VERB/app1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in {PRONOUN/app1/poss} nest.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
