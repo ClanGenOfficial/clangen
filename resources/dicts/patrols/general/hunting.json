@@ -1459,7 +1459,7 @@
             "prey": ["large"]
         },
         {
-            "text": "Forget struggling to hunt, p_l has a new problem, struggling to bring everything back to camp! Still, {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} going to complain about the problems of abundant prey and easy cover to pounce from.",
+            "text": "Forget struggling to hunt, p_l has a new problem, struggling to bring everything back to camp! Still, {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to complain about the problems of abundant prey and easy cover to pounce from.",
             "exp": 25,
             "weight": 10,
             "prey": ["large"]

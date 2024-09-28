@@ -1193,7 +1193,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Settling down, p_l wants to know how app1 is finding {PRONOUN/app1/poss} training - what {VERB/app1/do/does} {PRONOUN/app1/subject} think of the other young cats in the Clan? Any special friends, perhaps? app1 practically melts into the ground with embarrassment.",
+                "text": "Settling down, p_l wants to know how app1 is finding {PRONOUN/app1/poss} training - what {VERB/app1/do/does} {PRONOUN/app1/subject} {VERB/app1/think/thinks} of the other young cats in the Clan? Any special friends, perhaps? app1 practically melts into the ground with embarrassment.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
