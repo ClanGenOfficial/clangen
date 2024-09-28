@@ -15,7 +15,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey dripping from every moment.",
+                "text": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats pass a perfect day, sunshine and prey filling every moment.",
                 "exp": 15,
                 "weight": 20,
                 "prey": ["large"],
@@ -70,14 +70,14 @@
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
-        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
-        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "Best to leave the eagle to its hunt.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -130,7 +130,7 @@
                 "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious"],
+                "stat_trait": ["ambitious", "confident", "arrogant"],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -145,7 +145,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and they're driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -160,7 +160,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -197,7 +197,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -251,7 +251,7 @@
                 "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious"],
+                "stat_trait": ["ambitious", "confident", "arrogant"],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -266,7 +266,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and they are driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -312,13 +312,13 @@
         "types": ["hunting"],
         "tags": ["cruel_season"],
         "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -387,7 +387,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and they are driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -404,7 +404,7 @@
                 "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with its massive catch, and the opportunity is lost.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty"],
+                "stat_trait": ["bloodthirsty", "ambitious", "arrogant", "confident"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -416,7 +416,7 @@
                 ]
             },
             {
-                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing flailing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -436,7 +436,7 @@
                 ]
             },
             {
-                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -465,7 +465,7 @@
                 "text": "Keen to prove {PRONOUN/s_c/self}, s_c dives into the water and leaps for the eagle. Instead, what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the water, and the associated chills that come with that.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["bloodthirsty"],
+                "stat_trait": ["bloodthirsty", "ambitious", "arrogant", "confident"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -503,7 +503,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -538,7 +538,7 @@
                 ]
             },
             {
-                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where {PRONOUN/s_c/subject} {VERB/s_c/have/has} the edge over the bird. {PRONOUN/s_c/subject/CAP {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -554,7 +554,7 @@
                 ]
             },
             {
-                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where {PRONOUN/s_c/subject} {VERB/s_c/have/has} the edge over the bird. {PRONOUN/s_c/subject/CAP {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": ["ambitious"],
@@ -572,7 +572,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and they're driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -586,7 +586,7 @@
                 ]
             },
             {
-                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing flailing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills {PRONOUN/r_c/object}, the talon wounds or drowning.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -649,7 +649,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Your cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "The cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -744,7 +744,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -880,7 +880,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -1038,7 +1038,7 @@
                 ]
             },
             {
-                "text": "s_c is overconfident in {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
+                "text": "s_c is overconfident in {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
