@@ -5546,7 +5546,7 @@
                 ]
             },
             {
-                "text": "There's an injured kiwi, app1 explains, tripping over {PRONOUN/app1/poss} words a little. c_n could really use the fresh-kill. And p_l can't argue with that, which is how {PRONOUN/p_l/subject} find {PRONOUN/p_l/self} chilled through and damp, helping app1 haul the bird (which managed to die on its own) out of a gully, trying to think of a way to express {PRONOUN/p_l/poss} pride without encouraging this nonsense in the future.",
+                "text": "There's an injured kiwi, app1 explains, tripping over {PRONOUN/app1/poss} words a little. c_n could really use the fresh-kill. And p_l can't argue with that, which is how {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} chilled through and damp, helping app1 haul the bird (which managed to die on its own) out of a gully, trying to think of a way to express {PRONOUN/p_l/poss} pride without encouraging this nonsense in the future.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
