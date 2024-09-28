@@ -38,7 +38,7 @@
 		"id": "neutral_interaction3",
 		"interactions": [
 			"m_c is stuttering while speaking to r_c.",
-            "r_c listens patiently as m_c talks to {PRONOUN/r_c/object}.",
+            		"r_c listens patiently as m_c talks to {PRONOUN/r_c/object}.",
 			"r_c asks m_c to speak up while chatting together.",
 			"m_c avoids facing r_c directly while talking."
 		],
@@ -104,14 +104,14 @@
 		"id": "neutral_interaction8",
 		"interactions": [
 			"r_c notices m_c sulking around camp again.",
-            "r_c sits quietly by m_c.",
-            "r_c offers to share tongues with m_c but {PRONOUN/m_c/subject} {VERB/m_c/decline/declines}.",
+            		"r_c sits quietly by m_c.",
+            		"r_c offers to share tongues with m_c but {PRONOUN/m_c/subject} {VERB/m_c/decline/declines}.",
 			"r_c meows hello to m_c, but {PRONOUN/m_c/subject} {VERB/m_c/look/looks} pretty glum still."
 		],
 		"main_trait_constraint": [
 			"gloomy",
 			"lonesome",
-            "quiet"
+            		"quiet"
 		]
 	},
 	{
@@ -138,13 +138,13 @@
 			"bloodthirsty",
             		"bold"
 		],
-        "main_status_constraint": [
+        	"main_status_constraint": [
 			"apprentice",
 			"warrior",
             		"deputy",
             		"leader"
 		],
-        "random_status_constraint": [
+        	"random_status_constraint": [
 			"apprentice",
 			"warrior",
             		"deputy",

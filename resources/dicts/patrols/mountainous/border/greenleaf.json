@@ -159,7 +159,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject} {VERB/app1/are/is} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject} {VERB/app1/are/is} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },
@@ -175,7 +175,7 @@
                 }
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -348,6 +348,22 @@
                         "amount": 5
                     }
                 ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't don't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
             },
             {
                 "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border.",
@@ -399,7 +415,7 @@
                 ]
             },
             {
-                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and app1 and app2 run for home.",
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -560,6 +576,22 @@
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
                     }
                 ]
             },

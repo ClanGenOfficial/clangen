@@ -696,7 +696,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Tansy isn't mallow or dandelion, to be played with by kits. In high concentrations or potency, it can kill the elderly, pregnant, or compromised, and it will <i>definitely</i> make app1 sick if {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} respect it.",
+                "text": "Tansy isn't mallow or dandelion, to be played with by kits. In high concentrations or potency, it can kill the elderly, pregnant, or compromised, and it will <i>definitely</i> make app1 sick if {PRONOUN/app1/subject} {VERB/app1/do/does}n't respect it.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["tansy"],
@@ -895,12 +895,12 @@
             ]
         },
         "weight": 20,
-        "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
+        "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a whoop and {VERB/p_l/stop/stops} to play with app1.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1049,7 +1049,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
+                "text": "Not only do they not find anything, but app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1120,7 +1120,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -1276,7 +1276,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": [
@@ -1539,7 +1539,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "text": "The ground is dusty and slippery, and when p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [

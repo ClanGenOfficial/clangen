@@ -738,7 +738,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Tansy isn't mallow or dandelion, to be played with by kits. In high concentrations or potency, it can kill the elderly, pregnant, or compromised, and it will <i>definitely</i> make app1 sick if {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} respect it.",
+                "text": "Tansy isn't mallow or dandelion, to be played with by kits. In high concentrations or potency, it can kill the elderly, pregnant, or compromised, and it will <i>definitely</i> make app1 sick if {PRONOUN/app1/subject} {VERB/app1/do/does}n't respect it.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["tansy"],
@@ -1186,7 +1186,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "text": "The ground is dusty and slippery, and when p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1292,13 +1292,13 @@
                 "herbs": ["betony"]
             },
             {
-                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, they'll be able to dose their Clanmates and prevent coughs and chest infections.",
+                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "betony"]
             },
             {
-                "text": "As ever, s_c's keen eyes pick out their target quickly, and they bring back a great haul of betony for the herb stores.",
+                "text": "As ever, s_c's keen eyes pick out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1357,7 +1357,7 @@
                 ]
             },
             {
-                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, they'll be able to dose their Clanmates and prevent coughs and chest infections. app1, however, is more interested in how betony prevents gross, runny dirt.",
+                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections. app1, however, is more interested in how betony prevents gross, runny dirt.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "betony"],
@@ -1379,7 +1379,7 @@
                 ]
             },
             {
-                "text": "As ever, s_c's keen eyes pick out their target quickly. They point it out to app1, and the two bring back a great haul of betony for the herb stores.",
+                "text": "As ever, s_c's keen eyes pick out their target quickly. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} it out to app1, and the two bring back a great haul of betony for the herb stores.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1468,7 +1468,7 @@
                 ]
             },
             {
-                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l's patrol brings back, they'll be able to dose their Clanmates and prevent coughs and chest infections.",
+                "text": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l's patrol brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "betony"],
@@ -2010,7 +2010,7 @@
                 ]
             },
             {
-                "text": "Luck is on p_l's side today - the burdock is both plentiful and easy to find. As {PRONOUN/p_l/subject} {VERB/p_l/lay/lays} the fat roots out in a towering but neat pile in the herb stores, p_l's entire body thrums with a contented purr, and their Clanmates smile, happy to help out their hardworking medicine cat.",
+                "text": "Luck is on p_l's side today - the burdock is both plentiful and easy to find. As {PRONOUN/p_l/subject} {VERB/p_l/lay/lays} the fat roots out in a towering but neat pile in the herb stores, p_l's entire body thrums with a contented purr, and {PRONOUN/p_l/poss} Clanmates smile, happy to help out their hardworking medicine cat.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "burdock"],
@@ -2100,7 +2100,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The medicine cat carefully picks out catmint from its known hiding places, carrying it back to camp where it will be stored away from excitable warriors.",
+                "text": "p_l carefully picks out catmint from its known hiding places, carrying it back to camp where it will be stored away from excitable warriors.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["catmint"]
@@ -2664,7 +2664,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants.",
+                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants.",
                 "exp": 0,
                 "weight": 20
             }
@@ -2692,7 +2692,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as they remember watching app1 playing with them just a few short moons ago.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and it's a potent cure for poison. Their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} watching app1 playing with them just a few short moons ago.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["dandelion"],
@@ -2762,7 +2762,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future.",
+                "text": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2803,7 +2803,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. The warriors smile at the sight, sharing fond nursery memories about them as they gather.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and it's a potent cure for poison. Their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. The warriors smile at the sight, sharing fond nursery memories about them as they gather.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion"],
@@ -2825,7 +2825,7 @@
                 ]
             },
             {
-                "text": "It's a successful gathering mission, and p_l strides back to camp with a great haul of whole, intact dandelion plants. Later, they'll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that have helped them bring home so many.",
+                "text": "It's a successful gathering mission, and p_l strides back to camp with a great haul of whole, intact dandelion plants. Later, {PRONOUN/p_l/subject}'ll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time, but for now {PRONOUN/p_l/subject} {VERB/p_l/make/makes} sure to thank the warriors that have helped {PRONOUN/p_l/poss} bring home so many.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "dandelion"],
@@ -2847,7 +2847,7 @@
                 ]
             },
             {
-                "text": "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery.",
+                "text": "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. {PRONOUN/s_c/subject/CAP} {VERB/s_c/help/helps} the warriors carefully pluck fluffy dandelions heads to bring back for the nursery.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -3348,7 +3348,7 @@
                 ]
             },
             {
-                "text": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As they do, they instruct app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too.",
+                "text": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -3620,7 +3620,7 @@
                 ]
             },
             {
-                "text": "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As they work, they chat to app1 about juniper's calming effects. This is one of the few herbs their Clanmates compete to go on patrols to help collect, as everyone enjoys the scent.",
+                "text": "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As {PRONOUN/s_c/subject} {VERB/s_c/work/works}, {PRONOUN/s_c/subject} {VERB/s_c/chat/chats} with app1 about juniper's calming effects. This is one of the few herbs {PRONOUN/s_c/poss} Clanmates compete to go on patrols to help collect, as everyone enjoys the scent.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -3795,12 +3795,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
+        "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. p_l heaves a sigh - the expedition is delayed for another time.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a heartbeat, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a yowl and {VERB/p_l/stop/stops} to play with app1.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a heartbeat, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a yowl and {VERB/p_l/stop/stops} to play with app1.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["lungwort"],
@@ -3894,7 +3894,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech.",
+                "text": "Not only do they not find anything, but app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3936,7 +3936,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["lungwort"],
@@ -4042,7 +4042,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["lungwort"],
@@ -5434,7 +5434,7 @@
                 ]
             },
             {
-                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
+                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It even tastes relatively innocuous, which makes it easy to harvest.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "plantain"],
@@ -5800,7 +5800,7 @@
                 "herbs": ["ragwort"]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't require carrying it in {PRONOUN/p_l/poss} mouth.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with {PRONOUN/p_l/poss} harvest, but really wishes {PRONOUN/p_l/subject} had a way to bring it back to camp that didn't require carrying it in {PRONOUN/p_l/poss} mouth.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"]
@@ -5865,7 +5865,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouth, and has a lot of sympathy for app1's disgusted expression.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouths, and has a lot of sympathy for app1's disgusted expression.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"],
@@ -5976,7 +5976,7 @@
                 ]
             },
             {
-                "text": "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouth, a sentiment that the patrol helping them definitely shares... at length, very descriptively.",
+                "text": "Ragwort brings strength to cats who need it and eases aching joints, but StarClan, it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't require carrying it in their mouths - a sentiment that the patrol helping {PRONOUN/p_l/object} definitely shares... at length, very descriptively.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "ragwort"],
@@ -6063,7 +6063,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially its leaves.",
+                "text": "p_l identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially its leaves.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"]

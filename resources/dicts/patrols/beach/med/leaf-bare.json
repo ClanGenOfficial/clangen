@@ -1658,7 +1658,7 @@
                 ]
             },
             {
-                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen app1's happiness when {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to uncover a couple good dandelion plants. Watching {PRONOUN/p_l/subject} find joy in safeguarding the Clan gives p_l a swoop of pride and affection for the apprentice. The path of a medicine cat suits the young cat well.",
+                "text": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen app1's happiness when {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to uncover a couple good dandelion plants. Watching {PRONOUN/app1/object} find joy in safeguarding the Clan gives p_l a swoop of pride and affection for the apprentice. The path of a medicine cat suits the young cat well.",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["dandelion"],

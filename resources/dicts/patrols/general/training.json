@@ -7740,7 +7740,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem to be paying any attention. Frustrated with {PRONOUN/app1/object}, p_l decides to have a talk with the leader upon their return to camp.",
+                "text": "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, {PRONOUN/app1/subject} {VERB/app1/do/does}n't seem to be paying any attention. Frustrated with {PRONOUN/app1/object}, p_l decides to have a talk with the leader upon their return to camp.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
