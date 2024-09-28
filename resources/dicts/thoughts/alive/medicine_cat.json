@@ -121,7 +121,7 @@
     {
         "id": "calm_medicine_cat_apprentice",
         "thoughts": [
-            "Calms down an apprentice who is panicking other their minor injury"
+            "Calms down an apprentice who is panicking over {PRONOUN/r_c/poss} minor injury"
         ],
         "main_trait_constraint": [
             "calm"
@@ -144,7 +144,7 @@
         "id": "charismatic_medicine_cat",
         "thoughts": [
             "Is doing {PRONOUN/m_c/poss} daily checkup on the elders",
-	    "Easily persuades another Clan's medicine cat to gift c_n herbs"
+	    "Is thinking of just the right way to ask another Clan's medicine cat for herbs"
         ],
         "main_trait_constraint": [
             "charismatic"
@@ -303,7 +303,7 @@
     {
       "id": "playful_medicine_cat",
         "thoughts": [
-            "Keeps {PRONOUN/m_c/poss} patients distracted with silly games while {PRONOUN/m_c/subject} treat them"
+            "Keeps {PRONOUN/m_c/poss} patients distracted with silly games while {PRONOUN/m_c/subject} {VERB/m_c/treat/treats} them"
         ],
         "main_trait_constraint": [
             "playful"
