@@ -268,7 +268,7 @@
 		"interactions": [
 			"m_c had a difficult conversation with r_c and now, they have a deeper understanding of each other.",
 			"m_c and r_c have a long discussion about goals and aspirations, and find that they both have a lot in common.",
-			"m_c spent a long time talking with r_c and was impressed by {PRONOUN/m_c/poss} insight.",
+			"m_c spent a long time talking with r_c and was impressed by {PRONOUN/r_c/poss} insight.",
 			"m_c asks r_c about something complicated and is amazed at how quickly r_c understands."
 		],
 		"reaction_random_cat": {
