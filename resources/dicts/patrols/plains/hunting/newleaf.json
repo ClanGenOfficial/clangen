@@ -1128,7 +1128,7 @@
                 ]
             },
             {
-                "text": "While the rest of the patrol feeds on the kill, the swift fox gnawing on the head at the other end in uneasy truce, s_c keeps watch. It turns out to have been a wise move, as they spot a cougar's ears sticking up out of the grass. The kill's original owner is coming back, and the cats vacate with speed.",
+                "text": "While the rest of the patrol feeds on the kill, the swift fox gnawing on the head at the other end in uneasy truce, s_c keeps watch. It turns out to have been a wise move, as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a cougar's ears sticking up out of the grass. The kill's original owner is coming back, and the cats vacate with speed.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1328,7 +1328,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. Their jaws hang open to taste at the air, and a tingle of satisfaction shoots through them as they scent a nearby ground squirrel, just awakening from its leaf-bare hibernation.",
+        "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, just awakening from its leaf-bare hibernation.",
         "decline_text": "Though they're pleased to know the squirrels are waking up, they don't pursue this one. It hasn't properly eaten in moons; better to let it wake up and get fatter before bringing it home.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1379,13 +1379,13 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The wind blows a scent towards them, and app1 immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and they're pretty sure at one point it's long gone, but in the end, they find and catch it!",
+                "text": "The wind blows a scent towards {PRONOUN/app1/object}, and app1 immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure at one point it's long gone, but in the end, {PRONOUN/app1/subject} {VERB/app1/find/finds} and {VERB/app1/catch/catches} it!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "app1 hears a quiet snuffling nearby and slides into a hunting crouch. Slinking forward, they find the source is a squirrel, foraging for newleaf food! They stalk carefully and catch it while it's distracted, heading home with their head held high.",
+                "text": "app1 hears a quiet snuffling nearby and slides into a hunting crouch. Slinking forward, {PRONOUN/app1/subject} {VERB/app1/find/finds} the source is a squirrel, foraging for newleaf food! {PRONOUN/app1/subject/CAP} {VERB/app1/stalk/stalks} carefully and {VERB/app1/catch/catches} it while it's distracted, heading home with {PRONOUN/app1/poss} head held high.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1414,11 +1414,11 @@
         },
         "weight": 20,
         "intro_text": "p_l and app1 sit in the plains, near a network of ground squirrel burrows. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. app1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance, blinking in the newleaf sun!",
-        "decline_text": "p_l praises them and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
+        "decline_text": "p_l praises {PRONOUN/app1/object} and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though their paws are rather unpracticed, the basic knowledge is solid, and their hunt is a success!",
+                "text": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though {PRONOUN/app1/poss} paws are rather unpracticed, the basic knowledge is solid, and {PRONOUN/app1/poss} hunt is a success!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1433,7 +1433,7 @@
                 ]
             },
             {
-                "text": "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. They're nervous, of course, but their technique is nearly flawless, and they catch the squirrel easily!",
+                "text": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} nervous, of course, but {PRONOUN/app1/poss} technique is nearly flawless, and {PRONOUN/app1/subject} {VERB/app1/catch/catches} the squirrel easily!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1450,7 +1450,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in their excitement, app1 rustles the grass a little too hard; the squirrel shrieks at them and vanishes into the burrow.",
+                "text": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in {PRONOUN/app1/poss} excitement, app1 rustles the grass a little too hard; the squirrel shrieks at {PRONOUN/app1/object} and vanishes into the burrow.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1480,7 +1480,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 20,
-        "intro_text": "The trio is gathered around an isolated burrow, discussing their plan in hushed mews. This burrow is an abandoned rabbit's warren, but currently is home to ground squirrels. The three entrances seem just big enough for the three apprentices to crawl inside, bringing the hunt right to the squirrels, who are hopefully just waking up from hibernation.",
+        "intro_text": "The trio gathers around an isolated burrow, discussing their plan in hushed mews. This burrow is an abandoned rabbit's warren, but currently is home to ground squirrels. The three entrances seem just big enough for the three apprentices to crawl inside, bringing the hunt right to the squirrels, who are hopefully just waking up from hibernation.",
         "decline_text": "... On second thought, maybe this is too risky. app1 and app2 exchange nervous glances, and app3 shuffles {PRONOUN/app3/poss} paws before suggesting they go home instead, to which the others gladly agree. Better to stick to what they know.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1604,7 +1604,7 @@
                 ]
             },
             {
-                "text": "s_c murmurs instructions to their Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind.",
+                "text": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1656,13 +1656,13 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+                "text": "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1757,7 +1757,7 @@
                 ]
             },
             {
-                "text": "app1 stalks the mouse to an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair head back home there's a happy bounce in app1's steps.",
+                "text": "app1 stalks the mouse to an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair heads back home, there's a happy bounce in app1's steps.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
@@ -1824,7 +1824,7 @@
                 ]
             },
             {
-                "text": "While the way app1 tries to burst out of a bush on a rabbit is categorically silly, the mice that were startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
+                "text": "While the way app1 tries to burst out of a bush on a rabbit is categorically silly, the mice that are startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -1913,7 +1913,7 @@
                 ]
             },
             {
-                "text": "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+                "text": "The cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],

@@ -3068,7 +3068,7 @@
                 ]
             },
             {
-                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair head back home there's a happy bounce in app1's steps.",
+                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair heads back home, there's a happy bounce in app1's steps.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
