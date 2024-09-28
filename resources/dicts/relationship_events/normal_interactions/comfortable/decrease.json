@@ -176,7 +176,7 @@
 			"m_c overhears r_c complaining about giving herbs to cats that don't 'deserve' them.",
 			"m_c is startled at r_c's views on sharing herbs with other Clans.",
 			"m_c bristles after seeing r_c add more deathberries to {PRONOUN/r_c/poss} herb storage.",
-			"m_c stopped r_c before {PRONOUN/r_c/subject} {VERB/r_c/gives/gave} the wrong herbs to another cat. The look in r_c's eyes as {PRONOUN/r_c/subject} did so scared m_c...",
+			"m_c stopped r_c before {PRONOUN/r_c/subject} gave the wrong herbs to another cat. The look in r_c's eyes as {PRONOUN/r_c/subject} did so scared m_c...",
             		"m_c has been wondering if StarClan has actually been guiding r_c or if it's really the Dark Forest's influence."
 		],
 		"random_trait_constraint": [
