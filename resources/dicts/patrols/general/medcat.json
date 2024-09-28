@@ -3936,7 +3936,7 @@
         "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "running_app_med",
+        "patrol_art": "running_two_apps",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3961,7 +3961,7 @@
                         "amount": -5
                     }
                 ],
-                "art": "gen_train_argueAM"
+                "art": "gen_train_argueAA"
             },
             {
                 "text": "p_l stops the patrol and stares at app2. app2 shuffles {PRONOUN/app2/poss} paws, avoiding eye contact. After a few heartbeats, app2 admits they should probably just get on with the job they were given.",
@@ -3999,7 +3999,7 @@
                         "amount": 10
                     }
                 ],
-                "art": "gen_train_argueAM"
+                "art": "gen_train_argueAA"
             },
             {
                 "text": "No way, does app2 want to get them both in trouble? They're looking for <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
@@ -4022,7 +4022,7 @@
                         "amount": 5
                     }
                 ],
-                "art": "gen_train_argueAM"
+                "art": "gen_train_argueAA"
 
             }
         ],
@@ -4106,7 +4106,7 @@
                 ]
             },
             {
-                "text": "app2 cocks {PRONOUN/app2/poss} head at p_l. Is p_l a mouse-heart? Scared of a few little berries? p_l snaps back that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} no mouse-heart... and somehow ends up leading app2 to the patch of deathberries. Curiosity satisfied, app2 loses any interest in helping p_l gather herbs.",
+                "text": "p_l hesitates, and app2 cocks {PRONOUN/app2/poss} head at p_l. Is p_l a mouse-heart? Scared of a few little berries? p_l snaps back that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} no mouse-heart... and somehow ends up leading app2 to the patch of deathberries. Curiosity satisfied, app2 loses any interest in helping p_l gather herbs.",
                 "exp": 0,
                 "weight": 40,
                 "stat_trait": [ "fierce", "troublesome", "rebellious", "bold", "daring", "arrogant", "shameless", "adventurous" ],
@@ -4127,7 +4127,7 @@
                         "amount": 10
                     }
                 ],
-                "art": "gen_train_argueAM"
+                "art": "gen_train_argueAA"
             },
             {
                 "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
