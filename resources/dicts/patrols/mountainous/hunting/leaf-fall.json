@@ -799,7 +799,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -935,7 +935,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
