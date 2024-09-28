@@ -23,7 +23,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c keeps {PRONOUN/m_c/poss} tail tucked around r_c.",
-            "m_c is keeping a close eye on r_c to make sure {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} causing any trouble."
+            		"m_c is keeping a close eye on r_c to make sure {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not causing any trouble."
 		],
 		"random_status_constraint": [
 			"kitten"
@@ -36,7 +36,7 @@
 		"id": "trust_de_med1",
 		"interactions": [
 			"m_c caught r_c in a lie.",
-			"r_c let m_c down while m_c was counting on {PRONOUN/r_c/object}.",
+			"r_c let m_c down when {PRONOUN/m_c/subject} {VERB/m_c/were/was} counting on {PRONOUN/r_c/object}.",
 			"r_c tripped m_c at the Gathering in front of all the Clans."
 		]
 	},
@@ -56,9 +56,9 @@
 			"r_c is gossiping about m_c.",
 			"m_c is spreading a rumor about r_c.",
 			"m_c caught r_c slinking around the camp entrance in the middle of the night.",
-            "m_c catches r_c doing something sneaky and, when asked, r_c refused to give a straight answer.",
-            "m_c catches r_c sneaking around.",
-            "m_c catches r_c sneaking back into camp in the middle of the night."
+            		"m_c catches r_c doing something sneaky but when {PRONOUN/r_c/subject} {VERB/r_c/were/was} asked, r_c refused to give a straight answer.",
+            		"m_c catches r_c sneaking around.",
+            		"m_c catches r_c sneaking back into camp in the middle of the night."
 		],
 		"random_trait_constraint": [
 			"sneaky"
@@ -70,8 +70,8 @@
 			"m_c constantly pulls pranks on r_c.",
 			"m_c is relentlessly pestering r_c.",
 			"m_c keeps pouncing on r_c's tail despite being told to stop.",
-            "r_c hissed at m_c.",
-            "r_c caught m_c misbehaving even though {PRONOUN/m_c/subject} promised to be on {PRONOUN/m_c/poss} best behavior."
+            		"r_c hissed at m_c.",
+            		"r_c caught m_c misbehaving even though {PRONOUN/m_c/subject} promised to be on {PRONOUN/m_c/poss} best behavior."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -98,7 +98,7 @@
 		"interactions": [
 			"m_c tries to scare r_c.",
 			"m_c dismisses r_c's reasonable concerns and fears and tells {PRONOUN/r_c/object} to get over it.",
-            "m_c pulls a mean-spirited prank on r_c."
+            		"m_c pulls a mean-spirited prank on r_c."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -129,7 +129,7 @@
 		"interactions": [
 			"m_c is dissatisfied that r_c can't seem to get rid of {PRONOUN/m_c/poss} chronic pain.",
 			"m_c is upset that r_c seems to ignore {PRONOUN/r_c/object} more than the other cats.",
-			"m_c thinks that r_c prioritizes other cat's issues instead of m_c's chronic ones."
+			"m_c thinks that r_c prioritizes other cat's issues instead of {PRONOUN/m_c/poss} chronic ones."
 		],
 		"main_status_constraint": [
 			"elder"
@@ -148,11 +148,11 @@
 			"m_c isn't sure why r_c became a medicine cat at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
 			"m_c wouldn't be surprised if r_c faked signs from StarClan...",
 			"m_c makes absolutely sure r_c gave {PRONOUN/m_c/object} the right herbs.",
-            "m_c lashes {PRONOUN/m_c/poss} tail as r_c dismisses {PRONOUN/m_c/poss} health concerns as nothing serious.",
-            "r_c claimed m_c was lying about an injury and refused to even look at it.",
-            "r_c claimed m_c was lying about an illness and refused to even check.",
-            "r_c ignored m_c when {PRONOUN/m_c/subject} needed treatment.",
-            "m_c is doubting whether r_c has any connection to StarClan at all."
+            		"m_c lashes {PRONOUN/m_c/poss} tail as r_c dismisses {PRONOUN/m_c/poss} health concerns as nothing serious.",
+            		"r_c claimed m_c was lying about an injury and refused to even look at it.",
+            		"r_c claimed m_c was lying about an illness and refused to even check.",
+            		"r_c ignored m_c when {PRONOUN/m_c/subject} needed treatment.",
+            		"m_c is doubting whether r_c has any connection to StarClan at all."
 		],
 		"random_status_constraint": [
 			"medicine cat"
@@ -173,7 +173,7 @@
 			"m_c hopes to never have a serious illness with r_c in charge of treatments...",
 			"m_c complains that r_c never takes {PRONOUN/r_c/poss} role of medicine cat seriously.",
 			"m_c can't keep r_c's attention long enough to tell {PRONOUN/r_c/object} what {PRONOUN/m_c/object} {VERB/m_c/need/needs} help with.",
-            "r_c didn't notice m_c when {PRONOUN/m_c/subject} needed treatment."
+            		"r_c didn't notice m_c when {PRONOUN/m_c/subject} needed treatment."
 		],
 		"random_status_constraint": [
 			"medicine cat"
@@ -187,13 +187,13 @@
 		"id": "trust_for_leader_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c cowers away from r_c after r_c barks an order at {PRONOUN/m_c/object}.",
+			"m_c cowers away from r_c after {PRONOUN/r_c/subject} {VERB/r_c/bark/barks} an order at {PRONOUN/m_c/object}.",
 			"After hearing r_c's most recent demands, m_c is concerned about the future of the Clan.",
 			"m_c doesn't believe that r_c has the Clan's best interests in mind.",
 			"m_c doesn't understand how StarClan could grant a cat as cold and uncaring as r_c nine lives.",
 			"When it comes down to it, m_c doesn't think {PRONOUN/m_c/subject} could follow r_c's every order.",
 			"m_c wonders if {PRONOUN/m_c/subject} could run away from the Clan if necessary...",
-            "m_c wonders if exile is really so bad given current Clan leadership..."
+            		"m_c wonders if exile is really so bad given current Clan leadership..."
 		],
 		"random_status_constraint": [
 			"leader"

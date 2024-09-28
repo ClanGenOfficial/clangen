@@ -12,13 +12,13 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to spend some time just the two of them this afternoon!",
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
         "relationship_constraint": ["romantic_20", "not_mates"],
         "success_outcomes": [
             {
-                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad the forest together. The mildest of leaf-bare frosts is an excuse to huddle close for warmth.",
+                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The mildest of leaf-bare frosts is an excuse to huddle close for warmth.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -39,7 +39,7 @@
                 ]
             },
             {
-                "text": "All p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, paws and tails leaving sweeping tracks in the frosted forest floor, an artwork irrelevant to two cats much more absorbed with each other than the world around them.",
+                "text": "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, paws and tails leaving sweeping tracks in the frosted forest floor, an artwork irrelevant to two cats much more absorbed in each other than the world around them.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -230,7 +230,7 @@
         "decline_text": "app1 is too hungry and cold to stop for a story now! {PRONOUN/app1/subject/CAP} {VERB/app1/pad/pads} away in search of food.",
         "success_outcomes": [
                 {
-                    "text": "p_l tells a tale of a great cat who lives under the ice and controls the lake. Long ago, a trickster thought himself smarter than the lake cat and padded out onto the ice covering to lake to tease her. She broke the ice and drowned him in revenge, flooding the entire forest in newleaf. That's why it's always important to respect the ice in leaf-bare.",
+                    "text": "p_l tells a tale of a great cat who lives under the ice and controls the lake. Long ago, a trickster thought himself smarter than the lake cat and padded out onto the ice covering the lake to tease her. She broke the ice and drowned him in revenge, flooding the entire forest in newleaf. That's why it's always important to respect the ice in leaf-bare.",
                     "exp": 30,
                     "weight": 20,
                     "relationships": [
@@ -298,7 +298,7 @@
         "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
         "success_outcomes": [
                 {
-                    "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the Clans, never to return and never to walk in the stars, their life and talents wasted by cruel petty fighting.",
+                    "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the Clans, never to return and never to walk the stars, their life and talents wasted by cruel, petty fighting.",
                     "exp": 30,
                     "weight": 20,
                     "art": "scaryghost_INTRO",

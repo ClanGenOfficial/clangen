@@ -27,7 +27,7 @@
 	{
 		"id": "jel_de_med3",
 		"interactions": [
-			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} surprised when r_c asks for help.",
+			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject} {VERB/m_c/were/was} surprised when r_c asked for help.",
 			"m_c catches r_c in a moment of weakness and offers support."
 		],
 		"main_status_constraint": [
