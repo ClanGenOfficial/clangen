@@ -279,7 +279,7 @@
         "thoughts": [
             "Thinks r_c is far too soft with {PRONOUN/r_c/poss} patients",
 	    "Wishes r_c wasn't so soft",
-	    "Has to promice r_c {PRONOUN/m_c/subject} won't gather deathberries again"
+	    "Has to promise r_c {PRONOUN/m_c/subject} won't gather deathberries again"
         ],
         "random_trait_constraint": [
             "thoughtful",
