@@ -3767,7 +3767,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "r_c finds a nest that the weather has blown out of the tree and takes it as a sign from StarClan. Thanking {PRONOUN/r_c/poss} ancestors for the food of the unbroken eggs within, {PRONOUN/r_c/subject} also {VERB/r_c/murmur/murmurs} thanks for the warning, and {VERB/r_c/return/returns} back to camp, pelt prickling with the thought that {PRONOUN/r_c/subject} might have just as easily been blown out of the treetops as this nest was.",
+                "text": "r_c finds a nest that the weather has blown out of the tree and takes it as a sign from StarClan. Thanking {PRONOUN/r_c/poss} ancestors for the food of the unbroken eggs within, {PRONOUN/r_c/subject} also {VERB/r_c/murmur/murmurs} thanks for the warning, and {VERB/r_c/return/returns} to camp, pelt prickling with the thought that {PRONOUN/r_c/subject} might have just as easily been blown out of the treetops as this nest was.",
                 "exp": 25,
                 "weight": 5,
                 "prey": ["medium"]
@@ -3788,7 +3788,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c wanders out into the territory to search, but the driving rain and the rustle of the wind through the branches is too much, too obvious a danger, and {PRONOUN/r_c/subject} {VERB/r_c/return/returns} back to camp empty-pawed.",
+                "text": "r_c wanders out into the territory to search, but the driving rain and the rustle of the wind through the branches is too much, too obvious a danger, and {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp empty-pawed.",
                 "exp": 0,
                 "weight": 20
             },
@@ -3969,7 +3969,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's amazing that birds just leave these lying about! app1 finds a low hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
+                "text": "It's amazing that birds just leave these lying about! app1 finds a low-hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
                 "exp": 25,
                 "weight": 20,
                 "prey": ["medium"]
@@ -4060,7 +4060,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's amazing that birds just leave these lying about! app1 finds a low hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
+                "text": "It's amazing that birds just leave these lying about! app1 finds a low-hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out {PRONOUN/app1/poss} chest fur in pride.",
                 "exp": 25,
                 "weight": 20,
                 "prey": ["medium"]
