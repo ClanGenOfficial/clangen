@@ -2606,7 +2606,7 @@
                 ]
             },
             {
-                "text": "A brilliant battle move by s_c knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONUN/s_c/poss} body to do it alone.",
+                "text": "A brilliant battle move by s_c knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} body to do it alone.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -3817,7 +3817,7 @@
                 ]
             },
             {
-                "text": "A brilliant battle move by s_c knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONUN/s_c/poss} body to do it alone.",
+                "text": "A brilliant battle move by s_c knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} body to do it alone.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
