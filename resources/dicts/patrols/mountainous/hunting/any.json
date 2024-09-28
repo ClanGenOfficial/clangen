@@ -322,7 +322,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. {PRONOUN/r_c/subject} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -392,7 +392,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. {PRONOUN/r_c/subject} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -586,7 +586,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As r_c is checking the border lines, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} an odd sound coming from just beyond a rock fall.",
-        "decline_text": "It's probably nothing. {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} the noise alone and {VERB/r_c/continue/continues} searching for prey.",
+        "decline_text": "It's probably nothing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} the noise alone and {VERB/r_c/continue/continues} searching for prey.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -605,7 +605,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads towards the rock fall to check on the noise when a rabbit bursts out! {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
+                "text": "p_l pads towards the rock fall to check on the noise when a rabbit bursts out! {PRONOUN/r_c/subject/CAP} {VERB/r_c/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
                 "exp": 0,
                 "weight": 20
             },
