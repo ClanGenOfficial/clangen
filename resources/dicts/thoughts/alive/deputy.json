@@ -238,7 +238,7 @@
         "id": "teacher_deputy",
         "thoughts": [
             "Is devising an effective teaching strategy for new skills",
-            "Encourages the older cats to share {PRONOUN/m_c/poss} skills and techniques with the younger generations"
+            "Encourages the older cats to share their skills and techniques with the younger generations"
         ],
         "main_skill_constraint": [
             "TEACHER,1"
@@ -275,7 +275,7 @@
         "id": "fighter_deputy",
         "thoughts": [
             "Is instructing a group of warriors in advanced combat techniques",
-            "Feels a sense of protectiveness towards the Clan, ready to defend {PRONOUN/m_c/object} at any moment",
+            "Feels a sense of protectiveness towards the Clan, ready to defend them at any moment",
             "Is assessing the Clan's physical strength and readiness for potential threats",
             "Organizes a mock battle to keep the Clan's skills sharp"
         ],
@@ -297,7 +297,7 @@
     {
         "id": "healer_deputy",
         "thoughts": [
-            "Helps a Clanmate get a thorn out of {PRONOUN/m_c/self} paw while out on patrol",
+            "Helps a Clanmate get a thorn out of their paw while out on patrol",
             "Feels empathy for a sick Clanmate and is thinking of ways to help",
             "Is sharing knowledge about basic herbs with the Clan"
         ],
