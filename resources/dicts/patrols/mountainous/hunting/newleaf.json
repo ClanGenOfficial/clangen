@@ -66,7 +66,7 @@
                 "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious"],
+                "stat_trait": ["ambitious", "confident", "arrogant", "fierce"],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -81,7 +81,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and the cats are driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -187,7 +187,7 @@
                 "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious"],
+                "stat_trait": ["ambitious", "arrogant", "confident", "fierce" ],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -202,7 +202,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and the cats are driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -308,7 +308,7 @@
                 "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious"],
+                "stat_trait": ["ambitious", "arrogant", "confident", "fierce"],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -323,7 +323,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and the cats are driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -340,7 +340,7 @@
                 "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with its massive catch, and the opportunity is lost.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty"],
+                "stat_trait": ["bloodthirsty", "arrogant", "fierce", "confident", "ambitious"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -401,7 +401,7 @@
                 "text": "Keen to prove {PRONOUN/s_c/self}, s_c dives into the water and leaps for the eagle. Instead, what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the newleaf snowmelt, and the associated chills that come with that.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["bloodthirsty"],
+                "stat_trait": ["bloodthirsty", "arrogant", "confident", "ambitious", "fierce"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -508,7 +508,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch, and the cats are driven back, giving up on the idea of scavenging.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -693,7 +693,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "s_c really shows their {PRONOUN/s_c/poss}, bringing a clutch of mice back to camp for the fresh-kill pile.",
+                "text": "s_c really shows {PRONOUN/s_c/poss} skill, bringing a clutch of mice back to camp for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
@@ -1216,7 +1216,7 @@
                 "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+                "stat_trait": ["bloodthirsty", "bold", "arrogant", "ambitious", "fierce"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -1271,7 +1271,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c silently slinks through the underbrush, going undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1305,7 +1305,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1340,12 +1340,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1, and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
-        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
+        "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1 and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
+        "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1403,7 +1403,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [1, 6],
+            "leader": [-1, -1]
         },
         "weight": 20,
         "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
@@ -1427,7 +1428,7 @@
                 ]
             },
             {
-                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
+                "text": "A mischievous look in their eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["oak_leaves"],
@@ -1446,7 +1447,7 @@
                 "text": "With a glint in {PRONOUN/s_c/poss} eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when {PRONOUN/s_c/subject} {VERB/s_c/finish/finishes} with a mouthful of oak leaves, curling {PRONOUN/s_c/poss} tail in pride at the looks on {PRONOUN/s_c/poss} Clanmates faces.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
+                "stat_skill": ["HUNTER,1", "CLIMBER,1"],
                 "herbs": ["oak_leaves"],
                 "prey": ["medium"],
                 "relationships": [
@@ -1462,7 +1463,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+                "text": "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1483,9 +1484,13 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["broken bone"],
-                        "scars": []
+                        "injuries": ["broken bone"]
                     }
+                ],
+                "history": [
+                    { "reg_death": "m_c succumbed to a broken bone after falling out of a tree."},
+                    { "lead_death": "fell out of a tree and died of a broken bone"},
+                    { "scar": "m_c carries a scar after falling out of a tree and breaking a bone."}
                 ],
                 "relationships": [
                     {
@@ -1549,7 +1554,7 @@
                 "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
+                "stat_skill": ["HUNTER,1", "CLEVER,1"],
                 "prey": ["large"],
                 "relationships": [
                     {
