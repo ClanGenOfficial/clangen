@@ -1109,7 +1109,7 @@
         },
         "weight": 20,
         "intro_text": "p_l is showing several apprentices the border and points out some good spots to keep watch on specific parts of it.",
-        "decline_text": "p_l has no patience for the rowdy apprentices that day and orders them all back to camp. ",
+        "decline_text": "p_l has no patience for the rowdy apprentices that day and orders them all back to camp.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
@@ -1176,6 +1176,30 @@
                         "amount": 5
                     }
                 ]
+            },
+            {
+                "text": "s_c comes up with a dozen different creative comparisons for the scent of o_c_n, including dogwood, bird-dung, and rotting crab-apples. Which was not the point of coming here. app2 unfortunately thinks this is hilarious, and p_l's plan for the day vanishes like dew in sunshine.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [ "childish", "playful" ],
+                "can_have_stat": [ "app1" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": 10
+                    }
+                ]
+
             }
         ]
     },
