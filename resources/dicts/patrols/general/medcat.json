@@ -4074,7 +4074,7 @@
                 ]
             },
             {
-                "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggest they get back to camp before any cat notices they're in the wrong part of the territory.",
+                "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggests they get back to camp before any cat notices they're in the wrong part of the territory.",
                 "exp": 0,
                 "weight": 40,
                 "stat_skill": [ "DARK,1", "GHOST,1"],
@@ -4090,7 +4090,7 @@
                 ]
             },
             {
-                "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggest they get back to camp before any cat notices they're in the wrong part of the territory.",
+                "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggests they get back to camp before any cat notices they're in the wrong part of the territory.",
                 "exp": 0,
                 "weight": 40,
                 "stat_trait": [ "bloodthirsty", "cold", "vengeful" ],
