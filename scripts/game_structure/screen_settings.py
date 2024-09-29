@@ -23,7 +23,6 @@ game_screen_size = (800, 700)
 MANAGER: Optional[pygame_gui.UIManager] = None
 screen: Optional[pygame.Surface] = None
 curr_variable_dict = {}
-WINDOW = None
 
 display_change_in_progress = False  # this acts as a lock to ensure we don't end up in a loop of fullscreen changes
 
@@ -33,7 +32,6 @@ def set_display_mode(
     source_screen: Optional["Screens"] = None,
     show_confirm_dialog=True,
     ingame_switch=True,
-    user_defined_dimensions=None,
 ):
     global display_change_in_progress
 
@@ -49,7 +47,6 @@ def set_display_mode(
     global screen
     global MANAGER
     global curr_variable_dict
-    global WINDOW
 
     display_change_in_progress = True
 
