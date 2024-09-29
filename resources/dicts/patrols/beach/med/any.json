@@ -809,7 +809,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats snappy with each other.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats are snappy with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

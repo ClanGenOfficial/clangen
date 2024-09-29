@@ -129,7 +129,7 @@
                 ]
             },
             {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l can't keep a scowl on {PRONOUN/p_l/poss} face, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/p_l/poss} pelt in just the right way.",
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l can't keep a scowl on {PRONOUN/p_l/poss} face, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
                 "exp": 5,
                 "weight": 5,
                 "relationships": [
@@ -159,7 +159,7 @@
                 ]
             },
             {
-                "text": "s_c tries to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/s_c/poss} own swimming to notice. s_c gives up, discouraged.",
+                "text": "s_c tries to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. s_c gives up, discouraged.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["ambitious", "childish", "insecure", "lonesome"],

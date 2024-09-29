@@ -173,7 +173,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]
@@ -429,7 +429,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
@@ -1636,7 +1636,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats are snappy with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

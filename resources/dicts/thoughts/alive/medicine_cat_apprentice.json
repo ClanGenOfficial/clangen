@@ -273,5 +273,32 @@
         "random_living_status": [
             "living"
         ]
+    },
+    {
+        "id": "meanie_medicine_cat_apprentice_to_nice_med",
+        "thoughts": [
+            "Thinks r_c is far too soft with {PRONOUN/r_c/poss} patients",
+	    "Wishes r_c wasn't so soft",
+	    "Has to promise r_c {PRONOUN/m_c/subject} won't gather deathberries again"
+        ],
+        "random_trait_constraint": [
+            "thoughtful",
+            "righteous",
+            "loving",
+            "compassionate",
+            "sincere"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty",
+            "cold",
+            "vengeful",
+            "fierce"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     }
 ]

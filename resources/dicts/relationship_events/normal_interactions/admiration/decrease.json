@@ -35,8 +35,8 @@
 	{
 		"id": "admire_de_medium2",
 		"interactions": [
-			"m_c tried to bring r_c's behavior up to them, but it turned into a fight that someone else had to break up.",
-			"m_c confronted r_c about {PRONOUN/r_c/poss} bad attitude but that only makes r_c act out more.",
+			"m_c tried to bring r_c's behavior up to {PRONOUN/r_c/object}, but it turned into a fight that someone else had to break up.",
+			"m_c confronted r_c about {PRONOUN/r_c/poss} bad attitude but it only made r_c act out more.",
 			"m_c is disappointed when r_c doesn't uphold a promise.",
 			"r_c saw m_c do something really selfish and, while it didn't affect anyone else, m_c's view of {PRONOUN/r_c/object} is definitely warped."
 		],
@@ -49,7 +49,7 @@
 		"interactions": [
 			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat in the end.",
 			"m_c notices that r_c has been avoiding {PRONOUN/r_c/poss} responsibilities lately.",
-			"m_c and r_c were supposed to be working together today, but they can never agree long enough to accomplish anything.",
+			"m_c and r_c were supposed to be working together today, but can never agree long enough to accomplish anything.",
 			"m_c is frustrated after finishing a task that r_c was supposed to do."
 		],
 		"reaction_random_cat": {

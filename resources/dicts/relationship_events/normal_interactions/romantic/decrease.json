@@ -34,7 +34,7 @@
 		],
 		"relationship_constraint": [
 			"romantic_40",
-			"dislike_40"
+			"dislike_30"
 		]
 	},
 	{
@@ -66,7 +66,7 @@
 		"interactions": [
 			"m_c had a disagreement with r_c over kits.",
 			"m_c and r_c had a disagreement on how to raise kits.",
-            "m_c and r_c had a fight over if they would take a new mate if one of them died or went missing."
+            		"m_c and r_c had a fight over if they would take a new mate if one of them died or went missing."
 		],
 		"relationship_constraint": [
 			"mates"
