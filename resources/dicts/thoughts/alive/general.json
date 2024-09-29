@@ -301,6 +301,39 @@
         ]
     },
     {
+        "id": "play_pretend_gen",
+        "thoughts": [
+            "Has r_c very engaged in a very, very tall tale",
+            "Is proudly watching r_c plan how to hunt down a creature {PRONOUN/m_c/subject} made up"
+        ],
+        "main_trait_constraint": [
+            "adventurous",
+            "charismatic",
+            "childish",
+            "cunning",
+            "playful",
+            "sneaky"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "ambitious_gen",
         "thoughts": [
             "Is being admired by many Clanmates for {PRONOUN/m_c/poss} recent feats",
@@ -510,36 +543,6 @@
         ],
         "main_trait_constraint": [
             "charismatic"
-        ]
-    },
-    {
-        "id": "play_pretend_gen",
-        "thoughts": [
-            "Has r_c very engaged in a very, very tall tale",
-            "Is proudly watching r_c plan how to hunt down a creature {PRONOUN/m_c/subject} made up"
-        ],
-        "main_trait_constraint": [
-            "charismatic",
-            "cunning",
-            "sneaky"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
