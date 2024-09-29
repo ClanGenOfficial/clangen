@@ -18,7 +18,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object}.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1897,7 +1897,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2018,7 +2018,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2199,7 +2199,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -5138,7 +5138,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out {PRONOUN/p_l/poss} scent, leaving a foul taste hanging in the air. app1 quietly asks if there's anything {PRONOUN/p_l/subject} can do to block the scent, but unfortunately there's nothing {PRONOUN/p_l/subject} can do about it. It's just better to get harvesting over with as quickly as possible.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out {PRONOUN/p_l/poss} scent, leaving a foul taste hanging in the air. app1 quietly asks if there's anything {PRONOUN/p_l/subject} can do to block the scent, but unfortunately there's nothing {PRONOUN/p_l/subject} can do about it. Better just get the harvesting over with as quickly as possible.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["ragwort"],
@@ -6423,7 +6423,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The garlic won't notice leaf-bare until it actually hits - one of its good traits that makes up for its stinkiness. p_l is able to bring a good harvest home.",
+                "text": "The garlic won't notice leaf-bare until it actually hits - one of its good traits that makes up for its stinkiness. p_l brings a good harvest home.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["wild_garlic"]
