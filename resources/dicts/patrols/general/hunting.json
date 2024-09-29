@@ -293,6 +293,13 @@
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
+            },
+            {
+                "text": "s_c creeps up to the streambank, then lashes out a paw and hooks out a fat minnow. On a <i>scale</i> of one to ten, s_c would call this catch a gill-icious ten. Fishing is all about finding the right perch on grass, and not carping too much about failures. c_n should never trout s_c's fishing skill!",
+                "exp": 10,
+                "weight": 5,
+                "stat_trait": ["playful", "childish"],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -329,8 +336,29 @@
                 "text": "s_c makes fishing look easy, giving out tips to any interested cats.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
+                "stat_skill": ["HUNTER,1", "SWIMMER,1"],
                 "prey": ["large"]
+            },
+            {
+                "text": "r_c is so successful that s_c starts a rumor amongst the patrol that perhaps r_c isn't entirely a cat... Perhaps {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} some sort of combination of cat and fish... Like... a <i>fishcat</i>, s_c whispers. r_c frowns at {PRONOUN/s_c/object}, twitching {PRONOUN/r_c/poss} whiskers in a manner suspiciously similar to a catfish.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["childish", "playful"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "values": [ "comfort", "platonic" ],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": [ "comfort", "platonic" ],
+                        "amount": 5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
