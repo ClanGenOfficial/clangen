@@ -217,7 +217,7 @@
                 ]
             },
             {
-                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. p_l reacts with amazement to s_c's unconventional technique.",
+                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. p_l is amazed by s_c's unconventional technique.",
                 "exp": 20,
                 "weight": 5,
                 "stat_trait": [ "playful", "childish", "strange"
@@ -401,7 +401,7 @@
                 ]
             },
             {
-                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. The patrol reacts with amazement to s_c's unconventional technique.",
+                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. The patrol is amazed by s_c's unconventional technique.",
                 "exp": 20,
                 "weight": 5,
                 "stat_trait": [ "playful", "childish", "strange"
