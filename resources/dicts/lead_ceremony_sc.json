@@ -441,9 +441,9 @@
       ]
     },
   
-    "fierce_warrior": {
+    "fierce_bloodthirsty_warrior": {
       "tags": [],
-      "lead_trait": ["fierce"],
+      "lead_trait": ["fierce", "bloodthirsty"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
