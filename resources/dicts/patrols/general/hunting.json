@@ -508,6 +508,22 @@
                     }
                 ],
                 "prey": ["very_small"]
+            },
+            {
+                "text": "The rabbit sprints away before any cat in the patrol can react. s_c remarks that {PRONOUN/s_c/subject} <i>would've</i> chased after it, {PRONOUN/s_c/subject} just {VERB/s_c/think/thinks} that sort of prey is ra-bit too easy to catch. The rest of the patrol is irritable from the missed catch and doesn't react. s_c repeats the joke, to no avail. Tough crowd.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["childish", "playful" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
             }
         ]
     },
@@ -681,6 +697,22 @@
                         "mutual": false,
                         "values": ["jealous"],
                         "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Did r_c eat too many mice before sleeping? s_c inquires. That always disturbs <i>{PRONOUN/s_c/poss}</i> sleep. Once, {PRONOUN/s_c/subject} had this crazy dream where {PRONOUN/s_c/poss} paws had turned into mushrooms, and when s_c nibbled on {PRONOUN/s_c/poss} own paw, {PRONOUN/s_c/subject} started to - no, r_c interrupts, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pretty sure that's not what happened in this case.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["childish", "playful" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": -10
                     }
                 ],
                 "prey": ["very_small"]
@@ -1105,6 +1137,29 @@
                 "text": "p_l and the patrol pause and snicker when they see some Twolegs' attempt to catch several dogs gnawing on a deer carcass. As the Twolegs catch the dogs and leave, the patrol begins snacking on the carcass. A soft bleating noise nearby notifies them of the presence of the deer's still-nursing fawn. They return to c_n with the fawn's carcass, proud and tall.",
                 "exp": 10,
                 "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol chuckles at the sight of the Twolegs trying to round up their dogs, none purring louder than s_c. Oh <i>deer</i>. Once the Twolegs wrangle their dogs, the patrol descends to feast. s_c doesn't take too big of a mouthful; if {PRONOUN/s_c/subject} did, {PRONOUN/s_c/subject} would't be able to crack deer puns. That would be a stag-ggering loss to everyone.",
+                "exp": 10,
+                "weight": 5,
+                "stat_trait": [ "childish", "playful" ],
                 "prey": ["large"],
                 "relationships": [
                     {
