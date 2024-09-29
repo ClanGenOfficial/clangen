@@ -36,6 +36,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -45,6 +48,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -52,7 +58,7 @@
         "thoughts": [
             "Is fantasizing about leading the Clan into a victorious battle",
             "Feels a thrill imagining the chaos of a large-scale battle",
-          "Tells the border patrol not to let any intruders go free without a scar to remember them by"
+            "Tells the border patrol not to let any intruders go free without a scar to remember them by"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -69,10 +75,13 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "strange_deputy_to_gen",
+        "id": "strange_deputy",
         "thoughts": [
             "Accidentally assigns the same cat to three patrols",
             "Insists a hunting patrol needs to only bring back mice",
@@ -107,6 +116,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -166,6 +178,9 @@
         ],
         "main_skill_constraint": [
             "TEACHER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -189,6 +204,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -204,13 +222,16 @@
       "id": "rebellious_deputy_to_leader",
         "thoughts": [
             "Feels an urge to challenge the leader's decision for the betterment of the Clan",
-          "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
+            "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
         ],
         "main_trait_constraint": [
             "rebellious"
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -234,6 +255,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -251,7 +275,7 @@
         "id": "fighter_deputy",
         "thoughts": [
             "Is instructing a group of warriors in advanced combat techniques",
-          "Feels a sense of protectiveness towards the Clan, ready to defend {PRONOUN/m_c/object} at any moment",
+            "Feels a sense of protectiveness towards the Clan, ready to defend {PRONOUN/m_c/object} at any moment",
             "Is assessing the Clan's physical strength and readiness for potential threats",
             "Organizes a mock battle to keep the Clan's skills sharp"
         ],
@@ -291,6 +315,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -314,7 +341,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
-
 ]
