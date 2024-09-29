@@ -18,12 +18,10 @@
             "Is assigning cats to a hunting patrol",
             "Is wondering what it would be like to be a leader",
             "Is stressed about organizing patrols",
-            "Wonders who will give {PRONOUN/m_c/object} nine lives",
+            "Wonders who will give {PRONOUN/m_c/object} {PRONOUN/m_c/poss} nine lives",
             "Feels overworked",
             "Is hoping for a break",
             "Is assigning cats to the dawn patrol",
-            "Is assigning cats to the hunting patrol",
-            "Is assigning cats to patrol the borders",
             "Can't believe {PRONOUN/m_c/subject} overslept today",
             "Is unsure of what the rest of the Clan thinks of {PRONOUN/m_c/object} as deputy"
         ]
@@ -136,11 +134,23 @@
         "id": "playful_deputy",
         "thoughts": [
             "Is inventing a fun game to make patrol assignments more engaging",
-            "Is amused by the antics of the younger cats",
             "Finds joy in the simple tasks of a deputy's duty"
         ],
         "main_trait_constraint": [
             "playful"
+        ]
+    },
+    {
+      "id": "playful_deputy_to_younger",
+        "thoughts": [
+            "Is amused by the antics of the younger cats"
+        ],
+        "random_age_constraint": [
+            "kitten",
+            "adolescent"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -308,7 +318,7 @@
     {
       "id": "healer_deputy_to_medcat",
         "thoughts": [
-            "Takes a patrol out to gather herbs for the medicine cat"
+            "Takes a patrol out to gather herbs for the medicine cat den"
         ],
         "main_skill_constraint": [
             "HEALER,1"
