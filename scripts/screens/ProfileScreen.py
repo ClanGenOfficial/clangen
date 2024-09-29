@@ -83,6 +83,7 @@ def bs_blurb_text(cat):
 
     return backstory_text
 
+
 # ---------------------------------------------------------------------------- #
 #             change how backstory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
