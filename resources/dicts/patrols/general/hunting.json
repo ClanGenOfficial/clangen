@@ -178,7 +178,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l and r_c sprint toward the hare at the same time and bonk heads. The hare bolts into the grass before p_l and r_c can straighten up. What a hare-rrible situation, s_c chortles. p_l and r_c are far less amused.",
+                "text": "p_l and r_c sprint toward the hare at the same time and bonk heads. The hare bolts into the grass before either of them can straighten up. What a hare-rrible situation, s_c chortles. p_l and r_c are far less amused.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["childish", "playful" ],
@@ -295,7 +295,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c creeps up to the streambank, then lashes out a paw and hooks out a fat minnow. On a <i>scale</i> of one to ten, s_c would call this catch a gill-icious ten. Fishing is all about finding the right perch on grass, and not carping too much about failures. c_n should never trout s_c's fishing skill!",
+                "text": "s_c creeps up to the streambank, then lashes out a paw and hooks out a fat minnow. On a <i>scale</i> of one to ten, s_c would call this catch a gill-icious ten. Fishing is all about finding the right perch and not carping too much about failures. c_n should never trout s_c's fishing skill!",
                 "exp": 10,
                 "weight": 5,
                 "stat_trait": ["playful", "childish"],
@@ -510,7 +510,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The rabbit sprints away before any cat in the patrol can react. s_c remarks that {PRONOUN/s_c/subject} <i>would've</i> chased after it, {PRONOUN/s_c/subject} just {VERB/s_c/think/thinks} that sort of prey is ra-bit too easy to catch. The rest of the patrol is irritable from the missed catch and doesn't react. s_c repeats the joke, to no avail. Tough crowd.",
+                "text": "The rabbit sprints away before any cat in the patrol can react. s_c remarks that {PRONOUN/s_c/subject} <i>would've</i> chased after it, {PRONOUN/s_c/subject} just {VERB/s_c/think/thinks} that sort of prey is ra-bit too easy to catch. The rest of the patrol is irate from the missed catch and doesn't react. s_c repeats the joke, to no avail. Tough crowd.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["childish", "playful" ],
@@ -1156,7 +1156,7 @@
                 ]
             },
             {
-                "text": "The patrol chuckles at the sight of the Twolegs trying to round up their dogs, none purring louder than s_c. Oh <i>deer</i>. Once the Twolegs wrangle their dogs, the patrol descends to feast. s_c doesn't take too big of a mouthful; if {PRONOUN/s_c/subject} did, {PRONOUN/s_c/subject} would't be able to crack deer puns. That would be a stag-ggering loss to everyone.",
+                "text": "The patrol chuckles at the sight of the Twolegs trying to round up their dogs, none purring louder than s_c. Oh <i>deer</i>. Once the Twolegs wrangle their dogs, the patrol descends to feast. s_c doesn't take too big of a mouthful; if {PRONOUN/s_c/subject} did, {PRONOUN/s_c/subject} wouldn't be able to make deer puns. That would be a stag-ggering loss to everyone.",
                 "exp": 10,
                 "weight": 5,
                 "stat_trait": [ "childish", "playful" ],

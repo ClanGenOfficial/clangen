@@ -70,7 +70,7 @@
             },
             {
                 
-                "text": "s_c follows the scent all the way to the source - the wide, slavering jaws of the source - and the huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.",
+                "text": "s_c follows the scent all the way to the source - the wide, slavering jaws of the source - and the huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end, and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.",
                 "exp": 40,
                 "weight": 5,
                 "stat_trait": [ "playful", "childish", "strange" ],
@@ -1178,7 +1178,7 @@
                 ]
             },
             {
-                "text": "s_c comes up with a dozen different creative comparisons for the scent of o_c_n, including dogwood, bird-dung, and rotting crab-apples. Which was not the point of coming here. app2 unfortunately thinks this is hilarious, and p_l's plan for the day vanishes like dew in sunshine.",
+                "text": "s_c comes up with a dozen creative comparisons for the scent of o_c_n, including dogwood, bird-dung, and rotting crab apples. Which was not the point of coming here. app2 unfortunately thinks this is hilarious, and p_l's plan for the day evaporates like dew in sunshine.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [ "childish", "playful" ],
