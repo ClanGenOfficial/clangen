@@ -358,67 +358,6 @@ class RelationshipScreen(Screens):
         self.log_icon.kill()
         del self.log_icon
 
-    def get_previous_next_cat(self):
-        """Determines where the previous the next buttons should lead, and enables/diables them"""
-        """'Determines where the next and previous buttons point too."""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
-            else:
-                if (
-                    next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    previous_cat = check_cat.ID
-
-                elif (
-                    next_cat == 1
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    next_cat = check_cat.ID
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
-
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
-
     def update_checkboxes(self):
         # Remove all checkboxes
         for ele in self.checkboxes:
@@ -494,7 +433,14 @@ class RelationshipScreen(Screens):
             ui_scale(pygame.Rect((25, 75), (50, 50))), self.the_cat.sprite
         )
 
-        self.get_previous_next_cat()
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
+
+        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
+        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+
         self.apply_cat_filter(self.search_bar.get_text())
         self.update_inspected_relation()
         self.update_cat_page()

@@ -9,7 +9,7 @@
   },
   {
     "interaction_type": "offend",
-    "event_text": "m_c attempts to offend o_c_n at the Gathering, but {PRONOUN/m_c/poss} words are so soft that no one even recognizes the insult",
+    "event_text": "m_c attempts to offend o_c_n at the Gathering, but {PRONOUN/m_c/poss} words are so soft that no one even recognizes the insult.",
     "rel_change": 0,
     "m_c": {
       "trait": ["lonesome", "childish", "insecure", "nervous", "compassionate", "careful", "loving", "oblivious"]
@@ -112,7 +112,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "o_c_n's leader distances themselves from m_c during the Gathering, ignoring all attempts at conversation. It an ally will only go so far in hard times.",
+    "event_text": "o_c_n's leader distances themselves from m_c during the Gathering, ignoring all attempts at conversation. An ally will only go so far in hard times.",
     "rel_change": -2,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
@@ -164,7 +164,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "When c_n arrives at the Gathering and m_c takes {PRONOUN/m_c/poss} place with the Clan leaders, o_c_n's leader gasps and inquires as to what happened to leave *m_c* as the only option to lead, the *poor dear*. Their words are sickly sweet; m_c finds {PRONOUN/m_c/self} unable to control the following narrative o_c_n spins. c_n is no better off at the end of it.",
+    "event_text": "When c_n arrives at the Gathering and m_c takes {PRONOUN/m_c/poss} place with the Clan leaders, o_c_n's leader gasps and inquires as to what happened to leave <i>m_c</i> as the only option to lead, the <i>poor dear</i>. Their words are sickly sweet; m_c finds {PRONOUN/m_c/self} unable to control the following narrative o_c_n spins. c_n is no better off at the end of it.",
     "rel_change": 0,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
@@ -174,7 +174,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "When m_c joins the Clan leaders at the Gathering o_c_n's leader starts throwing nervous glances at the other leaders. No one else comments on the apprentice, though, despite the air of awkwardness. o_c_n's leader avoids m_c for the rest of the Gathering.",
+    "event_text": "When m_c joins the Clan leaders at the Gathering, o_c_n's leader starts throwing nervous glances at the other leaders. No one else comments on the apprentice, though, despite the air of awkwardness. o_c_n's leader avoids m_c for the rest of the Gathering.",
     "rel_change": 0,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
@@ -204,7 +204,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "m_c dreams the night before the Gathering and hears the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} speak at the Gathering o_c_n's leader shows open disdain, only for clouds to begin covering the moon. The Gathering ends quickly, though the enemy leader still leaves with their head held high.",
+    "event_text": "m_c dreams the night before the Gathering, hearing the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} at the Gathering, o_c_n's leader shows open disdain- only for clouds to begin covering the moon. The Gathering ends quickly, though the enemy leader still leaves with their head held high.",
     "rel_change": 10,
     "m_c": {
       "skill": ["STAR,4"]

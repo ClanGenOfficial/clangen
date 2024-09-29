@@ -19,7 +19,7 @@
   },
   {
     "interaction_type": "offend",
-    "event_text": "While getting to their spots before beginning the Gathering, m_c steps on the tail of o_c_n's leader. m_c gives no apology for the perhaps-not-quite mistake.",
+    "event_text": "While getting to {PRONOUN/m_c/poss} spot before beginning the Gathering, m_c steps on the tail of o_c_n's leader. m_c gives no apology for the perhaps-not-quite mistake.",
     "rel_change": -2,
     "m_c": {
       "trait": ["troublesome", "lonesome", "childish", "playful", "charismatic", "bold", "daring", "nervous", "insecure", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "loyal", "shameless", "sneaky", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
@@ -196,7 +196,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "During the Gathering, m_c does their best to make peace with o_c_n's leader.",
+    "event_text": "During the Gathering, m_c does {PRONOUN/m_c/poss} best to make peace with o_c_n's leader.",
     "rel_change": 2,
     "m_c": {},
     "player_clan_temper": ["any"],

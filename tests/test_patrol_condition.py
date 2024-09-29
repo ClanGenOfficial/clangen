@@ -38,7 +38,7 @@ class TestCondition(unittest.TestCase):
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the"
                       " dandelions are only playing dead. If they can get their paws on a plant,"
                       " the roots will still hold fresh, milky-white sap.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -58,7 +58,7 @@ class TestCondition(unittest.TestCase):
             {
                 "text": "It's not just spotting things that s_c is talented at - finding dandelions"
                         " in leaf-bare is hard enough, but finding good, non-wilted leaves is next to"
-                        " impossible, and it's a mark of s_c's unique skills that they manage it.",
+                        " impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],

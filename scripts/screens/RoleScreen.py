@@ -316,7 +316,10 @@ class RoleScreen(Screens):
             ),
         )
 
-        self.determine_previous_and_next_cat()
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
         self.update_disabled_buttons()
 
     def update_disabled_buttons(self):
@@ -605,61 +608,6 @@ class RoleScreen(Screens):
             output = f"{self.the_cat.name} has an unknown rank. I guess they want to make their own way in life! "
 
         return output
-
-    def determine_previous_and_next_cat(self):
-        """'Determines where the next and previous buttons point too."""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        if (
-            self.the_cat.dead
-            and not is_instructor
-            and self.the_cat.df == game.clan.instructor.df
-            and not (self.the_cat.outside or self.the_cat.exiled)
-        ):
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
-            else:
-                if (
-                    next_cat == 0
-                    and check_cat.ID != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    previous_cat = check_cat.ID
-
-                elif (
-                    next_cat == 1
-                    and check_cat != self.the_cat.ID
-                    and check_cat.dead == self.the_cat.dead
-                    and check_cat.ID != game.clan.instructor.ID
-                    and check_cat.outside == self.the_cat.outside
-                    and check_cat.df == self.the_cat.df
-                    and not check_cat.faded
-                ):
-                    next_cat = check_cat.ID
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
 
     def exit_screen(self):
         self.back_button.kill()

@@ -57,21 +57,24 @@
     "default": "herb-covered pelt",
     "plural": "herbs",
     "singular": "bunch of herbs",
-    "comment": ["just 'herb' sounds wrong, since the acc is visually multiple leaves on the cat. so i've structured",
+    "comment": [
+      "just 'herb' sounds wrong, since the acc is visually multiple leaves on the cat. So i've structured",
       "this in a way that allows it to sound correct when used for the singular_acc abbreviation"]
   },
   "PETALS": {
     "default": "petal-covered pelt",
     "plural": "petals",
     "singular": "bunch of petals",
-    "comment": ["just 'petal' sounds wrong, since the acc is visually multiple petals on the cat. so i've structured",
+    "comment": [
+      "just 'petal' sounds wrong, since the acc is visually multiple petals on the cat. So i've structured",
       "this in a way that allows it to sound correct when used for the singular_acc abbreviation"]
   },
   "DRY HERBS": {
     "default": "herb-covered pelt",
     "plural": "dry herbs",
     "singular": "bunch of dry herbs",
-    "comment": ["just 'dry herb' sounds wrong, since the acc is visually multiple leaves on the cat. so i've structured",
+    "comment": [
+      "just 'dry herb' sounds wrong, since the acc is visually multiple leaves on the cat. So i've structured",
       "this in a way that allows it to sound correct when used for the singular_acc abbreviation"]
   },
   "DRY CATMINT": {

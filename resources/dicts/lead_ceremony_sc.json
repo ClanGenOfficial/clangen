@@ -61,7 +61,7 @@
       "rank": [],
       "life_giving": [
         {
-          "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num] lives.\"  Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
+            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num] lives.\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
           "virtue": []
         }
       ]
@@ -441,9 +441,9 @@
       ]
     },
   
-    "fierce_warrior": {
+    "fierce_bloodthirsty_warrior": {
       "tags": [],
-      "lead_trait": ["fierce"],
+      "lead_trait": ["fierce", "bloodthirsty"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
@@ -775,7 +775,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "Wisdom is a virtue that is well valued in StarClan. r_c hopes that with this life of [virtue] that m_c can find the courage and power to be a great leader one day.",
+          "text": "Wisdom is a virtue that is well valued in StarClan. r_c hopes that, with this life of [virtue], m_c can find the courage and power to be a great leader one day.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]

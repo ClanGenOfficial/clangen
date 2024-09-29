@@ -91,7 +91,7 @@
 			"confession (confess_acceptance) - if these conditions are fulfilled by the opposite cat, they accept, otherwise, they reject.",
 			"conditions for mates - both relationships have to fulfill this condition",
 			"poly (current_mate) - which conditions all current mate relationships has to have towards the main cat + vise versa",
-			"poly (each_other) - which conditions all current mate relationships haves to have towards the new possible mate + vise versa"
+            "poly (each_other) - which conditions all current mate relationships has to have towards the new possible mate + vise versa"
 		]
 	},
 	"new_cat": {
