@@ -2251,7 +2251,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2309,7 +2309,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the rest of the patrol have to rescue {PRONOUN/s_c/object}from the red vixen.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2442,7 +2442,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2500,7 +2500,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the rest of the patrol have to rescue {PRONOUN/s_c/object}from the red vixen.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2753,7 +2753,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2768,7 +2768,7 @@
                 ]
             },
             {
-                "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating them on their bravery and skill.",
+                "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -2811,7 +2811,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2848,7 +2848,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -2916,7 +2916,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2974,7 +2974,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -3011,7 +3011,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -3123,7 +3123,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -3462,7 +3462,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -3520,7 +3520,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the rest of the patrol have to rescue {PRONOUN/s_c/object}from the red vixen.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -3653,7 +3653,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -3711,7 +3711,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the rest of the patrol have to rescue {PRONOUN/s_c/object}from the red vixen.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -3964,7 +3964,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -3979,7 +3979,7 @@
                 ]
             },
             {
-                "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating them on their bravery and skill.",
+                "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -4022,7 +4022,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4059,7 +4059,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -4127,7 +4127,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -4185,7 +4185,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4222,7 +4222,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -4334,7 +4334,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],

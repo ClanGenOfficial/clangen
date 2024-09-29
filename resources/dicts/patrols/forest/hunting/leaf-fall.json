@@ -23,13 +23,13 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and {VERB/p_l/kill/kills} it with ease.",
+                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "r_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} pounced - and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -38,7 +38,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight.",
+                "text": "r_c breaks a twig as {PRONOUN/r_c/subject} {VERB/r_c/ready/readies} {PRONOUN/r_c/self} to pounce, and the resulting crack alerts the squirrel. It doesn't even spare {PRONOUN/r_c/object} a glance as it scurries up the tree and out of sight.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -59,17 +59,17 @@
         },
         "weight": 20,
         "intro_text": "app1 scents a squirrel on the air! The dried leaves on the ground make {PRONOUN/app1/object} a little nervous, and {PRONOUN/app1/subject} {VERB/app1/wonder/wonders} if {PRONOUN/app1/subject} can navigate quietly enough to catch it...",
-        "decline_text": "They decide to move on and ignore the squirrel for now.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. They're right not to - their catch is flawless, and they return home with their chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end!",
+                "text": "Though {PRONOUN/app1/subject}{VERB/app1/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end!",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["medium"]
@@ -77,7 +77,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Poor app1 focuses too hard on making sure their hunting crouch is correct - by the time they feel ready, the squirrel is long gone.",
+                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct - by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -98,12 +98,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says they smell squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts app1 to see if they remember how to navigate the leaf-litter.",
+        "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts app1 to see if {PRONOUN/app1/subject} {VERB/app1/remember/remembers} how to navigate the leaf-litter.",
         "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. They're right not to - their catch is flawless, and they puff their chest out in pride as p_l praises them.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. T{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -118,7 +118,7 @@
                 ]
             },
             {
-                "text": "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end! p_l looks pleased and gives them tips to improve their technique next time.",
+                "text": "Though {PRONOUN/app1/subject}{VERB/app1/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -161,7 +161,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [1, 6],
+            "leader": [-1, -1]
         },
         "weight": 20,
         "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
@@ -185,7 +186,7 @@
                 ]
             },
             {
-                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, but they also have a pawful of oak leaves for the medicine cat as well!",
+                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only do they have the squirrel, but they also have a pawful of oak leaves for the medicine cat as well!",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["oak_leaves"],
@@ -204,7 +205,7 @@
                 "text": "With a glint in {PRONOUN/s_c/poss} eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when they've finished with a mouthful of oak leaves, curling their tail in pride at the looks on their Clanmates faces.",
                 "exp": 40,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
+                "stat_skill": ["HUNTER,1", "CLIMBER,1"],
                 "herbs": ["oak_leaves"],
                 "prey": ["medium"],
                 "relationships": [
@@ -235,7 +236,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and {VERB/r_c/land/lands} heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at the cats for pursuing such a foolhardy hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -245,6 +246,10 @@
                         "scars": []
                     }
                 ],
+                "history_text": {
+                    "scar": "This cat was scarred after falling from a tree.",
+                    "reg_death": "m_c died after falling from a tree while hunting."
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -269,7 +274,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol crunches through the dead leaves littering the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "intro_text": "As the patrol crunches through the dead leaves littering the woods, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -304,10 +309,10 @@
                 ]
             },
             {
-                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
+                "text": "s_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
+                "stat_skill": ["HUNTER,1", "CLEVER,1"],
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -345,7 +350,7 @@
         "types": ["hunting"],
         "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
+        "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
             "all apprentices": [-1, -1]
@@ -356,7 +361,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their Clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
+                "text": "The patrol backtracks. r_c is found, huddled under a bush - {PRONOUN/r_c/subject} lost the path and sight of {PRONOUN/r_c/poss} Clanmates but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -371,7 +376,7 @@
                 ]
             },
             {
-                "text": "p_l nearly jumps out of their pelt when r_c materializes next to them. Where in StarClan have they been?! But no, r_c has found a copse of trees so thick and overgrowth that they're merely damp, not soaked. It's better than p_l could have hoped for, and the hunting patrol can return to camp with a decent haul.",
+                "text": "p_l nearly jumps out of {PRONOUN/p_l/poss} pelt when r_c materializes next to them. Where in StarClan have they been?! Apparently, r_c has found a copse of trees so thick and overgrowth that they're merely damp, not soaked. It's better than p_l could have hoped for, and the hunting patrol can return to camp with a decent haul.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"],
@@ -386,7 +391,7 @@
                 ]
             },
             {
-                "text": "p_l, leading the search for s_c, hears a yowl in the distance. They charge towards the sound, swerving around trees, spotting s_c at the base of a hazel tree. They're staring up, tail lashing intently. On a branch above the cats, an owl sits with drooping, waterlogged wings. <i>Oh.</i> Yes, that'll do nicely.",
+                "text": "p_l, leading the search for s_c, hears a yowl in the distance. They charge towards the sound, swerving around trees, spotting s_c at the base of a hazel tree. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} staring up, tail lashing intently. On a branch above the cats, an owl sits with drooping, waterlogged wings. <i>Oh.</i> Yes, that'll do nicely.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -414,7 +419,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is silently furious at r_c when they find them. Leaf-fall is not the time to waste what could have been a productive hunting patrol with whatever nonsense r_c was up to.",
+                "text": "p_l is silently furious at r_c when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/r_c/object}. Leaf-fall is not the time to waste what could have been a productive hunting patrol with whatever nonsense r_c was up to.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -468,12 +473,12 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, they swear they could see a rat's tail.",
+        "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, {PRONOUN/p_l/subject} {VERB/p_l/swear/swears} {PRONOUN/p_l/subject} could see a rat's tail.",
         "decline_text": "It <i>could</i> be a single rat... or it could be a swarm of them lying in wait. Either way, it's too risky for p_l to pursue.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l lunges for the rat's tail with their claws and catches the rat! They drag it back to camp with their head held high.",
+                "text": "p_l lunges for the rat's tail with {PRONOUN/p_l/poss} claws outstretched and catches the rat! {PRONOUN/p_l/subject/CAP} {VERB/p_l/drag/drags} it back to camp with {PRONOUN/p_l/poss} head held high.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -501,12 +506,12 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l traverses the windy forest, trying their best to focus and not get distracted by the dancing leaves when they catch the scent of a rat nearby.",
-        "decline_text": "p_l decides that one rat isn't worth missing out on some fun! They instead chase after leaves for the rest of the hunting patrol.",
+        "intro_text": "p_l traverses the windy forest, trying {PRONOUN/p_l/poss} best to focus and not get distracted by the dancing leaves when {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of a rat nearby.",
+        "decline_text": "p_l decides that one rat isn't worth missing out on some fun! {PRONOUN/p_l/subject/CAP} instead {VERB/p_l/chase/chases} after leaves for the rest of the hunting patrol.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l sees the rat's tail in a clump of leaves and pounced after it. Their head is held high as they travel back to camp with the large piece of fresh-kill!",
+                "text": "p_l sees the rat's tail in a clump of leaves and pounced after it. {PRONOUN/p_l/subject/CAP} head is held high as {PRONOUN/p_l/subject} {VERB/p_l/travel/travels} back to camp with the large piece of fresh-kill!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -514,7 +519,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l's eyes flicker back towards the leaves, and can't help but swipe at them as they flutter by. When their attention returns to the rat, it's long gone.",
+                "text": "p_l's eyes flicker back towards the leaves and can't help but swipe at them as they flutter by. When {PRONOUN/p_l/poss} attention returns to the rat, it's long gone.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -536,7 +541,7 @@
         },
         "weight": 20,
         "intro_text": "p_l and app1 make their way towards a troop of mushrooms, eager to get more prey for the Clan. They hear rats squeaking amongst the fungi, and begin to plot their plan of attack.",
-        "decline_text": "p_l eventually decides to lead their patrol elsewhere. Who knows what dangerous effect those mushrooms could have on them.",
+        "decline_text": "p_l eventually decides to lead {PRONOUN/p_l/poss} patrol elsewhere. Who knows what dangerous effect those mushrooms could have on them.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -571,7 +576,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for their ingenious plan.",
+                "text": "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for {PRONOUN/r_c/poss} ingenious plan.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -685,7 +690,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The Rat King and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
+                "text": "The Rat King and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, hoping the Clan can heal so many wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -699,7 +704,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c knows they are one of the Clan's greatest hunters. They spot the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale.",
+                "text": "s_c knows {PRONOUN/s_c/subject} {VERB/s_c/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c/subject/CAP} {VERB/s_c/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell the tale.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["HUNTER,1"],
@@ -712,62 +717,9 @@
                 ],
                 "history_text": { "scar": "m_c was scarred fighting a Rat King."},
                 "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_hunt_leaf-fall_ratking2",
-        "biome": ["forest"],
-        "season": ["leaf-fall"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
-        "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "The Rat King's lair is heavily by smaller rats. While the patrol doesn't find any sign of the Rat King, they manage to defeat and bring back a feast of small rats.",
-                "exp": 30,
-                "weight": 20,
-                "prey": ["medium"]
             },
             {
-                "text": "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it - multiple eyes glowing in the dark, watching them.",
-                "exp": 30,
-                "weight": 5,
-                "prey": ["large"]
-            },
-            {
-                "text": "The waves of rats overwhelm the rest of the patrol, but s_c can see the Rat King writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["HUNTER,3"],
-                "prey": ["large"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There are more rats defending the Rat King's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "The Rat King's defenses are too powerful, and as wave upon wave of rats poured down onto the patrol, most of them manage to escape... but not everyone makes it out.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["multi", "some_lives"],
-                "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
-                    "lead_death": "fought a Rat King"
-                }
-            },
-            {
-                "text": "s_c knows they are one of the Clan's greatest hunters. They spot the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
+                "text": "s_c knows {PRONOUN/s_c/subject} {VERB/s_c/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c/subject/CAP} {VERB/s_c/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["HUNTER,2"],
@@ -825,7 +777,7 @@
                 ]
             },
             {
-                "text": "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments them on the catch with a laugh in their meow, and s_c has to agree with them, purring with amusement.",
+                "text": "s_c is basically on top of the skittering lizard and does a ridiculous hop to come down on it with claws extended. r_c compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c/poss} meow, and s_c has to agree with {PRONOUN/r_c/object}, purring with amusement.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -893,7 +845,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 pounces on the little creature and misses, but they don't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
+                "text": "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/do/does}n't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -1786,7 +1738,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+                "text": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their fury.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1814,7 +1766,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the red mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "text": "s_c displays incredible skill, driving the red mother vixen out of the territory almost by {PRONOUN/s_c/self}. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -1872,7 +1824,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the rest of the patrol have to rescue {PRONOUN/s_c/object}from the red vixen.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -1962,7 +1914,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1990,7 +1942,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to c_n.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to c_n.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2128,7 +2080,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
+                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2262,7 +2214,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+                "text": "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their fury.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -2276,7 +2228,7 @@
                 ]
             },
             {
-                "text": "The patrol drives away the gray fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them, but if c_n spots them, they won't hesitate.",
+                "text": "The patrol drives away the gray fox and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them, but if c_n spots them, they won't hesitate.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -2290,7 +2242,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2305,7 +2257,7 @@
                 ]
             },
             {
-                "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating them on their bravery and skill.",
+                "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -2348,7 +2300,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees further into the forest.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees further into the forest.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2385,7 +2337,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -2453,7 +2405,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2511,7 +2463,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees further into the forest.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees further into the forest.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2548,7 +2500,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -2616,7 +2568,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
+                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2674,7 +2626,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees further into the forest.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees further into the forest.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
