@@ -42,7 +42,7 @@
     "season": ["leaf-bare"],
     "tags": ["clan:kitten"],
     "weight": 30,
-    "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/poss} words paint an enchanting picture of the ancestors of c_n as {PRONOUN/m_c/subject} {VERB/m_c/point/points} out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
+    "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/poss/CAP} words paint an enchanting picture of the ancestors of c_n as {PRONOUN/m_c/subject} {VERB/m_c/point/points} out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
     "m_c": {
       "age": ["any"],
       "status": ["medicine cat", "elder"],

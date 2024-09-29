@@ -413,7 +413,7 @@
                 ]
             },
             {
-                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits.",
+                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine cat den awaits.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1225,7 +1225,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred when {PRONOUN/p_l/subject} tried to sneak across the o_c_n border."
+                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border."
                 },
                 "relationships": [
                     {
@@ -1239,7 +1239,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "Deciding it looks safe enough, p_l sneaks across the border... right into a late-night border patrol. {PRONOUN/p_l/subject/CAP}'{VERB/p_l/re/s} dealt with pretty quickly, and {PRONOUN/p_l/poss} fur prickles with embarrassment as {PRONOUN/p_l/subject} {VERB/p_l/scramble/scrambles} back over the border. {PRONOUN/p_l/subject} {VERB/p_l/have/has} the whole walk back to camp to think of an explanation for the fresh claw-wounds scoring {PRONOUN/p_l/poss} pelt.",
+                "text": "Deciding it looks safe enough, p_l sneaks across the border... right into a late-night border patrol. {PRONOUN/p_l/subject/CAP}'{VERB/p_l/re/s} dealt with pretty quickly, and {PRONOUN/p_l/poss} fur prickles with embarrassment as {PRONOUN/p_l/subject} {VERB/p_l/scramble/scrambles} back over the border. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} the whole walk back to camp to think of an explanation for the fresh claw-wounds scoring {PRONOUN/p_l/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -1258,7 +1258,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred when {PRONOUN/p_l/subject} tried to sneak across the o_c_n border."
+                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border."
                 },
                 "relationships": [
                     {
@@ -1501,7 +1501,7 @@
                 "stat_skill": ["FIGHTER,0"]
             },
             {
-                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
+                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject/CAP} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": [
@@ -2176,5 +2176,712 @@
             }
         ]
 
-    }
+    },
+{
+    "patrol_id": "gen_bord_appmission",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["border"],
+    "tags": ["other_clan"],
+    "patrol_art": "gen_train_talkingAW",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "warrior": [1, 1],
+        "apprentice": [1, 1]
+    },
+    "weight": 20,
+    "chance_of_success": 20,
+    "relationship_constraint": ["dislike_10"],
+    "intro_text": "p_l can't help but think that app1 has been distracted on this patrol, trailing behind and admiring any aimless insect that hovers nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that app1 could do with a <i>special</i> mission to get {PRONOUN/app1/object} back on track.",
+    "decline_text": "After a bit of thought, p_l decides that getting an apprentice to sneak across the border probably isn't the best idea... however irritating {PRONOUN/app1/subject} {VERB/app1/were/was} being.",
+    "success_outcomes": [
+        {
+            "text": "s_c waits for app1 to catch up to {PRONOUN/s_c/object} before proposing a super exciting, top secret mission just for {PRONOUN/app1/object}! All app1 has to do is sneak across the border and <i>borrow</i> some of that catmint. Eager to please s_c, app1 bounds across the border without a second thought, snatching a large clump of the valuable herb before returning to s_c. Not particuarly sneaky, but {PRONOUN/app1/poss} little escapade goes unnoticed regardless.",
+            "exp": 5,
+            "weight": 30,
+	    "stat_trait": ["bold", "childish", "cold", "cunning", "daring", "troublesome", "vengeful", "bloodthirsty", "rebellious"],
+	    "herbs": ["catmint"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1"],
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "art": "running_app2"
+        },
+	{
+            "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal a rabbit from o_c_n's territory. app1 hesitates - surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. Startled by app1's refusal, s_c stalks off to continue the patrol, fuming - and maybe a tiny bit impressed.",
+            "exp": 10,
+	    "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "bold"],
+	    "weight": 30,
+	    "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+            "art": "gen_train_argueAW"
+
+        },
+	{
+            "text": "Sighing to {PRONOUN/p_l/self}, p_l brightly suggests a super exciting mission for app1. All {PRONOUN/app1/subject} have to do is spot the closest bush in o_c_n territory, and sprint there and back as fast as {PRONOUN/app1/subject} can. While a slightly risky decision on p_l's part, the tiny transgression thankfully goes unnoticed, and gives app1 the thrill {PRONOUN/app1/subject} need to actually focus during the rest of the patrol. And besides, p_l reasons, what o_c_n doesn't know can't hurt them.",
+            "exp": 5,
+	    "weight": 20,
+	    "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": 5
+                    }
+                ],
+            "art": "running_app2"
+
+        }
+
+    ],
+    "fail_outcomes": [
+        {
+            "text": "In hindsight, maybe it wasn't the best idea to suggest app1 sneaks onto o_c_n territory. But app1 wasn't going to steal any prey, truly, p_l insists to the o_c_n patrol, {PRONOUN/app1/subject} just got overexcited! p_l's rambling excuses and apologies do little to soothe tensions, and the pair eventually return back to camp with heads and tails hung low. This was not going to be fun to explain.",
+            "exp": 0,
+            "weight": 20,
+	    "other_clan_rep": -1,
+	    "relationships": [
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["p_l"],
+		    "mutual": true,
+                    "values": ["respect"],
+                    "amount": -5
+                }
+            ],
+
+            "art": "gen_bord_otherclan_hostile"
+        },
+{
+            "text": "Of course, s_c wouldn't risk <i>{PRONOUN/s_c/poss}</i> reputation stealing o_c_n's prey. But {PRONOUN/s_c/subject} wouldn't be too upset if a particularly irritating apprentice did. It only takes a few sly words of encouragement for app1 to sneak across the border... right as a furious o_c_n patrol arrives. s_c allows the scuffle to go on for a bit, before ever-so-apologetically excusing the apprentice's recklessness.",
+            "exp": 0,
+            "weight": 20,
+	    "other_clan_rep": -2,
+	    "stat_trait": ["bloodthirsty", "vengeful", "cunning", "sneaky"],
+            "injury": [
+{
+                    "cats": ["app1"],
+                    "injuries": ["battle_injury"],
+                    "scars": ["SCRATCHSIDE", "BRIDGE", "CATBITETWO"]
+                }
+            ],
+            "history_text": {
+                "reg_death": "m_c died from a border skirmish after sneaking across the o_c_n border.",
+                "scar": "m_c was scarred in a border skirmish after sneaking across the o_c_n border"
+            },
+	    "relationships": [
+                {
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
+                        "values": ["platonic", "trust"],
+                        "amount": -10
+                    }
+		],
+	    "art": "gen_battle_app_other_clan"
+
+
+        }
+
+    ]
+    
+  },
+  {
+    "patrol_id": "gen_bord_kittypet_friends_with_dog",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["border"],
+    "tags": [],
+    "patrol_art": "gen_border_dogscent_clanmember",
+    "min_cats": 1,
+    "max_cats": 1,
+    "weight": 20,
+    "chance_of_success": 20,
+    "intro_text": "Having been chased by a small, yappy dog along the border, p_l is about to land a hefty blow to the irritating creature's face, when a panicked voice calls out from nearby.",
+    "decline_text": "Frankly, p_l has better things to do than talk to weird dog-defenders. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home early, without a second glance at whoever called out.",
+    "success_outcomes": [
+        {
+            "text": "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c:0/poss} name is n_c:0, and asking p_l not to hurt {PRONOUN/n_c:0/poss} friend. It takes p_l a while to realise {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c:0 walk away, {PRONOUN/n_c:0/poss} canine companion excitably following. The other warriors were not going to believe this!",
+            "exp": 5,
+	    "new_cat": [
+		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+                {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": 5
+                    }
+		],
+            "weight": 20,
+            "art": "gen_kittypet_friends_with_dog1"
+        },
+	{
+            "text": "s_c whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c not to hurt them. Any other day, s_c might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it.",
+            "exp": 5,
+	    "new_cat": [
+		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+	           {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "values": ["comfort"],
+                        "amount": -5
+                    }
+	    ],
+	    "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "cold", "grumpy"],
+	    "weight": 30,
+            "art": "gen_kittypet_friends_with_dog1"
+
+        },
+        {
+            "text": "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from. <i>Whatever this is</i>, {PRONOUN/p_l/subject} offers the kittypet a place to stay in c_n- this kittypet's skill in communicating with dogs may come in handy later.",
+            "exp": 10,
+	    "new_cat": [
+		["status:warrior", "backstory:kittypet1", "kittypet", "exists"]
+		],
+	    "relationships": [
+                {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["platonic","trust"],
+                        "amount": 10
+                    }
+		],
+            "weight": 20,
+            "art": "gen_kittypet_friends_with_dog1",
+            "outsider_rep": 1
+        }
+    ],
+    "fail_outcomes": [
+        {
+	"text": "Momentarily distracted, p_l doesn't have time to react as the increasingly-infuriating dog nips at {PRONOUN/p_l/poss} ear. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses}, lashing out at the dog just as an incredibly appologetic kittypet rushes over, leading the whimpering dog away. p_l stares after them in shock. Did that dog actually listen to the kittypet...? Perhaps better to head back to camp, and process this bizarre experience.",
+            "exp": 2,
+	    "weight": 20,
+	     "new_cat": [
+		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+                {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": -10
+                    }
+		],
+	    "injury": [
+		{
+                    "cats": ["p_l"],
+                    "injuries": ["torn ear"],
+                    "scars": ["RIGHTEAR", "LEFTEAR"]
+                }
+            ],
+
+            "art": "gen_kittypet_friends_with_dog1"
+    
+        },
+	{
+	"text": "p_l spins around just in time to see an impressively viscous kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c:0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed - and very confused - p_l.",
+            "exp": 2,
+	    "weight": 15,
+	     "new_cat": [
+		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+                {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+		{
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+			"mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": -10
+                    }
+		],
+	    "injury": [
+		{
+                    "cats": ["p_l"],
+                    "injuries": ["claw-wound", "cat bite", "torn pelt", "torn ear"],
+                    "scars": ["RIGHTEAR", "LEFTEAR", "SCRATCHSIDE", "CATBITETWO"]
+                }
+            ],
+		"history_text": {
+                "reg_death": "m_c died from injuries given by a particularly vicious kittypet.",
+		"lead_death": "died from injuries given by a particularly vicious kittypet",
+                "scar": "m_c was scarred after a kittypet took them by surprise, though {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} everyone it was a bloodthirsty rogue."
+            },
+
+            "art": "gen_battle_warrior_danger"
+    
+        }
+      ],
+	"antag_success_outcomes": [
+        {
+	"text": "p_l ignores the voice, swiping {PRONOUN/p_l/poss} claws across the dog's face. Out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} sees a kittypet halt in {PRONOUN/n_c:0/poss} tracks, letting out a cry of dismay. It only takes another snarl from p_l for both kittypet and dog to flee.",
+            "exp": 5,
+	    "new_cat": [
+		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+                {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+		],
+	    "weight": 10,
+            "art": "gen_kittypet_friends_with_dog1"
+	},
+    {
+        "text": "p_l lets out a vicious yowl, ignoring the now shrill voice calling out to {PRONOUN/p_l/object}, pleading with {PRONOUN/p_l/object} to stop as {PRONOUN/p_l/subject} {VERB/p_l/attack/attacks} the dog, violently tearing at the dog's pelt as it yaps and whines. After the tussle, the dog hauls itself towards the now teary-eyed kittypet, and p_l can't help but smirk at {PRONOUN/n_c:0/poss} terrified expression.",
+                "exp": 5,
+            "new_cat": [
+            ["kittypet", "meeting"]
+            ],
+            "relationships": [
+                    {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["n_c:0"],
+                            "mutual": true,
+                            "values": ["dislike"],
+                            "amount": 20
+                        }
+            ],
+            "weight": 10,
+            "stat_trait": ["bloodthirsty", "vengeful"],
+                "art": "gen_kittypet_friends_with_dog1"
+        }
+	],
+	"antag_fail_outcomes": [
+        {
+	"text": "p_l ignores the voice, and is about to swipe {PRONOUN/p_l/poss} claws across the dog's face when a kittypet barrels into {PRONOUN/p_l/object}. Having caught p_l by surprise, the kittypet is able to get a lucky blow, and the warrior is forced to retreat.",
+            "exp": 0,
+	    "new_cat": [
+		["kittypet", "meeting", "exists"]
+		],
+	    "relationships": [
+                {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 15
+                    }
+		],
+	    "weight": 10,
+	    "injury": [
+                    {
+                        "cats": ["p_l"],
+			            "injuries": ["claw-wound"],
+                        "scars": ["THREE", "BRIDGE", "SNOUT", "FACE", "CHEEK"]
+                    }
+                ],
+		"history_text": {
+                "reg_death": "m_c died from injuries given by a particularly vicious kittypet.",
+		        "lead_death": "died from injuries given by a particularly vicious kittypet",
+                "scar": "m_c was scarred when a kittypet took {PRONOUN/m_c/object} by surprise, though {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} everyone it was a bloodthirsty rogue."
+            },
+            "art": "gen_battle_warrior_danger"
+            }
+        ]
+   },
+   {
+    "patrol_id": "gen_bord_twocats_leafbare",
+    "biome": ["any"],
+    "season": ["leaf-bare"],
+    "types": ["border"],
+    "tags": ["new_cat"],
+    "patrol_art": "mtn_bord_trackrogue",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 20,
+    "intro_text": "p_l freezes as {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of multiple unfamiliar cats, along with rustling in the undergrowth. Turning {PRONOUN/p_l/poss} attention towards the noise, p_l's fur begins to bristle with unease.",
+    "decline_text": "The chance of these scents being an ambush or worse just isn't worth investigating by {PRONOUN/p_l/self}. Instead, p_l decides to retreat while {PRONOUN/p_l/subject} still can.",
+    "chance_of_success": 30,
+    "success_outcomes": [
+        {
+            "text": "p_l slowly makes {PRONOUN/p_l/poss} way forward, caution in {PRONOUN/p_l/poss} step. To {PRONOUN/p_l/poss} surprise, p_l finds two young cats shaking, curled around each other. The warrior is saddened to hear the two detail how they had been looking for a place to live when a sudden snowstorm hit. p_l nods, helping them back to camp so they may heal and finally experience a safe space.",
+            "exp": 15,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["n_c:0"],
+                    "cats_from": ["n_c:1"],
+                    "mutual": true,
+                    "values": ["platonic", "romantic"],
+                    "amount": 25
+                },
+                {
+                    "cats_from": ["n_c:0", "n_c:1"],
+                    "cats_to": ["patrol"],
+                    "mutual": "true",
+                    "values": ["platonic", "trust", "comfort"],
+                    "amount": 10
+                }
+            ],
+            "new_cat": [
+                ["status:warrior", "age:young adult", "backstory:rogue1"],
+                ["status:warrior", "age:young adult", "backstory:rogue1"]
+            ],
+            "art": "gen_warrior_two_outsiders",
+            "outsider_rep": 1,
+            "injury": [
+                {
+                    "cats": ["n_c:0"],
+                    "injuries": ["cold_injury"],
+                    "no_results": true
+                },
+                {
+                    "cats": ["n_c:1"],
+                    "injuries": ["cold_injury"],
+                    "no_results": true
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l cautiously makes {PRONOUN/p_l/poss} way forward, intending to find the source of the noise. However, upon finding the source, p_l is horrified. Two recently lifeless bodies lay before {PRONOUN/p_l/object}, curled around each other. The frostbite dotting their pelts indicates that the two cats must've gotten stuck in a terrible snowstorm, and p_l does {PRONOUN/p_l/poss} best to honor their lives with a proper burial.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [],
+            "new_cat": [
+                ["dead", "age:young adult", "meeting", "rogue"],
+                ["dead", "age:young adult", "meeting", "rogue"]
+            ],
+            "art": "gen_hunt_leafbaresnowstorm",
+            "outsider_rep": -1
+        },
+        {
+            "text": "The warrior swallows {PRONOUN/p_l/poss} unease and pads toward the sound, only to be horrified at what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} seeing. Two elder cats lay dead, frostbite scorching their legs. p_l lets out a saddened whimper before shooting a glare up towards the cloudy sky. StarClan, how could you do this to these innocent cats?",
+            "exp": 0,
+            "weight": 20,
+            "stat_skill": ["DARK,2"],
+            "relationships": [],
+            "new_cat": [
+                ["dead", "age:senior", "meeting"],
+                ["dead", "age:senior", "meeting"]
+            ],
+            "art": "gen_cat_looking_up1"
+        }
+    ],
+    "antag_success_outcomes": [
+        {
+            "text": "p_l bounds through a thorny bush, a sneer across {PRONOUN/p_l/poss} face. A pair of kittypets meets {PRONOUN/p_l/poss} gaze, startled. As p_l lets out a warning yowl to signify {PRONOUN/p_l/poss} intention to fight, the two kittypets quickly dart away.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["n_c:0"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["dislike"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["n_c:1"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["dislike"],
+                    "amount": 10
+                }
+            ],
+            "new_cat": [
+                ["kittypet", "meeting", "existing"],
+                ["kittypet", "meeting", "existing"]
+            ],
+            "art": "gen_angry_cat_warrior",
+            "outsider_rep": -1
+        },
+        {
+            "text": "p_l wasn't going to let any cat get the upper paw on {PRONOUN/p_l/object}. Without a second thought, {PRONOUN/p_l/subject} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at an unsuspecting kittypet, ignoring the scent of sickness on {PRONOUN/n_c:0/object}. Yowls from another kittypet begging p_l to stop makes {PRONOUN/p_l/object} take a step back... but <i>it's too late</i>. The kittypet is dead, p_l has blood on {PRONOUN/p_l/poss} paws and the glare of the other kittypet tells {PRONOUN/p_l/object} that {PRONOUN/p_l/subject} had just made a new enemy.",
+            "exp": 15,
+            "weight": 15,
+            "stat_trait": [
+            "fierce",
+            "bloodthirsty",
+            "cold", 
+            "shameless",
+            "vengeful"
+        ],
+            "relationships": [
+                {
+                    "cats_to": ["n_c:1"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["dislike"],
+                    "amount": 50
+                }
+            ],
+            "new_cat": [
+                ["dead", "meeting", "existing", "kittypet"],
+                ["kittypet", "meeting"]
+            ],
+            "art": "gen_gen_newcat_hostile",
+            "outsider_rep": -2
+        }
+    ],
+    "antag_fail_outcomes": [
+        {
+            "text": "p_l rushes towards the scents, intending to put up a fight- but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
+            "exp": 0,
+            "weight": 15,
+            "dead_cats": ["p_l"],
+            "history_text":
+        {
+            "cats": ["p_l"],
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} picked a fight {PRONOUN/m_c/subject} couldn't win."
+        },
+            "art": "gen_dead_cat",
+            "outsider_rep": -1
+        },
+        {
+            "text": "The warrior bounds through a bush, a snarl across {PRONOUN/p_l/poss} face. Before p_l can demand the rogues leave, a fight ensues. p_l is outnumbered two to one, and it is a miracle that {PRONOUN/p_l/subject} {VERB/p_l/make/makes} it out alive, barely escaping claw wounds. {PRONOUN/p_l/poss/CAP} luck doesn't last, though, and an oncoming snowstorm bites into {PRONOUN/p_l/poss} pelt on {PRONOUN/p_l/poss} way home.",
+            "exp": 5,
+            "weight": 20,
+            "injury": [
+                {
+                    "cats": ["p_l"],
+                    "injuries": ["cold_injury"],
+                    "scars": ["FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK"]
+                }
+            ],
+        "history_text": {
+            "reg_death": "m_c died from frostbite due to an unpredictable snowstorm.",
+            "lead_death": "died from frostbite due to an unpredictable snowstorm",
+            "scar": "m_c was scarred after getting frostbite from a snowstorm."
+        },
+            "art": "gen_battle_warrior_danger",
+            "outsider_rep": -1
+        }
+    ]
+},
+{
+    "patrol_id": "gen_bord_twocats_leafbare",
+    "biome": ["any"],
+    "season": ["leaf-bare"],
+    "types": ["border"],
+    "tags": ["new_cat"],
+    "patrol_art": "mtn_bord_trackrogue",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 20,
+    "intro_text": "p_l freezes as {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of multiple unfamiliar cats, along with rustling in the undergrowth. Turning {PRONOUN/p_l/poss} attention towards the noise, p_l's fur begins to bristle with unease.",
+    "decline_text": "The chance of these scents being an ambush or worse just isn't worth investigating by {PRONOUN/p_l/self}. Instead, p_l decides to retreat while {PRONOUN/p_l/subject} still can.",
+    "chance_of_success": 30,
+    "success_outcomes": [
+        {
+            "text": "p_l slowly makes {PRONOUN/p_l/poss} way forward, caution in {PRONOUN/p_l/poss} step. To {PRONOUN/p_l/poss} surprise, p_l finds two young cats shaking, curled around each other. The warrior is saddened to hear the two detail how they had been looking for a place to live when a sudden snowstorm hit. p_l nods, helping them back to camp so they may heal and finally experience a safe space.",
+            "exp": 15,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["n_c:0"],
+                    "cats_from": ["n_c:1"],
+                    "mutual": true,
+                    "values": ["platonic", "romantic"],
+                    "amount": 25
+                },
+                {
+                    "cats_from": ["n_c:0", "n_c:1"],
+                    "cats_to": ["patrol"],
+                    "mutual": "true",
+                    "values": ["platonic", "trust", "comfort"],
+                    "amount": 10
+                }
+            ],
+            "new_cat": [
+                ["status:warrior", "age:young adult", "backstory:rogue1"],
+                ["status:warrior", "age:young adult", "backstory:rogue1"]
+            ],
+            "art": "gen_warrior_two_outsiders",
+            "outsider_rep": 1,
+            "injury": [
+                {
+                    "cats": ["n_c:0"],
+                    "injuries": ["cold_injury"],
+                    "no_results": true
+                },
+                {
+                    "cats": ["n_c:1"],
+                    "injuries": ["cold_injury"],
+                    "no_results": true
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l cautiously makes {PRONOUN/p_l/poss} way forward, intending to find the source of the noise. However, upon finding the source, p_l is horrified. Two recently lifeless bodies lay before {PRONOUN/p_l/object}, curled around each other. The frostbite dotting their pelts indicates that the two cats must've gotten stuck in a terrible snowstorm, and p_l does {PRONOUN/p_l/poss} best to honor their lives with a proper burial.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [],
+            "new_cat": [
+                ["dead", "age:young adult", "meeting", "rogue"],
+                ["dead", "age:young adult", "meeting", "rogue"]
+            ],
+            "art": "gen_hunt_leafbaresnowstorm",
+            "outsider_rep": -1
+        },
+        {
+            "text": "The warrior swallows {PRONOUN/p_l/poss} unease and pads toward the sound, only to be horrified at what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} seeing. Two elder cats lay dead, frostbite scorching their legs. p_l lets out a saddened whimper before shooting a glare up towards the cloudy sky. StarClan, how could you do this to these innocent cats.",
+            "exp": 0,
+            "weight": 20,
+            "stat_skill": ["DARK,2"],
+            "relationships": [],
+            "new_cat": [
+                ["dead", "age:senior", "meeting"],
+                ["dead", "age:senior", "meeting"]
+            ],
+            "art": "gen_cat_looking_up1"
+        }
+    ],
+    "antag_success_outcomes": [
+        {
+            "text": "p_l bounds through a thorny bush, a sneer across {PRONOUN/p_l/poss} face. A pair of kittypets meets {PRONOUN/p_l/poss} gaze, startled. As p_l lets out a warning yowl to signify {PRONOUN/p_l/poss} intention to fight, the two kittypets quickly dart away.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["n_c:0"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["dislike"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["n_c:1"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["dislike"],
+                    "amount": 10
+                }
+            ],
+            "new_cat": [
+                ["kittypet", "meeting", "existing"],
+                ["kittypet", "meeting", "existing"]
+            ],
+            "art": "gen_angry_cat_warrior",
+            "outsider_rep": -1
+        },
+        {
+            "text": "p_l wasn't going to let any cat get the upper paw on {PRONOUN/p_l/object}. Without a second thought, {PRONOUN/p_l/subject} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at an unsuspecting kittypet, ignoring the scent of sickness on {PRONOUN/n_c:0/object}. Yowls from another kittypet begging p_l to stop makes {PRONOUN/p_l/object} take a step back- but <i>it's too late</i>. The kittypet is dead, p_l has blood on {PRONOUN/p_l/poss} paws, and the glare of the other kittypet tells {PRONOUN/p_l/object} that {PRONOUN/p_l/subject} had just made a new enemy.",
+            "exp": 15,
+            "weight": 15,
+            "stat_trait": [
+            "fierce",
+            "bloodthirsty",
+            "cold", 
+            "shameless",
+            "vengeful"
+        ],
+            "relationships": [
+                {
+                    "cats_to": ["n_c:1"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["dislike"],
+                    "amount": 50
+                }
+            ],
+            "new_cat": [
+                ["dead", "meeting", "existing", "kittypet"],
+                ["kittypet", "meeting"]
+            ],
+            "art": "gen_gen_newcat_hostile",
+            "outsider_rep": -2
+        }
+    ],
+    "antag_fail_outcomes": [
+        {
+            "text": "p_l rushes towards the scents, intending to put up a fight- but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
+            "exp": 0,
+            "weight": 15,
+            "dead_cats": ["p_l"],
+            "history_text":
+        {
+            "cats": ["p_l"],
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} picked a fight {PRONOUN/m_c/subject} couldn't win."
+        },
+            "art": "gen_dead_cat",
+            "outsider_rep": -1
+        },
+        {
+            "text": "The warrior bounds through a bush, a snarl across {PRONOUN/p_l/poss} face. Before p_l can demand the rogues leave, a fight ensues. p_l is outnumbered two to one, and it is a miracle that {PRONOUN/p_l/subject} {VERB/p_l/make/makes} it out alive, barely escaping claw wounds. {PRONOUN/p_l/poss/CAP} luck doesn't last, though, and an oncoming snowstorm bites into {PRONOUN/p_l/poss} pelt on {PRONOUN/p_l/poss} way home.",
+            "exp": 5,
+            "weight": 20,
+            "injury": [
+                {
+                    "cats": ["p_l"],
+                    "injuries": ["cold_injury"],
+                    "scars": ["FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK"]
+                }
+            ],
+        "history_text": {
+            "reg_death": "m_c died from frostbite due to an unpredictable snowstorm.",
+            "lead_death": "died from frostbite due to an unpredictable snowstorm",
+            "scar": "m_c was scarred after getting frostbite from a snowstorm."
+        },
+            "art": "gen_battle_warrior_danger",
+            "outsider_rep": -1
+        }
+    ]
+}
 ]

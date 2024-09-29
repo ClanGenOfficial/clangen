@@ -5,7 +5,7 @@
             "Has recently picked up the scent of mischievous kits in {PRONOUN/m_c/poss} den...",
             "Is pondering the next mentors for the kits of the Clan",
             "Thinks about who should mentor new apprentices",
-            "Bats a moss-ball back to r_c when it hits {PRONOUN/m_c/object}, chuckling at the wide-eyed kit",
+            "Bats a moss ball back to r_c when it hits {PRONOUN/m_c/object}, chuckling at the wide-eyed kit",
             "Is looking over the kits, pleased the Clan is thriving",
             "Is visiting the nursery to check on the kits, the future of the Clan"
         ],
@@ -224,7 +224,7 @@
             "Shows r_c how to lead with fear and demand respect",
             "Tells r_c to take care of any disloyal warriors",
             "Trusts r_c to continue to keep the Clan in line",
-            "Threatens to drag r_c to the dark forest with {PRONOUN/m_c/object}",
+            "Threatens to drag r_c to the Dark Forest with {PRONOUN/m_c/object}",
             "Is teaching r_c how to rat out spies and dissenting warriors",
             "Shows r_c how to control with pain and suffering"
         ],
