@@ -262,7 +262,7 @@ class Pregnancy_Events:
                 )
                 return
 
-            # if the other cat is a female and the current cat is a male, make the female cat pregnant
+            # if the other cat is afab and the current cat is amab, make the afab cat pregnant
             pregnant_cat = cat
             second_parent = other_cat
             if (

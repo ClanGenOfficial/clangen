@@ -597,7 +597,7 @@ class Events:
                                                    sort=True)
             for med in meds_available:
                 if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-                    amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
+                    amount = random.choices([1, 2, 3, 4], [1, 2, 2, 2], k=1)
                 elif game.clan.current_season == "Leaf-fall":
                     amount = random.choices([0, 1, 2], [3, 2, 1], k=1)
                 else:
@@ -609,9 +609,9 @@ class Events:
                         if herb in ["blackberry"]:
                             continue
                         if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-                            amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
+                            amount = random.choices([2, 5, 8], [3, 3, 1], k=1)
                         else:
-                            amount = random.choices([1, 2], [4, 1], k=1)
+                            amount = random.choices([2, 4], [4, 1], k=1)
                         if herb in game.clan.herbs:
                             game.clan.herbs[herb] += amount[0]
                         else:
@@ -1489,9 +1489,9 @@ class Events:
                         chance = int(chance * 2.22)
 
                     if cat.personality.trait in [
-                        "altruistic",
+                        "careful",
                         "compassionate",
-                        "empathetic",
+                        "loving",
                         "wise",
                         "faithful",
                     ]:
@@ -1527,7 +1527,7 @@ class Events:
                         chance = game.config["roles"]["mediator_app_chance"]
                         if cat.personality.trait in [
                             "charismatic",
-                            "empathetic",
+                            "loving",
                             "responsible",
                             "wise",
                             "thoughtful",

@@ -177,20 +177,20 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up. It's probably for the better that {PRONOUN/r_c/subject} weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
+                "text": "r_c leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c sheepishly picks {PRONOUN/r_c/self} up. It's probably for the better that {PRONOUN/r_c/subject} weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
             },
             {
-                "text": "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance. Thankfully s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between Clans.",
+                "text": "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance. Thankfully s_c smooths things over with the other patrol by graciously gifting them the rabbit. They part ways, fortunately without damaging the relationship between Clans.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
                 "prey": ["small"]
             },
             {
-                "text": "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan.",
+                "text": "r_c is about to leap for the rabbit when s_c grabs {PRONOUN/r_c/object} by the scruff and pulls {PRONOUN/r_c/object} back!  A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -206,14 +206,14 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
+                "text": "r_c leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["medium"],
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until the patrol leaves the area.",
+                "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face-to-face with a o_c_n cat. s_c is promptly chased back over the border. The other cat glares, hissing and spitting until the patrol leaves the area.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -230,7 +230,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt.",
+                "text": "r_c leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -266,14 +266,14 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} over to the border and hesitate only momentarily before crossing. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/gather/gathers} some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} over to the border and {VERB/p_l/hesitate/hesitates} only momentarily before crossing. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/gather/gathers} some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some too.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["raspberry"],
                 "other_clan_rep": 2
             },
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} to the border and {VERB/p_l/pause/pauses} for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["raspberry"],
@@ -290,7 +290,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is padding their way. Though the patrol seems to calm down as they recognize p_l, they look gravely at the medicine cat and explain that they can't spare any herbs - their medicine cat sent them to collect the last of the berries. p_l nods and thanks them anyway.",
+                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is padding {PRONOUN/p_l/poss} way. Though the patrol seems to calm down as they recognize p_l, they look gravely at the medicine cat and explain that they can't spare any herbs - their medicine cat sent them to collect the last of the berries. p_l nods and thanks them anyway.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -341,13 +341,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol decides to follow the scent, but only end up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
+                "text": "The patrol decides to follow the scent but only end up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now; the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c can't contain their annoyance at the trespass and when the patrol finds a lost o_c_n apprentice to be the source of the scent, s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
+                "text": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when the patrol finds a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
@@ -366,7 +366,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol, catching r_c but thankfully only injuring them before r_c tears themself free and sprints away.",
+                "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol, catching r_c but thankfully only injuring {PRONOUN/r_c/object} before r_c tears {PRONOUN/r_c/self} free and sprints away.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -386,7 +386,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs.",
+                "text": "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -394,7 +394,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. The patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
+                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. The patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly-marked border lines.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -412,7 +412,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
+        "intro_text": "As p_l is checking the border lines, {PRONOUN/p_l/subject} {VERB/p_l/notice/notices} that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
         "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance.  Maybe an apprentice simply lost their way.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -429,7 +429,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "p_l follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory.  The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists on escorting the warrior back to the o_c_n camp and the o_c_n leader is grateful for the service.",
+                "text": "p_l follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory.  The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists on escorting the warrior back to the o_c_n camp - the o_c_n leader is grateful for the service.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["altruistic", "compassionate", "empathetic", "calm"],
@@ -438,13 +438,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l decides to follow the scent, but only ends up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills.  It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
+                "text": "p_l decides to follow the scent but only ends up walking in circles. Either the trespasser is good at concealing their trail or {PRONOUN/p_l/subject} just needs to work on {PRONOUN/p_l/poss} tracking skills.  It doesn't matter now; the whole day has been wasted. p_l decides that {PRONOUN/p_l/subject} should just return to camp and report the strange scent.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text": "s_c can't contain their annoyance at the trespass and when they find a lost o_c_n apprentice to be the source of the scent, s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air.",
+                "text": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when {PRONOUN/s_c/subject} {VERB/s_c/find/finds} a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
@@ -463,7 +463,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and r_c sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching r_c but thankfully only injuring them before r_c tears themself free and scales the tree.",
+                "text": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and r_c sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching r_c but thankfully only injuring {PRONOUN/r_c/object} before r_c tears {PRONOUN/r_c/self} free and scales the tree.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -483,7 +483,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell p_l off for so hastily jumping to conclusions. The other medicine cat was only looking to borrow some herbs.",
+                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n medicine cat conversing with your own medicine cat. They tell p_l off for so hastily jumping to conclusions. The other medicine cat was only looking to borrow some herbs.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -491,7 +491,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
+                "text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly-marked border lines.",
                 "exp": 10,
                 "weight": 20,
                 "other_clan_rep": -2
@@ -535,7 +535,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -613,7 +613,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -705,7 +705,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round, and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -947,7 +947,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1025,7 +1025,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1117,7 +1117,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round, and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1359,7 +1359,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1437,7 +1437,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1529,7 +1529,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round, and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1752,7 +1752,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c remarks and heads home, a simple but necessary task completed.",
+                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c re-marks and heads home, a simple but necessary task completed.",
                 "exp": 20,
                 "weight": 20,
                 "other_clan_rep": 2
@@ -1771,7 +1771,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1830,7 +1830,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c remarks and heads home, a simple but necessary task completed.",
+                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c re-marks and heads home, a simple but necessary task completed.",
                 "exp": 20,
                 "weight": 20,
                 "other_clan_rep": 2
@@ -1849,7 +1849,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1922,7 +1922,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c remarks and heads home, a simple but necessary task completed.",
+                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c re-marks and heads home, a simple but necessary task completed.",
                 "exp": 20,
                 "weight": 20,
                 "other_clan_rep": 2
@@ -1941,7 +1941,7 @@
                 "other_clan_rep": 2
             },
             {
-                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round, and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2021,7 +2021,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c remarks and heads home, a simple but necessary task completed.",
+                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c re-marks and heads home, a simple but necessary task completed.",
                 "exp": 20,
                 "weight": 20,
                 "other_clan_rep": 2
@@ -2089,7 +2089,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c remarks and heads home, a simple but necessary task completed.",
+                "text": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the border markings. r_c re-marks and heads home, a simple but necessary task completed.",
                 "exp": 20,
                 "weight": 20,
                 "other_clan_rep": 2
@@ -2161,8 +2161,8 @@
         },
         "weight": 40,
         "pl_skill_constraint": ["LORE,1"],
-        "intro_text": "The border patrol, busy remarking, comes across an o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale - <i>if</i> they can all sit still for it!",
-        "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
+        "intro_text": "The border patrol, busy re-marking, comes across a o_c_n patrol doing the same. The apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale - <i>if</i> they can all sit still for it!",
+        "decline_text": "The apprentices can't sit still, but it's no great loss -the patrols just continue on with their work.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -2197,7 +2197,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up, and p_l's storytelling skills are wasted - though the o_c_n cats seem to appreciate the attempt.",
+                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted - though the o_c_n cats seem to appreciate the attempt.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": 0
@@ -2213,7 +2213,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she- Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent teenager away from the border.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she- Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1

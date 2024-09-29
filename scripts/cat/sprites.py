@@ -358,14 +358,23 @@ class Sprites:
         # sprite names will format as "symbol{PREFIX}{INDEX}", ex. "symbolSPRING0"
         y_pos = 1
         for letter in letters:
+            x_mod = 0
             for i, symbol in enumerate([symbol for symbol in self.symbol_dict if
                                         letter in symbol and self.symbol_dict[symbol]["variants"]]):
-                x_mod = 0
+
+                if self.symbol_dict[symbol]["variants"] > 1 and x_mod > 0:
+                    x_mod += -1
                 for variant_index in range(self.symbol_dict[symbol]["variants"]):
-                    x_mod += variant_index
+                    x_pos = i + x_mod
+
+                    if self.symbol_dict[symbol]["variants"] > 1:
+                        x_mod += 1
+                    elif x_mod > 0:
+                        x_pos += - 1
+
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
                     self.make_group('symbols',
-                                    (i + x_mod, y_pos),
+                                    (x_pos, y_pos),
                                     f"symbol{symbol.upper()}{variant_index}",
                                     sprites_x=1, sprites_y=1, no_index=True)
 
