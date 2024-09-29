@@ -487,7 +487,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Despite the snow, the patrol manages to hunt successfully, lurking where the pika are trying to stock their dens for leaf-bare. As p_l leads them home there's a sense of security and competence driving them onwards.",
+                "text": "Despite the snow, the patrol manages to hunt successfully, lurking where the pika are trying to stock their dens for leaf-bare. As p_l leads them home, a sense of security and competence drive them onwards.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -550,7 +550,7 @@
                 ]
             },
             {
-                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled.",
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp, r_c is cold and chilled.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1116,7 +1116,7 @@
                 ]
             },
             {
-                "text": "s_c is overconfident in {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
+                "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -1280,7 +1280,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers away.",
+                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1309,7 +1309,7 @@
             "deputy": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 50,
         "success_outcomes": [

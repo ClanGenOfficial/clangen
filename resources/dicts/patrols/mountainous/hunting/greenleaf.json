@@ -1038,7 +1038,7 @@
                 ]
             },
             {
-                "text": "s_c is overconfident in {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
+                "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold", "arrogant", "ambitious"],
@@ -1202,7 +1202,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers away.",
+                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
