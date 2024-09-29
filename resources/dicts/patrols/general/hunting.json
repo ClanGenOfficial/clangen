@@ -340,7 +340,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "r_c is so successful that s_c starts a rumor amongst the patrol that perhaps r_c isn't entirely a cat... Perhaps {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} some sort of combination of cat and fish... Like... a <i>fishcat</i>, s_c whispers. r_c frowns at {PRONOUN/s_c/object}, twitching {PRONOUN/r_c/poss} whiskers in a manner suspiciously similar to a catfish.",
+                "text": "r_c is so successful that s_c starts a rumor amongst the patrol that perhaps r_c isn't entirely a cat... Perhaps {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} some sort of combination of cat and fish... Like... a <i>fishcat,</i> s_c whispers. r_c frowns at {PRONOUN/s_c/object}, twitching {PRONOUN/r_c/poss} whiskers in a manner suspiciously similar to a catfish.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["childish", "playful"],
