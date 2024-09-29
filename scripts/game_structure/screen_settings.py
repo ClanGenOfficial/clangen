@@ -83,24 +83,19 @@ def set_display_mode(
         screen = pygame.display.set_mode(
             display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
         )
+        offset = (
+            floor((display_size[0] - screen_x) / 2),
+            floor((display_size[1] - screen_y) / 2),
+        )
+        game_screen_size = (screen_x, screen_y)
     else:
         offset = (0, 0)
         screen_x = 800
         screen_y = 700
         screen_scale = 1
         game_screen_size = (800, 700)
-        if user_defined_dimensions is not None:
-            determine_screen_scale(
-                user_defined_dimensions[0], user_defined_dimensions[1]
-            )
-        game_screen_size = (screen_x, screen_y)
-
-        screen = pygame.display.set_mode(
-            user_defined_dimensions
-            if user_defined_dimensions is not None
-            else game_screen_size,
-            pygame.RESIZABLE,
-        )
+        screen = pygame.display.set_mode((screen_x, screen_y))
+    game_screen_size = (screen_x, screen_y)
 
     if source_screen is None:
         MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
@@ -142,9 +137,7 @@ def set_display_mode(
 
             AllScreens.rebuild_all_screens()
 
-            scripts.screens.screens_core.screens_core.rebuild_core(
-                should_rebuild_bgs=False
-            )
+            scripts.screens.screens_core.screens_core.rebuild_core()
             scripts.debug_menu.debugmode.rebuild_console()
 
             screen_name = source_screen.name.replace(" ", "_")
