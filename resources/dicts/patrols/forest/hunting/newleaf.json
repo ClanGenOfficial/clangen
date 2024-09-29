@@ -29,7 +29,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c silently slinks through the underbrush, going undetected until {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} pounced - and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -98,8 +98,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} smell squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1, and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
-        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
+        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says {PRONOUN/app1/subject} smell squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1 and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
+        "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -220,7 +220,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+                "text": "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

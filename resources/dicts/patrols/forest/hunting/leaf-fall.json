@@ -58,7 +58,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 scents a squirrel on the air! The dried leaves on the ground make them a little nervous, and they wonder if they can navigate quietly enough to catch it...",
+        "intro_text": "app1 scents a squirrel on the air! The dried leaves on the ground make {PRONOUN/app1/object} a little nervous, and {PRONOUN/app1/subject} {VERB/app1/wonder/wonders} if {PRONOUN/app1/subject} can navigate quietly enough to catch it...",
         "decline_text": "They decide to move on and ignore the squirrel for now.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -99,7 +99,7 @@
         },
         "weight": 20,
         "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says they smell squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts app1 to see if they remember how to navigate the leaf-litter.",
-        "decline_text": "app1 looks apprehensive, and quietly says they want to look for something easier.",
+        "decline_text": "app1 looks apprehensive, then quietly says they want to look for something easier.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -220,7 +220,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+                "text": "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
