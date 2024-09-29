@@ -2903,7 +2903,7 @@
                 ]
             },
             {
-                "text": "r_c nearly managed to pin the gray vixen they found into a thorn thicket, but snapping jaws leave r_c dripping blood onto the leaf litter. This round goes to the gray fox.",
+                "text": "r_c nearly manages to pin the gray vixen {PRONOUN/r_c/subject} {VERB/r_c/find/finds} into a thorn thicket, but snapping jaws leave r_c dripping blood onto the leaf litter. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

@@ -2788,7 +2788,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2865,7 +2865,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -2908,7 +2908,7 @@
                 ]
             },
             {
-                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs them up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
+                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -2951,7 +2951,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -3028,7 +3028,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Thinking they could kill a gray fox by themselves, r_c launches into battle! r_c makes it out alive, but so does the gray fox. Upon bringing reinforcements to finish her off, it's discovered she's wisely left the territory with her kits.",
+                "text": "Thinking {PRONOUN/r_c/subject} could kill a gray fox by {PRONOUN/r_c/object}, r_c launches into battle! r_c makes it out alive, but so does the gray fox. Upon bringing reinforcements to finish her off, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} she's wisely left the territory with her kits.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [
@@ -3042,7 +3042,7 @@
                 ]
             },
             {
-                "text": "In an exhausting fight, r_c manages to bring down and kill the gray vixen they've tracked. Her near-grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in the swamps, before they start to compete for prey in leaf-bare.",
+                "text": "In an exhausting fight, r_c manages to bring down and kill the gray vixen {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked. Her near-grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in the swamps, before they start to compete for prey in leaf-bare.",
                 "exp": 50,
                 "weight": 5,
                 "relationships": [
@@ -3056,7 +3056,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
+                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -3071,7 +3071,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, and s_c's aggression makes up for the weight that the gray vixen has on {PRONOUN/s_c/object}, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -3100,7 +3100,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up a tree and into the swamp canopy in a move that completely surprises r_c. This round goes to the gray fox.",
+                "text": "r_c comes across a gray vixen at the end of the scent trail. She spots {PRONOUN/r_c/object} too, measures herself up against {PRONOUN/r_c/object}, then flees, scrambling up a tree and into the swamp canopy in a move that completely surprises r_c. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3114,7 +3114,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -3151,7 +3151,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract {PRONOUN/s_c/object} as she flees.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -3991,7 +3991,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4068,7 +4068,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -4111,7 +4111,7 @@
                 ]
             },
             {
-                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs them up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
+                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -4154,7 +4154,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4231,7 +4231,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Thinking they could kill a gray fox by themselves, r_c launches into battle! r_c makes it out alive, but so does the gray fox. Upon bringing reinforcements to finish her off, it's discovered she's wisely left the territory with her kits.",
+                "text": "Thinking {PRONOUN/r_c/subject} could kill a gray fox by {PRONOUN/r_c/object}, r_c launches into battle! r_c makes it out alive, but so does the gray fox. Upon bringing reinforcements to finish her off, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} she's wisely left the territory with her kits.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [
@@ -4245,7 +4245,7 @@
                 ]
             },
             {
-                "text": "In an exhausting fight, r_c manages to bring down and kill the gray vixen they've tracked. Her near-grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in the swamps, before they start to compete for prey in leaf-bare.",
+                "text": "In an exhausting fight, r_c manages to bring down and kill the gray vixen {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} tracked. Her near-grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in the swamps, before they start to compete for prey in leaf-bare.",
                 "exp": 50,
                 "weight": 5,
                 "relationships": [
@@ -4259,7 +4259,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
+                "text": "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
                 "exp": 50,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -4274,7 +4274,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, and s_c's aggression makes up for the weight that the gray vixen has on {PRONOUN/s_c/object}, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -4303,7 +4303,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up a tree and into the swamp canopy in a move that completely surprises r_c. This round goes to the gray fox.",
+                "text": "r_c comes across a gray vixen at the end of the scent trail. She spots {PRONOUN/r_c/object} too, measures herself up against {PRONOUN/r_c/object}, then flees, scrambling up a tree and into the swamp canopy in a move that completely surprises r_c. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4317,7 +4317,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object}and flees into the maze of the many wooded semi-submerged islands of the swamp.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -4354,7 +4354,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees.",
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract {PRONOUN/s_c/object} as she flees.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
