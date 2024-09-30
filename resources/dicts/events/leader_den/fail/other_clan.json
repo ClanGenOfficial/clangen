@@ -469,6 +469,54 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "antagonize",
+    "event_text": "No matter how much m_c berates and disrespects o_c_n, it seems Clan relations just can't get worse at the moment...",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "m_c launches insult after insult at o_c_n during the Gathering, but even o_c_n's leader can tell {PRONOUN/m_c/poss} heart isn't really in it.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "nervous", "insecure", "careful", "wise", "thoughtful", "loving", "compassionate", "gloomy" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "m_c brainstorms all night before the Gathering with {PRONOUN/m_c/poss} rudest Clanmates to develop the perfect insult. Once at the Gathering, m_c suddenly can't remember a single idea they came up with. Something about... o_c_n needing the bones removed from their fresh-kill, maybe? Even o_c_n's leader seems disappointed in m_c.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "careful", "lonesome", "insecure", "nervous", "compassionate", "loving", "gloomy" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "Apparently insults are quite Clan-specific. m_c launches {PRONOUN/m_c/poss} sickest burn at o_c_n's leader during the Gathering, who blinks back in total confusion. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} to explain that o_c_n just got totally burned.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "childish", "playful" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "m_c comes to the Gathering with {PRONOUN/m_c/poss} arsenal of best put-downs at the ready - but o_c_n's leader cuts {PRONOUN/m_c/object} down with one cold look. Every cat knows m_c can <i>talk</i>, but can c_n back up these words?",
+    "rel_change": 0,
+    "m_c": {
+      "skill": [ "SPEAKER,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "appease",
     "event_text": "Terrible weather convinces m_c to skip this Gathering. Any appeasement of o_c_n can wait until the sky isn't caving in on c_n.",
     "rel_change": 0,
