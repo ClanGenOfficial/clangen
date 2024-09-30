@@ -294,7 +294,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "m_c is eager to put {PRONOUN/m_c/poss} skills at being a thorn in the paw to use at the Gathering, but apparently, {PRONOUN/subject/m_c}{VERB/m_c/'ve/'s} already got such a reputation for being a shameless troublemaker that o_c_n's leader doesn't take it personally.",
+    "event_text": "m_c is eager to put {PRONOUN/m_c/poss} skills at being a thorn in the paw to use at the Gathering, but apparently, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} already got such a reputation for being a shameless troublemaker that o_c_n's leader doesn't take it personally.",
     "rel_change": 0,
     "m_c": {
       "trait": ["shameless", "troublesome", "childish", "cold", "bold", "grumpy", "flamboyant", "rebellious" ]
