@@ -341,7 +341,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} discovers o_c_n isn't present. Rumors on the border tell of a greencough outbreak. A missed opportunity for antagonizing o_c_n, but their enemies must be weak...",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {VERB/m_c/discover/discovers}s o_c_n isn't present. Rumors on the border tell of a greencough outbreak. A missed opportunity for antagonizing o_c_n, but their enemies must be weak...",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -349,7 +349,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} discovers o_c_n isn't present. Rumors on the border tell of a greencough outbreak. m_c worries about the Clan's ally, especially having missed this chance to strengthen the relationship.",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {VERB/m_c/discover/discovers}s o_c_n isn't present. Rumors on the border tell of a greencough outbreak. m_c worries about the Clan's ally, especially having missed this chance to strengthen the relationship.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -357,7 +357,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} discovers o_c_n isn't present. Rumors on the border tell of a greencough outbreak. At least that suggests o_c_n won't pose the same threat as before, but m_c really hoped to reduce hostilities with diplomacy...",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {VERB/m_c/discover/discovers}s o_c_n isn't present. Rumors on the border tell of a greencough outbreak. At least that suggests o_c_n won't pose the same threat as before, but m_c really hoped to reduce hostilities with diplomacy...",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -365,7 +365,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} discovers o_c_n isn't present. Rumors on the border tell of a greencough outbreak. There goes their chance to make an ally...",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {VERB/m_c/discover/discovers}s o_c_n isn't present. Rumors on the border tell of a greencough outbreak. There goes their chance to make an ally...",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -373,7 +373,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} discovers o_c_n isn't present. Rumors on the border tell of a greencough outbreak. Provoking o_c_n into anything will have to wait until they're back at the Gathering.",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {VERB/m_c/discover/discovers}s o_c_n isn't present. Rumors on the border tell of a greencough outbreak. Provoking o_c_n into anything will have to wait until they're back at the Gathering.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -381,7 +381,7 @@
   },
   {
     "interaction_type": "offend",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} discovers o_c_n isn't present. Rumors on the border tell of a greencough outbreak. And m_c had all {PRONOUN/m_c/poss} insults ready, too...",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {VERB/m_c/discover/discovers}s o_c_n isn't present. Rumors on the border tell of a greencough outbreak. And m_c had all {PRONOUN/m_c/poss} insults ready, too...",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
