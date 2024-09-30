@@ -25,6 +25,22 @@
   },
   {
     "interaction_type": "offend",
+    "event_text": "During the Gathering, m_c invents a story about o_c_n warriors crossing c_n's border. Instead of arguing, o_c_n's leader is horrified and promises they'll conduct a thorough investigation and punish the perpetrators.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["amiable", "gracious", "mellow", "wary", "logical", "stoic"]
+  },
+  {
+    "interaction_type": "offend",
+    "event_text": "At the Gathering, m_c threatens a skirmish with o_c_n if their warriors are found too close to the border. o_c_n's leader grins at the idea, agreeing that allies should help keep each other's claws sharp.",
+    "rel_change": 1,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["bloodthirsty", "proud", "cunning"]
+  },
+  {
+    "interaction_type": "offend",
     "event_text": "m_c attempts to offend o_c_n at the Gathering, but {PRONOUN/m_c/poss} words are so soft that no one even recognizes the insult.",
     "rel_change": 0,
     "m_c": {
