@@ -7,11 +7,22 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, shorten_text_to_fit
-from scripts.utility import scale
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.ui_elements import (
+    UITextBoxTweaked,
+    UISurfaceImageButton,
+)
+from scripts.utility import (
+    get_text_box_theme,
+    shorten_text_to_fit,
+    ui_scale_dimensions,
+    ui_scale,
+)
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
+from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 
 class RoleScreen(Screens):
@@ -85,107 +96,123 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
 
     def screen_switches(self):
+        super().screen_switches()
         self.show_mute_buttons()
 
-        self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))),
-            "",
-            object_id="#next_cat_button",
-            manager=MANAGER,
+        self.next_cat_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((622, 25), (153, 30))),
+            "Next Cat " + get_arrow(3, arrow_left=False),
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
             sound_id="page_flip",
-        )
-        self.previous_cat_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (306, 60))),
-            "",
-            object_id="#previous_cat_button",
             manager=MANAGER,
-            sound_id="page_flip",
         )
-        self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 120), (210, 60))),
-            "",
-            object_id="#back_button",
+        self.previous_cat_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
+            get_arrow(2, arrow_left=True) + " Previous Cat",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
+            sound_id="page_flip",
+            manager=MANAGER,
+        )
+        self.back_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 60), (105, 30))),
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
 
         # Create the buttons
         self.bar = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((96, 700), (1408, 20))),
+            ui_scale(pygame.Rect((48, 350), (704, 10))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/bar.png"),
-                (1408 / 1600 * screen_x, 20 / 1400 * screen_y),
+                ui_scale_dimensions((704, 10)),
             ),
             manager=MANAGER,
         )
 
         self.blurb_background = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((100, 390), (1400, 300))),
-            pygame.transform.scale(
-                pygame.image.load(
-                    "resources/images/mediation_selection_bg.png"
-                ).convert_alpha(),
-                (1400, 300),
-            ),
+            ui_scale(pygame.Rect((50, 195), (700, 150))),
+            get_box(BoxStyles.ROUNDED_BOX, (700, 150)),
         )
 
         # LEADERSHIP
-        self.promote_leader = UIImageButton(
-            scale(pygame.Rect((96, 720), (344, 72))),
-            "",
-            object_id="#promote_leader_button",
-            manager=MANAGER,
+        self.promote_leader = UISurfaceImageButton(
+            ui_scale(pygame.Rect((48, 0), (172, 36))),
+            "promote to leader",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_top",
+            anchors={"top_target": self.bar},
         )
-        self.promote_deputy = UIImageButton(
-            scale(pygame.Rect((96, 792), (344, 72))),
-            "",
-            object_id="#promote_deputy_button",
-            manager=MANAGER,
+        self.promote_deputy = UISurfaceImageButton(
+            ui_scale(pygame.Rect((48, 0), (172, 36))),
+            "promote to deputy",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.promote_leader},
         )
 
         # ADULT CAT ROLES
-        self.switch_warrior = UIImageButton(
-            scale(pygame.Rect((451, 720), (344, 72))),
-            "",
-            object_id="#switch_warrior_button",
-            manager=MANAGER,
+        self.switch_warrior = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "switch to warrior",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.bar},
         )
-        self.retire = UIImageButton(
-            scale(pygame.Rect((451, 792), (344, 72))),
-            "",
-            object_id="#retire_button",
-            manager=MANAGER,
+        self.retire = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "retire",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_warrior},
         )
-        self.switch_med_cat = UIImageButton(
-            scale(pygame.Rect((805, 720), (344, 104))),
-            "",
-            object_id="#switch_med_cat_button",
-            manager=MANAGER,
+        self.switch_med_cat = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 52))),
+            "switch to medicine\ncat",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.bar},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
-        self.switch_mediator = UIImageButton(
-            scale(pygame.Rect((805, 824), (344, 72))),
-            "",
-            object_id="#switch_mediator_button",
-            manager=MANAGER,
+        self.switch_mediator = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 36))),
+            "switch to mediator",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_med_cat},
         )
 
         # In-TRAINING ROLES:
-        self.switch_warrior_app = UIImageButton(
-            scale(pygame.Rect((1159, 720), (344, 104))),
-            "",
-            object_id="#switch_warrior_app_button",
-            manager=MANAGER,
+        self.switch_warrior_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "switch to warrior\napprentice",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.bar},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
-        self.switch_med_app = UIImageButton(
-            scale(pygame.Rect((1159, 824), (344, 104))),
-            "",
-            object_id="#switch_med_app_button",
-            manager=MANAGER,
+        self.switch_med_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "switch to medicine\ncat apprentice",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_warrior_app},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
-        self.switch_mediator_app = UIImageButton(
-            scale(pygame.Rect((1159, 928), (344, 104))),
-            "",
-            object_id="#switch_mediator_app_button",
-            manager=MANAGER,
+        self.switch_mediator_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "switch to mediator\napprentice",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_med_app},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
         )
 
         self.update_selected_cat()
@@ -200,17 +227,19 @@ class RoleScreen(Screens):
             return
 
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((490, 80), (300, 300))),
-            pygame.transform.scale(self.the_cat.sprite, (300, 300)),
+            ui_scale(pygame.Rect((245, 40), (150, 150))),
+            pygame.transform.scale(
+                self.the_cat.sprite, ui_scale_dimensions((150, 150))
+            ),
             manager=MANAGER,
         )
 
         name = str(self.the_cat.name)
-        short_name = shorten_text_to_fit(name, 300, 26)
+        short_name = shorten_text_to_fit(name, 150, 13)
         self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(
-            scale(pygame.Rect((775, 140), (350, -1))),
+            ui_scale(pygame.Rect((387, 70), (175, -1))),
             short_name,
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30"),
         )
 
         text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.personality.trait}\n"
@@ -246,7 +275,7 @@ class RoleScreen(Screens):
 
         self.selected_cat_elements["cat_details"] = UITextBoxTweaked(
             text,
-            scale(pygame.Rect((790, 200), (320, 188))),
+            ui_scale(pygame.Rect((395, 100), (160, 94))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
             line_spacing=0.95,
@@ -254,7 +283,7 @@ class RoleScreen(Screens):
 
         self.selected_cat_elements["role_blurb"] = pygame_gui.elements.UITextBox(
             self.get_role_blurb(),
-            scale(pygame.Rect((340, 400), (1120, 270))),
+            ui_scale(pygame.Rect((170, 200), (560, 135))),
             object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
         )
@@ -280,10 +309,10 @@ class RoleScreen(Screens):
             icon_path = os.path.join(main_dir, "buttonrank.png")
 
         self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((165, 462), (156, 156))),
+            ui_scale(pygame.Rect((82, 231), (78, 78))),
             pygame.transform.scale(
                 image_cache.load_image(icon_path),
-                (156 / 1600 * screen_x, 156 / 1400 * screen_y),
+                ui_scale_dimensions((78, 78)),
             ),
         )
 
