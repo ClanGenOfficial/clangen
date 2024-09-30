@@ -312,6 +312,32 @@
   },
   {
     "interaction_type": "provoke",
+    "event_text": "At the Gathering, m_c insinuates o_c_n is getting lazy and complacent. o_c_n's leader thanks {PRONOUN/m_c/object}, agreeing that o_c_n has been blessed with prosperity and safety.",
+    "rel_change": 1,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "At the Gathering, m_c implies o_c_n is full of warmongering fox-hearts. o_c_n's leader puffs up with pride, agreeing that their Clan is one of the strongest in the forest.",
+    "rel_change": 1,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": [ "bloodthirsty", "proud" ]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "While o_c_n's leader gives their speech at the Gathering, m_c pulls faces and rolls {PRONOUN/m_c/poss} eyes. o_c_n's leader never notices the childish behavior.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": ["childish"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
     "event_text": "At the Gathering, m_c makes jab after jab at o_c_n. o_c_n's leader never takes the bait.",
     "rel_change": 0,
     "m_c": {},
