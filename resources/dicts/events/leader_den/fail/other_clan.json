@@ -184,7 +184,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "m_c announces at the Gathering that {PRONOUN/m_c/subject} received a vision of prophecy_list_sight_sound. The leaders bustle to decide the meaning and, later on, o_c_n's leader hisses that this does not spell the end of hostilities between c_n and o_c_n.",
+    "event_text": "m_c announces at the Gathering that {PRONOUN/m_c/subject} received a vision of prophecy_list_sight_sound/m_c. The leaders bustle to decide the meaning and, later on, o_c_n's leader hisses that this does not spell the end of hostilities between c_n and o_c_n.",
     "rel_change": 0,
     "m_c": {
       "skill": ["PROPHET,1"]

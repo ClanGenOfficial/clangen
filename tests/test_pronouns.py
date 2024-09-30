@@ -62,6 +62,7 @@ def test():
         "lead_name": _r,
         "dep_name": _r,
         "med_name": _r,
+        "cat_tag": _r,
     }
 
     for x in range(0, 11):
