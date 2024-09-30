@@ -218,6 +218,38 @@
   },
   {
     "interaction_type": "provoke",
+    "event_text": "At the Gathering, m_c makes jab after jab at o_c_n. o_c_n's leader never takes the bait.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "m_c spends most of {PRONOUN/m_c/poss} speech at the Gathering making jibes at o_c_n for everything from their scent to their nursery tales. o_c_n's leader laughs along. Apparently self-deprecation is part of o_c_n culture as much at their dung-scent and their mouse-brained stories.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["cunning", "amiable", "gracious", "mellow", "stoic", "logical", "wary"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "No matter how fox-hearted m_c acts at the Gathering, {PRONOUN/m_c/subject} can't get a rise out of o_c_n's leader.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "m_c spends the whole Gathering remarking on o_c_n's recent shortcomings. o_c_n's leader sheepishly agrees they could be doing more to control their rowdy apprentices and alert fellow Clans to threats on the border.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["cunning", "amiable", "gracious", "mellow", "stoic", "logical", "wary"]
+  },
+  {
+    "interaction_type": "provoke",
     "event_text": "Terrible weather convinces m_c to skip this Gathering. Any provocation of o_c_n can wait until the sky isn't caving in on c_n.",
     "rel_change": 0,
     "m_c": {},
@@ -237,6 +269,16 @@
     "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. Provoking o_c_n into anything will have to wait until they're back at the Gathering.",
     "rel_change": 0,
     "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "Staring down the hulking, muscular figure of o_c_n's leader at the Gathering, m_c decides it's best not to provoke them just yet. For strategic reasons.",
+    "rel_change": 0,
+    "m_c": { 
+      "skill": [ "nervous", "insecure", "careful" ]
+    },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
   },
