@@ -252,7 +252,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
+                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to their presence by a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]

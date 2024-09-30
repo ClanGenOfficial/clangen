@@ -135,7 +135,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "A too-high tail brushing against the bushes is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away.",
+                "text": "A too-high tail brushing against the bushes scares the squirrel away, and app1 watches in disappointment as it scampers off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -648,7 +648,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/r_c/poss} presence with a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
+                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/r_c/poss} presence by a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -891,7 +891,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the sweltering heat. Perhaps it would be a perfect hunting spot?",
-        "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
+        "decline_text": "The other cats disagree with such a risk and resume their normal hunting patrol.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1160,7 +1160,7 @@
                 ]
             },
             {
-                "text": "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c/poss} meow, and s_c has to agree with {PRONOUN/r_c/object}, purring with amusement.",
+                "text": "s_c is basically on top of the skittering lizard and does a ridiculous hop to come down on it with claws extended. r_c compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c/poss} meow, and s_c has to agree with {PRONOUN/r_c/object}, purring with amusement.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -3733,7 +3733,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good, sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 10,
         "success_outcomes": [
