@@ -88,7 +88,7 @@ class HandleShortEvents:
         self.random_cat = random_cat
 
         # random cat gets added to involved later on, only if the event chosen requires a random cat
-        self.involved_cats = [self.main_cat.ID]
+        self.involved_cats = [self.main_cat.cat_id]
 
         # check for war and assign self.other_clan accordingly
         if game.clan.war.get("at_war", False):
@@ -177,7 +177,7 @@ class HandleShortEvents:
 
         # check if another cat is present
         if self.chosen_event.r_c:
-            self.involved_cats.append(self.random_cat.ID)
+            self.involved_cats.append(self.random_cat.cat_id)
 
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.chosen_event.sub_type:
@@ -212,7 +212,7 @@ class HandleShortEvents:
         # used in some murder events, this kinda sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
             kit = Cat.fetch_cat(random.choice(get_alive_status_cats(Cat, ["kitten"])))
-            self.involved_cats.append(kit.ID)
+            self.involved_cats.append(kit.cat_id)
             change_relationship_values(
                 [self.random_cat],
                 [kit],
@@ -330,7 +330,7 @@ class HandleShortEvents:
                     extra_text = f"The Clan has encountered {cat.name}."
                 else:
                     Relation_Events.welcome_new_cats([cat])
-                self.involved_cats.append(cat.ID)
+                self.involved_cats.append(cat.cat_id)
                 self.new_cat_objects.append([cat])
 
         # Check to see if any young litters joined with alive parents.
@@ -342,10 +342,10 @@ class HandleShortEvents:
                     if (
                         sub_sub[0] != sub[0]
                         and (
-                            sub_sub[0].gender == "female"
+                            sub_sub[0].sex == "female"
                             or game.clan.clan_settings["same sex birth"]
                         )
-                        and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
+                        and sub_sub[0].cat_id in (sub[0].parent1, sub[0].parent2)
                         and not (sub_sub[0].dead or sub_sub[0].outside)
                     ):
                         sub_sub[0].get_injured("recovering from birth")
@@ -482,8 +482,8 @@ class HandleShortEvents:
                     kitty.gone()
                     taken_cats.append(kitty)
                 self.multi_cat.append(kitty)
-                if kitty.ID not in self.involved_cats:
-                    self.involved_cats.append(kitty.ID)
+                if kitty.cat_id not in self.involved_cats:
+                    self.involved_cats.append(kitty.cat_id)
             for kitty in taken_cats:
                 self.dead_cats.remove(kitty)
 
@@ -669,7 +669,7 @@ class HandleShortEvents:
         :param injury: the injury being given, if in classic then leave this as the default None
         """
         # TODO: problematic as we currently cannot mark who is the r_c and who is the m_c
-        #  should consider if we can have history text be converted to use the cat's ID number in place of abbrs
+        #  should consider if we can have history text be converted to use the cat's cat_id number in place of abbrs
 
         # if injury is false, then this is classic and they just need scar history
         if not injury:

@@ -54,7 +54,7 @@ def json_load():
         try:
 
             new_cat = Cat(
-                ID=cat["ID"],
+                cat_id=cat["ID"],
                 prefix=cat["name_prefix"],
                 suffix=cat["name_suffix"],
                 specsuffix_hidden=(
@@ -145,7 +145,7 @@ def json_load():
                 cat["adoptive_parents"] if "adoptive_parents" in cat else []
             )
 
-            new_cat.genderalign = cat["gender_align"]
+            new_cat.gender = cat["gender_align"]
             # new_cat.pronouns = cat["pronouns"]
             new_cat.pronouns = (
                 cat["pronouns"]
@@ -204,10 +204,10 @@ def json_load():
                     cat["skill"], new_cat.status, new_cat.moons
                 )
 
-            new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
-            if None in new_cat.mate:
-                new_cat.mate = [i for i in new_cat.mate if i is not None]
-            new_cat.previous_mates = (
+            new_cat.current_mates = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
+            if None in new_cat.current_mates:
+                new_cat.current_mates = [i for i in new_cat.current_mates if i is not None]
+            new_cat.former_mates = (
                 cat["previous_mates"] if "previous_mates" in cat else []
             )
             new_cat.dead = cat["dead"]
@@ -320,7 +320,7 @@ def csv_load(all_cats):
             # spec2(29) - moons(30) - mate(31)
             # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36)
             # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
-            # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
+            # gender(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
             if i.strip() != "":
                 attr = i.split(",")
                 for x in range(len(attr)):
@@ -341,7 +341,7 @@ def csv_load(all_cats):
                     "2There was an error loading cat # " + str(attr[0])
                 )
                 the_cat = Cat(
-                    ID=attr[0],
+                    cat_id=attr[0],
                     prefix=attr[1].split(":")[0],
                     suffix=attr[1].split(":")[1],
                     gender=attr[2],
@@ -439,7 +439,7 @@ def csv_load(all_cats):
                     the_cat.moons = int(attr[30])
                     if len(attr) >= 31:
                         # assigning mate to cat, if any
-                        the_cat.mate = [attr[31]]
+                        the_cat.current_mates = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
@@ -464,7 +464,7 @@ def csv_load(all_cats):
                 if len(attr) > 39:
                     the_cat.exiled = bool(attr[39])
                 if len(attr) > 40:
-                    the_cat.genderalign = attr[40]
+                    the_cat.gender = attr[40]
                 if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
                     the_cat.former_apprentices = attr[41].split(";")
         game.switches["error_message"] = (
@@ -490,9 +490,9 @@ def csv_load(all_cats):
                 f_app = Cat.all_cats.get(f_app_id)
                 former_apps.append(f_app)
             inter_cat.apprentice = [
-                a.ID for a in apps
+                a.cat_id for a in apps
             ]  # Switch back to IDs. I don't want to risk breaking everything.
-            inter_cat.former_apprentices = [a.ID for a in former_apps]
+            inter_cat.former_apprentices = [a.cat_id for a in former_apps]
             if not inter_cat.dead:
                 game.switches["error_message"] = (
                     "There was an error loading this clan's relationships. Last cat read was "
@@ -528,15 +528,15 @@ def save_check():
         cat_ob = Cat.all_cats[cat]
 
         # Not-mutural mate relations
-        # if cat_ob.mate:
-        #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
+        # if cat_ob.current_mates:
+        #    _temp_ob = Cat.all_cats.get(cat_ob.current_mates)
         #    if _temp_ob:
         #        # Check if the mate's mate feild is set to none
-        #        if not _temp_ob.mate:
-        #            _temp_ob.mate = cat_ob.ID
+        #        if not _temp_ob.current_mates:
+        #            _temp_ob.current_mates = cat_ob.cat_id
         #    else:
         #        # Invalid mate
-        #        cat_ob.mate = None
+        #        cat_ob.current_mates = None
 
 
 def version_convert(version_info):

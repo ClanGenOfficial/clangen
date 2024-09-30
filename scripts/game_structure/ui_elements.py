@@ -456,7 +456,7 @@ class UISpriteButton:
 
 
 class CatButton(UIImageButton):
-    """Basic UIButton subclass for at sprite buttons. It stores the cat ID.
+    """Basic UIButton subclass for at sprite buttons. It stores the cat cat_id.
     Can also be used as a general button that holds some data"""
 
     def __init__(
@@ -1036,7 +1036,7 @@ class UICatListDisplay(UIContainer):
             scale(pygame.Rect((0, 30), (100, 100))),
             kitty.sprite,
             cat_object=kitty,
-            cat_id=kitty.ID,
+            cat_id=kitty.cat_id,
             container=container,
             object_id=f"#sprite{str(i)}",
             tool_tip_text=str(kitty.name) if self.tool_tip_name else None,

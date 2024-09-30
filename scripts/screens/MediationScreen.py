@@ -66,8 +66,8 @@ class MediationScreen(Screens):
                 self.selected_cat_2 = None
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
-                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
-                game.patrolled.append(self.mediators[self.selected_mediator].ID)
+                game.mediated.append([self.selected_cat_1.cat_id, self.selected_cat_2.cat_id])
+                game.patrolled.append(self.mediators[self.selected_mediator].cat_id)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator],
                     self.selected_cat_1,
@@ -78,8 +78,8 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
-                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
-                game.patrolled.append(self.mediators[self.selected_mediator].ID)
+                game.mediated.append([self.selected_cat_1.cat_id, self.selected_cat_2.cat_id])
+                game.patrolled.append(self.mediators[self.selected_mediator].cat_id)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator],
                     self.selected_cat_1,
@@ -266,7 +266,7 @@ class MediationScreen(Screens):
     def random_cat(self):
         if self.selected_cat_list():
             random_list = [
-                i for i in self.all_cats_list if i.ID not in self.selected_cat_list()
+                i for i in self.all_cats_list if i.cat_id not in self.selected_cat_list()
             ]
         else:
             random_list = self.all_cats_list
@@ -344,7 +344,7 @@ class MediationScreen(Screens):
         self.all_cats_list = [
             i
             for i in Cat.all_cats_list
-            if (i.ID != self.mediators[self.selected_mediator].ID)
+            if (i.cat_id != self.mediators[self.selected_mediator].cat_id)
             and not (i.dead or i.outside)
         ]
         self.all_cats = self.chunks(self.all_cats_list, 24)
@@ -421,7 +421,7 @@ class MediationScreen(Screens):
         if not cat:
             return
 
-        other_cat = [Cat.fetch_cat(i) for i in self.selected_cat_list() if i != cat.ID]
+        other_cat = [Cat.fetch_cat(i) for i in self.selected_cat_list() if i != cat.cat_id]
         if other_cat:
             other_cat = other_cat[0]
         else:
@@ -446,19 +446,19 @@ class MediationScreen(Screens):
         )
 
         # Gender
-        if cat.genderalign == "female":
+        if cat.gender == "female":
             gender_icon = image_cache.load_image(
                 "resources/images/female_big.png"
             ).convert_alpha()
-        elif cat.genderalign == "male":
+        elif cat.gender == "male":
             gender_icon = image_cache.load_image(
                 "resources/images/male_big.png"
             ).convert_alpha()
-        elif cat.genderalign == "trans female":
+        elif cat.gender == "trans female":
             gender_icon = image_cache.load_image(
                 "resources/images/transfem_big.png"
             ).convert_alpha()
-        elif cat.genderalign == "trans male":
+        elif cat.gender == "trans male":
             gender_icon = image_cache.load_image(
                 "resources/images/transmasc_big.png"
             ).convert_alpha()
@@ -475,7 +475,7 @@ class MediationScreen(Screens):
 
         related = False
         # MATE
-        if other_cat and len(cat.mate) > 0 and other_cat.ID in cat.mate:
+        if other_cat and len(cat.current_mates) > 0 and other_cat.cat_id in cat.current_mates:
             self.selected_cat_elements["mate_icon" + tag] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((x + 28, y + 28), (44, 40))),
                 pygame.transform.scale(
@@ -534,10 +534,10 @@ class MediationScreen(Screens):
         )
 
         mates = False
-        if len(cat.mate) > 0:
+        if len(cat.current_mates) > 0:
             col2 = "has a mate"
             if other_cat:
-                if other_cat.ID in cat.mate:
+                if other_cat.cat_id in cat.current_mates:
                     mates = True
                     col2 = f"{other_cat.name}'s mate"
         else:
@@ -547,16 +547,16 @@ class MediationScreen(Screens):
         if related and other_cat and not mates:
             col2 += "\n"
             if other_cat.is_uncle_aunt(cat):
-                if cat.genderalign in ["female", "trans female"]:
+                if cat.gender in ["female", "trans female"]:
                     col2 += "niece"
-                elif cat.genderalign in ["male", "trans male"]:
+                elif cat.gender in ["male", "trans male"]:
                     col2 += "nephew"
                 else:
                     col2 += "sibling's child"
             elif cat.is_uncle_aunt(other_cat):
-                if cat.genderalign in ["female", "trans female"]:
+                if cat.gender in ["female", "trans female"]:
                     col2 += "aunt"
-                elif cat.genderalign in ["male", "trans male"]:
+                elif cat.gender in ["male", "trans male"]:
                     col2 += "uncle"
                 else:
                     col2 += "related: parent's sibling"
@@ -597,8 +597,8 @@ class MediationScreen(Screens):
                 )
             )
 
-            if other_cat.ID in cat.relationships:
-                the_relationship = cat.relationships[other_cat.ID]
+            if other_cat.cat_id in cat.relationships:
+                the_relationship = cat.relationships[other_cat.cat_id]
             else:
                 the_relationship = cat.create_one_relationship(other_cat)
 
@@ -849,9 +849,9 @@ class MediationScreen(Screens):
     def selected_cat_list(self):
         output = []
         if self.selected_cat_1:
-            output.append(self.selected_cat_1.ID)
+            output.append(self.selected_cat_1.cat_id)
         if self.selected_cat_2:
-            output.append(self.selected_cat_2.ID)
+            output.append(self.selected_cat_2.cat_id)
 
         return output
 
@@ -863,7 +863,7 @@ class MediationScreen(Screens):
             if self.mediators[self.selected_mediator].not_working():
                 invalid_mediator = True
                 error_message += "This mediator can't work this moon. "
-            elif self.mediators[self.selected_mediator].ID in game.patrolled:
+            elif self.mediators[self.selected_mediator].cat_id in game.patrolled:
                 invalid_mediator = True
                 error_message += "This mediator has already worked this moon. "
         else:
@@ -872,7 +872,7 @@ class MediationScreen(Screens):
         invalid_pair = False
         if self.selected_cat_1 and self.selected_cat_2:
             for x in game.mediated:
-                if self.selected_cat_1.ID in x and self.selected_cat_2.ID in x:
+                if self.selected_cat_1.cat_id in x and self.selected_cat_2.cat_id in x:
                     invalid_pair = True
                     error_message += "This pair has already been mediated this moon. "
                     break

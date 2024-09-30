@@ -108,9 +108,9 @@ class TestCountRelation(unittest.TestCase):
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2)
         relation_3_2 = Relationship(cat_from=cat3, cat_to=cat2)
         relation_4_2 = Relationship(cat_from=cat4, cat_to=cat2)
-        cat1.relationships[cat2.ID] = relation_1_2
-        cat3.relationships[cat2.ID] = relation_3_2
-        cat4.relationships[cat2.ID] = relation_4_2
+        cat1.relationships[cat2.cat_id] = relation_1_2
+        cat3.relationships[cat2.cat_id] = relation_3_2
+        cat4.relationships[cat2.cat_id] = relation_4_2
         relation_1_2.link_relationship()
         relation_3_2.link_relationship()
         relation_4_2.link_relationship()
@@ -141,8 +141,8 @@ class TestHighestRomance(unittest.TestCase):
         cat4 = Cat()
 
         # when
-        cat1.mate.append(cat2.ID)
-        cat2.mate.append(cat1.ID)
+        cat1.current_mates.append(cat2.cat_id)
+        cat2.current_mates.append(cat1.cat_id)
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
@@ -165,8 +165,8 @@ class TestHighestRomance(unittest.TestCase):
         cat4 = Cat()
 
         # when
-        cat1.mate.append(cat2.ID)
-        cat2.mate.append(cat1.ID)
+        cat1.current_mates.append(cat2.cat_id)
+        cat2.current_mates.append(cat1.cat_id)
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
@@ -209,131 +209,131 @@ class TestGetQueens(unittest.TestCase):
     def test_single_mother(self):
         # given
         # young enough kid
-        self.test_cat1.gender = "female"
+        self.test_cat1.sex = "female"
 
         self.test_cat2.status = "kitten"
-        self.test_cat2.parent1 = self.test_cat1.ID
+        self.test_cat2.parent1 = self.test_cat1.cat_id
 
         # too old kid
-        self.test_cat3.gender = "female"
+        self.test_cat3.sex = "female"
 
         self.test_cat4.status = "apprentice"
-        self.test_cat4.parent1 = self.test_cat3.ID
+        self.test_cat4.parent1 = self.test_cat3.cat_id
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4]
-        self.assertEqual([self.test_cat1.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
+        self.assertEqual([self.test_cat1.cat_id], list(get_alive_clan_queens(living_cats)[0].keys()))
 
     def test_single_father(self):
         # given
         # young enough kid
-        self.test_cat1.gender = "male"
+        self.test_cat1.sex = "male"
 
         self.test_cat2.status = "kitten"
-        self.test_cat2.parent1 = self.test_cat1.ID
+        self.test_cat2.parent1 = self.test_cat1.cat_id
 
         # too old kid
-        self.test_cat3.gender = "male"
+        self.test_cat3.sex = "male"
 
         self.test_cat4.status = "apprentice"
-        self.test_cat4.parent1 = self.test_cat3.ID
+        self.test_cat4.parent1 = self.test_cat3.cat_id
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4]
-        self.assertEqual([self.test_cat1.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
+        self.assertEqual([self.test_cat1.cat_id], list(get_alive_clan_queens(living_cats)[0].keys()))
 
     def tests_hetero_pair(self):
         # given
         # young enough kid
-        self.test_cat1.gender = "female"
+        self.test_cat1.sex = "female"
 
-        self.test_cat2.gender = "male"
+        self.test_cat2.sex = "male"
 
         self.test_cat3.status = "kitten"
-        self.test_cat3.parent1 = self.test_cat2.ID
-        self.test_cat3.parent2 = self.test_cat1.ID
+        self.test_cat3.parent1 = self.test_cat2.cat_id
+        self.test_cat3.parent2 = self.test_cat1.cat_id
 
         # too old kid
-        self.test_cat4.gender = "female"
+        self.test_cat4.sex = "female"
 
-        self.test_cat5.gender = "male"
+        self.test_cat5.sex = "male"
 
         self.test_cat6.status = "apprentice"
-        self.test_cat6.parent1 = self.test_cat5.ID
-        self.test_cat6.parent2 = self.test_cat4.ID
+        self.test_cat6.parent1 = self.test_cat5.cat_id
+        self.test_cat6.parent2 = self.test_cat4.cat_id
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4, self.test_cat5, self.test_cat6]
-        self.assertEqual([self.test_cat1.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
+        self.assertEqual([self.test_cat1.cat_id], list(get_alive_clan_queens(living_cats)[0].keys()))
 
     def test_gay_pair(self):
         # given
         # young enough kid
-        self.test_cat1.gender = "male"
+        self.test_cat1.sex = "male"
 
-        self.test_cat2.gender = "male"
+        self.test_cat2.sex = "male"
 
         self.test_cat3.status = "kitten"
-        self.test_cat3.parent1 = self.test_cat2.ID
-        self.test_cat3.parent2 = self.test_cat1.ID
+        self.test_cat3.parent1 = self.test_cat2.cat_id
+        self.test_cat3.parent2 = self.test_cat1.cat_id
 
         # too old kid
-        self.test_cat4.gender = "male"
+        self.test_cat4.sex = "male"
 
-        self.test_cat5.gender = "male"
+        self.test_cat5.sex = "male"
 
         self.test_cat6.status = "apprentice"
-        self.test_cat6.parent1 = self.test_cat5.ID
-        self.test_cat6.parent2 = self.test_cat4.ID
+        self.test_cat6.parent1 = self.test_cat5.cat_id
+        self.test_cat6.parent2 = self.test_cat4.cat_id
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4, self.test_cat5, self.test_cat6]
         self.assertTrue(
-            [self.test_cat1.ID] == list(get_alive_clan_queens(living_cats)[0].keys())
-            or [self.test_cat2.ID] == list(get_alive_clan_queens(living_cats)[0].keys())
+            [self.test_cat1.cat_id] == list(get_alive_clan_queens(living_cats)[0].keys())
+            or [self.test_cat2.cat_id] == list(get_alive_clan_queens(living_cats)[0].keys())
         )
 
     def test_lesbian_pair(self):
         # given
         # young enough kid
-        self.test_cat1.gender = "female"
+        self.test_cat1.sex = "female"
 
-        self.test_cat2.gender = "female"
+        self.test_cat2.sex = "female"
 
         self.test_cat3.status = "kitten"
-        self.test_cat3.parent1 = self.test_cat2.ID
-        self.test_cat3.parent2 = self.test_cat1.ID
+        self.test_cat3.parent1 = self.test_cat2.cat_id
+        self.test_cat3.parent2 = self.test_cat1.cat_id
 
         # too old kid
-        self.test_cat4.gender = "female"
+        self.test_cat4.sex = "female"
 
-        self.test_cat5.gender = "female"
+        self.test_cat5.sex = "female"
 
         self.test_cat6.status = "apprentice"
-        self.test_cat6.parent1 = self.test_cat5.ID
-        self.test_cat6.parent2 = self.test_cat4.ID
+        self.test_cat6.parent1 = self.test_cat5.cat_id
+        self.test_cat6.parent2 = self.test_cat4.cat_id
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4, self.test_cat5, self.test_cat6]
         self.assertTrue(
-            [self.test_cat1.ID] == list(get_alive_clan_queens(living_cats)[0].keys())
-            or [self.test_cat2.ID] == list(get_alive_clan_queens(living_cats)[0].keys())
+            [self.test_cat1.cat_id] == list(get_alive_clan_queens(living_cats)[0].keys())
+            or [self.test_cat2.cat_id] == list(get_alive_clan_queens(living_cats)[0].keys())
         )
 
     def test_poly_pair(self):
         # given
         # young enough kid
-        self.test_cat1.gender = "female"
+        self.test_cat1.sex = "female"
 
-        self.test_cat2.gender = "female"
+        self.test_cat2.sex = "female"
 
-        self.test_cat3.gender = "male"
+        self.test_cat3.sex = "male"
 
         self.test_cat4.status = "kitten"
-        self.test_cat4.parent1 = self.test_cat2.ID
-        self.test_cat4.parent2 = self.test_cat1.ID
-        self.test_cat4.adoptive_parents.append(self.test_cat3.ID)
+        self.test_cat4.parent1 = self.test_cat2.cat_id
+        self.test_cat4.parent2 = self.test_cat1.cat_id
+        self.test_cat4.adoptive_parents.append(self.test_cat3.cat_id)
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4, self.test_cat5, self.test_cat6]
-        self.assertEqual([self.test_cat2.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
+        self.assertEqual([self.test_cat2.cat_id], list(get_alive_clan_queens(living_cats)[0].keys()))

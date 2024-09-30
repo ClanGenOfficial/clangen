@@ -18,7 +18,7 @@ class OutsiderEvents:
         if "lead_den_outsider_event" in game.clan.clan_settings:
             if game.clan.clan_settings["lead_den_outsider_event"]:
                 info_dict = game.clan.clan_settings["lead_den_outsider_event"]
-                if cat.ID == info_dict["cat_ID"]:
+                if cat.cat_id == info_dict["ID"]:
                     return
 
         # killing outside cats
@@ -41,7 +41,7 @@ class OutsiderEvents:
                 History.add_death(cat, death_text=death_history)
                 cat.die()
                 game.cur_events_list.append(
-                    Single_Event(text, "birth_death", cat.ID))
+                    Single_Event(text, "birth_death", cat.cat_id))
                 
     @staticmethod
     def lost_cat_become_outsider(cat: Cat):

@@ -116,7 +116,7 @@ class TestFamilyThoughts(unittest.TestCase):
     def test_family_thought_young_children(self):
         # given
         parent = Cat(moons=40)
-        kit = Cat(parent1=parent.ID, moons=4)
+        kit = Cat(parent1=parent.cat_id, moons=4)
         biome = "Forest"
         season = "Newleaf"
         camp = "camp2"

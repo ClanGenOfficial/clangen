@@ -14,8 +14,8 @@ class Thoughts:
 
         # No current relationship-value bases tags, so this is commented out.
         relationship = None
-        if random_cat.ID in main_cat.relationships:
-            relationship = main_cat.relationships[random_cat.ID]
+        if random_cat.cat_id in main_cat.relationships:
+            relationship = main_cat.relationships[random_cat.cat_id]
 
         if "siblings" in constraint and not main_cat.is_sibling(random_cat):
             return False
@@ -23,10 +23,10 @@ class Thoughts:
         if "littermates" in constraint and not main_cat.is_littermate(random_cat):
             return False
 
-        if "mates" in constraint and random_cat.ID not in main_cat.mate:
+        if "mates" in constraint and random_cat.cat_id not in main_cat.current_mates:
             return False
 
-        if "not_mates" in constraint and random_cat.ID in main_cat.mate:
+        if "not_mates" in constraint and random_cat.cat_id in main_cat.current_mates:
             return False
 
         if "parent/child" in constraint and not main_cat.is_parent(random_cat):
@@ -38,7 +38,7 @@ class Thoughts:
         if "mentor/app" in constraint and random_cat not in main_cat.apprentice:
             return False
 
-        if "app/mentor" in constraint and random_cat.ID != main_cat.mentor:
+        if "app/mentor" in constraint and random_cat.cat_id != main_cat.mentor:
             return False
 
         if "strangers" in constraint and relationship and (

@@ -374,7 +374,7 @@ class GenerateEvents:
             if "adoption" in event.sub_type:
                 if cat.no_kits:
                     continue
-                if any(Cat_class.fetch_cat(i).no_kits for i in cat.mate):
+                if any(Cat_class.fetch_cat(i).no_kits for i in cat.current_mates):
                     continue
 
             # check for old age

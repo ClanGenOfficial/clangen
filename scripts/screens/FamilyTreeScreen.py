@@ -240,7 +240,7 @@ class FamilyTreeScreen(Screens):
         self.cat_elements["root_cat_image"] = UISpriteButton(
             scale(pygame.Rect((462, 1151), (100, 100))),
             game.switches["root_cat"].sprite,
-            cat_id=game.switches["root_cat"].ID,
+            cat_id=game.switches["root_cat"].cat_id,
             manager=MANAGER,
             tool_tip_text=f'Started viewing tree at {game.switches["root_cat"].name}',
         )
@@ -361,7 +361,7 @@ class FamilyTreeScreen(Screens):
         self.cat_elements["the_cat_image"] = UISpriteButton(
             scale(pygame.Rect((150, 969), (300, 300))),
             self.the_cat.sprite,
-            cat_id=self.the_cat.ID,
+            cat_id=self.the_cat.cat_id,
             manager=MANAGER,
         )
         name = str(self.the_cat.name)
@@ -387,7 +387,7 @@ class FamilyTreeScreen(Screens):
         self.cat_elements["center_cat_image"] = UISpriteButton(
             scale(pygame.Rect((x_pos + 30, y_pos + 20), (100, 100))),
             self.the_cat.sprite,
-            cat_id=self.the_cat.ID,
+            cat_id=self.the_cat.cat_id,
             manager=MANAGER,
             container=self.family_tree,
         )
@@ -542,7 +542,7 @@ class FamilyTreeScreen(Screens):
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
                 _kitty.sprite,
-                cat_id=_kitty.ID,
+                cat_id=_kitty.cat_id,
                 manager=MANAGER,
                 tool_tip_text=info_text,
                 starting_height=2,

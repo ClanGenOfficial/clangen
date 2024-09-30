@@ -289,47 +289,47 @@ class ProfileScreen(Screens):
             # when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 # if the cat is anything besides m/f/transm/transf then turn them back to cis
-                if self.the_cat.genderalign not in [
+                if self.the_cat.gender not in [
                     "female",
                     "trans female",
                     "male",
                     "trans male",
                 ]:
-                    self.the_cat.genderalign = self.the_cat.gender
+                    self.the_cat.gender = self.the_cat.sex
                 elif (
-                    self.the_cat.gender == "male"
-                    and self.the_cat.genderalign == "female"
+                    self.the_cat.sex == "male"
+                    and self.the_cat.gender == "female"
                 ):
-                    self.the_cat.genderalign = self.the_cat.gender
+                    self.the_cat.gender = self.the_cat.sex
                 elif (
-                    self.the_cat.gender == "female"
-                    and self.the_cat.genderalign == "male"
+                    self.the_cat.sex == "female"
+                    and self.the_cat.gender == "male"
                 ):
-                    self.the_cat.genderalign = self.the_cat.gender
+                    self.the_cat.gender = self.the_cat.sex
 
                 # if the cat is cis (gender & gender align are the same) then set them to trans
                 # cis males -> trans female first
                 elif (
-                    self.the_cat.gender == "male" and self.the_cat.genderalign == "male"
+                    self.the_cat.sex == "male" and self.the_cat.gender == "male"
                 ):
-                    self.the_cat.genderalign = "trans female"
+                    self.the_cat.gender = "trans female"
                 # cis females -> trans male
                 elif (
-                    self.the_cat.gender == "female"
-                    and self.the_cat.genderalign == "female"
+                    self.the_cat.sex == "female"
+                    and self.the_cat.gender == "female"
                 ):
-                    self.the_cat.genderalign = "trans male"
+                    self.the_cat.gender = "trans male"
                 # if the cat is trans then set them to nonbinary
-                elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                    self.the_cat.genderalign = "nonbinary"
+                elif self.the_cat.gender in ["trans female", "trans male"]:
+                    self.the_cat.gender = "nonbinary"
                 # pronoun handler
-                if self.the_cat.genderalign in ["female", "trans female"]:
+                if self.the_cat.gender in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
-                elif self.the_cat.genderalign in ["male", "trans male"]:
+                elif self.the_cat.gender in ["male", "trans male"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
-                elif self.the_cat.genderalign in ["nonbinary"]:
+                elif self.the_cat.gender in ["nonbinary"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
-                elif self.the_cat.genderalign not in [
+                elif self.the_cat.gender not in [
                     "female",
                     "trans female",
                     "male",
@@ -563,13 +563,13 @@ class ProfileScreen(Screens):
             return
         if (
             self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
+            and game.clan.instructor.cat_id == self.the_cat.cat_id
             and self.the_cat.df is False
         ):
             is_sc_instructor = True
         elif (
             self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
+            and game.clan.instructor.cat_id == self.the_cat.cat_id
             and self.the_cat.df is True
         ):
             is_df_instructor = True
@@ -757,10 +757,10 @@ class ProfileScreen(Screens):
         """Generate the left column information"""
         output = ""
         # SEX/GENDER
-        if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
-            output += str(the_cat.gender)
+        if the_cat.gender is None or the_cat.gender == the_cat.sex:
+            output += str(the_cat.sex)
         else:
-            output += str(the_cat.genderalign)
+            output += str(the_cat.gender)
         # NEWLINE ----------
         output += "\n"
 
@@ -837,12 +837,12 @@ class ProfileScreen(Screens):
                 output += " moons"
 
         # MATE
-        if len(the_cat.mate) > 0:
+        if len(the_cat.current_mates) > 0:
             output += "\n"
 
             mate_names = []
             # Grab the names of only the first two, since that's all we will display
-            for _m in the_cat.mate[:2]:
+            for _m in the_cat.current_mates[:2]:
                 mate_ob = Cat.fetch_cat(_m)
                 if not isinstance(mate_ob, Cat):
                     continue
@@ -858,16 +858,16 @@ class ProfileScreen(Screens):
                 else:
                     mate_names.append(f"{str(mate_ob.name)}")
 
-            if len(the_cat.mate) == 1:
+            if len(the_cat.current_mates) == 1:
                 output += "mate: "
             else:
                 output += "mates: "
 
             output += ", ".join(mate_names)
 
-            if len(the_cat.mate) > 2:
-                output += f", and {len(the_cat.mate) - 2}"
-                if len(the_cat.mate) - 2 > 1:
+            if len(the_cat.current_mates) > 2:
+                output += f", and {len(the_cat.current_mates) - 2}"
+                if len(the_cat.current_mates) - 2 > 1:
                     output += " others"
                 else:
                     output += " other"
@@ -1013,11 +1013,11 @@ class ProfileScreen(Screens):
                 "exiled",
             ]:
                 nutr = None
-                if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
-                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+                if the_cat.cat_id in game.clan.freshkill_pile.nutrition_info:
+                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.cat_id]
                 if not nutr:
                     game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
-                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.cat_id]
                 output += "nutrition: " + nutr.nutrition_text
                 if game.clan.clan_settings["showxp"]:
                     output += " (" + str(int(nutr.percentage)) + ")"
@@ -1169,7 +1169,7 @@ class ProfileScreen(Screens):
         notes = self.user_notes
 
         notes_directory = get_save_dir() + "/" + clanname + "/notes"
-        notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
+        notes_file_path = notes_directory + "/" + self.the_cat.cat_id + "_notes.json"
 
         if not os.path.exists(notes_directory):
             os.makedirs(notes_directory)
@@ -1180,7 +1180,7 @@ class ProfileScreen(Screens):
         ):
             return
 
-        new_notes = {str(self.the_cat.ID): notes}
+        new_notes = {str(self.the_cat.cat_id): notes}
 
         game.safe_save(notes_file_path, new_notes)
 
@@ -1189,7 +1189,7 @@ class ProfileScreen(Screens):
         clanname = game.clan.name
 
         notes_directory = get_save_dir() + "/" + clanname + "/notes"
-        notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
+        notes_file_path = notes_directory + "/" + self.the_cat.cat_id + "_notes.json"
 
         if not os.path.exists(notes_file_path):
             return
@@ -1198,11 +1198,11 @@ class ProfileScreen(Screens):
             with open(notes_file_path, "r") as read_file:
                 rel_data = ujson.loads(read_file.read())
                 self.user_notes = "Click the check mark to enter notes about your cat!"
-                if str(self.the_cat.ID) in rel_data:
-                    self.user_notes = rel_data.get(str(self.the_cat.ID))
+                if str(self.the_cat.cat_id) in rel_data:
+                    self.user_notes = rel_data.get(str(self.the_cat.cat_id))
         except Exception as e:
             print(
-                f"ERROR: there was an error reading the Notes file of cat #{self.the_cat.ID}.\n",
+                f"ERROR: there was an error reading the Notes file of cat #{self.the_cat.cat_id}.\n",
                 e,
             )
 
@@ -2148,7 +2148,7 @@ class ProfileScreen(Screens):
             # Button to trans or cis the cats.
             if self.cis_trans_button:
                 self.cis_trans_button.kill()
-            if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
+            if self.the_cat.sex == "male" and self.the_cat.gender == "male":
                 self.cis_trans_button = UIImageButton(
                     scale(pygame.Rect((804, 972), (344, 104))),
                     "",
@@ -2157,7 +2157,7 @@ class ProfileScreen(Screens):
                     manager=MANAGER,
                 )
             elif (
-                self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
+                self.the_cat.sex == "female" and self.the_cat.gender == "female"
             ):
                 self.cis_trans_button = UIImageButton(
                     scale(pygame.Rect((804, 972), (344, 104))),
@@ -2166,7 +2166,7 @@ class ProfileScreen(Screens):
                     object_id="#change_trans_male_button",
                     manager=MANAGER,
                 )
-            elif self.the_cat.genderalign in ["trans female", "trans male"]:
+            elif self.the_cat.gender in ["trans female", "trans male"]:
                 self.cis_trans_button = UIImageButton(
                     scale(pygame.Rect((804, 972), (344, 104))),
                     "",
@@ -2174,7 +2174,7 @@ class ProfileScreen(Screens):
                     object_id="#change_nonbi_button",
                     manager=MANAGER,
                 )
-            elif self.the_cat.genderalign not in [
+            elif self.the_cat.gender not in [
                 "female",
                 "trans female",
                 "male",
@@ -2187,7 +2187,7 @@ class ProfileScreen(Screens):
                     object_id="#change_cis_button",
                     manager=MANAGER,
                 )
-            elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":
+            elif self.the_cat.sex == "male" and self.the_cat.gender == "female":
                 self.cis_trans_button = UIImageButton(
                     scale(pygame.Rect((804, 972), (344, 104))),
                     "",
@@ -2195,7 +2195,7 @@ class ProfileScreen(Screens):
                     object_id="#change_cis_button",
                     manager=MANAGER,
                 )
-            elif self.the_cat.gender == "female" and self.the_cat.genderalign == "male":
+            elif self.the_cat.sex == "female" and self.the_cat.gender == "male":
                 self.cis_trans_button = UIImageButton(
                     scale(pygame.Rect((804, 972), (344, 104))),
                     "",
@@ -2203,7 +2203,7 @@ class ProfileScreen(Screens):
                     object_id="#change_cis_button",
                     manager=MANAGER,
                 )
-            elif self.the_cat.genderalign:
+            elif self.the_cat.gender:
                 self.cis_trans_button = UIImageButton(
                     scale(pygame.Rect((804, 972), (344, 104))),
                     "",
@@ -2241,7 +2241,7 @@ class ProfileScreen(Screens):
                 object_id = "#exile_df_button"
                 if self.the_cat.df:
                     object_id = "#guide_sc_button"
-                if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+                if self.the_cat.dead and game.clan.instructor.cat_id == self.the_cat.cat_id:
                     self.exile_cat_button = UIImageButton(
                         scale(pygame.Rect((1156, 900), (344, 92))),
                         "",
@@ -2492,7 +2492,7 @@ class ProfileScreen(Screens):
                 biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)),
                 (240, 210),
             )
-        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+        elif the_cat.dead or game.clan.instructor.cat_id == the_cat.cat_id:
             biome_platforms = platformsheet.subsurface(
                 pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
             )

@@ -181,7 +181,7 @@ class ChooseMateScreen(Screens):
                 if event.ui_element.cat_object.faded:
                     return
 
-                game.switches["cat"] = event.ui_element.cat_object.ID
+                game.switches["cat"] = event.ui_element.cat_object.cat_id
                 self.change_screen("profile screen")
 
     def screen_switches(self):
@@ -342,7 +342,7 @@ class ChooseMateScreen(Screens):
         if not self.selected_cat:
             return
 
-        if self.selected_cat.ID not in self.the_cat.mate:
+        if self.selected_cat.cat_id not in self.the_cat.current_mates:
             self.the_cat.set_mate(self.selected_cat)
 
         else:
@@ -360,7 +360,7 @@ class ChooseMateScreen(Screens):
         """Updates everything in the mates container, including the list of current mates,
         and the page"""
 
-        self.all_mates = self.chunks([Cat.fetch_cat(i) for i in self.the_cat.mate], 30)
+        self.all_mates = self.chunks([Cat.fetch_cat(i) for i in self.the_cat.current_mates], 30)
         self.update_mates_container_page()
 
     def update_mates_container_page(self):
@@ -523,7 +523,7 @@ class ChooseMateScreen(Screens):
         i = 0
         for _off in display_cats:
             info_text = f"{str(_off.name)}"
-            additional_info = self.the_cat.inheritance.get_cat_info(_off.ID)
+            additional_info = self.the_cat.inheritance.get_cat_info(_off.cat_id)
             if len(additional_info["type"]) > 0:  # types is always real
                 rel_types = [
                     str(rel_type.value) for rel_type in additional_info["type"]
@@ -789,13 +789,13 @@ class ChooseMateScreen(Screens):
             + " moons\n"
             + self.the_cat.status
             + "\n"
-            + self.the_cat.genderalign
+            + self.the_cat.gender
             + "\n"
             + self.the_cat.personality.trait
         )
-        if self.the_cat.mate:
-            info += f"\n{len(self.the_cat.mate)} "
-            if len(self.the_cat.mate) > 1:
+        if self.the_cat.current_mates:
+            info += f"\n{len(self.the_cat.current_mates)} "
+            if len(self.the_cat.current_mates) > 1:
                 info += "mates"
             else:
                 info += "mate"
@@ -808,8 +808,8 @@ class ChooseMateScreen(Screens):
 
         if reset_selected_cat:
             self.selected_cat = None
-            if self.the_cat.mate:
-                self.selected_cat = Cat.fetch_cat(self.the_cat.mate[0])
+            if self.the_cat.current_mates:
+                self.selected_cat = Cat.fetch_cat(self.the_cat.current_mates[0])
             self.update_selected_cat()
 
         self.draw_tab_button()
@@ -835,7 +835,7 @@ class ChooseMateScreen(Screens):
         button_x += 320
 
         mates_tab_shown = False
-        if self.the_cat.mate:
+        if self.the_cat.current_mates:
             self.tab_buttons["mates"] = UIImageButton(
                 scale(pygame.Rect((button_x, 722), (306, 78))),
                 "",
@@ -899,7 +899,7 @@ class ChooseMateScreen(Screens):
             return
 
         self.draw_compatible_line_affection()
-        if self.selected_cat.ID in self.the_cat.mate:
+        if self.selected_cat.cat_id in self.the_cat.current_mates:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((600, 376), (400, 156))),
                 pygame.transform.scale(
@@ -909,7 +909,7 @@ class ChooseMateScreen(Screens):
                     (400, 156),
                 ),
             )
-        elif self.selected_cat.ID in self.the_cat.previous_mates:
+        elif self.selected_cat.cat_id in self.the_cat.former_mates:
             self.selected_cat_elements["center_heart"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((600, 376), (400, 156))),
                 pygame.transform.scale(
@@ -950,13 +950,13 @@ class ChooseMateScreen(Screens):
             + " moons\n"
             + self.selected_cat.status
             + "\n"
-            + self.selected_cat.genderalign
+            + self.selected_cat.gender
             + "\n"
             + self.selected_cat.personality.trait
         )
-        if self.selected_cat.mate:
-            info += f"\n{len(self.selected_cat.mate)} "
-            if len(self.selected_cat.mate) > 1:
+        if self.selected_cat.current_mates:
+            info += f"\n{len(self.selected_cat.current_mates)} "
+            if len(self.selected_cat.current_mates) > 1:
                 info += "mates"
             else:
                 info += "mate"
@@ -970,7 +970,7 @@ class ChooseMateScreen(Screens):
 
         if (
             not game.clan.clan_settings["same sex birth"]
-            and self.the_cat.gender == self.selected_cat.gender
+            and self.the_cat.sex == self.selected_cat.sex
         ):
             self.selected_cat_elements[
                 "no kit warning"
@@ -987,7 +987,7 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate.kill()
 
-        if self.selected_cat.ID in self.the_cat.mate:
+        if self.selected_cat.cat_id in self.the_cat.current_mates:
             self.toggle_mate = UIImageButton(
                 scale(pygame.Rect((646, 620), (306, 60))),
                 "",
@@ -1036,8 +1036,8 @@ class ChooseMateScreen(Screens):
         if self.the_cat.dead:
             romantic_love = 0
         else:
-            if self.selected_cat.ID in self.the_cat.relationships:
-                relation = self.the_cat.relationships[self.selected_cat.ID]
+            if self.selected_cat.cat_id in self.the_cat.relationships:
+                relation = self.the_cat.relationships[self.selected_cat.cat_id]
             else:
                 relation = self.the_cat.create_one_relationship(self.selected_cat)
             romantic_love = relation.romantic_love
@@ -1068,8 +1068,8 @@ class ChooseMateScreen(Screens):
         if self.selected_cat.dead:
             romantic_love = 0
         else:
-            if self.the_cat.ID in self.selected_cat.relationships:
-                relation = self.selected_cat.relationships[self.the_cat.ID]
+            if self.the_cat.cat_id in self.selected_cat.relationships:
+                relation = self.selected_cat.relationships[self.the_cat.cat_id]
             else:
                 relation = self.selected_cat.create_one_relationship(self.the_cat)
             romantic_love = relation.romantic_love
@@ -1113,12 +1113,12 @@ class ChooseMateScreen(Screens):
             and self.the_cat.is_potential_mate(
                 i, for_love_interest=False, age_restriction=False, ignore_no_mates=True
             )
-            and i.ID not in self.the_cat.mate
-            and (not self.single_only or not i.mate)
+            and i.cat_id not in self.the_cat.current_mates
+            and (not self.single_only or not i.current_mates)
             and (
                 not self.have_kits_only
                 or game.clan.clan_settings["same sex birth"]
-                or i.gender != self.the_cat.gender
+                or i.sex != self.the_cat.sex
             )
         ]
 

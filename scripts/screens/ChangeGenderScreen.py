@@ -66,7 +66,7 @@ class ChangeGenderScreen(Screens):
             elif event.ui_element == self.buttons["save"]:
                 if self.are_boxes_full():
                     gender_identity = self.get_new_identity()
-                    self.the_cat.genderalign = gender_identity
+                    self.the_cat.gender = gender_identity
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
                     self.selected_cat_elements[
@@ -152,7 +152,7 @@ class ChangeGenderScreen(Screens):
 
     def get_sample_text(self, pronouns):
         text = ""
-        text += f"Demo: {pronouns['ID']} <br>"
+        text += f"Demo: {pronouns['cat_id']} <br>"
         subject = f"{pronouns['subject']} are quick. <br>"
         if pronouns["conju"] == 2:
             subject = f"{pronouns['subject']} is quick. <br>"
@@ -187,11 +187,11 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER,
         )
 
-        # In what case would a cat have no genderalign? -key
-        if not self.the_cat.genderalign:
-            text = f"{self.the_cat.gender}"
+        # In what case would a cat have no gender? -key
+        if not self.the_cat.gender:
+            text = f"{self.the_cat.sex}"
         else:
-            text = f"{self.the_cat.genderalign}"
+            text = f"{self.the_cat.gender}"
 
         self.selected_cat_elements["cat_gender"] = pygame_gui.elements.UITextBox(
             text,
@@ -232,7 +232,7 @@ class ChangeGenderScreen(Screens):
         )
         self.selected_cat_elements["gender"] = pygame_gui.elements.UITextEntryLine(
             scale(pygame.Rect((700, 440), (330, 60))),
-            placeholder_text=self.the_cat.genderalign,
+            placeholder_text=self.the_cat.gender,
             manager=MANAGER,
         )
         self.buttons["save"] = UIImageButton(

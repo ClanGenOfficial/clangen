@@ -75,7 +75,7 @@ class GroupEvents:
             returns the list of the cat id's, which interacted with each other
         """
         abbreviations_cat_id = {}  # keeps track of which abbreviation is which cat
-        abbreviations_cat_id["m_c"] = cat.ID  # set the main cat
+        abbreviations_cat_id["m_c"] = cat.cat_id  # set the main cat
         chosen_interaction = None
 
         cat_amount = choice(list(GroupEvents.GROUP_INTERACTION_MASTER_DICT.keys()))
@@ -330,36 +330,36 @@ class GroupEvents:
                 if abbreviation in interact.status_constraint:
                     # if the cat status is in the status constraint, add the id to the list
                     status_ids = [
-                        cat.ID
+                        cat.cat_id
                         for cat in interact_cats
                         if cat.status in interact.status_constraint[abbreviation]
                     ]
                 else:
                     # if there is no constraint, add all ids to the list
-                    status_ids = [cat.ID for cat in interact_cats]
+                    status_ids = [cat.cat_id for cat in interact_cats]
 
                 # same as status
                 if abbreviation in interact.skill_constraint:
                     skill_ids = [
-                        cat.ID
+                        cat.cat_id
                         for cat in interact_cats
                         if cat.skill in interact.skill_constraint[abbreviation]
                     ]
                 else:
-                    skill_ids = [cat.ID for cat in interact_cats]
+                    skill_ids = [cat.cat_id for cat in interact_cats]
 
                 if abbreviation in interact.trait_constraint:
                     trait_ids = [
-                        cat.ID
+                        cat.cat_id
                         for cat in interact_cats
                         if cat.personality.trait
                         in interact.trait_constraint[abbreviation]
                     ]
                 else:
-                    trait_ids = [cat.ID for cat in interact_cats]
+                    trait_ids = [cat.cat_id for cat in interact_cats]
 
                 # only add the id if it is in all other lists
-                for cat_id in [cat.ID for cat in interact_cats]:
+                for cat_id in [cat.cat_id for cat in interact_cats]:
                     if (
                         cat_id in status_ids
                         and cat_id in skill_ids
@@ -406,7 +406,7 @@ class GroupEvents:
         interact_cats: list, abbreviations_cat_id: dict, cat_abbreviations_counter: dict
     ):
         """Choose which cat is which abbreviations."""
-        free_to_choose = [cat.ID for cat in interact_cats]
+        free_to_choose = [cat.cat_id for cat in interact_cats]
         # shuffle the list to prevent choosing the same cats every time
         shuffle(free_to_choose)
 
@@ -457,7 +457,7 @@ class GroupEvents:
 
             if cat_to_id not in cat_from.relationships:
                 cat_from.create_one_relationship(cat_to)
-                if cat_from.ID not in cat_to.relationships:
+                if cat_from.cat_id not in cat_to.relationships:
                     cat_to.create_one_relationship(cat_from)
                 continue
 

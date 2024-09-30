@@ -53,21 +53,21 @@ def get_alive_clan_queens(living_cats):
         if (
             len(parents) == 1
             or len(parents) > 2
-            or all(i.gender == "male" for i in parents)
-            or parents[0].gender == "female"
+            or all(i.sex == "male" for i in parents)
+            or parents[0].sex == "female"
         ):
-            if parents[0].ID in queen_dict:
-                queen_dict[parents[0].ID].append(cat)
+            if parents[0].cat_id in queen_dict:
+                queen_dict[parents[0].cat_id].append(cat)
                 living_kits.remove(cat)
             else:
-                queen_dict[parents[0].ID] = [cat]
+                queen_dict[parents[0].cat_id] = [cat]
                 living_kits.remove(cat)
         elif len(parents) == 2:
-            if parents[1].ID in queen_dict:
-                queen_dict[parents[1].ID].append(cat)
+            if parents[1].cat_id in queen_dict:
+                queen_dict[parents[1].cat_id].append(cat)
                 living_kits.remove(cat)
             else:
-                queen_dict[parents[1].ID] = [cat]
+                queen_dict[parents[1].cat_id] = [cat]
                 living_kits.remove(cat)
     return queen_dict, living_kits
 
@@ -135,12 +135,12 @@ def get_cats_same_age(Cat, cat, age_range=10):
     for inter_cat in Cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
-        if inter_cat.ID == cat.ID:
+        if inter_cat.cat_id == cat.cat_id:
             continue
 
-        if inter_cat.ID not in cat.relationships:
+        if inter_cat.cat_id not in cat.relationships:
             cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
+            if cat.cat_id not in inter_cat.relationships:
                 inter_cat.create_one_relationship(cat)
             continue
 
@@ -159,12 +159,12 @@ def get_free_possible_mates(cat):
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
-        if inter_cat.ID == cat.ID:
+        if inter_cat.cat_id == cat.cat_id:
             continue
 
-        if inter_cat.ID not in cat.relationships:
+        if inter_cat.cat_id not in cat.relationships:
             cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
+            if cat.cat_id not in inter_cat.relationships:
                 inter_cat.create_one_relationship(cat)
             continue
 
@@ -193,7 +193,7 @@ def get_random_moon_cat(
             lambda c: not c.dead
             and not c.exiled
             and not c.outside
-            and (c.ID != main_cat.ID),
+            and (c.cat_id != main_cat.cat_id),
             Cat.all_cats.values(),
         )
     )
@@ -527,7 +527,7 @@ def create_new_cat_block(
                 continue
             if cat_type != cat.status:
                 continue
-            if gender and gender != cat.gender:
+            if gender and gender != cat.sex:
                 continue
             if age and age not in Cat.age_moons[cat.age]:
                 continue
@@ -588,8 +588,8 @@ def create_new_cat_block(
             thought=thought,
             alive=alive,
             outside=outside,
-            parent1=parent1.ID if parent1 else None,
-            parent2=parent2.ID if parent2 else None,
+            parent1=parent1.cat_id if parent1 else None,
+            parent2=parent2.cat_id if parent2 else None,
         )
 
         # NEXT
@@ -601,7 +601,7 @@ def create_new_cat_block(
         for n_c in new_cats:
             # SET MATES
             for inter_cat in give_mates:
-                if n_c == inter_cat or n_c.ID in inter_cat.mate:
+                if n_c == inter_cat or n_c.cat_id in inter_cat.current_mates:
                     continue
 
                 # this is some duplicate work, since this triggers inheritance re-calcs
@@ -619,7 +619,7 @@ def create_new_cat_block(
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
-                n_c.relationships[inter_cat.ID] = start_relation
+                n_c.relationships[inter_cat.cat_id] = start_relation
 
             # BIO PARENTS
             for par in (parent1, parent2):
@@ -632,7 +632,7 @@ def create_new_cat_block(
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
-                par.relationships[n_c.ID] = start_relation
+                par.relationships[n_c.cat_id] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
@@ -640,7 +640,7 @@ def create_new_cat_block(
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
-                n_c.relationships[par.ID] = start_relation
+                n_c.relationships[par.cat_id] = start_relation
 
             # UPDATE INHERITANCE
             n_c.create_inheritance_new_cat()
@@ -692,8 +692,8 @@ def create_new_cat(
     :param str thought: if you need to give a custom "welcome" thought, set it here
     :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
-    :param str parent1: Cat ID to set as the biological parent1
-    :param str parent2: Cat ID object to set as the biological parert2
+    :param str parent1: Cat cat_id to set as the biological parent1
+    :param str parent2: Cat cat_id object to set as the biological parert2
     """
     # TODO: it would be nice to rewrite this to be less bool-centric
     accessory = None
@@ -925,7 +925,7 @@ def get_highest_romantic_relation(
     for rel in relationships:
         if rel.romantic_love < 0:
             continue
-        if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
+        if exclude_mate and rel.cat_from.cat_id in rel.cat_to.current_mates:
             continue
         if potential_mate and not rel.cat_to.is_potential_mate(
             rel.cat_from, for_love_interest=True
@@ -946,8 +946,8 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     :param rel_value: the relationship value that you're looking for,
     options are: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
     """
-    if cat_to.ID in cat_from.relationships:
-        relationship = cat_from.relationships[cat_to.ID]
+    if cat_to.cat_id in cat_from.relationships:
+        relationship = cat_from.relationships[cat_to.cat_id]
     else:
         relationship = cat_from.create_one_relationship(cat_to)
 
@@ -1013,19 +1013,19 @@ def get_cats_of_romantic_interest(cat):
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
-        if inter_cat.ID == cat.ID:
+        if inter_cat.cat_id == cat.cat_id:
             continue
 
-        if inter_cat.ID not in cat.relationships:
+        if inter_cat.cat_id not in cat.relationships:
             cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
+            if cat.cat_id not in inter_cat.relationships:
                 inter_cat.create_one_relationship(cat)
             continue
 
         # Extra check to ensure they are potential mates
         if (
             inter_cat.is_potential_mate(cat, for_love_interest=True)
-            and cat.relationships[inter_cat.ID].romantic_love > 0
+            and cat.relationships[inter_cat.cat_id].romantic_love > 0
         ):
             cats.append(inter_cat)
     return cats
@@ -1053,8 +1053,8 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     }
 
     for inter_cat in all_cats:
-        if cat.ID in inter_cat.relationships:
-            relation = inter_cat.relationships[cat.ID]
+        if cat.cat_id in inter_cat.relationships:
+            relation = inter_cat.relationships[cat.cat_id]
         else:
             continue
 
@@ -1090,7 +1090,7 @@ def filter_relationship_type(
     "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor",
     (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int",
     "jealousy_int", "trust_int"
-    :param str event_id: if the event has an ID, include it here
+    :param str event_id: if the event has an cat_id, include it here
     :param Cat patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
     # keeping this list here just for quick reference of what tags are handled here
@@ -1117,7 +1117,7 @@ def filter_relationship_type(
 
     if "siblings" in filter_types:
         test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+        testing_cats = [cat for cat in group if cat.cat_id != test_cat.cat_id]
 
         siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
         if not all(siblings):
@@ -1129,13 +1129,13 @@ def filter_relationship_type(
             return False
 
         # then if cats don't have the needed number of mates
-        if not all(len(i.mate) >= (len(group) - 1) for i in group):
+        if not all(len(i.current_mates) >= (len(group) - 1) for i in group):
             return False
 
         # Now the expensive test.  We have to see if everone is mates with each other
         # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
         for x in combinations(group, 2):
-            if x[0].ID not in x[1].mate:
+            if x[0].cat_id not in x[1].current_mates:
                 return False
 
     # check if all cats are mates with p_l (they do not have to be mates with each other)
@@ -1146,16 +1146,16 @@ def filter_relationship_type(
 
         # Check each cat to see if it is mates with the patrol leader
         for cat in group:
-            if cat.ID == patrol_leader.ID:
+            if cat.cat_id == patrol_leader.cat_id:
                 continue
-            if cat.ID not in patrol_leader.mate:
+            if cat.cat_id not in patrol_leader.current_mates:
                 return False
 
     # Check if all cats are not mates
     if "not_mates" in filter_types:
         # opposite of mate check
         for x in combinations(group, 2):
-            if x[0].ID in x[1].mate:
+            if x[0].cat_id in x[1].current_mates:
                 return False
 
     # Check if the cats are in a parent/child relationship
@@ -1192,7 +1192,7 @@ def filter_relationship_type(
         if len(group) != 2:
             return False
         # test for parentage
-        if not group[1].ID in group[0].apprentice:
+        if not group[1].cat_id in group[0].apprentice:
             return False
 
     if "app/mentor" in filter_types:
@@ -1204,7 +1204,7 @@ def filter_relationship_type(
         if len(group) != 2:
             return False
         # test for parentage
-        if not group[0].ID in group[1].apprentice:
+        if not group[0].cat_id in group[1].apprentice:
             return False
 
     # Filtering relationship values
@@ -1253,11 +1253,11 @@ def filter_relationship_type(
         fulfilled = True
         for inter_cat in group:
             rel_above_threshold = []
-            group_ids = [cat.ID for cat in group]
+            group_ids = [cat.cat_id for cat in group]
             relevant_relationships = list(
                 filter(
-                    lambda rel: rel.cat_to.ID in group_ids
-                    and rel.cat_to.ID != inter_cat.ID,
+                    lambda rel: rel.cat_to.cat_id in group_ids
+                    and rel.cat_to.cat_id != inter_cat.cat_id,
                     list(inter_cat.relationships.values()),
                 )
             )
@@ -1569,15 +1569,15 @@ def change_relationship_values(
                 continue
 
             # if the cats don't know each other, start a new relationship
-            if single_cat_to.ID not in single_cat_from.relationships:
+            if single_cat_to.cat_id not in single_cat_from.relationships:
                 single_cat_from.create_one_relationship(single_cat_to)
 
-            rel = single_cat_from.relationships[single_cat_to.ID]
+            rel = single_cat_from.relationships[single_cat_to.cat_id]
 
             # here we just double-check that the cats are allowed to be romantic with each other
             if (
                 single_cat_from.is_potential_mate(single_cat_to, for_love_interest=True)
-                or single_cat_to.ID in single_cat_from.mate
+                or single_cat_to.cat_id in single_cat_from.current_mates
             ):
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase
@@ -2385,7 +2385,7 @@ def update_sprite(cat):
     # apply
     cat.sprite = generate_sprite(cat)
     # update class dictionary
-    cat.all_cats[cat.ID] = cat
+    cat.all_cats[cat.cat_id] = cat
 
 
 def clan_symbol_sprite(clan, return_string=False, force_light=False):

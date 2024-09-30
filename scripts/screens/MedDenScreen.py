@@ -95,11 +95,11 @@ class MedDenScreen(Screens):
                 self.update_sick_cats()
             elif event.ui_element in self.cat_buttons.values():
                 cat = event.ui_element.return_cat_object()
-                game.switches["cat"] = cat.ID
+                game.switches["cat"] = cat.cat_id
                 self.change_screen("profile screen")
             elif event.ui_element == self.med_cat:
                 cat = event.ui_element.return_cat_object()
-                game.switches["cat"] = cat.ID
+                game.switches["cat"] = cat.cat_id
                 self.change_screen("profile screen")
             elif event.ui_element == self.cats_tab:
                 self.open_tab = "cats"

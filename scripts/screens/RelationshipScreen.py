@@ -89,10 +89,10 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.switch_focus_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                game.switches["cat"] = self.inspect_cat.cat_id
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                game.switches["cat"] = self.inspect_cat.cat_id
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
@@ -113,11 +113,11 @@ class RelationshipScreen(Screens):
                 self.current_page += 1
                 self.update_cat_page()
             elif event.ui_element == self.log_icon:
-                if self.inspect_cat.ID not in self.the_cat.relationships:
+                if self.inspect_cat.cat_id not in self.the_cat.relationships:
                     return
                 if self.next_cat == 0 and self.previous_cat == 0:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -136,7 +136,7 @@ class RelationshipScreen(Screens):
                     )
                 elif self.next_cat == 0:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -154,7 +154,7 @@ class RelationshipScreen(Screens):
                     )
                 elif self.previous_cat == 0:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -172,7 +172,7 @@ class RelationshipScreen(Screens):
                     )
                 else:
                     RelationshipLog(
-                        self.the_cat.relationships[self.inspect_cat.ID],
+                        self.the_cat.relationships[self.inspect_cat.cat_id],
                         [
                             self.view_profile_button,
                             self.switch_focus_button,
@@ -389,7 +389,7 @@ class RelationshipScreen(Screens):
             object_id=get_text_box_theme("#text_box_34_horizleft"),
         )
         self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(
-            self.the_cat.genderalign
+            self.the_cat.gender
             + " - "
             + str(self.the_cat.moons)
             + " moons - "
@@ -445,7 +445,7 @@ class RelationshipScreen(Screens):
             related = False
             # Mate Heart
             # TODO: UI UPDATE IS NEEDED
-            if len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate:
+            if len(self.the_cat.current_mates) > 0 and self.inspect_cat.cat_id in self.the_cat.current_mates:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((90, 300), (44, 40))),
                     pygame.transform.scale(
@@ -472,19 +472,19 @@ class RelationshipScreen(Screens):
                     )
 
             # Gender
-            if self.inspect_cat.genderalign == "female":
+            if self.inspect_cat.gender == "female":
                 gender_icon = image_cache.load_image(
                     "resources/images/female_big.png"
                 ).convert_alpha()
-            elif self.inspect_cat.genderalign == "male":
+            elif self.inspect_cat.gender == "male":
                 gender_icon = image_cache.load_image(
                     "resources/images/male_big.png"
                 ).convert_alpha()
-            elif self.inspect_cat.genderalign == "trans female":
+            elif self.inspect_cat.gender == "trans female":
                 gender_icon = image_cache.load_image(
                     "resources/images/transfem_big.png"
                 ).convert_alpha()
-            elif self.inspect_cat.genderalign == "trans male":
+            elif self.inspect_cat.gender == "trans male":
                 gender_icon = image_cache.load_image(
                     "resources/images/transmasc_big.png"
                 ).convert_alpha()
@@ -502,7 +502,7 @@ class RelationshipScreen(Screens):
             # Column One Details:
             col1 = ""
             # Gender-Align
-            col1 += self.inspect_cat.genderalign + "\n"
+            col1 += self.inspect_cat.gender + "\n"
 
             # Age
             col1 += f"{self.inspect_cat.moons} moons\n"
@@ -522,12 +522,12 @@ class RelationshipScreen(Screens):
 
             # Mate
             if (
-                len(self.inspect_cat.mate) > 0
-                and self.the_cat.ID not in self.inspect_cat.mate
+                len(self.inspect_cat.current_mates) > 0
+                and self.the_cat.cat_id not in self.inspect_cat.current_mates
             ):
                 col2 += "has a mate\n"
             elif (
-                len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate
+                len(self.the_cat.current_mates) > 0 and self.inspect_cat.cat_id in self.the_cat.current_mates
             ):
                 col2 += f"{self.the_cat.name}'s mate\n"
             else:
@@ -536,16 +536,16 @@ class RelationshipScreen(Screens):
             # Relation info:
             if related:
                 if self.the_cat.is_uncle_aunt(self.inspect_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.gender in ["female", "trans female"]:
                         col2 += "related: niece"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.gender in ["male", "trans male"]:
                         col2 += "related: nephew"
                     else:
                         col2 += "related: sibling's child\n"
                 elif self.inspect_cat.is_uncle_aunt(self.the_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.gender in ["female", "trans female"]:
                         col2 += "related: aunt"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.gender in ["male", "trans male"]:
                         col2 += "related: uncle"
                     else:
                         col2 += "related: parent's sibling"
@@ -692,19 +692,19 @@ class RelationshipScreen(Screens):
         )
 
         # Gender alignment
-        if the_relationship.cat_to.genderalign == "female":
+        if the_relationship.cat_to.gender == "female":
             gender_icon = image_cache.load_image(
                 "resources/images/female_big.png"
             ).convert_alpha()
-        elif the_relationship.cat_to.genderalign == "male":
+        elif the_relationship.cat_to.gender == "male":
             gender_icon = image_cache.load_image(
                 "resources/images/male_big.png"
             ).convert_alpha()
-        elif the_relationship.cat_to.genderalign == "trans female":
+        elif the_relationship.cat_to.gender == "trans female":
             gender_icon = image_cache.load_image(
                 "resources/images/transfem_big.png"
             ).convert_alpha()
-        elif the_relationship.cat_to.genderalign == "trans male":
+        elif the_relationship.cat_to.gender == "trans male":
             gender_icon = image_cache.load_image(
                 "resources/images/transmasc_big.png"
             ).convert_alpha()
@@ -722,8 +722,8 @@ class RelationshipScreen(Screens):
         related = False
         # MATE
         if (
-            len(self.the_cat.mate) > 0
-            and the_relationship.cat_to.ID in self.the_cat.mate
+            len(self.the_cat.current_mates) > 0
+            and the_relationship.cat_to.cat_id in self.the_cat.current_mates
         ):
             self.relation_list_elements[
                 "mate_icon" + str(i)

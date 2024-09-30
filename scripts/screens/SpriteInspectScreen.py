@@ -518,7 +518,7 @@ class SpriteInspectScreen(Screens):
                 pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
             )
             return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
-        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+        elif the_cat.dead or game.clan.instructor.cat_id == the_cat.cat_id:
             biome_platforms = platformsheet.subsurface(
                 pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
             )

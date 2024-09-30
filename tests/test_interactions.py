@@ -13,8 +13,8 @@ class RelationshipConstraints(unittest.TestCase):
     def test_siblings(self):
         # given
         parent = Cat()
-        cat_from = Cat(parent1=parent.ID)
-        cat_to = Cat(parent1=parent.ID)
+        cat_from = Cat(parent1=parent.cat_id)
+        cat_to = Cat(parent1=parent.cat_id)
         rel = Relationship(cat_from, cat_to, False, True)
     
         # then
@@ -25,8 +25,8 @@ class RelationshipConstraints(unittest.TestCase):
         # given
         cat_from = Cat()
         cat_to = Cat()
-        cat_from.mate.append(cat_to.ID)
-        cat_to.mate.append(cat_from.ID)
+        cat_from.current_mates.append(cat_to.cat_id)
+        cat_to.current_mates.append(cat_from.cat_id)
         rel = Relationship(cat_from, cat_to, True, False)
     
         # then
@@ -36,7 +36,7 @@ class RelationshipConstraints(unittest.TestCase):
     def test_parent_child_combo(self):
         # given
         parent = Cat()
-        child = Cat(parent1=parent.ID)
+        child = Cat(parent1=parent.cat_id)
 
         child_parent_rel = Relationship(child, parent, False, True)
         parent_child_rel = Relationship(parent, child, False, True)

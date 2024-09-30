@@ -369,7 +369,7 @@ class ChooseMentorScreen(Screens):
         info = (
             self.the_cat.status
             + "\n"
-            + self.the_cat.genderalign
+            + self.the_cat.gender
             + "\n"
             + self.the_cat.personality.trait
             + "\n"
@@ -409,39 +409,39 @@ class ChooseMentorScreen(Screens):
             # if "changing mentor" to the same cat, remove them as mentor instead
             if (
                 self.the_cat.moons > 6
-                and self.the_cat.ID not in old_mentor.former_apprentices
+                and self.the_cat.cat_id not in old_mentor.former_apprentices
             ):
-                old_mentor.former_apprentices.append(self.the_cat.ID)
+                old_mentor.former_apprentices.append(self.the_cat.cat_id)
             self.the_cat.mentor = None
-            old_mentor.apprentice.remove(self.the_cat.ID)
+            old_mentor.apprentice.remove(self.the_cat.cat_id)
             self.mentor = None
         elif new_mentor and old_mentor is not None:
-            old_mentor.apprentice.remove(self.the_cat.ID)
+            old_mentor.apprentice.remove(self.the_cat.cat_id)
             if (
                 self.the_cat.moons > 6
-                and self.the_cat.ID not in old_mentor.former_apprentices
+                and self.the_cat.cat_id not in old_mentor.former_apprentices
             ):
-                old_mentor.former_apprentices.append(self.the_cat.ID)
+                old_mentor.former_apprentices.append(self.the_cat.cat_id)
 
             self.the_cat.patrol_with_mentor = 0
-            self.the_cat.mentor = new_mentor.ID
-            new_mentor.apprentice.append(self.the_cat.ID)
+            self.the_cat.mentor = new_mentor.cat_id
+            new_mentor.apprentice.append(self.the_cat.cat_id)
             self.mentor = new_mentor
 
             # They are a current apprentice, not a former one now!
-            if self.the_cat.ID in new_mentor.former_apprentices:
-                new_mentor.former_apprentices.remove(self.the_cat.ID)
+            if self.the_cat.cat_id in new_mentor.former_apprentices:
+                new_mentor.former_apprentices.remove(self.the_cat.cat_id)
 
         elif new_mentor:
-            self.the_cat.mentor = new_mentor.ID
-            new_mentor.apprentice.append(self.the_cat.ID)
+            self.the_cat.mentor = new_mentor.cat_id
+            new_mentor.apprentice.append(self.the_cat.cat_id)
             self.mentor = new_mentor
-            if self.the_cat.ID not in new_mentor.former_apprentices:
+            if self.the_cat.cat_id not in new_mentor.former_apprentices:
                 self.the_cat.patrol_with_mentor = 0
 
             # They are a current apprentice, not a former one now!
-            if self.the_cat.ID in new_mentor.former_apprentices:
-                new_mentor.former_apprentices.remove(self.the_cat.ID)
+            if self.the_cat.cat_id in new_mentor.former_apprentices:
+                new_mentor.former_apprentices.remove(self.the_cat.cat_id)
 
         if self.mentor is not None:
             self.current_mentor_text.set_text(
@@ -550,7 +550,7 @@ class ChooseMentorScreen(Screens):
             self.confirm_mentor.disable()
             self.current_mentor_warning.hide()
             self.no_mentor_warning.show()
-        elif self.selected_mentor.ID == self.the_cat.mentor:
+        elif self.selected_mentor.cat_id == self.the_cat.mentor:
             self.confirm_mentor.hide()
             self.remove_mentor.show()
             self.remove_mentor.enable()

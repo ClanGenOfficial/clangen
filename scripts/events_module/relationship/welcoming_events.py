@@ -27,7 +27,7 @@ class Welcoming_Events:
         Returns
         -------
         """
-        if new_cat.ID == clan_cat.ID:
+        if new_cat.cat_id == clan_cat.cat_id:
             return
 
         # setup the status as "key" to use it
@@ -84,7 +84,7 @@ class Welcoming_Events:
         # add it to the event list
         game.cur_events_list.append(
             Single_Event(
-                interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]
+                interaction_str, ["relation", "interaction"], [new_cat.cat_id, clan_cat.cat_id]
             )
         )
 
@@ -104,27 +104,27 @@ class Welcoming_Events:
         interaction_str += effect
 
         # add to relationship logs
-        if new_cat.ID in clan_cat.relationships:
+        if new_cat.cat_id in clan_cat.relationships:
             if clan_cat.age == 1:
-                clan_cat.relationships[new_cat.ID].log.append(
+                clan_cat.relationships[new_cat.cat_id].log.append(
                     interaction_str
                     + f" - {clan_cat.name} was {clan_cat.moons} moons old"
                 )
             else:
-                clan_cat.relationships[new_cat.ID].log.append(
+                clan_cat.relationships[new_cat.cat_id].log.append(
                     interaction_str
                     + f" - {clan_cat.name} was {clan_cat.moons} moons old"
                 )
 
-            new_cat.relationships[clan_cat.ID].link_relationship()
+            new_cat.relationships[clan_cat.cat_id].link_relationship()
 
-        if clan_cat.ID in new_cat.relationships:
+        if clan_cat.cat_id in new_cat.relationships:
             if new_cat.age == 1:
-                new_cat.relationships[clan_cat.ID].log.append(
+                new_cat.relationships[clan_cat.cat_id].log.append(
                     interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old"
                 )
             else:
-                new_cat.relationships[clan_cat.ID].log.append(
+                new_cat.relationships[clan_cat.cat_id].log.append(
                     interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old"
                 )
 

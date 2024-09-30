@@ -91,18 +91,18 @@ class Relation_Events:
         # only adding cats which already have SOME relationship with each other
         cat_to_choose_from = []
         for inter_cat in possible_cats:
-            if inter_cat.ID not in cat.relationships:
+            if inter_cat.cat_id not in cat.relationships:
                 cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
+            if cat.cat_id not in inter_cat.relationships:
                 inter_cat.create_one_relationship(cat)
 
             cat_to_inter = (
-                cat.relationships[inter_cat.ID].platonic_like > 10
-                or cat.relationships[inter_cat.ID].comfortable > 10
+                cat.relationships[inter_cat.cat_id].platonic_like > 10
+                or cat.relationships[inter_cat.cat_id].comfortable > 10
             )
             inter_to_cat = (
-                inter_cat.relationships[cat.ID].platonic_like > 10
-                or inter_cat.relationships[cat.ID].comfortable > 10
+                inter_cat.relationships[cat.cat_id].platonic_like > 10
+                or inter_cat.relationships[cat.cat_id].comfortable > 10
             )
             if cat_to_inter and inter_to_cat:
                 cat_to_choose_from.append(inter_cat)
@@ -110,11 +110,11 @@ class Relation_Events:
         # if the cat has one or more mates, check how high the chance is,
         # that the cat interacts romantic with ANOTHER cat than their mate
         use_mate = False
-        if cat.mate:
+        if cat.current_mates:
             chance_number = game.config["relationship"]["chance_romantic_not_mate"]
 
             # the more mates the cat has, the less likely it will be that they interact with another cat romantically
-            for mate_id in cat.mate:
+            for mate_id in cat.current_mates:
                 chance_number -= int(cat.relationships[mate_id].romantic_love / 20)
             use_mate = int(random.random() * chance_number)
 
@@ -123,7 +123,7 @@ class Relation_Events:
         if use_mate or cat.no_mates:
             cat_to_choose_from = [
                 cat.all_cats[mate_id]
-                for mate_id in cat.mate
+                for mate_id in cat.current_mates
                 if not cat.all_cats[mate_id].dead and not cat.all_cats[mate_id].outside
             ]
 
@@ -149,9 +149,9 @@ class Relation_Events:
             random_cat = choice(same_age_cats)
             if (
                 Relation_Events.can_trigger_events(random_cat)
-                and random_cat.ID in cat.relationships
+                and random_cat.cat_id in cat.relationships
             ):
-                cat.relationships[random_cat.ID].start_interaction()
+                cat.relationships[random_cat.cat_id].start_interaction()
                 Relation_Events.trigger_event(cat)
                 Relation_Events.trigger_event(random_cat)
 
@@ -234,11 +234,11 @@ class Relation_Events:
                     Welcoming_Events.welcome_cat(age_cat, new_cat)
 
                 rest_number = number - len(same_age_cats)
-                same_age_ids = [c.ID for c in same_age_cats]
+                same_age_ids = [c.cat_id for c in same_age_cats]
                 alive_cats = [
                     alive_cat
                     for alive_cat in alive_cats
-                    if alive_cat.ID not in same_age_ids
+                    if alive_cat.cat_id not in same_age_ids
                 ]
 
                 chosen_rest = random.choices(population=alive_cats, k=len(alive_cats))
@@ -278,15 +278,15 @@ class Relation_Events:
             cat_from = main_cat
             cat_to = inter_cat
 
-            if inter_cat.ID == main_cat.ID:
+            if inter_cat.cat_id == main_cat.cat_id:
                 continue
-            if cat_to.ID not in cat_from.relationships:
+            if cat_to.cat_id not in cat_from.relationships:
                 cat_from.create_one_relationship(cat_to)
-                if cat_from.ID not in cat_to.relationships:
+                if cat_from.cat_id not in cat_to.relationships:
                     cat_to.create_one_relationship(cat_from)
                 continue
 
-            relationship = cat_from.relationships[cat_to.ID]
+            relationship = cat_from.relationships[cat_to.cat_id]
 
             if "siblings" in constraint and not cat_from.is_sibling(cat_to):
                 continue
@@ -387,10 +387,10 @@ class Relation_Events:
 
     @staticmethod
     def trigger_event(cat):
-        if cat.ID in Relation_Events.cats_triggered_events:
-            Relation_Events.cats_triggered_events[cat.ID] += 1
+        if cat.cat_id in Relation_Events.cats_triggered_events:
+            Relation_Events.cats_triggered_events[cat.cat_id] += 1
         else:
-            Relation_Events.cats_triggered_events[cat.ID] = 1
+            Relation_Events.cats_triggered_events[cat.cat_id] = 1
 
     @staticmethod
     def can_trigger_events(cat):
@@ -402,10 +402,10 @@ class Relation_Events:
         if cat.status in special_status:
             threshold = game.config["relationship"]["max_interaction_special"]
 
-        if cat.ID not in Relation_Events.cats_triggered_events:
+        if cat.cat_id not in Relation_Events.cats_triggered_events:
             return True
 
-        return Relation_Events.cats_triggered_events[cat.ID] < threshold
+        return Relation_Events.cats_triggered_events[cat.cat_id] < threshold
 
     @staticmethod
     def clear_trigger_dict():
