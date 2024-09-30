@@ -462,11 +462,57 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. There goes their chance to make an ally...",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. There goes c_n's chance to make an ally...",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c approaches o_c_n's leader right away and informs them that they would benefit greatly from an alliance with c_n. o_c_n's leader eyes {PRONOUN/m_c/object} skeptically.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "arrogant", "ambitious", "confident", "bold", "daring", "competitive", "flamboyant", "shameless" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c suggests to o_c_n's leader that they send a joint patrol to explore beyond their borders and find new hunting grounds. o_c_n's leader informs {PRONOUN/m_c/object} that not every cat shares {PRONOUN/m_c/poss} taste for adventure.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "adventurous" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c asks after o_c_n's leader health - have they been eating well? Sleeping enough? o_c_n's leader is unimpressed. Does m_c think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} their mother?",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "loving", "compassionate" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c asks if o_c_n's herb stores are full. o_c_n's leader's hackles raise, and the leader asks if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} trying to learn about o_c_n's weaknesses.",
+    "rel_change": -1,
+    "m_c": { },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["cunning", "proud", "wary", "stoic", "logical", "bloodthirsty"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c proposes a friendship between o_c_n and c_n, describing a beautiful future for their Clans where no cat goes hungry and half-Clan families might thrive. o_c_n's leader replies that though o_c_n may be an easy-going Clan, even they know life isn't all mice and moonlight'",
+    "rel_change": -1,
+    "m_c": { },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["gracious", "mellow", "amiable"]
   },
   {
     "interaction_type": "befriend",
