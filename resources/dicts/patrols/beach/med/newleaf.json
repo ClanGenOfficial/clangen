@@ -18,7 +18,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object}.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1891,7 +1891,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2012,7 +2012,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2193,7 +2193,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3868,7 +3868,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year.",
+                "text": "p_l fails to find any marigold and, as the plant dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year.",
                 "exp": 0,
                 "weight": 20
             }
@@ -3966,7 +3966,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year. app1's cavalier attitude about it doesn't help, either.",
+                "text": "p_l fails to find any marigold and, as the plant dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year. app1's cavalier attitude about it doesn't help, either.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4077,7 +4077,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year, although the warriors dismiss {PRONOUN/p_l/poss} concerns about what they see as little more than weeds.",
+                "text": "p_l fails to find any marigold and, as the plant dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year, although the warriors dismiss {PRONOUN/p_l/poss} concerns about what they see as little more than weeds.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4205,7 +4205,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year.",
+                "text": "p_l fails to find any mullein and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year.",
                 "exp": 0,
                 "weight": 20
             }
@@ -4303,7 +4303,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year. app1's cavalier attitude about it doesn't help, either.",
+                "text": "p_l fails to find any mullein and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year. app1's cavalier attitude about it doesn't help, either.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4455,7 +4455,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf.",
+                "text": "Towering into the sky, the oaks' blush of new leaves are one of the most hopeful signs of newleaf to p_l.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves"]
@@ -4504,7 +4504,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} app1 a lesson on using the trees to track the season - not just what moon it is, which only matters a little, but even how warm, cool, or wet the season has been so far.",
+                "text": "Towering into the sky, the oaks' blush of new leaves are one of the most hopeful signs of newleaf to p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} app1 a lesson on using the trees to track the season - not just what moon it is, which only matters a little, but even how warm, cool, or wet the season has been so far.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["oak_leaves"],
@@ -4615,7 +4615,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. The warriors helping {PRONOUN/p_l/subject} seem to just find it a fun training exercise, to see how spindly a branch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} able to balance on as they send down a rain of leaves on p_l.",
+                "text": "Towering into the sky, the oaks' blush of new leaves are one of the most hopeful signs of newleaf to p_l. The warriors helping {PRONOUN/p_l/subject} seem to just find it a fun training exercise, to see how spindly a branch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} able to balance on as they send down a rain of leaves on p_l.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves"],
@@ -4756,7 +4756,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Whatever tale p_l was reminded of, it does nothing to help {PRONOUN/p_l/object} climb the damn tree and fetch the leaves. {PRONOUN/p_l/subject/CAP} misjudge a step and are left clinging, claws out and eyes wide. Let's return to the ground. Now.",
+                "text": "Whatever tale p_l was reminded of, it does nothing to help {PRONOUN/p_l/object} climb the damn tree and fetch the leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/misjudge/misjudges} a step and {VERB/p_l/are/is} left clinging, claws out and eyes wide. Let's return to the ground. Now.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -4791,7 +4791,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Deep green, even in newleaf, and with a characteristic smoothness, p_l finds the plantain where {PRONOUN/p_l/subject} expected - right in the middle of a path.",
+                "text": "Deep green, even in newleaf, and with a characteristic smoothness, the plantain is right where {PRONOUN/p_l/subject} expected - right in the middle of a path.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["plantain"]
@@ -4812,7 +4812,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year.",
+                "text": "p_l fails to find any plantain and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots {PRONOUN/p_l/subject} {VERB/p_l/know/knows} from last year.",
                 "exp": 0,
                 "weight": 20
             }
@@ -4840,7 +4840,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Deep green, even in newleaf, and with a characteristic smoothness, p_l finds the plantain where {PRONOUN/p_l/subject} expected - right in the middle of a path. {PRONOUN/p_l/subject/CAP} {VERB/p_l/teach/teaches} app1 how the leaves can be opened and used on top of cobwebs for wound binding - although the plant itself doesn't help the wound heal, the leaves make good structural support for other remedies.",
+                "text": "Deep green, even in newleaf, and with a characteristic smoothness, the plantain is right where {PRONOUN/p_l/subject} expected - right in the middle of a path. {PRONOUN/p_l/subject/CAP} {VERB/p_l/teach/teaches} app1 how the leaves can be opened and used on top of cobwebs for wound binding - although the plant itself doesn't help the wound heal, the leaves make good structural support for other remedies.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["plantain"],
@@ -4951,7 +4951,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Deep green, even in newleaf, and with a characteristic smoothness, p_l finds the plantain where {PRONOUN/p_l/subject} expected - right in the middle of a path. The warriors help {PRONOUN/p_l/subject} pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path here is too annoying, anyways.",
+                "text": "Deep green, even in newleaf, and with a characteristic smoothness, the plantain is right where {PRONOUN/p_l/subject} expected - right in the middle of a path. The warriors help {PRONOUN/p_l/subject} pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path here is too annoying, anyways.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["plantain"],
@@ -6035,7 +6035,7 @@
             "all apprentices": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without any cares in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
+        "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
         "decline_text": "p_l takes {PRONOUN/app1/object} down to a stream to clean out {PRONOUN/app1/poss} mouth.",
         "chance_of_success": 30,
         "success_outcomes": [

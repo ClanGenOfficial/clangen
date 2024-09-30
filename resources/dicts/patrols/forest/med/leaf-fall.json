@@ -14,12 +14,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l goes out with a warrior escort, both for safety as they try to stock up under the clear leaf-fall skies, and for carrying capacity should they find anything.",
+        "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to stock up under the clear leaf-fall skies, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -67,7 +67,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -105,7 +105,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The ground is slippery and damp, and when p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "text": "The ground is slippery and damp, and when p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -153,7 +153,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -467,7 +467,7 @@
                 "herbs": ["blackberry"]
             },
             {
-                "text": "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. As {PRONOUN/p_l/subject} {VERB/p_l/set/sets} out the leaves out to dry before they're put away in the herb stores, p_l lets out a purr at the sight of {PRONOUN/p_l/poss} harvest.",
+                "text": "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. As {PRONOUN/p_l/subject} {VERB/p_l/set/sets} out the leaves out to dry before they're put away in the herb stores, p_l purrs at the sight of {PRONOUN/p_l/poss} harvest.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "blackberry"]
@@ -1838,7 +1838,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1878,7 +1878,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade them from the pride they feel plucking from the highest branches, even if those leaves aren't any more potent than the ones at the bottom of the tree.",
+                "text": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade {PRONOUN/app1/object} from the pride {PRONOUN/app1/subject} {VERB/app1/feel/feels} plucking from the highest branches, even if those leaves aren't any more potent than the ones at the bottom of the tree.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["elder_leaves"],
@@ -1948,7 +1948,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2086,7 +2086,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2835,7 +2835,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "text": "It takes them all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["lungwort"],
@@ -2884,7 +2884,7 @@
                 "text": "Night falls, but still s_c keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["patient"],
+                "stat_trait": ["patient", "ambitious"],
                 "herbs": ["lungwort"],
                 "relationships": [
                     {
@@ -3064,7 +3064,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The soft, rose-like scent of the mallow bushes drifts around p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
+                "text": "The soft, rose-like scent of the mallow bushes drifts around p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snip/snips} off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["mallow"]
@@ -3699,7 +3699,7 @@
                 ]
             },
             {
-                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping {PRONOUN/p_l/object}, knocks them over so that the entire bundle can be carried home.",
+                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping {PRONOUN/s_c/object}, knocks them over so that the entire bundle can be carried home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -4468,7 +4468,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. app1 asks if there's anything they can do to block the scent, but unfortunately there's nothing to be done. It's just better to get harvesting over with as quickly as possible.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. app1 asks if there's anything they can do to block the scent, but unfortunately there's nothing to be done. Better just get the harvesting over with as quickly as possible.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["ragwort"],
@@ -4745,7 +4745,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
+                "text": "app1 identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"]
@@ -4783,7 +4783,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, having accidentally eaten deathberries."
+                    "reg_death": "m_c died after accidentally ingesting deathberries during {PRONOUN/m_c/poss} medicine cat training."
                 }
             }
         ]
@@ -5350,7 +5350,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The garlic won't notice leaf-bare until it actually hits - one of its good traits that make up for its stinkiness. p_l is able to bring a good harvest home.",
+                "text": "The garlic won't notice leaf-bare until it actually hits - one of its good traits that make up for its stinkiness. p_l brings a good harvest home.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["wild_garlic"]
@@ -6156,7 +6156,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Whatever tale p_l was reminded of, it does nothing to help {PRONOUN/p_l/object} climb the damn tree and fetch the leaves. {PRONOUN/p_l/subject/CAP} misjudge a step and are left clinging, claws out and eyes wide. Let's return to the ground. Now.",
+                "text": "Whatever tale p_l was reminded of, it does nothing to help {PRONOUN/p_l/object} climb the damn tree and fetch the leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/misjudge/misjudges} a step and {VERB/p_l/are/is} left clinging, claws out and eyes wide. Let's return to the ground. Now.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6350,7 +6350,7 @@
             "all apprentices": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without any cares in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
+        "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
         "decline_text": "p_l takes {PRONOUN/app1/object} down to a stream to clean out {PRONOUN/app1/poss} mouth.",
         "chance_of_success": 30,
         "success_outcomes": [
