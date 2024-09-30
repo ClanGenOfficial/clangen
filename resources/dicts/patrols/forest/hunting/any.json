@@ -2914,7 +2914,7 @@
                 ]
             },
             {
-                "text": "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c/poss} meow, and s_c has to agree with {PRONOUN/s_c/object}, purring with laughter.",
+                "text": "s_c is basically on top of the skittering lizard and does a ridiculous hop to come down on it with claws extended. r_c compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c/poss} meow, and s_c has to agree with {PRONOUN/s_c/object}, purring with laughter.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],

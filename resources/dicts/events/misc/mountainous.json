@@ -17,7 +17,7 @@
     "location": ["mountainous"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "As a storm rages across the mountain outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
+    "event_text": "As a storm rages across the mountain outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
     "m_c": {
       "age": ["any"],
       "status": ["medicine cat", "medicine cat apprentice"],
@@ -29,7 +29,7 @@
     "location": ["mountainous"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight... m_c sits on an isolated mountain ledge, considering what the omens foretell.",
+    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c sits on an isolated mountain ledge, considering what the omens foretell.",
     "m_c": {
       "age": ["any"],
       "status": ["medicine cat", "medicine cat apprentice"],

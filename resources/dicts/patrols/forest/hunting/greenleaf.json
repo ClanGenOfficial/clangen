@@ -135,7 +135,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "A too-high tail brushing against the bushes scares the squirrel away, and app1 watches in disappointment as it scampers away.",
+                "text": "A too-high tail brushing against the bushes scares the squirrel away, and app1 watches in disappointment as it scampers off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
