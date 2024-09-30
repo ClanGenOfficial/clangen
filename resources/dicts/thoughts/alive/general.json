@@ -931,7 +931,6 @@
             "Promises to stick by a Clanmates side",
             "Refuses to reconsider a belief a Clanmate disagreed with",
             "Is debating a conflicting belief with a Clanmate", 
-            "Wonders if StarClan can hear {PRONOUN/m_c/object}",
             "Leaves fresh-kill at the grave of a dead loved one"
         ],
         "main_trait_constraint": [
