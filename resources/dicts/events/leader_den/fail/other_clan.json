@@ -277,7 +277,27 @@
     "event_text": "Staring down the hulking, muscular figure of o_c_n's leader at the Gathering, m_c decides it's best not to provoke them just yet. For strategic reasons.",
     "rel_change": 0,
     "m_c": { 
-      "skill": [ "nervous", "insecure", "careful" ]
+      "trait": [ "nervous", "insecure", "careful" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "m_c sweats at the Gathering, trying to think of the perfect insult before it's {PRONOUN/m_c/poss} turn to speak. o_c_n is a pack of... <i>grass-snifflers,</i> m_c announces to silence. o_c_n's leader seems more confused than insulted.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "nervous", "insecure", "careful", "calm", "gloomy", "strange", "lonesome", "childish", "playful", "strict", "compassionate", "faithful", "loving", "grumpy", "sincere"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "m_c is eager to put {PRONOUN/m_c/poss} skills at being a thorn in the paw to use at the Gathering, but apparently, {PRONOUN/subject/m_c}{VERB/m_c/'ve/'s} already got such a reputation for being a shameless troublemaker that o_c_n's leader doesn't take it personally.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": ["shameless", "troublesome", "childish", "cold", "bold", "grumpy", "flamboyant", "rebellious" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
