@@ -689,7 +689,7 @@
         },
         "weight": 20,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Though {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want app1 to feel pressured, p_l makes sure {PRONOUN/app1/subject} {VERB/app1/know/knows} how valuable a leaf-bare squirrel would be to {PRONOUN/app1/poss} Clanmates before asking what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
-        "decline_text": "app1 looks apprehensive, and quietly says they want to look for something easier.",
+        "decline_text": "app1 looks apprehensive, then quietly says they want to look for something easier.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -808,7 +808,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+                "text": "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

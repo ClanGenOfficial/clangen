@@ -1342,7 +1342,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c silently slinks through the underbrush, going undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1376,7 +1376,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 40,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1412,11 +1412,11 @@
         },
         "weight": 20,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Though they don't want app1 to feel pressured, p_l makes sure {PRONOUN/app1/subject} {VERB/app1/know/knows} how valuable a leaf-bare squirrel would be to their Clanmates before asking what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
-        "decline_text": "app1 looks apprehensive, and quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
+        "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1531,7 +1531,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+                "text": "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

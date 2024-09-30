@@ -25,6 +25,13 @@
                 "exp": 10,
                 "weight": 5,
                 "prey": ["small"]
+            },
+            {
+                "text": "s_c tracks down the mouse and pounces, killing it neatly. Looking down at it, {PRONOUN/s_c/subject} {VERB/s_c/wonder/wonders} what the mouse was thinking right before s_c caught it. It's too late to ask, though. The mouse-stery will never be solved.",
+                "exp": 10,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange" ],
+                "prey": ["small"]
             }
         ],
         "fail_outcomes": [
@@ -73,6 +80,14 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
+            },
+            {
+                "text": "s_c leaps for the mouse, but it vanishes just as {PRONOUN/s_c/subject} {VERB/s_c/slam/slams} {PRONOUN/s_c/poss} paw down on it. Where in StarClan's name could it have gone? How mouse-sterious...",
+                "exp": 0,
+                "weight": 5,
+                "can_have_stat": ["any"],
+                "stat_trait": [ "childish", "playful" ],
+                "prey": ["very_small"]
             }
         ]
     },
@@ -109,6 +124,13 @@
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
                 "prey": ["large"]
+            },
+            {
+                "text": "The patrol works together to block off the rat's possible escape routes, and p_l closes in for the kill. The cats congratulate each other, and s_c remarks that so often, hunting is about cooperation... and keeping a good rat-ttitude.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [ "childish", "playful" ],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -141,10 +163,10 @@
                 "prey": ["large"]
             },
             {
-                "text": "s_c runs the hare down in a huge display of athleticism and skill.",
+                "text": "s_c runs the hare down in an incredible display of athleticism and skill.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,3"],
+                "stat_skill": ["HUNTER,3", "RUNNER,3"],
                 "prey": ["large"]
             }
         ],
@@ -154,6 +176,20 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
+            },
+            {
+                "text": "p_l and r_c sprint toward the hare at the same time and bonk heads. The hare bolts into the grass before either of them can straighten up. What a hare-rrible situation, s_c chortles. p_l and r_c are far less amused.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["childish", "playful" ],
+                "prey": ["very_small"],
+                "injury": [
+                    {
+                        "cats": ["p_l", "r_c"],
+                        "injuries": [ "bruises" ]
+                    }
+                ]
+
             }
         ]
     },
@@ -257,6 +293,13 @@
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
+            },
+            {
+                "text": "s_c creeps up to the streambank, then lashes out a paw and hooks out a fat minnow. On a <i>scale</i> of one to ten, s_c would call this catch a gill-icious ten. Fishing is all about finding the right perch and not carping too much about failures. c_n should never trout s_c's fishing skill!",
+                "exp": 10,
+                "weight": 5,
+                "stat_trait": ["playful", "childish"],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -293,8 +336,29 @@
                 "text": "s_c makes fishing look easy, giving out tips to any interested cats.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
+                "stat_skill": ["HUNTER,1", "SWIMMER,1"],
                 "prey": ["large"]
+            },
+            {
+                "text": "r_c is so successful that s_c starts a rumor amongst the patrol that perhaps r_c isn't entirely a cat... Perhaps {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} some sort of combination of cat and fish... Like... a <i>fishcat,</i> s_c whispers. r_c frowns at {PRONOUN/s_c/object}, twitching {PRONOUN/r_c/poss} whiskers in a manner suspiciously similar to a catfish.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["childish", "playful"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "values": [ "comfort", "platonic" ],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": [ "comfort", "platonic" ],
+                        "amount": 5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -440,6 +504,22 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The rabbit sprints away before any cat in the patrol can react. s_c remarks that {PRONOUN/s_c/subject} <i>would've</i> chased after it, {PRONOUN/s_c/subject} just {VERB/s_c/think/thinks} that sort of prey is ra-bit too easy to catch. The rest of the patrol is irate from the missed catch and doesn't react. s_c repeats the joke, to no avail. Tough crowd.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["childish", "playful" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
                         "amount": -5
                     }
                 ],
@@ -617,6 +697,22 @@
                         "mutual": false,
                         "values": ["jealous"],
                         "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Did r_c eat too many mice before sleeping? s_c inquires. That always disturbs <i>{PRONOUN/s_c/poss}</i> sleep. Once, {PRONOUN/s_c/subject} had this crazy dream where {PRONOUN/s_c/poss} paws had turned into mushrooms, and when s_c nibbled on {PRONOUN/s_c/poss} own paw, {PRONOUN/s_c/subject} started to - no, r_c interrupts, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pretty sure that's not what happened in this case.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["childish", "playful" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": -10
                     }
                 ],
                 "prey": ["very_small"]
@@ -1058,6 +1154,29 @@
                         "amount": -5
                     }
                 ]
+            },
+            {
+                "text": "The patrol chuckles at the sight of the Twolegs trying to round up their dogs, none purring louder than s_c. Oh <i>deer</i>. Once the Twolegs wrangle their dogs, the patrol descends to feast. s_c doesn't take too big of a mouthful; if {PRONOUN/s_c/subject} did, {PRONOUN/s_c/subject} wouldn't be able to make deer puns. That would be a stag-ggering loss to everyone.",
+                "exp": 10,
+                "weight": 5,
+                "stat_trait": [ "childish", "playful" ],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -1127,6 +1246,12 @@
         "exp": 30,
         "weight": 20,
         "stat_trait": ["wise", "thoughtful", "careful"]
+      },
+      {
+        "text": "r_c kills the rat easily in its distracted state, but then notices the scent of sickness on its body. Best not to bring this one back, p_l decides; even in leaf-bare, it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
+        "exp": 30,
+        "weight": 10,
+        "stat_trait": ["childish", "playful" ]
       }
     ],
     "fail_outcomes": [
