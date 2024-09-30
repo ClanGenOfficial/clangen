@@ -650,6 +650,30 @@
   },
   {
     "interaction_type": "antagonize",
+    "event_text": "o_c_n's leader is bored of m_c's taunts. {PRONOUN/m_c/subject/CAP} {VERB/m_c/fail/fails} to make any progress in worsening this already-hostile relationship during the Gathering.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "During the Gathering, m_c threatens o_c_n's leader with more bloodshed and fury if o_c_n doesn't back down. o_c_n's leader rolls their eyes at the show of bravado.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, m_c fabricates an accusation of o_c_n stealing prey from c_n. o_c_n's leader is more baffled than anything - with all the bad blood between their Clans, why did m_c feel the need to invent slights?",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
     "event_text": "During the Gathering, m_c's brilliant, cutting insults are drowned out by o_c_n's leader picking a fight with a whole other Clan. m_c is disappointed. {PRONOUN/m_c/subject/CAP} thought <i>c_n</i> was o_c_n's nemesis.",
     "rel_change": 0,
     "m_c": {},
