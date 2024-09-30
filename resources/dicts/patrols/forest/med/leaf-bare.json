@@ -19,7 +19,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -67,7 +67,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is also <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is also <i>this</i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -153,7 +153,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, but p_l is also <i> this </i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, but p_l is also <i>this</i> close to murdering s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -190,7 +190,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as they try to gather what they can.",
+                "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry"]
@@ -1593,7 +1593,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i> problem </i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions is a disaster just waiting to happen.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions is a disaster just waiting to happen.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1604,7 +1604,7 @@
                 "herbs": ["juniper"]
             },
             {
-                "text": "Sometimes p_l finds themselves nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
+                "text": "Sometimes p_l finds {PRONOUN/p_l/self} nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["juniper"]
@@ -1658,7 +1658,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i> problem </i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous and p_l hesitates in bringing app1 along, but tells {PRONOUN/p_l/self} it's a learning opportunity.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous and p_l hesitates to bring app1 along, but tells {PRONOUN/p_l/self} it's a learning opportunity.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1685,7 +1685,7 @@
                 ]
             },
             {
-                "text": "Sometimes p_l finds themselves nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, though app1 gives them a weird look, which prompts p_l to explain their wide smile.",
+                "text": "Sometimes p_l finds {PRONOUN/p_l/self} nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, though app1 gives {PRONOUN/p_l/object} a weird look, which prompts p_l to explain {PRONOUN/p_l/poss} wide smile.",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["juniper"],
@@ -1802,7 +1802,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i> problem </i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -1829,7 +1829,7 @@
                 ]
             },
             {
-                "text": "Sometimes p_l finds themselves nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having {PRONOUN/p_l/poss} Clanmates there to help {PRONOUN/p_l/object} gather it.",
+                "text": "Sometimes p_l finds {PRONOUN/p_l/self} nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having {PRONOUN/p_l/poss} Clanmates there to help {PRONOUN/p_l/object} gather it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["juniper"],
@@ -2011,7 +2011,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
+        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} or app1 can only remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
