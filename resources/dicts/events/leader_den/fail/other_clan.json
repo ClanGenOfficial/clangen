@@ -17,6 +17,14 @@
   },
   {
     "interaction_type": "offend",
+    "event_text": "At the Gathering, m_c insists on going first, shouldering in front of o_c_n's leader. o_c_n's leader doesn't mind whatsoever, since they have no real news to share this moon.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
     "event_text": "m_c takes {PRONOUN/m_c/poss} chance at the Gathering to tell o_c_n's leader that c_n stands alone. o_c_n's leader approves of {PRONOUN/m_c/poss} strength and independence, and tells {PRONOUN/m_c/object} that their alliance is stronger than ever.",
     "rel_change": 1,
     "m_c": {},
@@ -45,6 +53,16 @@
     "rel_change": 0,
     "m_c": {
       "trait": ["lonesome", "childish", "insecure", "nervous", "compassionate", "careful", "loving", "oblivious"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
+    "event_text": "When o_c_n's leader joins m_c and the other leaders atop the leader's perch at the Gathering, m_c makes a loud fart noise with {PRONOUN/m_c/poss} mouth. o_c_n's leader unfortunately shares {PRONOUN/m_c/poss} childish sense of humor and nearly falls off the perch laughing.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": ["childish"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
