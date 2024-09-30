@@ -303,6 +303,16 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c openly and repeatedly threatens o_c_n and its leader. o_c_n's leader is entirely unimpressed and cracks jokes during their speech about how m_c is full of hot air and stirs up trouble like a bored kit. The other Clans laugh along at c_n's expense.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": ["shameless", "troublesome", "childish", "cold", "bold", "daring", "bloodthirsty", "rebellious", "fierce" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c cozies up to the o_c_n leader in an attempt to get in o_c_n's good graces. They don't seem very receptive, though.",
     "rel_change": 0,
