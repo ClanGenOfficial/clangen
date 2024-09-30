@@ -159,7 +159,9 @@
     "interaction_type": "praise",
     "event_text": "At the Gathering, m_c showers o_c_n's leader in praise for how well o_c_n apprentices are shaping up. o_c_n's leader stares at {PRONOUN/m_c/object}. Apparently o_c_n doesn't have any 'paws at the moment... Whoops.",
     "rel_change": -1,
-    "m_c": {},
+    "m_c": {
+      "trait": [ "oblivious" ]
+    },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
   },
@@ -194,6 +196,82 @@
     "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. m_c worries about the Clan's ally, especially when {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} missed this chance to strengthen the relationship.",
     "rel_change": 0,
     "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c stiffly compliments o_c_n's leader on their strength and prosperity. o_c_n's leader narrows their eyes, unconvinced of {PRONOUN/m_c/poss} sincerity.",
+    "rel_change": -1,
+    "m_c": { 
+      "trait": [ "insecure", "lonesome", "gloomy", "grumpy", "nervous" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "m_c fawns over o_c_n's leader all Gathering. As the moon sets, o_c_n's leader coolly reminds {PRONOUN/m_c/object} that actions speak louder than meows.",
+    "rel_change": -1,
+    "m_c": { 
+      "trait": [ "charismatic", "flamboyant", "ambitious", "bold", "daring", "shameless" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "m_c fawns over o_c_n's leader all Gathering. As the moon sets, o_c_n's leader coolly reminds {PRONOUN/m_c/object} that actions speak louder than meows.",
+    "rel_change": -1,
+    "m_c": { 
+      "skill": [ "SPEAKER,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "o_c_n's cats keep their distance from c_n during the Gathering. No matter what tack m_c tries, o_c_n's leader doesn't seem receptive. Perhaps this alliance is weakning for reasons {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't aware of.",
+    "rel_change": -2,
+    "m_c": { },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c suggests a friendly competition of hunting and sparring between o_c_n and c_n to take place during the next half-moon. o_c_n's leader declines, saying some Clans prioritize border safety and feeding the Clan over silly apprentice games.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": [ "competitive", "ambitious", "arrogant", "bold", "charismatic", "playful", "childish" ]
+     },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, o_c_n's leader seems much more interested in chatting with the other leaders than m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sulk/sulks} like a kit and {VERB/m_c/decide/decides} that c_n doesn't need o_c_n's friendship anyway.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": [ "childish" ]
+     },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, o_c_n's leader seems much more interested in chatting with the other leaders than m_c. When {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to include {PRONOUN/m_c/self}, {PRONOUN/m_c/subject} just {VERB/m_c/draw/draws} awkward looks from the other leaders.",
+    "rel_change": 2,
+    "m_c": {
+      "trait": [ "lonesome", "nervous", "insecure", "gloomy", "grumpy" ]
+     },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "m_c goes on and on about what a great alliance c_n and o_c_n have during {PRONOUN/m_c/poss} speech at the Gathering. o_c_n's leader coughs meaningfully; during their speech, they announce o_c_n will be focusing on its own priorities in the coming moons and suggests c_n does the same.",
+    "rel_change": 2,
+    "m_c": { },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
   },
