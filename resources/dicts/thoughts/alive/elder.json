@@ -342,8 +342,8 @@
     {
         "id": "blind_adolescent_retired_to_alive_apprentice",
         "thoughts": [
-            "Sadly listens as the apprentices share stories of {PRONOUN/m_c/poss} feats",
-            "Joins in as the apprentices share stories of {PRONOUN/m_c/poss} feats",
+            "Sadly listens as the apprentices share stories of their feats",
+            "Joins in as the apprentices share stories of their feats",
             "Asks r_c to describe what {PRONOUN/r_c/subject} saw on patrol today"
         ],
         "perm_conditions": {

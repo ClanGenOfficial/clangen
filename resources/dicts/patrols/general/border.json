@@ -67,6 +67,22 @@
                         "amount": 15
                     }
                 ]
+            },
+            {
+                
+                "text": "s_c follows the scent all the way to the source - the wide, slavering jaws of the source - and the huge dog barks ferociously as it bears down on {PRONOUN/s_c/object}. s_c's fur stands on end, and {PRONOUN/s_c/subject} {VERB/s_c/respond/responds} on instinct alone. Which is to say, s_c barks right back. The dog is momentarily baffled, just long enough for s_c to hightail it into the bushes. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't think anyone at camp will believe {PRONOUN/s_c/object} about this caper.",
+                "exp": 40,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange" ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -191,6 +207,29 @@
                     "righteous"
                 ],
                 "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. p_l is amazed by s_c's unconventional technique.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 15
+                    },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
@@ -352,6 +391,29 @@
                     "righteous"
                 ],
                 "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When the patrol comes upon the dog, it leaps for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/respond/responds} on sheer instinct - which is to say, {PRONOUN/s_c/subject} {VERB/s_c/bark/barks} right back in the dog's face. The dog falters in its attack, just for a moment, but that fraction of a heartbeat allows the patrol to get the upper-paw and drive off the dog. The patrol is amazed by s_c's unconventional technique.",
+                "exp": 20,
+                "weight": 5,
+                "stat_trait": [ "playful", "childish", "strange"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 15
+                    },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
@@ -728,6 +790,38 @@
                         "no_results": true
                     }
                 ]
+            },
+            {
+                "text": "The patrol follows the sound of the cries to a kittypet, curled up by the side of the road with the scent of sickness rising from {PRONOUN/n_c:0/poss} pelt. As p_l comforts {PRONOUN/n_c:0/object} and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} attention from a medicine cat, s_c quizzes {PRONOUN/n_c:0/object}. {VERB/n_c:0/Are/Is} {PRONOUN/n_c:0/subject} a spy for Twolegs? {VERB/n_c:0/Have/Has} {PRONOUN/n_c:0/subject} been sent to collect information on c_n in order to facilitate a Twolegs takeover? Once the kittypet answers no to both, s_c nods seriously. {PRONOUN/n_c:0/subject/CAP} can be welcomed into the Clan.",
+                "exp": 15,
+                "weight": 5,
+                "stat_trait": [ "childish", "playful", "strange" ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "backstory:kittypet4"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["sickness"],
+                        "no_results": true
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -1015,7 +1109,7 @@
         },
         "weight": 20,
         "intro_text": "p_l is showing several apprentices the border and points out some good spots to keep watch on specific parts of it.",
-        "decline_text": "p_l has no patience for the rowdy apprentices that day and orders them all back to camp. ",
+        "decline_text": "p_l has no patience for the rowdy apprentices that day and orders them all back to camp.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
@@ -1082,6 +1176,30 @@
                         "amount": 5
                     }
                 ]
+            },
+            {
+                "text": "s_c comes up with a dozen creative comparisons for the scent of o_c_n, including dogwood, bird-dung, and rotting crab apples. Which was not the point of coming here. app2 unfortunately thinks this is hilarious, and p_l's plan for the day evaporates like dew in sunshine.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [ "childish", "playful" ],
+                "can_have_stat": [ "app1" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": 10
+                    }
+                ]
+
             }
         ]
     },
@@ -2677,7 +2795,7 @@
     ],
     "antag_fail_outcomes": [
         {
-            "text": "p_l rushes towards the scents, intending to put up a fight- but {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
+            "text": "p_l rushes towards the scents, intending to put up a fight- but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
             "exp": 0,
             "weight": 15,
             "dead_cats": ["p_l"],
@@ -2851,7 +2969,7 @@
     ],
     "antag_fail_outcomes": [
         {
-            "text": "p_l rushes towards the scents, intending to put up a fight- but {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
+            "text": "p_l rushes towards the scents, intending to put up a fight- but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
             "exp": 0,
             "weight": 15,
             "dead_cats": ["p_l"],
