@@ -1,6 +1,6 @@
 [
     {
-        "id": "bloodthirsty_rogue_to_alive_playerclan_leader",
+        "id": "bloodthirsty_rogue_to_alive_playerclan_leadership",
         "thoughts": [
             "Tells {PRONOUN/m_c/self} {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to kill r_c and take their position in c_n"
         ],
@@ -20,21 +20,12 @@
         ]
     },
     {
-        "id": "vengeful_rogue",
+        "id": "cold_rogue",
         "thoughts": [
-            "Wants vengeance on {PRONOUN/m_c/poss} past Clan"
+            "Thinks about how {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need anyone else"
         ],
         "main_trait_constraint": [
-            "vengeful"
-        ]
-    },
-    {
-        "id": "strange_rogue",
-        "thoughts": [
-            "Crowns {PRONOUN/m_c/self} the ruler of all rogues"
-        ],
-        "main_trait_constraint": [
-            "strange"
+            "cold"
         ]
     },
     {
@@ -50,12 +41,21 @@
         ]
     },
     {
-        "id": "cold_rogue",
+        "id": "strange_rogue",
         "thoughts": [
-            "Thinks about how {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need anyone else"
+            "Crowns {PRONOUN/m_c/self} the ruler of all rogues"
         ],
         "main_trait_constraint": [
-            "cold"
+            "strange"
+        ]
+    },
+    {
+        "id": "vengeful_rogue",
+        "thoughts": [
+            "Wants vengeance on {PRONOUN/m_c/poss} past Clan"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
         ]
     },
     {
@@ -88,7 +88,7 @@
         "thoughts": [
             "Wants to show r_c in c_n a whole new world as a rogue",
             "Is waiting to ambush r_c in c_n",
-            "Watches r_c with slitted eyes as {PRONOUN/r_c/object} patrol the Clan's border",
+            "Watches r_c with slitted eyes as {PRONOUN/r_c/object} {VERB/r_c/patrol/patrols} the Clan's border",
             "Wonders if r_c would chase {PRONOUN/m_c/object} off immediately"
         ],
         "random_status_constraint": [
@@ -116,7 +116,7 @@
             "Is struggling to survive on {PRONOUN/m_c/poss} own",
             "Is fighting with another rogue over food",
             "Laughed at the thought of dead cats 'watching over' c_n",
-            "Debates if {PRONOUN/m_c/poss} previous Clan was fair casting {PRONOUN/m_c/object} out",
+            "Debates if {PRONOUN/m_c/poss} previous Clan was fair in casting {PRONOUN/m_c/object} out",
             "Debates if {PRONOUN/m_c/subject} should join c_n"
         ]
     },
