@@ -68,8 +68,8 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of grass {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional. What could this mean?",
-        "decline_text": "p_l is in too much of a hurry. {PRONOUN/p_l/subject/CAP} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
+        "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of grass {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional/p_l. What could this mean?",
+        "decline_text": "p_l is in too much of a hurry, {PRONOUN/p_l/subject} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
         "chance_of_success": 45,
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
         "success_outcomes": [
@@ -225,7 +225,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is plucking some goldenrod when {PRONOUN/app1/poss} attention is suddenly grabbed by omen_list_sight. The fur on {PRONOUN/app1/poss} back begins to prickle slightly, the sound of {PRONOUN/app1/poss} heartbeat like thunder in {PRONOUN/app1/poss} ears. {PRONOUN/app1/subject/CAP} {VERB/app1/turn/turns} and {VERB/app1/hare/hares} back to camp, herbs forgotten. {PRONOUN/app1/subject/CAP} {VERB/app1/need/needs} to tell {PRONOUN/app1/poss} mentor about this as soon as possible!",
+                "text": "p_l is plucking some goldenrod when {PRONOUN/app1/poss} attention is suddenly grabbed by omen_list_sight/p_l. The fur on {PRONOUN/app1/poss} back begins to prickle slightly, the sound of {PRONOUN/app1/poss} heartbeat like thunder in {PRONOUN/app1/poss} ears. {PRONOUN/app1/subject/CAP} {VERB/app1/turn/turns} and {VERB/app1/hare/hares} back to camp, herbs forgotten. {PRONOUN/app1/subject/CAP} {VERB/app1/need/needs} to tell {PRONOUN/app1/poss} mentor about this as soon as possible!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["goldenrod"]

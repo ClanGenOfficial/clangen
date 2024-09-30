@@ -245,7 +245,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is plucking some horsetail when their attention is suddenly grabbed by omen_list_sight. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!",
+                "text": "p_l is plucking some horsetail when their attention is suddenly grabbed by omen_list_sight/p_l. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!",
                 "exp": 20,
                 "weight": 20
             }
