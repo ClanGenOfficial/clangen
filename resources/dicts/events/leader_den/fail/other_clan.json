@@ -88,6 +88,30 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "offend",
+    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any attempt to offend o_c_n can wait until the sky isn't caving in on c_n.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
+    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any attempt to offend o_c_n will have to wait until next moon.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. And m_c had all {PRONOUN/m_c/poss} insults ready, too...",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "praise",
     "event_text": "During the Gathering, m_c flatters o_c_n to no end. By the end of the night, o_c_n's leader seems more annoyed by the attention than grateful.",
     "rel_change": -1,
@@ -150,8 +174,67 @@
     "other_clan_temper": []
   },
   {
+    "interaction_type": "praise",
+    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any praising of o_c_n can wait until the sky isn't caving in on c_n.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any praising of o_c_n will have to wait until next moon.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. m_c worries about the Clan's ally, especially when {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} missed this chance to strengthen the relationship.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "o_c_n's leader distances themselves from m_c during the Gathering, ignoring all attempts at conversation. An ally will only go so far in hard times.",
+    "rel_change": -2,
+    "m_c": {
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
+      "trait": ["nervous", "insecure", "gloomy", "playful", "childish", "charismatic", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "careful", "calm", "faithful", "loving", "responsible", "shameless", "wise", "cunning", "sincere"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["gracious", "amiable", "mellow"]
+  },
+  {
     "interaction_type": "provoke",
     "event_text": "During the Gathering, m_c attempts to make double-pawed comments about o_c_n's leader. Their leader, however, either doesn't care or is too oblivious to notice.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any provocation of o_c_n can wait until the sky isn't caving in on c_n.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any provocation of o_c_n will have to wait until next moon.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. Provoking o_c_n into anything will have to wait until they're back at the Gathering.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -212,6 +295,52 @@
     "other_clan_temper": ["bloodthirsty", "proud"]
   },
   {
+    "interaction_type": "befriend",
+    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any befriending of o_c_n can wait until the sky isn't caving in on c_n.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any befriending of o_c_n will have to wait until next moon.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. There goes their chance to make an ally...",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "o_c_n's leader looks at m_c with sickly-sweet pity, ignoring the stuttered offers of friendship.",
+    "rel_change": -1,
+    "m_c": {
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
+      "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "sneaky", "cunning"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["gracious", "amiable", "mellow"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "o_c_n's leader seems less than impressed when the apprentice approaches them with confident overtures of friendship.",
+    "rel_change": -2,
+    "m_c": {
+      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
+      "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["gracious", "amiable", "mellow"]
+  },
+  {
     "interaction_type": "antagonize",
     "event_text": "During the Gathering, m_c makes scathing comments about o_c_n. o_c_n's leader is quite blatantly ignoring {PRONOUN/m_c/object} though.",
     "rel_change": 0,
@@ -252,88 +381,8 @@
     "other_clan_temper": ["any"]
   },
   {
-    "interaction_type": "appease",
-    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any appeasement of o_c_n can wait until the sky isn't caving in on c_n.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "praise",
-    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any praising of o_c_n can wait until the sky isn't caving in on c_n.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "befriend",
-    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any befriending of o_c_n can wait until the sky isn't caving in on c_n.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "offend",
-    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any attempt to offend o_c_n can wait until the sky isn't caving in on c_n.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "provoke",
-    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any provocation of o_c_n can wait until the sky isn't caving in on c_n.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
     "interaction_type": "antagonize",
     "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any antagonizing of o_c_n will have to wait until next moon.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "praise",
-    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any praising of o_c_n will have to wait until next moon.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "appease",
-    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any appeasement of o_c_n will have to wait until next moon.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "offend",
-    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any attempt to offend o_c_n will have to wait until next moon.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "befriend",
-    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any befriending of o_c_n will have to wait until next moon.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "provoke",
-    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any provocation of o_c_n will have to wait until next moon.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -348,8 +397,16 @@
     "other_clan_temper": ["any"]
   },
   {
-    "interaction_type": "praise",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. m_c worries about the Clan's ally, especially having missed this chance to strengthen the relationship.",
+    "interaction_type": "appease",
+    "event_text": "Terrible weather convinces m_c to skip this Gathering. Any appeasement of o_c_n can wait until the sky isn't caving in on c_n.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "Despite the horrendous weather, m_c strikes out with {PRONOUN/m_c/poss} Gathering patrol to the meeting place. It's deserted. Any appeasement of o_c_n will have to wait until next moon.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -358,30 +415,6 @@
   {
     "interaction_type": "appease",
     "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. At least that suggests o_c_n won't pose the same threat as before, but m_c really hoped to reduce hostilities with diplomacy...",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "befriend",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. There goes their chance to make an ally...",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "provoke",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. Provoking o_c_n into anything will have to wait until they're back at the Gathering.",
-    "rel_change": 0,
-    "m_c": {},
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "offend",
-    "event_text": "When m_c reaches the meeting place with {PRONOUN/m_c/poss} Gathering patrol, {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers} o_c_n isn't present. Rumors on the border tell of a greencough outbreak. And m_c had all {PRONOUN/m_c/poss} insults ready, too...",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -418,39 +451,6 @@
     "m_c": {},
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "befriend",
-    "event_text": "o_c_n's leader looks at m_c with sickly-sweet pity, ignoring the stuttered offers of friendship.",
-    "rel_change": -1,
-    "m_c": {
-      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "sneaky", "cunning"]
-    },
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["gracious", "amiable", "mellow"]
-  },
-  {
-    "interaction_type": "befriend",
-    "event_text": "o_c_n's leader seems less than impressed when the apprentice approaches them with confident overtures of friendship.",
-    "rel_change": -2,
-    "m_c": {
-      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
-    },
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["gracious", "amiable", "mellow"]
-  },
-  {
-    "interaction_type": "praise",
-    "event_text": "o_c_n's leader distances themselves from m_c during the Gathering, ignoring all attempts at conversation. An ally will only go so far in hard times.",
-    "rel_change": -2,
-    "m_c": {
-      "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["nervous", "insecure", "gloomy", "playful", "childish", "charismatic", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "careful", "calm", "faithful", "loving", "responsible", "shameless", "wise", "cunning", "sincere"]
-    },
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["gracious", "amiable", "mellow"]
   },
   {
     "interaction_type": "appease",
