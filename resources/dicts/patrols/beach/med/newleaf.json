@@ -2932,7 +2932,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes {PRONOUN/p_l/object} all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} let out a yowl and stop to play with app1.",
+                "text": "It takes {PRONOUN/p_l/object} all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a yowl and {VERB/p_l/stop/stops} to play with app1.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["lungwort"],
@@ -2954,7 +2954,7 @@
                 ]
             },
             {
-                "text": "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with pride over {PRONOUN/app1/poss} accomplishment.",
+                "text": "app1 listens intently as the hours drift slowly by in the medicine cats' intense search, and then they finally spot a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with pride over {PRONOUN/app1/poss} accomplishment.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["lungwort"],
@@ -2976,7 +2976,7 @@
                 ]
             },
             {
-                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within c_n's borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2", "CLEVER,3"],
@@ -3147,20 +3147,6 @@
             {
                 "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
-                "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
@@ -3189,7 +3175,7 @@
         "tags": [],
         "patrol_art": "gen_med_gatheringlungwort",
         "min_cats": 2,
-        "max_cats": 3,
+        "max_cats": 2,
         "min_max_status": {
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
@@ -3483,7 +3469,7 @@
                 ]
             },
             {
-                "text": "While the mallow shrubs are soft both in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. {PRONOUN/p_l/subject/CAP} {VERB/p_l/test/tests} app1 on {PRONOUN/app1/poss} knowledge as they work, and the apprentice passes with flying colors.",
+                "text": "While the mallow shrubs are soft both in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. {PRONOUN/p_l/subject/CAP} {VERB/p_l/test/tests} app1 on {PRONOUN/app1/poss} knowledge as the medicine cats work, and the apprentice passes with flying colors.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow"],
@@ -3594,7 +3580,7 @@
                 ]
             },
             {
-                "text": "While the mallow shrubs are soft, both in scent and in touch, the plants are engaged in {PRONOUN/p_l/poss} own vigorous newleaf competition between each other, leaving p_l with tons to harvest. It's always a relief to bring in so much after a leaf-bare without any fresh mallow sources.",
+                "text": "While the mallow shrubs are soft, both in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. It's always a relief to bring in so much after a leaf-bare without any fresh mallow sources.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow"],
@@ -3682,7 +3668,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Mallow has a very literal name - it mellows things out, helping calm both the gut and the respiratory system. Perhaps it's not the most powerful herb in their arsenal, but it's excellent at helping in combination with others.",
+                "text": "Mallow has a very literal name - it mellows things out, helping calm both the gut and the respiratory system. Perhaps it's not the most powerful herb in c_n's herbal arsenal, but it's excellent at helping in combination with others.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["mallow"],
@@ -3958,7 +3944,7 @@
                 ]
             },
             {
-                "text": "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering. The patrol, too, is unaware, but it certainly bolsters their faith in their medicine cat to see {PRONOUN/s_c/subject} succeed with such competence.",
+                "text": "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering. The patrol, too, is unaware, but it certainly bolsters their faith in their medicine cat to see {PRONOUN/s_c/object} succeed with such competence.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -4272,7 +4258,7 @@
                 ]
             },
             {
-                "text": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even without the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help {PRONOUN/p_l/subject} harvest it.",
+                "text": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even without the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help {PRONOUN/p_l/object} harvest it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "mullein"],
@@ -4521,7 +4507,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Towering into the sky, the oaks' blush of new leaves are one of the most hopeful signs of newleaf to p_l. The warriors helping {PRONOUN/p_l/subject} seem to just find it a fun training exercise, to see how spindly a branch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} able to balance on as they send down a rain of leaves on p_l.",
+                "text": "Towering into the sky, the oaks' blush of new leaves are one of the most hopeful signs of newleaf to p_l. The warriors helping {PRONOUN/p_l/object} seem to just find it a fun training exercise, to see how spindly a branch they're able to balance on as they send down a rain of leaves on p_l.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves"],
