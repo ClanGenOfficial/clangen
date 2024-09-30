@@ -1207,7 +1207,7 @@
         "decline_text": "A songbird on a branch overhead sings, and the grouse startle and take flight. Dung.",
         "success_outcomes": [
                 {
-                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare.Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
                     "exp": 30,
                     "weight": 20,
                     "prey": ["medium"],
