@@ -896,6 +896,14 @@
   },
   {
     "interaction_type": "appease",
+    "event_text": "During the Gathering, m_c makes a heartfelt appeal to o_c_n's leader - let the bloodshed end and choose peace. o_c_n's leader curls their lip at this display of weakness.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["bloodthirsty", "cunning", "wary", "logical", "stoic" ]
+  },
+  {
+    "interaction_type": "appease",
     "event_text": "No matter what m_c says at the Gathering, o_c_n's leader ignores {PRONOUN/m_c/object}.",
     "rel_change": 0,
     "m_c": {},
