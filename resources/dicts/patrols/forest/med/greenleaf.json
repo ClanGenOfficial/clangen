@@ -1100,7 +1100,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1186,7 +1186,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The ground is dusty and slippery, and when p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "text": "The ground is dusty and slippery, and when p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -2936,7 +2936,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20
             },
@@ -3046,7 +3046,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3185,7 +3185,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3936,7 +3936,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "text": "It takes {PRONOUN/p_l/object} all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon them. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["lungwort"],
@@ -4166,7 +4166,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The soft, rose-like scent of the mallow bushes drifts around p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
+                "text": "The soft, rose-like scent of the mallow bushes drifts around p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snip/snips} off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["mallow"]
@@ -4802,7 +4802,7 @@
                 ]
             },
             {
-                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping {PRONOUN/p_l/object}, knocks them over so that the entire bundle can be carried home.",
+                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping {PRONOUN/s_c/object}, knocks them over so that the entire bundle can be carried home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -5843,7 +5843,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. app1 asks if there's anything they can do to block the scent, but unfortunately there's nothing to be done. It's just better to get harvesting over with as quickly as possible.",
+                "text": "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. app1 asks if there's anything they can do to block the scent, but unfortunately there's nothing to be done. Better just get the harvesting over with as quickly as possible.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["ragwort"],
@@ -6123,7 +6123,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
+                "text": "app1 identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"]
