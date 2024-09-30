@@ -18,7 +18,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1837,7 +1837,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20
             },
@@ -1944,7 +1944,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2082,7 +2082,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3673,7 +3673,7 @@
                 ]
             },
             {
-                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping {PRONOUN/p_l/object}, knocks them over so that the entire bundle can be carried home. As a bonus, their plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest.",
+                "text": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping {PRONOUN/s_c/object}, knocks them over so that the entire bundle can be carried home. As a bonus, their plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -4972,7 +4972,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
+                "text": "app1 identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/app1/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure it's something to do with kitting.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"]
