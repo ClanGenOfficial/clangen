@@ -468,6 +468,34 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "o_c_n's leader ignores m_c's attempts to ingratiate {PRONOUN/m_c/self} with them during the Gathering.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c pulls o_c_n's leader aside and suggests they form an alliance; with their combined strength, they can crush all that would oppose them. o_c_n's leader declines this offer.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "ambitious", "arrogant", "competitive", "confident", "fierce", "bloodthirsty", "cold", "vengeful", "bold", "daring", "shameless" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["wary", "stoic", "mellow", "amiable", "cunning", "garcious", "logical"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "m_c has never been good at making friends, and in a high-pressure situation like a Gathering? {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/manage/manages} more than two or three words to o_c_n's leader.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "insecure", "nervous", "careful", "gloomy", "lonesome", "grumpy" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "Approaching o_c_n's leader at the Gathering, m_c asks if they're interested in becoming best friends forever. o_c_n's leader rebuffs this once-in-a-lifetime opportunity.",
     "rel_change": 0,
     "m_c": {
