@@ -246,6 +246,10 @@
                         "scars": ["bone_scars"]
                     }
                 ],
+                "history_text": {
+                    "scar": "This cat was scarred after falling from a tree.",
+                    "reg_death": "m_c died after falling from a tree while hunting."
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

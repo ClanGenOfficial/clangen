@@ -23,7 +23,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far, and {VERB/p_l/kill/kills}s it with ease.",
+                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills}s it with ease.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -718,7 +718,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c/subject} expected. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded.",
+                "text": "r_c leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c/subject} expected. A harsh battle forces the patrol to retreat, r_c being the most grievously wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2806,7 +2806,7 @@
                 ]
             },
             {
-                "text": "r_c nearly managed to pin the gray vixen they found into a thorn thicket, but snapping jaws leave r_c dripping blood onto the leaf litter. This round goes to the gray fox.",
+                "text": "r_c nearly manages to pin the gray vixen {PRONOUN/r_c/subject} {VERB/r_c/find/finds} into a thorn thicket, but snapping jaws leave r_c dripping blood onto the leaf litter. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3052,7 +3052,7 @@
                 ]
             },
             {
-                "text": "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw down the ground squeaks. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lean/leans} down, jaws snapping, and {VERB/s_c/meet/meets} the eyes of the rest of the patrol with an insolent smirk.",
+                "text": "The patrol settles into the hunt, following the scents of mice. s_c wanders back, and as {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw down, the ground squeaks. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lean/leans} down, jaws snapping, and {VERB/s_c/meet/meets} the eyes of the rest of the patrol with an insolent smirk.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
