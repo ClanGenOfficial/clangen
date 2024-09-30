@@ -690,6 +690,100 @@
   },
   {
     "interaction_type": "appease",
+    "event_text": "m_c appeals to o_c_n's leader's mercy at the Gathering, telling them that the hostilities have taken their toll on c_n. o_c_n's leader asks why {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} that's o_c_n's problem.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "o_c_n's leader speaks first at the Gathering and uses their whole speech to bait and provoke m_c. m_c decides not to attempt peace this moon; {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not sure {PRONOUN/m_c/subject}'ll be able to say a word to o_c_n's leader without snarling.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "Despite m_c's best efforts at the Gathering, o_c_n has no appetite for peace.",
+    "rel_change": 0,
+    "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c cajoles o_c_n's leader into agreeing that peace would benefit every cat. o_c_n's leader nods, then scowls and shakes their head. They won't be so easily swayed by {PRONOUN/m_c/poss} skill for persuasion.",
+    "rel_change": 0,
+    "m_c": {
+        "trait": [ "confident", "charismatic" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c cajoles o_c_n's leader into agreeing that peace would benefit every cat. o_c_n's leader nods, then scowls and shakes their head. They won't be so easily swayed by {PRONOUN/m_c/poss} skill for persuasion.",
+    "rel_change": 0,
+    "m_c": {
+        "skill": [ "SPEAKER,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "o_c_n's leader knows m_c's talent for persuasion well and avoids speaking to {PRONOUN/m_c/object} all Gathering.",
+    "rel_change": 0,
+    "m_c": {
+        "trait": [ "confident", "charismatic" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "o_c_n's leader knows m_c's talent for persuasion well and avoids speaking to {PRONOUN/m_c/object} all Gathering.",
+    "rel_change": 0,
+    "m_c": {
+        "skill": [ "SPEAKER,1", "MEDIATOR,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c makes an appeal to o_c_n at the Gathering, convincing them that peace would benefit both Clans. o_c_n's leader hisses that they wouldn't trust {PRONOUN/m_c/object} as far as they could throw {PRONOUN/m_c/object}.",
+    "rel_change": -1,
+    "m_c": {
+      "trait": [ "shameless", "ambitious", "arrogant", "confident", "charismatic", "bold", "daring", "competitive", "flamboyant", "cunning", "cold", "bloodthirsty", "vengeful" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "At the Gathering, m_c speaks at length about peace and reducing hostilities between c_n and o_c_n. o_c_n's leader nods along, and then lets their gaze travel down to where m_c's claws have unconsciously slid out.",
+    "rel_change": -1,
+    "m_c": {
+      "trait": [ "cold", "bloodthirsty", "vengeful", "fierce" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c uses {PRONOUN/m_c/poss} speech at the Gathering to discuss peace and forgiveness through gritted teeth. No cat believes m_c, not even {PRONOUN/m_c/poss} own Clanmates.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "bloodthirsty", "vengeful" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
     "event_text": "No matter what m_c says at the Gathering, o_c_n's leader ignores {PRONOUN/m_c/object}.",
     "rel_change": 0,
     "m_c": {},
