@@ -175,7 +175,6 @@
         "id": "gen_to_kit",
         "thoughts": [
             "Is sitting near the camp entrance, keeping an eye out for sneaky kits",
-            "Is unable to be scared, no matter how much the kits try",
             "Is keeping an eye on some rowdy kits"
         ],
         "main_status_constraint": [
@@ -266,7 +265,7 @@
         "id": "adventurous_gen",
         "thoughts": [
             "Wants to explore far beyond the borders of {PRONOUN/m_c/poss} territory...",
-            "Wonders what lays beyond the distant horizon...",
+            "Wonders what lies beyond the distant horizon...",
             "Is dreaming of one day discovering something new and exciting!",
             "Is itching to run, run, run!",
             "Wants to climb the tallest tree in the territory!",
@@ -277,7 +276,7 @@
             "Is itching to explore the land beyond {PRONOUN/m_c/poss} Clan's territory",
             "Wants to go on a journey",
             "Wishes {PRONOUN/m_c/poss} leader would choose {PRONOUN/m_c/object} to go on a quest",
-            "Disappeared all day to explore the territory",
+            "Disappears for the whole day to explore the territory",
             "Promises {PRONOUN/m_c/poss} Clanmates {PRONOUN/m_c/subject} won't do anything dangerous while out"
         ],
         "main_trait_constraint": [
@@ -287,7 +286,7 @@
     {
         "id": "adventurous_gen_to_alive_kits",
         "thoughts": [
-            "Involves the kits in a game of make believe about traveling through a strange land",
+            "Involves the kits in a game of make-believe about traveling through a strange land",
             "Encourages the kits to explore as much as possible"
         ],
         "random_status_constraint": [
@@ -342,7 +341,8 @@
             "Is feeling proud of {PRONOUN/m_c/self}",
             "Is daydreaming about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Offers to help {PRONOUN/m_c/poss} Clanmates with their duties",
-            "Wonders how {PRONOUN/m_c/subject} would run the Clan better"
+            "Imagines how {PRONOUN/m_c/subject} would run the Clan better",
+            "Envies the deputy's position"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -352,7 +352,7 @@
         "id": "ambitious_to_leader",
         "thoughts": [
             "Is asking the Clan leader what {PRONOUN/m_c/subject} can do to help out around camp",
-            "Has been imitating the Clan leader's behaviour recently",
+            "Has been imitating the Clan leader's behavior recently",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy"
         ],
         "main_trait_constraint": [
@@ -371,7 +371,7 @@
             "Is sure of {PRONOUN/m_c/poss} skills being better then anyone else",
             "Is confidently spreading misinformation on something {PRONOUN/m_c/subject} {VERB/m_c/know/knows} little about",
             "Is confidently spreading misinformation on something {PRONOUN/m_c/subject} {VERB/m_c/know/knows} nothing about",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
             "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
@@ -399,13 +399,28 @@
             "Daydreams about killing a certain cat",
             "Wonders if {PRONOUN/m_c/subject} could kill a fox all by {PRONOUN/m_c/self}",
             "Started a fight with a fellow Clanmate",
-            "Wonders how {PRONOUN/m_c/subject} would run the Clan better",
+            "Imagines how {PRONOUN/m_c/subject} would run the Clan better",
             "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
             "Has been glaring at a certain cat in camp with an odd look in {PRONOUN/m_c/poss} eye",
             "Daydreams about slaughtering every cat {PRONOUN/m_c/subject} {VERB/m_c/despise/despises}"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
+        ]
+    },
+    {
+        "id": "bloodthirsty_working_cat",
+        "thoughts": [
+            "Draws blood during battle training and coldly says it was an accident"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader"
         ]
     },
     {
@@ -440,6 +455,21 @@
         ]
     },
     {
+        "id": "bold_working_cat",
+        "thoughts": [
+            "Charges forward during a border patrol, eager and unafraid"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader"
+        ]
+    },
+    {
         "id": "bold_to_kit",
         "thoughts": [
             "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes"
@@ -448,7 +478,24 @@
             "bold"
         ],
         "random_status_constraint": [
+            "newborn",
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "bold_to_medcat",
+        "thoughts": [
+            "Bravely offers to help r_c pick herbs from a dangerous spot"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ],
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
         ],
         "random_living_status": [
             "living"
@@ -474,6 +521,7 @@
             "Is purring quietly",
             "Has been reaching meditative states while sunbathing",
             "Calmly takes the lead while some Clanmates argue over this and that",
+            "Is unable to be scared, no matter how much the kits try",
             "Knows everything will be okay in the end",
             "Takes a deep breath and doesn't let a mean comment get to {PRONOUN/m_c/object}"
         ],
@@ -502,8 +550,8 @@
     {
         "id": "careful_to_med",
         "thoughts": [
-            "Is getting a small scratch checked out by the medicine cat",
-            "Is urging a Clanmate to get an scratch checked out"
+            "Is getting a small scratch checked out by r_c",
+            "Is urging a Clanmate to get a scratch checked out"
         ],
         "main_trait_constraint": [
             "careful"
@@ -520,7 +568,7 @@
         "id": "charismatic_gen",
         "thoughts": [
             "Is smiling warmly at {PRONOUN/m_c/poss} Clanmates",
-            "Is making everyone laugh with a very funny comment",
+            "Is making everyone laugh with a very funny quip",
             "Always manages to turn the mood into a lighter one",
             "Is laughing with friends",
             "Is looking around camp for someone to share tongues with",
@@ -606,13 +654,14 @@
         "id": "cold_gen",
         "thoughts": [
             "Is hissing in frustration",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Is grunting rudely at passersby",
             "Walked away from a conversation that bored {PRONOUN/m_c/object}",
             "Wonders why others snap back at {PRONOUN/m_c/object}",
             "Notices that {PRONOUN/m_c/poss} Clanmates have been nervous around {PRONOUN/m_c/object} lately",
             "Doesn't say thank you when offered a piece of fresh-kill",
             "Turns away without saying a word when a Clanmate vents to {PRONOUN/m_c/object}",
+            "Thinks the leader should be harsher on codebreakers",
             "Flatly insults a Clanmate's appearance",
             "Believes weakness should be punished, not nurtured",
             "Scorns the idea of needing help from anyone",
@@ -789,7 +838,7 @@
             "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and won",
             "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and lost",
             "Makes every patrol into a competition",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Puffs out {PRONOUN/m_c/poss} chest, feeling secure with the space {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up",
             "Watched a Clanmate do a chore {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really good at to see how {PRONOUN/m_c/object} can improve",
             "Is practicing doing things around camp as fast as possible, just in case"
@@ -802,7 +851,7 @@
         "id": "confident_gen",
         "thoughts": [
             "Is puffing {PRONOUN/m_c/poss} chest out",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Is strutting around confidently",
             "Puffs out {PRONOUN/m_c/poss} chest, feeling secure with the space {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up",
             "Doesn't falter when challenged on {PRONOUN/m_c/poss} abilities",
@@ -882,7 +931,7 @@
             "Isn't scared of anything today!",
             "Can't stop flexing {PRONOUN/m_c/poss} claws",
             "Woke up with a flame in {PRONOUN/m_c/poss} belly this morning!",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Taunted a dog stuck behind a Twoleg fence",
             "Is unusually tame today",
             "Is letting a wound go untreated in hopes it gives {PRONOUN/m_c/object} a scar",
@@ -937,7 +986,7 @@
         "thoughts": [
             "Is shooting glares at every cat {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} looking at {PRONOUN/m_c/object}",
             "Is grumbling about something or other to {PRONOUN/m_c/self}",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Is complaining to anyone who will listen",
             "Is extra irritable today",
             "Is extra huffy while working",
@@ -1261,7 +1310,7 @@
             "Took an extra piece of fresh-kill from the pile",
             "Is grooming intensely in clear view of everyone in camp",
             "Is snoring at a ridiculous volume",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Is bragging about how great a hunter {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
             "Announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} heading to the dirtplace",
             "Taunted a dog stuck behind a Twoleg fence",
@@ -1480,7 +1529,7 @@
         "thoughts": [
             "Is grooming {PRONOUN/m_c/self} thoughtfully",
             "Tells some kits a thing or two about growing older",
-            "Is lecturing about something someone said wrong offhandedly",
+            "Is lecturing about something someone said wrong offpawedly",
             "Is listening to someone talk about things they are unquestionably wrong about and dying inside",
             "Solves a problem by thinking back to another time the exact same thing happened",
             "Feels completely at peace",
