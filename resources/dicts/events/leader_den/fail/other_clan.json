@@ -297,17 +297,17 @@
     "event_text": "m_c is eager to put {PRONOUN/m_c/poss} skills at being a thorn in the paw to use at the Gathering, but apparently, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} already got such a reputation for being a shameless troublemaker that o_c_n's leader doesn't take it personally.",
     "rel_change": 0,
     "m_c": {
-      "trait": ["shameless", "troublesome", "childish", "cold", "bold", "grumpy", "flamboyant", "rebellious" ]
+      "trait": ["shameless", "troublesome", "childish", "cold", "bold", "grumpy", "flamboyant", "rebellious", "arrogant" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
   },
   {
     "interaction_type": "provoke",
-    "event_text": "During the Gathering, m_c openly and repeatedly threatens o_c_n and its leader. o_c_n's leader is entirely unimpressed and cracks jokes during their speech about how m_c is full of hot air and stirs up trouble like a bored kit. The other Clans laugh along at c_n's expense.",
+    "event_text": "During the Gathering, m_c repeatedly threatens o_c_n and its leader. o_c_n's leader is unimpressed and cracks jokes during their speech about how m_c is full of hot air and stirs up trouble like a bored kit. The other Clans laugh along at c_n's expense.",
     "rel_change": 0,
     "m_c": {
-      "trait": ["shameless", "troublesome", "childish", "cold", "bold", "daring", "bloodthirsty", "rebellious", "fierce" ]
+      "trait": ["shameless", "troublesome", "childish", "cold", "bold", "daring", "bloodthirsty", "rebellious", "fierce", "arrogant" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -550,7 +550,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "During the Gathering, m_c awkwardly compliments o_c_n's strength in a recent border skirmish between their Clans. o_c_n's leader promises {PRONOUN/m_c/subject} {VERB/m_c/has/have}n't seen anything yet.",
+    "event_text": "During the Gathering, m_c awkwardly compliments o_c_n's strength in a recent border skirmish between their Clans. o_c_n's leader unsheathes their claws and promises {PRONOUN/m_c/subject} {VERB/m_c/has/have}n't seen anything yet.",
     "rel_change": -1,
     "m_c": {},
     "player_clan_temper": ["any"],
