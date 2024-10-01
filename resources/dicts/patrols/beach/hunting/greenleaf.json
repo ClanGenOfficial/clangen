@@ -1140,7 +1140,7 @@
                 ]
             },
             {
-                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs them up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
+                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
@@ -1313,7 +1313,7 @@
                 ]
             },
             {
-                "text": "The cat and gray vixen are nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on {PRONOUN/s_c/object}, and the standoff is resolved when s_c charges the gray fox, and she chooses flight over fight.",
+                "text": "They're nearly of equal height, and s_c's aggression makes up for the weight that the gray vixen has on {PRONOUN/s_c/object}. The standoff is resolved when s_c charges the gray fox, and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [

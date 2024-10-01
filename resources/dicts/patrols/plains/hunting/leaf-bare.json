@@ -15,7 +15,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice scurrying along paths worn in through the snow. Only a couple, but in this season, that's more than enough to count as a success. As p_l leads them home, a sense of security and competence drive them onwards.",
+                "text": "Despite the snow, the patrol manages to hunt successfully, finding mice scurrying along paths worn in through the snow. Only a couple, but in this season, that's more than enough to count as a success. As p_l leads the way home, a sense of security and competence drives them onwards.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -132,7 +132,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in the mouth of a rabbit warren, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp r_c is cold and chilled, {PRONOUN/r_c/poss} paws and tail prickling with the danger of frostbite.",
+                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in the mouth of a rabbit warren, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp, r_c is cold and chilled, {PRONOUN/r_c/poss} paws and tail prickling with the danger of frostbite.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

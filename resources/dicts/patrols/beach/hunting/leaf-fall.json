@@ -352,7 +352,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+                "text": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their fury.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -845,7 +845,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+                "text": "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their fury.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1210,7 +1210,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on {PRONOUN/s_c/object}, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, and s_c's aggression makes up for the weight that the gray vixen has on {PRONOUN/s_c/object}. The standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [

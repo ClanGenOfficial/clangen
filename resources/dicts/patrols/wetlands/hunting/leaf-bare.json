@@ -3279,7 +3279,7 @@
                 ]
             },
             {
-                "text": "It's only because app1 was already looking that they spot s_c, high on the tree above the bright bird, edging forward carefully and steathily. app1 freezes, watching. s_c descends on the kingfisher from the one direciton it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
+                "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and steathily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_train_sneakprey",
@@ -3397,7 +3397,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "app1 tilts their head, confused at the sudden splash of color in a cold world. Thie kingfisher sees the movement, and flies off. Drat.",
+                    "text": "app1 tilts {PRONOUN/app1/poss} head, confused at the sudden splash of color in a cold world. The kingfisher sees the movement, and flies off. Drat.",
                     "exp": 0,
                     "weight": 10,
                     "relationships": [
@@ -3411,7 +3411,7 @@
                     ]
                 },
                 {
-                    "text": "Trying to catch the kingfisher, app1 misjudges their pounce and ends up getting hauled out of the freezing stream by their scruff. It's neither dignified nor comfortable.",
+                    "text": "Trying to catch the kingfisher, app1 misjudges {PRONOUN/app1/poss} pounce and has to be hauled out of the freezing stream by {PRONOUN/app1/poss} scruff. It's neither dignified nor comfortable.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [

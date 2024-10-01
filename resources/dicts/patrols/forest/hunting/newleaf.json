@@ -23,7 +23,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far, and {VERB/p_l/kill/kills}s it with ease.",
+                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills}s it with ease.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -355,7 +355,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
+                "text": "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} on it and {VERB/r_c/break/breaks} its neck. r_c sends a silent thanks to StarClan for this prey.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -647,7 +647,7 @@
                 ]
             },
             {
-                "text": "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol manages to get a hefty pile of prey for c_n.",
+                "text": "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol amasses a hefty pile of prey for c_n.",
                 "exp": 30,
                 "weight": 5,
                 "prey": ["large"],
@@ -718,7 +718,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c/subject} expected. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded.",
+                "text": "r_c leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c/subject} expected. A harsh battle forces the patrol to retreat, r_c being the most grievously wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -953,7 +953,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day.",
+                "text": "The patrol is unable to catch the small reptile quick enough, and the little lizard lives another day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1033,7 +1033,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day.",
+                "text": "The patrol is unable to catch the small reptile quick enough, and the little lizard lives another day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2082,7 +2082,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
+                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -2421,7 +2421,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2584,7 +2584,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -2748,7 +2748,7 @@
                 ]
             },
             {
-                "text": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on {PRONOUN/s_c/object}, and the standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
+                "text": "They're nearly of equal height, and s_c's aggression makes up for the weight that the gray vixen has on {PRONOUN/s_c/object}. The standoff is resolved when s_c charges the gray fox and she chooses flight over fight.",
                 "exp": 50,
                 "weight": 20,
                 "stat_trait": [
@@ -2806,7 +2806,7 @@
                 ]
             },
             {
-                "text": "r_c nearly managed to pin the gray vixen they found into a thorn ticket, but snapping jaws leave r_c dripping blood onto the leaf litter. Today this round goes to the gray fox.",
+                "text": "r_c nearly manages to pin the gray vixen {PRONOUN/r_c/subject} {VERB/r_c/find/finds} into a thorn thicket, but snapping jaws leave r_c dripping blood onto the leaf litter. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2876,7 +2876,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, snagging it just before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -2922,7 +2922,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
+                "text": "app1 leaps onto the mouse and makes the kill easily! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -2971,7 +2971,7 @@
                 ]
             },
             {
-                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair heads back home, there's a happy bounce in app1's step.",
+                "text": "app1 leaps onto the mouse and makes the kill easily! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/app1/object}, and as the pair heads back home, there's a happy bounce in app1's step.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
@@ -3052,7 +3052,7 @@
                 ]
             },
             {
-                "text": "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw down the ground squeaks. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lean/leans} down, jaws snapping, and {VERB/s_c/meet/meets} the eyes of the rest of the patrol with an insolent smirk.",
+                "text": "The patrol settles into the hunt, following the scents of mice. s_c wanders back, and as {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw down, the ground squeaks. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lean/leans} down, jaws snapping, and {VERB/s_c/meet/meets} the eyes of the rest of the patrol with an insolent smirk.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [

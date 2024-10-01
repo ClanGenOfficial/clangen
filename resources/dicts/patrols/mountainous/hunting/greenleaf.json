@@ -1166,7 +1166,7 @@
         },
         "weight": 20,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots - p_l points out a few likely destinations the squirrel may be heading to, then softly asks app1 how {PRONOUN/app1/subject} would like to proceed.",
-        "decline_text": "app1 looks apprehensive, then quietly says they want to look for something easier.",
+        "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1253,7 +1253,7 @@
                 ]
             },
             {
-                "text": "A mischievous look in their eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
+                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["oak_leaves"],

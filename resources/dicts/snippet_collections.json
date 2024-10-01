@@ -97,7 +97,7 @@
         ["crashing waves", "the roar of waves in the distance"],
         ["the sounds of battle", "the screams of fighting cats"],
         ["the rushing sound of a river"],
-        ["their own voice answering them"],
+        ["{PRONOUN/cat_tag/poss} own voice answering {PRONOUN/cat_tag/object}"],
         ["the sound of cracking ice"],
         ["the sound of a heartbeat"],
         ["a whispered message", "whispers of hope long past"],
@@ -168,9 +168,9 @@
     },
     "touch": {
       "general": [
-        ["the brush of a pelt against their own"],
+        ["the brush of a pelt against {PRONOUN/cat_tag/poss} own"],
         ["the touch of a mentor to an apprentice's forehead"],
-        ["a tail twining with their own"],
+        ["a tail twining with {PRONOUN/cat_tag/poss} own"],
         ["the warmth of a parent"]
       ],
       "forest": [
@@ -297,7 +297,7 @@
       "general": [
         ["the wind whistling past a claw raised in anger"],
         ["the ache of fatigue as eyes close for good"],
-        ["an endless cold that seeps into their bones"]
+        ["an endless cold that seeps into {PRONOUN/cat_tag/poss} bones"]
       ],
       "forest": [
 
@@ -434,8 +434,8 @@
         ["hatred for a dear friend"],
         ["knowing a secret that can never be revealed"],
         ["a truth unbelieved", "a truth concealed", "a truth never revealed"],
-        ["a weakness in their legs"],
-        ["a belly so empty they feel nauseous"],
+        ["a weakness in {PRONOUN/cat_tag/poss} legs"],
+        ["a belly so empty {PRONOUN/cat_tag/subject} feel nauseous"],
         ["a home no longer welcoming", "a home long lost", "a home once forgotten"],
         ["oozing corruption"]
       ],

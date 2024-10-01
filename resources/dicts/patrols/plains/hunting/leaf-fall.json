@@ -452,7 +452,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+                "text": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their fury.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1708,7 +1708,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, snagging it just before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]

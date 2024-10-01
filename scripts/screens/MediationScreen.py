@@ -157,18 +157,12 @@ class MediationScreen(Screens):
 
         self.selected_frame_1 = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((50, 80), (200, 350))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/mediator_selected_frame.png"),
-                ui_scale_dimensions((200, 350)),
-            ),
+            get_box(BoxStyles.ROUNDED_BOX, (200, 350)),
         )
         self.selected_frame_1.disable()
         self.selected_frame_2 = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((550, 80), (200, 350))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/mediator_selected_frame.png"),
-                ui_scale_dimensions((200, 350)),
-            ),
+            get_box(BoxStyles.ROUNDED_BOX, (200, 350)),
         )
         self.selected_frame_2.disable()
 

@@ -487,7 +487,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Despite the snow, the patrol manages to hunt successfully, lurking where the pika are trying to stock their dens for leaf-bare. As p_l leads them home, a sense of security and competence drive them onwards.",
+                "text": "Despite the snow, the patrol manages to hunt successfully, lurking where the pika are trying to stock their dens for leaf-bare. As p_l leads the way home, a sense of security and competence drives them onwards.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -610,7 +610,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in a mountain cave, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp r_c is cold and chilled, {PRONOUN/r_c/poss} paws and tail prickling with the danger of frostbite.",
+                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} in a mountain cave, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp, r_c is cold and chilled, {PRONOUN/r_c/poss} paws and tail prickling with the danger of frostbite.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1331,7 +1331,7 @@
                 ]
             },
             {
-                "text": "A mischievous look in their eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
+                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["oak_leaves"],

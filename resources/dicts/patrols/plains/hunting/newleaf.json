@@ -628,7 +628,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
+                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1663,7 +1663,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, snagging it just before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]

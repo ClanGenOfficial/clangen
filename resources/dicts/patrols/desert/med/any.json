@@ -2084,7 +2084,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is plucking some rosemary when {PRONOUN/p_l/poss} attention is suddenly grabbed by omen_list_sight. At the sight, the fur on {PRONOUN/p_l/poss} back prickles slightly and {PRONOUN/p_l/subject} can hear {PRONOUN/p_l/poss} thundering heartbeat. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} mentor about this sign right away!",
+                "text": "p_l is plucking some rosemary when {PRONOUN/p_l/poss} attention is suddenly grabbed by omen_list_sight/m_c. At the sight, the fur on {PRONOUN/p_l/poss} back prickles slightly and {PRONOUN/p_l/subject} can hear {PRONOUN/p_l/poss} thundering heartbeat. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} mentor about this sign right away!",
                 "exp": 20,
                 "weight": 20
             }
