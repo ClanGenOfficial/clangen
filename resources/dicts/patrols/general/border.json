@@ -792,7 +792,7 @@
                 ]
             },
             {
-                "text": "The patrol follows the sound of the cries to a kittypet, curled up by the side of the road with the scent of sickness rising from {PRONOUN/n_c:0/poss} pelt. As p_l comforts {PRONOUN/n_c:0/object} and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} attention from a medicine cat, s_c quizzes {PRONOUN/n_c:0/object}. {VERB/n_c:0/Are/Is} {PRONOUN/n_c:0/subject} a spy for Twolegs? {VERB/n_c:0/Have/Has} {PRONOUN/n_c:0/subject} been sent to collect information on c_n in order to facilitate a Twolegs takeover? Once the kittypet answers no to both, s_c nods seriously. {PRONOUN/n_c:0/subject/CAP} can be welcomed into the Clan.",
+                "text": "The patrol follows the sound of the cries to a kittypet, curled up by the side of the road with the scent of sickness rising from {PRONOUN/n_c:0/poss} pelt. As p_l comforts {PRONOUN/n_c:0/object} and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} attention from a medicine cat, s_c quizzes {PRONOUN/n_c:0/object}. {VERB/n_c:0/Are/Is} {PRONOUN/n_c:0/subject} a spy for Twolegs? {VERB/n_c:0/Were/Was} {PRONOUN/n_c:0/subject} sent to collect information on c_n to facilitate a Twolegs takeover? Once the kittypet answers no to both, s_c nods seriously. {PRONOUN/n_c:0/subject/CAP} can be welcomed into the Clan.",
                 "exp": 15,
                 "weight": 5,
                 "stat_trait": [ "childish", "playful", "strange" ],
