@@ -107,7 +107,6 @@
             "Is worried r_c is overworking {PRONOUN/r_c/self}",
             "Is finding r_c annoying",
             "Can't keep up with r_c",
-            "Is playing moss ball with r_c",
             "Is eavesdropping on r_c",
             "Wants to get to know r_c better",
             "Is sharing tongues with r_c",
@@ -145,9 +144,7 @@
             "Is picking the burrs from {PRONOUN/m_c/poss} pelt",
             "Can't wait to take a nap later",
             "Saw a yappy little dog today",
-            "Is sharpening {PRONOUN/m_c/poss} claws",
             "Is hoping {PRONOUN/m_c/subject} {VERB/m_c/find/finds} an opportunity to slip back to {PRONOUN/m_c/poss} nest",
-            "Can't wait to take a nap later",
             "Had a nice chat with a cat from another Clan at the border",
             "Had a nice chat with a loner outside Clan territory",
             "Had a nice chat with a kittypet",
@@ -157,7 +154,7 @@
             "Saw a kittypet with the fluffiest fur imaginable today",
             "Saw a big scary dog today",
             "Is drinking water from a nearby stream",
-            "Thought {PRONOUN/m_c/subject} saw a cat but turns out it was a Twoleg object that looked like one"
+            "Thought {PRONOUN/m_c/subject} saw a cat, but turns out it's a Twoleg object that just looks like one"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -175,7 +172,11 @@
         "id": "gen_to_kit",
         "thoughts": [
             "Is sitting near the camp entrance, keeping an eye out for sneaky kits",
-            "Is keeping an eye on some rowdy kits"
+            "Is keeping an eye on some rowdy kits",
+            "Is playing moss ball with r_c",
+            "Is letting the kits play with {PRONOUN/m_c/poss} tail",
+            "Goes to help a kit that stumbled over their own paws",
+            "Somehow has a gaggle of kits following {PRONOUN/m_c/object}"
         ],
         "main_status_constraint": [
             "apprentice",
