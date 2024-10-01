@@ -278,7 +278,6 @@
             "Is daydreaming about how much there is to see out in the world!",
             "Is itching to explore the land beyond {PRONOUN/m_c/poss} Clan's territory",
             "Wants to go on a journey",
-            "Wishes {PRONOUN/m_c/poss} leader would choose {PRONOUN/m_c/object} to go on a quest",
             "Disappears for the whole day to explore the territory",
             "Promises {PRONOUN/m_c/poss} Clanmates {PRONOUN/m_c/subject} won't do anything dangerous while out"
         ],
@@ -294,6 +293,21 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "adventurous_gen_to_alive_leader",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/poss} leader would choose {PRONOUN/m_c/object} to go on a quest"
+        ],
+        "random_status_constraint": [
+            "leader"
         ],
         "main_trait_constraint": [
             "adventurous"
