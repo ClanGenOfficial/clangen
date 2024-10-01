@@ -86,7 +86,6 @@
             "Is complaining about an itch {PRONOUN/m_c/subject} can't quite reach",
             "Is looking up, watching the clouds roll by",
             "Is watching the breeze blow around the camp",
-            "Is listening to the grass sway",
             "Is waiting to watch the sunrise",
             "Is waiting to watch the sunset",
             "Is grooming, grooming, grooming away..."
@@ -694,7 +693,7 @@
     {
         "id": "cold_grown_up_to_alive_apprentice",
         "thoughts": [
-            "Is scolding the apprentices over something minor",
+            "Is scolding the apprentices over something slight",
             "Is pushing the apprentices around",
             "Berates an apprentice for not doing their chores",
             "Tells r_c to toughen up"
@@ -708,7 +707,9 @@
             "elder"
         ],
         "random_status_constraint": [
-            "apprentice"
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "cold"
