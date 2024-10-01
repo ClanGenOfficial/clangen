@@ -121,7 +121,8 @@
             "Starts whining when r_c ignores {PRONOUN/m_c/object}",
             "Can't wait to be a warrior",
             "Pricked {PRONOUN/m_c/self} on the brambles protecting camp",
-            "Pounces on a shred of moss"
+            "Pounces on a shred of moss",
+            "Is wondering if {PRONOUN/m_c/subject} would be a good swimmer"
         ],
         "random_living_status": [
             "living"
