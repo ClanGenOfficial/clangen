@@ -337,7 +337,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c tries to climb up after them but slips and falls, twisting {PRONOUN/r_c/poss} paw.",
+                "text": "The squirrels dart up a tree, and r_c tries to climb up after them but slips and falls, twisting {PRONOUN/r_c/poss} paw.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -408,7 +408,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred after an unfortunate encounter with a wolverine."
+                    "scar": "m_c was scarred after an unfortunate encounter with a wolverine.",
+                    "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
+                    "lead_death": "killed by a wolverine"
                 },
                 "prey": ["very_small"]
             }
@@ -495,7 +497,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle.  The patrol brings back what meat had still been left.",
+                "text": "The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle. The patrol brings back what meat had still been left.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
@@ -515,6 +517,13 @@
                     "wise"
                 ],
                 "prey": ["large"]
+            },
+            {
+                "text": "The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "prey": ["large"]
             }
         ],
         "fail_outcomes": [
@@ -530,7 +539,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
+                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before {PRONOUN/r_c/subject} can run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -623,7 +632,7 @@
                 "stat_trait": ["nervous", "insecure"]
             },
             {
-                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before {PRONOUN/r_c/subject} can run.",
+                "text": "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal. The patrol doesn't move fast enough and r_c is killed before {PRONOUN/r_c/subject} can run.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -796,7 +805,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by a wolf protecting its scavenged meal.",
+                    "scar": "m_c was scarred by a wolf pack protecting its scavenged meal.",
                     "reg_death": "m_c was killed by a wolf pack protecting its meal.",
                     "lead_death": "killed by a wolf pack"
                 }
@@ -814,8 +823,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a wolf protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a wolf pack protecting its meal.",
-                    "lead_death": "killed by a wolf pack"
+                    "reg_death": "m_c was killed by a wolf protecting its meal.",
+                    "lead_death": "killed by a wolf"
                 }
             }
         ]
@@ -889,8 +898,8 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c was killed by a wolf protecting its meal.",
-                    "lead_death": "killed by a wolf"
+                    "reg_death": "m_c was killed by a wolf pack protecting its meal.",
+                    "lead_death": "killed by a wolf pack"
                 }
             }
         ]
@@ -964,8 +973,8 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c was killed by a wolf protecting its meal.",
-                    "lead_death": "killed by a wolf"
+                    "reg_death": "m_c was killed by a wolf pack protecting its meal.",
+                    "lead_death": "killed by a wolf pack"
                 }
             }
         ]
@@ -1068,7 +1077,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c finds no prey; it seems like all the prey was scared off because of their stench!",
+                "text": "r_c finds no prey; it seems like all the prey was scared off because of {PRONOUN/r_c/poss} stench!",
                 "exp": 0,
                 "weight": 20
             }
@@ -1158,7 +1167,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured as an apprentice during a hunting assessment."
+                    "scar": "m_c got injured as an apprentice during a hunting assessment.",
+                    "reg_death": "m_c died after a minor injury progressed to something worse.",
+                    "lead_death": "died after a minor injury progressed to something worse"
                 }
             }
         ]
@@ -1268,7 +1279,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "The prey is running terribly today. But, s_c has patience and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}.",
+                "text": "The prey is running terribly today. But s_c has patience and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1425,7 +1436,12 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { "scar": "m_c gained a scar from a fox." },
+                "history_text": { 
+                    "scar": "m_c gained a scar from a fox.",
+                    "reg_death": "m_c died from a fox bite.",
+                    "lead_death": "died from a fox bite"
+                    
+                },
                 "prey": ["very_small"]
             }
         ]
@@ -1565,7 +1581,6 @@
                 "weight": 10,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1639,81 +1654,6 @@
                 "weight": 10,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
-                    "faithful",
-                    "loving",
-                    "patient",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "lost_cats": ["s_c"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_hunt_gonetnr3",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "fst_hunt_gonetnr",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol encounters a clearing where a lot of Twolegs linger.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "They continue hunting undetected.",
-                "exp": 20,
-                "weight": 20,
-                "prey": ["small"]
-            },
-            {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
-                "exp": 20,
-                "weight": 5,
-                "prey": ["small"]
-            },
-            {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters and abruptly tells the patrol they need to leave. Now.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["CLEVER,3"]
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
-                "exp": 0,
-                "weight": 10,
-                "lost_cats": ["r_c"]
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/r_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/r_c/object} away in the monster.",
-                "exp": 0,
-                "weight": 10,
-                "stat_trait": [
-                    "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1770,7 +1710,8 @@
                     "loyal",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "prey": ["large"]
             }
@@ -1853,7 +1794,8 @@
                     "loyal",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "can_have_stat": ["app"],
                 "prey": ["medium"]
@@ -1872,7 +1814,8 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise"
+                    "wise",
+                    "careful"
                 ],
                 "can_have_stat": ["app"]
             },
@@ -2090,7 +2033,8 @@
                     "loyal",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "can_have_stat": ["app"],
                 "prey": ["small"],
@@ -2680,7 +2624,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fun2",
+        "patrol_id": "fst_hunt_fun_app1",
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
