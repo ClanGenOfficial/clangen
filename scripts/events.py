@@ -1364,7 +1364,7 @@ class Events:
                         f"promising a new era for the Clans."
                     )
                 else:
-                    c = random.choice([1, 2, 3])
+                    c = random.randint(1, 3)
                     if c == 1:
                         text = (
                             str(game.clan.deputy.name.prefix)
