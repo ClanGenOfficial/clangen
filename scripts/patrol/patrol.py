@@ -1071,7 +1071,7 @@ class Patrol:
 
         text = text.replace("c_n", str(game.clan.name) + "Clan")
 
-        text, senses, list_type = find_special_list_types(text)
+        text, senses, list_type, _ = find_special_list_types(text)
         if list_type:
             sign_list = get_special_snippet_list(
                 list_type, amount=randint(1, 3), sense_groups=senses
