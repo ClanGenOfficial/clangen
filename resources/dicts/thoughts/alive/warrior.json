@@ -62,38 +62,6 @@
         ]
     },
     {
-        "id": "warrior_gen_dead_sc_kits",
-        "thoughts": [
-            "Wonders if r_c would have been {PRONOUN/m_c/poss} apprentice once {PRONOUN/r_c/subject} {VERB/r_c/were/was} old enough",
-            "Ponders what r_c's favorite game would have been",
-            "Is listening to r_c's favorite games from {PRONOUN/r_c/poss} friends",
-            "Wonders what type of apprentice r_c would've been",
-            "Listens to other kits sadly talk about r_c's death",
-            "Sadly remembers when r_c would play games with {PRONOUN/m_c/object}",
-            "Hopes the kits in StarClan are safe"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "warrior_gen_dead_df_kits",
-        "thoughts": [
-            "Wonders how r_c deals with being in the Dark Forest",
-            "Wishes that r_c could walk among the stars",
-            "Is surprised at StarClan's cruelty towards r_c"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "darkforest"
-        ]
-    },
-    {
         "id": "warrior_parent_alive_kits",
         "thoughts": [
             "Excitedly plays games with r_c, letting {PRONOUN/r_c/object} win every time",
