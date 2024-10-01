@@ -731,7 +731,7 @@
                 "herbs": ["burdock"]
             },
             {
-                "text": "It's rare that p_l is able to spot an herb so quick, but today, {PRONOUN/p_l/poss} {VERB/p_l/find/finds} one quickly, trotting straight over to a burdock plant and digging at its foot.",
+                "text": "It's rare that p_l is able to spot an herb so quick, but today, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} one quickly, trotting straight over to a burdock plant and digging at its foot.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "burdock"]
