@@ -265,7 +265,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "o_c_n's cats keep their distance from c_n during the Gathering. No matter what tack m_c tries, o_c_n's leader doesn't seem receptive. Perhaps this alliance is weakning for reasons {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't aware of.",
+    "event_text": "o_c_n's cats keep their distance from c_n during the Gathering. No matter what tack m_c tries, o_c_n's leader doesn't seem receptive. Perhaps this alliance is weakening for reasons {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't aware of.",
     "rel_change": -2,
     "m_c": { },
     "player_clan_temper": ["any"],
