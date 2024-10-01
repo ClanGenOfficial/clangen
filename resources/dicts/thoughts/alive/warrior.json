@@ -12,7 +12,7 @@
             "Theatrically dies after r_c slays {PRONOUN/m_c/object}",
             "Has to pretend to be a captured warrior for r_c's games",
             "Is pretending to be a big, evil warrior for r_c",
-            "Gave a badger ride to r_c, and is now begged by more kittens to do the same"
+            "Gave a badger ride to r_c, and is now being begged by more kittens to do the same"
         ],
         "random_status_constraint": [
             "kitten"
@@ -68,7 +68,7 @@
         "thoughts": [
             "Wonders if r_c would have been {PRONOUN/m_c/poss} apprentice once {PRONOUN/r_c/subject} {VERB/r_c/were/was} old enough",
             "Ponders what r_c's favorite game would have been",
-            "Is listening to r_c's favorite games from {PRONOUN/m_c/poss} friends",
+            "Is listening to r_c's favorite games from {PRONOUN/r_c/poss} friends",
             "Wonders what type of apprentice r_c would've been",
             "Listens to other kits sadly talk about r_c's death",
             "Sadly remembers when r_c would play games with {PRONOUN/m_c/object}",
@@ -86,7 +86,7 @@
         "thoughts": [
             "Wonders how r_c deals with being in the Dark Forest",
             "Wishes that r_c could walk among the stars",
-            "Is surprised of StarClan's cruelty towards r_c"
+            "Is surprised at StarClan's cruelty towards r_c"
         ],
         "random_status_constraint": [
             "kitten"
@@ -143,6 +143,7 @@
             "Tries to set a good example for younger cats"
         ],
         "main_age_constraint": [
+            "senior",
             "senior adult",
             "adult"
         ],
@@ -220,13 +221,16 @@
     {
         "id": "careful_warrior_to_deputy",
         "thoughts": [
-            "Asks the deputy about sending out some more hunting patrols- just to be sure"
+            "Asks the deputy about sending out some more hunting patrols - just to be sure"
         ],
         "main_trait_constraint": [
             "careful"
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -242,34 +246,15 @@
         ]
     },
     {
-        "id": "cold_warrior_to_alive_apprentice",
-        "thoughts": [
-            "Is scolding the apprentices over something slight",
-            "Is pushing the apprentices around",
-            "Berates an apprentice for not doing their chores",
-            "Tells r_c to toughen up"
-        ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "main_trait_constraint": [
-            "cold"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
         "id": "compassionate_warrior",
         "thoughts": [
-            "Patiently waits for a rabbit to come out of their burrow, eventually catching it",
+            "Patiently waits for a rabbit to come out of its burrow, eventually catching it",
             "Offered to walk at the front of the patrol",
-            "Offered to stick {PRONOUN/m_c/poss} nose inside a badger set to check if the badger is still there",
-            "Offered to stick {PRONOUN/m_c/poss} nose inside a fox den to check if the fox is still there",
+            "Offered to stick {PRONOUN/m_c/poss} nose into a badger sett to check if the badger is still there",
+            "Offered to stick {PRONOUN/m_c/poss} nose into a fox den to check if the fox is still there",
             "Volunteered for extra patrols",
             "Volunteered for extra duties",
             "Volunteered to stand guard of the camp",
-            "Gives some plump fresh-kill to a Clanmate instead",
             "Shares the best hunting spots with the other warriors",
             "Does {PRONOUN/m_c/poss} Clanmates' chores with a smile on {PRONOUN/m_c/poss} face"
         ],
@@ -309,7 +294,6 @@
     {
         "id": "fierce_warrior",
         "thoughts": [
-            "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle",
             "Is showing off {PRONOUN/m_c/poss} battle moves",
             "Offered to lead a border patrol today",
             "Has been waiting for a war to be declared",
@@ -379,6 +363,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -393,6 +380,9 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -413,6 +403,12 @@
         ],
         "main_trait_constraint": [
             "righteous"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -428,11 +424,25 @@
     {
         "id": "troublesome_warrior",
         "thoughts": [
-            "Ate a mouse while out on patrol",
+            "Ate a mouse while out on patrol"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "troublesome_warrior_to_deputy",
+        "thoughts": [
             "Is being lectured yet again by the deputy"
         ],
         "main_trait_constraint": [
             "troublesome"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
