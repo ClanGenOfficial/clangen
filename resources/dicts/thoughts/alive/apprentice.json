@@ -165,9 +165,7 @@
             "strict",
             "ambitious",
             "vengeful",
-            "arrogant",
-            "grumpy",
-            "rebellious"
+            "arrogant"
 
         ],
         "random_living_status": [
@@ -185,12 +183,16 @@
             "Finds r_c's energy contagious, and is excited to train today"
         ],
         "random_trait_constraint": [
+            "childish",
+            "playful",
+            "charismatic",
             "bold",
             "daring",
-            "righteous",
             "adventurous",
             "flamboyant",
-            "arrogant"
+            "arrogant",
+            "competitive",
+            "oblivious"
 
         ],
         "random_living_status": [
@@ -454,7 +456,6 @@
             "ambitious",
             "vengeful",
             "arrogant",
-            "grumpy",
             "rebellious"
 
         ],
@@ -480,12 +481,17 @@
             "nervous"
         ],
         "random_trait_constraint": [
+            "childish",
+            "playful",
+            "charismatic",
             "bold",
             "daring",
             "righteous",
             "adventurous",
             "flamboyant",
-            "arrogant"
+            "arrogant",
+            "competitive",
+            "oblivious"
 
         ],
         "random_living_status": [
