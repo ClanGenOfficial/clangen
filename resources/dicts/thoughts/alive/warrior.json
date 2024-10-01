@@ -167,7 +167,8 @@
             "Sets out to catch five pieces of fresh-kill today",
             "Evaluates how {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to sharpen up {PRONOUN/m_c/poss} battle skills",
             "Tries to emulate the leader's body language when talking to younger cats",
-            "Feels inadequate about being nothing more than an ordinary warrior"
+            "Feels inadequate about being nothing more than an ordinary warrior",
+            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy"
         ],
         "main_trait_constraint": [
             "ambitious"
