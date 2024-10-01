@@ -294,7 +294,7 @@
   {
     "interaction_type": "praise",
     "event_text": "At the Gathering, o_c_n's leader seems much more interested in chatting with the other leaders than m_c. When {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to include {PRONOUN/m_c/self}, {PRONOUN/m_c/subject} just {VERB/m_c/draw/draws} awkward looks from the other leaders.",
-    "rel_change": 2,
+    "rel_change": -2,
     "m_c": {
       "trait": [ "lonesome", "nervous", "insecure", "gloomy", "grumpy" ]
      },
