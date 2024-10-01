@@ -520,7 +520,7 @@
             "Is showing off {PRONOUN/m_c/poss} new battle moves",
             "Is pushing hard for more battle training",
             "Was recently chastised by {PRONOUN/m_c/poss} mentor for reckless behavior out on patrol",
-            "Practiced battle moves with {PRONOUN/m_c/poss} claws out",
+            "Practices battle moves with {PRONOUN/m_c/poss} claws out",
             "Is keeping {PRONOUN/m_c/poss} claws extra sharp",
             "Is hissing at r_c",
             "Is always looking for a fight",
@@ -579,13 +579,12 @@
             "Is glad to have r_c as {PRONOUN/m_c/poss} mentor",
             "Wouldn't trade {PRONOUN/m_c/poss} mentor for anyone else in the Clan",
             "Is thankful for how patient r_c is with {PRONOUN/m_c/object}",
-            "Is comforted by r_c after admitting to not thinking {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing good enough",
-            "Asks r_c if {PRONOUN/r_c/subject} think that {PRONOUN/m_c/subject}'ll ever be strong warrior",
+            "Is being comforted by r_c after admitting to not thinking {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing good enough",
+            "Asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} that {PRONOUN/m_c/subject}'ll ever be a strong warrior",
             "Admits to r_c that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like a failure, and {PRONOUN/m_c/poss} mentor reassures {PRONOUN/m_c/subject}",
             "Feels hurt when r_c doesn't notice {PRONOUN/m_c/object} struggling",
             "Wonders if r_c really likes {PRONOUN/m_c/object}, or just pretends to",
             "Doesn't feel worthy of being r_c's apprentice"
-
         ],
         "main_trait_constraint": [
             "insecure",
@@ -621,14 +620,13 @@
             "Wishes r_c could be a bit more understanding",
             "Feels like r_c doesn't like {PRONOUN/m_c/object}",
             "Is surprised when r_c gives {PRONOUN/m_c/object} the day off on a hard day",
-            "Gets a lecture on being more confident when {PRONOUN/m_c/subject} {VERB/m_c/complain/complains} about never succeeding in a move",
+            "Gets a lecture on being more confident when {PRONOUN/m_c/subject} {VERB/m_c/complain/complains} about never succeeding with a particular move",
             "Knows r_c is trying {PRONOUN/r_c/poss} best to help {PRONOUN/m_c/object}",
             "Is found crying in {PRONOUN/m_c/poss} nest by r_c, and is comforted",
             "Is surprised when {PRONOUN/m_c/poss} mentor brings {PRONOUN/m_c/object} {PRONOUN/m_c/poss} favorite prey",
             "Gets lessons on posturing confidently from r_c",
             "Gets scared of {PRONOUN/m_c/poss} mentor after r_c snaps at {PRONOUN/m_c/object}",
-            "Is surprised when r_c apologizes for snapping at m_c the other day"
-
+            "Is surprised when r_c apologizes for snapping at {PRONOUN/m_c/object} the other day"
         ],
         "main_trait_constraint": [
             "insecure",
@@ -644,7 +642,6 @@
             "vengeful",
             "arrogant",
             "rebellious"
-
         ],
         "random_living_status": [
             "living"
@@ -656,12 +653,11 @@
     {
         "id": "insecure_nervous_warrior_apprentice_to_outgoing_mentor",
         "thoughts": [
-            "Wishes {PRONOUN/m_c/poss} mentor didn't encourage {PRONOUN/m_c/object} to speak with others so much",
+            "Wishes {PRONOUN/m_c/poss} mentor didn't try to encourage {PRONOUN/m_c/object} to speak with others so much",
             "Hides behind r_c during the Gathering",
             "Wonders how r_c can speak with others so easily",
-            "Tries to do some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
+            "Tries out some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
             "Hides away from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} {VERB/m_c/learn/learns} {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to take them to the far edges of the territory today"
-
         ],
         "main_trait_constraint": [
             "insecure",
@@ -679,7 +675,6 @@
             "arrogant",
             "competitive",
             "oblivious"
-
         ],
         "random_living_status": [
             "living"
@@ -691,10 +686,10 @@
     {
         "id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
         "thoughts": [
-            "Looks at r_c... an awkward silence hangs between them",
+            "Fidgets anxiously as an awkward silence settles between {PRONOUN/m_c/object} and r_c",
             "Feels understood by r_c",
             "Shares prey with r_c in comfortable silence",
-            "Is being taught some techniques r_c uses when being around others gets too much"
+            "Is being taught some techniques r_c uses when being around others gets to be too much"
 
         ],
         "main_trait_constraint": [
@@ -720,11 +715,10 @@
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
             "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
-            "Is sure {PRONOUN/m_c/subject} will fail {PRONOUN/m_c/poss} assessment",
             "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
             "Is worried about being an apprentice forever",
             "Is fighting back tears after missing a catch",
-            "Is worried to lose in a real fight",
+            "Is afraid to lose in a real fight",
             "Is avoiding everyone today",
             "Believes {PRONOUN/m_c/subject} can do well today",
             "Gives {PRONOUN/m_c/self} a stomachache by worrying so much",
@@ -759,8 +753,8 @@
     {
         "id": "responsible_warrior_apprentice",
         "thoughts": [
-            "Spent all morning mastering and practicing the hunting crouch",
-            "Makes sure that everyone else is fed before taking prey from the prey-pile",
+            "Spent all morning practicing and mastering the hunting crouch",
+            "Makes sure that everyone else is fed before taking prey from the fresh-kill pile",
             "Listens to {PRONOUN/m_c/poss} mentor's advice"
         ],
         "main_trait_constraint": [
