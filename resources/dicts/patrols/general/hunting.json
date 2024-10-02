@@ -1248,7 +1248,7 @@
         "stat_trait": ["wise", "thoughtful", "careful"]
       },
       {
-        "text": "r_c kills the rat easily in its distracted state, but then notices the scent of sickness on its body. Best not to bring this one back, p_l decides; even in leaf-bare, it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
+        "text": "r_c kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
         "exp": 30,
         "weight": 10,
         "stat_trait": ["childish", "playful" ]
