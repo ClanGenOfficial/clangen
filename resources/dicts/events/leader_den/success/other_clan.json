@@ -1394,7 +1394,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, o_c_n's leader repeatedly provokes and challenges c_n. m_c remains composed, not a whisker out of place, and asks o_c_n's leader to name a place and time for them to settle the score. {PRONOUN/m_c/poss/CAP} self-possession riles o_c_n's leader even more",
+    "event_text": "At the Gathering, o_c_n's leader repeatedly provokes and challenges c_n. m_c remains composed, not a whisker out of place, and asks o_c_n's leader to name a place and time for them to settle the score. {PRONOUN/m_c/poss/CAP} self-possession riles o_c_n's leader even more.",
     "rel_change": -10,
     "m_c": {
       "trait": ["calm"],
@@ -1405,7 +1405,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, m_c forgoes a traditional speech in favor of retelling the tale of a legendary o_c_n leader... but with {PRONOUN/m_c/poss} own special graphically violent twist. o_c_n warriors cover their apprentices' ears, and even o_c_n's leader looks like they'll have nightmares",
+    "event_text": "At the Gathering, m_c forgoes a traditional speech in favor of retelling the tale of a legendary o_c_n leader... but with {PRONOUN/m_c/poss} own special graphically violent twist. o_c_n warriors cover their apprentices' ears, and even o_c_n's leader looks like they'll have nightmares.",
     "rel_change": -10,
     "m_c": {
       "trait": ["bloodthirsty"],
@@ -1510,7 +1510,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "o_c_n's leader threatens c_n throughout the Gathering. m_c remains silent until {PRONOUN/m_c/poss} turn to speak, then remarks that no cat in o_c_n really wants war. o_c_n warriors shuffle their paws and avoid their leader's gaze, not wanting to admit that m_c is right",
+    "event_text": "o_c_n's leader threatens c_n throughout the Gathering. m_c remains silent until {PRONOUN/m_c/poss} turn to speak, then remarks that no cat in o_c_n really wants war. o_c_n warriors shuffle their paws and avoid their leader's gaze, not wanting to admit that m_c is right.",
     "rel_change": 6,
     "m_c": {
       "trait": ["strange", "thoughtful", "calm"],
