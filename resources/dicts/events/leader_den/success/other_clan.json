@@ -807,7 +807,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, m_c invents incidents border crossings and prey-stealing that never happened, just to further poison the stream between o_c_n and c_n.",
+    "event_text": "At the Gathering, m_c invents incidents of border crossings and prey-stealing that never happened, just to further poison the stream between o_c_n and c_n.",
     "rel_change": -3,
     "m_c": {},
     "player_clan_temper": ["any"],
