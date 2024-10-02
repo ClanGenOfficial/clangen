@@ -163,6 +163,17 @@
   },
   {
     "interaction_type": "praise",
+    "event_text": "While trying to scramble up onto the leader's perch at the Gathering, o_c_n's new young leader slips and scrabbles with their hindlegs for purchase. Thinking fast, m_c grabs their scruff and lifts them onto the perch easily. o_c_n's leader screeches that they're not a kit and need <i>no</i> help!",
+    "rel_change": -5,
+    "m_c": {
+      "skill": ["CLIMBER,3", "KIT,3"],
+      "trait": ["calm", "thoughtful", "wise", "careful", "sincere" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
     "event_text": "m_c praises the beauty of o_c_n's territory at length during the Gathering. o_c_n's leader questions whether m_c is hinting that {PRONOUN/m_c/subject}'d like to steal some of it for c_n.",
     "rel_change": -1,
     "m_c": {},
@@ -175,6 +186,17 @@
     "rel_change": -1,
     "m_c": {
       "trait": ["strange"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "Before the Gathering, m_c takes o_c_n's leader aside and warns them that their mate will be caught in a flood in the next moon. o_c_n's leader cuts {PRONOUN/m_c/object} off in disbelief, finding it too terrible to imagine. m_c watches o_c_n's leader leave after the Gathering, {PRONOUN/m_c/poss} heart sinking.",
+    "rel_change": -3,
+    "m_c": {
+      "trait": ["sincere"],
+      "skill": ["CLAIRVOYANT,4"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -476,6 +498,17 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "As o_c_n's leader announces new apprentices at the Gathering, m_c interrupts to offer plenty of unsolicited advice about how best to train an apprentice. o_c_n's leader seems less than grateful.",
+    "rel_change": -5,
+    "m_c": {
+      "skill": ["TEACHER,2"],
+      "trait": [ "shameless", "arrogant" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "At the Gathering, m_c pulls o_c_n's leader aside and suggests they form an alliance; with their combined strength, they can crush all that would oppose them. o_c_n's leader declines this offer.",
     "rel_change": 0,
     "m_c": {
@@ -486,10 +519,31 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c pulls o_c_n's leader aside to warn them that fire may be a problem for o_c_n in the coming moons. o_c_n's leader stiffens, staring at m_c with intense mistrust and skepticism.",
+    "rel_change": -2,
+    "m_c": {
+      "skill": ["CLAIRVOYANT,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "m_c has never been good at making friends, and in a high-pressure situation like a Gathering? {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/manage/manages} more than two or three words to o_c_n's leader.",
     "rel_change": 0,
     "m_c": {
       "trait": [ "insecure", "nervous", "careful", "gloomy", "lonesome", "grumpy" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, o_c_n's leader struggles through a report that an entire litter of o_c_n kits were wiped out by kitten-cough. m_c draws them aside after and reassures them that the kittens are playing moss-ball together in StarClan. o_c_n's leader hisses that this means nothing to the grieving parents.",
+    "rel_change": -5,
+    "m_c": {
+      "skill": [ "KIT,3", "STAR,2"],
+      "trait": [ "playful", "compassionate", "thoughtful", "loving" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -572,6 +626,17 @@
     "rel_change": 0,
     "m_c": {
       "trait": [ "adventurous" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c remarks on how a fighting technique developed by o_c_n warriors is something m_c hopes to teach to c_n's apprentices for moons to come. o_c_n's leader scowls and seems unhappy m_c even knows about this special technique.",
+    "rel_change": -5,
+    "m_c": {
+      "trait": ["thoughtful" ],
+      "skill": ["FIGHTER,2"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -943,6 +1008,17 @@
   },
   {
     "interaction_type": "appease",
+    "event_text": "On the way to the Gathering, m_c spots a patch of greenish-yellow mushrooms and assumes this must be a sign of StarClan favoring c_n. {PRONOUN/m_c/subject/CAP} {VERB/m_c/greet/greets} o_c_n's leader by confidently accepting their surrender in the ongoing hostilities; o_c_n's leader snarls in {PRONOUN/m_c/poss} face. Maybe they were just normal mushrooms, then.",
+    "rel_change": -5,
+    "m_c": {
+      "trait": ["arrogant"],
+      "skill": [ "OMEN,2" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
     "event_text": "The leader of o_c_n laughs at the sight of c_n being led by m_c. The cat makes a comment on how piteous m_c's clan must be, to have an apprentice leading them, and sneers that they'll soon have succeeded at wiping c_n out.",
     "rel_change": -1,
     "m_c": {
@@ -970,6 +1046,16 @@
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["wary"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "At the Gathering, m_c reveals to o_c_n's leader that one of the o_c_n warriors who died in a recent conflict came to m_c and spoke to {PRONOUN/m_c/object} about peace. o_c_n's leader is furious m_c would presume to speak for one of their dead Clanmates.",
+    "rel_change": -5,
+    "m_c": {
+      "skill": ["GHOST,3"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
   },
   {
     "interaction_type": "appease",
