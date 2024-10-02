@@ -328,16 +328,7 @@
     "event_text": "Another leader during the Gathering makes scathing comments towards o_c_n. m_c skillfully redirects their words into praise for o_c_n; o_c_n's leader seems appreciative.",
     "rel_change": 2,
     "m_c": {
-      "trait": ["confident", "compassionate", "bold", "righteous", "loyal", "sincere"]
-    },
-    "player_clan_temper": [],
-    "other_clan_temper": []
-  },
-  {
-    "interaction_type": "praise",
-    "event_text": "Another leader during the Gathering makes scathing comments towards o_c_n. m_c skillfully redirects their words into praise for o_c_n; o_c_n's leader seems appreciative.",
-    "rel_change": 2,
-    "m_c": {
+      "trait": ["confident", "compassionate", "bold", "righteous", "loyal", "sincere"],
       "skill": ["SPEAKER,3", "MEDIATOR,3"]
     },
     "player_clan_temper": [],
