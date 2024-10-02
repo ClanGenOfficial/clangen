@@ -181,6 +181,17 @@
   },
   {
     "interaction_type": "praise",
+    "event_text": "Before the Gathering, m_c takes o_c_n's leader aside and warns them that their mate will be caught in a flood in the next moon. o_c_n's leader cuts {PRONOUN/m_c/object} off in disbelief, finding it too terrible to imagine. m_c watches o_c_n's leader leave after the Gathering, {PRONOUN/m_c/poss} heart sinking.",
+    "rel_change": -3,
+    "m_c": {
+      "trait": ["sincere"],
+      "skill": ["CLAIRVOYANT,4"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
     "event_text": "m_c attempts to use {PRONOUN/m_c/poss} honeyed words to get onto o_c_n's good side, only for the other leader to give {PRONOUN/m_c/object} a pointed and <i>very</i> knowing look.",
     "rel_change": -3,
     "m_c": {
@@ -589,7 +600,7 @@
   {
     "interaction_type": "befriend",
     "event_text": "At the Gathering, m_c remarks on how a fighting technique developed by o_c_n warriors is something m_c hopes to teach to c_n's apprentices for moons to come. o_c_n's leader scowls and seems unhappy m_c even knows about this special technique.",
-    "rel_change": 5,
+    "rel_change": -5,
     "m_c": {
       "trait": ["thoughtful" ],
       "skill": ["FIGHTER,2"]
