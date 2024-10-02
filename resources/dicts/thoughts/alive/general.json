@@ -310,11 +310,12 @@
             "charismatic",
             "childish",
             "cunning",
-            "playful",
-            "sneaky"
+            "playful"
         ],
         "main_status_constraint": [
             "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
             "warrior",
             "medicine cat",
             "mediator",
@@ -352,8 +353,7 @@
         "id": "ambitious_to_leader",
         "thoughts": [
             "Is asking the Clan leader what {PRONOUN/m_c/subject} can do to help out around camp",
-            "Has been imitating the Clan leader's behavior recently",
-            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy"
+            "Has been imitating the Clan leader's behavior recently"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -368,11 +368,11 @@
     {
         "id": "arrogant_gen",
         "thoughts": [
-            "Is sure of {PRONOUN/m_c/poss} skills being better then anyone else",
+            "Is sure that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} more skilled than anyone else",
             "Is confidently spreading misinformation on something {PRONOUN/m_c/subject} {VERB/m_c/know/knows} little about",
             "Is confidently spreading misinformation on something {PRONOUN/m_c/subject} {VERB/m_c/know/knows} nothing about",
             "Is lecturing about something someone said wrong offpawedly",
-            "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
+            "Is certain {PRONOUN/m_c/subject} {VERB/m_c/look/looks} better than any other cat in the Clan",
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
             "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
             "Is bragging to everyone"
@@ -387,7 +387,7 @@
             "Is acting suspicious",
             "Has been washing {PRONOUN/m_c/poss} paws a lot lately",
             "Growls to {PRONOUN/m_c/self}",
-            "Has disappeared often recently",
+            "Has been disappearing often recently",
             "Is practicing forbidden battle moves",
             "Tells the warriors to get ready for a battle",
             "Yearns to fight",
@@ -442,9 +442,8 @@
     {
         "id": "bold_gen",
         "thoughts": [
-            "Is getting some looks after speaking out of turn at the last Clan meeting",
+            "Is getting some looks after speaking out of turn during a Clan meeting",
             "Spoke out of turn at the last Clan meeting",
-            "Bravely offers to help the medicine cat pick herbs from a dangerous spot",
             "Runs out of {PRONOUN/m_c/poss} den into 'battle', only to find that it was just a storm",
             "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
             "Is not afraid of anything",
@@ -505,7 +504,7 @@
         "id": "calm_gen",
         "thoughts": [
             "Is taking a moment to appreciate some peace and quiet",
-            "Is patiently listening to someone talk about things they are unquestionably wrong about and dying inside",
+            "Shakes {PRONOUN/m_c/poss} head as a Clanmate talks about something they are absolutely wrong about",
             "Looks on as the camp buzzes around {PRONOUN/m_c/object}",
             "Is basking in the gentle sunlight around camp",
             "Is meditating upon a sun-warmed rock",
@@ -521,7 +520,6 @@
             "Is purring quietly",
             "Has been reaching meditative states while sunbathing",
             "Calmly takes the lead while some Clanmates argue over this and that",
-            "Is unable to be scared, no matter how much the kits try",
             "Knows everything will be okay in the end",
             "Takes a deep breath and doesn't let a mean comment get to {PRONOUN/m_c/object}"
         ],
@@ -530,11 +528,25 @@
         ]
     },
     {
+        "id": "calm_to_kit",
+        "thoughts": [
+            "Is unable to be scared, no matter how much the kits try"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "careful_gen",
         "thoughts": [
             "Is double-checking {PRONOUN/m_c/poss} nest for burrs",
             "Is slowly and methodically grooming {PRONOUN/m_c/self}",
-            "Is chiding a younger cat for being so reckless",
             "Is padding back and forth across the camp",
             "Is helping to reinforce the nursery walls",
             "Is helping to reinforce the camp walls",
@@ -545,6 +557,22 @@
         ],
         "main_trait_constraint": [
             "careful"
+        ]
+    },
+    {
+        "id": "careful_to_younger",
+        "thoughts": [
+            "Is chiding a younger cat for being so reckless"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -654,7 +682,7 @@
         "id": "cold_gen",
         "thoughts": [
             "Is hissing in frustration",
-            "Is lecturing about something someone said wrong offpawedly",
+            "Responds to a stupid comment with a sharp hiss",
             "Is grunting rudely at passersby",
             "Walked away from a conversation that bored {PRONOUN/m_c/object}",
             "Wonders why others snap back at {PRONOUN/m_c/object}",
