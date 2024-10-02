@@ -179,7 +179,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "Before the Gathering officially starts, o_c_n's leader and m_c bend their heads together to chat and gossip like starlings.",
+    "event_text": "Before the Gathering officially starts, o_c_n's leader and m_c bend their heads together to gossip like starlings.",
     "rel_change": 2,
     "m_c": {},
     "player_clan_temper": ["any"],
@@ -261,7 +261,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, m_c praises o_c_n's leader for the skill of o_c_n warriors in both battle and hunting. o_c_n's leader is all the more pleased to hear that from a leader like m_c.",
+    "event_text": "At the Gathering, m_c praises o_c_n's leader for how sharp o_c_n warriors' claws are, be it for hunting or fighting. o_c_n's leader is all the more pleased to hear that from a leader like m_c.",
     "rel_change": 3,
     "m_c": {
       "skill": ["FIGHTER,2", "HUNTER,2"]
