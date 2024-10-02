@@ -655,6 +655,16 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c flatters o_c_n's leader with {PRONOUN/m_c/poss} attention. After all, m_c knows exactly how to handle short tempers and immature behavior.",
+    "rel_change": 1,
+    "m_c": {
+      "skill": [ "KIT,2" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["proud"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "At the Gathering, o_c_n's leader reports the tragic death of a kit who was killed by a snake in the nursery. m_c pulls them aside after to offer condolences, and suggests weaving basil and marigold into the nursery wall as a deterrent.",
     "rel_change": 3,
     "m_c": {
@@ -759,6 +769,16 @@
   },
   {
     "interaction_type": "antagonize",
+    "event_text": "When o_c_n's leader insults m_c at the Gathering, m_c replies that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} used to handling immature, childish behavior - but this is a lot, even for {PRONOUN/m_c/object}.",
+    "rel_change": -3,
+    "m_c": {
+      "skill": [ "KIT,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
     "event_text": "At the Gathering, m_c insists on speaking first and makes it clear that peace cannot thrive between o_c_n and c_n. Not until o_c_n pays for what they have done.",
     "rel_change": -2,
     "m_c": {},
@@ -836,7 +856,8 @@
     "event_text": "m_c flexes {PRONOUN/m_c/poss} claws in front of o_c_n's leader at the Gathering and asks if they ever wish o_c_n had a fighter as talented as {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} rewarded for {PRONOUN/m_c/poss} insolence with a hiss of outrage from o_c_n's leader.",
     "rel_change": -2,
     "m_c": {
-      "skill": ["FIGHTER,2"]
+      "skill": ["FIGHTER,2"],
+      "trait": [ "arrogant", "confident", "ambitious", "shameless", "fierce", "bloodthirsty", "cold", "competitive", "childish", "flamboyant", "adventurous", "troublesome" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1076,7 +1097,8 @@
     "event_text": "At the Gathering, o_c_n's leader gets in m_c's face. m_c squares {PRONOUN/m_c/poss} shoulders and lets {PRONOUN/m_c/poss} muscular physique speak for itself; o_c_n's leader suddenly acquires an appetite for peace. m_c's Clanmates giddily report the next morning that the leader looked like a kit next to {PRONOUN/m_c/object}.",
     "rel_change": 3,
     "m_c": {
-      "skill": [ "SWIMMER,3", "CLIMBING,3", "RUNNER,3", "FIGHTER,4" ]
+      "skill": [ "SWIMMER,3", "CLIMBING,3", "RUNNER,3", "FIGHTER,4" ],
+      "trait": [ "bold", "shameless", "daring", "cold", "vengeful", "fierce", "arrogant", "competitive", "cunning", "troublesome", "confident", "adventurous", "loyal", "responsible" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
