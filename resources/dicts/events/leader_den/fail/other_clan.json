@@ -993,12 +993,22 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "m_c dreams the night before the Gathering, hearing the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} at the Gathering, o_c_n's leader shows open disdain- only for clouds to begin covering the moon. The Gathering ends quickly, though the enemy leader still leaves with their head held high.",
-    "rel_change": 10,
+    "event_text": "m_c dreams the night before the Gathering, hearing the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} at the Gathering, o_c_n's leader shows open disdain - only for clouds to begin covering the moon. The Gathering ends quickly, though the enemy leader still leaves with their head held high.",
+    "rel_change": 0,
     "m_c": {
       "skill": ["STAR,4"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["proud"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "m_c is confident ending hostilities will be easy-appeasey-greenleaf-breezy. o_c_n's leader has no patience for this attitude.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "childish", "playful" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
   }
 ]
