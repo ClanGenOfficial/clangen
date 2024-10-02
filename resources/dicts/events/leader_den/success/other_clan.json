@@ -345,7 +345,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "m_c speaks to {PRONOUN/m_c/poss} Clanmates before the Gathering, making it clear what tonight's goal is. When c_n arrives at the Gathering Place, they all disperse to find o_c_n cats and take advantage of their prideful nature.",
+    "event_text": "m_c speaks to {PRONOUN/m_c/poss} Clanmates before the Gathering, making it clear what tonight's goal is. When c_n arrives at the Gathering place, they all disperse to find o_c_n cats and take advantage of their prideful nature.",
     "rel_change": 3,
     "m_c": {},
     "player_clan_temper": ["cunning"],
@@ -963,7 +963,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "No matter how much o_c_n's leader tries to provoke m_c during the gathering, {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} a cool head.",
+    "event_text": "No matter how much o_c_n's leader tries to provoke m_c during the Gathering, {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} a cool head.",
     "rel_change": 1,
     "m_c": {},
     "player_clan_temper": ["any"],
