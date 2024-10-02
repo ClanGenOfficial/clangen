@@ -49,7 +49,7 @@
   },
   {
     "interaction_type": "offend",
-    "event_text": "During {PRONOUN/m_c/poss} speech at the Gathering, m_c reveals one of o_c_n's weaknesses, which o_c_n's leader had told {PRONOUN/m_c/object} in confidence.",
+    "event_text": "During {PRONOUN/m_c/poss} speech at the Gathering, m_c reveals one of o_c_n's weaknesses that o_c_n's leader told {PRONOUN/m_c/object} in confidence.",
     "rel_change": -3,
     "m_c": {},
     "player_clan_temper": ["any"],
