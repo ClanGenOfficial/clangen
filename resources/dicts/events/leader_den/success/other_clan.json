@@ -695,7 +695,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "At the Gathering, m_c remarks to o_c_n's leader that each member of o_c_n is like a tiny chitinous thread which, and all together, they form the wings of a beautiful butterfly. o_c_n's leader isn't certain what m_c means by that, but appreciates the sentiment.",
+    "event_text": "At the Gathering, m_c remarks to o_c_n's leader that each member of o_c_n is like a tiny chitinous thread and, woven together, they form the wings of a beautiful butterfly. o_c_n's leader isn't certain what m_c means by that, but appreciates the sentiment.",
     "rel_change": 3,
     "m_c": {
       "trait": ["strange"]
