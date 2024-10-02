@@ -261,6 +261,28 @@
   },
   {
     "interaction_type": "praise",
+    "event_text": "Before the Gathering, m_c takes o_c_n's leader aside and warns them that their mate will be caught in a flood in the next moon, unless o_c_n's leader moves their camp to high ground. o_c_n's leader is shocked and grateful for m_c's clairvoyance.",
+    "rel_change": 10,
+    "m_c": {
+      "trait": ["sincere"],
+      "skill": ["CLAIRVOYANT,4"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "Before the Gathering, m_c murmurs to o_c_n's leader that in the next moon, another Clan will suffer a greencough outbreak. This could make a great opportunity for o_c_n and c_n to seize some more territory and split it between them.",
+    "rel_change": 10,
+    "m_c": {
+      "trait": ["ambitious"],
+      "skill": ["CLAIRVOYANT,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["logical", "proud", "cunning", "bloodthirsty", "stoic"]
+  },
+  {
+    "interaction_type": "praise",
     "event_text": "At the Gathering, m_c praises o_c_n's leader for how sharp o_c_n warriors' claws are, be it for hunting or fighting. o_c_n's leader is all the more pleased to hear that from a leader like m_c.",
     "rel_change": 3,
     "m_c": {
@@ -330,6 +352,28 @@
     "m_c": {
       "trait": ["confident", "compassionate", "bold", "righteous", "loyal", "sincere"],
       "skill": ["SPEAKER,3", "MEDIATOR,3"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": []
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c tells the story of a Clan that supported another through the darkest time in their shared history - even to great personal cost. {PRONOUN/m_c/subject/CAP} {VERB/m_c/announce/announces} that just like the mythical Clan, c_n will never abandon their ally.",
+    "rel_change": 10,
+    "m_c": {
+      "trait": ["loyal"],
+      "skill": ["STORY,2"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": []
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/believe/believes} StarClan intends for o_c_n and c_n warriors to go on a quest together. o_c_n's leader is surprised, but agrees to send out a joint patrol to explore this possibility.",
+    "rel_change": 10,
+    "m_c": {
+      "trait": ["adventurous"],
+      "skill": ["STAR,2", "PROPHET,2"]
     },
     "player_clan_temper": [],
     "other_clan_temper": []
@@ -427,6 +471,17 @@
     "event_text": "When o_c_n's leader announces new warriors at the Gathering, m_c is pointedly silent while the others cheer and welcome the new warriors.",
     "rel_change": -2,
     "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, o_c_n's leader delivers their news of a border skirmish. m_c grumbles under {PRONOUN/m_c/poss} breath about lazy, undisciplined fighting styles, and how o_c_n's warriors can hardly be called warriors at all.",
+    "rel_change": -5,
+    "m_c": {
+      "skill": ["FIGHTER,2"],
+      "trait": ["grumpy"]
+    },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
   },
@@ -636,7 +691,17 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "At the Gathering, m_c pulls o_c_n's leader aside to warn them that fire may be a problem for o_c_n in the coming moons. o_c_n's leader agrees to be careful, thanking m_c for the heads-up.",
+    "event_text": "At the Gathering, m_c pulls o_c_n's leader aside to warn them that fire may be a problem for o_c_n in the coming moons. o_c_n's leader seems skeptical as to how m_c could possibly know that, but nevertheless thanks {PRONOUN/m_c/object} for the heads-up.",
+    "rel_change": 3,
+    "m_c": {
+      "skill": ["CLAIRVOYANT,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c pulls o_c_n's leader aside to warn them that a large dog may be a problem for o_c_n in the coming moons. o_c_n's leader agrees to be careful, thanking m_c for the heads-up.",
     "rel_change": 3,
     "m_c": {
       "skill": ["CLAIRVOYANT,2"]
@@ -720,6 +785,28 @@
     "rel_change": 5,
     "m_c": {
       "trait": ["charismatic", "compassionate", "playful"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c goes out on a limb and admits to o_c_n's leader that their deceased parent is still hovering by them in spirit. o_c_n's leader bows their head, too overcome to speak.",
+    "rel_change": 5,
+    "m_c": {
+      "trait": ["daring", "bold" ],
+      "skill": ["GHOST,2"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c remarks on how a fighting technique developed by o_c_n warriors is something m_c hopes to teach to c_n's apprentices for moons to come. o_c_n's leader is impressed and flattered.",
+    "rel_change": 5,
+    "m_c": {
+      "trait": ["thoughtful" ],
+      "skill": ["FIGHTER,2"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1222,9 +1309,20 @@
   {
     "interaction_type": "appease",
     "event_text": "m_c is quick to assert {PRONOUN/m_c/self} at the Gathering, announcing that {PRONOUN/m_c/subject} received an omen: omen_list_smell_emotional/m_c. After a long debate, it's decided that the omen insists o_c_n and c_n cease hostilities.",
-    "rel_change": 10,
+    "rel_change": 8,
     "m_c": {
       "skill": ["OMEN,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "At the Gathering, m_c speaks passionately of the omen {PRONOUN/m_c/subject} received the previous night - omen_list_sound/m_c. o_c_n's leader is cowed by the echo of flames and scent of sulfur in m_c's speech, and quickly agrees to de-escalate tensions.",
+    "rel_change": 10,
+    "m_c": {
+      "skill": ["OMEN,1"],
+      "trait": ["fierce"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
