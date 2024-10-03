@@ -590,7 +590,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "During the Gathering, m_c says nothing to the other leaders all night, until the end of the Gathering - at which point {PRONOUN/m_c/subject} {VERB/m_c/warn/warns} o_c_n's leader that a storm in brewing for their Clan in the coming moon.",
+    "event_text": "During the Gathering, m_c says nothing to the other leaders all night, until the end of the Gathering - at which point {PRONOUN/m_c/subject} {VERB/m_c/gaze/gazes} dreamily into the distance and {VERB/m_c/warn/warns} o_c_n's leader that a storm in brewing for their Clan in the coming moon.",
     "rel_change": -5,
     "m_c": {
       "skill": ["CLAIRVOYANT,1"],
