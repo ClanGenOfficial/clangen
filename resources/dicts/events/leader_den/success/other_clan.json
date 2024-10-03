@@ -205,6 +205,17 @@
   },
   {
     "interaction_type": "offend",
+    "event_text": "Cats tend to let their guards down around m_c due to {PRONOUN/m_c/poss} quiet nature, which allows {PRONOUN/m_c/object} to notice the few o_c_n warriors who scowl whenever their leader speaks at the Gathering. m_c brings this up to o_c_n's leader and asks if they need help controlling their warriors.",
+    "rel_change": -5,
+    "m_c": {
+      "trait": ["lonesome"],
+      "skill": [ "INSIGHTFUL,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
     "event_text": "m_c is intentional with {PRONOUN/m_c/poss} comments during the Gathering. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to make it clear to o_c_n that c_n is no longer their ally - without being outright insulting.",
     "rel_change": -7,
     "m_c": {
@@ -252,6 +263,17 @@
     "m_c": {
       "skill": ["DREAM,2"],
       "trait": ["loyal", "bold", "daring"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, o_c_n's leader speaks at length about the perseverance of one of their medicine cats in caring for a seriously injured Clanmate. m_c feels it would be too awkward to congratulate o_c_n directly, but nevertheless nods to the medicine cat in question.",
+    "rel_change": 4,
+    "m_c": {
+      "skill": ["HEALER,1"],
+      "trait": ["lonesome"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -468,6 +490,17 @@
   },
   {
     "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c approaches o_c_n's leader and pays them a heartfelt compliment. {PRONOUN/m_c/subject/CAP} may not be a cat of many words, but when {PRONOUN/m_c/subject} {VERB/m_c/use/uses} them, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} them count.",
+    "rel_change": 10,
+    "m_c": {
+      "trait": ["lonesome"],
+      "skill": ["SPEAKER,1"]
+    },
+    "player_clan_temper": [],
+    "other_clan_temper": []
+  },
+  {
+    "interaction_type": "praise",
     "event_text": "At the Gathering, m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/believe/believes} StarClan intends for o_c_n and c_n warriors to go on a quest together. o_c_n's leader is surprised, but agrees to send out a joint patrol to explore this possibility.",
     "rel_change": 10,
     "m_c": {
@@ -552,6 +585,17 @@
     "event_text": "At the Gathering, m_c accuses o_c_n's leader of using loners and rogues to spy on c_n.",
     "rel_change": -2,
     "m_c": {},
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c says nothing to the other leaders all night, until the end of the Gathering - at which point {PRONOUN/m_c/subject} {VERB/m_c/warn/warns} o_c_n's leader that a storm in brewing for their Clan in the coming moon.",
+    "rel_change": -5,
+    "m_c": {
+      "skill": ["CLAIRVOYANT,1"],
+      "trait": [ "lonesome" ]
+    },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
   },
@@ -759,6 +803,17 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "provoke",
+    "event_text": "Being a quiet observer means m_c notices things other cats don't - such as the tense looks between o_c_n's leader and deputy. In the middle of the Gathering, m_c pipes up and asks if something's wrong in o_c_n's leadership, blinking innocently at them.",
+    "rel_change": -5,
+    "m_c": { 
+      "skill": [ "CLEVER,1" ],
+      "trait": ["lonesome" ]
+     },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c does {PRONOUN/m_c/poss} best to get on o_c_n's good side.",
     "rel_change": 2,
@@ -861,6 +916,17 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "The night before the Gathering, one of m_c's friends visits {PRONOUN/m_c/object} from StarClan and gives {PRONOUN/m_c/object} a pep talk, reminding {PRONOUN/m_c/object} what a good friend {PRONOUN/m_c/subject} {VERB/m_c/are/is}. m_c arrives at the Gathering with steeled nerves and strikes up conversation with o_c_n's leader",
+    "rel_change": 0,
+    "m_c": {
+      "trait": [ "lonesome" ],
+      "skill": [ "STAR,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c brings up an old legend about two Clans that put aside their differences and formed an alliance, bringing strength to both of them. o_c_n's leader listens with interest.",
     "rel_change": 3,
     "m_c": {
@@ -903,12 +969,34 @@
   {
     "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c flatters o_c_n's leader with {PRONOUN/m_c/poss} attention. After all, m_c knows exactly how to handle short tempers and immature behavior.",
-    "rel_change": 1,
+    "rel_change": 5,
     "m_c": {
       "skill": [ "KIT,1" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["proud"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "m_c may be awkward with cats {PRONOUN/m_c/poss} age, but some things about socializing are true for all ages. At the Gathering, m_c expresses interest in all of o_c_n's leader's comments and opinions, and by the end of the night, o_c_n's leader has puffed up their chest.",
+    "rel_change": 3,
+    "m_c": {
+      "skill": [ "TEACHER,1", "KIT,1" ],
+      "trait": [ "lonesome" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c sympathizes with o_c_n's leader about the pressures of leading a Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/suggest/suggests} going out for solo night hunts from time to time - that's always worked for m_c",
+    "rel_change": 3,
+    "m_c": {
+      "skill": [ "HUNTER,1" ],
+      "trait": [ "lonesome" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
   },
   {
     "interaction_type": "befriend",
@@ -938,6 +1026,17 @@
     "rel_change": 3,
     "m_c": {
       "skill": ["CAMP,3"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, o_c_n's leader gets into a tense debate with another leader. m_c waits until they've reached an impasse, then offers a softspoken solution that satisfies both of them. o_c_n's leader shoots {PRONOUN/m_c/object} an appreciative look.",
+    "rel_change": 5,
+    "m_c": {
+      "skill": [ "MEDIATOR,1"],
+      "trait": ["lonesome"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1526,11 +1625,22 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, m_c forgoes a traditional speech in favor of retelling the tale of a legendary o_c_n leader... but with {PRONOUN/m_c/poss} own special graphically violent twist. o_c_n warriors cover their apprentices' ears, and even o_c_n's leader looks like they'll have nightmares.",
+    "event_text": "At the Gathering, o_c_n's leader repeatedly provokes and challenges c_n. m_c remains composed, not a whisker out of place, and asks o_c_n's leader to name a place and time for them to settle the score. {PRONOUN/m_c/poss/CAP} self-possession riles o_c_n's leader even more.",
     "rel_change": -10,
     "m_c": {
-      "trait": ["bloodthirsty"],
-      "skill": ["STORY,1", "LORE,3"]
+      "trait": ["calm"],
+      "skill": ["FIGHTER,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, as o_c_n's leader faces off with m_c, m_c says nothing at all. Still, o_c_n's leader suddenly shrinks away. They can't be sure, but they could have sworn they saw the face of their cruel, dead mentor hovering at m_c's shoulder.",
+    "rel_change": -10,
+    "m_c": {
+      "trait": ["lonesome"],
+      "skill": ["DARK,1"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
