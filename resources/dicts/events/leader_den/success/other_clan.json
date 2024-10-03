@@ -982,6 +982,17 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "m_c brings a piece of willow bark with strange grooves on it to the Gathering. {PRONOUN/m_c/subject/CAP} {VERB/m_c/explain/explains} to the other leaders that this is a sign of future prosperity for o_c_n and c_n - and only them.",
+    "rel_change": 5,
+    "m_c": {
+      "skill": ["OMEN,1"],
+      "trait": [ "troublesome" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c brings up an old legend about two Clans that put aside their differences and formed an alliance, bringing strength to both of them. o_c_n's leader listens with interest.",
     "rel_change": 3,
     "m_c": {
@@ -1962,5 +1973,17 @@
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["wary", "cunning", "stoic", "logical", "amiable", "gracious"]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "The night before the Gathering, m_c enters the dreams of o_c_n's leader and meets them by rosebushes, lit in golden sunshine, with songbirds perched upon blossoming branches above them. At the Gathering, o_c_n's leader stammers through their speech and avoids m_c's gaze.",
+    "rel_change": 10,
+    "m_c": {
+      "age": ["young adult", "adult", "senior adult", "senior"],
+      "skill": [ "DREAM,4"],
+      "trait": [ "troublesome" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["wary"]
   }
 ]
