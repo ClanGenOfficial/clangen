@@ -1278,7 +1278,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "At the Gathering, m_c pays o_c_n's leader a few wooden compliments, but {PRONOUN/m_c/poss} obvious discomfort socializing and {PRONOUN/m_c/poss} powerful fighter's physique undermines all of {PRONOUN/m_c/poss} effort.",
+    "event_text": "At the Gathering, m_c pays o_c_n's leader a few wooden compliments, but {PRONOUN/m_c/poss} obvious discomfort socializing and {PRONOUN/m_c/poss} powerful fighter's physique undermines {PRONOUN/m_c/poss} effort.",
     "rel_change": -1,
     "m_c": {
       "skill": ["FIGHTER,1"],
