@@ -1877,7 +1877,6 @@
             "Is helping to reinforce the camp walls",
             "Is patching up a hole in the camp wall",
             "Is helping to reinforce the walls of the elders' den",
-            "Fortifies the camp walls for the fourth time this week",
             "Is tidying up some stray moss that blew into the clearing",
             "Is repairing one of the camp walls"
         ],
@@ -1918,7 +1917,7 @@
             "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
             "Prays to StarClan that next season will be a good one",
             "Never forgets to thank StarClan for the fresh-kill",
-            "Calms {PRONOUN/m_c/self} down by thinking how StarClan will see to things"
+            "Calms {PRONOUN/m_c/self} down by thinking about how StarClan will see to things"
         ],
         "main_skill_constraint": [
             "STAR,1"
@@ -1961,26 +1960,26 @@
         "thoughts": [
             "Is sharing prey with r_c",
             "Is on a walk with r_c",
-            "Decorated r_c's nest with flowers and cozy bedding",
-            "Took a nap in r_c's nest",
+            "Decorates r_c's nest with flowers and cozy bedding",
+            "Is taking a nap in r_c's nest",
             "Wants to work hard to impress r_c",
-            "Fluffed up r_c's nest for {PRONOUN/r_c/object}",
+            "Fluffs up r_c's nest for {PRONOUN/r_c/object}",
             "Loves r_c so much",
             "Is napping with r_c",
-            "Snuck away from camp with r_c for some alone time",
+            "Sneaks away from camp with r_c for some alone time",
             "Is nuzzling into r_c's fur, taking in {PRONOUN/r_c/poss} scent",
             "Can't stop admiring r_c",
-            "Is waiting for r_c to return from {PRONOUN/r_c/poss} patrol",
+            "Is waiting for r_c to return to camp",
             "Can't stop admiring r_c's pelt",
-            "Is certain no cat would ever compare to r_c",
+            "Is certain no cat could ever compare to r_c",
             "Is madly in love with r_c",
-            "Explored the territory with r_c",
-            "Took r_c to {PRONOUN/m_c/poss} favorite spot",
+            "Explores the territory with r_c",
+            "Takes r_c to {PRONOUN/m_c/poss} favorite spot",
             "Is on a walk with r_c",
             "Saves the last of r_c's favorite prey for {PRONOUN/r_c/object}",
-            "Brought r_c {PRONOUN/r_c/poss} favorite prey",
+            "Brings r_c {PRONOUN/r_c/poss} favorite prey",
             "Is thinking about having kits with r_c",
-            "Brought a flower back to camp for r_c",
+            "Brings a flower back to camp for r_c",
             "Is pressing against r_c, purring loudly",
             "Is thoughtfully grooming r_c"
         ],
@@ -1995,7 +1994,7 @@
         "id": "gen_medicine_cat_mate",
         "thoughts": [
             "Is urging r_c to rest",
-            "Brought r_c some prey",
+            "Brings r_c some prey",
             "Offers to help r_c with {PRONOUN/r_c/poss} patients"
         ],
         "random_status_constraint": [
@@ -2012,12 +2011,12 @@
         "id": "gen_sibling",
         "thoughts": [
             "Is sharing prey with r_c",
-            "Took a nap with r_c",
-            "Took a nap in r_c's nest",
+            "Is taking a nap with r_c",
+            "Is taking a nap in r_c's nest",
             "Wants to work hard to impress r_c",
             "Had a pointless, petty argument with r_c",
-            "Startled r_c to get back at {PRONOUN/r_c/object} for something or other",
-            "Casually insulted r_c in passing"
+            "Startles r_c to get back at {PRONOUN/r_c/object} for something or other",
+            "Casually insults r_c in passing"
         ],
         "random_living_status": [
             "living"
@@ -2029,10 +2028,10 @@
     {
         "id": "gen_sibling_not_kit",
         "thoughts": [
-            "Play fought with r_c just like old times",
+            "Play fights with r_c, just like old times",
             "Reminisces with r_c about when they were kits",
-            "Took the fresh-kill r_c was saving specifically because {PRONOUN/r_c/subject} {VERB/r_c/were/was} saving it", 
-            "Is waiting for r_c to return from {PRONOUN/r_c/poss} patrol",
+            "Takes the fresh-kill r_c was saving specifically because {PRONOUN/r_c/subject} {VERB/r_c/were/was} saving it", 
+            "Is waiting for r_c to return to camp",
             "Explores the territory with r_c"
         ],
         "main_status_constraint": [
@@ -2067,8 +2066,8 @@
     {
         "id": "parent_to_kit",
         "thoughts":[
-            "Pulled r_c aside and started grooming {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} protests",
-            "Is purring as {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} to r_c talk about nothing in particular",
+            "Pulls r_c aside and starts grooming {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} protests",
+            "Purrs as {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} to r_c talk about nothing in particular",
             "Is comforting r_c after a hard day",
             "Is so proud of r_c"
         ],
@@ -2080,13 +2079,13 @@
         ]
     },
     {
-        "id": "dead_sibling",
+        "id": "dead_littermate",
         "thoughts": [
             "Never had to imagine life without {PRONOUN/m_c/poss} sibling...",
             "Is remembering growing up with r_c"
         ],
         "relationship_constraint":[
-            "siblings"
+            "littermates"
         ],
         "random_living_status": [
             "starclan",
