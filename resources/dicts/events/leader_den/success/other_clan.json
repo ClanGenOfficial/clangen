@@ -162,6 +162,17 @@
   },
   {
     "interaction_type": "offend",
+    "event_text": "o_c_n's medicine cats present a new prophecy at the Gathering. m_c offends o_c_n by interrupting to offer {PRONOUN/m_c/poss} interpretation before the medicine cats can say anything else.",
+    "rel_change": -6,
+    "m_c": {
+      "trait": ["fierce", "bold", "daring", "shameless", "arrogant"],
+      "skill": ["PROPHET,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "offend",
     "event_text": "Before the Gathering, m_c has a fleeting vision of gnashing teeth and coarse black-and-white fur, along with the scent of o_c_n and blood. At the Gathering, m_c jokes that o_c_n is really <i>badgering</i> c_n about this alliance. o_c_n's leader's face darkens.",
     "rel_change": -5,
     "m_c": {
@@ -869,6 +880,17 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "provoke",
+    "event_text": "At the Gathering, dark whispers rush through m_c's voice like a cold wind through dead branches. {PRONOUN/m_c/subject/CAP} {VERB/m_c/warn/warns} o_c_n that they are making an enemy of c_n - and it could be their last mistake.",
+    "rel_change": -7,
+    "m_c": { 
+      "skill": [ "DARK,1" ],
+      "trait": ["fierce" ]
+     },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c does {PRONOUN/m_c/poss} best to get on o_c_n's good side.",
     "rel_change": 2,
@@ -1262,6 +1284,17 @@
     "rel_change": -3,
     "m_c": {
       "skill": [ "KIT,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, m_c roars that StarClan themselves have ordained c_n's position as the mightiest Clan. No cat - not o_c_n's leader, nor all their warriors - can get in the way of c_n's destiny.",
+    "rel_change": -10,
+    "m_c": {
+      "skill": ["STAR,1"],
+      "trait": ["fierce"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1958,6 +1991,17 @@
     "rel_change": 5,
     "m_c": {
       "skill": ["MEDIATOR,1"],
+      "trait": [ "fierce" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["mellow", "gracious", "amiable", "stoic", "logical", "wary", "cunning" ]
+  },
+  {
+    "interaction_type": "appease",
+    "event_text": "The night before the Gathering, m_c dreams vividly of a glorious battle between o_c_n and c_n - in which c_n comes out victorious. At the Gathering, o_c_n's leader keeps a wary distance; it seems these dreams of war did not suit their palate.",
+    "rel_change": 5,
+    "m_c": {
+      "skill": ["DREAM,1"],
       "trait": [ "fierce" ]
     },
     "player_clan_temper": ["any"],

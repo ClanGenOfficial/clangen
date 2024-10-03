@@ -619,6 +619,17 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c warns o_c_n's leader that {PRONOUN/m_c/subject} had a glimpse of the coming moons, and o_c_n may be headed for conflict with another Clan. o_c_n's leader interprets this as a threat, not an offer of allyship.",
+    "rel_change": -4,
+    "m_c": {
+      "trait": [ "fierce" ],
+      "skill": [ "CLAIRVOYANT,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "At the Gathering, m_c tries to casually mention something {PRONOUN/m_c/subject} witnessed in the dreams of o_c_n's leader. The other leader doesn't seem to appreciate this invasion of privacy at all.",
     "rel_change": -5,
     "m_c": {
@@ -968,6 +979,17 @@
     "rel_change": 0,
     "m_c": {
       "trait": [ "childish", "playful" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, m_c snarls and spits at o_c_n's leader. As {PRONOUN/m_c/subject} {VERB/m_c/do/does}, {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} a chill rush over {PRONOUN/m_c/poss} pelt, like plunging into icy water. Starlight glimmers at the paws of o_c_n's leader, and m_c stutters to a stop, squinting at it.",
+    "rel_change": 0,
+    "m_c": {
+      "trait": ["fierce"],
+      "skill": ["GHOST,1"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
