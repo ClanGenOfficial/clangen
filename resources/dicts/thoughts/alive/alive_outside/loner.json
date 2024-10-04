@@ -132,5 +132,23 @@
         "main_age_constraint": [
             "senior"
         ]
+    },
+    {
+        "id": "loner_leaffall",
+        "thoughts": [
+            "Frowns deeply at the first frost"
+        ],
+        "season": [
+            "Leaf-fall"
+        ]
+    },
+    {
+        "id": "loner_leafbare",
+        "thoughts": [
+            "Wishes newleaf would come already"
+        ],
+        "season": [
+            "Leaf-bare"
+        ]
     }
 ]
