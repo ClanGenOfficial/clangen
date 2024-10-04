@@ -1054,7 +1054,7 @@
             "Playfully flirts with cats from the other Clans at the Gathering",
             "Dazzles {PRONOUN/m_c/poss} Clanmates with {PRONOUN/m_c/poss} excellent skills",
             "Spends a long time grooming {PRONOUN/m_c/self} to catch as much attention as possible",
-            "Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again"
+            "Bumped into another cat and has to start {PRONOUN/m_c/poss} grooming routine all over again"
         ],
         "main_trait_constraint": [
             "flamboyant"
