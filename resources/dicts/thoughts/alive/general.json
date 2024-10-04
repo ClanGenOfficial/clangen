@@ -113,7 +113,7 @@
             "Is thinking about {PRONOUN/m_c/poss} life choices",
             "Found a wonderful napping spot outside camp",
             "Had a nightmare involving a Twoleg trap",
-            "Is humming a tune {PRONOUN/m_c/subject} heard near a Twoleg place",
+            "Is humming a tune {PRONOUN/m_c/subject} heard near a Twolegplace",
             "Is picking the burrs from {PRONOUN/m_c/poss} pelt",
             "Can't wait to take a nap later",
             "Saw a yappy little dog today",
@@ -2763,7 +2763,7 @@
             "Is worried {PRONOUN/m_c/subject} will never fit in",
             "Refuses to let {PRONOUN/m_c/poss} kittypet roots hold {PRONOUN/m_c/object} back",
             "Wants to play with {PRONOUN/m_c/poss} old kittypet toys",
-            "Avoids the Twoleg place to prove {PRONOUN/m_c/poss} loyalty"
+            "Avoids the Twolegplace to prove {PRONOUN/m_c/poss} loyalty"
         ],
         "main_backstory_constraint": [
             "kittypet1",
@@ -2821,7 +2821,7 @@
             "Uses knowledge from {PRONOUN/m_c/poss} time with Twolegs to improve a healing method",
             "Wonders what {PRONOUN/m_c/poss} old vet would do for greencough",
             "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
-            "Knows a great garden in the Twoleg place for gathering catmint",
+            "Knows a great garden in the Twolegplace for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses"
         ],
         "main_backstory_constraint": [
@@ -3092,7 +3092,7 @@
         "thoughts": [
             "Is trying to recruit other apprentices for a quick adventure",
             "Sneaks off to the Twolegplace to explore",
-            "Explores beyond Clan territory"
+            "Wanders out beyond Clan territory"
         ],
         "main_status_constraint": [
             "apprentice",
