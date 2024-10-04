@@ -923,7 +923,7 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader",
+            "leader"
         ],
         "main_trait_constraint": [
             "confident"
@@ -1095,7 +1095,7 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader",
+            "leader"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -1143,7 +1143,7 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader",
+            "leader"
         ],
         "main_trait_constraint": [
             "lonesome"
@@ -1291,7 +1291,7 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader",
+            "leader"
         ],
         "main_trait_constraint": [
             "nervous"
@@ -1333,7 +1333,7 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader",
+            "leader"
         ],
         "main_trait_constraint": [
             "playful"
@@ -1471,7 +1471,7 @@
     {
         "id": "righteous_to_kits",
         "thoughts": [
-            "Teaches the kits about morals until they all fall asleep",
+            "Teaches the kits about morals until they all fall asleep"
         ],
         "main_trait_constraint": [
             "righteous"
@@ -1518,7 +1518,7 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader",
+            "leader"
         ],
         "main_trait_constraint": [
             "shameless"
