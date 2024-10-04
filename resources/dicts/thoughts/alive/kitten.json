@@ -438,7 +438,7 @@
             "fearless"
         ],
         "random_status_constraint": [
-        	"apprentice"
+            "apprentice"
         ],
         "random_living_status": [
             "living"
