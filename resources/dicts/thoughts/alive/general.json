@@ -179,6 +179,34 @@
         ]
     },
     {
+        "id": "gen_to_deputy",
+        "thoughts": [
+            "Thinks r_c is doing a great job as deputy",
+            "Respects r_c's effort as deputy",
+            "Wonders if being deputy is really so hard",
+            "Knows r_c would make a great leader",
+            "Thinks r_c is doing an alright job as deputy",
+            "Thinks r_c is doing poorly as deputy"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "working_cat",
         "thoughts": [
             "Is guarding camp",
@@ -232,12 +260,6 @@
     {
         "id": "working_cat_to_deputy",
         "thoughts": [
-            "Thinks r_c is doing a great job as deputy",
-            "Respects r_c's effort as deputy",
-            "Wonders if being deputy is really so hard",
-            "Knows r_c would make a great leader",
-            "Thinks r_c is doing an alright job as deputy",
-            "Thinks r_c is doing poorly as deputy",
             "Is hoping the deputy won't assign {PRONOUN/m_c/object} to the dawn patrol tomorrow",
             "Is hoping the deputy assigns {PRONOUN/m_c/object} to the next patrol",
             "Is hoping the deputy won't assign {PRONOUN/m_c/object} to the next patrol"
