@@ -8,7 +8,6 @@ import pygame
 import pygame_gui
 import ujson
 
-from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -190,19 +189,7 @@ class SettingsScreen(Screens):
                         )
                         self.set_bg("default", "mainmenu_bg")
                         self.open_general_settings()
-
-                    if (
-                        self.sub_menu == "general"
-                        and event.ui_element is self.checkboxes["discord"]
-                    ):
-                        if game.settings["discord"]:
-                            print("Starting Discord RPC")
-                            game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
-                            game.rpc.start()
-                            game.rpc.start_rpc.set()
-                        else:
-                            print("Stopping Discord RPC")
-                            game.rpc.close()
+                        return
 
                     break
 

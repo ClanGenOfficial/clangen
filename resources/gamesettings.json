@@ -21,6 +21,11 @@
             "Camp backgrounds will match with the mode: nighttime for dark mode and daytime for light mode.",
             false
         ],
+        "fullscreen scaling": [
+            "Ignore fullscreen scaling rules",
+            "If enabled, fullscreen will display as large as possible (toggle fullscreen to update). This may include visual artifacts.",
+            false
+        ],
         "custom cursor": [
             "Custom cursor",
             "The cursor will be replaced with a cat paw. The cursor is currently unfinished and is prone to crashing.",
