@@ -1910,7 +1910,7 @@
         ]
     },
     {
-        "id": "starclan_gen",
+        "id": "starclan_skill_gen",
         "thoughts": [
             "Is giving thanks to StarClan",
             "Thought {PRONOUN/m_c/subject} saw a glimmer of stardust out of the corner of {PRONOUN/m_c/poss} eye",
@@ -1930,7 +1930,7 @@
         ]
     },
     {
-        "id": "starclan_to_medcat",
+        "id": "starclan_skill_to_medcat",
         "thoughts": [
             "Goes to the medicine cat to ask for spiritual advice"
         ],
@@ -1946,7 +1946,7 @@
         ]
     },
     {
-        "id": "starclan_df_2_to_kit",
+        "id": "starclan_df_skill_2_to_kit",
         "thoughts": [
             "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real"
         ],
@@ -3096,7 +3096,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "adventurous"
@@ -3116,8 +3117,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -3133,8 +3134,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -3144,16 +3145,35 @@
         "id": "bold_apprentices",
         "thoughts": [
             "Winked cheekily at another apprentice",
-            "Is criticizing {PRONOUN/m_c/poss} mentor",
+            "Is criticizing {PRONOUN/m_c/poss} mentor"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bold_apprentices_to_leader",
+        "thoughts": [
             "Tells the leader they're doing something wrong"
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "bold"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3163,8 +3183,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "random_status_constraint": [
             "apprentice",
@@ -3186,8 +3206,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "careful"
@@ -3198,17 +3218,17 @@
         "thoughts": [
             "Winked playfully at another apprentice from across the clearing!",
             "Is this moon's heartthrob to the other apprentices",
-            "Recently gave a wonderful speech to fellow apprentices that boosted morale"
+            "Recently gave a wonderful speech to {PRONOUN/m_c/poss} fellow apprentices that boosted morale"
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "random_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "charismatic"
@@ -3221,13 +3241,13 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "random_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "childish"
@@ -3237,11 +3257,11 @@
         "id": "cold_apprentices",
         "thoughts": [
             "Is hoping {PRONOUN/m_c/poss} name will end in -claw",
-            "Doesn't react when {PRONOUN/m_c/poss} mentor praises {PRONOUN/m_c/object} for a good catch",
             "Rudely walked away from a conversation that bored {PRONOUN/m_c/object}"
         ],
         "main_status_constraint": [
             "apprentice",
+            "medicine cat apprentice",
             "mediator apprentice"
         ],
         "main_trait_constraint": [
@@ -3249,23 +3269,38 @@
         ]
     },
     {
-        "id": "compassionate_apprentices_to_apprentices",
+        "id": "compassionate_apprentices",
         "thoughts": [
-            "Is convincing r_c to take a moments rest, lest {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} burnt out",
             "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
             "Made a suggestion to {PRONOUN/m_c/poss} mentor",
-            "Volunteered for the tasks the other apprentices hate doing",
-            "Is making sure the other apprentices are taking breaks",
-            "Offers to help r_c train",
             "Is doing extra apprentice tasks around camp, to help lighten the load"
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ]
+    },
+    {
+        "id": "compassionate_apprentices_to_apprentices",
+        "thoughts": [
+            "Is convincing r_c to take a moments rest, lest {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} burnt out",
+            "Volunteered for the tasks the other apprentices hate doing",
+            "Is making sure the other apprentices are taking breaks",
+            "Offers to help r_c train"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "random_status_constraint": [
-            "apprentice"
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "compassionate"
@@ -3284,27 +3319,11 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "daring"
-        ]
-    },
-    {
-        "id": "faithful_apprentices",
-        "thoughts": [
-            "Is sending thanks to the stars for a good training session",
-            "Prays to StarClan that the training session goes well",
-            "Has faith that {PRONOUN/m_c/poss} warrior ancestors are leading {PRONOUN/m_c/object} on the right path"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "main_trait_constraint": [
-            "faithful"
         ]
     },
     {
@@ -3319,8 +3338,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -3348,8 +3367,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "lonesome"
@@ -3365,8 +3384,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "loving"
@@ -3385,8 +3404,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "loyal"
@@ -3396,19 +3415,19 @@
         "id": "nervous_apprentices",
         "thoughts": [
             "Is hoping to not train today...",
-            "Wants to ask for help with something but is too ashamed",
+            "Wants to ask for help with something, but is too ashamed",
             "Is hoping {PRONOUN/m_c/subject} won't be a dissapointment to {PRONOUN/m_c/poss} Clan",
             "Hopes the Clans stay peaceful",
             "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} back in the nursery",
             "Has agreed to {PRONOUN/m_c/poss} mentor's orders recently, despite {PRONOUN/m_c/poss} own doubts",
             "Managed to conquer a difficult task, despite feeling nervous",
-            "Is spooked by the beady eyes of the prey during a hunting patrol",
+            "Is spooked by the beady eyes of prey during a hunting patrol",
             "Was startled by a squirrel while training"
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "nervous"
@@ -3423,8 +3442,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "playful"
@@ -3443,8 +3462,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "responsible"
@@ -3458,8 +3477,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "righteous"
@@ -3472,8 +3491,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "shameless"
@@ -3489,8 +3508,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "sneaky"
@@ -3506,8 +3525,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "strange"
@@ -3521,8 +3540,8 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "strict"
@@ -3540,38 +3559,38 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "troublesome"
         ]
     },
     {
-        "id": "vengeful_apprentices",
+        "id": "vengeful_apprentices_to_apprentices",
         "thoughts": [
             "Snaps at another apprentice",
             "Is still glaring at r_c after {PRONOUN/r_c/subject} teased {PRONOUN/m_c/object} yesterday"
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "vengeful"
         ],
-        "random_living_status": [
-            "living"
-        ],
         "random_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "wise_apprentices",
+        "id": "wise_apprentices_to_apprentices",
         "thoughts": [
             "Is giving somber advice to a fellow apprentice",
             "Is giving another apprentice very useful advice",
@@ -3579,11 +3598,35 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "wise"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "starclan_skill_apprentices",
+        "thoughts": [
+            "Is sending thanks to the stars for a good training session",
+            "Prays to StarClan that the training session goes well",
+            "Has faith that {PRONOUN/m_c/poss} warrior ancestors are leading {PRONOUN/m_c/object} on the right path"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_skill_constraint": [
+            "STAR,1"
         ]
     },
     {
