@@ -370,11 +370,28 @@
             "Is feeling proud of {PRONOUN/m_c/self}",
             "Is daydreaming about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Offers to help {PRONOUN/m_c/poss} Clanmates with their duties",
-            "Imagines how {PRONOUN/m_c/subject} would run the Clan better",
+            "Imagines how {PRONOUN/m_c/subject} would run the Clan better"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "ambitious_to_deputy",
+        "thoughts": [
             "Envies the deputy's position"
         ],
         "main_trait_constraint": [
             "ambitious"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "elder"
         ]
     },
     {
