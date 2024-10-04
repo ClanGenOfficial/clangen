@@ -3088,191 +3088,6 @@
         ]
     },
     {
-        "id": "apprentices_to_dead_elder",
-        "thoughts": [
-            "Is wishing r_c was still here to tell {PRONOUN/m_c/object} stories",
-            "Went to change r_c's bedding and hear a story only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
-            "Is missing r_c's stories...",
-            "Is wondering who helps r_c with {PRONOUN/r_c/poss} ticks in StarClan"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ],
-        "random_status_constraint": [
-            "elder"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "apprentices_to_dead_leadership",
-        "thoughts": [
-            "Is wondering if r_c approves of {PRONOUN/m_c/object} from StarClan",
-            "Is wishing r_c were still here to guide {PRONOUN/m_c/object}"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ],
-        "random_status_constraint": [
-            "leader",
-            "deputy"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "apprentices_to_dead_med_cats",
-        "thoughts": [
-            "Remembers how r_c healed {PRONOUN/m_c/object}",
-            "Hopes r_c is enjoying looking through StarClan's herb storage",
-            "Wishes {PRONOUN/m_c/subject} could be treated by r_c one last time..",
-            "Misses the way r_c treated {PRONOUN/m_c/poss} injuries",
-            "Is missing r_c's presence in the medicine cat den"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice"
-        ],
-        "random_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "apprentices_to_dead_apprentices",
-        "thoughts": [
-            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "random_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "apprentice_to_dead_sc_kit",
-        "thoughts": [
-            "Wonders if one of the stars in the sky is r_c",
-            "Remembers fondly when r_c would beg to be taught a new fighting move",
-            "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembers r_c is among the stars now",
-            "Misses r_c nagging {PRONOUN/m_c/object} about apprentice duties",
-            "Is tearing up after finding r_c's old moss ball",
-            "Hopes that somehow, someway, the kits in StarClan are learning the hunting crouch",
-            "Wonders if the kits get moss balls in StarClan",
-            "Hopes that the kits in StarClan get time to play games",
-            "Looks up at the night sky and wonders which stars are long-gone kits",
-            "Thought {PRONOUN/m_c/subject} saw a stray kit in front of the nursery, but it vanished",
-            "Walks into the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_former_rogue_apprentices",
-        "thoughts": [
-            "Discovers that {PRONOUN/m_c/poss} self-taught method is less effective",
-            "Wonders what {PRONOUN/m_c/subject} even {VERB/m_c/need/needs} this training method for",
-            "Brags about all the prey {PRONOUN/m_c/subject} caught when {PRONOUN/m_c/subject} {VERB/m_c/were/was} a rogue",
-            "Can't help but be intrigued by the Warrior Code",
-            "Is trying to memorize the Warrior Code"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "main_backstory_constraint": [
-            "rogue1",
-            "rogue2",
-            "rogue3",
-            "refugee4",
-            "tragedy_survivor2",
-            "guided2"
-        ]
-    },
-    {
-        "id": "gen_former_rogue_apprentices_to_mentor",
-        "thoughts": [
-            "Ditched {PRONOUN/m_c/poss} mentor to do to {PRONOUN/m_c/poss} own thing",
-            "Sneaks off to train on {PRONOUN/m_c/poss} own",
-            "Is rolling {PRONOUN/m_c/poss} eyes at {PRONOUN/m_c/poss} mentor's teachings"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "main_backstory_constraint": [
-            "rogue1",
-            "rogue2",
-            "rogue3",
-            "refugee4",
-            "tragedy_survivor2",
-            "guided2"
-        ],
-        "relationship_constraint": [
-            "app/mentor"
-        ]
-    },
-    {
-        "id": "gen_former_rogue_apprentices_to_apprentices",
-        "thoughts": [
-            "Boasts to the other apprentices about how {PRONOUN/m_c/subject} didn't need anyone before",
-            "Offers to show r_c the ways of a rogue",
-            "Doesn't understand why r_c brings {PRONOUN/r_c/poss} prey to the older cats before eating",
-            "Finds it hard to befriend {PRONOUN/m_c/poss} new denmates",
-            "Slightly embellishes a story about {PRONOUN/m_c/poss} rogue days to other apprentices",
-            "Is ignoring the gossip about {PRONOUN/m_c/poss} past"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "main_backstory_constraint": [
-            "rogue1",
-            "rogue2",
-            "rogue3",
-            "refugee4",
-            "tragedy_survivor2",
-            "guided2"
-        ],
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
         "id": "adventurous_apprentices",
         "thoughts": [
             "Is trying to recruit other apprentices for a quick adventure",
@@ -3769,6 +3584,191 @@
         ],
         "main_trait_constraint": [
             "wise"
+        ]
+    },
+    {
+        "id": "apprentices_to_dead_elder",
+        "thoughts": [
+            "Is wishing r_c was still here to tell {PRONOUN/m_c/object} stories",
+            "Went to change r_c's bedding and hear a story only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
+            "Is missing r_c's stories...",
+            "Is wondering who helps r_c with {PRONOUN/r_c/poss} ticks in StarClan"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "apprentices_to_dead_leadership",
+        "thoughts": [
+            "Is wondering if r_c approves of {PRONOUN/m_c/object} from StarClan",
+            "Is wishing r_c were still here to guide {PRONOUN/m_c/object}"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_status_constraint": [
+            "leader",
+            "deputy"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "apprentices_to_dead_med_cats",
+        "thoughts": [
+            "Remembers how r_c healed {PRONOUN/m_c/object}",
+            "Hopes r_c is enjoying looking through StarClan's herb storage",
+            "Wishes {PRONOUN/m_c/subject} could be treated by r_c one last time..",
+            "Misses the way r_c treated {PRONOUN/m_c/poss} injuries",
+            "Is missing r_c's presence in the medicine cat den"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice"
+        ],
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "apprentices_to_dead_apprentices",
+        "thoughts": [
+            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "apprentice_to_dead_sc_kit",
+        "thoughts": [
+            "Wonders if one of the stars in the sky is r_c",
+            "Remembers fondly when r_c would beg to be taught a new fighting move",
+            "Goes to teach r_c a new move {PRONOUN/m_c/subject} learned, but remembers r_c is among the stars now",
+            "Misses r_c nagging {PRONOUN/m_c/object} about apprentice duties",
+            "Is tearing up after finding r_c's old moss ball",
+            "Hopes that somehow, someway, the kits in StarClan are learning the hunting crouch",
+            "Wonders if the kits get moss balls in StarClan",
+            "Hopes that the kits in StarClan get time to play games",
+            "Looks up at the night sky and wonders which stars are long-gone kits",
+            "Thought {PRONOUN/m_c/subject} saw a stray kit in front of the nursery, but it vanished",
+            "Walks into the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "gen_former_rogue_apprentices",
+        "thoughts": [
+            "Discovers that {PRONOUN/m_c/poss} self-taught method is less effective",
+            "Wonders what {PRONOUN/m_c/subject} even {VERB/m_c/need/needs} this training method for",
+            "Brags about all the prey {PRONOUN/m_c/subject} caught when {PRONOUN/m_c/subject} {VERB/m_c/were/was} a rogue",
+            "Can't help but be intrigued by the Warrior Code",
+            "Is trying to memorize the Warrior Code"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ]
+    },
+    {
+        "id": "gen_former_rogue_apprentices_to_mentor",
+        "thoughts": [
+            "Ditched {PRONOUN/m_c/poss} mentor to do to {PRONOUN/m_c/poss} own thing",
+            "Sneaks off to train on {PRONOUN/m_c/poss} own",
+            "Is rolling {PRONOUN/m_c/poss} eyes at {PRONOUN/m_c/poss} mentor's teachings"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "gen_former_rogue_apprentices_to_apprentices",
+        "thoughts": [
+            "Boasts to the other apprentices about how {PRONOUN/m_c/subject} didn't need anyone before",
+            "Offers to show r_c the ways of a rogue",
+            "Doesn't understand why r_c brings {PRONOUN/r_c/poss} prey to the older cats before eating",
+            "Finds it hard to befriend {PRONOUN/m_c/poss} new denmates",
+            "Slightly embellishes a story about {PRONOUN/m_c/poss} rogue days to other apprentices",
+            "Is ignoring the gossip about {PRONOUN/m_c/poss} past"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
