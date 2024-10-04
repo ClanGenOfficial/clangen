@@ -474,6 +474,15 @@
         ]
     },
     {
+        "id": "cold_warrior_apprentice",
+        "thoughts": [
+            "Doesn't react when {PRONOUN/m_c/poss} mentor praises {PRONOUN/m_c/object} for a good catch"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
         "id": "confident_warrior_apprentice",
         "thoughts": [
             "Is sure that {PRONOUN/m_c/subject}'ll be made into a warrior soon",
