@@ -3847,7 +3847,7 @@
     {
         "id": "scared_storm_gen",
         "thoughts": [
-            "Cowers in {PRONOUN/m_c/poss} nest during a particularky rough storm"
+            "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm"
         ],
         "main_trait_constraint": [
             "insecure",
