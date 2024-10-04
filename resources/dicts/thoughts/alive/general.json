@@ -573,6 +573,14 @@
         "main_trait_constraint": [
             "careful"
         ],
+        "main_status_constraint": [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
         "random_status_constraint": [
             "apprentice",
             "kitten"
