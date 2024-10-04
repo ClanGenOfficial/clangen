@@ -3817,7 +3817,7 @@
     {
         "id": "scared_storm_gen",
         "thoughts": [
-            "Cowers in {PRONOUN/m_c/poss} nest during an especially rough storm"
+            "Cowers in {PRONOUN/m_c/poss} nest during a particularky rough storm"
         ],
         "main_trait_constraint": [
             "insecure",
@@ -3835,7 +3835,7 @@
     {
         "id": "gen_newleaf",
         "thoughts": [
-            "Enjoying the warmth of newleaf",
+            "Enjoys the warmth of newleaf",
             "Is relieved leaf-bare is finally over",
             "Is soaking in the newleaf warmth",
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
@@ -3862,7 +3862,7 @@
     {
         "id": "gen_greenleaf",
         "thoughts": [
-            "Enjoying the warmth of greenleaf",
+            "Enjoys the warmth of greenleaf",
             "Is finding the buzzing of the cicadas annoying",
             "Can't sleep because of the bugs and the heat",
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}",
@@ -3878,7 +3878,7 @@
         "id": "gen_greenleaf_kit",
         "thoughts": [
             "Is whining about the heat",
-		    "Is buzzing after swallowing a cicada" 
+            "Is buzzing after swallowing a cicada" 
         ],
         "season": [
             "Greenleaf"
@@ -3890,7 +3890,7 @@
     {
         "id": "gen_leaffall",
         "thoughts": [
-            "Leapt into a pile of fallen leaves",
+            "Leaps into a pile of fallen leaves",
             "Is crushing leaves under {PRONOUN/m_c/poss} paws",
             "Is glad it's not so hot out anymore"
         ],
@@ -3903,7 +3903,7 @@
         "thoughts": [
             "Is worried about the lack of prey leaf-bare will bring",
             "Is cleaning the clearing of fallen leaves",
-            "Caught extra prey for leaf-bare",
+            "Is catching extra prey for leaf-bare",
             "Is not looking forward to the sparse hunting in leaf-bare"
         ],
         "season": [
@@ -3919,7 +3919,7 @@
     {
         "id": "gen_leafbare",
         "thoughts": [
-            "Sneezed when a snowflake landed on {PRONOUN/m_c/poss} nose",
+            "Sneezes when a snowflake landed on {PRONOUN/m_c/poss} nose",
             "Took a nap in the clearing and woke up under a blanket of snow",
             "Can't wait for newleaf",
             "Can't stand this cold",
@@ -3936,7 +3936,7 @@
         "id": "gen_leafbare_kit",
         "thoughts": [
             "Is whining about the cold",
-            "Is whining about catching frostbite despite having just stepped outside"
+            "Is whining about having caught frostbite, despite having just stepped outside"
         ],
         "season": [
             "Leaf-bare"
@@ -4150,7 +4150,7 @@
         "thoughts": [
             "Tells the kits tall tales about how {PRONOUN/m_c/subject} became half-blind",
             "Trips over r_c!",
-            "Laughs at a kit who offered {PRONOUN/m_c/object} help to find {PRONOUN/m_c/poss} lost eye"
+            "Laughs at a kit who offered to help {PRONOUN/m_c/object} find {PRONOUN/m_c/poss} lost eye"
         ],
         "perm_conditions": {
             "m_c": [
@@ -4167,11 +4167,10 @@
     {
         "id": "one_bad_eye_adolescent_to_alive_gen",
         "thoughts": [
-            "Boasts that {PRONOUN/m_c/subject} can take on a fox with {PRONOUN/m_c/poss} good eye closed",
+            "Boasts that {PRONOUN/m_c/subject} could take on a fox with {PRONOUN/m_c/poss} good eye closed",
             "Wonders if {PRONOUN/m_c/poss} pelt looks messy on {PRONOUN/m_c/poss} bad side",
             "Jokingly told r_c {PRONOUN/m_c/subject} can see further with one eye",
-            "Looks at {PRONOUN/m_c/poss} bad side in a puddle",
-            "Is frustrated having to train with such a big blind spot"
+            "Looks at {PRONOUN/m_c/poss} bad side in a puddle"
         ],
         "perm_conditions": {
             "m_c": [
@@ -4180,6 +4179,25 @@
         },
         "main_age_constraint": [
             "adolescent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "one_bad_eye_apprentice_to_alive_gen",
+        "thoughts": [
+            "Is frustrated having to train with such a big blind spot"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "random_living_status": [
             "living"
@@ -4401,7 +4419,7 @@
         "thoughts": [
             "Is frustrated by everyone's concern for {PRONOUN/m_c/poss} health",
             "Hopes to live to see {PRONOUN/m_c/poss} naming ceremony",
-            "Daydreams of having a mate and kits knowing it's unlikely...",
+            "Daydreams of having a mate and kits, even knowing it's unlikely...",
             "Daydreams about someday being leader"
         ],
         "perm_conditions": {
@@ -4523,7 +4541,8 @@
             "Ignores {PRONOUN/m_c/poss} Clanmates' attempts to comfort {PRONOUN/m_c/object}",
             "Is twitching in {PRONOUN/m_c/poss} sleep",
             "Stares at the fresh-kill in front of {PRONOUN/m_c/object} without eating",
-            "Wonders why StarClan is punishing {PRONOUN/m_c/object}"
+            "Wonders why StarClan is punishing {PRONOUN/m_c/object}",
+            "Struggles to voice how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}"
         ],
         "perm_conditions": {
             "m_c": [
@@ -4535,8 +4554,7 @@
         "id": "lasting_grief_gen_to_alive_gen",
         "thoughts": [
             "Worries about losing r_c too",
-            "Puts on a smile for r_c",
-            "Struggles to voice how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}"
+            "Puts on a smile for r_c"
         ],
         "perm_conditions": {
             "m_c": [
