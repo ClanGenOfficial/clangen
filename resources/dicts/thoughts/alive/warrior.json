@@ -252,7 +252,7 @@
             "Batted at a snake on a patrol recently and fled",
             "Is walking along the edge of a very tall cliff",
             "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!",
-            "Challenges a Clanmate to a friendly spar",
+            "Challenges a Clanmate to a friendly spar"
         ],
         "main_trait_constraint": [
             "daring"
@@ -288,7 +288,7 @@
     {
         "id": "fierce_warrior_to_living_medcat",
         "thoughts": [
-            "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle",
+            "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -382,7 +382,7 @@
         "id": "strict_warrior",
         "thoughts": [
             "Is conducting a rather rigorous training session for the younger warriors",
-            "Takes pride in how well-run {PRONOUN/m_c/poss} patrols always are",
+            "Takes pride in how well-run {PRONOUN/m_c/poss} patrols always are"
         ],
         "main_trait_constraint": [
             "strict"
