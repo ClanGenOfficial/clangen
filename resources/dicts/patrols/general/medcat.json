@@ -23,6 +23,7 @@
                 "text": "The sunlight feels great and the cats have a successful discussion, talking about what came up at the last half-moon meetings and whether it'll affect c_n.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_med_sunny",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -38,6 +39,7 @@
                 "text": "The sunlight feels great and the cats have a lovely discussion, talking about what herbs need to be gathered and the best locations to gather them.",
                 "exp": 20,
                 "weight": 10,
+                "art": "gen_med_sunny",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -68,6 +70,7 @@
                 "text": "s_c makes sure everyone gets a good basking spot as the cats pause for a little break before resuming their herb-gathering.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_med_sunny",
                 "stat_trait": [
                     "compassionate",
                     "faithful",
@@ -133,6 +136,7 @@
                 "text": "s_c makes sure everyone gets a good basking spot as the cats pause for a little break before resuming their herb-gathering.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_med_sunny",
                 "stat_trait": [
                     "compassionate",
                     "faithful",
@@ -183,6 +187,7 @@
                 "text": "The patrol doesn't get much done because of that.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_med_sunny",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -209,7 +214,7 @@
                 ]
             },
             {
-                "text": "s_c wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c/poss} {VERB/r_c/movement/movements}, making the patrol return to camp with no herbs and grumpy.",
+                "text": "s_c wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c/poss} {VERB/r_c/movement/movements}, making the patrol return to camp grumpy and with no herbs.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait":[
@@ -313,6 +318,7 @@
                 "text": "The sunlight feels great, however r_c presses on, wanting to be able to take care of {PRONOUN/r_c/poss} Clanmates.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_med_gatheringcatmint_greenleaf1",
                 "stat_trait":[
                     "compassionate",
                     "thoughtful",
@@ -707,6 +713,7 @@
                 "text": "Somehow, cobweb-gathering brings p_l to an almost-meditative state. Not only {VERB/p_l/are/is} {PRONOUN/p_l/subject} fairly confident of {PRONOUN/p_l/poss} next steps, having been given this vision, but {PRONOUN/p_l/subject} also {VERB/p_l/bring/brings} back a good haul to the medicine den stocks.",
                 "exp": 20,
                 "weight": 5,
+                "art": "gen_med_cat_cobwebs_success",
                 "herbs": ["cobwebs"]
             },
             {
@@ -751,18 +758,21 @@
             { 
                 "text": "Despite p_l's attempts, the vision containing glimpses of clair_list/p_l remains cryptic and elusive... just like the cobwebs.",
                 "exp": 0, 
-                "weight": 20
+                "weight": 20,
+                "art": "gen_med_cat_cobwebs_fail"
             },
             { 
                 "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher what clair_list/p_l could mean. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive. At least {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} collected cobwebs.",
                 "exp": 0, 
                 "weight": 15,
+                "art": "gen_med_cat_cobwebs_success",
                 "herbs": ["cobwebs"]
             },
             { 
                 "text": "p_l decides it was just a dream, ignoring the signs from StarClan as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} cobwebs.", 
                 "exp": 0, 
                 "weight": 15,
+                "art": "gen_med_cat_cobwebs_success",
                 "herbs": ["cobwebs"]
             },
             { 
@@ -870,6 +880,7 @@
                 "text": "s_c listens intently as app1 describes the dream, involving glimpses of clair_list/app1, and tells app1 that {PRONOUN/s_c/subject} {VERB/s_c/have/has} seen the dream, too. s_c soothes the apprentice, explaining that this dream was nothing but a mild warning.",
                 "exp": 20,
                 "weight": 20,
+                "art":"gen_train_talkingMA",
                 "herbs": ["random_herbs"],
                 "stat_skill": ["DREAM,1", "STAR,2"],
                 "relationships": [
@@ -1201,36 +1212,42 @@
                 "text": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change.",
                 "exp": 0,
                 "weight": 20,
+                "art": "med_cat_looking_up",
                 "stat_trait": ["bloodthirsty", "vengeful", "sneaky", "cold", "arrogant"]
             },
             {
                 "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. p_l let out a small sigh, gaze turning upwards, did StarClan not want to speak with {PRONOUN/p_l/object}?",
                 "exp": 0,
-                "weight": 10
+                "weight": 10,
+                "art": "med_cat_looking_up"
             }
         ],
         "antag_fail_outcomes": [
             {
                 "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/r_c/object} to camp to help with an emergency.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "art": "gen_angry_cat_med"
             },
             {
                 "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disaproval, but vanishes.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "art": "gen_angry_cat_med"
             }
         ],
         "antag_success_outcomes": [
             {
                 "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "art": "gen_angry_cat_med"
             },
             {
                 "text": "r_c hisses at the unknown cat, fur bristling. The ghost vanishes, leaving r_c alone... for now.",
                 "exp": 30,
-                "weight": 20
+                "weight": 20,
+                "art": "gen_angry_cat_med"
             }    
         ]
     },
@@ -1318,6 +1335,7 @@
                 "text": "p_l turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/p_l/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/p_l/object}, and things must change.",
                 "exp": 0,
                 "weight": 20,
+                "art": "med_cat_looking_up",
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["bloodthirsty", "vengeful", "sneaky"],
                 "relationships": [
@@ -1529,6 +1547,7 @@
                 "text": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_cat_looking_up1",
                 "stat_trait": ["bloodthirsty", "vengeful", "sneaky"],
                 "can_have_stat": ["adult"],
                 "relationships": [
@@ -1825,6 +1844,7 @@
                 "text": "app1 dramatically flops over into a sunbeam, proclaiming that {PRONOUN/app1/subject} {VERB/app1/need/needs} to get some sunshine before hunting for herbs. app2 purrs and flops beside {PRONOUN/app1/object}, while app3 rolls {PRONOUN/app3/poss} eyes and loafs nearby. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_train_sunny4",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -1840,7 +1860,7 @@
                 "text": "app1 is the first to find some herbs, and smugly waves them in the faces of the other apprentices. After that it's a bit of a competition, with each cat trying to out-do the others. It's great for the Clan - in the end, as they come back to camp with a sizeable haul!",
                 "exp": 20,
                 "weight": 5,
-                "art": "running_two_apps",
+                "art": "gen_herbs_all_apps",
                 "herbs": ["many_herbs", "random_herbs"],
                 "relationships": [
                     {
@@ -1969,6 +1989,7 @@
                 "text": "p_l and app2 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} feel secluded at times, watching app2 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_app_siblings",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -1984,6 +2005,7 @@
                 "text": "p_l and app2 race through the territory together, hearts alight with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
                 "exp": 20,
                 "weight": 5,
+                "art": "running_two_apps",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -1999,6 +2021,7 @@
                 "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each other's pelts and purr, soaking in the moment and their love for each other before continuing on, promising to spend more time together. ",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_app_siblings",
                 "stat_trait": ["loving"],
                 "herbs": ["random_herbs"],
                 "relationships": [
@@ -2017,6 +2040,7 @@
                 "text": "p_l and app2 are far too distracted playing and catching up with one another, getting nothing useful done.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_app_siblings",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2031,6 +2055,7 @@
                 "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. app2 tries to comfort {PRONOUN/s_c/object}, but s_c shakes {PRONOUN/s_c/poss} head, knowing that no matter what {PRONOUN/app2/subject} {VERB/app2/say/says}, their roles are just too different. Both cats are too upset to gather herbs.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "stat_trait": ["lonesome", "insecure"],
                 "relationships": [
                     {
@@ -2760,6 +2785,7 @@
                 "text": "Try as they might, neither p_l nor app2 find any herbs. Frustrated, they start bickering about whose fault it is all the way back to camp.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_train_argueAA",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2940,6 +2966,7 @@
                 "text": "Fine. c_n does need more catmint. When they come across the bush, sheltered and thriving, p_l watches r_c carefully take the stalks off the leaves. p_l only needs the leaves, so {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} mind watching r_c getting silly with the stalks. It's even a little thrilling to be invited to join {PRONOUN/r_c/object}.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_med_romanticstroll_v1",
                 "herbs": ["many_herbs", "catmint"],
                 "relationships": [
                     {
@@ -3292,6 +3319,7 @@
                 "text": "Feigning tiredness, r_c is able to convince p_l to take a break. While relaxing, r_c makes sure to tell p_l how great {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is} and how the whole Clan owes {PRONOUN/p_l/object} so much. p_l's fur goes warm at the praise, and {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} the rest of the patrol unable to look r_c in the eye without feeling all fluttery.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_med_romanticstroll_v1",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3324,6 +3352,7 @@
                 "text": "s_c asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been. By the time the two cats return to camp, p_l feels as though a huge weight has been lifted off {PRONOUN/p_l/poss} shoulders, all thanks to s_c.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_med_romanticstroll_v1",
                 "stat_trait": [
                     "compassionate",
                     "loving",
@@ -3396,6 +3425,7 @@
                 "text": "Feigning tiredness, r_c is able to convince p_l to take a break. While relaxing, r_c makes sure to tell p_l how great {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} p_l is and how happy it makes {PRONOUN/r_c/object} to work with {PRONOUN/p_l/object} every day. p_l's fur goes warm at the praise, and {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} the rest of the patrol unable to look r_c in the eye without feeling all fluttery.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_romanticstroll_med",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3428,6 +3458,7 @@
                 "text": "s_c asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been. By the time the two cats return to camp, p_l feels as though a huge weight has been lifted off {PRONOUN/p_l/poss} shoulders, all thanks to s_c.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_romanticstroll_med",
                 "stat_trait": [
                     "compassionate",
                     "loving",
@@ -3502,6 +3533,7 @@
                 "text": "Feigning tiredness, p_l is able to convince r_c to take a break. While relaxing, p_l makes sure to tell r_c how great {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c is and how happy r_c's company makes {PRONOUN/p_l/object}. r_c's fur goes warm at the praise, and {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} the rest of the patrol unable to look p_l in the eye without feeling all fluttery.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_med_romanticstroll_v1",
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3534,6 +3566,7 @@
                 "text": "s_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been. By the time the two cats return to camp, r_c feels as though a huge weight has been lifted off {PRONOUN/r_c/poss} shoulders, all thanks to s_c.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_med_romanticstroll_v1",
                 "stat_trait": [
                     "compassionate",
                     "loving",
@@ -3585,15 +3618,24 @@
         },
         "weight": 20,
         "intro_text": "While out collecting herbs, p_l notices how quiet and dejected app1 is acting. After p_l asks {PRONOUN/app1/object} what's wrong, app1 admits {PRONOUN/app1/subject} {VERB/app1/do/does}n't feel cut out to be a medicine cat.",
-	"decline_text": "Unsure of what to say, p_l continues the herb patrol as usual, leaving app1 to {PRONOUN/app1/poss} sour mood.",
+	    "decline_text": "Unsure of what to say, p_l continues the herb patrol as usual, leaving app1 to {PRONOUN/app1/poss} sour mood.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
                 "text": "Smiling softly, s_c reassures app1 that {PRONOUN/s_c/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/s_c/subject} {VERB/s_c/were/was} an apprentice. s_c tells app1 a story from {PRONOUN/s_c/poss} own apprenticeship, when {PRONOUN/s_c/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/s_c/poss} mentor unhappy when all their patients started throwing up! Before long, app1 is laughing at s_c's own mishaps, {PRONOUN/app1/poss} own troubles forgotten.",
                 "exp": 20,
                 "weight": 20,
-		"stat_trait": ["childish", "bold", "oblivious", "playful", "shameless", "troublesome", "adventurous", "rebellious"],
-		"can_have_stat": ["p_l"],
+		        "stat_trait": [
+                "childish",
+                "bold", 
+                "oblivious", 
+                "playful", 
+                "shameless", 
+                "troublesome", 
+                "adventurous", 
+                "rebellious"
+            ],
+		        "can_have_stat": ["p_l"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3616,8 +3658,21 @@
                 "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remembers/remember} that c_n trust {PRONOUN/s_c/object} to heal them, and so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
                 "exp": 20,
                 "weight": 20,
-		"stat_trait": ["compassionate", "loving", "insecure", "nervous", "sincere", "careful", "wise", "calm", "thoughtful", "faithful", "righteous", "responsible"],
-		"can_have_stat": ["p_l"],
+		        "stat_trait": [
+                "compassionate", 
+                "loving", 
+                "insecure", 
+                "nervous", 
+                "sincere", 
+                "careful", 
+                "wise", 
+                "calm", 
+                "thoughtful", 
+                "faithful", 
+                "righteous", 
+                "responsible"
+            ],
+		        "can_have_stat": ["p_l"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3787,18 +3842,33 @@
             "normal adult": [1, 1],
             "medicine cat": [1, 1]
         },
-	"relationship_constraint": ["child/parent"],
+	    "relationship_constraint": ["child/parent"],
         "weight": 40,
         "intro_text": "It's a rare occasion when r_c gets to actually patrol with {PRONOUN/r_c/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like forever since they were alone together.",
-	"decline_text": "Noticing storm clouds above, p_l decides to head back to camp before it starts raining. Their catch-up would have to wait.",
+	    "decline_text": "Noticing storm clouds above, p_l decides to head back to camp before it starts raining. Their catch-up would have to wait.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
                 "text": "Noticing a mullein patch, p_l begins to excitedly explain how useful a find it was, before pausing - s_c has no idea what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} talking about, {VERB/s_c/do/does} {PRONOUN/s_c/subject}? s_c admits that, no, not entirely, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} more than happy for p_l to explain it to {PRONOUN/s_c/object}! By the end of the patrol, not only is s_c a mullein-master, but {PRONOUN/s_c/object} and p_l's bond is renewed.",
                 "exp": 20,
                 "weight": 20,
-		"stat_trait": ["calm", "charismatic", "compassionate", "faithful", "insecure", "loving", "loyal", "nervous", "responsible", "righteous", "sincere", "thoughtful", "wise", "careful"],
-		"can_have_stat": ["r_c"],
+		        "stat_trait": [
+                "calm", 
+                "charismatic", 
+                "compassionate", 
+                "faithful", 
+                "insecure", 
+                "loving", 
+                "loyal", 
+                "nervous", 
+                "responsible", 
+                "righteous", 
+                "sincere", 
+                "thoughtful", 
+                "wise", 
+                "careful"
+            ],
+		        "can_have_stat": ["r_c"],
                 "herbs": ["mullein"],
                 "relationships": [
                     {
@@ -3822,8 +3892,8 @@
                 "text": "s_c purrs, brushing {PRONOUN/s_c/poss} pelt against p_l's - s_c may not be the most talkative cat, but {PRONOUN/s_c/subject} {VERB/s_c/want/wants} p_l to know that {PRONOUN/s_c/subject} {VERB/s_c/appreciate/appreciates} p_l's presence. p_l purrs back, draping {PRONOUN/p_l/poss} tail across {PRONOUN/p_l/poss} parent's shoulders and continuing the patrol in a comfortable silence.",
                 "exp": 20,
                 "weight": 20,
-		"stat_trait": ["calm", "gloomy", "grumpy", "strange", "lonesome"],
-		"can_have_stat": ["r_c"],
+		        "stat_trait": ["calm", "gloomy", "grumpy", "strange", "lonesome"],
+		        "can_have_stat": ["r_c"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
