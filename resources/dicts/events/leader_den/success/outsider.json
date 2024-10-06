@@ -356,7 +356,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n finds m_c lounging on {PRONOUN/m_c/poss} Twolegs' fence. The c_n patrol descends on {PRONOUN/m_c/object}, teeth bared and claws unsheathed. m_c yowls for help from {PRONOUN/m_c/poss} housefolk, but {PRONOUN/m_c/subject}{VERB/'re/'s} no match for warrior training.",
+    "event_text": "c_n finds m_c lounging on {PRONOUN/m_c/poss} Twolegs' fence. The c_n patrol descends on {PRONOUN/m_c/object}, teeth bared and claws unsheathed. m_c yowls for help from {PRONOUN/m_c/poss} housefolk, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} no match for warrior training.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
