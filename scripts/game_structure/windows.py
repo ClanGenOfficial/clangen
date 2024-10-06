@@ -2220,7 +2220,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
-            "Do you want to keep these changes? Display changes will be reverted in {self.countdown_time} seconds.",
+            "Do you want to keep these changes? Display changes will be reverted in 10 seconds.",
             text_block_rect,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
@@ -2233,12 +2233,6 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
         )
         self.text_block.rebuild_from_changed_theme_data()
-
-        # Inside your update loop, decrement the countdown and update the text
-if self.countdown_time > 0:
-    self.countdown_time -= 1
-    self.text_block.set_text(
-        f"Do you want to keep these changes? Display changes will be reverted in {self.countdown_time} seconds."
     
     
         # make a timeout that will call in 10 seconds - if this window isn't closed,
