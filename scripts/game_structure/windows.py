@@ -1889,7 +1889,7 @@ class EventLoading(UIWindow):
         """Loops over the event frames and displays the animation"""
         i = 0
         while not self.end_animation:
-            i = (i + 1) % (len(self.frames) + 1)
+            i = (i + 1) % (len(self.frames))
 
             self.animated_image.set_image(self.frames[i])
             time.sleep(0.125)
