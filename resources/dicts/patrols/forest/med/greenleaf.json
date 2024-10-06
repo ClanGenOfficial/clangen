@@ -178,36 +178,27 @@
                 ]
             },
             {
-                "text": "s_c hears p_l chuckling, and can't help but lash {PRONOUN/s_c/poss} tail. Why is p_l laughing at {PRONOUN/s_c/object} when {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just trying to help get the herbs?",
+                "text": "r_c hears p_l chuckling, and can't help but lash {PRONOUN/r_c/poss} tail. Why is p_l laughing at {PRONOUN/r_c/object} when {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} just trying to help get the herbs?",
                 "exp": 0,
                 "weight": 20,
-                "can_have_stat":["not_pl"],
-                "stat_trait": [
-                    "nervous",
-                    "insecure",
-                    "gloomy",
-                    "childish",
-                    "grumpy",
-                    "arrogant"
-                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["platonic", "comfort"],
                         "amount": -5
                     },
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["trust"],
                         "amount": -10
                     },
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["dislike"],
                         "amount": 5
@@ -7037,3 +7028,4 @@
         ]
     }
 ]
+
