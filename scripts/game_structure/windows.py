@@ -2233,8 +2233,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
         )
         self.text_block.rebuild_from_changed_theme_data()
-    
-    
+     
         # make a timeout that will call in 10 seconds - if this window isn't closed,
         # it'll be used to revert the change
         pygame.time.set_timer(pygame.USEREVENT + 10, 10000, loops=1)
