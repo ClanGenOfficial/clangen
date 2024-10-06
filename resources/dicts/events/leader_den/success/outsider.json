@@ -390,30 +390,6 @@
     }
   },
   {
-    "interaction_type": "drive",
-    "event_text": "When c_n finds m_c, {PRONOUN/m_c/poss} fur bushes up and eyes widen at the sight of so many cats. It doesn't take much to drive {PRONOUN/m_c/object} out; {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} tail and {VERB/m_c/flee/flees}.",
-    "reputation": ["any"],
-    "rep_change": -10,
-    "m_c": {
-      "status": ["loner"],
-      "skill": [  ],
-      "new_thought": "Wonders how {PRONOUN/m_c/subject} wronged those cats",
-      "kit_thought": "Wonders where m_c has gone"
-    }
-  },
-  {
-    "interaction_type": "drive",
-    "event_text": "When c_n finds m_c, {PRONOUN/m_c/poss} fur bushes up and eyes widen at the sight of so many cats. It doesn't take much to drive {PRONOUN/m_c/object} out; {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} tail and {VERB/m_c/flee/flees}.",
-    "reputation": ["any"],
-    "rep_change": -5,
-    "m_c": {
-      "status": ["loner"],
-      "skill": [  ],
-      "new_thought": "Wonders how {PRONOUN/m_c/subject} wronged those cats",
-      "kit_thought": "Wonders where m_c has gone"
-    }
-  },
-  {
     "interaction_type": "hunt",
     "event_text": "c_n is prepared for a fight when they find m_c. Still, m_c knows the odds are not in {PRONOUN/m_c/poss} favor and flees - just not fast enough.",
     "reputation": ["any"],
