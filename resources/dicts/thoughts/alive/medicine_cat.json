@@ -1,5 +1,42 @@
 [
     {
+        "id": "med_cat_gen",
+        "thoughts": [
+            "Is looking for herbs",
+            "Is organizing the herb stores",
+            "Is drying some herbs",
+            "Is interpreting an omen",
+            "Is interpreting a prophecy",
+            "Hopes for a message from StarClan soon",
+            "Is feeling stressed taking care of the Clan",
+            "Is tending some growing herbs",
+            "Is making new nests",
+            "Wishes {PRONOUN/m_c/subject} had an extra set of paws",
+            "Is reciting the names of herbs aloud",
+            "Was startled awake in the wee hours by a vivid dream",
+            "Is running low on mouse bile",
+            "Plans to go out gathering herbs today",
+            "Is looking forward to the half-moon meeting",
+            "Is struggling to remember all of the names of herbs",
+            "Made a mess of the herbs and is panicking",
+            "Has been hearing the voices of StarClan cats...",
+            "Has the foul taste of bitter herbs in {PRONOUN/m_c/poss} mouth",
+            "Wonders if {PRONOUN/m_c/subject} could borrow some catmint from the other Clans",
+            "Is happy that {PRONOUN/m_c/subject} chose life as a medicine cat",
+            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates"
+        ]
+    },
+    {
+        "id": "med_cat_alive_young",
+        "thoughts": [
+            "Is thinking about taking on a new apprentice"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "kitten"
+        ]
+    },
+    {
         "id": "adventurous_medicine_cat",
         "thoughts": [
             "Heads out of Clan territory to look for new herbs",
@@ -463,43 +500,6 @@
         ],
         "random_living_status": [
             "darkforest"
-        ]
-    },
-    {
-        "id": "med_cat_gen",
-        "thoughts": [
-            "Is looking for herbs",
-            "Is organizing the herb stores",
-            "Is drying some herbs",
-            "Is interpreting an omen",
-            "Is interpreting a prophecy",
-            "Hopes for a message from StarClan soon",
-            "Is feeling stressed taking care of the Clan",
-            "Is tending some growing herbs",
-            "Is making new nests",
-            "Wishes {PRONOUN/m_c/subject} had an extra set of paws",
-            "Is reciting the names of herbs aloud",
-            "Was startled awake in the wee hours by a vivid dream",
-            "Is running low on mouse bile",
-            "Plans to go out gathering herbs today",
-            "Is looking forward to the half-moon meeting",
-            "Is struggling to remember all of the names of herbs",
-            "Made a mess of the herbs and is panicking",
-            "Has been hearing the voices of StarClan cats...",
-            "Has the foul taste of bitter herbs in {PRONOUN/m_c/poss} mouth",
-            "Wonders if {PRONOUN/m_c/subject} could borrow some catmint from the other Clans",
-            "Is happy that {PRONOUN/m_c/subject} chose life as a medicine cat",
-            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates"
-        ]
-    },
-    {
-        "id": "med_cat_alive_apprentice",
-        "thoughts": [
-            "Is thinking about taking on a new apprentice"
-        ],
-        "random_status_constraint": [
-            "apprentice",
-            "kitten"
         ]
     }     
 ]
