@@ -1,17 +1,5 @@
 [
     {
-        "id": "deputy_dead_deputy",
-        "thoughts": [
-            "Wishes {PRONOUN/m_c/subject} could speak to r_c to learn how to assign patrols better"
-        ],
-        "random_status_constraint": [
-            "deputy"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
         "id": "gen_deputy",
         "thoughts": [
             "Is assigning cats to a border patrol",
@@ -60,24 +48,6 @@
         ],
         "main_trait_constraint": [
             "ambitious"
-        ]
-    },
-    {
-      "id": "ambitious_teacher_deputy_to_leader",
-        "thoughts": [
-            "Is planning a new training curriculum to impress the leader"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ],
-        "main_trait_constraint": [
-            "ambitious"
-        ],
-        "main_skill_constraint": [
-            "TEACHER,1"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -354,6 +324,36 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+      "id": "ambitious_teacher_deputy_to_leader",
+        "thoughts": [
+            "Is planning a new training curriculum to impress the leader"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "deputy_dead_deputy",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/subject} could speak to r_c to learn how to assign patrols better"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     }
 ]
