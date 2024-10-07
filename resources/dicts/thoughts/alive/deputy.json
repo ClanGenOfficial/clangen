@@ -51,6 +51,24 @@
         ]
     },
     {
+      "id": "ambitious_teacher_deputy_to_leader",
+        "thoughts": [
+            "Is planning a new training curriculum to impress the leader"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "bloodthirsty_deputy_to_gen",
         "thoughts": [
             "Is fantasizing about leading the Clan into a victorious battle",
@@ -321,24 +339,6 @@
         ],
         "random_status_constraint": [
             "apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-      "id": "ambitious_teacher_deputy_to_leader",
-        "thoughts": [
-            "Is planning a new training curriculum to impress the leader"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ],
-        "main_trait_constraint": [
-            "ambitious"
-        ],
-        "main_skill_constraint": [
-            "TEACHER,1"
         ],
         "random_living_status": [
             "living"
