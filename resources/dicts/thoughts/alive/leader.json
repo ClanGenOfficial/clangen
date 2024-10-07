@@ -1,22 +1,5 @@
 [
     {
-        "id": "leader_alive_kits",
-        "thoughts": [
-            "Has recently picked up the scent of mischievous kits in {PRONOUN/m_c/poss} den...",
-            "Is pondering the next mentors for the kits of the Clan",
-            "Thinks about who should mentor new apprentices",
-            "Bats a moss ball back to r_c when it hits {PRONOUN/m_c/object}, chuckling at the wide-eyed kit",
-            "Is looking over the kits, pleased the Clan is thriving",
-            "Is visiting the nursery to check on the kits, the future of the Clan"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
         "id": "gen_leader",
         "thoughts": [
             "Is hoping for a sign from StarClan",
@@ -41,6 +24,33 @@
             "Is proud of the way the Clan is handling things lately",
             "Promises to take care of the Clan with {PRONOUN/m_c/poss} lives",
             "Is busy planning out priorities for the day"
+        ]
+    },
+    {
+        "id": "leader_DF",
+        "thoughts": [
+            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/have/has} been hearing the voices of Dark Forest cats...",
+            "Is pondering recent dreams {PRONOUN/m_c/subject} {VERB/m_c/have/has} had... perhaps from the Dark Forest?"
+        ],
+        "random_living_status": [
+            "darkforest"
+        ]
+    },
+    {
+        "id": "leader_alive_kits",
+        "thoughts": [
+            "Has recently picked up the scent of mischievous kits in {PRONOUN/m_c/poss} den...",
+            "Is pondering the next mentors for the kits of the Clan",
+            "Thinks about who should mentor new apprentices",
+            "Bats a moss ball back to r_c when it hits {PRONOUN/m_c/object}, chuckling at the wide-eyed kit",
+            "Is looking over the kits, pleased the Clan is thriving",
+            "Is visiting the nursery to check on the kits, the future of the Clan"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -77,16 +87,6 @@
         ],
         "random_living_status": [
             "living"
-        ]
-    },
-    {
-        "id": "leader_DF",
-        "thoughts": [
-            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/have/has} been hearing the voices of Dark Forest cats...",
-            "Is pondering recent dreams {PRONOUN/m_c/subject} {VERB/m_c/have/has} had... perhaps from the Dark Forest?"
-        ],
-        "random_living_status": [
-            "darkforest"
         ]
     },
     {
@@ -204,16 +204,6 @@
         ],
         "main_trait_constraint": [
             "strange"
-        ]
-    },
-    {
-        "id": "charismatic_leader",
-        "thoughts": [
-            "Gives a particularly rousing speech at a Clan meeting",
-            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
-        ],
-        "main_trait_constraint": [
-            "charismatic"
         ]
     },
     {
