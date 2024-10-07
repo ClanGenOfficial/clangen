@@ -20,69 +20,6 @@
         ]
     },
     {
-        "id": "warrior_formerly_a_loner_alive_kits",
-        "thoughts": [
-            "Is telling the kits about {PRONOUN/m_c/poss} days as a loner",
-            "Is being begged by r_c to tell {PRONOUN/r_c/object} about what being a loner was like"
-        ],
-        "main_backstory_constraint": [
-            "loner1",
-            "loner2",
-            "refugee2",
-            "refugee5",
-            "tragedy_survivor4",
-            "guided3"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "warrior_formerly_a_rogue_alive_kits",
-        "thoughts": [
-            "Is telling the kits about {PRONOUN/m_c/poss} days as a rogue",
-            "Is being begged by r_c to tell {PRONOUN/r_c/object} more what being a rogue was like"
-        ],
-        "main_backstory_constraint": [
-            "rogue1",
-            "rogue2",
-            "rogue3",
-            "refugee4",
-            "tragedy_survivor2",
-            "guided2"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "warrior_parent_alive_kits",
-        "thoughts": [
-            "Excitedly plays games with r_c, letting {PRONOUN/r_c/object} win every time",
-            "Is woken up by r_c jumping on {PRONOUN/m_c/object}, begging for something",
-            "Grooms r_c clean and makes {PRONOUN/r_c/object} presentable",
-            "Carries r_c to the nursery because {PRONOUN/r_c/subject} fell asleep",
-            "Is scolding r_c for almost being reckless",
-            "Hopes {PRONOUN/m_c/poss} kits arent getting into too much trouble",
-            "Is in awe with how fast r_c is growing"
-        ],
-        "relationship_constraint": [
-            "parent/child"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
         "id": "warrior_gen_alive_apprentice",
         "thoughts": [
             "Has the apprentices very engaged in a very, very tall tale"
@@ -407,6 +344,69 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "warrior_parent_alive_kits",
+        "thoughts": [
+            "Excitedly plays games with r_c, letting {PRONOUN/r_c/object} win every time",
+            "Is woken up by r_c jumping on {PRONOUN/m_c/object}, begging for something",
+            "Grooms r_c clean and makes {PRONOUN/r_c/object} presentable",
+            "Carries r_c to the nursery because {PRONOUN/r_c/subject} fell asleep",
+            "Is scolding r_c for almost being reckless",
+            "Hopes {PRONOUN/m_c/poss} kits arent getting into too much trouble",
+            "Is in awe with how fast r_c is growing"
+        ],
+        "relationship_constraint": [
+            "parent/child"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "warrior_formerly_a_loner_alive_kits",
+        "thoughts": [
+            "Is telling the kits about {PRONOUN/m_c/poss} days as a loner",
+            "Is being begged by r_c to tell {PRONOUN/r_c/object} about what being a loner was like"
+        ],
+        "main_backstory_constraint": [
+            "loner1",
+            "loner2",
+            "refugee2",
+            "refugee5",
+            "tragedy_survivor4",
+            "guided3"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "warrior_formerly_a_rogue_alive_kits",
+        "thoughts": [
+            "Is telling the kits about {PRONOUN/m_c/poss} days as a rogue",
+            "Is being begged by r_c to tell {PRONOUN/r_c/object} more what being a rogue was like"
+        ],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ],
+        "random_status_constraint": [
+            "kitten"
         ],
         "random_living_status": [
             "living"
