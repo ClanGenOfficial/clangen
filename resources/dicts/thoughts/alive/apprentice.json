@@ -69,142 +69,6 @@
         ]
     },
     {
-        "id": "warrior_apprentice_to_alive_mentor",
-        "thoughts": [
-            "Is trying to perfect the latest move that r_c taught {PRONOUN/m_c/object}",
-            "Is asking r_c questions",
-            "Is grumbling after r_c woke {PRONOUN/m_c/object} up for the dawn patrol",
-            "Obediently follows r_c out of camp for today's lesson",
-            "Is doing {PRONOUN/m_c/poss} best to listen to r_c",
-            "Hopes to be just like r_c as a warrior",
-            "Admires r_c's knowledge and skills",
-            "Wants to learn everything that r_c knows",
-            "Wants to make r_c proud today",
-            "Appreciates r_c's words of wisdom",
-            "Listens to r_c's advice",
-            "Takes r_c's advice to heart",
-            "Keeps asking r_c difficult questions",
-            "Is annoyed at r_c for something minor",
-            "Asks to be taught a specific skill r_c is knowledgeable in",
-            "Tries to mimic {PRONOUN/m_c/poss} mentor, much to r_c's obvious endearment",
-            "Wonders if r_c is proud of {PRONOUN/m_c/object}",
-            "Is asking r_c to show {PRONOUN/m_c/object} how to do something again"
-
-        ],
-        "relationship_constraint": [
-            "app/mentor"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "warrior_apprentice_to_comforting_mentor",
-        "thoughts": [
-            "Feels comfortable talking with r_c",
-            "Knows {PRONOUN/m_c/subject} can always come to r_c if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any issues",
-            "Hopes that one day {PRONOUN/m_c/subject} will be as good as a mentor as r_c is",
-            "Seeks r_c out after a nightmare",
-            "Wants to be as kind as r_c is",
-            "Is asked what {PRONOUN/m_c/subject} would like to focus on today for training",
-            "Knows that r_c is there for {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it"
-        ],
-        "random_trait_constraint": [
-            "charismatic",
-            "compassionate",
-            "thoughtful",
-            "confident",
-            "calm",
-            "faithful",
-            "loving",
-            "responsible",
-            "wise",
-            "cunning",
-            "sincere"
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "relationship_constraint": [
-            "app/mentor"
-        ]
-    },
-    {
-        "id": "warrior_apprentice_to_harsher_mentor",
-        "thoughts": [
-            "Has difficulty following r_c's lessons",
-            "Knows that r_c's training will make {PRONOUN/m_c/object} a stronger warrior",
-            "Wishes r_c would let {PRONOUN/m_c/object} relax for a day",
-            "Feels awkward around {PRONOUN/m_c/poss} mentor"
-        ],
-        "random_trait_constraint": [
-            "troublesome",
-            "fierce",
-            "bloodthirsty",
-            "cold",
-            "strict",
-            "ambitious",
-            "vengeful",
-            "arrogant"
-
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "relationship_constraint": [
-            "app/mentor"
-        ]
-    },
-    {
-        "id": "warrior_apprentice_to_outgoing_mentor",
-        "thoughts": [
-            "Gets dragged out of {PRONOUN/m_c/poss} nest for an all-day, out-of-camp training session",
-            "Is wide-eyed at how r_c seems to know <i>everyone</i>",
-            "Finds r_c's energy contagious, and is excited to train today"
-        ],
-        "random_trait_constraint": [
-            "childish",
-            "playful",
-            "charismatic",
-            "bold",
-            "daring",
-            "adventurous",
-            "flamboyant",
-            "arrogant",
-            "competitive",
-            "oblivious"
-
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "relationship_constraint": [
-            "app/mentor"
-        ]
-    },
-    {
-        "id": "warrior_apprentice_to_withdrawn_mentor",
-        "thoughts": [
-            "Has to seek r_c out for training",
-            "Tries to start a conversation with r_c... it falls flat quickly",
-            "Accidentally startles {PRONOUN/m_c/poss} mentor",
-            "Realizes that r_c pushes {PRONOUN/r_c/self} out of {PRONOUN/r_c/poss} comfort zone to help {PRONOUN/m_c/object}"
-        ],
-        "random_trait_constraint": [
-            "gloomy",
-            "lonesome",
-            "nervous",
-            "insecure",
-            "grumpy"
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "relationship_constraint": [
-            "app/mentor"
-        ]
-    },
-    {
         "id": "warrior_apprentice_to_alive_apprentice",
         "thoughts": [
             "Is learning how to hunt with r_c",
@@ -281,39 +145,6 @@
         ],
         "random_living_status": [
             "living"
-        ]
-    },
-    {
-        "id": "warrior_apprentice_to_dead_warrior",
-        "thoughts": [
-            "Wishes {PRONOUN/m_c/subject} could learn from r_c",
-            "Wants to be a great warrior, just like r_c"
-        ],
-        "random_status_constraint": [
-            "warrior"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "formerly_rogue_warrior_apprentice",
-        "thoughts": [
-            "Got scolded for eating what {PRONOUN/m_c/subject} caught",
-            "Is having some trouble adjusting",
-            "Forgets the Warrior Code sometimes",
-            "Wants to prove to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a good warrior",
-            "Doesn't want to run into any rogues while on patrol",
-            "Doesn't miss being a rogue",
-            "Is happy to be training as a warrior instead of living as a rogue"
-        ],
-        "main_backstory_constraint": [
-            "rogue1",
-            "rogue2",
-            "rogue3",
-            "refugee4",
-            "tragedy_survivor2",
-            "guided2"
         ]
     },
     {
@@ -543,6 +374,212 @@
         ]
     },
     {
+        "id": "insecure_nervous_warrior_apprentice",
+        "thoughts": [
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
+            "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
+            "Is worried about being an apprentice forever",
+            "Is fighting back tears after missing a catch",
+            "Is afraid to lose in a real fight",
+            "Is avoiding everyone today",
+            "Believes {PRONOUN/m_c/subject} can do well today",
+            "Gives {PRONOUN/m_c/self} a stomachache by worrying so much",
+            "Is fretting about something so much that {PRONOUN/m_c/subject} {VERB/m_c/give/gives} {PRONOUN/m_c/self} a headache"
+        ],
+        "main_trait_constraint": [
+            "insecure",
+            "nervous"
+        ]
+    },
+    {
+        "id": "nervous_warrior_apprentice",
+        "thoughts": [
+            "Is scared to go on border patrol",
+            "Fled upon hearing the distant barking of a dog",
+            "Wonders if {PRONOUN/m_c/subject}'ll ever become a warrior",
+            "Jumps at {PRONOUN/m_c/poss} own shadow",
+            "Is nervous about something",
+            "Stumbled over {PRONOUN/m_c/poss} words when talking with r_c",
+            "Wishes that one day {PRONOUN/m_c/subject}'ll be brave enough to be the deputy, or even the leader...",
+            "Is scared around water after a nightmare",
+            "Is nervous about {PRONOUN/m_c/poss} upcoming assessment",
+            "Wishes to be like the warriors in the stories told to {PRONOUN/m_c/object} in the nursery"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "responsible_warrior_apprentice",
+        "thoughts": [
+            "Spent all morning practicing and mastering the hunting crouch",
+            "Makes sure that everyone else is fed before taking prey from the fresh-kill pile",
+            "Listens to {PRONOUN/m_c/poss} mentor's advice"
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ]
+    },
+    {
+        "id": "thoughtful_warrior_apprentice",
+        "thoughts": [
+            "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
+            "Wants to gather moss for the elders' den",
+            "Is making sure there's nothing around camp that needs to be done",
+            "Asks r_c if {PRONOUN/r_c/subject} need anything before going on patrol",
+            "Asks r_c if {PRONOUN/r_c/subject} need anything before going hunting",
+            "Is lost in thought",
+            "Always double checks everything",
+            "Wonders what {PRONOUN/m_c/subject} can do to help"
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_alive_mentor",
+        "thoughts": [
+            "Is trying to perfect the latest move that r_c taught {PRONOUN/m_c/object}",
+            "Is asking r_c questions",
+            "Is grumbling after r_c woke {PRONOUN/m_c/object} up for the dawn patrol",
+            "Obediently follows r_c out of camp for today's lesson",
+            "Is doing {PRONOUN/m_c/poss} best to listen to r_c",
+            "Hopes to be just like r_c as a warrior",
+            "Admires r_c's knowledge and skills",
+            "Wants to learn everything that r_c knows",
+            "Wants to make r_c proud today",
+            "Appreciates r_c's words of wisdom",
+            "Listens to r_c's advice",
+            "Takes r_c's advice to heart",
+            "Keeps asking r_c difficult questions",
+            "Is annoyed at r_c for something minor",
+            "Asks to be taught a specific skill r_c is knowledgeable in",
+            "Tries to mimic {PRONOUN/m_c/poss} mentor, much to r_c's obvious endearment",
+            "Wonders if r_c is proud of {PRONOUN/m_c/object}",
+            "Is asking r_c to show {PRONOUN/m_c/object} how to do something again"
+
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_comforting_mentor",
+        "thoughts": [
+            "Feels comfortable talking with r_c",
+            "Knows {PRONOUN/m_c/subject} can always come to r_c if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any issues",
+            "Hopes that one day {PRONOUN/m_c/subject} will be as good as a mentor as r_c is",
+            "Seeks r_c out after a nightmare",
+            "Wants to be as kind as r_c is",
+            "Is asked what {PRONOUN/m_c/subject} would like to focus on today for training",
+            "Knows that r_c is there for {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it"
+        ],
+        "random_trait_constraint": [
+            "charismatic",
+            "compassionate",
+            "thoughtful",
+            "confident",
+            "calm",
+            "faithful",
+            "loving",
+            "responsible",
+            "wise",
+            "cunning",
+            "sincere"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_harsher_mentor",
+        "thoughts": [
+            "Has difficulty following r_c's lessons",
+            "Knows that r_c's training will make {PRONOUN/m_c/object} a stronger warrior",
+            "Wishes r_c would let {PRONOUN/m_c/object} relax for a day",
+            "Feels awkward around {PRONOUN/m_c/poss} mentor"
+        ],
+        "random_trait_constraint": [
+            "troublesome",
+            "fierce",
+            "bloodthirsty",
+            "cold",
+            "strict",
+            "ambitious",
+            "vengeful",
+            "arrogant"
+
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_outgoing_mentor",
+        "thoughts": [
+            "Gets dragged out of {PRONOUN/m_c/poss} nest for an all-day, out-of-camp training session",
+            "Is wide-eyed at how r_c seems to know <i>everyone</i>",
+            "Finds r_c's energy contagious, and is excited to train today"
+        ],
+        "random_trait_constraint": [
+            "childish",
+            "playful",
+            "charismatic",
+            "bold",
+            "daring",
+            "adventurous",
+            "flamboyant",
+            "arrogant",
+            "competitive",
+            "oblivious"
+
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "warrior_apprentice_to_withdrawn_mentor",
+        "thoughts": [
+            "Has to seek r_c out for training",
+            "Tries to start a conversation with r_c... it falls flat quickly",
+            "Accidentally startles {PRONOUN/m_c/poss} mentor",
+            "Realizes that r_c pushes {PRONOUN/r_c/self} out of {PRONOUN/r_c/poss} comfort zone to help {PRONOUN/m_c/object}"
+        ],
+        "random_trait_constraint": [
+            "gloomy",
+            "lonesome",
+            "nervous",
+            "insecure",
+            "grumpy"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
         "id": "insecure_nervous_warrior_apprentice_to_mentor",
         "thoughts": [
             "Feels worried about going on patrol today",
@@ -700,73 +737,36 @@
         ]
     },
     {
-        "id": "insecure_nervous_warrior_apprentice",
+        "id": "formerly_rogue_warrior_apprentice",
         "thoughts": [
-            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
-            "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
-            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
-            "Is worried about being an apprentice forever",
-            "Is fighting back tears after missing a catch",
-            "Is afraid to lose in a real fight",
-            "Is avoiding everyone today",
-            "Believes {PRONOUN/m_c/subject} can do well today",
-            "Gives {PRONOUN/m_c/self} a stomachache by worrying so much",
-            "Is fretting about something so much that {PRONOUN/m_c/subject} {VERB/m_c/give/gives} {PRONOUN/m_c/self} a headache"
+            "Got scolded for eating what {PRONOUN/m_c/subject} caught",
+            "Is having some trouble adjusting",
+            "Forgets the Warrior Code sometimes",
+            "Wants to prove to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a good warrior",
+            "Doesn't want to run into any rogues while on patrol",
+            "Doesn't miss being a rogue",
+            "Is happy to be training as a warrior instead of living as a rogue"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
         ]
     },
     {
-        "id": "nervous_warrior_apprentice",
+        "id": "warrior_apprentice_to_dead_warrior",
         "thoughts": [
-            "Is scared to go on border patrol",
-            "Fled upon hearing the distant barking of a dog",
-            "Wonders if {PRONOUN/m_c/subject}'ll ever become a warrior",
-            "Jumps at {PRONOUN/m_c/poss} own shadow",
-            "Is nervous about something",
-            "Stumbled over {PRONOUN/m_c/poss} words when talking with r_c",
-            "Wishes that one day {PRONOUN/m_c/subject}'ll be brave enough to be the deputy, or even the leader...",
-            "Is scared around water after a nightmare",
-            "Is nervous about {PRONOUN/m_c/poss} upcoming assessment",
-            "Wishes to be like the warriors in the stories told to {PRONOUN/m_c/object} in the nursery"
+            "Wishes {PRONOUN/m_c/subject} could learn from r_c",
+            "Wants to be a great warrior, just like r_c"
         ],
-        "main_trait_constraint": [
-            "nervous"
+        "random_status_constraint": [
+            "warrior"
         ],
         "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "responsible_warrior_apprentice",
-        "thoughts": [
-            "Spent all morning practicing and mastering the hunting crouch",
-            "Makes sure that everyone else is fed before taking prey from the fresh-kill pile",
-            "Listens to {PRONOUN/m_c/poss} mentor's advice"
-        ],
-        "main_trait_constraint": [
-            "responsible"
-        ]
-    },
-    {
-        "id": "thoughtful_warrior_apprentice",
-        "thoughts": [
-            "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
-            "Wants to gather moss for the elders' den",
-            "Is making sure there's nothing around camp that needs to be done",
-            "Asks r_c if {PRONOUN/r_c/subject} need anything before going on patrol",
-            "Asks r_c if {PRONOUN/r_c/subject} need anything before going hunting",
-            "Is lost in thought",
-            "Always double checks everything",
-            "Wonders what {PRONOUN/m_c/subject} can do to help"
-        ],
-        "main_trait_constraint": [
-            "thoughtful"
-        ],
-        "random_living_status": [
-            "living"
+            "starclan"
         ]
     }
 ]
