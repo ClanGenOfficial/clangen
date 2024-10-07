@@ -75,18 +75,6 @@
         ]
     },
     {
-        "id": "kittypet_shameless_thoughts",
-        "thoughts":[
-            "Stole food the second {PRONOUN/m_c/poss} housefolk turned their head",
-            "Is sleeping in the dog's bed",
-            "Is inside a Twoleg den that's not {PRONOUN/m_c/inposs}",
-            "Is pretending to be a hungry loner to get more food"
-        ],
-        "main_trait_constraint":[
-            "shameless"
-        ]
-    },
-    {
         "id": "kittypet_kitten_and_adolescent_thoughts",
         "thoughts": [
             "Is currently trying to figure out how to catch a bird",
@@ -148,6 +136,18 @@
         ],
         "main_age_constraint": [
             "senior"
+        ]
+    },
+    {
+        "id": "kittypet_shameless_thoughts",
+        "thoughts":[
+            "Stole food the second {PRONOUN/m_c/poss} housefolk turned their head",
+            "Is sleeping in the dog's bed",
+            "Is inside a Twoleg den that's not {PRONOUN/m_c/inposs}",
+            "Is pretending to be a hungry loner to get more food"
+        ],
+        "main_trait_constraint":[
+            "shameless"
         ]
     }
 ]
