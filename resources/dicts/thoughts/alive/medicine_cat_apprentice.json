@@ -1,74 +1,5 @@
 [
     {
-        "id": "general_med_cat_app_to_dead_starclan_newborn1",
-        "thoughts": [
-            "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up",
-            "Can still smell the bitter herbs that {PRONOUN/m_c/subject} desperately fetched to try and save r_c's life",
-            "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but was wrong",
-            "Contemplates how short r_c's life was and how much {PRONOUN/r_c/subject} {VERB/m_c/are/is} missing",
-            "Is questioning if r_c would grow up in StarClan or stay a newborn",
-            "Prays that r_c is healthy and receives the strength {PRONOUN/r_c/subject} need to grow in StarClan",
-            "Is finally accepting {PRONOUN/m_c/subject} did all {PRONOUN/m_c/subject} could to save r_c",
-            "Is pondering which role r_c would have been",
-            "Ponders how StarClan would deal with r_c",
-            "Thought {PRONOUN/m_c/subject} encountered r_c while scavenging for herbs, but it was a trick of {PRONOUN/m_c/poss} mind",
-            "Is listening to the reason behind r_c's name with a fond smile",
-            "Wonders if newborn kits grow up to be adults or stay young forever in StarClan",
-            "Is asking StarClan why they take newborns to Silverpelt",
-            "Prays that all the newborn kits in StarClan get enough food to stay strong",
-            "Is contemplating StarClan and why they would allow newborns to pass",
-            "Is reflecting on r_c's pelt, and is sad {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/poss} eye color",
-            "Was startled to meet a newborn kit while dreaming and ponders what it meant",
-            "Was spooked when {PRONOUN/m_c/subject} was out collecting herbs and encountered a ghostly newborn, which disappeared when noticed",
-            "Is asking {PRONOUN/m_c/poss} mentor why StarClan allows newborns to join Silverpelt",
-            "Is vowing to never let another newborn join StarClan's ranks"
-        ],
-        "random_status_constraint": [
-            "newborn"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "plain_med_cat_app_to_dead_starclan_newborn",
-        "thoughts": [
-            "Is wondering if r_c was a part of the stars last night",
-            "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but it was just the wind",
-            "Is questioning who would provide for r_c in StarClan",
-            "Wonders if r_c would have played with the insects in the grass if {PRONOUN/r_c/subject} had time to grow up",
-            "Questions if r_c's spirit exists in the tall grass",
-            "Thought {PRONOUN/m_c/subject} saw r_c's spirit hanging around the nursery tunnel",
-            "Wonders if r_c gets to venture out of the tunnels in StarClan",
-            "Thought {PRONOUN/m_c/subject} saw r_c playing with the roots of the tree, but sadly shakes off the thought",
-            "Was surprised to find r_c's spot in the nursery warm, despite {PRONOUN/r_c/object} being with the stars now",
-            "Is pondering if r_c would stay in tunnels or go out an explore the territory in StarClan",
-            "Wonders if the newborns in StarClan will ever get to play and run across open fields",
-            "Prays to StarClan that the passed newborn kits get to feel the wind across their pelt"
-        ],
-        "biome": [
-            "Plains"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "med_cat_app_dead_app",
-        "thoughts": [
-            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend",
-            "Wonders if {PRONOUN/m_c/subject} would have swapped secrets with r_c"
-        ],
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
         "id": "med_cat_app_gen",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to become a medicine cat",
@@ -88,20 +19,6 @@
             "Is memorizing all the places catmint grows",
             "Wonders if StarClan will send {PRONOUN/m_c/object} a practice sign before a real one",
             "Is neatly stacking bundles of herbs after drying"
-        ]
-    },
-    {
-        "id": "med_cat_app_to_dead_SC_kit",
-        "thoughts": [
-            "Is wondering if r_c would have bothered {PRONOUN/m_c/object} while {PRONOUN/m_c/subject} {VERB/m_c/were/was} sorting herbs",
-            "Wonders if {PRONOUN/m_c/subject} would have had to treat r_c for kittencough",
-            "Wonders if r_c would have wanted to be a medicine cat too"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "starclan"
         ]
     },
     {
@@ -299,6 +216,89 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "med_cat_app_to_dead_SC_kit",
+        "thoughts": [
+            "Is wondering if r_c would have bothered {PRONOUN/m_c/object} while {PRONOUN/m_c/subject} {VERB/m_c/were/was} sorting herbs",
+            "Wonders if {PRONOUN/m_c/subject} would have had to treat r_c for kittencough",
+            "Wonders if r_c would have wanted to be a medicine cat too"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "general_med_cat_app_to_dead_starclan_newborn1",
+        "thoughts": [
+            "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up",
+            "Can still smell the bitter herbs that {PRONOUN/m_c/subject} desperately fetched to try and save r_c's life",
+            "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but was wrong",
+            "Contemplates how short r_c's life was and how much {PRONOUN/r_c/subject} {VERB/m_c/are/is} missing",
+            "Is questioning if r_c would grow up in StarClan or stay a newborn",
+            "Prays that r_c is healthy and receives the strength {PRONOUN/r_c/subject} need to grow in StarClan",
+            "Is finally accepting {PRONOUN/m_c/subject} did all {PRONOUN/m_c/subject} could to save r_c",
+            "Is pondering which role r_c would have been",
+            "Ponders how StarClan would deal with r_c",
+            "Thought {PRONOUN/m_c/subject} encountered r_c while scavenging for herbs, but it was a trick of {PRONOUN/m_c/poss} mind",
+            "Is listening to the reason behind r_c's name with a fond smile",
+            "Wonders if newborn kits grow up to be adults or stay young forever in StarClan",
+            "Is asking StarClan why they take newborns to Silverpelt",
+            "Prays that all the newborn kits in StarClan get enough food to stay strong",
+            "Is contemplating StarClan and why they would allow newborns to pass",
+            "Is reflecting on r_c's pelt, and is sad {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/poss} eye color",
+            "Was startled to meet a newborn kit while dreaming and ponders what it meant",
+            "Was spooked when {PRONOUN/m_c/subject} was out collecting herbs and encountered a ghostly newborn, which disappeared when noticed",
+            "Is asking {PRONOUN/m_c/poss} mentor why StarClan allows newborns to join Silverpelt",
+            "Is vowing to never let another newborn join StarClan's ranks"
+        ],
+        "random_status_constraint": [
+            "newborn"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "plain_med_cat_app_to_dead_starclan_newborn",
+        "thoughts": [
+            "Is wondering if r_c was a part of the stars last night",
+            "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but it was just the wind",
+            "Is questioning who would provide for r_c in StarClan",
+            "Wonders if r_c would have played with the insects in the grass if {PRONOUN/r_c/subject} had time to grow up",
+            "Questions if r_c's spirit exists in the tall grass",
+            "Thought {PRONOUN/m_c/subject} saw r_c's spirit hanging around the nursery tunnel",
+            "Wonders if r_c gets to venture out of the tunnels in StarClan",
+            "Thought {PRONOUN/m_c/subject} saw r_c playing with the roots of the tree, but sadly shakes off the thought",
+            "Was surprised to find r_c's spot in the nursery warm, despite {PRONOUN/r_c/object} being with the stars now",
+            "Is pondering if r_c would stay in tunnels or go out an explore the territory in StarClan",
+            "Wonders if the newborns in StarClan will ever get to play and run across open fields",
+            "Prays to StarClan that the passed newborn kits get to feel the wind across their pelt"
+        ],
+        "biome": [
+            "Plains"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "med_cat_app_dead_app",
+        "thoughts": [
+            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend",
+            "Wonders if {PRONOUN/m_c/subject} would have swapped secrets with r_c"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     }
 ]
