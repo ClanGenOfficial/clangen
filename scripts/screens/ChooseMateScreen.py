@@ -1175,7 +1175,7 @@ class ChooseMateScreen(Screens):
         super().on_use()
 
         self.loading_screen_on_use(
-            self.work_thread, self.update_both, ui_scale_offset((450, 300))
+            self.work_thread, self.update_both
         )
 
     def get_valid_mates(self):
