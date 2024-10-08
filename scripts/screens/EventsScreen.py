@@ -112,6 +112,8 @@ class EventsScreen(Screens):
                     if val == element:
                         self.handle_tab_switch(ele)
                         break
+                    
+            self.mute_button_pressed(event)
 
         # ON FULL BUTTON PRESS
         elif (
