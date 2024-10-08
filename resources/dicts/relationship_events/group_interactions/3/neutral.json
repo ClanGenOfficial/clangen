@@ -7,9 +7,32 @@
 			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
 			"While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2."
 		],
+		"status_constraint": {
+			"m_c": [
+				"leader",
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator"
+			],
+			"r_c1": [
+				"leader",
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator"
+			],
+			"r_c2": [
+				"leader",
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator"
+			]
+		},
 		"relationship_constraint": {
 			"m_c_to_r_c1": ["trust_30"],
-			"m_c_to_r_c2": ["romantic_15"]
+			"m_c_to_r_c2": ["romantic_15","not_mates"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
