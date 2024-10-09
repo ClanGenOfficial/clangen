@@ -2157,6 +2157,11 @@ class ConfirmDisplayChanges(UIMessageWindow):
         )
         self.set_blocking(True)
 
+        self.count_down_thread: threading.Thread = threading.Thread(
+            target=self.count_down
+        )
+        self.count_down_thread.daemon = True
+
         self.dismiss_button.kill()
         self.text_block.kill()
 
@@ -2219,7 +2224,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
-            "Do you want to keep these changes? Display changes will be reverted in 10 seconds.",
+            "",
             text_block_rect,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
@@ -2235,9 +2240,30 @@ class ConfirmDisplayChanges(UIMessageWindow):
 
         # make a timeout that will call in 10 seconds - if this window isn't closed,
         # it'll be used to revert the change
-        pygame.time.set_timer(pygame.USEREVENT + 10, 10000, loops=1)
+
+        # self.update_text = lambda: (
+        #     self.text_block.config(text=str(self.i)),
+        #     self.i := self.i + 1,
+        #     root.after(1000, self.update_text) if self.i < 10 else None
+        # )[-1]
+
+        # count_down_thread : threading.Thread = threading.Thread(target= lambda: (
+        #     self.text_block.set_text(f"{i}"),
+        #     i = i + 1,
+        #     time.sleep(1)
+        # ))
+
+        # self.count_down_thread : threading.Thread = threading.Thread(target= self.count_down)
+        self.count_down_thread.start()
 
         self.source_screen_name = source_screen.name.replace(" ", "_")
+
+    def count_down(self):
+        """Used for counting down, performed in a different thread."""
+        for i in range(10):
+            self.text_block.set_text(f"Do you want to keep these changes? Display changes will be reverted in {10 - i} seconds.")
+            time.sleep(1)
+        pygame.event.post(pygame.event.Event(pygame.USEREVENT + 10))
 
     def revert_changes(self):
         """Revert the changes made to screen scaling"""
