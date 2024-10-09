@@ -10,7 +10,7 @@ import logging
 import re
 from itertools import combinations
 from math import floor
-from random import choice, choices, randint, random, sample, randrange
+from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
 from typing import List, Tuple
 
@@ -390,7 +390,7 @@ def create_new_cat_block(
     elif "old_name" in attribute_list:
         new_name = False
     else:
-        new_name = choice([True, False])
+        new_name = bool(getrandbits(1))
 
     # STATUS - must be handled before backstories
     status = None
@@ -547,7 +547,7 @@ def create_new_cat_block(
             if new_name:
                 name = f"{chosen_cat.name.prefix}"
                 spaces = name.count(" ")
-                if choice([1, 2]) == 1 and spaces > 0:  # adding suffix to OG name
+                if bool(getrandbits(1)) and spaces > 0:  # adding suffix to OG name
                     # make a list of the words within the name, then add the OG name back in the list
                     words = name.split(" ")
                     words.append(name)
@@ -767,10 +767,10 @@ def create_new_cat(
             # grab starting names and accs for loners/kittypets
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
-                if choice([1, 2]) == 1:
+                if bool(getrandbits(1)):
                     accessory = choice(Pelt.collars)
             elif (
-                loner and choice([1, 2]) == 1
+                loner and bool(getrandbits(1))
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -780,7 +780,7 @@ def create_new_cat(
 
             # now we make the cats
             if new_name:  # these cats get new names
-                if choice([1, 2]) == 1:  # adding suffix to OG name
+                if bool(getrandbits(1)):  # adding suffix to OG name
                     spaces = name.count(" ")
                     if spaces > 0:
                         # make a list of the words within the name, then add the OG name back in the list
