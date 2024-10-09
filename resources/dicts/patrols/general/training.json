@@ -11713,7 +11713,7 @@
            {
                "text": "s_c explains that one day, c_n might be taken over by a tyrannical ruler! True and loyal c_n warriors will have to be powerful enough to keep c_n safe. p_l supposes that's possible and agrees to show {PRONOUN/s_c/object} some advanced moves.",
                "exp": 10,
-                "stat_trait": ["troublesome", "rebellious", "cunning", "careful"],
+                "stat_trait": ["troublesome", "rebellious", "cunning", "careful", "childish" ],
                "can_have_stat": ["app1"],
                "relationships": [
                    {
@@ -11805,7 +11805,7 @@
                "text": "s_c confesses {PRONOUN/s_c/poss} fear that one day, all of c_n will be in danger, and only {PRONOUN/s_c/subject} will be able to save them. p_l comforts s_c and assures {PRONOUN/s_c/object} that c_n will stand together against any threat. Feeling reassured, s_c asks if p_l will teach {PRONOUN/s_c/object} some moves anyway - for fun.",
                "exp": 10,
                "can_have_stat": ["app1"],
-                "stat_trait": [ "insecure", "nervous", "gloomy" ],
+                "stat_trait": [ "insecure", "nervous", "gloomy", "loving" ],
                "relationships": [
                    {
                        "cats_to": ["p_l"],
@@ -11820,7 +11820,7 @@
                "text": "s_c's passion surprises p_l when {PRONOUN/s_c/subject} {VERB/s_c/declare/declares} that {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to be able to defend those that cannot defend themselves - kits, elders, every cat in c_n, and even those beyond their borders. p_l agrees to show s_c some moves.",
                "exp": 10,
                "can_have_stat": ["app1"],
-                "stat_trait": [ "righteous", "faithful", "thoughtful", "sincere" ],
+                "stat_trait": [ "righteous", "faithful", "thoughtful", "sincere", "loving" ],
                "relationships": [
                    {
                        "cats_to": ["p_l"],
@@ -11850,7 +11850,7 @@
                "text": "s_c describes a future where {PRONOUN/s_c/subject} might be alone in the territory, or even beyond the border, and might need to take care of {PRONOUN/s_c/self}. p_l reassures s_c that this is unlikely to happen to {PRONOUN/s_c/object} any time soon, but agrees to show {PRONOUN/s_c/object} some moves.",
                "exp": 10,
                "can_have_stat": ["app1"],
-                "stat_trait": [ "adventurous" ],
+                "stat_trait": [ "adventurous", "nervous", "lonesome" ],
                "relationships": [
                    {
                        "cats_to": ["p_l"],
@@ -11880,7 +11880,7 @@
                "text": "s_c exclaims that {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to be the <i>best</i>, better than any other Clanmate or rogue or loner or <i>anyone</i>. s_c wants to win every fight {PRONOUN/s_c/subject} {VERB/s_c/are/is} ever in, including spars. p_l snorts and agrees to help s_c achieve these lofty ambitions.",
                "exp": 10,
                "can_have_stat": ["app1"],
-                "stat_trait": [ "competitive", "shameless", "flamboyant", "arrogant" ],
+                "stat_trait": [ "competitive", "shameless", "flamboyant", "arrogant", "ambitious" ],
                "relationships": [
                    {
                        "cats_to": ["p_l"],
@@ -11940,7 +11940,7 @@
                "text": "p_l asks why s_c is set on learning advanced moves all of a sudden. s_c merely says that it is difficult to say what the future must hold, and {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to prepare for all possibilities. p_l agrees and shows {PRONOUN/s_c/object} some moves.",
                "exp": 10,
                "can_have_stat": ["app1"],
-                "stat_trait": [ "wise", "thoughtful", "sincere" ],
+                "stat_trait": [ "wise", "thoughtful", "sincere", "careful" ],
                "relationships": [
                    {
                        "cats_to": ["p_l"],
