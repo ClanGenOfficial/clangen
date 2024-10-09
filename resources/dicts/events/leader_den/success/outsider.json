@@ -420,7 +420,7 @@
     "rep_change": -15,
     "m_c": {
       "status": ["rogue", "loner" ],
-      "age": [ "kit", "adolescent" ],
+      "age": [ "kitten", "adolescent" ],
       "new_thought": "Bitterly wonders how {PRONOUN/m_c/subject} could have escaped"
     }
   },
@@ -431,7 +431,7 @@
     "rep_change": -10,
     "m_c": {
       "status": ["rogue", "loner" ],
-      "age": [ "kit", "adolescent" ]
+      "age": [ "kitten", "adolescent" ]
     }
   },
   {
@@ -446,7 +446,7 @@
     }
   },
   {
-    "interaction_type": "hunt",
+    "interaction_type": "drive",
     "event_text": "Exiling m_c wasn't enough - {PRONOUN/m_c/subject} must be driven far out of the surrounding territory. m_c only stands {PRONOUN/m_c/poss} ground for a heartbeat when {PRONOUN/m_c/poss} old Clanmates find {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} outnumbered, and {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
     "reputation": ["any"],
     "rep_change": -1,
@@ -505,7 +505,7 @@
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
-      "status": [ "exiled" ],
+      "status": [ "lost" ],
       "new_thought": "Never lost hope in {PRONOUN/m_c/poss} Clanmates finding {PRONOUN/m_c/object}",
       "kit_thought": "Is learning the truth behind all the stories"
     }
