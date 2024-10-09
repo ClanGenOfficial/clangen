@@ -985,7 +985,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, m_c snarls and spits at o_c_n's leader. As {PRONOUN/m_c/subject} {VERB/m_c/do/does}, {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} a chill rush over {PRONOUN/m_c/poss} pelt, like plunging into icy water. Starlight glimmers at the paws of o_c_n's leader, and m_c stutters to a stop, squinting at it.",
+    "event_text": "At the Gathering, m_c snarls and spits at o_c_n's leader. As {PRONOUN/m_c/subject} {VERB/m_c/do/does}, {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} a chill rush over {PRONOUN/m_c/poss} pelt, like plunging into icy water. Starlight glimmers at the paws of o_c_n's leader, and m_c stutters to a stop, squinting at it. Another presence has joined them on the leader's perch, and it doesn't seem happy with m_c.",
     "rel_change": 0,
     "m_c": {
       "trait": ["fierce"],
