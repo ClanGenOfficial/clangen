@@ -205,7 +205,7 @@ class Events:
                         shaken_cats = random.sample(
                             alive_cats,
                             k=max(
-                                int((len(alive_cats) * random.choice([4, 5, 6])) / 100),
+                                int((len(alive_cats) * random.randint(4, 6)) / 100),
                                 1,
                             ),
                         )
@@ -597,11 +597,11 @@ class Events:
                                                    sort=True)
             for med in meds_available:
                 if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-                    amount = random.choices([1, 2, 3, 4], [1, 2, 2, 2], k=1)
+                    amount = random.choices([1, 2, 3, 4], weights=[1, 2, 2, 2], k=1)
                 elif game.clan.current_season == "Leaf-fall":
-                    amount = random.choices([0, 1, 2], [3, 2, 1], k=1)
+                    amount = random.choices([0, 1, 2], weights=[3, 2, 1], k=1)
                 else:
-                    amount = random.choices([0, 1], [3, 1], k=1)
+                    amount = random.choices([0, 1], weights=[3, 1], k=1)
                 if amount[0] != 0:
                     herbs_found = random.sample(HERBS, k=amount[0])
                     herb_display = []
@@ -609,9 +609,9 @@ class Events:
                         if herb in ["blackberry"]:
                             continue
                         if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-                            amount = random.choices([2, 5, 8], [3, 3, 1], k=1)
+                            amount = random.choices([2, 5, 8], weights=[3, 3, 1], k=1)
                         else:
-                            amount = random.choices([2, 4], [4, 1], k=1)
+                            amount = random.choices([2, 4], weights=[4, 1], k=1)
                         if herb in game.clan.herbs:
                             game.clan.herbs[herb] += amount[0]
                         else:
@@ -1364,7 +1364,7 @@ class Events:
                         f"promising a new era for the Clans."
                     )
                 else:
-                    c = random.choice([1, 2, 3])
+                    c = random.randint(1, 3)
                     if c == 1:
                         text = (
                             str(game.clan.deputy.name.prefix)

@@ -28,7 +28,7 @@
     },
     "weak leg": {
         "sore": [
-            "r_c notices m_c limping from across the other side of the camp and gives {PRONOUN/m_c/subject} some exercises to help strengthen {PRONOUN/m_c/poss} weak leg and reduce the pain.",
+            "r_c notices m_c limping from across the other side of the camp and gives {PRONOUN/m_c/object} some exercises to help strengthen {PRONOUN/m_c/poss} weak leg and reduce the pain.",
             "m_c's bad leg is feeling particularly sore this moon."
         ],
         "joint pain": [
