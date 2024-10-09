@@ -748,7 +748,7 @@
                 ],
                 "scar": "m_c was scarred by r_c.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after r_c hurt {PRONOUN/m_c/object} for trying to stop an argument.",
-                "lead_death": "died from {PRONOUN/m_c/poss} wounds r_c gave them"
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds r_c gave {PRONOUN/m_c/object}"
             }
         ],
         "relationships": [
@@ -845,7 +845,7 @@
                 ],
                 "scar": "m_c was scarred while trying to save r_c from a rogue.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from a rogue.",
-                "lead_death": "died from {PRONOUN/m_c/poss} wounds given to them by a rogue"
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds given to {PRONOUN/m_c/object} by a rogue"
             }
         ],
         "relationships": [
@@ -1326,7 +1326,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit by frostbite.",
-                "reg_death": "m_c died after they got frostbite sneaking out of camp."
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite sneaking out of camp."
             }
         ]
     },
@@ -6769,7 +6769,7 @@
                     "m_c"
                 ],
                 "scar": "m_c's ear was torn in a scuffle when {PRONOUN/m_c/subject} chased off an enemy warrior.",
-                "reg_death": "m_c died after an enemy warrior injured them.",
+                "reg_death": "m_c died after an enemy warrior injured {PRONOUN/m_c/object}.",
                 "lead_death": "after being injured by an enemy warrior"
             }
         ],
@@ -7009,9 +7009,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred after falling into an o_c_n trap.",
-                "reg_death": "m_c died after falling into an o_c_n trap.",
-                "lead_death": "died after falling into an o_c_n trap"
+                "scar": "m_c was scarred after falling into a o_c_n trap.",
+                "reg_death": "m_c died after falling into a o_c_n trap.",
+                "lead_death": "died after falling into a o_c_n trap"
             }
         ],
         "other_clan": {
@@ -7033,7 +7033,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "During a skirmish, m_c bounds into battle against an o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
+        "event_text": "During a skirmish, m_c bounds into battle against a o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps {PRONOUN/m_c/object} back to camp.",
         "m_c": {
             "status": [
                 "apprentice",

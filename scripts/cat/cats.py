@@ -30,7 +30,8 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, screen
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     get_alive_status_cats,
@@ -593,11 +594,7 @@ class Cat:
         self.update_mentor()
 
         # if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
-        if (
-            game.clan
-            and not self.outside
-            and not self.exiled
-        ):
+        if game.clan and not self.outside and not self.exiled:
             self.grief(body)
 
         if not self.outside:
@@ -722,9 +719,7 @@ class Cat:
                 text += " " + choice(MINOR_MAJOR_REACTION["major"])
                 text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
-                cat.get_ill(
-                    "grief stricken", event_triggered=True, severity="major"
-                )
+                cat.get_ill("grief stricken", event_triggered=True, severity="major")
 
             # If major grief fails, but there are still very_high or high values,
             # it can fail to to minor grief. If they have a family relation, bypass the roll.
@@ -735,19 +730,49 @@ class Cat:
 
                 # These minor grief message will be applied as thoughts.
                 minor_grief_messages = (
-                    "Told a fond story at r_c's vigil",
-                    "Bargains with StarClan, begging them to send r_c back",
-                    "Sat all night at r_c's vigil",
-                    "Will never forget r_c",
-                    "Prays that r_c is safe in StarClan",
-                    "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
-                    "Is mourning r_c",
-                )
-
-                if body:
+                            "Told a fond story at r_c's vigil",
+                            "Bargains with StarClan, begging them to send r_c back",
+                            "Sat all night at r_c's vigil",
+                            "Will never forget r_c",
+                            "Prays that r_c is safe in StarClan",
+                            "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
+                            "Is mourning r_c",
+                            "Can't stop coming to tears each time r_c is mentioned",
+                            "Stayed the longest at r_c's vigil",
+                            "Left r_c's vigil early due to grief",
+                            "Lashes out at any cat who checks on {PRONOUN/m_c/object} after r_c's death",
+                            "Took a long walk on {PRONOUN/m_c/poss} own to mourn r_c in private",
+                            "Is busying {PRONOUN/m_c/self} with too much work to forget about r_c's death",
+                            "Does {PRONOUN/m_c/poss} best to console {PRONOUN/m_c/poss} clanmates about r_c's death",
+                            "Takes a part of r_c's nest to put with {PRONOUN/m_c/poss} own, clinging to the fading scent",
+                            "Sleeps in r_c's nest tonight",
+                            "Defensively states that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need any comfort about r_c's death",
+                            "Wonders why StarClan had to take r_c so soon",
+                            "Still needs r_c even though they're gone",
+                            "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
+                            "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
+                            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing"
+                        )
+                
+                if body: 
                     minor_grief_messages += (
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
                         "Slips out of camp to visit r_c's grave",
+                        "Clung so desperately to r_c's body that {PRONOUN/m_c/subject} had to be dragged away",
+                        "Hides a scrap of r_c's fur under {PRONOUN/m_c/poss} nest to cling to",
+                        "Can't stand the sight of r_c's body in camp",
+                        "Hissed at anyone who got too close to r_c's body, refusing to let go",
+                        "Spent a long time grooming r_c's fur for their vigil",
+                        "Arranged the flowers for r_c's vigil",
+                        "Picked the best spot in the burial grounds for r_c",
+                        "Keeps thinking that r_c is only sleeping",
+                        "Is in denial of r_c's death, despite the ongoing vigil",
+                        "Insists that r_c isn't gone",
+                        "Begs r_c not to leave them all",
+                        "Sleeps next to r_c for the entire vigil one last time",
+                        "Ran out of camp the moment {PRONOUN/m_c/subject} saw r_c's body",
+                        "Sang a song in memory of r_c at the vigil",
+                        "Stares at r_c's vigil longingly, but doesn't feel the right to join in"
                     )
 
                 text = choice(minor_grief_messages)
@@ -2032,7 +2057,7 @@ class Cat:
             "GULL FEATHERS",
             "SPARROW FEATHERS",
             "CLOVER",
-            "DAISY"
+            "DAISY",
         ]:
             self.pelt.accessory = None
         if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
@@ -2042,7 +2067,7 @@ class Cat:
             "GULL FEATHERS",
             "SPARROW FEATHERS",
             "CLOVER",
-            "DAISY"
+            "DAISY",
         ]:
             self.pelt.accessory = None
 
@@ -3416,6 +3441,36 @@ class Cat:
                 "prevent_fading": self.prevent_fading,
                 "favourite": self.favourite,
             }
+
+    def determine_next_and_previous_cats(self, status: List[str] = None):
+        """Determines where the next and previous buttons point to, relative to this cat.
+
+        :param status: Allows you to constrain the list by status
+        """
+        sorted_specific_list = [
+            check_cat
+            for check_cat in Cat.all_cats_list
+            if check_cat.dead == self.dead
+            and check_cat.outside == self.outside
+            and check_cat.df == self.df
+            and not check_cat.faded
+        ]
+
+        if status is not None:
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat.status in status
+            ]
+
+        idx = sorted_specific_list.index(self)
+
+        return (
+            sorted_specific_list[idx + 1].ID
+            if len(sorted_specific_list) > idx + 1
+            else 0,
+            sorted_specific_list[idx - 1].ID if idx - 1 >= 0 else 0,
+        )
 
 
 # ---------------------------------------------------------------------------- #

@@ -39,7 +39,7 @@
     {
         "id": "mediator_to_alive_leader",
         "thoughts": [
-            "Is angry with the leader for a border dispute gone wrong",
+            "Is upset with the leader over a border dispute gone wrong",
             "Mediated a meeting between senior warriors and the leader over recent Clan decisions",
             "Thinks r_c should be more prudent regarding Clan relations"
         ],
@@ -64,8 +64,8 @@
         "thoughts": [
             "Is feeling a sense of pride after mediating a difficult argument",
             "Wishes {PRONOUN/m_c/poss} Clanmates would just talk to each other",
-            "Is upset by a recent negotiation with a rival Clan",
-            "Negotiates a herb trade with another Clan",
+            "Is upset over a recent negotiation with a rival Clan",
+            "Negotiates an herb trade with another Clan",
             "Is negotiating with a kittypet to make use of the herbs in their Twoleg garden",
             "Is dismayed at how quickly {PRONOUN/m_c/poss} Clanmates get into arguments",
             "Feels exhausted after mediating so many arguments",
@@ -83,12 +83,12 @@
             "Feels exhausted from {PRONOUN/m_c/poss} Clanmates' bickering",
             "Is listening to both sides of an argument",
             "Is feeling a bit underappreciated for {PRONOUN/m_c/poss} mediation",
-            "Is wondering if {PRONOUN/m_c/subject} made the right decision to become a mediator",
+            "Is wondering if {PRONOUN/m_c/subject} made the right decision in becoming a mediator",
             "Is relieved {PRONOUN/m_c/subject} broke up an argument before it started",
             "Is hoping the Clan can stay peaceful",
             "Is contemplating teaching the Clan communication skills",
             "Is mediating a small disagreement between two Clanmates",
-            "Wonders if c_n considers {PRONOUN/m_c/object} a good mediator"
+            "Wonders if c_n considers {PRONOUN/m_c/object} to be a good mediator"
         ]
     },
     {

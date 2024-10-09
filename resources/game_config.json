@@ -91,7 +91,7 @@
 			"confession (confess_acceptance) - if these conditions are fulfilled by the opposite cat, they accept, otherwise, they reject.",
 			"conditions for mates - both relationships have to fulfill this condition",
 			"poly (current_mate) - which conditions all current mate relationships has to have towards the main cat + vise versa",
-			"poly (each_other) - which conditions all current mate relationships haves to have towards the new possible mate + vise versa"
+            "poly (each_other) - which conditions all current mate relationships has to have towards the new possible mate + vise versa"
 		]
 	},
 	"new_cat": {
@@ -425,7 +425,20 @@
 	},
 	"theme": {
 		"dark_mode_background": [57, 50, 36],
-		"light_mode_background": [206, 194, 168]
+		"light_mode_background": [206, 194, 168],
+		"fullscreen_background": {
+			"light": {
+				"vignette_alpha": 10,
+				"fade_color": [150, 150, 148],
+				"dropshadow_alpha": 30
+			},
+			"dark": {
+				"vignette_alpha": 50,
+				"fade_color": [100, 100, 100],
+				"dropshadow_alpha": 100,
+				"mainmenu_tint": [239, 229, 206]
+			}
+		}
 	},
 	"lock_season": false, 
 	"comment": "Forces the season to be locked at the Clan's starting_season"

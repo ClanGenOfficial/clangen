@@ -1,284 +1,217 @@
 {
-  "general": {
-    "body": [
-      "r_c nuzzles against the fur of {PRONOUN/r_c/poss} dead child, {PRONOUN/r_c/poss} kit, {PRONOUN/r_c/poss} m_c, and feels as though the world has ended.",
-      "No parent wants to outlive their child, and r_c wails over m_c's body.",
-      "r_c lays next to m_c's body, numb to the world around {PRONOUN/r_c/object}.",
-      "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-      "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-      "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that. . .",
-      "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
-
-    ],
-    "no_body": [
-      "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-      "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-      "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that. . .",
-      "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
-    ]
-  },
-  "adventurous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "altruistic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "ambitious": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bloodthirsty": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "calm": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "careful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "charismatic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "childish": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "cold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "compassionate": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "confident": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "daring": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "empathetic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "faithful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "fierce": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "insecure": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "lonesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loving": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loyal": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "nervous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "patient": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "playful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "responsible": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "righteous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "shameless": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "sneaky": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strange": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strict": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "thoughtful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "troublesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "vengeful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "wise": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  }
+    "general": {
+        "body": [
+            "r_c nuzzles against the fur of {PRONOUN/r_c/poss} dead child, {PRONOUN/r_c/poss} kit, {PRONOUN/r_c/poss} m_c, and feels as though the world has ended.",
+            "No parent wants to outlive their child, and r_c wails over m_c's body.",
+            "r_c lays next to m_c's body, numb to the world around {PRONOUN/r_c/object}.",
+            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
+            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
+            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
+            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+        ],
+        "no_body": [
+            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
+            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
+            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
+            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+        ]
+    },
+    "adventurous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "altruistic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "ambitious": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bloodthirsty": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "calm": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "careful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charismatic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "childish": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "cold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "compassionate": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "confident": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daring": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "empathetic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "faithful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "fierce": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "insecure": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "lonesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loving": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loyal": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "nervous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "patient": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "playful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "responsible": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "righteous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "shameless": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sneaky": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strange": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strict": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "thoughtful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "troublesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "vengeful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "wise": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    }
 }

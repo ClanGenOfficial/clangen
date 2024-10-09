@@ -82,7 +82,7 @@
             "Has more energy than {PRONOUN/m_c/subject} {VERB/m_c/know/knows} what to do with at the moment",
             "Got caught in a sudden downpour and is not happy about it",
             "Woke up on the wrong side of the nest",
-	    "Is feeling peckish",
+            "Is feeling peckish",
             "Is complaining about an itch {PRONOUN/m_c/subject} can't quite reach"
         ],
         "main_status_constraint": [
@@ -171,30 +171,29 @@
             "elder"
         ]
     },
-	{
+    {
         "id": "gen_to_kit",
         "thoughts": [
-	"Is sitting near the camp entrance, keeping an eye out for sneaky kits",
-	"Is unable to be scared, no matter how much the kits try",
-        "Is keeping an eye on some rowdy kits"
-		
-	],
-	"main_status_constraint": [
-		"apprentice",
-        	"medicine cat apprentice",
-        	"mediator apprentice",
-        	"warrior",
-        	"medicine cat",
-        	"mediator",
-        	"deputy",
-        	"leader",
-        	"elder"
-	],
-	"random_status_constraint": [
-		"kitten"
-		]
-	},
-	{
+            "Is sitting near the camp entrance, keeping an eye out for sneaky kits",
+            "Is unable to be scared, no matter how much the kits try",
+            "Is keeping an eye on some rowdy kits"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
         "id": "working_cat",
         "thoughts": [
             "Is guarding camp",
@@ -223,8 +222,8 @@
             "living"
         ]
     },
-	{
-        "id": "working_cat_warrior",
+    {
+        "id": "working_cat_to_leadership",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} could handle r_c's position",
             "Is complaining about being sent on dawn patrol",
@@ -240,10 +239,13 @@
         "random_status_constraint": [
             "deputy",
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "working_cat_deputy",
+        "id": "working_cat_to_deputy",
         "thoughts": [
             "Is hoping the deputy won't assign {PRONOUN/m_c/object} to the dawn patrol tomorrow",
             "Is hoping the deputy assigns {PRONOUN/m_c/object} to the next patrol",
@@ -255,28 +257,31 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-    "id": "adventurous_gen",
-    "thoughts": [
-        "Wants to explore far beyond the borders of {PRONOUN/m_c/poss} territory...",
-        "Wonders what lays beyond the distant horizon...",
-        "Is dreaming of one day discovering something new and exciting!",
-        "Is itching to run, run, run!",
-        "Wants to climb the tallest tree in the territory!",
-        "Is itching for some excitement around camp",
-        "Is considering bending the rules a bit... just this once",
-        "Is showing off a trinket {PRONOUN/m_c/subject} found while exploring",
-        "Is daydreaming about how much there is to see out in the world!",
-        "Is itching to explore the land beyond {PRONOUN/m_c/poss} Clan's territory",
-        "Wants to go on a journey",
-        "Wishes {PRONOUN/m_c/poss} leader would choose {PRONOUN/m_c/object} to go on a quest",
-        "Disappeared all day to explore the territory",
-        "Promises {PRONOUN/m_c/poss} Clanmates {PRONOUN/m_c/subject} won't do anything dangerous while out"
-    ],
-    "main_trait_constraint": [
-        "adventurous"
+        "id": "adventurous_gen",
+        "thoughts": [
+            "Wants to explore far beyond the borders of {PRONOUN/m_c/poss} territory...",
+            "Wonders what lays beyond the distant horizon...",
+            "Is dreaming of one day discovering something new and exciting!",
+            "Is itching to run, run, run!",
+            "Wants to climb the tallest tree in the territory!",
+            "Is itching for some excitement around camp",
+            "Is considering bending the rules a bit... just this once",
+            "Is showing off a trinket {PRONOUN/m_c/subject} found while exploring",
+            "Is daydreaming about how much there is to see out in the world!",
+            "Is itching to explore the land beyond {PRONOUN/m_c/poss} Clan's territory",
+            "Wants to go on a journey",
+            "Wishes {PRONOUN/m_c/poss} leader would choose {PRONOUN/m_c/object} to go on a quest",
+            "Disappeared all day to explore the territory",
+            "Promises {PRONOUN/m_c/poss} Clanmates {PRONOUN/m_c/subject} won't do anything dangerous while out"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
         ]
     },
     {
@@ -310,7 +315,7 @@
             "ambitious"
         ]
     },
-	{
+    {
         "id": "ambitious_to_leader",
         "thoughts": [
             "Is asking the Clan leader what {PRONOUN/m_c/subject} can do to help out around camp",
@@ -320,9 +325,12 @@
         "main_trait_constraint": [
             "ambitious"
         ],
-	"random_status_constraint": [
-		"leader"
-	]
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "arrogant_gen",
@@ -361,24 +369,27 @@
             "Wonders how {PRONOUN/m_c/subject} would run the Clan better",
             "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
             "Has been glaring at a certain cat in camp with an odd look in {PRONOUN/m_c/poss} eye",
-	    "Daydreams about slaughtering every cat {PRONOUN/m_c/subject} {VERB/m_c/despise/despises}"
+            "Daydreams about slaughtering every cat {PRONOUN/m_c/subject} {VERB/m_c/despise/despises}"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
         ]
     },
-	{
+    {
         "id": "bloodthirsty_to_leader",
         "thoughts": [
             "Wonders how easy it'd be to attack the leader from where {PRONOUN/r_c/subject} {VERB/r_c/lay/lies}",
-	    "Is watching the leader closely while imagining the Clan under {PRONOUN/m_c/poss} rule"
+            "Is watching the leader closely while imagining the Clan under {PRONOUN/m_c/poss} rule"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
         ],
-	"random_status_constraint": [
-		"leader"
-	]
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "bold_gen",
@@ -395,7 +406,7 @@
             "bold"
         ]
     },
-	{
+    {
         "id": "bold_to_kit",
         "thoughts": [
             "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes"
@@ -403,9 +414,12 @@
         "main_trait_constraint": [
             "bold"
         ],
-	"random_status_constraint": [
-		"kitten"
-	]
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "calm_gen",
@@ -456,15 +470,18 @@
         "id": "careful_to_med",
         "thoughts": [
             "Is getting a small scratch checked out by the medicine cat",
-		"Is urging a Clanmate to get an scratch checked out"
+            "Is urging a Clanmate to get an scratch checked out"
         ],
         "main_trait_constraint": [
             "careful"
         ],
-	"random_status_constraint": [
-		"medicine cat",
-		"medicine cat apprentice"
-	]
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "charismatic_gen",
@@ -495,34 +512,37 @@
             "charismatic"
         ]
     },
-{
-        "id": "older_liar_gen",
+    {
+        "id": "play_pretend_gen",
         "thoughts": [
-	"Has r_c very engaged in a very, very tall tale",
-	"Is proudly watching r_c plan how to hunt down a creature {PRONOUN/m_c/subject} made up"
-	],
-	"main_trait_constraint": [
-        "charismatic",
-        "cunning",
-        "sneaky"
+            "Has r_c very engaged in a very, very tall tale",
+            "Is proudly watching r_c plan how to hunt down a creature {PRONOUN/m_c/subject} made up"
         ],
-	 "main_status_constraint": [
-	"apprentice",
-        "warrior",
-        "medicine cat",
-        "mediator",
-        "deputy",
-        "leader",
-        "elder"
+        "main_trait_constraint": [
+            "charismatic",
+            "cunning",
+            "sneaky"
         ],
-	"random_status_constraint": [
-        "kitten",
-	"apprentice",
-	"medicine cat apprentice",
-        "mediator apprentice"
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
-},
-{
+    },
+    {
         "id": "childish_gen",
         "thoughts": [
             "Is chasing a butterfly around the camp",
@@ -544,23 +564,41 @@
             "childish"
         ]
     },
-	{
-        "id": "childish_gen_hunter",
+    {
+        "id": "silly_working_cat",
         "thoughts": [
-		"Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
-		"Is playing with some fresh-kill {PRONOUN/m_c/subject} just caught",
-		"Is bounding through the territory scaring away all the prey"
+            "Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
+            "Is playing with some fresh-kill {PRONOUN/m_c/subject} just caught",
+            "Is bounding through the territory, scaring away all the prey"
         ],
         "main_trait_constraint": [
-            "childish"
+            "childish",
+            "playful"
         ],
-	"main_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "warrior",
             "deputy",
             "leader"
         ]
-	},
+    },
+    {
+        "id": "silly_to_living_kit",
+        "thoughts": [
+            "Plays moss ball with r_c",
+            "Is pretending to not see r_c sneaking up on {PRONOUN/m_c/object}"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "main_trait_constraint": [
+            "childish",
+            "playful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
     {
         "id": "cold_gen",
         "thoughts": [
@@ -581,17 +619,20 @@
             "cold"
         ]
     },
-	{
-        "id": "cold_gen",
+    {
+        "id": "cold_gen_to_leader",
         "thoughts": [
             "Thinks the leader should be harsher on codebreakers"
         ],
         "main_trait_constraint": [
             "cold"
         ],
-	"random_status_constraint": [
-		"leader"
-	]
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "cold_to_alive_apprentice",
@@ -612,7 +653,7 @@
         ]
     },
     {
-        "id": "compassionate_warrior",
+        "id": "compassionate_gen",
         "thoughts": [
             "Spends time with a grieving Clanmate today",
             "Is patiently listening to someone talk about things they are unquestionably wrong about and dying inside",
@@ -659,7 +700,7 @@
             "compassionate"
         ]
     },
-	{
+    {
         "id": "compassionate_to_elder",
         "thoughts": [
             "Is listening to older cats gripe about their day"
@@ -667,11 +708,24 @@
         "main_trait_constraint": [
             "compassionate"
         ],
-	"random_status_constaint": [
-		"elder"
-	]
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
-	{
+    {
         "id": "compassionate_to_kit",
         "thoughts": [
             "Smiles at some kit's cheap prank, knowing they'll grow out of it soon"
@@ -679,23 +733,29 @@
         "main_trait_constraint": [
             "compassionate"
         ],
-	"random_status_constraint": [
-		"kitten"
-	]
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
-	{
-        "id": "compassionate_warrior",
+    {
+        "id": "compassionate_to_apprentices",
         "thoughts": [
             "Notices an apprentice struggling with a task and offers {PRONOUN/m_c/poss} help"
         ],
         "main_trait_constraint": [
             "compassionate"
         ],
-	"random_status_constraint": [
-		"apprentice",
-		"mediator apprentice",
-		"medicine cat apprentice"
-	]
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "compassionate_warrior_to_living_med_cat",
@@ -736,7 +796,7 @@
         ]
     },
     {
-        "id": "confident_warrior",
+        "id": "confident_gen",
         "thoughts": [
             "Is puffing {PRONOUN/m_c/poss} chest out",
             "Is lecturing about something someone said wrong offhandedly",
@@ -771,57 +831,26 @@
             "Suffered a bellyache after being dared to swallow a beetle",
             "Is twitching {PRONOUN/m_c/poss} tail in excitement about something",
             "Wishes there were more opportunities to show {PRONOUN/m_c/poss} skills",
-            "Defended a Clanmate in an argument"
-        ],
-        "main_trait_constraint": [
-            "daring"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-            ]
-    },
-    {
-        "id": "daring_not_kit",
-        "thoughts": [
+            "Defended a Clanmate in an argument",
             "Is letting a wound go untreated in hopes it gives {PRONOUN/m_c/object} a scar",
             "Is leaping from boulder to boulder out in the forest",
             "Is climbing to the top of a very tall tree!",
-            "Taunted a dog stuck behind a Twoleg's fence",
+            "Taunted a dog stuck behind a Twoleg fence",
             "Is walking along the edge of a very tall cliff",
             "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!"
         ],
         "main_trait_constraint": [
             "daring"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-            ]
+        ]
     },
     {
-        "id": "gen_faithful",
+        "id": "faithful_gen",
         "thoughts": [
             "Would follow {PRONOUN/m_c/poss} Clanmates to the ends of the earth",
             "Feels safe within the walls of the camp",
-	    "Promises to stick by a Clanmates side",
-	    "Refuses to reconsider a belief a Clanmate disagreed with",
-	    "Is debating a conflicting belief with a Clanmate", 
+            "Promises to stick by a Clanmates side",
+            "Refuses to reconsider a belief a Clanmate disagreed with",
+            "Is debating a conflicting belief with a Clanmate", 
             "Wonders if StarClan can hear {PRONOUN/m_c/object}",
             "Leaves fresh-kill at the grave of a dead loved one"
         ],
@@ -829,7 +858,7 @@
             "faithful"
         ]
     },
-	{
+    {
         "id": "faithful_to_kit",
         "thoughts": [
             "Urges a kit to follow {PRONOUN/r_c/poss} own beliefs"
@@ -837,12 +866,15 @@
         "main_trait_constraint": [
             "faithful"
         ],
-	"random_status_constraint": [
-		"kitten"
-	]
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
-        "id": "fierce_warrior",
+        "id": "fierce_gen",
         "thoughts": [
             "Isn't scared of anything today!",
             "Can't stop flexing {PRONOUN/m_c/poss} claws",
@@ -875,7 +907,7 @@
             "Playfully flirted with cats from the other Clans at the Gathering",
             "Dazzles {PRONOUN/m_c/poss} Clanmates with {PRONOUN/m_c/poss} excellent skills",
             "Spent a long time grooming {PRONOUN/m_c/self} to catch as much attention as possible",
-	"Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again"
+            "Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again"
         ],
         "main_trait_constraint": [
             "flamboyant"
@@ -910,14 +942,14 @@
             "Can't stand {PRONOUN/m_c/poss} Clanmates today especially",
             "Is looking extra grumpy today",
             "Is trying {PRONOUN/m_c/poss} hardest to avoid being bothered by {PRONOUN/m_c/poss} Clanmates",
-		"Doesn't understand why everyone else is so cheery"
+            "Doesn't understand why everyone else is so cheery"
         ],
         "main_trait_constraint": [
             "grumpy"
         ]
     },
     {
-        "id": "insecure_warrior",
+        "id": "insecure_gen",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough...",
             "Is thinking about where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}",
@@ -940,7 +972,7 @@
         ]
     },
     {
-        "id": "lonesome_warrior",
+        "id": "lonesome_gen",
         "thoughts": [
             "Is sitting alone",
             "Looks on as others share tongues around the camp clearing",
@@ -961,15 +993,7 @@
             "Feels bad about never being invited to share tongues",
             "Spitefully swears that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need others, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just fine!",
             "Feels the need to escape camp, the presence of everyone else just unbearable today",
-            "Doesn't know why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} always alone"
-        ],
-        "main_trait_constraint": [
-            "lonesome"
-        ]
-    },
-    {
-        "id": "lonesome_no_kit",
-        "thoughts": [
+            "Doesn't know why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} always alone",
             "Took a nap out in the territory away from others",
             "Went out to be by {PRONOUN/m_c/self}",
             "Is thinking wistfully about the past...",
@@ -978,21 +1002,10 @@
         ],
         "main_trait_constraint": [
             "lonesome"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]   
+        ]  
     },
     {
-        "id": "loving_warrior",
+        "id": "loving_gen",
         "thoughts": [
             "Is feeling content with the little things in life",
             "Is offering any help {PRONOUN/m_c/subject} can to the medicine cat",
@@ -1013,13 +1026,23 @@
         ]
     },
     {
-        "id": "loving_warrior_to_living_apprentices",
+        "id": "loving_to_living_apprentices",
         "thoughts": [
             "Spends some time with the apprentices",
             "Comforts r_c after {PRONOUN/r_c/subject} had a bad day"
         ],
+        "main_status_constraint": [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
         "random_status_constraint": [
-            "apprentice"
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "loving"
@@ -1029,7 +1052,7 @@
         ]
     },
     {
-        "id": "loyal_warrior",
+        "id": "loyal_gen",
         "thoughts": [
             "Is determined to protect {PRONOUN/m_c/poss} loved ones",
             "Is making sure everyone has eaten well",
@@ -1047,7 +1070,7 @@
         ]
     },
     {
-        "id": "nervous_warrior",
+        "id": "nervous_gen",
         "thoughts": [
             "Feels like there are ants pricking {PRONOUN/m_c/poss} pelt...",
             "Wonders if everyone laughs with {PRONOUN/m_c/object} or at {PRONOUN/m_c/object}...",
@@ -1074,7 +1097,7 @@
         ]
     },
     {
-        "id": "playful_warrior",
+        "id": "playful_gen",
         "thoughts": [
             "Is playing tag with cats around camp",
             "Is tossing moss balls around",
@@ -1100,39 +1123,6 @@
             "playful"
         ]
     },
-	{
-        "id": "playful_hunter",
-        "thoughts": [
-		"Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
-		"Is playing with some fresh-kill {PRONOUN/m_c/subject} just caught",
-		"Is bounding through the territory scaring away all the prey"
-        ],
-        "main_trait_constraint": [
-            "playful"
-        ],
-	"main_status_constraint": [
-            "apprentice",
-            "warrior",
-            "deputy",
-            "leader"
-        ]
-	},
-    {
-        "id": "playful_warrior_to_living_kit",
-        "thoughts": [
-            "Plays moss ball with r_c",
-            "Is pretending to not see r_c sneaking up on {PRONOUN/m_c/object}"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "main_trait_constraint": [
-            "playful"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
     {
         "id": "rebellious_gen",
         "thoughts": [
@@ -1146,17 +1136,48 @@
             "rebellious"
         ]
     },
-	{
-        "id": "rebellious_gen",
+    {
+        "id": "rebellious_to_leader",
         "thoughts": [
             "Started an argument with the leader during a Clan meeting"
         ],
         "main_trait_constraint": [
             "rebellious"
         ],
-	"random_status_constraint": [
-		"leader"
-	]
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "rebellious_to_leadership",
+        "thoughts": [
+            "Had a lengthy debate with r_c",
+            "Rolled {PRONOUN/m_c/poss} eyes at a job r_c assigned {PRONOUN/m_c/object} to",
+            "Is being scolded for {PRONOUN/m_c/poss} rebellious actions"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "elder"
+        ],
+        "random_status_constraint": [
+            "deputy",
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "responsible_gen",
@@ -1185,27 +1206,23 @@
         "main_trait_constraint": [
             "responsible"
         ],
+        "main_status_constraint": [
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
         "random_status_constraint": [
             "apprentice"
-            ]
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
-        "id": "rebellious_to_leadership",
-        "thoughts": [
-            "Had a lengthy debate with r_c",
-            "Rolled {PRONOUN/m_c/poss} eyes at a job r_c assigned {PRONOUN/m_c/object} to",
-            "Is being scolded for {PRONOUN/m_c/poss} rebellious actions"
-        ],
-        "main_trait_constraint": [
-            "rebellious"
-        ],
-        "random_status_constraint": [
-            "deputy",
-            "leader"
-            ]
-    },
-    {
-        "id": "responsible_kits",
+        "id": "responsible_to_kits",
         "thoughts": [
             "Is watching the kits to make sure none of them accidentally hurt each other",
             "Is teaching r_c the importance of following the code"
@@ -1221,7 +1238,7 @@
         ]
     },
     {
-        "id": "righteous_warrior",
+        "id": "righteous_gen",
         "thoughts": [
             "Is reevaluating {PRONOUN/m_c/poss} morals",
             "Hopes to help guide {PRONOUN/m_c/poss} Clanmates down the right path",
@@ -1236,7 +1253,7 @@
         ]
     },
     {
-        "id": "gen_shameless",
+        "id": "shameless_gen",
         "thoughts": [
             "Took an extra piece of fresh-kill from the pile",
             "Is grooming intensely in clear view of everyone in camp",
@@ -1254,8 +1271,8 @@
             "Keeps up a smirk while {PRONOUN/m_c/subject} {VERB/m_c/insult/insults} a Clanmate",
             "Has been lazing in {PRONOUN/m_c/poss} nest all day and doesn't seem to want to change that",
             "Made {PRONOUN/m_c/poss} Clanmates roll their eyes",
-		"Is lying in the center of camp",
-		"Is blatantly not doing {PRONOUN/m_c/poss} duties",
+            "Is lying in the center of camp",
+            "Is blatantly not doing {PRONOUN/m_c/poss} duties",
             "Doesn't apologize, even though everyone knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in the wrong"
         ],
         "main_trait_constraint": [
@@ -1277,7 +1294,7 @@
         ]
     },
     {
-        "id": "strange_warrior",
+        "id": "strange_gen",
         "thoughts": [
             "Is telling everyone about {PRONOUN/m_c/poss} weird dreams",
             "Doesn't understand why cats stare at {PRONOUN/m_c/object} the way they do",
@@ -1316,7 +1333,7 @@
         ]
     },
     {
-        "id": "gen_sneaky",
+        "id": "sneaky_gen",
         "thoughts": [
             "Took an extra piece of fresh-kill from the pile without anyone noticing",
             "Taunted a dog stuck behind a Twoleg fence",
@@ -1342,7 +1359,7 @@
         ]
     },
     {
-        "id": "strict_warrior",
+        "id": "strict_gen",
         "thoughts": [
             "Is lashing {PRONOUN/m_c/poss} tail furiously",
             "Will not allow {PRONOUN/m_c/self} to rest",
@@ -1359,20 +1376,30 @@
         ]
     },
     {
-        "id": "strict_warrior_to_living_apprentices",
+        "id": "strict_to_living_apprentices",
         "thoughts": [
             "Snaps at some apprentices after they pull a harmless prank",
             "Is criticizing everything r_c is doing wrong"
         ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "main_trait_constraint": [
-            "strict"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+            "main_status_constraint": [
+                "warrior",
+                "medicine cat",
+                "mediator",
+                "deputy",
+                "leader",
+                "elder"
+            ],
+            "random_status_constraint": [
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice"
+            ],
+            "main_trait_constraint": [
+                "strict"
+            ],
+            "random_living_status": [
+                "living"
+            ]
     },
     {
         "id": "thoughtful_gen",
@@ -1398,10 +1425,13 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
-        "id": "troublesome_warrior",
+        "id": "troublesome_gen",
         "thoughts": [
             "Won't stop pulling pranks",
             "Is causing problems",
@@ -1424,7 +1454,7 @@
         ]
     },
     {
-        "id": "vengeful_warrior",
+        "id": "vengeful_gen",
         "thoughts": [
             "Seems to be plotting something",
             "Is definitely plotting something",
@@ -1443,7 +1473,7 @@
         ]
     },
     {
-        "id": "wise_warrior",
+        "id": "wise_gen",
         "thoughts": [
             "Is grooming {PRONOUN/m_c/self} thoughtfully",
             "Tells some kits a thing or two about growing older",
@@ -1460,13 +1490,15 @@
         ]
     },
     {
-        "id": "wise_warrior_to_living_apprentices",
+        "id": "wise_to_living_apprentices",
         "thoughts": [
             "Is telling stories to a very interested bunch of apprentices",
             "Instills {PRONOUN/m_c/poss} wisdom into some rowdy apprentices" 
         ],
         "random_status_constraint": [
-            "apprentice"
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "wise"
@@ -1475,7 +1507,7 @@
             "living"
         ]
     },
-	{
+    {
         "id": "campkeeper_gen",
         "thoughts": [
             "Is padding back and forth across the camp",
@@ -1484,22 +1516,22 @@
             "Is patching up a hole in the camp wall",
             "Is helping to reinforce the walls of the elders' den",
             "Fortifies the camp walls for the fourth time this week",
-		"Is tidying up some stray moss that blew into the clearing"
+            "Is tidying up some stray moss that blew into the clearing"
         ],
         "main_skill_constraint": [
             "CAMP,1"
         ]
     },
-	{
+    {
         "id": "mediator_gen",
         "thoughts": [
             "Wonders if it's too late to become a mediator",
-	"Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead"
+            "Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead"
         ],
         "main_skill_constraint": [
             "MEDIATOR,1"
         ],
-	"main_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "warrior",
@@ -1507,14 +1539,14 @@
             "deputy",
             "leader",
             "elder"
-	]
+        ]
     },
-	{
-	"id": "starclan_gen",
-	"thoughts": [
-	"Is giving thanks to StarClan",
-	"Thought {PRONOUN/m_c/subject} saw a glimmer of stardust out of the corner of {PRONOUN/m_c/poss} eye",
-	"Is praying to StarClan for guidance",
+    {
+        "id": "starclan_gen",
+        "thoughts": [
+            "Is giving thanks to StarClan",
+            "Thought {PRONOUN/m_c/subject} saw a glimmer of stardust out of the corner of {PRONOUN/m_c/poss} eye",
+            "Is praying to StarClan for guidance",
             "Is assuring some worried Clanmates that StarClan will guide them",
             "Is pondering {PRONOUN/m_c/poss} warrior ancestors, and the protections they grant the Clan",
             "Is promising to always serve StarClan",
@@ -1523,23 +1555,26 @@
             "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
             "Prays to StarClan that next season will be a good one",
             "Goes to the medicine cat to ask for spiritual advice"
-	],
-	"main_skill_constraint": [
-		"STAR,1"
-	]
-	},
-	{
-	"id": "starclan2_to_kit",
-	"thoughts": [
+        ],
+        "main_skill_constraint": [
+            "STAR,1"
+        ]
+    },
+    {
+        "id": "starclan2_to_kit",
+        "thoughts": [
             "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real"
-	],
-	"main_skill_constraint": [
-		"STAR,2"
-	],
-	"random_status_constraint": [
-		"kitten"
-	]
-	},
+        ],
+        "main_skill_constraint": [
+            "STAR,2"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
     {
         "id": "gen_mate",
         "thoughts": [
@@ -1577,14 +1612,14 @@
             "elder"
         ],
         "random_living_status": [
-            "alive"
+            "living"
         ],
         "relationship_constraint": [
-			"mates"
-		]
+            "mates"
+        ]
     },
     {
-        "id": "gen_mate_medicine_cat",
+        "id": "gen_medicine_cat_mate",
         "thoughts": [
             "Is urging r_c to rest",
             "Brought r_c some prey",
@@ -1602,11 +1637,11 @@
             "medicine cat"
         ],
         "random_living_status": [
-            "alive"
+            "living"
         ],
         "relationship_constraint": [
-			"mates"
-		]
+            "mates"
+        ]
     },
     {
         "id": "gen_sibling",
@@ -1623,11 +1658,11 @@
             "any"
         ],
         "random_living_status": [
-            "alive"
+            "living"
         ],
         "relationship_constraint": [
-			"siblings"
-		]
+            "siblings"
+        ]
     },
     {
         "id": "gen_sibling_adult",
@@ -1650,11 +1685,11 @@
             "elder"
         ],
         "random_living_status": [
-            "alive"
+            "living"
         ],
         "relationship_constraint": [
-			"siblings"
-		]
+            "siblings"
+        ]
     },
     {
         "id": "parent_to_kit",
@@ -1666,6 +1701,9 @@
         ],
         "relationship_constraint": [
             "parent/child"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1684,7 +1722,8 @@
             "siblings"
         ],
         "random_living_status": [
-            "starclan"
+            "starclan",
+            "darkforest"
         ]
     },
     {
@@ -1977,7 +2016,7 @@
     {
         "id": "gen_to_alive_elder",
         "thoughts": [
-"Is hoping r_c will tell {PRONOUN/m_c/object} a new story",
+            "Is hoping r_c will tell {PRONOUN/m_c/object} a new story",
             "Wonders at all that r_c has seen and done",
             "Is telling r_c a story",
             "Is spending time with r_c", 
@@ -4085,7 +4124,7 @@
     {
         "id": "wasting_disease_leaf-fall_gen_to_alive_gen",
         "thoughts": [
-            "Dreads the potential illness that may arrive in Leaf-bare"
+            "Dreads the potential illness that may arrive in leaf-bare"
         ],
         "season": [
             "Leaf-fall"
@@ -4208,7 +4247,6 @@
             "kitten"
         ]
     },
-    
     {
         "id": "constantly_dizzy_gen_to_alive_gen",
         "thoughts": [
@@ -4224,7 +4262,7 @@
                 "constantly dizzy"
             ]
         },
-        "random_living_constraint": [
+        "random_living_status": [
             "living"
         ]
     },
@@ -4240,7 +4278,7 @@
                 "lasting grief"
             ]
         },
-        "random_living_constraint": [
+        "random_living_status": [
             "living"
         ]
     }

@@ -205,7 +205,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty-pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
+                "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty-pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly {VERB/s_c/need/needs} more training.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -322,13 +322,13 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. They snicker to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -392,13 +392,13 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. They snicker to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was} as far as that ground squirrel thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
             },
             {
-                "text": "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+                "text": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but great StarClan, it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -488,7 +488,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -545,7 +545,7 @@
                 "stat_trait": ["daring", "bold", "ambitious"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -556,7 +556,7 @@
                 }
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -568,8 +568,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c was killed by a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
+                    "reg_death": "m_c was killed by a fox.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a fox"
                 }
             }
         ]
@@ -585,8 +585,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
-        "decline_text": "It's probably nothing. They leave the noise alone and continue searching for prey.",
+        "intro_text": "As r_c is checking the border lines, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} an odd sound coming from just beyond a rock fall.",
+        "decline_text": "It's probably nothing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} the noise alone and {VERB/r_c/continue/continues} searching for prey.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -605,7 +605,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads towards the rock fall to check on the noise when a rabbit bursts out! They aren't quick enough to catch it, but at least the noise was nothing dangerous.",
+                "text": "p_l pads towards the rock fall to check on the noise when a rabbit bursts out! {PRONOUN/r_c/subject/CAP} {VERB/r_c/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
                 "exp": 0,
                 "weight": 20
             },
@@ -616,18 +616,18 @@
                 "stat_trait": ["daring", "bold", "ambitious"]
             },
             {
-                "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but {PRONOUN/r_c/subject} {VERB/r_c/are/is} alone on this patrol and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now.  The wolverine kills the lone cat with little trouble.",
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with a snarling wolverine! r_c yowls for help, but {PRONOUN/r_c/subject} {VERB/r_c/are/is} alone on this patrol and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now.  The wolverine kills the lone cat with little trouble.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c gained a scar from a fox.",
+                    "scar": "m_c gained a scar from a wolverine.",
                     "reg_death": "m_c was killed by a wolverine while patrolling alone.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator while patrolling alone"
                 }
             },
             {
-                "text": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away.",
+                "text": "r_c heads toward the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -639,7 +639,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c was killed by a wolverine while patrolling alone.",
+                    "reg_death": "m_c was killed by a fox while patrolling alone.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator while patrolling alone"
                 }
             }
@@ -1207,7 +1207,7 @@
         "decline_text": "A songbird on a branch overhead sings, and the grouse startle and take flight. Dung.",
         "success_outcomes": [
                 {
-                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare.Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
+                    "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
                     "exp": 30,
                     "weight": 20,
                     "prey": ["medium"],
@@ -1253,9 +1253,9 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "m_c was permanently marked by the barb of a stingray as an apprentice - but {PRONOUN/m_c/subject} survived.",
-                        "reg_death": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice.",
-                        "lead_death": "from the strike of a stingray encountered on a hunt as a foolish apprentice"
+                        "scar": "m_c was scarred after underestimating a grouse.",
+                        "reg_death": "m_c died after underestimating a grouse on a hunt as a foolish apprentice.",
+                        "lead_death": "from a grouse encountered on a hunt as a foolish apprentice"
                         }
                 }
             ]

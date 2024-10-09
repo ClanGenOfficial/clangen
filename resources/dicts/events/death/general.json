@@ -642,7 +642,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -676,7 +675,7 @@
         "history": [{
             "cats": ["m_c"],
             "reg_death": "m_c went missing and was found dead.",
-            "lead_death": "went missing and was found dead"
+            "lead_death": "went missing and {VERB/m_c/were/was} found dead"
         }]
     },
     {
@@ -1577,7 +1576,7 @@
         ],
         "tags": [ "no_body", "all_lives" ],
         "weight": 20,
-        "event_text": "m_c couldn't miss today! Such a bright day, perfect for a walk. That was until m_c detected another scent, a foul one. {PRONOUN/m_c/subject/CAP} recoiled, but not before long claws slashed across their face. Later, c_n found only blood and the scent of a predator at the scene.",
+        "event_text": "m_c couldn't miss today! Such a bright day, perfect for a walk. That was until m_c detected another scent, a foul one. {PRONOUN/m_c/subject/CAP} recoiled, but not before long claws slashed across {PRONOUN/m_c/poss} face. Later, c_n found only blood and the scent of a predator at the scene.",
         "m_c": {
             "age": [ "adolescent", "young adult", "adult", "senior adult" ],
             "dies": true
@@ -2162,7 +2161,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                
                 "compassionate",
                 "loving",
                 "responsible",
@@ -2246,7 +2244,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                
                 "compassionate",
                 "loving",
                 "responsible",
@@ -2329,7 +2326,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                
                 "compassionate",
                 "loving",
                 "responsible",
@@ -2387,7 +2383,7 @@
         "history": [{
             "cats": ["m_c", "r_c"],
             "reg_death": "This cat died in a border skirmish against o_c_n.",
-            "lead_death": "was killed in a border skirmish against o_c_n."
+            "lead_death": "{VERB/m_c/were/was} killed in a border skirmish against o_c_n."
         }],
         "other_clan": {
             "current_rep": [
@@ -2575,7 +2571,7 @@
         "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as they fall.",
+        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}.",
         "m_c": {
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "medicine cat", "mediator", "deputy"],
             "not_skill": [
@@ -2659,7 +2655,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky.",
+        "event_text": "r_c, guarding camp, yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c starts sprinting to m_c's position but can't get there in time, not before m_c is carried high into the sky.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
@@ -3320,7 +3316,6 @@
                 "ambitious",
                 "daring",
                 "fierce",
-                
                 "loving",
                 "loyal",
                 "responsible",
@@ -3380,7 +3375,6 @@
                 "bold",
                 "ambitious",
                 "fierce",
-                
                 "loving",
                 "loyal",
                 "responsible",
@@ -3604,7 +3598,7 @@
         },
         "history": [{
             "cats": ["m_c"],
-            "reg_death": "m_c died when they were struck by lightning.",
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} struck by lightning.",
             "lead_death": "{VERB/m_c/were/was} struck by lightning"
         }]
     },
@@ -3826,7 +3820,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4048,7 +4041,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
@@ -4118,7 +4110,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
@@ -4188,7 +4179,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4267,7 +4257,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4317,7 +4306,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4394,7 +4382,7 @@
         },
         "history": [{
             "cats": ["m_c"],
-            "reg_death": "m_c was killed by an o_c_n apprentice.",
+            "reg_death": "m_c was killed by a o_c_n apprentice.",
             "lead_death": "fought an apprentice from o_c_n"
         }],
         "other_clan": {
@@ -4413,7 +4401,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c died trying to save an o_c_n apprentice.",
+        "event_text": "m_c died trying to save a o_c_n apprentice.",
         "m_c": {
             "age": [
                 "young adult",
@@ -4429,7 +4417,6 @@
                 "compassionate",
                 "confident",
                 "daring",
-                
                 "fierce",
                 "loving",
                 "responsible",
@@ -4574,7 +4561,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
@@ -5627,7 +5613,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
+        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} {VERB/m_c/sneak/sneaks} out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
         "m_c": {
             "status": [
                 "kitten"
@@ -5917,7 +5903,7 @@
     "sub_type": ["war", "murder"],
     "tags": [],
     "weight": 20,
-    "event_text": "r_c stands back and watches as the o_c_n deputy kills m_c. r_c could probably have prevented it, but instead {PRONOUN/r_c/subject} turn and pretend {PRONOUN/r_c/subject} saw nothing.",
+      "event_text": "r_c stands back and watches as the o_c_n deputy kills m_c. r_c could probably have prevented it. Instead, {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} and {VERB/r_c/pretend/pretends} {PRONOUN/r_c/subject} saw nothing.",
     "m_c": {
       "status": ["apprentice", "warrior", "deputy", "leader"],
       "not_skill": ["FIGHTER,2"],
@@ -5929,8 +5915,8 @@
       "history": [
       {
       "cats": ["m_c"],
-      "reg_death": "m_c died when the o_c_n deputy killed them in battle, r_c allowed {PRONOUN/m_c/poss} death to happen.",
-      "lead_death": "died when the o_c_n deputy attacked them and r_c took no action"
+      "reg_death": "m_c died when the o_c_n deputy killed {PRONOUN/m_c/object} in battle, r_c allowed {PRONOUN/m_c/poss} death to happen.",
+      "lead_death": "died when the o_c_n deputy attacked {PRONOUN/m_c/object} and r_c took no action"
       }
     ],
     "other_clan": {
@@ -5982,8 +5968,8 @@
       "history": [
       {
       "cats": ["m_c"],
-      "reg_death": "m_c died when r_c lured {PRONOUN/m_c/object} into a Twoleg trap.",
-      "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
+      "reg_death": "m_c was murdered by r_c.",
+      "lead_death": "{VERB/m_c/were/was} murdered by r_c"
       }
     ]
   },
@@ -5994,7 +5980,7 @@
     "sub_type": ["murder"],
     "tags": ["lives_remain"],
     "weight": 30,
-    "event_text": "r_c attempts to take what remains of m_c's lives, but a warning from StarClan gives {PRONOUN/m_c/object} enough information to avoid such a fate. {PRONOUN/m_c/subject} still lose a life, but at least {PRONOUN/m_c/subject} manage take r_c down with {PRONOUN/m_c/object}.",
+      "event_text": "r_c attempts to take what remains of m_c's lives, but a warning from StarClan gives {PRONOUN/m_c/object} enough information to avoid such a fate. {PRONOUN/m_c/subject/CAP} still {VERB/m_c/lose/loses} a life, but at least {PRONOUN/m_c/subject} {VERB/m_c/manage/manages} to take r_c down with {PRONOUN/m_c/object}.",
     "m_c": {
         "status": ["leader"],
         "skill": ["OMEN,1", "DREAM,1", "PROPHET,1", "GHOST,2", "STAR,1"],
@@ -6007,11 +5993,11 @@
       "history": [
         {
             "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c"
         },
         {
             "cats": ["r_c"],
-            "reg_death": "r_c died when {PRONOUN/r_c/subject} tried to kill m_c and failed."
+            "reg_death": "r_c died after launching a failed assassination attempt on the Clan's leader."
         }
     ]
   }

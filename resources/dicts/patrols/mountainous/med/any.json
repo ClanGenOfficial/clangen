@@ -20,7 +20,7 @@
         "pl_skill_constraint": ["PROPHET,1"],
         "success_outcomes": [
             {
-                "text": "As p_l looks into the puddle, they're greeted by an intense vision. They drop what they're doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
+                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far too important.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "p_l is greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. p_l feels their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head.",
+                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives {PRONOUN/p_l/object} a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -50,7 +50,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because {PRONOUN/p_l/subject} really could have used some guidance from StarClan.",
                 "exp": 0,
                 "weight": 20
             }
@@ -74,11 +74,11 @@
         },
         "weight": 20,
         "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory, both on even and uneven ground.",
-        "decline_text": "As they look at app1's absent-minded gaze, they hesitate and change their mind. Maybe another day would be best, when app1 is more focused and less liable to slip and fall off the mountain.",
+        "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at app1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when app1 is more focused and less liable to slip and fall off the mountain.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
-                "text": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs they need both on even and uneven ground without them if needed.",
+                "text": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs {PRONOUN/app1/subject} {VERB/app1/need/needs} both on even and uneven ground without {PRONOUN/p_l/object} if needed.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -100,7 +100,7 @@
                 ]
             },
             {
-                "text": "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
+                "text": "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise {PRONOUN/app1/subject} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"],
@@ -163,7 +163,7 @@
         },
         "weight": 20,
         "intro_text": "app1 has been sent out into the mountains to try to find herbs alone.",
-        "decline_text": "Nervous and with an eerie sound on the wind scaring them, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp with {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object} and try again another day.",
+        "decline_text": "Nervous and with an eerie sound on the wind scaring {PRONOUN/app1/object}, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp with {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object} and try again another day.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
@@ -173,7 +173,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]
@@ -181,7 +181,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject}{VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/give/gives} up and return to camp, {PRONOUN/app1/poss} tail dragging miserably along the ground.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/give/gives} up and return to camp, {PRONOUN/app1/poss} tail dragging miserably along the ground.",
                 "exp": 0,
                 "weight": 20
             }
@@ -200,7 +200,7 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of slope {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional. What could this mean?",
+        "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of slope {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional/p_l. What could this mean?",
         "decline_text": "p_l is in too much of a hurry, {PRONOUN/p_l/subject} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
         "chance_of_success": 45,
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
@@ -242,12 +242,12 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of their mentor. The wind is whistling through the hills as they pad along.",
-        "decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
+        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind is whistling through the hills as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
+        "decline_text": "Before they get more than a few pawsteps away, {PRONOUN/app1/poss} mentor calls them back. Apparently, something more pressing has come up.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is plucking some rosemary when their attention is suddenly grabbed by omen_list_sight. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!",
+                "text": "app1 is plucking some rosemary when {PRONOUN/app1/poss} attention is suddenly grabbed by omen_list_sight/app1. The fur on {PRONOUN/app1/poss} back begins to prickle slightly, the sound of {PRONOUN/app1/poss} heartbeat like thunder in {PRONOUN/app1/poss} ears. {PRONOUN/app1/subject/CAP} {VERB/app1/turn/turns} and {VERB/app1/hare/hares} back to camp, herbs forgotten. {PRONOUN/app1/subject/CAP} {VERB/app1/need/needs} to tell {PRONOUN/app1/poss} mentor about this as soon as possible!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["rosemary"]
@@ -255,7 +255,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 feels a pit of dread beginning to form in their belly - they've forgotten where to find the herb their mentor wanted. They taste the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. They'll have to swallow their pride and return to ask for directions.",
+                "text": "app1 feels a pit of dread beginning to form in {PRONOUN/app1/poss} belly - {PRONOUN/app1/subject}{VERB/app1/'re/'s} forgotten where to find the herb {PRONOUN/app1/poss} mentor wanted. {PRONOUN/app1/subject/CAP} {VERB/app1/taste/tastes} the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. {PRONOUN/app1/subject/CAP}'ll have to swallow {PRONOUN/app1/poss} pride and return to ask for directions.",
                 "exp": 0,
                 "weight": 20
             }
@@ -275,8 +275,8 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. Their whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
-        "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a Clanmate.",
+        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs {PRONOUN/p_l/subject} can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
+        "decline_text": "Someone calls p_l back, and the patrol is forgotten as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} a Clanmate.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -349,7 +349,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l knows the conditions are miserable, but their group is even more insufferable. Not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it.",
+                "text": "p_l knows the conditions are miserable, but {PRONOUN/p_l/poss} group is even more insufferable. Not only do {PRONOUN/p_l/subject} {VERB/p_l/have/has} to put up with these cats for an entire afternoon, there's also nothing to show for it.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -429,11 +429,11 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside them to gather as many as they can, their eyes glittering with joy and pride as they work.",
+                "text": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside {PRONOUN/p_l/object} to gather as many as they can, {PRONOUN/app1/poss} eyes glittering with joy and pride as {PRONOUN/app1/subject} {VERB/app1/work/works}.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -448,7 +448,7 @@
                 ]
             },
             {
-                "text": "p_l goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l and app1 underneath the many cobwebs they have gathered.",
+                "text": "p_l goes to {PRONOUN/p_l/poss} favorite cobweb gathering places. Several cats in the camp startle when they pass by {PRONOUN/p_l/object} as they are unable to see p_l and app1 underneath the many cobwebs {PRONOUN/p_l/subject} gathered.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -465,7 +465,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching their apprentice and caring for their patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day.",
+                "text": "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching {PRONOUN/p_l/poss} apprentice and caring for {PRONOUN/p_l/poss} patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -495,12 +495,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "c_n can never have enough cobwebs, p_l instructs their team, leading them out to search for them.",
+        "intro_text": "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l <i>mrrp</i>s with laughter, watching r_c parade around with such a big bundle of cobwebs that they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
+                "text": "p_l <i>mrrp</i>s with laughter, watching r_c parade around with such a big bundle of cobwebs that {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} colliding with things in {PRONOUN/r_c/poss} path {PRONOUN/r_c/subject} can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -544,7 +544,7 @@
                 ]
             },
             {
-                "text": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow their lead, it's a very successful gathering mission.",
+                "text": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow {PRONOUN/s_c/poss} lead, it's a very successful gathering mission.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -569,7 +569,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find.",
+                "text": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds {PRONOUN/p_l/poss} breath and counts to ten before {PRONOUN/p_l/subject} {VERB/p_l/dismiss/dismisses} the patrol, every found cobweb ruined, what little {PRONOUN/p_l/subject} did manage to find.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -606,12 +606,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "It makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "It makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -633,7 +633,7 @@
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -657,7 +657,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -687,32 +687,32 @@
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 3,
-        "max_cats": 3,
+        "max_cats": 6,
         "min_max_status": {
             "medicine cat apprentice": [1, 6],
             "healer cats": [1, 6],
-            "all apprentices": [3, 3]
+            "all apprentices": [3, 6]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect cobwebs, app3 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app3 screws up {PRONOUN/app3/poss} face into a stupid expression around the stick {PRONOUN/app3/subject} {VERB/app3/hold/holds} in {PRONOUN/app3/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app2 ignores it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "app2 ignores it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app3 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": ["app3"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["app3"],
                         "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
@@ -721,20 +721,20 @@
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app3's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though app2 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
                 "relationships": [
                     {
                         "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_from": ["app3"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["app3"],
                         "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
@@ -745,19 +745,19 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
                         "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_from": ["app3"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["app3"],
                         "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
@@ -775,195 +775,19 @@
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 4,
-        "max_cats": 4,
-        "min_max_status": {
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [4, 4]
-        },
-        "weight": 20,
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_cobwebapps4",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "gen_med_cobwebapps",
-        "min_cats": 5,
-        "max_cats": 5,
-        "min_max_status": {
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [5, 5]
-        },
-        "weight": 20,
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_cobwebapps5",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "gen_med_cobwebapps",
-        "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
             "medicine cat apprentice": [1, 6],
             "healer cats": [1, 6],
-            "all apprentices": [6, 6]
+            "all apprentices": [4, 6]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+                "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["cobwebs"],
@@ -974,18 +798,11 @@
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             },
             {
-                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done.",
+                "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -996,20 +813,13 @@
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered..",
+                "text": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered...",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1019,13 +829,6 @@
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
                     }
                 ]
             }
@@ -1039,12 +842,12 @@
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
-        "max_cats": 3,
+        "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
             "medicine cat apprentice": [1, 6],
             "healer cats": [1, 6],
-            "all apprentices": [3, 3]
+            "all apprentices": [3, 6]
         },
         "weight": 20,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
@@ -1074,7 +877,7 @@
                 ]
             },
             {
-                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
+                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "cobwebs"],
@@ -1098,274 +901,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_cobwebapps7",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": [],
-        "patrol_art": "med_general_intro",
-        "min_cats": 4,
-        "max_cats": 4,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [4, 4]
-        },
-        "weight": 20,
-        "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_cobwebapps8",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": [],
-        "patrol_art": "med_general_intro",
-        "min_cats": 5,
-        "max_cats": 5,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [5, 5]
-        },
-        "weight": 20,
-        "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_cobwebapps9",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["six_apprentices"],
-        "patrol_art": "med_general_intro",
-        "min_cats": 6,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been.",
+                "text": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1567,7 +1103,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing not so far from the horsetail and requests that the warriors gather some. Having other cats to help them has definitely made the patrol an easy afternoon's work.",
+                "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing not so far from the horsetail and requests that the warriors gather some. Having other cats to help {PRONOUN/p_l/object} has definitely made the patrol an easy afternoon's work.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["moss", "horsetail"],
@@ -1611,7 +1147,7 @@
                 ]
             },
             {
-                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c brings back their impressive additions to the Clan's herb stores with the help of the warriors.",
+                "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c brings back {PRONOUN/s_c/poss} impressive additions to the Clan's herb stores with the help of the warriors.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1636,7 +1172,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other.",
+                "text": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats are snappy with each other.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1672,12 +1208,12 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/go/goes} to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile - once they're satisfied, they take a moment to wrap their jaws around the heap, then make their way back to camp.",
+                "text": "p_l quickly makes {PRONOUN/p_l/poss} way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/spend/spends} a bit of time slicing bits off with {PRONOUN/p_l/poss} claws, careful not to get any roots or dirt in the pile - once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} a moment to wrap {PRONOUN/p_l/poss} jaws around the heap, then make {PRONOUN/p_l/poss} way back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["moss"]
@@ -1685,7 +1221,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again.",
+                "text": "Mouse-dung! When p_l gets to the best moss-gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1894,7 +1430,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
@@ -1916,7 +1452,7 @@
                 ]
             },
             {
-                "text": "r_c seems somewhat irritated at first, but as p_l keeps chatting to them, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "r_c seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/r_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -1940,7 +1476,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c shrugs, tailtip twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
+                "text": "r_c shrugs, tailtip twitching with irritation. It's fine, it's totally not like {PRONOUN/r_c/subject}'d prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1970,34 +1506,33 @@
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
         "min_cats": 3,
-        "max_cats": 3,
+        "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [3, 3]
+            "apprentice": [2, 5],
+            "medicine cat apprentice": [1, 1],
+            "all apprentices": [3, 6]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app3 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cat of their group doesn't look thrilled, app1 insists there's nothing to apologize for. app1 bumps app2's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cats in the group don't look thrilled, app1 insists there's nothing to annoyed about. app1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": ["dislike"],
                         "amount": -10
@@ -2005,20 +1540,20 @@
                 ]
             },
             {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "Out of all the cats in the group, app2 is definitely the one that seems the most irritated about it at first. However, as p_l keeps chatting to {PRONOUN/app2/object}, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up to the task, and both apprentices feel much more comfortable with each other by the time the group brings their mossy loot back to camp.",
                 "exp": 20,
-                "weight": 5,
+                "weight": 20,
                 "herbs": ["many_herbs", "moss"],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["p_l"],
                         "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["p_l"],
                         "cats_from": ["app2"],
                         "mutual": true,
                         "values": ["dislike"],
@@ -2029,21 +1564,21 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
+                "text": "The warrior apprentices exchange glances, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": ["romantic", "platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": ["dislike"],
                         "amount": 10
                     }
@@ -2058,58 +1593,57 @@
         "types": ["herb_gathering"],
         "tags": ["romantic", "rom_two_apps"],
         "patrol_art": "gen_med_mossapps",
-        "min_cats": 4,
-        "max_cats": 4,
+        "min_cats": 3,
+        "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
             "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [4, 4]
+            "all apprentices": [3, 6]
         },
         "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app3 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "The apprentices are sent off into the territory to gather moss for the medicine cat den.",
         "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
+        "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": ["dislike"],
                         "amount": -10
                     }
                 ]
             },
             {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": ["dislike"],
                         "amount": -10
                     }
@@ -2118,21 +1652,21 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
+                "text": "app1 and app2 start to argue, ruining everyone's day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": ["dislike"],
                         "amount": 10
                     }
@@ -2148,461 +1682,16 @@
         "tags": [],
         "patrol_art": "gen_med_mossapps",
         "min_cats": 3,
-        "max_cats": 3,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [3, 3]
-        },
-        "weight": 20,
-        "intro_text": "The apprentices are sent off into the territory to gather moss for the medicine cat den.",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 and app2 start to argue, ruining everyone's day.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_mossapps5",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": [],
-        "patrol_art": "gen_med_mossapps",
-        "min_cats": 4,
-        "max_cats": 4,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [4, 4]
-        },
-        "weight": 20,
-        "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 and app2 start to argue, ruining everyone's day.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_mossapps6",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic","rom_two_apps"],
-        "patrol_art": "gen_med_mossapps",
-        "min_cats": 5,
-        "max_cats": 5,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [5, 5]
-        },
-        "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app3 screws up their face into a stupid expression at the menial nature of the task.",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_mossapps7",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": [],
-        "patrol_art": "gen_med_mossapps",
-        "min_cats": 5,
-        "max_cats": 5,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [5, 5]
-        },
-        "weight": 20,
-        "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 and app2 start to argue, ruining everyone's day.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_mossapps8",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
-        "patrol_art": "gen_med_mossapps",
-        "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
             "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [6, 6]
-        },
-        "weight": 20,
-        "intro_text": "As the apprentices head out to collect moss, app3 screws up their face into a stupid expression at the menial nature of the task.",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps app1's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
-                "exp": 20,
-                "weight": 20,
-                "herbs": ["moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            },
-            {
-                "text": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As app1 keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["many_herbs", "moss"],
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_mossapps9",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["six_apprentices"],
-        "patrol_art": "gen_med_mossapps",
-        "min_cats": 6,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
+            "all apprentices": [3, 6]
         },
         "weight": 20,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "success_outcomes": [
             {
                 "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
@@ -2627,7 +1716,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2688,12 +1777,12 @@
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along app1 as their assistant for this trip, and the two cats head out in relative silence.",
+        "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along app1 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Even though there's nothing about this place that's different, except for it being chosen for being a peaceful spot, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death.",
+                "text": "Even though there's nothing about this place that's different, except for it being chosen for being a peaceful spot, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. p_l and app1 tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["rosemary"],
@@ -2710,7 +1799,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of their paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
+                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2742,7 +1831,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Even though there's nothing about this place that's different, except for it being chosen for being a peaceful spot, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death.",
+                "text": "Even though there's nothing about this place that's different, except for it being chosen for being a peaceful spot, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. p_l and r_c tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["rosemary"],
@@ -2759,7 +1848,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
+                "text": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2927,7 +2016,7 @@
                 ]
             },
             {
-                "text": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument.",
+                "text": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object} and they get into a huge argument.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["None"],

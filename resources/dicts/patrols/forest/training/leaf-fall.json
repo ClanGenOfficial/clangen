@@ -12,13 +12,13 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
         "relationship_constraint": ["romantic_20", "not_mates"],
         "success_outcomes": [
             {
-                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad the forest together. The two stop under a great oak and curl up in the piles of bright leaves beneath it.",
+                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The two stop under a great oak and curl up in the piles of bright leaves beneath it.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -39,7 +39,7 @@
                 ]
             },
             {
-                "text": "All p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the bright crunch of leaves underfoot a pleasant backdrop as they chat, heads bent together.",
+                "text": "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the bright crunch of leaves underfoot a pleasant backdrop as they chat, heads bent together.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -129,12 +129,12 @@
                 "weight": 20
             },
             {
-                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"]
@@ -171,10 +171,10 @@
     "max_cats": 6,
     "min_max_status": {
         "apprentice": [2, 4],
-        "normal adult": [2,4]
+        "normal adult": [2, 4]
     },
     "weight": 20,
-    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders familiar forest paths, app1 gets swallowed up.",
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
     "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
     "chance_of_success": 60,
     "success_outcomes": [
@@ -219,15 +219,15 @@
     "max_cats": 6,
     "min_max_status": {
         "apprentice": [2, 4],
-        "normal adult": [2,2]
+        "normal adult": [2, 2]
     },
     "weight": 20,
-    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders familiar forest paths, app1 gets swallowed up.",
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
     "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
     "chance_of_success": 60,
     "success_outcomes": [
         {
-            "text": "app1 leaps out of the leaf drift, sending p_l falling into r_c as {PRONOUN/app1/subject} {VERB/app1/leap/leaps} onwards to bowl app2 into yet more leaves. The two apprentices descend into furious mock combat, yowling with excitement, as p_l gazes up at r_c in bewilderment.",
+            "text": "app1 leaps out of the leaf drift, sending p_l falling into r_c as {PRONOUN/app1/subject} {VERB/app1/fly/flies} by to bowl app2 into yet more leaves. The two apprentices descend into furious mock combat, yowling with excitement, as r_c gazes up at p_l in bewilderment.",
             "exp": 10,
             "weight": 20,
             "relationships": [
@@ -274,10 +274,10 @@
     "max_cats": 6,
     "min_max_status": {
         "apprentice": [2, 2],
-        "normal adult": [2,4]
+        "normal adult": [2, 4]
     },
     "weight": 20,
-    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders familiar forest paths, app1 gets swallowed up.",
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
     "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
     "chance_of_success": 60,
     "success_outcomes": [

@@ -313,7 +313,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "r_c realizes {PRONOUN/r_c/subject} {VERB/r_c/haven't/hasn't} seen m_c around camp for a few days. Checking {PRONOUN/m_c/subject} favorite spots yields nothing, so r_c decides to go out and search for {PRONOUN/m_c/object} in the Clan's territory. However, r_c could never have expected to find m_c's shriveled-up body, clearly dead for some time now.",
+        "event_text": "r_c realizes {PRONOUN/r_c/subject} {VERB/r_c/haven't/hasn't} seen m_c around camp for a few days. Checking {PRONOUN/m_c/poss} favorite spots yields nothing, so r_c decides to go out and search for {PRONOUN/m_c/object} in the Clan's territory. However, r_c could never have expected to find m_c's shriveled-up body, clearly dead for some time now.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -397,7 +397,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c couldn't speak, yell for help, or beg StarClan to give {PRONOUN/m_c/subject} a sign they were still with {PRONOUN/m_c/object}, {PRONOUN/m_c/poss} tongue having swelled up inside {PRONOUN/m_c/poss} dried mouth. As m_c collapses, feeling {PRONOUN/m_c/poss} body internally shut down because of dehydration and heat exhaustion, {PRONOUN/m_c/subject} pray that {PRONOUN/m_c/poss} Clanmates locate m_c's body before {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} unrecognizable under the sun.",
+        "event_text": "m_c couldn't speak, yell for help, or beg StarClan to give {PRONOUN/m_c/object} a sign they were still with {PRONOUN/m_c/object}, {PRONOUN/m_c/poss} tongue having swelled up inside {PRONOUN/m_c/poss} dried mouth. As m_c collapses, feeling {PRONOUN/m_c/poss} body internally shut down because of dehydration and heat exhaustion, {PRONOUN/m_c/subject} {VERB/m_c/pray/prays} that {PRONOUN/m_c/poss} Clanmates locate m_c's body before {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} unrecognizable under the sun.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -550,7 +550,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumble on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why {PRONOUN/r_c/poss} child didn't come back home: m_c was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
+        "event_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumbled on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why {PRONOUN/r_c/poss} child didn't come back home: m_c was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
         "m_c": {
             "age": [
                 "adolescent"

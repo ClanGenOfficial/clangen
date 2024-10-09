@@ -119,7 +119,7 @@
             "Asks the medicine cats to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
             "Doesn't understand StarClan's resentment towards {PRONOUN/m_c/object}",
             "Is thinking about taking kits from another Clan",
-            "Encourages warriors to destroy other Clan's herb supplies",
+            "Encourages warriors to destroy other Clans' herb supplies",
             "Demands the warriors train with their claws unsheathed",
             "Considers exiling elders from now on",
             "Thinks about driving out an opposing Clan",
@@ -224,7 +224,7 @@
             "Shows r_c how to lead with fear and demand respect",
             "Tells r_c to take care of any disloyal warriors",
             "Trusts r_c to continue to keep the Clan in line",
-            "Threatens to drag r_c to the dark forest with {PRONOUN/m_c/object}",
+            "Threatens to drag r_c to the Dark Forest with {PRONOUN/m_c/object}",
             "Is teaching r_c how to rat out spies and dissenting warriors",
             "Shows r_c how to control with pain and suffering"
         ],

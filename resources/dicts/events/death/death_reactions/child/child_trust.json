@@ -1,370 +1,281 @@
 {
-  "general": {
-    "body": [
-      "r_c wails when {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the body of {PRONOUN/r_c/poss} parent, m_c, lying still and cold.",
-      "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
-      "m_c's body lays in the clearing and r_c nuzzles up beside {PRONOUN/m_c/object}, wishing only to feel the warmth of {PRONOUN/r_c/poss} parent's presence.",
-      "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
-      "r_c gently licks m_c's fur clean, as m_c once did for {PRONOUN/r_c/object} in the nursery, and blinks back tears.",
-      "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
-
-    ],
-    "no_body": [
-      "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
-      "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
-      "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
-    ]
-  },
-  "adventurous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "ambitious": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bloodthirsty": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "calm": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "careful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "charismatic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "childish": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "cold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "compassionate": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "confident": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "daring": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "empathetic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "faithful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "fierce": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "insecure": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "lonesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loving": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loyal": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "nervous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "patient": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "playful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "responsible": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "righteous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "shameless": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "sneaky": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strange": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strict": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "thoughtful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "troublesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "vengeful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "wise": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "attention-seeker": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bossy": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bouncy": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bullying": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "charming": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "daydreamer": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "impulsive": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "inquisitive": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "noisy": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "polite": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "quiet": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "sweet": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  }
+    "general": {
+        "body": [
+            "r_c wails when {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the body of {PRONOUN/r_c/poss} parent, m_c, lying still and cold.",
+            "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
+            "m_c's body lays in the clearing and r_c nuzzles up beside {PRONOUN/m_c/object}, wishing only to feel the warmth of {PRONOUN/r_c/poss} parent's presence.",
+            "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
+            "r_c gently licks m_c's fur clean, as m_c once did for {PRONOUN/r_c/object} in the nursery, and blinks back tears.",
+            "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
+        ],
+        "no_body": [
+            "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
+            "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
+            "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
+        ]
+    },
+    "adventurous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "ambitious": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bloodthirsty": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "calm": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "careful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charismatic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "childish": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "cold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "compassionate": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "confident": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daring": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "empathetic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "faithful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "fierce": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "insecure": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "lonesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loving": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loyal": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "nervous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "patient": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "playful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "responsible": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "righteous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "shameless": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sneaky": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strange": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strict": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "thoughtful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "troublesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "vengeful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "wise": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "attention-seeker": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bossy": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bouncy": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bullying": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charming": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daydreamer": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "impulsive": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "inquisitive": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "noisy": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "polite": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "quiet": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sweet": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    }
 }

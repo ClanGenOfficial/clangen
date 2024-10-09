@@ -5,10 +5,10 @@
 		"interactions": [
 			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
 			"m_c offered r_c a paw with something but {PRONOUN/r_c/subject} turned it down, thanking {PRONOUN/m_c/object} for the offer.",
-            "m_c offered r_c a paw with something.",
-            "m_c told r_c a hard truth that {PRONOUN/m_c/subject} knew {PRONOUN/r_c/subject} needed to hear.",
-            "r_c warned m_c of a prank.",
-            "m_c gave r_c a helpful suggestion."
+            		"m_c offered r_c a paw with something.",
+            		"m_c told r_c a hard truth that {PRONOUN/m_c/subject} knew {PRONOUN/r_c/subject} needed to hear.",
+            		"r_c warned m_c of a prank.",
+            		"m_c gave r_c a helpful suggestion."
 		]
 	},
 	{
@@ -64,19 +64,19 @@
 		],
 		"random_trait_constraint": [
 			"bold",
-            "arrogant",
-            "competitive",
-            "bloodthirsty",
-            "daring",
-            "fierce",
-            "responsible"
+            		"arrogant",
+            		"competitive",
+            		"bloodthirsty",
+            		"daring",
+            		"fierce",
+            		"responsible"
 		],
         "random_status_constraint": [
-            "apprentice",
-            "warrior",
-            "deputy",
-            "leader",
-            "elder"
+            		"apprentice",
+            		"warrior",
+            		"deputy",
+            		"leader",
+            		"elder"
         ]
 	},
 	{
@@ -127,18 +127,29 @@
 	{
 		"id": "trust_inc_med8",
 		"interactions": [
-            "m_c urges r_c to rest, {PRONOUN/m_c/subject} can handle some of r_c's workload.",
-            "m_c reminded r_c of some work {PRONOUN/r_c/subject} forgot about."
+            		"m_c urges r_c to rest, {PRONOUN/m_c/subject} can handle some of r_c's workload.",
+            		"m_c reminded r_c of some work {PRONOUN/r_c/subject} forgot about."
 		],
         "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader"
+            		"apprentice",
+            		"medicine cat apprentice",
+            		"mediator apprentice",
+            		"warrior",
+            		"medicine cat",
+            		"mediator",
+            		"deputy",
+            		"leader",
+			"elder"
+        ],
+		"main_status_constraint": [
+            		"apprentice",
+            		"medicine cat apprentice",
+            		"mediator apprentice",
+            		"warrior",
+            		"medicine cat",
+            		"mediator",
+            		"deputy",
+            		"leader"
         ]
 	},
 	{
@@ -324,11 +335,11 @@
 			"m_c observes r_c carefully attending to any cat that needs help.",
 			"m_c feels like {PRONOUN/m_c/subject} can count on r_c to give {PRONOUN/m_c/object} the best treatment possible.",
 			"m_c is relieved when r_c says {PRONOUN/m_c/poss} injury is nothing to be worried about.",
-            "m_c is relieved when r_c says {PRONOUN/m_c/poss} cough is nothing to be worried about.",
-            "m_c is relieved r_c doesn't judge {PRONOUN/m_c/object} for coming to {PRONOUN/r_c/object} with concerns that end up being nothing at all.",
-            "m_c went to r_c genuinely concerned about a rough looking scratch only to be embarrassed and ashamed when r_c wipes it away. Turns out it was a very convincing smear of dried mud. r_c, amused by it all, promised not to tell anyone.",
-            "r_c is extra careful treating m_c.",
-            "m_c knows if anything goes wrong {PRONOUN/m_c/subject} can depend on r_c always."
+            		"m_c is relieved when r_c says {PRONOUN/m_c/poss} cough is nothing to be worried about.",
+            		"m_c is relieved r_c doesn't judge {PRONOUN/m_c/object} for coming to {PRONOUN/r_c/object} with concerns that end up being nothing at all.",
+            		"m_c went to r_c genuinely concerned about a rough looking scratch only to be embarrassed and ashamed when r_c wipes it away. Turns out it was a very convincing smear of dried mud. r_c, amused by it all, promised not to tell anyone.",
+            		"r_c is extra careful treating m_c.",
+            		"m_c knows if anything goes wrong {PRONOUN/m_c/subject} can depend on r_c always."
 		],
 		"random_status_constraint": [
 			"medicine cat apprentice",
