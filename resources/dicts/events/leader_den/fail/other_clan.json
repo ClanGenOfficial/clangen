@@ -325,7 +325,7 @@
     "event_text": "At the Gathering, m_c notes that o_c_n's leader has very pronounced, long toes and tells them they'd be a great runner with those grippy helpers. m_c winces the moment the words are out of {PRONOUN/m_c/poss} mouth, and sure enough, o_c_n's leader doesn't seem to find this a great compliment.",
     "rel_change": -1,
     "m_c": { 
-      "trait": [ "lonesome" ],
+      "trait": [ "lonesome", "strange" ],
       "skill": [ "RUNNER,1" ]
     },
     "player_clan_temper": ["any"],
@@ -611,7 +611,7 @@
     "event_text": "The night before the Gathering, one of m_c's friends visits {PRONOUN/m_c/object} from StarClan and gives {PRONOUN/m_c/object} a pep talk for befriending o_c_n's leader at the Gathering. Despite it, when the time comes, m_c is too shy to say anything.",
     "rel_change": 0,
     "m_c": {
-      "trait": [ "lonesome" ],
+      "trait": [ "lonesome", "nervous" ],
       "skill": [ "STAR,1" ]
     },
     "player_clan_temper": ["any"],
@@ -641,7 +641,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "m_c praises o_c_n during {PRONOUN/m_c/poss} Gathering speech and darts looks at the crowd of o_c_n cats below to gauge their receptiveness to different compliment. o_c_n's leader catches those glances and narrows their eyes at m_c.",
+    "event_text": "m_c praises o_c_n during {PRONOUN/m_c/poss} Gathering speech and darts looks at the crowd of o_c_n cats below to gauge their receptiveness to different compliments. o_c_n's leader catches those glances and narrows their eyes at m_c.",
     "rel_change": -5,
     "m_c": {
       "skill": ["SENSE,1"],
@@ -1098,7 +1098,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "Before the Gathering, m_c receives an omen - omen_list_sight. When {PRONOUN/m_c/subject} {VERB/m_c/bring/brings} it up at the Gathering to try to convince o_c_n's leader of StarClan's desire for peace, o_c_n's leader talks over {PRONOUN/m_c/object}.",
+    "event_text": "Before the Gathering, m_c receives an omen - omen_list_sight/m_c. When {PRONOUN/m_c/subject} {VERB/m_c/bring/brings} it up at the Gathering to try to convince o_c_n's leader of StarClan's desire for peace, o_c_n's leader talks over {PRONOUN/m_c/object}.",
     "rel_change": -1,
     "m_c": {
         "skill": [ "OMEN,1" ],

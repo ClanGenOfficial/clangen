@@ -996,7 +996,7 @@
     "event_text": "The night before the Gathering, one of m_c's friends visits {PRONOUN/m_c/object} from StarClan and gives {PRONOUN/m_c/object} a pep talk, reminding {PRONOUN/m_c/object} what a good friend {PRONOUN/m_c/subject} {VERB/m_c/are/is}. m_c arrives at the Gathering with steeled nerves and strikes up conversation with o_c_n's leader",
     "rel_change": 6,
     "m_c": {
-      "trait": [ "lonesome" ],
+      "trait": [ "lonesome", "nervous" ],
       "skill": [ "STAR,1" ]
     },
     "player_clan_temper": ["any"],
@@ -1005,7 +1005,7 @@
   {
     "interaction_type": "befriend",
     "event_text": "m_c brings a piece of willow bark with strange grooves on it to the Gathering. {PRONOUN/m_c/subject/CAP} {VERB/m_c/explain/explains} to the other leaders that this is a sign of future prosperity for o_c_n and c_n - and only them.",
-    "rel_change": 5,
+    "rel_change": -5,
     "m_c": {
       "skill": ["OMEN,1"],
       "trait": [ "troublesome" ]
@@ -1724,7 +1724,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, no much how o_c_n's leader snaps in {PRONOUN/m_c/poss} face, m_c doesn't react. Being unable to get a rise out of a cat as hot-tempered as m_c only seems to enrage o_c_n's leader more - and m_c knows it.",
+    "event_text": "At the Gathering, no matter how much o_c_n's leader snaps in {PRONOUN/m_c/poss} face, m_c doesn't react. Being unable to get a rise out of a cat as hot-tempered as m_c only seems to enrage o_c_n's leader more - and m_c knows it.",
     "rel_change": -8,
     "m_c": {
       "trait": ["fierce"],
@@ -1735,18 +1735,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, o_c_n's leader repeatedly provokes and challenges c_n. m_c remains composed, not a whisker out of place, and asks o_c_n's leader to name a place and time for them to settle the score. {PRONOUN/m_c/poss/CAP} self-possession riles o_c_n's leader even more.",
-    "rel_change": -10,
-    "m_c": {
-      "trait": ["calm"],
-      "skill": ["FIGHTER,1"]
-    },
-    "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
-  },
-  {
-    "interaction_type": "antagonize",
-    "event_text": "At the Gathering, o_c_n's leader repeatedly provokes and challenges c_n. m_c remains composed, not a whisker out of place, and asks o_c_n's leader to name a place and time for them to settle the score. {PRONOUN/m_c/poss/CAP} self-possession riles o_c_n's leader even more.",
+    "event_text": "At the Gathering, o_c_n's leader repeatedly provokes and challenges c_n. m_c remains composed, not a whisker out of place, and asks o_c_n's leader to name a place and time for them to settle the score. {PRONOUN/m_c/poss/CAP} self-discipline riles o_c_n's leader even more.",
     "rel_change": -10,
     "m_c": {
       "trait": ["calm"],
@@ -1939,7 +1928,7 @@
     "event_text": "At the Gathering, o_c_n's leader makes the usual accusations and threats. m_c ignores them and singles out an o_c_n couple with the scent of milk on their pelts, and asks in a snarl if they really want their kits to grow up in wartime? o_c_n's leader backs down, shame-faced",
     "rel_change": 5,
     "m_c": {
-      "skill": ["INSIGHTFUL,1", "SENSE,1" ],
+      "skill": ["INSIGHTFUL,1", "SENSE,1", "KIT,1" ],
       "trait": [ "fierce", "bold", "daring" ]
     },
     "player_clan_temper": ["any"],
