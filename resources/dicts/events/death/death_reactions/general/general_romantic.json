@@ -1,9 +1,8 @@
 {
   "general": {
     "body": [
-      "r_c bends over the body of {PRONOUN/r_c/poss} crush, wailing {PRONOUN/r_c/poss} despair into m_c's fur. {PRONOUN/r_c/subject/CAP} {VERB/r_c/sit/sits} vigil next to the body, wishing {PRONOUN/r_c/subject} could wake from this nightmare.",
-      "r_c stares dully at m_c, the world fading from awareness as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to comprehend {PRONOUN/m_c/poss} death. All the things they'll never do together, the places r_c wanted to show {PRONOUN/r_c/object}, the life they could have lived by each other's sides, all wiped away in an instant.",
-      "r_c wishes that {PRONOUN/r_c/subject} could have had the courage to ask m_c to be {PRONOUN/r_c/poss} mate, but now, with m_c's cold body before {PRONOUN/r_c/object}, r_c would never get the chance again. All those missed oppurtunities flashed before {PRONOUN/r_c/poss} eyes, and {PRONOUN/r_c/subject} bowed {PRONOUN/r_c/poss} head in the vigil."
+      "r_c bends over the body of {PRONOUN/r_c/poss}, wailing {PRONOUN/r_c/poss} despair into m_c's fur. {PRONOUN/r_c/subject/CAP} {VERB/r_c/sit/sits} vigil next to the body, wishing {PRONOUN/r_c/subject} could wake from this nightmare.",
+      "r_c stares dully at m_c, the world fading from awareness as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to comprehend {PRONOUN/m_c/poss} death. All the things they'll never do together, the places r_c wanted to show {PRONOUN/r_c/object}, the life they could have lived by each other's sides, all wiped away in an instant."
 
     ],
     "no_body": [
@@ -83,7 +82,6 @@
   },
   "compassionate": {
     "body": [
-      "r_c helps {PRONOUN/r_c/poss} clanmates in their mourning. It's all {PRONOUN/r_c/subject} can do not dwell on the possibilities, but caring for the cats around {PRONOUN/r_c/object} has always brought {PRONOUN/r_c/object} comfort in times of need. Perhaps in another life, r_c and m_c could have been mates, but it wouldn't do to dwell on such a fantasy, it only made the ache in {PRONOUN/r_c/poss} heart grow."
     ],
     "no_body": [
 
