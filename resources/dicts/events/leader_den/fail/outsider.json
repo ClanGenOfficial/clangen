@@ -411,16 +411,7 @@
     "rep_change": 0,
     "m_c": {
       "status": ["kittypet"],
-      "new_thought": "Curiously watches the Clan cats retreat",
-      "relationships": [
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": true,
-          "values": ["dislike"],
-          "amount": 10
-        }
-      ]
+      "new_thought": "Curiously watches the Clan cats retreat"
     }
   },
   {
@@ -555,10 +546,19 @@
     "interaction_type": "hunt",
     "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject} {VERB/m_c/greet/greets} the Clan cats politely. m_c is stunned when c_n descends on {PRONOUN/m_c/object} with unsheathed claws, but {PRONOUN/m_c/subject} {VERB/m_c/react/reacts} just in time to sprint off.",
     "reputation": ["welcoming"],
-    "rep_change": 0,
+    "rep_change": -1,
     "m_c": {
       "status": ["kittypet", "loner", "rogue"],
-      "new_thought": "Is stunned to discover Clan cats are much more vicious than their reputation suggested"
+      "new_thought": "Is stunned to discover Clan cats are much more vicious than their reputation suggested",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
     }
   },
   {
@@ -568,7 +568,16 @@
     "rep_change": 0,
     "m_c": {
       "status": ["kittypet", "loner", "rogue"],
-      "new_thought": "Shudders at the thought of running into a c_n warrior"
+      "new_thought": "Shudders at the thought of running into a c_n warrior",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
     }
   },
   {
