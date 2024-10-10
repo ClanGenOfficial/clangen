@@ -259,6 +259,175 @@
     ]
   },
   {
+    "event_id": "gen_misc_murderreveal_any12",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder_reveal"],
+    "weight": 10,
+    "event_text": "r_c wasn't even suspecting {PRONOUN/m_c/object}. But as soon as r_c mentions mur_c's death, m_c breaks down, telling how {PRONOUN/m_c/subject} didn't intend to do it, that it was all just an accident. Between wails, m_c desperately begs for r_c to understand {PRONOUN/m_c/subject} never wanted mur_c to die.",
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"],
+     "trait": ["childish", "loving", "compassionate", "playful", "thoughtful", "loyal", "sincere"]
+    },
+    "r_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["any"]
+    },
+    "relationships": [
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 15
+        },
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["trust", "respect", "comfort"],
+          "amount": -15
+        }
+      ]
+  },
+  {
+    "event_id": "gen_misc_murderreveal_any13",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder_reveal"],
+    "weight": 15,
+    "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.",
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"],
+     "trait": ["righteous", "loyal", "sincere", "fierce", "bold", "responsible", "shameless", "wise", "compassionate"]
+    },
+    "relationships": [
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 20
+        },
+        {
+          "cats_from": ["clan"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["trust", "respect", "comfort"],
+          "amount": -20
+        }
+      ]
+  },
+  {
+    "event_id": "gen_misc_murderreveal_any14",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder_reveal"],
+    "weight": 10,
+    "event_text": "r_c quietly takes m_c aside and tells {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} did to mur_c. Before m_c has time to defend {PRONOUN/m_c/self}, r_c eerily smiles and assures {PRONOUN/m_c/object} {PRONOUN/r_c/subject} won't tell anyone, that {PRONOUN/r_c/subject} {VERB/r_c/agree/agrees} with what m_c did. m_c squints {PRONOUN/m_c/poss} eyes, not sure if {PRONOUN/m_c/subject} should trust r_c's words.",
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+      },
+    "r_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["any"],
+      "trait": ["bloodthirsty", "cold", "vengeful", "cunning", "daring", "bold", "fierce"]
+    },
+    "relationships": [
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 30
+        },
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": true,
+          "values": ["trust", "respect", "comfort"],
+          "amount": -30
+        }
+      ]
+  },
+  {
+    "event_id": "gen_misc_murderreveal_any15",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder_reveal"],
+    "weight": 10,
+    "event_text": "One day, when m_c and r_c are alone together, r_c gathers the courage to finally tell m_c what {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been holding off for so long: {PRONOUN/r_c/subject} {VERB/r_c/know/knows} m_c was the one who killed mur_c, and has been waiting for {PRONOUN/m_c/object} to do the right thing and confess, but if {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} do it, then r_c will have to be the one to tell the Clan. m_c is shocked, but also kind of admires r_c's guts to tell {PRONOUN/m_c/object} that when they're all alone together.",
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+      },
+    "r_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["any"],
+      "trait": ["bold", "daring", "strict", "righteous", "strange", "arrogant", "confident"]
+    },
+    "relationships": [
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 30
+        },
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["trust", "respect", "comfort"],
+          "amount": -30
+        },
+        {
+         "cats_from": ["m_c"],
+          "cats_to": ["r_c"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 10
+        }
+      ]
+  },
+  {
+    "event_id": "gen_misc_murderreveal_dream1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder_reveal"],
+    "tags": ["skill_trait_required"],
+    "weight": 15,
+    "event_text": "r_c sighs. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} unintentionally walking into one of {PRONOUN/r_c/poss} Clanmates' dreams again. It could have been just another boring or nonsensical dream, but r_c is horrified to discover this dream is m_c's recollection of murdering mur_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wake/wakes} up in shock, wondering what to do with this new knowledge.",
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"]
+    },
+    "r_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+      "status": ["any"],
+      "skill": ["DREAM, 0"]
+    },
+      "relationships": [
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 30
+        },
+        {
+          "cats_from": ["r_c"],
+          "cats_to": ["m_c"],
+          "mutual": false,
+          "values": ["trust", "respect", "comfort"],
+          "amount": -30
+        }
+      ]
+  },
+  {
     "event_id": "gen_misc_any_misc2",
     "location": ["any"],
     "season": ["any"],
