@@ -1742,12 +1742,12 @@
       "skill": ["FIGHTER,1"]
     },
     "player_clan_temper": ["any"],
-    "other_clan_temper": ["any"]
+    "other_clan_temper": ["bloodthirsty", "proud"]
   },
   {
     "interaction_type": "antagonize",
     "event_text": "At the Gathering, m_c snarls and spits at o_c_n's leader, then feels a chill like ice water rush over {PRONOUN/m_c/poss} pelt. Starlight glimmers at the paws of o_c_n's leader, but m_c ignores it. Whatever spirit may be watching over o_c_n can take it up with {PRONOUN/m_c/object} another time.",
-    "rel_change": -10,
+    "rel_change": -5,
     "m_c": {
       "trait": ["fierce"],
       "skill": ["GHOST,1"]
