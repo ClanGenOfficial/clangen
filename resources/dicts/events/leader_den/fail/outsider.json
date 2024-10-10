@@ -365,5 +365,152 @@
         }
       ]
     }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. c_n will have to try another day.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["kittypet"],
+      "new_thought": "Smugly watches the Clan cats retreat",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 10
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. c_n will have to try another day.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["kittypet"],
+      "new_thought": "Smugly watches the Clan cats retreat",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 10
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. It's impossible to carry a conversation from outside.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["kittypet"],
+      "new_thought": "Curiously watches the Clan cats retreat",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": true,
+          "values": ["dislike"],
+          "amount": 10
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n tracks down m_c's last known location but only finds an abandoned nest and a fading scent.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["loner"],
+      "new_thought": "Finds a new den with better shelter"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n tracks down m_c's last known location but only finds an abandoned nest and a fading scent.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["loner"],
+      "new_thought": "Finds a new den with better shelter"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "c_n tracks down m_c's last known location but only finds an abandoned nest and a fading scent.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["loner"],
+      "new_thought": "Finds a new den with better shelter"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n asks a few local rogues if they've seen m_c around. The other rogues are less than helpful.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["rogue"],
+      "new_thought": "Wonders why c_n is looking for {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n asks a few local rogues if they've seen m_c around. The other rogues are less than helpful.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["rogue"],
+      "new_thought": "Wonders why c_n is looking for {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "c_n asks a few local rogues if they've seen m_c around. The other rogues are less than helpful.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["rogue"],
+      "new_thought": "Wonders why c_n is looking for {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n tracks m_c down. When m_c sees them advancing on {PRONOUN/m_c/object} with bared teeth, {PRONOUN/m_c/subject} {VERB/m_c/flee/flees} over a Twoleg fence and {VERB/m_c/disappear/disappears} into the bushes.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Doesn't understand why {PRONOUN/m_c/poss} old Clanmates want to hurt {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n tracks m_c down. When m_c sees them advancing on {PRONOUN/m_c/object} with bared teeth, {PRONOUN/m_c/subject} {VERB/m_c/flee/flees} over a Twoleg fence and {VERB/m_c/disappear/disappears} into the bushes.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Doesn't understand why {PRONOUN/m_c/poss} old Clanmates want to hurt {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "c_n puts out the word to all local groups of cats, desperate for any sign that m_c is still out there. They hear nothing back.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Wonders if {PRONOUN/m_c/poss} Clanmates have forgotten about {PRONOUN/m_c/object}"
+    }
   }
 ]
