@@ -368,7 +368,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. c_n will have to try another day.",
+    "event_text": "c_n finds m_c behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. c_n will have to try another day.",
     "reputation": ["any"],
     "rep_change": 0,
     "m_c": {
@@ -387,7 +387,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. c_n will have to try another day.",
+    "event_text": "c_n finds m_c behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. c_n will have to try another day.",
     "reputation": ["any"],
     "rep_change": 0,
     "m_c": {
@@ -406,7 +406,7 @@
   },
   {
     "interaction_type": "invite",
-    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. It's impossible to carry a conversation from outside.",
+    "event_text": "c_n finds m_c behind some sort of sheet of clear, unmeltable ice, barricading {PRONOUN/m_c/object} inside the Twoleg nest. It's impossible to carry a conversation from outside.",
     "reputation": ["any"],
     "rep_change": 0,
     "m_c": {
