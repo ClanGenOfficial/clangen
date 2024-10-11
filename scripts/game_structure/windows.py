@@ -2157,13 +2157,26 @@ class ConfirmDisplayChanges(UIMessageWindow):
             always_on_top=True,
         )
         self.set_blocking(True)
-        
-        # Used to close the count down thread
+        self.init_ui()
+
+        # A flag used to close the count down thread
         self.closed: bool = False
-        
-        self.count_down_thread: threading.Thread = threading.Thread(target=self.count_down)
+
+        # A separate thread used to animate the count down.
+        self.count_down_thread: threading.Thread = threading.Thread(
+            target=self.count_down
+        )
         self.count_down_thread.daemon = True
 
+        self.text_block.rebuild_from_changed_theme_data()
+
+        # Start the count down thread to animate the count down
+        # Changes would be reversed upon timer reaching zero.
+        self.count_down_thread.start()
+        self.source_screen_name = source_screen.name.replace(" ", "_")
+
+    def init_ui(self):
+        """Initialize the UI elements"""
         self.dismiss_button.kill()
         self.text_block.kill()
 
@@ -2238,28 +2251,6 @@ class ConfirmDisplayChanges(UIMessageWindow):
                 "bottom": "bottom",
             },
         )
-        self.text_block.rebuild_from_changed_theme_data()
-
-        # make a timeout that will call in 10 seconds - if this window isn't closed,
-        # it'll be used to revert the change
-
-        # self.update_text = lambda: (
-        #     self.text_block.config(text=str(self.i)),
-        #     self.i := self.i + 1,
-        #     root.after(1000, self.update_text) if self.i < 10 else None
-        # )[-1]
-
-        # count_down_thread : threading.Thread = threading.Thread(target= lambda: (
-        #     self.text_block.set_text(f"{i}"),
-        #     i = i + 1,
-        #     time.sleep(1)
-        # ))
-
-        # self.count_down_thread : threading.Thread = threading.Thread(target= self.count_down)
-
-        self.count_down_thread.start()
-
-        self.source_screen_name = source_screen.name.replace(" ", "_")
 
     def count_down(self):
         """Used for counting down, performed in a different thread."""
@@ -2267,15 +2258,10 @@ class ConfirmDisplayChanges(UIMessageWindow):
             if self.closed:
                 return
             self.text_block.set_text(
-                f"Do you want to keep these changes? Display changes will be reverted in {10 - i} seconds."
+                f"Do you want to keep these changes?Display changes will be reverted in {10 - i} seconds."
             )
             time.sleep(1)
         pygame.event.post(pygame.event.Event(pygame.USEREVENT + 10))
-        # try:
-        #     if self is not None:
-        #         pygame.event.post(pygame.event.Event(pygame.USEREVENT + 10))
-        # except AttributeError:
-        #     print(":(")
 
     def revert_changes(self):
         """Revert the changes made to screen scaling"""
