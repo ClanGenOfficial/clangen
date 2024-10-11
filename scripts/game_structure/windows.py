@@ -2258,7 +2258,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             if self.closed:
                 return
             self.text_block.set_text(
-                f"Do you want to keep these changes?Display changes will be reverted in {10 - i} seconds."
+                f"Do you want to keep these changes? Display changes will be reverted in {10 - i} seconds."
             )
             time.sleep(1)
         pygame.event.post(pygame.event.Event(pygame.USEREVENT + 10))
