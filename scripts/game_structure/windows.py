@@ -1,3 +1,4 @@
+from operator import truediv
 import os
 import shutil
 import subprocess
@@ -2156,10 +2157,11 @@ class ConfirmDisplayChanges(UIMessageWindow):
             always_on_top=True,
         )
         self.set_blocking(True)
-
-        self.count_down_thread: threading.Thread = threading.Thread(
-            target=self.count_down
-        )
+        
+        # Used to close the count down thread
+        self.closed: bool = False
+        
+        self.count_down_thread: threading.Thread = threading.Thread(target=self.count_down)
         self.count_down_thread.daemon = True
 
         self.dismiss_button.kill()
@@ -2254,6 +2256,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
         # ))
 
         # self.count_down_thread : threading.Thread = threading.Thread(target= self.count_down)
+
         self.count_down_thread.start()
 
         self.source_screen_name = source_screen.name.replace(" ", "_")
@@ -2261,9 +2264,18 @@ class ConfirmDisplayChanges(UIMessageWindow):
     def count_down(self):
         """Used for counting down, performed in a different thread."""
         for i in range(10):
-            self.text_block.set_text(f"Do you want to keep these changes? Display changes will be reverted in {10 - i} seconds.")
+            if self.closed:
+                return
+            self.text_block.set_text(
+                f"Do you want to keep these changes? Display changes will be reverted in {10 - i} seconds."
+            )
             time.sleep(1)
         pygame.event.post(pygame.event.Event(pygame.USEREVENT + 10))
+        # try:
+        #     if self is not None:
+        #         pygame.event.post(pygame.event.Event(pygame.USEREVENT + 10))
+        # except AttributeError:
+        #     print(":(")
 
     def revert_changes(self):
         """Revert the changes made to screen scaling"""
@@ -2282,6 +2294,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
                 event.ui_element == self.back_button
                 or event.ui_element == self.dismiss_button
             ):
+                self.closed = True
                 self.kill()
             elif event.ui_element == self.revert_button:
                 self.revert_changes()
