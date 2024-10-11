@@ -1,17 +1,20 @@
 {
     "general": {
         "body": [
-            "r_c wails when {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the body of {PRONOUN/r_c/poss} parent, m_c, lying still and cold.",
-            "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
-            "m_c's body lays in the clearing and r_c nuzzles up beside {PRONOUN/m_c/object}, wishing only to feel the warmth of {PRONOUN/r_c/poss} parent's presence.",
-            "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
-            "r_c gently licks m_c's fur clean, as m_c once did for {PRONOUN/r_c/object} in the nursery, and blinks back tears.",
-            "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
+            "r_c sobs and buries {PRONOUN/r_c/poss} muzzle in m_c's fur, searching for that comforting scent one last time. {PRONOUN/r_c/subject/CAP} can only smell the rosemary and thyme wreathed around {PRONOUN/m_c/poss} body.",
+            "The world feels a little darker, a little smaller, a little less safe to r_c, without m_c there to look out for {PRONOUN/r_c/object}.",
+            "r_c speaks softly at m_c's vigil about how {PRONOUN/r_c/subject} never felt so safe and loved as {PRONOUN/r_c/subject} did with m_c. c_n gathers to comfort r_c as {PRONOUN/r_c/subject} {VERB/r_c/trail/trails} off, at a loss.",
+            "r_c tries to wrap {PRONOUN/r_c/poss} head around the idea that m_c will never again twine their tails, never again rest {PRONOUN/m_c/poss} head against r_c's, and never again brush {PRONOUN/m_c/poss} fur against {PRONOUN/r_c/inposs}... but it's just unthinkable.",
+            "r_c can only stay at m_c's vigil for a few heartbeats - it's just too painful to see the cat r_c felt most comfort around, lying in a heap on the ground.",
+            "r_c has always felt such serenity and joy in m_c's presence, and when {PRONOUN/r_c/subject} {VERB/r_c/see/sees} {PRONOUN/m_c/poss} body limp on the ground, r_c can't hold back a sob.",
+            "r_c's voice trembles at m_c's vigil, trying to get through a memory of how {PRONOUN/r_c/poss} parent supported {PRONOUN/r_c/object}. During the speech, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unconsciously waiting for m_c to comfort {PRONOUN/r_c/object} - and that just makes r_c break down further."
         ],
         "no_body": [
-            "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
-            "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
-            "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
+            "The world feels a little darker, a little smaller, a little less safe to r_c, without m_c there to look out for {PRONOUN/r_c/object}.",
+            "r_c speaks softly at m_c's vigil about how {PRONOUN/r_c/subject} never felt so safe and loved as {PRONOUN/r_c/subject} did with m_c. c_n gathers to comfort r_c as {PRONOUN/r_c/subject} {VERB/r_c/trail/trails} off, at a loss.",
+            "r_c tries to wrap {PRONOUN/r_c/poss} head around the idea that m_c will never again twine their tails, never again rest {PRONOUN/m_c/poss} head against r_c's, and never again brush {PRONOUN/m_c/poss} fur against {PRONOUN/r_c/inposs}... but it's just unthinkable.",
+            "r_c feels heartbroken that not only is {PRONOUN/r_c/poss} beloved parent gone, but r_c also can't touch {PRONOUN/r_c/poss} nose to {PRONOUN/m_c/poss} pelt or breathe in {PRONOUN/r_c/poss} parent's scent one last time.",
+            "r_c prays that one day, c_n might recover m_c's body and allow r_c to gaze on {PRONOUN/r_c/poss} parent one last time and say goodbye properly."
         ]
     },
     "adventurous": {

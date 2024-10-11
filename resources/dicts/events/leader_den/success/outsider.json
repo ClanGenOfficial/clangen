@@ -141,7 +141,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey...especially when said outsider is doing it as successfully as m_c is. The yowls that chase m_c to the c_n border and beyond are a clear warning: do not return.",
+    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey... especially when said outsider is doing it as successfully as m_c is. The yowls that chase m_c to the c_n border and beyond are a clear warning: do not return.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -186,7 +186,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey, so they decide to...get rid of the issue. It may be brutal, but c_n needs to put c_n first.",
+    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey, so they decide to... get rid of the issue. It may be brutal, but c_n needs to put c_n first.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
@@ -309,6 +309,205 @@
           "amount": 5
         }
       ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "Now that m_c has been lost, c_n takes their chance to be rid of {PRONOUN/m_c/object} for good.",
+    "reputation": ["any"],
+    "rep_change": -5,
+    "m_c": {
+      "status": ["lost"],
+      "skill": [  ],
+      "new_thought": "Doesn't understand why {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed",
+      "kit_thought": "Wonders what happened to m_c",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Now that m_c has been lost, c_n takes their chance to make it clear {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome to ever return.",
+    "reputation": ["any"],
+    "rep_change": -5,
+    "m_c": {
+      "status": ["lost"],
+      "skill": [  ],
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n finds m_c lounging on {PRONOUN/m_c/poss} Twolegs' fence. The c_n patrol descends on {PRONOUN/m_c/object}, snarling and spitting. m_c yowls for help from {PRONOUN/m_c/poss} housefolk, but c_n drives {PRONOUN/m_c/object} off.",
+    "reputation": ["any"],
+    "rep_change": -5,
+    "m_c": {
+      "status": ["kittypet"],
+      "skill": [  ],
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n finds m_c lounging on {PRONOUN/m_c/poss} Twolegs' fence. The c_n patrol descends on {PRONOUN/m_c/object}, teeth bared and claws unsheathed. m_c yowls for help from {PRONOUN/m_c/poss} housefolk, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} no match for warrior training.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["kittypet"],
+      "skill": [  ],
+      "new_thought": "Prays {PRONOUN/m_c/poss} housefolk won't miss {PRONOUN/m_c/object} too much",
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/poss} fur bushes up and eyes widen at the sight of so many cats. In fact, it'll be the last sight {PRONOUN/m_c/subject} ever {VERB/m_c/see/sees}.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["loner"],
+      "skill": [  ],
+      "new_thought": "Wonders how {PRONOUN/m_c/subject} wronged those cats",
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/poss} fur bushes up and eyes widen at the sight of so many cats. It doesn't take much to drive {PRONOUN/m_c/object} out; {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} tail and {VERB/m_c/flee/flees}.",
+    "reputation": ["any"],
+    "rep_change": -5,
+    "m_c": {
+      "status": ["loner"],
+      "skill": [  ],
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees - just not fast enough.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["rogue"],
+      "age": [ "young adult", "adult", "senior adult" ],
+      "skill": [  ],
+      "new_thought": "Wonders how {PRONOUN/m_c/subject} wronged those cats",
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n is prepared for a fight when they find m_c. m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees. The c_n cats snarl threats at {PRONOUN/m_c/poss} back.",
+    "reputation": ["any"],
+    "rep_change": -5,
+    "m_c": {
+      "status": ["rogue"],
+      "age": [ "young adult", "adult", "senior adult" ],
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "m_c has no chance against this number of c_n's trained fighters. {PRONOUN/m_c/subject/CAP} {VERB/m_c/beg/begs} for mercy, but the pleas fall on deaf ears.",
+    "reputation": ["any"],
+    "rep_change": -15,
+    "m_c": {
+      "status": ["rogue", "loner" ],
+      "age": [ "kitten", "adolescent" ],
+      "new_thought": "Bitterly wonders how {PRONOUN/m_c/subject} could have escaped"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "m_c has no chance against this number of c_n's trained fighters. {PRONOUN/m_c/subject/CAP} {VERB/m_c/beg/begs} for mercy, and c_n orders {PRONOUN/m_c/object} to leave and never return.",
+    "reputation": ["any"],
+    "rep_change": -10,
+    "m_c": {
+      "status": ["rogue", "loner" ],
+      "age": [ "kitten", "adolescent" ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n knows that there is no territory far enough to drive m_c out to - {PRONOUN/m_c/subject} must be driven out of this life. {PRONOUN/m_c/subject/CAP} {VERB/m_c/see/sees} {PRONOUN/m_c/poss} old Clanmates coming, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}'nt have time to run.",
+    "reputation": ["any"],
+    "rep_change": -3,
+    "m_c": {
+      "status": ["exiled" ],
+      "new_thought": "Curses {PRONOUN/m_c/poss} old Clanmates",
+      "kit_thought": "Wonders what happened to m_c"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Exiling m_c wasn't enough - {PRONOUN/m_c/subject} must be driven far out of the surrounding territory. m_c only stands {PRONOUN/m_c/poss} ground for a heartbeat when {PRONOUN/m_c/poss} old Clanmates find {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} outnumbered, and {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["exiled" ],
+      "kit_thought": "Wonders what happened to m_c"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "c_n finds m_c just outside {PRONOUN/m_c/poss} Twoleg nest and makes {PRONOUN/m_c/object} an offer. Though m_c asks a few questions about leaf-bare, sickness, and injury, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} persuaded that Clan life is worth it.",
+    "reputation": ["any"],
+    "rep_change": 3,
+    "m_c": {
+      "status": ["kittypet" ],
+      "new_thought": "Hopes {PRONOUN/m_c/subject} made the right choice",
+      "kit_thought": "Takes in the new surroundings with wide eyes"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject} {VERB/m_c/look/looks} wary of so many sleek, muscled cats surrounding {PRONOUN/m_c/object}. Still, m_c listens carefully as c_n explains that all this strength could help protect {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} would no longer be alone against the world. m_c tentatively agrees.",
+    "reputation": ["any"],
+    "rep_change": 3,
+    "m_c": {
+      "status": ["loner" ],
+      "new_thought": "Has met more new cats today than {PRONOUN/m_c/subject} ever {VERB/m_c/have/has} before",
+      "kit_thought": "Stares at all the new cats"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "m_c is surprised to have been sought out specifically by c_n. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} no stranger to living in groups, but all this code business sounds awfully complicated... Eventually, m_c comes round and accompanies the c_n cats back to camp.",
+    "reputation": ["any"],
+    "rep_change": 3,
+    "m_c": {
+      "status": [ "rogue" ],
+      "new_thought": "Tries to remember all the names of {PRONOUN/m_c/poss} new 'Clanmates'",
+      "kit_thought": "Explores their new home"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "When c_n finds {PRONOUN/m_c/object}, m_c is highly skeptical of {PRONOUN/m_c/poss} old Clanmates' offer to return... The Clanmates that drove {PRONOUN/m_c/object} from {PRONOUN/m_c/poss} nest, from {PRONOUN/m_c/poss} home, now want {PRONOUN/m_c/object} to return? Warily, m_c allows {PRONOUN/m_c/self} to be led back to camp.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": [ "exiled" ],
+      "new_thought": "Tentatively reconnects with {PRONOUN/m_c/poss} old Clanmates",
+      "kit_thought": "Is learning the truth behind all the stories"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home - and they don't. When they come upon {PRONOUN/m_c/object} at last, c_n is overjoyed to bring {PRONOUN/m_c/object} back to camp where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": [ "lost" ],
+      "new_thought": "Never lost hope in {PRONOUN/m_c/poss} Clanmates finding {PRONOUN/m_c/object}",
+      "kit_thought": "Is learning the truth behind all the stories"
     }
   }
 ]
