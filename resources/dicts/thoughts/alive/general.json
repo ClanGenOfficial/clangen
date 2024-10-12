@@ -542,7 +542,6 @@
             "Is lecturing about something someone said wrong offpawedly",
             "Is certain {PRONOUN/m_c/subject} {VERB/m_c/look/looks} better than any other cat in the Clan",
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
-            "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
             "Is bragging to everyone"
         ],
         "main_trait_constraint": [
