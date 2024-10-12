@@ -132,7 +132,7 @@
             "Is having a rough time climbing {PRONOUN/m_c/poss} fence",
             "Wonders what would have happened if {PRONOUN/m_c/subject} left to be a loner at a younger age",
             "Took {PRONOUN/m_c/poss} time climbing on {PRONOUN/m_c/poss} fence",
-            "Shakes {PRONOUN/m_c/poss} head when {PRONOUN/m_c/subject} spot a cold queen and their kits"
+            "Shakes {PRONOUN/m_c/poss} head when {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} a cold queen and their kits"
         ],
         "main_age_constraint": [
             "senior"
