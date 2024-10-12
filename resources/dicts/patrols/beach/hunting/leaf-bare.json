@@ -23,7 +23,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "The squirrel doesn't notice p_l stalking up to them... that is, until {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} already pounced and {VERB/p_l/have/has} it between {PRONOUN/p_l/poss} jaws. It's a little late to do anything about it at that point, though.",
+                "text": "The squirrel doesn't notice p_l stalking up to it... that is, until {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} already pounced and {VERB/p_l/have/has} it between {PRONOUN/p_l/poss} jaws. It's a little late to do anything about it at that point, though.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -58,7 +58,7 @@
             "apprentice": [1, 6]
         },
         "weight": 20,
-        "intro_text": "app1 has snuck out of camp alone, hoping {PRONOUN/app1/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/s_c/scent/scents} the air and {VERB/s_c/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
+        "intro_text": "app1 has snuck out of camp alone, hoping {PRONOUN/app1/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/app1/scent/scents} the air and {VERB/app1/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
         "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -182,7 +182,7 @@
                 ]
             },
             {
-                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, before r_c remembers what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing and kills the squirrel before it, too, flees.",
+                "text": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send the rattlesnake fleeing, before r_c remembers what they're doing and kills the squirrel before it, too, flees.",
                 "exp": 50,
                 "weight": 5,
                 "prey": ["medium"],
@@ -402,11 +402,11 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": 5
                     }
                 ]
             },
@@ -424,10 +424,10 @@
                 "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": ["comfort"],
                         "amount": -5
                     }
                 ]
@@ -445,8 +445,8 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to turn back and wait until the snow dies down.",
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -456,7 +456,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "s_c really shows {PRONOUN/r_c/poss} talent, bringing a clutch of crabs back to camp for the fresh-kill pile.",
+                "text": "s_c really shows {PRONOUN/s_c/poss} talent, bringing a clutch of crabs back to camp for the fresh-kill pile.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
@@ -676,7 +676,7 @@
             "all apprentices": [2, 2]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery as siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -715,7 +715,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Together they manage a grand haul of one b_tp_dl_s, and not even a very big b_tp_dl_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n.",
+                "text": "Together they manage a grand haul of one b_tp_dl_s, and not even a very big b_tp_dl_s at that. They have a lot more to learn before they'll both be ready to take on the responsibility of providing for c_n.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
@@ -887,7 +887,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -947,7 +947,7 @@
             "all apprentices": [3, 3]
         },
         "weight": 40,
-        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1028,7 +1028,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great b_mp_a_s and two b_tp_a_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great b_mp_a_s and two b_tp_a_p! But {PRONOUN/s_c/poss} siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1098,7 +1098,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1158,7 +1158,7 @@
             "all apprentices": [4, 4]
         },
         "weight": 40,
-        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1239,7 +1239,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great b_mp_a_s and two b_tp_a_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great b_mp_a_s and two b_tp_a_p! But {PRONOUN/s_c/poss} siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1309,7 +1309,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1369,7 +1369,7 @@
             "all apprentices": [5, 5]
         },
         "weight": 40,
-        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1449,7 +1449,7 @@
                 ]
             },
             {
-                "text": "s_c catches a great b_mp_a_s and two b_tp_a_p! But their siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
+                "text": "s_c catches a great b_mp_a_s and two b_tp_a_p! But {PRONOUN/s_c/poss} siblings come up empty-pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["medium"],
@@ -1518,7 +1518,7 @@
             "apprentice": [1, 6]
         },
         "weight": 40,
-        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1577,7 +1577,7 @@
             "apprentice": [1, 6]
         },
         "weight": 40,
-        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -1700,7 +1700,7 @@
             "normal adult": [1, 6]
         },
         "weight": 40,
-        "intro_text": "As they wander along the coastline, keeping further back from the shore least the spray steal heat from their pelts, p_l awkwardly asks app1 how {PRONOUN/app1/subject} think {PRONOUN/app1/poss} training is going.",
+        "intro_text": "As they wander along the coastline, keeping further back from the shore least the spray steal heat from their pelts, p_l awkwardly asks app1 how {PRONOUN/app1/subject} {VERB/app1/think/thinks} {PRONOUN/app1/poss} training is going.",
         "decline_text": "app1 carefully talks around the subject, telling p_l nothing of importance.",
         "chance_of_success": 30,
         "relationship_constraint": ["siblings"],
@@ -2033,7 +2033,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "Perhaps hunting from the sides of a slippery, frosty rock pool wasn't their best moment, r_c concedes. The patrol has to hurry back to camp to warm {PRONOUN/r_c/object} up.",
+                "text": "Perhaps hunting from the sides of a slippery, frosty rock pool wasn't {PRONOUN/r_c/poss} best moment, r_c concedes. The patrol has to hurry back to camp to warm {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2044,7 +2044,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c still shows where cold sunk its fangs into {PRONOUN/m_c/subject} after an unplanned leaf-bare swim.",
+                    "scar": "m_c still shows where cold sunk its fangs into {PRONOUN/m_c/object} after an unplanned leaf-bare swim.",
                     "reg_death": "m_c was killed by cold water - not that the swim was planned.",
                     "lead_death": "were taken by an unexpected cold-water dunking"
                 },
@@ -2115,7 +2115,7 @@
                 ]
             },
             {
-                "text": "The siblings are proud of s_c, watching {PRONOUN/s_c/object} dart among the waves, foam bubbling along {PRONOUN/s_c/poss} pelt. Though sharing tongues afterwards is necessary to warm up again.",
+                "text": "s_c's sibling is proud, watching {PRONOUN/s_c/object} dart among the waves, foam bubbling along {PRONOUN/s_c/poss} pelt. Though sharing tongues afterwards is necessary to warm up again.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SWIMMER,1", "HUNTER,1"],
@@ -2220,7 +2220,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes them into the ocean. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the freezing dunking. Fleas and ticks!",
+                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/r_c/object} into the ocean. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bob/bobs} to the surface and {VERB/r_c/splutter/splutters} {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the freezing dunking. Fleas and ticks!",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2232,7 +2232,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c bears the scars from an unexpected cold dunking on a hunting patrol.",
-                    "reg_death": "m_c was killed by the cold ocean dunking they received when a wave swamped them unexpectedly.",
+                    "reg_death": "m_c was killed by the cold ocean dunking {PRONOUN/m_c/subject} received when a wave swamped {PRONOUN/m_c/object} unexpectedly.",
                     "lead_death": "were taken by an unexpected cold-water dunking"
                 },
                 "prey": ["very_small"]
@@ -2472,7 +2472,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "Perhaps hunting from the sides of a slippery, frosty rock pool wasn't their best moment, r_c concedes. The patrol hurries back to camp to warm {PRONOUN/r_c/object} up.",
+                "text": "Perhaps hunting from the sides of a slippery, frosty rock pool wasn't {PRONOUN/r_c/poss} best moment, r_c concedes. The patrol hurries back to camp to warm {PRONOUN/r_c/object} up.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2483,7 +2483,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c still shows where cold sunk its fangs into {PRONOUN/m_c/subject} after an unplanned leaf-bare swim.",
+                    "scar": "m_c still shows where cold sunk its fangs into {PRONOUN/m_c/object} after an unplanned leaf-bare swim.",
                     "reg_death": "m_c was killed by cold water - not that the swim was planned.",
                     "lead_death": "were taken by an unexpected cold-water dunking"
                 },
@@ -2504,7 +2504,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 40,
-        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially when the weather has kept them in camp too often recently!",
+        "intro_text": "r_c muses that sometimes it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially when the weather has kept them in camp too often recently!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
@@ -2659,7 +2659,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes them into the ocean. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the freezing dunking. Fleas and ticks!",
+                "text": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/r_c/object} into the ocean. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bob/bobs} to the surface and {VERB/r_c/splutter/splutters} {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the freezing dunking. Fleas and ticks!",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2671,7 +2671,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c bears the scars from an unexpected cold dunking on a hunting patrol.",
-                    "reg_death": "m_c was killed by the cold ocean dunking they received when a wave swamped them unexpectedly.",
+                    "reg_death": "m_c was killed by the cold ocean dunking {PRONOUN/m_c/subject} received when a wave swamped {PRONOUN/m_c/object} unexpectedly.",
                     "lead_death": "were taken by an unexpected cold-water dunking"
                 },
                 "prey": ["very_small"]

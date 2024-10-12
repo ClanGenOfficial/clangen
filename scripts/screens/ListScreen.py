@@ -621,7 +621,10 @@ class ListScreen(Screens):
         updates the cat list and display, search text is taken into account
         """
         self.current_listed_cats = []
+
+        # make sure cat list is the same every where else in the game.
         Cat.sort_cats(self.full_cat_list)
+        Cat.sort_cats(Cat.all_cats_list)
 
         # adding in the guide if necessary, this ensures the guide isn't affected by sorting as we always want them to
         # be the first cat on the list
