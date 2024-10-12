@@ -1440,7 +1440,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "m_c snuck out of camp, and brought back with {PRONOUN/m_c/object} some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
-        "new_accessory": ["HOLLY", "JUNIPER", "RASPBERRY"],
+        "new_accessory": ["HOLLY", "JUNIPER"],
         "m_c": {
             "status": ["kitten"]
         }
@@ -1821,7 +1821,7 @@
     "sub_type": ["accessory", "romance"],
     "weight": 20,
     "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
-    "new_accessory": ["BLUE BERRIES", "HOLLY", "RASPBERRY"],
+    "new_accessory": ["BLUE BERRIES", "HOLLY"],
     "m_c": {
       "age": ["adolescent"],
       "status": ["apprentice"]
