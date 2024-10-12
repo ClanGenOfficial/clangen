@@ -3176,7 +3176,7 @@
                 ]
             },
             {
-                "text": "That's kinda odd. app1 hastens to add that that doesn't mean it's bad, but maybe {PRONOUN/app2/subject} should tell {PRONOUN/app2/poss} mentor about this. Maybe it's something to do with StarClan?",
+                "text": "That's kind of odd. app1 hastens to add that that doesn't mean it's bad, but maybe {PRONOUN/app2/subject} should tell {PRONOUN/app2/poss} mentor about this. Maybe it's something to do with StarClan?",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
