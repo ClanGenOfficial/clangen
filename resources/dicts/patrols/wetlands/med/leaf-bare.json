@@ -37,8 +37,8 @@
             ]
         },
         "weight": 20,
-        "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough. It dies back during leaf-bare, but the snow in c_n's territory will preserve its juice and freshness until the newleaf thaw.",
-        "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+        "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough. It dies back during leaf-bare, but the snow in c_n's territory will preserve its juice and freshness until the newleaf thaw.",
+        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -191,7 +191,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
+                "text": "Not only do they not find anything, but app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -257,12 +257,12 @@
             ]
         },
         "weight": 20,
-        "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is upon the Clan. As the only reliable cure for yellowcough, they're determined that c_n stock up on it. It dies back during leaf-bare, but the snow in c_n's territory will preserve its juice and freshness until the newleaf thaw.",
-        "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+        "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is upon the Clan. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it. It dies back during leaf-bare, but the snow in c_n's territory will preserve its juice and freshness until the newleaf thaw.",
+        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering, they find a plant with leaves still green, if looking a little wilted. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+                "text": "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering, they find a plant with leaves still green, if looking a little wilted. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -351,7 +351,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -413,12 +413,12 @@
             ]
         },
         "weight": 20,
-        "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is upon the Clan. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help search for leaves preserved under the snow.",
-        "decline_text": "A cat grabs p_l's attention before they can leave.",
+        "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is upon the Clan. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help search for leaves preserved under the snow.",
+        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering they find a plant with leaves still green, if looking a little wilted. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+                "text": "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering they find a plant with leaves still green, if looking a little wilted. For just a moment, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": [
@@ -442,7 +442,7 @@
                 ]
             },
             {
-                "text": "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
+                "text": "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": [
@@ -547,7 +547,7 @@
                 ]
             },
             {
-                "text": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -595,11 +595,11 @@
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for useful fresh supplies that have survived leaf-bare so far, and for carrying capacity should they find anything.",
-        "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+        "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+                "text": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -681,7 +681,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+                "text": "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [

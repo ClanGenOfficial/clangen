@@ -109,7 +109,7 @@
                 ]
             },
             {
-                "text": "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out stable footing for the patrol to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+                "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out stable footing for the patrol to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -286,7 +286,7 @@
                 ]
             },
             {
-                "text": "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+                "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -301,7 +301,7 @@
                 ]
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -342,7 +342,7 @@
                 ]
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -458,7 +458,7 @@
                 ]
             },
             {
-                "text": "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
+                "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -474,7 +474,7 @@
                 ]
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -618,7 +618,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} yowl until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and a patrol passes by after sunhigh has come and gone to free their hapless Clanmate.",
+                "text": "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} {VERB/r_c/yowl/yowls} until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and a patrol passes by after sunhigh has come and gone to free their hapless Clanmate.",
                 "exp": 0,
                 "weight": 20
             },
@@ -720,7 +720,7 @@
                         "scars": ["RIGHTEAR"]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured as an apprentice, exploring alone." }
+                "history_text": { "scar": "m_c got injured as an apprentice while exploring alone." }
             }
         ]
     },
@@ -821,7 +821,7 @@
                 "stat_skill": ["CLEVER,1"]
             },
             {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home,{PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -927,7 +927,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1035,7 +1035,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1544,7 +1544,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed and proclaims {PRONOUN/app1/subject} clothed like a Twoleg. {PRONOUN/app2/subject/CAP} {VERB/app2/chase/chases} after app1, who's not as keen to get seaweed slime all over {PRONOUN/app1/self}, and the two young cats play on the safe sands all afternoon.",
+                "text": "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed and proclaims {PRONOUN/app1/subject} {VERB/app1/are/is} clothed like a Twoleg. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} after app2, who's not as keen to get seaweed slime all over {PRONOUN/app2/self}, and the two young cats play on the safe sands all afternoon.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -1558,7 +1558,7 @@
                 ]
             },
             {
-                "text": "app1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until {PRONOUN/app1/subject} finally get bored to make its escape.",
+                "text": "app1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until {PRONOUN/app1/subject} finally {VERB/app1/get/gets} bored to make its escape.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -1627,7 +1627,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/r_c/object}?",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1660,7 +1660,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -1765,7 +1765,7 @@
                 ]
             },
             {
-                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,3"],
@@ -1918,7 +1918,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} {VERB/p_l/round/rounds} a corner and {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
         "relationship_constraint": ["dislike_10"],
@@ -2135,7 +2135,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "As r_c settles down eagerly for the tale, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} a spike of pain in {PRONOUN/r_c/poss} paw pad and yelps. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine cat den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
+                    "text": "As r_c settles down eagerly for the tale, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} a spike of pain in {PRONOUN/r_c/poss} paw pad and {VERB/r_c/yelp/yelps}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine cat den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [
@@ -2181,7 +2181,7 @@
         "decline_text": "app1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
         "success_outcomes": [
                 {
-                    "text": "The fox warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion - a true warrior, never forgotten.",
+                    "text": "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion - a true warrior, never forgotten.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_hunt_vision",
@@ -2212,7 +2212,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as fox warrior-like as anyone could wish.",
+                    "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as Fox Warrior-like as anyone could wish.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [

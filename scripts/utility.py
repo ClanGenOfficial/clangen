@@ -9,12 +9,14 @@ TODO: Docs
 import logging
 import re
 from itertools import combinations
-from random import choice, choices, randint, random, sample, randrange
+from math import floor
+from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List
+from typing import List, Tuple
 
 import pygame
 import ujson
+from pygame_gui.core import ObjectID
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
@@ -22,7 +24,8 @@ from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
-from scripts.game_structure.game_essentials import game, screen_x, screen_y
+from scripts.game_structure.game_essentials import game
+import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
 
 
 # ---------------------------------------------------------------------------- #
@@ -387,7 +390,7 @@ def create_new_cat_block(
     elif "old_name" in attribute_list:
         new_name = False
     else:
-        new_name = choice([True, False])
+        new_name = bool(getrandbits(1))
 
     # STATUS - must be handled before backstories
     status = None
@@ -544,7 +547,7 @@ def create_new_cat_block(
             if new_name:
                 name = f"{chosen_cat.name.prefix}"
                 spaces = name.count(" ")
-                if choice([1, 2]) == 1 and spaces > 0:  # adding suffix to OG name
+                if bool(getrandbits(1)) and spaces > 0:  # adding suffix to OG name
                     # make a list of the words within the name, then add the OG name back in the list
                     words = name.split(" ")
                     words.append(name)
@@ -764,10 +767,10 @@ def create_new_cat(
             # grab starting names and accs for loners/kittypets
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
-                if choice([1, 2]) == 1:
+                if bool(getrandbits(1)):
                     accessory = choice(Pelt.collars)
             elif (
-                loner and choice([1, 2]) == 1
+                loner and bool(getrandbits(1))
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -777,7 +780,7 @@ def create_new_cat(
 
             # now we make the cats
             if new_name:  # these cats get new names
-                if choice([1, 2]) == 1:  # adding suffix to OG name
+                if bool(getrandbits(1)):  # adding suffix to OG name
                     spaces = name.count(" ")
                     if spaces > 0:
                         # make a list of the words within the name, then add the OG name back in the list
@@ -1820,42 +1823,57 @@ def get_special_snippet_list(
 def find_special_list_types(text):
     """
     purely to identify which senses are being called for by a snippet abbreviation
-    returns adjusted text, sense list, and list type
+    returns adjusted text, sense list, list type, and cat_tag
     """
     senses = []
-    if "omen_list" in text:
-        list_type = "omen_list"
-    elif "prophecy_list" in text:
-        list_type = "prophecy_list"
-    elif "dream_list" in text:
-        list_type = "dream_list"
-    elif "clair_list" in text:
-        list_type = "clair_list"
-    elif "story_list" in text:
-        list_type = "story_list"
-    else:
-        return text, None, None
+    list_text = None
+    list_type = None
+    words = text.split(" ")
+    for bit in words:
+        if "_list" in bit:
+            list_text = bit
+            # just getting rid of pesky punctuation
+            list_text = list_text.replace(".", "")
+            list_text = list_text.replace(",", "")
+            break
 
-    if "_sight" in text:
+    if not list_text:
+        return text, None, None, None
+
+    parts_of_tag = list_text.split("/")
+
+    try:
+        cat_tag = parts_of_tag[1]
+    except IndexError:
+        cat_tag = None
+
+    if "omen_list" in list_text:
+        list_type = "omen_list"
+    elif "prophecy_list" in list_text:
+        list_type = "prophecy_list"
+    elif "dream_list" in list_text:
+        list_type = "dream_list"
+    elif "clair_list" in list_text:
+        list_type = "clair_list"
+    elif "story_list" in list_text:
+        list_type = "story_list"
+
+    if "_sight" in list_text:
         senses.append("sight")
-        text = text.replace("_sight", "")
-    if "_sound" in text:
+    if "_sound" in list_text:
         senses.append("sound")
-        text = text.replace("_sight", "")
-    if "_smell" in text:
-        text = text.replace("_smell", "")
+    if "_smell" in list_text:
         senses.append("smell")
-    if "_emotional" in text:
-        text = text.replace("_emotional", "")
+    if "_emotional" in list_text:
         senses.append("emotional")
-    if "_touch" in text:
-        text = text.replace("_touch", "")
+    if "_touch" in list_text:
         senses.append("touch")
-    if "_taste" in text:
-        text = text.replace("_taste", "")
+    if "_taste" in list_text:
         senses.append("taste")
 
-    return text, senses, list_type
+    text = text.replace(list_text, list_type)
+
+    return text, senses, list_type, cat_tag
 
 
 def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
@@ -1988,6 +2006,16 @@ def event_text_adjust(
         print("WARNING: Tried to adjust text, but no text was provided.")
 
     replace_dict = {}
+
+    # special lists - this needs to happen first for pronoun tag reasons
+    text, senses, list_type, cat_tag = find_special_list_types(text)
+    if list_type:
+        sign_list = get_special_snippet_list(
+            list_type, amount=randint(1, 3), sense_groups=senses
+        )
+        text = text.replace(list_type, str(sign_list))
+        if cat_tag:
+            text = text.replace("cat_tag", cat_tag)
 
     # main_cat
     if "m_c" in text:
@@ -2135,13 +2163,7 @@ def event_text_adjust(
     # prey lists
     text = adjust_prey_abbr(text)
 
-    # special lists
-    text, senses, list_type = find_special_list_types(text)
-    if list_type:
-        sign_list = get_special_snippet_list(
-            list_type, amount=randint(1, 3), sense_groups=senses
-        )
-        text = text.replace(list_type, str(sign_list))
+
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
@@ -2319,23 +2341,22 @@ def get_pronouns(Cat):
 def shorten_text_to_fit(
     name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"
 ):
-    length_limit = (
-        length_limit // 2 if not game.settings["fullscreen"] else length_limit
-    )
-    # Set the font size based on fullscreen settings if not provided
-    # Text box objects are named by their fullscreen text size so it's easier to do it this way
+    length_limit = length_limit * scripts.game_structure.screen_settings.screen_scale
     if font_size is None:
-        font_size = 30
-    font_size = font_size // 2 if not game.settings["fullscreen"] else font_size
+        font_size = 15
+    font_size = floor(font_size * scripts.game_structure.screen_settings.screen_scale)
+
+    if font_type == "clangen":
+        font_type = "resources/fonts/clangen.ttf"
     # Create the font object
     font = pygame.font.Font(font_type, font_size)
 
     # Add dynamic name lengths by checking the actual width of the text
     total_width = 0
     short_name = ""
+    ellipsis_width = font.size("...")[0]
     for index, character in enumerate(name):
         char_width = font.size(character)[0]
-        ellipsis_width = font.size("...")[0]
 
         # Check if the current character is the last one and its width is less than or equal to ellipsis_width
         if index == len(name) - 1 and char_width <= ellipsis_width:
@@ -2346,7 +2367,7 @@ def shorten_text_to_fit(
                 break
             short_name += character
 
-    # If the name was truncated, add '...'
+    # If the name was truncated, add "..."
     if len(short_name) < len(name):
         short_name += "..."
 
@@ -2358,22 +2379,83 @@ def shorten_text_to_fit(
 # ---------------------------------------------------------------------------- #
 
 
-def scale(rect):
-    rect[0] = round(rect[0] / 1600 * screen_x) if rect[0] > 0 else rect[0]
-    rect[1] = round(rect[1] / 1400 * screen_y) if rect[1] > 0 else rect[1]
-    rect[2] = round(rect[2] / 1600 * screen_x) if rect[2] > 0 else rect[2]
-    rect[3] = round(rect[3] / 1400 * screen_y) if rect[3] > 0 else rect[3]
+def ui_scale(rect: pygame.Rect):
+    """
+    Scales a pygame.Rect appropriately for the UI scaling currently in use.
+    :param rect: a pygame.Rect
+    :return: the same pygame.Rect, scaled for the current UI.
+    """
+    # offset can be negative to allow for correct anchoring
+    rect[0] = floor(rect[0] * scripts.game_structure.screen_settings.screen_scale)
+    rect[1] = floor(rect[1] * scripts.game_structure.screen_settings.screen_scale)
+    # if the dimensions are negative, it's dynamically scaled, ignore
+    rect[2] = (
+        floor(rect[2] * scripts.game_structure.screen_settings.screen_scale)
+        if rect[2] > 0
+        else rect[2]
+    )
+    rect[3] = (
+        floor(rect[3] * scripts.game_structure.screen_settings.screen_scale)
+        if rect[3] > 0
+        else rect[3]
+    )
 
     return rect
 
 
-def scale_dimentions(dim):
-    dim = list(dim)
-    dim[0] = round(dim[0] / 1600 * screen_x) if dim[0] > 0 else dim[0]
-    dim[1] = round(dim[1] / 1400 * screen_y) if dim[1] > 0 else dim[1]
-    dim = tuple(dim)
+def ui_scale_dimensions(dim: Tuple[int, int]):
+    """
+    Use to scale the dimensions of an item - WILL IGNORE NEGATIVE VALUES
+    :param dim: The dimensions to scale
+    :return: The scaled dimensions
+    """
+    return (
+        floor(dim[0] * scripts.game_structure.screen_settings.screen_scale)
+        if dim[0] > 0
+        else dim[0],
+        floor(dim[1] * scripts.game_structure.screen_settings.screen_scale)
+        if dim[1] > 0
+        else dim[1],
+    )
 
-    return dim
+
+def ui_scale_offset(coords: Tuple[int, int]):
+    """
+    Use to scale the offset of an item (i.e. the first 2 values of a pygame.Rect).
+    Not to be confused with ui_scale_blit.
+    :param coords: The coordinates to scale
+    :return: The scaled coordinates
+    """
+    return (
+        floor(coords[0] * scripts.game_structure.screen_settings.screen_scale),
+        floor(coords[1] * scripts.game_structure.screen_settings.screen_scale),
+    )
+
+
+def ui_scale_value(val: int):
+    """
+    Use to scale a single value according to the UI scale. If you need this one,
+    you're probably doing something unusual. Try to avoid where possible.
+    :param val: The value to scale
+    :return: The scaled value
+    """
+    return floor(val * scripts.game_structure.screen_settings.screen_scale)
+
+
+def ui_scale_blit(coords: Tuple[int, int]):
+    """
+    Use to scale WHERE to blit an item, not the SIZE of it. (0, 0) is the top left corner of the pygame_gui managed window,
+    this adds the offset from fullscreen etc. to make it blit in the right place. Not to be confused with ui_scale_offset.
+    :param coords: The coordinates to blit to
+    :return: The scaled, correctly offset coordinates to blit to.
+    """
+    return floor(
+        coords[0] * scripts.game_structure.screen_settings.screen_scale
+        + scripts.game_structure.screen_settings.offset[0]
+    ), floor(
+        coords[1] * scripts.game_structure.screen_settings.screen_scale
+        + scripts.game_structure.screen_settings.offset[1]
+    )
 
 
 def update_sprite(cat):
@@ -2401,11 +2483,9 @@ def clan_symbol_sprite(clan, return_string=False, force_light=False):
             return clan.chosen_symbol
         else:
             if game.settings["dark mode"] and not force_light:
-                return sprites.dark_mode_symbol(
-                    sprites.sprites[f"{clan.chosen_symbol}"]
-                )
+                return sprites.dark_mode_symbol(sprites.sprites[clan.chosen_symbol])
             else:
-                return sprites.sprites[f"{clan.chosen_symbol}"]
+                return sprites.sprites[clan.chosen_symbol]
     else:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
@@ -2737,18 +2817,12 @@ def is_iterable(y):
         return False
 
 
-def get_text_box_theme(theme_name=""):
+def get_text_box_theme(theme_name=None):
     """Updates the name of the theme based on dark or light mode"""
     if game.settings["dark mode"]:
-        if theme_name == "":
-            return "#default_dark"
-        else:
-            return theme_name + "_dark"
+        return ObjectID("#dark", theme_name)
     else:
-        if theme_name == "":
-            return "#text_box"
-        else:
-            return theme_name
+        return theme_name
 
 
 def quit(savesettings=False, clearevents=False):
@@ -2756,7 +2830,7 @@ def quit(savesettings=False, clearevents=False):
     Quits the game, avoids a bunch of repeated lines
     """
     if savesettings:
-        game.save_settings()
+        game.save_settings(None)
     if clearevents:
         game.cur_events_list.clear()
     game.rpc.close_rpc.set()

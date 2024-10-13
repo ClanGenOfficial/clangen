@@ -13,12 +13,12 @@
             "all apprentices": [2, 2]
         },
         "weight": 20,
-        "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a new coating of snow! app1 and app2 tear off into the territory near camp, looking to play.",
+        "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a dusting of snow! app1 and app2 tear off into the territory near camp, looking to play.",
         "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows {PRONOUN/app1/object}, only to immediately hear a crack and sink up to {PRONOUN/app2/poss} haunches in the fluffy stuff. Teasingly, app1 runs around near {PRONOUN/app2/object}, and it turns into a game of app2 romping through the snow trying to catch {PRONOUN/app1/object}.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "text": "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+                "text": "app1 finds a snowdrift, and over the course of an hour {PRONOUN/app1/subject} and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "text": "After a while romping around in the snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth.",
+                "text": "After a while romping around in the snow, app1 complains of the cold seeping into {PRONOUN/app1/poss} fur. s_c digs a little hollow, and invites {PRONOUN/app1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -78,7 +78,7 @@
                 "weight": 20
             },
             {
-                "text": "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing.",
+                "text": "As they play in the snow, app1 falls over {PRONOUN/app1/self} embarrassingly, and suddenly decides {PRONOUN/app1/subject} {VERB/app1/remember/remembers} that {PRONOUN/app1/subject} {VERB/app1/have/has} other things {PRONOUN/app1/subject} should be doing.",
                 "exp": 0,
                 "weight": 20
             }
@@ -98,12 +98,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
+        "intro_text": "p_l brings {PRONOUN/app1/object} down the mountain, to where a little stream turns into a tiny cold bog.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 startles, hearing a cat cry out! They race over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
+                "text": "app1 startles, hearing a cat cry out! {PRONOUN/app1/subject/CAP} {VERB/app1/race/races} over the ridge, looking for the caller, as behind {PRONOUN/app1/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -117,7 +117,7 @@
                 ]
             },
             {
-                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
+                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off, as p_l sighs and settles down to wait. When {PRONOUN/app1/subject} eventually {VERB/app1/return/returns}, p_l teaches {PRONOUN/app1/object} about towhee birds, who can call like a cat.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -134,7 +134,7 @@
                 "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -149,7 +149,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l all the way back to camp.",
+                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird, and argues with p_l all the way back to camp.",
                 "exp": 0,
                 "weight": 20
             }
@@ -169,12 +169,12 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
+        "intro_text": "p_l brings {PRONOUN/app1/object} down the mountain, to where a little stream turns into a tiny cold bog.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 startles, hearing a cat cry out! They race over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
+                "text": "app1 startles, hearing a cat cry out! {PRONOUN/app1/subject/CAP} {VERB/app1/race/races} over the ridge, looking for the caller, as behind {PRONOUN/app1/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -188,7 +188,7 @@
                 ]
             },
             {
-                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
+                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off, as p_l sighs and settles down to wait. When {PRONOUN/app1/subject} eventually {VERB/app1/return/returns}, p_l teaches {PRONOUN/app1/object} about towhee birds, who can call like a cat.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -220,7 +220,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l all the way back to camp.",
+                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird, and argues with p_l all the way back to camp.",
                 "exp": 0,
                 "weight": 20
             }
@@ -246,7 +246,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, they don't need to feel bad, it's just something to learn from.",
+                "text": "app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -260,7 +260,7 @@
                 ]
             },
             {
-                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
+                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -277,7 +277,7 @@
                 "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -292,7 +292,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp.",
+                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp.",
                 "exp": 0,
                 "weight": 20
             }
@@ -318,7 +318,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind {PRONOUN/app2/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat, {PRONOUN/app2/subject} {VERB/app2/don't/doesn't} need to feel bad, it's just something to learn from.",
+                "text": "app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind {PRONOUN/app2/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -332,7 +332,7 @@
                 ]
             },
             {
-                "text": "As {PRONOUN/app1/object} {VERB/app1/approach/approaches} the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
+                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
                 "exp": 15,
                 "weight": 5,
                 "relationships": [
@@ -346,7 +346,7 @@
                 ]
             },
             {
-                "text": "s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, p_l explains, and this is one of the reasons why. But it can also work in c_n's favor too.",
+                "text": "s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c explains, and this is one of the reasons why. But it can also work in c_n's favor too.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["TEACHER,1"],
@@ -410,7 +410,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -503,7 +503,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -592,10 +592,10 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place.",
-        "decline_text": "A happier story, the cats ask, please. No one wants difficulty sleeping tonight.",
+        "decline_text": "A happier story, the cats ask, please. No one wants trouble sleeping tonight.",
         "success_outcomes": [
             {
-        "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
+        "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor and condemning them to walk a path of decay and cruelty.",
         "exp": 30,
         "weight": 20,
         "relationships": [
@@ -688,7 +688,7 @@
                     ]
                 },
                 {
-                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan, that seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
+                    "text": "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan... That seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan.",
                     "exp": 30,
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
@@ -722,7 +722,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy.",
+                    "text": "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor in their midst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [
@@ -767,7 +767,7 @@
                     "weight": 20,
                     "can_have_stat": ["not_pl_rc"],
                     "stat_trait": [
-                        "rebellious"
+                        "rebellious", "troublesome", "arrogant"
                     ],
                     "relationships": [
                         {

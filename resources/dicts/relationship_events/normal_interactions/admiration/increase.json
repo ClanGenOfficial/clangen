@@ -4,7 +4,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c saw r_c being considerate.",
-			"m_c noticed r_c is doing {PRONOUN/r_c/poss} best today.",
+			"m_c noticed r_c doing {PRONOUN/r_c/poss} best today.",
 			"m_c appreciates r_c's helpful attitude."
 		]
 	},
@@ -30,7 +30,7 @@
 			"m_c is awed by how much r_c has done for the Clan.",
 			"m_c is really impressed by all of r_c's accomplishments.",
 			"m_c wants to hold an important position like r_c.",
-			"m_c wonders how r_c became the cat {PRONOUN/r_c/subject} are today."
+			"m_c wonders how r_c became the cat {PRONOUN/r_c/subject} {VERB/r_c/are/is} today."
 		],
 		"main_status_constraint": [
 			"kitten",
@@ -139,7 +139,7 @@
 	{
 		"id": "admeration_kit_inc_med2",
 		"interactions": [
-			"m_c tells r_c that {PRONOUN/m_c/subject} would like to be like {PRONOUN/r_c/object} when {PRONOUN/m_c/subject} grows up."
+			"m_c tells r_c how {PRONOUN/m_c/subject} want to be just like {PRONOUN/r_c/object} when {PRONOUN/m_c/subject} {VERB/m_c/grows/grow} up."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -257,18 +257,18 @@
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice",
-            "medicine cat",
-            "deputy",
-            "leader"
+            		"medicine cat",
+            		"deputy",
+            		"leader"
 		]
 	},
 	{
 		"id": "admire_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c had a difficult conversation with r_c and they now have a deeper understanding of each other.",
+			"m_c had a difficult conversation with r_c and now, they have a deeper understanding of each other.",
 			"m_c and r_c have a long discussion about goals and aspirations, and find that they both have a lot in common.",
-			"m_c spent a long time talking with r_c and was impressed by r_c's insight.",
+			"m_c spent a long time talking with r_c and was impressed by {PRONOUN/r_c/poss} insight.",
 			"m_c asks r_c about something complicated and is amazed at how quickly r_c understands."
 		],
 		"reaction_random_cat": {

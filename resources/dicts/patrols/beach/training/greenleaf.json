@@ -18,7 +18,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and plunge in after {PRONOUN/p_l/object}.",
+                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and {VERB/r_c/plunge/plunges} in after {PRONOUN/p_l/object}.",
                 "exp": 5,
                 "weight": 20,
                 "relationships": [
@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter, the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
                 "exp": 5,
                 "weight": 5,
                 "relationships": [
@@ -211,7 +211,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -364,11 +364,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "relationship_constraint": ["not_mates"],
-        "intro_text": "This is just oppressive. The sand burns the patrols paws as they dart from one refuge of dune-bursh to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
+        "intro_text": "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
         "decline_text": "Time to go back home and wait it out.",
         "success_outcomes": [
                 {
-                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
+                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
                     "exp": 20,
                     "weight": 10,
                     "art": "gen_train_soggykitty_happy_warrior",
@@ -390,7 +390,7 @@
                     ]
                 },
                 {
-                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favor, batting back in mock splashy fight at the rest of the patrol fades away, just the two of them in their own little world",
+                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor, batting back in mock splashy fight as the rest of the patrol fades away, just the two of them in their own little world",
                     "exp": 20,
                     "weight": 10,
                     "art": "fst_train_newleafmatesonadates_70locked1",
