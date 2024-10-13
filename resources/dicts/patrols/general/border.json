@@ -3014,7 +3014,7 @@
 	"min_cats": 1,
 	"max_cats": 1,
 	"min_max_status": {
-		"normal adult": [1, 1],
+        "normal adult": [1, 1],
         "all apprentices": [-1, -1],
         "leader": [-1, -1]
 	},
@@ -3052,8 +3052,9 @@
         }
         ],
         "new_cat": [
-                ["clancat", "meeting", "age:mate", "mate:p_l"]
-        ],
+            ["meeting", "clancat", "mate:p_l", "age:mate"]
+],
+
         "art": "gen_flower_date_warrior_other_clan"
 },
 {
@@ -3085,7 +3086,7 @@
 }
 ],
 "new_cat": [
-        ["clancat", "age:mate", "mate:p_l"]
+    ["clancat", "mate:p_l", "age:mate"]
 ],
 "art": "gen_flower_date_warrior_other_clan"
 },
@@ -3118,7 +3119,7 @@
 }
 ],
 "new_cat": [
-        ["clancat", "meeting", "age:mate", "mate:p_l"]
+    ["meeting", "clancat", "mate:p_l", "age:mate"]
 ],
 "art": "gen_flower_date_warrior_other_clan"
 }
@@ -3155,7 +3156,7 @@
 }
 ],
 "new_cat": [
-        ["clancat", "meeting", "age:mate", "mate:p_l"]
+    ["meeting", "clancat", "mate:p_l", "age:mate"]
 ],
 "art": "gen_flower_date_warrior_other_clan"
 },
@@ -3194,8 +3195,8 @@
 }
 ],
 "new_cat": [
-       [ "clancat", "age:mate", "mate:p_l", "meeting" ]
-    ],
+    ["meeting", "clancat", "mate:p_l", "age:mate"]
+],
 "art": "gen_flower_date_warrior_other_clan"
 },
 {
@@ -3245,7 +3246,7 @@
 }
 ],
 "new_cat": [
-        ["clancat", "age:mate", "mate:p_l", "meeting"]
+    ["meeting", "clancat", "mate:p_l", "age:mate"]
 ],
 "art": "gen_battle_warrior_other_clan"
 },
@@ -3290,7 +3291,46 @@
 }
 ],
 "new_cat": [
-        ["clancat", "age:mate", "mate:p_l", "meeting"]
+    ["meeting", "clancat", "mate:p_l", "age:mate"]
+],
+"art": "gen_battle_warrior_other_clan"
+},
+{
+    "text": "p_l and n_c:0 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:0 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:0 wails that p_l has killed {PRONOUN/n_c:0/object} littermate, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
+    "exp": 0,
+    "weight": 10,
+    "injury": [
+    {
+        "cats": [ "n_c:0"],
+        "injuries": [ "grief stricken"]
+    }
+    ],
+    "other_clan_rep": -7,
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -15
+}
+],
+"new_cat": [
+    ["meeting", "clancat", "mate:p_l", "age:mate"]
 ],
 "art": "gen_battle_warrior_other_clan"
 }
@@ -3352,7 +3392,7 @@
         }
         ],
         "new_cat": [
-                ["dead", "clancat", "age:mate", "mate:p_l"]
+            ["dead", "status:apprentice", "backstory:otherclan2"]
         ],
         "art": "gen_battle_warrior_other_clan"
         },
@@ -3385,8 +3425,9 @@
         }
         ],
         "new_cat": [
-                ["clancat", "age:mate", "mate:p_l", "meeting"]
-        ],
+            ["meeting", "clancat", "mate:p_l", "age:mate"]
+],
+
         "art": "gen_bord_twocat_hostile_warrior_warrior"
         }
 	],
@@ -3420,10 +3461,14 @@
                 "amount": -15
         }
         ],
-        "new_cat": 
-            [
-                ["dead", "clancat", "age:mate", "mate:p_l"]
-            ],
+        "history": [
+{
+        "reg_death": "m_c died in a fight with {PRONOUN/m_c/poss} mate's Clanmates."
+}
+        ],
+        "new_cat": [
+            ["dead", "status:apprentice", "backstory:otherclan2"]
+        ],
         "art": "gen_battle_warrior_other_clan"
         }
 	]
