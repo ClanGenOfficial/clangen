@@ -1,75 +1,5 @@
 [
     {
-        "id": "kit_dead_kit",
-        "thoughts": [
-            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "relationship_constraint": [
-            "stranger"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "kit_dead_kit2",
-        "thoughts": [
-            "Is missing seeing r_c in the nursery",
-            "Is asking when r_c is coming back",
-            "Is promising to grow up big and strong for r_c",
-            "Is sleeping where r_c used to sleep",
-            "Went to ask r_c to play only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
-            "Is crying for r_c",
-            "Doesn't understand why r_c won't wake up"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "kit_alive_elder",
-        "thoughts": [
-            "Was nipped on the rump by an elder for being naughty",
-            "Was hissed at by r_c for being too noisy",
-            "Asks r_c what it is like to be so old",
-            "Hopes r_c has a new story to tell {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
-        ],
-        "random_status_constraint": [
-            "elder"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "kit_med_parent",
-        "thoughts": [
-            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
-            "Is wondering why r_c became a medicine cat and not a warrior",
-            "Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c",
-            "Is pretending to be r_c",
-            "Is watching r_c work",
-            "Is teaching the other kits about herbs",
-            "Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "relationship_constraint": [
-            "child/parent"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
         "id": "gen_kit",
         "thoughts": [
             "Plays moss ball by {PRONOUN/m_c/self}",
@@ -121,7 +51,8 @@
             "Starts whining when r_c ignores {PRONOUN/m_c/object}",
             "Can't wait to be a warrior",
             "Pricked {PRONOUN/m_c/self} on the brambles protecting camp",
-            "Pounces on a shred of moss"
+            "Pounces on a shred of moss",
+            "Is wondering if {PRONOUN/m_c/subject} would be a good swimmer"
         ],
         "random_living_status": [
             "living"
@@ -188,6 +119,48 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "kit_alive_elder",
+        "thoughts": [
+            "Was nipped on the rump by an elder for being naughty",
+            "Was hissed at by r_c for being too noisy",
+            "Asks r_c what it is like to be so old",
+            "Hopes r_c has a new story to tell {PRONOUN/m_c/object}",
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_greenleaf_kit",
+        "thoughts": [
+            "Is whining about the heat",
+            "Is buzzing after swallowing a cicada" 
+        ],
+        "season": [
+            "Greenleaf"
+        ],
+        "main_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "gen_leafbare_kit",
+        "thoughts": [
+            "Is whining about the cold",
+            "Is whining about having caught frostbite, despite having just stepped outside"
+        ],
+        "season": [
+            "Leaf-bare"
+        ],
+        "main_status_constraint": [
+            "kitten"
         ]
     },
     {
@@ -437,7 +410,7 @@
             "fearless"
         ],
         "random_status_constraint": [
-        	"apprentice"
+            "apprentice"
         ],
         "random_living_status": [
             "living"
@@ -770,6 +743,60 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "kit_med_parent",
+        "thoughts": [
+            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
+            "Is wondering why r_c became a medicine cat and not a warrior",
+            "Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c",
+            "Is pretending to be r_c",
+            "Is watching r_c work",
+            "Is teaching the other kits about herbs",
+            "Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "kit_dead_kit",
+        "thoughts": [
+            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "relationship_constraint": [
+            "stranger"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "kit_dead_kit2",
+        "thoughts": [
+            "Is missing seeing r_c in the nursery",
+            "Is asking when r_c is coming back",
+            "Is promising to grow up big and strong for r_c",
+            "Is sleeping where r_c used to sleep",
+            "Went to ask r_c to play only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
+            "Is crying for r_c",
+            "Doesn't understand why r_c won't wake up"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     }
 ]
