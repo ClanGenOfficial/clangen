@@ -3392,7 +3392,7 @@
         }
         ],
         "new_cat": [
-            ["dead", "status:apprentice", "backstory:otherclan2"]
+            ["dead", "mate:p_l", "age:mate", "clancat"]
         ],
         "art": "gen_battle_warrior_other_clan"
         },
@@ -3467,7 +3467,7 @@
 }
         ],
         "new_cat": [
-            ["dead", "status:apprentice", "backstory:otherclan2"]
+            ["dead", "mate:p_l", "age:mate", "clancat"]
         ],
         "art": "gen_battle_warrior_other_clan"
         }
