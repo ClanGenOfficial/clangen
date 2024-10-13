@@ -3001,5 +3001,457 @@
             "outsider_rep": -1
         }
     ]
+},
+{
+	"patrol_id": "gen_border_romeo_and_juliet",
+	"biome": [ "any" ],
+	"season": [ "any" ],
+	"types": [],
+	"tags": [ "other_clan", "new_cat" ],
+	"patrol_art": "gen_train_talkingWOCW",
+	"min_cats": 1,
+	"max_cats": 1,
+	"min_max_status": {
+		"normal adult": [1, 1],
+        "all apprentices": [-1, -1],
+        "leader": [-1, -1]
+	},
+	"weight": 10,
+	"chance_of_success": 50,
+	"intro_text": "p_l slinks out of camp to the o_c_n border. A pair of eyes gleam from the bushes, then {PRONOUN/p_l/poss} secret beloved appears. p_l breathes in the o_c_n scent, feeling a guilty rush of delight.",
+	"decline_text": "p_l admits {PRONOUN/p_l/subject} can't stay and hurries back to camp.",
+	"success_outcomes": [
+		{
+            "text": "p_l begs n_c:0 to come back with {PRONOUN/p_l/object}. n_c:0 shakes {PRONOUN/n_c:0/poss} head regretfully, reminding {PRONOUN/p_l/object} that their Clans would never accept it.",
+            "exp": 20,
+            "weight": 50,
+            "other_clan_rep": -1,
+            "relationships": [
+        {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["n_c:0"],
+                    "mutual": true,
+                    "values": ["romantic", "platonic"],
+                    "amount": 46
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "comfort"],
+                "amount": 28
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": [ "clan" ],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -6
+        }
+        ],
+        "new_cat": [
+            [
+                "clancat",
+                "meeting",
+                "mate:{p_l}"
+            ]
+        ],
+        "art": "gen_flower_date_warrior_other_clan"
+},
+{
+    "text": "p_l begs n_c:0 to come back with {PRONOUN/p_l/object} and gasps in joy when n_c:0 agrees. With one last look over {PRONOUN/n_c:0/poss} shoulder to {PRONOUN/n_c:0/poss} old Clan, then follows {PRONOUN/n_c:0/poss} mate to their new life together.",
+    "exp": 20,
+    "weight": 10,
+    "other_clan_rep": -1,
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -15
+}
+],
+"new_cat": [
+    [
+        "clancat",
+        "mate:{p_l}"
+    ]
+],
+"art": "gen_flower_date_warrior_other_clan"
+},
+{
+    "text": "n_c:0 urges p_l to give up {PRONOUN/p_l/poss} life in c_n and join {PRONOUN/n_c:0/object} in o_c_n. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/insist/insists} {PRONOUN/n_c:0/poss} Clanmates would welcome {PRONOUN/p_l/object} with open paws. p_l is tempted but ultimately can't give up c_n.",
+    "exp": 20,
+    "weight": 30,
+    "other_clan_rep": -1,
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -5
+}
+],
+"new_cat": [
+    [
+        "clancat",
+        "meeting",
+        "mate:{p_l}"
+    ]
+],
+"art": "gen_flower_date_warrior_other_clan"
+}
+	],
+	"fail_outcomes": [
+		
+{
+    "text": "Tonight is the night. p_l presses {PRONOUN/p_l/poss} pelt to n_c:0's, purring bittersweetly. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} said {PRONOUN/p_l/poss} goodbyes, and so has n_c:0. Now all that's left is to travel to the outer border together to start their shared life.",
+    "exp": 5,
+    "weight": 30,
+    "lost_cats": [ "p_l" ],
+    "other_clan_rep": -3,
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -15
+}
+],
+"new_cat": [
+    [
+        "clancat",
+        "meeting",
+        "mate:{p_l}"
+    ]
+],
+"art": "gen_flower_date_warrior_other_clan"
+},
+{
+    "text": "p_l and n_c:0 spend the whole night together - and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightangale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} regretfully {VERB/n_c:0/tell/tells} p_l that they'll have be more careful and less frequent in their meetings.",
+    "exp": 5,
+    "weight": 50,
+    "other_clan_rep": -1,
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -15
+}
+],
+"new_cat": [
+    [
+        "clancat",
+        "mate:{p_l}",
+        "meeting"
+    ]
+],
+"art": "gen_flower_date_warrior_other_clan"
+},
+{
+    "text": "p_l and n_c:0 lose track of time together and only realize the sun is rising when an o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged and, despite n_c:0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life.",
+    "exp": 0,
+    "weight": 10,
+    "other_clan_rep": -5,
+    "injury":
+{
+			"cats": [ "p_l" ],
+			"injuries": [ "battle_injury" ],
+			"scars": [ "THROAT" ],
+			"no_results": false
+},
+    "history_text":
+                {
+                    "cats": [ "p_l" ],
+                    "reg_death": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates.",
+                    "scar": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates."
+                },
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -15
+}
+],
+"new_cat": [
+    [
+        "clancat",
+        "mate:{p_l}",
+        "meeting"
+    ]
+],
+"art": "gen_battle_warrior_other_clan"
+},
+{
+    "text": "p_l and n_c:0 lose track of time together and only realize the sun is rising when an o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged. Though n_c:0 tries pull them off p_l, the o_c_n warriors leave p_l cold on the ground. n_c:0 flees, howling in grief for {PRONOUN/n_c:0/poss} lost love.",
+    "exp": 0,
+    "weight": 10,
+    "injury": {
+        "cats": ["n_c:0"],
+        "injuries": ["grief stricken"]
+    },
+    "dead_cats": [ "p_l" ],
+    "other_clan_rep": -7,
+    "history_text":
+                {
+                    "cats": [ "p_l" ],
+                    "reg_death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
+                },
+    "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["n_c:0"],
+            "mutual": true,
+            "values": ["romantic", "platonic"],
+            "amount": 46
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": ["n_c:0"],
+        "mutual": true,
+        "values": ["trust", "comfort"],
+        "amount": 28
+},	
+{
+        "cats_to": ["p_l"],
+        "cats_from": [ "clan" ],
+        "mutual": false,
+        "values": ["trust"],
+        "amount": -15
+}
+],
+"new_cat": [
+    [
+        "clancat",
+        "mate:{p_l}",
+        "meeting"
+    ]
+],
+"art": "gen_battle_warrior_other_clan"
+}
+	],
+
+	"antag_success_outcomes": [
+		{
+            "text": "p_l and n_c:0 lose track of time together and only realize the sun is rising when a c_n dawn patrol finds them. p_l tries to calm {PRONOUN/p_l/poss} Clanmates, but it's futile. They pounce on n_c:0, and though p_l tries to defend {PRONOUN/n_c:0/object}, n_c:0 is too grievously injured in the fray.",
+            "exp": 0,
+            "weight": 10,
+            "dead_cats": [ "n_c:0" ],
+            "injury": {
+                "cats": ["p_l"],
+                "injuries": [ "grief stricken" ]
+            },
+            "other_clan_rep": -7,
+            "history_text":
+                        {
+                            "cats": [ "n_c:0" ],
+                            "reg_death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
+                        },
+            "relationships": [
+        {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["n_c:0"],
+                    "mutual": true,
+                    "values": ["romantic", "platonic"],
+                    "amount": 46
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "comfort"],
+                "amount": 28
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": [ "clan" ],
+                "mutual": true,
+                "values": ["trust"],
+                "amount": -15
+        },	
+        {
+                "cats_to": ["clan"],
+                "cats_from": [ "p_l" ],
+                "mutual": false,
+                "values": ["comfort", "platonic" ],
+                "amount": -10
+        },	
+        {
+                "cats_to": ["clan"],
+                "cats_from": [ "p_l" ],
+                "mutual": false,
+                "values": ["dislike"],
+                "amount": 10
+        }
+        ],
+        "new_cat": [
+            [
+                "clancat",
+                "mate:{p_l}",
+                "meeting"
+            ]
+        ],
+        "art": "gen_battle_warrior_other_clan"
+        },
+        {
+            "text": "p_l is horrified when {PRONOUN/p_l/poss} Clanmate confronts {PRONOUN/p_l/object} and forces {PRONOUN/p_l/object} to renounce {PRONOUN/p_l/poss} relationship with n_c:0. p_l looks between n_c:0 and {PRONOUN/p_l/poss} Clanmate, then silently follows {PRONOUN/p_l/poss} Clanmate back to c_n territory.",
+            "exp": 0,
+            "weight": 10,
+            "other_clan_rep": -3,
+            "injury": {
+                "cats": ["p_l", "n_c:0" ],
+                "injuries": [ "grief stricken"]
+            },
+            "relationships": [
+        {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["n_c:0"],
+                    "mutual": true,
+                    "values": ["romantic", "platonic"],
+                    "amount": 22
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "comfort"],
+                "amount": 14
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": [ "clan" ],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -18
+        }
+        ],
+        "new_cat": [
+            [
+                "clancat",
+                "mate:{p_l}",
+                "meeting"
+            ]
+        ],
+        "art": "gen_bord_twocat_hostile_warrior_warrior"
+        }
+	],
+	"antag_fail_outcomes": [
+        {
+            "text": "p_l and n_c:0 spend moonhigh together, but then a rustle from both sides of the border reveals that their Clans have found them. Before p_l or n_c:0 can explain, battle erupts between the two patrols, fur flying and blood soaking the ground. Both p_l and n_c:0 are left cold on the ground in the aftermath, still reaching out for each other.",
+            "exp": 0,
+            "weight": 10,
+            "dead_cats": [ "p_l", "n_c:0" ],
+            "other_clan_rep": -7,
+            "relationships": [
+        {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["n_c:0"],
+                    "mutual": true,
+                    "values": ["romantic", "platonic"],
+                    "amount": 48
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "comfort"],
+                "amount": 36
+        },	
+        {
+                "cats_to": ["p_l"],
+                "cats_from": [ "clan" ],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -15
+        }
+        ],
+        "new_cat": [
+            [
+                "clancat",
+                "mate:{p_l}",
+                "meeting"
+            ]
+        ],
+        "art": "gen_battle_warrior_other_clan"
+        }
+	]
+
 }
 ]
