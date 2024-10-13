@@ -12,7 +12,7 @@ from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
