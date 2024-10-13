@@ -28,6 +28,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     shorten_text_to_fit,
     ui_scale_offset,
+    adjust_list_text,
 )
 from .Screens import Screens
 from ..cat.history import History
@@ -1600,6 +1601,7 @@ class ProfileScreen(Screens):
         if death_history:
             all_deaths = []
             death_number = len(death_history)
+            multi_life_count = 0
             for index, death in enumerate(death_history):
                 found_murder = (
                     False  # Add this line to track if a matching murder event is found
@@ -1627,6 +1629,9 @@ class ProfileScreen(Screens):
                     )
 
                 if self.the_cat.status == "leader":
+                    if text == "multi_lives":
+                        multi_life_count += 1
+                        continue
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
                             life_text = "lost {PRONOUN/m_c/poss} final life"
@@ -1643,10 +1648,21 @@ class ProfileScreen(Screens):
                             "fifth",
                             "sixth",
                             "seventh",
-                            "eigth",
+                            "eighth",
                         ]
+                        if multi_life_count != 0:
+                            temp_index = index - multi_life_count
+                            lives = [life_names[temp_index]]
+                            while multi_life_count != 0:
+                                multi_life_count -= 1
+                                temp_index += 1
+                                lives.append(life_names[temp_index])
+                        else:
+                            lives = [life_names[index]]
                         life_text = (
-                            "lost {PRONOUN/m_c/poss} " + life_names[index] + " life"
+                            "lost {PRONOUN/m_c/poss} "
+                            + adjust_list_text(lives)
+                            + (" life" if len(lives) == 1 else " lives")
                         )
                 elif death_number > 1:
                     # for retired leaders
