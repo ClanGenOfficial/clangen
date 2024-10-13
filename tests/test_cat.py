@@ -12,26 +12,32 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 class TestCreationAge(unittest.TestCase):
 
+    # test that a cat with 1-5 moons has the age of a kitten
     def test_kitten(self):
         test_cat = Cat(moons=5)
         self.assertEqual(test_cat.age, "kitten")
 
+    # test that a cat with 6-11 moons has the age of an adolescent
     def test_adolescent(self):
         test_cat = Cat(moons=6)
         self.assertEqual(test_cat.age, "adolescent")
 
+    # test that a cat with 12-47 moons has the age of a young adult
     def test_young_adult(self):
         test_cat = Cat(moons=12)
         self.assertEqual(test_cat.age, "young adult")
     
+    # test that a cat with 48-95 moons has the age of an adult
     def test_adult(self):
         test_cat = Cat(moons=48)
         self.assertEqual(test_cat.age, "adult")
 
+    # test that a cat with 96-119 moons has the age of a senior adult
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
         self.assertEqual(test_cat.age, "senior adult")
 
+    # test that a cat with 120-300 moons has the age of a senior
     def test_elder(self):
         test_cat = Cat(moons=120)
         self.assertEqual(test_cat.age, "senior")
@@ -39,6 +45,7 @@ class TestCreationAge(unittest.TestCase):
 
 class TestRelativesFunction(unittest.TestCase):
 
+    # test that is_parent returns True for a parent1-cat relationship and False otherwise
     def test_is_parent(self):
         parent = Cat()
         kit = Cat(parent1=parent.ID)
@@ -46,6 +53,7 @@ class TestRelativesFunction(unittest.TestCase):
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
 
+    # test that is_sibling returns True for cats with a shared parent1 and False otherwise
     def test_is_sibling(self):
         parent = Cat()
         kit1 = Cat(parent1=parent.ID)
@@ -55,6 +63,7 @@ class TestRelativesFunction(unittest.TestCase):
         self.assertTrue(kit2.is_sibling(kit1))
         self.assertTrue(kit1.is_sibling(kit2))
 
+    # test that is_uncle_aunt returns True for a uncle/aunt-cat relationship and False otherwise
     def test_is_uncle_aunt(self):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
@@ -65,6 +74,7 @@ class TestRelativesFunction(unittest.TestCase):
         self.assertFalse(kit.is_uncle_aunt(sibling2))
         self.assertTrue(sibling2.is_uncle_aunt(kit))
 
+    # test that is_grandparent returns True for a grandparent-cat relationship and False otherwise
     def test_is_grandparent(self):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
@@ -80,6 +90,7 @@ class TestRelativesFunction(unittest.TestCase):
 
 class TestPossibleMateFunction(unittest.TestCase):
 
+    # test that is_potential_mate returns False for cats that are related to each other
     def test_relation(self):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
@@ -94,6 +105,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertFalse(sibling1.is_potential_mate(sibling2))
         self.assertFalse(sibling1.is_potential_mate(kit))
 
+    # test that is_potential_mate returns False for cats that are related to each other even if for_love_interest is True
     def test_relation_love_interest(self):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
@@ -109,6 +121,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertFalse(sibling1.is_potential_mate(kit, for_love_interest=True))
         self.assertFalse(sibling2.is_potential_mate(sibling1, for_love_interest=True))
 
+    # test is_potential_mate for age checks
     def test_age_mating(self):
         kitten_cat2 = Cat(moons=1)
         kitten_cat1 = Cat(moons=1)
@@ -127,6 +140,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         elder_cat1 = Cat(moons=120)
         elder_cat2 = Cat(moons=120)
 
+        # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1))
 
         # check for setting
@@ -182,6 +196,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertTrue(elder_cat1.is_potential_mate(senior_adult_cat1))
         self.assertTrue(elder_cat1.is_potential_mate(elder_cat2))
 
+    # test is_potential_mate for age checks with for_love_interest set to True
     def test_age_love_interest(self):
         kitten_cat2 = Cat(moons=1)
         kitten_cat1 = Cat(moons=1)
@@ -198,6 +213,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         elder_cat1 = Cat(moons=120)
         elder_cat2 = Cat(moons=120)
 
+        # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1, True))
 
         # check invalid constellations
@@ -244,6 +260,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertTrue(elder_cat1.is_potential_mate(senior_adult_cat1, True))
         self.assertTrue(elder_cat1.is_potential_mate(elder_cat2, True))
 
+    # test that is_potential_mate returns False for exiled or dead cats
     def test_dead_exiled(self):
         exiled_cat = Cat()
         exiled_cat.exiled = True
@@ -276,6 +293,7 @@ class TestPossibleMateFunction(unittest.TestCase):
 
 class TestMateFunctions(unittest.TestCase):
 
+    # test that set_mate adds the mate's ID to the cat's mate list
     def test_set_mate(self):
         # given
         cat1 = Cat()
@@ -289,6 +307,7 @@ class TestMateFunctions(unittest.TestCase):
         self.assertEqual(cat1.mate[0], cat2.ID)
         self.assertEqual(cat2.mate[0], cat1.ID)
 
+    # test that unset_mate removes the mate's ID from the cat's mate list
     def test_unset_mate(self):
         # given
         cat1 = Cat()
@@ -306,6 +325,7 @@ class TestMateFunctions(unittest.TestCase):
         self.assertEqual(len(cat1.mate), 0)
         self.assertEqual(len(cat2.mate), 0)
 
+    # test for relationship comparisons
     def test_set_mate_relationship(self):
         # given
         cat1 = Cat()
@@ -340,6 +360,7 @@ class TestMateFunctions(unittest.TestCase):
         self.assertLessEqual(old_relation2.admiration, relation2.admiration)
         self.assertLessEqual(old_relation2.jealousy, relation2.jealousy)
 
+    # test for relationship comparisons for cats that are broken up
     def test_unset_mate_relationship(self):
         # given
         cat1 = Cat()
@@ -381,6 +402,8 @@ class TestMateFunctions(unittest.TestCase):
 
 
 class TestUpdateMentor(unittest.TestCase):
+
+    # test that an exiled cat apprentice becomes a former apprentice
     def test_exile_apprentice(self):
         # given
         app = Cat(moons=7, status="apprentice")
