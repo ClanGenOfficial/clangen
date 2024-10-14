@@ -1,77 +1,77 @@
 {
   "backstories": {
-        "clan_founder": "This cat is one of the founding members of the Clan.",
-        "clanborn": "This cat was born into the Clan where {PRONOUN/m_c/subject} currently {VERB/m_c/reside/resides}.",
+        "clan_founder": "m_c is one of the founding members of the Clan.",
+        "clanborn": "m_c was born into the Clan where {PRONOUN/m_c/subject} currently {VERB/m_c/reside/resides}.",
 
-        "halfclan1": "This cat was born into the Clan, but one of {PRONOUN/m_c/poss} parents resides in another Clan.",
-        "halfclan2": "This cat was born in another Clan, but chose to come to this Clan to be with {PRONOUN/m_c/poss} other parent.",
+        "halfclan1": "m_c was born into the Clan, but one of {PRONOUN/m_c/poss} parents resides in another Clan.",
+        "halfclan2": "m_c was born in another Clan, but chose to come to this Clan to be with {PRONOUN/m_c/poss} other parent.",
 
-        "outsider_roots1": "This cat was born into the Clan, but one of {PRONOUN/m_c/poss} parents is an outsider that belongs to no Clan.",
-        "outsider_roots2": "This cat was born outside the Clan, but came to live in the Clan with {PRONOUN/m_c/poss} parent at a young age.",
+        "outsider_roots1": "m_c was born into the Clan, but one of {PRONOUN/m_c/poss} parents is an outsider that belongs to no Clan.",
+        "outsider_roots2": "m_c was born outside the Clan, but came to live in the Clan with {PRONOUN/m_c/poss} parent at a young age.",
 
-        "loner1": "This cat joined the Clan by choice after living life as a loner.",
-        "loner2": "This cat used to live in a barn, but mostly stayed away from Twolegs. {PRONOUN/m_c/subject/CAP} decided Clan life might be an interesting change of pace.",
+        "loner1": "m_c joined the Clan by choice after living life as a loner.",
+        "loner2": "m_c used to live in a barn, but mostly stayed away from Twolegs. {PRONOUN/m_c/subject/CAP} decided Clan life might be an interesting change of pace.",
         "loner3": "m_c wandered the world, aimless and free, but always alone.",
         "loner4": "m_c wandered the world, aimless and free, but always alone - until {PRONOUN/m_c/subject} found someone worth staying for.",
 
-        "kittypet1": "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
-        "kittypet2": "This cat used to live on something called a 'boat' with Twolegs, but decided to join the Clan.",
-        "kittypet3": "This cat used to be a kittypet. {PRONOUN/m_c/subject/CAP} got lost after wandering away, and when {PRONOUN/m_c/subject} returned home, {PRONOUN/m_c/subject} found {PRONOUN/m_c/poss} Twolegs were gone. {PRONOUN/m_c/subject/CAP} eventually found {PRONOUN/m_c/poss} way to the Clan.",
-        "kittypet4": "This cat used to be a kittypet. One day, {PRONOUN/m_c/subject} got sick, and {PRONOUN/m_c/poss} Twolegs brought {PRONOUN/m_c/object} into the belly of a monster. The Twolegs then left {PRONOUN/m_c/object} to fend for {PRONOUN/m_c/self}.",
+        "kittypet1": "m_c joined the Clan by choice after living life with Twolegs as a kittypet.",
+        "kittypet2": "m_c used to live on something called a 'boat' with Twolegs, but decided to join the Clan.",
+        "kittypet3": "m_c used to be a kittypet. {PRONOUN/m_c/subject/CAP} got lost after wandering away, and when {PRONOUN/m_c/subject} returned home, {PRONOUN/m_c/subject} found {PRONOUN/m_c/poss} Twolegs were gone. {PRONOUN/m_c/subject/CAP} eventually found {PRONOUN/m_c/poss} way to the Clan.",
+        "kittypet4": "m_c used to be a kittypet. One day, {PRONOUN/m_c/subject} got sick, and {PRONOUN/m_c/poss} Twolegs brought {PRONOUN/m_c/object} into the belly of a monster. The Twolegs then left {PRONOUN/m_c/object} to fend for {PRONOUN/m_c/self}.",
 
-        "rogue1": "This cat joined the Clan by choice after living life as a rogue.",
-        "rogue2": "This cat used to live in a Twolegplace, scrounging for what {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/subject/CAP} thought the Clan might offer {PRONOUN/m_c/object} more security.",
-        "rogue3": "This cat used to live alone in {PRONOUN/m_c/poss} own territory, but was chased out by something and eventually found the Clan.",
+        "rogue1": "m_c joined the Clan by choice after living life as a rogue.",
+        "rogue2": "m_c used to live in a Twolegplace, scrounging for what {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/subject/CAP} thought the Clan might offer {PRONOUN/m_c/object} more security.",
+        "rogue3": "m_c used to live alone in {PRONOUN/m_c/poss} own territory, but was chased out by something and eventually found the Clan.",
 
-        "abandoned1": "This cat was found by the Clan as a kit and has been living with them ever since.",
-        "abandoned2": "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
-        "abandoned3": "This cat was born into another Clan, but {PRONOUN/m_c/subject} {VERB/m_c/were/was} left here as a kit for the Clan to raise.",
-        "abandoned4": "This cat was found and taken in after being abandoned by {PRONOUN/m_c/poss} Twolegs as a kit.",
+        "abandoned1": "m_c was found by the Clan as a kit and has been living with them ever since.",
+        "abandoned2": "m_c was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
+        "abandoned3": "m_c was born into another Clan, but {PRONOUN/m_c/subject} {VERB/m_c/were/was} left here as a kit for the Clan to raise.",
+        "abandoned4": "m_c was found and taken in after being abandoned by {PRONOUN/m_c/poss} Twolegs as a kit.",
 
-        "otherclan1": "This cat was born into another Clan, but came to this Clan by choice.",
-        "otherclan2": "This cat was unhappy in {PRONOUN/m_c/poss} old Clan and decided to come here instead.",
-        "otherclan3": "This cat's Clan stayed with the Clan after a disaster struck {PRONOUN/m_c/poss} old one, and decided to stay after the rest of {PRONOUN/m_c/poss} Clan returned home.",
-        "otherclan4": "This cat grew up in another Clan, but chose to leave that life and join the Clan {PRONOUN/m_c/subject} now {VERB/m_c/live/lives} in.",
+        "otherclan1": "m_c was born into another Clan, but came to this Clan by choice.",
+        "otherclan2": "m_c was unhappy in {PRONOUN/m_c/poss} old Clan and decided to come here instead.",
+        "otherclan3": "m_c's Clan stayed with the Clan after a disaster struck {PRONOUN/m_c/poss} old one, and decided to stay after the rest of {PRONOUN/m_c/poss} Clan returned home.",
+        "otherclan4": "m_c grew up in another Clan, but chose to leave that life and join the Clan {PRONOUN/m_c/subject} now {VERB/m_c/live/lives} in.",
 
 
-        "disgraced1": "This cat was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.",
-        "disgraced2": "This cat was exiled from {PRONOUN/m_c/poss} old Clan for something {PRONOUN/m_c/subject} didn't do and came here to seek safety.",
-        "disgraced3": "This cat once held a high rank in another Clan but was exiled for reasons {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to share.",
+        "disgraced1": "m_c was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.",
+        "disgraced2": "m_c was exiled from {PRONOUN/m_c/poss} old Clan for something {PRONOUN/m_c/subject} didn't do and came here to seek safety.",
+        "disgraced3": "m_c once held a high rank in another Clan but was exiled for reasons {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to share.",
 
-        "retired_leader": "This cat used to be the leader of another Clan before deciding {PRONOUN/m_c/subject} needed a change of scenery after leadership became too much. {PRONOUN/m_c/subject/CAP} returned {PRONOUN/m_c/poss} nine lives and let {PRONOUN/m_c/poss} deputy take over before coming here.",
-        "medicine_cat": "This cat was once a medicine cat in another Clan.",
-        "ostracized_warrior": "This cat was ostracized from {PRONOUN/m_c/poss} old Clan, but no one really knows why.",
+        "retired_leader": "m_c used to be the leader of another Clan before deciding {PRONOUN/m_c/subject} needed a change of scenery after leadership became too much. {PRONOUN/m_c/subject/CAP} returned {PRONOUN/m_c/poss} nine lives and let {PRONOUN/m_c/poss} deputy take over before coming here.",
+        "medicine_cat": "m_c was once a medicine cat in another Clan.",
+        "ostracized_warrior": "m_c was ostracized from {PRONOUN/m_c/poss} old Clan, but no one really knows why.",
 
-        "refugee1": "This cat came to this Clan after fleeing from {PRONOUN/m_c/poss} former Clan and the tyrannical leader that had taken over.",
-        "refugee2": "This cat used to live as a loner, but after another cat chased {PRONOUN/m_c/object} from {PRONOUN/m_c/poss} home, {PRONOUN/m_c/subject} took refuge in the Clan.",
-        "refugee3": "This cat used to be a kittypet, but joined the Clan after fleeing from {PRONOUN/m_c/poss} cruel Twoleg.",
-        "refugee4": "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
-        "refugee5": "This cat got washed away from {PRONOUN/m_c/poss} former territory in a flood that destroyed {PRONOUN/m_c/poss} home but was glad to find a new home in {PRONOUN/m_c/poss} new Clan here.",
-        "refugee6": "This cat used to be a kittypet, but joined the Clan, sick and weak after eating something {PRONOUN/m_c/subject} shouldn't have.",
+        "refugee1": "m_c came to this Clan after fleeing from {PRONOUN/m_c/poss} former Clan and the tyrannical leader that had taken over.",
+        "refugee2": "m_c used to live as a loner, but after another cat chased {PRONOUN/m_c/object} from {PRONOUN/m_c/poss} home, {PRONOUN/m_c/subject} took refuge in the Clan.",
+        "refugee3": "m_c used to be a kittypet, but joined the Clan after fleeing from {PRONOUN/m_c/poss} cruel Twoleg.",
+        "refugee4": "m_c used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
+        "refugee5": "m_c got washed away from {PRONOUN/m_c/poss} former territory in a flood that destroyed {PRONOUN/m_c/poss} home but was glad to find a new home in {PRONOUN/m_c/poss} new Clan here.",
+        "refugee6": "m_c used to be a kittypet, but joined the Clan, sick and weak after eating something {PRONOUN/m_c/subject} shouldn't have.",
 
-        "tragedy_survivor1": "Something horrible happened to this cat's previous Clan. {PRONOUN/m_c/subject/CAP} refuse to speak about it.",
-        "tragedy_survivor2": "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
-        "tragedy_survivor3": "This cat used to be a kittypet, but joined the Clan after something terrible happened to {PRONOUN/m_c/poss} Twolegs.",
-        "tragedy_survivor4": "This cat used to be a loner, but joined the Clan after something terrible made {PRONOUN/m_c/object} leave {PRONOUN/m_c/poss} old home behind.",
+        "tragedy_survivor1": "Something horrible happened to m_c's previous Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to speak about it.",
+        "tragedy_survivor2": "m_c used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
+        "tragedy_survivor3": "m_c used to be a kittypet, but joined the Clan after something terrible happened to {PRONOUN/m_c/poss} Twolegs.",
+        "tragedy_survivor4": "m_c used to be a loner, but joined the Clan after something terrible made {PRONOUN/m_c/object} leave {PRONOUN/m_c/poss} old home behind.",
 
-        "wandering_healer1": "This cat used to wander, helping those where {PRONOUN/m_c/subject} could, and eventually found the Clan.",
-        "wandering_healer2": "This cat used to live in a specific spot, offering help to all who wandered by, but eventually found {PRONOUN/m_c/poss} way to the Clan.",
+        "wandering_healer1": "m_c used to wander, helping those where {PRONOUN/m_c/subject} could, and eventually found the Clan.",
+        "wandering_healer2": "m_c used to live in a specific spot, offering help to all who wandered by, but eventually found {PRONOUN/m_c/poss} way to the Clan.",
 
-        "guided1": "This cat used to be a kittypet, but after dreaming of starry-furred cats, {PRONOUN/m_c/subject} followed their whispers to the Clan.",
-        "guided2": "This cat used to live a rough life as a rogue. While wandering, {PRONOUN/m_c/subject} found a set of starry pawprints, and followed them to the Clan.",
-        "guided3": "This cat used to live as a loner. A starry-furred cat appeared to {PRONOUN/m_c/object} one day, and then led {PRONOUN/m_c/object} to the Clan.",
-        "guided4": "This cat used to live in a different Clan, until a sign from StarClan told {PRONOUN/m_c/object} to leave.",
+        "guided1": "m_c used to be a kittypet, but after dreaming of starry-furred cats, {PRONOUN/m_c/subject} followed their whispers to the Clan.",
+        "guided2": "m_c used to live a rough life as a rogue. While wandering, {PRONOUN/m_c/subject} found a set of starry pawprints, and followed them to the Clan.",
+        "guided3": "m_c used to live as a loner. A starry-furred cat appeared to {PRONOUN/m_c/object} one day, and then led {PRONOUN/m_c/object} to the Clan.",
+        "guided4": "m_c used to live in a different Clan, until a sign from StarClan told {PRONOUN/m_c/object} to leave.",
 
-        "orphaned1": "This cat was found with a deceased parent. The Clan took {PRONOUN/m_c/object} in, but doesn't hide where {PRONOUN/m_c/subject} came from.",
-        "orphaned2": "This cat was found with a deceased parent. The Clan took {PRONOUN/m_c/object} in, but doesn't tell {PRONOUN/m_c/object} where {PRONOUN/m_c/subject} really came from.",
-        "orphaned3": "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
-        "orphaned4": "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
-        "orphaned5": "This cat was found as a kit hiding near {PRONOUN/m_c/poss} parent's bodies and got brought to live in the Clan.",
-        "orphaned6": "This cat was found flailing in the ocean as a teeny kitten, no parent in sight.",
+        "orphaned1": "m_c was found with a deceased parent. The Clan took {PRONOUN/m_c/object} in, but doesn't hide where {PRONOUN/m_c/subject} came from.",
+        "orphaned2": "m_c was found with a deceased parent. The Clan took {PRONOUN/m_c/object} in, but doesn't tell {PRONOUN/m_c/object} where {PRONOUN/m_c/subject} really came from.",
+        "orphaned3": "m_c was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
+        "orphaned4": "m_c was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
+        "orphaned5": "m_c was found as a kit hiding near {PRONOUN/m_c/poss} parents' bodies and got brought to live in the Clan.",
+        "orphaned6": "m_c was found flailing in the ocean as a teeny kitten, no parent in sight.",
 
-        "outsider1": "This cat was born outside of a Clan.",
-        "outsider2": "This cat was born outside of a Clan, but at {PRONOUN/m_c/poss} birth one parent was a member of a Clan.",
-        "outsider3": "This cat was born outside of a Clan, while {PRONOUN/m_c/poss} parent was lost."
+        "outsider1": "m_c was born outside of a Clan.",
+        "outsider2": "m_c was born outside of a Clan, but at {PRONOUN/m_c/poss} birth one parent was a member of a Clan.",
+        "outsider3": "m_c was born outside of a Clan, while {PRONOUN/m_c/poss} parent was lost."
   },
 
   "backstory_display": {
@@ -111,7 +111,7 @@
       "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1", "refugee6"
     ],
     "former_clancat_backstories": [
-      "otherclan1", "otherclan2", "otherclan3", "ostracized_warrior", "disgraced1", "disgraced2", "disgraced3", "retired_leader", "refugee1", "tragedy_survivor1", "medicine_cat", "guided4", "refugee5"
+      "otherclan1", "otherclan2", "otherclan3", "otherclan4", "ostracized_warrior", "disgraced1", "disgraced2", "disgraced3", "retired_leader", "refugee1", "tragedy_survivor1", "medicine_cat", "guided4", "refugee5"
     ],
     "healer_backstories": [
       "medicine_cat", "wandering_healer1", "wandering_healer2"

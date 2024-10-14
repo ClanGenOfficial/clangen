@@ -1,29 +1,15 @@
 [
     {
-        "id": "deputy_dead_deputy",
-        "thoughts": [
-            "Wishes {PRONOUN/m_c/subject} could speak to r_c to learn how to assign patrols better"
-        ],
-        "random_status_constraint": [
-            "deputy"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
         "id": "gen_deputy",
         "thoughts": [
             "Is assigning cats to a border patrol",
             "Is assigning cats to a hunting patrol",
             "Is wondering what it would be like to be a leader",
             "Is stressed about organizing patrols",
-            "Wonders who will give {PRONOUN/m_c/object} nine lives",
+            "Wonders who will give {PRONOUN/m_c/object} {PRONOUN/m_c/poss} nine lives",
             "Feels overworked",
             "Is hoping for a break",
             "Is assigning cats to the dawn patrol",
-            "Is assigning cats to the hunting patrol",
-            "Is assigning cats to patrol the borders",
             "Can't believe {PRONOUN/m_c/subject} overslept today",
             "Is unsure of what the rest of the Clan thinks of {PRONOUN/m_c/object} as deputy"
         ]
@@ -36,6 +22,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -45,101 +34,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
-        ]
-    },
-    {
-        "id": "bloodthirsty_deputy_to_gen",
-        "thoughts": [
-            "Is fantasizing about leading the Clan into a victorious battle",
-            "Feels a thrill imagining the chaos of a large-scale battle",
-          "Tells the border patrol not to let any intruders go free without a scar to remember them by"
         ],
-        "main_trait_constraint": [
-            "bloodthirsty"
-        ]
-    },
-    {
-      "id": "bloodthirsty_deputy_to_leader",
-        "thoughts": [
-            "Thinks about killing the leader and staging it as an accident",
-            "Encourages the leader to start a war"
-        ],
-        "main_trait_constraint": [
-            "bloodthirsty"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ]
-    },
-    {
-        "id": "strange_deputy_to_gen",
-        "thoughts": [
-            "Accidentally assigns the same cat to three patrols",
-            "Insists a hunting patrol needs to only bring back mice",
-            "Goes missing and comes back smelling like garlic",
-            "Is making odd noises",
-            "Giggles at the thought of a bird trying to swim"
-        ],
-        "main_trait_constraint": [
-            "strange"
-        ]
-    },
-    {  
-        "id":"insecure_deputy",
-        "thoughts": [
-            "Hopes {PRONOUN/m_c/subject}'ll make a decent leader someday",
-            "Wonders how {PRONOUN/m_c/subject} became deputy in the first place",
-            "Feels a pang of self-doubt when a patrol returns late",
-            "Questions whether {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} respected or just tolerated by the Clan",
-            "Worries that {PRONOUN/m_c/poss} mistakes will lead to the Clan's downfall"
-        ],
-        "main_trait_constraint":[
-            "insecure"
-        ]
-    },
-    {
-      "id": "insecure_deputy_to_leader",
-        "thoughts": [
-            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} organizing sound right"
-        ],
-        "main_trait_constraint":[
-            "insecure"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ]
-    },
-    {
-        "id": "fierce_deputy",
-        "thoughts": [
-            "Is sternly instructing a patrol about the importance of strength in defending the Clan",
-            "Feels a rush of adrenaline at the thought of an upcoming battle",
-            "Impressed {PRONOUN/m_c/poss} Clanmates by scaring off an intruder"
-        ],
-        "main_trait_constraint": [
-            "fierce"
-        ]
-    },
-    {
-        "id": "playful_deputy",
-        "thoughts": [
-            "Is inventing a fun game to make patrol assignments more engaging",
-            "Is amused by the antics of the younger cats",
-            "Finds joy in the simple tasks of a deputy's duty"
-        ],
-        "main_trait_constraint": [
-            "playful"
-        ]
-    },
-    {
-        "id": "nervous_deputy",
-        "thoughts": [
-            "Is fretting over a recent increase in fox sightings near the camp",
-            "Feels a twinge of worry about an approaching storm",
-            "Is overthinking a recent encounter with a rival Clan"
-        ],
-        "main_trait_constraint": [
-            "nervous"
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -166,6 +63,147 @@
         ],
         "main_skill_constraint": [
             "TEACHER,1"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "bloodthirsty_deputy_to_gen",
+        "thoughts": [
+            "Is fantasizing about leading the Clan into a victorious battle",
+            "Feels a thrill imagining the chaos of a large-scale battle",
+            "Tells the border patrol not to let any intruders go free without a scar to remember them by"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+      "id": "bloodthirsty_deputy_to_leader",
+        "thoughts": [
+            "Thinks about killing the leader and staging it as an accident",
+            "Encourages the leader to start a war"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "fierce_deputy",
+        "thoughts": [
+            "Is sternly instructing a patrol about the importance of strength in defending the Clan",
+            "Feels a rush of adrenaline at the thought of an upcoming battle",
+            "Impressed {PRONOUN/m_c/poss} Clanmates by scaring off an intruder"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {  
+        "id":"insecure_deputy",
+        "thoughts": [
+            "Hopes {PRONOUN/m_c/subject}'ll make a decent leader someday",
+            "Wonders how {PRONOUN/m_c/subject} became deputy in the first place",
+            "Feels a pang of self-doubt when a patrol returns late",
+            "Questions whether {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} respected or just tolerated by the Clan",
+            "Worries that {PRONOUN/m_c/poss} mistakes will lead to the Clan's downfall"
+        ],
+        "main_trait_constraint":[
+            "insecure"
+        ]
+    },
+    {
+      "id": "insecure_deputy_to_leader",
+        "thoughts": [
+            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} organizing sound right"
+        ],
+        "main_trait_constraint":[
+            "insecure"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "nervous_deputy",
+        "thoughts": [
+            "Is fretting over a recent increase in fox sightings near the camp",
+            "Feels a twinge of worry about an approaching storm",
+            "Is overthinking a recent encounter with a rival Clan"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "playful_deputy",
+        "thoughts": [
+            "Is inventing a fun game to make patrol assignments more engaging",
+            "Finds joy in the simple tasks of a deputy's duty"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ]
+    },
+    {
+      "id": "playful_deputy_to_younger",
+        "thoughts": [
+            "Is amused by the antics of the younger cats"
+        ],
+        "random_age_constraint": [
+            "kitten",
+            "adolescent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "rebellious_deputy",
+        "thoughts": [
+            "Is questioning the necessity of an outdated tradition"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ]
+    },
+    {
+      "id": "rebellious_deputy_to_leader",
+        "thoughts": [
+            "Feels an urge to challenge the leader's decision for the betterment of the Clan",
+            "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "strange_deputy",
+        "thoughts": [
+            "Accidentally assigns the same cat to three patrols",
+            "Insists a hunting patrol needs to only bring back mice",
+            "Goes missing and comes back smelling like garlic",
+            "Is making odd noises",
+            "Giggles at the thought of a bird trying to swim"
+        ],
+        "main_trait_constraint": [
+            "strange"
         ]
     },
     {
@@ -189,74 +227,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
-        ]
-    },
-    {
-        "id": "rebellious_deputy",
-        "thoughts": [
-            "Is questioning the necessity of an outdated tradition"
         ],
-        "main_trait_constraint": [
-            "rebellious"
-        ]
-    },
-    {
-      "id": "rebellious_deputy_to_leader",
-        "thoughts": [
-            "Feels an urge to challenge the leader's decision for the betterment of the Clan",
-          "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
-        ],
-        "main_trait_constraint": [
-            "rebellious"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ]
-    },
-    {
-        "id": "teacher_deputy",
-        "thoughts": [
-            "Is devising an effective teaching strategy for new skills",
-            "Encourages the older cats to share {PRONOUN/m_c/poss} skills and techniques with the younger generations"
-        ],
-        "main_skill_constraint": [
-            "TEACHER,1"
-        ]
-    },
-    {
-      "id": "teacher_deputy_to_apprentice",
-        "thoughts": [
-            "Feels satisfaction watching an apprentice master a lesson",
-            "Guides an apprentice through {PRONOUN/m_c/poss} hunting assessment"
-        ],
-        "main_skill_constraint": [
-            "TEACHER,1"
-        ],
-        "random_status_constraint": [
-            "apprentice"
-        ]
-    },
-    {
-        "id": "hunter_deputy",
-        "thoughts": [
-            "Makes sure no area of the territory is overhunted",
-            "Feels a rush of anticipation at the prospect of a successful hunt",
-            "Is out surveying the territory for the best hunting spots to send patrols tomorrow"
-        ],
-        "main_skill_constraint": [
-            "HUNTER,1"
-        ]
-    },
-    {
-        "id": "fighter_deputy",
-        "thoughts": [
-            "Is instructing a group of warriors in advanced combat techniques",
-          "Feels a sense of protectiveness towards the Clan, ready to defend {PRONOUN/m_c/object} at any moment",
-            "Is assessing the Clan's physical strength and readiness for potential threats",
-            "Organizes a mock battle to keep the Clan's skills sharp"
-        ],
-        "main_skill_constraint": [
-            "FIGHTER,1"
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -271,9 +244,21 @@
         ]
     },
     {
+        "id": "fighter_deputy",
+        "thoughts": [
+            "Is instructing a group of warriors in advanced combat techniques",
+            "Feels a sense of protectiveness towards the Clan, ready to defend them at any moment",
+            "Is assessing the Clan's physical strength and readiness for potential threats",
+            "Organizes a mock battle to keep the Clan's skills sharp"
+        ],
+        "main_skill_constraint": [
+            "FIGHTER,1"
+        ]
+    },
+    {
         "id": "healer_deputy",
         "thoughts": [
-            "Helps a Clanmate get a thorn out of {PRONOUN/m_c/self} paw while out on patrol",
+            "Helps a Clanmate get a thorn out of their paw while out on patrol",
             "Feels empathy for a sick Clanmate and is thinking of ways to help",
             "Is sharing knowledge about basic herbs with the Clan"
         ],
@@ -284,13 +269,27 @@
     {
       "id": "healer_deputy_to_medcat",
         "thoughts": [
-            "Takes a patrol out to gather herbs for the medicine cat"
+            "Takes a patrol out to gather herbs for the medicine cat den"
         ],
         "main_skill_constraint": [
             "HEALER,1"
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "hunter_deputy",
+        "thoughts": [
+            "Makes sure no area of the territory is overhunted",
+            "Feels a rush of anticipation at the prospect of a successful hunt",
+            "Is out surveying the territory for the best hunting spots to send patrols tomorrow"
+        ],
+        "main_skill_constraint": [
+            "HUNTER,1"
         ]
     },
     {
@@ -314,7 +313,47 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "teacher_deputy",
+        "thoughts": [
+            "Is devising an effective teaching strategy for new skills",
+            "Encourages the older cats to share their skills and techniques with the younger generations"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ]
+    },
+    {
+      "id": "teacher_deputy_to_apprentice",
+        "thoughts": [
+            "Feels satisfaction watching an apprentice master a lesson",
+            "Guides an apprentice through {PRONOUN/m_c/poss} hunting assessment"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "deputy_dead_deputy",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/subject} could speak to r_c to learn how to assign patrols better"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     }
-
 ]

@@ -66,14 +66,14 @@
     },
     "grief stricken": {
         "lasting grief": [
-            "m_c gazes blankly at the wall of the medicine den, not acknowledging r_c beside {PRONOUN/m_c/object}. r_c sighs and sits beside {PRONOUN/m_c/object}, hoping that {PRONOUN/r_c/poss} presence can provide some comfort.",
+            "m_c gazes blankly at the wall of the medicine cat den, not acknowledging r_c beside {PRONOUN/m_c/object}. r_c sighs and sits beside {PRONOUN/m_c/object}, hoping that {PRONOUN/r_c/poss} presence can provide some comfort.",
             "m_c curls up in {PRONOUN/m_c/poss} nest, numb to the other cats beside {PRONOUN/m_c/object}. There's a hole inside {PRONOUN/m_c/poss} heart now that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} could never again be filled.",
             "m_c pads out of camp, wanting nothing more than to be away from the pitying looks of {PRONOUN/m_c/poss} Clanmates.",
             "m_c wishes desperately to hear the voice of {PRONOUN/m_c/poss} loved one again, to see their face and smell their scent. The reality of the situation makes m_c want to wail into the sky.",
             "m_c realizes one day that this grief will never leave - {PRONOUN/m_c/subject}'ll just have to learn to live with it. There's nothing else to do."
         ],
         "constant nightmares": [
-            "m_c heads to the medicine den, hoping that r_c will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}.",
+            "m_c heads to the medicine cat den, hoping that r_c will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}.",
             "m_c wakes from yet another nightmare, feeling as though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} being haunted by the ghost of the one {PRONOUN/m_c/subject} {VERB/m_c/grieve/grieves}.",
             "m_c wakes and wails, {PRONOUN/m_c/poss} dreams haunted by visions of {PRONOUN/m_c/poss} dead loved one.",
             "m_c jolts awake and immediately leaves the den to clear {PRONOUN/m_c/poss} head, hoping some fresh night air will help {PRONOUN/m_c/object} cope with the sadness and memories."

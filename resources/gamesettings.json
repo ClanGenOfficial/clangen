@@ -2,7 +2,7 @@
     ".": [
         "WARNING: This file is NOT where your settings are stored.",
         "This file is only used to display the settings in the game.",
-        "The file you are looking for is 'settings.txt' in your saves folder.",
+        "The file you are looking for is 'settings.json' in your saves folder.",
         "If you want to change your settings, edit that file instead.",
         "FORMAT:",
         {
@@ -19,6 +19,11 @@
         "dark mode": [
             "Dark mode",
             "Camp backgrounds will match with the mode: nighttime for dark mode and daytime for light mode.",
+            false
+        ],
+        "fullscreen scaling": [
+            "Ignore fullscreen scaling rules",
+            "If enabled, fullscreen will display as large as possible (toggle fullscreen to update). This may include visual artifacts.",
             false
         ],
         "custom cursor": [

@@ -4,7 +4,7 @@ import random
 import re
 from os.path import exists as path_exists
 from random import choice, choices
-from typing import List, Dict, Union, TYPE_CHECKING
+from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 
 import pygame
 
@@ -206,7 +206,7 @@ class PatrolOutcome:
 
         return outcome_list
 
-    def execute_outcome(self, patrol: "Patrol") -> tuple:
+    def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, Optional[str]]:
         """
         Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
@@ -294,7 +294,7 @@ class PatrolOutcome:
         return False
 
     def _get_stat_cat(self, patrol: "Patrol"):
-        """Sets the stat cat. Returns true if a stat cat was found, and False is a stat cat was not found"""
+        """Sets the stat cat. Returns true if a stat cat was found, and False if a stat cat was not found"""
 
         print("---")
         print(
@@ -306,7 +306,7 @@ class PatrolOutcome:
         allowed_specific = [
             x
             for x in self.can_have_stat
-            if x in ("r_c", "p_l", "app1", "app2", "any", "not_pl_rc")
+            if x in ("r_c", "p_l", "app1", "app2", "any", "not_pl_rc", "not_pl")
         ]
 
         # Special default behavior for patrols less than two cats.
@@ -812,16 +812,14 @@ class PatrolOutcome:
 
         for cat in patrol.patrol_cats:
             if Cat.fetch_cat(cat.mentor) in patrol.patrol_cats:
+                mentor = Cat.fetch_cat(cat.mentor)
                 affect_personality = cat.personality.mentor_influence(
-                    Cat.fetch_cat(cat.mentor)
+                    mentor.personality
                 )
-                affect_skills = cat.skills.mentor_influence(Cat.fetch_cat(cat.mentor))
+                affect_skills = cat.skills.mentor_influence(mentor)
                 if affect_personality:
                     History.add_facet_mentor_influence(
-                        cat,
-                        affect_personality[0],
-                        affect_personality[1],
-                        affect_personality[2],
+                        cat, mentor.ID, affect_personality[0], affect_personality[1]
                     )
                     print(str(cat.name), affect_personality)
                 if affect_skills:

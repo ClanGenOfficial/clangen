@@ -5,13 +5,12 @@ from copy import deepcopy
 from itertools import repeat
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 import pygame
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.history import History
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.patrol.patrol_event import PatrolEvent
@@ -39,7 +38,6 @@ class Patrol:
     used_patrols = []
 
     def __init__(self):
-
         self.patrol_event: PatrolEvent = None
 
         self.patrol_leader = None
@@ -103,7 +101,7 @@ class Patrol:
 
         return self.process_text(self.patrol_event.intro_text, None)
 
-    def proceed_patrol(self, path: str = "proceed") -> Tuple[str]:
+    def proceed_patrol(self, path: str = "proceed") -> Tuple[str, str, Optional[str]]:
         """Proceed the patrol to the next step.
         path can be: "proceed", "antag", or "decline" """
 
@@ -404,10 +402,12 @@ class Patrol:
         return final_patrols, final_romance_patrols
 
     def _check_constraints(self, patrol: PatrolEvent) -> bool:
-        if not filter_relationship_type(group=self.patrol_cats,
-                                        filter_types=patrol.relationship_constraints,
-                                        event_id=patrol.patrol_id,
-                                        patrol_leader=self.patrol_leader):
+        if not filter_relationship_type(
+            group=self.patrol_cats,
+            filter_types=patrol.relationship_constraints,
+            event_id=patrol.patrol_id,
+            patrol_leader=self.patrol_leader,
+        ):
             return False
 
         if (
@@ -574,7 +574,6 @@ class Patrol:
     def get_filtered_patrols(
         self, possible_patrols, biome, camp, current_season, patrol_type
     ):
-
         filtered_patrols, romantic_patrols = self._filter_patrols(
             possible_patrols, biome, camp, current_season, patrol_type
         )
@@ -631,10 +630,9 @@ class Patrol:
 
         return all_patrol_events
 
-    def determine_outcome(self, antagonize=False):
-
+    def determine_outcome(self, antagonize=False) -> Tuple[str, str, Optional[str]]:
         if self.patrol_event is None:
-            return
+            raise Exception("No patrol event supplied")
 
         # First Step - Filter outcomes and pick a fail and success outcome
         success_outcomes = (
@@ -672,7 +670,7 @@ class Patrol:
     def calculate_success( 
         self, success_outcome: PatrolOutcome, fail_outcome: PatrolOutcome
     ) -> Tuple[PatrolOutcome, bool]:
-        """Returns both the chosen event, and a boolian that's True if success, and False is fail."""
+        """Returns both the chosen event, and a boolean that's True if success, and False is fail."""
 
         patrol_size = len(self.patrol_cats)
         total_exp = sum([x.experience for x in self.patrol_cats])
@@ -934,7 +932,7 @@ class Patrol:
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
 
-    def process_text(self, text, stat_cat: Cat) -> str:
+    def process_text(self, text, stat_cat: Optional[Cat]) -> str:
         """Processes text"""
 
         vowels = ["A", "E", "I", "O", "U"]
@@ -1073,15 +1071,16 @@ class Patrol:
 
         text = text.replace("c_n", str(game.clan.name) + "Clan")
 
-        text, senses, list_type = find_special_list_types(text)
+        text, senses, list_type, _ = find_special_list_types(text)
         if list_type:
             sign_list = get_special_snippet_list(
                 list_type, amount=randint(1, 3), sense_groups=senses
             )
             text = text.replace(list_type, str(sign_list))
 
-        #TODO: check if this can be handled in event_text_adjust
+        # TODO: check if this can be handled in event_text_adjust
         return text
+
 
 # ---------------------------------------------------------------------------- #
 #                               PATROL CLASS END                               #

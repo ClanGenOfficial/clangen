@@ -1,280 +1,214 @@
 {
-  "general": {
-    "body": [
-      "As r_c stares down at m_c's body, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} nothing. m_c was a disappointment.",
-      "r_c sits respectfully, but doesn't contribute a story to m_c's vigil. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} {PRONOUN/r_c/subject} should feel more about the death of {PRONOUN/r_c/poss} kit, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't}.",
-      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have any grief for m_c.",
-      "r_c keeps up appearances, soothing the fur of {PRONOUN/r_c/poss} dead kit and sitting vigil, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} care that m_c is dead. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know if {PRONOUN/r_c/subject} ever loved {PRONOUN/m_c/object}, not like {PRONOUN/r_c/subject} {VERB/r_c/were/was} supposed to.",
-      "r_c doesn't know if {PRONOUN/r_c/subject} can be blamed for the slight relief {PRONOUN/r_c/subject} {VERB/r_c/feel/feels}. m_c is dead and gone, and that seems overall an improvement. {PRONOUN/r_c/subject/CAP} {VERB/r_c/regret/regrets} ever bringing such a kit into the world."
-   ],
-   "no_body": [
-      "r_c sits respectfully, but doesn't contribute a story to m_c's vigil. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} {PRONOUN/r_c/subject} should feel more about the death of {PRONOUN/r_c/poss} kit, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't}.",
-      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have any grief for m_c.",
-      "r_c doesn't know if {PRONOUN/r_c/subject} can be blamed for the slight relief {PRONOUN/r_c/subject} {VERB/r_c/feel/feels}. m_c is dead and gone, and that seems overall an improvement. {PRONOUN/r_c/subject/CAP} {VERB/r_c/regret/regrets} ever bringing such a kit into the world."
-   ]
-  },
-  "adventurous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "altruistic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "ambitious": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bloodthirsty": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "calm": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "careful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "charismatic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "childish": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "cold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "compassionate": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "confident": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "daring": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "empathetic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "faithful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "fierce": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "insecure": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "lonesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loving": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loyal": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "nervous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "patient": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "playful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "responsible": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "righteous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "shameless": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "sneaky": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strange": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strict": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "thoughtful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "troublesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "vengeful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "wise": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  }
+    "general": {
+        "body": [
+            "As r_c stares down at m_c's body, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} nothing. m_c was a disappointment.",
+            "r_c sits respectfully, but doesn't contribute a story to m_c's vigil. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} {PRONOUN/r_c/subject} should feel more about the death of {PRONOUN/r_c/poss} kit, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't}.",
+            "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have any grief for m_c.",
+            "r_c keeps up appearances, smoothing the fur of {PRONOUN/r_c/poss} dead kit and sitting vigil, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} care that m_c is dead. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know if {PRONOUN/r_c/subject} ever loved {PRONOUN/m_c/object}, not like {PRONOUN/r_c/subject} {VERB/r_c/were/was} supposed to.",
+            "r_c doesn't know if {PRONOUN/r_c/subject} can be blamed for the slight relief {PRONOUN/r_c/subject} {VERB/r_c/feel/feels}. m_c is dead and gone, and that seems overall an improvement. {PRONOUN/r_c/subject/CAP} {VERB/r_c/regret/regrets} ever bringing such a kit into the world."
+        ],
+        "no_body": [
+            "r_c sits respectfully, but doesn't contribute a story to m_c's vigil. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} {PRONOUN/r_c/subject} should feel more about the death of {PRONOUN/r_c/poss} kit, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't}.",
+            "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have any grief for m_c.",
+            "r_c doesn't know if {PRONOUN/r_c/subject} can be blamed for the slight relief {PRONOUN/r_c/subject} {VERB/r_c/feel/feels}. m_c is dead and gone, and that seems overall an improvement. {PRONOUN/r_c/subject/CAP} {VERB/r_c/regret/regrets} ever bringing such a kit into the world."
+        ]
+    },
+    "adventurous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "altruistic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "ambitious": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bloodthirsty": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "calm": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "careful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charismatic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "childish": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "cold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "compassionate": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "confident": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daring": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "empathetic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "faithful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "fierce": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "insecure": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "lonesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loving": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loyal": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "nervous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "patient": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "playful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "responsible": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "righteous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "shameless": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sneaky": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strange": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strict": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "thoughtful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "troublesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "vengeful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "wise": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    }
 }

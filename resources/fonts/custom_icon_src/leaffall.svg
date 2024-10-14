@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        version="1.1"
+        id="svg1"
+        width="17"
+        height="17"
+        viewBox="0 0 17 17"
+        sodipodi:docname="leaffall.svg"
+        inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"><defs
+     id="defs1" />
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#505050"
+            bordercolor="#ffffff"
+            borderopacity="1"
+            inkscape:showpageshadow="0"
+            inkscape:pageopacity="0"
+            inkscape:pagecheckerboard="1"
+            inkscape:deskcolor="#505050"
+            showgrid="true"
+            inkscape:zoom="64"
+            inkscape:cx="6.6484375"
+            inkscape:cy="10.757813"
+            inkscape:window-width="1920"
+            inkscape:window-height="991"
+            inkscape:window-x="-9"
+            inkscape:window-y="-9"
+            inkscape:window-maximized="1"
+            inkscape:current-layer="g1"><inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="0.5"
+       spacingy="0.5"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" /></sodipodi:namedview>
+    <g
+            inkscape:groupmode="layer"
+            inkscape:label="Image"
+            id="g1"><path
+       id="rect1"
+       style="fill:#000000;stroke-width:1.71429"
+       d="M 7.6428571,0.78571429 V 2.5 H 5.9285714 V 4.2142857 H 4.2142857 v 6.8571433 h 1.7142857 v 1.714285 H 7.6428571 V 4.2142857 h 1.7142858 v 8.5714283 h 1.7142861 v -1.714285 h 1.714285 V 4.2142857 H 11.071429 V 2.5 H 9.3571429 V 0.78571429 Z M 9.3571429,12.785714 H 7.6428571 v 3.428572 h 1.7142858 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc" /></g></svg>
