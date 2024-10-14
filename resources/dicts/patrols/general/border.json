@@ -3161,7 +3161,7 @@
 "art": "gen_flower_date_warrior_other_clan"
 },
 {
-    "text": "p_l and n_c:0 spend one last night together - and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightangale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn.",
+    "text": "p_l and n_c:0 spend one last night together - and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightingale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn.",
     "exp": 5,
     "weight": 50,
     "other_clan_rep": -1,
@@ -3296,7 +3296,7 @@
 "art": "gen_battle_warrior_other_clan"
 },
 {
-    "text": "p_l and n_c:0 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:0 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:0 wails that p_l has killed {PRONOUN/n_c:0/object} littermate, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
+    "text": "p_l and n_c:0 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:0 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:0 wails that p_l has killed {PRONOUN/n_c:0/poss} littermate, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
     "exp": 0,
     "weight": 10,
     "injury": [
