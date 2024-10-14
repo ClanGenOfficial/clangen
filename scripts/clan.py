@@ -517,16 +517,8 @@ class Clan:
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
-        clan_data["other_clans"] = []
-        for other_clan in self.all_clans:
-            clan_data["other_clans"].append(
-                {
-                    "name": other_clan.name,
-                    "relations": other_clan.relations,
-                    "temperament": other_clan.temperament,
-                    "chosen_symbol": other_clan.chosen_symbol
-                }
-            )
+        clan_data["other_clans"] = [vars(i) for i in self.all_clans]
+        
         clan_data["war"] = self.war
 
         self.save_herbs(game.clan)
