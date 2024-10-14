@@ -268,7 +268,7 @@
     "tags0": ["plant"]
   }, 
   "Burrow": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["location"]
   }, 
   "Bush": {
@@ -1194,7 +1194,7 @@
     "tags0": []
   }, 
   "Lynx": {
-    "variants": 0,
+    "variants": 1,
     "tags0": []
   },
   "Lyre": {
