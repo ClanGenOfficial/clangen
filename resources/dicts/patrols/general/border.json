@@ -3433,7 +3433,7 @@
 	],
 	"antag_fail_outcomes": [
         {
-            "text": "p_l and n_c:0 spend moonhigh together discussing whether to run away together, but then a rustle from both sides of the border reveals that their Clans have found them. Before p_l or n_c:0 can explain, battle erupts between the two patrols, fur flying and blood soaking the ground. Both p_l and n_c:0 are left cold on the ground in the aftermath, still reaching out for each other.",
+            "text": "p_l and n_c:0 spend moonhigh together discussing whether to run away together, but then a rustle from both sides of the border reveals that their Clans have found them. Before p_l or n_c:0 can explain, battle erupts between the two patrols, fur flying and blood soaking the ground. Both p_l and n_c:0 are left cold in the aftermath, still reaching out for each other.",
             "exp": 0,
             "weight": 10,
             "dead_cats": [ "p_l", "n_c:0" ],
