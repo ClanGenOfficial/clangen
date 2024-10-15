@@ -69,18 +69,19 @@ class Name:
                             _tmp = new_name.split(":")
                             names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
 
-    def __init__(self,
-                 status=enums.Status.WARRIOR,
-                 prefix=None,
-                 suffix=None,
-                 colour=None,
-                 eyes=None,
-                 pelt=None,
-                 tortiepattern=None,
-                 biome=None,
-                 specsuffix_hidden=False,
-                 load_existing_name=False
-                 ):
+    def __init__(
+        self,
+        status=enums.Status.WARRIOR,
+        prefix=None,
+        suffix=None,
+        colour=None,
+        eyes=None,
+        pelt=None,
+        tortiepattern=None,
+        biome=None,
+        specsuffix_hidden=False,
+        load_existing_name=False,
+    ):
         self.status = status
         self.prefix = prefix
         self.suffix = suffix
@@ -139,7 +140,6 @@ class Name:
                     and str(self.suffix) != ""
                 )
             ):
-
                 # check if random die was for prefix
                 if name_fixpref:
                     self.give_prefix(eyes, colour, biome)

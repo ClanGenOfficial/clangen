@@ -190,8 +190,7 @@ class Patrol:
         else:
             # Get the oldest cat
             possible_leader = [
-                i for i in self.patrol_cats
-                if not i.status.can_patrol_app()
+                i for i in self.patrol_cats if not i.status.can_patrol_app()
             ]
             if possible_leader:
                 # Flip a coin to pick the most experience, or oldest.
@@ -221,12 +220,12 @@ class Patrol:
         print("Random Cat:", str(self.random_cat.name))
 
     def get_possible_patrols(
-            self,
-            current_season: str,
-            biome: str,
-            camp: str,
-            patrol_type: str,
-            game_setting_disaster=None,
+        self,
+        current_season: str,
+        biome: str,
+        camp: str,
+        patrol_type: str,
+        game_setting_disaster=None,
     ) -> Tuple[List[PatrolEvent]]:
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
@@ -245,29 +244,53 @@ class Patrol:
 
         possible_patrols = []
         # This is for debugging purposes, load-in *ALL* the possible patrols when debug_override_patrol_stat_requirements is true. (May require longer loading time)
-        if (game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]):
+        if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
             leaves = ["greenleaf", "leaf-bare", "leaf-fall", "newleaf", "any"]
             for biome in game.clan.BIOME_TYPES:
                 for leaf in leaves:
                     biome_dir = f"{biome.lower()}/"
                     self.update_resources(biome_dir, leaf)
                     possible_patrols.extend(self.generate_patrol_events(self.HUNTING))
-                    possible_patrols.extend(self.generate_patrol_events(self.HUNTING_SZN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.HUNTING_SZN)
+                    )
                     possible_patrols.extend(self.generate_patrol_events(self.BORDER))
-                    possible_patrols.extend(self.generate_patrol_events(self.BORDER_SZN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.BORDER_SZN)
+                    )
                     possible_patrols.extend(self.generate_patrol_events(self.TRAINING))
-                    possible_patrols.extend(self.generate_patrol_events(self.TRAINING_SZN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.TRAINING_SZN)
+                    )
                     possible_patrols.extend(self.generate_patrol_events(self.MEDCAT))
-                    possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_SZN))
-                    possible_patrols.extend(self.generate_patrol_events(self.HUNTING_GEN))
-                    possible_patrols.extend(self.generate_patrol_events(self.BORDER_GEN))
-                    possible_patrols.extend(self.generate_patrol_events(self.TRAINING_GEN))
-                    possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_GEN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.MEDCAT_SZN)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.HUNTING_GEN)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.BORDER_GEN)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.TRAINING_GEN)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.MEDCAT_GEN)
+                    )
                     possible_patrols.extend(self.generate_patrol_events(self.DISASTER))
-                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_WELCOMING))
-                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_HOSTILE))
-                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_ALLIES))
-                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.NEW_CAT_WELCOMING)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.NEW_CAT_HOSTILE)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
+                    )
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.OTHER_CLAN_HOSTILE)
+                    )
 
         # this next one is needed for Classic specifically
         patrol_type = (
@@ -373,16 +396,17 @@ class Patrol:
         if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
             final_patrols = final_romance_patrols = possible_patrols
             # Logging
-            print("All patrol filters regarding location, session, etc. have been removed.")
-
+            print(
+                "All patrol filters regarding location, session, etc. have been removed."
+            )
 
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible,
         # make it the *only* possible patrol
         if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
             for _pat in possible_patrols:
                 if (
-                        _pat.patrol_id
-                        == game.config["patrol_generation"]["debug_ensure_patrol_id"]
+                    _pat.patrol_id
+                    == game.config["patrol_generation"]["debug_ensure_patrol_id"]
                 ):
                     patrol_type = choice(_pat.types) if _pat.types != [] else "general"
                     final_patrols = final_romance_patrols = [_pat]
@@ -411,16 +435,16 @@ class Patrol:
             return False
 
         if (
-                patrol.pl_skill_constraints
-                and not self.patrol_leader.skills.check_skill_requirement_list(
             patrol.pl_skill_constraints
-        )
+            and not self.patrol_leader.skills.check_skill_requirement_list(
+                patrol.pl_skill_constraints
+            )
         ):
             return False
 
         if (
-                patrol.pl_trait_constraints
-                and self.patrol_leader.personality.trait not in patrol.pl_trait_constraints
+            patrol.pl_trait_constraints
+            and self.patrol_leader.personality.trait not in patrol.pl_trait_constraints
         ):
             return False
 
@@ -428,7 +452,7 @@ class Patrol:
 
     @staticmethod
     def decide_if_romantic(
-            romantic_event, patrol_leader, random_cat, patrol_apprentices: list
+        romantic_event, patrol_leader, random_cat, patrol_apprentices: list
     ) -> bool:
         # if no romance was available or the patrol lead and random cat aren't potential mates then use the normal event
 
@@ -447,8 +471,8 @@ class Patrol:
             love2 = random_cat
 
         if (
-                not love1.is_potential_mate(love2, for_love_interest=True)
-                and love1.ID not in love2.mate
+            not love1.is_potential_mate(love2, for_love_interest=True)
+            and love1.ID not in love2.mate
         ):
             print("not a potential mate or current mate")
             return False
@@ -459,8 +483,8 @@ class Patrol:
         ]
 
         if (
-                get_personality_compatibility(love1, love2) is True
-                or love1.ID in love2.mate
+            get_personality_compatibility(love1, love2) is True
+            or love1.ID in love2.mate
         ):
             chance_of_romance_patrol -= 10
         else:
@@ -478,8 +502,8 @@ class Patrol:
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
             if (
-                    val in ["romantic", "platonic", "admiration", "comfortable", "trust"]
-                    and value_check >= 20
+                val in ["romantic", "platonic", "admiration", "comfortable", "trust"]
+                and value_check >= 20
             ):
                 chance_of_romance_patrol -= 1
             elif val in ["dislike", "jealousy"] and value_check >= 20:
@@ -490,12 +514,12 @@ class Patrol:
         return not int(random.random() * chance_of_romance_patrol)
 
     def _filter_patrols(
-            self,
-            possible_patrols: List[PatrolEvent],
-            biome: str,
-            camp: str,
-            current_season: str,
-            patrol_type: str,
+        self,
+        possible_patrols: List[PatrolEvent],
+        biome: str,
+        camp: str,
+        current_season: str,
+        patrol_type: str,
     ):
         filtered_patrols = []
         romantic_patrols = []
@@ -512,10 +536,10 @@ class Patrol:
 
             # Don't check for repeat patrols if ensure_patrol_id is being used.
             if (
-                    not isinstance(
-                        game.config["patrol_generation"]["debug_ensure_patrol_id"], str
-                    )
-                    and patrol.patrol_id in self.used_patrols
+                not isinstance(
+                    game.config["patrol_generation"]["debug_ensure_patrol_id"], str
+                )
+                and patrol.patrol_id in self.used_patrols
             ):
                 continue
 
@@ -572,7 +596,7 @@ class Patrol:
         return filtered_patrols, romantic_patrols
 
     def get_filtered_patrols(
-            self, possible_patrols, biome, camp, current_season, patrol_type
+        self, possible_patrols, biome, camp, current_season, patrol_type
     ):
         filtered_patrols, romantic_patrols = self._filter_patrols(
             possible_patrols, biome, camp, current_season, patrol_type
@@ -668,7 +692,7 @@ class Patrol:
         return final_event.execute_outcome(self)
 
     def calculate_success(
-            self, success_outcome: PatrolOutcome, fail_outcome: PatrolOutcome
+        self, success_outcome: PatrolOutcome, fail_outcome: PatrolOutcome
     ) -> Tuple[PatrolOutcome, bool]:
         """Returns both the chosen event, and a boolean that's True if success, and False is fail."""
 
@@ -679,7 +703,7 @@ class Patrol:
         ]
 
         exp_adustment = (
-                (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
+            (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
         )
 
         success_chance = self.patrol_event.chance_of_success + int(exp_adustment)
@@ -698,12 +722,12 @@ class Patrol:
         for kitty in self.patrol_cats:
             hits = kitty.skills.check_skill_requirement_list(success_outcome.stat_skill)
             success_chance += (
-                    hits * game.config["patrol_generation"]["win_stat_cat_modifier"]
+                hits * game.config["patrol_generation"]["win_stat_cat_modifier"]
             )
 
             hits = kitty.skills.check_skill_requirement_list(fail_outcome.stat_skill)
             success_chance -= (
-                    hits * game.config["patrol_generation"]["fail_stat_cat_modifier"]
+                hits * game.config["patrol_generation"]["fail_stat_cat_modifier"]
             )
 
             if kitty.personality.trait in success_outcome.stat_trait:
@@ -727,10 +751,14 @@ class Patrol:
         success = int(random.random() * 120) < success_chance
 
         # This is a debug option, this will forcefully change the outcome of a patrol
-        if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_outcome"], bool):
+        if isinstance(
+            game.config["patrol_generation"]["debug_ensure_patrol_outcome"], bool
+        ):
             success = game.config["patrol_generation"]["debug_ensure_patrol_outcome"]
             # Logging
-            print(f"The outcome of {self.patrol_event.patrol_id} was altered to {success}")
+            print(
+                f"The outcome of {self.patrol_event.patrol_id} was altered to {success}"
+            )
 
         return (success_outcome if success else fail_outcome, success)
 
@@ -739,45 +767,45 @@ class Patrol:
         # HUNTING #
         self.HUNTING_SZN = None
         with open(
-                f"{resource_dir}{biome_dir}hunting/{leaf}.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}hunting/{leaf}.json", "r", encoding="ascii"
         ) as read_file:
             self.HUNTING_SZN = ujson.loads(read_file.read())
         self.HUNTING = None
         with open(
-                f"{resource_dir}{biome_dir}hunting/any.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}hunting/any.json", "r", encoding="ascii"
         ) as read_file:
             self.HUNTING = ujson.loads(read_file.read())
         # BORDER #
         self.BORDER_SZN = None
         with open(
-                f"{resource_dir}{biome_dir}border/{leaf}.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}border/{leaf}.json", "r", encoding="ascii"
         ) as read_file:
             self.BORDER_SZN = ujson.loads(read_file.read())
         self.BORDER = None
         with open(
-                f"{resource_dir}{biome_dir}border/any.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}border/any.json", "r", encoding="ascii"
         ) as read_file:
             self.BORDER = ujson.loads(read_file.read())
         # TRAINING #
         self.TRAINING_SZN = None
         with open(
-                f"{resource_dir}{biome_dir}training/{leaf}.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}training/{leaf}.json", "r", encoding="ascii"
         ) as read_file:
             self.TRAINING_SZN = ujson.loads(read_file.read())
         self.TRAINING = None
         with open(
-                f"{resource_dir}{biome_dir}training/any.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}training/any.json", "r", encoding="ascii"
         ) as read_file:
             self.TRAINING = ujson.loads(read_file.read())
         # MED #
         self.MEDCAT_SZN = None
         with open(
-                f"{resource_dir}{biome_dir}med/{leaf}.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}med/{leaf}.json", "r", encoding="ascii"
         ) as read_file:
             self.MEDCAT_SZN = ujson.loads(read_file.read())
         self.MEDCAT = None
         with open(
-                f"{resource_dir}{biome_dir}med/any.json", "r", encoding="ascii"
+            f"{resource_dir}{biome_dir}med/any.json", "r", encoding="ascii"
         ) as read_file:
             self.MEDCAT = ujson.loads(read_file.read())
         # NEW CAT #
@@ -786,12 +814,12 @@ class Patrol:
             self.NEW_CAT = ujson.loads(read_file.read())
         self.NEW_CAT_HOSTILE = None
         with open(
-                f"{resource_dir}new_cat_hostile.json", "r", encoding="ascii"
+            f"{resource_dir}new_cat_hostile.json", "r", encoding="ascii"
         ) as read_file:
             self.NEW_CAT_HOSTILE = ujson.loads(read_file.read())
         self.NEW_CAT_WELCOMING = None
         with open(
-                f"{resource_dir}new_cat_welcoming.json", "r", encoding="ascii"
+            f"{resource_dir}new_cat_welcoming.json", "r", encoding="ascii"
         ) as read_file:
             self.NEW_CAT_WELCOMING = ujson.loads(read_file.read())
         # OTHER CLAN #
@@ -800,12 +828,12 @@ class Patrol:
             self.OTHER_CLAN = ujson.loads(read_file.read())
         self.OTHER_CLAN_ALLIES = None
         with open(
-                f"{resource_dir}other_clan_allies.json", "r", encoding="ascii"
+            f"{resource_dir}other_clan_allies.json", "r", encoding="ascii"
         ) as read_file:
             self.OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
         self.OTHER_CLAN_HOSTILE = None
         with open(
-                f"{resource_dir}other_clan_hostile.json", "r", encoding="ascii"
+            f"{resource_dir}other_clan_hostile.json", "r", encoding="ascii"
         ) as read_file:
             self.OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
         self.DISASTER = None
@@ -814,22 +842,22 @@ class Patrol:
         # sighing heavily as I add general patrols back in
         self.HUNTING_GEN = None
         with open(
-                f"{resource_dir}general/hunting.json", "r", encoding="ascii"
+            f"{resource_dir}general/hunting.json", "r", encoding="ascii"
         ) as read_file:
             self.HUNTING_GEN = ujson.loads(read_file.read())
         self.BORDER_GEN = None
         with open(
-                f"{resource_dir}general/border.json", "r", encoding="ascii"
+            f"{resource_dir}general/border.json", "r", encoding="ascii"
         ) as read_file:
             self.BORDER_GEN = ujson.loads(read_file.read())
         self.TRAINING_GEN = None
         with open(
-                f"{resource_dir}general/training.json", "r", encoding="ascii"
+            f"{resource_dir}general/training.json", "r", encoding="ascii"
         ) as read_file:
             self.TRAINING_GEN = ujson.loads(read_file.read())
         self.MEDCAT_GEN = None
         with open(
-                f"{resource_dir}general/medcat.json", "r", encoding="ascii"
+            f"{resource_dir}general/medcat.json", "r", encoding="ascii"
         ) as read_file:
             self.MEDCAT_GEN = ujson.loads(read_file.read())
 
@@ -917,7 +945,7 @@ class Patrol:
             file_name = self.patrol_event.patrol_art
 
         if not isinstance(file_name, str) or not path_exists(
-                f"{root_dir}{file_name}.png"
+            f"{root_dir}{file_name}.png"
         ):
             if "herb_gathering" in self.patrol_event.types:
                 file_name = "med"
@@ -983,8 +1011,8 @@ class Patrol:
                 pronoun = Cat.default_pronouns[0]  # They/them for muliple cats
             else:
                 names = (
-                        ", ".join([str(x.name) for x in new_cats[:-1]])
-                        + f", and {new_cats[1].name}"
+                    ", ".join([str(x.name) for x in new_cats[:-1]])
+                    + f", and {new_cats[1].name}"
                 )
                 pronoun = Cat.default_pronouns[0]  # They/them for muliple cats
 

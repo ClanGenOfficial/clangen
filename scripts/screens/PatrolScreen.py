@@ -120,9 +120,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) < 6:
                 if not game.clan.clan_settings["random med cat"]:
                     able_no_med = [
-                        cat
-                        for cat in self.able_cats
-                        if not cat.status.is_medcat_any()
+                        cat for cat in self.able_cats if not cat.status.is_medcat_any()
                     ]
                     if len(able_no_med) == 0:
                         able_no_med = self.able_cats
@@ -137,9 +135,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) <= 3:
                 if not game.clan.clan_settings["random med cat"]:
                     able_no_med = [
-                        cat
-                        for cat in self.able_cats
-                        if not cat.status.is_medcat_any()
+                        cat for cat in self.able_cats if not cat.status.is_medcat_any()
                     ]
                     if len(able_no_med) < 3:
                         able_no_med = self.able_cats
@@ -150,9 +146,10 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements["add_six"]:
             if len(self.current_patrol) == 0:
-                if not game.clan.clan_settings['random med cat']:
-                    able_no_med = [cat for cat in self.able_cats if
-                                   not cat.status.is_medcat_any()]
+                if not game.clan.clan_settings["random med cat"]:
+                    able_no_med = [
+                        cat for cat in self.able_cats if not cat.status.is_medcat_any()
+                    ]
                     if len(able_no_med) < 6:
                         able_no_med = self.able_cats
                     self.current_patrol += sample(able_no_med, k=6)
@@ -386,7 +383,7 @@ class PatrolScreen(Screens):
 
             # making sure meds don't get the option for other patrols
             if any((cat.status.is_medcat_any() for cat in self.current_patrol)):
-                self.patrol_type = 'med'
+                self.patrol_type = "med"
             else:
                 if self.patrol_type == "med":
                     self.patrol_type = "general"
@@ -427,9 +424,10 @@ class PatrolScreen(Screens):
                 manager=MANAGER,
             )
 
-            able_no_med = [cat for cat in self.able_cats if
-                           not cat.status.is_medcat_any()]
-            if game.clan.clan_settings['random med cat']:
+            able_no_med = [
+                cat for cat in self.able_cats if not cat.status.is_medcat_any()
+            ]
+            if game.clan.clan_settings["random med cat"]:
                 able_no_med = self.able_cats
             if len(able_no_med) == 0:
                 able_no_med = self.able_cats
@@ -737,13 +735,12 @@ class PatrolScreen(Screens):
             ui_scale(pygame.Rect((65, 140), (320, 320))),
             get_box(BoxStyles.FRAME, (320, 320)),
             manager=MANAGER,
-
-)
+        )
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
             pygame.transform.smoothscale(
                 self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
-        ),
+            ),
         )
 
         # Prepare Intro Text
@@ -831,7 +828,7 @@ class PatrolScreen(Screens):
             self.elements["antagonize"].hide()
 
     def run_patrol_proceed(self, user_input):
-        """Proceeds the patrol - to be run in the seperate thread. """
+        """Proceeds the patrol - to be run in the seperate thread."""
         if user_input in ["nopro", "notproceed"]:
             (
                 self.display_text,
@@ -870,7 +867,7 @@ class PatrolScreen(Screens):
             "",
             object_id="#patrol_again",
             manager=MANAGER,
-)
+        )
         # Update patrol art, if needed.
         if (
             self.outcome_art is not None
@@ -901,14 +898,20 @@ class PatrolScreen(Screens):
 
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
-            if (not the_cat.dead and the_cat.in_camp
-                    and the_cat.ID not in game.patrolled
-                    and the_cat.status.can_patrol_any()
-                    and not the_cat.outside
-                    and the_cat not in self.current_patrol
-                    and not the_cat.not_working()):
-                if the_cat.status.is_newborn() or game.config['fun']['all_cats_are_newborn']:
-                    if game.config['fun']['newborns_can_patrol']:
+            if (
+                not the_cat.dead
+                and the_cat.in_camp
+                and the_cat.ID not in game.patrolled
+                and the_cat.status.can_patrol_any()
+                and not the_cat.outside
+                and the_cat not in self.current_patrol
+                and not the_cat.not_working()
+            ):
+                if (
+                    the_cat.status.is_newborn()
+                    or game.config["fun"]["all_cats_are_newborn"]
+                ):
+                    if game.config["fun"]["newborns_can_patrol"]:
                         self.able_cats.append(the_cat)
                 else:
                     self.able_cats.append(the_cat)
@@ -1105,11 +1108,9 @@ class PatrolScreen(Screens):
             self.elements["selected_bio"] = pygame_gui.elements.UITextBox(
                 str(self.selected_cat.status)
                 + "<br />"
-                + str(
-                self.selected_cat.personality.trait)
+                + str(self.selected_cat.personality.trait)
                 + "<br />"
-                + str(
-                self.selected_cat.skills.skill_string(short=True))
+                + str(self.selected_cat.skills.skill_string(short=True))
                 + "<br />"
                 + str(self.selected_cat.experience_level)
                 + (
@@ -1301,8 +1302,7 @@ class PatrolScreen(Screens):
         self.hide_menu_buttons()
 
     def on_use(self):
-super().on_use()
-
+        super().on_use()
         self.loading_screen_on_use(
             self.start_patrol_thread, self.open_patrol_event_screen
         )

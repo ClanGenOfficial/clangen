@@ -1164,8 +1164,15 @@ class MakeClanScreen(Screens):
         self.deputy = create_cat(status=enums.Status.WARRIOR)
         self.med_cat = create_cat(status=enums.Status.WARRIOR)
         for _ in range(randrange(4, 8)):
-            random_status = choice([enums.Status.KITTEN, enums.Status.WARRIORAPP,
-                                    enums.Status.WARRIOR, enums.Status.WARRIOR, enums.Status.ELDER])
+            random_status = choice(
+                [
+                    enums.Status.KITTEN,
+                    enums.Status.WARRIORAPP,
+                    enums.Status.WARRIOR,
+                    enums.Status.WARRIOR,
+                    enums.Status.ELDER,
+                ]
+            )
             self.members.append(create_cat(status=random_status))
 
     def random_clan_name(self):

@@ -195,8 +195,8 @@ class LeaderDenScreen(Screens):
                 meds = get_alive_status_cats(
                     Cat,
                     get_status=[enums.Status.MEDCAT, enums.Status.MEDCATAPP],
-                                             working=True,
-                                             sort=True,
+                    working=True,
+                    sort=True,
                 )
                 if meds:
                     self.helper_cat = meds[0]
@@ -208,7 +208,7 @@ class LeaderDenScreen(Screens):
                         and not i.exiled
                         and not i.outside
                         and not i.not_working()
-                           and i.status.is_mediator_any()
+                        and i.status.is_mediator_any()
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
@@ -223,7 +223,11 @@ class LeaderDenScreen(Screens):
                     if not i.dead
                     and not i.exiled
                     and not i.outside
-                       and (not i.status.is_kit_any() and not i.status.is_warrior_app() and not i.status.is_leader())
+                    and (
+                        not i.status.is_kit_any()
+                        and not i.status.is_warrior_app()
+                        and not i.status.is_leader()
+                    )
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)

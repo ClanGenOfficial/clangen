@@ -6,7 +6,10 @@ import ujson
 
 from scripts.cat import enums
 from scripts.game_structure.game_essentials import game
-from scripts.utility import (filter_relationship_type, get_living_clan_cat_count, get_alive_status_cats,
+from scripts.utility import (
+    filter_relationship_type,
+    get_living_clan_cat_count,
+    get_alive_status_cats,
 )
 
 resource_directory = "resources/dicts/events/"
@@ -22,7 +25,7 @@ class GenerateEvents:
 
     INJURY_DISTRIBUTION = None
     with open(
-            f"resources/dicts/conditions/event_injuries_distribution.json", "r"
+        f"resources/dicts/conditions/event_injuries_distribution.json", "r"
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
@@ -34,8 +37,8 @@ class GenerateEvents:
     def get_short_event_dicts(file_path):
         try:
             with open(
-                    file_path,
-                    "r",
+                file_path,
+                "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -49,8 +52,8 @@ class GenerateEvents:
         events = None
         try:
             with open(
-                    file_path,
-                    "r",
+                file_path,
+                "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -63,8 +66,8 @@ class GenerateEvents:
         try:
             file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
             with open(
-                    file_path,
-                    "r",
+                file_path,
+                "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -219,14 +222,14 @@ class GenerateEvents:
 
     @staticmethod
     def filter_possible_short_events(
-            Cat_class,
-            possible_events,
-            cat,
-            random_cat,
-            other_clan,
-            freshkill_active,
-            freshkill_trigger_factor,
-            sub_types=None,
+        Cat_class,
+        possible_events,
+        cat,
+        random_cat,
+        other_clan,
+        freshkill_active,
+        freshkill_trigger_factor,
+        sub_types=None,
     ):
         final_events = []
         incorrect_format = []
@@ -241,12 +244,12 @@ class GenerateEvents:
         for event in possible_events:
             if event.history:
                 if (
-                        not isinstance(event.history, list)
-                        or "cats" not in event.history[0]
+                    not isinstance(event.history, list)
+                    or "cats" not in event.history[0]
                 ):
                     if (
-                            f"{event.event_id} history formatted incorrectly"
-                            not in incorrect_format
+                        f"{event.event_id} history formatted incorrectly"
+                        not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} history formatted incorrectly"
@@ -254,8 +257,8 @@ class GenerateEvents:
             if event.injury:
                 if not isinstance(event.injury, list) or "cats" not in event.injury[0]:
                     if (
-                            f"{event.event_id} injury formatted incorrectly"
-                            not in incorrect_format
+                        f"{event.event_id} injury formatted incorrectly"
+                        not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} injury formatted incorrectly"
@@ -306,8 +309,8 @@ class GenerateEvents:
 
             # check season
             if (
-                    game.clan.current_season.lower() not in event.season
-                    and "any" not in event.season
+                game.clan.current_season.lower() not in event.season
+                and "any" not in event.season
             ):
                 continue
 
@@ -316,14 +319,14 @@ class GenerateEvents:
 
             # some events are classic only
             if (
-                    game.clan.game_mode in ["expanded", "cruel season"]
-                    and "classic" in event.tags
+                game.clan.game_mode in ["expanded", "cruel season"]
+                and "classic" in event.tags
             ):
                 continue
             # cruel season only events
             if (
-                    game.clan.game_mode in ["classic", "expanded"]
-                    and "cruel_season" in event.tags
+                game.clan.game_mode in ["classic", "expanded"]
+                and "cruel_season" in event.tags
             ):
                 continue
 
@@ -352,10 +355,12 @@ class GenerateEvents:
 
             discard = False
             for status in enums.Status:
-                status = enums.Status(status)  # if anyone knows of a cleaner way of doing this, I am all ears.
+                status = enums.Status(
+                    status
+                )  # if anyone knows of a cleaner way of doing this, I am all ears.
                 if f"clan:{str(status)}" in event.tags:
                     if status.is_deputy_or_leader() and not get_alive_status_cats(
-                            Cat_class, [status]
+                        Cat_class, [status]
                     ):
                         discard = True
                     elif not len(get_alive_status_cats(Cat_class, [status])) >= 2:
@@ -364,9 +369,12 @@ class GenerateEvents:
                 continue
 
             if "clan_apps" in event.tags and not get_alive_status_cats(
-                    Cat_class,
-                    [enums.Status.WARRIORAPP, enums.Status.MEDCATAPP,
-                                                                        enums.Status.MEDIATORAPP],
+                Cat_class,
+                [
+                    enums.Status.WARRIORAPP,
+                    enums.Status.MEDCATAPP,
+                    enums.Status.MEDIATORAPP,
+                ],
             ):
                 continue
 
@@ -379,22 +387,22 @@ class GenerateEvents:
 
             # check for old age
             if (
-                    "old_age" in event.sub_type
-                    and cat.moons < game.config["death_related"]["old_age_death_start"]
+                "old_age" in event.sub_type
+                and cat.moons < game.config["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
-                    "old_age" not in event.sub_type
-                    and cat.moons > game.config["death_related"]["old_age_death_start"]
-                    and int(random.random() * 3)
+                "old_age" not in event.sub_type
+                and cat.moons > game.config["death_related"]["old_age_death_start"]
+                and int(random.random() * 3)
             ):
                 continue
 
             # if the event is marked as changing romantic interest, check that the cats are allowed to be romantic
             if random_cat:
                 if "romance" in event.sub_type and not random_cat.is_potential_mate(
-                        cat
+                    cat
                 ):
                     continue
 
@@ -402,21 +410,21 @@ class GenerateEvents:
                 if cat.age not in event.m_c["age"] and "any" not in event.m_c["age"]:
                     continue
                 if (
-                        cat.status not in event.m_c["status"]
-                        and "any" not in event.m_c["status"]
+                    cat.status not in event.m_c["status"]
+                    and "any" not in event.m_c["status"]
                 ):
                     continue
                 if event.m_c["relationship_status"]:
                     if not filter_relationship_type(
-                            group=[cat, random_cat],
-                            filter_types=event.m_c["relationship_status"],
-                            event_id=event.event_id,
+                        group=[cat, random_cat],
+                        filter_types=event.m_c["relationship_status"],
+                        event_id=event.event_id,
                     ):
                         continue
 
                 # check cat trait and skill
                 if (
-                        int(random.random() * trait_skill_bypass) or prevent_bypass
+                    int(random.random() * trait_skill_bypass) or prevent_bypass
                 ):  # small chance to bypass
                     has_trait = False
                     if event.m_c["trait"]:
@@ -433,7 +441,7 @@ class GenerateEvents:
                                 continue
 
                             if cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
+                                split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -464,7 +472,7 @@ class GenerateEvents:
                                 continue
 
                             if cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
+                                split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -480,26 +488,26 @@ class GenerateEvents:
             # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
                 if (
-                        random_cat.age not in event.r_c["age"]
-                        and "any" not in event.r_c["age"]
+                    random_cat.age not in event.r_c["age"]
+                    and "any" not in event.r_c["age"]
                 ):
                     continue
                 if (
-                        random_cat.status not in event.r_c["status"]
-                        and "any" not in event.r_c["status"]
+                    random_cat.status not in event.r_c["status"]
+                    and "any" not in event.r_c["status"]
                 ):
                     continue
                 if event.r_c["relationship_status"]:
                     if not filter_relationship_type(
-                            group=[cat, random_cat],
-                            filter_types=event.r_c["relationship_status"],
-                            event_id=event.event_id,
+                        group=[cat, random_cat],
+                        filter_types=event.r_c["relationship_status"],
+                        event_id=event.event_id,
                     ):
                         continue
 
                 # check cat trait and skill
                 if (
-                        int(random.random() * trait_skill_bypass) or prevent_bypass
+                    int(random.random() * trait_skill_bypass) or prevent_bypass
                 ):  # small chance to bypass
                     has_trait = False
                     if event.r_c["trait"]:
@@ -516,7 +524,7 @@ class GenerateEvents:
                                 continue
 
                             if random_cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
+                                split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -547,7 +555,7 @@ class GenerateEvents:
                                 continue
 
                             if random_cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
+                                split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -591,16 +599,16 @@ class GenerateEvents:
                     for injury in block["injuries"]:
                         if injury in GenerateEvents.INJURIES:
                             if (
-                                    GenerateEvents.INJURIES[injury]["severity"]
-                                    != allowed_severity
+                                GenerateEvents.INJURIES[injury]["severity"]
+                                != allowed_severity
                             ):
                                 discard = True
                                 break
 
                             if "m_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                        "NOTAIL" in cat.pelt.scars
-                                        or "HALFTAIL" in cat.pelt.scars
+                                    "NOTAIL" in cat.pelt.scars
+                                    or "HALFTAIL" in cat.pelt.scars
                                 ):
                                     continue
 
@@ -608,14 +616,14 @@ class GenerateEvents:
                                     continue
                             if "r_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                        "NOTAIL" in random_cat.pelt.scars
-                                        or "HALFTAIL" in random_cat.pelt.scars
+                                    "NOTAIL" in random_cat.pelt.scars
+                                    or "HALFTAIL" in random_cat.pelt.scars
                                 ):
                                     continue
 
                                 if (
-                                        injury == "torn ear"
-                                        and "NOEAR" in random_cat.pelt.scars
+                                    injury == "torn ear"
+                                    and "NOEAR" in random_cat.pelt.scars
                                 ):
                                     continue
 
@@ -628,20 +636,20 @@ class GenerateEvents:
                 if "any" not in event.outsider["current_rep"]:
                     # hostile
                     if (
-                            1 <= game.clan.reputation <= 30
-                            and "hostile" not in event.outsider["current_rep"]
+                        1 <= game.clan.reputation <= 30
+                        and "hostile" not in event.outsider["current_rep"]
                     ):
                         continue
                     # neutral
                     elif (
-                            31 <= game.clan.reputation <= 70
-                            and "neutral" not in event.outsider["current_rep"]
+                        31 <= game.clan.reputation <= 70
+                        and "neutral" not in event.outsider["current_rep"]
                     ):
                         continue
                     # welcoming
                     elif (
-                            71 <= game.clan.reputation <= 100
-                            and "welcoming" not in event.outsider["current_rep"]
+                        71 <= game.clan.reputation <= 100
+                        and "welcoming" not in event.outsider["current_rep"]
                     ):
                         continue
 
@@ -655,8 +663,8 @@ class GenerateEvents:
                 if "war" in event.sub_type:
                     rel_change_type = game.switches["war_rel_change_type"]
                     if (
-                            event.other_clan["changed"] < 0
-                            and rel_change_type != "rel_down"
+                        event.other_clan["changed"] < 0
+                        and rel_change_type != "rel_down"
                     ):
                         continue
 
@@ -664,20 +672,20 @@ class GenerateEvents:
                 if "any" not in event.other_clan["current_rep"]:
                     # ally
                     if (
-                            "ally" in event.other_clan["current_rep"]
-                            and int(other_clan.relations) < 17
+                        "ally" in event.other_clan["current_rep"]
+                        and int(other_clan.relations) < 17
                     ):
                         continue
                     # neutral
                     elif "neutral" in event.other_clan["current_rep"] and (
-                            int(other_clan.relations) <= 7
-                            or int(other_clan.relations) >= 17
+                        int(other_clan.relations) <= 7
+                        or int(other_clan.relations) >= 17
                     ):
                         continue
                     # hostile
                     elif (
-                            "hostile" in event.other_clan["current_rep"]
-                            and int(other_clan.relations) > 7
+                        "hostile" in event.other_clan["current_rep"]
+                        and int(other_clan.relations) > 7
                     ):
                         continue
 
@@ -724,8 +732,8 @@ class GenerateEvents:
                         if trigger_factor < 2 and game.clan.game_mode == "expanded":
                             trigger_factor = 2
                         if (
-                                trigger_factor < 1.2
-                                and game.clan.game_mode == "cruel season"
+                            trigger_factor < 1.2
+                            and game.clan.game_mode == "cruel season"
                         ):
                             trigger_factor = 1.2
 
@@ -768,9 +776,9 @@ class GenerateEvents:
                             if "adequate" in trigger:
                                 for herb in herbs:
                                     if (
-                                            entire_supply_needed_amount / 2
-                                            < herbs[herb]
-                                            < entire_supply_needed_amount
+                                        entire_supply_needed_amount / 2
+                                        < herbs[herb]
+                                        < entire_supply_needed_amount
                                     ):
                                         discard = False
                                     else:
@@ -779,9 +787,9 @@ class GenerateEvents:
                             if "full" in trigger:
                                 for herb in herbs:
                                     if (
-                                            entire_supply_needed_amount
-                                            < herbs[herb]
-                                            < entire_supply_needed_amount * 2
+                                        entire_supply_needed_amount
+                                        < herbs[herb]
+                                        < entire_supply_needed_amount * 2
                                     ):
                                         discard = False
                                     else:
@@ -803,20 +811,20 @@ class GenerateEvents:
                                     discard = False
                                     break
                                 if (
-                                        "adequate" in trigger
-                                        and needed_amount / 2 < herbs[herb] < needed_amount
+                                    "adequate" in trigger
+                                    and needed_amount / 2 < herbs[herb] < needed_amount
                                 ):
                                     discard = False
                                     break
                                 if (
-                                        "full" in trigger
-                                        and needed_amount < herbs[herb] < needed_amount * 2
+                                    "full" in trigger
+                                    and needed_amount < herbs[herb] < needed_amount * 2
                                 ):
                                     discard = False
                                     break
                                 if (
-                                        "excess" in trigger
-                                        and needed_amount * 2 < herbs[herb]
+                                    "excess" in trigger
+                                    and needed_amount * 2 < herbs[herb]
                                 ):
                                     discard = False
                                     break
@@ -833,16 +841,16 @@ class GenerateEvents:
                                     discard = False
                             if "adequate" in trigger:
                                 if (
-                                        needed_amount / 2
-                                        < herbs[chosen_herb]
-                                        < needed_amount
+                                    needed_amount / 2
+                                    < herbs[chosen_herb]
+                                    < needed_amount
                                 ):
                                     discard = False
                             if "full" in trigger:
                                 if (
-                                        needed_amount
-                                        < herbs[chosen_herb]
-                                        < needed_amount * 2
+                                    needed_amount
+                                    < herbs[chosen_herb]
+                                    < needed_amount * 2
                                 ):
                                     discard = False
                             if "excess" in trigger:
@@ -905,13 +913,13 @@ class GenerateEvents:
         return possible_events
 
     def possible_lead_den_events(
-            self,
-            cat,
-            event_type: str,
-            interaction_type: str,
-            success: bool,
-            other_clan_temper=None,
-            player_clan_temper=None,
+        self,
+        cat,
+        event_type: str,
+        interaction_type: str,
+        success: bool,
+        other_clan_temper=None,
+        player_clan_temper=None,
     ) -> list:
         """
         finds and generates a list of possible leader den events
@@ -931,13 +939,13 @@ class GenerateEvents:
 
             if "other_clan_temper" in event or "player_clan_temper" in event:
                 if (
-                        other_clan_temper not in event["other_clan_temper"]
-                        and "any" not in event["other_clan_temper"]
+                    other_clan_temper not in event["other_clan_temper"]
+                    and "any" not in event["other_clan_temper"]
                 ):
                     continue
                 if (
-                        player_clan_temper not in event["player_clan_temper"]
-                        and "any" not in event["player_clan_temper"]
+                    player_clan_temper not in event["player_clan_temper"]
+                    and "any" not in event["player_clan_temper"]
                 ):
                     continue
 
@@ -945,23 +953,23 @@ class GenerateEvents:
                 reputation = game.clan.reputation
                 # hostile
                 if (
-                        1 <= reputation <= 30
-                        and "hostile" not in event["reputation"]
-                        and "any" not in event["reputation"]
+                    1 <= reputation <= 30
+                    and "hostile" not in event["reputation"]
+                    and "any" not in event["reputation"]
                 ):
                     continue
                 # neutral
                 elif (
-                        31 <= reputation <= 70
-                        and "neutral" not in event["reputation"]
-                        and "any" not in event["reputation"]
+                    31 <= reputation <= 70
+                    and "neutral" not in event["reputation"]
+                    and "any" not in event["reputation"]
                 ):
                     continue
                 # welcoming
                 elif (
-                        71 <= reputation <= 100
-                        and "welcoming" not in event["reputation"]
-                        and "any" not in event["reputation"]
+                    71 <= reputation <= 100
+                    and "welcoming" not in event["reputation"]
+                    and "any" not in event["reputation"]
                 ):
                     continue
 
@@ -979,13 +987,13 @@ class GenerateEvents:
                         if "lost" not in cat_info["status"]:
                             continue
                     elif (
-                            cat.status not in cat_info["status"]
-                            and "any" not in cat_info["status"]
+                        cat.status not in cat_info["status"]
+                        and "any" not in cat_info["status"]
                     ):
                         continue
                 elif (
-                        cat.status not in cat_info["status"]
-                        and "any" not in cat_info["status"]
+                    cat.status not in cat_info["status"]
+                    and "any" not in cat_info["status"]
                 ):
                     continue
             if "age" in cat_info:
@@ -1024,24 +1032,24 @@ class ShortEvent:
     """
 
     def __init__(
-            self,
-            event_id="",
-            location=None,
-            season=None,
-            sub_type=None,
-            tags=None,
-            weight=0,
-            text="",
-            new_accessory=None,
-            m_c=None,
-            r_c=None,
-            new_cat=None,
-            injury=None,
-            history=None,
-            relationships=None,
-            outsider=None,
-            other_clan=None,
-            supplies=None,
+        self,
+        event_id="",
+        location=None,
+        season=None,
+        sub_type=None,
+        tags=None,
+        weight=0,
+        text="",
+        new_accessory=None,
+        m_c=None,
+        r_c=None,
+        new_cat=None,
+        injury=None,
+        history=None,
+        relationships=None,
+        outsider=None,
+        other_clan=None,
+        supplies=None,
     ):
         if not event_id:
             print("WARNING: moon event has no event_id")
@@ -1120,20 +1128,20 @@ class ShortEvent:
 
 class OngoingEvent:
     def __init__(
-            self,
-            event=None,
-            camp=None,
-            season=None,
-            tags=None,
-            priority="secondary",
-            duration=None,
-            current_duration=0,
-            rarity=0,
-            trigger_events=None,
-            progress_events=None,
-            conclusion_events=None,
-            secondary_disasters=None,
-            collateral_damage=None,
+        self,
+        event=None,
+        camp=None,
+        season=None,
+        tags=None,
+        priority="secondary",
+        duration=None,
+        current_duration=0,
+        rarity=0,
+        trigger_events=None,
+        progress_events=None,
+        conclusion_events=None,
+        secondary_disasters=None,
+        collateral_damage=None,
     ):
         self.event = event
         self.camp = camp

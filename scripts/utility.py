@@ -220,9 +220,11 @@ def get_random_moon_cat(
             if possible_parents:
                 random_cat = Cat.fetch_cat(choice(possible_parents))
         if mentor_app_modifier:
-            if main_cat.status.is_app_any() \
-                    and main_cat.mentor \
-                    and not int(random() * 3):
+            if (
+                main_cat.status.is_app_any()
+                and main_cat.mentor
+                and not int(random() * 3)
+            ):
                 random_cat = Cat.fetch_cat(main_cat.mentor)
             elif main_cat.apprentice and not int(random() * 3):
                 random_cat = Cat.fetch_cat(choice(main_cat.apprentice))
@@ -394,8 +396,10 @@ def create_new_cat_block(
         if not match:
             continue
 
-        if enums.Status(match.group(1)) in enums.Status.list() \
-                and enums.Status(match.group(1)).is_inside_clan():
+        if (
+            enums.Status(match.group(1)) in enums.Status.list()
+            and enums.Status(match.group(1)).is_inside_clan()
+        ):
             status = enums.Status(match.group(1))
             break
 
@@ -754,8 +758,8 @@ def create_new_cat(
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
                     accessory = choice(Pelt.collars)
-            elif (
-                loner and bool(getrandbits(1))
+            elif loner and bool(
+                getrandbits(1)
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -2147,8 +2151,6 @@ def event_text_adjust(
 
     # prey lists
     text = adjust_prey_abbr(text)
-
-
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:

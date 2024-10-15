@@ -224,15 +224,15 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
             elif (
-                    "leader_ceremony" in self.profile_elements
-                    and event.ui_element == self.profile_elements["leader_ceremony"]
+                "leader_ceremony" in self.profile_elements
+                and event.ui_element == self.profile_elements["leader_ceremony"]
             ):
                 self.change_screen("ceremony screen")
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen("med den screen")
             elif (
-                    "mediation" in self.profile_elements
-                    and event.ui_element == self.profile_elements["mediation"]
+                "mediation" in self.profile_elements
+                and event.ui_element == self.profile_elements["mediation"]
             ):
                 self.change_screen("mediation screen")
             elif event.ui_element == self.profile_elements["favourite_button"]:
@@ -303,26 +303,26 @@ class ProfileScreen(Screens):
                 ]:
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
-                        self.the_cat.gender == "male"
-                        and self.the_cat.genderalign == "female"
+                    self.the_cat.gender == "male"
+                    and self.the_cat.genderalign == "female"
                 ):
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
-                        self.the_cat.gender == "female"
-                        and self.the_cat.genderalign == "male"
+                    self.the_cat.gender == "female"
+                    and self.the_cat.genderalign == "male"
                 ):
                     self.the_cat.genderalign = self.the_cat.gender
 
                 # if the cat is cis (gender & gender align are the same) then set them to trans
                 # cis males -> trans female first
                 elif (
-                        self.the_cat.gender == "male" and self.the_cat.genderalign == "male"
+                    self.the_cat.gender == "male" and self.the_cat.genderalign == "male"
                 ):
                     self.the_cat.genderalign = "trans female"
                 # cis females -> trans male
                 elif (
-                        self.the_cat.gender == "female"
-                        and self.the_cat.genderalign == "female"
+                    self.the_cat.gender == "female"
+                    and self.the_cat.genderalign == "female"
                 ):
                     self.the_cat.genderalign = "trans male"
                 # if the cat is trans then set them to nonbinary
@@ -582,15 +582,15 @@ class ProfileScreen(Screens):
         if self.the_cat is None:
             return
         if (
-                self.the_cat.dead
-                and game.clan.instructor.ID == self.the_cat.ID
-                and self.the_cat.df is False
+            self.the_cat.dead
+            and game.clan.instructor.ID == self.the_cat.ID
+            and self.the_cat.df is False
         ):
             is_sc_instructor = True
         elif (
-                self.the_cat.dead
-                and game.clan.instructor.ID == self.the_cat.ID
-                and self.the_cat.df is True
+            self.the_cat.dead
+            and game.clan.instructor.ID == self.the_cat.ID
+            and self.the_cat.df is True
         ):
             is_df_instructor = True
 
@@ -603,15 +603,15 @@ class ProfileScreen(Screens):
             )
         if is_sc_instructor:
             self.the_cat.thought = (
-                    "Hello. I am here to guide the dead cats of "
-                    + game.clan.name
-                    + "Clan into StarClan."
+                "Hello. I am here to guide the dead cats of "
+                + game.clan.name
+                + "Clan into StarClan."
             )
         if is_df_instructor:
             self.the_cat.thought = (
-                    "Hello. I am here to drag the dead cats of "
-                    + game.clan.name
-                    + "Clan into the Dark Forest."
+                "Hello. I am here to drag the dead cats of "
+                + game.clan.name
+                + "Clan into the Dark Forest."
             )
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
@@ -681,9 +681,9 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-                self.the_cat.status.is_medcat_any()
-                or self.the_cat.is_ill()
-                or self.the_cat.is_injured()
+            self.the_cat.status.is_medcat_any()
+            or self.the_cat.is_ill()
+            or self.the_cat.is_injured()
         ):
             self.profile_elements["med_den"].show()
         else:
@@ -757,10 +757,10 @@ class ProfileScreen(Screens):
         next_cat = 0
         current_cat_found = 0
         if (
-                self.the_cat.dead
-                and not is_instructor
-                and self.the_cat.df == game.clan.instructor.df
-                and not (self.the_cat.outside or self.the_cat.exiled)
+            self.the_cat.dead
+            and not is_instructor
+            and self.the_cat.df == game.clan.instructor.df
+            and not (self.the_cat.outside or self.the_cat.exiled)
         ):
             previous_cat = game.clan.instructor.ID
 
@@ -775,24 +775,24 @@ class ProfileScreen(Screens):
                 current_cat_found = 1
             else:
                 if (
-                        current_cat_found == 0
-                        and check_cat.ID != self.the_cat.ID
-                        and check_cat.dead == self.the_cat.dead
-                        and check_cat.ID != game.clan.instructor.ID
-                        and check_cat.outside == self.the_cat.outside
-                        and check_cat.df == self.the_cat.df
-                        and not check_cat.faded
+                    current_cat_found == 0
+                    and check_cat.ID != self.the_cat.ID
+                    and check_cat.dead == self.the_cat.dead
+                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.outside == self.the_cat.outside
+                    and check_cat.df == self.the_cat.df
+                    and not check_cat.faded
                 ):
                     previous_cat = check_cat.ID
 
                 elif (
-                        current_cat_found == 1
-                        and check_cat != self.the_cat.ID
-                        and check_cat.dead == self.the_cat.dead
-                        and check_cat.ID != game.clan.instructor.ID
-                        and check_cat.outside == self.the_cat.outside
-                        and check_cat.df == self.the_cat.df
-                        and not check_cat.faded
+                    current_cat_found == 1
+                    and check_cat != self.the_cat.ID
+                    and check_cat.dead == self.the_cat.dead
+                    and check_cat.ID != game.clan.instructor.ID
+                    and check_cat.outside == self.the_cat.outside
+                    and check_cat.df == self.the_cat.df
+                    and not check_cat.faded
                 ):
                     next_cat = check_cat.ID
                     break
@@ -857,9 +857,9 @@ class ProfileScreen(Screens):
                 output += "parent: " + str(all_parents[0].name)
             elif len(all_parents) > 2:
                 output += (
-                        "parents: "
-                        + ", ".join([str(i.name) for i in all_parents[:2]])
-                        + f", and {len(all_parents) - 2} "
+                    "parents: "
+                    + ", ".join([str(i.name) for i in all_parents[:2]])
+                    + f", and {len(all_parents) - 2} "
                 )
                 if len(all_parents) - 2 == 1:
                     output += "other"
@@ -937,11 +937,7 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if (
-                the_cat.outside
-                and not the_cat.exiled
-                and the_cat.status.is_inside_clan()
-        ):
+        if the_cat.outside and not the_cat.exiled and the_cat.status.is_inside_clan():
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -996,10 +992,10 @@ class ProfileScreen(Screens):
 
             if len(apprentices) > 2:
                 output += (
-                        "former apprentices: "
-                        + ", ".join([str(i.name) for i in apprentices[:2]])
-                        + ", and "
-                        + str(len(apprentices) - 2)
+                    "former apprentices: "
+                    + ", ".join([str(i.name) for i in apprentices[:2]])
+                    + ", and "
+                    + str(len(apprentices) - 2)
                 )
                 if len(apprentices) - 2 > 1:
                     output += " others"
@@ -1041,8 +1037,8 @@ class ProfileScreen(Screens):
             if the_cat.backstory:
                 for category in BACKSTORIES["backstory_categories"]:
                     if (
-                            the_cat.backstory
-                            in BACKSTORIES["backstory_categories"][category]
+                        the_cat.backstory
+                        in BACKSTORIES["backstory_categories"][category]
                     ):
                         bs_text = BACKSTORIES["backstory_display"][category]
                         break
@@ -1054,9 +1050,9 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-                game.clan.game_mode in ["expanded", "cruel season"]
-                and the_cat.is_alive()
-                and FRESHKILL_ACTIVE
+            game.clan.game_mode in ["expanded", "cruel season"]
+            and the_cat.is_alive()
+            and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
             if the_cat.status.is_inside_clan():
@@ -1074,8 +1070,8 @@ class ProfileScreen(Screens):
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
                 if (
-                        the_cat.permanent_condition[condition]["born_with"] is True
-                        and the_cat.permanent_condition[condition]["moons_until"] != -2
+                    the_cat.permanent_condition[condition]["born_with"] is True
+                    and the_cat.permanent_condition[condition]["moons_until"] != -2
                 ):
                     continue
                 output += "has a permanent condition"
@@ -1232,8 +1228,8 @@ class ProfileScreen(Screens):
             os.makedirs(notes_directory)
 
         if (
-                notes is None
-                or notes == "Click the check mark to enter notes about your cat!"
+            notes is None
+            or notes == "Click the check mark to enter notes about your cat!"
         ):
             return
 
@@ -1317,10 +1313,7 @@ class ProfileScreen(Screens):
         bs_blurb = None
         if self.the_cat.backstory:
             bs_blurb = BACKSTORIES["backstories"][self.the_cat.backstory]
-        if (
-                self.the_cat.status.is_outside_clan()
-                and self.the_cat.dead
-        ):
+        if self.the_cat.status.is_outside_clan() and self.the_cat.dead:
             bs_blurb = f"This cat was a {self.the_cat.status} in life."
         elif self.the_cat.status.is_outside_clan():
             bs_blurb = f"This cat is a {self.the_cat.status} and currently resides outside of the Clans."
@@ -1336,19 +1329,19 @@ class ProfileScreen(Screens):
             if beginning:
                 if beginning["clan_born"]:
                     text += (
-                            " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon "
-                            + str(beginning["moon"])
-                            + " during "
-                            + str(beginning["birth_season"])
-                            + "."
+                        " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon "
+                        + str(beginning["moon"])
+                        + " during "
+                        + str(beginning["birth_season"])
+                        + "."
                     )
                 else:
                     text += (
-                            " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon "
-                            + str(beginning["moon"])
-                            + " at the age of "
-                            + str(beginning["age"])
-                            + " Moons."
+                        " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon "
+                        + str(beginning["moon"])
+                        + " at the age of "
+                        + str(beginning["age"])
+                        + " Moons."
                     )
 
         text = process_text(text, cat_dict)
@@ -1439,10 +1432,10 @@ class ProfileScreen(Screens):
                 )
                 if len(valid_formor_mentors) > 1:
                     influence_history += (
-                            ", ".join([str(i.name) for i in valid_formor_mentors[:-1]])
-                            + " and "
-                            + str(valid_formor_mentors[-1].name)
-                            + ". "
+                        ", ".join([str(i.name) for i in valid_formor_mentors[:-1]])
+                        + " and "
+                        + str(valid_formor_mentors[-1].name)
+                        + ". "
                     )
                 else:
                     influence_history += str(valid_formor_mentors[0].name) + ". "
@@ -1452,7 +1445,7 @@ class ProfileScreen(Screens):
             # Second, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and isinstance(
-                    mentor_influence["trait"], dict
+                mentor_influence["trait"], dict
             ):
                 for _mentor in mentor_influence["trait"]:
                     # If the strings are not set (empty list), continue.
@@ -1466,11 +1459,11 @@ class ProfileScreen(Screens):
 
                     if len(mentor_influence["trait"][_mentor].get("strings")) > 1:
                         string_snippet = (
-                                ", ".join(
-                                    mentor_influence["trait"][_mentor].get("strings")[:-1]
-                                )
-                                + " and "
-                                + mentor_influence["trait"][_mentor].get("strings")[-1]
+                            ", ".join(
+                                mentor_influence["trait"][_mentor].get("strings")[:-1]
+                            )
+                            + " and "
+                            + mentor_influence["trait"][_mentor].get("strings")[-1]
                         )
                     else:
                         string_snippet = mentor_influence["trait"][_mentor].get(
@@ -1488,7 +1481,7 @@ class ProfileScreen(Screens):
 
             skill_influence = []
             if "skill" in mentor_influence and isinstance(
-                    mentor_influence["skill"], dict
+                mentor_influence["skill"], dict
             ):
                 for _mentor in mentor_influence["skill"]:
                     # If the strings are not set (empty list), continue.
@@ -1502,11 +1495,11 @@ class ProfileScreen(Screens):
 
                     if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
                         string_snippet = (
-                                ", ".join(
-                                    mentor_influence["skill"][_mentor].get("strings")[:-1]
-                                )
-                                + " and "
-                                + mentor_influence["skill"][_mentor].get("strings")[-1]
+                            ", ".join(
+                                mentor_influence["skill"][_mentor].get("strings")[:-1]
+                            )
+                            + " and "
+                            + mentor_influence["skill"][_mentor].get("strings")[-1]
                         )
                     else:
                         string_snippet = mentor_influence["skill"][_mentor].get(
@@ -1527,29 +1520,29 @@ class ProfileScreen(Screens):
         graduation_history = ""
         if app_ceremony:
             graduation_history = (
-                    "When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} "
-                    + app_ceremony["honor"]
-                    + "."
+                "When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} "
+                + app_ceremony["honor"]
+                + "."
             )
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
                 graduation_history += (
-                        " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at "
-                        + str(grad_age)
-                        + " moons old."
+                    " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at "
+                    + str(grad_age)
+                    + " moons old."
                 )
             elif int(grad_age) > 13:
                 graduation_history += (
-                        " {PRONOUN/m_c/subject/CAP} graduated late at "
-                        + str(grad_age)
-                        + " moons old."
+                    " {PRONOUN/m_c/subject/CAP} graduated late at "
+                    + str(grad_age)
+                    + " moons old."
                 )
             else:
                 graduation_history += (
-                        " {PRONOUN/m_c/subject/CAP} graduated at "
-                        + str(grad_age)
-                        + " moons old."
+                    " {PRONOUN/m_c/subject/CAP} graduated at "
+                    + str(grad_age)
+                    + " moons old."
                 )
 
             if game.switches["show_history_moons"]:
@@ -1577,17 +1570,17 @@ class ProfileScreen(Screens):
             text = "{PRONOUN/m_c/subject/CAP} mentored "
             if len(all_real_apprentices) > 2:
                 text += (
-                        ", ".join([str(i.name) for i in all_real_apprentices[:-1]])
-                        + ", and "
-                        + str(all_real_apprentices[-1].name)
-                        + "."
+                    ", ".join([str(i.name) for i in all_real_apprentices[:-1]])
+                    + ", and "
+                    + str(all_real_apprentices[-1].name)
+                    + "."
                 )
             elif len(all_real_apprentices) == 2:
                 text += (
-                        str(all_real_apprentices[0].name)
-                        + " and "
-                        + str(all_real_apprentices[1].name)
-                        + "."
+                    str(all_real_apprentices[0].name)
+                    + " and "
+                    + str(all_real_apprentices[1].name)
+                    + "."
                 )
             elif len(all_real_apprentices) == 1:
                 text += str(all_real_apprentices[0].name) + "."
@@ -1867,8 +1860,8 @@ class ProfileScreen(Screens):
             (i, self.get_condition_details(i))
             for i in self.the_cat.permanent_condition
             if not (
-                    self.the_cat.permanent_condition[i]["born_with"]
-                    and self.the_cat.permanent_condition[i]["moons_until"] != -2
+                self.the_cat.permanent_condition[i]["born_with"]
+                and self.the_cat.permanent_condition[i]["moons_until"] != -2
             )
         ]
         all_illness_injuries.extend(
@@ -1956,7 +1949,7 @@ class ProfileScreen(Screens):
             else:
                 # moons with the condition if not born with condition
                 moons_with = (
-                        game.clan.age - self.the_cat.permanent_condition[name]["moon_start"]
+                    game.clan.age - self.the_cat.permanent_condition[name]["moon_start"]
                 )
                 if moons_with != 1:
                     text_list.append(f"has had this condition for {moons_with} moons")
@@ -2214,10 +2207,10 @@ class ProfileScreen(Screens):
                 self.change_adoptive_parent_button.enable()
 
             if (
-                    self.the_cat.age
-                    not in ["young adult", "adult", "senior adult", "senior"]
-                    or self.the_cat.exiled
-                    or self.the_cat.outside
+                self.the_cat.age
+                not in ["young adult", "adult", "senior adult", "senior"]
+                or self.the_cat.exiled
+                or self.the_cat.outside
             ):
                 self.choose_mate_button.disable()
             else:
@@ -2230,9 +2223,9 @@ class ProfileScreen(Screens):
             else:
                 self.manage_roles.enable()
             if (
-                    not self.the_cat.status.is_app_any()
-                    or self.the_cat.dead
-                    or self.the_cat.outside
+                not self.the_cat.status.is_app_any()
+                or self.the_cat.dead
+                or self.the_cat.outside
             ):
                 self.change_mentor_button.disable()
             else:
@@ -2243,7 +2236,7 @@ class ProfileScreen(Screens):
             if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
                 self.cis_trans_button.set_text("change to trans\nfemale")
             elif (
-                    self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
+                self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
             ):
                 self.cis_trans_button.set_text("change to trans\nmale")
             elif self.the_cat.genderalign in ["trans female", "trans male"]:
@@ -2291,7 +2284,7 @@ class ProfileScreen(Screens):
                         "",
                         object_id=object_id,
                         tool_tip_text="Changing where this cat resides will change "
-                                      "where your Clan goes after death. ",
+                        "where your Clan goes after death. ",
                         starting_height=2,
                         manager=MANAGER,
                     )
@@ -2389,16 +2382,16 @@ class ProfileScreen(Screens):
                     object_id="#help_button",
                     manager=MANAGER,
                     tool_tip_text="The notes section has limited html capabilities.<br>"
-                                  "Use the following commands with < and > in place of the apostrophes.<br>"
-                                  "-'br' to start a new line.<br>"
-                                  "-Encase text between 'b' and '/b' to bold.<br>"
-                                  "-Encase text between 'i' and '/i' to italicize.<br>"
-                                  "-Encase text between 'u' and '/u' to underline.<br><br>"
-                                  "The following font related codes can be used, "
-                                  "but keep in mind that not all font faces will work.<br>"
-                                  "-Encase text between 'font face = name of font you wish to use' and '/font' to change the font face.<br>"
-                                  "-Encase text between 'font color= #hex code of the color' and '/font' to change the color of the text.<br>"
-                                  "-Encase text between 'font size=number of size' and '/font' to change the text size.",
+                    "Use the following commands with < and > in place of the apostrophes.<br>"
+                    "-'br' to start a new line.<br>"
+                    "-Encase text between 'b' and '/b' to bold.<br>"
+                    "-Encase text between 'i' and '/i' to italicize.<br>"
+                    "-Encase text between 'u' and '/u' to underline.<br><br>"
+                    "The following font related codes can be used, "
+                    "but keep in mind that not all font faces will work.<br>"
+                    "-Encase text between 'font face = name of font you wish to use' and '/font' to change the font face.<br>"
+                    "-Encase text between 'font color= #hex code of the color' and '/font' to change the color of the text.<br>"
+                    "-Encase text between 'font size=number of size' and '/font' to change the text size.",
                 )
                 if self.editing_notes is True:
                     self.save_text = UIImageButton(

@@ -133,7 +133,7 @@ class Pregnancy_Events:
     def handle_adoption(cat: Cat, other_cat=None, clan=game.clan):
         """Handle if the there is no pregnancy but the pair triggered kits chance."""
         if other_cat and (
-                other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0
+            other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0
         ):
             return
 
@@ -198,7 +198,7 @@ class Pregnancy_Events:
     def handle_zero_moon_pregnant(cat: Cat, other_cat=None, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
         if other_cat and (
-                other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0
+            other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0
         ):
             return
 
@@ -267,9 +267,9 @@ class Pregnancy_Events:
             pregnant_cat = cat
             second_parent = other_cat
             if (
-                    cat.gender == "male"
-                    and other_cat is not None
-                    and other_cat.gender == "female"
+                cat.gender == "male"
+                and other_cat is not None
+                and other_cat.gender == "female"
             ):
                 pregnant_cat = other_cat
                 second_parent = cat
@@ -415,11 +415,11 @@ class Pregnancy_Events:
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["both_unmated"]))
         elif (
-                len(cat.mate) > 0 and other_cat.ID not in cat.mate and not other_cat.dead
+            len(cat.mate) > 0 and other_cat.ID not in cat.mate and not other_cat.dead
         ) or (
-                len(other_cat.mate) > 0
-                and cat.ID not in other_cat.mate
-                and not other_cat.dead
+            len(other_cat.mate) > 0
+            and cat.ID not in other_cat.mate
+            and not other_cat.dead
         ):
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["affair"]))
@@ -434,7 +434,7 @@ class Pregnancy_Events:
         else:
             death_chance = 40
         if not int(
-                random.random() * death_chance
+            random.random() * death_chance
         ):  # chance for a cat to die during childbirth
             possible_events = events["birth"]["death"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
@@ -520,7 +520,7 @@ class Pregnancy_Events:
         # decide chances of having kits, and if it's possible at all.
         # Including - age, dead statis, having kits turned off.
         not_correct_age = (
-                cat.age in ["newborn", "kitten", "adolescent"] or cat.moons < 15
+            cat.age in ["newborn", "kitten", "adolescent"] or cat.moons < 15
         )
         if not_correct_age or cat.no_kits or cat.dead:
             return False
@@ -543,12 +543,12 @@ class Pregnancy_Events:
 
     @staticmethod
     def check_second_parent(
-            cat: Cat,
-            second_parent: Cat,
-            single_parentage: bool,
-            allow_affair: bool,
-            same_sex_birth: bool,
-            same_sex_adoption: bool,
+        cat: Cat,
+        second_parent: Cat,
+        single_parentage: bool,
+        allow_affair: bool,
+        same_sex_birth: bool,
+        same_sex_adoption: bool,
     ):
         """
         This checks to see if the chosen second parent and CAT can have kits. It assumes CAT can have kits.
@@ -558,7 +558,7 @@ class Pregnancy_Events:
 
         # Checks for second parent alone:
         if not Pregnancy_Events.check_if_can_have_kits(
-                second_parent, single_parentage, allow_affair
+            second_parent, single_parentage, allow_affair
         ):
             return False, False
 
@@ -635,8 +635,8 @@ class Pregnancy_Events:
             Pregnancy_Events.set_biggest_family()
 
         if (
-                Pregnancy_Events.biggest_family_is_big()
-                and cat.ID not in Pregnancy_Events.biggest_family
+            Pregnancy_Events.biggest_family_is_big()
+            and cat.ID not in Pregnancy_Events.biggest_family
         ):
             chance = int(chance * 0.8)
 
@@ -646,8 +646,8 @@ class Pregnancy_Events:
                 i
                 for i in Cat.all_cats_list
                 if i.is_potential_mate(cat, for_love_interest=True)
-                   and (samesex or i.gender != cat.gender)
-                   and i.ID not in cat.mate
+                and (samesex or i.gender != cat.gender)
+                and i.ID not in cat.mate
             ]
             if special_affair:
                 possible_affair_partners = [
@@ -705,7 +705,7 @@ class Pregnancy_Events:
 
     @staticmethod
     def get_kits(
-            kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=None
+        kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=None
     ):
         """Create some amount of kits
         No parents are specified, it will create a blood parents for all the
@@ -768,7 +768,9 @@ class Pregnancy_Events:
                     thought = f"Is glad that {insert} safe"
                     blood_parent = create_new_cat(
                         Cat,
-                        status=random.choice([enums.Status.LONER, enums.Status.KITTYPET]),
+                        status=random.choice(
+                            [enums.Status.LONER, enums.Status.KITTYPET]
+                        ),
                         alive=False,
                         thought=thought,
                         age=randint(15, 120),
@@ -786,13 +788,19 @@ class Pregnancy_Events:
                 # Two parents provided
                 # The cat that gave birth is always parent1 so there is no need to check gender
                 kit = Cat(
-                    parent1=cat.ID, parent2=other_cat.ID, moons=0, status=enums.Status.NEWBORN
+                    parent1=cat.ID,
+                    parent2=other_cat.ID,
+                    moons=0,
+                    status=enums.Status.NEWBORN,
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
-                    parent1=cat.ID, moons=0, backstory=backstory, status=enums.Status.NEWBORN
+                    parent1=cat.ID,
+                    moons=0,
+                    backstory=backstory,
+                    status=enums.Status.NEWBORN,
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 
@@ -808,12 +816,9 @@ class Pregnancy_Events:
 
             # try to give them a permanent condition. 1/90 chance
             # don't delete the game.clan condition, this is needed for a test
-            if
-                    game.clan
-                    and not int(
-                        random.random()
-                        * game.config["cat_generation"]["base_permanent_condition"]
-
+            if game.clan and not int(
+                random.random()
+                * game.config["cat_generation"]["base_permanent_condition"]
             ):
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
@@ -958,7 +963,7 @@ class Pregnancy_Events:
 
     @staticmethod
     def get_love_affair_chance(
-            mate_relation: Relationship, affair_relation: Relationship
+        mate_relation: Relationship, affair_relation: Relationship
     ):
         """Looks into the current values and calculate the chance of having kits with the affair cat.
         The lower, the more likely they will have affairs. This function should only be called when mate
@@ -974,13 +979,13 @@ class Pregnancy_Events:
             affair_relation.link_relationship()
 
         average_mate_love = (
-                                    mate_relation.romantic_love
-                                    + mate_relation.opposite_relationship.romantic_love
-                            ) / 2
+            mate_relation.romantic_love
+            + mate_relation.opposite_relationship.romantic_love
+        ) / 2
         average_affair_love = (
-                                      affair_relation.romantic_love
-                                      + affair_relation.opposite_relationship.romantic_love
-                              ) / 2
+            affair_relation.romantic_love
+            + affair_relation.opposite_relationship.romantic_love
+        ) / 2
 
         difference = average_mate_love - average_affair_love
 
@@ -1026,8 +1031,8 @@ class Pregnancy_Events:
 
         affair_chance = 15
         average_romantic_love = (
-                                        relation.romantic_love + relation.opposite_relationship.romantic_love
-                                ) / 2
+            relation.romantic_love + relation.opposite_relationship.romantic_love
+        ) / 2
 
         if average_romantic_love > 50:
             affair_chance -= 12
@@ -1042,7 +1047,7 @@ class Pregnancy_Events:
 
     @staticmethod
     def get_balanced_kit_chance(
-            first_parent: Cat, second_parent: Cat, affair, clan
+        first_parent: Cat, second_parent: Cat, affair, clan
     ) -> int:
         """Returns a chance based on different values."""
         # Now that the second parent is determined, we can calculate the balanced chance for kits
@@ -1094,17 +1099,17 @@ class Pregnancy_Events:
                 )
 
             average_romantic_love = (
-                                            second_parent_relation.romantic_love
-                                            + second_parent_relation.opposite_relationship.romantic_love
-                                    ) / 2
+                second_parent_relation.romantic_love
+                + second_parent_relation.opposite_relationship.romantic_love
+            ) / 2
             average_comfort = (
-                                      second_parent_relation.comfortable
-                                      + second_parent_relation.opposite_relationship.comfortable
-                              ) / 2
+                second_parent_relation.comfortable
+                + second_parent_relation.opposite_relationship.comfortable
+            ) / 2
             average_trust = (
-                                    second_parent_relation.trust
-                                    + second_parent_relation.opposite_relationship.trust
-                            ) / 2
+                second_parent_relation.trust
+                + second_parent_relation.opposite_relationship.trust
+            ) / 2
 
             if average_romantic_love >= 85:
                 inverse_chance -= int(inverse_chance * 0.3)
@@ -1139,21 +1144,21 @@ class Pregnancy_Events:
             Pregnancy_Events.set_biggest_family()
 
         if (
-                first_parent.ID in Pregnancy_Events.biggest_family
-                or second_parent
-                and second_parent.ID in Pregnancy_Events.biggest_family
+            first_parent.ID in Pregnancy_Events.biggest_family
+            or second_parent
+            and second_parent.ID in Pregnancy_Events.biggest_family
         ):
             inverse_chance = int(inverse_chance * 1.7)
 
         # - decrease inverse chance if the current family is small
         if len(first_parent.get_relatives(clan.clan_settings["first cousin mates"])) < (
-                living_cats / 15
+            living_cats / 15
         ):
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance single parents if settings allow an biggest family is huge
         settings_allow = (
-                not second_parent and not clan.clan_settings["single parentage"]
+            not second_parent and not clan.clan_settings["single parentage"]
         )
         if settings_allow and Pregnancy_Events.biggest_family_is_big():
             inverse_chance = int(inverse_chance * 0.9)
