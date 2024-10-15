@@ -1,0 +1,9 @@
+{
+  "button_press": ["Button_Click_1.mp3","Button_Click_2.mp3","Button_Click_3.mp3","Button_Click_4.mp3","Button_Click_5.mp3"],
+  "button_hover": ["Button_Hover_1.mp3","Button_Hover_2.mp3","Button_Hover_3.mp3","Button_Hover_4.mp3","Button_Hover_5.mp3", "Button_Hover_6.mp3"],
+  "page_flip": ["Page_Flip_1.mp3","Page_Flip_2.mp3","Page_Flip_3.mp3","Page_Flip_4.mp3","Page_Flip_5.mp3"],
+  "dice_roll": ["Dice_roll_1.mp3","Dice_roll_2.mp3","Dice_roll_3.mp3","Dice_roll_4.mp3","Dice_roll_5.mp3","Dice_roll_6.mp3","Dice_roll_7.mp3"],
+  "save": ["Save_Button.mp3"],
+  "timeskip": ["Timeskip_Button.mp3"],
+  "antagonize": ["Antagonize_Button.mp3"]
+}

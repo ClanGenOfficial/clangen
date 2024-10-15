@@ -194,7 +194,7 @@
         "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside! m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/m_c/poss} grasp.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-            "trait": [ "ambitious", "bold", "altruistic", "daring", "fierce", "responsible" ]
+            "trait": [ "ambitious", "bold", "daring", "fierce", "responsible" ]
         },
         "r_c": {
             "age": ["kitten"],

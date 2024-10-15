@@ -68,6 +68,9 @@ def get_amount_cat_for_one_medic(clan):
     amount = 10
     if clan and clan.game_mode == 'cruel season':
         amount = 7
+    if clan and clan.game_mode == 'classic':
+        # just hope nobody has clans with more than 1,000,000 cats in classic
+        amount = 1000000
     return amount
 
 

@@ -15,7 +15,7 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
-        "intro_text": "A winter gale howls outside camp - today's apprentice lesson will occur in the shelter of the den. p_l gathers {PRONOUN/p_l/poss} audience close. On the longest night of leafbare, if a cat is unlucky, they might spot great white islands appearing out of the sea-mist.",
+        "intro_text": "A winter gale howls outside camp - today's apprentice lesson will occur in the shelter of the den. p_l gathers {PRONOUN/p_l/poss} audience close. On the longest night of leaf-bare, if a cat is unlucky, they might spot great white islands appearing out of the sea-mist.",
         "decline_text": "app1 shivers, and goes to close a breach in the den walls before the warmth is driven out. Myths will have to wait.",
         "success_outcomes": [
             {
@@ -121,7 +121,7 @@
                         ]
                 },
                 {
-                    "text": "This day will be a day of heroes, s_c whispers, capturing their Clanmates' attention. Heroes born, or made, or found - such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it.",
+                    "text": "This day will be a day of heroes, s_c whispers, capturing {PRONOUN/s_c/poss} Clanmates' attention. Heroes born, or made, or found - such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it.",
                     "exp": 40,
                     "weight": 20,
                     "art": "bch_train_stormwaves",

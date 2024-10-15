@@ -1,25 +1,41 @@
+from typing import Dict
+
 import pygame
 import pygame_gui
 
+from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events import events_class
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import IDImageButton, UIImageButton
-from scripts.game_structure.windows import GameOver
-from scripts.utility import (
-    get_living_clan_cat_count,
-    get_text_box_theme,
-    scale,
-    shorten_text_to_fit,
-    clan_symbol_sprite,
+from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import MANAGER
+from scripts.game_structure.ui_elements import (
+    UIModifiedScrollingContainer,
+    IDImageButton,
+    UISurfaceImageButton,
+    CatButton,
 )
-from .Screens import Screens
-from ..cat.cats import Cat
-from ..game_structure import image_cache
+from scripts.game_structure.windows import GameOver
+from scripts.screens.Screens import Screens
+from scripts.ui.generate_box import BoxStyles, get_box
+from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.icon import Icon
+from scripts.utility import (
+    ui_scale,
+    clan_symbol_sprite,
+    get_text_box_theme,
+    shorten_text_to_fit,
+    get_living_clan_cat_count,
+    ui_scale_dimensions,
+    ui_scale_value,
+    ui_scale_offset,
+)
 
 
 class EventsScreen(Screens):
-    event_display_type = "all events"
+    current_display = "all events"
+    selected_display = "all events"
+
     all_events = ""
     ceremony_events = ""
     birth_death_events = ""
@@ -30,36 +46,35 @@ class EventsScreen(Screens):
     display_text = (
         "<center>See which events are currently happening in the Clan.</center>"
     )
-    display_events = ""
+    display_events = []
+    tabs = [
+        "all events",
+        "ceremonies",
+        "births & deaths",
+        "relationships",
+        "health",
+        "other clans",
+        "miscellaneous",
+    ]
 
-    def __init__(self, name=None):
+    def __init__(self, name):
         super().__init__(name)
-        self.clan_symbol = None
-        self.misc_alert = None
-        self.other_clans_alert = None
-        self.health_alert = None
-        self.relation_alert = None
-        self.birth_death_alert = None
-        self.ceremony_alert = None
-        self.misc_events_button = None
-        self.other_clans_events_button = None
-        self.health_events_button = None
-        self.birth_death_events_button = None
-        self.ceremonies_events_button = None
-        self.all_events_button = None
-        self.relationship_events_button = None
-        self.events_list_box = None
-        self.toggle_borders_button = None
-        self.timeskip_button = None
-        self.events_frame = None
-        self.clan_age = None
-        self.season = None
-        self.heading = None
-        self.display_events_elements = {}
-        self.involved_cat_buttons = []
-        self.cat_profile_buttons = {}
-        self.scroll_height = {}
+
         self.events_thread = None
+        self.event_screen_container = None
+        self.clan_info = {}
+        self.timeskip_button = None
+
+        self.full_event_display_container = None
+        self.events_frame = None
+        self.event_buttons = {}
+        self.alert = {}
+
+        self.event_display = None
+        self.event_display_elements = {}
+        self.cat_profile_buttons = {}
+        self.involved_cat_container = None
+        self.involved_cat_buttons = {}
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
@@ -67,782 +82,456 @@ class EventsScreen(Screens):
         self.first_opened = False
 
     def handle_event(self, event):
-        if game.switches["window_open"]:
-            pass
-        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if (
-                event.ui_element == self.ceremonies_events_button
-                and self.ceremony_alert
-            ):
-                self.ceremony_alert.kill()
-            elif (
-                event.ui_element == self.birth_death_events_button
-                and self.birth_death_alert
-            ):
-                self.birth_death_alert.kill()
-            elif (
-                event.ui_element == self.relationship_events_button
-                and self.relation_alert
-            ):
-                self.relation_alert.kill()
-            elif event.ui_element == self.health_events_button and self.health_alert:
-                self.health_alert.kill()
-            elif (
-                event.ui_element == self.other_clans_events_button
-                and self.other_clans_alert
-            ):
-                self.other_clans_alert.kill()
-            elif event.ui_element == self.misc_events_button and self.misc_alert:
-                self.misc_alert.kill()
+        # ON HOVER
+        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            element = event.ui_element
+            if element in self.event_buttons.values():
+                for ele in self.event_buttons:
+                    if self.event_buttons[ele] == element:
+                        x_pos = int(self.alert[ele].get_relative_rect()[0] - 10)
+                        y_pos = self.alert[ele].get_relative_rect()[1]
+                        self.alert[ele].set_relative_position((x_pos, y_pos))
 
-        if game.switches["window_open"]:
-            return
+        # ON UNHOVER
+        elif event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
+            element = event.ui_element
+            if element in self.event_buttons.values():
+                for ele in self.event_buttons:
+                    if self.event_buttons[ele] == element:
+                        x_pos = int(self.alert[ele].get_relative_rect()[0] + 10)
+                        y_pos = self.alert[ele].get_relative_rect()[1]
+                        self.alert[ele].set_relative_position((x_pos, y_pos))
 
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.timeskip_button:
+        # ON START BUTTON PRESS
+        elif (
+            event.type == pygame_gui.UI_BUTTON_START_PRESS
+        ):  # this happens on start press to prevent alert movement
+            element = event.ui_element
+            if element in self.event_buttons.values():
+                for ele, val in self.event_buttons.items():
+                    if val == element:
+                        self.handle_tab_switch(ele)
+                        break
+                    
+            self.mute_button_pressed(event)
+
+        # ON FULL BUTTON PRESS
+        elif (
+            event.type == pygame_gui.UI_BUTTON_PRESSED
+        ):  # everything else on button press to prevent blinking
+            element = event.ui_element
+            if element == self.timeskip_button:
                 self.events_thread = self.loading_screen_start_work(
                     events_class.one_moon
                 )
-
-            # Change the type of events displayed
-            elif event.ui_element == self.all_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "all events"
-                # Update Display
-                self.update_list_buttons(self.all_events_button)
-                self.display_events = self.all_events
-                self.update_events_display()
-            elif event.ui_element == self.ceremonies_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "ceremony events"
-                self.ceremonies_events_button.disable()
-                # Update Display
-                self.update_list_buttons(
-                    self.ceremonies_events_button, self.ceremony_alert
-                )
-                self.display_events = self.ceremony_events
-                self.update_events_display()
-            elif event.ui_element == self.birth_death_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "birth death events"
-                self.birth_death_events_button.enable()
-                # Update Display
-                self.update_list_buttons(
-                    self.birth_death_events_button, self.birth_death_alert
-                )
-                self.display_events = self.birth_death_events
-                self.update_events_display()
-            elif event.ui_element == self.relationship_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "relationship events"
-                self.relationship_events_button.enable()
-                # Update Display
-                self.update_list_buttons(
-                    self.relationship_events_button, self.relation_alert
-                )
-                self.display_events = self.relation_events
-                self.update_events_display()
-            elif event.ui_element == self.health_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "health events"
-                self.health_events_button.disable()
-                # Update Display
-                self.update_list_buttons(self.health_events_button, self.health_alert)
-                self.display_events = self.health_events
-                self.update_events_display()
-            elif event.ui_element == self.other_clans_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "other clans events"
-                self.other_clans_events_button.disable()
-                # Update Display
-                self.update_list_buttons(
-                    self.other_clans_events_button, self.other_clans_alert
-                )
-                self.display_events = self.other_clans_events
-                self.update_events_display()
-            elif event.ui_element == self.misc_events_button:
-                if self.event_container.vert_scroll_bar:
-                    self.scroll_height[self.event_display_type] = (
-                        self.event_container.vert_scroll_bar.scroll_position
-                        / self.event_container.vert_scroll_bar.scrollable_height
-                    )
-                self.event_display_type = "misc events"
-                self.misc_events_button.disable()
-                # Update Display
-                self.update_list_buttons(self.misc_events_button, self.misc_alert)
-                self.display_events = self.misc_events
-                self.update_events_display()
-            elif event.ui_element in self.involved_cat_buttons:
-                self.make_cat_buttons(event.ui_element)
-            elif event.ui_element in self.cat_profile_buttons:
-                game.switches["cat"] = event.ui_element.ids
+            elif element in self.involved_cat_buttons.values():
+                self.make_cat_buttons(element)
+            elif element in self.cat_profile_buttons.values():
+                self.save_scroll_position()
+                game.switches["cat"] = element.cat_id
                 self.change_screen("profile screen")
             else:
+                self.save_scroll_position()
                 self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
-            if event.key == pygame.K_RIGHT:
-                self.change_screen("camp screen")
-            elif event.key == pygame.K_UP:
-                if self.event_display_type == "ceremony events":
-                    self.event_display_type = "all events"
-                    # Update Display
-                    self.update_list_buttons(self.all_events_button)
-                    self.display_events = self.all_events
-                    self.update_events_display()
-                elif self.event_display_type == "birth death events":
-                    self.event_display_type = "ceremony events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.ceremonies_events_button, self.ceremony_alert
-                    )
-                    self.display_events = self.ceremony_events
-                    self.update_events_display()
-                elif self.event_display_type == "relationship events":
-                    self.event_display_type = "birth death events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.birth_death_events_button, self.birth_death_alert
-                    )
-                    self.display_events = self.birth_death_events
-                    self.update_events_display()
-                elif self.event_display_type == "health events":
-                    self.event_display_type = "relationship events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.relationship_events_button, self.relation_alert
-                    )
-                    self.display_events = self.relation_events
-                    self.update_events_display()
-                elif self.event_display_type == "other clans events":
-                    self.event_display_type = "health events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.health_events_button, self.health_alert
-                    )
-                    self.display_events = self.health_events
-                    self.update_events_display()
-                elif self.event_display_type == "misc events":
-                    self.event_display_type = "other clans events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.other_clans_events_button, self.other_clans_alert
-                    )
-                    self.display_events = self.other_clans_events
-                    self.update_events_display()
-            elif event.key == pygame.K_DOWN:
-                if self.event_display_type == "all events":
-                    self.event_display_type = "ceremony events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.ceremonies_events_button, self.ceremony_alert
-                    )
-                    self.display_events = self.ceremony_events
-                    self.update_events_display()
-                elif self.event_display_type == "ceremony events":
-                    self.event_display_type = "birth death events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.birth_death_events_button, self.birth_death_alert
-                    )
-                    self.display_events = self.birth_death_events
-                    self.update_events_display()
-                elif self.event_display_type == "birth death events":
-                    self.event_display_type = "relationship events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.relationship_events_button, self.relation_alert
-                    )
-                    self.display_events = self.relation_events
-                    self.update_events_display()
-                elif self.event_display_type == "relationship events":
-                    self.event_display_type = "health events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.health_events_button, self.health_alert
-                    )
-                    self.display_events = self.health_events
-                    self.update_events_display()
-                elif self.event_display_type == "health events":
-                    self.event_display_type = "other clans events"
-                    # Update Display
-                    self.update_list_buttons(
-                        self.other_clans_events_button, self.other_clans_alert
-                    )
-                    self.display_events = self.other_clans_events
-                    self.update_events_display()
-                elif self.event_display_type == "other clans events":
-                    self.event_display_type = "misc events"
-                    # Update Display
-                    self.update_list_buttons(self.misc_events_button, self.misc_alert)
-                    self.display_events = self.misc_events
-                    self.update_events_display()
-            elif event.key == pygame.K_SPACE:
+        # KEYBIND CONTROLS
+        elif game.settings["keybinds"]:
+            # ON PRESSING A KEY
+            if event.type == pygame.KEYDOWN:
+                # LEFT ARROW
+                if event.key == pygame.K_LEFT:
+                    self.change_screen("patrol screen")
+                # RIGHT ARROW
+                elif event.key == pygame.K_RIGHT:
+                    self.change_screen("camp screen")
+                # DOWN AND UP ARROW
+                elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                    self.handle_tab_select(event.key)
+                elif event.key == pygame.K_RETURN:
+                    self.handle_tab_switch(self.selected_display)
 
-                self.events_thread = self.loading_screen_start_work(
-                    events_class.one_moon
-                )
+    def save_scroll_position(self):
+        """
+        adds current event display vert scroll bar position to game.switches["saved_scroll_positions"] dict
+        """
+        if self.event_display.vert_scroll_bar:
+            game.switches["saved_scroll_positions"][self.current_display] = (
+                self.event_display.vert_scroll_bar.scroll_position
+                / self.event_display.vert_scroll_bar.scrollable_height
+            )
+
+    def handle_tab_select(self, event):
+        # find next tab based on current tab
+        current_index = self.tabs.index(self.selected_display)
+        if event == pygame.K_DOWN:
+            next_index = current_index + 1
+            wrap_index = 0
+        else:
+            next_index = current_index - 1
+            wrap_index = -1
+
+        # unselect the currently selected display
+        # unless it matches the current display, we don't want to mess with the state of that button
+        if self.current_display != self.selected_display:
+            self.event_buttons[self.selected_display].unselect()
+            x_pos = int(self.alert[self.selected_display].get_relative_rect()[0] + 10)
+            y_pos = self.alert[self.selected_display].get_relative_rect()[1]
+            self.alert[self.selected_display].set_relative_position((x_pos, y_pos))
+
+        # find the new selected display
+        try:
+            self.selected_display = self.tabs[next_index]
+        except IndexError:
+            self.selected_display = self.tabs[wrap_index]
+
+        # select the new selected display
+        # unless it matches the current display, we don't want to mess with the state of that button
+        if self.current_display != self.selected_display:
+            self.event_buttons[self.selected_display].select()
+            x_pos = int(self.alert[self.selected_display].get_relative_rect()[0] - 10)
+            y_pos = self.alert[self.selected_display].get_relative_rect()[1]
+            self.alert[self.selected_display].set_relative_position((x_pos, y_pos))
+
+    def handle_tab_switch(self, display_type, is_rescale=False):
+        """
+        saves current tab scroll position, removes alert, and then switches to the new tab
+        """
+        if not is_rescale:
+            self.save_scroll_position()
+
+        self.current_display = display_type
+        self.update_list_buttons()
+
+        if display_type == "all events":
+            self.display_events = self.all_events
+        elif display_type == "ceremonies":
+            self.display_events = self.ceremony_events
+        elif display_type == "births & deaths":
+            self.display_events = self.birth_death_events
+        elif display_type == "relationships":
+            self.display_events = self.relation_events
+        elif display_type == "health":
+            self.display_events = self.health_events
+        elif display_type == "other clans":
+            self.display_events = self.other_clans_events
+        elif display_type == "miscellaneous":
+            self.display_events = self.misc_events
+
+        self.alert[display_type].hide()
+
+        self.update_events_display()
 
     def screen_switches(self):
+        super().screen_switches()
         # On first open, update display events list
+        self.show_mute_buttons()
         if not self.first_opened:
             self.first_opened = True
             self.update_display_events_lists()
             self.display_events = self.all_events
 
-        self.clan_symbol = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((455, 210), (200, 200))),
-            pygame.transform.scale(clan_symbol_sprite(game.clan), (200, 200)),
-            object_id=f"clan_symbol",
+        self.event_screen_container = pygame_gui.core.UIContainer(
+            ui_scale(pygame.Rect((0, 0), (800, 700))),
             starting_height=1,
             manager=MANAGER,
         )
 
-        self.heading = pygame_gui.elements.UITextBox(
+        self.clan_info["symbol"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((227, 105), (100, 100))),
+            pygame.transform.scale(
+                clan_symbol_sprite(game.clan), ui_scale_dimensions((100, 100))
+            ),
+            object_id=f"clan_symbol",
+            starting_height=1,
+            container=self.event_screen_container,
+            manager=MANAGER,
+        )
+
+        self.clan_info["heading"] = pygame_gui.elements.UITextBox(
             "Timeskip to progress your Clan's life.",
-            scale(pygame.Rect((680, 310), (500, -1))),
+            ui_scale(pygame.Rect((340, 155), (250, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
+            starting_height=1,
+            container=self.event_screen_container,
             manager=MANAGER,
         )
 
-        self.season = pygame_gui.elements.UITextBox(
+        self.clan_info["season"] = pygame_gui.elements.UITextBox(
             f"Current season: {game.clan.current_season}",
-            scale(pygame.Rect((680, 205), (1200, 80))),
+            ui_scale(pygame.Rect((340, 102), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
+            starting_height=1,
+            container=self.event_screen_container,
             manager=MANAGER,
         )
-        self.clan_age = pygame_gui.elements.UITextBox(
+        self.clan_info["age"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((680, 245), (1200, 80))),
+            ui_scale(pygame.Rect((340, 122), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
+            starting_height=1,
+            container=self.event_screen_container,
             manager=MANAGER,
         )
 
-        self.events_frame = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((412, 532), (1068, 740))),
-            image_cache.load_image(
-                "resources/images/event_page_frame.png"
-            ).convert_alpha(),
-            manager=MANAGER,
-        )
-        self.events_frame.disable()
         # Set text for Clan age
         if game.clan.age == 1:
-            self.clan_age.set_text(f"Clan age: {game.clan.age} moon")
+            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
         if game.clan.age != 1:
-            self.clan_age.set_text(f"Clan age: {game.clan.age} moons")
+            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
 
-        self.timeskip_button = UIImageButton(
-            scale(pygame.Rect((620, 436), (360, 60))),
-            "",
-            object_id="#timeskip_button",
+        self.timeskip_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((310, 218), (180, 30))),
+            "Timeskip One Moon",
+            get_button_dict(ButtonStyles.SQUOVAL, (180, 30)),
+            object_id="@buttonstyles_squoval",
+            starting_height=1,
+            container=self.event_screen_container,
             manager=MANAGER,
+            sound_id="timeskip",
         )
 
-        # Sets up the buttons to switch between the event types.
-        self.all_events_button = UIImageButton(
-            scale(pygame.Rect((120, 570), (300, 60))),
-            "",
-            object_id="#all_events_button",
+        self.full_event_display_container = pygame_gui.core.UIContainer(
+            ui_scale(pygame.Rect((45, 266), (700, 700))),
+            starting_height=1,
+            container=self.event_screen_container,
             manager=MANAGER,
         )
-        self.ceremonies_events_button = UIImageButton(
-            scale(pygame.Rect((120, 672), (300, 60))),
-            "",
-            object_id="#ceremony_events_button",
-            manager=MANAGER,
-        )
-        self.birth_death_events_button = UIImageButton(
-            scale(pygame.Rect((120, 772), (300, 60))),
-            "",
-            object_id="#birth_death_events_button",
-            manager=MANAGER,
-        )
-        self.relationship_events_button = UIImageButton(
-            scale(pygame.Rect((120, 872), (300, 60))),
-            "",
-            object_id="#relationship_events_button",
-        )
-        self.health_events_button = UIImageButton(
-            scale(pygame.Rect((120, 972), (300, 60))),
-            "",
-            object_id="#health_events_button",
-            manager=MANAGER,
-        )
-        self.other_clans_events_button = UIImageButton(
-            scale(pygame.Rect((120, 1072), (300, 60))),
-            "",
-            object_id="#other_clans_events_button",
-            manager=MANAGER,
-        )
-        self.misc_events_button = UIImageButton(
-            scale(pygame.Rect((120, 1172), (300, 60))),
-            "",
-            object_id="#misc_events_button",
+        self.events_frame = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((161, 0), (534, 370))),
+            get_box(BoxStyles.FRAME, (534, 370)),
+            starting_height=8,
+            container=self.full_event_display_container,
             manager=MANAGER,
         )
 
-        if self.event_display_type == "all events":
-            self.all_events_button.disable()
-        elif self.event_display_type == "ceremony events":
-            self.ceremonies_events_button.disable()
-        elif self.event_display_type == "birth death events":
-            self.birth_death_events_button.disable()
-        elif self.event_display_type == "relationship events":
-            self.relationship_events_button.disable()
-        elif self.event_display_type == "health events":
-            self.health_events_button.disable()
-        elif self.event_display_type == "other clans events":
-            self.other_clans_events_button.disable()
-        elif self.event_display_type == "misc events":
-            self.misc_events_button.disable()
+        y_pos = 0
+        for event_type in self.tabs:
+            self.event_buttons[f"{event_type}"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((16, 19 + y_pos), (150, 30))),
+                event_type,
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
+                object_id="@buttonstyles_vertical_tab",
+                starting_height=1,
+                container=self.full_event_display_container,
+                manager=MANAGER,
+                anchors={"right_target": self.events_frame},
+            )
 
-        self.misc_alert = None
-        self.other_clans_alert = None
-        self.health_alert = None
-        self.relation_alert = None
-        self.birth_death_alert = None
-        self.ceremony_alert = None
+            if event_type:
+                self.alert[f"{event_type}"] = pygame_gui.elements.UIImage(
+                    ui_scale(pygame.Rect((10, 24 + y_pos), (4, 22))),
+                    pygame.transform.scale(
+                        image_cache.load_image("resources/images/alert_mark.png"),
+                        ui_scale_dimensions((4, 22)),
+                    ),
+                    container=self.full_event_display_container,
+                    object_id=f"alert_mark_{event_type.replace(' ', '_')}",
+                    manager=MANAGER,
+                    visible=False,
+                )
 
+            y_pos += 50
+
+        self.event_buttons[self.current_display].disable()
+
+        self.make_event_scrolling_container()
         self.open_involved_cat_button = None
-        self.make_events_container()
-        self.events_container_y = self.event_container.get_relative_rect()[3]
-
-        # Display text
-        # self.explain_text = pygame_gui.elements.UITextBox(self.display_text, scale(pygame.Rect((25,110),(750,40))))
+        self.update_events_display()
 
         # Draw and disable the correct menu buttons.
         self.set_disabled_menu_buttons(["events_screen"])
         self.update_heading_text(f"{game.clan.name}Clan")
         self.show_menu_buttons()
-        self.update_events_display()
 
-    def exit_screen(self):
-        self.open_involved_cat_button = None
-        self.clan_symbol.kill()
-        self.timeskip_button.kill()
-        del self.timeskip_button
-        self.all_events_button.kill()
-        del self.all_events_button
-        self.ceremonies_events_button.kill()
-        del self.ceremonies_events_button
-        if self.ceremony_alert:
-            self.ceremony_alert.kill()
-            del self.ceremony_alert
-        self.birth_death_events_button.kill()
-        del self.birth_death_events_button
-        if self.birth_death_alert:
-            self.birth_death_alert.kill()
-            del self.birth_death_alert
-        self.relationship_events_button.kill()
-        del self.relationship_events_button
-        if self.relation_alert:
-            self.relation_alert.kill()
-            del self.relation_alert
-        self.health_events_button.kill()
-        del self.health_events_button
-        if self.health_alert:
-            self.health_alert.kill()
-            del self.health_alert
-        self.other_clans_events_button.kill()
-        del self.other_clans_events_button
-        if self.other_clans_alert:
-            self.other_clans_alert.kill()
-            del self.other_clans_alert
-        self.misc_events_button.kill()
-        del self.misc_events_button
-        if self.misc_alert:
-            self.misc_alert.kill()
-            del self.misc_alert
-        self.events_frame.kill()
-        del self.events_frame
-        self.heading.kill()
-        del self.heading
-        self.clan_age.kill()
-        del self.clan_age
-        self.season.kill()
-        del self.season
-        self.event_container.kill()
+    def display_change_save(self) -> Dict:
+        self.save_scroll_position()
+        variable_dict = super().display_change_save()
 
-        for ele in self.display_events_elements:
-            self.display_events_elements[ele].kill()
-        self.display_events_elements = {}
+        variable_dict["current_display"] = self.current_display
 
-        for ele in self.involved_cat_buttons:
-            ele.kill()
-        self.involved_cat_buttons = []
+        return variable_dict
 
-        for ele in self.cat_profile_buttons:
-            ele.kill()
-        self.cat_profile_buttons = []
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
 
-        self.hide_menu_buttons()
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
 
-    def on_use(self):
+        self.handle_tab_switch(self.current_display, is_rescale=True)
+        MANAGER.update(1)
 
-        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
-
-    def timeskip_done(self):
-        """Various sorting and other tasks that must be done with the timeskip is over."""
-
-        self.scroll_height = {}
-
-        if get_living_clan_cat_count(Cat) == 0:
-            GameOver("events screen")
-
-        self.event_display_type = "all events"
-        self.all_events_button.disable()
-        self.all_events = [
-            x for x in game.cur_events_list if "interaction" not in x.types
-        ]
-
-        self.ceremonies_events_button.enable()
-        if self.ceremony_alert:
-            self.ceremony_alert.kill()
-        self.ceremony_events = [
-            x for x in game.cur_events_list if "ceremony" in x.types
-        ]
-        if self.ceremony_events:
-            self.ceremony_alert = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((110, 680), (8, 44))),
-                pygame.transform.scale(
-                    image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
-                ),
-                manager=MANAGER,
+        if game.switches["saved_scroll_positions"].get(self.current_display):
+            self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
+                game.switches["saved_scroll_positions"][self.current_display]
             )
 
-        if self.birth_death_alert:
-            self.birth_death_alert.kill()
-        self.birth_death_events_button.enable()
-        self.birth_death_events = [
-            x for x in game.cur_events_list if "birth_death" in x.types
-        ]
-        if self.birth_death_events:
-            self.birth_death_alert = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((110, 780), (8, 44))),
-                pygame.transform.scale(
-                    image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
-                ),
-                manager=MANAGER,
-            )
+    def make_event_scrolling_container(self):
+        """
+        kills and recreates the self.event_display container
+        """
+        if self.event_display:
+            self.event_display.kill()
 
-        if self.relation_alert:
-            self.relation_alert.kill()
-        self.relationship_events_button.enable()
-        self.relation_events = [
-            x for x in game.cur_events_list if "relation" in x.types
-        ]
-        if self.relation_events:
-            self.relation_alert = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((110, 880), (8, 44))),
-                pygame.transform.scale(
-                    image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
-                ),
-                manager=MANAGER,
-            )
-
-        if self.health_alert:
-            self.health_alert.kill()
-        self.health_events_button.enable()
-        self.health_events = [x for x in game.cur_events_list if "health" in x.types]
-        if self.health_events:
-            self.health_alert = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((110, 980), (8, 44))),
-                pygame.transform.scale(
-                    image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
-                ),
-                manager=MANAGER,
-            )
-
-        if self.other_clans_alert:
-            self.other_clans_alert.kill()
-        self.other_clans_events_button.enable()
-        self.other_clans_events = [
-            x for x in game.cur_events_list if "other_clans" in x.types
-        ]
-        if self.other_clans_events:
-            self.other_clans_alert = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((110, 1080), (8, 44))),
-                pygame.transform.scale(
-                    image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
-                ),
-                manager=MANAGER,
-            )
-
-        if self.misc_alert:
-            self.misc_alert.kill()
-        self.misc_events_button.enable()
-        self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
-        if self.misc_events:
-            self.misc_alert = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((110, 1180), (8, 44))),
-                pygame.transform.scale(
-                    image_cache.load_image("resources/images/alert_mark.png"), (8, 44)
-                ),
-                manager=MANAGER,
-            )
-
-        if self.event_display_type == "all events":
-            # if events list is empty, add a single message the says nothing interesting happened
-            if not self.all_events:
-                self.all_events.append(
-                    Single_Event("Nothing interesting happened this moon.")
-                )
-            self.display_events = self.all_events
-        elif self.event_display_type == "ceremony events":
-            self.display_events = self.ceremony_events
-        elif self.event_display_type == "birth death events":
-            self.display_events = self.birth_death_events
-        elif self.event_display_type == "relationship events":
-            self.display_events = self.relation_events
-        elif self.event_display_type == "health events":
-            self.display_events = self.health_events
-        elif self.event_display_type == "other clans events":
-            self.display_events = self.other_clans_events
-        elif self.event_display_type == "misc events":
-            self.display_events = self.misc_events
-
-        self.update_events_display()
-        self.show_menu_buttons()
-
-    def update_list_buttons(self, current_list, current_alert=None):
-        """handles the disabling and enabling of the list buttons"""
-
-        # enable all the buttons
-        self.all_events_button.enable()
-        self.ceremonies_events_button.enable()
-        self.birth_death_events_button.enable()
-        self.relationship_events_button.enable()
-        self.health_events_button.enable()
-        self.other_clans_events_button.enable()
-        self.misc_events_button.enable()
-
-        # disable the current button
-        current_list.disable()
-        if current_alert:
-            current_alert.kill()
-
-    def update_events_display(self):
-
-        self.season.set_text(f"Current season: {game.clan.current_season}")
-        if game.clan.age == 1:
-            self.clan_age.set_text(f"Clan age: {game.clan.age} moon")
-        if game.clan.age != 1:
-            self.clan_age.set_text(f"Clan age: {game.clan.age} moons")
-
-        for ele in self.display_events_elements:
-            self.display_events_elements[ele].kill()
-        self.display_events_elements = {}
-
-        for ele in self.involved_cat_buttons:
-            ele.kill()
-        self.involved_cat_buttons = []
-
-        for ele in self.cat_profile_buttons:
-            ele.kill()
-        self.cat_profile_buttons = []
-
-        # In order to set-set the scroll-bar postion, we have to remake the scrolling container
-        self.event_container.kill()
-        self.make_events_container()
-
-        # Stop if Clan is new, so that events from previously loaded Clan don't show up
-        if game.clan.age == 0:
-            return
-
-        # Make display, with buttons and all that.
-        box_length = self.event_container.get_relative_rect()[2]
-        i = 0
-        y = 0
-        padding = 70 / 1400 * screen_y
-        button_size = 68 / 1600 * screen_x
-        button_padding = 80 / 1400 * screen_x
-        for ev in self.display_events:
-            if isinstance(ev.text, str):  # Check to make sure text is a string.
-                self.display_events_elements["event" + str(i)] = (
-                    pygame_gui.elements.UITextBox(
-                        ev.text,
-                        pygame.Rect((0, y), (box_length - 20, -1)),
-                        object_id=get_text_box_theme("#text_box_30_horizleft"),
-                        container=self.event_container,
-                        starting_height=2,
-                        manager=MANAGER,
-                    )
-                )
-                self.display_events_elements["event" + str(i)].disable()
-                # Find the next y-height by finding the height of the text box, and adding 35 for the cats button
-
-                if i % 2 == 0:
-                    if game.settings["dark mode"]:
-                        self.display_events_elements["shading" + str(i)] = (
-                            pygame_gui.elements.UIImage(
-                                pygame.Rect(
-                                    (0, y),
-                                    (
-                                        box_length + 100,
-                                        self.display_events_elements[
-                                            "event" + str(i)
-                                        ].get_relative_rect()[3]
-                                        + padding,
-                                    ),
-                                ),
-                                image_cache.load_image(
-                                    "resources/images/shading_dark.png"
-                                ),
-                                container=self.event_container,
-                                manager=MANAGER,
-                            )
-                        )
-                    else:
-                        self.display_events_elements["shading" + str(i)] = (
-                            pygame_gui.elements.UIImage(
-                                pygame.Rect(
-                                    (0, y),
-                                    (
-                                        box_length + 100,
-                                        self.display_events_elements[
-                                            "event" + str(i)
-                                        ].get_relative_rect()[3]
-                                        + padding,
-                                    ),
-                                ),
-                                image_cache.load_image("resources/images/shading.png"),
-                                container=self.event_container,
-                                manager=MANAGER,
-                            )
-                        )
-
-                    self.display_events_elements["shading" + str(i)].disable()
-
-                y += self.display_events_elements["event" + str(i)].get_relative_rect()[
-                    3
-                ]
-
-                self.involved_cat_buttons.append(
-                    IDImageButton(
-                        pygame.Rect(
-                            (
-                                self.event_container.get_relative_rect()[2]
-                                - button_padding,
-                                y - 10,
-                            ),
-                            (button_size, button_size),
-                        ),
-                        ids=ev.cats_involved,
-                        container=self.event_container,
-                        layer_starting_height=2,
-                        object_id="#events_cat_button",
-                        manager=MANAGER,
-                    )
-                )
-
-                y += 68 / 1600 * screen_y
-                i += 1
-            else:
-                print("Incorrectly formatted event:", ev.text, type(ev))
-
-        # Set scrolling container length
-        # This is a hack-y solution, but it was the easiest way to have the shading go all the way across the box
-        self.event_container.set_scrollable_area_dimensions((box_length, y + 15))
-
-        if self.event_container.vert_scroll_bar:
-            for ele in self.involved_cat_buttons:
-                ele.set_relative_position(
-                    (ele.get_relative_rect()[0] - 20, ele.get_relative_rect()[1])
-                )
-
-        if self.event_container.horiz_scroll_bar:
-            self.event_container.set_dimensions(
-                (box_length, self.events_container_y + 20)
-            )
-            self.event_container.horiz_scroll_bar.hide()
-        else:
-            self.event_container.set_dimensions((box_length, self.events_container_y))
-        # Set the scroll bar to the last position it was at
-        if self.scroll_height.get(self.event_display_type):
-            self.event_container.vert_scroll_bar.set_scroll_from_start_percentage(
-                self.scroll_height[self.event_display_type]
-            )
+        rect = pygame.Rect(
+            ui_scale_offset((211, 275)),
+            (
+                self.events_frame.rect[2] + ui_scale_value(13),
+                self.events_frame.rect[3] - ui_scale_value(19),
+            ),
+        )
+        self.event_display = UIModifiedScrollingContainer(
+            rect,
+            starting_height=1,
+            manager=MANAGER,
+            allow_scroll_y=True,
+        )
+        self.events_frame.join_focus_sets(self.event_display)
 
     def make_cat_buttons(self, button_pressed):
         """Makes the buttons that take you to the profile."""
 
-        # Check if the button you pressed doesn't have it cat profile buttons currently displayed.
-        # If it doesn't have it's buttons displayed, set the current open involved_cat_button to the pressed button,
-        # clear all other buttons, and open the cat profile buttons.
-        if self.open_involved_cat_button != button_pressed:
-            self.open_involved_cat_button = button_pressed
-            for ele in self.cat_profile_buttons:
-                ele.kill()
-            self.cat_profile_buttons = []
+        # How much to increase the panel box size by in order to fit the catbuttons
+        size_increase = 26
 
-            pressed_button_pos = (
-                button_pressed.get_relative_rect()[0],
-                button_pressed.get_relative_rect()[1],
+        # determine whether we need a scrollbar
+        scrollbar_needed = len(button_pressed.ids) > 2
+
+        # Check if the button you pressed doesn't have its cat profile buttons currently displayed.
+        # if it does, clear the cat profile buttons
+        if self.open_involved_cat_button == button_pressed:
+            self.open_involved_cat_button = None
+            if len(self.cat_profile_buttons) > 2:
+                button_pressed.parent_element.set_dimensions(
+                    (
+                        button_pressed.parent_element.get_relative_rect()[2],
+                        button_pressed.parent_element.get_relative_rect()[3]
+                        - ui_scale_value(size_increase),
+                    ),
+                )
+            for ele in self.cat_profile_buttons:
+                self.cat_profile_buttons[ele].kill()
+            self.cat_profile_buttons = {}
+            return
+        # now check if the involved cat display is already open somewhere
+        # if so, shrink that back to original size
+        elif (
+            self.open_involved_cat_button is not None
+            and len(self.cat_profile_buttons) > 2
+        ):
+            self.open_involved_cat_button.parent_element.set_dimensions(
+                (
+                    self.open_involved_cat_button.parent_element.get_relative_rect()[2],
+                    self.open_involved_cat_button.parent_element.get_relative_rect()[3]
+                    - ui_scale_value(size_increase),
+                ),
             )
 
-            i = 1
-            for ev in button_pressed.ids:
-                cat_ob = Cat.fetch_cat(ev)
+        # If it doesn't have its buttons displayed, set the current open involved_cat_button to the pressed button,
+        # clear all other buttons, and open the cat profile buttons.
+        self.open_involved_cat_button = button_pressed
+        if self.involved_cat_container:
+            self.involved_cat_container.kill()
+        for ele in self.cat_profile_buttons:
+            self.cat_profile_buttons[ele].kill()
+        self.cat_profile_buttons = {}
+
+        container = button_pressed.parent_element
+
+        # if a scrollbar is required, update the container to be bigge enough
+        if scrollbar_needed:
+            container.set_dimensions(
+                (
+                    container.relative_rect[2],
+                    container.relative_rect[3] + ui_scale_value(size_increase),
+                )
+            )
+
+        involved_cat_rect = ui_scale(
+            pygame.Rect((0, 0), (455, 56 if scrollbar_needed else 36))
+        )
+        involved_cat_rect.topleft = (
+            ui_scale_value(5),
+            -button_pressed.get_relative_rect()[3],
+        )
+
+        self.involved_cat_container = UIModifiedScrollingContainer(
+            involved_cat_rect,
+            container=container,
+            manager=MANAGER,
+            starting_height=3,
+            allow_scroll_x=True,
+            allow_scroll_y=False,
+            should_grow_automatically=scrollbar_needed,  # true if we need a scrollbar, false otherwise
+            anchors={"top_target": button_pressed},
+        )
+        del involved_cat_rect
+
+        # make the cat profiles
+        if scrollbar_needed:
+            for i, cat_id in enumerate(button_pressed.ids):
+                rect = ui_scale(pygame.Rect((0 if i == 0 else 5, 0), (120, 34)))
+                cat_ob = Cat.fetch_cat(cat_id)
                 if cat_ob:
                     # Shorten name if needed
                     name = str(cat_ob.name)
-                    short_name = shorten_text_to_fit(name, 195, 26)
+                    short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
-                    self.cat_profile_buttons.append(
-                        IDImageButton(
-                            pygame.Rect(
-                                (
-                                    pressed_button_pos[0]
-                                    - (240 / 1600 * screen_x * i)
-                                    - 1,
-                                    pressed_button_pos[1] + 4,
-                                ),
-                                (232 / 1600 * screen_x, 60 / 1400 * screen_y),
-                            ),
-                            text=short_name,
-                            ids=ev,
-                            container=self.event_container,
-                            object_id="#events_cat_profile_button",
-                            layer_starting_height=2,
-                            manager=MANAGER,
-                        )
+                    self.cat_profile_buttons[f"profile_button{i}"] = CatButton(
+                        rect,
+                        text=short_name,
+                        cat_id=cat_id,
+                        container=self.involved_cat_container,
+                        object_id="#events_cat_profile_button",
+                        starting_height=1,
+                        manager=MANAGER,
+                        anchors={
+                            "left_target": self.cat_profile_buttons[
+                                f"profile_button{i - 1}"
+                            ]
+                        }
+                        if i > 0
+                        else {"left": "left"},
                     )
-                    # There is only room for about four buttons.
-                    if i > 3:
-                        break
-                    i += 1
-
-        # If the button pressed does have its cat profile buttons open, just close the buttons.
         else:
-            self.open_involved_cat_button = None
-            for ele in self.cat_profile_buttons:
-                ele.kill()
-            self.cat_profile_buttons = []
+            rect = ui_scale(pygame.Rect((0, 0), (120, 34)))
+            for i, cat_id in enumerate(reversed(button_pressed.ids)):
+                rect.topright = ui_scale_offset((0 if i == 0 else -125, 0))
+                cat_ob = Cat.fetch_cat(cat_id)
+                if cat_ob:
+                    # Shorten name if needed
+                    name = str(cat_ob.name)
+                    short_name = shorten_text_to_fit(name, 80, 13, "clangen")
+
+                    self.cat_profile_buttons[f"profile_button{i}"] = CatButton(
+                        rect,
+                        text=short_name,
+                        cat_id=cat_id,
+                        container=self.involved_cat_container,
+                        object_id="#events_cat_profile_button",
+                        starting_height=1,
+                        manager=MANAGER,
+                        anchors={
+                            "left_target": self.cat_profile_buttons[
+                                f"profile_button{i - 1}"
+                            ]
+                        }
+                        if i > 0
+                        else {"right": "right"},
+                    )
+        del rect
+        self.involved_cat_container.set_view_container_dimensions(
+            (
+                self.involved_cat_container.get_relative_rect()[2],
+                self.event_display.get_relative_rect()[3],
+            )
+        )
+
+    def exit_screen(self):
+        self.event_display.kill()  # event display isn't put in the screen container due to lag issues
+        self.event_screen_container.kill()
 
     def update_display_events_lists(self):
         """
@@ -867,10 +556,212 @@ class EventsScreen(Screens):
         ]
         self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
 
-    def make_events_container(self):
-        """In its own function so that there is only one place the box size is set"""
-        self.event_container = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((432, 552), (1028, 700))),
-            allow_scroll_x=False,
-            manager=MANAGER,
+    def update_events_display(self):
+        """
+        Kills and recreates the event display, updates the clan info, sets the event display scroll position if it was
+        previously saved
+        """
+
+        # UPDATE CLAN INFO
+        self.clan_info["season"].set_text(f"Current season: {game.clan.current_season}")
+        if game.clan.age == 1:
+            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
+        else:
+            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
+
+        self.make_event_scrolling_container()
+
+        for ele in self.event_display_elements:
+            self.event_display_elements[ele].kill()
+        self.event_display_elements = {}
+
+        for ele in self.cat_profile_buttons:
+            self.cat_profile_buttons[ele].kill()
+        self.cat_profile_buttons = {}
+
+        for ele in self.involved_cat_buttons:
+            self.involved_cat_buttons[ele].kill()
+        self.involved_cat_buttons = {}
+
+        # Stop if Clan is new, so that events from previously loaded Clan don't show up
+        if game.clan.age == 0:
+            return
+
+        for event_object in self.display_events:
+            if not isinstance(event_object.text, str):
+                print(
+                    f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}"
+                )
+                self.display_events.remove(event_object)
+                continue
+
+        default_rect = pygame.Rect(
+            ui_scale_offset((5, 0)),
+            (
+                self.event_display.get_relative_rect()[2]
+                - ui_scale_value(10)
+                - self.event_display.scroll_bar_width,
+                ui_scale_value(300),
+            ),
         )
+        for i, event_object in enumerate(self.display_events):
+            self.event_display_elements[f"container{i}"] = pygame_gui.elements.UIPanel(
+                default_rect,
+                5,
+                MANAGER,
+                container=self.event_display,
+                element_id="event_panel",
+                object_id="#dark" if game.settings["dark mode"] else None,
+                margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
+                anchors={"top_target": self.event_display_elements[f"container{i - 1}"]}
+                if i > 0
+                else {"top": "top"},
+            )
+            if i % 2 == 0:
+                self.event_display_elements[f"container{i}"].background_colour = (
+                    pygame.Color(87, 76, 55)
+                    if game.settings["dark mode"]
+                    else pygame.Color(167, 148, 111)
+                )
+                self.event_display_elements[f"container{i}"].rebuild()
+
+        for i, event_object in enumerate(self.display_events):
+            # TEXT BOX
+            self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
+                event_object.text,
+                ui_scale(pygame.Rect((0, 0), (509, -1))),
+                object_id=get_text_box_theme("#text_box_30_horizleft"),
+                starting_height=1,
+                container=self.event_display_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={"left": "left", "right": "right"},
+            )
+
+        catbutton_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
+        catbutton_rect.topright = ui_scale_offset((-10, 5))
+        for i, event_object in enumerate(self.display_events):
+            if not event_object.cats_involved:
+                continue
+
+            self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
+                catbutton_rect,
+                Icon.CAT_HEAD,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                ids=event_object.cats_involved,
+                layer_starting_height=3,
+                object_id="@buttonstyles_icon",
+                parent_element=self.event_display_elements[f"container{i}"],
+                container=self.event_display_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={
+                    "right": "right",
+                    "top_target": self.event_display_elements[f"event{i}"],
+                },
+            )
+        del catbutton_rect
+
+        for i, event_object in enumerate(self.display_events):
+            self.event_display_elements[f"container{i}"].set_dimensions(
+                (
+                    default_rect[2],
+                    self.event_display_elements[f"event{i}"].get_relative_rect()[3]
+                    + (
+                        self.involved_cat_buttons[f"cat_button{i}"].get_relative_rect()[
+                            3
+                        ]
+                        + ui_scale_value(10)
+                    )
+                    if f"cat_button{i}" in self.involved_cat_buttons
+                    else self.event_display_elements[f"event{i}"].get_relative_rect()[
+                        3
+                    ],
+                )
+            )
+
+        # this HAS TO UPDATE before saved scroll position can be set
+        self.event_display.scrollable_container.update(1)
+
+        # don't ask me why we have to redefine these dimensions, we just do
+        # otherwise the scroll position save will break
+        self.event_display.set_dimensions(
+            (
+                self.event_display.get_relative_rect()[2],
+                self.event_display.get_relative_rect()[3],
+            )
+        )
+
+        # set saved scroll position
+        if game.switches["saved_scroll_positions"].get(self.current_display):
+            self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
+                game.switches["saved_scroll_positions"][self.current_display]
+            )
+
+    def update_list_buttons(self):
+        """
+        re-enable all event tab buttons, then disable the currently selected tab
+        """
+        for ele in self.event_buttons:
+            self.event_buttons[ele].enable()
+
+        self.event_buttons[self.current_display].disable()
+
+    def on_use(self):
+        super().on_use()
+        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
+        pass
+
+    def timeskip_done(self):
+        """Various sorting and other tasks that must be done with the timeskip is over."""
+
+        game.switches["saved_scroll_positions"] = {}
+
+        if get_living_clan_cat_count(Cat) == 0:
+            GameOver("events screen")
+
+        self.update_display_events_lists()
+
+        self.current_display = "all events"
+        self.event_buttons["all events"].disable()
+
+        for tab in self.event_buttons:
+            if tab != "all events":
+                self.event_buttons[tab].enable()
+
+        if not self.all_events:
+            self.all_events.append(
+                Single_Event("Nothing interesting happened this moon.")
+            )
+
+        self.display_events = self.all_events
+
+        if self.ceremony_events:
+            self.alert["ceremonies"].show()
+        else:
+            self.alert["ceremonies"].hide()
+
+        if self.birth_death_events:
+            self.alert["births & deaths"].show()
+        else:
+            self.alert["births & deaths"].hide()
+
+        if self.relation_events:
+            self.alert["relationships"].show()
+        else:
+            self.alert["relationships"].hide()
+
+        if self.health_events:
+            self.alert["health"].show()
+        else:
+            self.alert["health"].hide()
+
+        if self.other_clans_events:
+            self.alert["other clans"].show()
+        else:
+            self.alert["other clans"].hide()
+
+        if self.misc_events:
+            self.alert["miscellaneous"].show()
+        else:
+            self.alert["miscellaneous"].hide()
+
+        self.update_events_display()

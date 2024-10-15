@@ -1,16 +1,26 @@
 {
   "general": {
     "body": [
-      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care and doesn't, than any grief for m_c.",
-      "r_c refuses to sit vigil for m_c. {PRONOUN/m_c/subject/CAP} failed r_c as a parent, guardian, and mentor. Why should r_c honor {PRONOUN/m_c/object} now?",
-      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
-      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil."
+        "r_c seethes as c_n praises m_c's legacy. Even dead, m_c casts a shadow that r_c cannot escape.",
+        "Anger courses through r_c's body as c_n concludes m_c's vigil by agreeing that m_c's legacy will live on in {PRONOUN/m_c/poss} offspring. r_c wonders if {PRONOUN/r_c/subject}'ll ever be seen as {PRONOUN/r_c/poss} own cat.",
+        "r_c hopes that now that m_c is finally dead, cats will stop comparing {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} parent.",
+        "r_c is stricken at the sight of m_c's body. {PRONOUN/r_c/subject/CAP} always thought {PRONOUN/r_c/subject}'d have m_c to compare {PRONOUN/r_c/self} to. Now that m_c is dead, all that jealousy seems foolish.",
+        "r_c ignores m_c's vigil. Finally, {PRONOUN/r_c/subject} might have a chance of living {PRONOUN/r_c/poss} own life without constant comparisons to m_c.",
+        "Finally, m_c is dead. Tomorrow will be the first day of r_c's life not as m_c's kit, but as <i>r_c</i>.",
+        "r_c stares at m_c's body, no flicker of feeling in {PRONOUN/r_c/poss} gaze. At least now r_c knows what sort of death {PRONOUN/r_c/subject}'ll have to live up to.",
+        "r_c is shocked by the rush of sorrow that m_c's death brings. For all {PRONOUN/r_c/poss} jealousy of m_c, {PRONOUN/m_c/subject} {VERB/m_c/were/was} {PRONOUN/r_c/poss} parent in the end.",
+        "r_c puts on a show of grief for {PRONOUN/r_c/poss} Clanmates sake, but inwardly, r_c is just glad that {PRONOUN/r_c/poss} life will no longer be measured against m_c's.",
+        "m_c is dead? Took {PRONOUN/m_c/object} long enough, r_c snorts. As soon as the ceremonies are over, r_c is looking forward to the rest of {PRONOUN/r_c/poss} m_c-free life."
     ],
     "no_body": [
-      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care and doesn't, than any grief for m_c.",
-      "r_c refuses to sit vigil for m_c. {PRONOUN/m_c/subject/CAP} failed r_c as a parent, guardian, and mentor. Why should r_c honor {PRONOUN/m_c/object} now?",
-      "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
-      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil."
+      "r_c seethes as c_n praises m_c's legacy. Even dead, m_c casts a shadow that r_c cannot escape.",
+      "Anger courses through r_c's body as c_n concludes m_c's vigil by agreeing that m_c's legacy will live on in {PRONOUN/m_c/poss} offspring. r_c wonders if {PRONOUN/r_c/subject}'ll ever be seen as {PRONOUN/r_c/poss} own cat.",
+      "r_c hopes that now that m_c is finally dead, cats will stop comparing {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} parent.",
+      "Now that m_c is dead, r_c realizes {PRONOUN/r_c/poss} jealousy of {PRONOUN/r_c/poss} parent was foolish.",
+        "Finally, m_c is dead. Tomorrow will be the first day of r_c's life, not as m_c's kit, but as <i>r_c</i>.",
+        "r_c is shocked by the rush of sorrow that m_c's death brings. For all {PRONOUN/r_c/poss} jealousy of m_c, {PRONOUN/m_c/subject} {VERB/m_c/were/was} {PRONOUN/r_c/poss} parent in the end.",
+        "r_c puts on a show of grief for {PRONOUN/r_c/poss} Clanmates sake, but inwardly, r_c is just glad that {PRONOUN/r_c/poss} life will no longer be measured against m_c's.",
+        "m_c is dead? Took {PRONOUN/m_c/object} long enough, r_c snorts. As soon as the ceremonies are over, r_c is looking forward to the rest of {PRONOUN/r_c/poss} m_c-free life."
     ]
   },
   "adventurous": {

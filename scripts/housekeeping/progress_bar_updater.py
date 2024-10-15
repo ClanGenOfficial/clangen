@@ -5,7 +5,7 @@ from pygame_gui.core import IContainerLikeInterface, UIElement, ObjectID
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIStatusBar
 
-from scripts.game_structure.image_button import UITextBoxTweaked
+from scripts.game_structure.ui_elements import UITextBoxTweaked
 
 
 class UIUpdateProgressBar(UIStatusBar):

@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "bch_bord_flashflood_tide2",
+        "patrol_id": "bch_bord_nl_flashflood_tide2",
         "biome": ["beach"],
         "season": ["newleaf"],
         "types": ["border"],
