@@ -3001,5 +3001,522 @@
             "outsider_rep": -1
         }
     ]
+},
+{
+	"patrol_id": "gen_bord_asyoulikeit1",
+	"biome": [ "any" ],
+	"season": [ "any" ],
+	"types": [],
+	"tags": [],
+	"patrol_art": "cat_running_two",
+	"min_cats": 2,
+	"max_cats": 2,
+	"min_max_status": {
+		"normal adult": [1, 6],
+		"all apprentices": [-1, -1]
+	},
+	"weight": 20,
+	"chance_of_success": 50,
+	"intro_text": "p_l and r_c head to the outer border, near some Twoleg nests. {PRONOUN/p_l/subject/CAP} {VERB/p_l/signal/signals} silently for r_c to stop when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} some commotion. Together, they peep from the bushes and see two kittypets locked in argument.",
+	"decline_text": "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol.",
+	"success_outcomes": [
+		{
+	    "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look.",
+	    "exp": 20,
+        "weight": 20,
+	    "outsider_rep": 2,
+	"relationships": [
+        {
+			"cats_to": [ "n_c:1" ],
+			"cats_from": [ "n_c:0" ],
+			"mutual": false,
+			"values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+			"amount": 55
+        },	
+        {
+			"cats_to": [ "n_c:0" ],
+			"cats_from": [ "n_c:1" ],
+			"mutual": false,
+			"values": [ "dislike" ],
+			"amount": 25
+		},	
+        {
+            "cats_to": [ "n_c:0" ],
+            "cats_from": [ "n_c:1" ],
+            "mutual": false,
+            "values": [ "platonic", "trust" ],
+            "amount": 15
+        },	
+        {
+            "cats_to": [ "p_l" ],
+            "cats_from": [ "n_c:1" ],
+            "mutual": false,
+            "values": [ "platonic", "trust", "comfort" ],
+            "amount": 15
+        }
+],
+"new_cat": [
+    ["meeting", "kittypet", "age:young adult"],
+    ["meeting", "kittypet", "age:young adult"]
+],
+"art": "gen_train_talkingWL"
+},
+{
+        "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border.",
+        "exp": 20,
+        "weight": 20,
+        "outsider_rep": -1,
+        "relationships": [
+    {
+        "cats_to": [ "n_c:1" ],
+        "cats_from": [ "n_c:0" ],
+        "mutual": false,
+        "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+        "amount": 55
+    },	
+    {
+        "cats_to": [ "n_c:0" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": false,
+        "values": [ "dislike" ],
+        "amount": 25
+    },	
+    {
+        "cats_to": [ "n_c:0" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": false,
+        "values": [ "platonic", "trust" ],
+        "amount": 15
+    }
+],
+"new_cat": [
+["meeting", "kittypet", "age:young adult"],
+["meeting", "kittypet", "age:young adult"]
+],
+"art": "gen_gen_newcat_hostile"
+		},
+		{
+            "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
+            "exp": 20,
+            "weight": 50,
+            "outsider_rep": 4,
+            "stat_trait": [ "loving", "compassionate", "thoughtful", "wise"],
+        "relationships": [
+            {
+                "cats_to": [ "n_c:1" ],
+                "cats_from": [ "n_c:0" ],
+                "mutual": false,
+                "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+                "amount": 55
+            },	
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "dislike" ],
+                "amount": 5
+            },	
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "romantic", "platonic", "trust" ],
+                "amount": 15
+            },	
+            {
+                "cats_to": [ "s_c" ],
+                "cats_from": [ "n_c:1", "n_c:0" ],
+                "mutual": false,
+                "values": [ "platonic", "trust", "comfort" ],
+                "amount": 20
+            }
+    ],
+    "new_cat": [
+        ["meeting", "kittypet", "age:young adult"],
+        ["meeting", "kittypet", "age:young adult"]
+    ],
+    "art": "gen_speaking_cat_w3"
+    },
+    {
+        "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
+        "exp": 20,
+        "weight": 50,
+        "outsider_rep": 4,
+        "stat_skill": [ "MEDIATOR,1"],
+    "relationships": [
+        {
+            "cats_to": [ "n_c:1" ],
+            "cats_from": [ "n_c:0" ],
+            "mutual": false,
+            "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+            "amount": 55
+        },	
+        {
+            "cats_to": [ "n_c:0" ],
+            "cats_from": [ "n_c:1" ],
+            "mutual": false,
+            "values": [ "dislike" ],
+            "amount": 5
+        },	
+        {
+            "cats_to": [ "n_c:0" ],
+            "cats_from": [ "n_c:1" ],
+            "mutual": false,
+            "values": [ "romantic", "platonic", "trust" ],
+            "amount": 15
+        },	
+        {
+            "cats_to": [ "s_c" ],
+            "cats_from": [ "n_c:1", "n_c:0" ],
+            "mutual": false,
+            "values": [ "platonic", "trust", "comfort" ],
+            "amount": 20
+        }
+],
+"new_cat": [
+    ["meeting", "kittypet", "age:young adult"],
+    ["meeting", "kittypet", "age:young adult"]
+],
+"art": "gen_speaking_cat_w2"
+}
+	],
+	"fail_outcomes": [
+		{
+            "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes.",
+            "exp": 20,
+            "weight": 20,
+            "outsider_rep": -1,
+        "relationships": [
+            {
+                "cats_to": [ "n_c:1" ],
+                "cats_from": [ "n_c:0" ],
+                "mutual": false,
+                "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+                "amount": 55
+            },	
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "dislike" ],
+                "amount": 25
+            },	
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "platonic", "trust" ],
+                "amount": 15
+            },	
+            {
+                "cats_to": [ "p_l" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "romantic", "platonic", "trust", "comfort" ],
+                "amount": 15
+            },	
+            {
+                "cats_to": [ "p_l" ],
+                "cats_from": [ "n_c:0" ],
+                "mutual": false,
+                "values": [ "jealousy", "dislike" ],
+                "amount": 15
+            }
+    ],
+    "new_cat": [
+        ["meeting", "kittypet", "age:young adult"],
+        ["meeting", "kittypet", "age:young adult"]
+    ],
+    "art": "gen_happy_cat3"
+    },
+{
+    "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue.",
+    "exp": 20,
+    "weight": 20,
+    "outsider_rep": -1,
+"relationships": [
+    {
+        "cats_to": [ "n_c:1" ],
+        "cats_from": [ "n_c:0" ],
+        "mutual": false,
+        "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+        "amount": 55
+    },
+    {
+        "cats_to": [ "n_c:0" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": false,
+        "values": [ "platonic", "trust" ],
+        "amount": 45
+    },	
+    {
+        "cats_to": [ "p_l" ],
+        "cats_from": [ "n_c:1", "n_c:0" ],
+        "mutual": false,
+        "values": [ "dislike" ],
+        "amount": 15
+    }
+],
+"new_cat": [
+["meeting", "kittypet", "age:young adult"],
+["meeting", "kittypet", "age:young adult"]
+],
+"art": "gen_bord_twocat_hostile_loner_loner"
+	},
+    {
+        "text": "s_c has no interest in what the kittypets' problems with each other are. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stroll/strolls} forward and coldly tells them both to get lost before s_c sends them off with their tails between their legs.",
+        "exp": 20,
+        "weight": 50,
+        "outsider_rep": -3,
+        "stat_trait": ["bloodthirsty", "bold", "cold", "arrogant" ],
+    "relationships": [
+        {
+            "cats_to": [ "p_l" ],
+            "cats_from": [ "n_c:1", "n_c:0" ],
+            "mutual": false,
+            "values": [ "dislike" ],
+            "amount": 35
+        },
+        {
+            "cats_to": [ "n_c:0" ],
+            "cats_from": [ "n_c:1" ],
+            "mutual": true,
+            "values": [ "platonic", "dislike" ],
+            "amount": 25
+        }
+    ],
+    "new_cat": [
+    ["meeting", "kittypet", "age:young adult"],
+    ["meeting", "kittypet", "age:young adult"]
+    ],
+    "art": "gen_bord_twocat_hostile_warrior_warrior"
+        }
+	],
+
+	"antag_success_outcomes": [
+        {
+            "text": "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram - and to go tell all their kittypet friends to keep their personal lives on the other side of the border.",
+            "exp": 20,
+            "weight": 20,
+            "outsider_rep": -3,
+        "relationships": [
+            {
+                "cats_to": [ "p_l" ],
+                "cats_from": [ "n_c:1", "n_c:0" ],
+                "mutual": false,
+                "values": [ "dislike" ],
+                "amount": 35
+            },
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": true,
+                "values": [ "platonic", "dislike" ],
+                "amount": 25
+            }
+        ],
+        "new_cat": [
+        ["meeting", "kittypet", "age:young adult"],
+        ["meeting", "kittypet", "age:young adult"]
+        ],
+        "art": "gen_bord_twocat_hostile_warrior_warrior"
+            },
+{
+    "text": "p_l interrupts the kittypets' argument to tell them both to scram. One kittypet takes a swipe at p_l, but p_l easily knocks the soft-pawed kittypet to the ground and tells {PRONOUN/n_c:0/object} to leave c_n territory before {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} more of a fool out of {PRONOUN/n_c:0/self}.",
+    "exp": 20,
+    "weight": 20,
+    "outsider_rep": -3,
+"relationships": [
+    {
+        "cats_to": [ "p_l" ],
+        "cats_from": [ "n_c:0" ],
+        "mutual": false,
+        "values": [ "dislike" ],
+        "amount": 45
+    },
+    {
+        "cats_to": [ "n_c:0" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": true,
+        "values": [ "platonic", "dislike" ],
+        "amount": 25
+    }
+],
+"new_cat": [
+["meeting", "kittypet", "age:young adult"],
+["meeting", "kittypet", "age:young adult"]
+],
+"art": "gen_battle_warrior_loner"
+		},
+        {
+            "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest.",
+            "exp": 20,
+            "weight": 20,
+            "outsider_rep": -3,
+        "relationships": [
+            {
+                "cats_to": [ "p_l" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "dislike" ],
+                "amount": 45
+            },{
+                "cats_to": [ "n_c:1" ],
+                "cats_from": [ "n_c:0" ],
+                "mutual": false,
+                "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+                "amount": 55
+            },	
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "dislike" ],
+                "amount": 25
+            },	
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": false,
+                "values": [ "platonic", "trust" ],
+                "amount": 15
+            }
+        ],
+        "new_cat": [
+        ["meeting", "kittypet", "age:young adult"],
+        ["meeting", "kittypet", "age:young adult"]
+        ],
+        "art": "gen_gen_newcat_hostile"
+                },		
+        {
+                    "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this.",
+                    "exp": 20,
+                    "weight": 20,
+                    "outsider_rep": -3,
+                "relationships": [
+                    {
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "n_c:1", "n_c:0" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": 35
+                    },{
+                        "cats_to": [ "n_c:1" ],
+                        "cats_from": [ "n_c:0" ],
+                        "mutual": false,
+                        "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+                        "amount": 55
+                    },	
+                    {
+                        "cats_to": [ "n_c:0" ],
+                        "cats_from": [ "n_c:1" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": 25
+                    },	
+                    {
+                        "cats_to": [ "n_c:0" ],
+                        "cats_from": [ "n_c:1" ],
+                        "mutual": false,
+                        "values": [ "platonic", "trust" ],
+                        "amount": 15
+                    }
+                ],
+                "new_cat": [
+                ["meeting", "kittypet", "age:young adult"],
+                ["meeting", "kittypet", "age:young adult"]
+                ],
+                "art": "gen_bord_twocat_hostile_loner_loner"
+        }
+	],
+
+	"antag_fail_outcomes": [
+		{
+            "text": "p_l doesn't care about kittypet drama. {PRONOUN/p_l/subject/CAP} {VERB/p_l/interrupt/interrupts} and {VERB/p_l/tell/tells} the kittypets to get lost. One kittypet doesn't appreciate p_l's tone and takes a swipe at {PRONOUN/p_l/object}. r_c jumps into help a humiliated p_l drive off the kittypets.",
+            "exp": 20,
+            "weight": 20,
+            "outsider_rep": -3,
+            "injuries": [
+                {
+                    "cats": [ "p_l" ],
+                    "injury": [ "cat_bite" ],
+                    "scars": [ "CATBITETWO" ]
+                }
+            ],
+            "history_text": {
+                "reg_death": "m_c died from injuries inflicted by a kittypet.",
+                "scar": "m_c was scarred from a fight with a kittypet."
+            },
+        "relationships": [
+            {
+                "cats_to": [ "p_l" ],
+                "cats_from": [ "n_c:1", "n_c:0" ],
+                "mutual": false,
+                "values": [ "dislike" ],
+                "amount": 35
+            },
+            {
+                "cats_to": [ "n_c:0" ],
+                "cats_from": [ "n_c:1" ],
+                "mutual": true,
+                "values": [ "platonic", "dislike" ],
+                "amount": 25
+            }
+        ],
+        "new_cat": [
+        ["meeting", "kittypet", "age:young adult"],
+        ["meeting", "kittypet", "age:young adult"]
+        ],
+        "art": "gen_battle_warrior_loner"
+},        
+{
+    "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other, n_c:1, who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously.",
+    "exp": 20,
+    "weight": 20,
+    "outsider_rep": -1,
+"relationships": [
+    {
+        "cats_to": [ "p_l" ],
+        "cats_from": [ "n_c:0" ],
+        "mutual": false,
+        "values": [ "dislike", "jealousy" ],
+        "amount": 35
+    },
+    {
+        "cats_to": [ "p_l" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": false,
+        "values": [ "romantic", "platonic", "comfort", "trust", "admiration" ],
+        "amount": 15
+    },
+    {
+        "cats_to": [ "n_c:1" ],
+        "cats_from": [ "n_c:0" ],
+        "mutual": false,
+        "values": [ "romantic", "platonic", "trust", "comfort", "admiration" ],
+        "amount": 55
+    },	
+    {
+        "cats_to": [ "n_c:0" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": false,
+        "values": [ "dislike" ],
+        "amount": 25
+    },	
+    {
+        "cats_to": [ "n_c:0" ],
+        "cats_from": [ "n_c:1" ],
+        "mutual": false,
+        "values": [ "platonic", "trust" ],
+        "amount": 15
+    }
+],
+"new_cat": [
+["meeting", "kittypet", "age:young adult"],
+["meeting", "kittypet", "age:young adult"]
+],
+"art": "gen_happy_cat3"
+}
+	]
 }
 ]
