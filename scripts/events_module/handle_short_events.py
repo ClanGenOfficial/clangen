@@ -210,7 +210,7 @@ class HandleShortEvents:
             )
             unpack_rel_block(Cat, self.chosen_event.relationships, self)
 
-        # used in some murder events, this kinda sucks tho it would be nice to change how this sort of thing is handled
+        # used in some murder events, this kind of sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
             kit = Cat.fetch_cat(random.choice(get_alive_status_cats(Cat, ["kitten"])))
             self.involved_cats.append(kit.ID)
