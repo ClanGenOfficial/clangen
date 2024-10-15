@@ -151,7 +151,7 @@
 			"m_c left a gift in r_c's nest for {PRONOUN/r_c/object} to find.",
 			"m_c picked out the best piece of prey to share with r_c.",
 			"m_c sees r_c stumble while hunting and thinks it's cute.",
-			"m_c overhears r_c tell another cat {PRONOUN/r_c/subject} kinda {VERB/r_c/like/likes} m_c."
+			"m_c overhears r_c tell another cat {PRONOUN/r_c/subject} kind of {VERB/r_c/like/likes} m_c."
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",

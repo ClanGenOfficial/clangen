@@ -2,6 +2,8 @@ from typing import TYPE_CHECKING
 
 import ujson
 
+from scripts.housekeeping.datadir import get_save_dir
+
 if TYPE_CHECKING:
     from scripts.screens.Screens import Screens
 
@@ -209,7 +211,7 @@ def determine_screen_scale(x, y, ingame_switch):
 
         screen_config = game.settings
     else:
-        with open("saves/settings.json", "r") as read_config:
+        with open(get_save_dir() + "/settings.json", "r") as read_config:
             screen_config = ujson.load(read_config)
 
     if "fullscreen scaling" in screen_config and screen_config["fullscreen scaling"]:

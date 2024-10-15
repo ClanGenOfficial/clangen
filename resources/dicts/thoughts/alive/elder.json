@@ -1,19 +1,5 @@
 [
     {
-        "id": "elder_gen_to_dead_gen",
-        "thoughts": [
-            "Is telling stories about r_c",
-            "Wishes that r_c were still alive",
-            "Found a trinket that used to belong to r_c",
-            "Is forgetting who r_c was",
-            "Is thinking fondly of r_c",
-            "Sometimes feels like r_c is still right there next to {PRONOUN/m_c/object}"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
         "id": "gen_elder",
         "thoughts": [
             "Is snoring in {PRONOUN/m_c/poss} sleep",
@@ -98,6 +84,20 @@
         ],
         "random_status_constraint": [
             "leader"
+        ]
+    },
+    {
+        "id": "elder_gen_to_dead_gen",
+        "thoughts": [
+            "Is telling stories about r_c",
+            "Wishes that r_c were still alive",
+            "Found a trinket that used to belong to r_c",
+            "Is forgetting who r_c was",
+            "Is thinking fondly of r_c",
+            "Sometimes feels like r_c is still right there next to {PRONOUN/m_c/object}"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
