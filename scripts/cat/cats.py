@@ -31,7 +31,8 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, screen
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     get_alive_status_cats,
@@ -255,13 +256,15 @@ class Cat:
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'senior'
+                self.age = "senior"
             elif moons == 0:
-                self.age = 'newborn'
+                self.age = "newborn"
             else:
                 # In range
                 for key_age in self.age_moons.keys():
-                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
+                    if moons in range(
+                        self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
+                    ):
                         self.age = key_age
         else:
             if self.status.is_newborn():
@@ -273,8 +276,10 @@ class Cat:
             elif self.status.is_app_any():
                 self.age = 'adolescent'
             else:
-                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
-            self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+                self.age = choice(["young adult", "adult", "adult", "senior adult"])
+            self.moons = randint(
+                self.age_moons[self.age][0], self.age_moons[self.age][1]
+            )
 
         # backstory
         if self.backstory is None:
@@ -402,28 +407,31 @@ class Cat:
         self.genderalign = self.gender
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-        # newborns can't be trans, sorry babies
-        if self.age in ['kitten', 'newborn']:
-            trans_chance = 0
-            nb_chance = 0
+
+        # GENDER IDENTITY
+        if self.age in ["kitten", "newborn"]:
+            # newborns can't be trans, sorry babies
+            pass
+        elif nb_chance == 1:
+            self.genderalign = "nonbinary"
+        elif trans_chance == 1:
+            if self.gender == "female":
+                self.genderalign = "trans male"
+            else:
+                self.genderalign = "trans female"
+
+        # PRONOUNS
         if theythemdefault is True:
             self.pronouns = [self.default_pronouns[0].copy()]
-            if nb_chance == 1:
-                self.genderalign = "nonbinary"
-            elif trans_chance == 1:
-                if self.gender == "female":
-                    self.genderalign = "trans male"
-                else:
-                    self.genderalign = "trans female"
         else:
-            # Assigning pronouns based on gender and chance
-            if self.gender in ["female", "trans female"]:
+            # Assigning pronouns based on gender
+            if self.genderalign in ["female", "trans female"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.gender in ["male", "trans male"]:
+            elif self.genderalign in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]
             else:
-                self.pronouns = [self.default_pronouns[0].copy()]
                 self.genderalign = "nonbinary"
+                self.pronouns = [self.default_pronouns[0].copy()]
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(
@@ -436,9 +444,9 @@ class Cat:
         self.personality = Personality(kit_trait=self.is_baby())
 
         # experience and current patrol status
-        if self.age in ['young', 'newborn']:
+        if self.age in ["young", "newborn"]:
             self.experience = 0
-        elif self.age in ['adolescent']:
+        elif self.age in ["adolescent"]:
             m = self.moons
             self.experience = 0
             while m > Cat.age_moons["adolescent"][0]:
@@ -449,15 +457,18 @@ class Cat:
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age in ['young adult', 'adult']:
+        elif self.age in ["young adult", "adult"]:
             self.experience = randint(Cat.experience_levels_range["prepared"][0],
-                                      Cat.experience_levels_range["proficient"][1])
-        elif self.age in ['senior adult']:
+                                      Cat.experience_levels_range["proficient"][1],
+            )
+        elif self.age in ["senior adult"]:
             self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                      Cat.experience_levels_range["expert"][1])
-        elif self.age in ['senior']:
+                                      Cat.experience_levels_range["expert"][1],
+            )
+        elif self.age in ["senior"]:
             self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                      Cat.experience_levels_range["master"][1])
+                                      Cat.experience_levels_range["master"][1],
+            )
         else:
             self.experience = 0
 
@@ -530,7 +541,9 @@ class Cat:
         if self.status.is_leader():
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
-                death_thought = Thoughts.leader_death_thought(self, lives_left, darkforest)
+                death_thought = Thoughts.leader_death_thought(
+                    self, lives_left, darkforest
+                )
                 final_thought = event_text_adjust(self, death_thought, main_cat=self)
                 self.thought = final_thought
                 return ""
@@ -563,7 +576,6 @@ class Cat:
         # if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
         if (
                 game.clan
-                and game.clan.game_mode != "classic"
                 and not self.outside
                 and not self.exiled
         ):
@@ -673,7 +685,6 @@ class Cat:
             # If major_chance is not 0, there is a chance for major grief
             grief_type = None
             if major_chance and not int(random() * major_chance):
-
                 grief_type = "major"
 
                 possible_strings = []
@@ -692,35 +703,60 @@ class Cat:
                 text += " " + choice(MINOR_MAJOR_REACTION["major"])
                 text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
-                # grief the cat
-                if game.clan.game_mode != "classic":
-                    cat.get_ill(
-                        "grief stricken", event_triggered=True, severity="major"
-                    )
+                cat.get_ill("grief stricken", event_triggered=True, severity="major")
 
             # If major grief fails, but there are still very_high or high values,
             # it can fail to minor grief. If they have a family relation, bypass the roll.
             elif (very_high_values or high_values) and (
                     family_relation != "general" or not int(random() * 5)
             ):
-
                 grief_type = "minor"
 
                 # These minor grief message will be applied as thoughts.
                 minor_grief_messages = (
-                    "Told a fond story at r_c's vigil",
-                    "Bargains with StarClan, begging them to send r_c back",
-                    "Sat all night at r_c's vigil",
-                    "Will never forget r_c",
-                    "Prays that r_c is safe in StarClan",
-                    "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
-                    "Is mourning r_c",
-                )
+                            "Told a fond story at r_c's vigil",
+                            "Bargains with StarClan, begging them to send r_c back",
+                            "Sat all night at r_c's vigil",
+                            "Will never forget r_c",
+                            "Prays that r_c is safe in StarClan",
+                            "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
+                            "Is mourning r_c",
+                            "Can't stop coming to tears each time r_c is mentioned",
+                            "Stayed the longest at r_c's vigil",
+                            "Left r_c's vigil early due to grief",
+                            "Lashes out at any cat who checks on {PRONOUN/m_c/object} after r_c's death",
+                            "Took a long walk on {PRONOUN/m_c/poss} own to mourn r_c in private",
+                            "Is busying {PRONOUN/m_c/self} with too much work to forget about r_c's death",
+                            "Does {PRONOUN/m_c/poss} best to console {PRONOUN/m_c/poss} clanmates about r_c's death",
+                            "Takes a part of r_c's nest to put with {PRONOUN/m_c/poss} own, clinging to the fading scent",
+                            "Sleeps in r_c's nest tonight",
+                            "Defensively states that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need any comfort about r_c's death",
+                            "Wonders why StarClan had to take r_c so soon",
+                            "Still needs r_c even though they're gone",
+                            "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
+                            "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
+                            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing"
+                        )
 
                 if body:
                     minor_grief_messages += (
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
                         "Slips out of camp to visit r_c's grave",
+                        "Clung so desperately to r_c's body that {PRONOUN/m_c/subject} had to be dragged away",
+                        "Hides a scrap of r_c's fur under {PRONOUN/m_c/poss} nest to cling to",
+                        "Can't stand the sight of r_c's body in camp",
+                        "Hissed at anyone who got too close to r_c's body, refusing to let go",
+                        "Spent a long time grooming r_c's fur for their vigil",
+                        "Arranged the flowers for r_c's vigil",
+                        "Picked the best spot in the burial grounds for r_c",
+                        "Keeps thinking that r_c is only sleeping",
+                        "Is in denial of r_c's death, despite the ongoing vigil",
+                        "Insists that r_c isn't gone",
+                        "Begs r_c not to leave them all",
+                        "Sleeps next to r_c for the entire vigil one last time",
+                        "Ran out of camp the moment {PRONOUN/m_c/subject} saw r_c's body",
+                        "Sang a song in memory of r_c at the vigil",
+                        "Stares at r_c's vigil longingly, but doesn't feel the right to join in"
                     )
 
                 text = choice(minor_grief_messages)
@@ -752,7 +788,9 @@ class Cat:
                         )
                     )
 
-                text = event_text_adjust(Cat, choice(possible_strings), main_cat=self, random_cat=cat)
+                text = event_text_adjust(
+                    Cat, choice(possible_strings), main_cat=self, random_cat=cat
+                )
                 if cat.ID not in Cat.grief_strings:
                     Cat.grief_strings[cat.ID] = []
 
@@ -1543,7 +1581,9 @@ class Cat:
             self, other_cat, game_mode, biome, season, camp
         )
 
-        chosen_thought = event_text_adjust(Cat, chosen_thought, main_cat=self, random_cat=other_cat, clan=game.clan)
+        chosen_thought = event_text_adjust(
+            Cat, chosen_thought, main_cat=self, random_cat=other_cat, clan=game.clan
+        )
 
         # insert thought
         self.thought = str(chosen_thought)
@@ -1568,8 +1608,6 @@ class Cat:
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 
-        if game.game_mode == "classic":
-            return
         # handle contact with ill cat if
         if self.is_ill():
             relevant_relationship.cat_to.contact_with_ill_cat(self)
@@ -1791,9 +1829,6 @@ class Cat:
         :param lethal: Allow lethality, default `True` (bool)
         :param severity: Override severity, default `'default'` (str, accepted values `'minor'`, `'major'`, `'severe'`)
         """
-        if game.clan.game_mode == "classic":
-            return
-
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1867,9 +1902,6 @@ class Cat:
         :param severity: _description_, defaults to 'default'
         :type severity: str, optional
         """
-        if game.clan and game.clan.game_mode == "classic":
-            return
-
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -1936,8 +1968,11 @@ class Cat:
 
         if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
-            if "blood loss" in new_injury.also_got and len(
-                    get_alive_status_cats(Cat, [enums.Status.MEDCAT], working=True)) != 0:
+            if (
+                "blood loss" in new_injury.also_got
+                and len(
+                    get_alive_status_cats(Cat, [enums.Status.MEDCAT], working=True)) != 0
+            ):
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -2003,12 +2038,20 @@ class Cat:
             "RED FEATHERS",
             "BLUE FEATHERS",
             "JAY FEATHERS",
+            "GULL FEATHERS",
+            "SPARROW FEATHERS",
+            "CLOVER",
+            "DAISY",
         ]:
             self.pelt.accessory = None
         if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
             "RED FEATHERS",
             "BLUE FEATHERS",
             "JAY FEATHERS",
+            "GULL FEATHERS",
+            "SPARROW FEATHERS",
+            "CLOVER",
+            "DAISY",
         ]:
             self.pelt.accessory = None
 
@@ -2445,13 +2488,13 @@ class Cat:
                     self.create_one_relationship(other_cat)
                     self.relationships[other_cat.ID].mate = True
                 self_relationship = self.relationships[other_cat.ID]
-                self_relationship.romantic_love -= 40
-                self_relationship.comfortable -= 20
-                self_relationship.trust -= 10
+                self_relationship.romantic_love -= randint(20, 60)
+                self_relationship.comfortable -= randint(10, 30)
+                self_relationship.trust -= randint(5, 15)
                 self_relationship.mate = False
                 if fight:
-                    self_relationship.romantic_love -= 20
-                    self_relationship.platonic_like -= 30
+                    self_relationship.romantic_love -= randint(10, 30)
+                    self_relationship.platonic_like -= randint(15, 45)
 
             if not other_cat.dead:
                 if self.ID not in other_cat.relationships:
@@ -2836,7 +2879,6 @@ class Cat:
 
         # Effects on traits
         for trait in chosen_pos + neg_traits:
-
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
@@ -3379,6 +3421,36 @@ class Cat:
                 "favourite": self.favourite,
             }
 
+    def determine_next_and_previous_cats(self, status: List[str] = None):
+        """Determines where the next and previous buttons point to, relative to this cat.
+
+        :param status: Allows you to constrain the list by status
+        """
+        sorted_specific_list = [
+            check_cat
+            for check_cat in Cat.all_cats_list
+            if check_cat.dead == self.dead
+            and check_cat.outside == self.outside
+            and check_cat.df == self.df
+            and not check_cat.faded
+        ]
+
+        if status is not None:
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat.status in status
+            ]
+
+        idx = sorted_specific_list.index(self)
+
+        return (
+            sorted_specific_list[idx + 1].ID
+            if len(sorted_specific_list) > idx + 1
+            else 0,
+            sorted_specific_list[idx - 1].ID if idx - 1 >= 0 else 0,
+        )
+
 
 # ---------------------------------------------------------------------------- #
 #                               END OF CAT CLASS                               #
@@ -3682,13 +3754,22 @@ def create_cat(status, moons=None, biome=None):
         new_cat.moons = moons
     else:
         if new_cat.moons >= 160:
-            new_cat.moons = choice(range(120, 155))
+            new_cat.moons = randint(120, 155)
         elif new_cat.moons == 0:
-            new_cat.moons = choice([1, 2, 3, 4, 5])
+            new_cat.moons = randint(1, 5)
 
-    not_allowed_scars = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
-                         'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
-
+    not_allowed_scars = ["NOPAW",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOEAR",
+        "BOTHBLIND",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BRIGHTHEART",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "MANLEG",
+]
     for scar in new_cat.pelt.scars:
         if scar in not_allowed_scars:
             new_cat.pelt.scars.remove(scar)

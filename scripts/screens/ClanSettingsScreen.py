@@ -3,22 +3,26 @@ import logging
 import os
 import platform
 import subprocess
+from typing import Dict
 
 import pygame
 import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-
-from scripts.game_structure.ui_elements import UIImageButton
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
     get_text_box_theme,
-    scale,
+    ui_scale,
+    ui_scale_dimensions,
+    ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
+from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
 
@@ -31,12 +35,6 @@ class ClanSettingsScreen(Screens):
     Screen handles all Clan-specific settings
     """
 
-    text_size = {
-        "0": "small",
-        "1": "medium",
-        "2": "big",
-    }  # How text sizes will show up on the screen
-    bool = {True: "Yes", False: "No", None: "None"}
     sub_menu = "general"
 
     # This is set to the current settings when the screen is opened.
@@ -53,6 +51,15 @@ class ClanSettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
+    def __init__(self, name):
+        super().__init__(name)
+        self.opens = {
+            "general": self.open_general_settings,
+            "relation": self.open_relation_settings,
+            "role": self.open_roles_settings,
+            "stats": self.open_clan_stats,
+        }
+
     def handle_event(self, event):
         """
         TODO: DOCS
@@ -65,7 +72,9 @@ class ClanSettingsScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.open_data_directory_button:
+            if event.ui_element == self.fullscreen_toggle:
+                toggle_fullscreen(source_screen=self)
+            elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":
                     subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == "Windows":
@@ -90,6 +99,7 @@ class ClanSettingsScreen(Screens):
                 return
             self.handle_checkbox_events(event)
             self.menu_button_pressed(event)
+            self.mute_button_pressed(event)
 
     def handle_checkbox_events(self, event):
         """
@@ -102,13 +112,6 @@ class ClanSettingsScreen(Screens):
                     self.settings_changed = True
                     # self.update_save_button()
 
-                    opens = {
-                        "general": self.open_general_settings,
-                        "relation": self.open_relation_settings,
-                        "role": self.open_roles_settings,
-                        "stats": self.open_clan_stats,
-                    }
-
                     scroll_pos = None
                     if (
                         "container_general" in self.checkboxes_text
@@ -118,8 +121,8 @@ class ClanSettingsScreen(Screens):
                             "container_general"
                         ].vert_scroll_bar.start_percentage
 
-                    if self.sub_menu in opens:
-                        opens[self.sub_menu]()
+                    if self.sub_menu in self.opens:
+                        self.opens[self.sub_menu]()
 
                     if scroll_pos is not None:
                         self.checkboxes_text[
@@ -132,44 +135,76 @@ class ClanSettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        super().screen_switches()
         self.settings_changed = False
         self.show_menu_buttons()
-        self.set_disabled_menu_buttons(["stats"])
+        self.show_mute_buttons()
+        self.set_disabled_menu_buttons(["clan_settings"])
 
-        self.general_settings_button = UIImageButton(
-            scale(pygame.Rect((200, 280), (300, 60))),
-            "",
-            object_id="#general_settings_button",
+        self.general_settings_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((100, 140), (150, 30))),
+            "general settings",
+            get_button_dict(ButtonStyles.MENU_LEFT, (150, 30)),
+            object_id="@buttonstyles_menu_left",
             manager=MANAGER,
         )
-        self.relation_settings_button = UIImageButton(
-            scale(pygame.Rect((500, 280), (300, 60))),
-            "",
-            object_id="#relation_settings_button",
+        self.relation_settings_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 140), (150, 30))),
+            "relation settings",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
+            anchors={"left_target": self.general_settings_button},
         )
-        self.role_settings_button = UIImageButton(
-            scale(pygame.Rect((800, 280), (300, 60))),
-            "",
-            object_id="#role_settings_button",
+        self.role_settings_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 140), (150, 30))),
+            "role settings",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
+            object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
+            anchors={"left_target": self.relation_settings_button},
         )
-        self.clan_stats_button = UIImageButton(
-            scale(pygame.Rect((1100, 280), (300, 60))),
-            "",
-            object_id="#clan_stats_button",
+        self.clan_stats_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 140), (150, 30))),
+            "clan stats",
+            get_button_dict(ButtonStyles.MENU_RIGHT, (150, 30)),
+            object_id="@buttonstyles_menu_right",
             manager=MANAGER,
+            anchors={"left_target": self.role_settings_button},
         )
 
-        self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((50, 1290), (356, 60))),
-            "",
-            object_id="#open_data_directory_button",
+        self.open_data_directory_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 645), (178, 30))),
+            "Open Data Directory",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
             tool_tip_text="Opens the data directory. "
             "This is where save files "
             "and logs are stored.",
         )
+
+        screentext = "windowed" if game.settings["fullscreen"] else "fullscreen"
+        rect = ui_scale(pygame.Rect((0, 0), (158, 36)))
+        rect.bottomright = ui_scale_offset((-5, -25))
+        self.fullscreen_toggle = UIImageButton(
+            rect,
+            "",
+            object_id="#toggle_fullscreen_button",
+            manager=MANAGER,
+            starting_height=2,
+            tool_tip_text=(
+                f"This will put the game into {screentext} mode."
+                "<br><br>"
+                "<b>Important:</b> This also saves all changed settings!"
+            ),
+            anchors={
+                "bottom": "bottom",
+                "right": "right",
+                "right_target": Screens.menu_buttons["mute_button"],
+            },
+        )
+        del screentext, rect
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
@@ -177,6 +212,22 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = "general"
         self.open_general_settings()
         self.refresh_checkboxes()
+
+    def display_change_save(self) -> Dict:
+        variable_dict = super().display_change_save()
+        variable_dict["sub_menu"] = self.sub_menu
+        return variable_dict
+
+    def display_change_load(self, variable_dict: Dict):
+        super().display_change_load(variable_dict)
+
+        for key, value in variable_dict.items():
+            try:
+                setattr(self, key, value)
+            except KeyError:
+                continue
+
+        self.opens[self.sub_menu]()
 
     def exit_screen(self):
         """
@@ -194,6 +245,8 @@ class ClanSettingsScreen(Screens):
         self.clan_stats_button.kill()
         del self.clan_stats_button
         self.hide_menu_buttons()
+        self.fullscreen_toggle.kill()
+        del self.fullscreen_toggle
 
     def open_general_settings(self):
         """Opens and draws general_settings"""
@@ -202,23 +255,23 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "general"
 
-        self.checkboxes_text["container_general"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((0, 490), (1400, 600))),
-                allow_scroll_x=False,
-                manager=MANAGER,
-            )
+        self.checkboxes_text[
+            "container_general"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            ui_scale(pygame.Rect((0, 245), (700, 300))),
+            allow_scroll_x=False,
+            manager=MANAGER,
         )
 
         n = 0
         for code, desc in settings_dict["general"].items():
-            x_val = 450
+            x_val = 225
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
 
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((x_val, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -227,12 +280,12 @@ class ClanSettingsScreen(Screens):
             n += 1
 
         self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
-            (1360 / 1600 * screen_x, (n * 78 + 80) / 1400 * screen_y)
+            ui_scale_dimensions((780, n * 39 + 40))
         )
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "Change the general Clan-specific settings",
-            scale(pygame.Rect((200, 370), (1200, 100))),
+            ui_scale(pygame.Rect((100, 185), (600, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -250,24 +303,24 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "role"
 
-        self.checkboxes_text["container_role"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((0, 490), (1400, 600))),
-                allow_scroll_x=False,
-                manager=MANAGER,
-            )
+        self.checkboxes_text[
+            "container_role"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            ui_scale(pygame.Rect((0, 245), (700, 300))),
+            allow_scroll_x=False,
+            manager=MANAGER,
         )
 
         n = 0
         for code, desc in settings_dict["role"].items():
             # Handle nested
-            x_val = 450
+            x_val = 225
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
 
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((x_val, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_role"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -277,7 +330,7 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "Change Clan-specific settings regarding cat roles",
-            scale(pygame.Rect((200, 370), (1200, 100))),
+            ui_scale(pygame.Rect((100, 185), (600, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -291,23 +344,23 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "relation"
 
-        self.checkboxes_text["container_relation"] = (
-            pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((0, 490), (1400, 600))),
-                allow_scroll_x=False,
-                manager=MANAGER,
-            )
+        self.checkboxes_text[
+            "container_relation"
+        ] = pygame_gui.elements.UIScrollingContainer(
+            ui_scale(pygame.Rect((0, 245), (700, 300))),
+            allow_scroll_x=False,
+            manager=MANAGER,
         )
 
         n = 0
         for code, desc in settings_dict["relation"].items():
-            x_val = 450
+            x_val = 225
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
 
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
                 desc[0],
-                scale(pygame.Rect((x_val, n * 78), (1000, 78))),
+                ui_scale(pygame.Rect((x_val, n * 39), (500, 39))),
                 container=self.checkboxes_text["container_relation"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER,
@@ -317,7 +370,7 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "Change Clan-specific settings regarding cat relationships",
-            scale(pygame.Rect((200, 370), (1200, 100))),
+            ui_scale(pygame.Rect((100, 185), (600, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
         )
@@ -399,7 +452,7 @@ class ClanSettingsScreen(Screens):
 
         self.checkboxes_text["stat_box"] = pygame_gui.elements.UITextBox(
             text,
-            scale(pygame.Rect((300, 400, 1060, 690))),
+            ui_scale(pygame.Rect((150, 200), (530, 345))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
         )
 
@@ -415,22 +468,22 @@ class ClanSettingsScreen(Screens):
         n = 0
         for code, desc in settings_dict[self.sub_menu].items():
             if game.clan.clan_settings[code]:
-                box_type = "#checked_checkbox"
+                box_type = "@checked_checkbox"
             else:
-                box_type = "#unchecked_checkbox"
+                box_type = "@unchecked_checkbox"
 
             # Handle nested
             disabled = False
-            x_val = 340
+            x_val = 170
             if len(desc) == 4 and isinstance(desc[3], list):
-                x_val += 50
+                x_val += 25
                 disabled = (
                     game.clan.clan_settings.get(desc[3][0], not desc[3][1])
                     != desc[3][1]
                 )
 
             self.checkboxes[code] = UIImageButton(
-                scale(pygame.Rect((x_val, n * 78), (68, 68))),
+                ui_scale(pygame.Rect((x_val, n * 39), (34, 34))),
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container_" + self.sub_menu],
@@ -466,3 +519,4 @@ class ClanSettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        super().on_use()

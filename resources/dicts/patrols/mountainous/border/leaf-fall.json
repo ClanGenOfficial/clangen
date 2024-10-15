@@ -58,7 +58,7 @@
     ],
 "fail_outcomes": [
         {
-            "text": "r_c creeps closer, wanting to watch the show. Unfortunately, {PRONOUN/r_c/subject} accidentally steps on a dead leaf, and the crunch alerts the two bucks. The patrol watches in disappointment as the two bucks bleat and run from sight. All that bravado, and they were scared off by a leaf?",
+            "text": "r_c creeps closer, wanting to watch the show. Unfortunately, {PRONOUN/r_c/subject} accidentally {VERB/r_c/step/steps} on a dead leaf, and the crunch alerts the two bucks. The patrol watches in disappointment as the two bucks bleat and run from sight. All that bravado, and they were scared off by a leaf?",
             "exp": 0,
             "weight": 20
         },

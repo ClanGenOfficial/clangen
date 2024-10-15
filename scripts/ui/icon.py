@@ -1,0 +1,34 @@
+from strenum import StrEnum
+
+
+class Icon(StrEnum):
+    SPEAKER = "\U0001F50A"
+    MUTE = "\U0001F507"
+
+    DICE = "\u2684"
+
+    CAT_HEAD = "\U0001F431"
+
+    STARCLAN = "\u26EA"
+    DARKFOREST = "\U0001F4A7"
+    CLAN_PLAYER = "\u2302"
+    CLAN_OTHER = "\U0001F3F0"
+    CLAN_UNKNOWN = "\U0001F3DA"
+
+    PAW = "\U0001F43E"
+    MOUSE = "\U0001F401"
+    SCRATCHES = "\U0001F485"
+    HERB = "\U0001F33F"
+
+    NEWLEAF = "\U0001FAB4"
+    GREENLEAF = "\u2600"
+    LEAFFALL = "\U0001F342"
+    LEAFBARE = "\u2744"
+
+    ARROW_DOUBLELEFT = "\u23EA"
+    ARROW_DOUBLERIGHT = "\u23E9"
+    ARROW_LEFT = "\u2190"
+    ARROW_RIGHT = "\u2192"
+
+    MAGNIFY = "\U0001F50D"
+    NOTEPAD = "\U0001F5C9"

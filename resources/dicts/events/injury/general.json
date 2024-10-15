@@ -645,7 +645,7 @@
             "clan:warrior"
         ],
         "weight": 20,
-        "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}'re found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
+        "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -748,7 +748,7 @@
                 ],
                 "scar": "m_c was scarred by r_c.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after r_c hurt {PRONOUN/m_c/object} for trying to stop an argument.",
-                "lead_death": "died from {PRONOUN/m_c/poss} wounds r_c gave them"
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds r_c gave {PRONOUN/m_c/object}"
             }
         ],
         "relationships": [
@@ -845,7 +845,7 @@
                 ],
                 "scar": "m_c was scarred while trying to save r_c from a rogue.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from a rogue.",
-                "lead_death": "died from {PRONOUN/m_c/poss} wounds given to them by a rogue"
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds given to {PRONOUN/m_c/object} by a rogue"
             }
         ],
         "relationships": [
@@ -1326,7 +1326,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit by frostbite.",
-                "reg_death": "m_c died after they got frostbite sneaking out of camp."
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite sneaking out of camp."
             }
         ]
     },
@@ -1682,7 +1682,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut"
+                    "bruises"
                 ]
             }
         ]
@@ -5419,7 +5419,7 @@
     {
         "event_id": "gen_injury_crackedpads_anymultiage1",
         "location": [
-            "any"
+            "beach"
         ],
         "season": [
             "any"
@@ -5790,6 +5790,7 @@
     },
     {
         "event_id": "gen_injury_crackedpads_any1",
+        "location": ["any"],
         "season": [
             "leaf-bare"
         ],
@@ -5994,7 +5995,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "m_c fought a rogue and, while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine den afterwards.",
+        "event_text": "m_c fought a rogue and, while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine cat den afterwards.",
         "m_c": {
             "age": [
                 "senior",
@@ -6633,12 +6634,13 @@
     },
     {
         "event_id": "gen_injury_beesting_multiany3",
+        "location": ["any"],
         "season": [
             "greenleaf",
             "newleaf"
         ],
         "weight": 20,
-        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} bend down and take a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} come home with a swollen face...",
+        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
         "m_c": {
             "age": [
                 "any"
@@ -6767,7 +6769,7 @@
                     "m_c"
                 ],
                 "scar": "m_c's ear was torn in a scuffle when {PRONOUN/m_c/subject} chased off an enemy warrior.",
-                "reg_death": "m_c died after an enemy warrior injured them.",
+                "reg_death": "m_c died after an enemy warrior injured {PRONOUN/m_c/object}.",
                 "lead_death": "after being injured by an enemy warrior"
             }
         ],
@@ -6872,7 +6874,7 @@
             "newleaf"
         ],
         "weight": 20,
-        "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by {PRONOUN/m_c/poss} buzzing, m_c attacks them, and got swarmed by bees.",
+        "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by their buzzing, m_c attacked them, and got swarmed by bees.",
         "m_c": {
             "age": [
                 "any"
@@ -7007,9 +7009,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred after falling into an o_c_n trap.",
-                "reg_death": "m_c died after falling into an o_c_n trap.",
-                "lead_death": "died after falling into an o_c_n trap"
+                "scar": "m_c was scarred after falling into a o_c_n trap.",
+                "reg_death": "m_c died after falling into a o_c_n trap.",
+                "lead_death": "died after falling into a o_c_n trap"
             }
         ],
         "other_clan": {
@@ -7031,7 +7033,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "During a skirmish, m_c bounds into battle against an o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
+        "event_text": "During a skirmish, m_c bounds into battle against a o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps {PRONOUN/m_c/object} back to camp.",
         "m_c": {
             "status": [
                 "apprentice",

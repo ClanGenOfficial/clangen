@@ -2,7 +2,9 @@
 	{
 		"id": "leader_life_starclan_thoughts",
 		"thoughts": [
-			"Was startled to find {PRONOUN/m_c/self} in Silverpelt for a moment... did {PRONOUN/m_c/subject} just lose a life?"
+			"Was startled to find {PRONOUN/m_c/self} in Silverpelt for a moment... did {PRONOUN/m_c/subject} just lose a life?",
+			"Has been somber ever since {PRONOUN/m_c/subject} lost a life...",
+			"Has been thinking of the cat who gave {PRONOUN/m_c/object} the life {PRONOUN/m_c/subject} just lost..." 
 			]
 	}
 ]

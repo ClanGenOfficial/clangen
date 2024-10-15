@@ -1,12 +1,13 @@
 import os
+import traceback
 from ast import literal_eval
 from shutil import move as shutil_move
 
 import pygame
-import pygame_gui
 import ujson
 
 from scripts.event_class import Single_Event
+from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
 pygame.init()
@@ -131,13 +132,14 @@ class Game:
         "patrol_chosen": "general",
         "favorite_sub_tab": None,
         "root_cat": None,
-        "window_open": False,
         "skip_conditions": [],
         "show_history_moons": False,
         "fps": 30,
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
+        "audio_mute": False,
         "saved_scroll_positions": {},
+        "moon&season_open": False,
     }
     all_screens = {}
     cur_events = {}
@@ -145,7 +147,7 @@ class Game:
 
     # SETTINGS
     settings = {}
-    settings["mns open"] = False
+    settings["moon&season_open"] = False
     setting_lists = {}
 
     debug_settings = {
@@ -208,6 +210,7 @@ class Game:
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
+
 
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
@@ -342,13 +345,20 @@ class Game:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")
 
-    def save_settings(self):
+    def save_settings(self, currentscreen=None):
         """Save user settings for later use"""
         if os.path.exists(get_save_dir() + "/settings.txt"):
             os.remove(get_save_dir() + "/settings.txt")
 
         self.settings_changed = False
-        game.safe_save(get_save_dir() + "/settings.json", self.settings)
+        try:
+            game.safe_save(get_save_dir() + "/settings.json", self.settings)
+        except RuntimeError:
+            from scripts.game_structure.windows import SaveError
+
+            SaveError(traceback.format_exc())
+            if currentscreen is not None:
+                currentscreen.change_screen("start screen")
 
     def load_settings(self):
         """Load settings that user has saved from previous use"""
@@ -420,11 +430,7 @@ class Game:
             cat_data = inter_cat.get_save_dict()
             clan_cats.append(cat_data)
 
-            # Don't save conditions for classic condition. This
-            # should allow closing and reloading to clear conditions on
-            # classic, just in case a condition is accidently applied.
-            if game.game_mode != "classic":
-                inter_cat.save_condition()
+            inter_cat.save_condition()
 
             if inter_cat.history:
                 inter_cat.save_history(directory + "/history")
@@ -444,7 +450,6 @@ class Game:
 
         copy_of_info = ""
         for cat in game.cat_to_fade:
-
             inter_cat = self.cat_class.all_cats[cat]
 
             # Add ID to list of faded cats.
@@ -489,7 +494,6 @@ class Game:
             with open(
                 get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt", "a"
             ) as write_file:
-
                 if not os.path.exists(
                     get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt"
                 ):
@@ -625,73 +629,8 @@ game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-if game.settings["fullscreen"]:
-    screen_x, screen_y = 1600, 1400
-    screen = pygame.display.set_mode(
-        (screen_x, screen_y), pygame.FULLSCREEN | pygame.SCALED
-    )
-else:
-    screen_x, screen_y = 800, 700
-    screen = pygame.display.set_mode((screen_x, screen_y))
-
-
-def load_manager(res: tuple):
-    # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(
-        res, "resources/theme/defaults.json", enable_live_theme_updates=False
-    )
-    manager.add_font_paths(
-        font_name="notosans",
-        regular_path="resources/fonts/NotoSans-Medium.ttf",
-        bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
-        italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
-        bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
-    )
-
-    if res[0] > 800:
-        manager.get_theme().load_theme("resources/theme/defaults.json")
-        manager.get_theme().load_theme("resources/theme/buttons.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_dark.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-        manager.get_theme().load_theme("resources/theme/horizontal_scroll_bar.json")
-        manager.get_theme().load_theme("resources/theme/window_base.json")
-        manager.get_theme().load_theme("resources/theme/tool_tips.json")
-
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 30, "style": "italic"},
-                {"name": "notosans", "point_size": 26, "style": "italic"},
-                {"name": "notosans", "point_size": 30, "style": "bold"},
-                {"name": "notosans", "point_size": 26, "style": "bold"},
-                {"name": "notosans", "point_size": 22, "style": "bold"},
-            ]
-        )
-
-    else:
-        manager.get_theme().load_theme("resources/theme/defaults_small.json")
-        manager.get_theme().load_theme("resources/theme/buttons_small.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar_small.json")
-        manager.get_theme().load_theme("resources/theme/horizontal_scroll_bar_small.json")
-        manager.get_theme().load_theme("resources/theme/window_base_small.json")
-        manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
-
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 11, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "bold"},
-                {"name": "notosans", "point_size": 15, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "italic"},
-                {"name": "notosans", "point_size": 15, "style": "italic"},
-            ]
-        )
-
-    manager.get_theme().load_theme("resources/theme/windows.json")
-    manager.get_theme().load_theme("resources/theme/image_buttons.json")
-
-    return manager
-
-
-MANAGER = load_manager((screen_x, screen_y))
+toggle_fullscreen(
+    fullscreen=game.settings["fullscreen"],
+    show_confirm_dialog=False,
+    ingame_switch=False,
+)

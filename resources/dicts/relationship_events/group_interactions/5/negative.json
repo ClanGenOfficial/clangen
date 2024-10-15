@@ -1,1 +1,34 @@
-[]
+[
+    {
+	"id": "morning_stretches",
+	"biome": ["any"],
+	"season": ["any"],
+	"intensity": "medium",
+	"cat_amount": 5,
+	"interactions": [
+		"m_c, wanting to help keep {PRONOUN/m_c/poss} Clanmates in shape and ready for anything, woke r_c1, r_c2, r_c3, and r_c4 up early for morning stretches."
+	],
+	"status_constraint": {
+		"m_c": ["deputy", "leader", "warrior", "elder", "medicine cat", "mediator"]
+	},
+	"specific_reaction": {
+		"r_c1_to_m_c": {
+			"romantic": "increase",
+			"dislike": "decrease",
+			"comfortable": "increase",
+			"trust": "increase"
+		},
+        	"r_c2_to_m_c": {
+			"dislike": "increase"
+		},
+        "r_c3_to_m_c": {
+			"comfortable": "increase",
+			"trust": "increase"
+		},
+        "r_c4_to_m_c": {
+			"comfortable": "increase",
+			"trust": "increase"
+		}   
+	}
+}
+]

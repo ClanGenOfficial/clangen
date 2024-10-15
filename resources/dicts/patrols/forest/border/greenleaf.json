@@ -1,27 +1,21 @@
 [
     {
         "patrol_id": "fst_bord_shortswim1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
+        "biome": ["forest"],
+        "season": ["greenleaf"],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c looks at the small stream {PRONOUN/r_c/subject} {VERB/r_c/have/has} to cross to continue on to mark the border and {VERB/r_c/debate/debates} if {PRONOUN/r_c/subject} should stop for a quick swim to cool off.",
+        "intro_text": "r_c looks at the small stream {PRONOUN/r_c/subject} {VERB/r_c/have/has} to cross to continue marking the border, and {VERB/r_c/debate/debates} stopping for a quick swim to cool off.",
         "decline_text": "r_c decides to continue with the patrol instead.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} to swim for a few moments and {VERB/r_c/feel/feels} rejuvenated, cooled, and ready to carry on marking the border.",
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} to swim for a few moments, and soon {VERB/r_c/feel/feels} rejuvenated, cooled, and ready to carry on marking the border.",
                 "exp": 5,
                 "weight": 20
             },
@@ -41,7 +35,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely, and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/get/gets} distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely, and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
                 "exp": 0,
                 "weight": 20
             }

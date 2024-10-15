@@ -17,9 +17,9 @@
         "m_c no longer has greencough."
     ],
     "kittencough": [
-        "m_c is free of kittencough, once again able to play and frolick.",
+        "m_c is free of kittencough, once again able to play and frolic.",
         "m_c has recovered from kittencough.",
-        "m_c no longer has whitecough."
+        "m_c no longer has kittencough."
     ],
     "an infected wound": [
         "The infection in m_c's wound has abated.",
@@ -78,14 +78,14 @@
         "m_c picks {PRONOUN/m_c/self} up out of {PRONOUN/m_c/poss} nest and begins the day anew, a fresh conviction in {PRONOUN/m_c/poss} heart."
     ],
     "carrionplace disease": [
-      "The stench coming from m_c is finally fading. {PRONOUN/m_c/subject}{VERB/m_c/'ve/s} recovered from carrionplace disease.",
+        "The stench coming from m_c is finally fading. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} recovered from carrionplace disease.",
         "Against all odds, m_c has recovered from carrionplace disease."
     ],
-	"malnourished": [
+    "malnourished": [
         "m_c finally feels energized again. It seems the newly consistent meals have done {PRONOUN/m_c/object} good."
     ],
-	"starving": [
-        "m_c's paws no longer feel quite so heavy. {PRONOUN/m_c/subject/CAP} can tell that {PRONOUN/m_c/subject} still need to eat more, but at least the situation isn't as dire.",
+    "starving": [
+        "m_c's paws no longer feel quite so heavy. {PRONOUN/m_c/subject/CAP} can tell that {PRONOUN/m_c/subject} still {VERB/m_c/need/needs} to eat more, but at least the situation isn't as dire.",
         "m_c still feels the rumbles of hunger in {PRONOUN/m_c/poss} belly, but it's nothing compared to the emptiness {PRONOUN/m_c/subject}'d so recently experienced."
     ]
 }

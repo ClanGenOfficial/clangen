@@ -1,26 +1,287 @@
-from math import floor, ceil
-from typing import Union, Tuple, Optional
 import html
+from functools import lru_cache
+from math import ceil
+from typing import Union, Tuple, Optional, Dict, Iterable, Callable, List
 
 import pygame
 import pygame_gui
-from pygame_gui.core import UIContainer
+from pygame_gui.core import UIContainer, IContainerLikeInterface, UIElement, ObjectID
 from pygame_gui.core.gui_type_hints import RectLike, Coordinate
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
-from pygame_gui.elements import UIAutoResizingContainer, UIHorizontalScrollBar
+from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
+from scripts.utility import (
+    ui_scale,
+    shorten_text_to_fit,
+    ui_scale_dimensions,
+    ui_scale_value,
+)
 
-from scripts.utility import scale, shorten_text_to_fit
+
+class UISurfaceImageButton(pygame_gui.elements.UIButton):
+    """Subclass of the button class that allows you to pass in surfaces for the images directly."""
+
+    def __init__(
+        self,
+        relative_rect: Union[RectLike, Coordinate],
+        text: str,
+        image_dict: Dict[str, pygame.Surface],
+        manager: Optional[IUIManagerInterface] = None,
+        container: Optional[IContainerLikeInterface] = None,
+        tool_tip_text: Union[str, None] = None,
+        starting_height: int = 1,
+        parent_element: UIElement = None,
+        object_id: Union[ObjectID, str, None] = None,
+        anchors: Dict[str, Union[str, UIElement]] = None,
+        allow_double_clicks: bool = False,
+        generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
+        visible: int = 1,
+        sound_id: str = None,
+        *,
+        command: Union[Callable, Dict[int, Callable]] = None,
+        tool_tip_object_id: Optional[ObjectID] = None,
+        text_kwargs: Optional[Dict[str, str]] = None,
+        tool_tip_text_kwargs: Optional[Dict[str, str]] = None,
+        max_dynamic_width: Optional[int] = None,
+        text_is_multiline: bool = False,
+        text_layer_object_id: Optional[Union[ObjectID, str]] = None,
+        tab_movement: Dict[str, bool] = None,
+    ):
+        self.sound_id = sound_id
+        if object_id is None:
+            ids = None
+        else:
+            ids = (
+                [object_id.object_id, object_id.class_id]
+                if isinstance(object_id, ObjectID)
+                else [object_id]
+            )
+
+        tab_data = None
+        if ids is not None:
+            self._is_tab = any(["tab" in temp for temp in ids if temp is not None])
+        else:
+            self._is_tab = False
+        if self._is_tab:
+            for obj_id in ids:
+                obj_id = obj_id.replace("@buttonstyles_", "")
+                try:
+                    from scripts.ui.generate_button import buttonstyles
+
+                    tab_data = buttonstyles[obj_id]["tab_movement"]
+                    break
+                except KeyError:
+                    continue
+            if tab_data is None:
+                raise Exception(
+                    "Button is tab, but unable to find matching data! Ensure object_id is correct & that buttonstyles has tab_movement key"
+                )
+            self.tab_movement = {
+                "hovered": tab_data["hovered"]
+                if not hasattr(tab_movement, "hovered")
+                else tab_movement["hovered"],
+                "disabled": tab_data["disabled"]
+                if not hasattr(tab_movement, "disabled")
+                else tab_movement["disabled"],
+            }
+
+        self._normal_image = image_dict["normal"]
+        self._hovered_image = (
+            image_dict["hovered"] if "hovered" in image_dict else self.normal_image
+        )
+        self._selected_image = (
+            image_dict["selected"] if "selected" in image_dict else self.normal_image
+        )
+        self._disabled_image = (
+            image_dict["disabled"] if "disabled" in image_dict else self.normal_image
+        )
+        super().__init__(
+            relative_rect,
+            text,
+            manager,
+            container,
+            tool_tip_text,
+            starting_height,
+            parent_element,
+            object_id,
+            anchors,
+            allow_double_clicks,
+            generate_click_events_from,
+            visible,
+            command=command,
+            tool_tip_object_id=tool_tip_object_id,
+            text_kwargs=text_kwargs,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
+            max_dynamic_width=max_dynamic_width,
+        )
+
+        if text_is_multiline or self._is_tab:
+            temp_text = self.text
+            if self._is_tab and tab_data["amount"][0] != 0:
+                text_rect = pygame.Rect(
+                    relative_rect[0] + ui_scale_value(tab_data["amount"][0]),
+                    relative_rect[1] + ui_scale_value(tab_data["amount"][1]),
+                    relative_rect[2] - ui_scale_value(tab_data["amount"][0]),
+                    -1,
+                )
+            else:
+                text_rect = pygame.Rect(
+                    relative_rect[0], relative_rect[1], relative_rect[2], -1
+                )
+            self.set_text("")
+            self.text_layer = UITextBoxTweaked(
+                temp_text,
+                text_rect,
+                object_id=text_layer_object_id
+                if text_layer_object_id is not None
+                else object_id,
+                container=container,
+                starting_height=self.starting_height,
+                anchors=self.anchors,
+                line_spacing=0.95,
+            )
+            self.text_layer.disable()
+
+            if self._is_tab:
+                if self.text_layer.rect.height >= relative_rect[3]:
+                    offset = (self.text_layer.rect.height - relative_rect[3]) // 2
+                    current = self.text_layer.get_relative_rect()
+                    self.text_layer.set_relative_position(
+                        (current[0], current[1] - offset)
+                    )
+
+                text_layer_pos = self.text_layer.get_abs_rect()
+                self.text_layer_offset = (text_layer_pos[0], text_layer_pos[1])
+                self.text_layer_active_offset: Tuple[int, int] = (
+                    text_layer_pos[0] - ui_scale_value(tab_data["amount"][0]),
+                    text_layer_pos[1] - ui_scale_value(tab_data["amount"][1]),
+                )
+
+    def set_text(self, text: str, *, text_kwargs: Optional[Dict[str, str]] = None):
+        if hasattr(self, "text_layer"):
+            self.text_layer.set_text(text, text_kwargs=text_kwargs)
+        else:
+            super().set_text(text, text_kwargs=text_kwargs)
+
+    def return_sound_id(self):
+        return self.sound_id
+
+    def kill(self):
+        if hasattr(self, "text_layer"):
+            self.text_layer.kill()
+        super().kill()
+
+    def hide(self):
+        if hasattr(self, "text_layer"):
+            self.text_layer.hide()
+        super().hide()
+
+    def show(self):
+        if hasattr(self, "text_layer"):
+            self.text_layer.show()
+        super().show()
+
+    def on_hovered(self):
+        if self._is_tab and self.tab_movement["hovered"]:
+            self.text_layer.set_position(self.text_layer_active_offset)
+        super().on_hovered()
+
+    def on_unhovered(self):
+        if self._is_tab and self.tab_movement["hovered"]:
+            self.text_layer.set_position(self.text_layer_offset)
+        super().on_unhovered()
+
+    def disable(self):
+        if self.hovered:
+            self.on_unhovered()
+        super().disable()
+        if self._is_tab and self.tab_movement["disabled"]:
+            self.text_layer.set_position(self.text_layer_active_offset)
+
+    def enable(self):
+        super().enable()
+        if self._is_tab and self.tab_movement["disabled"]:
+            self.drawable_shape.active_state.transition = None
+            self.text_layer.set_position(self.text_layer_offset)
+
+    def _set_active(self):
+        self.drawable_shape.set_active_state("hovered")
+
+    @property
+    def normal_image(self):
+        return self._normal_image
+
+    @normal_image.setter
+    def normal_image(self, val):
+        pass
+
+    @property
+    def hovered_image(self):
+        return self._hovered_image
+
+    @hovered_image.setter
+    def hovered_image(self, val):
+        pass
+
+    @property
+    def selected_image(self):
+        return self._selected_image
+
+    @selected_image.setter
+    def selected_image(self, val):
+        pass
+
+    @property
+    def disabled_image(self):
+        return self._disabled_image
+
+    @disabled_image.setter
+    def disabled_image(self, val):
+        pass
 
 
 class UIImageButton(pygame_gui.elements.UIButton):
     """Subclass of pygame_gui's button class. This allows for auto-scaling of the
     button image."""
+
+    def __init__(
+        self,
+        relative_rect: Union[RectLike, Coordinate],
+        text: str,
+        manager: Optional[IUIManagerInterface] = None,
+        container: Optional[IContainerLikeInterface] = None,
+        tool_tip_text: Union[str, None] = None,
+        starting_height: int = 1,
+        parent_element: UIElement = None,
+        object_id: Union[ObjectID, str, None] = None,
+        anchors: Dict[str, Union[str, UIElement]] = None,
+        allow_double_clicks: bool = False,
+        generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
+        visible: int = 1,
+        sound_id=None,
+    ):
+        self.sound_id = sound_id
+        super().__init__(
+            relative_rect=relative_rect,
+            text=text,
+            manager=manager,
+            container=container,
+            tool_tip_text=tool_tip_text,
+            starting_height=starting_height,
+            parent_element=parent_element,
+            object_id=ObjectID(class_id="@image_button", object_id=object_id)
+            if not isinstance(object_id, ObjectID)
+            else object_id,
+            anchors=anchors,
+            allow_double_clicks=allow_double_clicks,
+            generate_click_events_from=generate_click_events_from,
+            visible=visible,
+        )
 
     def _set_any_images_from_theme(self):
         changed = False
@@ -89,19 +350,24 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
         return changed
 
+    def return_sound_id(self):
+        return self.sound_id
+
 
 class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
     def __init__(
-            self,
-            relative_rect: pygame.Rect,
-            manager=None,
-            starting_height: int = 1,
-            container=None,
-            object_id=None,
-            visible: int = 1,
-            allow_scroll_x: bool = False,
-            allow_scroll_y: bool = False):
-
+        self,
+        relative_rect: pygame.Rect,
+        manager=None,
+        starting_height: int = 1,
+        container=None,
+        object_id=None,
+        visible: int = 1,
+        allow_scroll_x: bool = False,
+        allow_scroll_y: bool = False,
+        should_grow_automatically=True,
+        anchors=None,
+    ):
         super().__init__(
             relative_rect=relative_rect,
             manager=manager,
@@ -111,32 +377,42 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
             visible=visible,
             allow_scroll_x=allow_scroll_x,
             allow_scroll_y=allow_scroll_y,
-            should_grow_automatically=True)
+            should_grow_automatically=should_grow_automatically,
+            anchors=anchors,
+        )
 
         if self.allow_scroll_y:
             self.vert_scroll_bar.kill()
             self.vert_scroll_bar = None
 
             self.scroll_bar_width = self._get_scroll_bar_width()
-            scroll_bar_rect = pygame.Rect(-self.scroll_bar_width,
-                                          0,
-                                          self.scroll_bar_width,
-                                          self.relative_rect.height)
+            scroll_bar_rect = pygame.Rect(
+                -self.scroll_bar_width,
+                0,
+                self.scroll_bar_width,
+                self.relative_rect.height,
+            )
 
-            self.vert_scroll_bar = UIImageVerticalScrollBar(relative_rect=scroll_bar_rect,
-                                                            visible_percentage=1.0,
-                                                            manager=self.ui_manager,
-                                                            container=self._root_container,
-                                                            parent_element=self,
-                                                            starting_height=10,
-                                                            anchors={'left': 'right',
-                                                                     'right': 'right',
-                                                                     'top': 'top',
-                                                                     'bottom': 'bottom'},
-                                                            visible=False)
+            self.vert_scroll_bar = UIImageVerticalScrollBar(
+                relative_rect=scroll_bar_rect,
+                visible_percentage=1.0,
+                manager=self.ui_manager,
+                container=self._root_container,
+                parent_element=self,
+                starting_height=10,
+                anchors={
+                    "left": "right",
+                    "right": "right",
+                    "top": "top",
+                    "bottom": "bottom",
+                },
+                visible=False,
+            )
             self.join_focus_sets(self.vert_scroll_bar)
 
-            self.vert_scroll_bar.set_container_this_will_scroll(self.scrollable_container)
+            self.vert_scroll_bar.set_container_this_will_scroll(
+                self.scrollable_container
+            )
 
         if self.allow_scroll_x:
             self.horiz_scroll_bar.kill()
@@ -144,21 +420,32 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
 
             self.scroll_bar_height = self._get_scroll_bar_height()
 
-            scroll_bar_rect = scale(
-                pygame.Rect(0, -self.scroll_bar_height, self.relative_rect.width, self.scroll_bar_height))
-            self.horiz_scroll_bar = UIModifiedHorizScrollBar(relative_rect=scroll_bar_rect,
-                                                             visible_percentage=1.0,
-                                                             manager=self.ui_manager,
-                                                             container=self._root_container,
-                                                             parent_element=self,
-                                                             anchors={'left': 'left',
-                                                                      'right': 'right',
-                                                                      'top': 'bottom',
-                                                                      'bottom': 'bottom'},
-                                                             visible=False)
+            scroll_bar_rect = pygame.Rect(
+                0,
+                -self.scroll_bar_height,
+                self.relative_rect.width,
+                self.scroll_bar_height,
+            )
+            self.horiz_scroll_bar = UIModifiedHorizScrollBar(
+                relative_rect=scroll_bar_rect,
+                visible_percentage=1.0,
+                manager=self.ui_manager,
+                container=self._root_container,
+                parent_element=self,
+                anchors={
+                    "left": "left",
+                    "right": "right",
+                    "top": "bottom",
+                    "bottom": "bottom",
+                },
+                visible=True,
+                starting_height=10,
+            )
             self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
             self.horiz_scroll_bar.set_relative_position((0, 0))
-            self.horiz_scroll_bar.set_container_this_will_scroll(self.scrollable_container)
+            self.horiz_scroll_bar.set_container_this_will_scroll(
+                self.scrollable_container
+            )
 
     def set_view_container_dimensions(self, dimensions: Coordinate):
         self._view_container.set_dimensions(dimensions)
@@ -192,21 +479,29 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         need_horiz_scroll_bar = False
         need_vert_scroll_bar = False
 
-        if (self.scrolling_height > self._view_container.rect.height or
-            self.scrollable_container.relative_rect.top != 0) and self.allow_scroll_y:
+        if (
+            self.scrolling_height > self._view_container.rect.height
+            or self.scrollable_container.relative_rect.top != 0
+        ) and self.allow_scroll_y:
             need_vert_scroll_bar = True
             self.scroll_bar_width = self._get_scroll_bar_width()
 
         # Need to subtract scrollbar width here to account for when the above statement evaluated to True
-        if (self.scrolling_width > self._view_container.rect.width - self.scroll_bar_width or
-            self.scrollable_container.relative_rect.left != 0) and self.allow_scroll_x:
+        if (
+            self.scrolling_width
+            > self._view_container.rect.width - self.scroll_bar_width
+            or self.scrollable_container.relative_rect.left != 0
+        ) and self.allow_scroll_x:
             need_horiz_scroll_bar = True
             self.scroll_bar_height = self._get_scroll_bar_height()
 
             # Needs a second check for the case where we didn't need the vertical scroll bar until after creating a
             # horizontal scroll bar
-            if (self.scrolling_height > self._view_container.rect.height - self.scroll_bar_height or
-                self.scrollable_container.relative_rect.top != 0) and self.allow_scroll_y:
+            if (
+                self.scrolling_height
+                > self._view_container.rect.height - self.scroll_bar_height
+                or self.scrollable_container.relative_rect.top != 0
+            ) and self.allow_scroll_y:
                 need_vert_scroll_bar = True
                 self.scroll_bar_width = self._get_scroll_bar_width()
 
@@ -214,31 +509,25 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
         return need_horiz_scroll_bar, need_vert_scroll_bar
 
     def _get_scroll_bar_width(self) -> int:
-        if game.settings["fullscreen"]:
-            return 44
-        else:
-            return 24
+        return ui_scale_value(20) + 4
 
     def _get_scroll_bar_height(self) -> int:
-        if game.settings["fullscreen"]:
-            return 38
-        else:
-            return 20
+        return ui_scale_value(18) + 2
 
 
 class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
     def __init__(
-            self,
-            relative_rect: pygame.Rect,
-            visible_percentage: float,
-            manager=None,
-            container=None,
-            parent_element=None,
-            object_id=None,
-            anchors=None,
-            visible: int = 1,
-            starting_height: int = 1):
-
+        self,
+        relative_rect: pygame.Rect,
+        visible_percentage: float,
+        manager=None,
+        container=None,
+        parent_element=None,
+        object_id=None,
+        anchors=None,
+        visible: int = 1,
+        starting_height: int = 1,
+    ):
         super().__init__(
             relative_rect=relative_rect,
             visible_percentage=visible_percentage,
@@ -247,62 +536,75 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
             parent_element=parent_element,
             object_id=object_id,
             anchors=anchors,
-            visible=visible)
+            visible=visible,
+        )
 
         self.scroll_wheel_speed = 100
         self.sliding_button.change_layer(starting_height)
-        if game.settings["fullscreen"]:
-            self.button_height = 32
-        else:
-            self.button_height = 16
+        self.button_height = 16
         self.arrow_button_height = self.button_height
         self.top_button.kill()
-        self.top_button = UIImageButton(scale(pygame.Rect((0, 0),
-                                                          (32, 32))),
-                                        text='',
-                                        manager=self.ui_manager,
-                                        container=self.button_container,
-                                        starting_height=starting_height,
-                                        parent_element=self,
-                                        object_id="#vertical_slider_up_arrow_button",
-                                        anchors={'left': 'left',
-                                                 'right': 'right',
-                                                 'top': 'top',
-                                                 'bottom': 'top'}
-                                        )
+        self.top_button = UIImageButton(
+            ui_scale(pygame.Rect((0, 0), (16, 16))),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=starting_height,
+            parent_element=self,
+            object_id="#vertical_slider_up_arrow_button",
+            anchors={
+                "centerx": "centerx",
+            },
+        )
 
         self.bottom_button.kill()
-        self.bottom_button = UIImageButton(scale(pygame.Rect((0, -self.arrow_button_height),
-                                                             (32, 32))),
-                                           text='',
-                                           manager=self.ui_manager,
-                                           container=self.button_container,
-                                           starting_height=starting_height,
-                                           parent_element=self,
-                                           object_id="#vertical_slider_down_arrow_button",
-                                           anchors={'left': 'left',
-                                                    'right': 'right',
-                                                    'top': 'bottom',
-                                                    'bottom': 'bottom'}
-                                           )
+        bottom_button_rect = ui_scale(pygame.Rect((0, 0), (16, 16)))
+        bottom_button_rect.bottomleft = (0, 0)
+        self.bottom_button = UIImageButton(
+            bottom_button_rect,
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=starting_height,
+            parent_element=self,
+            object_id="#vertical_slider_down_arrow_button",
+            anchors={
+                "bottom": "bottom",
+                "centerx": "centerx",
+            },
+        )
+        del bottom_button_rect
 
     def set_visible_percentage(self, percentage: float):
         super().set_visible_percentage(percentage)
-        if game.settings["fullscreen"]:
-            speed = 30
-        else:
-            speed = 15
-        self.scroll_wheel_speed = (1 / self.visible_percentage) * speed
+        self.scroll_wheel_speed = (1 / self.visible_percentage) * ui_scale_value(15)
 
 
 class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
-    def __init__(self, relative_rect: RectLike, visible_percentage: float, manager, container, parent_element, anchors,
-                 visible):
-        super().__init__(relative_rect, visible_percentage, manager=manager, container=container,
-                         parent_element=parent_element, anchors=anchors, visible=visible)
+    def __init__(
+        self,
+        relative_rect: RectLike,
+        visible_percentage: float,
+        manager,
+        container,
+        parent_element,
+        anchors,
+        visible,
+        starting_height=1,
+    ):
+        super().__init__(
+            relative_rect,
+            visible_percentage,
+            manager=manager,
+            container=container,
+            parent_element=parent_element,
+            anchors=anchors,
+            visible=visible,
+        )
 
-        self.button_width = 15
+        self.button_width = ui_scale_value(15)
         self.arrow_button_width = self.button_width
+        self.sliding_button.change_layer(starting_height)
 
         self.rebuild()
 
@@ -312,25 +614,33 @@ class UISpriteButton:
     For most functions, this can be used exactly like other pygame_gui elements."""
 
     def __init__(
-            self,
-            relative_rect,
-            sprite,
-            cat_id=None,
-            visible=1,
-            cat_object=None,
-            starting_height=1,
-            manager: IUIManagerInterface = None,
-            container=None,
-            object_id=None,
-            tool_tip_text=None,
-            anchors=None,
+        self,
+        relative_rect: pygame.Rect,
+        sprite: pygame.Surface,
+        cat_id=None,
+        visible=1,
+        cat_object=None,
+        starting_height=1,
+        manager: IUIManagerInterface = None,
+        container=None,
+        object_id=None,
+        tool_tip_text=None,
+        anchors=None,
     ):
+        input_sprite = sprite.premul_alpha()
+        # if it's going to be small on the screen, smoothscale out the crunch
+        input_sprite = (
+            pygame.transform.smoothscale(input_sprite, relative_rect.size)
+            if (
+                relative_rect.height <= ui_scale_value(sprite.get_height())
+                or relative_rect.width <= ui_scale_value(sprite.get_height())
+            )
+            else pygame.transform.scale(input_sprite, relative_rect.size)
+        )
 
-        # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that
-        # UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(
             relative_rect,
-            pygame.transform.scale(sprite, relative_rect.size),
+            input_sprite,
             visible=visible,
             manager=manager,
             container=container,
@@ -338,6 +648,8 @@ class UISpriteButton:
             anchors=anchors,
         )
         self.image.disable()
+        del input_sprite
+
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
 
         self.button = CatButton(
@@ -402,19 +714,20 @@ class CatButton(UIImageButton):
     Can also be used as a general button that holds some data"""
 
     def __init__(
-            self,
-            relative_rect,
-            text,
-            cat_id=None,
-            visible=True,
-            cat_object=None,
-            starting_height=1,
-            parent_element=None,
-            object_id=None,
-            manager=None,
-            tool_tip_text=None,
-            container=None,
-            anchors=None,
+        self,
+        relative_rect,
+        text,
+        cat_id=None,
+        visible=True,
+        cat_object=None,
+        starting_height=1,
+        parent_element=None,
+        object_id=None,
+        manager=None,
+        tool_tip_text=None,
+        container=None,
+        anchors=None,
+        auto_disable_if_no_data=False,
     ):
         self.cat_id = cat_id
         self.cat_object = cat_object
@@ -429,7 +742,10 @@ class CatButton(UIImageButton):
             tool_tip_text=tool_tip_text,
             container=container,
             anchors=anchors,
+            allow_double_clicks=True,
         )
+        if auto_disable_if_no_data and cat_id is None and cat_object is None:
+            self.disable()
 
     def return_cat_id(self):
         return self.cat_id
@@ -447,24 +763,23 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
     only use if you want to have control over the line spacing."""
 
     def __init__(
-            self,
-            html_text: str,
-            relative_rect,
-            manager=None,
-            line_spacing=1,
-            wrap_to_height: bool = False,
-            starting_height: int = 1,
-            container=None,
-            parent_element=None,
-            object_id=None,
-            anchors=None,
-            visible: int = 1,
-            *,
-            pre_parsing_enabled: bool = True,
-            text_kwargs=None,
-            allow_split_dashes: bool = True,
+        self,
+        html_text: str,
+        relative_rect,
+        manager=None,
+        line_spacing: float = 1,
+        wrap_to_height: bool = False,
+        starting_height: int = 1,
+        container=None,
+        parent_element=None,
+        object_id=None,
+        anchors=None,
+        visible: int = 1,
+        *,
+        pre_parsing_enabled: bool = True,
+        text_kwargs=None,
+        allow_split_dashes: bool = True,
     ):
-
         self.line_spaceing = line_spacing
 
         super().__init__(
@@ -543,15 +858,14 @@ class UIRelationStatusBar:
     """Wraps together a status bar"""
 
     def __init__(
-            self,
-            relative_rect,
-            percent_full=0,
-            positive_trait=True,
-            dark_mode=False,
-            manager=None,
-            style="bars",
+        self,
+        relative_rect,
+        percent_full=0,
+        positive_trait=True,
+        dark_mode=False,
+        manager=None,
+        style="bars",
     ):
-
         # Change the color of the bar depending on the value and if it's a negative or positive trait
         if percent_full > 49:
             if positive_trait:
@@ -598,20 +912,22 @@ class UIRelationStatusBar:
         del self
 
 
-class IDImageButton(UIImageButton):
+class IDImageButton(UISurfaceImageButton):
     """Class to handle the "involved cats" button on the events page. It stores the IDs of the cat's involved."""
 
     def __init__(
-            self,
-            relative_rect,
-            text="",
-            ids=None,
-            object_id=None,
-            container=None,
-            manager=None,
-            layer_starting_height=1,
+        self,
+        relative_rect,
+        text,
+        button_dict,
+        ids=None,
+        object_id=None,
+        container=None,
+        manager=None,
+        layer_starting_height=1,
+        anchors=None,
+        parent_element=None,
     ):
-
         if ids:
             self.ids = ids
         else:
@@ -620,10 +936,13 @@ class IDImageButton(UIImageButton):
         super().__init__(
             relative_rect,
             text,
+            image_dict=button_dict,
             object_id=object_id,
             container=container,
             starting_height=layer_starting_height,
             manager=manager,
+            anchors=anchors,
+            parent_element=parent_element,
         )
         # This button will auto-disable if no ids are entered.
         if not self.ids:
@@ -647,15 +966,15 @@ class UIDropDownContainer(UIAutoResizingContainer):
                     may override this."""
 
     def __init__(
-            self,
-            relative_rect: RectLike,
-            container: UIContainer,
-            object_id: str,
-            starting_height: int,
-            parent_button: UIImageButton,
-            child_button_container: UIContainer,
-            manager: IUIManagerInterface,
-            visible: bool = False,
+        self,
+        relative_rect: RectLike,
+        container: UIContainer,
+        object_id: str,
+        starting_height: int,
+        parent_button: UIImageButton,
+        child_button_container: UIContainer,
+        manager: IUIManagerInterface,
+        visible: bool = False,
     ):
         super().__init__(
             relative_rect=relative_rect,
@@ -716,24 +1035,23 @@ class UICheckbox(UIImageButton):
     """
 
     def __init__(
-            self,
-            position: tuple,
-            container: UIContainer,
-            tool_tip_text: str,
-            starting_height: int,
-            visible: bool,
-            manager,
-            check: bool = False,
+        self,
+        position: tuple,
+        container: UIContainer,
+        tool_tip_text: str,
+        starting_height: int,
+        visible: bool,
+        manager,
+        check: bool = False,
     ):
-
         self.checked = check
 
-        relative_rect = scale(pygame.Rect(position, (68, 68)))
+        relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 
         if check:
-            object_id = "#checked_checkbox"
+            object_id = "@checked_checkbox"
         else:
-            object_id = "#unchecked_checkbox"
+            object_id = "@unchecked_checkbox"
 
         super().__init__(
             relative_rect=relative_rect,
@@ -751,40 +1069,40 @@ class UICheckbox(UIImageButton):
         switches the checkbox into the "checked" state
         """
         self.checked = True
-        self.change_object_id("#checked_checkbox")
+        self.change_object_id("@checked_checkbox")
 
     def uncheck(self):
         """
         switches the checkbox into the "unchecked" state
         """
         self.checked = False
-        self.change_object_id("#unchecked_checkbox")
+        self.change_object_id("@unchecked_checkbox")
 
 
 class UICatListDisplay(UIContainer):
     def __init__(
-            self,
-            relative_rect: RectLike,
-            container: UIContainer,
-            starting_height: int,
-            object_id: str,
-            manager,
-            cat_list: list,
-            cats_displayed: int,
-            x_px_between: int,
-            columns: int,
-            current_page: int,
-            next_button: UIImageButton,
-            prev_button: UIImageButton,
-            first_button: UIImageButton = None,
-            last_button: UIImageButton = None,
-            anchors: Optional[dict] = None,
-            rows: int = None,
-            show_names: bool = False,
-            tool_tip_name: bool = False,
-            visible: bool = True,
-            text_theme="#cat_list_text",
-            y_px_between: int = None,
+        self,
+        relative_rect: RectLike,
+        container: UIContainer,
+        starting_height: int,
+        object_id: str,
+        manager,
+        cat_list: list,
+        cats_displayed: int,
+        x_px_between: int,
+        columns: int,
+        current_page: int,
+        next_button: UIImageButton,
+        prev_button: UIImageButton,
+        first_button: UIImageButton = None,
+        last_button: UIImageButton = None,
+        anchors: Optional[dict] = None,
+        rows: int = None,
+        show_names: bool = False,
+        tool_tip_name: bool = False,
+        visible: bool = True,
+        text_theme="#cat_list_text",
+        y_px_between: int = None,
     ):
         """
         Creates and displays a list of click-able cat sprites.
@@ -844,32 +1162,63 @@ class UICatListDisplay(UIContainer):
 
         self._favor_circle = pygame.transform.scale(
             pygame.image.load(f"resources/images/fav_marker.png").convert_alpha(),
-            (100, 100),
+            ui_scale_dimensions((50, 50)),
         )
         if game.settings["dark mode"]:
             self._favor_circle.set_alpha(150)
 
-        cell_width = floor(self.relative_rect.width / self.columns)
-        cell_height = floor(self.relative_rect.height / self.rows)
-
-        for row in range(self.rows):
-            new_row = []
-            for column in range(self.columns):
-                ui_container = UIContainer(
-                    pygame.Rect(
-                        column * cell_width,
-                        row * cell_height,
-                        cell_width,
-                        cell_height,
-                    ),
-                    container=self,
-                    manager=self.ui_manager,
-                )
-                new_row.append(ui_container)
-            self.boxes.append(new_row)
+        self.generate_grid()
 
         self._chunk()
         self._display_cats()
+
+    def generate_grid(self):
+        """
+        A wrapper for the grid generation to speed it up significantly.
+        Must be done like this to avoid memory leak.
+        """
+        self.boxes = self._generate_grid_cached(
+            self.relative_rect.width // self.columns,
+            self.relative_rect.height // self.rows,
+            self.rows,
+            self.columns,
+            self.ui_manager,
+        )
+        for box in self.boxes:
+            box.set_container(self)
+            box.rebuild()
+
+    @staticmethod
+    @lru_cache(maxsize=5)
+    def _generate_grid_cached(cell_width, cell_height, rows, columns, manager):
+        boxes: List[Optional[UIContainer]] = [None] * (rows * columns)
+        for i, box in enumerate(boxes):
+            if i == 0:
+                anchors = {}
+            elif i % columns == 0:
+                # first item in a row excluding first
+                anchors = {"top_target": boxes[i - columns]}
+            elif i < columns:
+                # top row
+                anchors = {"left_target": boxes[i - 1]}
+            else:
+                # all other rows
+                anchors = {
+                    "left_target": boxes[i - 1],
+                    "top_target": boxes[i - columns],
+                }
+
+            boxes[i] = UIContainer(
+                pygame.Rect(
+                    0,
+                    0,
+                    cell_width,
+                    cell_height,
+                ),
+                anchors=anchors,
+                manager=manager,
+            )
+        return boxes
 
     def clear_display(self):
         [sprite.kill() for sprite in self.cat_sprites.values()]
@@ -898,7 +1247,7 @@ class UICatListDisplay(UIContainer):
         separates the cat list into smaller chunks to display on each page
         """
         self.cat_chunks = [
-            self.cat_list[x: x + self.cats_displayed]
+            self.cat_list[x : x + self.cats_displayed]
             for x in range(0, len(self.cat_list), self.cats_displayed)
         ]
 
@@ -923,60 +1272,27 @@ class UICatListDisplay(UIContainer):
 
         # FAVOURITE ICON
         if show_fav:
-            i = -1
-            for row in range(self.rows):
-                for column in range(self.columns):
-                    container = self.boxes[row][column]
-                    i += 1
-                    try:
-                        kitty = display_cats[i]
-                    except IndexError:
-                        break
-                    if kitty.favourite:
-                        self.create_favor_indicator(i, container)
+            fav_indexes = [
+                display_cats.index(cat) for cat in display_cats if cat.favourite
+            ]
+            [self.create_favor_indicator(i, self.boxes[i]) for i in fav_indexes]
 
         # CAT SPRITE
-        i = -1
-        for row in range(self.rows):
-            for column in range(self.columns):
-                container = self.boxes[row][column]
-                i += 1
-                try:
-                    kitty = display_cats[i]
-                except IndexError:
-                    break
-                self.create_cat_button(i, kitty, container)
+        [
+            self.create_cat_button(i, kitty, self.boxes[i])
+            for i, kitty in enumerate(display_cats)
+        ]
 
         # CAT NAME
         if self.show_names:
-            i = -1
-            for row in range(self.rows):
-                for column in range(self.columns):
-                    container = self.boxes[row][column]
-                    i += 1
-                    try:
-                        kitty = display_cats[i]
-                    except IndexError:
-                        break
-                    self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
-                        scale(
-                            pygame.Rect(
-                                (0, 10),
-                                (100 + self.x_px_between, 60),
-                            )
-                        ),
-                        shorten_text_to_fit(str(kitty.name), 220, 30),
-                        container=container,
-                        object_id=self.text_theme,
-                        anchors={
-                            "centerx": "centerx",
-                            "top_target": self.cat_sprites[f"sprite{i}"],
-                        },
-                    )
+            [
+                self.create_name(i, kitty, self.boxes[i])
+                for i, kitty in enumerate(display_cats)
+            ]
 
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-            scale(pygame.Rect((0, 30), (100, 100))),
+            ui_scale(pygame.Rect((0, 15), (50, 50))),
             kitty.sprite,
             cat_object=kitty,
             cat_id=kitty.ID,
@@ -987,9 +1303,21 @@ class UICatListDisplay(UIContainer):
             anchors={"centerx": "centerx"},
         )
 
+    def create_name(self, i, kitty, container):
+        self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
+            pygame.Rect((0, 0), (container.rect[2], ui_scale_value(30))),
+            shorten_text_to_fit(str(kitty.name), 220, 30),
+            container=container,
+            object_id=self.text_theme,
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.cat_sprites[f"sprite{i}"],
+            },
+        )
+
     def create_favor_indicator(self, i, container):
         self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 30), (100, 100))),
+            ui_scale(pygame.Rect((0, 15), (50, 50))),
             self._favor_circle,
             object_id=f"favor_circle{i}",
             container=container,
@@ -1025,3 +1353,99 @@ class UICatListDisplay(UIContainer):
             if self.first_button:
                 self.first_button.enable()
                 self.last_button.enable()
+
+
+class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
+    """
+    a subclass of UIHorizontalSlider, this is really only meant for one size and appearance of slider, though could
+    be modified to allow for more customizability.  As we currently only use horizontal sliders in one spot and I
+    don't foresee future additional sliders, I will leave it as is for now.
+    """
+
+    def __init__(
+        self,
+        relative_rect,
+        start_value,
+        value_range,
+        click_increment=None,
+        object_id=None,
+        manager=None,
+        anchors=None,
+    ):
+        super().__init__(
+            relative_rect=relative_rect,
+            start_value=start_value,
+            value_range=value_range,
+            click_increment=click_increment,
+            object_id=object_id,
+            manager=manager,
+            anchors=anchors,
+        )
+
+        self.sliding_button_width = ui_scale_value(30)
+        self.arrow_button_width = ui_scale_value(self.arrow_button_width)
+
+        self.scrollable_width = (
+            self.background_rect.width
+            - self.sliding_button_width
+            - (2 * self.arrow_button_width)
+        )
+        self.right_limit_position = self.scrollable_width
+        self.scroll_position = self.scrollable_width / 2
+
+        # kill the sliding button that the UIHorizontalSlider class makes, then make it again
+        self.sliding_button.kill()
+        self.sliding_button = UIImageButton(
+            pygame.Rect(
+                (0, 0), (self.sliding_button_width, self.background_rect.height)
+            ),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=1,
+            parent_element=self,
+            object_id="#horizontal_slider_button",
+            anchors={"left": "left", "right": "left", "top": "top", "bottom": "bottom"},
+            visible=self.visible,
+        )
+
+        # reset start value, for some reason it defaults to 50 otherwise
+        self.set_current_value(start_value)
+        # set hold range manually since using UIImageButton breaks it?
+        self.sliding_button.set_hold_range((self.background_rect.width, 100))
+
+        # kill and remake the left button
+        self.left_button.kill()
+        self.left_button = UIImageButton(
+            pygame.Rect((0, 0), (self.arrow_button_width, self.background_rect.height)),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=1,
+            parent_element=self,
+            object_id="#horizontal_slider_left_arrow_button",
+            anchors={"left": "left", "right": "left", "top": "top", "bottom": "bottom"},
+            visible=self.visible,
+        )
+
+        # kill and remake the right button
+        self.right_button.kill()
+        self.right_button = UIImageButton(
+            pygame.Rect(
+                (-self.arrow_button_width, 0),
+                (ui_scale_value(20), self.background_rect.height),
+            ),
+            text="",
+            manager=self.ui_manager,
+            container=self.button_container,
+            starting_height=1,
+            parent_element=self,
+            object_id="#horizontal_slider_right_arrow_button",
+            anchors={
+                "left": "right",
+                "right": "right",
+                "top": "top",
+                "bottom": "bottom",
+            },
+            visible=self.visible,
+        )

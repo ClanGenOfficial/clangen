@@ -20,10 +20,13 @@
         "thoughts": [
             "Had an argument with another mediator apprentice",
             "Doesn't agree with r_c's style of mediation",
-            "Is planning a group mediation session with r_c and some troubling cats"
+            "Is planning a group mediation session with r_c and some troublemaking cats"
         ],
         "random_status_constraint": [
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -38,6 +41,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -53,12 +59,15 @@
             "mediator apprentice",
             "apprentice",
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
         "id": "righteous_mediator_apprentice",
         "thoughts": [
-            "Was scolded for taking sides in mediating arguments recently",
+            "Was scolded for taking sides while mediating arguments recently",
             "Is being reminded to be neutral in mediation",
             "Is having trouble remaining neutral when one cat is clearly in the wrong",
             "Is struggling between doing the right thing and keeping a secret",
@@ -78,5 +87,4 @@
             "vengeful"
         ]
     }
-    
 ]

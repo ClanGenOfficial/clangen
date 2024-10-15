@@ -189,19 +189,23 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l while searching for some specific herbs is startled by weird sounds and whispers on the wind.",
+        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
         "chance_of_success": 35,
         "success_outcomes": [
             {
-                "text": "p_l sure that it is a sign of StarClan follows the sounds and whispers on the wind and finds a queen who lost their life in a harsh kitting, their newborn kits clinging to a body that will never move again. p_l instantly wraps themselves around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
+                "text": "p_l, sure that it is a sign of StarClan, follows the sounds and whispers on the wind and finds a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
                 "exp": 10,
                 "weight": 20
             },
             {
-                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with their kits.",
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with {PRONOUN/n_c:0/poss} kits.",
                 "exp": 10,
-                "weight": 5
+                "weight": 5,
+                "new_cat": [
+                    ["can_birth", "age:has_kits"],
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
+                ]
             }
         ],
         "fail_outcomes": [
@@ -241,7 +245,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is plucking some horsetail when their attention is suddenly grabbed by omen_list_sight. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!",
+                "text": "p_l is plucking some horsetail when their attention is suddenly grabbed by omen_list_sight/p_l. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!",
                 "exp": 20,
                 "weight": 20
             }

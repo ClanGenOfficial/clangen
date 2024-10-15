@@ -20,7 +20,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c immediately leaps to protect their Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"]
@@ -156,7 +156,7 @@
                 "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich meadow outside of c_n territory.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -415,10 +415,10 @@
       "weight": 20
     },
     {
-      "text": "As the patrol sets out to cross, s_c stops them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} what the other cats miss, a dark current ready to pull any cat that dares to cross under. The patrol members cast uneasy glances at each other and unanimously decide to head home without crossing.",
+      "text": "As the patrol sets out to cross, s_c stops them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} what the other cats miss: a dark current ready to pull under any cat that dares to cross. The patrol members cast uneasy glances at each other and unanimously decide to head home without crossing.",
       "exp": 0,
       "weight": 20,
-      "stat_skill": ["SWIMMER,3"]
+      "stat_skill": ["SWIMMER,3", "INSIGHT,3", "SENSE,3", "CLEVER,3"]
     },
     {
       "text": "As the patrol sets out to cross, a chill runs down s_c's spine and whispers fill {PRONOUN/s_c/poss} mind. s_c yells out a warning to the patrol to stop, and the cats jump back, startled. Suddenly, a large branch sweeps down the river right where the patrol was crossing. s_c shakily whispers thanks to StarClan for their warning.",
@@ -469,7 +469,7 @@
       }
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost {VERB/s_c/let/lets} out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 5,
       "stat_trait": ["nervous", "insecure"],
@@ -480,14 +480,14 @@
       }
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost {VERB/s_c/let/lets} out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water rushes them downstream.",
       "exp": 0,
       "weight": 5,
       "stat_trait": ["nervous", "insecure"],
       "lost_cats": ["multi"]
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost {VERB/s_c/let/lets} out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 10,
       "stat_trait": ["nervous", "insecure"],
@@ -573,7 +573,7 @@
          "art": "mothman_OUTCOME"
    	 },
    	 {
-   		 "text": "r_c doesn't return home.",
+   		 "text": "r_c never returns home.",
    		 "exp": 0,
    		 "weight": 20,
    		 "dead_cats": ["r_c"],
@@ -612,7 +612,7 @@
 	"chance_of_success": 30,
 	"success_outcomes": [
   	{
-  		"text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood curdling scream, one mirrored by p_l as p_l shrieks and runs.",
+  		"text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream - one mirrored by p_l as p_l shrieks and runs.",
   		"exp": 0,
   		"weight": 20,
    	    "injury": [

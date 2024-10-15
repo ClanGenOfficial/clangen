@@ -29,7 +29,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around them.",
+        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
         "m_c": {
             "not_skill": [
                 "CLIMBER,2"
@@ -100,7 +100,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c, guarding camp, yowls a warning as they spot a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky by a rook.",
+        "event_text": "r_c, guarding camp, yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c starts sprinting to m_c's position but can't get there in time, not before m_c is carried high into the sky by a rook.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
