@@ -587,7 +587,8 @@
             [
                 "old_name",
                 "clancat",
-                "status:warrior"
+                "status:warrior",
+                "backstory:former_clancat_backstories"
             ]
         ],
         "other_clan": {
@@ -608,7 +609,8 @@
             [
                 "old_name",
                 "clancat",
-                "status:warrior"
+                "status:warrior",
+                "backstory:former_clancat_backstories"
             ]
         ],
         "injury": [
