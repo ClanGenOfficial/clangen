@@ -22,8 +22,6 @@
             "Wonders if Clan life is the only way to live with others",
             "Was chased away from the shelter {PRONOUN/m_c/subject} had been staying in",
             "Hopes {PRONOUN/m_c/poss} mild cough won't get worse",
-            "Wishes newleaf would come already",
-            "Frowns deeply at the first frost",
             "Got invited to spend the night with a group of friendly loners",
             "Saw a helpless cat get taken in a metal box by Twolegs",
             "Sniffed around a known Clan territory curiously",
@@ -62,12 +60,12 @@
             "Is learning about the Clans",
             "Thinks Clan cats are strange",
             "Is in awe hearing the stories about the Clans",
-            "Is imagining an epic life where {PRONOUN/m_c/subject} {VERB/m_c/are/is} a legendary wander in these lands",
+            "Is imagining an epic life where {PRONOUN/m_c/subject} {VERB/m_c/are/is} a legendary wanderer in these lands",
             "Is marking random locations with {PRONOUN/m_c/poss} claws to remember as a potential hideout",
             "Turns up {PRONOUN/m_c/poss} nose when another loner tries to give {PRONOUN/m_c/object} directions",
             "Collects various items {PRONOUN/m_c/subject} {VERB/m_c/find/finds} beautiful and interesting",
             "Wonders if {PRONOUN/m_c/poss} parents were once renowned explorers",
-            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."
+            "Laughs at the thought of being a Clan cat and having a warrior name... Maybe..."
         ],
         "main_age_constraint": [
             "adolescent"
@@ -83,11 +81,14 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constraint":[
-            "adolescent"
+        "random_status_constraint": [
+            "apprentice"
         ],
-        "random_outside_status":[
+        "random_outside_status": [
             "clancat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -122,14 +123,32 @@
             "Is admiring the massive territory {PRONOUN/m_c/subject} secured for so long",
             "Looks back with fondness at the misadventures {PRONOUN/m_c/subject} had with old friends",
             "Has no shame eating crow-food if that's what it takes to survive",
-            "Easily fought off an overconfident rogue with many moons surviving in this rough life",
+            "Easily fought off an overconfident rogue with {PRONOUN/m_c/poss} many rough moons of experience",
             "Had a vivid nightmare where {PRONOUN/m_c/subject} couldn't save {PRONOUN/m_c/poss} old friend from wild dogs",
-            "Met up with an old kittypet friend, for both the free food and company",
+            "Met up with an old kittypet friend, for both the free food and the company",
             "Is gnawing at {PRONOUN/m_c/poss} pelt, irritated at the abundance of fleas",
-            "Coughed heavily"
+            "Coughs heavily"
         ],
         "main_age_constraint": [
             "senior"
+        ]
+    },
+    {
+        "id": "loner_leaffall",
+        "thoughts": [
+            "Frowns deeply at the first frost"
+        ],
+        "season": [
+            "Leaf-fall"
+        ]
+    },
+    {
+        "id": "loner_leafbare",
+        "thoughts": [
+            "Wishes newleaf would come already"
+        ],
+        "season": [
+            "Leaf-bare"
         ]
     }
 ]

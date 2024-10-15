@@ -13,5 +13,14 @@
     "bch_hunt_redfox_scavenge3",
     "bch_hunt_foxgray_scavenge1",
     "bch_hunt_foxgray_scavenge2",
-    "bch_hunt_foxgray_scavenge3"
+    "bch_hunt_foxgray_scavenge3",
+    "gen_dead_cat_app_EXPLICIT",
+    "gen_dead_cat_app_ghost_EXPLICIT",
+    "gen_dead_cat_EXPLICIT",
+    "gen_dead_cat_ghost_EXPLICIT",
+    "gen_dead_cat_med_EXPLICIT",
+    "gen_dead_cat_otherclan_EXPLICIT",
+    "gen_dead_cat_otherclan_ghost_EXPLICIT",
+    "gen_dead_cat_outsider_EXPLICIT",
+    "gen_dead_cat_outsider_ghost_EXPLICIT"
 ]

@@ -125,7 +125,7 @@ class Sprites:
             'lineart', 'lineartdf', 'lineartdead',
             'eyes', 'eyes2', 'skin',
             'scars', 'missingscars',
-            'medcatherbs',
+            'medcatherbs', 'wild',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'singlecolours', 'speckledcolours', 'tabbycolours', 'bengalcolours', 'marbledcolours',
             'rosettecolours', 'smokecolours', 'tickedcolours', 'mackerelcolours', 'classiccolours',
@@ -272,15 +272,17 @@ class Sprites:
                 self.make_group('missingscars', (col, row), f'scars{missing_part}')
 
         # accessories
+        #to my beloved modders, im very sorry for reordering everything <333 -clay
         medcatherbs_data = [
-            ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "LAUREL"],
-            ["BLUEBELLS", "NETTLE", "POPPY", "LAVENDER", "HERBS", "PETALS"],
-            [],  # Empty row because this is the wild data, except dry herbs.
-            ["OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER"]
+            ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "CATTAIL", "POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY"],
+            ["BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "HERBS", "PETALS", "NETTLE", "HEATHER", "GORSE", "JUNIPER", "LAVENDER"],
+            ["OAK LEAVES", "CATMINT", "MAPLE SEED", "LAUREL", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "CLOVER", "DAISY"]
         ]
-
+        dryherbs_data = [
+            ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]
+        ]
         wild_data = [
-            ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS"]
+            ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS", "MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "CICADA WINGS", "BLACK CICADA"]
         ]
 
         collars_data = [
@@ -311,12 +313,14 @@ class Sprites:
         for row, herbs in enumerate(medcatherbs_data):
             for col, herb in enumerate(herbs):
                 self.make_group('medcatherbs', (col, row), f'acc_herbs{herb}')
-        self.make_group('medcatherbs', (5, 2), 'acc_herbsDRY HERBS')
-
+        #dryherbs
+        for row, dry in enumerate(dryherbs_data):
+            for col, dryherbs in enumerate(dry):
+                self.make_group('medcatherbs', (col, 3), f'acc_herbs{dryherbs}')     
         # wild
         for row, wilds in enumerate(wild_data):
             for col, wild in enumerate(wilds):
-                self.make_group('medcatherbs', (col, 2), f'acc_wild{wild}')
+                self.make_group('wild', (col, 0), f'acc_wild{wild}')
 
         # collars
         for row, collars in enumerate(collars_data):
@@ -354,14 +358,22 @@ class Sprites:
         # sprite names will format as "symbol{PREFIX}{INDEX}", ex. "symbolSPRING0"
         y_pos = 1
         for letter in letters:
+            x_mod = 0
             for i, symbol in enumerate([symbol for symbol in self.symbol_dict if
                                         letter in symbol and self.symbol_dict[symbol]["variants"]]):
-                x_mod = 0
+                if self.symbol_dict[symbol]["variants"] > 1 and x_mod > 0:
+                    x_mod += -1
                 for variant_index in range(self.symbol_dict[symbol]["variants"]):
-                    x_mod += variant_index
+                    x_pos = i + x_mod
+
+                    if self.symbol_dict[symbol]["variants"] > 1:
+                        x_mod += 1
+                    elif x_mod > 0:
+                        x_pos += - 1
+
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
                     self.make_group('symbols',
-                                    (i + x_mod, y_pos),
+                                    (x_pos, y_pos),
                                     f"symbol{symbol.upper()}{variant_index}",
                                     sprites_x=1, sprites_y=1, no_index=True)
 

@@ -1,19 +1,19 @@
 [
-	{
-		"id": "apprentice_dark_forest_thoughts",
-		"thoughts": [
-			"Wishes {PRONOUN/m_c/subject} finished {PRONOUN/m_c/poss/} battle training",
-			"Tries to imitate the battle moves of other Dark Forest cats",
-			"Wonders if it is {PRONOUN/m_c/poss/} fault or {PRONOUN/m_c/poss} mentor's fault that they ended up here",
-			"Wishes {PRONOUN/m_c/subject} could put their hunting training to use",
-			"Misses the elders' stories",
-			"Regrets ever disrespecting {PRONOUN/m_c/poss/} mentor",
-			"Tries to convince another Dark Forest cat to train {PRONOUN/m_c/object}",
-			"Misses eating fresh-kill and sharing tongues with {PRONOUN/m_c/poss} Clanmates",
-			"Stands by the StarClan border, hoping a cat will take pity on {PRONOUN/m_c/object}",
-			"Furiously grabs onto a branch so hard one of {PRONOUN/m_c/poss} claws snaps off",
-			"Wonders what {PRONOUN/m_c/subject} did wrong",
-			"Tries to groom {PRONOUN/m_c/poss} matted fur only to realize it's too caked with mud to clean"
-			]
-	}
+    {
+        "id": "apprentice_dark_forest_thoughts",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/subject}'d finished {PRONOUN/m_c/poss} battle training",
+            "Tries to imitate the battle moves of other Dark Forest cats",
+            "Wonders if it is {PRONOUN/m_c/poss} fault or {PRONOUN/m_c/poss} mentor's fault that {PRONOUN/m_c/subject} ended up here",
+            "Wishes {PRONOUN/m_c/subject} could put {PRONOUN/m_c/poss} hunting training to use",
+            "Misses the elders' stories",
+            "Regrets ever disrespecting {PRONOUN/m_c/poss} mentor",
+            "Tries to convince another Dark Forest cat to train {PRONOUN/m_c/object}",
+            "Misses eating fresh-kill and sharing tongues with {PRONOUN/m_c/poss} Clanmates",
+            "Stands by the StarClan border, hoping a cat will take pity on {PRONOUN/m_c/object}",
+            "Furiously grabs onto a branch so hard one of {PRONOUN/m_c/poss} claws snaps off",
+            "Wonders what {PRONOUN/m_c/subject} did wrong",
+            "Tries to groom {PRONOUN/m_c/poss} matted fur, only to realize it's too caked with mud to clean"
+        ]
+    }
 ]

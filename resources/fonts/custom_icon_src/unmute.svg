@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        version="1.1"
+        id="svg1"
+        width="17"
+        height="17"
+        viewBox="0 0 17 17"
+        sodipodi:docname="unmute.svg"
+        inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"><defs
+   id="defs1" />
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#505050"
+            bordercolor="#ffffff"
+            borderopacity="1"
+            inkscape:showpageshadow="0"
+            inkscape:pageopacity="0"
+            inkscape:pagecheckerboard="1"
+            inkscape:deskcolor="#505050"
+            showgrid="true"
+            inkscape:zoom="22.627417"
+            inkscape:cx="6.1650872"
+            inkscape:cy="4.8834562"
+            inkscape:window-width="1920"
+            inkscape:window-height="991"
+            inkscape:window-x="-9"
+            inkscape:window-y="-9"
+            inkscape:window-maximized="1"
+            inkscape:current-layer="g1"><inkscape:grid
+     id="grid1"
+     units="px"
+     originx="0"
+     originy="0"
+     spacingx="1"
+     spacingy="1"
+     empcolor="#0099e5"
+     empopacity="0.30196078"
+     color="#0099e5"
+     opacity="0.14901961"
+     empspacing="5"
+     dotted="false"
+     gridanglex="30"
+     gridanglez="30"
+     visible="true" /></sodipodi:namedview>
+    <g
+            inkscape:groupmode="layer"
+            inkscape:label="Image"
+            id="g1"><path
+     id="rect1"
+     style="fill:#000000"
+     d="M 10 0 L 10 2 L 8 2 L 8 4 L 6 4 L 6 6 L 0 6 L 0 12 L 6 12 L 6 14 L 8 14 L 8 16 L 10 16 L 10 18 L 12 18 L 12 0 L 10 0 z M 18 2 L 18 4 L 20 4 L 20 2 L 18 2 z M 18 4 L 16 4 L 16 6 L 18 6 L 18 4 z M 16 8 L 16 10 L 22 10 L 22 8 L 16 8 z M 16 12 L 16 14 L 18 14 L 18 12 L 16 12 z M 18 14 L 18 16 L 20 16 L 20 14 L 18 14 z " /></g></svg>

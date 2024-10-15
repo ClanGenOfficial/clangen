@@ -2,16 +2,28 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.clan import HERBS
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
     UITextBoxTweaked,
+    UISurfaceImageButton,
 )
-from scripts.utility import get_text_box_theme, scale, get_alive_status_cats, shorten_text_to_fit, get_living_clan_cat_count
+from scripts.utility import (
+    get_text_box_theme,
+    ui_scale,
+    get_alive_status_cats,
+    shorten_text_to_fit,
+    get_living_clan_cat_count,
+)
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from ..game_structure.screen_settings import MANAGER
+from ..ui.generate_box import BoxStyles, get_box
+from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
+from ..ui.icon import Icon
 
 
 class MedDenScreen(Screens):
@@ -59,6 +71,8 @@ class MedDenScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.next_med:
@@ -111,29 +125,34 @@ class MedDenScreen(Screens):
                 self.handle_tab_toggles()
 
     def screen_switches(self):
+        super().screen_switches()
+        self.show_mute_buttons()
         self.hide_menu_buttons()
-        self.back_button = UIImageButton(
-            scale(pygame.Rect((50, 50), (210, 60))),
-            "",
-            object_id="#back_button",
+        self.back_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
+            get_arrow(2) + " Back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
-        self.next_med = UIImageButton(
-            scale(pygame.Rect((1290, 556), (68, 68))),
-            "",
-            object_id="#arrow_right_button",
+        self.next_med = UISurfaceImageButton(
+            ui_scale(pygame.Rect((645, 278), (34, 34))),
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
-        self.last_med = UIImageButton(
-            scale(pygame.Rect((1200, 556), (68, 68))),
-            "",
-            object_id="#arrow_left_button",
+        self.last_med = UISurfaceImageButton(
+            ui_scale(pygame.Rect((600, 278), (34, 34))),
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
             manager=MANAGER,
         )
 
         if game.clan.game_mode != "classic":
             self.help_button = UIImageButton(
-                scale(pygame.Rect((1450, 50), (68, 68))),
+                ui_scale(pygame.Rect((725, 25), (34, 34))),
                 "",
                 object_id="#help_button",
                 manager=MANAGER,
@@ -143,78 +162,75 @@ class MedDenScreen(Screens):
                 "<br><br>"
                 "Hover your mouse over the medicine den image to see what herbs your Clan has!",
             )
-            self.last_page = UIImageButton(
-                scale(pygame.Rect((660, 1272), (68, 68))),
-                "",
-                object_id="#arrow_left_button",
-                manager=MANAGER,
+            self.last_page = UISurfaceImageButton(
+                ui_scale(pygame.Rect((330, 636), (34, 34))),
+                Icon.ARROW_LEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
             )
-            self.next_page = UIImageButton(
-                scale(pygame.Rect((952, 1272), (68, 68))),
-                "",
-                object_id="#arrow_right_button",
+            self.next_page = UISurfaceImageButton(
+                ui_scale(pygame.Rect((476, 636), (34, 34))),
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
                 manager=MANAGER,
             )
 
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
-                scale(pygame.Rect((281, 820), (400, 60))),
+                ui_scale(pygame.Rect((140, 410), (200, 30))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"),
                 manager=MANAGER,
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
-                scale(pygame.Rect((281, 820), (400, 60))),
+                ui_scale(pygame.Rect((140, 410), (200, 30))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"),
                 manager=MANAGER,
             )
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((280, 880), (1120, 400))),
-                pygame.image.load("resources/images/sick_hurt_bg.png").convert_alpha(),
+                ui_scale(pygame.Rect((140, 440), (560, 200))),
+                get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
                 manager=MANAGER,
             )
             self.cat_bg.disable()
             log_text = game.herb_events_list.copy()
-            """if game.settings["fullscreen"]:
-                img_path = "resources/images/spacer.png"
-            else:
-                img_path = "resources/images/spacer_small.png"""
             self.log_box = pygame_gui.elements.UITextBox(
                 f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
-                scale(pygame.Rect((300, 900), (1080, 360))),
+                ui_scale(pygame.Rect((150, 450), (540, 180))),
                 object_id="#text_box_26_horizleft_verttop_pad_14_0_10",
                 manager=MANAGER,
             )
             self.log_box.hide()
             self.cats_tab = UIImageButton(
-                scale(pygame.Rect((218, 924), (70, 150))),
+                ui_scale(pygame.Rect((109, 462), (35, 75))),
                 "",
                 object_id="#hurt_sick_cats_button",
                 manager=MANAGER,
             )
             self.cats_tab.disable()
             self.log_tab = UIImageButton(
-                scale(pygame.Rect((218, 1104), (70, 128))),
+                ui_scale(pygame.Rect((109, 552), (35, 64))),
                 "",
                 object_id="#med_den_log_button",
                 manager=MANAGER,
             )
             self.in_den_tab = UIImageButton(
-                scale(pygame.Rect((740, 818), (150, 70))),
+                ui_scale(pygame.Rect((370, 409), (75, 35))),
                 "",
                 object_id="#in_den_tab",
                 manager=MANAGER,
             )
             self.in_den_tab.disable()
             self.out_den_tab = UIImageButton(
-                scale(pygame.Rect((920, 818), (224, 70))),
+                ui_scale(pygame.Rect((460, 409), (112, 35))),
                 "",
                 object_id="#out_den_tab",
                 manager=MANAGER,
             )
             self.minor_tab = UIImageButton(
-                scale(pygame.Rect((1174, 818), (140, 70))),
+                ui_scale(pygame.Rect((587, 409), (70, 35))),
                 "",
                 object_id="#minor_tab",
                 manager=MANAGER,
@@ -306,7 +322,7 @@ class MedDenScreen(Screens):
 
         self.meds_messages = UITextBoxTweaked(
             "",
-            scale(pygame.Rect((216, 620), (1200, 160))),
+            ui_scale(pygame.Rect((108, 310), (600, 80))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1,
         )
@@ -323,6 +339,8 @@ class MedDenScreen(Screens):
             else:
                 insert = "medicine cats"
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+            if game.clan.game_mode == "classic":
+                meds_cover = ""
 
             if len(self.meds) >= 1 and number == 0:
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
@@ -331,7 +349,9 @@ class MedDenScreen(Screens):
             needed_amount = int(get_living_clan_cat_count(Cat) * 4)
             med_concern = f"This should not appear."
             if herb_amount == 0:
-                med_concern = f"The herb stores are empty and bare, this does not bode well."
+                med_concern = (
+                    f"The herb stores are empty and bare, this does not bode well."
+                )
             elif 0 < herb_amount <= needed_amount / 4:
                 if len(self.meds) == 1:
                     med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
@@ -406,7 +426,9 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"],sort=True)
+        self.meds = get_alive_status_cats(
+            Cat, ["medicine cat", "medicine cat apprentice"], sort=True
+        )
 
         if not self.meds:
             all_pages = []
@@ -440,22 +462,22 @@ class MedDenScreen(Screens):
 
         for cat in self.display_med:
             self.med_cat = UISpriteButton(
-                scale(pygame.Rect((870, 330), (300, 300))),
+                ui_scale(pygame.Rect((435, 165), (150, 150))),
                 cat.sprite,
                 cat_object=cat,
                 manager=MANAGER,
             )
             name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 275, 30)
+            short_name = shorten_text_to_fit(name, 137, 15)
             self.med_name = pygame_gui.elements.ui_label.UILabel(
-                scale(pygame.Rect((1050, 310), (450, 60))),
+                ui_scale(pygame.Rect((525, 155), (225, 30))),
                 short_name,
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
             self.med_info = UITextBoxTweaked(
                 "",
-                scale(pygame.Rect((1160, 370), (240, 240))),
+                ui_scale(pygame.Rect((580, 185), (120, 120))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1,
                 manager=MANAGER,
@@ -509,8 +531,8 @@ class MedDenScreen(Screens):
             else:
                 self.last_page.enable()
 
-        pos_x = 350
-        pos_y = 920
+        pos_x = 175
+        pos_y = 460
         i = 0
         for cat in self.display_cats:
             condition_list = []
@@ -525,7 +547,7 @@ class MedDenScreen(Screens):
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
-                scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 cat.sprite,
                 cat_object=cat,
                 manager=MANAGER,
@@ -534,20 +556,20 @@ class MedDenScreen(Screens):
             )
 
             name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 185, 30)
+            short_name = shorten_text_to_fit(name, 92, 15)
             self.cat_names.append(
                 pygame_gui.elements.UITextBox(
                     short_name,
-                    scale(pygame.Rect((pos_x - 60, pos_y + 100), (220, -1))),
+                    ui_scale(pygame.Rect((pos_x - 30, pos_y + 50), (110, -1))),
                     object_id="#text_box_30_horizcenter",
                     manager=MANAGER,
                 )
             )
 
-            pos_x += 200
-            if pos_x >= 1340:
-                pos_x = 350
-                pos_y += 160
+            pos_x += 100
+            if pos_x >= 670:
+                pos_x = 175
+                pos_y += 80
             i += 1
 
     def draw_med_den(self):
@@ -561,10 +583,14 @@ class MedDenScreen(Screens):
         if not herbs_stored:
             herb_list.append("Empty")
         if len(herb_list) <= 10:
-            herb_display = "<br>".join(sorted(herb_list))
+            # classic doesn't display herbs
+            if game.clan.game_mode == "classic":
+                herb_display = None
+            else:
+                herb_display = "<br>".join(sorted(herb_list))
 
             self.den_base = UIImageButton(
-                scale(pygame.Rect((216, 190), (792, 448))),
+                ui_scale(pygame.Rect((108, 95), (396, 224))),
                 "",
                 object_id="#med_cat_den_hover",
                 tool_tip_text=herb_display,
@@ -590,20 +616,39 @@ class MedDenScreen(Screens):
             if added is False:
                 holding_pairs.extend(pair)
 
-            herb_display = "<br>".join(holding_pairs)
+            # classic doesn't display herbs
+            if game.clan.game_mode == "classic":
+                herb_display = None
+            else:
+                herb_display = "<br>".join(holding_pairs)
             self.den_base = UIImageButton(
-                scale(pygame.Rect((216, 190), (792, 448))),
+                ui_scale(pygame.Rect((108, 95), (396, 224))),
                 "",
                 object_id="#med_cat_den_hover_big",
                 tool_tip_text=herb_display,
                 manager=MANAGER,
             )
 
-        herbs = game.clan.herbs
+        if game.clan.game_mode == "classic":
+            num_drawn = 0
+            herb_amount = sum(game.clan.herbs.values())
+
+            # draw x different herbs where x is how many herbs you have
+            herbs = {}
+            for herb in HERBS:
+                # 2 so we have both cobwebs
+                herbs[herb] = 2
+                num_drawn += 1
+
+                if num_drawn >= herb_amount:
+                    break
+        else:
+            # otherwise draw the herbs you have
+            herbs = game.clan.herbs
         for herb in herbs:
             if herb == "cobwebs":
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((216, 190), (792, 448))),
+                    ui_scale(pygame.Rect((108, 95), (396, 224))),
                     pygame.transform.scale(
                         pygame.image.load(
                             "resources/images/med_cat_den/cobweb1.png"
@@ -614,7 +659,7 @@ class MedDenScreen(Screens):
                 )
                 if herbs["cobwebs"] > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(
-                        scale(pygame.Rect((216, 190), (792, 448))),
+                        ui_scale(pygame.Rect((108, 95), (396, 224))),
                         pygame.transform.scale(
                             pygame.image.load(
                                 "resources/images/med_cat_den/cobweb2.png"
@@ -625,7 +670,7 @@ class MedDenScreen(Screens):
                     )
                 continue
             self.herbs[herb] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((216, 190), (792, 448))),
+                ui_scale(pygame.Rect((108, 95), (396, 224))),
                 pygame.transform.scale(
                     pygame.image.load(
                         f"resources/images/med_cat_den/{herb}.png"

@@ -271,10 +271,6 @@ def cats_fulfill_single_interaction_constraints(
                 return False
 
     if len(interaction.has_injuries) >= 1:
-        # if there is an injury constraint and the Clan is in classic mode, this interaction cannot be used
-        if game_mode == "classic":
-            return False
-
         if "m_c" in interaction.has_injuries:
             injuries_in_needed = list(
                 filter(

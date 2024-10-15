@@ -17,7 +17,7 @@
     "location": ["plains"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "As the wind howls on the plains outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
+    "event_text": "As the wind howls on the plains outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
     "m_c": {
       "age": ["any"],
       "status": ["medicine cat", "medicine cat apprentice"],
@@ -29,11 +29,35 @@
     "location": ["plains"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight... m_c isolates {PRONOUN/m_c/self} in the shifting long grass, considering what the omens foretell.",
+    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c isolates {PRONOUN/m_c/self} in the shifting long grass, considering what the omens foretell.",
     "m_c": {
       "age": ["any"],
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
+    }
+  },
+  {
+    "event_id": "pln_misc_blooming_accessory",
+    "location": ["any"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "sub_type": ["accessory"],
+    "weight": 20,
+    "event_text":  "The acc_plural are just absolutely blooming this season! m_c decides to keep some to remind {PRONOUN/m_c/object} of such a beautiful sight.",
+    "new_accessory": ["HEATHER", "GORSE"],
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    }
+  },
+  {
+    "event_id": "pln_misc_trip_accessory",
+    "location": ["any"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "sub_type": ["accessory"],
+    "weight": 20,
+    "event_text":  "m_c tripped and ended up with acc_plural all over {PRONOUN/m_c/object}! Oh hey, it actually doesn't look that bad...",
+    "new_accessory": ["CLOVER", "DAISY"],
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     }
   }
 ]

@@ -124,22 +124,15 @@ class Relationship:
                 all_interactions, intensity, biome, season, game_mode
             )
 
+        # return if there are no possible interactions.
         if len(possible_interactions) <= 0:
             print(
-                "ERROR: No interaction with this conditions. ",
+                "WARNING: No interaction with this conditions.",
                 rel_type,
                 in_de_crease,
                 intensity,
             )
-            possible_interactions = [
-                SingleInteraction(
-                    "fall_back",
-                    "Any",
-                    "Any",
-                    "medium",
-                    ["Default string, this should never appear."],
-                )
-            ]
+            return
 
         # check if the current interaction id is already used and us another if so
         chosen_interaction = choice(possible_interactions)
@@ -159,8 +152,8 @@ class Relationship:
         self.used_interaction_ids.append(self.chosen_interaction.id)
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
-        # give cats injuries if the game mode is not classic
-        if self.chosen_interaction.get_injuries and game_mode != "classic":
+        # give cats injuries
+        if self.chosen_interaction.get_injuries:
             injuries = []
             for (
                 abbreviations,

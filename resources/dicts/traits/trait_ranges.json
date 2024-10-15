@@ -266,19 +266,19 @@
             "aggression": [0, 8],
             "stability": [0, 8]
         },
-        "charming": {
+        "daydreamer": {
             "lawfulness": [0, 8],
             "sociability": [8, 16],
             "aggression": [0, 8],
             "stability": [8, 16]
         },
-        "fearless": {
+        "charming": {
             "lawfulness": [0, 8],
             "sociability": [8, 16],
             "aggression": [8, 16],
             "stability": [0, 8]
         },
-        "noisy": {
+        "fearless": {
             "lawfulness": [0, 8],
             "sociability": [8, 16],
             "aggression": [8, 16],
@@ -302,7 +302,7 @@
             "aggression": [8, 16],
             "stability": [0, 8]
         },
-        "daydreamer": {
+        "know-it-all": {
             "lawfulness": [8, 16],
             "sociability": [0, 8],
             "aggression": [8, 16],
@@ -320,13 +320,13 @@
             "aggression": [0, 8],
             "stability": [8, 16]
         },
-        "know-it-all": {
+        "bossy": {
             "lawfulness": [8, 16],
             "sociability": [8, 16],
             "aggression": [8, 16],
             "stability": [0, 8]
         },
-        "bossy": {
+        "noisy": {
             "lawfulness": [8, 16],
             "sociability": [8, 16],
             "aggression": [8, 16],

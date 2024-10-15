@@ -9,5 +9,5 @@ def load_image(path):
     Otherwise, the image is retrieved from the cache.
     """
     if path not in _images:
-        _images[path] = pygame.image.load(path)
+        _images[path] = pygame.image.load(path).convert_alpha()
     return _images[path]

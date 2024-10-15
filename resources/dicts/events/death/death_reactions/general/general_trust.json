@@ -1,375 +1,295 @@
 {
-  "general": {
-    "body": [
-      "r_c will miss m_c, truly. There was no other cat {PRONOUN/r_c/subject} trusted more and {PRONOUN/r_c/subject} already {VERB/r_c/miss/misses} m_c's steady presence at {PRONOUN/r_c/poss} side.",
-      "How is r_c supposed to keep going? {PRONOUN/r_c/subject/CAP} thought m_c was always going to be there, was supposed to always be by {PRONOUN/r_c/poss} side, but now. . .",
-      "It's like losing a tail, or a limb, or {PRONOUN/r_c/poss} shadow. r_c relied on m_c, trusted {PRONOUN/m_c/object}, and contemplating moving on from the loss seems impossible."
-
-    ],
-    "no_body": [
-      "r_c will miss m_c, truly. There was no other cat {PRONOUN/r_c/subject} trusted more and {PRONOUN/r_c/subject} already {VERB/r_c/miss/misses} m_c's steady presence at {PRONOUN/r_c/poss} side.",
-      "How is r_c supposed to keep going? {PRONOUN/r_c/subject/CAP} thought m_c was always going to be there, was supposed to always be by {PRONOUN/r_c/poss} side, but now. . .",
-      "It's like losing a tail, or a limb, or {PRONOUN/r_c/poss} shadow. r_c relied on m_c, trusted {PRONOUN/m_c/object}, and contemplating moving on from the loss seems impossible."
-    ]
-  },
-  "adventurous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "altruistic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "ambitious": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bloodthirsty": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "calm": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "careful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "charismatic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "childish": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "cold": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "compassionate": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "confident": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "daring": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "empathetic": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "faithful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "fierce": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "insecure": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "lonesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loving": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "loyal": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "nervous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "patient": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "playful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "responsible": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "righteous": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "shameless": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "sneaky": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strange": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "strict": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "thoughtful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "troublesome": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "vengeful": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "wise": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "attention-seeker": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bossy": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bouncy": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "bullying": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "charming": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "daydreamer": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "impulsive": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "inquisitive": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "noisy": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "polite": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "quiet": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  },
-  "sweet": {
-    "body": [
-
-    ],
-    "no_body": [
-
-    ]
-  }
+    "general": {
+        "body": [
+            "r_c will miss m_c, truly. There was no other cat {PRONOUN/r_c/subject} trusted more and {PRONOUN/r_c/subject} already {VERB/r_c/miss/misses} m_c's steady presence at {PRONOUN/r_c/poss} side.",
+            "How is r_c supposed to keep going? {PRONOUN/r_c/subject/CAP} thought m_c was always going to be there, was supposed to always be by {PRONOUN/r_c/poss} side, but now...",
+            "It's like losing a tail, or a limb, or {PRONOUN/r_c/poss} shadow. r_c relied on m_c, trusted {PRONOUN/m_c/object}, and contemplating moving on from the loss seems impossible.",
+            "r_c would have followed m_c anywhere, but this is one journey {PRONOUN/m_c/subject} must take alone.",
+            "r_c feels unsteady at the thought of trying to pad through life without m_c to rely on.",
+            "Part of r_c assumed nothing bad could ever happen to c_n when m_c was there. With {PRONOUN/m_c/object} gone, how will they carry on?",
+            "r_c opened up to m_c more than almost any other cat. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}n't know how {PRONOUN/r_c/subject}'ll handle hard times without m_c.",
+            "r_c stares at m_c's body, unable to look away. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} a steady, rock-solid presence in r_c's life, and death has rendered {PRONOUN/m_c/object} so small and feeble.",
+            "r_c prays m_c's spirit is somewhere watching over {PRONOUN/r_c/object} now. {PRONOUN/r_c/subject/CAP} can't imagine the rest of {PRONOUN/r_c/poss} life without {PRONOUN/m_c/poss} guidance."
+        ],
+        "no_body": [
+            "r_c will miss m_c, truly. There was no other cat {PRONOUN/r_c/subject} trusted more and {PRONOUN/r_c/subject} already {VERB/r_c/miss/misses} m_c's steady presence at {PRONOUN/r_c/poss} side.",
+            "How is r_c supposed to keep going? {PRONOUN/r_c/subject/CAP} thought m_c was always going to be there, was supposed to always be by {PRONOUN/r_c/poss} side, but now...",
+            "It's like losing a tail, or a limb, or {PRONOUN/r_c/poss} shadow. r_c relied on m_c, trusted {PRONOUN/m_c/object}, and contemplating moving on from the loss seems impossible.",
+            "r_c would have followed m_c anywhere, but this is one journey {PRONOUN/m_c/subject} must take alone.",
+            "r_c feels unsteady at the thought of trying to pad through life without m_c to rely on.",
+            "Part of r_c assumed nothing bad could ever happen to c_n when m_c was there. With {PRONOUN/m_c/object} gone, how will they carry on?",
+            "r_c opened up to m_c more than almost any other cat. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}n't know how {PRONOUN/r_c/subject}'ll handle hard times without m_c.",
+            "r_c prays m_c's spirit is somewhere watching over {PRONOUN/r_c/object} now. {PRONOUN/r_c/subject/CAP} can't imagine the rest of {PRONOUN/r_c/poss} life without {PRONOUN/m_c/poss} guidance."
+        ]
+    },
+    "adventurous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "altruistic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "ambitious": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bloodthirsty": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "calm": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "careful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charismatic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "childish": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "cold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "compassionate": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "confident": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daring": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "empathetic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "faithful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "fierce": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "insecure": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "lonesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loving": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loyal": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "nervous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "patient": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "playful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "responsible": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "righteous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "shameless": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sneaky": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strange": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strict": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "thoughtful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "troublesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "vengeful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "wise": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "attention-seeker": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bossy": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bouncy": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bullying": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charming": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daydreamer": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "impulsive": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "inquisitive": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "noisy": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "polite": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "quiet": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sweet": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    }
 }

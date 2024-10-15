@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        version="1.1"
+        id="svg1"
+        width="17"
+        height="17"
+        viewBox="0 0 17 17"
+        sodipodi:docname="button_claws.svg"
+        inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+        xmlns="http://www.w3.org/2000/svg">
+    <defs
+            id="defs1"/>
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#505050"
+            bordercolor="#ffffff"
+            borderopacity="1"
+            inkscape:showpageshadow="0"
+            inkscape:pageopacity="0"
+            inkscape:pagecheckerboard="1"
+            inkscape:deskcolor="#505050"
+            showgrid="true"
+            inkscape:zoom="32"
+            inkscape:cx="6.53125"
+            inkscape:cy="6.921875"
+            inkscape:window-width="1920"
+            inkscape:window-height="991"
+            inkscape:window-x="-9"
+            inkscape:window-y="-9"
+            inkscape:window-maximized="1"
+            inkscape:current-layer="g1">
+        <inkscape:grid
+                id="grid1"
+                units="px"
+                originx="0"
+                originy="0"
+                spacingx="0.25"
+                spacingy="0.25"
+                empcolor="#0099e5"
+                empopacity="0.30196078"
+                color="#0099e5"
+                opacity="0.14901961"
+                empspacing="5"
+                dotted="false"
+                gridanglex="30"
+                gridanglez="30"
+                visible="true"/>
+    </sodipodi:namedview>
+    <g
+            inkscape:groupmode="layer"
+            inkscape:label="Image"
+            id="g1">
+        <g
+                id="g4"
+                transform="matrix(1.6,0,0,1.6,-5.1,-5.8)">
+            <path
+                    style="fill:#ff0000"
+                    d="m 7,4 h 0.5 v 0.5 h 1 V 5 H 9 V 5.5 H 9.5 V 6 H 10 v 0.5 h 0.5 V 7 H 11 v 1 h 0.5 V 8.5 H 12 v 1 h 0.5 v 2 H 12 v -1 H 11.5 V 10 H 11 V 9 H 10.5 V 8 H 10 V 7.5 H 9.5 V 7 H 9 V 6 H 8.5 V 5.5 H 8 V 5 H 7.5 V 4.5 H 7 Z"
+                    id="path1"/>
+            <path
+                    style="fill:#ff0000"
+                    d="M 13,11.5 V 12 h -0.5 v -0.5 z"
+                    id="path2"/>
+            <path
+                    style="fill:#ff0000"
+                    d="M 5,4.5 H 5.5 V 5 H 6 V 5.5 H 6.5 V 6 H 7 V 6.5 H 7.5 V 7 H 8 V 7.5 H 8.5 V 8 H 9 V 9 H 9.5 V 9.5 H 10 v 1 h 0.5 v 1 H 11 V 13 h 0.5 v 0.5 H 11 V 13 H 10.5 V 12.5 H 10 V 12 H 9.5 V 11 H 9 V 10.5 H 8.5 v -1 H 8 V 9 H 7.5 V 8.5 H 7 v -1 H 6.5 V 7 H 6 V 6 H 5.5 V 5 H 5 Z"
+                    id="path3"/>
+            <path
+                    style="fill:#ff0000"
+                    d="M 4,7 H 4.5 V 7.5 H 5 V 8 H 5.5 V 8.5 H 6 V 9 H 6.5 V 9.5 H 7 v 1 h 0.5 v 1 H 8 v 1 h 0.5 v 1 H 9 V 14 H 8.5 V 13.5 H 8 V 13 H 7.5 V 12.5 H 7 v -1 H 6.5 V 11 H 6 V 10 H 5.5 V 9 H 5 V 8.5 H 4.5 v -1 H 4 Z"
+                    id="path4"/>
+        </g>
+    </g>
+</svg>
