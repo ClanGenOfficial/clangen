@@ -19,21 +19,31 @@ class CanHaveKits(unittest.TestCase):
         cat.no_kits = True
 
         # then
-        self.assertFalse(Pregnancy_Events.check_if_can_have_kits(cat, single_parentage=True, allow_affair=True))
+        self.assertFalse(
+            Pregnancy_Events.check_if_can_have_kits(
+                cat, single_parentage=True, allow_affair=True
+            )
+        )
 
-    @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
+    @patch(
+        "scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits"
+    )
     def test_no_kit_setting(self, check_if_can_have_kits):
         # given
         test_clan = PlayerClan(name="clan")
         test_clan.pregnancy_data = {}
-        cat1 = Cat(gender='female')
+        cat1 = Cat(gender="female")
         cat1.no_kits = True
-        cat2 = Cat(gender='male')
+        cat2 = Cat(gender="male")
 
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-        relation1 = Relationship(cat1, cat2, mates=True, family=False, romantic_love=100)
-        relation2 = Relationship(cat2, cat1, mates=True, family=False, romantic_love=100)
+        relation1 = Relationship(
+            cat1, cat2, mates=True, family=False, romantic_love=100
+        )
+        relation2 = Relationship(
+            cat2, cat1, mates=True, family=False, romantic_love=100
+        )
         cat1.relationships[cat2.ID] = relation1
         cat2.relationships[cat1.ID] = relation2
 
@@ -49,16 +59,24 @@ class SameSexAdoptions(unittest.TestCase):
     def test_kits_are_adopted(self):
         # given
 
-        cat1 = Cat(gender='female', age="adult", moons=40)
-        cat2 = Cat(gender='female', age="adult", moons=40)
+        cat1 = Cat(gender="female", age="adult", moons=40)
+        cat2 = Cat(gender="female", age="adult", moons=40)
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 
         # when
         single_parentage = False
         allow_affair = False
-        self.assertTrue(Pregnancy_Events.check_if_can_have_kits(cat1, single_parentage, allow_affair))
-        self.assertTrue(Pregnancy_Events.check_if_can_have_kits(cat2, single_parentage, allow_affair))
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                cat1, single_parentage, allow_affair
+            )
+        )
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                cat2, single_parentage, allow_affair
+            )
+        )
 
         can_have_kits, kits_are_adopted = Pregnancy_Events.check_second_parent(
             cat=cat1,
@@ -66,18 +84,20 @@ class SameSexAdoptions(unittest.TestCase):
             single_parentage=single_parentage,
             allow_affair=allow_affair,
             same_sex_birth=False,
-            same_sex_adoption=True
+            same_sex_adoption=True,
         )
         self.assertTrue(can_have_kits)
         self.assertTrue(kits_are_adopted)
 
 
 class Pregnancy(unittest.TestCase):
-    @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
+    @patch(
+        "scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits"
+    )
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = PlayerClan(name="clan")
-        cat = Cat(gender='female', age="adult", moons=40)
+        cat = Cat(gender="female", age="adult", moons=40)
         clan.pregnancy_data = {}
 
         # when
@@ -87,12 +107,14 @@ class Pregnancy(unittest.TestCase):
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
 
-    @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
+    @patch(
+        "scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits"
+    )
     def test_pair(self, check_if_can_have_kits):
         # given
         clan = PlayerClan(name="clan")
-        cat1 = Cat(gender='female', age="adult", moons=40)
-        cat2 = Cat(gender='male', age="adult", moons=40)
+        cat1 = Cat(gender="female", age="adult", moons=40)
+        cat2 = Cat(gender="male", age="adult", moons=40)
 
         clan.pregnancy_data = {}
 

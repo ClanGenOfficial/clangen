@@ -2,7 +2,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.clan import HERBS
+from scripts.clan.playerclan import HERBS
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
