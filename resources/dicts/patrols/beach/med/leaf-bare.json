@@ -1336,7 +1336,7 @@
                 ]
             },
             {
-                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject} and app1 — who's been a real trooper today — are back in their nice, warm nests.",
+                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject} and app1 - who's been a real trooper today - are back in their nice, warm nests.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["daisy"],
