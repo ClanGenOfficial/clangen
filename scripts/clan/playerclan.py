@@ -13,13 +13,13 @@ import random
 import statistics
 from random import choice, randint
 
-import pygame
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
-from scripts.cat.sprites import sprites
+from scripts.clan.baseclan import BaseClan
+from scripts.clan.otherclan import OtherClan
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure.game_essentials import game
@@ -32,60 +32,47 @@ from scripts.utility import (
 )  # pylint: disable=redefined-builtin
 
 
-class Clan:
+class PlayerClan(BaseClan):
+    """
+    The player's clan in ClanGen
     """
 
-    TODO: Docs
-
-    """
-
-    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
-
-    CAT_TYPES = [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "warrior",
-        "medicine",
-        "deputy",
-        "leader",
-        "elder",
-        "mediator",
-        "general",
-    ]
-
+    leader = ""
     leader_lives = 0
-    clan_cats = []
-    starclan_cats = []
-    darkforest_cats = []
-    unknown_cats = []
-    seasons = [
-        "Newleaf",
-        "Newleaf",
-        "Newleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Leaf-bare",
-        "Leaf-bare",
-    ]
+    leader_predecessors = 0
+    deputy = ""
+    deputy_predecessors = 0
+    medicine_cat = ""
+    med_cat_list = []
+    med_cat_predecessors = 0
 
-    temperament_dict = {
-        "low_social": ["cunning", "proud", "bloodthirsty"],
-        "mid_social": ["amiable", "stoic", "wary"],
-        "high_social": ["gracious", "mellow", "logical"],
+    camp_bg = "camp1"
+
+    herbs = {}
+    age = 0
+    instructor = None
+    chosen_symbol = ""
+    game_mode = "classic"
+    pregnancy_data = {}
+    inheritance = {}
+    custom_pronouns = []
+    clan_settings = {}
+    setting_lists = {}
+    all_settings = []
+    _reputation = 80  # reputation with outsiders
+    starting_members = []
+    freshkill_pile = None
+    war = {
+        "at_war": False,
+        "enemy": None,
+        "duration": 0,
     }
+    last_focus_change = None
+    clans_in_focus = []
+    faded_ids = []
 
     with open("resources/placements.json", "r") as read_file:
         layouts = ujson.loads(read_file.read())
-
-    age = 0
-    current_season = "Newleaf"
-    all_clans = []
 
     def __init__(
         self,
@@ -118,23 +105,19 @@ class Clan:
         self.med_cat_number = len(
             self.med_cat_list
         )  # Must do this after the medicine cat is added to the list.
-        self.herbs = {}
         self.age = 0
         self.current_season = "Newleaf"
         self.starting_season = starting_season
-        self.instructor = None
-        # This is the first cat in starclan, to "guide" the other dead cats there.
+
+        # self.instructor = None
+        # # This is the first cat in starclan, to "guide" the other dead cats there.
+
         self.biome = biome
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        self.pregnancy_data = {}
-        self.inheritance = {}
-        self.custom_pronouns = []
 
         # Init Settings
-        self.clan_settings = {}
-        self.setting_lists = {}
         with open("resources/clansettings.json", "r") as read_file:
             _settings = ujson.loads(read_file.read())
 
@@ -142,12 +125,11 @@ class Clan:
             self.clan_settings[setting] = values[0]
             self.setting_lists[setting] = values
 
-        all_settings = []
-        all_settings.append(_settings["general"])
-        all_settings.append(_settings["role"])
-        all_settings.append(_settings["relation"])
-        all_settings.append(_settings["freshkill_tactics"])
-        all_settings.append(_settings["clan_focus"])
+        all_settings = [_settings["general"],
+                        _settings["role"],
+                        _settings["relation"],
+                        _settings["freshkill_tactics"],
+                        _settings["clan_focus"]]
 
         for setting in all_settings:  # Add all the settings to the settings dictionary
             for setting_name, inf in setting.items():
@@ -174,9 +156,7 @@ class Clan:
         self.last_focus_change = None
         self.clans_in_focus = []
 
-        self.faded_ids = (
-            []
-        )  # Stores ID's of faded cats, to ensure these IDs aren't reused.
+        self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
         if self_run_init_functions:
             self.post_initialization_functions()
 
@@ -278,8 +258,8 @@ class Clan:
         #    game.settings['disasters'] = True
 
         # set the starting season
-        season_index = self.seasons.index(self.starting_season)
-        self.current_season = self.seasons[season_index]
+        season_index = self.SEASONS.index(self.starting_season)
+        self.current_season = self.SEASONS[season_index]
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
@@ -590,7 +570,7 @@ class Clan:
 
     def load_clan_txt(self):
         """
-        TODO: DOCS
+        Handles loading old Clans from text files, rather than JSON.
         """
         other_clans = []
         if game.switches["clan_list"] == "":
@@ -604,12 +584,14 @@ class Clan:
                 self.all_clans.append(OtherClan())
             return
         game.switches["error_message"] = "There was an error loading the clan.txt"
+
         with open(
             get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.txt",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
             clan_data = read_file.read()
+
         clan_data = clan_data.replace("\t", ",")
         sections = clan_data.split("\n")
         if len(sections) == 7:
@@ -636,6 +618,7 @@ class Clan:
             instructor_info = sections[3]
             members = sections[4].split(",")
             other_clans = []
+
         if len(general) == 9:
             if general[3] == "None":
                 general[3] = "camp1"
@@ -645,7 +628,7 @@ class Clan:
                 general[7] = "classic"
             elif general[8] == "None":
                 general[8] = 50
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -664,7 +647,7 @@ class Clan:
                 general[4] = 0
             elif general[7] == "None":
                 general[7] = "classic"
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -680,7 +663,7 @@ class Clan:
                 general[4] = 0
             elif general[3] == "None":
                 general[3] = "camp1"
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -691,7 +674,7 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         elif len(general) == 3:
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
@@ -701,7 +684,7 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         else:
-            game.clan = Clan(
+            game.clan = PlayerClan(
                 general[0],
                 Cat.all_cats[leader_info[0]],
                 Cat.all_cats.get(deputy_info[0], None),
@@ -709,11 +692,13 @@ class Clan:
                 self_run_init_functions=False,
             )
             game.clan.post_initialization_functions()
+
         game.clan.age = int(general[1])
         if not game.config["lock_season"]:
-            game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+            game.clan.current_season = game.clan.SEASONS[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season
+
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]
         ), int(leader_info[2])
@@ -801,7 +786,7 @@ class Clan:
         else:
             med_cat = None
 
-        game.clan = Clan(
+        game.clan = PlayerClan(
             name=clan_data["clanname"],
             leader=leader,
             deputy=deputy,
@@ -1253,94 +1238,8 @@ class Clan:
 
         return _temperament
 
-    @temperament.setter
-    def temperament(self, val):
-        return
 
-
-class OtherClan:
-    """
-    TODO: DOCS
-    """
-
-    interaction_dict = {
-        "ally": ["offend", "praise"],
-        "neutral": ["provoke", "befriend"],
-        "hostile": ["antagonize", "appease", "declare"],
-    }
-
-    temperament_list = [
-        "cunning",
-        "wary",
-        "logical",
-        "proud",
-        "stoic",
-        "mellow",
-        "bloodthirsty",
-        "amiable",
-        "gracious",
-    ]
-
-    def __init__(self, name="", relations=0, temperament="", chosen_symbol=""):
-        clan_names = names.names_dict["normal_prefixes"]
-        clan_names.extend(names.names_dict["clan_prefixes"])
-        self.name = name or choice(clan_names)
-        self.relations = relations or randint(8, 12)
-        self.temperament = temperament or choice(self.temperament_list)
-        if self.temperament not in self.temperament_list:
-            self.temperament = choice(self.temperament_list)
-
-        self.chosen_symbol = (
-            None  # have to establish None first so that clan_symbol_sprite works
-        )
-        self.chosen_symbol = (
-            chosen_symbol
-            if chosen_symbol
-            else clan_symbol_sprite(self, return_string=True)
-        )
-
-    def __repr__(self):
-        return f"{self.name}Clan"
-
-
-class StarClan:
-    """
-    TODO: DOCS
-    """
-
-    forgotten_stages = {
-        0: [0, 100],
-        10: [101, 200],
-        30: [201, 300],
-        60: [301, 400],
-        90: [401, 500],
-        100: [501, 502],
-    }  # Tells how faded the cat will be in StarClan by months spent
-    dead_cats = {}
-
-    def __init__(self):
-        """
-        TODO: DOCS
-        """
-        self.instructor = None
-
-    def fade(self, cat):
-        """
-        TODO: DOCS
-        """
-        white = pygame.Surface((sprites.size, sprites.size))
-        fade_level = 0
-        if cat.dead:
-            for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items
-                if cat.dead_for in range(
-                    self.forgotten_stages[f][0], self.forgotten_stages[f][1]
-                ):
-                    fade_level = f
-        white.fill((255, 255, 255, fade_level))
-        return white
-
-
-clan_class = Clan()
+clan_class = PlayerClan()
 clan_class.remove_cat(cat_class.ID)
 
 HERBS = None

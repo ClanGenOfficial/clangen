@@ -7,7 +7,7 @@ from pygame_gui.core import ObjectID
 from pygame_gui.elements import UIImage
 
 import scripts.game_structure.screen_settings
-from scripts.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -61,7 +61,7 @@ class SwitchClanScreen(Screens):
 
                 for page in self.clan_buttons:
                     if event.ui_element in page:
-                        Clan.switch_clans(
+                        PlayerClan.switch_clans(
                             self.clan_name[self.page][page.index(event.ui_element)]
                         )
 

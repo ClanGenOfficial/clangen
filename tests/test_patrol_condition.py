@@ -2,7 +2,7 @@ import unittest
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.patrol.patrol import Patrol
 
 
@@ -93,7 +93,7 @@ class TestCondition(unittest.TestCase):
 
     def test_cold_injury(self):
         # GIVEN
-        clan = Clan()
+        clan = PlayerClan()
         patrol_cat = Cat(moons=20)
         patrol_cat.status = "warrior"
         patrol_cat.history = History()

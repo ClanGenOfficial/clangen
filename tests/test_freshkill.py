@@ -4,7 +4,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.skills import Skill, SkillPath
-from scripts.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.clan_resources.freshkill import FreshkillPile
 from scripts.utility import get_alive_clan_queens
 
@@ -81,15 +81,15 @@ class FreshkillPileTest(unittest.TestCase):
 
     def test_feed_cats(self) -> None:
         # given
-        test_clan = Clan(name="Test",
-                         leader=None,
-                         deputy=None,
-                         medicine_cat=None,
-                         biome='Forest',
-                         camp_bg=None,
-                         game_mode='expanded',
-                         starting_members=[],
-                         starting_season='Newleaf')
+        test_clan = PlayerClan(name="Test",
+                               leader=None,
+                               deputy=None,
+                               medicine_cat=None,
+                               biome='Forest',
+                               camp_bg=None,
+                               game_mode='expanded',
+                               starting_members=[],
+                               starting_season='Newleaf')
         test_warrior = Cat()
         test_warrior.status = "warrior"
         test_clan.add_cat(test_warrior)

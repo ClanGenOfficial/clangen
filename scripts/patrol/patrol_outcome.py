@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from scripts.patrol.patrol import Patrol
 
 from scripts.cat.history import History
-from scripts.clan import HERBS
+from scripts.clan.playerclan import HERBS
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,

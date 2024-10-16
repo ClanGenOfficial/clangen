@@ -9,7 +9,7 @@ from pygame_gui.core import ObjectID
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
-from scripts.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
@@ -1984,7 +1984,7 @@ class MakeClanScreen(Screens):
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
-        game.clan = Clan(
+        game.clan = PlayerClan(
             name=self.clan_name,
             leader=self.leader,
             deputy=self.deputy,

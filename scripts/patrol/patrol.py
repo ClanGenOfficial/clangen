@@ -11,7 +11,7 @@ import pygame
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.clan import Clan
+from scripts.clan.playerclan import PlayerClan
 from scripts.game_structure.game_essentials import game
 from scripts.patrol.patrol_event import PatrolEvent
 from scripts.patrol.patrol_outcome import PatrolOutcome
@@ -116,7 +116,7 @@ class Patrol:
 
         return self.determine_outcome(antagonize=(path == "antag"))
 
-    def add_patrol_cats(self, patrol_cats: List[Cat], clan: Clan) -> None:
+    def add_patrol_cats(self, patrol_cats: List[Cat], clan: PlayerClan) -> None:
         """Add the list of cats to the patrol class and handles to set all needed values.
 
         Parameters
@@ -124,7 +124,7 @@ class Patrol:
         patrol_cats : list
             list of cats which are on the patrol
 
-        clan: Clan
+        clan: PlayerClan
             the Clan class of the game, this parameter is needed to make tests possible
 
         Returns
@@ -369,7 +369,7 @@ class Patrol:
             possible_patrols, biome, camp, current_season, patrol_type
         )
 
-        # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc. 
+        # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
         if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
             final_patrols = final_romance_patrols = possible_patrols
             # Logging
@@ -667,7 +667,7 @@ class Patrol:
         # Run the chosen outcome
         return final_event.execute_outcome(self)
 
-    def calculate_success( 
+    def calculate_success(
         self, success_outcome: PatrolOutcome, fail_outcome: PatrolOutcome
     ) -> Tuple[PatrolOutcome, bool]:
         """Returns both the chosen event, and a boolean that's True if success, and False is fail."""
