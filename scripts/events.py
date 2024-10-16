@@ -1144,11 +1144,14 @@ class Events:
         self.mediator_events(cat)
 
         # handle nutrition amount
-        # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
-        if game.clan.game_mode in ['expanded', 'cruel season'
-                                   ] and game.clan.freshkill_pile:
-            Condition_Events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
-
+        # (CARE: the cats has to be fed before - should be handled in "one_moon" function)
+        if (
+            game.clan.game_mode in ["expanded", "cruel season"]
+            and game.clan.freshkill_pile
+        ):
+            Condition_Events.handle_nutrient(
+                cat
+            )
             if cat.dead:
                 return
 

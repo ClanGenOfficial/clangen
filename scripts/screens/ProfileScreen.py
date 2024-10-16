@@ -1004,15 +1004,9 @@ class ProfileScreen(Screens):
                 "former Clancat",
                 "exiled",
             ]:
-                nutr = None
-                if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
-                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
-                if not nutr:
-                    game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
-                    nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
-                output += "nutrition: " + nutr.nutrition_text
+                output += "nutrition: " + the_cat.nutrition.nutrition_text
                 if game.clan.clan_settings["showxp"]:
-                    output += " (" + str(int(nutr.percentage)) + ")"
+                    output += " (" + str(int(the_cat.nutrition.percentage)) + ")"
                 output += "\n"
 
         if the_cat.is_disabled():

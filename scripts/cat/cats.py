@@ -15,6 +15,7 @@ import ujson  # type: ignore
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
+from scripts.cat.nutrition import Nutrition
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
@@ -227,6 +228,8 @@ class Cat:
         self.permanent_condition = {}
         self.df = False
         self.experience_level = None
+
+        self.nutrition = Nutrition(status)
 
         # Various behavior toggles
         self.no_kits = False
@@ -731,31 +734,31 @@ class Cat:
 
                 # These minor grief message will be applied as thoughts.
                 minor_grief_messages = (
-                            "Told a fond story at r_c's vigil",
-                            "Bargains with StarClan, begging them to send r_c back",
-                            "Sat all night at r_c's vigil",
-                            "Will never forget r_c",
-                            "Prays that r_c is safe in StarClan",
-                            "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
-                            "Is mourning r_c",
-                            "Can't stop coming to tears each time r_c is mentioned",
-                            "Stayed the longest at r_c's vigil",
-                            "Left r_c's vigil early due to grief",
-                            "Lashes out at any cat who checks on {PRONOUN/m_c/object} after r_c's death",
-                            "Took a long walk on {PRONOUN/m_c/poss} own to mourn r_c in private",
-                            "Is busying {PRONOUN/m_c/self} with too much work to forget about r_c's death",
-                            "Does {PRONOUN/m_c/poss} best to console {PRONOUN/m_c/poss} clanmates about r_c's death",
-                            "Takes a part of r_c's nest to put with {PRONOUN/m_c/poss} own, clinging to the fading scent",
-                            "Sleeps in r_c's nest tonight",
-                            "Defensively states that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need any comfort about r_c's death",
-                            "Wonders why StarClan had to take r_c so soon",
-                            "Still needs r_c even though they're gone",
-                            "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
-                            "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
-                            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing"
-                        )
-                
-                if body: 
+                    "Told a fond story at r_c's vigil",
+                    "Bargains with StarClan, begging them to send r_c back",
+                    "Sat all night at r_c's vigil",
+                    "Will never forget r_c",
+                    "Prays that r_c is safe in StarClan",
+                    "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
+                    "Is mourning r_c",
+                    "Can't stop coming to tears each time r_c is mentioned",
+                    "Stayed the longest at r_c's vigil",
+                    "Left r_c's vigil early due to grief",
+                    "Lashes out at any cat who checks on {PRONOUN/m_c/object} after r_c's death",
+                    "Took a long walk on {PRONOUN/m_c/poss} own to mourn r_c in private",
+                    "Is busying {PRONOUN/m_c/self} with too much work to forget about r_c's death",
+                    "Does {PRONOUN/m_c/poss} best to console {PRONOUN/m_c/poss} clanmates about r_c's death",
+                    "Takes a part of r_c's nest to put with {PRONOUN/m_c/poss} own, clinging to the fading scent",
+                    "Sleeps in r_c's nest tonight",
+                    "Defensively states that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need any comfort about r_c's death",
+                    "Wonders why StarClan had to take r_c so soon",
+                    "Still needs r_c even though they're gone",
+                    "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
+                    "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
+                    "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing",
+                )
+
+                if body:
                     minor_grief_messages += (
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
                         "Slips out of camp to visit r_c's grave",
@@ -773,7 +776,7 @@ class Cat:
                         "Sleeps next to r_c for the entire vigil one last time",
                         "Ran out of camp the moment {PRONOUN/m_c/subject} saw r_c's body",
                         "Sang a song in memory of r_c at the vigil",
-                        "Stares at r_c's vigil longingly, but doesn't feel the right to join in"
+                        "Stares at r_c's vigil longingly, but doesn't feel the right to join in",
                     )
 
                 text = choice(minor_grief_messages)
@@ -3478,6 +3481,7 @@ class Cat:
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
 
+
 # Creates a random cat
 def create_cat(status, moons=None, biome=None):
     new_cat = Cat(status=status, biome=biome)
@@ -3503,7 +3507,6 @@ def create_cat(status, moons=None, biome=None):
         "NORIGHTEAR",
         "MANLEG",
     ]
-
     for scar in new_cat.pelt.scars:
         if scar in not_allowed_scars:
             new_cat.pelt.scars.remove(scar)

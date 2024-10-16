@@ -95,16 +95,12 @@ class ClearingScreen(Screens):
             elif event.ui_element in [self.feed_one_button, self.feed_max_button]:
                 amount = 1
                 if event.ui_element == self.feed_max_button:
-                    nutrition_info = game.clan.freshkill_pile.nutrition_info
-                    max_amount = nutrition_info[self.focus_cat_object.ID].max_score
-                    current_amount = nutrition_info[
-                        self.focus_cat_object.ID
-                    ].current_score
-                    amount = max_amount - current_amount
-                game.clan.freshkill_pile.feed_cat(self.focus_cat_object, amount, 0)
-                Condition_Events.handle_nutrient(
-                    self.focus_cat_object, game.clan.freshkill_pile.nutrition_info
-                )
+                    amount = (
+                        self.focus_cat_object.nutrition.max_score
+                        - self.focus_cat_object.nutrition.current_score
+                    )
+                game.clan.freshkill_pile.feed_one_cat(self.focus_cat_object, amount, 0)
+                Condition_Events.handle_nutrient(self.focus_cat_object)
                 self.update_cats_list()
                 self.update_nutrition_cats()
                 self.update_focus_cat()
@@ -121,7 +117,7 @@ class ClearingScreen(Screens):
                     self.handle_tab_toggles()
             elif event.ui_element == self.feed_all_button:
                 game.clan.freshkill_pile.already_fed = []
-                game.clan.freshkill_pile.feed_cats(self.hungry_cats, True)
+                game.clan.freshkill_pile.prepare_feed_cats(self.hungry_cats, True)
                 game.clan.freshkill_pile.already_fed = []
                 self.update_cats_list()
                 self.update_nutrition_cats()
@@ -189,20 +185,15 @@ class ClearingScreen(Screens):
             self.handle_checkbox_events(event)
 
     def update_cats_list(self):
-        self.satisfied_cats = []
-        self.hungry_cats = []
-        nutrition_info = game.clan.freshkill_pile.nutrition_info
-        low_nutrition_cats = [
-            cat_id
-            for cat_id, nutrient in nutrition_info.items()
-            if nutrient.percentage <= 99
+        clan_cats = [
+            cat for cat in Cat.all_cats_list if not cat.outside and not cat.dead
         ]
-        for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
-                if the_cat.ID in low_nutrition_cats:
-                    self.hungry_cats.append(the_cat)
-                else:
-                    self.satisfied_cats.append(the_cat)
+
+        self.hungry_cats = [cat for cat in clan_cats if cat.nutrition.percentage <= 99]
+        self.satisfied_cats = [
+            cat for cat in clan_cats if cat.ID not in self.hungry_cats
+        ]
+
         if self.cat_tab_open == self.satisfied_tab:
             self.tab_list = self.satisfied_cats
         else:
@@ -471,10 +462,7 @@ class ClearingScreen(Screens):
         self.feed_max_button.show()
         self.stop_focus_button.show()
         self.feed_all_button.hide()
-        nutrition_info = game.clan.freshkill_pile.nutrition_info
-        p = 100
-        if self.focus_cat_object.ID in nutrition_info:
-            p = int(nutrition_info[self.focus_cat_object.ID].percentage)
+        p = int(self.focus_cat_object.nutrition.percentage)
         if p >= 100:
             self.feed_one_button.disable()
             self.feed_max_button.disable()
@@ -504,18 +492,12 @@ class ClearingScreen(Screens):
             manager=MANAGER,
         )
         info_list = [self.focus_cat_object.skills.skill_string(short=True)]
-        nutrition_info = game.clan.freshkill_pile.nutrition_info
-        if self.focus_cat_object.ID in nutrition_info:
-            nutrition_text = (
-                "nutrition: " + nutrition_info[self.focus_cat_object.ID].nutrition_text
+        nutrition_text = "nutrition: " + self.focus_cat_object.nutrition.nutrition_text
+        if game.clan.clan_settings["showxp"]:
+            nutrition_text += (
+                " (" + str(int(self.focus_cat_object.nutrition.percentage)) + ")"
             )
-            if game.clan.clan_settings["showxp"]:
-                nutrition_text += (
-                    " ("
-                    + str(int(nutrition_info[self.focus_cat_object.ID].percentage))
-                    + ")"
-                )
-            info_list.append(nutrition_text)
+        info_list.append(nutrition_text)
         work_status = "This cat can work"
         if self.focus_cat_object.not_working():
             work_status = "This cat isn't able to work"
@@ -573,14 +555,10 @@ class ClearingScreen(Screens):
                 elif "malnourished" in cat.illnesses.keys():
                     condition_list.append("malnourished")
             if self.cat_tab_open == self.hungry_tab:
-                nutrition_info = game.clan.freshkill_pile.nutrition_info
-                if cat.ID in nutrition_info:
-                    full_text = " nutrition: " + nutrition_info[cat.ID].nutrition_text
-                    if game.clan.clan_settings["showxp"]:
-                        full_text += (
-                            " (" + str(int(nutrition_info[cat.ID].percentage)) + ")"
-                        )
-                    condition_list.append(full_text)
+                full_text = " nutrition: " + cat.nutrition.nutrition_text
+                if game.clan.clan_settings["showxp"]:
+                    full_text += " (" + str(cat.nutrition.percentage) + ")"
+                condition_list.append(full_text)
             conditions = (
                 ",<br>".join(condition_list) if len(condition_list) > 0 else None
             )
