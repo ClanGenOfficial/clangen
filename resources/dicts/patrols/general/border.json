@@ -3090,8 +3090,8 @@
     }
 ],
 "new_cat": [
-["meeting", "kittypet", "age:young adult"],
-["meeting", "kittypet", "age:young adult"]
+["meeting", "kittypet", "age:young adult", "exists" ],
+["meeting", "kittypet", "age:young adult", "exists"]
 ],
 "art": "gen_gen_newcat_hostile"
 		},
@@ -3132,8 +3132,8 @@
             }
     ],
     "new_cat": [
-        ["meeting", "kittypet", "age:young adult"],
-        ["meeting", "kittypet", "age:young adult"]
+        ["meeting", "kittypet", "age:young adult", "exists"],
+        ["meeting", "kittypet", "age:young adult", "exists"]
     ],
     "art": "gen_speaking_cat_w3"
     },
@@ -3224,8 +3224,8 @@
             }
     ],
     "new_cat": [
-        ["meeting", "kittypet", "age:young adult"],
-        ["meeting", "kittypet", "age:young adult"]
+        ["meeting", "kittypet", "age:young adult", "exists"],
+        ["meeting", "kittypet", "age:young adult", "exists"]
     ],
     "art": "gen_happy_cat3"
     },
@@ -3258,8 +3258,8 @@
     }
 ],
 "new_cat": [
-["meeting", "kittypet", "age:young adult"],
-["meeting", "kittypet", "age:young adult"]
+["meeting", "kittypet", "age:young adult", "exists" ],
+["meeting", "kittypet", "age:young adult", "exists"]
 ],
 "art": "gen_bord_twocat_hostile_loner_loner"
 	},
@@ -3316,8 +3316,8 @@
             }
         ],
         "new_cat": [
-        ["meeting", "kittypet", "age:young adult"],
-        ["meeting", "kittypet", "age:young adult"]
+        ["meeting", "kittypet", "age:young adult", "exists"],
+        ["meeting", "kittypet", "age:young adult", "exists"]
         ],
         "art": "gen_bord_twocat_hostile_warrior_warrior"
             },
@@ -3343,8 +3343,8 @@
     }
 ],
 "new_cat": [
-["meeting", "kittypet", "age:young adult"],
-["meeting", "kittypet", "age:young adult"]
+["meeting", "kittypet", "age:young adult", "exists" ],
+["meeting", "kittypet", "age:young adult", "exists"]
 ],
 "art": "gen_battle_warrior_loner"
 		},
@@ -3383,8 +3383,8 @@
             }
         ],
         "new_cat": [
-        ["meeting", "kittypet", "age:young adult"],
-        ["meeting", "kittypet", "age:young adult"]
+        ["meeting", "kittypet", "age:young adult", "exists"],
+        ["meeting", "kittypet", "age:young adult", "exists"]
         ],
         "art": "gen_gen_newcat_hostile"
                 },		
@@ -3423,8 +3423,8 @@
                     }
                 ],
                 "new_cat": [
-                ["meeting", "kittypet", "age:young adult"],
-                ["meeting", "kittypet", "age:young adult"]
+                ["meeting", "kittypet", "age:young adult", "exists"],
+                ["meeting", "kittypet", "age:young adult", "exists"]
                 ],
                 "art": "gen_bord_twocat_hostile_loner_loner"
         }
@@ -3465,8 +3465,8 @@
             }
         ],
         "new_cat": [
-        ["meeting", "kittypet", "age:young adult"],
-        ["meeting", "kittypet", "age:young adult"]
+        ["meeting", "kittypet", "age:young adult", "exists"],
+        ["meeting", "kittypet", "age:young adult", "exists"]
         ],
         "art": "gen_battle_warrior_loner"
 },        
@@ -3513,8 +3513,8 @@
     }
 ],
 "new_cat": [
-["meeting", "kittypet", "age:young adult"],
-["meeting", "kittypet", "age:young adult"]
+["meeting", "kittypet", "age:young adult", "exists" ],
+["meeting", "kittypet", "age:young adult", "exists"]
 ],
 "art": "gen_happy_cat3"
 }
