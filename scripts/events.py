@@ -121,6 +121,10 @@ class Events:
             # get the moonskip freshkill
             self.get_moon_freshkill()
 
+        # Adding in any potential lead den events that have been saved
+        if "lead_den_interaction" in game.clan.clan_settings:
+            if game.clan.clan_settings["lead_den_interaction"]:
+                self.handle_lead_den_event()
 
         # checking if a lost cat returns on their own
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
@@ -133,11 +137,6 @@ class Events:
                 self.one_moon_cat(cat)
             else:
                 self.one_moon_outside_cat(cat)
-
-        # Adding in any potential lead den events that have been saved
-        if "lead_den_interaction" in game.clan.clan_settings:
-            if game.clan.clan_settings["lead_den_interaction"]:
-                self.handle_lead_den_event()
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
