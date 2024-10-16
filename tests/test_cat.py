@@ -3,6 +3,7 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 
@@ -406,8 +407,8 @@ class TestUpdateMentor(unittest.TestCase):
     # test that an exiled cat apprentice becomes a former apprentice
     def test_exile_apprentice(self):
         # given
-        app = Cat(moons=7, status="apprentice")
-        mentor = Cat(moons=20, status="warrior")
+        app = Cat(moons=7, status=enums.Status.WARRIORAPP)
+        mentor = Cat(moons=20, status=enums.Status.WARRIOR)
         app.update_mentor(mentor.ID)
 
         # when

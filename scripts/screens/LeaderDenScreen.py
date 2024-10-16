@@ -4,6 +4,7 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game
@@ -193,7 +194,7 @@ class LeaderDenScreen(Screens):
             if not self.helper_cat:  # if dep is sick, med cat helps
                 meds = get_alive_status_cats(
                     Cat,
-                    get_status=["medicine cat", "medicine cat apprentice"],
+                    get_status=[enums.Status.MEDCAT, enums.Status.MEDCATAPP],
                     working=True,
                     sort=True,
                 )
@@ -207,7 +208,7 @@ class LeaderDenScreen(Screens):
                         and not i.exiled
                         and not i.outside
                         and not i.not_working()
-                        and i.status in ["mediator", "mediator apprentice"]
+                        and i.status.is_mediator_any()
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
@@ -222,7 +223,11 @@ class LeaderDenScreen(Screens):
                     if not i.dead
                     and not i.exiled
                     and not i.outside
-                    and i.status not in ["newborn", "kitten", "leader"]
+                    and (
+                        not i.status.is_kit_any()
+                        and not i.status.is_warrior_app()
+                        and not i.status.is_leader()
+                    )
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)

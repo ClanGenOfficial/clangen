@@ -669,7 +669,7 @@ class ChooseMentorScreen(Screens):
         valid_mediator_mentors = []
         invalid_mediator_mentors = []
 
-        if self.the_cat.status == "apprentice":
+        if self.the_cat.status.is_warrior_app():
             for cat in potential_warrior_mentors:
                 # Assume cat is valid initially
                 is_valid = True
@@ -691,7 +691,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_warrior_mentors
 
-        elif self.the_cat.status == "medicine cat apprentice":
+        elif self.the_cat.status.is_medcat_app():
             for cat in potential_medcat_mentors:
                 is_valid = True
 
@@ -709,7 +709,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_medcat_mentors
 
-        elif self.the_cat.status == "mediator apprentice":
+        elif self.the_cat.status.is_mediator_app():
             for cat in potential_mediator_mentors:
                 # Assume cat is valid initially
                 is_valid = True

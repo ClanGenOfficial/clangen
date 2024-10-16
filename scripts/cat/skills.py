@@ -366,17 +366,17 @@ class CatSkills:
         new_skill.hidden = hidden_skill
 
         # TODO: Make this nicer
-        if status == "newborn" or moons <= 0:
+        if status.is_newborn() or moons <= 0:
             pass
-        elif status == "kitten" or moons < 6:
+        elif status.is_kitten() or moons < 6:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
-        elif status == "apprentice":
+        elif status.is_warrior_app():
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
             if random.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(
                     point_tier=1, interest_only=True, exclude=new_skill.primary.path
                 )
-        elif moons < 50:
+        elif moons < 50:  # TODO: Should these thresholds be in a config file?
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(1, 2))
             if random.randint(1, 2) == 1:
                 new_skill.secondary = Skill.get_random_skill(
@@ -482,7 +482,7 @@ class CatSkills:
         this function should be run every moon for every cat to progress their skills accordingly
         :param the_cat: the cat object for affected cat
         """
-        if the_cat.status == "newborn" or the_cat.moons <= 0:
+        if the_cat.status.is_newborn() or the_cat.moons <= 0:
             return
 
         # Give a primary is there isn't one already, and the cat is older than one moon.
@@ -502,19 +502,19 @@ class CatSkills:
                     random.choice(parental_paths),
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
+                        the_cat.status.is_app_any() or the_cat.status.is_kitten()
                     ),
                 )
             else:
                 self.primary = Skill.get_random_skill(
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
+                        the_cat.status.is_app_any() or the_cat.status.is_kitten()
                     ),
                 )
 
         if not (the_cat.outside or the_cat.exiled):
-            if the_cat.status == "kitten":
+            if the_cat.status.is_kitten():
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
@@ -533,7 +533,7 @@ class CatSkills:
                     elif self.primary:
                         self.primary.points += amount_effect
 
-            elif "apprentice" in the_cat.status:
+            elif the_cat.status.is_app_any():
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
@@ -552,7 +552,7 @@ class CatSkills:
                     elif self.primary:
                         self.primary.points += amount_effect
 
-            elif the_cat.moons > 120:
+            elif the_cat.moons > 120:  # TODO: Check if this should be tied to a config option (start of elder, e.g.?)
                 # for old cats, we want to check if the skills start to degrade at all, age is the great equalizer
 
                 self.primary.interest_only = False

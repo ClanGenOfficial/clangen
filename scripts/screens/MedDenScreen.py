@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
 from scripts.clan import HERBS
 from scripts.game_structure.game_essentials import game
@@ -427,7 +428,7 @@ class MedDenScreen(Screens):
 
         # get the med cats
         self.meds = get_alive_status_cats(
-            Cat, ["medicine cat", "medicine cat apprentice"], sort=True
+            Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], sort=True
         )
 
         if not self.meds:

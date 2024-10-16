@@ -120,9 +120,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) < 6:
                 if not game.clan.clan_settings["random med cat"]:
                     able_no_med = [
-                        cat
-                        for cat in self.able_cats
-                        if cat.status not in ["medicine cat", "medicine cat apprentice"]
+                        cat for cat in self.able_cats if not cat.status.is_medcat_any()
                     ]
                     if len(able_no_med) == 0:
                         able_no_med = self.able_cats
@@ -137,9 +135,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) <= 3:
                 if not game.clan.clan_settings["random med cat"]:
                     able_no_med = [
-                        cat
-                        for cat in self.able_cats
-                        if cat.status not in ["medicine cat", "medicine cat apprentice"]
+                        cat for cat in self.able_cats if not cat.status.is_medcat_any()
                     ]
                     if len(able_no_med) < 3:
                         able_no_med = self.able_cats
@@ -152,9 +148,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) == 0:
                 if not game.clan.clan_settings["random med cat"]:
                     able_no_med = [
-                        cat
-                        for cat in self.able_cats
-                        if cat.status not in ["medicine cat", "medicine cat apprentice"]
+                        cat for cat in self.able_cats if not cat.status.is_medcat_any()
                     ]
                     if len(able_no_med) < 6:
                         able_no_med = self.able_cats
@@ -388,12 +382,7 @@ class PatrolScreen(Screens):
             self.elements["random"].enable()
 
             # making sure meds don't get the option for other patrols
-            if any(
-                (
-                    cat.status in ["medicine cat", "medicine cat apprentice"]
-                    for cat in self.current_patrol
-                )
-            ):
+            if any((cat.status.is_medcat_any() for cat in self.current_patrol)):
                 self.patrol_type = "med"
             else:
                 if self.patrol_type == "med":
@@ -436,9 +425,7 @@ class PatrolScreen(Screens):
             )
 
             able_no_med = [
-                cat
-                for cat in self.able_cats
-                if cat.status not in ["medicine cat", "medicine cat apprentice"]
+                cat for cat in self.able_cats if not cat.status.is_medcat_any()
             ]
             if game.clan.clan_settings["random med cat"]:
                 able_no_med = self.able_cats
@@ -915,14 +902,13 @@ class PatrolScreen(Screens):
                 not the_cat.dead
                 and the_cat.in_camp
                 and the_cat.ID not in game.patrolled
-                and the_cat.status
-                not in ["elder", "kitten", "mediator", "mediator apprentice"]
+                and the_cat.status.can_patrol_any()
                 and not the_cat.outside
                 and the_cat not in self.current_patrol
                 and not the_cat.not_working()
             ):
                 if (
-                    the_cat.status == "newborn"
+                    the_cat.status.is_newborn()
                     or game.config["fun"]["all_cats_are_newborn"]
                 ):
                     if game.config["fun"]["newborns_can_patrol"]:
@@ -1205,7 +1191,7 @@ class PatrolScreen(Screens):
             # Draw mentor or apprentice
             relation = "should not display"
             if (
-                self.selected_cat.status in ["medicine cat apprentice", "apprentice"]
+                self.selected_cat.status.can_patrol_app()
                 or self.selected_cat.apprentice != []
             ):
                 self.elements["app_mentor_frame"] = pygame_gui.elements.UIImage(
@@ -1215,8 +1201,7 @@ class PatrolScreen(Screens):
                 )
 
                 if (
-                    self.selected_cat.status
-                    in ["medicine cat apprentice", "apprentice"]
+                    self.selected_cat.status.can_patrol_app()
                     and self.selected_cat.mentor is not None
                 ):
                     self.app_mentor = Cat.fetch_cat(self.selected_cat.mentor)
@@ -1318,7 +1303,6 @@ class PatrolScreen(Screens):
 
     def on_use(self):
         super().on_use()
-
         self.loading_screen_on_use(
             self.start_patrol_thread, self.open_patrol_event_screen
         )

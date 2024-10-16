@@ -227,7 +227,7 @@ class Romantic_Events:
                 possible_death = (
                     injury_dict["death_text"] if "death_text" in injury_dict else None
                 )
-                if injured_cat.status == "leader":
+                if injured_cat.status.is_leader():
                     possible_death = (
                         injury_dict["death_leader_text"]
                         if "death_leader_text" in injury_dict

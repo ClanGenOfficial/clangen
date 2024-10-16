@@ -8,6 +8,7 @@ from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 
 import pygame
 
+
 from scripts.events_module.handle_short_events import INJURY_GROUPS
 
 if TYPE_CHECKING:
@@ -310,29 +311,20 @@ class PatrolOutcome:
         ]
 
         # Special default behavior for patrols less than two cats.
-        # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than than two cats
+        # Patrol leader is the only one allowed to be stat_cat in patrols equal to or less than two cats
         if not allowed_specific and len(patrol.patrol_cats) <= 2:
             allowed_specific = ["p_l"]
 
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
             # First, the blanket requirements
-            if "app" in self.can_have_stat and kitty.status not in [
-                "apprentice",
-                "medicine cat apprentice",
-            ]:
+            if "app" in self.can_have_stat and not kitty.status.can_patrol_app():
                 continue
 
-            if "adult" in self.can_have_stat and kitty.status in [
-                "apprentice",
-                "medicine cat apprentice",
-            ]:
+            if "adult" in self.can_have_stat and kitty.status.can_patrol_app():
                 continue
 
-            if "healer" in self.can_have_stat and kitty.status not in [
-                "medicine cat",
-                "medicine cat apprentice",
-            ]:
+            if "healer" in self.can_have_stat and not kitty.status.is_medcat_any():
                 continue
 
             # Then, move on the specific requirements.
@@ -412,7 +404,7 @@ class PatrolOutcome:
 
         if gained_exp or app_exp:
             for cat in patrol.patrol_cats:
-                if cat.status in ["apprentice", "medicine cat apprentice"]:
+                if cat.status.can_patrol_app():
                     cat.experience = cat.experience + app_exp
                 else:
                     cat.experience = cat.experience + gained_exp
@@ -444,7 +436,7 @@ class PatrolOutcome:
 
         results = []
         for _cat in cats_to_kill:
-            if _cat.status == "leader":
+            if _cat.status.is_leader():
                 if "all_lives" in self.dead_cats:
                     game.clan.leader_lives = 0
                     results.append(f"{_cat.name} lost all of their lives.")
@@ -894,7 +886,7 @@ class PatrolOutcome:
             print("WARNING: Injury occured, but some death or scar history is missing.")
 
         final_death_history = None
-        if cat.status == "leader":
+        if cat.status.is_leader():
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:
@@ -936,7 +928,7 @@ class PatrolOutcome:
             print("WARNING: Death occured, but some death history is missing.")
 
         final_death_history = None
-        if cat.status == "leader":
+        if cat.status.is_leader():
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:

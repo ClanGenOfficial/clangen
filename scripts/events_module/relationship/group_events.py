@@ -697,7 +697,7 @@ class GroupEvents:
                 if "death_text" in injury_dict
                 else None
             )
-            if injured_cat.status == "leader":
+            if injured_cat.status.is_leader():
                 possible_death = (
                     GroupEvents.prepare_text(
                         injury_dict["death_leader_text"], abbreviations_cat_id

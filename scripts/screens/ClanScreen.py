@@ -134,7 +134,7 @@ class ClanScreen(Screens):
                 and Cat.all_cats[x].in_camp
                 and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
                 and (
-                    Cat.all_cats[x].status != "newborn"
+                    not Cat.all_cats[x].status.is_newborn()
                     or game.config["fun"]["all_cats_are_newborn"]
                     or game.config["fun"]["newborns_can_roam"]
                 )
@@ -414,7 +414,7 @@ class ClanScreen(Screens):
 
             # Newborns are not meant to be placed. They are hiding.
             if (
-                Cat.all_cats[x].status == "newborn"
+                Cat.all_cats[x].status.is_newborn()
                 or game.config["fun"]["all_cats_are_newborn"]
             ):
                 if (
@@ -428,32 +428,37 @@ class ClanScreen(Screens):
                 else:
                     continue
 
-            if Cat.all_cats[x].status in ["apprentice", "mediator apprentice"]:
+            if (
+                Cat.all_cats[x].status.is_mediator_app()
+                or Cat.all_cats[x].status.is_warrior_app()
+            ):
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 100, 100, 1]
                 )
-            elif Cat.all_cats[x].status == "deputy":
+            elif Cat.all_cats[x].status.is_deputy():
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 1, 50, 1]
                 )
-
-            elif Cat.all_cats[x].status == "elder":
+            elif Cat.all_cats[x].status.is_elder():
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 2000, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status == "kitten":
+            elif Cat.all_cats[x].status.is_kitten():
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [60, 8, 1, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["medicine cat apprentice", "medicine cat"]:
+            elif Cat.all_cats[x].status.is_medcat_any():
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [20, 20, 20, 400, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["warrior", "mediator"]:
+            elif (
+                Cat.all_cats[x].status.is_warrior()
+                or Cat.all_cats[x].status.is_mediator()
+            ):
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 1, 1, 1, 60, 60]
                 )
-            elif Cat.all_cats[x].status == "leader":
+            elif Cat.all_cats[x].status.is_leader():
                 game.clan.leader.placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 200, 1, 1, 1, 1, 1]
                 )

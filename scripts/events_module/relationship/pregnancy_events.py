@@ -3,6 +3,7 @@ from random import choice, randint
 
 import ujson
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.names import names, Name
@@ -374,7 +375,7 @@ class Pregnancy_Events:
                 game.clan.add_to_outside(kit)
                 kit.backstory = "outsider1"
                 if cat.exiled:
-                    kit.status = "loner"
+                    kit.status = enums.Status.LONER
                     name = choice(names.names_dict["normal_prefixes"])
                     kit.name = Name("loner", prefix=name, suffix="")
                 if other_cat and not other_cat.outside:
@@ -438,7 +439,7 @@ class Pregnancy_Events:
             possible_events = events["birth"]["death"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
             meds = get_alive_status_cats(
-                Cat, ["medicine cat", "medicine cat apprentice"], sort=True
+                Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP], sort=True
             )
             mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
             if not meds or cat in meds or len(mate_is_med) > 0:
@@ -448,11 +449,11 @@ class Pregnancy_Events:
 
             if cat.outside:
                 possible_events = events["birth"]["outside_death"]
-            if game.clan.leader_lives > 1 and cat.status == "leader":
+            if game.clan.leader_lives > 1 and cat.status.is_leader():
                 possible_events = events["birth"]["lead_death"]
             event_list.append(choice(possible_events))
 
-            if cat.status == "leader":
+            if cat.status.is_leader():
                 clan.leader_lives -= 1
                 cat.die()
                 death_event = "died shortly after kitting"
@@ -463,7 +464,7 @@ class Pregnancy_Events:
         elif not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
-                if cat.status == "leader":
+                if cat.status.is_leader():
                     death_event = "died after a harsh kitting"
                 else:
                     death_event = f"{cat.name} died after a harsh kitting."
@@ -471,7 +472,7 @@ class Pregnancy_Events:
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
                 meds = get_alive_status_cats(
-                    Cat, ["medicine cat", "medicine cat apprentice"]
+                    Cat, [enums.Status.MEDCAT, enums.Status.MEDCATAPP]
                 )
                 mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
                 if not meds or cat in meds or len(mate_is_med) > 0:
@@ -767,7 +768,9 @@ class Pregnancy_Events:
                     thought = f"Is glad that {insert} safe"
                     blood_parent = create_new_cat(
                         Cat,
-                        status=random.choice(["loner", "kittypet"]),
+                        status=random.choice(
+                            [enums.Status.LONER, enums.Status.KITTYPET]
+                        ),
                         alive=False,
                         thought=thought,
                         age=randint(15, 120),
@@ -779,20 +782,25 @@ class Pregnancy_Events:
                     parent1=blood_parent.ID,
                     moons=0,
                     backstory=backstory,
-                    status="newborn",
+                    status=enums.Status.NEWBORN,
                 )
-
             elif cat and other_cat:
                 # Two parents provided
                 # The cat that gave birth is always parent1 so there is no need to check gender
                 kit = Cat(
-                    parent1=cat.ID, parent2=other_cat.ID, moons=0, status="newborn"
+                    parent1=cat.ID,
+                    parent2=other_cat.ID,
+                    moons=0,
+                    status=enums.Status.NEWBORN,
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
-                    parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
+                    parent1=cat.ID,
+                    moons=0,
+                    backstory=backstory,
+                    status=enums.Status.NEWBORN,
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 

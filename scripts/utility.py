@@ -18,6 +18,8 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.cat import enums
+
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 from scripts.cat.history import History
@@ -219,8 +221,7 @@ def get_random_moon_cat(
                 random_cat = Cat.fetch_cat(choice(possible_parents))
         if mentor_app_modifier:
             if (
-                main_cat.status
-                in ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+                main_cat.status.is_app_any()
                 and main_cat.mentor
                 and not int(random() * 3)
             ):
@@ -351,11 +352,7 @@ def create_new_cat_block(
         # TODO: make this less ugly
         for index in mate_indexes:
             if index in in_event_cats:
-                if in_event_cats[index] in [
-                    "apprentice",
-                    "medicine cat apprentice",
-                    "mediator apprentice",
-                ]:
+                if in_event_cats[index].status.is_app_any():
                     print("Can't give apprentices mates")
                     continue
 
@@ -393,24 +390,17 @@ def create_new_cat_block(
         new_name = bool(getrandbits(1))
 
     # STATUS - must be handled before backstories
-    status = None
+    status = enums.Status.NONE
     for _tag in attribute_list:
         match = re.match(r"status:(.+)", _tag)
         if not match:
             continue
 
-        if match.group(1) in [
-            "newborn",
-            "kitten",
-            "elder",
-            "apprentice",
-            "warrior",
-            "mediator apprentice",
-            "mediator",
-            "medicine cat apprentice",
-            "medicine cat",
-        ]:
-            status = match.group(1)
+        if (
+            enums.Status(match.group(1)) in enums.Status.list()
+            and enums.Status(match.group(1)).is_inside_clan()
+        ):
+            status = enums.Status(match.group(1))
             break
 
     # SET AGE
@@ -437,16 +427,16 @@ def create_new_cat_block(
             age = randint(19, 120)
             break
 
-    if status and not age:
-        if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
+    if not status.is_none() and not age:
+        if status.is_app_any():
             age = randint(
                 Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1]
             )
-        elif status in ["warrior", "mediator", "medicine cat"]:
+        elif status.is_warrior_medcat_or_mediator():
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
-        elif status == "elder":
+        elif status.is_elder():
             age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
 
     if "kittypet" in attribute_list:
@@ -464,17 +454,17 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if status not in ["kitten", "newborn"]:
-            status = "kitten"
+        if not status.is_kit_any():
+            status = enums.Status.KITTEN
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
-    if status in ("kitten", "newborn"):
+    if status.is_kit_any():
         chosen_backstory = choice(
             BACKSTORIES["backstory_categories"]["abandoned_backstories"]
         )
-    elif status == "medicine cat" and cat_type == "former Clancat":
+    elif status.is_medcat() and cat_type == "former Clancat":
         chosen_backstory = choice(["medicine_cat", "disgraced1"])
-    elif status == "medicine cat":
+    elif status.is_medcat():
         chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
     else:
         if cat_type == "former Clancat":
@@ -501,14 +491,14 @@ def create_new_cat_block(
             break
 
     # KITTEN THOUGHT
-    if status in ["kitten", "newborn"]:
+    if status.is_kit_any():
         thought = "Is snuggled safe in the nursery"
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
     if "meeting" in attribute_list:
         outside = True
-        status = cat_type
+        status = enums.Status(cat_type)
         new_name = False
         thought = "Is wondering about those new cats"
 
@@ -581,7 +571,7 @@ def create_new_cat_block(
             loner=cat_type in ["loner", "rogue"],
             kittypet=cat_type == "kittypet",
             other_clan=cat_type == "former Clancat",
-            kit=False if litter else status in ["kitten", "newborn"],
+            kit=False if litter else status.is_kit_any(),
             # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -669,7 +659,7 @@ def create_new_cat(
     litter: bool = False,
     other_clan: bool = None,
     backstory: bool = None,
-    status: str = None,
+    status: enums.Status = None,
     age: int = None,
     gender: str = None,
     thought: str = "Is looking around the camp with wonder",
@@ -689,7 +679,7 @@ def create_new_cat(
     :param bool litter: set True if a litter of kittens needs to be generated - default: False
     :param bool other_clan: if new cat(s) are from a neighboring clan, set true
     :param bool backstory: a list of possible backstories.json for the new cat(s) - default: None
-    :param str status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
+    :param enums.Status status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param int age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param str thought: if you need to give a custom "welcome" thought, set it here
@@ -717,34 +707,33 @@ def create_new_cat(
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
     if not isinstance(age, int):
-        if status == "newborn":
+        if status.is_newborn():
             age = 0
         elif litter or kit:
             age = randint(1, 5)
-        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
+        elif status.is_app_any():
             age = randint(6, 11)
-        elif status == "warrior":
+        elif status.is_warrior():
             age = randint(23, 120)
-        elif status == "medicine cat":
+        elif status.is_medcat():
             age = randint(23, 140)
-        elif status == "elder":
+        elif status.is_elder():
             age = randint(120, 130)
         else:
             age = randint(6, 120)
 
     # setting status
-    if not status:
+    if status.is_none():
         if age == 0:
-            status = "newborn"
+            status = enums.Status.NEWBORN
         elif age < 6:
-            status = "kitten"
+            status = enums.Status.KITTEN
         elif 6 <= age <= 11:
-            status = "apprentice"
+            status = enums.Status.WARRIORAPP
         elif age >= 12:
-            status = "warrior"
+            status = enums.Status.WARRIOR
         elif age >= 120:
-            status = "elder"
-
+            status = enums.Status.ELDER
     # cat creation and naming time
     for index in range(number_of_cats):
         # setting gender
@@ -769,8 +758,8 @@ def create_new_cat(
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
                     accessory = choice(Pelt.collars)
-            elif (
-                loner and bool(getrandbits(1))
+            elif loner and bool(
+                getrandbits(1)
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -1944,7 +1933,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         kitty = Cat.fetch_cat(game.clan.deputy)
         cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
     if "med_name" in text:
-        kitty = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
+        kitty = choice(get_alive_status_cats(Cat, [enums.Status.MEDCAT], working=True))
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if cat_dict:
@@ -2095,7 +2084,7 @@ def event_text_adjust(
 
     # med_name
     if "med_name" in text:
-        med = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
+        med = choice(get_alive_status_cats(Cat, [enums.Status.MEDCAT], working=True))
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns
@@ -2162,8 +2151,6 @@ def event_text_adjust(
 
     # prey lists
     text = adjust_prey_abbr(text)
-
-
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:

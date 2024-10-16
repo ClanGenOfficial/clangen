@@ -1,5 +1,6 @@
 import unittest
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.clan import Clan
@@ -94,8 +95,7 @@ class TestCondition(unittest.TestCase):
     def test_cold_injury(self):
         # GIVEN
         clan = Clan()
-        patrol_cat = Cat(moons=20)
-        patrol_cat.status = "warrior"
+        patrol_cat = Cat(moons=20, status=enums.Status.WARRIOR)
         patrol_cat.history = History()
         patrol = Patrol()
         patrol.add_patrol_cats([patrol_cat], clan)

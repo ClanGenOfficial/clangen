@@ -1,6 +1,7 @@
 import os
 import unittest
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import Skill, SkillPath
 from scripts.events_module.relationship.group_events import GroupEvents, GroupInteraction
@@ -14,7 +15,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = GroupEvents()
         main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat.status = enums.Status.WARRIOR
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -36,7 +37,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = GroupEvents()
         main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat.status = enums.Status.WARRIOR
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -320,15 +321,11 @@ class OtherFiltering(unittest.TestCase):
 class Abbreviations(unittest.TestCase):
     def test_get_abbreviation_possibilities_all(self):
         # given
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status=enums.Status.WARRIOR)
 
-        random1 = Cat()
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
-        random3 = Cat()
-        random3.status = "warrior"
+        random1 = Cat(status=enums.Status.WARRIOR)
+        random2 = Cat(status=enums.Status.WARRIOR)
+        random3 = Cat(status=enums.Status.WARRIOR)
 
         interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
@@ -351,15 +348,11 @@ class Abbreviations(unittest.TestCase):
 
     def test_get_abbreviation_possibilities_not_all(self):
         # given
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status=enums.Status.WARRIOR)
 
-        random1 = Cat()
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
-        random3 = Cat()
-        random3.status = "medicine cat"
+        random1 = Cat(status=enums.Status.WARRIOR)
+        random2 = Cat(status=enums.Status.WARRIOR)
+        random3 = Cat(status=enums.Status.MEDCAT)
 
         interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
@@ -405,20 +398,16 @@ class Abbreviations(unittest.TestCase):
 
     def test_set_abbreviations_cats(self):
         # given
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status=enums.Status.WARRIOR)
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": None,
             "r_c2": None
         }
 
-        random1 = Cat()
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
-        random3 = Cat()
-        random3.status = "medicine cat"
+        random1 = Cat(status=enums.Status.WARRIOR)
+        random2 = Cat(status=enums.Status.WARRIOR)
+        random3 = Cat(status=enums.Status.MEDCAT)
 
         # when
         interaction_cats = [random1, random2, random3]
@@ -450,12 +439,9 @@ class OtherCatsFiltering(unittest.TestCase):
     def test_relationship_allow_true(self):
         # given
         parent = Cat()
-        main_cat = Cat(parent1=parent.ID)
-        main_cat.status = "warrior"
-        random1 = Cat(parent1=parent.ID)
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
+        main_cat = Cat(parent1=parent.ID, status=enums.Status.WARRIOR)
+        random1 = Cat(parent1=parent.ID, status=enums.Status.WARRIOR)
+        random2 = Cat(status=enums.Status.WARRIOR)
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": random1.ID,
@@ -557,12 +543,9 @@ class OtherCatsFiltering(unittest.TestCase):
     def test_relationship_allow_false(self):
         # given
         parent = Cat()
-        main_cat = Cat(parent1=parent.ID)
-        main_cat.status = "warrior"
-        random1 = Cat(parent1=parent.ID)
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
+        main_cat = Cat(parent1=parent.ID, status=enums.Status.WARRIOR)
+        random1 = Cat(parent1=parent.ID, status=enums.Status.WARRIOR)
+        random2 = Cat(status=enums.Status.WARRIOR)
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": random1.ID,

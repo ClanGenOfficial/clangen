@@ -30,18 +30,18 @@ class Welcoming_Events:
         if new_cat.ID == clan_cat.ID:
             return
 
-        # setup the status as "key" to use it
-        status = clan_cat.status
-        if status == "medicine cat" or status == "medicine cat apprentice":
-            status = "medicine"
-
-        if status == "mediator apprentice":
-            status = "mediator"
+        # set up the status as "key" to use it
+        if clan_cat.status.is_medcat_any():
+            status_key = "medicine"
+        elif clan_cat.status.is_mediator_any():
+            status_key = "mediator"
+        else:
+            status_key = clan_cat.status
 
         # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)
-        if status not in WELCOMING_MASTER_DICT:
-            print(f"ERROR: there is no welcoming json for the status {status}")
+        if status_key not in WELCOMING_MASTER_DICT:
+            print(f"ERROR: there is no welcoming json for the status {status_key}")
         else:
             possible_events.extend(WELCOMING_MASTER_DICT[status])
         filtered_events = Welcoming_Events.filter_welcome_interactions(

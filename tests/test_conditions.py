@@ -3,6 +3,7 @@ import unittest
 
 import ujson
 
+from scripts.cat import enums
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled
 
@@ -12,50 +13,37 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 class TestsMedCondition(unittest.TestCase):
     def test_fulfilled(self):
-        cat1 = Cat(moons=20)
-        cat1.status = "warrior"
-
-        med = Cat(moons=20)
-        med.status = "medicine cat"
+        cat1 = Cat(moons=20, status=enums.Status.WARRIOR)
+        med = Cat(moons=20, status=enums.Status.MEDCAT)
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
 
     def test_fulfilled_many_cats(self):
-        cat1 = Cat(moons=20)
-        cat1.status = "warrior"
-        cat2 = Cat(moons=20)
-        cat2.status = "warrior"
-        cat3 = Cat(moons=20)
-        cat3.status = "warrior"
-        cat4 = Cat(moons=20)
-        cat4.status = "warrior"
+        cat1 = Cat(moons=20, status=enums.Status.WARRIOR)
+        cat2 = Cat(moons=20, status=enums.Status.WARRIOR)
+        cat3 = Cat(moons=20, status=enums.Status.WARRIOR)
+        cat4 = Cat(moons=20, status=enums.Status.WARRIOR)
 
-        med1 = Cat(moons=20)
-        med1.status = "medicine cat"
-        med2 = Cat(moons=20)
-        med2.status = "medicine cat"
+        med1 = Cat(moons=20, status=enums.Status.MEDCAT)
+        med2 = Cat(moons=20, status=enums.Status.MEDCAT)
 
         all_cats = [cat1, cat2, cat3, cat4, med1, med2]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 2))
 
     def test_injured_fulfilled(self):
-        cat1 = Cat(moons=20)
-        cat1.status = "warrior"
+        cat1 = Cat(moons=20, status=enums.Status.WARRIOR)
 
-        med = Cat(moons=20)
-        med.status = "medicine cat"
+        med = Cat(moons=20, status=enums.Status.MEDCAT)
         med.injuries["small cut"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
 
     def test_illness_fulfilled(self):
-        cat1 = Cat(moons=20)
-        cat1.status = "warrior"
+        cat1 = Cat(moons=20, status=enums.Status.WARRIOR)
 
-        med = Cat(moons=20)
-        med.status = "medicine cat"
+        med = Cat(moons=20, status=enums.Status.MEDCAT)
         med.illnesses["running nose"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
@@ -63,7 +51,8 @@ class TestsMedCondition(unittest.TestCase):
 
 
 class TestsIllnesses(unittest.TestCase):
-    def load_resources(self):
+    @staticmethod
+    def load_resources():
         resource_directory = "resources/dicts/conditions/"
 
         illnesses = None
@@ -73,7 +62,8 @@ class TestsIllnesses(unittest.TestCase):
 
 
 class TestInjury(unittest.TestCase):
-    def load_resources(self):
+    @staticmethod
+    def load_resources():
         resource_directory = "resources/dicts/conditions/"
 
         injuries = None

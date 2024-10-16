@@ -7,6 +7,7 @@ import random
 
 import ujson
 
+from scripts.cat import enums
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -70,7 +71,7 @@ class Name:
 
     def __init__(
         self,
-        status="warrior",
+        status=enums.Status.WARRIOR,
         prefix=None,
         suffix=None,
         colour=None,
@@ -139,7 +140,6 @@ class Name:
                     and str(self.suffix) != ""
                 )
             ):
-
                 # check if random die was for prefix
                 if name_fixpref:
                     self.give_prefix(eyes, colour, biome)

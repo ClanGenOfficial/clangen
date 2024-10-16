@@ -417,21 +417,21 @@ class ClanSettingsScreen(Screens):
                 continue
 
             living_cats += 1
-            if cat.status == "medicine cat":
+            if cat.status.is_medcat():
                 med_cats += 1
-            elif cat.status == "medicine cat apprentice":
+            elif cat.status.is_medcat_app():
                 med_cat_apprentices += 1
-            elif cat.status == "warrior":
+            elif cat.status.is_warrior():
                 warriors += 1
-            elif cat.status == "apprentice":
+            elif cat.status.is_warrior_app():
                 warrior_apprentices += 1
-            elif cat.status == "mediator apprentice":
+            elif cat.status.is_mediator_app():
                 mediator_apprentices += 1
-            elif cat.status == "mediator":
+            elif cat.status.is_mediator():
                 mediators += 1
-            elif cat.status == "elder":
+            elif cat.status.is_elder():
                 elders += 1
-            elif cat.status in ("newborn", "kitten"):
+            elif cat.status.is_kit_any():
                 kits += 1
 
         text = (
