@@ -13,11 +13,16 @@
 		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 15,
 		"influence_condition_events": 20,
+		"relationship_thought_chance": 20,
+		"kin_thought_chance": 20,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
 			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate",
-			"influence_condition_events - how much an event with a condition can influence the relationship"
+			"influence_condition_events - how much an event with a condition can influence the relationship",
+			"relationship_thought_chance - % chance that a cat's thought will refer to a cat they have a relationship with",
+			"kin_thought_chance - % chance that a cat's thought will refer to a cat they are related to",
+			"the % for thought_chance only applies to thoughts that would have already mentioned a second cat."
 		]
 	},
 	"mates":{
