@@ -853,7 +853,7 @@ class GenerateEvents:
                 if discard:
                     continue
 
-            final_events.append(event)
+            final_events.extend([event] * event.weight)
 
         for notice in incorrect_format:
             print(notice)
