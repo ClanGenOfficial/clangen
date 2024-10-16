@@ -5490,7 +5490,7 @@
     	"biome": ["forest"],
     	"season": ["leaf-fall"],
     	"types": ["hunting"],
-    	"tags": ["halloween", "romance"],
+    	"tags": ["halloween", "romantic"],
     	"patrol_art": "pipbats_INTRO",
     	"min_cats": 3,
     	"max_cats": 6,

@@ -593,9 +593,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "sub_type": [
-            "romance"
-        ],
+        "tags": ["romantic"],
         "weight": 20,
         "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration; r_c curses m_c for tainting what could have been a good memory of {PRONOUN/r_c/inposs}.",
         "m_c": {
@@ -660,10 +658,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "sub_type": [
-            "romance"
-        ],
-        "tags": [],
+        "tags": ["romantic"],
         "weight": 20,
         "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} why.",
         "m_c": {
