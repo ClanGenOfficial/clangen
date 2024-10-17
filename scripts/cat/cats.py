@@ -142,6 +142,7 @@ class Cat:
         backstory="clanborn",
         parent1=None,
         parent2=None,
+        adoptive_parents=None,
         suffix=None,
         specsuffix_hidden=False,
         ID=None,
@@ -199,7 +200,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
-        self.adoptive_parents = []
+        self.adoptive_parents = adoptive_parents if adoptive_parents else []
         self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
