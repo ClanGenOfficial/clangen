@@ -15,6 +15,7 @@
             [
                 "new_name",
                 "parent:0",
+                "adoptive:m_c",
                 "backstory:abandoned2, outsider1",
                 "litter"
             ]
@@ -40,6 +41,7 @@
             [
                 "new_name",
                 "parent:0",
+                "adoptive:m_c",
                 "backstory:abandoned2, outsider1",
                 "litter"
             ]
@@ -61,8 +63,11 @@
             "status": ["any"]
         },
         "new_cat": [
+            ["age:has_kits", "meeting", "clancat", "can_birth"],
             [
                 "new_name",
+                "parent:0",
+                "adoptive:m_c",
                 "backstory:abandoned2, outsider1",
                 "litter"
             ]
@@ -88,6 +93,7 @@
             [
                 "new_name",
                 "parent:0",
+                "adoptive:m_c",
                 "backstory:abandoned2, outsider1",
                 "litter"
             ]
@@ -109,8 +115,11 @@
             "status": ["any"]
         },
         "new_cat": [
+            ["age:has_kits", "meeting", "unknown", "can_birth"],
             [
                 "new_name",
+                "parent:0",
+                "adoptive:m_c",
                 "backstory:abandoned2, outsider1",
                 "litter"
             ]
