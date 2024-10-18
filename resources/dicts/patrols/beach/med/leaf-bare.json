@@ -51,7 +51,7 @@
             {
                 "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
                 "can_have_stat": ["r_c"],
                 "herbs": ["random_herbs"],
@@ -152,7 +152,7 @@
             {
                 "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
                 "can_have_stat": ["r_c"],
                 "herbs": ["random_herbs"],
@@ -185,7 +185,7 @@
             {
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
-                "weight": 20,
+                "weight": 40,
                 "stat_trait": ["troublesome", "childish"],
                 "can_have_stat": ["r_c"],
                 "relationships": [
@@ -234,7 +234,7 @@
             {
                 "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold and expertly maneuvers in to pluck the leaves for c_n.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["blackberry"]
             }
@@ -340,7 +340,7 @@
             {
                 "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns.",
                 "exp": 30,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "can_have_stat": ["adult"],
                 "herbs": ["blackberry"],
@@ -550,7 +550,7 @@
             {
                 "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pass/passes} them out to the members of the patrol from within the thicket, and {PRONOUN/s_c/poss} entourage ensures that s_c is able to bring a huge quantity of fresh blackberry leaves home.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "can_have_stat": ["p_l"],
                 "herbs": ["blackberry"],
@@ -728,7 +728,7 @@
             {
                 "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["burdock"]
             }
@@ -740,40 +740,28 @@
                 "weight": 20
             },
             {
-                "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
+                "text": "p_l digs and digs and digs, but eventually {PRONOUN/p_l/subject} {VERB/p_l/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/p_l/poss} pelt, and {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives} back at camp miserable and cold.",
                 "exp": 0,
                 "weight": 10,
 				"injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["p_l"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTMITT"]
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
                 }
             },
             {
-                "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
+                "text": "p_l digs and digs and digs, but eventually {PRONOUN/p_l/subject} {VERB/p_l/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/p_l/poss} pelt, and though {PRONOUN/p_l/subject} {VERB/p_l/try/tries}, p_l eventually loses the strength to get home as well.",
                 "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["cold_injury"],
-                        "scars": ["FROSTMITT"]
-                    }
-                ],
+                "weight": 5,
+                "dead_cats": ["p_l"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -796,11 +784,11 @@
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
+        "decline_text": "p_l has second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially since {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
+                "text": "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["burdock"],
@@ -844,9 +832,9 @@
                 ]
             },
             {
-                "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
+                "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c and app1 are after the roots, and those are still perfectly harvestable in leaf-bare.",
                 "exp": 30,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "can_have_stat": ["adult"],
                 "herbs": ["burdock"],
@@ -870,7 +858,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely come close.",
+                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely {VERB/p_l/come/comes} close.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -891,33 +879,19 @@
                 ]
             },
             {
-                "text": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect", "comfort", "trust"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            },
-            {
-                "text": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. p_l in particular is shivering and chilled to the bone by the time {PRONOUN/p_l/subject} and app1 return to camp, empty-pawed and miserable.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+				"injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
+                    }
+                ],
                 "history_text": {
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -937,19 +911,69 @@
                 ]
             },
             {
-                "text": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. The cold has leached all the heat from p_l's pelt, and even with app1's help, {PRONOUN/p_l/subject} just {VERB/p_l/don't/doesn't} have the energy to make it back to camp.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. app1 in particular is shivering and chilled to the bone by the time {PRONOUN/app1/subject} and p_l return to camp, empty-pawed and miserable.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
                         "cats": ["app1"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTMITT"]
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. The cold has leached all the heat from app1's pelt, and even with p_l's help, {PRONOUN/app1/subject} just {VERB/app1/don't/doesn't} have the energy to make it back to camp.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -986,11 +1010,11 @@
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "The patrol is stopped before it can leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan. {PRONOUN/p_l/poss/CAP} Clanmates purr at the sight of the dirty roots.",
+                "text": "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan. {PRONOUN/p_l/poss/CAP} Clanmates purr at the sight of the dirty roots, having spent just as much energy digging for them as p_l.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["burdock"],
@@ -1012,7 +1036,7 @@
                 ]
             },
             {
-                "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and {PRONOUN/p_l/poss} Clanmates smile, appreciating {PRONOUN/p_l/poss} hard-working medicine cat.",
+                "text": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and {PRONOUN/p_l/poss} Clanmates smile, appreciating the hard-working medicine cat.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["burdock"],
@@ -1034,10 +1058,11 @@
                 ]
             },
             {
-                "text": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare.",
+                "text": "s_c wows the patrol by remembering exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, it's the roots that the patrol is after, and those are still perfectly harvestable in leaf-bare.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
+                "can_have_stat": ["p_l"],
                 "herbs": ["burdock"],
                 "relationships": [
                     {
@@ -1059,7 +1084,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp without any burdock, prickling with frustration.",
+                "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They all return to camp without any burdock, pelts prickling with frustration.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1080,77 +1105,113 @@
                 ]
             },
             {
-                "text": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            },
-            {
-                "text": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            },
-            {
-                "text": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/has} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
                         "cats": ["r_c"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTMITT"]
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. p_l in particular is shivering and chilled to the bone by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns}, empty-pawed and miserable.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. The cold has leached all the heat from p_l's pelt, and even with the other cats' help, {PRONOUN/p_l/subject} just {VERB/p_l/don't/doesn't} have the energy to make it back to camp.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. The cold has leached all the heat from r_c's pelt, and even with the other cats' help, {PRONOUN/r_c/subject} just {VERB/r_c/don't/doesn't} have the energy to make it back to camp.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["dislike"],
                         "amount": 10
@@ -1185,7 +1246,7 @@
                 "herbs": ["daisy"]
             },
             {
-                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back in {PRONOUN/p_l/poss} nice warm nest.",
+                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back in {PRONOUN/p_l/poss} nice, warm nest.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["daisy"]
@@ -1193,7 +1254,7 @@
             {
                 "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "herbs": ["daisy"]
             }
@@ -1205,19 +1266,28 @@
                 "weight": 20
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
+                        "cats": ["p_l"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTTAIL"]
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
+                }
+            },
+            {
+                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow. Left exhausted after the fruitless search, p_l collapses on {PRONOUN/p_l/poss} way back to camp, and is unable to get up no matter how hard {PRONOUN/p_l/subject} {VERB/p_l/try/tries}.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -1240,12 +1310,12 @@
         },
         "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/subject} even try to look? And is bringing app1 a good idea?",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
+        "decline_text": "p_l has second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially since {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
                 "text": "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from. {PRONOUN/p_l/subject/CAP} {VERB/p_l/share/shares} an exhausted look of commiseration with app1.",
-                "exp": 40,
+                "exp": 10,
                 "weight": 20,
                 "herbs": ["daisy"],
                 "relationships": [
@@ -1266,8 +1336,8 @@
                 ]
             },
             {
-                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back in {PRONOUN/p_l/poss} nice warm nests, and app1 has been a real trooper today.",
-                "exp": 40,
+                "text": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject} and app1 - who's been a real trooper today - are back in their nice, warm nests.",
+                "exp": 10,
                 "weight": 5,
                 "herbs": ["daisy"],
                 "relationships": [
@@ -1289,8 +1359,8 @@
             },
             {
                 "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in {PRONOUN/s_c/poss} wake, wide-eyed and impressed.",
-                "exp": 40,
-                "weight": 20,
+                "exp": 10,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
                 "can_have_stat": ["adult"],
                 "herbs": ["daisy"],
@@ -1314,7 +1384,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "text": "Not only do p_l and app1 end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1335,33 +1405,19 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect", "comfort", "trust"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "Not only do both cats end up soaked to the skin, they can't even find any daisies under the snow, and p_l's left shivering violently by the time {PRONOUN/p_l/subject} and app1 return to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
+                    }
+                ],
                 "history_text": {
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1381,19 +1437,69 @@
                 ]
             },
             {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "Not only do both cats end up soaked to the skin, they can't even find any daisies under the snow. p_l's left so exhausted that {PRONOUN/p_l/subject} {VERB/p_l/collapse/collapses} on the way back to camp, unable to go any further even with app1's help.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only do both cats end up soaked to the skin, they can't even find any daisies under the snow, and app1's left shivering violently by the time {PRONOUN/app1/subject} and p_l return to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
                         "cats": ["app1"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTTAIL"]
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only do both cats end up soaked to the skin, they can't even find any daisies under the snow. app1's left so exhausted that {PRONOUN/app1/subject} {VERB/app1/collapse/collapses} on the way back to camp, unable to go any further even with p_l's help.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1429,8 +1535,8 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/subject} even try to look?",
-        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/poss} patrol even try to look?",
+        "decline_text": "The patrol is stopped before it can leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -1480,8 +1586,9 @@
             {
                 "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat.",
                 "exp": 10,
-                "weight": 20,
+                "weight": 40,
                 "stat_skill": ["SENSE,2"],
+                "can_have_stat": ["p_l"],
                 "herbs": ["daisy"],
                 "relationships": [
                     {
@@ -1503,19 +1610,19 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any daisies under the snow. A wasted and horribly chilly day.",
+                "text": "Not only do all the cats end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -1524,60 +1631,112 @@
                 ]
             },
             {
-                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow, and {PRONOUN/p_l/subject}'re left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
-                "exp": 0,
-                "weight": 20,
-                "injury": [
-                    {
-                        "cats": ["multi"],
-                        "injuries": ["shivering"]
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "This cat froze to death."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "respect"],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-                    }
-                ]
-            },
-            {
-                "text": "Not only does p_l end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any daisies under the snow, and {PRONOUN/p_l/subject}'re left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
+                "text": "Not only do all the cats end up soaked to the skin, they can't even find any daisies under the snow, and p_l's left shivering violently by the time {PRONOUN/p_l/subject} and the others return to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
                         "cats": ["p_l"],
                         "injuries": ["cold_injury"],
-                        "scars": ["FROSTTAIL", "FROSTFACE"]
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
-                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": ["platonic", "respect", "comfort", "trust"],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only do all the cats end up soaked to the skin, they can't even find any daisies under the snow. p_l's left so exhausted that {PRONOUN/p_l/subject} {VERB/p_l/collapse/collapses} on the way back to camp, unable to go any further even with the other cats' help.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["p_l"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only do all the cats end up soaked to the skin, they can't even find any daisies under the snow, and r_c's left shivering violently by the time {PRONOUN/r_c/subject} and the others return to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE", "FROSTMITT", "FROSTSOCK", "FROSTTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite after searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Not only do all the cats end up soaked to the skin, they can't even find any daisies under the snow. r_c's left so exhausted that {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} on the way back to camp, unable to go any further even with the other cats' help.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -2545,7 +2704,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c froze to death from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
                 }
             },
             {
@@ -2705,7 +2864,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "reg_death": "m_c froze to death from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
