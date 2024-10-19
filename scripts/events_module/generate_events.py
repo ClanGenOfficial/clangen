@@ -269,11 +269,10 @@ class GenerateEvents:
                 if sub not in event.sub_type:
                     wrong_type = True
 
-                    continue
             for sub in event.sub_type:
                 if sub not in sub_types:
                     wrong_type = True
-                    continue
+
             if wrong_type:
                 continue
 
@@ -371,7 +370,7 @@ class GenerateEvents:
                 continue
 
             # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
-            if "adoption" in event.sub_type:
+            if "adoption" in event.tags:
                 if cat.no_kits:
                     continue
                 if any(Cat_class.fetch_cat(i).no_kits for i in cat.mate):
@@ -393,7 +392,7 @@ class GenerateEvents:
 
             # if the event is marked as changing romantic interest, check that the cats are allowed to be romantic
             if random_cat:
-                if "romance" in event.sub_type and not random_cat.is_potential_mate(
+                if "romantic" in event.tags and not random_cat.is_potential_mate(
                         cat
                 ):
                     continue
@@ -854,7 +853,7 @@ class GenerateEvents:
                 if discard:
                     continue
 
-            final_events.append(event)
+            final_events.extend([event] * event.weight)
 
         for notice in incorrect_format:
             print(notice)

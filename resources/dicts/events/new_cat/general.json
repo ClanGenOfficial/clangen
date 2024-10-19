@@ -3,7 +3,7 @@
         "event_id": "gen_new_cat_adoption_anylonerlitter1",
         "location": ["any"],
         "season": ["any"],
-        "sub_type": ["adoption"],
+        "tags": ["adoption"],
         "weight": 5,
         "event_text": "A loner named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -28,7 +28,7 @@
         "event_id": "gen_new_cat_adoption_anyroguelitter1",
         "location": ["any"],
         "season": ["any"],
-         "sub_type": ["adoption"],
+        "tags": ["adoption"],
         "weight": 5,
         "event_text": "A rogue named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -53,7 +53,7 @@
         "event_id": "gen_new_cat_adoption_anywelcomingotherclanlitter1",
         "location": ["any"],
         "season": ["any"],
-         "sub_type": ["adoption"],
+        "tags": ["adoption"],
         "weight": 5,
         "event_text": "A o_c_n queen decides to leave their litter with c_n. m_c takes them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -76,7 +76,7 @@
         "event_id": "gen_new_cat_adoption_anymultirepkittypetlitter1",
         "location": ["any"],
         "season": ["any"],
-         "sub_type": ["adoption"],
+        "tags": ["adoption"],
         "weight": 5,
         "event_text": "A kittypet named n_c:0 leaves {PRONOUN/n_c:0/poss} litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -101,7 +101,7 @@
         "event_id": "gen_new_cat_adoption_anylitter1",
         "location": ["any"],
         "season": ["any"],
-         "sub_type": ["adoption"],
+        "tags": ["adoption"],
         "weight": 5,
         "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/poss} own.",
         "m_c": {
@@ -226,7 +226,7 @@
         "event_id": "gen_new_cat_anypolymate1",
         "location": ["any"],
         "season": ["any"],
-        "sub_type":["romance"],
+        "tags": ["romantic"],
         "weight": 5,
         "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} staying.",
         "m_c": {
@@ -587,7 +587,8 @@
             [
                 "old_name",
                 "clancat",
-                "status:warrior"
+                "status:warrior",
+                "backstory:former_clancat_backstories"
             ]
         ],
         "other_clan": {
@@ -608,7 +609,8 @@
             [
                 "old_name",
                 "clancat",
-                "status:warrior"
+                "status:warrior",
+                "backstory:former_clancat_backstories"
             ]
         ],
         "injury": [

@@ -354,7 +354,7 @@
         "biome": ["beach"],
         "season": ["greenleaf"],
         "types": ["training"],
-        "tags": ["romance"],
+        "tags": ["romantic"],
         "patrol_art": "fst_hunt_heat",
         "min_cats": 4,
         "max_cats": 6,

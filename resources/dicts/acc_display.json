@@ -212,11 +212,6 @@
     "plural": "blue flower bulbs",
     "singular": "blue flower bulb"
   },
-  "RASPBERRY": {
-    "default": "raspberries",
-    "plural": "raspberries",
-    "singular": "raspberry"
-  },
   "CATTAIL": {
     "default": "cattail",
     "plural": "cattails",

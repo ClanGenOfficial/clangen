@@ -578,7 +578,7 @@ class FamilyTreeScreen(Screens):
             )
 
             pos_x += 50
-            if pos_x > 450:
+            if pos_x > 380:
                 pos_y += 50
                 pos_x = 0
             i += 1

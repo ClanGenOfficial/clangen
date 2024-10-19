@@ -59,7 +59,7 @@
 		"id": "jel_inc_med4",
 		"interactions": [
 			"m_c is huffing in annoyance seeing that r_c caught more prey than {PRONOUN/m_c/object}.",
-            		"During a border patrol, an o_c patrol stopped them and chatted up a storm with r_c, but more or less ignored m_c...",
+            		"During a border patrol, an o_c_n patrol stopped them and chatted up a storm with r_c, but more or less ignored m_c...",
             		"m_c feels like r_c is always trying to catch more prey than {PRONOUN/m_c/object}."
 		],
         	"main_status_constraint": [

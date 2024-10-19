@@ -3655,7 +3655,7 @@
                 ]
             },
             {
-                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remembers/remember} that c_n trust {PRONOUN/s_c/object} to heal them, and so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
+                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, and so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
                 "exp": 20,
                 "weight": 20,
 		        "stat_trait": [
@@ -3997,6 +3997,297 @@
                         "amount": -5
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_apps_and_poison",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "running_two_apps",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 1],
+            "medicine cat apprentice": [1, 1]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "intro_text": "p_l and app2 leave camp together to gather herbs and refresh c_n's stocks of some basic necessities. A short ways out of camp, app2 stops p_l and asks, with a glint in {PRONOUN/app2/poss} eye, if p_l will show {PRONOUN/app2/object} where deathberries grow on c_n's territory.",
+        "decline_text": "p_l hastily makes up an excuse to return to camp, and app2's curiosity remains unsatisfied.",
+        "success_outcomes": [
+            {
+                "text": "p_l snorts; {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't so mouse-brained that {PRONOUN/p_l/subject}'ll tell app2 where to find deadly poison. Especially not when they have a task to accomplish. app2 sighs and resigns {PRONOUN/app2/self} to gathering regular old herbs.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "values": [ "trust", "comfort" ],
+                        "amount": -5
+                    }
+                ],
+                "art": "gen_train_argueAA"
+            },
+            {
+                "text": "p_l stops the patrol and stares at app2. app2 shuffles {PRONOUN/app2/poss} paws, avoiding eye contact. After a few heartbeats, app2 admits they should probably just get on with the job they were given.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "values": [ "trust", "comfort" ],
+                        "amount": -5
+                    }
+                ],
+                "art": "fst_med_herblocation2"
+            },
+            {
+                "text": "s_c rolls {PRONOUN/s_c/poss} eyes. That kind of information is only for very <i>important</i> cats - which doesn't include app2, s_c is quick to inform {PRONOUN/app2/object}. Now run along and help gather herbs like a good little apprentice.",
+                "exp": 10,
+                "weight": 40,
+                "can_have_stat": "healer",
+                "stat_trait": "arrogant",
+                "herbs": ["random_herbs"],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "s_c" ],
+                        "values": [ "trust", "comfort" ],
+                        "amount": -5
+                    },
+                    {
+                        "cat_to": [ "s_c" ],
+                        "cat_from": [ "app2" ],
+                        "values": [ "dislike", "jealousy" ],
+                        "amount": 10
+                    }
+                ],
+                "art": "gen_train_argueAA"
+            },
+            {
+                "text": "No way, does app2 want to get them both in trouble? They're looking for <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
+                "exp": 10,
+                "weight": 40,
+                "can_have_stat": "healer",
+                "stat_trait": [ "loyal", "strict", "responsible", "righteous" ],
+                "herbs": ["random_herbs"],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "s_c" ],
+                        "values": [ "trust", "comfort" ],
+                        "amount": -5
+                    },
+                    {
+                        "cat_to": [ "s_c" ],
+                        "cat_from": [ "app2" ],
+                        "values": [ "dislike" ],
+                        "amount": 5
+                    }
+                ],
+                "art": "gen_train_argueAA"
+
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l hesitates. Maybe {PRONOUN/p_l/subject} {VERB/p_l/have/has} time to gather herbs <i>and</i> satisfy app2's curiosity? p_l leads {PRONOUN/app2/object} quickly to a sheltered copse where the yew grows. Before app2 can linger, p_l hustles {PRONOUN/app2/object} away again to more fruitful patches of herbs, but their detour has already wasted too much time; c_n is expecting them back.",
+                "exp": 0,
+                "weight": 20,
+                "relationship": [
+                    {
+                        "cat_to": [ "p_l" ],
+                        "cat_from": [ "app2" ],
+                        "mutual": true,
+                        "values": [ "trust" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Come on, s_c persuades {PRONOUN/p_l/object}. Just one little look? A look isn't harming any cat. No cat's gotten poisoned from <i>looking</i> at deathberries, right? p_l caves and shows s_c the way to the deathberry bush, but neither apprentice manages to actually gather any of the herbs they were looking for along the way.",
+                "exp": 0,
+                "weight": 40,
+                "stat_skill": [ "SPEAKER,1"],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "p_l" ],
+                        "cat_from": [ "app2" ],
+                        "mutual": true,
+                        "values": [ "trust" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Come on, s_c persuades {PRONOUN/p_l/object}. Just one little look? A look isn't harming any cat. No cat's gotten poisoned from <i>looking</i> at deathberries, right? p_l caves and shows s_c the way to the deathberry bush, but neither apprentice manages to actually gather any of the herbs they were looking for along the way.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "charismatic", "cunning" ],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "p_l" ],
+                        "cat_from": [ "app2" ],
+                        "mutual": true,
+                        "values": [ "trust" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggests they get back to camp before any cat notices they're in the wrong part of the territory.",
+                "exp": 0,
+                "weight": 40,
+                "stat_skill": [ "DARK,1", "GHOST,1"],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "trust", "comfort" ],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggests they get back to camp before any cat notices they're in the wrong part of the territory.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "bloodthirsty", "cold", "vengeful" ],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "trust", "comfort" ],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "p_l hesitates, and app2 cocks {PRONOUN/app2/poss} head at p_l. Is p_l a mouse-heart? Scared of a few little berries? p_l snaps back that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} no mouse-heart... and somehow ends up leading app2 to the patch of deathberries. Curiosity satisfied, app2 loses any interest in helping p_l gather herbs.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "fierce", "troublesome", "rebellious", "bold", "daring", "arrogant", "shameless", "adventurous" ],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "platonic" ],
+                        "amount": -10
+                    },
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": 10
+                    }
+                ],
+                "art": "gen_train_argueAA"
+            },
+            {
+                "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
+                "exp": 0,
+                "weight": 40,
+                "stat_skill": [ "INSIGHTFUL,1", "HEALER,1" ],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "platonic", "comfort" ],
+                        "amount": 10
+                    },
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": -10
+                    }
+                ],
+                "art": "gen_speaking_cat_app"
+            },
+            {
+                "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "thoughtful", "wise", "calm", "sincere" ],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "platonic", "comfort" ],
+                        "amount": 10
+                    },
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "dislike" ],
+                        "amount": -10
+                    }
+                ],
+                "art": "gen_speaking_cat_app"
+            },
+            {
+                "text": "p_l is unsettled by the request, but leads {PRONOUN/app2/object} to the deathberry bushes anyway. When {PRONOUN/p_l/subject} {VERB/p_l/look/looks} back, p_l is startled to see app2's fur bushed out and {PRONOUN/app2/poss} eyes wide, staring at the berries. app2's a talented fighter, but none of {PRONOUN/app2/poss} skills can protect {PRONOUN/app2/object} from the threat of poison. With this insight into {PRONOUN/p_l/poss} Clanmate gained, p_l leads {PRONOUN/app2/object} away.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [ "fierce", "competitive", "ambitious", "bold", "daring", "bloodthirsty" ],
+                "stat_skill": [ "FIGHTER,1"],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "platonic" ],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l knows app2 probably doesn't have any nefarious plans in mind, so {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to where the yew grows. To p_l's horror, app2 cheerfully announces {PRONOUN/app2/subject}{VERB/app2/'ve/'s} always been curious how they'd taste, and plucks a few berries with {PRONOUN/app2/poss} mouth. p_l tackles {PRONOUN/app2/object}, forcing {PRONOUN/app2/object} to spit them out right away, and takes {PRONOUN/app2/object} back to camp for immediate medical attention.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [ "childish" ],
+                "can_have_stat": [ "r_c" ],
+                "relationship": [
+                    {
+                        "cat_to": [ "app2" ],
+                        "cat_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [ "trust" ],
+                        "amount": -15
+                    }
+                ],
+                "injury":
+                    {
+                                "cats": [ "app2" ],
+                                "injuries": [ "poisoned" ]
+                    },
+                "history_text": {
+                        "reg_death": "m_c died after tasting deathberries out of curiosity.",
+                        "lead_death": "died after tasting deathberries"
+                    }
             }
         ]
     }

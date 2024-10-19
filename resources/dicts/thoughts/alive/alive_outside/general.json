@@ -5,7 +5,7 @@
             "Desperately tries to find {PRONOUN/m_c/poss} way back",
             "Misses {PRONOUN/m_c/poss} nest",
             "Is asking a group of loners if know where {PRONOUN/m_c/poss} Clan is",
-            "Dreamed about finding {PRONOUN/m_c/poss} way home only to wake up alone again",
+            "Dreamed about finding {PRONOUN/m_c/poss} way home, only to wake up alone again",
             "Finds comfort in {PRONOUN/m_c/poss} solitude",
             "Takes stock of {PRONOUN/m_c/poss} surroundings",
             "Wonders if {PRONOUN/m_c/subject} will even find {PRONOUN/m_c/poss} way home",
@@ -60,6 +60,30 @@
         ]
     },
     {
+        "id": "lost_thoughts_to_random_cat",
+        "thoughts": [
+            "Is missing r_c",
+            "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "warrior", 
+            "mediator", 
+            "medicine cat", 
+            "deputy", 
+            "leader", 
+            "elder"
+        ],
+        "random_status_constraint": [
+            "any"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "lost_cats_with_family",
         "thoughts": [
             "Wonders how {PRONOUN/m_c/poss} family is doing",
@@ -86,7 +110,7 @@
     {
         "id": "lost_cats_with_siblings",
         "thoughts": [
-            "Hopes {PRONOUN/m_c/poss} littermates are doing ok"
+            "Hopes {PRONOUN/m_c/poss} siblings are doing okay"
         ],
         "relationship_constraint": [
             "siblings"
@@ -119,60 +143,5 @@
             "leader", 
             "elder"
         ]
-    },
-    {
-        "id": "lost_thoughts_to_random_cat",
-        "thoughts": [
-            "Is missing r_c",
-            "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
-        ],
-        "main_status_constraint": [
-           "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
-            "elder"
-        ],
-        "random_status_constraint": [
-            "any"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
-        "id": "lost_thoughts_to_apprentices",
-        "thoughts": [
-            "Wonders who is mentoring the c_n kits that must be apprentices by now"
-        ],
-        "main_status_constraint": [
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
-            "elder"
-        ],
-        "random_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
     }
 ]
-
-
-
-
-
-
-
-
-

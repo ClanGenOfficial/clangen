@@ -16,8 +16,8 @@
 			"m_c notices that r_c doesn't want to help out.",
 			"m_c doesn't understand why r_c is being so rude.",
 			"r_c saw m_c taking extra fresh kill before others had a chance to eat.",
-            		"m_c walks away when r_c asks for help.",
-            		"r_c saw m_c do something kinda selfish."
+            "m_c walks away when r_c asks for help.",
+            "r_c saw m_c do something kind of selfish."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"

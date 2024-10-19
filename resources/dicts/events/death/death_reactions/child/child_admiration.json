@@ -1,17 +1,20 @@
 {
     "general": {
         "body": [
-            "r_c wails when {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the body of {PRONOUN/r_c/poss} parent, m_c, lying still and cold.",
-            "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
-            "m_c's body lays in the clearing and r_c nuzzles up beside {PRONOUN/m_c/object}, wishing only to feel the warmth of {PRONOUN/r_c/poss} parent's presence.",
-            "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
-            "r_c gently licks m_c's fur clean, as m_c once did for {PRONOUN/r_c/object} in the nursery, and blinks back tears.",
-            "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
+            "r_c always idolized m_c and modeled {PRONOUN/r_c/poss} ideal of what it meant to be a true and good c_n cat on m_c. Without {PRONOUN/m_c/object}, r_c feels like {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been set adrift.",
+            "r_c never realized just how high of a pedestal {PRONOUN/r_c/subject} had placed m_c on, but with {PRONOUN/r_c/poss} parent gone - it feels like r_c's world has come crashing down around {PRONOUN/r_c/poss} ears.",
+            "r_c stares in disbelief at the body of {PRONOUN/r_c/poss} parent. How can c_n go on without m_c? {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} the solid foundation upon which c_n rested, in r_c's mind - and now that foundation has crumbled.",
+            "r_c presses {PRONOUN/r_c/poss} muzzle to the cold body of m_c, choking back sobs. All the spark and life that r_c always admired in {PRONOUN/r_c/poss} parent has faded, leaving nothing but a husk behind.",
+            "r_c admired m_c so deeply - as a parent, but also as a Clanmate and a teacher. This loss cuts {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} core.",
+            "Looking at {PRONOUN/r_c/poss} parent's body, r_c is too overcome to speak. How will {PRONOUN/r_c/subject} go on without m_c? How will c_n survive without {PRONOUN/m_c/object}?",
+            "r_c presses against m_c's cold flank and tells {PRONOUN/m_c/object} again and again how loved and cherished {PRONOUN/m_c/subject} {VERB/m_c/are/is}, and how much {PRONOUN/r_c/subject} {VERB/r_c/look/looks} up to {PRONOUN/m_c/object}. Knowing m_c can't hear {PRONOUN/r_c/object} now breaks {PRONOUN/r_c/poss} heart.",
+            "r_c grieves m_c deeply, knowing that {PRONOUN/r_c/subject} may never have the chance to tell {PRONOUN/r_c/subject} parent what a profound impact {PRONOUN/m_c/subject} had on {PRONOUN/r_c/poss} life."
         ],
         "no_body": [
-            "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
-            "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
-            "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
+            "r_c always idolized m_c and modeled {PRONOUN/r_c/poss} vision of what it meant to be a true and good c_n cat on m_c. Without {PRONOUN/m_c/object}, r_c feels like {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been set adrift.",
+            "r_c never realized just how high of a pedestal {PRONOUN/r_c/subject} had placed m_c on, but with {PRONOUN/r_c/poss} parent gone - it feels like r_c's world has come crashing down around {PRONOUN/r_c/poss} ears.",
+            "r_c admired m_c so deeply - as a parent, but also as a Clanmate and a teacher. This loss cuts {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} core.",
+            "r_c grieves m_c deeply, knowing that {PRONOUN/r_c/subject} may never have the chance to tell {PRONOUN/r_c/subject} parent what a profound impact {PRONOUN/m_c/subject} had on {PRONOUN/r_c/poss} life."
         ]
     },
     "adventurous": {

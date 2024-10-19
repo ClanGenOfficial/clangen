@@ -3626,7 +3626,7 @@
         },
         "history": [{
             "cats": ["m_c"],
-            "reg_death": "m_c was swept away by a flood",
+            "reg_death": "m_c was swept away by a flood.",
             "lead_death": "{VERB/m_c/were/was} swept away by a flood"
         }]
     },

@@ -156,7 +156,7 @@ class Patrol:
                 else:
                     self.patrol_statuses["all apprentices"] = 1
 
-            if cat.status in ("warrior", "deputy", "leader"):
+            if cat.status in ("warrior", "deputy", "leader") and cat.age != "adolescent":
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1
                 else:
@@ -379,7 +379,7 @@ class Patrol:
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible,
         # make it the *only* possible patrol
         if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
-            for _pat in possible_patrols:
+            for _pat in final_patrols:
                 if (
                     _pat.patrol_id
                     == game.config["patrol_generation"]["debug_ensure_patrol_id"]
