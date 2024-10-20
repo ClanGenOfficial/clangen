@@ -186,7 +186,7 @@ class Sprites:
              'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT', 'EYEBAGS'],
             ['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR', 'BUSTER', 'SMOKEY', 'HAWKBLAZE',
              'CAKE', 'ROSINA', 'PRINCESS'],
-            ['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE']
+            ['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE', 'BADGER', 'DORSAL', 'JUNO', 'QTIP', 'MISTLEPAW', 'POOKIE']
         ]
 
         for row, patches in enumerate(white_patches):
@@ -219,7 +219,7 @@ class Sprites:
              'GRUMPYFACE'],
             ['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER', 'BRIE'],
             ['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY'],
-            ['SHILOH', 'FRECKLED', 'HEARTBEAT']
+            ['SHILOH', 'FRECKLED', 'HEARTBEAT', 'CUPID', 'PEPE']
         ]
 
         for row, masks in enumerate(tortiepatchesmasks):
