@@ -5956,7 +5956,7 @@
     "sub_type": ["murder"],
     "tags": ["all_lives", "low_lives"],
     "weight": 30,
-    "event_text": "r_c hisses {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} {VERB/r_c/kill/kills} m_c.",
+    "event_text": "r_c hisses {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} {VERB/r_c/kill/kills} {PRONOUN/m_c/object}.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "dies": true

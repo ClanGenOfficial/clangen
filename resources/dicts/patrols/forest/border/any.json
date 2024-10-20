@@ -124,7 +124,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/s_c/poss} lungs.",
+                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -170,7 +170,7 @@
                 ]
             },
             {
-                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/s_c/poss/CAP} body is discovered the next day, cold and covered in wounds.",
+                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, cold and covered in wounds.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -393,7 +393,7 @@
                 ]
             },
             {
-                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/s_c/subject/CAP} {VERB/s_c/try/tries} to creep just a little closer - but the ground drops away steeply beneath {PRONOUN/s_c/poss} paws and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
+                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer - but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -404,7 +404,7 @@
                 }
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/s_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/s_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
