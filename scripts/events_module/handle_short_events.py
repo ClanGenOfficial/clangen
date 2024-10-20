@@ -314,6 +314,7 @@ class HandleShortEvents:
         extra_text = None
 
         in_event_cats = {"m_c": self.main_cat}
+
         if self.random_cat:
             in_event_cats["r_c"] = self.random_cat
         for i, attribute_list in enumerate(self.chosen_event.new_cat):
@@ -328,7 +329,10 @@ class HandleShortEvents:
                 if cat.dead:
                     extra_text = f"{cat.name}'s ghost now wanders."
                 elif cat.outside:
-                    extra_text = f"The Clan has encountered {cat.name}."
+                    if "unknown" in attribute_list:
+                        extra_text = ""
+                    else:
+                        extra_text = f"The Clan has encountered {cat.name}."
                 else:
                     Relation_Events.welcome_new_cats([cat])
                 self.involved_cats.append(cat.ID)
