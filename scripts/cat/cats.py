@@ -2680,6 +2680,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
@@ -2699,6 +2700,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
