@@ -618,12 +618,14 @@
     "tags0": ["animal", "bird"]
   }, 
   "Fallen": {
-    "variants": 1,
-    "tags0": ["cat", "animal"]
+    "variants": 2,
+    "tags0": ["cat", "animal"],
+    "tags1": ["cat", "animal"]
   }, 
   "Falling": {
-    "variants": 1,
-    "tags0": ["cat", "animal"]
+    "variants": 2,
+    "tags0": ["cat", "animal"],
+    "tags1": ["element", "light"]
   }, 
   "Fallow": {
     "variants": 2,
