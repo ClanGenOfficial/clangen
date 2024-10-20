@@ -632,7 +632,7 @@ class Cat:
         """
         compiles grief moon event text
         """
-        if body is True:
+        if body:
             body_status = "body"
         else:
             body_status = "no_body"
@@ -688,7 +688,7 @@ class Cat:
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
-                if not body_treated and "rosemary" in game.clan.herbs:
+                if body and not body_treated and "rosemary" in game.clan.herbs:
                     body_treated = True
                     game.clan.herbs["rosemary"] -= 1
                     if game.clan.herbs["rosemary"] <= 0:
