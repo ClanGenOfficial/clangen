@@ -418,6 +418,7 @@ class Condition_Events:
             "RATBITE": ["weak leg"],
             "LEGBITE": ["weak leg"],
             "TOETRAP": ["weak leg"],
+            "HINDLEG": ["weak leg"]
 
         }
 
