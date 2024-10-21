@@ -400,23 +400,26 @@ class Condition_Events:
 
         # dict of possible physical conditions that can be acquired from relevant scars
         scar_to_condition = {
-            "LEGBITE": ["weak leg"],
             "THREE": ["one bad eye", "failing eyesight"],
-            "NOPAW": ["lost a leg"],
-            "TOETRAP": ["weak leg"],
-            "NOTAIL": ["lost their tail"],
-            "HALFTAIL": ["lost their tail"],
+            "FOUR": ["weak leg"],
             "LEFTEAR": ["partial hearing loss"],
             "RIGHTEAR": ["partial hearing loss"],
-            "MANLEG": ["weak leg", "twisted leg"],
-            "BRIGHTHEART": ["one bad eye"],
             "NOLEFTEAR": ["partial hearing loss"],
             "NORIGHTEAR": ["partial hearing loss"],
             "NOEAR": ["partial hearing loss", "deaf"],
+            "NOPAW": ["lost a leg"],
+            "NOTAIL": ["lost their tail"],
+            "HALFTAIL": ["lost their tail"],
+            "BRIGHTHEART": ["one bad eye"],
             "LEFTBLIND": ["one bad eye", "failing eyesight"],
             "RIGHTBLIND": ["one bad eye", "failing eyesight"],
-            "BOTHBLIND": ["blind"],
+            "BOTHBLIND": ["failing eyesight", "blind"],
+            "MANLEG": ["weak leg", "twisted leg"],
             "RATBITE": ["weak leg"],
+            "LEGBITE": ["weak leg"],
+            "TOETRAP": ["weak leg"],
+            "HINDLEG": ["weak leg"]
+
         }
 
         scarless_conditions = [
@@ -464,12 +467,12 @@ class Condition_Events:
                             return perm_condition
                 except KeyError:
                     print(
-                        f"WARNING: {injury_name} couldn't be found in injury dict! no permanent condition was given"
+                        f"WARNING: {injury_name} couldn't be found in injury dict! no permanent condition is possible."
                     )
                     return perm_condition
             else:
                 print(
-                    f"WARNING: {scar} for {injury_name} is either None or is not in scar_to_condition dict."
+                    f"WARNING: {scar} for {injury_name} is either None or is not in scar_to_condition dict. This is not necessarily a bug.  Only report if you feel the scar should have resulted in a permanent condition."
                 )
 
         elif condition is not None:
