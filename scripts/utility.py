@@ -268,7 +268,7 @@ def get_current_season():
     if index > 11:
         index = index - 12
 
-    game.clan.current_season = game.clan.seasons[index]
+    game.clan.current_season = game.clan.SEASONS[index]
 
     return game.clan.current_season
 
