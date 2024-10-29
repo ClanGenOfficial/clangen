@@ -1,8 +1,11 @@
 {
-  "menu_playlist": ["resources/audio/music/Menu_Ambiance.mp3"],
-  "creation_playlist": ["resources/audio/music/Clangen_Generations_441khz.mp3"],
+  "menu_playlist": ["Menu_Ambiance.mp3"],
+  "creation_playlist": ["Generations_102824_loopfriendly_levelmatched.mp3"],
+
+  "general_playlist": ["Dawn_Patrol_levelmatched.mp3"],
+
   "forest_playlist": [],
-  "plains_playlist": [],
+  "plains_playlist": ["Plains_Ambiance_1.mp3"],
   "beach_playlist": [],
-  "mountainous_playlist": []
+  "mountainous_playlist": ["Mountain_Ambiance_1.mp3", "Mountain_Ambiance_2.mp3"]
 }

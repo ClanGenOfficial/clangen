@@ -34,7 +34,11 @@ class MusicManager:
             return
         for playlist in music_data:
             try:
-                self.playlists[playlist] = music_data[playlist]
+                self.playlists[playlist] = []
+                for path in music_data[playlist]:
+                    self.playlists[playlist].append(
+                        "resources/audio/music/" + path
+                    )
             except:
                 logger.exception("Failed to load playlist")
 
@@ -94,7 +98,7 @@ class MusicManager:
 
         self.queue_music()
 
-    def play_music(self, track, loops=0):
+    def play_music(self, track, loops=0, fade_ms=1000):
         """
         plays the given track and sets volume
         set loops to -1 to loop the chosen file
@@ -103,7 +107,7 @@ class MusicManager:
         self.current_track = track
         pygame.mixer.music.load(self.current_track)
         pygame.mixer.music.set_volume(self.volume)
-        pygame.mixer.music.play(loops, fade_ms=1000)
+        pygame.mixer.music.play(loops, fade_ms=fade_ms)
         # print(f"playing music:{self.current_track}")
 
     def queue_music(self):
@@ -116,7 +120,7 @@ class MusicManager:
             return
 
         # otherwise we pick a new track and queue it
-        if self.current_track and self.number_of_tracks > 1:
+        if self.current_track in self.current_playlist and self.number_of_tracks > 1:
             playlist_copy = self.current_playlist.copy()
             # print(f"playlist: {playlist_copy}, removing track: {self.current_track}")
             playlist_copy.remove(
@@ -143,7 +147,8 @@ class MusicManager:
         if not self.queued_track:
             return
 
-        self.play_music(self.queued_track)
+        self.fade_out_music()
+        self.play_music(self.queued_track, fade_ms=2000)
         self.queue_music()
 
     def fade_out_music(self, fadeout=2000):
@@ -193,16 +198,16 @@ class MusicManager:
             biome = game.clan.biome
         except AttributeError:
             biome = "Forest"
-        new_playlist = []
+        new_playlist = self.playlists["general_playlist"]
 
         if biome == "Forest":
-            new_playlist = self.playlists["forest_playlist"]
+            new_playlist.extend(self.playlists["forest_playlist"])
         elif biome == "Plains":
-            new_playlist = self.playlists["plains_playlist"]
+            new_playlist.extend(self.playlists["plains_playlist"])
         elif biome == "Mountainous":
-            new_playlist = self.playlists["beach_playlist"]
+            new_playlist.extend(self.playlists["beach_playlist"])
         elif biome == "Beach":
-            new_playlist = self.playlists["mountainous_playlist"]
+            new_playlist.extend(self.playlists["mountainous_playlist"])
 
         return new_playlist
 
