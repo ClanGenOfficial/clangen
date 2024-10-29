@@ -147,8 +147,7 @@ class MusicManager:
         if not self.queued_track:
             return
 
-        self.fade_out_music()
-        self.play_music(self.queued_track, fade_ms=2000)
+        self.play_music(self.queued_track, fade_ms=3000)
         self.queue_music()
 
     def fade_out_music(self, fadeout=2000):
@@ -198,6 +197,7 @@ class MusicManager:
             biome = game.clan.biome
         except AttributeError:
             biome = "Forest"
+
         new_playlist = self.playlists["general_playlist"]
 
         if biome == "Forest":
@@ -205,10 +205,10 @@ class MusicManager:
         elif biome == "Plains":
             new_playlist.extend(self.playlists["plains_playlist"])
         elif biome == "Mountainous":
-            new_playlist.extend(self.playlists["beach_playlist"])
-        elif biome == "Beach":
             new_playlist.extend(self.playlists["mountainous_playlist"])
-
+        elif biome == "Beach":
+            new_playlist.extend(self.playlists["beach_playlist"])
+        print(f"new playlist = {new_playlist}")
         return new_playlist
 
 
