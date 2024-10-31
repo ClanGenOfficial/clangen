@@ -1,11 +1,12 @@
 {
-  "menu_playlist": ["Menu_Ambiance.mp3"],
-  "creation_playlist": ["Generations_102824_loopfriendly_levelmatched.mp3"],
+  "menu_playlist": ["menu_ambiance.mp3"],
+  "creation_playlist": ["Generations.mp3"],
 
-  "general_playlist": ["Dawn_Patrol_levelmatched.mp3"],
+  "general_playlist": ["Dawn_Patrol.mp3"],
+  "leafbare_playlist": ["Leafbare.mp3"],
 
   "forest_playlist": [],
-  "plains_playlist": ["Plains_Ambiance_1.mp3"],
+  "plains_playlist": ["plains_ambiance_1.mp3"],
   "beach_playlist": [],
-  "mountainous_playlist": ["Mountain_Ambiance_1.mp3", "Mountain_Ambiance_2.mp3"]
+  "mountainous_playlist": ["mountain_ambiance_1.mp3", "mountain_ambiance_2.mp3"]
 }

@@ -49,7 +49,7 @@ class MusicManager:
         if self.muted:
             return
 
-        self.biome_playlist = self.get_biome_music()
+        self.biome_playlist = self.get_world_music()
         # print(f"biome playlist is {self.biome_playlist}, current playlist is {self.current_playlist}")
         # print(f"screen is {screen}")
         # print(f"menu playlist is {self.playlists['menu_playlist']}")
@@ -189,7 +189,7 @@ class MusicManager:
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
-    def get_biome_music(self):
+    def get_world_music(self):
         """
         Finds the clan's biome and returns the appropriate playlist
         """
@@ -198,7 +198,12 @@ class MusicManager:
         except AttributeError:
             biome = "Forest"
 
-        new_playlist = self.playlists["general_playlist"]
+        try:
+            season = game.clan.current_season
+        except AttributeError:
+            season = "Newleaf"
+
+        new_playlist = self.playlists["general_playlist"].copy()
 
         if biome == "Forest":
             new_playlist.extend(self.playlists["forest_playlist"])
@@ -208,7 +213,9 @@ class MusicManager:
             new_playlist.extend(self.playlists["mountainous_playlist"])
         elif biome == "Beach":
             new_playlist.extend(self.playlists["beach_playlist"])
-        print(f"new playlist = {new_playlist}")
+
+        new_playlist.extend(self.playlists.get(f"{season.lower().replace('-', '')}_playlist", []))
+
         return new_playlist
 
 
