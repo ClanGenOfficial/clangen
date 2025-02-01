@@ -824,9 +824,14 @@ class Pelt:
 
         # White patches must be initalized before eye color.
         num = game.config["cat_generation"]["base_heterochromia"]
+        if (
+            self.white_patches in Pelt.high_white
+            or self.white_patches in Pelt.mostly_white
+            or self.white_patches == "FULLWHITE"
+            or self.colour == "WHITE"
+        ):
+            num = num - 90
         if self.white_patches == "FULLWHITE" or self.colour == "WHITE":
-            num -= 90
-        elif self.white_patches in Pelt.high_white or self.white_patches in Pelt.mostly_white:
             num -= 10
         for _par in parents:
             if _par.pelt.eye_colour2:
