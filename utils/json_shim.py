@@ -5,7 +5,7 @@ Shim for orjson to mimic Python default json API.
 # pylint: disable=no-member
 import orjson
 
-def dumps(obj, indent=0):
+def dumps(obj, indent=0) -> str:
     """
     Serialize `obj` to a JSON formatted `str`.
     
