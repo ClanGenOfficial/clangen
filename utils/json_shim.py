@@ -5,14 +5,12 @@ Shim for orjson to mimic Python default json API.
 # pylint: disable=no-member
 import orjson
 
-import json
-
 def dumps(obj, indent=0) -> str:
     """
     Serialize `obj` to a JSON formatted `str`.
     
     If you specify `indent` as a number greater than 0,
-    indent will ALWAYS BE 2 SPACES.
+    indent will be 2 spaces.
     """
     opt = 0
     if indent > 0:
@@ -32,7 +30,7 @@ def dump(obj, fp, indent=0):
     (a `.write()`-supporting file-like object).
 
     If you specify `indent` as a number greater than 0,
-    indent will ALWAYS BE 2 SPACES.
+    indent will be 2 spaces.
     """
     opt = 0
     if indent > 0:
