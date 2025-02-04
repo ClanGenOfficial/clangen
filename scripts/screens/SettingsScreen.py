@@ -8,7 +8,7 @@ from math import floor
 import i18n
 import pygame
 import pygame_gui
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game_essentials import game

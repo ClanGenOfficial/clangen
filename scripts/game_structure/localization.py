@@ -3,7 +3,7 @@ from typing import List, Dict, Union, Optional
 
 import i18n
 import i18n.translations
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.game_structure.game_essentials import game
 

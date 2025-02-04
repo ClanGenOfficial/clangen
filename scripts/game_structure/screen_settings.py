@@ -2,7 +2,7 @@ import logging
 import os.path
 from typing import TYPE_CHECKING
 
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.housekeeping.datadir import get_save_dir
 

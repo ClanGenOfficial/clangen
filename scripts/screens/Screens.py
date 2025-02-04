@@ -3,7 +3,7 @@ from typing import Dict, Optional, Union
 
 import pygame
 import pygame_gui
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings

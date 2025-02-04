@@ -15,7 +15,7 @@ from random import choice, randint
 
 import i18n
 import pygame
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History

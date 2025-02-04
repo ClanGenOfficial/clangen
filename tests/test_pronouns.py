@@ -12,7 +12,7 @@ import os
 import re
 import sys
 import unittest
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"

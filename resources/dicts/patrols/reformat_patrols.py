@@ -1,4 +1,4 @@
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 import collections
 import os
 from os.path import exists as file_exists

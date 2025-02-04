@@ -3,7 +3,7 @@
 import random
 
 import i18n
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.events_module.event_filters import (
     event_for_location,

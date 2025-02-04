@@ -3,7 +3,7 @@ from copy import deepcopy
 from typing import Dict, List
 
 import i18n
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum

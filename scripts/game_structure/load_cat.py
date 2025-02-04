@@ -4,7 +4,7 @@ from math import floor
 from random import choice
 
 import i18n
-import utils.json_shim as ujson
+import scripts.json_shim as ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.game_structure.localization import get_new_pronouns
