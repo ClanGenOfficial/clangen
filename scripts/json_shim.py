@@ -5,6 +5,7 @@ Shim for orjson to mimic Python default json API.
 # pylint: disable=no-member
 # pylint: disable=unused-argument
 import orjson
+from typing import Union
 
 def dumps(obj, indent=0, ensure_ascii=False) -> str:
     """
@@ -24,7 +25,7 @@ def dumps(obj, indent=0, ensure_ascii=False) -> str:
         opt = orjson.OPT_INDENT_2
     return orjson.dumps(obj, option=opt).decode()
 
-def loads(s):
+def loads(s: Union[str, bytes, bytearray]):
     """
     Deserialize `s` (a `str`, `bytes` or `bytearray` instance containing a JSON document)
     to a Python object.
@@ -42,7 +43,7 @@ def dump(obj, fp, indent=0):
     opt = 0
     if indent > 0:
         opt = orjson.OPT_INDENT_2
-    return fp.write(orjson.dumps(obj, option=opt).decode())
+    fp.write(orjson.dumps(obj, option=opt).decode())
 
 def load(fp):
     """
