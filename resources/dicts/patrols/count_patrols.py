@@ -2,7 +2,7 @@ import collections
 import os
 from os.path import exists as file_exists
 
-import ujson
+import utils.json_shim as ujson
 
 """ This script exists to count and catalogue all patrols.   """
 

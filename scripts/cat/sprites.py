@@ -2,7 +2,7 @@ import os
 from copy import copy
 
 import pygame
-import ujson
+import utils.json_shim as ujson
 
 from scripts.game_structure.game_essentials import game
 

@@ -7,7 +7,7 @@ from re import sub
 import i18n
 import pygame
 import pygame_gui
-import ujson
+import utils.json_shim as ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from ..cat.enums import CatAgeEnum

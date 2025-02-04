@@ -4,7 +4,7 @@ from ast import literal_eval
 from shutil import move as shutil_move
 
 import pygame
-import ujson
+import utils.json_shim as ujson
 
 from scripts.event_class import Single_Event
 from scripts.game_structure.screen_settings import toggle_fullscreen

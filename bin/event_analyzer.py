@@ -2,7 +2,7 @@ import json
 import os
 from typing import MutableMapping
 
-import ujson
+import utils.json_shim as ujson
 
 # Please don't mind this truly horrifying list of global variables.
 # Lord have mercy on my soul

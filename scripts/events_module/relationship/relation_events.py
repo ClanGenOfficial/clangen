@@ -2,7 +2,7 @@ import os
 import random
 from random import choice, randint
 
-import ujson
+import utils.json_shim as ujson
 
 from scripts.cat.cats import Cat
 from scripts.events_module.relationship.group_events import GroupEvents

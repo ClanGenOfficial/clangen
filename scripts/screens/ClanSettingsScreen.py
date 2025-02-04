@@ -7,7 +7,7 @@ from typing import Dict
 
 import pygame
 import pygame_gui
-import ujson
+import utils.json_shim as ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game

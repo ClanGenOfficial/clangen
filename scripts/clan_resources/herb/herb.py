@@ -1,6 +1,6 @@
 import os
 
-import ujson
+import utils.json_shim as ujson
 import i18n
 
 from scripts.game_structure.localization import load_lang_resource

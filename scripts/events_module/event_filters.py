@@ -1,6 +1,6 @@
 import re
 
-import ujson
+import utils.json_shim as ujson
 
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (

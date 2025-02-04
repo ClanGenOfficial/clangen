@@ -12,7 +12,7 @@ import os
 import sys
 import unittest
 
-import ujson
+import utils.json_shim as ujson
 
 
 def test():

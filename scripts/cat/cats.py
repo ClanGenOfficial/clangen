@@ -12,7 +12,7 @@ from random import choice, randint, sample, random, getrandbits, randrange
 from typing import Dict, List, Any, Union, Callable
 
 import i18n
-import ujson  # type: ignore
+import utils.json_shim as ujson  # type: ignore
 
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History

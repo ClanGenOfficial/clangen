@@ -2,7 +2,7 @@
 import unittest
 
 import i18n
-import ujson
+import utils.json_shim as ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.localization import (
