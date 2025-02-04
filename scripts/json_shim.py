@@ -3,14 +3,21 @@ Shim for orjson to mimic Python default json API.
 """
 
 # pylint: disable=no-member
+# pylint: disable=unused-argument
 import orjson
 
-def dumps(obj, indent=0) -> str:
+def dumps(obj, indent=0, ensure_ascii=False) -> str:
     """
     Serialize `obj` to a JSON formatted `str`.
     
     If you specify `indent` as a number greater than 0,
     indent will be 2 spaces.
+
+    `ensure_ascii` does not do anything because orjson does not
+    support this feature. By default, orjson does NOT escape
+    utf-8 characters to ascii. It is there for compatibility,
+    in case that orjson can't be used or we have to migrate
+    json libraries again.
     """
     opt = 0
     if indent > 0:
