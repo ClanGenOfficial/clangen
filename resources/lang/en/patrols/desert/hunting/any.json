@@ -2459,5 +2459,79 @@
                         }
                 }
             ]
+    },
+    {
+        "patrol_id": "dst_hunt_groundsquirrelsolo",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "patrol_art": null,
+        "intro_text": "As p_l begins {PRONOUN/m_c/poss} hunting patrol, a swift blur of brown catches {PRONOUN/m_c/poss} eyes. A spotted ground squirrel separated from their scurry. A small mouthful, but it would be perfect for the Clan.",
+        "decline_text": "Or, perhaps not. Maybe just around the next sand dune was something bigger. P_l sets {PRONOUN/m_c/poss} sight on the distance and hurries away from the lone squirrel.",
+        "min_max_status": {
+            "warrior": [
+                1,
+                1
+            ]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l wastes no time on {PRONOUN/m_c/poss} quarry. Ducking low to the sand and stepping as lightly as {PRONOUN/m_c/subject} could, p_l eventually pounces and lands on the squirrel before it could escape!",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite practice and patience, the squirrel turned around in a spot of bad luck and dashed away underground. p_l growls under {PRONOUN/m_c/poss} breath in annoyance and stalks away.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_groundsquirrelwar",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "patrol_art": null,
+        "intro_text": "p_l leads {PRONOUN/m_c/poss} patrol towards a small stream, hearing word of a scurry of ground squirrels that made their dens nearby.",
+        "decline_text": "Just before the patrol could begin their work, p_l suddenly decides against this endeavor. There can be better prey to find than one or two ground squirrels, {PRONOUN/m_c/subject} {VERB/m_c/argue/argues}.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "The patrol darts forward towards the stream at p_l's command, and it was not long until the spotted prey was surrounded. p_l watches with pride as the others begin piling their prey up for the return trip to camp.",
+                "exp": 20,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l and the patrol rush forward at {PRONOUN/m_c/poss} command, but the ground squirrels were ever faster. The prey fell back into their den holes by the time the cats made it.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]
