@@ -2489,14 +2489,16 @@
             {
                 "text": "p_l wastes no time on {PRONOUN/m_c/poss} quarry. Ducking low to the sand and stepping as lightly as {PRONOUN/m_c/subject} could, p_l eventually pounces and lands on the squirrel before it could escape!",
                 "exp": 20,
-                "weight": 20
+                "weight": 20,
+                "prey": ["small"]
             }
         ],
         "fail_outcomes": [
             {
                 "text": "Despite practice and patience, the squirrel turned around in a spot of bad luck and dashed away underground. p_l growls under {PRONOUN/m_c/poss} breath in annoyance and stalks away.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "prey": ["very_small"]
             }
         ]
     },
@@ -2523,14 +2525,196 @@
             {
                 "text": "The patrol darts forward towards the stream at p_l's command, and it was not long until the spotted prey was surrounded. p_l watches with pride as the others begin piling their prey up for the return trip to camp.",
                 "exp": 20,
-                "weight": 20
+                "weight": 20,
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "p_l and the patrol rush forward at {PRONOUN/m_c/poss} command, but the ground squirrels were ever faster. The prey fell back into their den holes by the time the cats made it.",
+                "text": "p_l and the patrol rush forward at {PRONOUN/m_c/poss} command, but the ground squirrels were ever faster. The prey fell back into their den holes by the time the cats made it to the stream.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_kangratsolo",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "patrol_art": null,
+        "intro_text": "p_l steps lightly towards a small dune, spotting a set of bouncing tracks in the sand. ",
+        "decline_text": "With a huff, p_l decides that {PRONOUN/m_c/subject} could be tracking something better, and leaves the tracks alone.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l lowers {PRONOUN/m_c/self} to the ground and goes the other way behind the dune, surprising and trapping a kangaroo rat! ",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l attempts to follow the tracks, but {PRONOUN/m_c/poss} footsteps cause the kangaroo rat {PRONOUN/m_c/subject} {VERB/m_c/were/was} hunting to dart away quickly!",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_kangratwar",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "patrol_art": null,
+        "intro_text": "p_l and {PRONOUN/m_c/poss} follow the tracks left behind by a colony of bouncing kangaroo rats. r_c seems especially eager to hunt them down with a grumble in {PRONOUN/m_c/poss} belly.",
+        "decline_text": "p_l's ear flicks at r_c's belly, and decides to return the patrol to camp. If {PRONOUN/m_c/subject} could hear {PRONOUN/r_c/poss} belly, imagine what the rats could hear.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l and the patrol manage to find the kangaroo rats! With an exhilarating chase, the patrol manages to catch a pawful to return to camp. r_c especially seems happy at the chance of {PRONOUN/r_c/poss} favorite meal!",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l and the patrol get into positions as they catch the kangaroo rats resting. But before p_l could give the command, an unusually loud grumble from r_c's belly gives away their position! The kangaroo rats flee faster than the patrol could chase them.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_batsolo",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "patrol_art": null,
+        "intro_text": "p_l enjoys the cool night air among the dunes, listening out for any bats who decide to take flight into the starry sky.",
+        "decline_text": "p_l gets so enraptured by the clear skies, the cool wind, and the bright stars above that {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to stargaze instead. One less hunting patrol can't hurt.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l catches the sound of wings in the air, and leap up in time to catch a small bat in {PRONOUN/m_c/poss} jaws! {PRONOUN/m_c/subject/CAP} cant wait to show off this catch to the Clan.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l listens for the fluttering of wings, but only the wind answers. The peace and quiet of the area is so inviting, {PRONOUN/m_c/subject} {VERB/m_c/risk/risks} a light nap to pass the time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/realize/realizes} {PRONOUN/m_c/poss} mistake when {PRONOUN/m_c/subject} {VERB/m_c/awaken/awakens} to the morning sun on the horizon.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_batwarrduo",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "patrol_art": null,
+        "intro_text": "p_l and r_c walk side by side on their nightly hunting patrol. With a grin, r_c challenges p_l to see how many bats they both can catch before the night is out!",
+        "decline_text": "p_l prepares to accept r_c's challenge, but a yowl for the patrol to return to camp stops their almost-revelry. Maybe next time.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l grins and accepts r_c's challenge. The two race off at their agreed upon signal, and by the time the morning sun scorched the sands they both has returned with a pile of prey. Neither can really remember who won the challenge.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l hisses at r_c about taking their duties as warriors seriously. The strained air between the two cats is enough to turn their hunting expedition into a fruitless endeavor. Something the two argued about even back at camp.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_batwarrsix",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "patrol_art": null,
+        "intro_text": "p_l leads the patrol towards a rocky cavern in the sands. In the daylight, sleeping bats would be no trouble to hunt... so long as they can climb up to their resting places, that is.",
+        "decline_text": "p_l and r_c discuss the risks of such a hunt, and after some valid points, the patrol decides to hunt elsewhere.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "The patrol carefully began to climb the walls of the cave, eyes watching where they take their next step. At p_l's command, the patrol starts to lunge at the bat's hiding places and land in the soft sand. It did not take long until they return to camp with a good prey pile and higher spirits.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite p_l's careful warnings, the patrol found climbing up the rocky walls too much. A few near-misses and even more falls, the patrol leaves the cave with empty paws.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
             }
         ]
     }
