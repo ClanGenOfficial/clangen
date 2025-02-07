@@ -145,6 +145,7 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 anchors=self.anchors,
                 line_spacing=0.95,
             )
+            self.join_focus_sets(self.text_layer)
             self.text_layer.disable()
 
             if self._is_tab:
@@ -264,14 +265,18 @@ class UIImageButton(pygame_gui.elements.UIButton):
         generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
         visible: int = 1,
         sound_id=None,
+        text_kwargs=None,
+        tool_tip_text_kwargs=None,
     ):
         self.sound_id = sound_id
         super().__init__(
             relative_rect=relative_rect,
             text=text,
+            text_kwargs=text_kwargs,
             manager=manager,
             container=container,
             tool_tip_text=tool_tip_text,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
             starting_height=starting_height,
             parent_element=parent_element,
             object_id=ObjectID(class_id="@image_button", object_id=object_id)
@@ -625,8 +630,27 @@ class UISpriteButton:
         container=None,
         object_id=None,
         tool_tip_text=None,
+        text_kwargs=None,
+        tool_tip_text_kwargs=None,
         anchors=None,
     ):
+        # The transparent button. This a subclass that UIButton that also hold the cat_id.
+
+        self.button = CatButton(
+            relative_rect,
+            "",
+            text_kwargs=text_kwargs,
+            object_id=ObjectID("#cat_button", object_id),
+            visible=visible,
+            cat_id=cat_id,
+            cat_object=cat_object,
+            starting_height=starting_height,
+            manager=manager,
+            tool_tip_text=tool_tip_text,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
+            container=container,
+            anchors=anchors,
+        )
         input_sprite = sprite.premul_alpha()
         # if it's going to be small on the screen, smoothscale out the crunch
         input_sprite = (
@@ -650,24 +674,8 @@ class UISpriteButton:
             object_id=object_id,
             anchors=anchors,
         )
-        self.image.disable()
         del input_sprite
-
-        # The transparent button. This a subclass that UIButton that also hold the cat_id.
-
-        self.button = CatButton(
-            relative_rect,
-            "",
-            object_id="#cat_button",
-            visible=visible,
-            cat_id=cat_id,
-            cat_object=cat_object,
-            starting_height=starting_height,
-            manager=manager,
-            tool_tip_text=tool_tip_text,
-            container=container,
-            anchors=anchors,
-        )
+        self.button.join_focus_sets(self.image)
 
     def return_cat_id(self):
         return self.button.return_cat_id()
@@ -728,6 +736,8 @@ class CatButton(UIImageButton):
         object_id=None,
         manager=None,
         tool_tip_text=None,
+        text_kwargs=None,
+        tool_tip_text_kwargs=None,
         container=None,
         anchors=None,
         auto_disable_if_no_data=False,
@@ -737,6 +747,8 @@ class CatButton(UIImageButton):
         super().__init__(
             relative_rect,
             text,
+            text_kwargs=text_kwargs,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
             object_id=object_id,
             visible=visible,
             parent_element=parent_element,

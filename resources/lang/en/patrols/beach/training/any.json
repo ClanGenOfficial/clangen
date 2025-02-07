@@ -1,0 +1,2397 @@
+[
+    {
+        "patrol_id": "bch_train_session1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_session1",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
+        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app1 listens carefully as p_l explains where to find the best prey in the rich waters of the pools.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "app1 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels from them.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools without an ounce of hesitation in {PRONOUN/s_c/poss} movements.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["adventurous", "bold", "confident", "daring", "ambitious"],
+                "can_have_stat": ["app"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 tries to remember the differences between the creatures within the pools but fails to retain any of the information.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c struggles to take the lesson seriously, and eventually the training session ends early with no real progress made.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["troublesome", "playful"],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "app1 pokes around in the pools for potential food. Ouch! Oops, that was a sea urchin. app1 limps the whole way home.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": ["QUILLCHUNK"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c got spiked by a sea urchin while training as an apprentice."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_stuck1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_stuck",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Trailing behind the patrol, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l digs through the sand, helping r_c clear it away enough for the other cat to scramble free.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out stable footing for the patrol to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/r_c/object} calm as the patrol carefully digs down to {PRONOUN/r_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol works all day to free r_c and gets nothing else done.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ]
+            },
+            {
+                "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                }
+            },
+            {
+                "text": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": ["CHEEK"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                }
+            },
+            {
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "vengeful"
+                ],
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                }
+            },
+            {
+                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object}, and {VERB/r_c/blame/blames} s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "vengeful"
+                ],
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": ["CHEEK"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_stuck2",
+        "biome": ["plains"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_stuck",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As r_c trails behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l digs through the loose sand, helping r_c clear it away enough for the other cat to scramble free.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l works all day to free r_c and gets nothing else done.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": ["LEFTEAR"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
+                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_stuck3",
+        "biome": ["plains"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "bch_train_stuck",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As r_c trails behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l digs through the loose soil, helping r_c clear it away enough for the other cat to scramble free. r_c admires how smart p_l is.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l works all day to free r_c and gets nothing else done.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": ["LEFTEAR"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["romantic", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_stuck4",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_stuck",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "r_c is training alone out on the coast when suddenly, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing on shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c spends the entire day carefully working {PRONOUN/r_c/poss} way free and gets nothing else done, but at least {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unharmed.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} {VERB/r_c/yowl/yowls} until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and a patrol passes by after sunhigh has come and gone to free their hapless Clanmate.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} {VERB/r_c/succumb/succumbs} to {PRONOUN/r_c/poss} injuries and {VERB/r_c/drift/drifts} to StarClan alone.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                }
+            },
+            {
+                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some beach grass to shelter in through the night out on the shore, until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine cat den.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury"],
+                        "scars": ["ONE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_soloapp1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_soloapp",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
+        "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "At least this is a good chance to learn the territory! r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c clambers over a rise in the ground and stumbles across a tiny, sparkling waterfall!",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "There's nothing to worry about! s_c pads confidently through c_n territory, assured of {PRONOUN/s_c/poss} safety by the strength of c_n borders.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory and doesn't learn anything.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c shivers a little, imagining what could be out there... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["minor_injury"],
+                        "scars": ["RIGHTEAR"]
+                    }
+                ],
+                "history_text": { "scar": "m_c got injured as an apprentice while exploring alone." }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_solo2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_solo",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall!",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows that it emerges from equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory. Somehow.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_solo3",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_solo",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally {VERB/r_c/return/returns}, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do and so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_solo4",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_solo",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
+        "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c rounds a corner and stumbles across a tiny, sparkling waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally {VERB/r_c/return/returns}, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do and so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["insecure", "lonesome", "nervous"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_octopus1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_octopus",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "decline_text": "When they get there, they can't find it, and the lesson fails.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, {PRONOUN/app1/subject} can see how it could be a sea cat.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/app1/object} to take the training session seriously.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_octopus2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_octopus",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "decline_text": "When they get there, they can't find it, and the lesson fails.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["TEACHER,1"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_octopus3",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_octopus",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "decline_text": "When they get there, they can't find it, and the lesson fails.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_octopus4",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_octopus",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "decline_text": "When they get there, they can't find it, and the lesson fails.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app2 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
+                "exp": 15,
+                "weight": 20,
+                "stat_skill": ["TEACHER,1"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. app2 sides with p_l, and no one learns anything in the squabbling.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_stormwaves1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "bch_train_stormwaves",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
+        "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app2 picks {PRONOUN/app2/poss} way up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting and then runs off into the rain.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_stormwaves2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "bch_train_stormwaves",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
+        "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app2 picks {PRONOUN/app2/poss} way up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with app2.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_shellhunt1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["rom_two_apps", "romantic"],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "app1 and app2 wander on a sandy beach near camp.",
+        "decline_text": "The apprentices are called back to camp to help watch camp.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed and proclaims {PRONOUN/app1/subject} {VERB/app1/are/is} clothed like a Twoleg. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} after app2, who's not as keen to get seaweed slime all over {PRONOUN/app2/self}, and the two young cats play on the safe sands all afternoon.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until {PRONOUN/app1/subject} finally {VERB/app1/get/gets} bored to make its escape.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 finds a shell with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly {VERB/app1/present/presents} it to app2, wondering if app2 might like it for {PRONOUN/app2/poss} nest. Blushing to the tips of {PRONOUN/app2/poss} ears, app2 accepts {PRONOUN/app1/poss} gift.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "lonesome",
+                    "loyal",
+                    "charismatic"
+                ],
+                "can_have_stat": ["app"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 tries to give app2 a shell, but {PRONOUN/app2/subject} {VERB/app2/do/does}n't want it, and the crestfallen app1 slinks off.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_sunset1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "gen_train_sunset",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}. p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's a long but satisfying training session, and both cats have ample opportunity to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun and smiles.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,3"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly and ends the training session early with a diplomatic and completely made-up excuse.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_sunset2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "gen_train_sunset",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}. p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's a long but satisfying training session, and both cats have ample opportunity to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun and smiles.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,3"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c tries, but both the cats are too tired after a long day's work and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_biolumin1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notice sparkles of light where the waves break upon the shore.",
+        "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c pokes curiously at one of the little lights, bringing {PRONOUN/r_c/poss} face down to it. It's a tiny crab, less than the width of one of {PRONOUN/r_c/poss} claws! It fascinates {PRONOUN/r_c/object} and p_l, and they spend hours on the beach, lapping up mouthfuls of light crabs and crushing them between their teeth, laughing with each other as their mouths start glowing too.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c leans against p_l, their pelts keeping each other warm as they take in the magic of the sea.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "As they watch, quiet and patient, more and more of the sea starts to come alive with tiny, glittering creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and s_c spend hours watching the magic of the sea swirl, dip, and undulate, their hearts full of wonder.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "lonesome",
+                    "loyal",
+                    "nervous",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": ["r_c", "p_l"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "They continue on their way, not stopping to see the sights.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_arguingromance1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} {VERB/p_l/round/rounds} a corner and {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
+        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["dislike_10"],
+        "success_outcomes": [
+            {
+                "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in deep dry sand, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-backflip with a smug smirk.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "exp": 15,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Both warriors are stiffly polite with each other, and it's a boring and completely unproductive afternoon, though maybe r_c isn't quite the thorn in {PRONOUN/p_l/poss} paw p_l thought {PRONOUN/r_c/subject} {VERB/r_c/were/was}.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_training_dolphinlore1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "all apprentices": [2, 2],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices.",
+        "decline_text": "The weather is turning rough, and p_l makes the decision to teach the apprentices about the dolphins another day. ",
+        "chance_of_success": 75,
+        "success_outcomes": [
+            {
+                "text": "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. The tiny white and red cat that was saved made the first traditions and bonds with the dolphins, and both the Clan and the dolphins wept at their death when it came.",
+                "exp": 5,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l tells the apprentices about the red and white cat that was saved by the dolphins. They managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves.",
+                "exp": 5,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "A sudden storm cuts off p_l's words, and the patrol sprints back to camp to get warm and dry.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_nessie1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["halloween"],
+        "patrol_art": "nessie_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the cats move along the shoreline, they spot something massive moving beneath the water.",
+        "decline_text": "The cats are feeling remarkably incurious today.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep-water fish, trading the respective delicacies that are hard for the other to obtain.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol is so wrapped up trying to work out what the creature is that r_c topples into the water. It solves the mystery though, as Nessie propels r_c back onto the shoreline with one gentle, immense flipper.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_frogman1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["halloween"],
+        "patrol_art": "loveland_frog_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "p_l waves r_c over with {PRONOUN/p_l/poss} tail. What's <i>that</i>?!",
+        "decline_text": "r_c isn't interested, and the patrol continues on their way.",
+        "success_outcomes": [
+            {
+                "text": "The massive frog-Twoleg creeps up the rocks, slow and unnatural. The patrol watches, breathless, until it's out of sight. Well, p_l huffs. Maybe toads grow bigger than {PRONOUN/p_l/subject} thought. Terrifying.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It halts and, like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c can do is shiver.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock", "non_lethal"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_ottercreationmyth_storylocked1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "As the patrol takes a break to bask, p_l begins a story. Once upon a time, many seasons ago, there was a strong, sleek-furred warrior, for whom swimming was easier than walking...",
+        "decline_text": "A story is nice, but the patrol has to get back to their training, the rest will wait for another time.",
+        "success_outcomes": [
+            {
+                    "text": "They slipped into the ocean to feed their Clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all. Their fur grew fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
+                    "exp": 40,
+                    "weight": 20,
+                    "art": "gen_hunt_fish",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "As r_c settles down eagerly for the tale, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} a spike of pain in {PRONOUN/r_c/poss} paw pad and {VERB/r_c/yelp/yelps}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine cat den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
+                    "exp": 0,
+                    "weight": 20,
+                    "injury": [
+                        {
+                            "cats": ["r_c"],
+                            "injuries": ["small cut"]
+                        }
+                    ],
+                    "history_text": {
+                        "scar": "m_c got a small cut while out training, which has left a scar.",
+                        "reg_death": "m_c died from complications from a small cut.",
+                        "lead_death": "from complications from a small cut"
+                    },
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["r_c"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_foxdawn_lorelocked1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1"],
+        "intro_text": "p_l notices app1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior - have they heard this piece of Clan history?",
+        "decline_text": "app1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
+        "success_outcomes": [
+                {
+                    "text": "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion - a true warrior, never forgotten.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_hunt_vision",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as Fox Warrior-like as anyone could wish.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1"],
+                            "mutual": true,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_mauifishing_storylocked1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "bch_train_session1",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[2, 6],
+            "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "After a fishing lesson, the apprentices look soggy and sorry for themselves. p_l waves {PRONOUN/p_l/poss} tail to suggest they stop for a moment and take a break. After all, even Maowi had to work hard to fish!",
+        "decline_text": "Taking a break turns into ending the patrol early.",
+        "success_outcomes": [
+                {
+                    "text": "The great legend Maowi was once a young apprentice, p_l starts the story, who went out fishing with his older, already grown siblings. They had no faith in him, but speaking a great karakia to give StarClan's blessing to his claws, he won a stingray from the ocean that stretched from horizon to horizon and became c_n's territory.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a Stars-blessed cat when they're finding it so hard to learn themselves.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["app1", "app2"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_mauislowingthesun_storylocked1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "The sun splashes orange, yellow, and gold across the sea where it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as p_l begins the myth of How Maowi Slowed The Sun.",
+        "decline_text": "A story is nice, but the patrol has to get back to camp, the rest will wait for another time.",
+        "success_outcomes": [
+            {
+                    "text": "Once, the sun raced across the sky, each day only lasting a single catnap. The great Maowi, alongside his siblings, said a karakia to StarClan to ask for their help in fighting the sun. They pinned the great flaming sun in a burrow, clawing at it until it gave in and promised to slow, and this is why the sun gives up its race in leaf-bare and slows the day, bringing greenleaf.",
+                    "exp": 40,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["platonic", "comfort"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                        ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l gets distracted by the glory of the sunset and loses the words {PRONOUN/p_l/subject} {VERB/p_l/were/was} forming. Ah well.",
+                    "exp": 0,
+                    "weight": 20
+                }
+            ]
+    },
+    {
+        "patrol_id": "bch_train_themoonandthetides_storylorelocked1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+            },
+        "weight": 30,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "The heartbeat of the tides, in and out like breathing, might at first seem connected to the spirit of the land, p_l says. But that's wrong.",
+        "decline_text": "No one seems interested in p_l's story.",
+        "success_outcomes": [
+                {
+                    "text": "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_hunt_vision",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["comfort", "trust", "platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "Learning about the tides is boring - shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "gen_train_soggykitty_mad_warrior",
+                    "relationships": [
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ]
+    }
+]

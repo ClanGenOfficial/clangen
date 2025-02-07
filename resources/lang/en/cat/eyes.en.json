@@ -1,0 +1,26 @@
+{
+    "en": {
+        "YELLOW": "yellow",
+        "AMBER": "amber",
+        "HAZEL": "hazel",
+        "PALEGREEN": "pale green",
+        "GREEN": "green",
+        "BLUE": "blue",
+        "DARKBLUE": "dark blue",
+        "GREY": "gray",
+        "CYAN": "cyan",
+        "EMERALD": "emerald-green",
+        "PALEBLUE": "pale blue",
+        "PALEYELLOW": "pale yellow",
+        "GOLD": "gold",
+        "HEATHERBLUE": "heather blue",
+        "COPPER": "copper",
+        "SAGE": "sage",
+        "COBALT": "cobalt blue",
+        "SUNLITICE": "sunlit ice",
+        "GREENYELLOW": "green-yellow",
+        "BRONZE": "bronze",
+        "SILVER": "silver",
+		"ORANGE": "orange"
+    }
+}

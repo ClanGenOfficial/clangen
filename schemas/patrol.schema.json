@@ -1,0 +1,457 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Clangen Patrol Schema",
+  "description": "Patrols in Clan Generator.",
+  "type": "array",
+  "definitions": {
+    "outcome": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "description": "Displayed outcome text.",
+          "type": "string"
+        },
+        "weight": {
+          "description": "Controls how common an outcome is.",
+          "type": "integer",
+          "default": 20
+        },
+        "exp": {
+          "description": "Base exp gain.",
+          "type": "integer"
+        },
+        "stat_skill": {
+          "description": "Makes this a stat outcome which can occur if a stat cat can be found.",
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/definitions/skill"
+          }
+        },
+        "stat_trait": {
+          "description": "Makes this a stat outcome which can occur if a stat cat can be found.",
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/definitions/trait"
+          }
+        },
+        "can_have_stat": {
+          "description": "Overrides default behavior or adds additional requirements for stat_cat picking.",
+          "type": "array",
+          "items": {
+            "enum": [
+              "p_l",
+              "r_c",
+              "app1",
+              "app2",
+              "not_pl",
+              "not_pl_rc",
+              "any",
+              "adult",
+              "app",
+              "healer"
+            ]
+          }
+        },
+        "prey": {
+          "description": "Indicates how much prey each cat brings back.",
+          "type": "array",
+          "items": {
+            "enum": ["very_small", "small", "medium", "large", "huge"]
+          }
+        },
+        "herbs": {
+          "description": "Indicates which herbs will be given.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/definitions/herb"
+              },
+              {
+                "enum": ["random_herbs", "many_herbs"]
+              }
+            ]
+          }
+        },
+        "lost_cats": {
+          "description": "Indicates which cats will become lost.",
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/definitions/gather_cat"
+          }
+        },
+        "dead_cats": {
+          "description": "Indicates which cats will die.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/definitions/gather_cat"
+              },
+              {
+                "enum": ["some_lives", "all_lives"]
+              }
+            ]
+          }
+        },
+        "injury": {
+          "description": "Indicates which cats get injured and how.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cats": {
+                "description": "Which cats are injured.",
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/definitions/gather_cat"
+                }
+              },
+              "injuries": {
+                "description": "Pool of injuries to draw from.",
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "common.schema.json#/definitions/injury"
+                    },
+                    {
+                      "$ref": "common.schema.json#/definitions/illness"
+                    },
+                    {
+                      "$ref": "common.schema.json#/definitions/perm_condition"
+                    },
+                    {
+                      "const": "non_lethal"
+                    }
+                  ]
+                }
+              },
+              "scars": {
+                "description": "Pool of scars to draw from in Classic. Currently non-functional.",
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/definitions/scar"
+                }
+              },
+              "no_results": {
+                "description": "True if the injury \"got\" message does not show up in patrol summary.",
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "history_text": {
+          "description": "Controls the history-text for scars and death.",
+          "type": "object",
+          "properties": {
+            "reg_death": {
+              "type": "string",
+              "description": "Death history text for non-leaders. Whole sentence."
+            },
+            "lead_death": {
+              "type": "string",
+              "description": "Death history text for leaders. Sentence fragment."
+            },
+            "scar": {
+              "type": "string",
+              "description": "Scar history. Whole sentence."
+            }
+          }
+        },
+        "relationships": {
+          "description": "Indicates effect on cat relationships.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cats_from": {
+                "description": "The cat's whose relationship values are being edited. You are changing how the \"cats_from\" feels.",
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/definitions/gather_cat"
+                }
+              },
+              "cats_to": {
+                "description": "The target of the relationship. You are changing how \"cats_from\" feels about \"cats_to\".",
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/definitions/gather_cat"
+                }
+              },
+              "mutual": {
+                "description": "Controls if the relation effect will be applied in both directions.",
+                "type": "boolean"
+              },
+              "values": {
+                "description": "Controls which relationship values are affected.",
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "romantic",
+                    "platonic",
+                    "dislike",
+                    "comfort",
+                    "jealous",
+                    "trust",
+                    "respect"
+                  ]
+                }
+              },
+              "amount": {
+                "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
+                "type": "integer"
+              }
+            },
+            "required": ["cats_from", "cats_to", "values", "amount"]
+          }
+        },
+        "new_cat": {
+          "description": "Adds new cat(s), either joining the clan or as outside cats. The {index} value corresponds to their index value on this list (e.g. n_c:0 refers to the first cat in this list).",
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/definitions/new_cat"
+          }
+        },
+        "art": {
+          "description": "Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used.",
+          "type": "string"
+        },
+        "art_clean": {
+          "description": "Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore.",
+          "type": "string"
+        },
+        "outsider_rep": {
+          "description": "How much outsider reputation will change. Can be positive or negative.",
+          "type": "integer"
+        },
+        "other_clan_rep": {
+          "description": "How much reputation with other Clan will change. Can be positive or negative.",
+          "type": "integer"
+        }
+      },
+      "required": ["text", "exp", "weight"]
+    }
+  },
+  "items": {
+    "type": "object",
+    "properties": {
+      "patrol_id": {
+        "description": "Unique string used to identify the patrol.",
+        "type": "string"
+      },
+      "biome": {
+        "description": "Controls the biome(s) the patrol appears in",
+        "type": "array",
+        "items": {
+          "enum": [
+            "mountainous",
+            "plains",
+            "forest",
+            "beach",
+            "wetlands",
+            "desert",
+            "any"
+          ]
+        }
+      },
+      "season": {
+        "description": "Controls the season(s) the patrol appears in.",
+        "type": "array",
+        "items": {
+          "enum": ["greenleaf", "leaf-fall", "leaf-bare", "newleaf", "any"]
+        }
+      },
+      "types": {
+        "description": "Controls the type of patrol.",
+        "type": "array",
+        "items": {
+          "enum": ["hunting", "herb_gathering", "border", "training"]
+        }
+      },
+      "tags": {
+        "description": "Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "romantic",
+            "rom_two_apps",
+            "disaster",
+            "new_cat",
+            "halloween",
+            "april_fools",
+            "new_years",
+            "cruel_season"
+          ]
+        }
+      },
+      "patrol_art": {
+        "description": "The name of displayed patrol art file, without any file extension (no .png).",
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "patrol_art_clean": {
+        "description": "If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in \"patrol_art\" as explicit.",
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "min_cats": {
+        "description": "Minimum total number of cats for this patrol.",
+        "type": "integer"
+      },
+      "max_cats": {
+        "description": "Maximum total number of cats for this patrol",
+        "type": "integer"
+      },
+      "min_max_status": {
+        "description": "Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
+        "type": "object",
+        "propertyNames": {
+          "enum": [
+            "medicine cat",
+            "warrior",
+            "leader",
+            "deputy",
+            "apprentice",
+            "medicine cat apprentice",
+            "healer cats",
+            "normal adult",
+            "all apprentices"
+          ]
+        },
+        "additionalProperties": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "weight": {
+        "description": "Controls how common a patrol is. Normal patrols would be around 20. Lower numbers are less common and higher numbers are more common.",
+        "type": "integer",
+        "default": 20
+      },
+      "chance_of_success": {
+        "description": "Controls chance to succeed. Higher number is higher chance to succeed.",
+        "type": "integer"
+      },
+      "relationship_constraint": {
+        "description": "Only allows patrol if cats meet relationship constraint.",
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "enum": [
+                "siblings",
+                "mates",
+                "not_mates",
+                "mates_with_pl",
+                "parent/child",
+                "child/parent",
+                "mentor/app",
+                "app/mentor"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
+            },
+            {
+              "type": "string",
+              "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
+            },
+            {
+              "type": "string",
+              "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
+            },
+            {
+              "type": "string",
+              "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
+            },
+            {
+              "type": "string",
+              "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
+            },
+            {
+              "type": "string",
+              "pattern": "^trust_(0|[1-9][0-9]?|100)$"
+            },
+            {
+              "type": "string",
+              "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
+            }
+          ]
+        }
+      },
+      "pl_skill_constraint": {
+        "description": "Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/skill"
+        }
+      },
+      "intro_text": {
+        "description": "The text that displays when the patrol first starts.",
+        "type": "string"
+      },
+      "decline_text": {
+        "description": "The text that displays if the patrol is declined (do not proceed)",
+        "type": "string"
+      },
+      "success_outcomes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/outcome"
+        }
+      },
+      "fail_outcomes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/outcome"
+        }
+      },
+      "antag_success_outcomes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/outcome"
+        }
+      },
+      "antag_fail_outcomes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/outcome"
+        }
+      }
+    },
+    "required": [
+      "patrol_id",
+      "biome",
+      "season",
+      "types",
+      "tags",
+      "patrol_art",
+      "min_cats",
+      "max_cats",
+      "weight",
+      "chance_of_success",
+      "intro_text",
+      "decline_text",
+      "success_outcomes",
+      "fail_outcomes"
+    ]
+  }
+}

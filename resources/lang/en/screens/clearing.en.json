@@ -1,0 +1,32 @@
+{
+    "en": {
+        "help_tooltip": "Your Clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most important source of freshkill. You can see what was consumed and caught in the Log below! Freshkill can't be stored endlessly: after four moons prey will rot and will be thrown away. Cats under 3 moons with a parent (queen) taking care of them don't need food.<br><br>Feeding the Clan is very important, therefore cats will be fed before any changes to rank. Hover your mouse over the pile to see the current and needed amount of prey for your Clan!",
+        "feed_all_hungry": "Feed all hungry",
+        "feed_one": "Feed one",
+        "feed_max": "Feed max",
+        "nutrition_title": "Nutrition Overview",
+        "log_title": "Freshkill Pile Log",
+        "tactic_title": "Feeding Tactic",
+        "cats_tab": " Cats",
+        "log_tab": " Log",
+        "tactic_tab": "Tactics",
+        "hungry_tab": "Hungry",
+        "satisfied_tab": "Satisfied",
+        "nutrition_text": "nutrition: %{nutrition_text}",
+        "cant_work_hunger": "\n(because of hunger)",
+        "prey_amount_info": "Up to %{warrior_amount} warriors can be fed with this amount of prey.",
+        "prey_amount_none": "The fresh-kill pile is empty, the Clan desperately needs prey!",
+        "prey_amount_very_low": "The fresh-kill pile can't even feed half of the Clan. Hunting patrols should be organized immediately.",
+        "prey_amount_low": "Only half of the Clan can be fed currently. Hunting patrols should be organized.",
+        "prey_amount_average": "Every mouth of the Clan can be fed, but some more prey would not harm.",
+        "prey_amount_high": "The fresh-kill pile is overflowing and the Clan can feast!",
+        "prey_amount_very_high": "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt.",
+        "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount}<br><b>Needed amount:</b> %{needed_amount}",
+        "additional_prey_text": "<b>Status-order + needed amount:</b>",
+        "condition_increase_text": "%{number}. %{status} - %{prey}",
+        "prey_count": {
+            "one": "%{count} piece",
+            "many": "%{count} pieces"
+        }
+    }
+}

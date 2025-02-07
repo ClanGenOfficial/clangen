@@ -1,0 +1,14 @@
+{
+    "en": {
+        "heading": "Choose adoptive parents for m_c",
+        "info": "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. Adoptive and blood parents will be treated the same; this also applies to siblings.",
+        "help_tooltip": "A cat's adoptive parents are set automatically when the cat is born. Any cats that are mates with the parents at the time of birth are considered adoptive parents. To be a possible adoptive parent, the cat has to be 14 moons older than the child.",
+        "potential": "Potential Parents",
+        "adoptive": "Adoptive Parents",
+        "birth": "Birth Parents",
+        "mates_current_parents": "Mates of current parents",
+        "unrelated": "Not closely related",
+        "set_parent": "Set adoptive parent",
+        "unset_parent": "Unset adoptive parent"
+    }
+}

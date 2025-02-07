@@ -1,0 +1,28 @@
+{
+    "en": {
+        "help_tooltip": "c_n's medicine cats will gather herbs over each timeskip and during any patrols they are sent on. You can see what was gathered in the Log below! The medicine cats will give these to any hurt or sick cats that need them, helping those cats to heal quicker.<br><br>Hover your mouse over the medicine den image to see what herbs your Clan has!",
+        "hurt_sick_title": "Hurt & Sick Cats",
+        "hurt_sick_label": " Cats",
+        "log_title": "Medicine Den Log",
+        "log_label": " Log",
+        "in_den": "in den",
+        "out_den": "out of den",
+        "minor": "minor",
+        "meds_cover": {
+            "one": "m_c can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
+            "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
+        },
+        "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
+        "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
+        "gather_success": "%{name} collected %{herbs} during this moon.",
+        "gather_fail": "%{name} didn't collect any herbs this moon.",
+        "herb_used": "m_c was given %{herb} as treatment for: %{condition}. %{effect}",
+        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
+        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
+        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
+        "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
+        "blood_loss": "Herbs were used to stop blood loss for %{name}.",
+        "loss_event": "Lost %{herbs} during this moon.",
+        "gain_event": "Gained %{herbs} during this moon."
+    }
+}

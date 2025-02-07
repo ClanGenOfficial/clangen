@@ -85,9 +85,9 @@
     "..": "these are special. they do not have a display name or a tooltip",
     "__other": {
         "language": [
-            "english",
-            "spanish",
-            "german"
+            "en",
+            "es",
+            "de"
         ],
         "text size": [
             "0",

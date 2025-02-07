@@ -1,0 +1,80 @@
+{
+  "Clangen patrol template (minimal)": {
+    "prefix": "clangen-patrol-minimal",
+    "scope": "json",
+    "body": [
+      "{",
+      "    \"patrol_id\": \"$1\",",
+      "    \"biome\": [$2],",
+      "    \"season\": [$3],",
+      "    \"types\": [$4],",
+      "    \"tags\": [$5],",
+      "    \"patrol_art\": ${6:null},",
+      "    \"min_cats\": ${7:1},",
+      "    \"max_cats\": ${8:6},",
+      "    \"weight\": ${9:20},",
+      "    \"chance_of_success\": ${10:50},",
+      "    \"intro_text\": \"$11\",",
+      "    \"decline_text\": \"$12\",",
+      "    \"success_outcomes\": [$13],",
+      "    \"fail_outcomes\": [$14]",
+      "}"
+    ],
+    "description": "Clangen patrol template, with only the required fields."
+  },
+  "Clangen outcome template (minimal)": {
+    "prefix": "clangen-patrol-outcome-minimal",
+    "body": [
+      "{",
+      "    \"text\": \"$1\",",
+      "    \"exp\": ${2:0},",
+      "    \"weight\": ${3:20}",
+      "}"
+    ],
+    "description": "Clangen outcome template, with only the required fields."
+  },
+  "pronoun_tag_subject": {
+    "prefix": ["they"],
+    "body": ["{PRONOUN/${1|m_c,r_c,s_c,p_l,n_c|}/subject${2|},/CAP}|}$0"]
+  },
+  "pronoun_tag_object": {
+    "prefix": ["them"],
+    "body": ["{PRONOUN/${1|m_c,r_c,s_c,p_l,n_c|}/object${2|},/CAP}|}$0"]
+  },
+  "pronoun_tag_poss": {
+    "prefix": ["their"],
+    "body": ["{PRONOUN/${1|m_c,r_c,s_c,p_l,n_c|}/poss${2|},/CAP}|}$0"]
+  },
+  "pronoun_tag_inposs": {
+    "prefix": ["theirs"],
+    "body": ["{PRONOUN/${1|m_c,r_c,s_c,p_l,n_c|}/inposs${2|},/CAP}|}$0"]
+  },
+  "pronoun_tag_self": {
+    "prefix": ["themself"],
+    "body": ["{PRONOUN/${1|m_c,r_c,s_c,p_l,n_c|}/self${2|},/CAP}|}$0"]
+  },
+  "pronoun_tag_verbs": {
+    "prefix": ["verbtag"],
+    "body": ["{VERB/${1|m_c,r_c,s_c,p_l,n_c|}/${2:run}/${3:runs}}$0"]
+  },
+  "pronoun_tag_subject_is": {
+    "prefix": ["they're"],
+    "body": ["{PRONOUN/m_c/subject${2|},/CAP}|}{VERB/m_c/'re/'s}$0"]
+  },
+  "pronoun_is": {
+    "prefix": ["are"],
+    "body": ["{VERB/${1|m_c,r_c,s_c,p_l,n_c|}/are/is}$0"]
+  },
+  "pronoun_do_not": {
+    "prefix": ["don't"],
+    "body": ["{VERB/${1|m_c,r_c,s_c,p_l,n_c|}/don't/doesn't}$0"]
+  },
+  "pronoun_have": {
+    "prefix": ["have"],
+    "body": ["{VERB/${1|m_c,r_c,s_c,p_l,n_c|}/have/has}$0"]
+  },
+  "pronoun_do": {
+    "prefix": ["do"],
+    "body": ["{VERB/${1|m_c,r_c,s_c,p_l,n_c|}/do/does}$0"]
+  }
+}

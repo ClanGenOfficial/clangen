@@ -1,0 +1,14 @@
+StartChar: H18543
+Encoding: 9642 9642 139
+Width: 512
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+512 469 m 1,0,-1
+ 512 217 l 1,1,-1
+ 0 215 l 1,2,-1
+ 0 469 l 1,3,-1
+ 512 469 l 1,0,-1
+EndSplineSet
+EndChar

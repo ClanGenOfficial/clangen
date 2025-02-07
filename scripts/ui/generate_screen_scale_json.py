@@ -33,7 +33,7 @@ def _multiply_numbers(data, multiplier):
 
 
 def generate_screen_scale(input_file, output_file, multiplier):
-    with open(input_file, "r") as readfile:
+    with open(input_file, "r", encoding="utf-8") as readfile:
         data = json.load(readfile)
 
     modified_data = _multiply_numbers(data, multiplier)
@@ -43,5 +43,5 @@ def generate_screen_scale(input_file, output_file, multiplier):
 
         p = Path(output_file)
         os.makedirs(p.parent)
-    with open(os.path.abspath(output_file), "w") as writefile:
+    with open(os.path.abspath(output_file), "w", encoding="utf-8") as writefile:
         json.dump(modified_data, writefile, indent=4)

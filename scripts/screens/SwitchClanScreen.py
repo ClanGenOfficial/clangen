@@ -23,7 +23,6 @@ from scripts.utility import (
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
-from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
 logger = logging.getLogger(__name__)
@@ -119,7 +118,7 @@ class SwitchClanScreen(Screens):
         )
         self.main_menu = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            get_arrow(3) + " Main Menu",
+            "buttons.main_menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
@@ -127,7 +126,7 @@ class SwitchClanScreen(Screens):
         )
 
         self.info = pygame_gui.elements.UITextBox(
-            "Note: This will close the game.\n When you open it next, it should have the new Clan.",
+            "screens.switch_clan.info",
             # pylint: disable=line-too-long
             ui_scale(pygame.Rect((100, 600), (600, 70))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
@@ -135,19 +134,16 @@ class SwitchClanScreen(Screens):
         )
 
         self.current_clan = pygame_gui.elements.UITextBox(
-            "",
+            "screens.switch_clan.current_clan",
             ui_scale(pygame.Rect((0, 100), (600, 40))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             anchors={"centerx": "centerx"},
+            text_kwargs={
+                "clan": game.clan.name if game.clan else "",
+                "count": 1 if game.clan else 0,
+            },
         )
-        if game.clan:
-            self.current_clan.set_text(
-                f"The currently loaded Clan is {game.clan.name}Clan"
-            )
-        else:
-            self.current_clan.set_text("There is no Clan currently loaded.")
-
         self.clan_list = game.read_clans()
 
         self.clan_buttons = [[]]

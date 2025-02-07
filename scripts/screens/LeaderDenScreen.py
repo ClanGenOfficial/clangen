@@ -1,5 +1,6 @@
 import random
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
@@ -16,7 +17,6 @@ from scripts.game_structure.ui_elements import (
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.get_arrow import get_arrow
 from scripts.ui.icon import Icon
 from scripts.utility import (
     ui_scale,
@@ -93,10 +93,14 @@ class LeaderDenScreen(Screens):
                         self.focus_clan = game.clan.all_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
-                text = self.focus_frame_elements["negative_interaction"].text
+                text = self.focus_frame_elements["negative_interaction"].text.replace(
+                    "screens.leader_den.", ""
+                )
                 self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["positive_interaction"]:
-                text = self.focus_frame_elements["positive_interaction"].text
+                text = self.focus_frame_elements["positive_interaction"].text.replace(
+                    "screens.leader_den.", ""
+                )
                 self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["clans_tab"]:
                 self.open_clans_tab()
@@ -107,7 +111,7 @@ class LeaderDenScreen(Screens):
                 self.update_outsider_focus()
             elif event.ui_element in self.focus_button.values():
                 self.update_outsider_interaction_choice(
-                    event.ui_element.get_object_ids()[3]
+                    event.ui_element.text.replace("screens.leader_den.", "")
                 )
                 self.update_outsider_cats()
 
@@ -130,7 +134,7 @@ class LeaderDenScreen(Screens):
         # BACK AND HELP
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            get_arrow(2) + " Back",
+            "buttons.back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -140,12 +144,7 @@ class LeaderDenScreen(Screens):
             "",
             object_id="#help_button",
             manager=MANAGER,
-            tool_tip_text="This screen allows you to check on the other cats who live nearby, both Outsiders and "
-            "other Clan cats.  You can control how the leader of your Clan will treat other leaders at "
-            "Gatherings, but keep in mind that you can only determine one interaction each moon!  "
-            "Likewise, you can consider whether to drive out or invite in Outsider cats.  If you drive "
-            "out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite "
-            "in a cat, they might join your Clan!",
+            tool_tip_text="screens.leader_den.help_tooltip",
         )
         # This is here incase the leader comes back
         self.no_leader = False
@@ -256,63 +255,87 @@ class LeaderDenScreen(Screens):
 
         self.screen_elements["clan_notice_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((68, 375), (445, -1))),
-            html_text=f" {self.leader_name} is considering how to handle the next Gathering. ",
+            html_text="screens.leader_den.clan_notice_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
             manager=MANAGER,
+            text_kwargs={
+                "m_c": game.clan.leader if not self.no_leader else None,
+                "count": 1,
+            },
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((68, 375), (445, -1))),
-            html_text=f" {self.leader_name} is considering what to do about nearby Outsiders. ",
+            html_text=f"screens.leader_den.outsider_notice_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
             manager=MANAGER,
+            text_kwargs={
+                "count": 1,
+                "m_c": game.clan.leader if not self.no_leader else None,
+            },
         )
 
         # if no one is alive, give a special notice
         if not get_living_clan_cat_count(Cat):
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
-                " No one is left to attend a Gathering. "
+                "screens.leader_den.no_cats_clan"
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                " Outsiders do not concern themselves with a dead Clan. "
+                "screens.leader_den.no_cats_outsider"
             )
         # if leader is dead and no one new is leading, give special notice
         elif self.no_leader or game.clan.leader.dead or game.clan.leader.exiled:
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
-                " With no one to lead, the Clan can't focus on what to say at the Gathering. "
+                "screens.leader_den.no_leader_clan"
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                " With no one to lead, the Clan can't concern themselves with Outsiders. "
+                "screens.leader_den.no_leader_outsider"
             )
         # if leader is sick but helper is available, give special notice
         elif game.clan.leader.not_working() and self.helper_cat:
             self.helper_name = self.helper_cat.name
             self.screen_elements["clan_notice_text"].set_text(
-                f" {self.leader_name} and {self.helper_name} are discussing how to handle the next Gathering. "
+                "screens.leader_den.clan_notice_text",
+                text_kwargs={
+                    "m_c": game.clan.leader,
+                    "r_c": self.helper_cat,
+                    "count": 2,
+                },
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                f" {self.leader_name} and {self.helper_name} are discussing what to do about nearby Outsiders. "
+                "screens.leader_den.outsider_notice_text",
+                text_kwargs={
+                    "m_c": game.clan.leader,
+                    "r_c": self.helper_cat,
+                    "count": 2,
+                },
             )
         # if leader is sick but no helper is available, give special notice
         elif game.clan.leader.not_working():
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
-                f" There is no one to attend the next Gathering. {self.leader_name} must hope to recover in time for the next one. "
+                "screens.leader_den.leader_sick_clan",
+                text_kwargs={"m_c": game.clan.leader},
             )
             self.screen_elements["outsider_notice_text"].set_text(
-                f" {self.leader_name} is considering what to do about nearby Outsiders. "
+                "screens.leader_den.leader_sick_outsider",
+                text_kwargs={"m_c": game.clan.leader},
             )
 
         self.screen_elements["clan_notice_text"].show()
 
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((68, 410), (445, -1))),
-            html_text=f"The other Clans think {game.clan.name}Clan is {self.clan_temper}.",
+            html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
+            text_kwargs={
+                "temper": i18n.t(f"screens.leader_den.{self.clan_temper}"),
+                "clan": game.clan.name,
+            },
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
@@ -362,7 +385,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_frame_elements["clans_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((30, 2), (69, 34))),
-            "Clans",
+            "screens.leader_den.clans",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (69, 34)),
             object_id="@buttonstyles_horizontal_tab",
             container=self.focus_frame_container,
@@ -373,7 +396,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_frame_elements["outsiders_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((111, 2), (102, 34))),
-            "Outsiders",
+            "screens.leader_den.outsiders",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (102, 34)),
             object_id="@buttonstyles_horizontal_tab",
             container=self.focus_frame_container,
@@ -454,7 +477,7 @@ class LeaderDenScreen(Screens):
                 f"clan_temper{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"{other_clan.temperament.strip()}",
+                text=f"screens.leader_den.{other_clan.temperament.strip()}",
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -467,7 +490,7 @@ class LeaderDenScreen(Screens):
                 f"clan_rel{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"{get_other_clan_relation(other_clan.relations).strip()}",
+                text=f"screens.leader_den.{get_other_clan_relation(other_clan.relations).strip()}",
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -602,7 +625,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_clan_elements["clan_temper"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 5), (215, -1))),
-            text=f"{self.focus_clan.temperament.strip()}",
+            text=f"screens.leader_den.{self.focus_clan.temperament.strip()}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
@@ -613,7 +636,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_clan_elements["clan_rel"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 0), (215, -1))),
-            text=f"{relation}",
+            text=f"screens.leader_den.{relation}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
@@ -650,10 +673,14 @@ class LeaderDenScreen(Screens):
             self.focus_clan_container.disable()
 
         interaction = OtherClan.interaction_dict[relation]
-        self.focus_frame_elements["negative_interaction"].set_text(f"{interaction[0]}")
+        self.focus_frame_elements["negative_interaction"].set_text(
+            f"screens.leader_den.{interaction[0]}"
+        )
         self.focus_frame_elements["negative_interaction"].show()
 
-        self.focus_frame_elements["positive_interaction"].set_text(f"{interaction[1]}")
+        self.focus_frame_elements["positive_interaction"].set_text(
+            f"screens.leader_den.{interaction[1]}"
+        )
         self.focus_frame_elements["positive_interaction"].show()
 
     def update_clan_interaction_choice(self, object_id):
@@ -663,10 +690,13 @@ class LeaderDenScreen(Screens):
         """
 
         interaction = object_id.replace("#clan_", "")
-        other_clan = self.focus_clan.name
 
         self.screen_elements["clan_notice_text"].set_text(
-            f" {self.leader_name} has decided to {interaction} {other_clan}Clan."
+            f"screens.leader_den.action_clan_{interaction}",
+            text_kwargs={
+                "m_c": game.clan.leader,
+                "other_clan": self.focus_clan,
+            },
         )
 
         self.handle_other_clan_interaction(interaction)
@@ -798,7 +828,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_outsider_elements["cat_status"] = pygame_gui.elements.UILabel(
             relative_rect=ui_scale(pygame.Rect((0, 5), (218, -1))),
-            text=f"{self.focus_cat.status}",
+            text=f"general.{self.focus_cat.status}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
@@ -806,10 +836,11 @@ class LeaderDenScreen(Screens):
                 "centerx": "centerx",
                 "top_target": self.focus_outsider_elements["cat_name"],
             },
+            text_kwargs={"count": 1},
         )
         self.focus_outsider_elements["cat_trait"] = pygame_gui.elements.UILabel(
             relative_rect=ui_scale(pygame.Rect((0, 0), (218, -1))),
-            text=f"{self.focus_cat.personality.trait}",
+            text=f"cat.personality.{self.focus_cat.personality.trait}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
@@ -820,13 +851,17 @@ class LeaderDenScreen(Screens):
         )
         self.focus_outsider_elements["cat_skills"] = pygame_gui.elements.UILabel(
             relative_rect=ui_scale(pygame.Rect((0, 0), (218, -1))),
-            text=f"Skills: {self.focus_cat.skills.skill_string(short=True)}",
+            text="screens.leader_den.outsider_skill",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
             anchors={
                 "centerx": "centerx",
                 "top_target": self.focus_outsider_elements["cat_trait"],
+            },
+            text_kwargs={
+                "skill": self.focus_cat.skills.skill_string(short=True),
+                "m_c": self.focus_cat,
             },
         )
 
@@ -846,11 +881,13 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["hunt_down"] = UIImageButton(
+        self.focus_button["hunt_down"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 0), (121, 30))),
-            "",
-            object_id="#outsider_hunt",
-            tool_tip_text="This cat will be killed if found.",
+            "screens.leader_den.hunt_down",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
+            tool_tip_text="screens.leader_den.hunt_down_tooltip",
+            tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -859,12 +896,13 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["drive_off"] = UIImageButton(
+        self.focus_button["drive_off"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "",
-            object_id="#outsider_drive",
-            tool_tip_text="This cat will be driven out of the area if found (they will no longer be accessible in "
-            "game).",
+            "screens.leader_den.drive_off",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
+            tool_tip_text="screens.leader_den.drive_off_tooltip",
+            tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -874,11 +912,13 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["invite_in"] = UIImageButton(
+        self.focus_button["invite_in"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "",
-            object_id="#outsider_invite",
-            tool_tip_text="This cat will join the Clan if found.",
+            "screens.leader_den.invite_in",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
+            tool_tip_text="screens.leader_den.invite_in_tooltip",
+            tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -895,9 +935,9 @@ class LeaderDenScreen(Screens):
             and self.focus_cat.status
             not in ["kittypet", "loner", "rogue", "former Clancat"]
         ):
-            self.focus_button["invite_in"].change_object_id("#outsider_search")
+            self.focus_button["invite_in"].set_text("screens.leader_den.search_for")
         else:
-            self.focus_button["invite_in"].change_object_id("#outsider_invite")
+            self.focus_button["invite_in"].set_text("screens.leader_den.invite_in")
 
         self.focus_button["invite_in"].show()
 
@@ -918,7 +958,10 @@ class LeaderDenScreen(Screens):
             self.screen_elements["clan_notice_text"].show()
 
             self.screen_elements["temper_text"].set_text(
-                f"The other Clans think {game.clan.name}Clan is {self.clan_temper}."
+                "screens.leader_den.temper_text",
+                text_kwargs={
+                    "temper": i18n.t(f"screens.leader_den.{self.clan_temper}")
+                },
             )
         else:
             self.screen_elements["outsider_notice_text"].show()
@@ -933,7 +976,8 @@ class LeaderDenScreen(Screens):
                 reputation = "welcoming"
 
             self.screen_elements["temper_text"].set_text(
-                f"Outsiders view your clan as {reputation}."
+                "screens.leader_den.outsider_rep",
+                text_kwargs={"reputation": i18n.t(f"screens.leader_den.{reputation}")},
             )
 
     def update_outsider_cats(self):
@@ -1010,43 +1054,35 @@ class LeaderDenScreen(Screens):
 
             i += 1
 
-    def update_outsider_interaction_choice(self, object_id):
+    def update_outsider_interaction_choice(self, action):
         """
         handles changing chosen outsider interaction. updates notice text.
-        :param object_id: the object ID of the interaction button
+        :param action: the object ID of the interaction button
         """
-        outsider = self.focus_cat.name
-
-        interaction = "this should not appear - report as bug!"
-        if object_id in ["#outsider_hunt", "hunt"]:
-            interaction = "hunt down"
-        elif object_id in ["#outsider_drive", "drive"]:
-            interaction = "drive off"
-        elif object_id in ["#outsider_invite", "invite"]:
-            interaction = "invite in"
-        elif object_id in ["#outsider_search", "search"]:
-            interaction = "search for"
 
         self.screen_elements["outsider_notice_text"].set_text(
-            f" {self.leader_name} has decided to {interaction} {outsider}."
+            f"screens.leader_den.action_outsider_{action}",
+            text_kwargs={
+                "m_c": game.clan.leader,
+                "r_c": self.focus_cat,
+            },
         )
 
-        self.handle_outsider_interaction(object_id)
+        self.handle_outsider_interaction(action)
 
-    def handle_outsider_interaction(self, object_id):
+    def handle_outsider_interaction(self, action):
         """
         handles determining the outcome of an outsider interaction, returns result text
-        :param object_id: the object id of the interaction button pressed
+        :param action: the object id of the interaction button pressed
         """
         game.clan.clan_settings["lead_den_interaction"] = True
-        interaction_type = object_id.replace("#outsider_", "")
 
         # percentage of success
         success_chance = (int(game.clan.reputation) / 100) / 1.5
         if game.clan.leader.not_working:
             success_chance = success_chance / 1.2
         # searching should be extra hard, after all those kitties are LOST
-        if interaction_type == "search":
+        if action == "search":
             success_chance = success_chance / 2
         # if we got to zero somehow, reset to give a teeny little chance of success
         if success_chance <= 0:
@@ -1059,7 +1095,7 @@ class LeaderDenScreen(Screens):
 
         game.clan.clan_settings["lead_den_outsider_event"] = {
             "cat_ID": self.focus_cat.ID,
-            "interaction_type": interaction_type,
+            "interaction_type": action,
             "success": success,
         }
 

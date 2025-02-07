@@ -1,0 +1,32 @@
+{
+    "en": {
+        "thought": "Prrrp! You shouldn't see this! Report as a bug.",
+        "rickroll": "Never going to give r_c up, never going to let {PRONOUN\/r_c\/object} down, never going to run around and desert {PRONOUN\/r_c\/object}.",
+        "interaction": "This is a default interaction! ID: %{id} with cats (m_c), (r_c)",
+        "ceremony_honor": "hard work",
+        "focus_text": "This shouldn't appear; report as a bug (focus feature).",
+        "illness_get_event": "m_c has gotten %{illness}.",
+        "illness_death_event": "m_c was killed by {PRONOUN/m_c/poss} illness.",
+        "illness_death_history": "m_c died to an illness.",
+        "illness_death_history_leader": "died to an illness",
+        "injury_death_event": "m_c was kiled by {PRONOUN/m_c/poss} injuries.",
+        "injury_death_history": "m_c died to an injury.",
+        "injury_death_history_leader": "died to an injury",
+        "injury_healed_event": "m_c's %{injury} has healed.",
+        "permanent_condition_from_injury_event": "After m_c's %{injury} healed, {PRONOUN/m_c/subject} now {VERB/m_c/have/has} %{condition}.",
+        "complications_death_event": "m_c died from complications caused by %{condition}.",
+        "complications_death_event_leader": "m_c lost a life to %{condition}.",
+        "complications_death_history": "m_c died from complications caused by %{condition}.",
+        "complications_death_history_leader": "died from complications caused by %{condition}",
+        "warn_no_leader": "c_n has no leader!",
+        "warn_no_deputy": "c_n has no deputy!",
+        "deputy_event": "m_c becomes deputy.",
+        "warn_low_freshkill": "c_n doesn't have enough prey for next moon!",
+        "warn_low_medcats": "c_n doesn't have enough healthy medicine cats! Cats will be sick or hurt for longer and have a higher chance of dying.",
+        "warn_no_medcats": "c_n has no medicine cat!",
+        "event_dead_outsider": "m_c's ghost now wanders.",
+        "event_met_outsider": "The Clan has encountered m_c.",
+        "patrol_regular_death": "m_c died on patrol.",
+        "relationship_log": "These cats recently interacted."
+    }
+}

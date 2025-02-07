@@ -34,43 +34,7 @@ jobs:
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_group_interaction.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_filter_patrol.py
-        
-  # Check if file encoding is correct.
-  encoding_test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python 3.11 x64
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v3
-        with:
-          poetry-version: 1.4.1
-      - name: Check file encoding
-        id: encoding_test
-        run: poetry run python3 tests/test_encoding.py test
-      - name: Fix the issue hopefully
-        if: ${{ failure() && github.event_name == 'push'}}
-        id: fixit
-        env:
-          FILES: ${{ steps.encoding_test.outputs.files  }}
-        run: poetry run python3 tests/test_encoding.py fix
-      - name: Make a pr
-        if: ${{ failure() && steps.fixit.conclusion == 'success' && github.event_name == 'push' }}
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: Fix file encoding
-          title: Fix file encoding
-          body: |
-            This PR fixes the file encoding. The files that were changed are: ${{ steps.encoding_test.outputs.files }}
-          branch: fix-file-encoding
-          delete-branch: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch-suffix: random
+        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_group_interaction.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_filter_patrol.py tests/test_lang.py
   json_test:
     runs-on: ubuntu-latest
     steps:
@@ -85,9 +49,11 @@ jobs:
         with:
           poetry-version: 1.4.1
       - name: install dependencies
-        run: poetry install
+        run: poetry install --with test
       - name: Check json validity
         run: poetry run python3 tests/test_json.py
+      - name: Check json schemas
+        run: poetry run python3 tests/test_json_schemas.py
   pronoun_test:
       runs-on: ubuntu-latest
       steps:

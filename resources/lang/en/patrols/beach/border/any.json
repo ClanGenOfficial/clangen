@@ -1,0 +1,1792 @@
+[
+    {
+        "patrol_id": "bch_bord_rogue1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The rogues are terrifyingly coordinated and use the patrol's shock and confusion against them. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["multi"],
+                "history_text": {
+                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "lead_death": "killed in a rogue ambush"
+                }
+            },
+            {
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["CATBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "m_c died of injuries sustained in a rogue ambush.",
+                    "lead_death": "died of injuries sustained in a rogue ambush"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_rogue2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As r_c is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
+        "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered; warning the Clan is more important than playing the hero.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks. Eventually, r_c escapes the fray and pelts towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. The shock only lasts a moment before they descend on the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} killed.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, covered in wounds and cold.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_rogue3",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues stalk out of the beach grass to confront the Clan cats!",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
+                "exp": 30,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c takes the lead, confronting the gang with confidence. Eventually, the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c takes the lead, confronting the gang with confidence. Eventually, the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["bold", "confident"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The rogues are terrifyingly coordinated and use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["multi"],
+                "history_text": {
+                    "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "m_c died of injuries sustained in a rogue ambush.",
+                    "lead_death": "died of injuries sustained in a rogue ambush"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and r_c is badly injured, forcing the patrol to retreat.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["CATBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "m_c died of injuries sustained in a rogue ambush.",
+                    "lead_death": "died of injuries sustained in a rogue ambush"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+                "exp": 30,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_flashflood1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_flashflood",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if the patrol should continue.",
+        "decline_text": "The patrol decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["multi"],
+                "history_text": {
+                    "reg_death": "This cat was drowned by floodwaters.",
+                    "lead_death": "drowned in floodwaters"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_flashflood2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_flashflood",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if the patrol should continue.",
+        "decline_text": "The patrol decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol is able to react fast and strike out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c was drowned by floodwaters.",
+                    "lead_death": "drowned in floodwaters"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_flashflood3",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_flashflood",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and r_c wonders if {PRONOUN/r_c/subject} should continue.",
+        "decline_text": "r_c decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c gets wet in the rain, but otherwise, the patrol is successful.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c makes a careful judgment and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain begins to pour around {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"]
+            },
+            {
+                "text": "It's not worth the risk - s_c heads for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was injured in a flood.",
+                    "reg_death": "m_c was drowned by floodwaters.",
+                    "lead_death": "drowned in floodwaters"
+                }
+            },
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c remembers enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood. {PRONOUN/r_c/subject/CAP} {VERB/r_c/sink/sinks} {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/object}. It saves {PRONOUN/r_c/poss} life.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury", "water in their lungs"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was injured in a flood.",
+                    "reg_death": "m_c was drowned by floodwaters.",
+                    "lead_death": "drowned in floodwaters"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_flashflood4",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_flashflood",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and r_c wonders if {PRONOUN/r_c/subject} should continue.",
+        "decline_text": "r_c decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c gets wet in the rain, but otherwise, the patrol is successful.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c makes a careful judgment and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain begins to pour around {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"]
+            },
+            {
+                "text": "It's not worth the risk - s_c heads for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away. With the little warning {PRONOUN/r_c/subject} {VERB/r_c/have/has}, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a branch being carried by the water and {VERB/r_c/strike/strikes} out strongly for it. Hurt and shivering from both exhaustion and the cold, {PRONOUN/r_c/subject} nevertheless {VERB/r_c/cling/clings} to safety as the floodwaters run their course.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blunt_force_injury", "water in their lungs"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was injured in a flood."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. r_c quickly hides {PRONOUN/r_c/self} in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died of an injury inflicted by an invading rogue.",
+                    "lead_death": "died of an injury inflicted by an invading rogue"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. r_c quickly hides {PRONOUN/r_c/self} in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/s_c/poss} nose to the ground, s_c doesn't see the blow coming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/haul/hauls} {PRONOUN/s_c/self} to {PRONOUN/s_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "vengeful",
+                    "bloodthirsty",
+                    "bold",
+                    "daring",
+                    "confident"
+                ],
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died of an injury inflicted by an invading rogue.",
+                    "lead_death": "died of an injury inflicted by an invading rogue"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue3",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. app1 quickly hides {PRONOUN/app1/self} in the grass on the sand dunes and sets up an ambush that lets {PRONOUN/app1/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by this adolescent and ignores {PRONOUN/s_c/object} completely.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue.",
+                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                }
+            },
+            {
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died of an injury inflicted by an invading rogue.",
+                    "lead_death": "died of an injury inflicted by an invading rogue"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue4",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Fewer eyes watching that embarrassing moment.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": { 
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died of an injury inflicted by an invading rogue.",
+                    "lead_death": "died of an injury inflicted by an invading rogue"
+                 },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue5",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/poss} patrol is so small. Fewer eyes watching that embarrassing moment.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died of an injury inflicted by an invading rogue.",
+                    "lead_death": "died of an injury inflicted by an invading rogue"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue6",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died of an injury inflicted by an invading rogue.",
+                    "lead_death": "died of an injury inflicted by an invading rogue"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue7",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws {PRONOUN/s_c/self} at the rogue and, together with r_c, drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by s_c's confidence and the number of cats, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue8",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence and the number of cats, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_trackrogue9",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent, but with a full patrol backing {PRONOUN/s_c/object} up, the rogue opts to leave c_n territory instead of fight.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_nessie1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "nessie_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the cats move along the shoreline, they spot something massive moving beneath the water.",
+        "decline_text": "The cats are feeling remarkably incurious today.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep-water fish, both creatures trading the respective delicacies that are hard for the other to obtain.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol is so wrapped up trying to work out what the creature is that r_c topples into the water. It solves the mystery though, as Nessie propels r_c back onto the shoreline with one gentle, immense flipper.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_frogman1",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "loveland_frog_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "p_l waves r_c over with {PRONOUN/p_l/poss} tail. What's <i>that</i>?!",
+        "decline_text": "r_c isn't interested, and the patrol continues on their way.",
+        "success_outcomes": [
+            {
+                "text": "The massive frog-Twoleg creeps up the rocks, slow and unnatural. The patrol watches, breathless, until it's out of sight. Well, p_l huffs. Maybe toads grow bigger than {PRONOUN/p_l/subject} thought. Terrifying.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It halts and, like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c can do is shiver.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["shock", "non_lethal"]
+                    }
+                ]
+            }
+        ]
+    }
+]

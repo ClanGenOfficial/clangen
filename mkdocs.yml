@@ -1,0 +1,138 @@
+site_name: ClanGen Documentation
+site_url: https://clangen.io/clangen-docs/
+repo_url: https://github.com/ClanGenOfficial/clangen
+repo_name: ClanGenOfficial/clangen
+edit_uri: https://github.com/ClanGenOfficial/clangen/edit/development/docs/
+nav:
+  - Welcome:
+    - index.md
+  - Developer Documentation:
+    - dev/index.md
+    - Project Basics:
+        - dev/project-basics/index.md
+        - dev/project-basics/development-team-roles.md
+        - dev/project-basics/getting-started-with-github-and-clangen.md
+    - Code:
+        - dev/code/index.md
+        - dev/code/content-adding.md
+    - Writing:
+        - dev/writing/index.md
+        - Reference:
+          - dev/writing/reference/index.md
+          - dev/writing/reference/trait-dictionary.md
+        - dev/writing/patrols.md
+        - dev/writing/shortevents.md
+        - dev/writing/leaders-den-events.md
+        - dev/writing/thoughts.md
+        - dev/writing/leader-ceremonies.md
+        - dev/writing/localization.md
+        - dev/writing/advanced-documentation.md
+    - Art:
+        - dev/art/index.md
+        - dev/art/cat-sprites.md
+        - dev/art/patrol-sprites.md
+        - dev/art/clan-symbols.md
+        - dev/art/camp-backgrounds.md
+    - Audio:
+        - dev/audio/index.md
+  - User Guides:
+    - user-guides/index.md
+  - Contributing to the Wiki:
+      - contributing/index.md
+      - contributing/documentation-resources.md
+
+theme:
+  name: material
+  logo: assets/main.png
+  favicon: assets/main.ico
+  # if you add a feature, add a link to it's matching documentation to contributing/documentation-resources.md
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
+    - navigation.top
+    - navigation.indexes
+    - navigation.tabs
+  custom_dir: docs-resources
+  palette:
+    - media: "(prefers-color-scheme)"
+      scheme: clangen_light
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to ClanGen light mode
+
+    # Palette toggle for clangen light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: clangen_light
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to basic light mode
+
+    # Palette toggle for basic light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to ClanGen dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: clangen_dark
+      toggle:
+        icon: material/weather-night
+        name: Switch to basic dark mode
+
+    # Palette toggle for basic dark mode
+    - media: "(prefers-color-scheme: og-dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+extra:
+  homepage: https://clangen.io/
+extra_css:
+  - stylesheets/extra.css
+
+# if you add an extension, add a link to it's matching documentation to contributing/documentation-resources.md
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - docs-resources/.icons
+  - pymdownx.snippets:
+      auto_append:
+        - docs-resources/includes/abbreviations.md
+  - md_in_html
+  - toc:
+      permalink: True
+
+watch:
+  - docs-resources/includes
+plugins:
+  - search
+  - git-committers:
+      enabled: !ENV [GIT_COMMITTERS_ENABLED, False]
+      repository: ClanGenOfficial/clangen
+      branch: development
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago

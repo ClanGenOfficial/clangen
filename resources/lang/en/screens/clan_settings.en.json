@@ -1,0 +1,12 @@
+{
+    "en": {
+        "general": "general settings",
+        "general_info": "Change the general Clan-specific settings",
+        "relation": "relation settings",
+        "relation_info": "Change Clan-specific settings regarding cat relationships",
+        "role": "role settings",
+        "role_info": "Change Clan-specific settings regarding cat roles",
+        "stats": "clan stats",
+        "stats_text": "Living Clan Cats: %{living}\nStarClan Cats: %{starclan}\nDark Forest Cats: %{darkforest}\nUnknown Residence Cats: %{unknownresidence}\nMedicine Cats: %{medcats}\nMedicine Cat Apprentices: %{medcatapps}\nWarriors: %{warriors}\nWarrior Apprentices: %{apps}\nMediators: %{mediators}\nMediator Apprentices: %{mediatorapps}\nElders: %{elders}\nKittens and Newborns: %{kits}\nFaded Cats: %{faded}"
+    }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "event_id": "fst_misc_war_anyapps1",
+    "location": ["forest"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "tags": ["clan:apprentice"],
+    "weight": 15,
+    "event_text": "The apprentices of the Clan are taking special training to learn how to land on enemies when jumping from trees.",
+    "m_c": {
+      "status": ["apprentice"]
+    }
+  },
+  {
+    "event_id": "fst_misc_multiprophecymedcatprophet1",
+    "location": ["forest"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "As a storm rages and the branches of the forest whip around outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["PROPHET,2"]
+    }
+  },
+  {
+    "event_id": "fst_misc_multiomenmedcatomen1",
+    "location": ["forest"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c conceals {PRONOUN/m_c/self} in a hidden alcove under branches that drip all the way to the ground, needing privacy as {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} what these new omens foretell.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["OMEN,2"]
+    }
+  },
+  {
+    "event_id": "fst_misc_ceremony_parent_child_acc1",
+    "location": ["forest:camp3"],
+    "season": ["any"],
+    "sub_type": ["ceremony", "accessory"],
+    "weight": 20,
+    "event_text": "Like a seed just beginning to sprout, m_c is now on {PRONOUN/m_c/poss} journey to becoming a full warrior of c_n. With a proud gaze, r_c presents {PRONOUN/r_c/poss} kit with acc_singular. r_c knows that one day m_c will grow big and strong, just like a little seed can grow into a strong tree.",
+    "new_accessory": ["MAPLE SEED"],
+    "m_c": {
+      "status": ["apprentice"],
+      "relationship_status":["child/parent"]
+    },
+    "r_c": {
+      "status": ["any"]
+    },
+    "relationships": [
+      {
+        "cats_to": ["r_c"],
+        "cats_from": ["m_c"],
+        "mutual": true,
+        "values": ["platonic","comfort","trust"],
+        "amount": 10
+      },
+      {
+        "cats_to": ["m_c"],
+        "cats_from": ["r_c"],
+        "mutual": false,
+        "values": ["respect"],
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_sparrow_accessory",
+    "location": ["any"],
+    "season": ["newleaf","greenleaf"],
+    "subtype": ["accessory"],
+    "weight": 20,
+    "event_text": "A small flock of sparrows has decided to start frequenting the branches high above camp. To the annoyance of many, their preening has dropped plenty of feathers around camp; m_c thinks they're pretty, though, and decides to keep some.",
+    "new_accessory": ["SPARROW FEATHERS"]
+  }
+]

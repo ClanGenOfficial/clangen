@@ -1,0 +1,24 @@
+name: Test Documentation Build
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  test-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.8.5
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'   
+      - name: Install docs dependencies
+        run: poetry install --no-root --only docs
+      - name: Build documentation
+        run: poetry run mkdocs build --strict

@@ -1,4 +1,0 @@
-{
-'apprentice' : 'aprendiz',
-'warrior' : 'guerrero',
-}

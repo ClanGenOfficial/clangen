@@ -7,8 +7,10 @@ easily manipulate and update the inheritance. This class will be used to check f
 while mating and for the display of the family tree screen.
 
 """
-
+import i18n
 from strenum import StrEnum  # pylint: disable=no-name-in-module
+
+from scripts.utility import adjust_list_text
 
 
 class RelationType(StrEnum):
@@ -311,7 +313,10 @@ class Inheritance:
             # they might be related, but only if it is not an adoption
             if relevant_id in self.all_involved:
                 mate_rel = self.get_exact_rel_type(relevant_id)
-            self.mates[relevant_id] = {"type": mate_rel, "additional": ["current mate"]}
+            self.mates[relevant_id] = {
+                "type": mate_rel,
+                "additional": [i18n.t("inheritance.current_mate")],
+            }
             self.other_mates.append(relevant_id)
 
         for relevant_id in self.cat.previous_mates:
@@ -321,7 +326,7 @@ class Inheritance:
                 mate_rel = self.get_exact_rel_type(relevant_id)
             self.mates[relevant_id] = {
                 "type": mate_rel,
-                "additional": ["previous mate"],
+                "additional": [i18n.t("inheritance.prev_mate")],
             }
             self.other_mates.append(relevant_id)
 
@@ -352,7 +357,7 @@ class Inheritance:
                     self.all_involved.append(grand_id)
                     self.all_but_cousins.append(grand_id)
                 self.grand_parents[grand_id]["additional"].append(
-                    f"parent of {str(parent_cat.name)}"
+                    i18n.t("inheritance.parent_of_inter", name=str(parent_cat.name))
                 )
 
     def init_kits(self, inter_id, inter_cat):
@@ -370,7 +375,7 @@ class Inheritance:
                 other_id = inter_blood_parents.pop()
                 other_cat = self.cat.fetch_cat(other_id)
                 self.kits[inter_id]["additional"].append(
-                    f"second parent: {str(other_cat.name)}"
+                    i18n.t("inheritance.second_parent", name=str(other_cat.name))
                 )
 
         # kit - adoptive
@@ -385,13 +390,14 @@ class Inheritance:
                     if blood_parent_cat is None:
                         print(f"ERROR: the blood_parent of {str(inter_cat.name)}")
                     else:
-                        name.append(blood_parent_cat.name)
-                if 0 < len(name) < 2:
-                    self.kits[inter_id]["additional"].append(f"blood parent: {name[0]}")
-                elif 0 < len(name) < 3:
-                    self.kits[inter_id]["additional"].append(
-                        f"blood parent: {name[0]}, {name[1]}"
+                        name.append(str(blood_parent_cat.name))
+                self.kits[inter_id]["additional"].append(
+                    i18n.t(
+                        "inheritance.blood_parent",
+                        count=len(name),
+                        name=adjust_list_text(name),
                     )
+                )
 
         # check for mates
         if inter_id in self.kits:
@@ -405,7 +411,7 @@ class Inheritance:
                         rel_type = self.get_exact_rel_type(mate_id)
                 self.kits_mates[mate_id] = {
                     "type": rel_type,
-                    "additional": [f"mate of {str(inter_cat.name)}"],
+                    "additional": [i18n.t("inheritance.mate_of_inter", name=str(inter_cat.name))],
                 }
 
     def init_siblings(self, inter_id, inter_cat):
@@ -438,7 +444,7 @@ class Inheritance:
                 inter_cat.moons + inter_cat.dead_for
                 == self.cat.moons + self.cat.dead_for
             ):
-                additional_info.append("litter mates")
+                additional_info.append(i18n.t("inheritance.littermates"))
         elif (
             len(blood_parent_overlap) == 1
             and len(inter_parent_ids) == 1
@@ -449,7 +455,7 @@ class Inheritance:
                 inter_cat.moons + inter_cat.dead_for
                 == self.cat.moons + self.cat.dead_for
             ):
-                additional_info.append("litter mates")
+                additional_info.append(i18n.t("inheritance.littermates"))
         elif len(blood_parent_overlap) == 1 and (
             len(inter_parent_ids) > 1 or len(current_parent_ids) > 1
         ):
@@ -478,7 +484,9 @@ class Inheritance:
                         mate_rel = self.get_exact_rel_type(mate_id)
                 self.siblings_mates[mate_id] = {
                     "type": mate_rel,
-                    "additional": [f"mate of {str(inter_cat.name)}"],
+                    "additional": [
+                        i18n.t("inheritance.mate_of_inter", name=str(inter_cat.name))
+                    ],
                 }
                 self.other_mates.append(mate_id)
 
@@ -499,7 +507,10 @@ class Inheritance:
 
                     add_info = ""
                     if len(parent_cats_names) > 0:
-                        add_info = f"child of " + ", ".join(parent_cats_names)
+                        add_info = i18n.t(
+                            "inheritance.child_of_inter",
+                            name=adjust_list_text(parent_cats_names),
+                        )
                     self.siblings_kits[_c.ID] = {
                         "type": kit_rel_type,
                         "additional": [add_info],
@@ -540,7 +551,10 @@ class Inheritance:
                     )
                 else:
                     self.parents_siblings[inter_id]["additional"].append(
-                        f"child of {str(grand_parent_cat.name)}"
+                        i18n.t(
+                            "inheritance.child_of_inter",
+                            name=str(grand_parent_cat.name),
+                        )
                     )
 
     def init_cousins(self, inter_id, inter_cat):
@@ -563,7 +577,10 @@ class Inheritance:
                     rel_type = RelationType.NOT_BLOOD
                 add_info = ""
                 if len(parent_cats_names) > 0:
-                    add_info = f"child of " + ", ".join(parent_cats_names)
+                    add_info = i18n.t(
+                        "inheritance.child_of_inter",
+                        name=adjust_list_text(parent_cats_names),
+                    )
 
                 self.cousins[inter_id] = {"type": rel_type, "additional": [add_info]}
                 self.all_involved.append(inter_id)
@@ -580,7 +597,9 @@ class Inheritance:
 
         add_info = ""
         if len(parent_cats_names) > 0:
-            add_info = f"child of " + ", ".join(parent_cats_names)
+            add_info = i18n.t(
+                "inheritance.child_of_inter", name=adjust_list_text(parent_cats_names)
+            )
 
         for inter_parent_id in inter_parent_ids:
             if inter_parent_id in self.kits.keys():

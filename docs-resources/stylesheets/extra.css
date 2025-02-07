@@ -1,0 +1,150 @@
+/* Custom TODO admonition */
+:root {
+    --md-admonition-icon--todo: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M208 64a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM9.8 214.8c5.1-12.2 19.1-18 31.4-12.9L60.7 210l22.9-38.1C99.9 144.6 129.3 128 161 128c51.4 0 97 32.9 113.3 81.7l34.6 103.7 79.3 33.1 34.2-45.6c6.4-8.5 16.6-13.3 27.2-12.8s20.3 6.4 25.8 15.5l96 160c5.9 9.9 6.1 22.2 .4 32.2s-16.3 16.2-27.8 16.2l-256 0c-11.1 0-21.4-5.7-27.2-15.2s-6.4-21.2-1.4-31.1l16-32c5.4-10.8 16.5-17.7 28.6-17.7l32 0 22.5-30L22.8 246.2c-12.2-5.1-18-19.1-12.9-31.4zm82.8 91.8l112 48c11.8 5 19.4 16.6 19.4 29.4l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-74.9-60.6-26-37 111c-5.6 16.8-23.7 25.8-40.5 20.2S-3.9 486.6 1.6 469.9l48-144 11-33 32 13.7z"/></svg>')
+}
+
+.md-typeset .admonition.todo,
+.md-typeset details.todo {
+    border-color: rgb(255, 152, 0);
+}
+
+.md-typeset .todo>.admonition-title,
+.md-typeset .todo>summary {
+    background-color: rgba(255, 152, 0, 0.1);
+}
+
+.md-typeset .todo>.admonition-title::before,
+.md-typeset .todo>summary::before {
+    background-color: rgb(255, 152, 0);
+    -webkit-mask-image: var(--md-admonition-icon--todo);
+    mask-image: var(--md-admonition-icon--todo);
+}
+
+/* Custom Caution admonition (GitHub style) */
+:root {
+    --md-admonition-icon--caution: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.47.22A.75.75 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.75.75 0 0 1-.22.53l-4.25 4.25A.75.75 0 0 1 11 16H5a.75.75 0 0 1-.53-.22L.22 11.53A.75.75 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4m0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>')
+}
+
+.md-typeset .admonition.caution,
+.md-typeset details.caution {
+    border-color: rgb(255, 106, 105);
+}
+
+.md-typeset .caution>.admonition-title,
+.md-typeset .caution>summary {
+    background-color: rgba(255, 106, 105, 0.1);
+}
+
+.md-typeset .caution>.admonition-title::before,
+.md-typeset .caution>summary::before {
+    background-color: rgb(255, 106, 105);
+    -webkit-mask-image: var(--md-admonition-icon--caution);
+    mask-image: var(--md-admonition-icon--caution);
+}
+
+/* custom theming */
+[data-md-color-scheme="clangen_light"] {
+    /* color of the header */
+    --md-primary-fg-color: #655934;
+    /* color of github button */
+    --md-primary-fg-color--dark: #393224;
+    /* color of the header text */
+    --md-primary-bg-color: #EFE5CE;
+    /* search box text */
+    --md-primary-bg-color--light: #B1A588;
+
+    /* footer color */
+    --md-footer-bg-color: #655934;
+    --md-footer-fg-color: #EFE5CE;
+
+    /* link color */
+    --md-typeset-a-color: #723645;
+    /* link highlight color */
+    --md-accent-fg-color: #91805F;
+
+    /* background color of the site */
+    --md-default-bg-color: #EFE5CE;
+
+    /* h1 text color */
+    --md-default-fg-color--light: #2F1F17;
+    /* text color */
+    --md-typeset-color: #2F1F17;
+
+    /* icon button color */
+    --md-default-fg-color--lighter: #56392E;
+
+    /* code snippet bg color */
+    --md-code-bg-color: #DFCFB5;
+    /* code snippet text color */
+    --md-code-fg-color: #2F1F17;
+
+    /* specific code snippet colors */
+    --md-code-hl-punctuation-color: #443413;
+    --md-code-hl-name-color: #42361F;
+    --md-code-hl-string-color: #0B3720;
+    --md-code-hl-keyword-color: #1E3967;
+    --md-code-hl-constant-color: #321C97;
+    --md-code-hl-function-color: #542259;
+    --md-code-hl-special-color: #700A2C;
+    --md-code-hl-number-color: #611414;
+    --md-code-hl-color: #003694;
+
+    /* admonition bg color */
+    --md-admonition-bg-color: #EFE5CE;
+    /* admonition text */
+    --md-admonition-fg-color: #2F1F17;
+}
+[data-md-color-scheme="clangen_dark"] {
+    /* color of the header */
+    --md-primary-fg-color: #655934;
+    /* color of github button */
+    --md-primary-fg-color--dark: #393224;
+    /* color of the header text */
+    --md-primary-bg-color: #EFE5CE;
+    /* search box text */
+    --md-primary-bg-color--light: #B1A588;
+
+    /* footer color */
+    --md-footer-bg-color: #291B0F;
+    --md-footer-fg-color: #EFE5CE;
+
+    /* link color */
+    --md-typeset-a-color: #E5BD6C;
+    /* link highlight color */
+    --md-accent-fg-color: #EFE5CE;
+
+    /* background color of the site */
+    --md-default-bg-color: #393224;
+
+    /* h1 text color */
+    --md-default-fg-color--light: #EFE5CE;
+    /* text color */
+    --md-typeset-color: #EFE5CE;
+
+    /* icon button color */
+    --md-default-fg-color--lighter: #B1A588;
+
+    /* tooltip text color */
+    --md-default-fg-color: #E4CFB5;
+
+    /* code snippet bg color */
+    --md-code-bg-color: #322B1F;
+    /* code snippet default text color */
+    --md-code-fg-color: #EFE5CE;
+
+    /* specific code snippet colors */
+    --md-code-hl-punctuation-color: #EFE5CE;
+    --md-code-hl-name-color: #DDD0B4;
+    --md-code-hl-string-color: #3CD387;
+    --md-code-hl-keyword-color: #B8CAEA;
+    --md-code-hl-constant-color: #BEB2F0;
+    --md-code-hl-function-color: #DAAEE0;
+    --md-code-hl-special-color: #F6A2BE;
+    --md-code-hl-number-color: #EEAAAA;
+    --md-code-hl-color: #99BEFF;
+
+    /* admonition bg color */
+    --md-admonition-bg-color: #393224;
+    /* admonition text */
+    --md-admonition-fg-color: #E4CFB5;
+}

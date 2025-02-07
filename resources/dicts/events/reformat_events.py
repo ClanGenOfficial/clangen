@@ -26,28 +26,46 @@ misc_general = []
 misc_mountainous = []
 misc_plains = []
 
+
 def reformat(path):
     if "Copy" not in path:
         return
-    not_allowed = ["fresh", "nutrition", "disasters", "ceremony", "dislike", "jealousy", "witness",
-                   "template", "reactions", "beach.json", "forest.json", "new_general.json", "mountainous.json", "plains.json"]
+    not_allowed = [
+        "fresh",
+        "nutrition",
+        "disasters",
+        "ceremony",
+        "dislike",
+        "jealousy",
+        "witness",
+        "template",
+        "reactions",
+        "beach.json",
+        "forest.json",
+        "new_general.json",
+        "mountainous.json",
+        "plains.json",
+    ]
     for item in not_allowed:
         if item in path:
             return
     try:
-        with open(path, "r") as read_file:
+        with open(path, "r", encoding="utf-8") as read_file:
             events = read_file.read()
             event_ujson = ujson.loads(events)
 
     except:
-        print(f'Something went wrong with {path}')
+        print(f"Something went wrong with {path}")
 
     if not event_ujson:
         return
 
     try:
         if type(event_ujson[0]) != dict:
-            print(path, "is not in the correct event format. It may not be an event .json.")
+            print(
+                path,
+                "is not in the correct event format. It may not be an event .json.",
+            )
             return
     except KeyError:
         return
@@ -95,7 +113,7 @@ def reformat(path):
                 new_format["season"].append("leaf-bare")
                 event["tags"].remove("Leafbare")
 
-        if new_format["season"] == ['greenleaf', 'newleaf', 'leaf-fall', 'leaf-bare']:
+        if new_format["season"] == ["greenleaf", "newleaf", "leaf-fall", "leaf-bare"]:
             new_format["season"] = ["any"]
 
         new_format["tags"] = []
@@ -115,9 +133,18 @@ def reformat(path):
 
         if "kitten" in path:
             new_format["m_c"]["age"].append("kitten")
-        if "apprentice" in path or "medicine_cat_app" in event["tags"] or "mediator" in path:
+        if (
+            "apprentice" in path
+            or "medicine_cat_app" in event["tags"]
+            or "mediator" in path
+        ):
             new_format["m_c"]["age"].append("adolescent")
-        if "warrior" in path or "deputy" in path or "leader" in path or "mediator" in path:
+        if (
+            "warrior" in path
+            or "deputy" in path
+            or "leader" in path
+            or "mediator" in path
+        ):
             new_format["m_c"]["age"].append("young adult")
             new_format["m_c"]["age"].append("adult")
             new_format["m_c"]["age"].append("senior adult")
@@ -125,7 +152,12 @@ def reformat(path):
             new_format["m_c"]["age"].append("young adult")
             new_format["m_c"]["age"].append("adult")
             new_format["m_c"]["age"].append("senior adult")
-        if "elder" in path or "leader" in path or "medicine" in path or "mediator" in path:
+        if (
+            "elder" in path
+            or "leader" in path
+            or "medicine" in path
+            or "mediator" in path
+        ):
             new_format["m_c"]["age"].append("senior")
         if "elder" in path and "old_age" not in event["tags"]:
             new_format["m_c"]["age"].append("adolescent")
@@ -200,9 +232,19 @@ def reformat(path):
 
         if "tags" in event:
             for tag in event["tags"]:
-                if tag in ["other_cat", "other_cat_kit", "other_cat_med", "other_cat_warrior", "other_cat_dep",
-                           "other_cat_leader", "other_cat_app", "other_cat_med_app", "other_cat_elder", "rc_to_mc",
-                           "mc_to_rc"]:
+                if tag in [
+                    "other_cat",
+                    "other_cat_kit",
+                    "other_cat_med",
+                    "other_cat_warrior",
+                    "other_cat_dep",
+                    "other_cat_leader",
+                    "other_cat_app",
+                    "other_cat_med_app",
+                    "other_cat_elder",
+                    "rc_to_mc",
+                    "mc_to_rc",
+                ]:
                     new_format["r_c"] = {}
                     new_format["r_c"]["age"] = []
 
@@ -215,8 +257,13 @@ def reformat(path):
                     if "other_cat_med_app" in event["tags"]:
                         event["tags"].remove("other_cat_med_app")
                         new_format["r_c"]["age"].append("adolescent")
-                    if "other_cat_warrior" in event["tags"] or "other_cat_leader" in event["tags"] or "other_cat_dep" in \
-                            event["tags"] or "other_cat_med" in event["tags"] or "other_cat_adult" in event["tags"]:
+                    if (
+                        "other_cat_warrior" in event["tags"]
+                        or "other_cat_leader" in event["tags"]
+                        or "other_cat_dep" in event["tags"]
+                        or "other_cat_med" in event["tags"]
+                        or "other_cat_adult" in event["tags"]
+                    ):
                         new_format["r_c"]["age"].append("young adult")
                         new_format["r_c"]["age"].append("adult")
                         new_format["r_c"]["age"].append("senior adult")
@@ -226,9 +273,15 @@ def reformat(path):
                         new_format["r_c"]["age"].append("adult")
                         new_format["r_c"]["age"].append("senior adult")
                         new_format["r_c"]["age"].append("senior")
-                    if "other_cat_elder" in event["tags"] or "other_cat_leader" in event["tags"]:
+                    if (
+                        "other_cat_elder" in event["tags"]
+                        or "other_cat_leader" in event["tags"]
+                    ):
                         new_format["r_c"]["age"].append("senior")
-                    if "other_cat_elder" in event["tags"] and "old_age" not in event["tags"]:
+                    if (
+                        "other_cat_elder" in event["tags"]
+                        and "old_age" not in event["tags"]
+                    ):
                         new_format["r_c"]["age"].append("adolescent")
                         new_format["r_c"]["age"].append("young adult")
                         new_format["r_c"]["age"].append("adult")
@@ -279,13 +332,17 @@ def reformat(path):
                             new_format["r_c"]["skill"] = event["other_cat_skill"]
                     if "other_cat_negate_skill" in event:
                         if event["other_cat_negate_skill"]:
-                            new_format["r_c"]["not_skill"] = event["other_cat_negate_skill"]
+                            new_format["r_c"]["not_skill"] = event[
+                                "other_cat_negate_skill"
+                            ]
                     if "other_cat_trait" in event:
                         if event["other_cat_trait"]:
                             new_format["r_c"]["trait"] = event["other_cat_trait"]
                     if "other_cat_negate_trait" in event:
                         if event["other_cat_negate_trait"]:
-                            new_format["r_c"]["not_trait"] = event["other_cat_negate_trait"]
+                            new_format["r_c"]["not_trait"] = event[
+                                "other_cat_negate_trait"
+                            ]
 
                     if "multi_death" in event["tags"]:
                         event["tags"].remove("multi_death")
@@ -335,24 +392,66 @@ def reformat(path):
             new_format["injury"] = []
 
             if "injury" in event:
-                info = {"cats": ["m_c"],
-                        "injuries": []}
+                info = {"cats": ["m_c"], "injuries": []}
                 info["injuries"].append(event["injury"])
                 if "scar" in event["tags"]:
                     event["tags"].remove("scar")
                     info["scars"] = []
-                    scar_list = ["ONE", "TWO", "THREE", "TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE",
-                                 "BELLY",
-                                 "LEGBITE", "NECKBITE", "FACE", "MANLEG", "BRIGHTHEART", "MANTAIL", "BRIDGE",
-                                 "RIGHTBLIND",
-                                 "LEFTBLIND", "BOTHBLIND", "BEAKCHEEK", "BEAKLOWER", "CATBITE", "RATBITE", "QUILLCHUNK",
-                                 "QUILLSCRATCH", "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "BEAKSIDE",
-                                 "CATBITETWO",
-                                 "FOUR", "LEFTEAR", "RIGHTEAR", "NOTAIL", "HALFTAIL", "NOPAW", "NOLEFTEAR",
-                                 "NORIGHTEAR",
-                                 "NOEAR", "SNAKE", "TOETRAP", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP",
-                                 "FROSTFACE",
-                                 "FROSTTAIL", "FROSTMITT", "FROSTSOCK", "TOE", "SNAKETWO"]
+                    scar_list = [
+                        "ONE",
+                        "TWO",
+                        "THREE",
+                        "TAILSCAR",
+                        "SNOUT",
+                        "CHEEK",
+                        "SIDE",
+                        "THROAT",
+                        "TAILBASE",
+                        "BELLY",
+                        "LEGBITE",
+                        "NECKBITE",
+                        "FACE",
+                        "MANLEG",
+                        "BRIGHTHEART",
+                        "MANTAIL",
+                        "BRIDGE",
+                        "RIGHTBLIND",
+                        "LEFTBLIND",
+                        "BOTHBLIND",
+                        "BEAKCHEEK",
+                        "BEAKLOWER",
+                        "CATBITE",
+                        "RATBITE",
+                        "QUILLCHUNK",
+                        "QUILLSCRATCH",
+                        "HINDLEG",
+                        "BACK",
+                        "QUILLSIDE",
+                        "SCRATCHSIDE",
+                        "BEAKSIDE",
+                        "CATBITETWO",
+                        "FOUR",
+                        "LEFTEAR",
+                        "RIGHTEAR",
+                        "NOTAIL",
+                        "HALFTAIL",
+                        "NOPAW",
+                        "NOLEFTEAR",
+                        "NORIGHTEAR",
+                        "NOEAR",
+                        "SNAKE",
+                        "TOETRAP",
+                        "BURNPAWS",
+                        "BURNTAIL",
+                        "BURNBELLY",
+                        "BURNRUMP",
+                        "FROSTFACE",
+                        "FROSTTAIL",
+                        "FROSTMITT",
+                        "FROSTSOCK",
+                        "TOE",
+                        "SNAKETWO",
+                    ]
                     for tag in event["tags"]:
                         if tag in scar_list:
                             info["scars"].append(tag)
@@ -362,20 +461,62 @@ def reformat(path):
 
             if "other_cat_injure" in event["tags"]:
                 event["tags"].remove("other_cat_injure")
-                info = {
-                    "cats": ["r_c"],
-                    "injuries": []
-                }
-                injuries = ["claw-wound", "bite-wound", "cat bite", "beak bite", "snake bite", "rat bite", "tick bites",
-                            "blood loss", "broken jaw", "broken bone", "mangled leg", "dislocated joint", "joint pain",
-                            "sprain", "mangled tail", "bruises", "cracked pads", "sore", "phantom pain", "scrapes",
-                            "small cut", "torn pelt", "torn ear", "frostbite", "recovering from birth",
-                            "water in their lungs", "burn", "severe burn", "shock", "lingering shock",
-                            "shivering", "dehydrated", "head damage", "damaged eyes", "quilled by a porcupine",
-                            "broken back", "poisoned", "bee sting", "headache", "severe headache", "pregnant"]
+                info = {"cats": ["r_c"], "injuries": []}
+                injuries = [
+                    "claw-wound",
+                    "bite-wound",
+                    "cat bite",
+                    "beak bite",
+                    "snake bite",
+                    "rat bite",
+                    "tick bites",
+                    "blood loss",
+                    "broken jaw",
+                    "broken bone",
+                    "mangled leg",
+                    "dislocated joint",
+                    "joint pain",
+                    "sprain",
+                    "mangled tail",
+                    "bruises",
+                    "cracked pads",
+                    "sore",
+                    "phantom pain",
+                    "scrapes",
+                    "small cut",
+                    "torn pelt",
+                    "torn ear",
+                    "frostbite",
+                    "recovering from birth",
+                    "water in their lungs",
+                    "burn",
+                    "severe burn",
+                    "shock",
+                    "lingering shock",
+                    "shivering",
+                    "dehydrated",
+                    "head damage",
+                    "damaged eyes",
+                    "quilled by a porcupine",
+                    "broken back",
+                    "poisoned",
+                    "bee sting",
+                    "headache",
+                    "severe headache",
+                    "pregnant",
+                ]
 
-                pools = ["battle_injury", "minor_injury", "blunt_force_injury", "hot_injury", "cold_injury",
-                         "big_bite_injury", "small_bite_injury", "beak_bite", "rat_bite"]
+                pools = [
+                    "battle_injury",
+                    "minor_injury",
+                    "blunt_force_injury",
+                    "hot_injury",
+                    "cold_injury",
+                    "big_bite_injury",
+                    "small_bite_injury",
+                    "beak_bite",
+                    "rat_bite",
+                ]
 
                 for tag in event["tags"]:
                     if tag in injuries:
@@ -388,18 +529,61 @@ def reformat(path):
                 if "scar" in event["tags"]:
                     event["tags"].remove("scar")
                     info["scars"] = []
-                    scar_list = ["ONE", "TWO", "THREE", "TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE",
-                                 "BELLY",
-                                 "LEGBITE", "NECKBITE", "FACE", "MANLEG", "BRIGHTHEART", "MANTAIL", "BRIDGE",
-                                 "RIGHTBLIND",
-                                 "LEFTBLIND", "BOTHBLIND", "BEAKCHEEK", "BEAKLOWER", "CATBITE", "RATBITE", "QUILLCHUNK",
-                                 "QUILLSCRATCH", "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "BEAKSIDE",
-                                 "CATBITETWO",
-                                 "FOUR", "LEFTEAR", "RIGHTEAR", "NOTAIL", "HALFTAIL", "NOPAW", "NOLEFTEAR",
-                                 "NORIGHTEAR",
-                                 "NOEAR", "SNAKE", "TOETRAP", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP",
-                                 "FROSTFACE",
-                                 "FROSTTAIL", "FROSTMITT", "FROSTSOCK", "TOE", "SNAKETWO"]
+                    scar_list = [
+                        "ONE",
+                        "TWO",
+                        "THREE",
+                        "TAILSCAR",
+                        "SNOUT",
+                        "CHEEK",
+                        "SIDE",
+                        "THROAT",
+                        "TAILBASE",
+                        "BELLY",
+                        "LEGBITE",
+                        "NECKBITE",
+                        "FACE",
+                        "MANLEG",
+                        "BRIGHTHEART",
+                        "MANTAIL",
+                        "BRIDGE",
+                        "RIGHTBLIND",
+                        "LEFTBLIND",
+                        "BOTHBLIND",
+                        "BEAKCHEEK",
+                        "BEAKLOWER",
+                        "CATBITE",
+                        "RATBITE",
+                        "QUILLCHUNK",
+                        "QUILLSCRATCH",
+                        "HINDLEG",
+                        "BACK",
+                        "QUILLSIDE",
+                        "SCRATCHSIDE",
+                        "BEAKSIDE",
+                        "CATBITETWO",
+                        "FOUR",
+                        "LEFTEAR",
+                        "RIGHTEAR",
+                        "NOTAIL",
+                        "HALFTAIL",
+                        "NOPAW",
+                        "NOLEFTEAR",
+                        "NORIGHTEAR",
+                        "NOEAR",
+                        "SNAKE",
+                        "TOETRAP",
+                        "BURNPAWS",
+                        "BURNTAIL",
+                        "BURNBELLY",
+                        "BURNRUMP",
+                        "FROSTFACE",
+                        "FROSTTAIL",
+                        "FROSTMITT",
+                        "FROSTSOCK",
+                        "TOE",
+                        "SNAKETWO",
+                    ]
                     for tag in event["tags"]:
                         if tag in scar_list:
                             info["scars"].append(tag)
@@ -413,14 +597,28 @@ def reformat(path):
                 if "scar" in event["history_text"]:
                     new_format["history"]["scar"] = event["history_text"]["scar"]
                 if "reg_death" in event["history_text"]:
-                    new_format["history"]["reg_death"] = event["history_text"]["reg_death"]
+                    new_format["history"]["reg_death"] = event["history_text"][
+                        "reg_death"
+                    ]
                 if "lead_death" in event["history_text"]:
-                    new_format["history"]["lead_death"] = event["history_text"]["lead_death"]
+                    new_format["history"]["lead_death"] = event["history_text"][
+                        "lead_death"
+                    ]
 
         for tag in event["tags"]:
-            if tag in ["other_cat", "other_cat_kit", "other_cat_med", "other_cat_warrior", "other_cat_dep",
-                       "other_cat_leader", "other_cat_app", "other_cat_med_app", "other_cat_elder", "rc_to_mc",
-                       "mc_to_rc"]:
+            if tag in [
+                "other_cat",
+                "other_cat_kit",
+                "other_cat_med",
+                "other_cat_warrior",
+                "other_cat_dep",
+                "other_cat_leader",
+                "other_cat_app",
+                "other_cat_med_app",
+                "other_cat_elder",
+                "rc_to_mc",
+                "mc_to_rc",
+            ]:
                 new_format["relationships"] = []
                 info = {}
                 if "mc_to_rc" in event["tags"]:
@@ -493,10 +691,7 @@ def reformat(path):
                 new_format["relationships"].append(info)
 
         if "new_cat" in path:
-            new_format["outsider"] = {
-                "current_rep": [],
-                "changed": 1
-            }
+            new_format["outsider"] = {"current_rep": [], "changed": 1}
             if "hostile" in event["tags"]:
                 event["tags"].remove("hostile")
                 new_format["outsider"]["current_rep"].append("hostile")
@@ -508,10 +703,7 @@ def reformat(path):
                 new_format["outsider"]["current_rep"].append("welcoming")
 
         if "other_clan" in event["tags"]:
-            new_format["other_clan"] = {
-                "current_rep": [],
-                "changed": 0
-            }
+            new_format["other_clan"] = {"current_rep": [], "changed": 0}
             if "war" in event["tags"]:
                 event["tags"].remove("war")
                 new_format["other_clan"]["current_rep"].append("hostile")
@@ -545,7 +737,9 @@ def reformat(path):
         # print(new_format["tags"])
 
         dict_text = ujson.dumps(new_format, indent=4)
-        dict_text = dict_text.replace("\/", "/")  # ujson tries to escape "/", but doesn't end up doing a good job.
+        dict_text = dict_text.replace(
+            "\/", "/"
+        )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
         if "injury" in path:
             if "beach" in path:
@@ -559,12 +753,11 @@ def reformat(path):
             if "plains" in path:
                 injury_plains.append(dict_text)
 
-
     if injury_beach:
         string = ""
         for event in injury_beach:
             string = string + event
-        with open("injury/beach.json", "w") as write_file:
+        with open("injury/beach.json", "w", encoding="utf-8") as write_file:
             write_file.write(string)
     if injury_forest:
         string = ""

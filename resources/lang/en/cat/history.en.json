@@ -1,0 +1,45 @@
+{
+    "en": {
+        "training_kit": "This cat has not begun training.",
+        "training_app": "This cat has not finished training.",
+        "training_mentors": {
+            "zero": "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown.",
+            "one": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by %{mentors}.",
+            "many": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by %{mentors}."
+        },
+        "training_mentor_trait_influence": "r_c influenced {PRONOUN/m_c/object} to be more likely to %{influence}.",
+        "training_mentor_skill_influence": "r_c helped {PRONOUN/m_c/object} become better at %{influence}.",
+        "graduation_honor": "When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} %{honor}.",
+        "graduation_early": "{PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at %{age} moons old.",
+        "graduation_normal": "{PRONOUN/m_c/subject/CAP} graduated at %{age} moons old.",
+        "graduation_late": "{PRONOUN/m_c/subject/CAP} graduated late at %{age} moons old.",
+        "mentored": "{PRONOUN/m_c/subject/CAP} mentored %{apprentices}.",
+        "leader_death_final": "lost {PRONOUN/m_c/poss} final life",
+        "leader_death_all": "lost all of {PRONOUN/m_c/poss} lives",
+        "leader_death_remaining": "lost the rest of {PRONOUN/m_c/poss} lives",
+        "leader_death_cardinal": {
+            "one": "lost {PRONOUN/m_c/poss} %{cardinal} life",
+            "many": "lost {PRONOUN/m_c/poss} %{cardinal} lives"
+        },
+        "leader_death_retired": "lost {PRONOUN/m_c/poss} last remaining life",
+        "leader_death_default": "lost a life",
+        "leader_lost_lives": {
+            "one": "m_c lost a life.",
+            "many": "m_c lost %{count} lives."
+        },
+        "regular_death": "%{cats} died.",
+        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}.",
+        "murdered": "%{name} murdered %{victims}.",
+        "leader_lives_left_df": {
+            "zero": "The leader has no lives left and has travelled to the Dark Forest.",
+            "one": "The leader has one life left.",
+            "many": "The leader has %{count} lives left."
+        },
+        "leader_lives_left_sc": {
+            "zero": "The leader has no lives left and has travelled to StarClan.",
+            "one": "The leader has one life left.",
+            "many": "The leader has %{count} lives left."
+        },
+        "scar_from_injury": "m_c was scarred from an injury (%{injury_name})."
+    }
+}

@@ -1,14 +1,15 @@
 import random
 from random import choice
 
+import i18n
+
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
-    SingleInteraction,
-    NEUTRAL_INTERACTIONS,
-    INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
+    rebuild_relationship_dicts,
 )
+import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
@@ -21,6 +22,7 @@ from scripts.utility import get_personality_compatibility, process_text
 
 class Relationship:
     used_interaction_ids = []
+    currently_loaded_lang = None
 
     def __init__(
         self,
@@ -80,6 +82,10 @@ class Relationship:
         if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
             return
 
+        if self.currently_loaded_lang != i18n.config.get("locale"):
+            Relationship.currently_loaded_lang = i18n.config.get("locale")
+            rebuild_relationship_dicts()
+
         # update relationship
         if self.cat_to.ID in self.cat_from.mate:
             self.mates = True
@@ -112,9 +118,11 @@ class Relationship:
         biome = str(game.clan.biome).casefold()
         game_mode = game.clan.game_mode
 
-        all_interactions = NEUTRAL_INTERACTIONS.copy()
+        all_interactions = interactions.NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
-            all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
+            all_interactions = interactions.INTERACTION_MASTER_DICT[rel_type][
+                in_de_crease
+            ].copy()
             possible_interactions = self.get_relevant_interactions(
                 all_interactions, intensity, biome, season, game_mode
             )
@@ -205,23 +213,21 @@ class Relationship:
         # prepare string for display
         interaction_str = self.adjust_interaction_string(interaction_str)
 
-        effect = " (neutral effect)"
+        effect = i18n.t("relationships.neutral_postscript")
         if in_de_crease != "neutral" and positive:
-            effect = f" ({intensity} positive effect)"
-        if in_de_crease != "neutral" and not positive:
-            effect = f" ({intensity} negative effect)"
+            effect = i18n.t(f"relationships.positive_postscript_{intensity}")
+        elif in_de_crease != "neutral" and not positive:
+            effect = i18n.t(f"relationships.negative_postscript_{intensity}")
 
         interaction_str = interaction_str + effect
-        if self.cat_from.moons == 1:
-            self.log.append(
-                interaction_str
-                + f" - {self.cat_from.name} was {self.cat_from.moons} moon old"
+        self.log.append(
+            interaction_str
+            + i18n.t(
+                "relationships.age_postscript",
+                name=str(self.cat_from.name),
+                count=self.cat_from.moons,
             )
-        else:
-            self.log.append(
-                interaction_str
-                + f" - {self.cat_from.name} was {self.cat_from.moons} moons old"
-            )
+        )
         relevant_event_tabs = ["relation", "interaction"]
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
@@ -229,7 +235,7 @@ class Relationship:
             Single_Event(
                 interaction_str,
                 ["relation", "interaction"],
-                [self.cat_to.ID, self.cat_from.ID],
+                cat_dict={"m_c": self.cat_to, "r_c": self.cat_from},
             )
         )
 

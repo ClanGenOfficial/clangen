@@ -1,0 +1,12 @@
+{
+    "en": {
+        "allow_romantic": "Allow romantic",
+        "allow_romantic_tooltip": "Allow effects on romantic like, if possible. ",
+        "mediate": "Mediate",
+        "sabotage": "Sabotage",
+        "cat_feelings": "~~%{name}'s feelings~~",
+        "cant_work": "This mediator can't work this moon.",
+        "already_worked": "This mediator has already worked this moon.",
+        "pair_already_mediated": "This pair has already been mediated this moon."
+    }
+}
