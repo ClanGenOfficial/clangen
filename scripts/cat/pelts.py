@@ -785,7 +785,6 @@ class Pelt:
                 self.cat_sprites["senior"] = 13
             elif self.cat_sprites["senior"] == 5:
                 self.cat_sprites["senior"] = 14
-
         if self.pattern in convert_dict["old_tortie_patches"]:
             old_pattern = self.pattern
             self.pattern = convert_dict["old_tortie_patches"][old_pattern][1]
@@ -807,6 +806,14 @@ class Pelt:
             self.pattern = "MINIMALFOUR"
 
     def init_eyes(self, parents):
+        """ Sets eye color for this cat's pelt. Takes parents' eye colors into account.
+        Heterochromia is possible based on the white-ness of the pelt, so the pelt color and white_patches must be
+        set before this function is called.
+
+        :param parents: List[Cat] representing this cat's parents
+
+        :return: None
+        """
         if not parents:
             self.eye_colour = choice(Pelt.eye_colours)
         else:
@@ -817,7 +824,9 @@ class Pelt:
         # White patches must be initalized before eye color.
         num = game.config["cat_generation"]["base_heterochromia"]
         if (
-            self.white_patches in [Pelt.high_white, Pelt.mostly_white, "FULLWHITE"]
+            self.white_patches in Pelt.high_white
+            or self.white_patches in Pelt.mostly_white
+            or self.white_patches == "FULLWHITE"
             or self.colour == "WHITE"
         ):
             num = num - 90
