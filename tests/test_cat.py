@@ -10,6 +10,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat_relations.relationship import Relationship
 
+
 class TestCreationAge(unittest.TestCase):
     # test that a cat with 1-5 moons has the age of a kitten
     def test_kitten(self):
@@ -25,7 +26,7 @@ class TestCreationAge(unittest.TestCase):
     def test_young_adult(self):
         test_cat = Cat(moons=12)
         self.assertEqual(test_cat.age, CatAgeEnum.YOUNG_ADULT)
-    
+
     # test that a cat with 48-95 moons has the age of an adult
     def test_adult(self):
         test_cat = Cat(moons=48)

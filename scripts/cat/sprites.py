@@ -1,7 +1,6 @@
 import logging
 import os
 from copy import copy
-from typing import Union
 
 import pygame
 import ujson
@@ -207,7 +206,7 @@ class Sprites:
                 "PALEYELLOW",
                 "GOLD",
                 "GREENYELLOW",
-                "ORANGE"
+                "ORANGE",
             ],
         ]
 
@@ -780,7 +779,6 @@ class Sprites:
         del var
 
         return recolored_symbol
-
 
 
 # CREATE INSTANCE

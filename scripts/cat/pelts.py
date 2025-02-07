@@ -177,7 +177,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     yellow_eyes = [
         "YELLOW",
@@ -188,7 +188,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     blue_eyes = [
         "BLUE",
@@ -468,7 +468,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     little_white = [
         "LITTLE",
@@ -806,7 +806,7 @@ class Pelt:
             self.pattern = "MINIMALFOUR"
 
     def init_eyes(self, parents):
-        """ Sets eye color for this cat's pelt. Takes parents' eye colors into account.
+        """Sets eye color for this cat's pelt. Takes parents' eye colors into account.
         Heterochromia is possible based on the white-ness of the pelt, so the pelt color and white_patches must be
         set before this function is called.
 
@@ -1673,7 +1673,9 @@ def unpack_appearance_ruleset(cat, rule, short, pelt, color):
             for scar in cat.pelt.scars:
                 if scar in _scar_details:
                     scarlist.append(i18n.t(f"cat.pelts.{scar}"))
-            return adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else "" # note: this doesn't preserve order!
+            return (
+                adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else ""
+            )  # note: this doesn't preserve order!
     else:
         raise Exception(f"Unmatched ruleset item {rule} in describe_appearance!")
     return ""
