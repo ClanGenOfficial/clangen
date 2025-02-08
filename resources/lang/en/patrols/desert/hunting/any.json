@@ -2678,7 +2678,16 @@
                 "text": "p_l hisses at r_c about taking their duties as warriors seriously. The strained air between the two cats is enough to turn their hunting expedition into a fruitless endeavor. Something the two argued about even back at camp.",
                 "exp": 0,
                 "weight": 20,
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "relationships": [
+                {
+                    "cats_to": ["r_c", "r_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                }                    
+            ]
             }
         ]
     },
@@ -2712,6 +2721,84 @@
         "fail_outcomes": [
             {
                 "text": "Despite p_l's careful warnings, the patrol found climbing up the rocky walls too much. A few near-misses and even more falls, the patrol leaves the cave with empty paws.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_thorlizsolo",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "patrol_art": null,
+        "intro_text": "While on the hunt for c_n, p_l's eyes darts towards an unusual sight. A small, prickly lizard walking across the sands. With enough precision perhaps {PRONOUN/m_c/subject} can catch it for c_n.",
+        "decline_text": "But with the risk of being cut by those tiny spines, p_l didn't want to give the medicine cat another reason to work. p_l continues to walk past the lizard.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "It takes some careful strikes with {PRONOUN/m_c/poss} paws and teeth to keep it from sticking to {PRONOUN/m_c/poss} soft paw pads. But eventually, {PRONOUN/m_c/poss} {VERB/m_c/were/was} able to find a weak spot in the lizard's defenses and bring it back to c_n with pride.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Try as {PRONOUN/m_c/subject} might, the confounding thorny lizard was too much of a puzzle to solve. After another near miss of being pricked with its spines, p_l let the lizard go with reluctance. ",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "p_l struck out at the lizard, and for a moment felt a flash of pride when their teeth connected with anything than rough points! But the pride dissolved when they saw the lizard running away. A false head?! p_l felt bewildered for the rest of the hunting patrol.",
+                "exp": 0,
+                "weight": 10,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_thornlizduo",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "patrol_art": null,
+        "intro_text": "p_l and r_c found an unusual sight while hunting. It looked like a lizard covered completely with thorns! The two look towards another in appraisal. ",
+        "decline_text": "Quickly, r_c shook {PRONOUN/r_c/poss} head. If either cat got hurt, it would be on their heads. The two went off to search for more prey instead.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l and r_c took their positions around the lizard. r_c kept blocking its escape, while p_l tried to pierce through its tough scales. Between the two, the little lizard didn't stand a chance.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l and r_c took their positions around the lizard. Before p_l could land a well timed blow against its spines and scales, the lizard bolted between r_c's paws and escaped back into the underground.",
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
