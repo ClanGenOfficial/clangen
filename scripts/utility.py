@@ -894,7 +894,7 @@ def create_new_cat(
 
         # give em a collar if they got one
         if accessory:
-            new_cat.pelt.accessory = accessory
+            new_cat.pelt.accessory = [accessory]
 
         # give apprentice aged cat a mentor
         if new_cat.age == "adolescent":
@@ -2295,14 +2295,14 @@ def event_text_adjust(
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
         text = text.replace(
-            "acc_plural", i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=2)
+            "acc_plural", i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2)
         )
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
         text = text.replace(
             "acc_singular",
-            i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=1),
+            i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
         )
 
     if "given_herb" in text:
@@ -2852,21 +2852,27 @@ def generate_sprite(
                     )
 
         # draw accessories
-        if not acc_hidden:
-            if cat.pelt.accessory in cat.pelt.plant_accessories:
-                new_sprite.blit(
-                    sprites.sprites["acc_herbs" + cat.pelt.accessory + cat_sprite],
-                    (0, 0),
-                )
-            elif cat.pelt.accessory in cat.pelt.wild_accessories:
-                new_sprite.blit(
-                    sprites.sprites["acc_wild" + cat.pelt.accessory + cat_sprite],
-                    (0, 0),
-                )
-            elif cat.pelt.accessory in cat.pelt.collars:
-                new_sprite.blit(
-                    sprites.sprites["collars" + cat.pelt.accessory + cat_sprite], (0, 0)
-                )
+        from scripts.cat.pelts import Pelt
+        if not acc_hidden and cat.pelt.accessory:
+            cat_accessories = cat.pelt.accessory
+            categories = ["collars", "tail_accessories", "body_accessories", "head_accessories"]
+            for category in categories:
+                for accessory in cat_accessories:
+                    if accessory in getattr(Pelt, category):
+                        if accessory in cat.pelt.plant_accessories:
+                            new_sprite.blit(
+                                sprites.sprites["acc_herbs" + accessory + cat_sprite],
+                                (0, 0),
+                            )
+                        elif accessory in cat.pelt.wild_accessories:
+                            new_sprite.blit(
+                                sprites.sprites["acc_wild" + accessory + cat_sprite],
+                                (0, 0),
+                            )
+                        elif accessory in cat.pelt.collars:
+                            new_sprite.blit(
+                                sprites.sprites["collars" + accessory + cat_sprite], (0, 0)
+                            )
 
         # Apply fading fog
         if (

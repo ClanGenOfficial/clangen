@@ -206,7 +206,8 @@
 		"elder_modifier": 20,
 		"happy_trait_modifier": -30,
 		"grumpy_trait_modifier": 30,
-		"ceremony_modifier": -20
+		"ceremony_modifier": -20,
+		"multiple_acc_modifier": 50
 	},
 	"transition_related": {
 		"base_trans_chance": 256,

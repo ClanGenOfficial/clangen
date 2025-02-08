@@ -4738,7 +4738,7 @@
         "sub_type": [ "old_age" ],
         "tags": [ ],
         "weight": 20,
-        "event_text": "One day, the deputy found m_c dead in the leader's den, a life lost to old age",
+        "event_text": "One day, the deputy found m_c dead in the leader's den, a life lost to old age.",
         "m_c": {
             "age": [
                 "senior"
