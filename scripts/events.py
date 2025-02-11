@@ -7,7 +7,6 @@ TODO: Docs
 """
 
 import random
-
 # pylint: enable=line-too-long
 import traceback
 
@@ -23,15 +22,16 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.outsider_events import OutsiderEvents
-from scripts.events_module.relationship.relation_events import Relation_Events
-from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.game_structure.game_essentials import game
-from scripts.game_structure.windows import SaveError
 from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
+from scripts.events_module.relationship.relation_events import Relation_Events
+from scripts.events_module.short.condition_events import Condition_Events
+from scripts.events_module.short.handle_short_events import handle_short_events
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
+from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
@@ -47,7 +47,6 @@ from scripts.utility import (
     history_text_adjust,
     unpack_rel_block,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class Events:
@@ -273,8 +272,8 @@ class Events:
             med_cats=get_alive_status_cats(
                 Cat,
                 get_status=["medicine cat", "medicine cat apprentice"],
-                working=True
-            )
+                working=True,
+            ),
         )
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
@@ -462,7 +461,9 @@ class Events:
                                     )
                                     invited_cat.name.give_suffix(
                                         pelt=None,
-                                        biome=game.clan.biome,
+                                        biome=game.clan.biome
+                                        if not game.clan.override_biome
+                                        else game.clan.override_biome,
                                         tortiepattern=None,
                                     )
                                     invited_cat.specsuffix_hidden = False
@@ -647,16 +648,16 @@ class Events:
             healthy_meds = get_alive_status_cats(
                 Cat,
                 get_status=["medicine cat", "medicine cat apprentice"],
-                working=True
+                working=True,
             )
             # get warriors to help
             healthy_warriors = get_alive_status_cats(
-                Cat,
-                get_status=["warrior", "deputy", "leader"],
-                working=True
+                Cat, get_status=["warrior", "deputy", "leader"], working=True
             )
 
-            focus_text = game.clan.herb_supply.handle_focus(healthy_meds, healthy_warriors)
+            focus_text = game.clan.herb_supply.handle_focus(
+                healthy_meds, healthy_warriors
+            )
 
         elif game.clan.clan_settings.get("threaten outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]
@@ -781,10 +782,7 @@ class Events:
                     )
                 )
 
-            focus_text = i18n.t(
-                "hardcoded.focus_prey",
-                count=warrior_amount
-            )
+            focus_text = i18n.t("hardcoded.focus_prey", count=warrior_amount)
 
             if herb_focus_text:
                 focus_text += f" {herb_focus_text}"

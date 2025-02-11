@@ -7,16 +7,16 @@ from os.path import exists as path_exists
 from random import choice, randint, choices
 from typing import List, Tuple, Optional
 
-import i18n
 import pygame
 
-from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.clan import Clan
-from scripts.game_structure.game_essentials import game
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
+from scripts.game_structure import localization
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
     get_personality_compatibility,
@@ -28,7 +28,6 @@ from scripts.utility import (
     get_special_snippet_list,
     adjust_list_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -87,7 +86,11 @@ class Patrol:
 
         final_patrols, final_romance_patrols = self.get_possible_patrols(
             str(game.clan.current_season).casefold(),
-            str(game.clan.biome).casefold(),
+            str(
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            ).casefold(),
             str(game.clan.camp_bg).casefold(),
             patrol_type,
             game.settings.get("disasters"),
@@ -639,8 +642,18 @@ class Patrol:
             i = 0
             while not herb_filtered_patrols and i <= len(target_herbs):
                 i += 1
-                herb_filtered_patrols = [patrol for patrol in filtered_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
-                herb_romance_patrols = [patrol for patrol in romantic_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+                herb_filtered_patrols = [
+                    patrol
+                    for patrol in filtered_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
+                herb_romance_patrols = [
+                    patrol
+                    for patrol in romantic_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
 
             if herb_filtered_patrols:
                 filtered_patrols = herb_filtered_patrols
@@ -858,7 +871,11 @@ class Patrol:
         filtered_patrols = []
 
         # get first what kind of prey size which will be chosen
-        biome = game.clan.biome
+        biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
         season = game.clan.current_season
         possible_prey_size = []
         idx = 0

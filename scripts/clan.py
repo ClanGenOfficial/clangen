@@ -9,11 +9,9 @@ TODO: Docs
 # pylint: enable=line-too-long
 
 import os
-import random
 import statistics
 from random import choice, randint
 
-import i18n
 import pygame
 import ujson
 
@@ -30,7 +28,8 @@ from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
     get_current_season,
     quit,
-    clan_symbol_sprite, get_living_clan_cat_count,
+    clan_symbol_sprite,
+    get_living_clan_cat_count,
 )  # pylint: disable=redefined-builtin
 
 
@@ -41,7 +40,7 @@ class Clan:
 
     """
 
-    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
     CAT_TYPES = [
         "newborn",
@@ -126,6 +125,7 @@ class Clan:
         self.instructor = None
         # This is the first cat in starclan, to "guide" the other dead cats there.
         self.biome = biome
+        self.override_biome = None
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
@@ -1097,18 +1097,14 @@ class Clan:
         try:
             # load the old file path and convert the save data into current format
             if os.path.exists(old_file_path):
-                with open(
-                    old_file_path, "r", encoding="utf-8"
-                ) as save_file:
+                with open(old_file_path, "r", encoding="utf-8") as save_file:
                     herbs = ujson.load(save_file)
                     clan.herb_supply = HerbSupply()
                     clan.herb_supply.convert_old_save(herbs)
 
             # load the current file path, if it exists in save
             elif os.path.exists(current_file_path):
-                with open(
-                    current_file_path, "r", encoding="utf-8"
-                ) as save_file:
+                with open(current_file_path, "r", encoding="utf-8") as save_file:
                     herbs = ujson.load(save_file)
                     clan.herb_supply = HerbSupply(herb_supply=herbs["storage"])
                     clan.herb_supply.collected = herbs["collected"]
@@ -1129,13 +1125,12 @@ class Clan:
 
         game.safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
-            clan.herb_supply.combined_supply_dict
+            clan.herb_supply.combined_supply_dict,
         )
 
         # delete old herb save file if it exists
         if os.path.exists(get_save_dir() + f"/{game.clan.name}/herbs.json"):
             os.remove(get_save_dir() + f"/{game.clan.name}/herbs.json")
-
 
     def load_freshkill_pile(self, clan):
         """
@@ -1376,4 +1371,3 @@ class StarClan:
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
-
