@@ -453,8 +453,13 @@ class HerbSupply:
                 found_herbs[herb] = choices(population=[1, 2, 3], weights=weight, k=1)[0] * quantity_modifier
                 amount_of_herbs -= 1
 
-        list_of_herb_strs = []
+        return self.handle_found_herbs_outcomes(found_herbs)
 
+    def handle_found_herbs_outcomes(self, found_herbs: dict = {}):
+        """
+        Handles adding herbs to the collection and preparing outcome for patrols
+        """
+        list_of_herb_strs = []
         if found_herbs:
             for herb, count in found_herbs.items():
                 # add it to the collection

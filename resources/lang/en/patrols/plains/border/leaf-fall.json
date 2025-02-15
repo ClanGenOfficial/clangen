@@ -637,8 +637,8 @@
                 }
             ],
             "history_text": {
-                "scar": "A subadult coyote scarred r_c's pelt.",
-                "reg_death": "r_c was killed by trying to fight a subadult coyote with a small patrol.",
+                "scar": "A subadult coyote scarred m_c's pelt.",
+                "reg_death": "m_c was killed by trying to fight a subadult coyote with a small patrol.",
                 "lead_death": "trying to fight a subadult coyote with a small patrol"
             },
             "relationships": [
@@ -667,7 +667,7 @@
             ],
             "history_text": {
                 "scar": "Driving off coyotes left its scars on r_c.",
-                "reg_death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders.",
+                "reg_death": "m_c died from injuries sustained in keeping coyotes away from c_n's borders.",
                 "lead_death": "from injuries gotten keeping coyotes away from c_n's borders"
             },
             "relationships": [
@@ -957,8 +957,8 @@
                 }
             ],
             "history_text": {
-                "scar": "A subadult coyote scarred r_c's pelt.",
-                "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                "scar": "A subadult coyote scarred m_c's pelt.",
+                "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                 "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
             },
             "relationships": [
@@ -1088,8 +1088,8 @@
                 }
             ],
             "history_text": {
-                "scar": "A coyote encounter left its scars on r_c.",
-                "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                "scar": "A coyote encounter left its scars on m_c.",
+                "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                 "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
             }
         },

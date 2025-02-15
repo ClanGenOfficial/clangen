@@ -1,2 +1,4 @@
-poetry install --no-root
-poetry run python main.py
+@echo off
+
+poetry install --no-root || ( pause & exit /b )
+poetry run python main.py || ( pause & exit /b )

@@ -3486,6 +3486,10 @@ class Cat:
                 if filter_func(check_cat)
             ]
 
+        if game.clan.instructor in sorted_specific_list:
+            sorted_specific_list.remove(game.clan.instructor)
+            sorted_specific_list.insert(0, game.clan.instructor)
+
         idx = sorted_specific_list.index(self)
 
         return (

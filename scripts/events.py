@@ -1709,8 +1709,8 @@ class Events:
         if cat.dead or cat.outside:
             return
 
-        # check if cat already has acc
-        if cat.pelt.accessory:
+        # check if cat already has max acc
+        if cat.pelt.accessory and len(cat.pelt.accessory) == 3:
             self.ceremony_accessory = False
             return
 
@@ -1751,6 +1751,8 @@ class Events:
             "nervous",
         ]:
             chance += acc_chances["grumpy_trait_modifier"]
+        if cat.pelt.accessory and len(cat.pelt.accessory) >= 1:
+            chance += acc_chances["multiple_acc_modifier"]
         if self.ceremony_accessory:
             chance += acc_chances["ceremony_modifier"]
 
