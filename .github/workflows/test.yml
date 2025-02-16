@@ -25,9 +25,9 @@ jobs:
       - name: Remove the zip
         run: rm tests/saves.zip
       - name: Install poetry
-        uses: abatilo/actions-poetry@v3
+        uses: abatilo/actions-poetry@v4
         with:
-          poetry-version: 1.4.1
+          poetry-version: latest
       - name: install dependencies
         run: poetry install
       - name: Run unit tests
