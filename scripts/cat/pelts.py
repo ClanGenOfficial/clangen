@@ -835,7 +835,7 @@ class Pelt:
             # tortiecolour and pelt_colour will be the same. Therefore, let's also re-set the pelt color
             self.colour = self.tortiecolour
             self.tortiecolour = convert_dict["old_tortie_patches"][old_pattern][0]
-            
+
         if self.tortiemarking == "MINIMAL1":
             self.tortiemarking = "MINIMALONE"
         elif self.tortiemarking == "MINIMAL2":
