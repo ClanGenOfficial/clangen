@@ -34,6 +34,7 @@ class RomanticEvents:
     # ---------------------------------------------------------------------------- #
 
     MATE_DICTS = {}
+    BREAKUP_STRINGS = {}
     POLY_MATE_DICTS = {}
     current_loaded_lang = None
     ROMANTIC_EVENTS: Dict = {}
@@ -52,6 +53,7 @@ class RomanticEvents:
 
         resources = [
             ("MATE_DICTS", "become_mates.json"),
+            ("BREAKUP_STRINGS", "breakup_mates.json"),
             (
                 "POLY_MATE_DICTS",
                 "become_mates_poly.json",
@@ -451,9 +453,8 @@ class RomanticEvents:
 
         # Determine if this is a nice breakup or a fight breakup
         # TODO - make this better
-        had_fight = not int(random.random() * 3)
-
-        # TODO : more varied breakup text.
+        breakup_type = random.choices(["had_fight", "decided_to_be_friends", "lost_feelings", "bad_breakup", "chill_breakup"], [3, 3, 2, 5, 5])[0]
+        
         cat_from.unset_mate(cat_to, breakup=False)
 
         if cat_to.ID in cat_from.relationships:
@@ -467,24 +468,50 @@ class RomanticEvents:
             relationship_to = cat_to.create_one_relationship(cat_from)
 
         # These are large decreases - they are to prevent becoming mates again on the same moon.
-        relationship_to.romantic_love -= 15
-        relationship_from.romantic_love -= 15
-        relationship_to.comfortable -= 10
-        relationship_from.comfortable -= 10
-        if had_fight:
-            relationship_to.romantic_love -= 5
-            relationship_from.romantic_love -= 5
+        if breakup_type == "had_fight":
+            relationship_to.romantic_love -= 15
+            relationship_from.romantic_love -= 15
             relationship_from.platonic_like -= 10
             relationship_to.platonic_like -= 10
             relationship_from.trust -= 10
             relationship_to.trust -= 10
             relationship_to.dislike += 10
             relationship_from.dislike += 10
+        elif breakup_type == "decided_to_be_friends":
+            relationship_to.romantic_love -= 30
+            relationship_from.romantic_love -= 30
+            relationship_from.platonic_like += 30
+            relationship_to.platonic_like += 30
+            relationship_from.trust += 20
+            relationship_to.trust += 20
+            relationship_to.comfortable += 5
+            relationship_from.comfortable += 5
+        elif breakup_type == "lost_feelings":
+            relationship_to.romantic_love -= 30
+            relationship_from.romantic_love -= 30
+            relationship_from.platonic_like -= 10
+            relationship_to.platonic_like -= 10
+            relationship_to.comfortable -= 10
+            relationship_from.comfortable -= 10
+        elif breakup_type == "bad_breakup":
+            relationship_to.romantic_love -= 20
+            relationship_from.romantic_love -= 15
+            relationship_from.platonic_like -= 10
+            relationship_to.platonic_like -= 15
+            relationship_from.trust -= 20
+            relationship_to.trust -= 25
+            relationship_to.comfortable -= 20
+            relationship_from.comfortable -= 20
+            relationship_to.dislike += 10
+            relationship_from.dislike += 5
+        elif breakup_type == "chill_breakup":
+            relationship_to.romantic_love -= 15
+            relationship_from.romantic_love -= 15
+            relationship_to.comfortable -= 10
+            relationship_from.comfortable -= 10
 
-        if had_fight:
-            text = i18n.t("hardcoded.breakup_angy")
-        else:
-            text = i18n.t("hardcoded.breakup_chill")
+        text = choice(RomanticEvents.BREAKUP_STRINGS[breakup_type])
+        text = event_text_adjust(Cat, text, main_cat=cat_from, random_cat=cat_to)
         game.cur_events_list.append(
             Single_Event(
                 text,

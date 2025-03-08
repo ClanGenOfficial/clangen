@@ -5,7 +5,7 @@ import i18n
 from scripts.cat.history import History
 from scripts.conditions import (
     get_amount_cat_for_one_medic,
-    medical_cats_condition_fulfilled,
+    medicine_cats_can_cover_clan,
 )
 from scripts.game_structure.game_essentials import game
 
@@ -95,7 +95,7 @@ class Scar_Events:
         chance = max(5 - moons_with, 1)
 
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
-        if medical_cats_condition_fulfilled(
+        if medicine_cats_can_cover_clan(
             game.cat_class.all_cats.values(), amount_per_med
         ):
             chance += 2

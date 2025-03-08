@@ -99,13 +99,16 @@ class Clan:
         camp_bg=None,
         symbol=None,
         game_mode="classic",
-        starting_members=[],
+        starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
     ):
         self.history = History()
         if name == "":
             return
+
+        if starting_members is None:
+            starting_members = []
 
         self.name = name
         self.leader = leader
@@ -810,7 +813,7 @@ class Clan:
         )
         game.clan.post_initialization_functions()
 
-        game.clan.reputation = int(clan_data["reputation"])
+        game.clan.reputation = max(0, min(100, int(clan_data["reputation"])))
 
         game.clan.age = clan_data["clanage"]
         game.clan.starting_season = (

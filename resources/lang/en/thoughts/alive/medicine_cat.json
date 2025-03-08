@@ -501,5 +501,134 @@
         "random_living_status": [
             "darkforest"
         ]
-    }     
+    },
+    {
+        "id": "med_cat_to_mild_injury_gen",
+        "thoughts": [
+            "Is looking after r_c's minor injury",
+            "Checks in on r_c's injury, just to be careful"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "bruises",
+                "cracked pads",
+                "sore",
+                "scrapes",
+                "small cut",
+                "tick bites",
+                "torn ear"
+            ]
+        }
+    },
+    {
+        "id": "med_cat_to_mid_injury_gen",
+        "thoughts": [
+            "Is observing r_c's injury closely",
+            "Is making sure r_c is healing correctly",
+            "Is concerned about r_c's injury"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "claw-wound",
+                "bite-wound",
+                "cat bite",
+                "beak bite",
+                "snake bite",
+                "rat bite",
+                "dislocated joint",
+                "sprain",
+                "quilled by a porcupine",
+                "torn pelt"
+            ]
+        }
+    },
+    {
+        "id": "med_cat_to_major_injury_gen",
+        "thoughts": [
+            "Is working constantly to heal r_c's injury",
+            "Prays to StarClan to heal r_c",
+            "Watches r_c through the night",
+            "Does {PRONOUN/m_c/poss} best to ease r_c's pain",
+            "Is worried about r_c's injury",
+            "Wonders if there is something new {PRONOUN/m_c/subject} could try for r_c's injury"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "broken jaw",
+                "broken back",
+                "broken bone",
+                "mangled leg",
+                "mangled tail",
+                "head damage",
+                "severe burn",
+                "severe headache"
+            ]
+        }
+    },
+    {
+        "id": "med_cat_to_mild_illness_gen",
+        "thoughts": [
+            "Keeps a watchful eye on r_c's illness",
+            "Is hopeful that r_c will recover soon",
+            "Reassures r_c that {PRONOUN/r_c/subject} will overcome {PRONOUN/r_c/poss} illness"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "running nose",
+                "whitecough",
+                "stomachache"
+            ]
+        }
+    },
+    {
+        "id": "med_cat_to_major_illness_gen",
+        "thoughts": [
+            "Is worried about r_c's worsening condition",
+            "Is prepping for r_c's treatment",
+            "Is asking StarClan for help treating r_c",
+            "Begs StarClan to cure r_c"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "heat stroke",
+                "a festering wound",
+                "carrionplace disease",
+                "an infected wound",
+                "redcough",
+                "kittencough",
+                "poisoned"
+            ]
+        }
+    },
+    {
+        "id": "med_cat_to_coughs_gen",
+        "thoughts": [
+            "Begs StarClan to cure r_c",
+            "Is keeping r_c away from other cats",
+            "Is worried about r_c's cough spreading",
+            "Isn't sure if {PRONOUN/m_c/subject} can handle an outbreak",
+            "Bristles in fear at the sound of a nearby cough"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "greencough",
+                "yellowcough"
+            ]
+        }
+    },
+    {
+        "id": "med_cat_to_pregnant_gen",
+        "thoughts": [
+            "Is lightly feeling r_c's belly for how many kits {PRONOUN/r_c/subject} might have",
+            "Is preparing for r_c's upcoming kitting",
+            "Is checking on r_c again, much to r_c's annoyance",
+            "Makes sure that r_c is not pushing {PRONOUN/r_c/self} too far during pregnancy",
+            "Reminds r_c to take light walks around camp to encourage an easier kitting"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "pregnant"
+            ]
+        }
+    }
 ]

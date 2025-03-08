@@ -789,7 +789,7 @@
                 "dead_cats":["r_c"],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died to keep coyotes away from c_n's borders.",
+                    "reg_death": "m_c died to keep coyotes away from c_n's borders.",
                     "lead_death": "keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -818,7 +818,7 @@
                 ],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died to keep coyotes away from c_n's borders.",
+                    "reg_death": "m_c died to keep coyotes away from c_n's borders.",
                     "lead_death": "keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1037,7 +1037,7 @@
                 ],
                 "history_text": {
                     "scar": "Mauling a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1102,7 +1102,7 @@
                 ],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1237,7 +1237,7 @@
                 ],
                 "history_text": {
                     "scar": "A coyote encounter left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 }
             },
@@ -1261,7 +1261,7 @@
                 "dead_cats":["r_c"],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1290,7 +1290,7 @@
                 ],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [

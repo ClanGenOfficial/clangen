@@ -861,10 +861,10 @@ class MediationScreen(Screens):
         if self.selected_mediator is not None:
             if self.mediators[self.selected_mediator].not_working():
                 invalid_mediator = True
-                error_message += i18n.t("screens.mediator.cant_work")
+                error_message += i18n.t("screens.mediation.cant_work")
             elif self.mediators[self.selected_mediator].ID in game.patrolled:
                 invalid_mediator = True
-                error_message += i18n.t("screens.mediator.already_worked")
+                error_message += i18n.t("screens.mediation.already_worked")
         else:
             invalid_mediator = True
 

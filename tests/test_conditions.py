@@ -6,7 +6,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
-from scripts.conditions import medical_cats_condition_fulfilled
+from scripts.conditions import medicine_cats_can_cover_clan
 
 
 
@@ -19,7 +19,7 @@ class TestsMedCondition(unittest.TestCase):
         med.status = "medicine cat"
 
         all_cats = [cat1, med]
-        self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
+        self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
     def test_fulfilled_many_cats(self):
         cat1 = Cat(moons=20)
@@ -37,7 +37,7 @@ class TestsMedCondition(unittest.TestCase):
         med2.status = "medicine cat"
 
         all_cats = [cat1, cat2, cat3, cat4, med1, med2]
-        self.assertTrue(medical_cats_condition_fulfilled(all_cats, 2))
+        self.assertTrue(medicine_cats_can_cover_clan(all_cats, 2))
 
     def test_injured_fulfilled(self):
         cat1 = Cat(moons=20)
@@ -48,7 +48,7 @@ class TestsMedCondition(unittest.TestCase):
         med.injuries["small cut"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
-        self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
+        self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
     def test_illness_fulfilled(self):
         cat1 = Cat(moons=20)
@@ -59,7 +59,7 @@ class TestsMedCondition(unittest.TestCase):
         med.illnesses["running nose"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
-        self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
+        self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
 
 class TestsIllnesses(unittest.TestCase):
