@@ -88,7 +88,7 @@ class Name:
             color = cat.pelt.colour
             eyes = cat.pelt.eye_colour
             pelt = cat.pelt.name
-            tortiepattern = cat.pelt.tortiepattern
+            tortiepattern = cat.pelt.tortie_pattern
         except AttributeError:
             color = None
             eyes = None
