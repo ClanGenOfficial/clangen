@@ -92,7 +92,7 @@ class Pelt:
         "CHOCOLATE",
     ]
 
-    tortiepatterns = [
+    tortie_patterns = [
         "ONE",
         "TWO",
         "THREE",
@@ -137,7 +137,7 @@ class Pelt:
         "FRECKLED",
         "HEARTBEAT",
     ]
-    tortiebases = [
+    tortie_bases = [
         "single",
         "tabby",
         "bengal",
@@ -946,7 +946,7 @@ class Pelt:
             self.name = selected.name
             self.length = selected.length
             self.colour = selected.colour
-            self.tortie_base = selected.tortiebase
+            self.tortie_base = selected.tortie_base
             return selected.white
 
         # ------------------------------------------------------------------------------------------------------------#
@@ -1243,9 +1243,9 @@ class Pelt:
     def init_pattern(self):
         if self.name in Pelt.torties:
             if not self.tortie_base:
-                self.tortie_base = choice(Pelt.tortiebases)
+                self.tortie_base = choice(Pelt.tortie_bases)
             if not self.tortie_marking:
-                self.tortie_marking = choice(Pelt.tortiepatterns)
+                self.tortie_marking = choice(Pelt.tortie_patterns)
 
             wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
             if self.colour:
@@ -1257,7 +1257,7 @@ class Pelt:
                     print("Wildcard tortie!")
 
                     # Allow any pattern:
-                    self.tortie_pattern = choice(Pelt.tortiebases)
+                    self.tortie_pattern = choice(Pelt.tortie_bases)
 
                     # Allow any colors that aren't the base color.
                     possible_colors = Pelt.pelt_colours.copy()

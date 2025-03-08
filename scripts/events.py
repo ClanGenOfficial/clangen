@@ -463,7 +463,7 @@ class Events:
                                     invited_cat.name.give_suffix(
                                         pelt=None,
                                         biome=game.clan.biome,
-                                        tortiepattern=None,
+                                        tortie_pattern=None,
                                     )
                                     invited_cat.specsuffix_hidden = False
 
