@@ -20,7 +20,13 @@
         "Main Menu music: <i>Generations</i>",
         "{licensing}",
         "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a>",
-        "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
+        "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> ",
+        "The NotoSans font is (c) Google LLC, 2015-2021, licensed under the <a href=https://openfontlicense.org/open-font-license-official-text/>SIL Open Font License 1.1</a>",
+        "The ClanGen font is comprised of the following open-source fonts:",
+        "- <i>Perfect DOS VGA 437</i>, created by Zeh Fernando - Latin uppercase, numbers and punctuation",
+        "- <i>Abaddon Bold</i>, created by Nathan Scott (@caffi_nate on itch.io) - Latin lowercase and punctuation",
+        "- <i>Greybeard</i>, ported by flowchartsman from <i>UW ttyp0</i>, created by Uwe Waldmann - Cyrillic",
+        "- All other symbols not specified are the work of ClanGen developers and artists, licensed under <a href=https://openfontlicense.org/open-font-license-official-text/>SIL Open Font License 1.1</a>"
     ],
     "contrib": {
         "<SENIORS>": "SENIOR DEVELOPERS BELOW HERE",
