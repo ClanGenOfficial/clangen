@@ -1,9 +1,7 @@
-from pygame_gui.windows.ui_console_window import UIConsoleWindow
-
-_debugClass: UIConsoleWindow = None
+_debugClass = None
 
 
-def set_debug_class(debug_class: UIConsoleWindow):
+def set_debug_class(debug_class):
     global _debugClass  # pylint: disable=global-statement
     _debugClass = debug_class
 
@@ -16,7 +14,7 @@ def add_multiple_lines_to_log(lines: str):
         lines (str)
     """
     for line in lines.split("\n"):
-        _debugClass.add_output_line_to_log(line.strip())
+        _debugClass.push_line(line.strip())
 
 
 def add_output_line_to_log(line: str):
@@ -25,4 +23,4 @@ def add_output_line_to_log(line: str):
     Args:
         line (str)
     """
-    _debugClass.add_output_line_to_log(line)
+    _debugClass.push_line(line)

@@ -1,0 +1,662 @@
+{
+  "comment": [
+    "add new snippets to the relevant list:",
+    "prophecy list can have more amorphous and dreamy concepts",
+    "omen list should be more physical, should feel odd and meaningful, but grounded in reality",
+    "dream list should focus on emotional feelings rather than specific happenings",
+    "clair (clairvoyance) list should focus on amorphous feelings of things that already happened or could happen",
+
+    "be sure to put your snippet in the relevant 'sense' category (if the list has sense categories).",
+    "general lists are meant to hold the snippets that fit in any biome",
+    "the lists within the lists are where we hold the snippets",
+    "snippets that are grouped together in one list are similar enough that we don't want them appearing in the same event together",
+    "thus only one snippet will be chosen from that list to be shuffled into the pool of potential snippets"
+  ],
+  "prophecy_list": {
+    "sight": {
+      "general": [
+        ["blood pooling on the ground", "blood dripping from a leaf"],
+        ["spread claws", "a cat's paw devoid of claws"],
+        ["snarling teeth", "bloodied teeth"],
+        ["a bird's feather"],
+        ["soft fur"],
+        ["sunlight glinting off a plant"],
+        ["pouring rain", "storms never-ending", "a rainstorm on a sunny day"],
+        ["hail pounding the ground"],
+        ["snow falling softly", "a blizzard raging"],
+        ["wind howling"],
+        ["bright sunshine", "the sun", "the sun blotted out by a great shadow", "a wolf eating the sun", "a cat pulling the sun from the sky", "a rabbit stealing the sun", "a warrior's form blocking the sun"],
+        ["blinding light", "a trail of light stretching through the camp"],
+        ["blazing heat"],
+        ["dark clouds", "a bloody red cloud", "rolling clouds", "clouds covering the sky", "a single beam of moonlight from the clouds"],
+        ["rushing fire", "fire engulfing a cat", "fire covering the camp", "fire trapped in stone", "the camp in flames", "an animal leaping from flames"],
+        ["flooding water", "water flowing upwards"],
+        ["mud splattered on the rocks"],
+        ["rocks falling"],
+        ["the earth ripping", "a deep pit in the ground", "a great hole opening up in the earth", "the ground tearing itself open"],
+        ["a freshly-dug grave", "a fore-boding grave"],
+        ["the falling petals of a flower", "petals drifting in the breeze", "a flower missing one petal"],
+        ["honey dripping", "a dripping honeycomb"],
+        ["spreading frost", "a frosty morning", "frost covering the camp"],
+        ["falling trees"],
+        ["a dry river still flowing with water", "a clear pool of water", "a rippling pool of water", "a pool of water with something just below the surface", "claw-marks on a still puddle", "a rainbow on the water"],
+        ["deathberries", "wilting herbs", "bountiful herbs"],
+        ["the moon", "a blackbird covering the moon", "a bleeding moon"],
+        ["the stars", "the stars falling from the sky", "Silverpelt slowly disappearing", "dozens of new stars", "twinkling stars"],
+        ["frozen paws"],
+        ["an unyielding fog", "a suffocating fog"],
+        ["an oppressive darkness", "darkness unending", "a panther-black night", "darkness despite the shining sun"],
+        ["the apprentices' den", "the leader's den", "the nursery", "the warriors' den", "the elders' den"],
+        ["a deep lake"],
+        ["a snake eating it's own tail"],
+        ["a ghostly pair of eyes"],
+        ["two pawprints overlapping"],
+        ["a broken Twoleg collar"],
+        ["the glowing eyes of a monster"],
+        ["skeletal trees against the sky"],
+        ["abandoned Twoleg dens", "spreading Twoleg dens"],
+        ["a tattered Twoleg pelt"],
+        ["the reflection of a lion", "a tiger's reflection"],
+        ["a twig burning from both ends"],
+        ["the grin of a wolf"],
+        ["a lost object finally returned", "a missing possession finally found"],
+        ["a figure with the voice of StarClan"],
+        ["a cat not yet born"],
+        ["a cat nearly forgotten"],
+        ["a cat covered in blood"],
+        ["a cat standing beside a Twoleg"],
+        ["stones dissolving in water"]
+      ],
+      "forest": [
+        ["the forest folding in on itself"]
+
+      ],
+      "plains": [
+        ["a blood soaked field"]
+
+      ],
+      "beach": [
+        
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "sound": {
+      "general": [
+        ["echoing snarls", "the snarl of a friend", "the snarls of an enemy", "snarling from the dark", "hissing", "the hiss of a friend", "an enemy's hiss"],
+        ["wailing cries"],
+        ["a thundering voice"],
+        ["a kit's mew", "the mewl of a newborn", "the squeal of kittens"],
+        ["the sound of barking"],
+        ["howling in the distance", "a distant howl of pain", "cats howling to the moon"],
+        ["a monster roaring"],
+        ["the purring of a friend", "the purr of an enemy", "the purr of a mother", "a rumbling purr"],
+        ["the squeak of prey being killed", "the squeal of dying prey"],
+        ["a bird call", "bird song on a clear morning"],
+        ["crashing waves", "the roar of waves in the distance"],
+        ["the sounds of battle", "the screams of fighting cats"],
+        ["the rushing sound of a river"],
+        ["{PRONOUN/cat_tag/poss} own voice answering {PRONOUN/cat_tag/object}"],
+        ["the sound of cracking ice"],
+        ["the sound of a heartbeat"],
+        ["a whispered message", "whispers of hope long past"],
+        ["a dying promise"],
+        ["a cat's final words"]
+
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "smell": {
+      "general": [
+        ["the smell of the medicine cat den"],
+        ["the scent of catmint"],
+        ["the scent of another Clan"],
+        ["the scent of someone long dead"],
+        ["the smell of sickness"],
+        ["the scent of traveling herbs"],
+        ["pawsteps that smell like no cat"],
+        ["the scent of milk far from the nursery"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "emotional": {
+      "general": [
+        ["the excitement of an apprentice", "an apprentice's vigor", "the naivety of an apprentice"],
+        ["the strength of a warrior", "the steadfastness of a warrior", "a warrior's loyalty"],
+        ["the ache of an elder's bones", "the wisdom of an elder"],
+        ["the sensation of falling"],
+        ["the feeling of flight"],
+        ["a half-remembered promise"],
+        ["a foreboding feeling"],
+        ["the embrace of a family"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "touch": {
+      "general": [
+        ["the brush of a pelt against {PRONOUN/cat_tag/poss} own"],
+        ["the touch of a mentor to an apprentice's forehead"],
+        ["a tail twining with {PRONOUN/cat_tag/poss} own"],
+        ["the warmth of a parent"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    }
+  },
+
+  "omen_list": {
+    "sight": {
+      "general": [
+        ["a five-pointed leaf", "a star-shaped leaf", "an oddly torn leaf"],
+        ["a stone of two halves perfectly fitting together", "a stone with shining chips in it", "a stone with odd patterns on it", "a sparkling stone"],
+        ["an odd pile of soft downy fur", "a tuft of fox fur", "a tuft of badger fur", "a charred scrap of fur"],
+        ["a shard of glass"],
+        ["withered deathberries"],
+        ["a strangely shaped cloud", "a cat shaped cloud"],
+        ["a gleaming feather", "an oddly shaped feather", "a broken feather", "tattered feathers"],
+        ["the tooth of a large predator", "the claw of a large predator", "an old bloody claw"],
+        ["an eagle's talon", "the talon of a hawk"],
+        ["a piece of fresh prey already rotting"],
+        ["a two-headed adder", "a dead snake eating it's own tail", "a perfectly shed snake-skin"],
+        ["a glowing bug fallen to the ground"],
+        ["a pawprint of red on rock"],
+        ["destroyed herbs", "wilting herbs"],
+        ["a bird's broken egg", "a perfectly intact yet hollow bird's egg"],
+        ["a dew-covered spider's web"],
+        ["a torn collar"],
+        ["the bones of fresh-kill", "a cracked mouse skull", "a cracked rabbit skull"],
+        ["a shining beetle shell"],
+        ["a green moth"],
+        ["an emaciated vole", "an emaciated rabbit", "an emaciated mouse"],
+        ["a headless centipede"],
+        ["an abandoned bee-stinger"],
+        ["a shed whisker"]
+      ],
+      "forest": [
+        ["a crooked-jawed squirrel", "a dying rat"],
+        ["a split acorn", "a perfect walnut", "a massive slab of tree-bark", "a scorched pine cone"],
+        ["a branch that looks whole but comes apart with a gentle touch", "a stick rotted through"]
+      ],
+      "plains": [
+        ["a patch of dying grass", "wilted grass", "a single burnt stalk of grass", "sprouting grass"],
+        ["a towering thundercloud", "the vast blue clear sky", "the flat horizon simmering in the far distance"],
+        ["a crooked-jawed squirrel", "a white rabbit", "a white spotted rabbit"]
+
+      ],
+      "beach": [
+        ["a three-eyed fish"],
+        ["a miraculously burning reed"],
+        ["a shell shining with the colors of water"]
+
+      ],
+      "mountainous": [
+        ["a crooked-jawed squirrel"]
+      ],
+      "wetlands": [
+        ["a three-eyed fish"],
+        ["a miraculously burning reed"],
+        ["a shell shining with the colors of water"]
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "sound": {
+      "general": [
+        ["a whispering on the wind"],
+        ["the sound of a cat no longer here"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+        ["the rustle of wind through the grass", "the howl of wind over an empty plain"],
+        ["the cry of hawk", "the screech of an eagle"]
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+        ["the cry of hawk", "the screech of an eagle"]
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "smell": {
+      "general": [
+        ["the scent of spoiled queen's milk"],
+        ["the scent of a long dead cat"]
+
+      ],
+      "forest": [
+        ["pine sap scent strong in the air"]
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "emotional": {
+      "general": [
+        ["a pervasive feeling of dread"],
+        ["the feeling of ants crawling through fur", "the drag of a claw through fur"],
+        ["the imprint of fangs on skin"],
+        ["the feeling of a hidden onlooker", "the oppressive feeling of eyes unseen"],
+        ["the stillness that comes before disaster"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "touch": {
+      "general": [
+        ["the wind whistling past a claw raised in anger"],
+        ["the ache of fatigue as eyes close for good"],
+        ["an endless cold that seeps into {PRONOUN/cat_tag/poss} bones"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    }
+  },
+
+  "dream_list": [
+    ["hunger", "starvation", "gluttony", "ravenous hunger"],
+    ["cold", "warmth", "heat", "burning", "freezing"],
+    ["loneliness", "apathy", "numbness"],
+    ["irritation", "exasperation", "annoyance", "aggravation", "agitation", "vexation", "ire"],
+    ["want", "need", "longing", "yearning", "craving"],
+    ["loss", "grief", "heartache", "melancholy", "depression"],
+    ["a crush", "love", "romance", "desire"],
+    ["hate", "hatred", "loathing", "contempt", "malice"],
+    ["admiration", "respect", "esteem", "reverence", "hero worship"],
+    ["disapproval", "scorn", "displeasure", "condemnation", "distaste", "censure", "belittlement", "reproach"],
+    ["ambition", "drive", "determination", "motivation", "aspiration", "assertiveness"],
+    ["self-assurance", "confidence", "self-confidence", "pride", "self-worth"],
+    ["greed", "appetite", "possessiveness", "covetousness"],
+    ["envy", "jealousy", "spite"],
+    ["parental pride", "maternal pride", "paternal pride", "parental worry", "maternal worry", "paternal worry"], 
+    ["selflessness", "altruism", "benevolence"],
+    ["calm", "peace", "serenity", "tranquility"],
+    ["anxiety", "nervousness", "worry"],
+    ["happiness", "joy", "satisfaction", "glee"],
+    ["contentment", "relaxation", "bliss", "purring pleasure", "delight"],
+    ["pain", "hurt", "anugish", "agony", "suffering", "torment"],
+    ["discomfort", "sting", "ache", "sore", "tender pang"],
+    ["vengeful thoughts", "vengeance", "revenge", "retaliation", "retribution", "payback"],
+    ["achievement", "triumph", "victory", "accomplishment", "fulfillment", "success"],
+    ["sorrow", "despondance", "misery", "gloom", "woe"],
+    ["turmoil", "unrest", "tension", "upheaval", "turbulence", "unease"],
+    ["horror", "terror", "fear", "foreboding", "dread"],
+    ["danger", "risk", "peril", "jeopardy", "threat", "imperilment"],
+    ["intuition", "premonition", "shrewd perception", "foreknowledge"],
+    ["bloodlust", "bloodthirst", "barbarity", "cruelty", "ruthlessness", "malignity"],
+    ["hope", "optimism", "wishing on a star"],
+    ["faith", "piety", "devotion", "devoutness", "piousness"],
+    ["loyalty", "fealty", "trust", "fidelity", "dedication"],
+    ["love", "care", "compassion", "cherishing", "affection"],
+    ["curiosity", "inquisitiveness", "wonder", "wondering", "nosiness"],
+    ["inspiration", "an idea", "an impluse"],
+    ["playfulness", "mischief", "friskiness", "impish energy", "roguishness", "kitten-like gaiety"],
+    ["excitement", "thrill", "invigorated", "surprise", "exhilaration"],
+    ["secrecy", "concealment", "stealth", "discretion", "subterfuge", "deceit"],
+    ["guilt", "shame", "chagrin"],
+    ["cattiness", "petty malice", "bitterness", "asperity"],
+    ["regret", "remorse", "complicity", "culpability"],
+    ["focus", "attentive", "obsessive"],
+    ["desperation", "distress"]
+  ],
+
+  "clair_list": {
+    "comment_clair": [
+    "when the clair_list is called it'll also pull the dream list along with it, this is bc the dream list items are",
+    "appropriate for the clair_list but the clair_list items aren't all appropriate for the dream_list"
+  ],
+    "sound": {
+      "general": [
+        ["the rumble of many paws over the ground"],
+        ["echoes of a past conversation", "echoes of a past argument"],
+        ["whispers of a deed long past", "whispers of a secret long lost"],
+        ["a betrayal on the wind"],
+        ["the crackling of a burning branch"],
+        ["the whisper of voices rapidly fading"],
+        ["the sound of wingbeats in the wind"],
+        ["the sounds of a heated argument"],
+        ["near silent pawsteps"],
+        ["the soft noises of kits nursing"],
+        ["a peal of laughter"],
+        ["distant wails of grief"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "smell": {
+      "general": [
+        ["the smell of kittypet food"],
+        ["a strange acidic scent"],
+        ["the smell of dirt baked by the sun"],
+        ["the smell of rain"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "emotional": {
+      "general": [
+        ["blood spilt in battle", "a battle from long ago", "the terror of a battle field"],
+        ["a war won", "a battle lost"],
+        ["an old rendezvous", "a friendly meeting", "a truce between enemies"],
+        ["a cat's last breath"],
+        ["a promise kept", "a half-remembered promise", "a promise already broken", "a promise not yet made"],
+        ["a story half-remembered"],
+        ["the excitement of an apprentice", "an apprentice's vigor", "the naivety of an apprentice"],
+        ["the strength of a warrior", "the steadfastness of a warrior", "a warrior's loyalty"],
+        ["the ache of an elder's bones", "an elder's wisdom"],
+        ["drowning"],
+        ["lingering grief", "grief's sharp impact"],
+        ["a newborn's innocence","the loss of innocence"],
+        ["a memory being forgotten", "a fading memory", "a memory long lost"],
+        ["forgetting something important", "forgetting a secret once precious"],
+        ["wishing for something now missing", "longing for a long lost possession"],
+        ["hatred for a dear friend"],
+        ["knowing a secret that can never be revealed"],
+        ["a truth unbelieved", "a truth concealed", "a truth never revealed"],
+        ["a weakness in {PRONOUN/cat_tag/poss} legs"],
+        ["a belly so empty {PRONOUN/cat_tag/subject} feel nauseous"],
+        ["a home no longer welcoming", "a home long lost", "a home once forgotten"],
+        ["oozing corruption"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "touch": {
+      "general": [
+        ["deathly still air", "an unseen fire's heat"],
+        ["trembling stones"],
+        ["falling through the air", "flying through the air"],
+        ["the warmth of a parent", "the embrace of a family","the warmth of family in the darkness before a kit's eyes open"],
+        ["tails entwining", "the slip of wet fur", "teeth snapping against fur", "claws against a scruff"],
+        ["a mentor's touch to an apprentice's forehead"],
+        ["slipping on muddy earth despite the dry ground", "sinking into muddy earth"],
+        ["paws damp with water", "paws damp with blood", "paws heavy with blood"],
+        ["another cat's violent shove"],
+        ["sharpening one's claws against stone"],
+        ["wind whipping through fur"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    },
+    "taste": {
+      "general": [
+        ["the bitter taste of poppy seeds", "the taste of bitter herbs", "the taste of blood in the air"],
+        ["the lingering taste of iron on the tongue"],
+        ["the volatile taste of berries"]
+      ],
+      "forest": [
+
+      ],
+      "plains": [
+
+      ],
+      "beach": [
+      ],
+      "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
+      ]
+    }
+  },
+
+  "story_list": {
+    "comment_story": [
+    "the general list shouldn't have any 'the cat who ___' snippets, as we don't want to have more than one of these in an event",
+    "only add 'the cat who ___' snippets to biome lists, you can add one snippet to multiple biomes if you feels it fits in more than one"
+    ],
+    "general": [
+      ["The Thieving Fox"],
+      ["The Tenacious Rabbit", "The Rabbit Prince"],
+      ["The Hare King", "The Witch Hare"],
+      ["The Lion's Promise", "How The Tiger Got Its Stripes","The Leopard's Spots","The Cougar's Claws"],
+      ["The Place of No Stars", "The Stars of Silverpelt"],
+      ["The Great Tail-Chaser"],
+      ["The Hole In The Sky"],
+      ["The Bird Who Lost Its Wings"]
+    ],
+    "forest": [
+      ["The Cat Who Became a Porcupine", "The Cat Who Carried the Sun", "The Cat Who Grew Into an Oak", "The Willow Cat",
+        "The Badger Who Befriended a Cat","The Cats Made of Light", "The Cats Made of Shadow"],
+      ["The Old Forests of the Ancestors", "The Forest's Origin", "The First Seed", "The Squirrel Who Planted the Forest"],
+      ["The Star Bugs"],
+      ["The Sun-drown Place"]
+
+    ],
+    "plains": [
+      ["The Cat Who Dug a Tunnel Through The World", "The Blind Hunter Who Saved The Clan", "The Cat Without a Song",
+        "The Cat Who Carried The Sun", "The Cat Made From The Earth", "The Cats Made of Light", "The Great Worm-cat",
+        "The Cats Made of Shadow"],
+      ["the Thunderbeasts"],
+      ["How The Great Skytowers Came To Be"],
+      ["The Metal Trees of the Twolegs"],
+      ["The Weasel's Lie"],
+      ["The Sun-drown Place"]
+
+    ],
+    "beach": [
+      ["The Cursed Cat", "The Cat Who Carried The Sun", "The Cat Who Swam Over The Sea", "The Fish Who Became a Cat",
+        "The Cat Who Spoke To Fish", "The Cats Made of Shadow"],
+      ["The Dolphin's Farewell"],
+      ["The Dead's Token"],
+      ["The Ocean's Tears", "The Crying Sky"],
+      ["The Singing Shell"],
+      ["The Moving Sands"],
+      ["The Ghosts of The Sea", "The Ghost Who Was Trapped In a Pool"]
+
+    ],
+    "mountainous": [
+      ["The Eagle Who Became a Cat", "The She-cat Who Traded Her Voice", "The Cat Who Flew", "The Cat Who Carried The Sun",
+      "The Cats Made of Light", "The Cat Who Moved The Mountains", "The Cats Made of Shadow"],
+      ["The Mountain's Shadow"],
+      ["The Hummingbird's Feather"],
+      ["The Betrayal of the Ravens"],
+      ["The Dancing Sky"],
+      ["The Sun-drown Place"]
+
+    ],
+    "wetlands": [
+
+    ],
+    "desert": [
+
+    ]
+  }
+}

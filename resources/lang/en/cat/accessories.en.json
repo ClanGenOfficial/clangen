@@ -1,0 +1,548 @@
+{
+    "en": {
+        "INFO": [
+            "zero should be what you'd like to display on the cat profile",
+            "one and many will be used on events"
+        ],
+        "MAPLE LEAF": {
+            "zero": "maple leaf",
+            "many": "maple leaves",
+            "one": "maple leaf"
+        },
+        "HOLLY": {
+            "zero": "holly",
+            "many": "holly",
+            "one": "holly"
+        },
+        "BLUE BERRIES": {
+            "zero": "blue berries",
+            "many": "blue berries",
+            "one": "blue berry"
+        },
+        "FORGET ME NOTS": {
+            "zero": "forget-me-not flowers",
+            "many": "forget-me-not flowers",
+            "one": "forget-me-not flower"
+        },
+        "RYE STALK": {
+            "zero": "rye stalk",
+            "many": "rye stalks",
+            "one": "rye stalk"
+        },
+        "LAUREL": {
+            "zero": "laurel",
+            "many": "laurels",
+            "one": "laurel"
+        },
+        "BLUEBELLS": {
+            "zero": "bluebells",
+            "many": "bluebells",
+            "one": "bluebell"
+        },
+        "NETTLE": {
+            "zero": "nettle",
+            "many": "nettles",
+            "one": "nettle"
+        },
+        "POPPY": {
+            "zero": "poppy",
+            "many": "poppies",
+            "one": "poppy"
+        },
+        "LAVENDER": {
+            "zero": "lavender",
+            "many": "lavender flowers",
+            "one": "lavender"
+        },
+        "HERBS": {
+            "zero": "herb-covered pelt",
+            "many": "herbs",
+            "one": "bunch of herbs"
+        },
+        "PETALS": {
+            "zero": "petal-covered pelt",
+            "many": "petals",
+            "one": "bunch of petals"
+        },
+        "DRY HERBS": {
+            "zero": "herb-covered pelt",
+            "many": "dry herbs",
+            "one": "bunch of dry herbs"
+        },
+        "DRY CATMINT": {
+            "zero": "dried catmint",
+            "many": "dry catmint",
+            "one": "dry catmint"
+        },
+        "DRY NETTLES": {
+            "zero": "dried nettles",
+            "many": "dry nettles",
+            "one": "dried nettle"
+        },
+        "DRY LAURELS": {
+            "zero": "dried laurels",
+            "many": "dry laurels",
+            "one": "dried laurel"
+        },
+        "OAK LEAVES": {
+            "zero": "oak leaves",
+            "many": "oak leaves",
+            "one": "oak leaf"
+        },
+        "CATMINT": {
+            "zero": "catmint",
+            "many": "catmint",
+            "one": "catmint"
+        },
+        "MAPLE SEED": {
+            "zero": "maple seed",
+            "many": "maple seeds",
+            "one": "maple seed"
+        },
+        "JUNIPER": {
+            "zero": "juniper",
+            "many": "juniper",
+            "one": "juniper"
+        },
+        "RED FEATHERS": {
+            "zero": "cardinal feathers",
+            "many": "cardinal feathers",
+            "one": "cardinal feather"
+        },
+        "BLUE FEATHERS": {
+            "zero": "crow feathers",
+            "many": "crow feathers",
+            "one": "crow feather"
+        },
+        "JAY FEATHERS": {
+            "zero": "jay feathers",
+            "many": "jay feathers",
+            "one": "jay feather"
+        },
+        "MOTH WINGS": {
+            "zero": "moth wings",
+            "many": "moth wings",
+            "one": "moth wing"
+        },
+        "CICADA WINGS": {
+            "zero": "cicada wings",
+            "many": "cicada wings",
+            "one": "cicada wing"
+        },
+        "ORANGE POPPY": {
+            "zero": "orange poppy",
+            "many": "orange poppies",
+            "one": "orange poppy"
+        },
+        "CYAN POPPY": {
+            "zero": "cyan poppy",
+            "many": "cyan poppies",
+            "one": "cyan poppy"
+        },
+        "WHITE POPPY": {
+            "zero": "white poppy",
+            "many": "white poppies",
+            "one": "white poppy"
+        },
+        "PINK POPPY": {
+            "zero": "pink poppy",
+            "many": "pink poppies",
+            "one": "pink poppy"
+        },
+        "CLOVER": {
+            "zero": "clover tail",
+            "many": "clovers",
+            "one": "bunch of clovers"
+        },
+        "DAISY": {
+            "zero": "daisy tail",
+            "many": "daisies",
+            "one": "bunch of daisies"
+        },
+        "LILY OF THE VALLEY": {
+            "zero": "lily of the valley",
+            "many": "lilies of the valley",
+            "one": "lily of the valley"
+        },
+        "HEATHER": {
+            "zero": "heather",
+            "many": "heather",
+            "one": "heather"
+        },
+        "SNAPDRAGON": {
+            "zero": "snapdragon",
+            "many": "snapdragons",
+            "one": "snapdragon"
+        },
+        "GORSE": {
+            "zero": "gorse flowers",
+            "many": "gorse flowers",
+            "one": "gorse flowers"
+        },
+        "BULB WHITE": {
+            "zero": "white flower bulb",
+            "many": "white flower bulbs",
+            "one": "white flower bulb"
+        },
+        "BULB YELLOW": {
+            "zero": "yellow flower bulb",
+            "many": "yellow flower bulbs",
+            "one": "yellow flower bulb"
+        },
+        "BULB ORANGE": {
+            "zero": "orange flower bulb",
+            "many": "orange flower bulbs",
+            "one": "orange flower bulb"
+        },
+        "BULB PINK": {
+            "zero": "pink flower bulb",
+            "many": "pink flower bulbs",
+            "one": "pink flower bulb"
+        },
+        "BULB BLUE": {
+            "zero": "blue flower bulb",
+            "many": "blue flower bulbs",
+            "one": "blue flower bulb"
+        },
+        "RASPBERRY": {
+            "zero": "raspberries",
+            "many": "raspberries",
+            "one": "raspberry"
+        },
+        "CATTAIL": {
+            "zero": "cattail",
+            "many": "cattails",
+            "one": "cattail"
+        },
+        "GULL FEATHERS": {
+            "zero": "gull feathers",
+            "many": "gull feathers",
+            "one": "gull feather"
+        },
+        "SPARROW FEATHERS": {
+            "zero": "sparrow feathers",
+            "many": "sparrow feathers",
+            "one": "sparrow feather"
+        },
+        "ROSY MOTH WINGS": {
+            "zero": "rosy maple moth wings",
+            "many": "rosy maple moth wings",
+            "one": "rosy maple moth"
+        },
+        "MORPHO BUTTERFLY": {
+            "zero": "morpho butterfly wings",
+            "many": "morpho butterfly wings",
+            "one": "morpho butterfly"
+        },
+        "MONARCH BUTTERFLY": {
+            "zero": "monarch butterfly wings",
+            "many": "monarch butterfly wings",
+            "one": "monarch butterfly"
+        },
+        "BLACK CICADA": {
+            "zero": "black cicada wings",
+            "many": "black cicada wings",
+            "one": "black cicada"
+        },
+        "CRIMSON": {
+            "zero": "crimson leather collar",
+            "many": "crimson leather collars",
+            "one": "crimson leather collar"
+        },
+        "BLUE": {
+            "zero": "blue leather collar",
+            "many": "blue leather collars",
+            "one": "blue leather collar"
+        },
+        "CYAN": {
+            "zero": "cyan leather collar",
+            "many": "cyan leather collars",
+            "one": "cyan leather collar"
+        },
+        "YELLOW": {
+            "zero": "yellow leather collar",
+            "many": "yellow leather collars",
+            "one": "yellow leather collar"
+        },
+        "LIME": {
+            "zero": "lime leather collar",
+            "many": "lime leather collars",
+            "one": "lime leather collar"
+        },
+        "GREEN": {
+            "zero": "green leather collar",
+            "many": "green leather collars",
+            "one": "green leather collar"
+        },
+        "RED": {
+            "zero": "red leather collar",
+            "many": "red leather collars",
+            "one": "red leather collar"
+        },
+        "RAINBOW": {
+            "zero": "rainbow leather collar",
+            "many": "rainbow leather collars",
+            "one": "rainbow leather collar"
+        },
+        "BLACK": {
+            "zero": "black leather collar",
+            "many": "black leather collars",
+            "one": "black leather collar"
+        },
+        "SPIKES": {
+            "zero": "spiky leather collar",
+            "many": "spiky leather collars",
+            "one": "spiky leather collar"
+        },
+        "WHITE": {
+            "zero": "white leather collar",
+            "many": "white leather collars",
+            "one": "white leather collar"
+        },
+        "PINK": {
+            "zero": "pink leather collar",
+            "many": "pink leather collars",
+            "one": "pink leather collar"
+        },
+        "PURPLE": {
+            "zero": "purple leather collar",
+            "many": "purple leather collars",
+            "one": "purple leather collar"
+        },
+        "MULTI": {
+            "zero": "lilac leather collar",
+            "many": "lilac leather collars",
+            "one": "lilac leather collar"
+        },
+        "INDIGO": {
+            "zero": "indigo leather collar",
+            "many": "indigo leather collars",
+            "one": "indigo leather collar"
+        },
+        "CRIMSONBELL": {
+            "zero": "crimson bell collar",
+            "many": "crimson bell collars",
+            "one": "crimson bell collar"
+        },
+        "BLUEBELL": {
+            "zero": "blue bell collar",
+            "many": "blue bell collars",
+            "one": "blue bell collar"
+        },
+        "CYANBELL": {
+            "zero": "cyan bell collar",
+            "many": "cyan bell collars",
+            "one": "cyan bell collar"
+        },
+        "YELLOWBELL": {
+            "zero": "yellow bell collar",
+            "many": "yellow bell collars",
+            "one": "yellow bell collar"
+        },
+        "LIMEBELL": {
+            "zero": "lime bell collar",
+            "many": "lime bell collars",
+            "one": "lime bell collar"
+        },
+        "GREENBELL": {
+            "zero": "green bell collar",
+            "many": "green bell collars",
+            "one": "green bell collar"
+        },
+        "REDBELL": {
+            "zero": "red bell collar",
+            "many": "red bell collars",
+            "one": "red bell collar"
+        },
+        "RAINBOWBELL": {
+            "zero": "rainbow bell collar",
+            "many": "rainbow bell collars",
+            "one": "rainbow bell collar"
+        },
+        "BLACKBELL": {
+            "zero": "black bell collar",
+            "many": "black bell collars",
+            "one": "black bell collar"
+        },
+        "SPIKESBELL": {
+            "zero": "spiky bell collar",
+            "many": "spiky bell collars",
+            "one": "spikybell collar"
+        },
+        "WHITEBELL": {
+            "zero": "white bell collar",
+            "many": "white bell collars",
+            "one": "white bell collar"
+        },
+        "PINKBELL": {
+            "zero": "pink bell collar",
+            "many": "pink bell collars",
+            "one": "pink bell collar"
+        },
+        "PURPLEBELL": {
+            "zero": "purple bell collar",
+            "many": "purple bell collars",
+            "one": "purple bell collar"
+        },
+        "MULTIBELL": {
+            "zero": "lilac bell collar",
+            "many": "lilac bell collars",
+            "one": "lilac bell collar"
+        },
+        "INDIGOBELL": {
+            "zero": "indigo bell collar",
+            "many": "indigo bell collars",
+            "one": "indigo bell collar"
+        },
+        "CRIMSONBOW": {
+            "zero": "crimson bow collar",
+            "many": "crimson bow collars",
+            "one": "crimson bow collar"
+        },
+        "BLUEBOW": {
+            "zero": "blue bow collar",
+            "many": "blue bow collars",
+            "one": "blue bow collar"
+        },
+        "CYANBOW": {
+            "zero": "cyan bow collar",
+            "many": "cyan bow collars",
+            "one": "cyan bow collar"
+        },
+        "YELLOWBOW": {
+            "zero": "yellow bow collar",
+            "many": "yellow bow collars",
+            "one": "yellow bow collar"
+        },
+        "LIMEBOW": {
+            "zero": "lime bow collar",
+            "many": "lime bow collars",
+            "one": "lime bow collar"
+        },
+        "GREENBOW": {
+            "zero": "green bow collar",
+            "many": "green bow collars",
+            "one": "green bow collar"
+        },
+        "REDBOW": {
+            "zero": "red bow collar",
+            "many": "red bow collars",
+            "one": "red bow collar"
+        },
+        "RAINBOWBOW": {
+            "zero": "rainbow bow collar",
+            "many": "rainbow bow collars",
+            "one": "rainbow bow collar"
+        },
+        "BLACKBOW": {
+            "zero": "black bow collar",
+            "many": "black bow collars",
+            "one": "black bow collar"
+        },
+        "SPIKESBOW": {
+            "zero": "gold foil bow collar",
+            "many": "gold foil bow collars",
+            "one": "gold foil bow collar"
+        },
+        "WHITEBOW": {
+            "zero": "white bow collar",
+            "many": "white bow collars",
+            "one": "white bow collar"
+        },
+        "PINKBOW": {
+            "zero": "pink bow collar",
+            "many": "pink bow collars",
+            "one": "pink bow collar"
+        },
+        "PURPLEBOW": {
+            "zero": "purple bow collar",
+            "many": "purple bow collars",
+            "one": "purple bow collar"
+        },
+        "MULTIBOW": {
+            "zero": "lilac bow collar",
+            "many": "lilac bow collars",
+            "one": "lilac bow collar"
+        },
+        "INDIGOBOW": {
+            "zero": "indigo bow collar",
+            "many": "indigo bow collars",
+            "one": "indigo bow collar"
+        },
+        "CRIMSONNYLON": {
+            "zero": "crimson nylon collar",
+            "many": "crimson nylon collars",
+            "one": "crimson nylon collar"
+        },
+        "BLUENYLON": {
+            "zero": "blue nylon collar",
+            "many": "blue nylon collars",
+            "one": "blue nylon collar"
+        },
+        "CYANNYLON": {
+            "zero": "cyan nylon collar",
+            "many": "cyan nylon collars",
+            "one": "cyan nylon collar"
+        },
+        "YELLOWNYLON": {
+            "zero": "yellow nylon collar",
+            "many": "yellow nylon collars",
+            "one": "yellow nylon collar"
+        },
+        "LIMENYLON": {
+            "zero": "lime nylon collar",
+            "many": "lime nylon collars",
+            "one": "lime nylon collar"
+        },
+        "GREENNYLON": {
+            "zero": "green nylon collar",
+            "many": "green nylon collars",
+            "one": "green nylon collar"
+        },
+        "REDNYLON": {
+            "zero": "red nylon collar",
+            "many": "red nylon collars",
+            "one": "red nylon collar"
+        },
+        "RAINBOWNYLON": {
+            "zero": "rainbow nylon collar",
+            "many": "rainbow nylon collars",
+            "one": "rainbow nylon collar"
+        },
+        "BLACKNYLON": {
+            "zero": "black nylon collar",
+            "many": "black nylon collars",
+            "one": "black nylon collar"
+        },
+        "SPIKESNYLON": {
+            "zero": "blue and gold nylon collar",
+            "many": "blue and gold nylon collars",
+            "one": "blue and gold nylon collar"
+        },
+        "WHITENYLON": {
+            "zero": "white nylon collar",
+            "many": "white nylon collars",
+            "one": "white nylon collar"
+        },
+        "PINKNYLON": {
+            "zero": "pink nylon collar",
+            "many": "pink nylon collars",
+            "one": "pink nylon collar"
+        },
+        "PURPLENYLON": {
+            "zero": "purple nylon collar",
+            "many": "purple nylon collars",
+            "one": "purple nylon collar"
+        },
+        "MULTINYLON": {
+            "zero": "lilac nylon collar",
+            "many": "lilac nylon collars",
+            "one": "lilac nylon collar"
+        },
+        "INDIGONYLON": {
+            "zero": "indigo nylon collar",
+            "many": "indigo nylon collars",
+            "one": "indigo nylon collar"
+        }
+    }
+}

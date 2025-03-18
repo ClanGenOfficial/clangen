@@ -30,5 +30,24 @@
             "normal_text": "#EFE5CE",
             "selected_text": "#EFE5CE"
         }
+    },
+    "#blank_button_dark": {
+        "prototype": "#blank_button",
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "disabled_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "active_border": "#00000000",
+            "selected_border": "#00000000",
+            "normal_text": "#EFE5CE",
+            "hovered_text": "#EFE5CE",
+            "selected_text": "#EFE5CE",
+            "active_text": "#EFE5CE"
+        }
     }
 }

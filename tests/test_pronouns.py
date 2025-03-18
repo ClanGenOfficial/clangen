@@ -12,14 +12,15 @@ import os
 import re
 import sys
 import unittest
-
 import ujson
 
-from scripts.cat.cats import Cat
-from scripts.utility import process_text
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
+
+from scripts.cat.cats import Cat
+from scripts.game_structure.localization import get_new_pronouns
+from scripts.utility import process_text
 
 
 def test():
@@ -33,7 +34,7 @@ def test():
     # to ensure that we are catching cases where only one verb conjugation
     # was provided - since singular-conjugation
     # should be the second provided conjugation.
-    _r = ("Name", Cat.default_pronouns[1])
+    _r = ("Name", get_new_pronouns("female")[0])
     replacement_dict = {
         "m_c": _r,
         "r_c": _r,
@@ -99,7 +100,7 @@ def test_replacement_failure(path: str, repl_dict: dict) -> bool:
     json is incorrectly formatted."""
 
     success = True
-    with open(path, "r") as file:
+    with open(path, "r", encoding="utf-8") as file:
         try:
             contents = ujson.loads(file.read())
         except ujson.JSONDecodeError as _e:
@@ -120,7 +121,7 @@ def test_replacement_failure(path: str, repl_dict: dict) -> bool:
             # This tests for any pronoun or verb tag fragments that might have
             # snuck through. This is most likely caused by using the incorrect type of
             # brackets
-            if re.search(r"\{PRONOUN|\(PRONOUN|\{VERB|\(VERB", processed):
+            if re.search(r"\{PRONOUN|\(PRONOUN|\{VERB|\(VERB|\{ADJ|\(ADJ", processed):
                 print(
                     f'::error file={path}: "{_str}" contains pronoun tag fragments after replacment'
                 )

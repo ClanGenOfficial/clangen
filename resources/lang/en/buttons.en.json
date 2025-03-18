@@ -1,0 +1,32 @@
+{
+    "en": {
+        "continue": "continue",
+        "switch_clan": "switch clan",
+        "new_clan": "new clan",
+        "settings_info": "settings + info",
+        "quit": "quit",
+        "open_data_directory": "Open Data Directory",
+        "open_data_directory_tooltip": "Opens the data directory. This is where save files and logs are stored.",
+        "toggle_fullscreen": "Toggle Fullscreen",
+        "toggle_fullscreen_tooltip": "This will put the game into %{screentext} mode.<br><br><b>Important:</b> This also saves all changed settings!",
+        "update_available": "Update Available!",
+        "back": "⬅┓ Back",
+        "next_cat": "Next Cat ┏▪⮕",
+        "next_step": "Next Step ┏▪⮕",
+        "previous_cat": "⬅┐ Previous Cat",
+        "previous_step": "⬅┐ Previous Step",
+        "done": "Done ┏▪⬛⬛⮕",
+        "done_lower": "done",
+        "save": "Save",
+        "save_settings": "Save Settings",
+        "main_menu": "⬅▪⬝┐  Main Menu",
+        "main_menu_lower": "⬅⬝┐  main menu",
+        "quit_game": "⬅⬝┓ quit game",
+        "add_cat": "add cat",
+        "remove_cat": "remove cat",
+        "cancel": "cancel",
+        "save_clan": "save clan",
+        "saving": "saving...",
+        "clan_saved": "saved!"
+    }
+}

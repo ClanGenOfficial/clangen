@@ -2,16 +2,22 @@ import os
 from copy import deepcopy
 from random import choice
 
-import ujson
+import i18n
 
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import change_relationship_values, event_text_adjust
+from scripts.utility import (
+    change_relationship_values,
+    event_text_adjust,
+)
+from scripts.game_structure.localization import load_lang_resource
 
 
 class Welcoming_Events:
     """All events which are related to welcome a new cat in the clan."""
+
+    currently_loaded_lang = None
 
     @staticmethod
     def welcome_cat(clan_cat: Cat, new_cat: Cat) -> None:
@@ -29,6 +35,10 @@ class Welcoming_Events:
         """
         if new_cat.ID == clan_cat.ID:
             return
+
+        if Welcoming_Events.currently_loaded_lang != i18n.config.get("locale"):
+            Welcoming_Events.currently_loaded_lang = i18n.config.get("locale")
+            Welcoming_Events.rebuild_dicts()
 
         # setup the status as "key" to use it
         status = clan_cat.status
@@ -53,7 +63,9 @@ class Welcoming_Events:
         interaction_str = choice(random_interaction.interactions)
 
         # prepare string for display
-        interaction_str = event_text_adjust(Cat, interaction_str, main_cat=clan_cat, random_cat=new_cat)
+        interaction_str = event_text_adjust(
+            Cat, interaction_str, main_cat=clan_cat, random_cat=new_cat
+        )
 
         # influence the relationship
         new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
@@ -67,7 +79,7 @@ class Welcoming_Events:
             admiration=new_to_clan_cat["admiration"],
             comfortable=new_to_clan_cat["comfortable"],
             jealousy=new_to_clan_cat["jealousy"],
-            trust=new_to_clan_cat["trust"]
+            trust=new_to_clan_cat["trust"],
         )
         change_relationship_values(
             cats_to=[new_cat],
@@ -78,13 +90,16 @@ class Welcoming_Events:
             admiration=clan_cat_to_new["admiration"],
             comfortable=clan_cat_to_new["comfortable"],
             jealousy=clan_cat_to_new["jealousy"],
-            trust=clan_cat_to_new["trust"]
+            trust=clan_cat_to_new["trust"],
         )
 
         # add it to the event list
         game.cur_events_list.append(
             Single_Event(
-                interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]
+                interaction_str,
+                ["relation", "interaction"],
+                [new_cat.ID, clan_cat.ID],
+                cat_dict={"m_c": new_cat, "r_c": clan_cat},
             )
         )
 
@@ -105,28 +120,55 @@ class Welcoming_Events:
 
         # add to relationship logs
         if new_cat.ID in clan_cat.relationships:
-            if clan_cat.age == 1:
-                clan_cat.relationships[new_cat.ID].log.append(
-                    interaction_str
-                    + f" - {clan_cat.name} was {clan_cat.moons} moons old"
+            clan_cat.relationships[new_cat.ID].log.append(
+                interaction_str
+                + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(clan_cat.name),
+                    count=clan_cat.moons,
                 )
-            else:
-                clan_cat.relationships[new_cat.ID].log.append(
-                    interaction_str
-                    + f" - {clan_cat.name} was {clan_cat.moons} moons old"
-                )
+            )
 
             new_cat.relationships[clan_cat.ID].link_relationship()
 
         if clan_cat.ID in new_cat.relationships:
-            if new_cat.age == 1:
-                new_cat.relationships[clan_cat.ID].log.append(
-                    interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old"
+            clan_cat.relationships[new_cat.ID].log.append(
+                interaction_str
+                + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(new_cat.name),
+                    count=new_cat.moons,
                 )
-            else:
-                new_cat.relationships[clan_cat.ID].log.append(
-                    interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old"
+            )
+
+    @staticmethod
+    def rebuild_dicts():
+        global WELCOMING_MASTER_DICT, GENERAL_WELCOMING
+        fallback_path = os.path.join(
+            "resources",
+            "lang",
+            i18n.config.get("fallback"),
+            "events",
+            "relationship_events",
+            "welcoming_events",
+        )
+        for file in os.listdir(
+            fallback_path
+        ):  # always use fallback bcs english must exist
+            if "general.json" == file:
+                continue
+            status = file.split(".")[0]
+            WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
+                load_lang_resource(
+                    f"events/relationship_events/welcoming_events/{file}"
                 )
+            )
+
+        GENERAL_WELCOMING = create_welcome_interaction(
+            load_lang_resource(
+                "events/relationship_events/welcoming_events/general.json"
+            )
+        )
 
     @staticmethod
     def filter_welcome_interactions(welcome_interactions: list, new_cat: Cat) -> list:
@@ -179,7 +221,6 @@ class Welcoming_Events:
 
 
 class Welcome_Interaction:
-
     def __init__(self, id, interactions=None, background=None, new_cat_moons=None):
         self.id = id
         self.background = background
@@ -194,6 +235,9 @@ class Welcome_Interaction:
 # ---------------------------------------------------------------------------- #
 #                   build master dictionary for interactions                   #
 # ---------------------------------------------------------------------------- #
+
+WELCOMING_MASTER_DICT = {}
+GENERAL_WELCOMING = []
 
 
 def create_welcome_interaction(inter_list) -> list:
@@ -212,22 +256,3 @@ def create_welcome_interaction(inter_list) -> list:
         )
 
     return created_list
-
-
-base_path = os.path.join(
-    "resources", "dicts", "relationship_events", "welcoming_events"
-)
-
-WELCOMING_MASTER_DICT = {}
-for file in os.listdir(base_path):
-    if "general.json" == file:
-        continue
-    status = file.split(".")[0]
-    with open(os.path.join(base_path, file), "r") as read_file:
-        welcome_list = ujson.load(read_file)
-        WELCOMING_MASTER_DICT[status] = create_welcome_interaction(welcome_list)
-
-GENERAL_WELCOMING = []
-with open(os.path.join(base_path, "general.json"), "r") as read_file:
-    loaded_list = ujson.loads(read_file.read())
-    GENERAL_WELCOMING = create_welcome_interaction(loaded_list)

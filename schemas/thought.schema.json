@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Clangen Thought Schema",
+  "description": "Thoughts in Clan Generator.",
+  "type": "array",
+  "definitions": {
+    "perm_condition_any": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/definitions/perm_condition"
+        },
+        {
+          "const": "any"
+        }
+      ]
+    },
+    "illness_injury_any": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/definitions/illness"
+        },
+        {
+          "$ref": "common.schema.json#/definitions/injury"
+        },
+        {
+          "const": "any"
+        }
+      ]
+    },
+    "status_any": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/definitions/status"
+        },
+        {
+          "const": "any"
+        }
+      ]
+    }
+  },
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
+        "type": "string"
+      },
+      "biome": {
+        "description": "Constrains the thought to only occur if a player chooses a specific biome.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "mountainous",
+            "plains",
+            "forest",
+            "beach",
+            "wetlands",
+            "desert"
+          ]
+        }
+      },
+      "season": {
+        "description": "Constrains the thought to only occur once the Clan is in a specific season.",
+        "type": "array",
+        "items": {
+          "enum": ["Greenleaf", "Leaf-fall", "Leaf-bare", "Newleaf"]
+        }
+      },
+      "camp": {
+        "description": "Constrains the thought to only occur if a specific camp type is chosen.",
+        "type": "array",
+        "items": {
+          "enum": ["camp1", "camp2", "camp3", "camp4"]
+        }
+      },
+      "thoughts": {
+        "description": "List of the text that will be displayed in-game as thoughts.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "has_injuries": {
+        "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury). Can also use \"any\" to allow the thought to occur if the cat has any illness or injury.",
+        "type": "object",
+        "properties": {
+          "m_c": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/illness_injury_any"
+            }
+          },
+          "r_c": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/illness_injury_any"
+            }
+          }
+        }
+      },
+      "perm_conditions": {
+        "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
+        "type": "object",
+        "properties": {
+          "m_c": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/perm_condition_any"
+            }
+          },
+          "r_c": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/perm_condition_any"
+            }
+          }
+        }
+      },
+      "relationship_constraint": {
+        "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "siblings",
+            "littermates",
+            "mates",
+            "not_mates",
+            "parent/child",
+            "child/parent",
+            "app/mentor",
+            "mentor/app",
+            "strangers"
+          ]
+        }
+      },
+      "main_backstory_constraint": {
+        "description": "Constrains the thought to only occur if m_c has a certain backstory.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/backstory"
+        }
+      },
+      "random_backstory_constraint": {
+        "description": "Constrains the thought to only occur if r_c has a certain backstory.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/backstory"
+        }
+      },
+      "main_status_constraint": {
+        "description": "Constrains the thought to only happen if m_c is in a certain role.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/status_any"
+        }
+      },
+      "random_status_constraint": {
+        "description": "Constrains the thought to only happen if r_c is in a certain role.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/status_any"
+        }
+      },
+      "main_age_constraint": {
+        "description": "Constrains the thought to only happen if m_c is within a certain age group.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/age"
+        }
+      },
+      "random_age_constraint": {
+        "description": "Constrains the thought to only happen if r_c is within a certain age group.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/age"
+        }
+      },
+      "main_trait_constraint": {
+        "description": "Constrains the thought to only happen if m_c has a specific trait.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/all_trait"
+        }
+      },
+      "random_trait_constraint": {
+        "description": "Constrains the thought to only happen if r_c has a specific trait.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/all_trait"
+        }
+      },
+      "main_skill_constraint": {
+        "description": "Constrains the thought to only happen if m_c has a specific skill.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/skill"
+        }
+      },
+      "random_skill_constraint": {
+        "description": "Constrains the thought to only happen if r_c has a specific skill.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/skill"
+        }
+      },
+      "random_living_status": {
+        "description": "Constrains the thought if r_c has a specific place of death.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "living",
+            "darkforest",
+            "starclan",
+            "unknownresidence"
+          ]
+        }
+      },
+      "random_outside_status": {
+        "description": "Constrains the thought if r_c has a specific outside role.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "lost",
+            "outside",
+            "clancat"
+          ]
+        }
+      }
+    },
+    "required": ["id", "thoughts"]
+  }
+}

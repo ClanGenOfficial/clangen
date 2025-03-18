@@ -1,0 +1,73 @@
+name: Bug report
+description: Create a report to help us improve
+title: "[BUG] "
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of bug
+      description: What kind of issue are you experiencing?
+      options:
+      - Please choose an option...
+      - UI - anything to do with the user interface - maybe a button is not working, or the way some assets are formatted seems to be off. 
+      - Sprite - an issue with the art in the game
+      - Audio - issues related to the audio system
+      - Code - general bugs related to how the game runs and responds to you. 
+      - 'Typo - misspellings or incorrect grammar - IMPORTANT: "bugs" of this type are collected here: https://github.com/ClanGenOfficial/clangen/issues/1818'
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug
+      placeholder: "ex.: This bug implies that the cat is never..."
+    validations:
+      required: true
+  - type: dropdown
+    id: grade
+    attributes:
+      label: Grade
+      description: How much of an impact does this issue have on play?
+      options:
+      - Please choose an option...
+      - Game-breaking - a bug that makes it impossible to play the game
+      - Dire - Still playable, but a major feature is broken
+      - Important - The bug has a large effect on the gameplay but is not urgent
+      - Regular - A typical bug that should be seen to soon, but doesn't necessarily break the game or inhibit the player
+      - Non-vital - This bug can easily be ignored and does not have a large impact on play
+      - Unimportant - This bug has little to no impact on play. 
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: patrol
+    attributes:
+      label: Patrol ID + Outcome Print (if applicable)
+      placeholder: If you don't know what this means, you probably don't need to fill it out.
+  - type: input
+    id: version
+    attributes:
+      label: "Commit # or Game Version Number"
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      placeholder: Add any other context about the problem here.
+  - type: textarea
+    id: screenshots
+    attributes: 
+      label: Screenshots
+      placeholder: If applicable, add screenshots to help explain your problem.

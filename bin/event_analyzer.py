@@ -22,7 +22,7 @@ valid_records = {
         "forest": {},
         "mountainous": {},
         "plains": {},
-        "wetlands": {}
+        "wetlands": {},
     },
     "weight": {},
     "season": {
@@ -30,7 +30,7 @@ valid_records = {
         "newleaf": [],
         "greenleaf": [],
         "leaf-fall": [],
-        "leaf-bare": []
+        "leaf-bare": [],
     },
     "sub_type": {
         "war": [],
@@ -41,7 +41,8 @@ valid_records = {
         "adoption": [],
         "murder_reveal": [],
         "accessory": [],
-        "ceremony": []},
+        "ceremony": [],
+    },
     "tags": {
         "classic": [],
         "cruel_season": [],
@@ -54,18 +55,10 @@ valid_records = {
         "lives_remain": [],
         "high_lives": [],
         "mid_lives": [],
-        "low_lives": []
+        "low_lives": [],
     },
     "new_accessory": {},
-    "injury": {
-        "cats": {
-            "m_c": [],
-            "r_c": [],
-            "n_c": []
-        },
-        "injuries": {},
-        "scars": {}
-    },
+    "injury": {"cats": {"m_c": [], "r_c": [], "n_c": []}, "injuries": {}, "scars": {}},
     "m_c": {
         "age": {
             "any": [],
@@ -99,354 +92,66 @@ valid_records = {
             "child/parent": [],
             "app/mentor": [],
             "mentor/app": [],
-
             "romantic": [],
             "platonic": [],
             "dislike": [],
             "comfortable": [],
             "jealousy": [],
             "admiration": [],
-            "trust": []
+            "trust": [],
         },
         "skill": {
-            "TEACHER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HUNTER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "FIGHTER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "RUNNER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLIMBER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SWIMMER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SPEAKER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "MEDIATOR": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLEVER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "INSIGHTFUL": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SENSE": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "KIT": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STORY": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "LORE": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CAMP": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HEALER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STAR": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DUSK": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "OMEN": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DREAM": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLAIRVOYANT": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "PROPHET": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "GHOST": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DARK": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
+            "TEACHER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "HUNTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "FIGHTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "RUNNER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CLIMBER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "SWIMMER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "SPEAKER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "MEDIATOR": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CLEVER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "INSIGHTFUL": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "SENSE": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "KIT": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "STORY": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "LORE": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CAMP": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "HEALER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "STAR": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "DUSK": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "OMEN": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "DREAM": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CLAIRVOYANT": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "PROPHET": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "GHOST": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "DARK": {"0": [], "1": [], "2": [], "3": [], "4": []},
         },
         "not_skill": {
-            "TEACHER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HUNTER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "FIGHTER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "RUNNER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLIMBER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SWIMMER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SPEAKER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "MEDIATOR": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLEVER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "INSIGHTFUL": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SENSE": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "KIT": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STORY": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "LORE": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CAMP": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HEALER": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STAR": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DUSK": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "OMEN": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DREAM": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLAIRVOYANT": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "PROPHET": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "GHOST": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DARK": {
-                "0": [],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            }, },
+            "TEACHER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "HUNTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "FIGHTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "RUNNER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CLIMBER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "SWIMMER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "SPEAKER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "MEDIATOR": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CLEVER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "INSIGHTFUL": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "SENSE": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "KIT": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "STORY": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "LORE": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CAMP": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "HEALER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "STAR": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "DUSK": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "OMEN": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "DREAM": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "CLAIRVOYANT": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "PROPHET": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "GHOST": {"0": [], "1": [], "2": [], "3": [], "4": []},
+            "DARK": {"0": [], "1": [], "2": [], "3": [], "4": []},
+        },
         "trait": {
             "troublesome": [],
             "lonesome": [],
@@ -487,7 +192,6 @@ valid_records = {
             "rebellious": [],
             "sincere": [],
             "careful": [],
-
             # kit traits
             "unruly": [],
             "shy": [],
@@ -546,7 +250,6 @@ valid_records = {
             "rebellious": [],
             "sincere": [],
             "careful": [],
-
             # kit traits
             "unruly": [],
             "shy": [],
@@ -566,9 +269,7 @@ valid_records = {
             "bouncy": [],
         },
         "backstory": {},
-        "dies": {
-            "True": []
-        }
+        "dies": {"True": []},
     },
     "r_c": {
         "age": {
@@ -602,287 +303,57 @@ valid_records = {
             "comfortable": [],
             "jealousy": [],
             "admiration": [],
-            "trust": []
+            "trust": [],
         },
         "skill": {
-            "TEACHER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HUNTER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "FIGHTER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "RUNNER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLIMBER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SWIMMER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SPEAKER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "MEDIATOR": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLEVER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "INSIGHTFUL": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SENSE": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "KIT": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STORY": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "LORE": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CAMP": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HEALER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STAR": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DUSK": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "OMEN": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DREAM": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLAIRVOYANT": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "PROPHET": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "GHOST": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
+            "TEACHER": {"1": [], "2": [], "3": [], "4": []},
+            "HUNTER": {"1": [], "2": [], "3": [], "4": []},
+            "FIGHTER": {"1": [], "2": [], "3": [], "4": []},
+            "RUNNER": {"1": [], "2": [], "3": [], "4": []},
+            "CLIMBER": {"1": [], "2": [], "3": [], "4": []},
+            "SWIMMER": {"1": [], "2": [], "3": [], "4": []},
+            "SPEAKER": {"1": [], "2": [], "3": [], "4": []},
+            "MEDIATOR": {"1": [], "2": [], "3": [], "4": []},
+            "CLEVER": {"1": [], "2": [], "3": [], "4": []},
+            "INSIGHTFUL": {"1": [], "2": [], "3": [], "4": []},
+            "SENSE": {"1": [], "2": [], "3": [], "4": []},
+            "KIT": {"1": [], "2": [], "3": [], "4": []},
+            "STORY": {"1": [], "2": [], "3": [], "4": []},
+            "LORE": {"1": [], "2": [], "3": [], "4": []},
+            "CAMP": {"1": [], "2": [], "3": [], "4": []},
+            "HEALER": {"1": [], "2": [], "3": [], "4": []},
+            "STAR": {"1": [], "2": [], "3": [], "4": []},
+            "DUSK": {"1": [], "2": [], "3": [], "4": []},
+            "OMEN": {"1": [], "2": [], "3": [], "4": []},
+            "DREAM": {"1": [], "2": [], "3": [], "4": []},
+            "CLAIRVOYANT": {"1": [], "2": [], "3": [], "4": []},
+            "PROPHET": {"1": [], "2": [], "3": [], "4": []},
+            "GHOST": {"1": [], "2": [], "3": [], "4": []},
         },
         "not_skill": {
-            "TEACHER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HUNTER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "FIGHTER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "RUNNER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLIMBER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SWIMMER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SPEAKER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "MEDIATOR": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLEVER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "INSIGHTFUL": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "SENSE": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "KIT": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STORY": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "LORE": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CAMP": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "HEALER": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "STAR": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DUSK": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "OMEN": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "DREAM": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "CLAIRVOYANT": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "PROPHET": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
-            "GHOST": {
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": []
-            },
+            "TEACHER": {"1": [], "2": [], "3": [], "4": []},
+            "HUNTER": {"1": [], "2": [], "3": [], "4": []},
+            "FIGHTER": {"1": [], "2": [], "3": [], "4": []},
+            "RUNNER": {"1": [], "2": [], "3": [], "4": []},
+            "CLIMBER": {"1": [], "2": [], "3": [], "4": []},
+            "SWIMMER": {"1": [], "2": [], "3": [], "4": []},
+            "SPEAKER": {"1": [], "2": [], "3": [], "4": []},
+            "MEDIATOR": {"1": [], "2": [], "3": [], "4": []},
+            "CLEVER": {"1": [], "2": [], "3": [], "4": []},
+            "INSIGHTFUL": {"1": [], "2": [], "3": [], "4": []},
+            "SENSE": {"1": [], "2": [], "3": [], "4": []},
+            "KIT": {"1": [], "2": [], "3": [], "4": []},
+            "STORY": {"1": [], "2": [], "3": [], "4": []},
+            "LORE": {"1": [], "2": [], "3": [], "4": []},
+            "CAMP": {"1": [], "2": [], "3": [], "4": []},
+            "HEALER": {"1": [], "2": [], "3": [], "4": []},
+            "STAR": {"1": [], "2": [], "3": [], "4": []},
+            "DUSK": {"1": [], "2": [], "3": [], "4": []},
+            "OMEN": {"1": [], "2": [], "3": [], "4": []},
+            "DREAM": {"1": [], "2": [], "3": [], "4": []},
+            "CLAIRVOYANT": {"1": [], "2": [], "3": [], "4": []},
+            "PROPHET": {"1": [], "2": [], "3": [], "4": []},
+            "GHOST": {"1": [], "2": [], "3": [], "4": []},
         },
         "trait": {
             "troublesome": [],
@@ -924,7 +395,6 @@ valid_records = {
             "rebellious": [],
             "sincere": [],
             "careful": [],
-
             # kit traits
             "unruly": [],
             "shy": [],
@@ -983,7 +453,6 @@ valid_records = {
             "rebellious": [],
             "sincere": [],
             "careful": [],
-
             # kit traits
             "unruly": [],
             "shy": [],
@@ -1003,57 +472,40 @@ valid_records = {
             "bouncy": [],
         },
         "backstory": {},
-        "dies": {
-            "True": []
-        }
+        "dies": {"True": []},
     },
 }
 invalid_records = {
     "location": {
         missing: [],
     },
-    "season": {
-        missing: []
-    },
-    "sub_type": {
-    },
+    "season": {missing: []},
+    "sub_type": {},
     "tags": {},
     "new_accessory": {},
     "weight": [],
-    "injury": {
-        "cats": {},
-        "injuries": {},
-        "scars": {},
-        "history": {
-            missing: []
-        }
-
-    },
+    "injury": {"cats": {}, "injuries": {}, "scars": {}, "history": {missing: []}},
     "m_c": {
         "age": {},
         "status": {},
-        "relationship_status": {
-            "invalid block": []
-        },
+        "relationship_status": {"invalid block": []},
         "skill": {},
         "not_skill": {},
         "trait": {},
         "not_trait": {},
         "backstory": {},
-        "dies": {}
+        "dies": {},
     },
     "r_c": {
         "age": {},
         "status": {},
-        "relationship_status": {
-            "invalid block": []
-        },
+        "relationship_status": {"invalid block": []},
         "skill": {},
         "not_skill": {},
         "trait": {},
         "not_trait": {},
         "backstory": {},
-        "dies": {}
+        "dies": {},
     },
 }
 
@@ -1083,19 +535,30 @@ type_subtype = {
     "death": ["war", "murder", "old_age", "mass_death", "romance"],
     "injury": ["war", "romance"],
     "new": ["war", "adoption", "romance"],
-    "misc": ["war", "murder_reveal", "accessory", "ceremony", "romance"]
+    "misc": ["war", "murder_reveal", "accessory", "ceremony", "romance"],
 }
 
 
 def event_analysis(directory: str = None, blacklist: list[str] = None):
     global all_ids
-    ea_header("Event analyzer\nv0.1", "For finding gaps in our current offering", trailing_newline=False)
+    ea_header(
+        "Event analyzer\nv0.1",
+        "For finding gaps in our current offering",
+        trailing_newline=False,
+    )
     if directory is None:
         directory = "../resources/dicts/events/"
 
     if blacklist is None:
-        blacklist = ["ceremonies", "death\\death_reactions", "death\\murder",
-                     "disaster", "leader_den", "nutrition", "war.json"]
+        blacklist = [
+            "ceremonies",
+            "death\\death_reactions",
+            "death\\murder",
+            "disaster",
+            "leader_den",
+            "nutrition",
+            "war.json",
+        ]
 
     events = ea_init(directory, blacklist)
     valid, all_ids = ea_split(events)
@@ -1106,10 +569,14 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
     # ea_overview(len(all_ids))
 
     running = True
-    print("Welcome! You may want to start by checking the overview (\"o\") or problems (\"p\") reports.")
+    print(
+        'Welcome! You may want to start by checking the overview ("o") or problems ("p") reports.'
+    )
     while running:
         print("\n")
-        cmd = input("Please type a request. To view the list of commands, type \"help\" or \"h\".\n\n")
+        cmd = input(
+            'Please type a request. To view the list of commands, type "help" or "h".\n\n'
+        )
         cmd = cmd.lower().strip()
         cmd_parts = cmd.split(" ")
         cmd_key = cmd_parts[0]
@@ -1160,9 +627,13 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
 
 def ea_init(directory, blacklist) -> list:
     print("Preparing...")
-    with open("../resources/dicts/conditions/injuries.json", "r") as f:
+    with open(
+        "../resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
+    ) as f:
         data = ujson.loads(f.read())
-    history_lethal = [lethal for lethal in data.values() if lethal["mortality"].values() != 0]
+    history_lethal = [
+        lethal for lethal in data.values() if lethal["mortality"].values() != 0
+    ]
 
     all_history = history_scarrable + history_lethal
     print("OK\n")
@@ -1173,7 +644,7 @@ def ea_init(directory, blacklist) -> list:
     # used to hide/ignore invalid or undesirable json files
     for root, _, files in os.walk(directory):
         for filename in files:
-            if not filename.endswith('.json'):
+            if not filename.endswith(".json"):
                 continue
 
             filepath = os.path.join(root, filename)
@@ -1181,7 +652,7 @@ def ea_init(directory, blacklist) -> list:
 
             if relative_path.startswith(tuple(blacklist)):
                 continue
-            with open(filepath, 'r') as f:
+            with open(filepath, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 all_data.extend(data)
     print(f"OK\n")
@@ -1205,12 +676,21 @@ def ea_split(events):
         if "location" not in event:
             invalid_records["location"][missing].append(event_id)
         else:  # event has a location
-            ea_add_records_with_subtype(event_id, event["location"], valid_records["location"],
-                                        invalid_records["location"])
+            ea_add_records_with_subtype(
+                event_id,
+                event["location"],
+                valid_records["location"],
+                invalid_records["location"],
+            )
 
         # SEASON
         if "season" in event:
-            ea_add_records(event_id, event["season"], valid_records["season"], invalid_records["season"])
+            ea_add_records(
+                event_id,
+                event["season"],
+                valid_records["season"],
+                invalid_records["season"],
+            )
         else:
             invalid_records["season"][missing].append(event_id)
 
@@ -1219,39 +699,73 @@ def ea_split(events):
             event_type = event_id.split("_")[1]
             for genre in event["sub_type"]:
                 if genre not in type_subtype[event_type]:
-                    ea_invalid_record(event_id, event["sub_type"] + " in " + genre, invalid_records["sub_type"])
-            ea_add_records(event_id, event["sub_type"], valid_records["sub_type"], invalid_records["sub_type"])
+                    ea_invalid_record(
+                        event_id,
+                        event["sub_type"] + " in " + genre,
+                        invalid_records["sub_type"],
+                    )
+            ea_add_records(
+                event_id,
+                event["sub_type"],
+                valid_records["sub_type"],
+                invalid_records["sub_type"],
+            )
 
         # TAGS
         if "tags" in event:
             for tag in event["tags"]:
                 if "no_body" in tag:
-                    if not ("dies" in die_check for main_c in event["m_c"] for die_check in main_c):
-                        ea_invalid_record(event_id, "[no_body but m_c doesn't die]",
-                                          invalid_records["tags"])
+                    if not (
+                        "dies" in die_check
+                        for main_c in event["m_c"]
+                        for die_check in main_c
+                    ):
+                        ea_invalid_record(
+                            event_id,
+                            "[no_body but m_c doesn't die]",
+                            invalid_records["tags"],
+                        )
                 if "skill_trait_requirement" in tag:
-                    if not (("skill" in skill_check for skill_check in event["m_c"]) or
-                            ("trait" in trait_check for trait_check in event["m_c"]) or
-                            ("skill" in skill_check for skill_check in event["r_c"]) or
-                            ("trait" in trait_check for trait_check in event["r_c"])):
-                        ea_invalid_record(event_id, "[skill_trait_requirement but no skill_traits]",
-                                          invalid_records["tags"])
+                    if not (
+                        ("skill" in skill_check for skill_check in event["m_c"])
+                        or ("trait" in trait_check for trait_check in event["m_c"])
+                        or ("skill" in skill_check for skill_check in event["r_c"])
+                        or ("trait" in trait_check for trait_check in event["r_c"])
+                    ):
+                        ea_invalid_record(
+                            event_id,
+                            "[skill_trait_requirement but no skill_traits]",
+                            invalid_records["tags"],
+                        )
 
-            ea_add_records_with_subtype(event_id, event["tags"], valid_records["tags"], invalid_records["tags"])
+            ea_add_records_with_subtype(
+                event_id, event["tags"], valid_records["tags"], invalid_records["tags"]
+            )
 
         if "new_accessory" in event:
             if not ("accessory" in e for e in event["sub_type"]):
-                ea_invalid_record(event_id, "[no accessory tag]", invalid_records["new_accessory"])
-            ea_add_records(event_id, event["new_accessory"],
-                           valid_records["new_accessory"], invalid_records["new_accessory"],
-                           ignore_categories=True)
+                ea_invalid_record(
+                    event_id, "[no accessory tag]", invalid_records["new_accessory"]
+                )
+            ea_add_records(
+                event_id,
+                event["new_accessory"],
+                valid_records["new_accessory"],
+                invalid_records["new_accessory"],
+                ignore_categories=True,
+            )
 
         # WEIGHT - only care if it's missing
         if "weight" not in event:
             invalid_records["weight"].append(event_id)
         else:
-            ea_add_record(event_id, event["weight"], valid_records["weight"], invalid_records["weight"],
-                          ignore_categories=True)
+            ea_add_record(
+                event_id,
+                event["weight"],
+                valid_records["weight"],
+                invalid_records["weight"],
+                ignore_categories=True,
+            )
 
         # CATTOS
         if "m_c" in event:
@@ -1259,57 +773,98 @@ def ea_split(events):
             if "relationship_status" in event["m_c"] and "r_c" not in event:
                 rel_valid = False
 
-            ea_handle_cat(event_id, event["m_c"], valid_records["m_c"], invalid_records["m_c"], rel_valid=rel_valid)
+            ea_handle_cat(
+                event_id,
+                event["m_c"],
+                valid_records["m_c"],
+                invalid_records["m_c"],
+                rel_valid=rel_valid,
+            )
 
         if "r_c" in event:
-            ea_handle_cat(event_id, event["r_c"], valid_records["r_c"], invalid_records["r_c"])
+            ea_handle_cat(
+                event_id, event["r_c"], valid_records["r_c"], invalid_records["r_c"]
+            )
 
         # INJURIES & HISTORY
         if "injury" in event:
             for injury in event["injury"]:
                 # this horrible thing checks if any of the injuries cause death or scarring and have no history
-                if "history" not in event and len(set(all_history).intersection(set(injury["injuries"]))) > 0:
+                if (
+                    "history" not in event
+                    and len(set(all_history).intersection(set(injury["injuries"]))) > 0
+                ):
                     print("Magical wound with no history!")
                     print(event_id)
-                    ea_invalid_record(event_id, missing, invalid_records["injury"]["history"])
+                    ea_invalid_record(
+                        event_id, missing, invalid_records["injury"]["history"]
+                    )
                     break
 
                 if "cats" in injury:
-                    ea_add_records(event_id, injury["cats"], valid_records["injury"]["cats"],
-                                   invalid_records["injury"]["cats"],
-                                   validation={"type": "startswith",
-                                               "data": valid_records["injury"]["cats"].keys()})
+                    ea_add_records(
+                        event_id,
+                        injury["cats"],
+                        valid_records["injury"]["cats"],
+                        invalid_records["injury"]["cats"],
+                        validation={
+                            "type": "startswith",
+                            "data": valid_records["injury"]["cats"].keys(),
+                        },
+                    )
                 else:
-                    ea_invalid_record(event_id, missing, invalid_records["injury"]["cats"])
+                    ea_invalid_record(
+                        event_id, missing, invalid_records["injury"]["cats"]
+                    )
 
                 if "injuries" in injury:
-                    ea_add_records(event_id, injury["injuries"], valid_records["injury"]["injuries"],
-                                   invalid_records["injury"]["injuries"],
-                                   ignore_categories=True)
+                    ea_add_records(
+                        event_id,
+                        injury["injuries"],
+                        valid_records["injury"]["injuries"],
+                        invalid_records["injury"]["injuries"],
+                        ignore_categories=True,
+                    )
                 else:
-                    ea_invalid_record(event_id, missing, invalid_records["injury"]["injuries"])
+                    ea_invalid_record(
+                        event_id, missing, invalid_records["injury"]["injuries"]
+                    )
 
                 if "scars" in injury:
-                    ea_add_records(event_id, injury["scars"], valid_records["injury"]["scars"],
-                                   invalid_records["injury"]["scars"],
-                                   ignore_categories=True)
+                    ea_add_records(
+                        event_id,
+                        injury["scars"],
+                        valid_records["injury"]["scars"],
+                        invalid_records["injury"]["scars"],
+                        ignore_categories=True,
+                    )
                 elif injury["injuries"] in history_scarrable:
-                    ea_invalid_record(event_id, "[scarrable but no scars]",
-                                      invalid_records["injury"]["injuries"])
+                    ea_invalid_record(
+                        event_id,
+                        "[scarrable but no scars]",
+                        invalid_records["injury"]["injuries"],
+                    )
 
     return valid_records, all_ids
 
 
-def ea_add_records(event_id, records, valid_log, error_log, validation=None, ignore_categories=False):
+def ea_add_records(
+    event_id, records, valid_log, error_log, validation=None, ignore_categories=False
+):
     if isinstance(records, list):
         for record in records:
-            ea_add_record(event_id, record, valid_log, error_log, validation, ignore_categories)
+            ea_add_record(
+                event_id, record, valid_log, error_log, validation, ignore_categories
+            )
     else:
-        ea_add_record(event_id, records, valid_log, error_log, validation, ignore_categories)
+        ea_add_record(
+            event_id, records, valid_log, error_log, validation, ignore_categories
+        )
 
 
-def ea_add_records_with_subtype(event_id, records, valid_log, invalid_log,
-                                allow_category=True, delineator=":"):
+def ea_add_records_with_subtype(
+    event_id, records, valid_log, invalid_log, allow_category=True, delineator=":"
+):
     for record in records:
         if delineator not in record:
             if allow_category:
@@ -1340,10 +895,14 @@ def ea_add_records_with_subtype(event_id, records, valid_log, invalid_log,
                 elif category in valid_log:
                     valid_log[category][str(value)] = [event_id]
                 else:
-                    ea_invalid_record(event_id, (category + delineator + value), invalid_log)
+                    ea_invalid_record(
+                        event_id, (category + delineator + value), invalid_log
+                    )
 
 
-def ea_add_record(event_id, record, valid_log, invalid_log, validation=None, ignore_categories=False):
+def ea_add_record(
+    event_id, record, valid_log, invalid_log, validation=None, ignore_categories=False
+):
     if validation is not None:
         is_valid, record_name = ea_validate_record(record, validation)
         if is_valid:
@@ -1386,28 +945,46 @@ def ea_handle_cat(event_id, cat, valid_log, error_log, rel_valid=True):
 
     # STATUS
     if "status" in cat:
-        ea_add_records(event_id, cat["status"], valid_log["status"], error_log["status"])
+        ea_add_records(
+            event_id, cat["status"], valid_log["status"], error_log["status"]
+        )
 
     # RELATIONSHIP_STATUS
     if "relationship_status" in cat:
         validation = {
             "type": "startswith",
-            "data": valid_log["relationship_status"].keys()
+            "data": valid_log["relationship_status"].keys(),
         }
         if rel_valid:
-            ea_add_records(event_id, cat["relationship_status"],
-                           valid_log["relationship_status"], error_log["relationship_status"], validation)
+            ea_add_records(
+                event_id,
+                cat["relationship_status"],
+                valid_log["relationship_status"],
+                error_log["relationship_status"],
+                validation,
+            )
         else:
             error_log["relationship_status"]["invalid block"].append(event_id)
 
     # SKILL
     if "skill" in cat:
-        ea_add_records_with_subtype(event_id, cat["skill"], valid_log["skill"], error_log["skill"], delineator=",")
+        ea_add_records_with_subtype(
+            event_id,
+            cat["skill"],
+            valid_log["skill"],
+            error_log["skill"],
+            delineator=",",
+        )
 
     # NOT SKILL
     if "not_skill" in cat:
-        ea_add_records_with_subtype(event_id, cat["not_skill"], valid_log["not_skill"], error_log["not_skill"],
-                                    delineator=",")
+        ea_add_records_with_subtype(
+            event_id,
+            cat["not_skill"],
+            valid_log["not_skill"],
+            error_log["not_skill"],
+            delineator=",",
+        )
 
     # TRAIT
     if "trait" in cat:
@@ -1415,13 +992,19 @@ def ea_handle_cat(event_id, cat, valid_log, error_log, rel_valid=True):
 
     # NOT TRAIT
     if "not_trait" in cat:
-        ea_add_records(event_id, cat["not_trait"],
-                       valid_log["not_trait"], error_log["not_trait"])
+        ea_add_records(
+            event_id, cat["not_trait"], valid_log["not_trait"], error_log["not_trait"]
+        )
 
     # BACKSTORY
     if "backstory" in cat:
-        ea_add_records(event_id, cat["backstory"],
-                       valid_log["backstory"], error_log["backstory"], ignore_categories=True)
+        ea_add_records(
+            event_id,
+            cat["backstory"],
+            valid_log["backstory"],
+            error_log["backstory"],
+            ignore_categories=True,
+        )
 
     # DIES
     if "dies" in cat:
@@ -1600,7 +1183,9 @@ def ea_problems():
 def ea_overview(count, subview="all"):
     ea_header("General Overview", big=True, trailing_newline=True)
     print(f"Total number of events: {count}\n")
-    print("NB: Breakdown numbers will probably total to more than this as each event can have multiple of each group!!")
+    print(
+        "NB: Breakdown numbers will probably total to more than this as each event can have multiple of each group!!"
+    )
 
     if subview in ["all", "location"]:
         print("Breakdown by location:")
@@ -1627,11 +1212,15 @@ def ea_overview(count, subview="all"):
 def ea_overview_cat(count, cat="m_c"):
     ea_header("M_C Overview", big=True, trailing_newline=True)
     print(f"Total number of events: {count}\n")
-    print("NB: Breakdown numbers will probably total to more than this as each event can have multiple of each group!!")
+    print(
+        "NB: Breakdown numbers will probably total to more than this as each event can have multiple of each group!!"
+    )
 
     running = True
     while running:
-        cmd = input("\nType a category name to view breakdown (\"h\" to view a full list), or \"q\" to quit.\n")
+        cmd = input(
+            '\nType a category name to view breakdown ("h" to view a full list), or "q" to quit.\n'
+        )
         if cmd == "age":
             print("\nBreakdown by age:")
             ea_group_report(valid_records[cat]["age"], True)
@@ -1661,7 +1250,8 @@ def ea_overview_cat(count, cat="m_c"):
             ea_group_report(valid_records[cat]["dies"], True)
         elif cmd in ["help", "h"]:
             print(
-                'Valid categories:\n\nage\nstatus\nrelationship_status\nskill\nnot_skill\ntrait\nnot_trait\nbackstory\ndies')
+                "Valid categories:\n\nage\nstatus\nrelationship_status\nskill\nnot_skill\ntrait\nnot_trait\nbackstory\ndies"
+            )
         elif cmd in ["quit", "q"]:
             print("Returning to main program.")
             running = False
@@ -1674,11 +1264,17 @@ def ea_group_report(records, detailed=False):
 
 
 def ea_subgroup_report(records, detailed=False, is_skill=False):
-    records = dict(sorted(records.items(), key=lambda x: ea_sort_subgroup(x), reverse=True))
+    records = dict(
+        sorted(records.items(), key=lambda x: ea_sort_subgroup(x), reverse=True)
+    )
     for name, group in records.items():
         if not isinstance(group, list):
             group = dict(sorted(group.items(), key=lambda x: len(x[1]), reverse=True))
-        groupcount = sum(len(sub) for sub in group.values()) if not isinstance(group, list) else len(group)
+        groupcount = (
+            sum(len(sub) for sub in group.values())
+            if not isinstance(group, list)
+            else len(group)
+        )
         if groupcount == 0:
             continue
         print(f"{indent}{name}: {groupcount}")
@@ -1687,11 +1283,17 @@ def ea_subgroup_report(records, detailed=False, is_skill=False):
         for name_sub, subgroup in group.items():
             if len(subgroup) == 0:
                 continue
-            print(f"{indent}{indent}{indent}{name_sub}{'+' if is_skill else ''}: {len(subgroup)}")
+            print(
+                f"{indent}{indent}{indent}{name_sub}{'+' if is_skill else ''}: {len(subgroup)}"
+            )
 
 
 def ea_sort_subgroup(group):
-    return sum(len(sub) for sub in group[1]) if not isinstance(group[1], list) else len(group[1])
+    return (
+        sum(len(sub) for sub in group[1])
+        if not isinstance(group[1], list)
+        else len(group[1])
+    )
 
 
 def ea_intersection(group1: str, group2: str, detailed=False):
@@ -1716,15 +1318,16 @@ def ea_intersection(group1: str, group2: str, detailed=False):
     intersection = list(set(dict1) & set(dict2))
 
     print(
-        f"There are {len(intersection)} events that match \"{group1.replace('.', ' -> ')}\" " +
-        f"and \"{group2.replace('.', ' -> ')}\".\n\n")
+        f"There are {len(intersection)} events that match \"{group1.replace('.', ' -> ')}\" "
+        + f"and \"{group2.replace('.', ' -> ')}\".\n\n"
+    )
 
     if detailed is not False:
         for record in intersection:
             print(record)
 
 
-def flatten(dictionary, parent_key='', separator='.'):
+def flatten(dictionary, parent_key="", separator="."):
     items = []
     for key, value in dictionary.items():
         new_key = parent_key + separator + str(key) if parent_key else str(key)
@@ -1739,7 +1342,14 @@ def flatten(dictionary, parent_key='', separator='.'):
 #   UTILITIES
 # -------------
 
-def ea_header(title: str = None, normal_text: str = None, leading_newline=True, trailing_newline=False, big=False):
+
+def ea_header(
+    title: str = None,
+    normal_text: str = None,
+    leading_newline=True,
+    trailing_newline=False,
+    big=False,
+):
     if leading_newline:
         print("")
     pa_dashes(big)
@@ -1778,22 +1388,32 @@ def ea_dump_records(records):
 
 def ea_help():
     ea_header("Help", big=True)
-    print('"help"/"h": Prints a list of commands in the tool (you\'re reading it currently!)')
-    print('"intersect"/"i" [group1] [group2]:  Prints the number of events that are in BOTH input groups.\n'
-          + f"{indent}{indent}{indent}" + 'Use dot notation (e.g. season.any). Optional argument "id" to '
-          + 'print a list of matching event IDs.')
+    print(
+        '"help"/"h": Prints a list of commands in the tool (you\'re reading it currently!)'
+    )
+    print(
+        '"intersect"/"i" [group1] [group2]:  Prints the number of events that are in BOTH input groups.\n'
+        + f"{indent}{indent}{indent}"
+        + 'Use dot notation (e.g. season.any). Optional argument "id" to '
+        + "print a list of matching event IDs."
+    )
     print('"details"/"d" [group]: Prints every event ID matching that tag.')
-    print('"overview"/"o" [type]: Prints an overview of events, broken down in broad categories. Accepted types:')
-    print(f"{indent}{indent}{indent}\"g\" - general (all except m_c and r_c)")
-    print(f"{indent}{indent}{indent}\"location\" - location")
-    print(f"{indent}{indent}{indent}\"season\" - season")
-    print(f"{indent}{indent}{indent}\"subtype\" - subtype")
-    print(f"{indent}{indent}{indent}\"tags\" - tags")
-    print(f"{indent}{indent}{indent}\"accessory\" - accessories")
-    print(f"{indent}{indent}{indent}\"m\" - m_c tags (opens submenu)")
-    print(f"{indent}{indent}{indent}\"r\" - r_c tags (opens submenu)")
-    print('"problems"/"p": Prints a list of all errors identified by the tool, broken down by category.')
+    print(
+        '"overview"/"o" [type]: Prints an overview of events, broken down in broad categories. Accepted types:'
+    )
+    print(f'{indent}{indent}{indent}"g" - general (all except m_c and r_c)')
+    print(f'{indent}{indent}{indent}"location" - location')
+    print(f'{indent}{indent}{indent}"season" - season')
+    print(f'{indent}{indent}{indent}"subtype" - subtype')
+    print(f'{indent}{indent}{indent}"tags" - tags')
+    print(f'{indent}{indent}{indent}"accessory" - accessories')
+    print(f'{indent}{indent}{indent}"m" - m_c tags (opens submenu)')
+    print(f'{indent}{indent}{indent}"r" - r_c tags (opens submenu)')
+    print(
+        '"problems"/"p": Prints a list of all errors identified by the tool, broken down by category.'
+    )
     print('"quit"/"q": Quit the tool.')
+
 
 if __name__ == "__main__":
     event_analysis()

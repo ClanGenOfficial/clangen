@@ -1,2 +1,4 @@
-%AppData%\Python\Scripts\poetry install --no-root
-%AppData%\Python\Scripts\poetry run python main.py
+@echo off
+
+poetry install --no-root || ( pause & exit /b )
+poetry run python main.py || ( pause & exit /b )

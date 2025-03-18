@@ -3,44 +3,44 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 
-from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import Relationship
-
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
+from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
+from scripts.cat_relations.relationship import Relationship
 
 class TestCreationAge(unittest.TestCase):
 
     # test that a cat with 1-5 moons has the age of a kitten
     def test_kitten(self):
         test_cat = Cat(moons=5)
-        self.assertEqual(test_cat.age, "kitten")
+        self.assertEqual(test_cat.age, CatAgeEnum.KITTEN)
 
     # test that a cat with 6-11 moons has the age of an adolescent
     def test_adolescent(self):
         test_cat = Cat(moons=6)
-        self.assertEqual(test_cat.age, "adolescent")
+        self.assertEqual(test_cat.age, CatAgeEnum.ADOLESCENT)
 
     # test that a cat with 12-47 moons has the age of a young adult
     def test_young_adult(self):
         test_cat = Cat(moons=12)
-        self.assertEqual(test_cat.age, "young adult")
+        self.assertEqual(test_cat.age, CatAgeEnum.YOUNG_ADULT)
     
     # test that a cat with 48-95 moons has the age of an adult
     def test_adult(self):
         test_cat = Cat(moons=48)
-        self.assertEqual(test_cat.age, "adult")
+        self.assertEqual(test_cat.age, CatAgeEnum.ADULT)
 
     # test that a cat with 96-119 moons has the age of a senior adult
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
-        self.assertEqual(test_cat.age, "senior adult")
+        self.assertEqual(test_cat.age, CatAgeEnum.SENIOR_ADULT)
 
     # test that a cat with 120-300 moons has the age of a senior
     def test_elder(self):
         test_cat = Cat(moons=120)
-        self.assertEqual(test_cat.age, "senior")
+        self.assertEqual(test_cat.age, CatAgeEnum.SENIOR)
 
 
 class TestRelativesFunction(unittest.TestCase):

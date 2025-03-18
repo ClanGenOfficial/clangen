@@ -2,17 +2,11 @@ import os
 import shutil
 import unittest
 
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.game_structure.game_essentials import Game
 from scripts.housekeeping.datadir import get_save_dir
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 if not os.path.exists("tests/testSaves"):
     num_example_saves = 0

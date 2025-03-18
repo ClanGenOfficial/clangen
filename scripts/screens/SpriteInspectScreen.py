@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import i18n
 import pygame
 import pygame_gui
 
@@ -11,14 +12,12 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_offset,
-    get_text_box_theme,
-)
+    get_text_box_theme, )
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
-from ..ui.get_arrow import get_arrow
 
 
 class SpriteInspectScreen(Screens):
@@ -138,7 +137,7 @@ class SpriteInspectScreen(Screens):
 
         self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "Next Cat " + get_arrow(3, arrow_left=False),
+            "buttons.next_cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -146,7 +145,7 @@ class SpriteInspectScreen(Screens):
         )
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            get_arrow(2, arrow_left=True) + " Previous Cat",
+            "buttons.previous_cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -154,7 +153,7 @@ class SpriteInspectScreen(Screens):
         )
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
-            get_arrow(2) + " Back",
+            "buttons.back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -176,38 +175,38 @@ class SpriteInspectScreen(Screens):
 
         self.save_image_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 95), (135, 30))),
-            "Save as Image",
+            "screens.sprite_inspect.save_image",
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
         )
 
         # Toggle Text:
         self.platform_shown_text = pygame_gui.elements.UITextBox(
-            "Show Platform",
+            "screens.sprite_inspect.show_platform",
             ui_scale(pygame.Rect((150, 580), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.scars_shown_text = pygame_gui.elements.UITextBox(
-            "Show Scar(s)",
+            "screens.sprite_inspect.show_scars",
             ui_scale(pygame.Rect((350, 580), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.acc_shown_text = pygame_gui.elements.UITextBox(
-            "Show Accessory",
+            "screens.sprite_inspect.show_accessory",
             ui_scale(pygame.Rect((545, 580), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
-            "Show as Living",
+            "screens.sprite_inspect.show_living",
             ui_scale(pygame.Rect((250, 630), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_not_working_text = pygame_gui.elements.UITextBox(
-            "Show as Healthy",
+            "screens.sprite_inspect.show_healthy",
             ui_scale(pygame.Rect((450, 630), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
@@ -267,9 +266,7 @@ class SpriteInspectScreen(Screens):
 
         cat_name = str(self.the_cat.name)  # name
         if self.the_cat.dead:
-            cat_name += (
-                " (dead)"  # A dead cat will have the (dead) sign next to their name
-            )
+            cat_name = i18n.t("general.dead_label", name=cat_name)
         short_name = shorten_text_to_fit(cat_name, 195, 20)
 
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
@@ -288,9 +285,9 @@ class SpriteInspectScreen(Screens):
             "",
             object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="Remove favorite"
+            tool_tip_text="general.remove_favorite"
             if self.the_cat.favourite
-            else "Mark as favorite",
+            else "general.mark_favorite",
             starting_height=2,
             anchors={"right": "right", "right_target": self.cat_elements["cat_name"]},
         )
@@ -446,16 +443,8 @@ class SpriteInspectScreen(Screens):
         return super().exit_screen()
 
     def update_disabled_buttons(self):
-        # Previous and next cat button
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
 
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        self.update_previous_next_cat_buttons()
 
         if self.displayed_life_stage >= len(self.valid_life_stages) - 1:
             self.next_life_stage.disable()

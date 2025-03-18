@@ -1,0 +1,123 @@
+[
+    {
+        "event_id": "mtn_new_cat_eagle",
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c found an injured loner while out on a walk - clearly, {PRONOUN/n_c:0/subject}'d been attacked by an eagle. {PRONOUN/m_c/subject/CAP} rushes {PRONOUN/n_c:0/object} back to camp to be treated.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "exists",
+		"loner"
+            ]
+        ],
+	"injury": [
+        {
+            "cats": ["n_c:0"],
+            "injuries": ["blunt_force_injury"],
+            "scars": ["THREE", "FACE"]
+        }
+        ],
+	"history:": [
+        {
+        "cats": ["n_c:0"],
+        "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+        "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+        "lead_death": "died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle"
+        }
+        ],
+	"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "platonic"],
+            "amount": 5
+          },
+          {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "values": ["trust"],
+            "amount": 10
+          },
+	  {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+	    "mutual": true,
+            "values": ["dislike"],
+            "amount": -10
+          }
+
+
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "mtn_new_cat_litter1",
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c finds a dead loner at the bottom of a cliff, near a litter of kittens. {PRONOUN/m_c/subject/CAP} {VERB/m_c/take/takes} the poor kittens back to camp, where they're offered a place in the Clan.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            ["age:has_kits", "meeting", "loner", "dead"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:orphaned1, orphaned2",
+                "litter"
+            ]
+        ],
+	"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["comfort", "platonic"],
+            "amount": 5
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming", "neutral"
+            ],
+            "changed": 1
+        }
+    }
+
+
+]

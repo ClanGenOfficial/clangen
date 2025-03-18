@@ -1,0 +1,2308 @@
+[
+    {
+        "patrol_id": "wtlnd_bord_soloneutral1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c re-marks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but reaches a section where the border is muddled and has to give up and go home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloneutral2",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c re-marks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}'t make it back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c lost their life in an ambush on the border."
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloneutral3",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "lost a life in an ambush on the border"
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloneutral4",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue and walk away with a greater respect for one another.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the tar pits.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path and return to their respective camps to discuss with their leaders.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloneutral5",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue and walk away with a greater respect for one another.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the tar pits.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path and agree to raise it at the next Gathering instead.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloally1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a stern warning and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them, keen to catch up on what their ally has been up to.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - at the worst possible moment, because a o_c_n patrol sees them doing it! {PRONOUN/r_c/subject/CAP} immediately {VERB/r_c/apologize/apologizes} to the o_c_n patrol for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloally2",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Unimpressed, r_c brings them back to their border as the apprentice tries to melt into the ground in shame, returning them to a mentor whose face goes slack with horror to see c_n's deputy.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. {PRONOUN/s_c/subject/CAP} {VERB/s_c/send/sends} the patrol off with several friendly messages to pass on from different c_n cats and an update from c_n's leader.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloally3",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Unimpressed, r_c brings them back to their border as the apprentice tries to melt into the ground in shame, returning them to a mentor who tucks their tail and apologizes profusely.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. The cats leave with several messages to pass on from both sides and a renewed sense of goodwill and trust between them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloally4",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. They commiserate and exchange news with each other, neither ally blaming the other for the innocent mistakes of apprentices.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into a venting session, both deputies finally getting the chance to lift stress from their shoulders and talk to an equal.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path and return to their respective camps to discuss with their leaders.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_soloally5",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. They commiserate and exchange news with each other, neither ally blaming the other for the innocent mistakes of apprentices.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into a venting session, both leaders finally getting the chance to lift stress from their shoulders and talk to an equal.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path and agree to bring the subject up at next Gathering instead.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_solohostile1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "leader": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The youngster is terrified and protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formal but genuinely grateful.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who fluffs up their pelt and insults {PRONOUN/s_c/object}. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly, their mentor joins s_c in lecturing the apprentice.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious swipe of {PRONOUN/r_c/poss} claws and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps - s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_solohostile2",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The youngster is terrified and protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who fluffs up their pelt and insults {PRONOUN/s_c/object}. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly, their mentor joins s_c, both warrior and deputy lecturing the apprentice.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them coldly, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}n't make it back to camp.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_solohostile3",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The youngster is terrified and protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who fluffs up their pelt and insults {PRONOUN/s_c/object}. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly, their mentor joins s_c, both warrior and leader lecturing the apprentice.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's leader.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c lost a life against a hostile Clan."
+                },
+                "other_clan_rep": -1
+            },
+            {
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c lost a life against a hostile Clan."
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_solohostile4",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "deputy": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. They're carefully frosty with each other but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. One of the patrol members yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with their new apprentice. s_c passes on a message from c_n's leader and politely wishes the young apprentice well. The other deputy is begrudgingly impressed.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and it nearly comes to a fight.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/r_c/poss} hostility. Eventually the other patrol snaps, and r_c doesn't make it back to camp. {PRONOUN/r_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_solohostile5",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
+                "exp": 20,
+                "weight": 5,
+                "other_clan_rep": 2
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their Clan leader. One of the patrol members yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their Clans and politely wishes the young apprentice well. The other leader is begrudgingly impressed.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path and storm off in a huff.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "r_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/r_c/poss} hostility. Eventually the other patrol snaps, and r_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "reg_death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_abandontwoleg1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["disaster", "new_cat"],
+        "patrol_art": "gen_bord_abandontwolegdis",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out in the swamp.",
+        "decline_text": "The patrol decides not to investigate.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+                "exp": 30,
+                "weight": 20
+            },
+            {
+                "text": "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing along. Instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c:0/poss} current life.",
+                "exp": 30,
+                "weight": 5,
+                "new_cat": [
+                    ["status:elder", "age:senior", "loner"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"]
+            },
+            {
+                "text": "s_c signals for the patrol to stop. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation in a murmur. Maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["patrol"],
+                "history_text": { "reg_death": "This cat died from being ambushed by rogues." },
+                "outsider_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_abandontwoleg2",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["disaster", "new_cat"],
+        "patrol_art": "gen_bord_abandontwolegdis",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out in the swamp.",
+        "decline_text": "The patrol decides not to investigate.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+                "exp": 30,
+                "weight": 20
+            },
+            {
+                "text": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too. Instead, r_c offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+                "exp": 30,
+                "weight": 5
+            },
+            {
+                "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"]
+            },
+            {
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["patrol"],
+                "history_text": {
+                    "reg_death": "This cat died from being ambushed by rogues while on a solo patrol."
+                },
+                "outsider_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_flashflood1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["multi"],
+                "history_text": { "reg_death": "This cat was drowned by floodwaters." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_flashflood2",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
+        "decline_text": "The patrol decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol react fast and strike out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": { "reg_death": "m_c was drowned by floodwaters." },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_flashflood3",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "There are dark clouds on the horizon, and r_c wonders if {PRONOUN/r_c/subject} should continue.",
+        "decline_text": "r_c decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "While it's pretty gray up there, the promised rain never comes.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c makes a careful judgment and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"]
+            },
+            {
+                "text": "It's not worth the risk - s_c heads for home.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": { "reg_death": "m_c was drowned by floodwaters." }
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_flashflood5",
+        "biome": ["wetlands"],
+        "season": ["leaf-bare"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As a shivering r_c crosses a muddy bog, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
+        "decline_text": "r_c decides to head back early.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c leaps forward, dashing to the other side of the bog and up into the trees. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the swamp get lost under a tide of water from inland.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,3"],
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c is in the middle of the bog when the flood hits {PRONOUN/r_c/object}. Freezing water rushes past and sweeps {PRONOUN/r_c/object} straight out into the churning river, under its ice.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": { "reg_death": "m_c was killed by a flood." }
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. r_c slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue2",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to investigate.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. r_c slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue3",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While on patrol, app1 notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. app1 slips into the swamp and sets up an ambush that lets {PRONOUN/app1/object} pretend to be a far bigger and more impressive fighter. app1 sends the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by this adolescent and ignores {PRONOUN/s_c/object} completely.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            },
+            {
+                "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c was killed by an invading rogue."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue4",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws themselves at the rogue and, together with r_c, drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue5",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue6",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While on patrol, app1 notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue7",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws themselves at the rogue and, together with r_c, drives them off c_n territory.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue8",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["CLEVER,1"]
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_trackrogue9",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While on patrol, app1 notices some suspicious pawprints in the swamp mud.",
+        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} not to investigate.",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent, but with the full patrol backing {PRONOUN/s_c/object} up, the rogue leaves c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_story1",
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "On their way to mark the far corners of their swamps, r_c starts telling a story of their ancestors to keep every cat entertained.",
+        "decline_text": "The patrol seems uninterested, so r_c drops the idea. ",
+        "chance_of_success": 10,
+        "success_outcomes": [
+            {
+                "text": "It keeps the cats' minds off their damp paws and the muddy path. The patrol goes quickly and easily.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "patrol"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "patrol"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their Clanmates, and everyone ends the day feeling much closer to each other.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "charismatic",
+                    "childish",
+                    "playful",
+                    "loving"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "patrol"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c skids on mud as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} getting to an exciting part and has to stop the story to pay attention to the path. ",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "patrol"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c takes r_c aside and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "cold",
+                    "strict",
+                    "righteous",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c", "patrol"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    }
+]

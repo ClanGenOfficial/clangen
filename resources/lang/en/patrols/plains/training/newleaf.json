@@ -1,0 +1,238 @@
+[
+    {
+        "patrol_id": "pln_train_newleaf_beetlesoloapp1",
+        "biome": ["plains"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
+        "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "While app1 is wiggling {PRONOUN/app1/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["stomachache"],
+                        "scars": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_train_newleaf_3mates_cloverfield1",
+        "biome": ["plains"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "pln_train_newleaf_3mates_cloverfield1",
+        "min_cats": 3,
+        "max_cats": 3,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 60,
+        "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves like a jaunty reed, twitching a little in {PRONOUN/p_l/poss} excitement and scattering dewdrops whenever it hits the grass.",
+        "decline_text": "The warriors get intercepted by a hunting patrol who need extra paws, and the possibility of a romantic afternoon evaporates.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["mates_with_pl"],
+        "success_outcomes": [
+            {
+                "text": "As they emerge into the vast clover fields, p_l gathers both of {PRONOUN/p_l/poss} mates close, putting weight into every meow. Holding a four-leaf clover out between {PRONOUN/p_l/poss} toe beans, p_l declares that for {PRONOUN/p_l/object}, these cats, this bond - they are both p_l's luck. And p_l's heart is theirs.",
+                "exp": 30,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Standing in the middle of the field of clovers {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} brought them to, p_l bunts up softly against both of {PRONOUN/p_l/subject} mates. The bond they all share is the greatest luck p_l has or will ever have, {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, and {PRONOUN/p_l/subject} wanted to declare that here, where the four-leaf clover grows.",
+                "exp": 30,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "They emerge into the vast clover fields, a known romantic spot, and p_l bounces with anticipation. {PRONOUN/p_l/subject/CAP} just {VERB/p_l/love/loves} {PRONOUN/p_l/poss} mates so much - {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so <i>ducky</i> to have them! No, no, wait, let {PRONOUN/p_l/object} try that again - {PRONOUN/p_l/subject} hope {PRONOUN/p_l/poss} mates never <i>leaf</i> {PRONOUN/p_l/object}!",
+                "exp": 30,
+                "weight": 20,
+                "stat_trait": ["childish", "playful", "charismatic", "flamboyant", "bold"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Stuttering, p_l leads {PRONOUN/p_l/poss} mates out into the clover fields - but {PRONOUN/p_l/subject} can't properly piece together the romantic declaration {PRONOUN/p_l/subject} spent so long crafting. It's okay, r_c murmurs, bunting {PRONOUN/p_l/object}. It's all okay; they're all still here together in the sunshine.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l leads {PRONOUN/p_l/poss} mates into a field of clover. This is... nice? r_c looks about in confusion, apparently waiting for more. What, did p_l miss a step?",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["cold", "strict", "arrogant", "grumpy", "lonesome"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_train_newleaf_circleoflife_storylorelocked1",
+        "biome": ["plains"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_med_herbsmeadow",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "intro_text": "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year.",
+        "decline_text": "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work.",
+        "success_outcomes": [
+                {
+                    "text": "This is the cycle, the fundemental truth underlying c_n. The grass sprouts in newleaf as the snows retreat, grows heavy and flush with life in greenleaf, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. The very foundation of their lives relies on it.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["LORE,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Everything the patrol sees exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each member of c_n dies, their bodies will become the dirt, and the dirt will feed the grass, and the rabbits eat the grass. Every creature is connected in the great cycle.",
+                    "exp": 30,
+                    "weight": 20,
+                    "art": "gen_bord_story",
+                    "stat_skill": ["STORY,1"],
+                    "can_have_stat": ["p_l"],
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["platonic"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "p_l spends too long admiring the scenery and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no cat is too pleased with {PRONOUN/p_l/poss} lack of attention.",
+                    "exp": 0,
+                    "weight": 20,
+                    "art": "running_warrior2",
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -5
+                        }
+                    ]
+                }
+            ]
+    }
+]

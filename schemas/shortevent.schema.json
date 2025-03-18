@@ -1,0 +1,507 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Clangen Short Event Schema",
+  "description": "Short moonskip events in Clan Generator.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "event_id": {
+        "description": "Unique string used to identify the event.",
+        "type": "string"
+      },
+      "location": {
+        "description": "Controls the biome and camp the event appears in.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "season": {
+        "description": "List of seasons in which the event may occur.",
+        "items": {
+          "enum": ["greenleaf", "leaf-fall", "leaf-bare", "newleaf", "any"]
+        }
+      },
+      "sub_type": {
+        "description": "List of subtypes for this event.",
+        "items": {
+          "enum": [
+            "war",
+            "murder",
+            "old_age",
+            "mass_death",
+            "adoption",
+            "murder_reveal",
+            "accessory",
+            "ceremony",
+            "transition",
+            "mediator"
+          ]  
+        }
+      },
+      "tags": {
+        "description": "Used for some filtering purposes",
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "enum": [
+                "classic",
+                "cruel_season",
+                "no_body",
+                "skill_trait_required",
+                "clan_wide",
+                "all_lives",
+                "some_lives",
+                "lives_remain",
+                "high_lives",
+                "mid_lives",
+                "low_lives",
+                "clan:apps",
+                "lost",
+                "kit_manipulated",
+                "romantic",
+                "adoption"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^clan:(.+)$"
+            }
+          ]
+        }
+      },
+      "weight": {
+        "description": "Controls how common an event is. A \"normal\" event would be ~20. A lower number makes the event less common, and a higher number makes the event more common.",
+        "type": "integer"
+      },
+      "event_text": {
+        "description": "Text that appears within the event list when the event occurs.",
+        "type": "string"
+      },
+      "new_accessory": {
+        "description": "If the event gives a new accessory, list possible new accessories here (one will be chosen from the list)",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "m_c": {
+        "description": "Specifies the requirements for the main cat (m_c) of the event.",
+        "type": "object",
+        "properties": {
+          "age": {
+            "description": "List of ages m_c can be. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/age"
+                },
+                {
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "status": {
+            "description": "List of statuses m_c can be. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/status"
+                },
+                {
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "relationship_status": {
+            "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "siblings",
+                    "mates",
+                    "not_mates",
+                    "parent/child",
+                    "child/parent",
+                    "app/mentor",
+                    "mentor/app"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^trust_(0|[1-9][0-9]?|100)$"
+                }
+              ]
+            }
+          },
+          "skill": {
+            "description": "m_c must possess at least one skill from this list. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/skill"
+                },
+                {
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "not_skill": {
+            "description": "m_c cannot possess any of the skills on this list.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/skill"
+            }
+          },
+          "trait": {
+            "description": "m_c must possess at least one trait from this list. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/all_trait"
+                },
+                {
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "not_trait": {
+            "description": "m_c cannot possess any of the traits on this list.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/all_trait"
+            }
+          },
+          "backstory": {
+            "description": "m_c must possess a backstory from this list.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/backstory"
+            }
+          },
+          "dies": {
+            "description": "m_c will die due to this event. Default is False.",
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "r_c": {
+        "description": "Specifies the requirements for the random cat (r_c) of the event.",
+        "type": "object",
+        "properties": {
+          "age": {
+            "description": "List of ages r_c can be. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/age"
+                },
+                {
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "status": {
+            "description": "List of statuses r_c can be. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/status"
+                },
+                {
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "relationship_status": {
+            "description": "Dictates what relationships r_c must have towards m_c.",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^trust_(0|[1-9][0-9]?|100)$"
+                }
+              ]
+            }
+          },
+          "skill": {
+            "description": "r_c must possess at least one skill from this list. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/skill"
+                },
+                {
+                  "type": "string",
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "not_skill": {
+            "description": "r_c cannot possess any of the skills on this list.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/skill"
+            }
+          },
+          "trait": {
+            "description": "r_c must possess at least one trait from this list. If they can be anything, use \"any\".",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/definitions/all_trait"
+                },
+                {
+                  "type": "string",
+                  "const": "any"
+                }
+              ]
+            }
+          },
+          "not_trait": {
+            "description": "r_c cannot possess any of the traits on this list.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/all_trait"
+            }
+          },
+          "backstory": {
+            "description": "r_c must possess a backstory from this list.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/backstory"
+            }
+          },
+          "dies": {
+            "description": "r_c will die due to this event. Default is False.",
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "new_cat": {
+        "description": "Adds a new cat.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/definitions/new_cat"
+        }
+      },
+      "injury": {
+        "type": "array",
+        "items": {
+          "properties": {
+            "cats": {
+              "description": "Which cats are injured.",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "enum": ["m_c", "r_c"]
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^n_c:[0-9]+$"
+                  }
+                ]
+              }
+            },
+            "injuries": {
+              "description": "Pool of injuries to draw from.",
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/definitions/injury"
+              }
+            },
+            "scars": {
+              "description": "Pool of scars to draw from. If in classic mode, a scar is chosen from this pool to be given instead of an injury. If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.",
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/definitions/scar"
+              }
+            }
+          }
+        }
+      },
+      "history_text": {
+        "type": "object",
+        "properties": {
+          "cats": {
+            "description": "List of cats for whom the history will be assigned.",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "enum": ["m_c", "r_c"]
+                },
+                {
+                  "type": "string",
+                  "pattern": "^n_c:[0-9]+$"
+                }
+              ]
+            }
+          },
+          "reg_death": {
+            "description": "Death history text for non-leaders. Whole sentence. Must be included if the cat is dead or injured.",
+            "type": "string"
+          },
+          "lead_death": {
+            "description": "Death history text for leaders. Sentence fragment. Must be included if the dead or injured cat could be the leader.",
+            "type": "string"
+          },
+          "scar": {
+            "description": "Scar history. Whole sentence. Must be included if cat gets injured.",
+            "type": "string"
+          }
+        }
+      },
+      "outsider": {
+        "description": "Dictates what reputation the clan is required to have with outsiders as well as how that reputation changes due to the event.",
+        "type": "object",
+        "properties": {
+          "current_rep": {
+            "description": "The reputation the Clan must have in order for this event to be possible.",
+            "type": "array",
+            "items": {
+              "enum": ["hostile", "neutral", "welcoming", "any"]
+            }
+          },
+          "changed": {
+            "description": "How the reputation of the Clan changes as a result of this event",
+            "type": "integer"
+          }
+        }
+      },
+      "other_clan": {
+        "description": "Dictates what reputation the clan is required to have with the other clan as well as how that reputation changes due to the event.",
+        "type": "object",
+        "properties": {
+          "current_rep": {
+            "description": "The reputation the Clan must have in order for this event to be possible.",
+            "type": "array",
+            "items": {
+              "enum": ["hostile", "neutral", "ally", "any"]
+            }
+          },
+          "changed": {
+            "description": "How the reputation of the Clan changes as a result of this event",
+            "type": "integer"
+          }
+        }
+      },
+      "supplies": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "Indicates the supply being affected.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "$ref": "common.schema.json#/definitions/herb"
+                },
+                {
+                  "enum": ["freshkill", "all_herb", "any_herb"]
+                }
+              ]
+            },
+            "trigger": {
+              "description": "Indicates when the event can trigger. Must include all possible trigger times.",
+              "type": "array",
+              "items": {
+                "enum": ["always", "low", "adequate", "full", "excess"]
+              }
+            },
+            "adjust": {
+              "description": "Indicates how the supply should be adjusted.",
+              "anyOf": [
+                {
+                  "enum": [
+                    "reduce_eighth",
+                    "reduce_quarter",
+                    "reduce_half",
+                    "reduce_full",
+                    ""
+                  ]
+                },
+                {
+                  "type": "string",
+                  "pattern": "^increase_[0-9]+$"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

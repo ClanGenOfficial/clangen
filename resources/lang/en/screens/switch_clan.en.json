@@ -1,0 +1,9 @@
+{
+    "en": {
+        "info": "Note: This will close the game.\n When you open it next, it should have the new Clan.",
+        "current_clan": {
+            "zero": "There is no Clan currently loaded.",
+            "one": "The currently loaded Clan is %{clan}Clan."
+        }
+    }
+}

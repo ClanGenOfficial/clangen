@@ -1,5 +1,6 @@
 from typing import Dict
 
+import i18n
 import pygame
 import pygame_gui
 import ujson
@@ -19,11 +20,10 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
-from ..events_module.condition_events import Condition_Events
+from scripts.events_module.short.condition_events import Condition_Events
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
-from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
@@ -219,7 +219,7 @@ class ClearingScreen(Screens):
         self.hide_menu_buttons()
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            get_arrow(2) + " Back",
+            "buttons.back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -232,21 +232,21 @@ class ClearingScreen(Screens):
         )
         self.feed_all_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((625, 300), (160, 30))),
-            "Feed all hungry",
+            "screens.clearing.feed_all_hungry",
             get_button_dict(ButtonStyles.SQUOVAL, (160, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.feed_one_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((650, 300), (111, 30))),
-            "Feed one",
+            "screens.clearing.feed_one",
             get_button_dict(ButtonStyles.SQUOVAL, (115, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
         self.feed_max_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((648, 335), (115, 30))),
-            "Feed max",
+            "screens.clearing.feed_max",
             get_button_dict(ButtonStyles.SQUOVAL, (115, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -260,13 +260,7 @@ class ClearingScreen(Screens):
             "",
             object_id="#help_button",
             manager=MANAGER,
-            tool_tip_text="Your clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most "
-            "important source of freshkill. You can see what was consumed and catched in the Log below! "
-            "Freshkill can't be stored endlessly, after four moons prey will rot and will be thrown away. "
-            "Cats under 3 moons with a parent(queen) taking care of them, don't need food. "
-            "<br><br>"
-            "Feeding the Clan is very important, therefore cats will be fed before any changes to rank. "
-            "Hover your mouse over the pile to see the current amount and the needed amount of prey of your Clan! ",
+            tool_tip_text="screens.clearing.help_tooltip",
         )
         self.last_page = UISurfaceImageButton(
             ui_scale(pygame.Rect((330, 636), (34, 34))),
@@ -281,19 +275,19 @@ class ClearingScreen(Screens):
             object_id="@buttonstyles_icon",
         )
         self.nutrition_title = pygame_gui.elements.UITextBox(
-            "Nutrition Overview",
+            "screens.clearing.nutrition_title",
             ui_scale(pygame.Rect((140, 405), (200, 40))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.log_title = pygame_gui.elements.UITextBox(
-            "Freshkill Pile Log",
+            "screens.clearing.log_title",
             ui_scale(pygame.Rect((140, 405), (200, 40))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
         )
         self.tactic_title = pygame_gui.elements.UITextBox(
-            "Feeding Tactic",
+            "screens.clearing.tactic_title",
             ui_scale(pygame.Rect((140, 405), (200, 40))),
             object_id=get_text_box_theme("#text_box_40_horizcenter"),
             manager=MANAGER,
@@ -316,7 +310,7 @@ class ClearingScreen(Screens):
         self.log_box.hide()
         self.cats_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((40, 460), (100, 30))),
-            Icon.CAT_HEAD + " Cats",
+            Icon.CAT_HEAD + i18n.t("screens.clearing.cats_tab"),
             get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
             object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
@@ -324,28 +318,28 @@ class ClearingScreen(Screens):
         self.cats_tab.disable()
         self.log_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((40, 500), (100, 30))),
-            Icon.NOTEPAD + " Log",
+            Icon.NOTEPAD + i18n.t("screens.clearing.log_tab"),
             get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
             object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
         self.tactic_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((40, 540), (100, 30))),
-            Icon.MAGNIFY + " Tactics",
+            Icon.MAGNIFY + i18n.t("screens.clearing.tactic_tab"),
             get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
             object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
         self.hungry_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((490, 409), (80, 35))),
-            "Hungry",
+            "screens.clearing.hungry_tab",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (80, 35)),
             object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
         )
         self.satisfied_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((587, 409), (95, 35))),
-            "Satisfied",
+            "screens.clearing.satisfied_tab",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (95, 35)),
             object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
@@ -506,21 +500,18 @@ class ClearingScreen(Screens):
         info_list = [self.focus_cat_object.skills.skill_string(short=True)]
         nutrition_info = game.clan.freshkill_pile.nutrition_info
         if self.focus_cat_object.ID in nutrition_info:
-            nutrition_text = (
-                "nutrition: " + nutrition_info[self.focus_cat_object.ID].nutrition_text
+            nutrition_text = i18n.t(
+                "screens.clearing.nutrition_text",
+                nutrition_text=nutrition_info[self.focus_cat_object.ID].nutrition_text,
             )
             if game.clan.clan_settings["showxp"]:
-                nutrition_text += (
-                    " ("
-                    + str(int(nutrition_info[self.focus_cat_object.ID].percentage))
-                    + ")"
-                )
+                nutrition_text += f" ({str(int(nutrition_info[self.focus_cat_object.ID].percentage))})"
             info_list.append(nutrition_text)
-        work_status = "This cat can work"
+        work_status = i18n.t("general.can_work")
         if self.focus_cat_object.not_working():
-            work_status = "This cat isn't able to work"
+            work_status = i18n.t("general.cant_work")
             if self.focus_cat_object.not_work_because_hunger():
-                work_status += "\n(because of hunger)"
+                work_status += i18n.t("screens.clearing.cant_work_hunger")
         info_list.append(work_status)
 
         self.focus_info.set_text("<br>".join(info_list))
@@ -575,11 +566,12 @@ class ClearingScreen(Screens):
             if self.cat_tab_open == self.hungry_tab:
                 nutrition_info = game.clan.freshkill_pile.nutrition_info
                 if cat.ID in nutrition_info:
-                    full_text = " nutrition: " + nutrition_info[cat.ID].nutrition_text
+                    full_text = i18n.t(
+                        "screens.clearing.nutrition_text",
+                        nutrition_text=nutrition_info[cat.ID].nutrition_text,
+                    )
                     if game.clan.clan_settings["showxp"]:
-                        full_text += (
-                            " (" + str(int(nutrition_info[cat.ID].percentage)) + ")"
-                        )
+                        full_text += f" ({str(int(nutrition_info[cat.ID].percentage))})"
                     condition_list.append(full_text)
             conditions = (
                 ",<br>".join(condition_list) if len(condition_list) > 0 else None
@@ -627,32 +619,28 @@ class ClearingScreen(Screens):
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
         warrior_need = game.prey_config["prey_requirement"]["warrior"]
         warrior_amount = int(current_prey_amount / warrior_need)
-        general_text = (
-            f"Up to {warrior_amount} warriors can be fed with this amount of prey."
+        general_text = i18n.t(
+            "screens.clearing.prey_amount_info", warrior_amount=warrior_amount
         )
 
         concern_text = "This should not appear."
         if current_prey_amount == 0:
-            concern_text = (
-                "The fresh-kill pile is empty, the Clan desperately needs prey!"
-            )
+            concern_text = i18n.t("screens.clearing.prey_amount_none")
             self.pile_size = "#freshkill_pile_empty"
         elif 0 < current_prey_amount <= needed_amount / 2:
-            concern_text = "The fresh-kill pile can't even feed half of the Clan. Hunting patrols should be organized immediately."
+            concern_text = i18n.t("screens.clearing.prey_amount_very_low")
             self.pile_size = "#freshkill_pile_verylow"
         elif needed_amount / 2 < current_prey_amount <= needed_amount:
-            concern_text = "Only half of the Clan can be fed currently. Hunting patrols should be organized."
+            concern_text = i18n.t("screens.clearing.prey_amount_low")
             self.pile_size = "#freshkill_pile_low"
         elif needed_amount < current_prey_amount <= needed_amount * 1.5:
-            concern_text = (
-                "Every mouth of the Clan can be fed, but some more prey would not harm."
-            )
+            concern_text = i18n.t("screens.clearing.prey_amount_average")
             self.pile_size = "#freshkill_pile_average"
         elif needed_amount * 1.5 < current_prey_amount <= needed_amount * 2.5:
-            concern_text = "The fresh-kill pile is overflowing and the Clan can feast!"
+            concern_text = i18n.t("screens.clearing.prey_amount_high")
             self.pile_size = "#freshkill_pile_good"
         elif needed_amount * 2.5 < current_prey_amount:
-            concern_text = "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt."
+            concern_text = i18n.t("screens.clearing.prey_amount_very_high")
             self.pile_size = "#freshkill_pile_full"
 
         information_display.append(general_text)
@@ -663,7 +651,11 @@ class ClearingScreen(Screens):
             self.pile_base.kill()
         current_prey_amount = game.clan.freshkill_pile.total_amount
         needed_amount = round(game.clan.freshkill_pile.amount_food_needed(), 2)
-        hover_display = f"<b>Current amount:</b> {current_prey_amount}<br><b>Needed amount:</b> {needed_amount}"
+        hover_display = i18n.t(
+            "screens.clearing.freshkill_pile_tooltip",
+            current_prey_amount=current_prey_amount,
+            needed_amount=needed_amount,
+        )
         self.pile_base = UIImageButton(
             ui_scale(pygame.Rect((250, 25), (300, 300))),
             "",
@@ -741,8 +733,8 @@ class ClearingScreen(Screens):
                 x_val += 40
 
             self.tactic_text[code] = pygame_gui.elements.UITextBox(
-                desc[0],
-                ui_scale(pygame.Rect((x_val, n * 45), (500, 39))),
+                f"settings.{code}",
+                ui_scale(pygame.Rect((x_val, n * 45), (160, 39))),
                 container=self.tactic_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER,
@@ -770,8 +762,8 @@ class ClearingScreen(Screens):
                     x_val += 20
 
                 self.additional_text[code] = pygame_gui.elements.UITextBox(
-                    desc[0],
-                    ui_scale(pygame.Rect((x_val, n * 30), (500, 39))),
+                    f"settings.{code}",
+                    ui_scale(pygame.Rect((x_val, n * 30), (200, -1))),
                     container=self.additional_text["container_general"],
                     object_id="#text_box_30_horizleft_pad_0_8",
                     manager=MANAGER,
@@ -780,8 +772,8 @@ class ClearingScreen(Screens):
 
         x_val = 22
         self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
-            "<b>Status-order + needed amount:</b>",
-            ui_scale(pygame.Rect((x_val, n * 25 + 5), (500, 39))),
+            "screens.clearing.additional_prey_text",
+            ui_scale(pygame.Rect((x_val, n * 25 + 5), (250, 39))),
             container=self.additional_text["container_general"],
             object_id="#text_box_30_horizleft_pad_0_8",
             manager=MANAGER,
@@ -791,12 +783,27 @@ class ClearingScreen(Screens):
         feeding_order = game.prey_config["feeding_order"]
         for status in feeding_order:
             amount = prey_requirement[status]
-            self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
-                f"{n}. {status}: {amount} prey",
-                ui_scale(pygame.Rect((x_val, n * 22 + 27), (500, 39))),
+            self.additional_text[
+                f"condition_increase_{n}"
+            ] = pygame_gui.elements.UITextBox(
+                "screens.clearing.condition_increase_text",
+                ui_scale(pygame.Rect((x_val, 0), (250, -1))),
                 container=self.additional_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER,
+                text_kwargs={
+                    "number": str(n),
+                    "status": i18n.t(
+                        f"general.{status}",
+                        count=2 if status not in ["leader", "deputy"] else 1,
+                    ),
+                    "prey": i18n.t("screens.clearing.prey_count", count=amount),
+                },
+                anchors={
+                    "top_target": self.additional_text[f"condition_increase_{n-1}"]
+                    if n > 1
+                    else self.additional_text["condition_increase"]
+                },
             )
             n += 1
 
@@ -853,7 +860,7 @@ class ClearingScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.tactic_text["container_" + sub_menu],
-                tool_tip_text=desc[1],
+                tool_tip_text=f"settings.{code}_tooltip",
             )
 
             if disabled:
@@ -888,7 +895,7 @@ class ClearingScreen(Screens):
                     "",
                     object_id=box_type,
                     container=self.additional_text["container_" + sub_menu],
-                    tool_tip_text=desc[1],
+                    tool_tip_text=f"settings.{code}_tooltip",
                 )
 
                 if disabled:

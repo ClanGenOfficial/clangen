@@ -1,26 +1,110 @@
-<strong>v0.11.2</strong>
-- Fix: ensure that the changelog is read as UTF-8
-- Fix: issue with manual feeding with tactic "low nutrition first"
-- Fix: edge case of a cat has the exiled status, but is not outside
+<strong>v0.12.2</strong>
 
-<strong>v0.11.1</strong>
-- Fix: The changelog. Yep, just the changelog. Yes, it happened again-
+<b>QoL</b>
+- Changed fullscreen toggle to F11
 
-<strong>v0.11.0</strong>
-- Feature: Freshkill pile & nutrition system
-- Feature: "Destroy accessory" button
-- Content: Lakeside Forest Background
-- Content: Murder for the new year
-- Content: expanded scars: "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"
-    Expanded tortie: 'FRECKLED' white patches: 'BLAZEMASK', 'TEARS'
-- Content: Sibling and constrained patrols
-- Content: weights and mates
-- Content: expanded war events
-- Content: more patrols
-- QOL: Cat List UI Update
-- QOL: same sex setting update
-- QOL: update for freshkill switch
-- QOL: Patrol type decision enabled in classic
-- QOL: updated credits list
-- QOL:  change to poetry
-- Plus many more bug fixes, tweaks to events and patrols, and more! Aprils fools - we made an actual game update.
+<b>Bugfixes</b>
+- Fixed new cat moon event crash
+- Fixed patrol grammar
+- Fixed issue with problematic dependent names
+- Added missing stat attributes to certain patrols 
+- Fixed prefix and suffix list loading
+- Fixed tail accessories appearing on cats without tails
+- Fixed missing bracket
+- Fixed murdermittens issue
+- Removed torn pelt from scarring list
+- Fixed "Viscous Kittypets" typo
+- Added missing relationship descriptor in grief event
+- Fixed errors in patrol text
+- Prevented underage cats from having mates
+- Fixed history crash
+- Fixed error dialogue persisting between screens
+
+<strong>v0.12.1</strong>
+- Fix builds
+
+<strong>v0.12.0</strong>
+
+<b>Features</b>
+- CLAN FOCUS: New feature accessed via the Warrior's Den. Direct your warriors' Focus towards specific goals, such as feeding the Clan or sabotaging other neighboring Clans. When the Focus is changed, there is a cooldown of 3 moons before it can be changed again, so choose wisely! Please note that some Focuses aren't accessible in Classic mode and that some Focuses require certain cat ranks to be present.
+- PRONOUNS: Wow! The cats have pronouns other than they/them? Yes it's true! Cats can now naturally generate with they/them, he/him, or she/her pronouns. Want a cat to have different pronouns than those options? You can do that to! Check out their profile page and the Change Gender option to add any pronoun under the sun. These pronouns will be used in text throughout the game when referring to that cat (give a big hand to our writing team for the monumental amount of work they did to get pronouns integrated into all the text!) Please note a new game setting to revert the game to only generating they/them pronouns for all cats.
+- LEADER'S DEN: You can now access the Leader's Den to view the other Clans neighboring your Clan as well as the known Outsiders. Decide how you want to interact with these other cats: will you appease the hostile Clans? Or antagonize them further? Will you hunt down that one pesky rogue? Or perhaps you've decided an exiled Clanmate should be allowed a second chance...
+- CLAN SYMBOLS: You can now choose a Clan symbol during Clan creation. Other Clans also generate with symbols, which you will see in the Leader's Den. There are currently 484 symbols available to choose from, a roster that we plan to continue expanding with each stable update. Please note that old Clan saves will not be able to choose a Clan symbol in-game, though save editing to change the symbol is relatively simple. When loading an old save, the game will attempt to assign a symbol matching with it's prefix, if no symbol exists then it will randomly choose a symbol.
+- CLASSIC CONDITIONS: Classic mode can now access illnesses, injuries, and permanent conditions!  Please note that this still differs in some ways from Expanded mode. In Classic Mode, a single medicine cat can care for the entire Clan, specific herb amounts are not displayed on the med den screen, an herb will treat a condition regardless of the Clan's actual herb amounts, the Clan's herb supply is randomly generated and is not dependent on events.
+- AUDIO: What in StarClan?? Clangen with sound!? Clangen now comes with shiny new sound effects and one very lovely music track that plays during Clan creation. More music is on the horizon... and don't worry! There is a handy dandy mute button in the corner of the screen and audio settings to control music/ambiance and sound effects volume separately.
+
+<b>QoL</b>
+- Fullscreen new and improved! Art no longer looks oddly crunched and the black frame has been replaced with pretty background art. This comes with a new setting to turn off anti-aliasing and a setting to ignore fullscreen scaling rules, just in case you want it a little extra large (please note that this setting will come with some visual quirks if enabled)
+- You can now search cats on the mediator page
+- More special characters are allowed in user notes
+- Leaders can now be affected by mass extinction events
+- Mass extinction events are now limited to affecting 11 cats at most, but they can occur multiple times in a single moon.
+- When leaders die of starvation, they now revive with enough nutrition to bring them up to malnourished, giving a little extra time to find food before starving once more.
+- Moon events that previously mentioned an Outsider, but did not generate an Outsider cat, will now generate an Outsider
+- Moon events that mention an Outsider can now pull an Outsider from the existing list of Outsiders, rather than generating a new one
+- War events will now match with the affect of the overarching war event for that moon (i.e. if the Clans are having peace talks that moon, no clan relation lowering events will occur at the same time)
+- More moon events are now recorded in the relationship log if they changed a relationship
+- "show dead/living" button on cat list is now "view dead/living"
+- "filtered by" button on cat list is now "sort by"
+- Last and First page buttons are now available on the cat list screen.
+- Players can now input a page number on the cat list screen to move to that page immediately
+- Leader death history now displays as a single sentence for each death, rather than one long run-on sentence
+- Custom cursor setting now comes with a warning about increased chance of crashes
+- All text (or at least, the vast majority) can now be copy-pasted!
+- Buttons on moon events that lead to the profiles of cats involved now generates a horizontal scroll bar if the buttons go off-screen
+- If a moon event had no cats specifically involved, the involved cat button no longer displays
+- Alert exclamation marks now persist until the tab is clicked
+- When keybinds are on, you can now use the arrow keys to move up and down the event tab buttons, and the enter button to switch to the selected tab
+- Cats can now be quickly added to and removed from patrols via double clicking
+- Herb moon events no longer destroy herb supplies in their entirety (with the exception of one war event) and any large destruction events no longer occur if herb stores are already low
+- Herb gained on moonskip and patrols has been slightly buffed
+- Relationship value changes when cats break up is now dynamic, meaning some break ups have larger impacts than others
+- Newborn kits are now listed in the involved cat buttons on moon events
+- Quick start! You can click Quick Start at the beginning of Clan Creation to skip to the end. All choices will be made randomly
+
+<b>Content</b>
+- 100s of new patrol art additions
+- Many many new patrols! Many requiring specific traits or skills.
+- New outcomes for existing patrols! Many requiring specific traits or skills.
+- New Camps! The Mountainous camp, Ruins, and the Beach camp, Fjord.
+- New moon events, such as murders and new ways to gain accessories.
+- Literally 1000+ new relationship events
+- Many many new thoughts, many of which are exclusive to certain traits, ages, conditions, seasons, and skills
+- New leader ceremony possibilities, many of which are exclusive to cats of certain traits (both the dead cats and the new leader)
+- Prefix list updated to include new canon names (looking at you, Stretchkit)
+- Many new loner/kittypet names
+- Many outcomes for Leader Den events, many of which are specific to certain skills, traits, and ages
+- New events for pregnancy announcements and speculations
+- New grief events and thoughts
+- New accessories!
+
+<b>Bugfixes</b>
+- Murders will no longer occasionally crash the game
+- Fixed a bug caused by the training app murder event
+- You can no longer sort living cats by death date
+- Players no longer get stuck in the med den backrooms (when accessing the med den through cat profiles, the back button would return you to the cat profile. attempting to back out of the cat profile would take you back to the med den. rinse and repeat, it's a loop)
+- Buttons now disable/enable properly when closing relationship logs on first and last cats in the cat list
+- You can no longer enter negative page numbers by clicking the back button very very fast
+- Leaders now receive appropriate birth event text when dying from childbirth
+- Outsider kittens can no longer join as warriors
+- Long term conditions, like wasting disease, will now display in leader's history if they took a life
+- When leaders are lost on patrol, patrol result text no longer mentions them by their warrior name
+- Litters can no longer spawn with duplicate names (i.e. two kits named Stonekit)
+- Medicine cats captured by twolegs no longer have their role erased
+- Cat history no longer lists cats as murdering themselves
+- Kicked cats out of the walls (fixed some possible cat positionings on camp screen)
+- Adolescents can no longer be considered "normal adults" in patrols simply because they graduated to warrior early.
+- Kits adopted during moon events now receive correct inheritance info and begin with a positive relationship toward new adoptive parent(s)
+- Mates of adoptive parents now automatically adopt any newly adopted kits received on moonskip
+- Check added for matching age when assigning random romantic relationship values at Clan creation
+- When assigning random relationship values at Clan creation, the Guide cat will now only generate relationships with living cats old enough to have known the Guide in life.
+- Adopted litters now always generate with a bio parent, ensuring their inheritance lists them as littermates
+- The generation of half-clan litters no longer assumes the birthing parent can only be the (biologically) female parent (this is important for "ignore biology" game setting)
+- Cats with no romantic interest in each other will no longer receive romance decreasing events
+- Poly cat love confessions no longer read as though one cat is asking their dead mate for permission before accepting a new cat into the polycule.
+- Rosemary is no longer applied to the "dead body" of a lost cat
+- Affair birth events no longer mention nonexistent mates
+- Fixed mistagging in patrols that would lead to unintended effects
+- Many small UI issues
+- Many small sprite fixes
+- Many typo fixes

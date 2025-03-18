@@ -2,6 +2,8 @@ import random
 from copy import deepcopy
 from typing import List
 
+import i18n
+
 from scripts.cat.cats import Cat
 from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
@@ -47,7 +49,9 @@ class Nutrition:
         self.nutrition_text = text_config["text"][0]
         for index in range(len(text_config["lower_range"])):
             if self.percentage >= text_config["lower_range"][index]:
-                self.nutrition_text = text_config["text"][index]
+                self.nutrition_text = i18n.t(
+                    f"conditions.nutrition.{text_config['text'][index]}"
+                )
 
 
 class FreshkillPile:
@@ -181,16 +185,14 @@ class FreshkillPile:
             previous_amount = value
             if key == "expires_in_1" and FRESHKILL_ACTIVE and value > 0:
                 amount = round(value, 2)
-                event_list.append(
-                    f"Some prey expired, {amount} pieces were removed from the pile."
-                )
+                event_list.append(i18n.t("hardcoded.expired_prey", count=amount))
         self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
         self.already_fed = []
         self.feed_cats(living_cats)
         self.already_fed = []
         value_diff -= sum(self.pile.values())
-        event_list.append(f"{value_diff} pieces of prey were consumed.")
+        event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
         self._update_needed_food(living_cats)
         self.update_total_amount()
 
@@ -249,7 +251,9 @@ class FreshkillPile:
     #                                    tactics                                   #
     # ---------------------------------------------------------------------------- #
 
-    def tactic_status(self, living_cats: List[Cat], additional_food_round=False) -> None:
+    def tactic_status(
+        self, living_cats: List[Cat], additional_food_round=False
+    ) -> None:
         """Feed cats in order of status, resolving ties with age.
 
         :param list living_cats: Cats to feed
@@ -424,7 +428,9 @@ class FreshkillPile:
         sorted_cats = sorted(living_cats, key=lambda x: x.experience, reverse=True)
         self.feed_group(sorted_cats, additional_food_round)
 
-    def tactic_hunter_first(self, living_cats: List[Cat], additional_food_round=False) -> None:
+    def tactic_hunter_first(
+        self, living_cats: List[Cat], additional_food_round=False
+    ) -> None:
         """Feed cats with the hunter skill first, then everyone else according to status.
 
         :param list living_cats: Cats to feed

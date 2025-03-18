@@ -1,0 +1,60 @@
+{
+    "en": {
+        "random_patrol": "random patrol type",
+        "training": "training",
+        "hunting": "hunting",
+        "border": "border",
+        "herb_gathering": "herb gathering",
+        "choose_cats_info": "Choose up to six cats to take on patrol.\nSmaller patrols help cats gain more experience, but larger patrols are safer.",
+        "able_cats_label": "able cats",
+        "patrol_label": "patrol",
+        "select": "select",
+        "unavailable": "unavailable",
+        "skills_traits_label":  "skills & traits",
+        "remove_all_label": "remove all",
+        "go_on_patrol": "go on patrol",
+        "current_prey": "current prey: %{prey}",
+        "needed_prey": "needed prey: %{prey}",
+        "label_patrol_info": "patrol leader: %{leader}\npatrol members: %{members}\npatrol skills: %{skills}\npatrol traits: %{traits}",
+        "current_patrol_info": "current patrol skills: %{skills}\ncurrent patrol traits: %{traits}",
+        "proceed": "proceed",
+        "dont_proceed": "do not proceed",
+        "antagonize": "antagonize",
+        "patrol_again": "patrol again",
+        "back_to_clan": "back to clan",
+        "dead_outsider": {
+            "one": "%{cats}'s ghost now wanders.",
+            "many": "%{cats} ghosts now wander."
+        },
+        "met_outsider": "The patrol met %{cats}.",
+        "new_outsider": "%{cats} joined the Clan.",
+        "lost_cats": {
+            "one": "%{cats} has been lost.",
+            "many": "%{cats} have been lost."
+        },
+        "outsider_rep_improved": "Your Clan's reputation towards Outsiders has improved.",
+        "outsider_rep_neutral": "Your Clan's reputation towards Outsiders is unchanged.",
+        "outsider_rep_worsened": "Your Clan's reputation towards Outsiders has worsened.",
+        "clan_rep_improved": "Relations with %{clan} have improved.",
+        "clan_rep_neutral": "Relations with %{clan} are unchanged.",
+        "clan_rep_worsened": "Relations with %{clan} have worsened.",
+        "herbs_gathered": {
+            "zero": "Despite searching, no herbs were found.",
+            "one": "%{herbs} was gathered.",
+            "many": "%{herbs} were gathered."
+        },
+        "herb_log": {
+            "one": "%{herbs} was gathered on patrol.",
+            "many": "%{herbs} were gathered on patrol."
+        },
+        "prey_log": {
+            "one": "%{count} piece of prey was caught on a patrol.",
+            "many": "%{count} pieces of prey were caught on a patrol."
+        },
+        "prey_very_small": "A very small amount of prey is brought to camp.",
+        "prey_small": "A small amount of prey is brought to camp.",
+        "prey_medium": "A medium amount of prey is brought to camp.",
+        "prey_large": "A large amount of prey is brought to camp.",
+        "prey_huge": "A huge amount of prey is brought to camp."
+    }
+}

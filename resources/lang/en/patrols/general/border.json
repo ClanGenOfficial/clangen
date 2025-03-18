@@ -1,0 +1,661 @@
+[
+    {
+        "patrol_id": "Gen_bord_balancing_boringborder",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_dog",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "p_l heads out to mark c_n's borders.",
+        "decline_text": "p_l decides to not mark their borders.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l sucessfully marks c_n's borders.",
+                "exp": 5,
+                "weight": 20,
+                "art": "gen_otherclan_mates_date"
+            },
+            {
+                "text": "p_l manages to mark the borders efficiently, coming home earlier than expected.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l scents some prey, catching it p_l has a quick snack.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "A boring task usually, and today was no different.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l wishs for something interesting to happen, but no, there was nothing to ease p_l's boredom as {PRONOUN/p_l/subject} mark the borders.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l is pleased to have a peaceful patrol, with no threats to face.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l finishes marking the borders, glad to be able to go back and rest {PRONOUN/p_l/poss} paws.",
+                "exp": 5,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l ends the patrol early, feeling too lazy to mark the rest of the border.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l starts daydreaming, and ends up marking in the wrong place, at least it wasn't in o_c_n's territory.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "A boring task, and one p_l hates.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Getting distracted while marking, p_l ends up taking several more hours than needed to mark the border.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l marks the wrong area, making more work for others to fix {PRONOUN/p_l/poss} mistake.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "Gen_bord_balancing_scent",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "p_l heads out to patrol c_n's borders, but scents something along the borders.",
+        "decline_text": "p_l decides to not investigate the scent.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l identifys the scent as prey. Nothing to be concerned over.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l identifies the scent as a passing predator, but it seems to have moved on.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "The scent leads p_l to a nearby patch of herbs, hopefully the herbs are useful to the clans healer.",
+                "exp": 5,
+                "weight": 15,
+                "herbs": ["tansy"]
+            },
+            {
+                "text": "p_l detects the scent of a fellow clanmate, possibly on a solo patrol of their own, but it was nothing to worry about.",
+                "exp": 5,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l can't identify the scent, and return back to camp to report it.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l struggles to identify the faint scent and decides to return to camp for assistance.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Despite p_l's efforts, {PRONOUN/p_l/subject} cannot discern the source of the scent and returns to camp to report it.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The scent seems to vanish suddenly, leaving p_l puzzled and unable to track it further.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "A sudden gust of wind disperses the scent before p_l can investigate further... leaving {PRONOUN/p_l/object} unsure if it was a trespasser, a threat, or something harmless.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "Gen_bord_balancing_tracks",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_bord_trackrogue",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "p_l heads out to patrol c_n's borders, but spots some tracks.",
+        "decline_text": "p_l decides to not investigate the tracks.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l identifys the tracks as belonging to some prey.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "The tracks lead p_l to a nearby red berry bush. p_l moves on, noting it down to inform the medicine cat.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l identifies the tracks as belonging to a fellow clanmate.",
+                "exp": 5,
+                "weight": 20
+            },
+            {
+                "text": "p_l identifies the tracks as belonging to two-legs, and p_l decides to head back to camp to inform the others.",
+                "exp": 5,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l can't identify the tracks, and are forced to return to camp to report it.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Despite p_l efforts, {PRONOUN/p_l/subject} can't identify the tracks, and reports it back at camp.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The tracks are obscured by recent rainfall, making it impossible for p_l to determine their origin.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The tracks lead p_l to an area too dangerous to navigate, forcing p_l to abandon {PRONOUN/p_l/poss} investigation.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "Gen_bord_balancing_markings",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "p_l heads out to patrol c_n's borders, and notices that some of their markings had been disturbed.",
+        "decline_text": "p_l decides to not investigate the markings.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Upon closer inspection, it was just remarking from a clannmate.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The scratches didn't match any cats paws, that was for certain, and p_l returns to camp to report it, alert to any threats.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Upon investigation, p_l finds that the disturbed markings were caused by a loner, though the intruder is long gone by now.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l couldn't identify what had disturbed the border markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} return to camp.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The disturbance in the markings remains a mystery to p_l, and when {PRONOUN/p_l/subject} reports the incident, extra patrols are assigned to monitor for any further disruptions.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_kittybat",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "kittybat_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "On border patrol, the patrol finds a kittypet's scent. Following the (extremely) obvious sounds of distress, p_l leads the patrol down to a kittypet, haplessly wedged between a couple of rocks. Wailing pathetically, they cry that their wing is stuck!",
+        "decline_text": "It's beyond c_n's border, it's not c_n's problem.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Cats don't normally come with wings, much less bat ones, and the patrol flinches back from the foreign stranger. But unnatural or not, the stranger's still stuck, and with a deep breath, p_l orders them forward to free a fellow cat... ish... thing.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": 1
+            },
+            {
+                "text": "Frankly, extra limbs or not (bat wings, at that - this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them.",
+                "exp": 15,
+                "weight": 10,
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse</i>, the patrol passes the mouse-brained kittypet by, leaving them to their stupidity while they focus on their actual task.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "Swaggering up, p_l tries to intimidate the kittypet. But while the cat is easily successfully frightened, that doesn't make them any less stuck in place, and eventually the patrol is forced to help set them free, if only so they can leave c_n's borders.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Hissing, p_l bowls the kittypet over, and with a ripping sound, the bat wing detaches from their back. The plump cat's crying increases in volume as they flee. p_l brings the trophy back to camp to boast.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_border_pumpkineyes",
+        "biome": ["any"],
+        "season": ["leaf-fall"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "pumpkineyes_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol is heading out to check the borders, when p_l says {PRONOUN/p_l/subject} {VERB/p_l/see/sees} strange glowing eyes in the distance.",
+        "decline_text": "r_c sighs and tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just seeing things. There's nothing out there... right?",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The patrol cautiously heads in the direction of the strange, motionless eyes. The cats see an eerie face with glowing eyes in the distance, baring its fangs and smelling of smoke. p_l creeps up to the face to find that it belongs to a pumpkin! Spooked, r_c suggests heading back to camp to report this bizarre finding to the Clan. p_l agrees, not wanting to be near this... thing... any longer.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "The patrol cautiously heads in the direction of the strange, motionless eyes. When p_l gets closer {PRONOUN/p_l/subject} {VERB/p_l/are/is} overwhelmed with the scent of Twolegs and smoke. Upon closer inspection, it seems that these foolish Twoleg kits are trying to set fire to a pumpkin with an unsettling hollow face! p_l and r_c charge the Twoleg kits, hissing, spitting, and doing their best to scare them off. Thankfully the kits scatter before they set the pumpkin ablaze.",
+                "exp": 10,
+                "weight": 5
+            },
+            {
+                "text": "As the patrol heads in the direction of the sinister glare of strange, motionless eyes, the scent of smoke creeps up on the patrol. s_c darts forward, finding the smoke scent coming from an odd pumpkin with some sort of... face? Thinking quickly {PRONOUN/s_c/subject} {VERB/s_c/scratch/scratches} dirt into the holes on the pumpkin, extinguishing the small flames. The patrol is left wondering what in the name of StarClan they're looking at.",
+                "exp": 15,
+                "weight": 10,
+                "stat_trait": [
+                    "thoughtful", 
+                    "careful",
+                    "cunning",
+                    "responsible", 
+                    "wise"
+                ],
+                "stat_skill": [
+                    "CLEVER,1", 
+                    "INSIGHTFUL,1", 
+                    "SENSE,1"
+                ]
+            },
+            {
+                "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c lets out a mrrow of laughter! {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that this is a Twoleg ritual performed around the start of leaf-bare. p_l is glad to have a cat with s_c's understanding of Twolegs on this patrol. With this knowledge, unneeded panic was surely avoided!",
+                "exp": 15,
+                "weight": 10,
+                "stat_skill": [
+                    "KITTYPET,0", 
+                    "LONER,0"],
+                "can_have_stat": ["r_c"]
+            },
+            {
+                "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c, and run their cold, fur-less paws through {PRONOUN/s_c/subject} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
+                "exp": 20,
+                "weight": 10,
+                "stat_skill": ["GHOST,1"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol cautiously heads in the direction of the strange, motionless eyes. As they get closer to what seems to be some sort of pumpkin, a group of Twoleg kits springs out of nowhere and chases the frightened cats off! The patrol runs until the Twolegs stop following. Panting and defeated, they return to camp without much information about the strange face.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "As r_c slowly creeps towards the disturbing face, s_c huffs with frustration. Tail lashing, s_c calls r_c a mouse-heart and stomps in the direction of the unblinking eyes without a shred of fear. s_c rolls {PRONOUN/s_c/poss} eyes and knocks over the harmless pumpkin, ignoring the strange face and the smell of smoke wafting around it.",
+                "exp": 5,
+                "weight": 20,
+                "stat_trait": [
+                    "bloodthirsty", 
+                    "cold", 
+                    "strict", 
+                    "grumpy", 
+                    "fierce"
+                ]
+            },
+            {
+                "text": "As r_c slowly creeps towards the disturbing face, s_c recklessly darts forward to get a closer look! {PRONOUN/s_c/subject/CAP} {VERB/s_c/crash/crashes} into some strange pumpkin, knocking it over and obscuring its eerie face. The patrol heads home without much left to investigate thanks to s_c's antics.",
+                "exp": 5,
+                "weight": 20,
+                "stat_trait": [
+                    "troublesome", 
+                    "childish", 
+                    "playful", 
+                    "shameless"
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_trickortreat",
+        "biome": ["any"],
+        "season": ["leaf-fall"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts.",
+        "decline_text": "The patrol decides it's best not to interfere with this peculiar ritual.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c, being ever so curious, decides to see if {PRONOUN/r_c/subject} can decipher the meaning behind this Twoleg ritual. After some time, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} it's some kind of friendly exchange. Each time the Twoleg kits go to the den, they receive a bit of prey from the older Twolegs. The patrol takes note and continues on their way, amused by the Twolegs' strange customs.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c's surprise, one of the tiny Twolegs offers {PRONOUN/r_c/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c decides to take it back to the camp for further investigation.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "r_c decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN/r_c/subject} {VERB/r_c/meow/meows} softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c a morsel of food. The patrol brings it back to camp for further investigation.",
+                "exp": 10,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c, being ever so curious, decides to see if {PRONOUN/r_c/subject} can decipher the meaning behind this Twoleg ritual. However, after some time, {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up, concluding that it's just another strange Twoleg custom that Clan cats will never understand.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "The patrol attempts to get closer to the Twoleg kits, but their presence causes panic among the little creatures. The larger Twolegs nearby seem agitated, waving their paws and stomping around. The cats quickly retreat to avoid causing further disruption.",
+                "exp": 0,
+                "weight": 10
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_scarecrow",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["halloween"],
+        "patrol_art": "scarecrow_INTRO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field.",
+        "decline_text": "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c hesitantly approaches the Twoleg, fur bristling and on guard. It doesn't appear to notice {PRONOUN/r_c/object} yet. Paw by paw, r_c inches forward, but realizes something seems off. Is this Twoleg... even alive? After a quick investigation, r_c finds hay sticking out of the Twoleg's pelt. How odd. r_c reports back with {PRONOUN/r_c/poss} findings.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends the Twoleg falling to the ground with a giant thump.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,0"]
+            },
+            {
+                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject/CAP} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": [
+                    "ROGUE,0", 
+                    "LONER,0"
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol decides to take no chances and sets up an ambush around the Twoleg. They wait... and wait... but the Twoleg makes no movements to attack. Finally, r_c notices that the Twoleg isn't even a Twoleg at all! They wasted all of that time for nothing.",
+                "exp": 0,
+                "weight": 10
+            },
+            {
+                "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends both of them to the ground. s_c ends up covered in hay, {PRONOUN/s_c/poss} claws sunk into a harmless scarecrow.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,0"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_dislike",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": [],
+        "tags": [],
+        "patrol_art": "gen_train_argueWW",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "warrior": [2, 2]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": ["dislike_20"],
+        "intro_text": "p_l and r_c have been bickering non-stop the entire time they've been patrolling.",
+        "decline_text": "Unable to work together, the two return to camp.",
+        "success_outcomes": [
+            {
+                "text": "Despite the bickering, the two manage to patrol the border without incident.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "At one point during the bickering, the two start to come to a better understanding of each other, resulting in them forging some respect for each other.",
+                "exp": 10,
+                "weight": 10,
+                "art": "gen_train_talkingWW",
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "p_l and r_c have been bickering the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
+                "exp": 10,
+                "weight": 5,
+                "art": "gen_battle_rogue_warrior",
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury", "battle_injury"]
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
+                    "scar": "m_c was scarred in a fight with a rogue."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
+                "exp": 10,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "trust", "comfort"],
+                        "amount": 5
+                    }	
+                ]
+            },
+            {
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an imprompto contest to see who can catch the most bugs.",
+                "exp": 10,
+                "weight": 10,
+                "art": "fst_hunt_fun3",
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }	
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The bickering gets to be too much, and r_c storms back to camp irritated.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "While they are bickering, r_c trips, and p_l snickers, earning r_c's ire.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"]
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 3
+                    }	
+                ]
+            },
+            {
+                "text": "As the duo are patroling, they are ambushed by a rogue! r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "exp": 0,
+                "weight": 5,
+                "art": "gen_dead_cat",
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol.",
+                    "lead_death": "succumbed to injury after being ambushed and abandoned"
+                }
+            },
+            {
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes their tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "respect"],
+                        "amount": -5
+                    }		
+                ]
+            },
+            {
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
+                "exp": 0,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }	
+                ]
+            }
+        ]
+    }
+]

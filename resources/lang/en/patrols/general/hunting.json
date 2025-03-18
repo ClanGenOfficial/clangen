@@ -1,0 +1,3624 @@
+[
+    {
+        "patrol_id": "gen_hunt_vision1",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_vision",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "As the patrol spreads out to hunt, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
+        "decline_text": "The patrol doesn't talk about the vision.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol talks to {PRONOUN/r_c/object} about whether it was a real vision as they hunt.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of {PRONOUN/p_l/poss} seniority and experience as they discuss {PRONOUN/r_c/poss} vision.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["STAR,1", "SENSE,1", "OMEN,1", "CLAIRVOYANT,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c nods, and pads beside r_c as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams, dream_list, and s_c isn't going to leave r_c alone to figure it out {PRONOUN/r_c/self}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["DREAM,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/p_l/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["faithful"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "No one can make sense of the vision.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "r_c notices p_l looking at {PRONOUN/r_c/object} enviously and withdraws from the rest of the patrol, dismissing the dream as unimportant.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Did r_c eat too many mice before sleeping? s_c inquires. That always disturbs <i>{PRONOUN/s_c/poss}</i> sleep. Once, {PRONOUN/s_c/subject} had this crazy dream where {PRONOUN/s_c/poss} paws had turned into mushrooms, and when s_c nibbled on {PRONOUN/s_c/poss} own paw, {PRONOUN/s_c/subject} started to - no, r_c interrupts, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} pretty sure that's not what happened in this case.",
+                "exp": 0,
+                "weight": 10,
+                "stat_trait": ["childish", "playful" ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": -10
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_vision2",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_vision",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/head/heads} out to hunt, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/push/pushes} it from {PRONOUN/r_c/poss} mind.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "It definitely distracts {PRONOUN/r_c/object} from the hunt, but r_c uses the time by {PRONOUN/r_c/self} to put {PRONOUN/r_c/poss} thoughts in order. It was a sign from {PRONOUN/r_c/poss} ancestors. Now {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to figure out what to do next.",
+                "exp": 20,
+                "weight": 10,
+                "prey": ["small"]
+            },
+            {
+                "text": "Somehow hunting brings r_c to an almost meditative state, and not only {VERB/r_c/are/is} {PRONOUN/r_c/subject} fairly confident of {PRONOUN/r_c/poss} next steps having been given this vision, but {PRONOUN/r_c/subject} also {VERB/r_c/bring/brings} back a good haul to the prey pile.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["any"],
+                "stat_skill": ["HUNTER,3", "CLEVER,1", "INSIGHTFUL,1"],
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
+                "exp": 20,
+                "can_have_stat": ["any"],
+                "stat_skill": ["STAR,1", "CLAIRVOYANT,1", "SENSE,1"],
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "As {PRONOUN/s_c/subject} {VERB/s_c/hunt/hunts}, s_c's eyes are caught by omen_list, and {PRONOUN/s_c/poss} dream snaps into clarity. It draws the hunt short, but that's not important right now.",
+                "exp": 20,
+                "can_have_stat": ["any"],
+                "stat_skill": ["OMEN,1"],
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
+                "exp": 20,
+                "can_have_stat": ["any"],
+                "stat_trait": ["faithful"],
+                "weight": 20,
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c can't make sense of the vision.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The clair_list r_c remembers from {PRONOUN/r_c/poss} dream doesn't exactly feel like <i>StarClan's</i> type of message.",
+                "exp": 0,
+                "can_have_stat": ["any"],
+                "stat_skill": ["DARK,1"],
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_sneakprey1",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_sneakprey",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 5,
+        "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "After all, {PRONOUN/r_c/subject} {VERB/r_c/have/has} caught enough on this solo hunt that {PRONOUN/r_c/subject} won't be able to carry it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gives in to {PRONOUN/r_c/poss} grumbling belly, reasoning that no one will notice, but when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp empty-pawed and with blood on {PRONOUN/r_c/poss} lips, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the stares of the other warriors on {PRONOUN/r_c/poss} pelt.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_sneakprey2",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_sneakprey",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 5,
+        "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "After all, {PRONOUN/r_c/subject} {VERB/r_c/have/has} caught enough on this solo hunt that {PRONOUN/r_c/subject} won't be able to carry it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gives in to {PRONOUN/r_c/poss} grumbling belly, reasoning that no one will notice, but when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp empty-pawed and with blood on {PRONOUN/r_c/poss} lips, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the stares of the warriors on {PRONOUN/r_c/poss} pelt. r_c slinks back to the apprentices' den, tail and ears low.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_sneakprey3",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_sneakprey",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [-1, -1],
+            "deputy": [-1, -1]
+        },
+        "weight": 5,
+        "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
+        "decline_text": "r_c decides against breaking the Warrior Code.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c gives in to {PRONOUN/r_c/poss} grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on {PRONOUN/r_c/poss} lips, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the suspicious stares of the other warriors on {PRONOUN/r_c/poss} pelt.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls dep_name aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when {PRONOUN/r_c/subject} {VERB/r_c/slink/slinks} into {PRONOUN/r_c/poss} nest that night.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_sneakprey4",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_sneakprey",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "deputy": [-1, -1]
+        },
+        "weight": 5,
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught.",
+        "decline_text": "app1 decides against breaking the warrior code.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} so hungry - but this prey is for the Clan, not app1. {PRONOUN/app1/subject/CAP} hold {PRONOUN/app1/poss} head up high and bring {PRONOUN/app1/poss} small catch home to the freshkill pile.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "After all, the patrol has caught enough on this hunt that {PRONOUN/app1/subject}'ll have trouble carrying it all back to camp. {PRONOUN/app1/subject/CAP} {VERB/app1/stop/stops} for a quick snack and {VERB/app1/return/returns} to camp laden with prey for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls dep_name aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace; r_c prickles with humiliation and terrible smells.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 gets away with it, burying the evidence. But {PRONOUN/app1/poss} pelt still prickles with guilt when the patrol brings so little home.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["clan", "patrol"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["jealous"    ],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+    "patrol_id": "gen_hunt_stinkyrat",
+        "biome": ["forest", "plains", "mountainous", "beach", "wetlands"],
+    "season": ["leaf-bare"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_hunt_leafbaresnowstorm",
+    "min_cats": 3,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 10,
+    "intro_text": "The patrol comes across a large rat. It's too busy digging around in a frozen pile of foul Twoleg crowfood to notice the approaching patrol.",
+    "decline_text": "p_l decides to look for other prey, leaving the patrol as desperate for food as the rat.",
+    "chance_of_success": 40,
+    "success_outcomes": [
+      {
+        "text": "The patrol easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare.",
+        "exp": 30,
+        "weight": 20,
+        "prey": ["medium"]
+      },
+      {
+        "text": "r_c drops into a hunter's crouch and silently moves closer to make a clean kill. Strangely, the rat turns to r_c and makes a series of pained squeaks. p_l orders a retreat after r_c smells the disgusting scent of crowfood from the rat's breath.",
+        "exp": 30,
+        "weight": 10
+      },
+      {
+        "text": "s_c drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c/subject/CAP} suddenly {VERB/s_c/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c/poss} Clanmates. s_c explains crossly that the rat was carrying a foul, sickly-sweet scent on its breath. It would have poisoned any cat that bit it.",
+        "exp": 30,
+        "weight": 20,
+        "stat_skill": ["CLEVER,3", "HUNTER,2", "SENSE,1"]
+      },
+      {
+        "text": "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry.",
+        "exp": 30,
+        "weight": 20,
+        "stat_skill": ["ROGUE,0", "LONER,0"]
+      },
+      {
+        "text": "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["wise", "thoughtful", "careful"]
+      },
+      {
+        "text": "r_c kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
+        "exp": 30,
+        "weight": 10,
+        "stat_trait": ["childish", "playful" ],
+        "can_have_stat": ["r_c"]
+      }
+    ],
+    "fail_outcomes": [
+      {
+        "text": "Just as r_c is about to pounce the rat scurries away with an angry squeak. Both the patrol and the rat go home with empty paws.",
+        "exp": 30,
+        "weight": 20
+      },
+      {
+        "text": "Without thinking, s_c pounces at the rat. The patrol watches completely stunned as s_c misses the rat by several tail lengths and scares it off. The disgruntled patrol heads home and s_c has to explain why {PRONOUN/s_c/subject} missed an easy catch in the middle of leaf-bare.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["oblivious", "arrogant", "confident", "shameless"]
+      },
+      {
+        "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill and never recovers.",
+        "exp": 30,
+        "weight": 5,
+        "dead_cats": ["r_c"],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      },
+      {
+        "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill.",
+        "exp": 30,
+        "weight": 10,
+        "injury": [
+          {
+            "cats": ["r_c"],
+            "injuries": ["carrionplace disease", "diarrhea", "poisoned"]
+          }
+        ],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      },
+      {
+        "text": "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill and never recovers.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["oblivious", "arrogant", "confident", "shameless"],
+        "dead_cats": ["s_c"],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      },
+      {
+        "text": "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill.",
+        "exp": 30,
+        "weight": 20,
+        "stat_trait": ["oblivious", "arrogant", "confident", "shameless"],
+        "injury": [
+          {
+            "cats": ["s_c"],
+            "injuries": ["carrionplace disease", "diarrhea", "poisoned"]
+          }
+        ],
+        "history_text": {
+          "reg_death": "m_c died after tasting a tainted rat.",
+          "lead_death": "died after tasting a tainted rat"
+        }
+      }
+    ]
+  },
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_solowarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l puts {PRONOUN/p_l/poss} nose to the ground, checking for prey scent as {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts}.",
+    "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "There's barely anything out there, and p_l is strangely proud {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to bring anything back to camp at all.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "It's bitterly disappointing, to bring back so little for the fresh-kill pile, and p_l retreats to curl up into a ball in {PRONOUN/p_l/poss} nest.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "Even s_c, for all {PRONOUN/s_c/poss} talents, can't bring back prey for the fresh-kill pile if there's only scraps to catch.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_solowarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l stretches, digging {PRONOUN/p_l/poss} claws into the ground as {PRONOUN/p_l/subject} {VERB/p_l/warm/warms} up. Without needing to coordinate a group, this hunting patrol can proceed entirely at their own schedule.",
+    "decline_text": "Actually, p_l wants to do something with company. {PRONOUN/p_l/subject/CAP} {VERB/p_l/join/joins} up with a bigger patrol instead of going out on {PRONOUN/p_l/poss} own.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "p_l finds a decent sized carcass to scavenge, though {PRONOUN/p_l/subject} {VERB/p_l/have/has} to throw away a significant amount of meat least {PRONOUN/p_l/subject} bring crow-food back to camp.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "p_l doesn't manage to catch much - but {PRONOUN/p_l/poss} hunt brings {PRONOUN/p_l/object} near one of c_n's borders, and {PRONOUN/p_l/subject} {VERB/p_l/stop/stops} to do a little remarking before {PRONOUN/p_l/subject} {VERB/p_l/head/heads} home.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "The prey just does <i>not</i> want to cooperate today, and it takes all of s_c's talents to bring what feels like not nearly enough fresh-kill back to camp.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+  {
+    "patrol_id": "gen_hunt_mediumprey_balancing_solowarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "Sometimes it's nice to go out alone - there's nothing to distract p_l from the hunt.",
+    "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before {PRONOUN/p_l/subject} even {VERB/p_l/start/starts}.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "A nice bundle of mice will do splendidly, and p_l feels perfectly happy with {PRONOUN/p_l/poss} contributions to the fresh-kill pile when they trot home.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "It's good, getting to focus on nothing but {PRONOUN/p_l/self} on a solo hunt. That {PRONOUN/p_l/poss} hunt is successful also helps p_l's mood, and by the time {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} home {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} relaxed and content.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "Mulling over how to best teach the best hunting grounds for the season, p_l realizes {PRONOUN/p_l/subject} nearly overlooked the perfect spot. Sure enough, {PRONOUN/p_l/subject} {VERB/p_l/pick/picks} up a good catch for the fresh-kill pile there.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["TEACHER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Maybe no one else is here to show off to - but that pounce was <i>still</i> beautiful, audience appreciation or not. p_l certainly doesn't think the prey appreciated it.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "The prey tries to take a swipe at p_l as it goes down, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} more than prepared to scrap, and if {PRONOUN/p_l/poss} prey wants to go, then p_l's raring for a fight!",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["FIGHTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "The prey takes off running, but it chooses the wrong cat to race against, and p_l cuts corners to skid into a beautiful takedown, winning race and meal all at once.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["RUNNER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "The effort p_l puts in to climbing up to the outlook pays off when {PRONOUN/p_l/poss} ascent reveals an old animal on its last legs. The end of its life will feed c_n well.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["CLIMBER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Occasionally, water hunts for you, or for anyone knowledgeable enough to safely fish drowned prey from where it washes up. p_l has a healthy respect for the element, but certainly won't turn down a gift.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["SWIMMER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_solowarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l thinks {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} found a promising hunting spot to focus on for {PRONOUN/p_l/poss} solo patrol.",
+    "decline_text": "{PRONOUN/p_l/subject/CAP} decide to move on instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "{PRONOUN/p_l/poss/CAP} judgment is accurate - these hunting grounds are excellent, p_l will have to bring {PRONOUN/p_l/poss} Clanmates back here another day.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "Forget struggling to hunt, p_l has a new problem, struggling to bring everything back to camp! Still, {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to complain about the problems of abundant prey and easy cover to pounce from.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "This is the life, p_l hums, trying to balance the heavy load {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carrying back to camp.",
+            "exp": 25,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "A gaggle of younger cats run through, ruining everything before p_l can properly get started.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_solowarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "normal adult": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "p_l's glad to go out on a solo hunting patrol - there's an ambush spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been itching to try out on {PRONOUN/p_l/poss} own.",
+    "decline_text": "{PRONOUN/p_l/subject/CAP} encounter an herb gathering patrol on the way there and get swept up into it.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "p_l succeeds beyond {PRONOUN/p_l/poss} wildest hopes, coming home with prey so large {PRONOUN/p_l/subject} {VERB/p_l/have/has} to drag rather than carry it.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "It takes a long time waiting, crouched in hiding, but it's all worth it to burst out, claws and teeth ready, prey completely unsuspecting.",
+            "exp": 25,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "With a hunter's keen attention, p_l waits, letting smaller targets pass whisker close in front of {PRONOUN/p_l/object}, waiting for the perfect prey to appear. When it does {PRONOUN/p_l/subject} leap from {PRONOUN/p_l/poss} cover to slam it down to the ground, triumphant in victory.",
+            "exp": 25,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["p_l"],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l misses {PRONOUN/p_l/poss} pounces, and brings nothing home.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's not p_l's lucky day - the prey just doesn't seem to be running.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "A gaggle of younger cats run through, ruining everything before p_l can properly get started.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["running nose"]
+                }
+              ],
+              "history_text": {
+                "reg_death": "m_c died after a running nose progressed to something worse.",
+                "lead_death": "died after a running nose progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_soloapphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "app1 has snuck out late, timed with the last flares of the sunset, to try to hunt alone.",
+    "decline_text": "It's not a great day for hunting, app1 decides, and calls it off before someone figures out {PRONOUN/app1/subject}{VERB/app1/'ve/'s} snuck out of camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Maybe the light makes it harder for the prey to see app1 - but it makes it harder for app1 to see {PRONOUN/app1/poss} prey, too. Not a stellar success.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "Trying to hunt after a full day's warrior training isn't {PRONOUN/app1/poss} smartest idea. app1 is too exhausted to bring much home.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "It doesn't matter how keen on hunting app1 is - if the prey isn't there, not even the mightiest hunter in StarClan can do anything, let alone a rangy adolescent. Still, not much is better than nothing.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["app1"],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1 is so busy hiding from the notice of a dusk border patrol that {PRONOUN/app1/subject} outright {VERB/app1/fail/fails} to catch <i>anything</i>.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "app1 gets so distracted by the pretty sunset that zero hunting gets done.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear", "scrapes"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_soloapphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "Look, {PRONOUN/app1/subject}{VERB/app1/'re/'s} so close to perfecting {PRONOUN/app1/poss} pounce, app1 can <i>feel</i> it. {PRONOUN/app1/subject/CAP} head out to prove so.",
+    "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "And bam, and BAM! Sure {PRONOUN/app1/subject} might not be bringing home a ton of prey, but app1 thinks {PRONOUN/app1/subject}{VERB/app1/'ve/'s} really figured out {PRONOUN/app1/poss} flow. BAM!",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "Trying to hunt after a full day's warrior training isn't {PRONOUN/app1/poss} smartest idea. app1 is too exhausted to bring much home.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "There's something really special about the clear focus of hunting. Or, at least, app1 thinks so. This might not be the world's greatest haul of prey, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} proud of the work {PRONOUN/app1/subject}{VERB/app1/'ve/'s} done and the progress in {PRONOUN/app1/poss} training {PRONOUN/app1/subject}{VERB/app1/'re/'s} making.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["app1"],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Forget pouncing - app1 can't find any prey to pounce <i>on</i>.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/line/lines} up the perfect shot, {VERB/app1/go/goes} for it - and one of {PRONOUN/app1/poss} hindfeet slips out from under {PRONOUN/app1/object}. Fox-dung!",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear", "scrapes"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_mediumprey_balancing_soloapphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "app1 is tired of being treated like {PRONOUN/app1/subject} {VERB/app1/do/does}n't know anything - {PRONOUN/app1/subject} {VERB/app1/stalk/stalks} off to hunt alone.",
+    "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "This will surely be enough prey to prove {PRONOUN/app1/self}. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} not asking for {PRONOUN/app1/poss} warrior name early - just to be acknowledged for the skills {PRONOUN/app1/subject}{VERB/app1/'ve/'s} put so much effort into learning.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "This isn't enough. app1 swallows hard, lifts {PRONOUN/app1/poss} head up, and brings what {PRONOUN/app1/subject} {VERB/app1/have/has} back to camp, squashing down {PRONOUN/app1/poss} hopes for a naming ceremony.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "Sure, {PRONOUN/app1/subject} might not be the greatest fighter or the Clan's cleverest cat, but hunting? Hunting is a <i>breeze</i> for app1, and {PRONOUN/app1/subject} {VERB/app1/come/comes} back to camp with the proof of that.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["app1"],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Forget pouncing - app1 can't find any prey to pounce <i>on</i>.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't manage a single kill. Instead, app1 pretends {PRONOUN/app1/subject} {VERB/app1/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back into camp.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear", "scrapes"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_soloapphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "app1 doesn't want to be in the apprentices' den until {PRONOUN/app1/poss} muzzle grays - {PRONOUN/app1/subject} {VERB/app1/need/needs} to prove lead_name should pay attention to {PRONOUN/app1/object}.",
+    "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "app1 knows that a warrior would have more experience, more strength, more endurance, more <i>everything</i>. But that doesn't matter, app1 has more heart, and this amount of success stacking the fresh-kill pile proves it.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "Bringing the last of {PRONOUN/app1/poss} catch back to camp, app1 sits proudly beside the fresh-kill pile, chest fluffed out in achievement.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "app1 leans on {PRONOUN/app1/poss} strengths, choosing to go hunting, which {PRONOUN/app1/subject} {VERB/app1/know/knows} is one of {PRONOUN/app1/poss} talents. And it's critical to c_n too, making {PRONOUN/app1/poss} heart swell with pride as {PRONOUN/app1/subject} {VERB/app1/see/sees} another cat blink in surprise at {PRONOUN/app1/poss} hunting haul.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["app1"],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Forget pouncing - app1 can't find any prey to pounce <i>on</i>.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't manage a single kill. Instead, app1 pretends {PRONOUN/app1/subject} {VERB/app1/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back into camp.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear", "scrapes"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_soloapphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [1, 1]
+    },
+    "weight": 1,
+    "intro_text": "app1 nervously creeps out towards c_n's dirtplace, profile low to the ground as {PRONOUN/app1/subject} {VERB/app1/sneak/sneaks} out of camp. Let's see what a night hunt feels like.",
+    "decline_text": "app1 thinks better of the plan and returns to {PRONOUN/app1/poss} nest.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Flashing through the night, claws out, teeth bared, alone in the darkness, app1 feels <i>powerful</i>. Also, {PRONOUN/app1/subject} swear the prey is more blind than in daylight.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "It's cold, alone by {PRONOUN/app1/self}. But app1 shakes it off, and {PRONOUN/app1/subject} {VERB/app1/find/finds} enough food that the Clan will have questions, waking up with a fresh-kill pile weirdly fuller than when they went to sleep.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "Hunting is always exciting, always fun, but this - the feeling of the wind ruffling {PRONOUN/app1/poss} pelt, the way the animal calls have all changed with the darkness, the thrill of ambushing one thing after another, this is great!",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["app1"],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Forget pouncing - app1 can't find any prey to pounce <i>on</i>.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "It's <i>dark</i>. How{VERB/app1/'re/'s} {PRONOUN/app1/subject} supposed to hunt like this?",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear", "scrapes"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_smallwarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 3,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "As they head out into c_n's territory, p_l suggests a high cover hunting ground, perfect for ambushing.",
+    "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Perfect for ambushing, p_l said. Perfect for ambushing each other, maybe! First r_c ruins p_l's hunt, then p_l trips over r_c as {PRONOUN/r_c/subject} {VERB/r_c/stalk/stalks}. This did <i>not</i> go to plan.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust", "respect"],
+                    "amount": -5
+                }
+            ],
+            "prey": ["very_small"]
+        },
+        {
+            "text": "There might be tons of cover here to pounce from, but there's tons of places for the prey to hide, too. The patrol doesn't bring much home.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "Look, s_c might be a talented hunter, but {PRONOUN/s_c/subject} can't succeed if there's no prey in the first place - this hunting spot just didn't work out well.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "In setting up an overly complicated ambush strategy, all the cats do is drive away the prey from the local area. And also fall over each other a bit.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The cats lose track of each other under the thick cover and end up ruining the hunt in the name of reforming the patrol.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c trots over, telling p_l to take it easy and lean on {PRONOUN/r_c/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["sprain"]
+                }
+              ],
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust", "comfort"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_smallwarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 3,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "The small hunting patrol heads out together.",
+    "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The scent trails here are very dispersed and weak - the patrol kills a couple good pieces of prey, but not much. p_l makes a note to report the state of this hunting ground when they get back to camp.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "They don't quite have enough cats to set up an inescapable net, and several times, prey slips away from them. Still, they're not empty-pawed.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "s_c catches every single bit of prey the patrol brings home. The other cats aren't happy with how this is going to look, comparing themselves to s_c.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["jealous"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c.",
+            "exp": 0,
+            "weight": 20,
+            "stat_trait": [
+                "arrogant",
+                "shameless",
+                "childish",
+                "flamboyant",
+                "competitive",
+                "ambitious"
+            ],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": -5
+                }
+            ]
+        },
+        {
+            "text": "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["comfort"],
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "text": "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c trots over, telling p_l to take it easy and lean on {PRONOUN/r_c/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["sprain"]
+                }
+              ],
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust", "comfort"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_mediumprey_balancing_smallwarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 3,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "This hunting patrol might be small, but p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} the perfect spot to take advantage of that.",
+    "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "This particular hunting ground isn't very productive, so it's not usually anyone's favorite. But that means the prey here hasn't been chased for a while, and the patrol is able to spread out and find a fair amount of success.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Having a large patrol hunting near a border might send the wrong message to their neighbors. But the borderlands still have prey, and with a smaller hunting patrol, there's no accidental diplomatic passive-aggressive messaging to hunting there.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "It turns out to not really matter where they hunt - s_c's hunting skills carry the day. Not that the other members of the patrol don't bring back their own perfectly respectable kills too.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c.",
+            "exp": 0,
+            "weight": 20,
+            "stat_trait": [
+                "arrogant",
+                "shameless",
+                "childish",
+                "flamboyant",
+                "competitive",
+                "ambitious"
+            ],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": -5
+                }
+            ]
+        },
+        {
+            "text": "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["comfort"],
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "text": "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c trots over, telling p_l to take it easy and lean on {PRONOUN/r_c/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["sprain"]
+                }
+              ],
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust", "comfort"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_smallwarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 3,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "With a smaller hunting party, the cats are going to need to coordinate together well to succeed.",
+    "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Everyone turns to p_l to lead, and p_l rises to the occasion, giving a clear plan of attack that the patrol pulls off flawlessly. Each cat can be proud of the work they put in today.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "This is what Clanmates do - this is what a Clan is <i>for</i>. Nodding to each other, the patrol heads out, determined to back each other up. That's what ends up making all the difference, and their hunt goes flawlessly.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "The cats defer to s_c as the expert, and s_c nods, laying out {PRONOUN/s_c/poss} thoughts and consulting with everyone to make sure each cat is comfortable with the part they'll play. It's a good use of {PRONOUN/s_c/poss} skills, one that rewards the cats handsomely.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["comfort"],
+                    "amount": 3
+                }
+            ],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c.",
+            "exp": 0,
+            "weight": 20,
+            "stat_trait": [
+                "arrogant",
+                "shameless",
+                "childish",
+                "flamboyant",
+                "competitive",
+                "ambitious"
+            ],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": -5
+                }
+            ]
+        },
+        {
+            "text": "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["comfort"],
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "text": "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c trots over, telling p_l to take it easy and lean on {PRONOUN/r_c/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["sprain"]
+                }
+              ],
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust", "comfort"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_smallwarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 3,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "Eyes glowing with the last rays of the sunset, the small hunting party heads out into the gathering dusk.",
+    "decline_text": "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "It's the perfect time of day, the cats melting in and out of their territory's shadowy cover as their successes begin to pile up. At first there's only a couple pieces of prey, then more, and more, and more, until finally p_l calls off the patrol: not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "With their diurnal prey tired and headed to their homes, their crepuscular counterparts come out in full force! As their nocturnal prey still blinks away the sleep in their eyes, the patrol has a truly premium number of opportunities to catch food, enough so that the entire Clan comes to comment on the patrol's success when they return.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["clan"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 1
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "s_c knows <i>exactly</i> how to take advantage of the growing gloom, giving the rest of the patrol a couple of ideas that tip the balance from a successful patrol to an astonishingly outstanding one.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["comfort"],
+                    "amount": 3
+                }
+            ],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "s_c tries to show off, but it screws up the coordination of the entire patrol. Wonderful. Great job, s_c.",
+            "exp": 0,
+            "weight": 20,
+            "stat_trait": [
+                "arrogant",
+                "shameless",
+                "childish",
+                "flamboyant",
+                "competitive",
+                "ambitious"
+            ],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": -5
+                }
+            ]
+        },
+        {
+            "text": "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats console one another as they walk home.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["comfort"],
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "text": "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c trots over, telling p_l to take it easy and lean on {PRONOUN/r_c/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["p_l"],
+                  "injuries": ["sprain"]
+                }
+              ],
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust", "comfort"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_largewarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "A large hunting patrol is formed and sent out to see what they can find.",
+    "decline_text": "The patrol can't agree on a hunting ground and break up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Worryingly, the answer is 'very little'. The patrol shares uneasy glances as they take what few prey they've managed to acquire back to camp.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "They don't bring back nothing. But they don't bring back a lot, either. No one feels any kind of accomplishment or pride, not with this barely qualifying as a success, if it does at all.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "With so many hunters out together, one would think they'd manage to find more. But no cat can control the luck of the hunt, not even a skilled hunter like s_c.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Even in the worst conditions, there's normally <i>something</i> to hunt. But none of the cats manages even a single kill, and tails are tucked sadly when the patrol pads back into camp.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l chooses a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_largewarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "Honestly, it looks like a scat day to try to hunt, so the cats team up into a bigger hunting patrol, hoping that will help.",
+    "decline_text": "The patrol can't agree on a hunting ground and break up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Does it somehow make the conditions ideal? No. Does having their Clanmates there to coordinate with absolutely net them more prey than they'd have been able to do in smaller patrols? Yes.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "It feels like their teamwork didn't do much, with each cat not bringing home much prey. But collectively, the patrol still had some success, and if it could've been better, well, it could've also been much worse.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "Talent can't make up for a dung day. Teamwork can't either. But together? It sort-of makes up for it. s_c would be better pleased if {PRONOUN/s_c/subject}'d had more success, but that's life sometimes: not every hunt can be fruitful.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Even in the worst conditions, there's normally <i>something</i> to hunt. But none of the cats manages even a single kill, and tails are tucked sadly when the patrol pads back into camp.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l chooses a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_mediumprey_balancing_largewarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "The cats chat as they head out to hunt.",
+    "decline_text": "The patrol can't agree on a hunting ground and break up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "It's nice, catching up with Clanmates they might not see every day as they all hunt. Nothing earth-shattering. Just nice.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Sometimes, the nicest thing is to have a completely unremarkable hunt.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["medium"]
+        },
+        {
+            "text": "s_c is complimented on {PRONOUN/s_c/poss} hunting talents. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} humble about it, but that doesn't make it less true.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The area the patrol chooses has been the subject of several recent hunts, and these hunting grounds are now sparsely populated with fearful, cautious prey. The patrol doesn't have any success.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l chooses a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_largewarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "The bigger the hunting party, the bigger the expectations for what they'll bring home to the fresh-kill pile.",
+    "decline_text": "The patrol can't agree on a hunting ground and break up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The patrol will more than satisfy those expectations with this haul of prey. They bump shoulders companionably as they pad home.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "They don't disappoint.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "s_c has a good idea that takes advantage of the number of cats in the patrol: one that nets them all a very successful haul of prey.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The area the patrol chooses has been the subject of several recent hunts, and these hunting grounds are now sparsely populated with fearful, cautious prey. The patrol doesn't have any success.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l chooses a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_largewarriorhunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [1, 6]
+    },
+    "weight": 1,
+    "intro_text": "There's a spring in their steps as the cats head out - today looks like a good day for hunting.",
+    "decline_text": "The patrol can't agree on a hunting ground and break up into smaller groups instead.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The hunting is easy and the company is good. That spring is still just as present in their steps as the patrol heads back to camp - though perhaps the amount of prey they're all carrying makes it harder to see.",
+            "exp": 30,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "The conditions don't disappoint - it's going to be tough carrying all their fresh-kill home, but that's the kind of problem the cats are happy to have.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["huge"]
+        },
+        {
+            "text": "Not only does s_c personally catch a terrifying amount of prey, but {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up support to everyone else to do the same, and the patrol brings a truly awe-inspiring haul home.",
+            "exp": 30,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They find nothing. Actually nothing. This isn't just bad luck - this is something spooking the local prey away from this area of the territory, and it needs to be reported back to camp straight away.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "The area the patrol chooses has been the subject of several recent hunts, and these hunting grounds are now sparsely populated with fearful, cautious prey. The patrol doesn't have any success.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "p_l chose a completely stupid hunting spot to lead them all to, and by the time the patrol gives up and heads back to camp, more than one cat is throwing surly glares in {PRONOUN/p_l/poss} direction.",
+            "exp": 0,
+            "weight": 20,
+              "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_verysmallprey_balancing_appgrouphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
+    },
+    "weight": 1,
+    "intro_text": "A hunting patrol of <i>just apprentices!</i> This is going to go great!",
+    "decline_text": "It's not a great day for hunting, p_l decides, and calls it off before they even start.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "It doesn't!",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've.",
+            "exp": 10,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["very_small"]
+        },
+        {
+            "text": "The only apprentice to catch anything is s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} sure everyone else knows it. Extensively.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike", "jealous"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They all quickly decide that no one caught anything - and <i>definitely</i> not anything on any other Clan's territory - and swear each other to secrecy.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "comfort"],
+                    "amount": 10
+                }
+            ]
+        },
+        {
+            "text": "app1 had no idea {PRONOUN/app1/subject} had so much in common with app2, the apprentices exchanging complaints about training and gossip. It's a wonderful time - a wonderful time where they completely neglect to do any hunting.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up {PRONOUN/app1/poss} ear, but in the process, {PRONOUN/app1/subject} {VERB/app1/squawk/squawks} with surprise and {VERB/app1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_smallprey_balancing_appgrouphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
+    },
+    "weight": 1,
+    "intro_text": "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>.",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The apprentices demonstrate their independence by independently finding a good hunting ground, independently taking down prey, and independently getting lost on the way home. But they do independently get themselves unlost!",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've.",
+            "exp": 10,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        },
+        {
+            "text": "Who needs a warrior to tell them what to do when they have s_c, who will tell them what to do just as extensively and annoyingly. Even more irritatingly, s_c gets the most prey by far.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "jealous"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They all quickly decide that no one caught anything - and <i>definitely</i> not anything on any other Clan's territory - and swear each other to secrecy.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "comfort"],
+                    "amount": 10
+                }
+            ]
+        },
+        {
+            "text": "app1 had no idea {PRONOUN/app1/subject} had so much in common with app2, the apprentices exchanging complaints about training and gossip. It's a wonderful time - a wonderful time where they completely neglect to do any hunting.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up {PRONOUN/app1/poss} ear, but in the process, {PRONOUN/app1/subject} {VERB/app1/squawk/squawks} with surprise and {VERB/app1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_mediumprey_balancing_appgrouphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
+    },
+    "weight": 1,
+    "intro_text": "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The world takes on an almost shadowy hue, brought to life by the night ambience; the once-familiar now made novel and thrilling under the cloak of darkness. The apprentices tear around c_n territory, fishing prey from unexpected places, shivering with pride at their own daring - and not noticing the camp guard silently shadowing them, keeping them safe.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "comfort"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. The next morning, the apprentices smirk as they watch the adults puzzle over the extra prey in the fresh-kill pile, a secret shared in smug smiles and lashing tails.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        },
+        {
+            "text": "s_c wins the competition, easily. But {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} magnanimous in victory, managing to not completely look like a mouse-brain. Maybe that's the more impressive achievement.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "jealous"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["medium"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The night is dark and void of prey. Even worse, app1 gets scared and starts calling out for {PRONOUN/app1/poss} mentor. But they're too far away from camp to be heard and app1 shuts up quickly. What should've been a fun, cool adventure has been ruined.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Their competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. Sure, they don't get any hunting done - but that doesn't seem to matter to the adventurous apprentices.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up {PRONOUN/app1/poss} ear, but  squawks with surprise and lets go in the process, causing the critter to scamper away. Well. So ends the hunt for the only prey they've managed to find tonight. Fox-dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_largeprey_balancing_appgrouphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
+    },
+    "weight": 1,
+    "intro_text": "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there's less pressure hunting as an apprentice-only patrol.",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The lack of pressure lets them try things, fail, and try again, not worrying too hard about the results. And that experimentation nets them some <i>really good results</i>.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "comfort"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "They try, and try, and try again, without any success. It's only when they all give up on their independent attempts and combine to drive prey out as a team that the apprentices see results - and learn an important lesson in the process.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "trust"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        },
+        {
+            "text": "s_c, who actually really likes hunting, is open about offering {PRONOUN/s_c/poss} help.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 5
+                }
+            ],
+            "prey": ["large"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "But then sometimes, they realize it's difficult to learn if the only cats to learn from <i>also</i> don't know what they're doing.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Maybe they don't manage to catch anything, but just getting the chance to try without any pressure is pretty good on its own, and only an apprentice really understands the struggles of another apprentice.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up {PRONOUN/app1/poss} ear, but in the process, {PRONOUN/app1/subject} {VERB/app1/squawk/squawks} with surprise and {VERB/app1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_hugeprey_balancing_appgrouphunt1",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 6],
+        "normal adult": [-1, -1]
+    },
+    "weight": 1,
+    "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Determined, the apprentices work hard and long, coordinating with each other to drive prey to each other's claws. Maybe it'll take twice as long without a warrior to guide them - but they're still going to do it, all by themselves!",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "comfort"],
+                    "amount": 10
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "They try, and try, and try again, without any success. It's only when they all give up on their independent attempts and combine to drive prey out as a team that the apprentices see results - and learn an important lesson in the process.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "respect", "trust"],
+                    "amount": 10
+                }
+            ],
+            "prey": ["huge"]
+        },
+        {
+            "text": "s_c, swearing the patrol to secrecy, leads them to their absolute favorite hunting spot, where the apprentices catch so much prey that they need two separate trips to carry it all home.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["HUNTER,0"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "trust"],
+                    "amount": 5
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": true,
+                    "values": ["platonic"],
+                    "amount": 10
+                }
+            ],
+            "prey": ["huge"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "They realize it's difficult to learn if the only cats to learn from <i>also</i> don't know what they're doing.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Maybe they don't manage to catch anything, but just getting the chance to try without any pressure is pretty good on its own, and only an apprentice really understands the struggles of another apprentice.",
+            "exp": 20,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "comfort"],
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "text": "Not only does app1 find a particularly vicious prey animal who tears up {PRONOUN/app1/poss} ear, but in the process, {PRONOUN/app1/subject} {VERB/app1/squawk/squawks} with surprise and {VERB/app1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                  "cats": ["app1"],
+                  "injuries": ["torn ear"],
+                  "scars": ["RIGHTEAR"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+        }
+    ]
+},
+  {
+    "patrol_id": "gen_hunt_kittylion",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": ["halloween"],
+    "patrol_art": "kittylion_INTRO",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+      "apprentice": [1,1]
+    },
+    "weight": 20,
+    "intro_text": "app1 huffs in frustration when all scents of prey are drowned out by kittypet scent. {PRONOUN/app1/subject/CAP} {VERB/app1/follow/follows} the scent to discover a... lion? But are lions this small? And why does it smell like a kittypet?",
+    "decline_text": "One can never be too cautious around strange creatures; who knows whether it could be deadly? {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} just an apprentice after all! app1 backs away from the cat-sized lion, praying that StarClan understands {PRONOUN/app1/poss} empty-pawed return.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "app1 cautiously greets the small lion, who reassures {PRONOUN/app1/object} that it is not actually a lion, but rather a kittypet in accessories. Whew! Now app1 can return to {PRONOUN/app1/poss} hunting in peace, knowing the silly kittypet poses no harm.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["small"],
+            "art": "kittylion_OUTCOME"
+        },
+        {
+            "text": "Boldly, s_c steps forward to interrogate the small lion, who explains that it is a kittypet that must put up with its Twolegs' insistence on something called \"costumes\". It even offers to let s_c try its accessory!",
+            "exp": 20,
+            "weight": 20,
+            "stat_trait": [
+                "bold", 
+                "confident", 
+                "daring", 
+                "adventurous", 
+                "shameless", 
+                "playful"
+            ],
+            "art": "kittylion_OUTCOME"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "While attempting to stalk up to the small lion, app1 trips and falls flat on {PRONOUN/app1/poss} face. The creature startles and flees directly into a burrow of prey. Sullen, app1 trots home empty-pawed and full of questions about what {PRONOUN/app1/subject} even encountered. ",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_jumpscare",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": ["halloween"],
+    "patrol_art": "jumpscare_INTRO",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "intro_text": "The patrol splits up to hunt, but after a while r_c is nowhere to be found.",
+    "decline_text": "p_l heads home without r_c, annoyed that {PRONOUN/r_c/subject} would abandon the patrol.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+   	    {
+   		 "text": "p_l decides to continue on without r_c and manages to make a few good catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something watching {PRONOUN/p_l/object}... and getting closer! p_l turns around, ready to strike, only to find r_c sneaking up on {PRONOUN/p_l/object}! The pair of cats have a good laugh over the failed prank and carry the prey back to camp together.",
+   		 "exp": 20,
+   		 "weight": 20,
+   		 "prey": ["medium"]
+   	    },
+   	    {
+   		 "text": "After making some good catches, p_l picks up on r_c's scent. Whiskers twitching with mischief, p_l decides to give r_c a good scare and drops into a sneaking crouch. p_l creeps closer and closer until r_c is in range, but suddenly r_c turns around with a startled hiss! Both r_c and p_l jump with fright, fur puffed out and claws ready! It takes a moment but both cats have a good laugh at the scare they gave each other, and promise not to tell any cat about how easily startled they were.",
+   		 "exp": 5,
+   		 "weight": 20,
+   		 "prey": ["medium"]
+   	    }
+    ],
+    "fail_outcomes": [
+   	 {
+         "text": "p_l decides to continue on without r_c and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face-to-face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!",
+   		 "exp": 0,
+   		 "weight": 20,
+   		 "prey": ["small"]
+   	 },
+   	 {
+         "text": "p_l heads off without r_c and manages to make a few catches... when something nips {PRONOUN/p_l/poss} paw! Unable to catch a scent from whatever it was, p_l assumes it to be some kind of prank and furiously looks for r_c. Upon finding {PRONOUN/r_c/object}, p_l begins to complain but r_c cuts {PRONOUN/p_l/object} off, accusing p_l of nipping {PRONOUN/r_c/poss} paw instead! Both cats fall silent with unease when they realize something else was the culprit, likely watching them both from the shadows... The patrol quickly heads back to camp.",
+   		 "exp": 0,
+   		 "weight": 5,
+   		 "prey": ["small"]
+   	 }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_scary_ghost1",
+    "biome": [ "any"],
+    "season": [ "any"],
+    "types": [ "hunting"],
+    "tags": [ "halloween"],
+    "patrol_art": "scaryghost_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [0, 6],
+        "healer cats": [-1, -1],
+        "normal adult": [0, 6]
+    },
+    "weight": 20,
+    "intro_text": "As the patrol follows a trail into a darkly-shadowed part of the territory, night shadows begin to play with their vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet the patrol as they walk amongst the shadows. The stranger's fur is translucent... and it moves as though made from a strange dark mist.",
+    "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a normal cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the patrol back to camp.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "The patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The dark silhouette seems to flicker in and out of view as the patrol runs toward it, gradually reappearing further and further away. The patrol stops, watching the stranger in the distance. Glowing, haunted eyes gaze back from the shadows. The patrol returns home, mesmerized by the strangeness of what they just witnessed.",
+            "exp": 10,
+            "weight": 20
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol confronts the strange cat - they are obviously an intruder on c_n territory, and they don't look like the friendly type. The strange cat shrieks, an awful, blood-curdling scream that makes r_c's fur stand on end. Overcome by terror, the patrol flees back to camp.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["patrol"],
+                    "injuries": ["shock", "non_lethal"]
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_duo_dislike",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "normal adult": [2, 2]
+    },
+    "relationship_constraint": ["dislike_20"],
+    "weight": 40,
+    "intro_text": "Hunting should be an easy task, but with p_l and r_c persistently rubbing each other the wrong way, one of them is bound to snap and return to camp.",
+    "decline_text": "There is no way the duo were ever going to successfully hunt together. They each return to camp to find other duties.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Impressively, the pair manage to stop bickering long enough for r_c to make an impressive catch. Perhaps even more shockingly, though, p_l congratulates {PRONOUN/r_c/object}, and the two actually work together for the rest of the patrol.",
+            "exp": 10,
+            "weight": 20,
+	    "prey": ["medium"],
+	    "relationships": [
+		{
+            	"cats_to": ["p_l"],
+            	"cats_from": ["r_c"],
+            	"mutual": true,
+            	"values": ["dislike"],
+            	"amount": -10
+		},
+	        {
+            	"cats_to": ["p_l"],
+            	"cats_from": ["r_c"],
+            	"mutual": true,
+            	"values": ["respect", "platonic"],
+            	"amount": 10
+		}
+	    ]
+        },
+	{
+            "text": "However much s_c dislikes r_c, feeding the Clan is more important. They manage to get through the patrol without any major disputes - and catch a decent amount of prey, too.",
+            "exp": 10,
+            "weight": 40,
+	    "prey": ["medium"],
+	    "stat_trait": ["calm", "compassionate", "faithful", "loyal", "righteous", "responsible", "thoughtful", "wise"],
+	    "relationships": [
+		{
+            	"cats_to": ["p_l"],
+            	"cats_from": ["s_c"],
+            	"mutual": true,
+            	"values": ["dislike"],
+            	"amount": -5
+		}
+	    ]
+        },
+	{
+            "text": "Spotting a rabbit, the bickering duo glance at each other, realising they'll need to work together to catch it. Feeding the Clan comes before rivalries. Putting their differences aside, r_c chases the rabbit while p_l gets into position, catching the rabbit when r_c drives it into {PRONOUN/r_c/poss} paws.",
+            "exp": 20,
+            "weight": 20,
+	    "prey": ["medium"],
+	    "relationships": [
+		{
+            	"cats_to": ["p_l"],
+            	"cats_from": ["r_c"],
+            	"mutual": true,
+            	"values": ["dislike"],
+            	"amount": -10
+		},
+	        {
+            	"cats_to": ["p_l"],
+            	"cats_from": ["r_c"],
+            	"mutual": true,
+            	"values": ["trust", "respect"],
+            	"amount": 10
+		}
+	    ],
+	    "art": "gen_hunt_rabbit"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The pair manage to keep the hunting patrol relatively on track, until s_c bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing s_c's obnoxious face off, p_l storms off back to camp.",
+            "exp": 0,
+            "weight": 20,
+	    "prey": ["very_small"],
+	    "stat_trait": ["childish", "oblivious", "strange", "troublesome"],
+	    "can_have_stat": ["r_c"],
+	    "relationships": [
+		{
+            	"cats_to": ["p_l"],
+            	"cats_from": ["s_c"],
+            	"mutual": true,
+            	"values": ["dislike"],
+            	"amount": 10
+		}
+	    ]
+            
+        },
+	{
+            "text": "{PRONOUN/p_l/poss} nerves already frayed, it only takes one more snide comment from r_c for p_l to explode, snarling in r_c's face the first insult that comes to mind. The two abruptly part ways, their hunting forgotten.",
+            "exp": 0,
+            "weight": 20,
+	    "prey": ["very_small"],
+	    "relationships": [
+		{
+            	"cats_to": ["p_l"],
+            	"cats_from": ["r_c"],
+            	"mutual": true,
+            	"values": ["dislike"],
+            	"amount": 10
+		}
+	    ]
+            
+        },
+	{
+            "text": "Already on edge from the constant bickering, when r_c makes a particularly hurtful remark, s_c retaliates, {PRONOUN/s_c/poss} claws scratching r_c's cheek. The pair silently return to camp - each cat seething - and refuse to tell any cat what happened.",
+            "exp": 0,
+            "weight": 20,
+	    "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+	    "relationships": [
+		{
+            	"cats_to": ["r_c"],
+            	"cats_from": ["s_c"],
+            	"mutual": true,
+            	"values": ["dislike"],
+            	"amount": 15
+		}
+	    ],
+	    "injury": [
+                {
+                  "cats": ["r_c"],
+                  "injuries": ["torn pelt"],
+                  "scars": ["CHEEK"],
+                  "no_results": false
+             
+                }
+              ],
+              "history_text": {
+                "scar": "m_c was scarred when a Clanmate lashed out at {PRONOUN/m_c/object} while they were bickering on patrol.",
+                "reg_death": "m_c died after a small injury progressed to something worse.",
+                "lead_death": "died after a small injury progressed to something worse"
+              }
+            
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_group_competition",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_speaking_cat_w1",
+    "min_cats": 3,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [2, 6]
+    },
+    "weight": 20,
+    "intro_text": "Noticing how bored the patrol seems, r_c brightly suggests a hunting competition to add a bit of friendly rivalry to the outing.",
+    "decline_text": "The rest of the patrol dismisses the idea. Eventually, they give up on hunting as a group and head off to perform other tasks.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Intrigued, the patrol agrees to the competition, everyone splitting up and catching as much prey as they can find. It makes for a fun afternoon, and every cat brings back an impressive haul.",
+            "exp": 10,
+	    "prey": ["large"],
+            "weight": 10,
+	    "relationships": [
+		{
+            	"cats_to": ["patrol"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "While every cat brings back impressive catches, s_c's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner.",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_skill": ["HUNTER,2"],
+            "weight": 20,
+	    "relationships": [
+		{
+            	"cats_to": ["s_c"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "Every cat seems a little hesitant, until s_c agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c a grateful look, r_c organises the competition, and the patrol have a fun - and productive - afternoon!",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_trait": ["charismatic"],
+            "weight": 20,
+	    "relationships": [
+		{
+            	"cats_to": ["r_c"],
+            	"cats_from": ["s_c"],
+            	"mutual": true,
+            	"values": ["platonic"],
+            	"amount": 5
+		},
+		{
+            	"cats_to": ["s_c"],
+            	"cats_from": ["r_c"],
+            	"values": ["dislike", "jealous"],
+            	"amount": -5
+		}
+	    ],
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair.",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_skill": ["MEDIATOR,1"],
+	    "relationships": [
+		{
+            	"cats_to": ["s_c"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+            "weight": 20,
+	    "art": "hunt_general_intro"
+        },
+	{
+            "text": "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind - and smart - enough to just give {PRONOUN/s_c/object} the win.",
+            "exp": 10,
+	    "prey": ["large"],
+	    "stat_trait": ["competitive"],
+	    "relationships": [
+		{
+            	"cats_to": ["patrol"],
+            	"cats_from": ["patrol"],
+            	"values": ["respect"],
+            	"amount": 5
+		}
+	    ],
+            "weight": 20,
+	    "art": "hunt_general_intro"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "s_c rolls {PRONOUN/s_c/poss} eyes, callously dissmissing the idea as a game for immature apprentices. Cheeks burning, r_c ducks {PRONOUN/r_c/poss} head, continuing the patrol in silence.",
+            "exp": 5,
+	    "prey": ["small"],
+            "weight": 20,
+            "stat_trait": ["arrogant", "bloodthirsty", "cold", "grumpy", "strict"],
+	    "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ]
+        },
+	{
+            "text": "Realising the patrol's reluctance, r_c hastily dismisses the idea, and they continue the hunt in awkward silence.",
+            "exp": 5,
+	    "prey": ["small"],
+            "weight": 10,
+	    "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+        },
+	{
+            "text": "Though the patrol is initially open to the idea, they quickly devolve into an argument on how prey should be scored, whether teams were allowed, and other details r_c really hadn't thought were that important. Who knew warriors could get so competitive?",
+            "exp": 5,
+	    "prey": ["very_small"],
+            "weight": 10,
+	    "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+        },
+	{
+            "text": "The competition is going great, every cat enjoying their respective hunts, until s_c gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c.",
+            "exp": 5,
+	    "prey": ["very_small"],
+	    "stat_trait": ["childish", "oblivious", "troublesome"],
+            "weight": 20,
+	    "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+        },
+	{
+            "text": "The <i>point</i> of the competition, an irritated r_c explains to s_c, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c grumbles, no cat made those rules clear to {PRONOUN/s_c/object}.",
+            "exp": 5,
+	    "prey": ["very_small"],
+	    "stat_trait": ["competitive", "sneaky", "cunning"],
+            "weight": 20,
+	    "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+		    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+        }
+    ]
+}
+
+]

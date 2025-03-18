@@ -28,7 +28,9 @@ class Icon(StrEnum):
     ARROW_DOUBLELEFT = "\u23EA"
     ARROW_DOUBLERIGHT = "\u23E9"
     ARROW_LEFT = "\u2190"
+    ARROW_UP = "\u2191"
     ARROW_RIGHT = "\u2192"
+    ARROW_DOWN = "\u2193"
 
     MAGNIFY = "\U0001F50D"
     NOTEPAD = "\U0001F5C9"

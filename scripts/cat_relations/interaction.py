@@ -1,10 +1,9 @@
-import os
+import i18n
 
-import ujson
+from scripts.game_structure.localization import load_lang_resource
 
 
 class SingleInteraction:
-
     def __init__(
         self,
         interact_id,
@@ -32,10 +31,7 @@ class SingleInteraction:
         self.interactions = (
             interactions
             if interactions
-            else [
-                f"This is a default interaction! "
-                f"ID: {interact_id} with cats (m_c), (r_c)"
-            ]
+            else [i18n.t("defaults.interaction", id=interact_id)]
         )
         self.get_injuries = get_injuries if get_injuries else {}
         self.has_injuries = has_injuries if has_injuries else {}
@@ -66,7 +62,6 @@ class SingleInteraction:
 
 
 class GroupInteraction:
-
     def __init__(
         self,
         interact_id,
@@ -93,10 +88,7 @@ class GroupInteraction:
         self.interactions = (
             interactions
             if interactions
-            else [
-                f"This is a default interaction! "
-                f"ID: {interact_id} with cats (m_c), (r_c)"
-            ]
+            else [i18n.t("defaults.interaction", id=interact_id)]
         )
         self.get_injuries = get_injuries if get_injuries else {}
         self.has_injuries = has_injuries if has_injuries else {}
@@ -184,10 +176,9 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
                 f"which is higher than the max value of a relationship (100)."
             )
             break
-
-        if threshold <= 0:
+        elif threshold <= 0:
             print(
-                f"ERROR: patrol {interaction_id} has a relationship constraints for the value {v_type}, "
+                f"ERROR: interaction {interaction_id} has a relationship constraints for the value {v_type}, "
                 f"which is lower than the min value of a relationship or 0."
             )
             break
@@ -415,6 +406,7 @@ INTERACTION_MASTER_DICT = {
     "jealousy": {},
     "trust": {},
 }
+NEUTRAL_INTERACTIONS = []
 rel_types = [
     "romantic",
     "platonic",
@@ -424,17 +416,29 @@ rel_types = [
     "jealousy",
     "trust",
 ]
-base_path = os.path.join(
-    "resources", "dicts", "relationship_events", "normal_interactions"
-)
-for rel in rel_types:
-    with open(os.path.join(base_path, rel, "increase.json"), "r") as read_file:
-        loaded_list = ujson.loads(read_file.read())
-        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_list)
-    with open(os.path.join(base_path, rel, "decrease.json"), "r") as read_file:
-        loaded_list = ujson.loads(read_file.read())
-        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_list)
 
-with open(os.path.join(base_path, "neutral.json"), "r") as read_file:
-    loaded_list = ujson.loads(read_file.read())
-    NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
+relationship_lang = None
+
+
+def rebuild_relationship_dicts():
+    global INTERACTION_MASTER_DICT, NEUTRAL_INTERACTIONS, relationship_lang
+    if relationship_lang == i18n.config.get("locale"):
+        return
+
+    for rel in rel_types:
+        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
+            load_lang_resource(
+                f"events/relationship_events/normal_interactions/{rel}/increase.json"
+            )
+        )
+        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
+            load_lang_resource(
+                f"events/relationship_events/normal_interactions/{rel}/decrease.json"
+            )
+        )
+
+    NEUTRAL_INTERACTIONS = create_interaction(
+        load_lang_resource(
+            f"events/relationship_events/normal_interactions/neutral.json"
+        )
+    )

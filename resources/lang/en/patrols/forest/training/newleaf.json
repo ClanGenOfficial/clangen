@@ -1,0 +1,348 @@
+[
+    {
+        "patrol_id": "fst_train_newleafromanticstroll_20locked1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "gen_flower_date_warrior_warrior",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["romantic_20", "not_mates"],
+        "success_outcomes": [
+            {
+                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together, the call of courting birds a somewhat embarrassingly apt background music to their date.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the flowers of newleaf completely outshone by their purring potential partner in their eyes.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1", "INSIGHTFUL,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out - and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_train_newleafmatesonadates_70locked1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "fst_train_newleafmatesonadates_70locked1",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/object}.",
+        "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before either cat can head out of camp.",
+        "chance_of_success": 80,
+        "relationship_constraint": ["romantic_70", "mates"],
+        "success_outcomes": [
+            {
+                "text": "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c/self}. All the more special for being there together.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Yes, the place is magical - a beautiful, bubbling, calm stream, and the clouds clear and the light sparkles along it, making the forest shine with reflections. But as lovely as p_l's little secret is, it's improved beyond measure with the addition of r_c.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c shakes {PRONOUN/r_c/poss} head, refusing {PRONOUN/r_c/poss} mate. {PRONOUN/r_c/subject/CAP} just {VERB/r_c/don't/doesn't} have time today, there's too much to do, too much c_n needs solved, and {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have time to waltz off and relax!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_train_newleaf_beetlesoloapp1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
+        "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "While app1 is wiggling {PRONOUN/app1/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["stomachache"],
+                        "scars": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_train_newleaf_mapleshadereference_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+           "normal adult": [-1, -1],
+           "apprentice":[1, 6]
+            },
+        "weight": 40,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,0", "LORE,0"],
+        "intro_text": "Hiding from a newleaf rain shower under a bush, p_l whispers to the other apprentices - have they heard the story of the Shaded Vengeance?",
+        "decline_text": "Oh, the rain let up - back to training!",
+        "success_outcomes": [
+                {
+                    "text": "Once upon a time lived a calico cat with entitlement and lust living in her heart. She had an affair with a cat from another Clan, and when both she and her lover's mate bore him kits, she exploded into rage, dragging her litter into the river where they drowned. She still roams the riverbank to this day, looking for young cats to kit-nap...",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust", "platonic"],
+                            "amount": 10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["jealous"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "That old nursery tale? They're apprentices, they're too old for such silly things.",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect", "trust", "platonic"],
+                            "amount": -10
+                        }
+                    ]
+                }
+            ]
+    },
+    {
+        "patrol_id": "fst_train_newleaf_crowrock_storylocked1",
+        "biome": ["forest"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "crows_mocking_INTRO",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            },
+        "weight": 20,
+        "chance_of_success": 60,
+        "pl_skill_constraint": ["STORY,1"],
+        "intro_text": "There's a saying, about crows in newleaf...",
+        "decline_text": "Cats say many things. Doesn't mean it's worth listening to.",
+        "success_outcomes": [
+                {
+                    "text": "It's said, p_l whispers, that if you leave a shiny, beautiful rock out under a crow's nest, they will leave you a beautiful thing in return...",
+                    "exp": 30,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": true,
+                            "values": ["comfort", "platonic"],
+                            "amount": 5
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": 5
+                        }
+                    ]
+                }
+            ],
+            "fail_outcomes": [
+                {
+                    "text": "No one is interested in hearing superstitions about crows - surely it's better to hunt them instead?",
+                    "exp": 0,
+                    "weight": 20,
+                    "relationships": [
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["respect"],
+                            "amount": -10
+                        },
+                        {
+                            "cats_to": ["patrol"],
+                            "cats_from": ["p_l"],
+                            "mutual": false,
+                            "values": ["dislike"],
+                            "amount": 3
+                        }
+                    ]
+                }
+            ]
+    }
+]

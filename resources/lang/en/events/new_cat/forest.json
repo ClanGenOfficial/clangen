@@ -1,0 +1,99 @@
+[
+     {
+        "event_id": "fst_new_cat_lost_kitten1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c returned to camp with a kitten tottering behind {PRONOUN/m_c/object}, and explains that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} wandering - lost - around the forest, no parent in sight.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "backstory:abandoned1, abandoned4",
+                "age:kitten"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "platonic"],
+            "amount": 10
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "fst_new_cat_lost_kitten2",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c found an abandoned kitten wandering around the forest and takes {PRONOUN/n_c:0/object} back to camp. Though c_n isn't happy about it, m_c persuades them to let n_c:0 stay in the Clan.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+	    "trait": ["compassionate", "loving", "responsible", "thoughtful"]
+        },
+        "new_cat": [
+            [
+                "backstory:abandoned1, abandoned4",
+                "age:kitten"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "platonic"],
+            "amount": 10
+          },
+	  {
+            "cats_from": ["clan"],
+            "cats_to": ["m_c", "n_c:0"],
+            "values": ["dislike"],
+            "amount": 5
+	  }
+
+
+        ],
+        "outsider": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 1
+        }
+    }
+
+
+]

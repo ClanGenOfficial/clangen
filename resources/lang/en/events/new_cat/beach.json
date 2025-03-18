@@ -1,0 +1,148 @@
+[
+    {
+        "event_id": "bch_new_cat_saviour_drowning1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c wandered out of camp, only to come back with a stranger. After explaining how m_c saved {PRONOUN/n_c:0/poss} life, the new cat introduces {PRONOUN/n_c:0/self} as n_c:0, and asks to join c_n.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "backstory:refugee2, refugee5, tragedy_survivor4",
+                "status:warrior"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 10
+          },
+          {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["platonic", "trust"],
+            "amount": 10
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "bch_new_cat_saviour_drowning2",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c comes back to camp with a sodden kit in {PRONOUN/m_c/poss} jaws, explaining that {PRONOUN/m_c/subject} spotted {PRONOUN/n_c:0/object} floundering in the water - no parents in sight - and couldn't just leave the little scrap to die.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "loner",
+                "backstory:orphaned6",
+                "status:kitten"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "platonic"],
+            "amount": 10
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral", "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "bch_new_cat_abandoned_kit1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "After going for a walk, m_c returns to camp with a small kitten, explaining that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} abandoned, tucked away under a rocky ledge.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "backstory:abandoned1",
+                "status:kitten"
+            ]
+        ],
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 10
+          },
+          {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["platonic", "trust"],
+            "amount": 10
+          }
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral", "welcoming"
+            ],
+            "changed": 1
+        }
+    }
+]

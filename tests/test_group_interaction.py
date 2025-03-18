@@ -1,13 +1,12 @@
 import os
 import unittest
 
-from scripts.cat.cats import Cat, Relationship
-from scripts.cat.skills import Skill, SkillPath
-from scripts.events_module.relationship.group_events import GroupEvents, GroupInteraction
-
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
+from scripts.cat.cats import Cat, Relationship
+from scripts.cat.skills import Skill, SkillPath
+from scripts.events_module.relationship.group_events import GroupEvents, GroupInteraction
 
 class MainCatFiltering(unittest.TestCase):
     def test_main_cat_status_one(self):

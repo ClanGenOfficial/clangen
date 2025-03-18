@@ -1,0 +1,523 @@
+[
+    {
+        "patrol_id": "fst_train_leaffallromanticstroll_20locked1",
+        "biome": ["forest"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": ["romantic"],
+        "patrol_art": "gen_flower_date_warrior_warrior",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
+        "chance_of_success": 60,
+        "relationship_constraint": ["romantic_20", "not_mates"],
+        "success_outcomes": [
+            {
+                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The two stop under a great oak and curl up in the piles of bright leaves beneath it.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the bright crunch of leaves underfoot a pleasant backdrop as they chat, heads bent together.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1", "INSIGHTFUL,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out - and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "comfort"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_train_leaffall_beetlesoloapp1",
+        "biome": ["forest"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
+        "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "exp": 20,
+                "weight": 5
+            },
+            {
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,0"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "While app1 is wiggling {PRONOUN/app1/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["stomachache"],
+                        "scars": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+    "patrol_id": "fst_train_playinginleaves1",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "train_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 4],
+        "normal adult": [2, 4]
+    },
+    "weight": 20,
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
+    "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
+    "chance_of_success": 60,
+    "success_outcomes": [
+        {
+            "text": "app1 explodes out of the leaf drift, bowling over app2! Laughing, p_l bats at r_c, claws sheathed, and skids off the path into the leaves as the patrol devolves into rustling, raucous, riotous fun.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "trust"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1? app1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_playinginleaves2",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": ["romantic"],
+    "patrol_art": "train_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 4],
+        "normal adult": [2, 2]
+    },
+    "weight": 20,
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
+    "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
+    "chance_of_success": 60,
+    "success_outcomes": [
+        {
+            "text": "app1 leaps out of the leaf drift, sending p_l falling into r_c as {PRONOUN/app1/subject} {VERB/app1/fly/flies} by to bowl app2 into yet more leaves. The two apprentices descend into furious mock combat, yowling with excitement, as r_c gazes up at p_l in bewilderment.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "trust"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["romantic"],
+                    "amount": 10
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1? app1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_playinginleaves3",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": ["romantic", "rom_two_apps"],
+    "patrol_art": "train_general_intro",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [2, 2],
+        "normal adult": [2, 4]
+    },
+    "weight": 20,
+    "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
+    "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
+    "chance_of_success": 60,
+    "success_outcomes": [
+        {
+            "text": "app1 leaps out of the leaf drift, bowling app2 head over paws and batting at {PRONOUN/app2/subject} furiously. p_l and r_c share a long, exasperated look, rolling their eyes as the apprentices flicker between yelling insults and flirting while they spar. p_l's sure the apprentices think they're <i>very</i> subtle.",
+            "exp": 10,
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["platonic", "trust"],
+                    "amount": 10
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["dislike"],
+                    "amount": -5
+                },
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["app2"],
+                    "mutual": true,
+                    "values": ["romantic"],
+                    "amount": 10
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1? app1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_leaffall_berrybush1",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "train_general_intro",
+    "min_cats": 3,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 10,
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 40,
+    "success_outcomes": [
+        {
+            "text": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+            "exp": 20,
+            "weight": 20
+        },
+        {
+            "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
+            "exp": 20,
+            "weight": 5,
+            "herbs": ["raspberry"]
+        },
+        {
+            "text": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
+            "exp": 20,
+            "weight": 20,
+            "stat_skill": ["CLEVER,2"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat might have a chance at saving {PRONOUN/r_c/object} from deathberry poisoning.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["poisoned"],
+                    "scars": []
+                }
+            ],
+            "history_text": {
+                "reg_death": "m_c mistook deathberries for something edible.",
+                "lead_death": "after eating deathberries"
+            }
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_leaffall_berrybush2",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "train_general_intro",
+    "min_cats": 3,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [1, 6]
+    },
+    "weight": 10,
+    "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 20,
+    "success_outcomes": [
+        {
+            "text": "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+            "exp": 20,
+            "weight": 20
+        },
+        {
+            "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
+            "exp": 20,
+            "weight": 5,
+            "herbs": ["raspberry"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
+            "exp": 0,
+            "weight": 20
+        },
+        {
+            "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+            "exp": 0,
+            "weight": 10,
+            "dead_cats": ["app1"],
+            "history_text": {
+                "reg_death": "m_c mistook deathberries for something edible.",
+                "lead_death": "after eating deathberries"
+            }
+        },
+        {
+            "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/app1/object} from deathberry poisoning.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["app1"],
+                    "injuries": ["poisoned"],
+                    "scars": []
+                }
+            ],
+            "history_text": {
+                "reg_death": "m_c mistook deathberries for something edible.",
+                "lead_death": "after eating deathberries"
+            }
+        }
+    ]
+},
+{
+    "patrol_id": "fst_train_leaffall_eclipsemyth_storylocked1",
+    "biome": ["forest"],
+    "season": ["leaf-fall"],
+    "types": [],
+    "tags": [],
+    "patrol_art": "gen_train_ghost",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+       "normal adult": [1, 6]
+        },
+    "weight": 40,
+    "chance_of_success": 60,
+    "pl_skill_constraint": ["STORY,1"],
+    "intro_text": "Gather round, gather round. p_l sits in the center of the group, in the most prominent place, and drops {PRONOUN/p_l/poss} voice down low as a hush falls - today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger.",
+    "decline_text": "A leaf-fall rainshower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
+    "success_outcomes": [
+        {
+                "text": "At first, few but the medicine cats noticed the leaf-fall, its harshness, the snows early, the prey scarce. All noticed on the day StarClan hissed - the great sun itself blinking dark under their anger. All paid heed to the omens then, and the Clans turned back to the Stars, begging for life and sun to return. They learned a lesson not soon forgotten.",
+                "exp": 40,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    }
+                    ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c refuses to believe their ancestors ever blotted out the sun - not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "platonic"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "If StarClan hissed at them, they should've hissed back, s_c argues. Their ancestors are nothing without them!",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "rebellious"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "platonic"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+}
+]

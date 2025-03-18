@@ -1,6 +1,9 @@
 import os
 import unittest
 
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
@@ -9,10 +12,6 @@ from scripts.utility import (
     get_amount_of_cats_with_relation_value_towards,
     get_alive_clan_queens
 )
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
 
 class TestPersonalityCompatibility(unittest.TestCase):
 

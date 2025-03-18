@@ -1,16 +1,15 @@
 import os
 import unittest
 
-from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import Relationship
-from scripts.clan import Clan
-from scripts.patrol.patrol import PatrolEvent, Patrol
-
-from scripts.utility import filter_relationship_type
-
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
+from scripts.cat.cats import Cat
+from scripts.cat_relations.relationship import Relationship
+from scripts.clan import Clan
+from scripts.events_module.patrol.patrol import PatrolEvent, Patrol
+
+from scripts.utility import filter_relationship_type
 
 # TODO: redo them! Filtering is not working like this anymore, but it got removed from .github/workflows/test.yml
 # so they are not failing!

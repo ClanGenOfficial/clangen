@@ -1,0 +1,198 @@
+{
+    "en": {
+        "moons_age": {
+            "one": "1 moon",
+            "many": "%{count} moons"
+        },
+        "moons_age_in_death": {
+            "one": "1 moon (in death)",
+            "many": "%{count} moons (in death)"
+        },
+        "moons_age_in_life": {
+            "one": "1 moon (in life)",
+            "many": "%{count} moons (in life)"
+        },
+        "moon_date": "moon %{moon}",
+        "leader": {
+            "one": "leader",
+            "many": "leaders"
+        },
+        "deputy": {
+            "one": "deputy",
+            "many": "deputies"
+        },
+        "warrior": {
+            "one": "warrior",
+            "many": "warriors"
+        },
+        "medicine cat": {
+            "one": "medicine cat",
+            "many": "medicine cats"
+        },
+        "mediator": {
+            "one": "mediator",
+            "many": "mediators"
+        },
+        "apprentice": {
+            "one": "apprentice",
+            "many": "apprentices"
+        },
+        "medicine cat apprentice": {
+            "one": "medicine cat apprentice",
+            "many": "medicine cat apprentices"
+        },
+        "mediator apprentice": {
+            "one": "mediator apprentice",
+            "many": "mediator apprentices"
+        },
+        "queen": {
+            "one": "queen",
+            "many": "queens"
+        },
+        "queen/pregnant": {
+            "one": "queen/pregnant cat",
+            "many": "queens/pregnant cats"
+        },
+        "newborn": {
+            "one": "newborn",
+            "many": "newborns"
+        },
+        "kitten": {
+            "one": "kitten",
+            "many": "kittens"
+        },
+        "kitten_profile": "young",
+        "adolescent": "adolescent",
+        "young adult": "young adult",
+        "adult": "adult",
+        "senior adult": "senior adult",
+        "senior": "senior",
+        "kit": {
+            "one": "kit",
+            "many": "kits"
+        },
+        "elder": {
+            "one": "elder",
+            "many": "elders"
+        },
+        "loner": {
+            "one": "loner",
+            "many": "loners"
+        },
+        "rogue": {
+            "one": "rogue",
+            "many": "rogues"
+        },
+        "kittypet": {
+            "one": "kittypet",
+            "many": "kittypets"
+        },
+        "former Clancat": {
+            "one": "former Clancat",
+            "many": "former Clancats"
+        },
+        "exiled": {
+            "one": "exiled",
+            "many": "exiled"
+        },
+        "lost": "lost",
+        "mate": {
+            "one": "mate",
+            "many": "mates"
+        },
+        "she-cat": "she-cat",
+        "tom": "tom",
+        "cat": "cat",
+        "female": "female",
+        "male": "male",
+        "trans female": "trans female",
+        "trans male": "trans male",
+        "nonbinary": "nonbinary",
+        "is": "is",
+        "are": "are",
+        "can_work": "This cat can work",
+        "cant_work": "This cat isn't able to work",
+        "cant_work_condition": "Can't work with this condition",
+        "exp_label": "exp: %{exp}",
+        "newleaf": "newleaf",
+        "greenleaf": "greenleaf",
+        "leaf-fall": "leaf-fall",
+        "leaf-bare": "leaf-bare",
+        "relation_BLOOD": "",
+        "relation_ADOPTIVE": "adoptive",
+        "relation_HALF_BLOOD": "half sibling",
+        "relation_NOT_BLOOD": "not blood related",
+        "relation_RELATED": "blood related",
+        "related_label": "related: %{relation}",
+        "niece": "niece",
+        "nephew": "nephew",
+        "siblings_child": "sibling's child",
+        "aunt": "aunt",
+        "uncle": "uncle",
+        "parents_sibling": "parent's sibling",
+        "grandparent": "grandparent",
+        "grandchild": "grandchild",
+        "parent": "parent",
+        "child": "child",
+        "sibling": "sibling",
+        "sibling_littermate": "sibling (littermate)",
+        "cousin": "cousin",
+        "starclan": "StarClan",
+        "dark_forest": "Dark Forest",
+        "unknown_residence": "Unknown Residence",
+        "empty": "empty",
+        "none": "none",
+        "name_search": "name search",
+        "has_a_mate": "has a mate",
+        "cats_mate": "%{name}'s mate",
+        "mate_none": "mate: none",
+        "mate_living": "(living)",
+        "mate_dead": "(dead)",
+        "mate_away": "(away)",
+        "mate_label": {
+            "one": "mate: %{mates}",
+            "many": "mates: %{mates}"
+        },
+        "mate_extra": {
+            "one": "1 other",
+            "many": "%{count} others"
+        },
+        "mentor": {
+            "one": "mentor",
+            "many": "mentors"
+        },
+        "mentor_label": "mentor: %{mentor}",
+        "apprentice_label": {
+            "zero": "",
+            "one": "apprentice: %{apprentices}",
+            "many": "apprentices: %{apprentices}"
+        },
+        "former_apprentice_label": {
+            "one": "former apprentice: %{apprentices}",
+            "many": "former apprentices: %{apprentices}"
+        },
+        "apprentice_extra": {
+            "zero": "",
+            "one": "1 other",
+            "many": "%{count} others"
+        },
+        "dead_label": "%{name} (dead)",
+        "mark_favorite": "Mark as favorite",
+        "remove_favorite": "Remove favorite",
+        "has_permanent_condition": "has a permanent condition",
+        "born_with": "born with this condition",
+        "had_perm_condition_for": {
+            "one": "has had this condtion for %{count} moon",
+            "many": "has had this condition for %{count} moons"
+        },
+        "had_injury_for": "has been hurt for %{moons}",
+        "pregnant_for": "has been pregnant for %{moons}",
+        "recovering_from_birth_for": "has been recovering for %{moons}",
+        "sick": "sick",
+        "injured": "injured",
+        "grieving": "grieving",
+        "fleas": "flea-ridden",
+        "is_infected": "is infected",
+        "is_festering": "is festering"
+    }
+}
