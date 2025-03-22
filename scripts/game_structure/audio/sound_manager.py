@@ -1,0 +1,104 @@
+import logging
+import random
+
+import pygame
+import pygame_gui
+import ujson
+
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.ui_elements import CatButton, UISpriteButton
+
+logger = logging.getLogger(__name__)
+
+
+class _SoundManager:
+    def __init__(self):
+        self.volume = game.settings["sound_volume"] / 100
+        self.pressed = None
+        self.muted = False
+
+        self.load_sounds()
+
+    def load_sounds(self):
+        self.sounds = {}
+        # open up the sound dictionary
+        try:
+            with open("resources/audio/sounds.json", "r", encoding="utf-8") as f:
+                sound_data = ujson.load(f)
+        except:
+            logger.exception("Failed to load sound index")
+            return
+        for sound in sound_data:
+            try:
+                self.sounds[sound] = []
+                for path in sound_data[sound]:
+                    self.sounds[sound].append(
+                        pygame.mixer.Sound("resources/audio/sounds/" + path)
+                    )
+
+                for each in self.sounds[sound]:
+                    pygame.mixer.Sound.set_volume(each, self.volume)
+            except:
+                logger.exception("Failed to load sound")
+
+    def handle_sound_events(self, event):
+        """
+        assigns universal sound effects to event.type objects
+        SHOULD NOT BE USED FOR INDIVIDUAL UNIQUE BUTTON SOUNDS
+        UIImageButtons have a sound_id parameter for assigning unique sounds to individual buttons
+        :param event: the event that is taking place
+        """
+        # This makes sounds play using UI_BUTTON_PRESSED, instead of UI_BUTTON_START_PRESS
+        try:
+            if event.ui_element.sound_id in ["timeskip"]:
+                if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                    self.play("button_press", event.ui_element)
+                else:
+                    return
+        except:
+            pass
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.pressed = event.ui_element
+            self.play("button_press", event.ui_element)
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            if event.ui_element.__class__ not in [CatButton, UISpriteButton]:
+                if self.pressed != event.ui_element:
+                    self.play("button_hover")
+            self.pressed = None
+
+    def play(self, sound, button=None):
+        """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
+        used instead"""
+        if self.muted:
+            return
+
+        if button and hasattr(button, "sound_id"):
+            try:
+                if button.sound_id is not None:
+                    sound = button.sound_id
+            except AttributeError:
+                logger.exception(f"That ui_element has no sound_id.")
+
+        try:
+            pygame.mixer.Sound.play(random.choice(self.sounds[sound]))
+        except KeyError:
+            logger.exception(f"Could not find sound {sound}")
+
+    def change_volume(self, new_volume):
+        """changes the volume, int given should be between 0 and 100"""
+        # make sure given volume is between 0 and 100
+        if new_volume > 100:
+            new_volume = 100
+        if new_volume < 0:
+            new_volume = 0
+
+        # convert to a float and change volume accordingly
+        self.volume = new_volume / 100
+        game.settings["sound_volume"] = new_volume
+        for sound in self.sounds:
+            for each in self.sounds[sound]:
+                pygame.mixer.Sound.set_volume(each, self.volume)
+
+
+sound_manager = _SoundManager()
