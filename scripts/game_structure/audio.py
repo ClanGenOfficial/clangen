@@ -67,15 +67,6 @@ class AmbianceManager:
             self.fade_out_music()
             self.play_playlist(self.playlists["menu_playlist"])
 
-        # clan creation screen
-        elif (
-            screen in creation_screens
-            and self.current_playlist != self.playlists["creation_playlist"]
-        ):
-            # print("creation screen")
-            self.fade_out_music()
-            self.play_playlist(self.playlists["creation_playlist"])
-
         # other screens
         elif (
             screen not in menu_screens
