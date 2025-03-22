@@ -1,12 +1,7 @@
 {
-  "menu_playlist": ["menu_ambiance.mp3"],
-  "creation_playlist": ["Generations.mp3"],
+  "menu_music": ["Generations.mp3"],
 
-  "general_playlist": ["Dawn_Patrol.mp3"],
-  "leafbare_playlist": ["Leafbare.mp3"],
+  "general_music": ["Dawn_Patrol.mp3"],
+  "leafbare_music": ["Leafbare.mp3"]
 
-  "forest_playlist": [],
-  "plains_playlist": ["plains_ambiance_1.mp3"],
-  "beach_playlist": [],
-  "mountainous_playlist": ["mountain_ambiance_1.mp3", "mountain_ambiance_2.mp3"]
 }
