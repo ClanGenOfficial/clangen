@@ -19,7 +19,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
-from ..game_structure.audio import music_manager, sound_manager
+from scripts.game_structure.audio.audio import music_manager, sound_manager
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,

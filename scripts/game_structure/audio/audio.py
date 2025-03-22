@@ -7,10 +7,9 @@ import ujson
 
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import CatButton, UISpriteButton
+from scripts.screens.all_screens import main_menu_screens
 
 logger = logging.getLogger(__name__)
-
-menu_screens = ["settings screen", "start screen", "switch clan screen", "make clan screen"]
 
 
 class AmbianceManager:
@@ -60,7 +59,7 @@ class AmbianceManager:
 
         # menu screen
         if (
-            screen in menu_screens
+            screen in main_menu_screens
             and self.current_playlist != self.playlists["menu_playlist"]
         ):
             # print("menu screen")
@@ -69,7 +68,7 @@ class AmbianceManager:
 
         # other screens
         elif (
-            screen not in menu_screens
+            screen not in main_menu_screens
             and self.current_playlist != self.biome_playlist
         ):
             # print("biome screen")

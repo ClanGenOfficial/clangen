@@ -18,7 +18,6 @@ import subprocess
 import traceback
 from html import escape
 
-import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
@@ -26,7 +25,7 @@ from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.audio import music_manager
+from scripts.game_structure.audio.audio import music_manager
 from scripts.game_structure.game_essentials import (
     game,
 )

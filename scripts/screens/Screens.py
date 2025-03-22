@@ -10,7 +10,7 @@ import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.audio import music_manager
+from scripts.game_structure.audio.audio import music_manager
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
