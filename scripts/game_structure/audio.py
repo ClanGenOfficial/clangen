@@ -53,7 +53,7 @@ class AmbianceManager:
         if self.muted or self.audio_disabled:
             return
 
-        self.biome_playlist = self.get_world_music()
+        self.biome_playlist = self.get_world_ambiance()
         # print(f"biome playlist is {self.biome_playlist}, current playlist is {self.current_playlist}")
         # print(f"screen is {screen}")
         # print(f"menu playlist is {self.playlists['menu_playlist']}")
@@ -64,7 +64,7 @@ class AmbianceManager:
             and self.current_playlist != self.playlists["menu_playlist"]
         ):
             # print("menu screen")
-            self.fade_out_music()
+            self.fade_out_ambiance()
             self.play_playlist(self.playlists["menu_playlist"])
 
         # other screens
@@ -73,7 +73,7 @@ class AmbianceManager:
             and self.current_playlist != self.biome_playlist
         ):
             # print("biome screen")
-            self.fade_out_music()
+            self.fade_out_ambiance()
             self.play_playlist(self.biome_playlist)
 
     def play_playlist(self, playlist):
@@ -92,7 +92,7 @@ class AmbianceManager:
 
         self.queue_music()
 
-    def play_music(self, track, loops=0, fade_ms=1000):
+    def play_ambiance(self, track, loops=0, fade_ms=1000):
         """
         plays the given track and sets volume
         set loops to -1 to loop the chosen file
@@ -109,6 +109,7 @@ class AmbianceManager:
         queues up the next music track, this track is chosen randomly from self.current_playlist but WILL NOT be the
         current track
         """
+        # TODO: MOVE TO MUSIC MANAGER
         #  if playlist is empty or has a single track, don't attempt queueing
         if self.number_of_tracks == 0:
             return
@@ -138,13 +139,14 @@ class AmbianceManager:
         """
         Plays the currently queued track then queues the next track
         """
+        # TODO: MOVE TO MUSIC MANAGER
         if not self.queued_track:
             return
 
-        self.play_music(self.queued_track, fade_ms=3000)
+        self.play_ambiance(self.queued_track, fade_ms=3000)
         self.queue_music()
 
-    def fade_out_music(self, fadeout=2000):
+    def fade_out_ambiance(self, fadeout=2000):
         """
         fades the music out, by default the fade is 2 seconds
         """
@@ -195,7 +197,7 @@ class AmbianceManager:
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
-    def get_world_music(self):
+    def get_world_ambiance(self):
         """
         Finds the clan's biome and returns the appropriate playlist
         """
@@ -264,7 +266,7 @@ class _SoundManager:
         UIImageButtons have a sound_id parameter for assigning unique sounds to individual buttons
         :param event: the event that is taking place
         """
-        # This think make sounds play using UI_BUTTON_PRESSED, instead of UI_BUTTON_START_PRESS
+        # This makes sounds play using UI_BUTTON_PRESSED, instead of UI_BUTTON_START_PRESS
         try:
             if event.ui_element.sound_id in ["timeskip"]:
                 if event.type == pygame_gui.UI_BUTTON_PRESSED:
