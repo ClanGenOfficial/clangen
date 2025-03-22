@@ -10,11 +10,10 @@ from scripts.game_structure.ui_elements import CatButton, UISpriteButton
 
 logger = logging.getLogger(__name__)
 
-menu_screens = ["settings screen", "start screen", "switch clan screen"]
-creation_screens = ["make clan screen"]
+menu_screens = ["settings screen", "start screen", "switch clan screen", "make clan screen"]
 
 
-class MusicManager:
+class AmbianceManager:
     def __init__(self):
         
         self.current_playlist = []
@@ -32,22 +31,22 @@ class MusicManager:
         self.playlists = {}
         # loading playlists
         try:
-            with open("resources/audio/music.json", "r", encoding="utf-8") as f:
-                music_data = ujson.load(f)
+            with open("resources/audio/ambiance.json", "r", encoding="utf-8") as f:
+                audio_data = ujson.load(f)
         except:
             logger.exception("Failed to load playlist index")
             return
-        for playlist in music_data:
+        for playlist in audio_data:
             try:
                 self.playlists[playlist] = []
-                for path in music_data[playlist]:
+                for path in audio_data[playlist]:
                     self.playlists[playlist].append(
-                        "resources/audio/music/" + path
+                        "resources/audio/ambiance/" + path
                     )
             except:
                 logger.exception("Failed to load playlist")
 
-    def check_music(self, screen):
+    def check_ambiance(self, screen):
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
@@ -80,7 +79,6 @@ class MusicManager:
         # other screens
         elif (
             screen not in menu_screens
-            and screen not in creation_screens
             and self.current_playlist != self.biome_playlist
         ):
             # print("biome screen")
@@ -189,7 +187,7 @@ class MusicManager:
         else:
             self.muted = False
         pygame.mixer.music.unpause()
-        self.check_music(screen)
+        self.check_ambiance(screen)
         return True
 
     def change_volume(self, new_volume):
@@ -236,7 +234,7 @@ class MusicManager:
         return new_playlist
 
 
-music_manager = MusicManager()
+music_manager = AmbianceManager()
 
 
 class _SoundManager:
