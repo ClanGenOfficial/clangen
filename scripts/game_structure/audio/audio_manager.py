@@ -2,7 +2,7 @@ import pygame.mixer
 
 from scripts.game_structure.audio.sound_manager import sound_manager
 from scripts.game_structure.audio.ambiance_manager import ambiance_manager
-
+from scripts.game_structure.audio.music_manager import music_manager
 
 """
 I need this to be capable of controlling all the audio aspects within the game.
@@ -13,10 +13,19 @@ I need this to be capable of controlling all the audio aspects within the game.
 - Hold global pause functions
 """
 
+
 class AudioManager:
     def __init__(self):
         self.audio_disabled = False
         self.muted = False
+
+    def start_background_audio(self):
+        if not pygame.mixer.music.get_busy():
+            ambiance_manager.play_queued()
+
+        if not music_manager.get_busy():
+            music_manager.choose_music()
+            music_manager.play_music()
 
     def mute_audio(self):
         """
@@ -24,7 +33,7 @@ class AudioManager:
         """
         self.muted = True
         if not self.audio_disabled:
-            ambiance_manager.mute_music()
+            ambiance_manager.mute_ambiance()
             sound_manager.muted = True
 
     def unmute_audio(self, screen):
@@ -46,7 +55,7 @@ class AudioManager:
         else:
             self.muted = False
 
-        ambiance_manager.unmute_music(screen)
+        ambiance_manager.unmute_ambiance(screen)
         sound_manager.muted = False
 
     def fade_out_audio(self, fadeout=2000):
@@ -55,3 +64,5 @@ class AudioManager:
         """
         ambiance_manager.fade_out_ambiance(fadeout)
 
+
+audio_manager = AudioManager()

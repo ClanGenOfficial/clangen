@@ -26,6 +26,8 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
+from scripts.game_structure.audio.ambiance_manager import ambiance_manager
+
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -181,7 +183,10 @@ for module_name, module in list(sys.modules.items()):
             reload(module)
 
 # Load game
-from scripts.game_structure.audio import sound_manager, music_manager
+from scripts.game_structure.audio.sound_manager import sound_manager
+from scripts.game_structure.audio.audio_manager import audio_manager
+from scripts.game_structure.audio.ambiance_manager import ambiance_manager
+from scripts.game_structure.audio.music_manager import music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
@@ -308,8 +313,8 @@ try:
     pygame.mixer.init()
 except pygame.error:
     print("Failed to initialize sound. Sound will be disabled.")
-    music_manager.audio_disabled = True
-    music_manager.muted = True
+    audio_manager.audio_disabled = True
+    audio_manager.muted = True
 AllScreens.start_screen.screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
@@ -396,11 +401,11 @@ while 1:
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
     if (
-        not music_manager.audio_disabled
-        and not pygame.mixer.music.get_busy()
-        and not music_manager.muted
+        not audio_manager.audio_disabled
+        and not audio_manager.muted
     ):
-        music_manager.play_queued()
+        audio_manager.start_background_audio()
+
 
     debug_mode.pre_update(clock)
     # END FRAME

@@ -1,7 +1,7 @@
 {
-  "menu_music": ["Generations.mp3"],
+  "menu_playlist": ["Generations.mp3"],
 
-  "general_music": ["Dawn_Patrol.mp3"],
-  "leafbare_music": ["Leafbare.mp3"]
+  "general_playlist": ["Dawn_Patrol.mp3"],
+  "leafbare_playlist": ["Leafbare.mp3"]
 
 }

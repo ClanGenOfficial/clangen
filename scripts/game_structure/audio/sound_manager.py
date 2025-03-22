@@ -81,7 +81,8 @@ class _SoundManager:
                 logger.exception(f"That ui_element has no sound_id.")
 
         try:
-            pygame.mixer.Sound.play(random.choice(self.sounds[sound]))
+            if pygame.mixer.find_channel():
+                pygame.mixer.Sound.play(random.choice(self.sounds[sound]))
         except KeyError:
             logger.exception(f"Could not find sound {sound}")
 
