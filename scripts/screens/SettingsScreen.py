@@ -19,7 +19,8 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
-from scripts.game_structure.audio.audio import music_manager, sound_manager
+from scripts.game_structure.audio.ambiance_manager import ambiance_manager
+from scripts.game_structure.audio.sound_manager import sound_manager
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
@@ -112,7 +113,7 @@ class SettingsScreen(Screens):
             if hasattr(event, "ui_element"):
                 if event.ui_element == self.volume_elements["music_volume_slider"]:
                     self.update_music_volume_indicator()
-                    music_manager.change_volume(event.value)
+                    ambiance_manager.change_volume(event.value)
                     self.settings_changed = True
                     self.update_save_button()
                 elif event.ui_element == self.volume_elements["sound_volume_slider"]:
@@ -438,7 +439,7 @@ class SettingsScreen(Screens):
 
         self.volume_elements["music_volume_slider"] = UIImageHorizontalSlider(
             ui_scale(pygame.Rect((0, 250), (200, 30))),
-            start_value=int(music_manager.volume * 100),
+            start_value=int(ambiance_manager.volume * 100),
             value_range=(0, 100),
             click_increment=1,
             object_id="horizontal_slider",

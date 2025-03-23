@@ -4,9 +4,7 @@ import random
 import pygame
 import ujson
 
-from scripts.game_structure.audio.sound_manager import sound_manager
 from scripts.game_structure.game_essentials import game
-from scripts.screens.all_screens import main_menu_screens
 
 logger = logging.getLogger(__name__)
 
@@ -52,25 +50,20 @@ class AmbianceManager:
             return
 
         self.biome_playlist = self.get_world_ambiance()
-        # print(f"biome playlist is {self.biome_playlist}, current playlist is {self.current_playlist}")
-        # print(f"screen is {screen}")
-        # print(f"menu playlist is {self.playlists['menu_playlist']}")
 
         # menu screen
         if (
-                screen in main_menu_screens
+                screen in game.main_menu_screens
                 and self.current_playlist != self.playlists["menu_playlist"]
         ):
-            # print("menu screen")
             self.fade_out_ambiance()
             self.play_playlist(self.playlists["menu_playlist"])
 
         # other screens
         elif (
-                screen not in main_menu_screens
+                screen not in game.main_menu_screens
                 and self.current_playlist != self.biome_playlist
         ):
-            # print("biome screen")
             self.fade_out_ambiance()
             self.play_playlist(self.biome_playlist)
 
@@ -100,7 +93,6 @@ class AmbianceManager:
         pygame.mixer.music.load(self.current_track)
         pygame.mixer.music.set_volume(self.volume)
         pygame.mixer.music.play(loops, fade_ms=fade_ms)
-        # print(f"playing music:{self.current_track}")
 
     def queue_ambiance(self):
         """
@@ -115,12 +107,10 @@ class AmbianceManager:
         # otherwise we pick a new track and queue it
         if self.current_track in self.current_playlist and self.number_of_tracks > 1:
             playlist_copy = self.current_playlist.copy()
-            # print(f"playlist: {playlist_copy}, removing track: {self.current_track}")
             playlist_copy.remove(
                 self.current_track
             )  # don't want to repeat current track, so we take it out
             options = playlist_copy
-            # print(f"final list: {options}")
         else:
             options = self.current_playlist
 
@@ -175,7 +165,7 @@ class AmbianceManager:
 
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
-        # TODO: create the new ambiance volume setting
+        # TODO: create the new ambiance volume in settings
         game.settings["ambiance_volume"] = new_volume
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)

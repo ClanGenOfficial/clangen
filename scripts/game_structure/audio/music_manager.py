@@ -5,10 +5,8 @@ import logging
 import pygame
 
 from scripts.game_structure.game_essentials import game
-from scripts.screens.all_screens import main_menu_screens
 
 logger = logging.getLogger(__name__)
-
 
 class MusicManager:
     def __init__(self):
@@ -23,6 +21,8 @@ class MusicManager:
         self.available_music: dict = {}
 
         self.volume = game.settings["music_volume"] / 100
+
+        self.load_possible_tracks()
 
     def get_busy(self) -> bool:
         """
@@ -64,7 +64,7 @@ class MusicManager:
         loads the given track into memory for playing
         """
         try:
-            self.loaded_track = pygame.mixer.Sound("resources/audio/music/")
+            self.loaded_track = pygame.mixer.Sound(track)
             self.current_track_name = track
         except:
             logger.exception("Failed to load music")
@@ -86,7 +86,7 @@ class MusicManager:
         """
         playlist = []
 
-        if screen in main_menu_screens:
+        if screen in game.main_menu_screens:
             playlist = self.available_music.get("menu_playlist")
         else:
             playlist.append(self.available_music.get("general_playlist"))
@@ -95,7 +95,7 @@ class MusicManager:
 
         if not playlist:
             logger.error("Music track list is empty, check the music.json!")
-            chosen_track = "Generations.mp3"  # making this default just in case
+            chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
         elif len(playlist) == 1:
             chosen_track = playlist[0]
         else:
@@ -108,9 +108,9 @@ class MusicManager:
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
         """
-        if screen in main_menu_screens and self.current_track_name not in self.available_music["menu_playlist"]:
+        if screen in game.main_menu_screens and self.current_track_name not in self.available_music["menu_playlist"]:
             self.stop_music()
-        elif screen not in main_menu_screens and self.current_track_name in self.available_music["menu_playlist"]:
+        elif screen not in game.main_menu_screens and self.current_track_name in self.available_music["menu_playlist"]:
             self.stop_music()
 
     def play_music(self):

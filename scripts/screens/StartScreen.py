@@ -25,7 +25,7 @@ from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.audio.audio import music_manager
+from scripts.game_structure.audio.ambiance_manager import ambiance_manager
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -165,7 +165,7 @@ class StartScreen(Screens):
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
-        music_manager.check_ambiance("start screen")
+        ambiance_manager.check_ambiance("start screen")
 
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game.settings["dark mode"]:
