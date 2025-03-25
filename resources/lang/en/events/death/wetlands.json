@@ -1,0 +1,23 @@
+[
+  {
+        "event_id": "wtlnd_death_any_PLACEHOLDER",
+        "location": ["forest"],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "weight": 20,
+        "event_text": "m_c got stuck in quicksand and wasn't found in time.",
+        "m_c": {
+            "status": [ "apprentice", "warrior", "deputy", "leader"],
+            "dies": true
+        },
+        "history": [
+            {
+            "cats": ["m_c"],
+            "reg_death": "m_c died after getting trapped in quicksand.",
+            "lead_death": "{VERB/m_c/were/was} stuck in quicksand."
+            }
+        ]
+  }  
+]
