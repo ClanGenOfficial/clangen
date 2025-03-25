@@ -94,6 +94,7 @@ class MusicManager:
         """
         chooses music from the appropriate playlists and sends it to be loaded
         """
+        self.live = True
         playlist = []
 
         if screen in game.main_menu_screens:
@@ -136,9 +137,7 @@ class MusicManager:
                 screen in game.main_menu_screens
                 and self.current_track_name not in self.available_music["menu_playlist"]
         ):
-            self.fade_out_music()
-            self.choose_music(screen)
-            self.play_music()
+            self.fade_out_music(delay=2)
         elif (
                 screen not in game.main_menu_screens
                 and self.current_track_name in self.available_music["menu_playlist"]
@@ -147,12 +146,11 @@ class MusicManager:
 
     def play_music(self):
         """plays the loaded track"""
-        self.live = True
         self.loaded_track.set_volume(self.volume)
         if not self.channel:
-            self.channel = self.loaded_track.play()
+            self.channel = self.loaded_track.play(fade_ms=3000)
         else:
-            self.channel.play(self.loaded_track)
+            self.channel.play(self.loaded_track, fade_ms=3000)
         self.start_music_timer()
 
     def mute_music(self):
@@ -179,13 +177,17 @@ class MusicManager:
             # the silence timer should always be longer than all possible music tracks, so this *should* be fine
             self.start_silence_timer()
 
-    def fade_out_music(self, fadeout=2000):
+    def fade_out_music(self, fadeout=2000, delay=randint(200, 400)):
         """
         fades the music out, default fade is 2 seconds
+        :param fadeout: length of fadeout in milliseconds
+        :param delay: this is used to dictate the length of the silence timer that begins when the music starts to fade.
+        If a new music track is going to play immediately after the initial track fades, then you need a small delay
+        between the two, otherwise the fade will get cut off or weird duplication will occur.
         """
         if self.channel.get_busy():
             self.channel.fadeout(fadeout)
-            self.start_silence_timer()
+            self.start_silence_timer(delay)
             self.music_timer.cancel()
 
     def change_volume(self, new_volume):
@@ -209,13 +211,13 @@ class MusicManager:
         self.music_timer.daemon = True
         self.music_timer.start()
 
-    def start_silence_timer(self):
+    def start_silence_timer(self, duration=randint(200, 400)):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
         # waiting should already be true, but we'll just make certain
         self.del_music()
-        self.silence_timer = Timer(randint(200, 400), self.reset_music)
+        self.silence_timer = Timer(duration, self.reset_music)
         self.silence_timer.daemon = True
         self.silence_timer.start()
 
