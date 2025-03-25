@@ -23,7 +23,7 @@ class AudioManager:
         if not pygame.mixer.music.get_busy():
             ambiance_manager.play_queued()
 
-        if not music_manager.get_busy():
+        if not music_manager.get_busy() and not music_manager.live:
             music_manager.choose_music()
             music_manager.play_music()
 

@@ -12,6 +12,11 @@ logger = logging.getLogger(__name__)
 
 class MusicManager:
     def __init__(self):
+        # live is used to denote that the music manager is working in some respect. Even if music is not currently
+        # playing, the manager is stilled considered live as long as the silence timer is running.
+        # essentially, the only time the manager shouldn't be live, is when the program first starts up.
+        self.live = False
+
         self.music_timer = None
         self.silence_timer = None
 
@@ -94,7 +99,7 @@ class MusicManager:
         if screen in game.main_menu_screens:
             playlist = self.available_music.get("menu_playlist")
         else:
-            playlist.append(self.available_music.get("general_playlist"))
+            playlist.extend(self.available_music.get("general_playlist"))
 
             try:
                 biome = game.clan.biome
@@ -106,8 +111,10 @@ class MusicManager:
             except AttributeError:
                 season = "Newleaf"
 
-            playlist.append(self.available_music.get(f"{season.casefold().replace('-', '')}_playlist"))
-            playlist.append(self.available_music.get(f"{biome.casefold()}_playlist"))
+            if self.available_music.get(f"{season.casefold().replace('-', '')}_playlist"):
+                playlist.extend(self.available_music.get(f"{season.casefold().replace('-', '')}_playlist"))
+            if self.available_music.get(f"{biome.casefold()}_playlist"):
+                playlist.extend(self.available_music.get(f"{biome.casefold()}_playlist"))
 
         if not playlist:
             logger.error("Music track list is empty, check the music.json!")
@@ -115,7 +122,8 @@ class MusicManager:
         elif len(playlist) == 1:
             chosen_track = playlist[0]
         else:
-            playlist.remove(self.last_track_name)
+            if self.last_track_name in playlist:
+                playlist.remove(self.last_track_name)
             chosen_track = choice(playlist)
 
         self.load_music(chosen_track)
@@ -129,7 +137,7 @@ class MusicManager:
                 and self.current_track_name not in self.available_music["menu_playlist"]
         ):
             self.fade_out_music()
-            self.choose_music()
+            self.choose_music(screen)
             self.play_music()
         elif (
                 screen not in game.main_menu_screens
@@ -139,8 +147,12 @@ class MusicManager:
 
     def play_music(self):
         """plays the loaded track"""
+        self.live = True
         self.loaded_track.set_volume(self.volume)
-        self.channel = self.loaded_track.play()
+        if not self.channel:
+            self.channel = self.loaded_track.play()
+        else:
+            self.channel.play(self.loaded_track)
         self.start_music_timer()
 
     def mute_music(self):
@@ -148,6 +160,10 @@ class MusicManager:
         pauses the playing track
         """
         self.channel.pause()
+        if self.music_timer.is_alive():
+            self.music_timer.cancel()
+        elif self.silence_timer.is_alive():
+            self.silence_timer.cancel()
 
     def unmute_music(self, screen):
         """
@@ -158,6 +174,10 @@ class MusicManager:
 
         if self.loaded_track:
             self.channel.unpause()
+            # a weird one here, we couldn't preserve the progress of the music timer
+            # so instead, we start the silence timer and pray
+            # the silence timer should always be longer than all possible music tracks, so this *should* be fine
+            self.start_silence_timer()
 
     def fade_out_music(self, fadeout=2000):
         """
@@ -165,7 +185,8 @@ class MusicManager:
         """
         if self.channel.get_busy():
             self.channel.fadeout(fadeout)
-            self.del_music()
+            self.start_silence_timer()
+            self.music_timer.cancel()
 
     def change_volume(self, new_volume):
         """
@@ -192,13 +213,14 @@ class MusicManager:
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
+        # waiting should already be true, but we'll just make certain
         self.del_music()
         self.silence_timer = Timer(randint(200, 400), self.reset_music)
         self.silence_timer.daemon = True
         self.silence_timer.start()
 
     def reset_music(self):
-        self.choose_music()
+        self.choose_music(game.switches["cur_screen"])
         self.play_music()
 
 
