@@ -440,7 +440,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 2,
         "max_cats": 6,
@@ -550,7 +550,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 2,
         "max_cats": 6,
@@ -640,7 +640,7 @@
                         "cats_to": ["clan", "patrol"],
                         "cats_from": ["app1"],
                         "mutual": false,
-                        "values": ["jealous"    ],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ],

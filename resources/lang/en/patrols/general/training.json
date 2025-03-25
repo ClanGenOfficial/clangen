@@ -425,7 +425,7 @@
                 ]
             },
             {
-                "text": "With the patrol ranged around {PRONOUN/s_c/subject} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates - has anyone heard of story_list?",
+                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates - has anyone heard of story_list?",
                 "exp": 20,
                 "weight": 40,
                 "stat_skill": [

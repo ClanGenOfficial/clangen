@@ -326,16 +326,8 @@ class RoleScreen(Screens):
         self.update_disabled_buttons()
 
     def update_disabled_buttons(self):
-        # Previous and next cat button
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
 
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        self.update_previous_next_cat_buttons()
 
         if game.clan.leader:
             leader_invalid = game.clan.leader.dead or game.clan.leader.outside

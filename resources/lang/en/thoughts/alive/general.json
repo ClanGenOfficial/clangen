@@ -1422,7 +1422,7 @@
             "Is too nervous to tell another cat they're wrong",
             "Wonders if r_c has ever struggled with feelings of inadequacy",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing the best {PRONOUN/m_c/subject} can, but feels guilty anyway",
-            "Apologizes for something that wasn't {PRONOUN/m_c/subject} fault",
+            "Apologizes for something that wasn't {PRONOUN/m_c/poss} fault",
             "Fakes it 'til {PRONOUN/m_c/subject} {VERB/m_c/make/makes it}",
             "Boasts loudly about all {PRONOUN/m_c/poss} accomplishments",
             "Tries to downplay {PRONOUN/m_c/poss} Clanmates' accomplishments"
@@ -4904,5 +4904,594 @@
         "random_living_status": [
             "living"
         ]
+    },
+    {
+        "id": "blood_loss_gen",
+        "thoughts": [
+            "Is feeling lightheaded",
+            "Is feeling so cold {PRONOUN/m_c/subject} {VERB/m_c/are/is} shivering",
+            "Can barely keep {PRONOUN/m_c/poss} eyes open",
+            "Is fighting for each breath",
+            "Is barely responsive"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "blood loss"
+            ]
+        }
+    },
+    {
+        "id": "broken_bone_jaw_gen",
+        "thoughts": [
+            "Is feeling dizzy from pain",
+            "Is avoiding moving {PRONOUN/m_c/poss} wound",
+            "Can't seem to get rid of the tingling feeling in {PRONOUN/m_c/poss} wound",
+            "Wonders if {PRONOUN/m_c/poss} wound will ever feel right again",
+            "Hopes the swelling will go down soon"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "broken bone",
+                "broken jaw"
+            ]
+        }
+    },
+    {
+        "id": "mangled_leg_tail_gen",
+        "thoughts": [
+            "Is keeping {PRONOUN/m_c/poss} mangled wounds as still as possible",
+            "Is avoiding looking at {PRONOUN/m_c/poss} wounds",
+            "Just wants {PRONOUN/m_c/poss} wounds to be healed already"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "mangled tail",
+                "mangled leg"
+            ]
+        }
+    },
+    {
+        "id": "phantom_pain_gen",
+        "thoughts": [
+            "Doesn't understand how something that isn't there can hurt so much",
+            "Wishes {PRONOUN/m_c/poss} missing limb was back so {PRONOUN/m_c/subject} could soothe its pain"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "phantom pain"
+            ]
+        }
+    },
+    {
+        "id": "shivering_frostbite_gen",
+        "thoughts": [
+            "Is absolutely freezing",
+            "Is shaking uncontrollably",
+            "Would do anything to be warm again",
+            "Can't feel {PRONOUN/m_c/poss} toes"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "shivering",
+                "frostbite"
+            ]
+        }
+    },
+    {
+        "id": "recovering_from_birth_gen",
+        "thoughts": [
+            "Is resting whenever {PRONOUN/m_c/subject} can",
+            "Is feeling a bit sore today",
+            "Wants to take a light walk around camp"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "recovering from birth"
+            ]
+        }
+    },
+    {
+        "id": "water_in_lungs_gen",
+        "thoughts": [
+            "Is wheezing loudly",
+            "Is having sharp chest pains",
+            "Is coughing up a storm",
+            "Can't seem to get a deep breath in",
+            "Is anxious about breathing enough while {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "water in their lungs"
+            ]
+        }
+    },
+    {
+        "id": "burn_gen",
+        "thoughts": [
+            "Can't believe a burn could hurt so much",
+            "Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} touching flames"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "burn",
+                "severe burn"
+            ]
+        }
+    },
+    {
+        "id": "dehydrated_gen",
+        "thoughts": [
+            "Feels like {PRONOUN/m_c/poss} head is pounding",
+            "Would do anything for a lick of water",
+            "Feels like {PRONOUN/m_c/poss} mouth is made of sand",
+            "Is so tired {PRONOUN/m_c/subject} can barely stay awake",
+            "Is too dizzy to sit up"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "dehydrated"
+            ]
+        }
+    },
+    {
+        "id": "head_damage_gen",
+        "thoughts": [
+            "Is feeling extremely dizzy",
+            "Is having trouble focusing on anything",
+            "Is feeling groggy",
+            "Can't remember what happened today",
+            "Is hiding from sunlight",
+            "Can't get the pain in {PRONOUN/m_c/poss} head to stop"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "head damage"
+            ]
+        }
+    },
+    {
+        "id": "damaged_eyes_gen",
+        "thoughts": [
+            "Is having trouble seeing anything",
+            "Is avoiding sunlight",
+            "Hopes the swelling in {PRONOUN/m_c/poss} eye goes down soon",
+            "Is trying to avoid squinting in pain"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "damaged eyes"
+            ]
+        }
+    },
+    {
+        "id": "broken_back_gen",
+        "thoughts": [
+            "Is barely awake",
+            "Is taking shallow breaths",
+            "Is laying very still to avoid making {PRONOUN/m_c/poss} wound worse",
+            "Is dealing with the nonstop tingling in {PRONOUN/m_c/poss} limbs"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "broken back"
+            ]
+        }
+    },
+    {
+        "id": "poisoned_gen",
+        "thoughts": [
+            "Can't stop shaking",
+            "Is curled up in pain",
+            "Is drooling uncontrollably",
+            "Feels like {PRONOUN/m_c/poss} stomach is broken",
+            "Is having trouble breathing",
+            "Is feeling weak and dizzy"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "poisoned"
+            ]
+        }
+    },
+    {
+        "id": "bee_sting_gen",
+        "thoughts": [
+            "Is itching {PRONOUN/m_c/poss} bee sting relentlessly",
+            "Never wants to see another bee again",
+            "Is still in pain from being stung"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "bee sting"
+            ]
+        }
+    },
+    {
+        "id": "severe_headache_gen",
+        "thoughts": [
+            "Is shivering in pain",
+            "Feels sick to {PRONOUN/m_c/poss} stomach",
+            "Can't stand the sunlight",
+            "Is so dizzy {PRONOUN/m_c/subject} {VERB/m_c/have/has} to lay down",
+            "Can't stop the throbbing pain in {PRONOUN/m_c/poss} head",
+            "Is in so much pain {PRONOUN/m_c/subject} can't do anything else but curl up in {PRONOUN/m_c/poss} nest"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "severe headache"
+            ]
+        }
+    },
+    {
+        "id": "headache_gen",
+        "thoughts": [
+            "Just wants to lay down for a bit to deal with the pain",
+            "Wonders if {PRONOUN/m_c/subject} didn't have enough water today",
+            "Feels the pain creeping around {PRONOUN/m_c/poss} skull"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "headache"
+            ]
+        }
+    },
+    {
+        "id": "pregnant_gen",
+        "thoughts": [
+            "Is a little short of breath",
+            "Is extra hungry today",
+            "Is surprised at the movement within {PRONOUN/m_c/poss} belly",
+            "Wants to get some fresh moss for {PRONOUN/m_c/poss} nest right away",
+            "Is thinking about the future",
+            "Wonders how many kits {PRONOUN/m_c/subject}'ll have",
+            "Purrs at the idea of naming {PRONOUN/m_c/poss} kits after something special"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "pregnant"
+            ]
+        }
+    },
+    {
+        "id": "shock_gen",
+        "thoughts": [
+            "Is feeling unnaturally cold",
+            "Is breathing rapidly",
+            "Can't stop shivering",
+            "Feels {PRONOUN/m_c/poss} heart racing",
+            "Is reeling with dizziness"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "shock"
+            ]
+        }
+    },
+    {
+        "id": "seizure_gen",
+        "thoughts": [
+            "Is staring into the distance",
+            "Didn't notice a nearby noise",
+            "Is feeling confused",
+            "Is feeling stiff"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "seizure"
+            ]
+        }
+    },
+    {
+        "id": "diarrhea_gen",
+        "thoughts": [
+            "Is running to the dirtplace... again",
+            "Is groaning with stomach pain",
+            "Doesn't want to go far from the dirtplace",
+            "Wonders if {PRONOUN/m_c/poss} pain was caused by something bad {PRONOUN/m_c/subject} ate"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "diarrhea"
+            ]
+        }
+    },
+    {
+        "id": "fleas_gen",
+        "thoughts": [
+            "Is so itchy {PRONOUN/m_c/subject} can't stand it",
+            "Is scratching furiously",
+            "Feels like {PRONOUN/m_c/poss} whole pelt is crawling",
+            "Is biting at another itch",
+            "Is biting tufts of fur out while trying to reach an itch"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "fleas"
+            ]
+        }
+    },
+    {
+        "id": "infected_wound_gen",
+        "thoughts": [
+            "Is worrying about how hot {PRONOUN/m_c/poss} wound feels",
+            "Is feeling really sore",
+            "Is hot to the touch but shivering with cold",
+            "Is shivering in {PRONOUN/m_c/poss} nest"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "an infected wound"
+            ]
+        }
+    },
+    {
+        "id": "carrionplace_disease_gen",
+        "thoughts": [
+            "Is having another coughing fit",
+            "Can barely catch a breath",
+            "Is burning hot with fever",
+            "Is exhausted but can't sleep between coughing fits",
+            "Has a terrible stench oozing from {PRONOUN/m_c/poss} pelt",
+            "Swears to never touch another rat"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "carrionplace disease"
+            ]
+        }
+    },
+    {
+        "id": "festering_wound_gen",
+        "thoughts": [
+            "Is shivering uncontrollably",
+            "Is constantly feeling either very hot or very cold",
+            "Doesn't seem to be aware of things around {PRONOUN/m_c/object}",
+            "Is talking about something that doesn't make any sense"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "a festering wound"
+            ]
+        }
+    },
+    {
+        "id": "heat_stroke_gen",
+        "thoughts": [
+            "Is having trouble staying awake",
+            "Drifts in and out of consciousness",
+            "Is panting uncontrollably",
+            "Doesn't understand what is going on"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "heat stroke"
+            ]
+        }
+    },
+    {
+        "id": "heat_exhaustion_gen",
+        "thoughts": [
+            "Is extremely thirsty",
+            "Is feeling weak",
+            "Is a little confused",
+            "Can't stand how hot it is"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "heat exhaustion"
+            ]
+        }
+    },
+    {
+        "id": "stomachache_gen",
+        "thoughts": [
+            "Is growling in pain",
+            "Is curled up in {PRONOUN/m_c/poss} nest with pain",
+            "Feels like {PRONOUN/m_c/poss} stomach is twisting"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "stomachache"
+            ]
+        }
+    },
+    {
+        "id": "constant_nightmares_gen",
+        "thoughts": [
+            "Is dreading going to sleep",
+            "Is tired but doesn't want to sleep again",
+            "Is nodding off during the day",
+            "Jolts awake, panting",
+            "Yowls in {PRONOUN/m_c/poss} sleep"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "constant nightmares"
+            ]
+        }
+    },
+    {
+        "id": "grief_stricken_gen",
+        "thoughts": [
+            "Doesn't know how to get through the day",
+            "Is avoiding other cats",
+            "Doesn't seem to enjoy things like {PRONOUN/m_c/subject} used to",
+            "Can't stop thinking about the past",
+            "Would give anything to have them back",
+            "Doesn't see the point in moving on without them"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "grief stricken"
+            ]
+        }
+    },
+    {
+        "id": "malnourished_gen",
+        "thoughts": [
+            "Is trying to ignore {PRONOUN/m_c/poss} rumbling stomach",
+            "Tries to focus on something other than food",
+            "Imagines the taste of fresh-kill"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "malnourished"
+            ]
+        }
+    },
+    {
+        "id": "starving_gen",
+        "thoughts": [
+            "Is weak with hunger",
+            "Can barely stand up",
+            "Is groaning with hunger pains",
+            "Isn't sure if {PRONOUN/m_c/subject} {VERB/m_c/have/has} the strength to hunt despite the hunger"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "starving"
+            ]
+        }
+    },
+    {
+        "id": "running_nose_gen",
+        "thoughts": [
+            "Is constantly sniffling",
+            "Tries to be careful about sneezing around other cats",
+            "Hopes to have a clear nose again soon"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "running nose"
+            ]
+        }
+    },
+    {
+        "id": "whitecough_gen",
+        "thoughts": [
+            "Is having a coughing fit",
+            "Can't stop sneezing",
+            "Is having trouble taking a deep breath",
+            "Is wheezing loudly",
+            "Is coughing up white sludge"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "whitecough"
+            ]
+        }
+    },
+    {
+        "id": "greencough_gen",
+        "thoughts": [
+            "Can barely breath between coughs",
+            "Is rattling with every breath",
+            "Is too weak to leave {PRONOUN/m_c/poss} nest",
+            "Is coughing up green sludge"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "greencough"
+            ]
+        }
+    },
+    {
+        "id": "yellowcough_gen",
+        "thoughts": [
+            "Can barely swallow due to {PRONOUN/m_c/poss} sore throat",
+            "Is burning with fever",
+            "Is revolted by the thought of eating",
+            "Can barely catch {PRONOUN/m_c/poss} breath",
+            "Is staring intently at something that isn't there",
+            "Is coughing up yellow sludge"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "yellowcough"
+            ]
+        }
+    },
+    {
+        "id": "redcough_gen",
+        "thoughts": [
+            "Feels {PRONOUN/m_c/poss} heart beating too fast",
+            "Is shivering so hard {PRONOUN/m_c/subject} can't sit up",
+            "Is so very tired",
+            "Fell over unexpectedly",
+            "Barely has the energy to withstand another coughing fit",
+            "Is coughing up dark red sludge"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "redcough"
+            ]
+        }
+    },
+    {
+        "id": "mild_injury_gen",
+        "thoughts": [
+            "Is stopping in the medicine den just in case",
+            "Is feeling a little sore",
+            "Is mildly annoyed at {PRONOUN/m_c/poss} injury",
+            "Is handling the minor pain without issue"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "bruises",
+                "cracked pads",
+                "sore",
+                "scrapes",
+                "small cut",
+                "tick bites",
+                "torn ear"
+            ]
+        }
+    },
+    {
+        "id": "mid_injury_gen",
+        "thoughts": [
+            "Is grimacing in pain",
+            "Is doing {PRONOUN/m_c/poss} best to heal",
+            "Hopes {PRONOUN/m_c/subject} will heal quickly",
+            "Doesn't want to be stuck in the medicine den"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "claw-wound",
+                "bite-wound",
+                "cat bite",
+                "beak bite",
+                "snake bite",
+                "rat bite",
+                "dislocated joint",
+                "sprain",
+                "quilled by a porcupine",
+                "torn pelt"
+            ]
+        }
+    },
+    {
+        "id": "major_injury_gen",
+        "thoughts": [
+            "Would do anything to get the pain to stop",
+            "Can't think of anything besides the pain",
+            "Is shaking in pain",
+            "Is lying still to avoid the pain",
+            "Is trying to sleep to get relief from the constant pain",
+            "Is barely awake",
+            "Can't seem to stay awake for long"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "broken jaw",
+                "broken back",
+                "broken bone",
+                "mangled leg",
+                "mangled tail",
+                "head damage",
+                "severe burn",
+                "severe headache"
+            ]
+        }
     }
 ]

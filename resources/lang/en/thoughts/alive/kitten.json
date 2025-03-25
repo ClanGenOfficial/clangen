@@ -798,5 +798,34 @@
         "random_living_status": [
             "starclan"
         ]
+    },
+    {
+        "id": "kittencough_gen",
+        "thoughts": [
+            "Wants to play but can't stop coughing",
+            "Is unusually willing to nap",
+            "Is trembling after a coughing fit",
+            "Is rattling when breathing",
+            "Just wants to stay in {PRONOUN/m_c/poss} nest"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "kittencough"
+            ]
+        }
+    },
+    {
+        "id": "kit_to_pregnant_cat",
+        "thoughts": [
+            "Wants r_c to let {PRONOUN/m_c/object} name one of the kits",
+            "Can't wait for r_c's kits to be here so they can play together",
+            "Is asking r_c question after question about being pregnant",
+            "Asks r_c if {PRONOUN/r_c/subject}'ll have twelve kits since {PRONOUN/r_c/poss} belly is so big"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "pregnant"
+            ]
+        }
     }
 ]

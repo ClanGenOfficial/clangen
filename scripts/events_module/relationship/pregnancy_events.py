@@ -191,6 +191,7 @@ class Pregnancy_Events:
             cats_involved["r_c"] = other_cat
         for kit in kits:
             kit.thought = "hardcoded.new_kit_thought"
+            kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
 
         # Normally, birth cooldown is only applied to cat who gave birth
         # However, if we don't apply birth cooldown to adoption, we get
@@ -230,9 +231,9 @@ class Pregnancy_Events:
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
                 print_event = i18n.t(
-                    "pregnant.pregnant_secret",
+                    "conditions.pregnancy.pregnant_secret",
                     name=cat.name,
-                    insert=i18n.t("pregnant.kit_amount", count=amount),
+                    insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
                 )
                 cats_involved = [cat.ID]
                 cat_dict = {"m_c": cat}
@@ -266,9 +267,9 @@ class Pregnancy_Events:
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
                 print_event = i18n.t(
-                    "pregnant.pregnant_secret",
+                    "conditions.pregnancy.pregnant_secret",
                     name=cat.name,
-                    insert=i18n.t("pregnant.kit_amount", count=amount),
+                    insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
                 )
                 cats_involved = [cat.ID]
                 for kit in kits:
@@ -828,12 +829,14 @@ class Pregnancy_Events:
                     parent1=cat.ID, parent2=other_cat.ID, moons=0, status="newborn"
                 )
                 kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
+                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
                     parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
                 )
                 kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
+                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:

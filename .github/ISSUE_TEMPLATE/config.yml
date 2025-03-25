@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Bug - Typo (misspellings/improper grammar)
+    url: https://github.com/ClanGenOfficial/clangen/issues/1818
+    about: Report an issue with text itself (spelling, punctuation, and grammar).

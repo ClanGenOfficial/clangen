@@ -1729,7 +1729,7 @@ class SaveAsImage(UIWindow):
 
         self.save_as_image = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 90), (135, 30))),
-            "screens.sprite_inspect.save_as_image",
+            "screens.sprite_inspect.save_image",
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
             sound_id="save",
