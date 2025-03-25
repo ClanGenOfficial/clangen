@@ -65,12 +65,5 @@ class AudioManager:
         music_manager.unmute_music(screen)
         sound_manager.muted = False
 
-    def fade_out_audio(self, fadeout=2000):
-        """
-        Fades out all background audio
-        """
-        ambiance_manager.fade_out_ambiance(fadeout)
-        music_manager.fade_out_music(fadeout)
-
 
 audio_manager = AudioManager()
