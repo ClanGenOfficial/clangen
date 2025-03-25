@@ -160,7 +160,7 @@ class MusicManager:
         self.channel.pause()
         if self.music_timer.is_alive():
             self.music_timer.cancel()
-        elif self.silence_timer.is_alive():
+        elif self.silence_timer and self.silence_timer.is_alive():
             self.silence_timer.cancel()
 
     def unmute_music(self, screen):
@@ -168,6 +168,8 @@ class MusicManager:
         unpauses the current music track
         :param screen: the screen that the player is currently viewing
         """
+        # this just acts a bit weird on consecutive mutes/unmutes, not sure why, but if players aren't spam clicking
+        # the mute button it likely won't be noticeable
         self.check_music(screen)
 
         if self.loaded_track:
@@ -175,6 +177,8 @@ class MusicManager:
             # a weird one here, we couldn't preserve the progress of the music timer
             # so instead, we start the silence timer and pray
             # the silence timer should always be longer than all possible music tracks, so this *should* be fine
+            if self.silence_timer and self.silence_timer.is_alive():
+                self.silence_timer.cancel()
             self.start_silence_timer()
 
     def fade_out_music(self, fadeout=2000, delay=randint(200, 400)):

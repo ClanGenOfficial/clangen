@@ -150,7 +150,6 @@ class AmbianceManager:
         """
         pygame.mixer.music.unpause()
         self.check_ambiance(screen)
-        return True
 
     def change_volume(self, new_volume):
         """changes the volume, int given should be between 0 and 100"""
