@@ -152,8 +152,6 @@ class Cat:
             self.init_faded(ID, status, prefix, suffix, moons, **kwargs)
             return
 
-        self.generate_events = generate_events()
-
         # Private attributes
         self._mentor = None  # plz
         self._experience = None
@@ -717,7 +715,7 @@ class Cat:
                 possible_strings = []
                 for x in very_high_values:
                     possible_strings.extend(
-                        self.generate_events.possible_death_reactions(
+                        generate_events.possible_death_reactions(
                             family_relation, x, cat.personality.trait, body_status
                         )
                     )
@@ -810,7 +808,7 @@ class Cat:
                 possible_strings = []
                 for x in high_values:
                     possible_strings.extend(
-                        self.generate_events.possible_death_reactions(
+                        generate_events.possible_death_reactions(
                             family_relation, x, cat.personality.trait, body_status
                         )
                     )

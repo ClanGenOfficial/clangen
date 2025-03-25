@@ -107,7 +107,7 @@ def generate_short_events(event_triggered, biome):
     file_path = f"{event_triggered}/{biome}.json"
 
     try:
-        if file_path in generate_events.loaded_events:
+        if file_path in loaded_events:
             return loaded_events[file_path]
         else:
             events_dict = get_short_event_dicts(file_path)
