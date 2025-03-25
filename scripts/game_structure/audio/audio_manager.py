@@ -27,6 +27,10 @@ class AudioManager:
             music_manager.choose_music()
             music_manager.play_music()
 
+    def check_audio(self, screen):
+        music_manager.check_music(screen)
+        ambiance_manager.check_ambiance(screen)
+
     def mute_audio(self):
         """
         Pauses background audio tracks and mutes sound effects
@@ -34,6 +38,7 @@ class AudioManager:
         self.muted = True
         if not self.audio_disabled:
             ambiance_manager.mute_ambiance()
+            music_manager.mute_music()
             sound_manager.muted = True
 
     def unmute_audio(self, screen):
@@ -46,6 +51,7 @@ class AudioManager:
                 pygame.mixer.init()
                 ambiance_manager.load_playlists()
                 sound_manager.load_sounds()
+                music_manager.load_possible_tracks()
                 self.audio_disabled = False
                 self.muted = False
             except pygame.error:
@@ -56,6 +62,7 @@ class AudioManager:
             self.muted = False
 
         ambiance_manager.unmute_ambiance(screen)
+        music_manager.unmute_music(screen)
         sound_manager.muted = False
 
     def fade_out_audio(self, fadeout=2000):
@@ -63,6 +70,7 @@ class AudioManager:
         Fades out all background audio
         """
         ambiance_manager.fade_out_ambiance(fadeout)
+        music_manager.fade_out_music(fadeout)
 
 
 audio_manager = AudioManager()

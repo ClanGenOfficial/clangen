@@ -15,7 +15,7 @@ class AmbianceManager:
         self.current_playlist = []
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
-        self.volume = game.settings["music_volume"] / 100
+        self.volume = game.settings["ambiance_volume"] / 100
         self.muted = False
         self.audio_disabled = False
         self.current_track = None
@@ -99,8 +99,7 @@ class AmbianceManager:
         queues up the next ambiance track, this track is chosen randomly from self.current_playlist but WILL NOT be the
         current track
         """
-        # TODO: MOVE TO MUSIC MANAGER
-        #  if playlist is empty or has a single track, don't attempt queueing
+        # if playlist is empty or has a single track, don't attempt queueing
         if self.number_of_tracks == 0:
             return
 
@@ -116,9 +115,7 @@ class AmbianceManager:
 
         try:
             self.queued_track = random.choice(options)
-            print(
-                f"queueing music: current track is {self.current_track}, new track is {self.queued_track}"
-            )
+
         except IndexError:
             print("WARNING: playlist is empty")
             self.queued_track = None
@@ -165,7 +162,6 @@ class AmbianceManager:
 
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
-        # TODO: create the new ambiance volume in settings
         game.settings["ambiance_volume"] = new_volume
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
@@ -185,15 +181,7 @@ class AmbianceManager:
             season = "Newleaf"
 
         new_playlist = self.playlists["general_playlist"].copy()
-
-        if biome == "Forest":
-            new_playlist.extend(self.playlists["forest_playlist"])
-        elif biome == "Plains":
-            new_playlist.extend(self.playlists["plains_playlist"])
-        elif biome == "Mountainous":
-            new_playlist.extend(self.playlists["mountainous_playlist"])
-        elif biome == "Beach":
-            new_playlist.extend(self.playlists["beach_playlist"])
+        new_playlist.extend(self.playlists[f"{biome.casefold()}_playlist"])
 
         new_playlist.extend(self.playlists.get(f"{season.lower().replace('-', '')}_playlist", []))
 

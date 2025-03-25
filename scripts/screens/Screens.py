@@ -11,6 +11,7 @@ import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.audio.ambiance_manager import ambiance_manager
+from scripts.game_structure.audio.music_manager import music_manager
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
@@ -48,6 +49,7 @@ class Screens:
         Last screen must be tracked to ensure a clear transition between screens."""
 
         ambiance_manager.check_ambiance(new_screen)
+        music_manager.check_music(new_screen)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 

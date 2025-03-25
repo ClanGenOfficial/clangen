@@ -21,6 +21,7 @@ from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from scripts.game_structure.audio.ambiance_manager import ambiance_manager
 from scripts.game_structure.audio.sound_manager import sound_manager
+from ..game_structure.audio.music_manager import music_manager
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
@@ -113,6 +114,11 @@ class SettingsScreen(Screens):
             if hasattr(event, "ui_element"):
                 if event.ui_element == self.volume_elements["music_volume_slider"]:
                     self.update_music_volume_indicator()
+                    music_manager.change_volume(event.value)
+                    self.settings_changed = True
+                    self.update_save_button()
+                elif event.ui_element == self.volume_elements["ambiance_volume_slider"]:
+                    self.update_ambiance_volume_indicator()
                     ambiance_manager.change_volume(event.value)
                     self.settings_changed = True
                     self.update_save_button()
@@ -430,29 +436,59 @@ class SettingsScreen(Screens):
             anchors={"centerx": "centerx"},
         )
 
-        self.volume_elements["music_volume_text"] = pygame_gui.elements.UITextBox(
-            "screens.settings.music_volume",
+        self.volume_elements["ambiance_volume_text"] = pygame_gui.elements.UITextBox(
+            "screens.settings.ambiance_volume",
             ui_scale(pygame.Rect((175, 250), (200, 30))),
             object_id=get_text_box_theme("#text_box_30"),
             manager=MANAGER,
         )
 
-        self.volume_elements["music_volume_slider"] = UIImageHorizontalSlider(
+        self.volume_elements["ambiance_volume_slider"] = UIImageHorizontalSlider(
             ui_scale(pygame.Rect((0, 250), (200, 30))),
             start_value=int(ambiance_manager.volume * 100),
             value_range=(0, 100),
             click_increment=1,
             object_id="horizontal_slider",
             manager=MANAGER,
-            anchors={"left_target": self.volume_elements["music_volume_text"]},
+            anchors={"left_target": self.volume_elements["ambiance_volume_text"]},
+        )
+
+        self.volume_elements["ambiance_volume_indicator"] = pygame_gui.elements.UITextBox(
+            f"{self.volume_elements['ambiance_volume_slider'].get_current_value()}",
+            ui_scale(pygame.Rect((-8, 250), (50, 30))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER,
+            anchors={"left_target": self.volume_elements["ambiance_volume_slider"]},
+        )
+
+        self.volume_elements["music_volume_text"] = pygame_gui.elements.UITextBox(
+            "screens.settings.music_volume",
+            ui_scale(pygame.Rect((175, 15), (200, 30))),
+            object_id=get_text_box_theme("#text_box_30"),
+            manager=MANAGER,
+            anchors={"top_target": self.volume_elements["ambiance_volume_text"]},
+        )
+
+        self.volume_elements["music_volume_slider"] = UIImageHorizontalSlider(
+            ui_scale(pygame.Rect((0, 15), (200, 30))),
+            start_value=int(music_manager.volume * 100),
+            value_range=(0, 100),
+            click_increment=1,
+            object_id="horizontal_slider",
+            manager=MANAGER,
+            anchors={
+                "top_target": self.volume_elements["ambiance_volume_text"],
+                "left_target": self.volume_elements["music_volume_text"]},
         )
 
         self.volume_elements["music_volume_indicator"] = pygame_gui.elements.UITextBox(
             f"{self.volume_elements['music_volume_slider'].get_current_value()}",
-            ui_scale(pygame.Rect((-8, 250), (50, 30))),
+            ui_scale(pygame.Rect((-8, 15), (50, 30))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
-            anchors={"left_target": self.volume_elements["music_volume_slider"]},
+            anchors={
+                "top_target": self.volume_elements["ambiance_volume_text"],
+                "left_target": self.volume_elements["music_volume_slider"]},
         )
 
         self.volume_elements["sound_volume_text"] = pygame_gui.elements.UITextBox(
@@ -485,6 +521,11 @@ class SettingsScreen(Screens):
                 "top_target": self.volume_elements["music_volume_indicator"],
                 "left_target": self.volume_elements["sound_volume_slider"],
             },
+        )
+
+    def update_ambiance_volume_indicator(self):
+        self.volume_elements["ambiance_volume_indicator"].set_text(
+            f"{self.volume_elements['ambiance_volume_slider'].get_current_value()}"
         )
 
     def update_music_volume_indicator(self):

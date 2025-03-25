@@ -20,6 +20,7 @@ from pygame_gui.windows import UIMessageWindow
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
+from scripts.game_structure.audio.audio_manager import audio_manager
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import (
     get_lang_config,
@@ -319,6 +320,7 @@ class SaveCheck(UIWindow):
                     self.mm_btn.enable()
                     game.last_screen_forupdate = game.switches["cur_screen"]
                     game.switches["cur_screen"] = "start screen"
+                    audio_manager.check_audio("start screen")
                     game.switch_screens = True
                     self.kill()
                 else:

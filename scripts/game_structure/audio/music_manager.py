@@ -1,4 +1,5 @@
-from random import choice
+from random import choice, randint
+from threading import Timer
 
 import ujson
 import logging
@@ -8,10 +9,13 @@ from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
 
+
 class MusicManager:
     def __init__(self):
-        self.waiting = False
-        self.channel_used = None
+        self.music_timer = None
+        self.silence_timer = None
+
+        self.channel = None
 
         self.current_track_name = None
         self.last_track_name = None
@@ -28,13 +32,13 @@ class MusicManager:
         """
         checks if music is currently playing
         """
-        if not self.channel_used and not self.waiting:
+        if not self.music_timer or not self.music_timer.is_alive():
             return False
 
-        if self.channel_used.get_busy():
-            return True
+        elif self.silence_timer and self.silence_timer.is_alive():
+            return False
 
-        return False
+        return True
 
     def load_possible_tracks(self):
         """
@@ -75,6 +79,7 @@ class MusicManager:
         is loaded
         """
         self.last_track_name = self.current_track_name
+        self.current_track_name = None
 
         del self.loaded_track
 
@@ -90,8 +95,19 @@ class MusicManager:
             playlist = self.available_music.get("menu_playlist")
         else:
             playlist.append(self.available_music.get("general_playlist"))
-            playlist.append(self.available_music.get(f"{game.clan.current_season.caselock()}_playlist"))
-            playlist.append(self.available_music.get(f"{game.clan.biome.caselock()}_playlist"))
+
+            try:
+                biome = game.clan.biome
+            except AttributeError:
+                biome = "Forest"
+
+            try:
+                season = game.clan.current_season
+            except AttributeError:
+                season = "Newleaf"
+
+            playlist.append(self.available_music.get(f"{season.casefold().replace('-', '')}_playlist"))
+            playlist.append(self.available_music.get(f"{biome.casefold()}_playlist"))
 
         if not playlist:
             logger.error("Music track list is empty, check the music.json!")
@@ -108,28 +124,30 @@ class MusicManager:
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
         """
-        if screen in game.main_menu_screens and self.current_track_name not in self.available_music["menu_playlist"]:
-            self.stop_music()
-        elif screen not in game.main_menu_screens and self.current_track_name in self.available_music["menu_playlist"]:
-            self.stop_music()
+        if (
+                screen in game.main_menu_screens
+                and self.current_track_name not in self.available_music["menu_playlist"]
+        ):
+            self.fade_out_music()
+            self.choose_music()
+            self.play_music()
+        elif (
+                screen not in game.main_menu_screens
+                and self.current_track_name in self.available_music["menu_playlist"]
+        ):
+            self.fade_out_music()
 
     def play_music(self):
         """plays the loaded track"""
-        # .play returns used channel, so we grab that here
-        self.channel_used = pygame.mixer.Sound.play(self.loaded_track)
-
-    def stop_music(self):
-        """
-        stops and deletes currently loaded track
-        """
-        self.fade_out_music()
-        self.del_music()
+        self.loaded_track.set_volume(self.volume)
+        self.channel = self.loaded_track.play()
+        self.start_music_timer()
 
     def mute_music(self):
         """
         pauses the playing track
         """
-        self.channel_used.pause()
+        self.channel.pause()
 
     def unmute_music(self, screen):
         """
@@ -139,21 +157,49 @@ class MusicManager:
         self.check_music(screen)
 
         if self.loaded_track:
-            self.channel_used.unpause()
+            self.channel.unpause()
 
     def fade_out_music(self, fadeout=2000):
         """
         fades the music out, default fade is 2 seconds
         """
-        if self.channel_used.get_busy():
-            self.channel_used.fadeout(fadeout)
+        if self.channel.get_busy():
+            self.channel.fadeout(fadeout)
+            self.del_music()
 
-    def set_timer(self):
+    def change_volume(self, new_volume):
         """
-        sets a timer for the next track to play
+        changes the voume, int given should be between 0 and 100
         """
-        pygame.time.set_timer(pygame.USEREVENT + 5, millis=300000)
-        self.waiting = True
+        if new_volume > 100:
+            new_volume = 100
+        elif new_volume < 0:
+            new_volume = 0
+
+        self.volume = new_volume / 100
+        game.settings["music_volume"] = new_volume
+        self.loaded_track.set_volume(self.volume)
+
+    def start_music_timer(self):
+        """
+        sets a timer for the length of the track.  When the timer ends, silence timer is activated.
+        """
+        self.music_timer = Timer(self.loaded_track.get_length(), self.start_silence_timer)
+        self.music_timer.daemon = True
+        self.music_timer.start()
+
+    def start_silence_timer(self):
+        """
+        Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
+        """
+        self.del_music()
+        self.silence_timer = Timer(randint(200, 400), self.reset_music)
+        self.silence_timer.daemon = True
+        self.silence_timer.start()
+
+    def reset_music(self):
+        self.choose_music()
+        self.play_music()
 
 
 music_manager = MusicManager()

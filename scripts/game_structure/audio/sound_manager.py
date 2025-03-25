@@ -37,7 +37,7 @@ class _SoundManager:
                     )
 
                 for each in self.sounds[sound]:
-                    pygame.mixer.Sound.set_volume(each, self.volume)
+                    each.set_volume(self.volume)
             except:
                 logger.exception("Failed to load sound")
 
@@ -82,7 +82,8 @@ class _SoundManager:
 
         try:
             if pygame.mixer.find_channel():
-                pygame.mixer.Sound.play(random.choice(self.sounds[sound]))
+                chosen = random.choice(self.sounds[sound])
+                chosen.play()
         except KeyError:
             logger.exception(f"Could not find sound {sound}")
 
@@ -91,7 +92,7 @@ class _SoundManager:
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100
-        if new_volume < 0:
+        elif new_volume < 0:
             new_volume = 0
 
         # convert to a float and change volume accordingly
@@ -99,7 +100,7 @@ class _SoundManager:
         game.settings["sound_volume"] = new_volume
         for sound in self.sounds:
             for each in self.sounds[sound]:
-                pygame.mixer.Sound.set_volume(each, self.volume)
+                each.set_volume(self.volume)
 
 
 sound_manager = _SoundManager()
