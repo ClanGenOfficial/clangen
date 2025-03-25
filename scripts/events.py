@@ -19,7 +19,7 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
-    medical_cats_condition_fulfilled,
+    medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
@@ -279,7 +279,7 @@ class Events:
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
-            med_fulfilled = medical_cats_condition_fulfilled(
+            med_fulfilled = medicine_cats_can_cover_clan(
                 Cat.all_cats.values(), amount_per_med
             )
 
@@ -769,9 +769,9 @@ class Events:
                     change_clan_relations(clan, amount)
 
             # finish
-            text_snippet = "hardcoded.injury_hoarding"
+            text_snippet = "hardcoded.focus_injury_hoarding"
             if game.clan.clan_settings.get("raid other clans"):
-                text_snippet = "hardcoded.injury_raiding"
+                text_snippet = "hardcoded.focus_injury_raiding"
             for condition_type, value in involved_cats.items():
                 game.cur_events_list.append(
                     Single_Event(
@@ -1277,7 +1277,7 @@ class Events:
                     ]
 
                     # check if the Clan has sufficient med cats
-                    has_med = medical_cats_condition_fulfilled(
+                    has_med = medicine_cats_can_cover_clan(
                         Cat.all_cats.values(),
                         amount_per_med=get_amount_cat_for_one_medic(game.clan),
                     )
@@ -1709,8 +1709,8 @@ class Events:
         if cat.dead or cat.outside:
             return
 
-        # check if cat already has acc
-        if cat.pelt.accessory:
+        # check if cat already has max acc
+        if cat.pelt.accessory and len(cat.pelt.accessory) == 3:
             self.ceremony_accessory = False
             return
 
@@ -1751,6 +1751,8 @@ class Events:
             "nervous",
         ]:
             chance += acc_chances["grumpy_trait_modifier"]
+        if cat.pelt.accessory and len(cat.pelt.accessory) >= 1:
+            chance += acc_chances["multiple_acc_modifier"]
         if self.ceremony_accessory:
             chance += acc_chances["ceremony_modifier"]
 

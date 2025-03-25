@@ -292,7 +292,10 @@ def change_clan_reputation(difference):
     will change the Clan's reputation with outsider cats according to the difference parameter.
     """
     game.clan.reputation += difference
-
+    if game.clan.reputation < 0:
+        game.clan.reputation = 0 # clamp to 0
+    elif game.clan.reputation > 100:
+        game.clan.reputation = 100 # clamp to 100
 
 def change_clan_relations(other_clan, difference):
     """
@@ -894,7 +897,7 @@ def create_new_cat(
 
         # give em a collar if they got one
         if accessory:
-            new_cat.pelt.accessory = accessory
+            new_cat.pelt.accessory = [accessory]
 
         # give apprentice aged cat a mentor
         if new_cat.age == "adolescent":
@@ -2295,14 +2298,14 @@ def event_text_adjust(
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
         text = text.replace(
-            "acc_plural", i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=2)
+            "acc_plural", i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2)
         )
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
         text = text.replace(
             "acc_singular",
-            i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=1),
+            i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
         )
 
     if "given_herb" in text:
@@ -2598,47 +2601,26 @@ def clan_symbol_sprite(clan, return_string=False, force_light=False):
     :param return_string: default False, set True if the sprite name string is required rather than the sprite image
     :param force_light: Set true if you want this sprite to override the dark/light mode changes with the light sprite
     """
-    clan_name = clan.name
-    if clan.chosen_symbol:
-        if return_string:
-            return clan.chosen_symbol
-        else:
-            if game.settings["dark mode"] and not force_light:
-                return sprites.dark_mode_symbol(sprites.sprites[clan.chosen_symbol])
-            else:
-                return sprites.sprites[clan.chosen_symbol]
-    else:
+    if not clan.chosen_symbol:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
             name = sprite.strip("1234567890")
-            if f"symbol{clan_name.upper()}" == name:
+            if f"symbol{clan.name.upper()}" == name:
                 possible_sprites.append(sprite)
-        if return_string:  # returns the str of the symbol
-            if possible_sprites:
-                return choice(possible_sprites)
-            else:
-                # give random symbol if no matching symbol exists
-                print(
-                    f"WARNING: attempted to return symbol string, but there's no clan symbol for {clan_name.upper()}.  Random symbol string returned."
-                )
-                return f"{choice(sprites.clan_symbols)}"
-
-        # returns the actual sprite of the symbol
         if possible_sprites:
-            if game.settings["dark mode"] and not force_light:
-                return sprites.dark_mode_symbol(
-                    sprites.sprites[choice(possible_sprites)]
-                )
-            else:
-                return sprites.sprites[choice(possible_sprites)]
+            clan.chosen_symbol = choice(possible_sprites)
         else:
             # give random symbol if no matching symbol exists
             print(
-                f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
+                f"WARNING: attempted to return symbol, but there's no clan symbol for {clan.name.upper()}. "
+                f"Random chosen."
             )
-            return sprites.dark_mode_symbol(
-                sprites.sprites[f"{choice(sprites.clan_symbols)}"]
-            )
+            clan.chosen_symbol = choice(sprites.clan_symbols)
+
+    if return_string:
+        return clan.chosen_symbol
+    else:
+        return sprites.get_symbol(clan.chosen_symbol, force_light=force_light)
 
 
 def generate_sprite(
@@ -2852,21 +2834,27 @@ def generate_sprite(
                     )
 
         # draw accessories
-        if not acc_hidden:
-            if cat.pelt.accessory in cat.pelt.plant_accessories:
-                new_sprite.blit(
-                    sprites.sprites["acc_herbs" + cat.pelt.accessory + cat_sprite],
-                    (0, 0),
-                )
-            elif cat.pelt.accessory in cat.pelt.wild_accessories:
-                new_sprite.blit(
-                    sprites.sprites["acc_wild" + cat.pelt.accessory + cat_sprite],
-                    (0, 0),
-                )
-            elif cat.pelt.accessory in cat.pelt.collars:
-                new_sprite.blit(
-                    sprites.sprites["collars" + cat.pelt.accessory + cat_sprite], (0, 0)
-                )
+        from scripts.cat.pelts import Pelt
+        if not acc_hidden and cat.pelt.accessory:
+            cat_accessories = cat.pelt.accessory
+            categories = ["collars", "tail_accessories", "body_accessories", "head_accessories"]
+            for category in categories:
+                for accessory in cat_accessories:
+                    if accessory in getattr(Pelt, category):
+                        if accessory in cat.pelt.plant_accessories:
+                            new_sprite.blit(
+                                sprites.sprites["acc_herbs" + accessory + cat_sprite],
+                                (0, 0),
+                            )
+                        elif accessory in cat.pelt.wild_accessories:
+                            new_sprite.blit(
+                                sprites.sprites["acc_wild" + accessory + cat_sprite],
+                                (0, 0),
+                            )
+                        elif accessory in cat.pelt.collars:
+                            new_sprite.blit(
+                                sprites.sprites["collars" + accessory + cat_sprite], (0, 0)
+                            )
 
         # Apply fading fog
         if (

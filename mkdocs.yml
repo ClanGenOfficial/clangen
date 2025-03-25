@@ -6,6 +6,7 @@ edit_uri: https://github.com/ClanGenOfficial/clangen/edit/development/docs/
 nav:
   - Welcome:
     - index.md
+    - report-a-bug.md
   - Developer Documentation:
     - dev/index.md
     - Project Basics:
@@ -100,6 +101,7 @@ extra_css:
 # if you add an extension, add a link to it's matching documentation to contributing/documentation-resources.md
 markdown_extensions:
   - abbr
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences

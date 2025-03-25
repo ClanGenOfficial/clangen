@@ -177,7 +177,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     yellow_eyes = [
         "YELLOW",
@@ -188,7 +188,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     blue_eyes = [
         "BLUE",
@@ -304,14 +304,6 @@ class Pelt:
         "BULB BLUE",
         "CLOVER",
         "DAISY",
-        "CLOVER",
-        "DAISY",
-        "LILY OF THE VALLEY",
-        "HEATHER",
-        "SNAPDRAGON",
-        "GORSE",
-        "BULB WHITE",
-        "BULB YELLOW",
         "DRY HERBS",
         "DRY CATMINT",
         "DRY NETTLES",
@@ -403,6 +395,53 @@ class Pelt:
         "INDIGONYLON",
     ]
 
+    head_accessories = [
+        "MOTH WINGS",
+        "ROSY MOTH WINGS",
+        "MORPHO BUTTERFLY",
+        "MONARCH BUTTERFLY",
+        "CICADA WINGS",
+        "BLACK CICADA",
+        "MAPLE LEAF",
+        "HOLLY",
+        "BLUE BERRIES",
+        "FORGET ME NOTS",
+        "RYE STALK",
+        "CATTAIL",
+        "POPPY",
+        "ORANGE POPPY",
+        "CYAN POPPY",
+        "WHITE POPPY",
+        "PINK POPPY",
+        "BLUEBELLS",
+        "LILY OF THE VALLEY",
+        "SNAPDRAGON",
+        "NETTLE",
+        "HEATHER",
+        "GORSE",
+        "JUNIPER",
+        "RASPBERRY",
+        "LAVENDER",
+        "OAK LEAVES",
+        "CATMINT",
+        "MAPLE SEED",
+        "LAUREL",
+        "BULB WHITE",
+        "BULB YELLOW",
+        "BULB ORANGE",
+        "BULB PINK",
+        "BULB BLUE",
+        "DRY CATMINT",
+        "DRY NETTLES",
+        "DRY LAURELS",
+    ]
+
+    body_accessories = [
+        "HERBS",
+        "PETALS",
+        "DRY HERBS"
+    ]
+
     tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
     spotted = ["Speckled", "Rosette"]
     plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]
@@ -468,7 +507,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     little_white = [
         "LITTLE",
@@ -652,7 +691,7 @@ class Pelt:
         tortiepattern: str = None,
         vitiligo: str = None,
         points: str = None,
-        accessory: str = None,
+        accessory: list = None,
         paralyzed: bool = False,
         opacity: int = 100,
         scars: list = None,
@@ -785,7 +824,6 @@ class Pelt:
                 self.cat_sprites["senior"] = 13
             elif self.cat_sprites["senior"] == 5:
                 self.cat_sprites["senior"] = 14
-
         if self.pattern in convert_dict["old_tortie_patches"]:
             old_pattern = self.pattern
             self.pattern = convert_dict["old_tortie_patches"][old_pattern][1]
@@ -806,7 +844,19 @@ class Pelt:
         elif self.pattern == "MINIMAL4":
             self.pattern = "MINIMALFOUR"
 
+        if isinstance(self.accessory, str):
+            self.accessory = [self.accessory]
+
+
     def init_eyes(self, parents):
+        """Sets eye color for this cat's pelt. Takes parents' eye colors into account.
+        Heterochromia is possible based on the white-ness of the pelt, so the pelt color and white_patches must be
+        set before this function is called.
+
+        :param parents: List[Cat] representing this cat's parents
+
+        :return: None
+        """
         if not parents:
             self.eye_colour = choice(Pelt.eye_colours)
         else:
@@ -817,7 +867,9 @@ class Pelt:
         # White patches must be initalized before eye color.
         num = game.config["cat_generation"]["base_heterochromia"]
         if (
-            self.white_patches in [Pelt.high_white, Pelt.mostly_white, "FULLWHITE"]
+            self.white_patches in Pelt.high_white
+            or self.white_patches in Pelt.mostly_white
+            or self.white_patches == "FULLWHITE"
             or self.colour == "WHITE"
         ):
             num = num - 90
@@ -1171,7 +1223,7 @@ class Pelt:
 
     def init_accessories(self, age):
         if age == "newborn":
-            self.accessory = None
+            self.accessory = []
             return
 
         acc_display_choice = random.randint(0, 80)
@@ -1181,11 +1233,11 @@ class Pelt:
             acc_display_choice = random.randint(0, 100)
 
         if acc_display_choice == 1:
-            self.accessory = choice(
+            self.accessory = [choice(
                 [choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)]
-            )
+            )]
         else:
-            self.accessory = None
+            self.accessory = []
 
     def init_pattern(self):
         if self.name in Pelt.torties:
@@ -1621,7 +1673,7 @@ def _describe_torties(cat, color_name, short=False) -> [str, str]:
             "rosette",
             "speckled",
         ]:
-            base = f"cat.pelts.{base}_long"  # the extra space is intentional
+            base = f"cat.pelts.{cat.pelt.tortiebase.capitalize()}_long"  # the extra space is intentional
         else:
             base = ""
         return base, color_name
@@ -1664,7 +1716,9 @@ def unpack_appearance_ruleset(cat, rule, short, pelt, color):
             for scar in cat.pelt.scars:
                 if scar in _scar_details:
                     scarlist.append(i18n.t(f"cat.pelts.{scar}"))
-            return adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else "" # note: this doesn't preserve order!
+            return (
+                adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else ""
+            )  # note: this doesn't preserve order!
     else:
         raise Exception(f"Unmatched ruleset item {rule} in describe_appearance!")
     return ""

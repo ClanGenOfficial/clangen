@@ -14,7 +14,7 @@ from scripts.clan_resources.freshkill import (
     STARV_PERCENTAGE,
 )
 from scripts.conditions import (
-    medical_cats_condition_fulfilled,
+    medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
@@ -1085,7 +1085,7 @@ class Condition_Events:
 
             # adjust chance of risk gain if Clan has enough meds
             chance = risk["chance"]
-            if medical_cats_condition_fulfilled(
+            if medicine_cats_can_cover_clan(
                 Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)
             ):
                 chance += 10  # lower risk if enough meds

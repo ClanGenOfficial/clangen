@@ -47,7 +47,7 @@
 			"m_c tries to find r_c to apologize for something, but finds {PRONOUN/r_c/object} playing with a Clanmate.",
 			"r_c does something endearing, which surprises m_c.",
 			"m_c stumbles upon r_c looking at the stars with wonder in {PRONOUN/r_c/poss} eyes.",
-			"m_c is rethinking how {PRONOUN/m_c/subject} feel about r_c and gives {PRONOUN/r_c/object} another chance."
+			"m_c is rethinking how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} about r_c and gives {PRONOUN/r_c/object} another chance."
 		]
 	},
 	{
