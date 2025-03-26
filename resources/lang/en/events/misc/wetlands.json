@@ -1,0 +1,12 @@
+[
+  {
+    "event_id": "wtlnd_misc_stingingnettleboop_PLACEHOLDER",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "whilst m_c was poking around in the undergrowth {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant - Ouch!",
+    "m_c": {
+      "status": ["apprentice", "warrior", "elder", "kitten"],
+    }
+  }
+]
