@@ -1,0 +1,12 @@
+[
+  {
+    "event_id": "dst_misc_angrylizard_PLACEHOLDER",
+    "location": ["desert"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c was sniffing at an odd lump in the sand when suddenly a very upset lizard burst out and gave {PRONOUN/m_c/object} a nip on the nose! It sprinted away before {PRONOUN/m_c/subject} could give it payback.",
+    "m_c": {
+      "status": ["warrior", "apprentice", "kitten", "elder"]
+    }
+  }
+]
