@@ -33,6 +33,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
+from ..game_structure.audio.audio_manager import audio_manager
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
@@ -165,7 +166,7 @@ class StartScreen(Screens):
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
-        ambiance_manager.check_ambiance("start screen")
+        audio_manager.check_background_audio("start screen")
 
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game.settings["dark mode"]:

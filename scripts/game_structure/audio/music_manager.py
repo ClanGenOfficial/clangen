@@ -133,6 +133,9 @@ class MusicManager:
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
         """
+        if not self.channel:
+            return
+
         if (
                 screen in game.main_menu_screens
                 and self.current_track_name not in self.available_music["menu_playlist"]
@@ -189,7 +192,7 @@ class MusicManager:
         If a new music track is going to play immediately after the initial track fades, then you need a small delay
         between the two, otherwise the fade will get cut off or weird duplication will occur.
         """
-        if self.channel.get_busy():
+        if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
             self.start_silence_timer(delay)
             self.music_timer.cancel()

@@ -49,7 +49,7 @@ class Screens:
         It will handle keeping track of the last screen and cur screen.
         Last screen must be tracked to ensure a clear transition between screens."""
 
-        audio_manager.check_audio(new_screen)
+        audio_manager.check_background_audio(new_screen)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 

@@ -15,11 +15,18 @@ I need this to be capable of controlling all the audio aspects within the game.
 
 
 class AudioManager:
+    """
+    This class allows control over audio as a whole.
+    """
     def __init__(self):
         self.audio_disabled = False
         self.muted = False
 
-    def start_background_audio(self):
+    @staticmethod
+    def start_background_audio():
+        """
+        Begins background audio playback if necessary.
+        """
         if not pygame.mixer.music.get_busy():
             ambiance_manager.play_queued()
 
@@ -27,7 +34,10 @@ class AudioManager:
             music_manager.choose_music()
             music_manager.play_music()
 
-    def check_audio(self, screen):
+    def check_background_audio(self, screen):
+        """
+        Checks that background audio is appropriate for the given screen
+        """
         music_manager.check_music(screen)
         ambiance_manager.check_ambiance(screen)
 

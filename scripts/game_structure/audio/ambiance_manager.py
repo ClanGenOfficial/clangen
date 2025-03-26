@@ -16,8 +16,6 @@ class AmbianceManager:
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
         self.volume = game.settings["ambiance_volume"] / 100
-        self.muted = False
-        self.audio_disabled = False
         self.current_track = None
         self.queued_track = None
 
@@ -46,8 +44,6 @@ class AmbianceManager:
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
-        if self.muted or self.audio_disabled:
-            return
 
         self.biome_playlist = self.get_world_ambiance()
 
