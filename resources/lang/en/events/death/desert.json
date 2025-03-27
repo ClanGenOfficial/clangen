@@ -7,7 +7,7 @@
           ],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was bitten and killed by a rattlesnake out in the territory.",
+          "event_text": "m_c was killed by a rattlesnake out in the territory.",
           "m_c": {
               "status": [ "apprentice", "warrior", "deputy", "leader"],
               "dies": true
