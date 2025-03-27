@@ -593,17 +593,34 @@
     },
     {
         "patrol_id": "wtlnd_med_romance7",
-        "biome": ["wetlands"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for useful fresh supplies that have survived leaf-bare so far, and for carrying capacity should they find anything.",
@@ -616,10 +633,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -628,13 +653,23 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -647,10 +682,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -659,13 +702,24 @@
                 "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -674,18 +728,38 @@
     },
     {
         "patrol_id": "wtlnd_med_romance8",
-        "biome": ["wetlands"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived leaf-bare so far.",
@@ -698,10 +772,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -710,13 +792,23 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -729,10 +821,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -741,13 +841,24 @@
                 "text": "Not only do they not find anything, but p_l is <i>this</i> close to murdering s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]

@@ -49,10 +49,10 @@
         " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy and moving to the nursery would feel stifling - maybe next moon.",
         " Surely it's not time to move into the nursery, though.",
         " {PRONOUN/m_c/subject/CAP} couldn't imagine being trapped in the nursery yet and {VERB/m_c/insist/insists} {PRONOUN/m_c/subject} can keep working.",
-	    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/dare/dares} any cat to force {PRONOUN/m_c/object} into that stuffy old nursery and, to {PRONOUN/m_c/poss} delight, no cat tries to. Maybe next moon, but not now.",
-	    " {PRONOUN/m_c/subject/CAP} wouldn't dare settle down and let others work while {PRONOUN/m_c/subject} rested! Things will continue as usual for now.",
-	    " There's so much that needs to be done! {PRONOUN/m_c/subject/CAP} just can't settle down yet!"
-  ],
+        " {PRONOUN/m_c/subject/CAP} {VERB/m_c/dare/dares} any cat to force {PRONOUN/m_c/object} into that stuffy old nursery and, to {PRONOUN/m_c/poss} delight, no cat tries to. Maybe next moon, but not now.",
+        " {PRONOUN/m_c/subject/CAP} wouldn't dare settle down and let others work while {PRONOUN/m_c/subject} rested! Things will continue as usual for now.",
+        " There's so much that needs to be done! {PRONOUN/m_c/subject/CAP} just can't settle down yet!"
+    ],
     "comment": [
         "both the minor and major severity strings will appear in conjunction with either a litter guess or an announcement. Write them accordingly!",
         "They should also start with a space in order to ensure there is a space between the announcement/litter sentence and the severity sentence."
@@ -82,7 +82,6 @@
             "m_c and r_c were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert} that they wonder what to name them.",
             "With r_c purring against {PRONOUN/m_c/poss} back, m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to explode with love, looking at {PRONOUN/m_c/poss} tiny new {insert}.",
             "While on a walk in the territory with r_c, m_c unexpectedly had {PRONOUN/m_c/poss} {insert} with help from {PRONOUN/m_c/poss} mate."
-
         ],
         "dead_mate": [
             "m_c looks at {PRONOUN/m_c/poss} {insert}, choking on both a purr and a wail. How {VERB/m_c/are/is} {PRONOUN/m_c/subject} supposed to do this without r_c?",
@@ -98,7 +97,7 @@
             "m_c purrs loudly as r_c grooms {PRONOUN/m_c/poss} pelt. As their new {insert} squirms around m_c's belly, the two cats think about their new responsibilities together.",
             "m_c gazes lovingly at {PRONOUN/m_c/poss} new {insert}. r_c looks nervous and awkward in the nursery, but m_c calls {PRONOUN/r_c/object} forward to meet the litter.",
             "Nobody can judge what two cats do in private. Some ask whether m_c and r_c will become mates for the sake of their {insert}, but most turn a blind eye to it, opting to allow the pair their privacy as new parents."
-    ],
+        ],
         "affair": [
             "m_c secretly had a {insert} with r_c.",
             "m_c hopes that {PRONOUN/m_c/poss} {insert} doesn't look too much like r_c, otherwise questions might follow.",
@@ -148,8 +147,8 @@
             "Some say m_c didn't make it.",
             "Some say m_c would have needed a medicine cat to survive.",
             "Hopefully those kits have someone to care for them, as m_c apparently didn't make it...",
-        	"If only m_c had a medicine cat with {PRONOUN/m_c/object}..."
-	    ],
+            "If only m_c had a medicine cat with {PRONOUN/m_c/object}..."
+        ],
         "lead_death": [
             "m_c lost one of {PRONOUN/m_c/poss} nine lives, but gave birth to a {insert}.",
             "Although m_c gave birth to a {insert}, it came at the cost of one of {PRONOUN/m_c/poss} nine lives."

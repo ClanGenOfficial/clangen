@@ -10,7 +10,7 @@
         "patrol_label": "patrol",
         "select": "select",
         "unavailable": "unavailable",
-        "skills_traits_label":  "skills & traits",
+        "skills_traits_label": "skills & traits",
         "remove_all_label": "remove all",
         "go_on_patrol": "go on patrol",
         "current_prey": "current prey: %{prey}",

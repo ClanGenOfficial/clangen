@@ -28,6 +28,8 @@
         "thoughts": [
             "Is proud of being one of c_n's first leaders"
         ],
-        "main_backstory_constraint": ["clan_founder"]
+        "main_backstory_constraint": [
+            "clan_founder"
+        ]
     }
 ]

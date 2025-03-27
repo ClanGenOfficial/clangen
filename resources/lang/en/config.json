@@ -31,23 +31,34 @@
         "ruleset": {
             "scarred": "",
             "fur_length": "",
-            "pattern": ["color"],
+            "pattern": [
+                "color"
+            ],
             "cat": "",
             "vitiligo": "",
             "amputation": ""
         },
         "groups": [
             {
-                "values": [0, 1],
+                "values": [
+                    0,
+                    1
+                ],
                 "format": ", ",
                 "post_value": ", "
             },
             {
-                "values": [2, 3],
+                "values": [
+                    2,
+                    3
+                ],
                 "format": " "
             },
             {
-                "values": [4, 5],
+                "values": [
+                    4,
+                    5
+                ],
                 "format": "list",
                 "pre_value": ", with "
             }

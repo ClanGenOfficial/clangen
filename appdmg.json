@@ -9,7 +9,17 @@
         }
     },
     "contents": [
-        { "x": 204, "y": 200, "type": "link", "path": "/Applications" },
-        { "x": 66, "y": 200, "type": "file", "path": "dist/Clangen.app" }
-      ]
+        {
+            "x": 204,
+            "y": 200,
+            "type": "link",
+            "path": "/Applications"
+        },
+        {
+            "x": 66,
+            "y": 200,
+            "type": "file",
+            "path": "dist/Clangen.app"
+        }
+    ]
 }

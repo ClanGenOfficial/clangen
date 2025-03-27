@@ -1,23 +1,40 @@
 [
     {
         "patrol_id": "mtn_med_soloripples1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_soloripples",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle.",
         "decline_text": "p_l is in too much of a hurry, not sparing the rippling water a second glance.",
         "chance_of_success": 45,
-        "pl_skill_constraint": ["PROPHET,1"],
+        "pl_skill_constraint": [
+            "PROPHET,1"
+        ],
         "success_outcomes": [
             {
                 "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far too important.",
@@ -25,10 +42,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -39,10 +64,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -58,19 +91,40 @@
     },
     {
         "patrol_id": "mtn_med_herblocation1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory, both on even and uneven ground.",
@@ -81,20 +135,35 @@
                 "text": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs {PRONOUN/app1/subject} {VERB/app1/need/needs} both on even and uneven ground without {PRONOUN/p_l/object} if needed.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -103,20 +172,35 @@
                 "text": "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise {PRONOUN/app1/subject} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -129,17 +213,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -148,18 +245,36 @@
     },
     {
         "patrol_id": "mtn_med_herblocation2",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "mtn_med_herblocation2",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "app1 has been sent out into the mountains to try to find herbs alone.",
@@ -170,13 +285,17 @@
                 "text": "app1 is focused, determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily and {VERB/app1/bring/brings} them back to camp with {PRONOUN/app1/poss} head held up high - no sweat, no stress, no fuss.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"]
+                "herbs": [
+                    "random_herbs"
+                ]
             },
             {
                 "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"]
+                "herbs": [
+                    "random_herbs"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -189,33 +308,48 @@
     },
     {
         "patrol_id": "mtn_med_clair1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "healer cats": [1, 6]
+            "healer cats": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of slope {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional/p_l. What could this mean?",
         "decline_text": "p_l is in too much of a hurry, {PRONOUN/p_l/subject} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
         "chance_of_success": 45,
-        "pl_skill_constraint": ["CLAIRVOYANT,1"],
+        "pl_skill_constraint": [
+            "CLAIRVOYANT,1"
+        ],
         "success_outcomes": [
             {
                 "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} and {VERB/p_l/consider/considers} the feeling for a moment, allowing {PRONOUN/p_l/self} to linger. This might be important for the future, or it could simply be the left-over feelings of an event long past... either way, p_l doesn't stay too long before returning to herb collecting.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"]
+                "herbs": [
+                    "random_herbs"
+                ]
             },
             {
                 "text": "These feelings could prove important, they have in the past, at least. p_l makes {PRONOUN/p_l/self} comfortable on the slope, letting the feelings wash over {PRONOUN/p_l/object} and carry {PRONOUN/p_l/object} away. Eventually {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to herb collecting, content in the new knowledge and understanding {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} gained.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"]
+                "herbs": [
+                    "random_herbs"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -228,18 +362,36 @@
     },
     {
         "patrol_id": "mtn_med_appfirstsign1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind is whistling through the hills as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
@@ -250,7 +402,9 @@
                 "text": "app1 is plucking some rosemary when {PRONOUN/app1/poss} attention is suddenly grabbed by omen_list_sight/app1. The fur on {PRONOUN/app1/poss} back begins to prickle slightly, the sound of {PRONOUN/app1/poss} heartbeat like thunder in {PRONOUN/app1/poss} ears. {PRONOUN/app1/subject/CAP} {VERB/app1/turn/turns} and {VERB/app1/hare/hares} back to camp, herbs forgotten. {PRONOUN/app1/subject/CAP} {VERB/app1/need/needs} to tell {PRONOUN/app1/poss} mentor about this as soon as possible!",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["rosemary"]
+                "herbs": [
+                    "rosemary"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -263,16 +417,28 @@
     },
     {
         "patrol_id": "mtn_med_rainygathering1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_rainygathering",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs {PRONOUN/p_l/subject} can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
@@ -283,20 +449,34 @@
                 "text": "It's absolutely miserable weather to be gathering herbs in, and p_l wishes {PRONOUN/p_l/subject} didn't have to. Despite r_c nearly slipping and falling over multiple times during the patrol and them all getting drenched to the bone, they do, miraculously, still manage to bring back herbs.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -305,20 +485,34 @@
                 "text": "The entire patrol mutely agrees to grit their teeth and bear it, but that doesn't stop the relief everyone feels when they settle into their nests to dry off, a rather motley assortment of herbs refreshing the medicine cat den's stocks.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -327,21 +521,38 @@
                 "text": "The keen-eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the dry camp, not lingering for a second more than they need to.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SENSE,2"],
-                "herbs": ["many_herbs", "random_herbs"],
+                "stat_skill": [
+                    "SENSE,2"
+                ],
+                "herbs": [
+                    "many_herbs",
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -354,17 +565,29 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -373,17 +596,32 @@
     },
     {
         "patrol_id": "mtn_med_gatheringcobwebs1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
@@ -394,13 +632,18 @@
                 "text": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. No cat will have the chance to bleed out - not now, with so many cobwebs to staunch their wounds!",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"]
+                "herbs": [
+                    "cobwebs"
+                ]
             },
             {
                 "text": "p_l visits a few of {PRONOUN/p_l/poss} favorite places to gather cobwebs. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} back to camp, {PRONOUN/p_l/subject} {VERB/p_l/end/ends} up startling several cats on {PRONOUN/p_l/poss} way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass {PRONOUN/p_l/subject} {VERB/p_l/have/has} gathered.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"]
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -413,19 +656,40 @@
     },
     {
         "patrol_id": "mtn_med_cobweblesson1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_cobweblesson",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
@@ -436,13 +700,22 @@
                 "text": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside {PRONOUN/p_l/object} to gather as many as they can, {PRONOUN/app1/poss} eyes glittering with joy and pride as {PRONOUN/app1/subject} {VERB/app1/work/works}.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"],
+                "herbs": [
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -451,13 +724,23 @@
                 "text": "p_l goes to {PRONOUN/p_l/poss} favorite cobweb gathering places. Several cats in the camp startle when they pass by {PRONOUN/p_l/object} as they are unable to see p_l and app1 underneath the many cobwebs {PRONOUN/p_l/subject} gathered.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -470,10 +753,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -482,17 +772,32 @@
     },
     {
         "patrol_id": "mtn_med_cobwebhelp1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them.",
@@ -503,20 +808,35 @@
                 "text": "p_l <i>mrrp</i>s with laughter, watching r_c parade around with such a big bundle of cobwebs that {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} colliding with things in {PRONOUN/r_c/poss} path {PRONOUN/r_c/subject} can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"],
+                "herbs": [
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -525,20 +845,36 @@
                 "text": "The patrol brings back a truly massive haul, and return in good humor, laughing as they set down their sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -547,21 +883,39 @@
                 "text": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow {PRONOUN/s_c/poss} lead, it's a very successful gathering mission.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2"],
-                "herbs": ["many_herbs", "cobwebs"],
+                "stat_skill": [
+                    "SENSE,2"
+                ],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -574,17 +928,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -593,17 +960,35 @@
     },
     {
         "patrol_id": "mtn_med_cobwebapps1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic",
+            "rom_two_apps"
+        ],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [2, 2]
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
@@ -614,20 +999,36 @@
                 "text": "It makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"],
+                "herbs": [
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -636,20 +1037,37 @@
                 "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -662,17 +1080,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -681,17 +1113,35 @@
     },
     {
         "patrol_id": "mtn_med_cobwebapps2",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic",
+            "rom_two_apps"
+        ],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [3, 6]
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                3,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "As the apprentices head out to collect cobwebs, app3 screws up {PRONOUN/app3/poss} face into a stupid expression around the stick {PRONOUN/app3/subject} {VERB/app3/hold/holds} in {PRONOUN/app3/poss} mouth.",
@@ -702,20 +1152,36 @@
                 "text": "app2 ignores it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app3 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"],
+                "herbs": [
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app3"],
-                        "cats_from": ["app1"],
+                        "cats_to": [
+                            "app3"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app3"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app3"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -724,20 +1190,37 @@
                 "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app3's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though app2 seems solely focused on the chore, content to let the others muck about so long as everything gets done.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app3"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app3"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["app3"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app3"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -750,17 +1233,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app3"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app3"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["app3"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app3"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -769,17 +1266,35 @@
     },
     {
         "patrol_id": "mtn_med_cobwebapps3",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic",
+            "rom_two_apps"
+        ],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [4, 6]
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                4,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
@@ -790,13 +1305,23 @@
                 "text": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"],
+                "herbs": [
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -805,13 +1330,24 @@
                 "text": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -824,10 +1360,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -836,18 +1380,36 @@
     },
     {
         "patrol_id": "mtn_med_cobwebapps6",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [3, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                3,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
@@ -858,20 +1420,35 @@
                 "text": "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["cobwebs"],
+                "herbs": [
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -880,20 +1457,36 @@
                 "text": "... However, once out of camp, the apprentices realize they're out of their depth, and turn to p_l for help. p_l, to {PRONOUN/p_l/poss} credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "cobwebs"],
+                "herbs": [
+                    "many_herbs",
+                    "cobwebs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -906,17 +1499,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -925,17 +1531,32 @@
     },
     {
         "patrol_id": "mtn_med_gatheringhorsetail1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
@@ -946,20 +1567,33 @@
                 "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["moss", "horsetail"]
+                "herbs": [
+                    "moss",
+                    "horsetail"
+                ]
             },
             {
                 "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags the entire big, long shoot back to camp, where {PRONOUN/p_l/subject} diligently {VERB/p_l/process/processes} it down further into smaller stem sections that are easily stored.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["many_herbs", "moss", "horsetail"]
+                "herbs": [
+                    "many_herbs",
+                    "moss",
+                    "horsetail"
+                ]
             },
             {
                 "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags {PRONOUN/s_c/poss} haul back to camp - quite the impressive addition to the Clan's herb stores.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SENSE,2"],
-                "herbs": ["many_herbs", "moss", "horsetail"]
+                "stat_skill": [
+                    "SENSE,2"
+                ],
+                "herbs": [
+                    "many_herbs",
+                    "moss",
+                    "horsetail"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -972,19 +1606,40 @@
     },
     {
         "patrol_id": "mtn_med_horsetaillesson1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
@@ -995,20 +1650,38 @@
                 "text": "p_l doesn't know why horsetail plants lack leaves, but {PRONOUN/p_l/subject} {VERB/p_l/encourage/encourages} app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["moss", "horsetail"],
+                "herbs": [
+                    "moss",
+                    "horsetail"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1017,20 +1690,39 @@
                 "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags an entire big, long shoot back to camp, leaving app1 to carry the moss. In camp, app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with them.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "moss", "horsetail"],
+                "herbs": [
+                    "many_herbs",
+                    "moss",
+                    "horsetail"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1039,21 +1731,42 @@
                 "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags {PRONOUN/s_c/poss} haul back to camp - quite the impressive addition to the Clan's herb stores - while {PRONOUN/s_c/subject} {VERB/s_c/describe/describes} the plant's uses to app1",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2"],
-                "herbs": ["many_herbs", "moss", "horsetail"],
+                "stat_skill": [
+                    "SENSE,2"
+                ],
+                "herbs": [
+                    "many_herbs",
+                    "moss",
+                    "horsetail"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1066,17 +1779,32 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1085,17 +1813,32 @@
     },
     {
         "patrol_id": "mtn_med_horsetailhelp1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "Bringing a motley assortment of Clanmates along with them, p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
@@ -1106,20 +1849,36 @@
                 "text": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing not so far from the horsetail and requests that the warriors gather some. Having other cats to help {PRONOUN/p_l/object} has definitely made the patrol an easy afternoon's work.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["moss", "horsetail"],
+                "herbs": [
+                    "moss",
+                    "horsetail"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1128,20 +1887,37 @@
                 "text": "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where they diligently process it down further into smaller stem sections that are easily stored.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["many_herbs", "moss", "horsetail"],
+                "herbs": [
+                    "many_herbs",
+                    "moss",
+                    "horsetail"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1150,21 +1926,40 @@
                 "text": "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c brings back {PRONOUN/s_c/poss} impressive additions to the Clan's herb stores with the help of the warriors.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SENSE,2"],
-                "herbs": ["many_herbs", "moss", "horsetail"],
+                "stat_skill": [
+                    "SENSE,2"
+                ],
+                "herbs": [
+                    "many_herbs",
+                    "moss",
+                    "horsetail"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1177,17 +1972,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1196,16 +2004,28 @@
     },
     {
         "patrol_id": "mtn_med_gatheringmoss1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
@@ -1216,7 +2036,9 @@
                 "text": "p_l quickly makes {PRONOUN/p_l/poss} way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/spend/spends} a bit of time slicing bits off with {PRONOUN/p_l/poss} claws, careful not to get any roots or dirt in the pile - once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} a moment to wrap {PRONOUN/p_l/poss} jaws around the heap, then make {PRONOUN/p_l/poss} way back to camp.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["moss"]
+                "herbs": [
+                    "moss"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -1229,17 +2051,32 @@
     },
     {
         "patrol_id": "mtn_med_gatheringmoss2",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
@@ -1250,20 +2087,34 @@
                 "text": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1276,17 +2127,29 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1295,16 +2158,28 @@
     },
     {
         "patrol_id": "mtn_med_gatheringmoss3",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. They need to go and gather some more.",
@@ -1315,20 +2190,34 @@
                 "text": "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1341,17 +2230,29 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1360,16 +2261,28 @@
     },
     {
         "patrol_id": "mtn_med_gatheringmoss4",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_gatheringmoss",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. They need to go and gather some more.",
@@ -1380,13 +2293,21 @@
                 "text": "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1399,10 +2320,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1411,18 +2338,38 @@
     },
     {
         "patrol_id": "mtn_med_mossapps1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "gen_med_mossapps",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "p_l comes up to meet r_c, quietly apologizing about r_c being sent to help p_l collect moss.",
@@ -1433,20 +2380,36 @@
                 "text": "There's nothing to apologize for! r_c bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1455,20 +2418,37 @@
                 "text": "r_c seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/r_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "moss"],
+                "herbs": [
+                    "many_herbs",
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1481,17 +2461,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1500,17 +2494,35 @@
     },
     {
         "patrol_id": "mtn_med_mossapps2",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic",
+            "rom_two_apps"
+        ],
         "patrol_art": "gen_med_mossapps",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [2, 5],
-            "medicine cat apprentice": [1, 1],
-            "all apprentices": [3, 6]
+            "apprentice": [
+                2,
+                5
+            ],
+            "medicine cat apprentice": [
+                1,
+                1
+            ],
+            "all apprentices": [
+                3,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
@@ -1521,20 +2533,36 @@
                 "text": "Though the other cats in the group don't look thrilled, app1 insists there's nothing to be annoyed about. app1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1543,20 +2571,37 @@
                 "text": "Out of all the cats in the group, app2 is definitely the one that seems the most irritated about it at first. However, as p_l keeps chatting to {PRONOUN/app2/object}, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up to the task, and both apprentices feel much more comfortable with each other by the time the group brings their mossy loot back to camp.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "moss"],
+                "herbs": [
+                    "many_herbs",
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1569,17 +2614,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1588,17 +2647,35 @@
     },
     {
         "patrol_id": "mtn_med_mossapps3",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic", "rom_two_apps"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic",
+            "rom_two_apps"
+        ],
         "patrol_art": "gen_med_mossapps",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "all apprentices": [3, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                3,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "The apprentices are sent off into the territory to gather moss for the medicine cat den.",
@@ -1609,20 +2686,35 @@
                 "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1631,20 +2723,36 @@
                 "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "moss"],
+                "herbs": [
+                    "many_herbs",
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1657,17 +2765,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1676,17 +2797,32 @@
     },
     {
         "patrol_id": "mtn_med_mossapps4",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_mossapps",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "all apprentices": [3, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                3,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
@@ -1697,20 +2833,35 @@
                 "text": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["moss"],
+                "herbs": [
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1719,20 +2870,36 @@
                 "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "moss"],
+                "herbs": [
+                    "many_herbs",
+                    "moss"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1745,17 +2912,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1764,17 +2944,32 @@
     },
     {
         "patrol_id": "mtn_med_gatheringrosemary1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along app1 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
@@ -1785,13 +2980,22 @@
                 "text": "Even though there's nothing about this place that's different, except for it being chosen for being a peaceful spot, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. p_l and app1 tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["rosemary"],
+                "herbs": [
+                    "rosemary"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1804,8 +3008,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["small cut"],
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "small cut"
+                        ],
                         "scars": []
                     }
                 ]
@@ -1814,16 +3022,28 @@
     },
     {
         "patrol_id": "mtn_med_gatheringrosemary2",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_gatheringrosemary",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along r_c as their assistant for this trip, and the two cats head out in relative silence.",
@@ -1834,13 +3054,22 @@
                 "text": "Even though there's nothing about this place that's different, except for it being chosen for being a peaceful spot, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. p_l and r_c tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["rosemary"],
+                "herbs": [
+                    "rosemary"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1853,8 +3082,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["small cut"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "small cut"
+                        ],
                         "scars": []
                     }
                 ]
@@ -1863,18 +3096,34 @@
     },
     {
         "patrol_id": "mtn_med_discussion1",
-        "biome": ["mountainous"],
-        "season": ["any"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
         "types": [],
         "tags": [],
         "patrol_art": "gen_med_discussion",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "all apprentices": [-1, -1],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l and r_c head into the deep valleys to look for herbs, discussing the latest news.",
@@ -1885,13 +3134,23 @@
                 "text": "They have a good discussion while foraging under massive mountain cliffs and manage to come up with several ideas to discuss with c_n's leadership.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1900,13 +3159,23 @@
                 "text": "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and return to camp to discuss them with the leader and deputy.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1919,10 +3188,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "trust"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1931,17 +3208,30 @@
     },
     {
         "patrol_id": "mtn_med_dwindleherbsgathering1",
-        "biome": ["mountainous"],
-        "season": ["any"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
@@ -1952,20 +3242,35 @@
                 "text": "p_l and r_c decide to search near mountain meadows that the warriors regularly use for hunting. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from the little pockets of plenty.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1974,20 +3279,35 @@
                 "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -2000,17 +3320,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -2021,17 +3354,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]

@@ -1,21 +1,35 @@
 [
     {
         "patrol_id": "fst_train_greenleafromanticstroll_20locked1",
-        "biome": ["forest"],
-        "season": ["greenleaf"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "gen_flower_date_warrior_warrior",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1]
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
-        "relationship_constraint": ["romantic_20", "not_mates"],
+        "relationship_constraint": [
+            "romantic_20",
+            "not_mates"
+        ],
         "success_outcomes": [
             {
                 "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together, the shifting dappled light beneath the canopy a green-tinted backdrop to the excitement of this budding dynamic to their relationship.",
@@ -23,17 +37,32 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike", "jealous"],
+                        "values": [
+                            "dislike",
+                            "jealous"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -44,17 +73,32 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike", "jealous"],
+                        "values": [
+                            "dislike",
+                            "jealous"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -63,20 +107,39 @@
                 "text": "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1", "MEDIATOR,1", "INSIGHTFUL,1"],
+                "stat_skill": [
+                    "SPEAKER,1",
+                    "MEDIATOR,1",
+                    "INSIGHTFUL,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike", "jealous"],
+                        "values": [
+                            "dislike",
+                            "jealous"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -89,17 +152,32 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike", "jealous"],
+                        "values": [
+                            "dislike",
+                            "jealous"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -108,15 +186,24 @@
     },
     {
         "patrol_id": "fst_train_greenleaf_beetlesoloapp1",
-        "biome": ["forest"],
-        "season": ["greenleaf"],
-        "types": ["training"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
@@ -137,7 +224,9 @@
                 "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["HUNTER,0"]
+                "stat_skill": [
+                    "HUNTER,0"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -152,8 +241,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["stomachache"],
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "stomachache"
+                        ],
                         "scars": []
                     }
                 ]
@@ -162,9 +255,15 @@
     },
     {
         "patrol_id": "fst_train_greenleaf_berrybush1",
-        "biome": ["forest"],
-        "season": ["greenleaf"],
-        "types": ["training"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 3,
@@ -181,10 +280,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -193,13 +299,22 @@
                 "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["raspberry"],
+                "herbs": [
+                    "raspberry"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -208,13 +323,22 @@
                 "text": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,2"],
+                "stat_skill": [
+                    "CLEVER,2"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -227,10 +351,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -241,8 +372,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["poisoned"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
                         "scars": []
                     }
                 ],
@@ -252,10 +387,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -264,15 +406,24 @@
     },
     {
         "patrol_id": "fst_train_greenleaf_berrybush2",
-        "biome": ["forest"],
-        "season": ["greenleaf"],
-        "types": ["training"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
@@ -288,7 +439,9 @@
                 "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["raspberry"]
+                "herbs": [
+                    "raspberry"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -301,7 +454,9 @@
                 "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/app1/object}, having not identified deathberries before eating them.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["app1"],
+                "dead_cats": [
+                    "app1"
+                ],
                 "history_text": {
                     "reg_death": "m_c mistook deathberries for something edible.",
                     "lead_death": "after eating deathberries"
@@ -313,8 +468,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["poisoned"],
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
                         "scars": []
                     }
                 ],

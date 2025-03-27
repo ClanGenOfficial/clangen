@@ -1,12 +1,14 @@
-[{
-    "id": "general_loner_dead_thoughts",
-    "thoughts": [
-        "Wonders how {PRONOUN/m_c/subject} ended up here",
-        "Admires {PRONOUN/m_c/poss} starry fur",
-        "Hunts for star-speckled prey",
-        "Enjoys the warm sun against {PRONOUN/m_c/poss} back"
-    ],
-    "main_status_constraint": [
-        "loner"
-    ]
-}]
+[
+    {
+        "id": "general_loner_dead_thoughts",
+        "thoughts": [
+            "Wonders how {PRONOUN/m_c/subject} ended up here",
+            "Admires {PRONOUN/m_c/poss} starry fur",
+            "Hunts for star-speckled prey",
+            "Enjoys the warm sun against {PRONOUN/m_c/poss} back"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ]
+    }
+]

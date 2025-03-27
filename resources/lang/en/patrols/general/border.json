@@ -1,9 +1,15 @@
 [
     {
         "patrol_id": "Gen_bord_balancing_boringborder",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_dog",
         "min_cats": 1,
@@ -81,9 +87,15 @@
     },
     {
         "patrol_id": "Gen_bord_balancing_scent",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -108,7 +120,9 @@
                 "text": "The scent leads p_l to a nearby patch of herbs, hopefully the herbs are useful to the clans healer.",
                 "exp": 5,
                 "weight": 15,
-                "herbs": ["tansy"]
+                "herbs": [
+                    "tansy"
+                ]
             },
             {
                 "text": "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own, but it was nothing to worry about.",
@@ -146,9 +160,15 @@
     },
     {
         "patrol_id": "Gen_bord_balancing_tracks",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 1,
@@ -205,9 +225,15 @@
     },
     {
         "patrol_id": "Gen_bord_balancing_markings",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -249,10 +275,18 @@
     },
     {
         "patrol_id": "gen_bord_kittybat",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
-        "tags": ["halloween"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "kittybat_INTRO",
         "min_cats": 2,
         "max_cats": 6,
@@ -302,10 +336,18 @@
     },
     {
         "patrol_id": "gen_border_pumpkineyes",
-        "biome": ["any"],
-        "season": ["leaf-fall"],
-        "types": ["border"],
-        "tags": ["halloween"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "pumpkineyes_INTRO",
         "min_cats": 2,
         "max_cats": 6,
@@ -330,15 +372,15 @@
                 "exp": 15,
                 "weight": 10,
                 "stat_trait": [
-                    "thoughtful", 
+                    "thoughtful",
                     "careful",
                     "cunning",
-                    "responsible", 
+                    "responsible",
                     "wise"
                 ],
                 "stat_skill": [
-                    "CLEVER,1", 
-                    "INSIGHTFUL,1", 
+                    "CLEVER,1",
+                    "INSIGHTFUL,1",
                     "SENSE,1"
                 ]
             },
@@ -347,15 +389,20 @@
                 "exp": 15,
                 "weight": 10,
                 "stat_skill": [
-                    "KITTYPET,0", 
-                    "LONER,0"],
-                "can_have_stat": ["r_c"]
+                    "KITTYPET,0",
+                    "LONER,0"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ]
             },
             {
                 "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c, and run their cold, fur-less paws through {PRONOUN/s_c/subject} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
                 "exp": 20,
                 "weight": 10,
-                "stat_skill": ["GHOST,1"]
+                "stat_skill": [
+                    "GHOST,1"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -369,10 +416,10 @@
                 "exp": 5,
                 "weight": 20,
                 "stat_trait": [
-                    "bloodthirsty", 
-                    "cold", 
-                    "strict", 
-                    "grumpy", 
+                    "bloodthirsty",
+                    "cold",
+                    "strict",
+                    "grumpy",
                     "fierce"
                 ]
             },
@@ -381,9 +428,9 @@
                 "exp": 5,
                 "weight": 20,
                 "stat_trait": [
-                    "troublesome", 
-                    "childish", 
-                    "playful", 
+                    "troublesome",
+                    "childish",
+                    "playful",
                     "shameless"
                 ]
             }
@@ -391,10 +438,18 @@
     },
     {
         "patrol_id": "gen_bord_trickortreat",
-        "biome": ["any"],
-        "season": ["leaf-fall"],
-        "types": ["border"],
-        "tags": ["halloween"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -435,10 +490,18 @@
     },
     {
         "patrol_id": "gen_bord_scarecrow",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
-        "tags": ["halloween"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "scarecrow_INTRO",
         "min_cats": 2,
         "max_cats": 6,
@@ -457,14 +520,16 @@
                 "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends the Twoleg falling to the ground with a giant thump.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,0"]
+                "stat_skill": [
+                    "FIGHTER,0"
+                ]
             },
             {
                 "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject/CAP} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": [
-                    "ROGUE,0", 
+                    "ROGUE,0",
                     "LONER,0"
                 ]
             }
@@ -479,25 +544,36 @@
                 "text": "s_c sneaks up behind the Twoleg. With a mighty roar, s_c leaps onto its back and {PRONOUN/s_c/poss} momentum sends both of them to the ground. s_c ends up covered in hay, {PRONOUN/s_c/poss} claws sunk into a harmless scarecrow.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,0"]
+                "stat_skill": [
+                    "FIGHTER,0"
+                ]
             }
         ]
     },
     {
         "patrol_id": "gen_bord_dislike",
-        "biome": ["any"],
-        "season": ["any"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
         "types": [],
         "tags": [],
         "patrol_art": "gen_train_argueWW",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "warrior": [2, 2]
+            "warrior": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "chance_of_success": 50,
-        "relationship_constraint": ["dislike_20"],
+        "relationship_constraint": [
+            "dislike_20"
+        ],
         "intro_text": "p_l and r_c have been bickering non-stop the entire time they've been patrolling.",
         "decline_text": "Unable to work together, the two return to camp.",
         "success_outcomes": [
@@ -513,12 +589,18 @@
                 "art": "gen_train_talkingWW",
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 3
-                    }	
+                    }
                 ]
             },
             {
@@ -528,8 +610,13 @@
                 "art": "gen_battle_rogue_warrior",
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury", "battle_injury"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury",
+                            "battle_injury"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -538,28 +625,59 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 3
-                    }	
+                    }
                 ]
             },
             {
                 "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
                 "exp": 10,
                 "weight": 10,
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "troublesome",
+                    "fierce",
+                    "bloodthirsty",
+                    "cold",
+                    "childish",
+                    "shameless",
+                    "vengeful",
+                    "arrogant",
+                    "competitive",
+                    "grumpy",
+                    "cunning",
+                    "oblivious",
+                    "rebellious"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["dislike", "trust", "comfort"],
+                        "values": [
+                            "dislike",
+                            "trust",
+                            "comfort"
+                        ],
                         "amount": 5
-                    }	
+                    }
                 ]
             },
             {
@@ -567,16 +685,29 @@
                 "exp": 10,
                 "weight": 10,
                 "art": "fst_hunt_fun3",
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "flamboyant",
+                    "strange",
+                    "playful",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic"],
+                        "values": [
+                            "platonic"
+                        ],
                         "amount": 5
-                    }	
+                    }
                 ]
             }
         ],
@@ -592,18 +723,28 @@
                 "weight": 20,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["minor_injury"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "minor_injury"
+                        ]
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 3
-                    }	
+                    }
                 ]
             },
             {
@@ -611,7 +752,9 @@
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_dead_cat",
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "reg_death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol.",
                     "lead_death": "succumbed to injury after being ambushed and abandoned"
@@ -621,39 +764,81 @@
                 "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes their tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
                 "exp": 0,
                 "weight": 10,
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "troublesome",
+                    "fierce",
+                    "bloodthirsty",
+                    "cold",
+                    "childish",
+                    "shameless",
+                    "vengeful",
+                    "arrogant",
+                    "competitive",
+                    "grumpy",
+                    "cunning",
+                    "oblivious",
+                    "rebellious"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
-                    }		
+                    }
                 ]
             },
             {
                 "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
                 "exp": 0,
                 "weight": 10,
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["flamboyant", "strange", "playful", "childish"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "flamboyant",
+                    "strange",
+                    "playful",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
-                    }	
+                    }
                 ]
             }
         ]

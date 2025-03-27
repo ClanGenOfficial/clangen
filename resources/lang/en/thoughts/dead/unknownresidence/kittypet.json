@@ -1,14 +1,14 @@
 [
-{        
-    "id": "general_kittypet_dead_thoughts",
-    "thoughts": [
-        "Visits {PRONOUN/m_c/poss} housefolk to make sure they're okay",
-        "Hangs around {PRONOUN/m_c/poss} old home, hesitant to leave it",
-        "Watches over {PRONOUN/m_c/poss} housefolk as they sleep",
-        "Watches {PRONOUN/m_c/poss} housefolk's new cat with interest"
-    ],
-    "main_status_constraint": [
-        "kittypet"
-    ]
-}
+    {
+        "id": "general_kittypet_dead_thoughts",
+        "thoughts": [
+            "Visits {PRONOUN/m_c/poss} housefolk to make sure they're okay",
+            "Hangs around {PRONOUN/m_c/poss} old home, hesitant to leave it",
+            "Watches over {PRONOUN/m_c/poss} housefolk as they sleep",
+            "Watches {PRONOUN/m_c/poss} housefolk's new cat with interest"
+        ],
+        "main_status_constraint": [
+            "kittypet"
+        ]
+    }
 ]

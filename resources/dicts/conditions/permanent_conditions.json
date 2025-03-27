@@ -53,11 +53,11 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "marigold",
-            "ragwort"
-        ],
+                "daisy",
+                "juniper",
+                "marigold",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -89,11 +89,11 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "marigold",
-            "ragwort"
-        ],
+                "daisy",
+                "juniper",
+                "marigold",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -125,11 +125,11 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "marigold",
-            "ragwort"
-        ],
+                "daisy",
+                "juniper",
+                "marigold",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -161,11 +161,11 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "marigold",
-            "ragwort"
-        ],
+                "daisy",
+                "juniper",
+                "marigold",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -197,9 +197,9 @@
         ],
         "herbs": {
             "1": [
-            "juniper",
-            "ragwort"
-        ],
+                "juniper",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -262,11 +262,11 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "ragwort",
-            "marigold"
-        ],
+                "daisy",
+                "juniper",
+                "ragwort",
+                "marigold"
+            ],
             "2": [],
             "3": []
         }
@@ -294,9 +294,9 @@
         ],
         "herbs": {
             "1": [
-            "betony",
-            "mullein"
-        ],
+                "betony",
+                "mullein"
+            ],
             "2": [],
             "3": []
         }
@@ -348,9 +348,9 @@
         ],
         "herbs": {
             "1": [
-            "juniper",
-            "ragwort"
-        ],
+                "juniper",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -393,7 +393,8 @@
         },
         "illness_infectiousness": [
         ],
-        "risks": [{
+        "risks": [
+            {
                 "name": "failing eyesight",
                 "chance": 80
             }
@@ -480,7 +481,6 @@
             "2": [],
             "3": []
         }
-
     },
     "constant joint pain": {
         "severity": "minor",
@@ -505,11 +505,11 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "marigold",
-            "ragwort"
-        ],
+                "daisy",
+                "juniper",
+                "marigold",
+                "ragwort"
+            ],
             "2": [],
             "3": []
         }
@@ -537,9 +537,9 @@
         ],
         "herbs": {
             "1": [
-            "ragwort",
-            "juniper"
-        ],
+                "ragwort",
+                "juniper"
+            ],
             "2": [],
             "3": []
         }
@@ -621,10 +621,10 @@
         ],
         "herbs": {
             "1": [
-            "thyme",
-            "juniper",
-            "poppy"
-        ],
+                "thyme",
+                "juniper",
+                "poppy"
+            ],
             "2": [],
             "3": []
         }
@@ -652,10 +652,10 @@
         ],
         "herbs": {
             "1": [
-            "thyme",
-            "juniper",
-            "poppy"
-        ],
+                "thyme",
+                "juniper",
+                "poppy"
+            ],
             "2": [],
             "3": []
         }
@@ -687,9 +687,9 @@
         ],
         "herbs": {
             "1": [
-            "poppy",
-            "juniper"
-        ],
+                "poppy",
+                "juniper"
+            ],
             "2": [],
             "3": []
         }

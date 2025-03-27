@@ -7,10 +7,12 @@
             "clanborn"
         ],
         "outsider_roots_backstories": [
-            "outsider_roots1", "outsider_roots2"
+            "outsider_roots1",
+            "outsider_roots2"
         ],
         "half_clan_backstories": [
-            "halfclan1", "halfclan2"
+            "halfclan1",
+            "halfclan2"
         ],
         "loner_backstories": [
             "loner1",
@@ -24,10 +26,24 @@
             "wandering_healer2"
         ],
         "rogue_backstories": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "refugee5", "wandering_healer1"
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2",
+            "refugee5",
+            "wandering_healer1"
         ],
         "kittypet_backstories": [
-            "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1", "refugee6"
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1",
+            "refugee6"
         ],
         "former_clancat_backstories": [
             "otherclan1",
@@ -46,16 +62,28 @@
             "refugee5"
         ],
         "healer_backstories": [
-            "medicine_cat", "wandering_healer1", "wandering_healer2"
+            "medicine_cat",
+            "wandering_healer1",
+            "wandering_healer2"
         ],
         "orphaned_backstories": [
-            "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"
+            "orphaned1",
+            "orphaned2",
+            "orphaned3",
+            "orphaned4",
+            "orphaned5",
+            "orphaned6"
         ],
         "abandoned_backstories": [
-            "abandoned1", "abandoned2", "abandoned3", "abandoned4"
+            "abandoned1",
+            "abandoned2",
+            "abandoned3",
+            "abandoned4"
         ],
         "outsider_backstories": [
-            "outsider1", "outsider2", "outsider3"
+            "outsider1",
+            "outsider2",
+            "outsider3"
         ]
     },
     "conversion": {

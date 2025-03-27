@@ -1,24 +1,44 @@
 [
     {
         "patrol_id": "dst_med_soloripples1",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l sees weird ripples on the water of the underground spring while collecting fresh water.",
         "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
         "chance_of_success": 45,
-        "pl_skill_constraint": ["PROPHET,1"],
+        "pl_skill_constraint": [
+            "PROPHET,1"
+        ],
         "success_outcomes": [
             {
                 "text": "As p_l looks into the water of the underground spring {PRONOUN/p_l/subject} {VERB/p_l/are/is} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing and race back to the camp to tell and consult with {PRONOUN/p_l/poss} leader.",
@@ -26,10 +46,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -40,10 +68,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -56,10 +92,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -68,19 +112,40 @@
     },
     {
         "patrol_id": "dst_med_app_herblocation1",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
@@ -91,13 +156,22 @@
                 "text": "app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs both under and above ground without {PRONOUN/p_l/object} if needed.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -106,13 +180,22 @@
                 "text": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise, {PRONOUN/app1/subject} {VERB/app1/have/has} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"],
+                "herbs": [
+                    "random_herbs"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -125,10 +208,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -137,19 +227,40 @@
     },
     {
         "patrol_id": "dst_med_app_herblocation2",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "app1 has been sent out into the desert to try to find some specific herbs alone.",
@@ -160,13 +271,17 @@
                 "text": "app1 is focused and determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily, and bring them back to camp with {PRONOUN/app1/poss} head held up high, no sweat, no stress, no fuss.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": ["random_herbs"]
+                "herbs": [
+                    "random_herbs"
+                ]
             },
             {
                 "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": ["random_herbs"]
+                "herbs": [
+                    "random_herbs"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -179,19 +294,40 @@
     },
     {
         "patrol_id": "dst_medcat_emergency1",
-        "biome": ["desert"],
-        "season": ["greenleaf"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [-1, -1],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
@@ -204,10 +340,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -216,13 +359,25 @@
                 "text": "strong connection to StarClan",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["STAR,2", "CLAIRVOYANT,2", "PROPHET,3", "DREAM,2"],
+                "stat_skill": [
+                    "STAR,2",
+                    "CLAIRVOYANT,2",
+                    "PROPHET,3",
+                    "DREAM,2"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -231,13 +386,25 @@
                 "text": "faithful",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["faithful", "strange", "thoughtful", "wise"],
+                "stat_trait": [
+                    "faithful",
+                    "strange",
+                    "thoughtful",
+                    "wise"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -250,10 +417,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -262,16 +436,25 @@
                 "text": "r_c has an unexpected severe reaction to the cacti, {PRONOUN/r_c/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "reg_death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -280,19 +463,40 @@
     },
     {
         "patrol_id": "dst_med_lungwort1",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
@@ -305,17 +509,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -326,17 +544,31 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -345,20 +577,37 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -367,20 +616,40 @@
                 "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -393,17 +662,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -412,17 +695,32 @@
     },
     {
         "patrol_id": "dst_med_lungwort2",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [-1, -1]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up.",
@@ -435,10 +733,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -449,10 +753,16 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -461,13 +771,22 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -476,13 +795,25 @@
                 "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -495,17 +826,27 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["sore"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
                         "scars": []
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -514,17 +855,32 @@
     },
     {
         "patrol_id": "dst_med_lungwort3",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
@@ -535,13 +891,21 @@
                 "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to stock up on before the withering heat of greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["lungwort"],
+                "herbs": [
+                    "lungwort"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -550,13 +914,23 @@
                 "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "lungwort", "plantain"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort",
+                    "plantain"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -565,14 +939,26 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "lungwort"],
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -581,14 +967,29 @@
                 "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "lungwort"],
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -599,13 +1000,22 @@
                 "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -616,17 +1026,27 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["sore"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
                         "scars": []
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -635,19 +1055,40 @@
     },
     {
         "patrol_id": "dst_med_lungwort4",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
@@ -660,17 +1101,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -681,17 +1136,31 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -700,20 +1169,37 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -722,20 +1208,40 @@
                 "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -748,17 +1254,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -767,17 +1287,32 @@
     },
     {
         "patrol_id": "dst_med_lungwort5",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [-1, -1]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it.",
@@ -790,10 +1325,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -804,10 +1345,16 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -816,13 +1363,22 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -831,13 +1387,25 @@
                 "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -850,17 +1418,27 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["sore"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
                         "scars": []
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -869,17 +1447,32 @@
     },
     {
         "patrol_id": "dst_med_lungwort6",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} take along a warrior escort to help.",
@@ -890,13 +1483,21 @@
                 "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["lungwort"],
+                "herbs": [
+                    "lungwort"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -905,13 +1506,23 @@
                 "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "lungwort", "plantain"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort",
+                    "plantain"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -920,14 +1531,26 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "lungwort"],
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -936,14 +1559,29 @@
                 "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "lungwort"],
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -954,13 +1592,22 @@
                 "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -971,17 +1618,27 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["sore"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
                         "scars": []
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -990,19 +1647,40 @@
     },
     {
         "patrol_id": "dst_med_lungwort7",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
@@ -1015,17 +1693,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1036,17 +1728,31 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1055,20 +1761,37 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1077,20 +1800,40 @@
                 "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1103,17 +1846,31 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1122,17 +1879,32 @@
     },
     {
         "patrol_id": "dst_med_lungwort8",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [-1, -1]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-fall is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it.",
@@ -1145,10 +1917,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1159,10 +1937,16 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1171,13 +1955,22 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1186,13 +1979,25 @@
                 "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1205,17 +2010,27 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["sore"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
                         "scars": []
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1224,17 +2039,32 @@
     },
     {
         "patrol_id": "dst_med_lungwort9",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-fall is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} take along a warrior escort to help.",
@@ -1245,13 +2075,21 @@
                 "text": "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long greenleaf. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/subject} off guard.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["lungwort"],
+                "herbs": [
+                    "lungwort"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1260,13 +2098,23 @@
                 "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["many_herbs", "lungwort", "plantain"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort",
+                    "plantain"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1275,14 +2123,26 @@
                 "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "lungwort"],
-                "stat_skill": ["SENSE,2", "CLEVER,3"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1291,14 +2151,29 @@
                 "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["many_herbs", "lungwort"],
-                "stat_trait": ["thoughtful", "confident", "loyal", "responsible", "arrogant"],
+                "herbs": [
+                    "many_herbs",
+                    "lungwort"
+                ],
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1309,13 +2184,22 @@
                 "text": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1326,17 +2210,27 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["sore"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
                         "scars": []
                     }
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1345,18 +2239,38 @@
     },
     {
         "patrol_id": "dst_med_rescue1",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
-        "tags": ["new_cat"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "new_cat"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
@@ -1373,8 +2287,16 @@
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    ["can_birth", "age:has_kits"],
-                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
+                    [
+                        "can_birth",
+                        "age:has_kits"
+                    ],
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:outsider_roots2"
+                    ]
                 ]
             }
         ],
@@ -1387,26 +2309,56 @@
             }
         ],
         "antag_fail_outcomes": [
-            { "text": "null, ", "exp": 0, "weight": 20, "outsider_rep": -1 }
+            {
+                "text": "null, ",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
         ],
         "antag_success_outcomes": [
-            { "text": "null, ", "exp": 10, "weight": 20, "outsider_rep": -2 }
+            {
+                "text": "null, ",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2
+            }
         ]
     },
     {
         "patrol_id": "dst_med_romance1",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} for newleaf's fresh buds, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
@@ -1419,10 +2371,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1431,14 +2391,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1451,10 +2423,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1463,14 +2443,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1479,18 +2472,38 @@
     },
     {
         "patrol_id": "dst_med_romance2",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find the buds of newleaf.",
@@ -1503,10 +2516,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1515,14 +2536,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1535,10 +2568,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1547,14 +2588,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1563,17 +2617,34 @@
     },
     {
         "patrol_id": "dst_med_romance3",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the leaf-bare growing season, and for carrying capacity should they find anything.",
@@ -1586,10 +2657,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1598,14 +2677,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1618,10 +2709,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1630,14 +2729,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1646,18 +2758,38 @@
     },
     {
         "patrol_id": "dst_med_romance4",
-        "biome": ["desert"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of leaf-bare.",
@@ -1670,10 +2802,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1682,14 +2822,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1702,10 +2854,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1714,14 +2874,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1730,17 +2903,34 @@
     },
     {
         "patrol_id": "dst_med_romance5",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to stock up under the clear leaf-fall skies, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
@@ -1753,10 +2943,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1765,14 +2963,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1785,10 +2995,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1797,14 +3015,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1813,18 +3044,38 @@
     },
     {
         "patrol_id": "dst_med_romance6",
-        "biome": ["desert"],
-        "season": ["leaf-fall"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the first harvests available in leaf-fall.",
@@ -1837,10 +3088,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1849,14 +3108,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1869,10 +3140,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1881,14 +3160,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1897,17 +3189,34 @@
     },
     {
         "patrol_id": "dst_med_romance7",
-        "biome": ["desert"],
-        "season": ["greenleaf"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for sorely needed fresh supplies that have survived greenleaf so far, and for carrying capacity should they find anything.",
@@ -1920,10 +3229,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1932,14 +3249,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1952,10 +3281,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1964,14 +3301,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1980,18 +3330,38 @@
     },
     {
         "patrol_id": "dst_med_romance8",
-        "biome": ["desert"],
-        "season": ["greenleaf"],
-        "types": ["herb_gathering"],
-        "tags": ["romantic"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived greenleaf so far.",
@@ -2004,10 +3374,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -2016,14 +3394,26 @@
                 "text": "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when they come back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -2036,10 +3426,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -2048,14 +3446,27 @@
                 "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "childish"],
-                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                    "troublesome",
+                    "childish"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -2064,19 +3475,40 @@
     },
     {
         "patrol_id": "dst_med_appfirstsign1",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "medicine cat apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l is out to gather a few herbs at the behest of {PRONOUN/p_l/poss} mentor. The wind is gently rustling the scrubby grass as {PRONOUN/p_l/subject} pad along.",

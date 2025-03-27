@@ -42,11 +42,11 @@
     "broken jaw": [
         "m_c's broken jaw has healed.",
         "m_c has healed well from the broken jaw {PRONOUN/m_c/subject} suffered.",
-      "m_c's jaw no longer bothers {PRONOUN/m_c/object}: it seems to have healed from its break."
+        "m_c's jaw no longer bothers {PRONOUN/m_c/object}: it seems to have healed from its break."
     ],
     "broken bone": [
         "m_c's broken bone has healed.",
-      "m_c is happy to find {PRONOUN/m_c/poss} body pain-free: it seems {PRONOUN/m_c/poss} broken bone has finally healed.",
+        "m_c is happy to find {PRONOUN/m_c/poss} body pain-free: it seems {PRONOUN/m_c/poss} broken bone has finally healed.",
         "m_c has healed from {PRONOUN/m_c/poss} broken bone."
     ],
     "mangled leg": [
@@ -65,12 +65,12 @@
         "m_c is no longer suffering from joint pain.",
         "m_c's joint pain is gone.",
         "m_c's joint pain is feeling much better.",
-      "m_c has recovered from {PRONOUN/m_c/poss} joint pain and is happy to be moving around pain-free."
+        "m_c has recovered from {PRONOUN/m_c/poss} joint pain and is happy to be moving around pain-free."
     ],
     "sprain": [
         "m_c's sprain has healed.",
         "m_c's sprain is feeling much better.",
-      "m_c can walk and move without pain - {PRONOUN/m_c/poss} sprain must have healed.",
+        "m_c can walk and move without pain - {PRONOUN/m_c/poss} sprain must have healed.",
         "m_c has recovered from {PRONOUN/m_c/poss} sprain."
     ],
     "mangled tail": [
@@ -81,14 +81,14 @@
     ],
     "bruises": [
         "m_c's bruises have healed.",
-      "m_c is feeling much better - {PRONOUN/m_c/poss} bruises are gone.",
+        "m_c is feeling much better - {PRONOUN/m_c/poss} bruises are gone.",
         "m_c's bruises are gone.",
         "m_c's bruises have disappeared.",
         "m_c is no longer bruised."
     ],
     "cracked pads": [
         "m_c's pads have healed.",
-      "m_c can walk without pain - {PRONOUN/m_c/poss} cracked pads have healed.",
+        "m_c can walk without pain - {PRONOUN/m_c/poss} cracked pads have healed.",
         "m_c's cracked pads are feeling better.",
         "m_c's pads are no longer cracked.",
         "m_c's cracked pads have healed."
@@ -96,14 +96,14 @@
     "sore": [
         "m_c is no longer sore.",
         "m_c's soreness has abated.",
-      "m_c feels much better: {PRONOUN/m_c/poss} soreness is gone.",
+        "m_c feels much better: {PRONOUN/m_c/poss} soreness is gone.",
         "m_c's soreness is gone."
     ],
     "phantom pain": [
         "m_c's phantom pain has abated.",
         "m_c's phantom pain is gone.",
         "m_c's missing limb no longer hurts.",
-      "m_c feels much better: {PRONOUN/m_c/poss} missing limb no longer causing {PRONOUN/m_c/object} pain.",
+        "m_c feels much better: {PRONOUN/m_c/poss} missing limb no longer causing {PRONOUN/m_c/object} pain.",
         "m_c is relieved to find {PRONOUN/m_c/poss} phantom pain gone."
     ],
     "scrapes": [
@@ -144,8 +144,8 @@
         "m_c's lungs finally feel back to normal.",
         "m_c is breathing normally again, the water in {PRONOUN/m_c/poss} lungs is gone.",
         "m_c has recovered from the water in {PRONOUN/m_c/poss} lungs.",
-      "There's no longer water in m_c's lungs: {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} back to breathing normally.",
-      "m_c's breathing has returned to normal - {PRONOUN/m_c/poss} lungs are no longer filled with water."
+        "There's no longer water in m_c's lungs: {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} back to breathing normally.",
+        "m_c's breathing has returned to normal - {PRONOUN/m_c/poss} lungs are no longer filled with water."
     ],
     "burn": [
         "m_c's burn has healed.",
@@ -154,7 +154,7 @@
         "m_c has recovered from the burn {PRONOUN/m_c/subject} suffered."
     ],
     "severe burn": [
-      "m_c was lucky - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} recovered from the severe burn {PRONOUN/m_c/subject} got.",
+        "m_c was lucky - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} recovered from the severe burn {PRONOUN/m_c/subject} got.",
         "m_c has healed from {PRONOUN/m_c/poss} severe burn.",
         "m_c's severe burn has finally healed."
     ],
@@ -163,7 +163,7 @@
         "m_c feels much better and is no longer suffering from shock.",
         "m_c's shock is gone.",
         "m_c is no longer in shock.",
-      "m_c finally feels more like {PRONOUN/m_c/self} - {PRONOUN/m_c/poss} shock is gone."
+        "m_c finally feels more like {PRONOUN/m_c/self} - {PRONOUN/m_c/poss} shock is gone."
     ],
     "lingering shock": [
         "It took a little while, but m_c finally feels normal again.",
@@ -193,7 +193,7 @@
         "m_c's eyes have recovered from {PRONOUN/m_c/poss} injury."
     ],
     "quilled by a porcupine": [
-      "The porcupine quills stuck in m_c's pelt have finally come out.",
+        "The porcupine quills stuck in m_c's pelt have finally come out.",
         "m_c has recovered from the wounds {PRONOUN/m_c/subject} got from the porcupine.",
         "The barbed quills were no fun to remove, but at least m_c is feeling better now."
     ],
@@ -204,7 +204,7 @@
         "m_c is no longer poisoned."
     ],
     "broken back": [
-      "m_c's broken back has healed. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} made a full recovery against all odds.",
+        "m_c's broken back has healed. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} made a full recovery against all odds.",
         "m_c is ecstatic to be walking around freely again, {PRONOUN/m_c/poss} broken back finally healed."
     ],
     "bee sting": [

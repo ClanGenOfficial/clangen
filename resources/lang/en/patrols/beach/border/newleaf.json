@@ -1,9 +1,15 @@
 [
     {
         "patrol_id": "bch_bord_nl_flashflood_tide2",
-        "biome": ["beach"],
-        "season": ["newleaf"],
-        "types": ["border"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -18,21 +24,33 @@
                 "text": "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
                 "exp": 20,
                 "weight": 20,
-                "prey": ["large"]
+                "prey": [
+                    "large"
+                ]
             },
             {
                 "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,3"],
-                "prey": ["large"]
+                "stat_skill": [
+                    "CLEVER,3"
+                ],
+                "prey": [
+                    "large"
+                ]
             },
             {
                 "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["careful", "insecure", "nervous"],
-                "prey": ["large"]
+                "stat_trait": [
+                    "careful",
+                    "insecure",
+                    "nervous"
+                ],
+                "prey": [
+                    "large"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -40,7 +58,9 @@
                 "text": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "reg_death": "m_c was swept out to sea by a flood.",
                     "lead_death": "{VERB/m_c/were/was} swept out to sea by a flood"

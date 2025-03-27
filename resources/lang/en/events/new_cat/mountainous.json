@@ -23,47 +23,73 @@
         "new_cat": [
             [
                 "exists",
-		"loner"
+                "loner"
             ]
         ],
-	"injury": [
-        {
-            "cats": ["n_c:0"],
-            "injuries": ["blunt_force_injury"],
-            "scars": ["THREE", "FACE"]
-        }
+        "injury": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "injuries": [
+                    "blunt_force_injury"
+                ],
+                "scars": [
+                    "THREE",
+                    "FACE"
+                ]
+            }
         ],
-	"history:": [
-        {
-        "cats": ["n_c:0"],
-        "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "lead_death": "died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle"
-        }
+        "history:": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+                "lead_death": "died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle"
+            }
         ],
-	"relationships": [
-          {
-            "cats_from": ["m_c"],
-            "cats_to": ["n_c:0"],
-            "mutual": true,
-            "values": ["comfort", "platonic"],
-            "amount": 5
-          },
-          {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-            "values": ["trust"],
-            "amount": 10
-          },
-	  {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-	    "mutual": true,
-            "values": ["dislike"],
-            "amount": -10
-          }
-
-
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort",
+                    "platonic"
+                ],
+                "amount": 5
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "dislike"
+                ],
+                "amount": -10
+            }
         ],
         "outsider": {
             "current_rep": [
@@ -94,7 +120,12 @@
             ]
         },
         "new_cat": [
-            ["age:has_kits", "meeting", "loner", "dead"],
+            [
+                "age:has_kits",
+                "meeting",
+                "loner",
+                "dead"
+            ],
             [
                 "new_name",
                 "parent:0",
@@ -102,22 +133,28 @@
                 "litter"
             ]
         ],
-	"relationships": [
-          {
-            "cats_from": ["m_c"],
-            "cats_to": ["n_c:1"],
-            "mutual": true,
-            "values": ["comfort", "platonic"],
-            "amount": 5
-          }
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:1"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort",
+                    "platonic"
+                ],
+                "amount": 5
+            }
         ],
         "outsider": {
             "current_rep": [
-                "welcoming", "neutral"
+                "welcoming",
+                "neutral"
             ],
             "changed": 1
         }
     }
-
-
 ]

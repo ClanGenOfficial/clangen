@@ -1,9 +1,15 @@
 [
     {
         "patrol_id": "pln_bord_rogue1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,
@@ -20,10 +26,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -32,13 +45,22 @@
                 "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
+                "stat_skill": [
+                    "FIGHTER,3"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -47,13 +69,24 @@
                 "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "fierce",
+                    "vengeful"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -64,7 +97,9 @@
                 "text": "The rogues are terrifyingly coordinated and use the patrol's shock and confusion against them. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["multi"],
+                "dead_cats": [
+                    "multi"
+                ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
@@ -72,10 +107,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -86,9 +128,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["RIGHTBLIND"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "RIGHTBLIND"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -98,10 +146,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -110,9 +165,15 @@
     },
     {
         "patrol_id": "pln_bord_rogue2",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -132,7 +193,9 @@
                 "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
+                "stat_skill": [
+                    "FIGHTER,3"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -140,13 +203,19 @@
                 "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. Their shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} killed.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
+                "stat_trait": [
+                    "bloodthirsty",
+                    "fierce",
+                    "vengeful"
+                ]
             },
             {
                 "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, covered in wounds and cold.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
                     "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
@@ -156,9 +225,15 @@
     },
     {
         "patrol_id": "pln_bord_rogue3",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,
@@ -175,10 +250,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -189,10 +271,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -201,13 +290,22 @@
                 "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -216,13 +314,23 @@
                 "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bold", "confident"],
+                "stat_trait": [
+                    "bold",
+                    "confident"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -233,7 +341,9 @@
                 "text": "The rogues are terrifyingly coordinated and use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["multi"],
+                "dead_cats": [
+                    "multi"
+                ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
                     "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
@@ -246,9 +356,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["THROAT"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "THROAT"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -275,15 +391,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
@@ -304,7 +429,9 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": [
+                    "FIGHTER,1"
+                ]
             },
             {
                 "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
@@ -340,13 +467,17 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
                     "reg_death": "m_c was killed by an invading rogue.",
@@ -359,9 +490,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -374,15 +511,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue2",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
@@ -403,7 +549,9 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using grass to cover an abandoned rabbit burrow. The startled intruder yowls as they first fall, then flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight.",
@@ -439,13 +587,17 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": [
+                    "FIGHTER,1"
+                ]
             },
             {
                 "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
                     "reg_death": "m_c was killed by an invading rogue.",
@@ -458,9 +610,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -473,15 +631,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue3",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
@@ -527,13 +694,17 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": [
+                    "app"
+                ]
             },
             {
                 "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
                     "reg_death": "m_c was killed by an invading rogue.",
@@ -546,9 +717,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -561,15 +738,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue4",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1]
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
@@ -582,10 +768,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -596,10 +789,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -608,13 +808,22 @@
                 "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws {PRONOUN/s_c/self} at the rogue and, together with r_c, drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -643,10 +852,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -659,10 +875,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -671,13 +894,22 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -688,9 +920,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -700,10 +938,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -712,15 +957,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue5",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1]
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
@@ -733,10 +987,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -747,10 +1008,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -759,13 +1027,22 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using grass to cover an abandoned rabbit burrow. The startled intruder yowls as they first fall, then flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -794,10 +1071,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -810,10 +1094,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -822,13 +1113,22 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/object} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -839,9 +1139,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -851,10 +1157,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -863,15 +1176,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue6",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
@@ -917,7 +1239,9 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": [
+                    "app"
+                ]
             },
             {
                 "text": "Following the trail with {PRONOUN/app1/poss} nose to the ground, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/object} to {PRONOUN/app1/poss} feet, squealing with pain, and {VERB/app1/run/runs} for home.",
@@ -925,9 +1249,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -940,9 +1270,15 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue7",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 3,
@@ -959,10 +1295,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -973,10 +1316,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -985,13 +1335,22 @@
                 "text": "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws {PRONOUN/s_c/self} at the rogue and, together with r_c, drives them off c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1020,10 +1379,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1036,10 +1402,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1048,13 +1421,22 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1063,9 +1445,15 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue8",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 3,
@@ -1082,10 +1470,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1096,10 +1491,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1108,13 +1510,22 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using grass to cover an abandoned rabbit burrow. The startled intruder yowls as they first fall, then flee c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1143,10 +1554,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1159,10 +1577,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1171,13 +1596,22 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1186,15 +1620,24 @@
     },
     {
         "patrol_id": "pln_bord_trackrogue9",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
@@ -1207,10 +1650,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1221,10 +1671,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1237,10 +1694,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1267,13 +1731,22 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": [
+                    "app"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1282,9 +1755,15 @@
     },
     {
         "patrol_id": "plains_bord_story1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
@@ -1301,10 +1780,20 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": [
+                            "r_c",
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1313,13 +1802,25 @@
                 "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": [
+                            "s_c",
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1336,10 +1837,20 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": [
+                            "s_c",
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1352,10 +1863,20 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": [
+                            "r_c",
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1374,10 +1895,20 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": [
+                            "s_c",
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect", "comfort"],
+                        "values": [
+                            "platonic",
+                            "respect",
+                            "comfort"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1386,17 +1917,34 @@
     },
     {
         "patrol_id": "pln_bord_frnight1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
-        "tags": ["halloween"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "pln_fresno",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "healer cats": [-1, -1],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                1,
+                6
+            ],
+            "healer cats": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "chance_of_success": 50,
@@ -1418,8 +1966,14 @@
                 "weight": 20,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["shock", "minor_injury", "non_lethal"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "shock",
+                            "minor_injury",
+                            "non_lethal"
+                        ]
                     }
                 ]
             }
@@ -1427,10 +1981,18 @@
     },
     {
         "patrol_id": "pln_bord_ufo1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
-        "tags": ["halloween"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "pln_UFO",
         "min_cats": 2,
         "max_cats": 6,
@@ -1448,13 +2010,19 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort"],
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
-                    
                 ]
             }
         ],
@@ -1463,158 +2031,237 @@
                 "text": "One of those moons is getting awfully... close... r_c gets caught in a strange wind that picks {PRONOUN/r_c/object} up, claws scrabbling wildly, sucked towards the frightening foreign moon as it takes {PRONOUN/r_c/object} away from c_n.",
                 "exp": 0,
                 "weight": 20,
-                "lost_cats": ["r_c"]
+                "lost_cats": [
+                    "r_c"
+                ]
             }
         ]
     },
     {
         "patrol_id": "pln_train_beautyandthebeast_storylocked1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            },
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["STORY,1"],
+        "pl_skill_constraint": [
+            "STORY,1"
+        ],
         "intro_text": "As the cats remark the border, p_l asks if they remember the tale of the beautiful molly and the monstrous tom. Once upon a time, the mighty tom of the plains found a beautiful molly on the border of his lands, skinny and trembling...",
         "decline_text": "This... really isn't the time to stop for a story.",
         "success_outcomes": [
-                {
-                    "text": "Outraged, the tom drew his claws - only for the molly to disappear in a burst of starlight, StarClan judging the tom for his monstrous heart. His scent grew foul, his whiskers fell off, his claws blunted, and so the first coyote was born, howling his anger and loss.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_train_ghost",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                },
-                {
-                    "text": "With a terrifying anger, the tom unsheathed his claws... but luckily for the molly, she was a StarClan cat in disguise, and with a burst of starlight, StarClan judged him, and turned him into a horrifying monster... a <i>coyote</i>.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_train_ghost",
-                    "can_have_stat":["p_l"],
-                    "stat_trait": [
-                        "nervous",
-                        "insecure",
-                        "gloomy"
-                    ],
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                },
-                {
-                    "text": "The powerful tom went to chase her off, but StarClan judged him a monster, and cursed him to become a coyote. It is a lesson all can take note of - the stars will judge you for your actions.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_train_ghost",
-                    "can_have_stat":["p_l"],
-                    "stat_trait": [
-                        "cold",
-                        "arrogant",
-                        "righteous"
-                    ],
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                },
-                {
-                    "text": "The tom drove the molly off and was cursed by StarClan for his cruelty. And good thing too, s_c pipes up! Evil like that should always be punished!",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_train_ghost",
-                    "can_have_stat":["not_pl"],
-                    "stat_trait": [
-                        "compassionate",
-                        "faithful",
-                        "loving",
-                        "responsible"
-                    ],
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        },
-                        {
-                            "cats_to": ["s_c"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "The patrol isn't interested in hearing p_l's fable as they work. A pity - one should always remember the lessons of c_n's myths.",
-                    "exp": 0,
-                    "weight": 20,
-                    "relationships": [
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["p_l"],
-                            "mutual": false,
-                            "values": ["respect"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ]
+            {
+                "text": "Outraged, the tom drew his claws - only for the molly to disappear in a burst of starlight, StarClan judging the tom for his monstrous heart. His scent grew foul, his whiskers fell off, his claws blunted, and so the first coyote was born, howling his anger and loss.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_ghost",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "With a terrifying anger, the tom unsheathed his claws... but luckily for the molly, she was a StarClan cat in disguise, and with a burst of starlight, StarClan judged him, and turned him into a horrifying monster... a <i>coyote</i>.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_ghost",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The powerful tom went to chase her off, but StarClan judged him a monster, and cursed him to become a coyote. It is a lesson all can take note of - the stars will judge you for your actions.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_ghost",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "cold",
+                    "arrogant",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The tom drove the molly off and was cursed by StarClan for his cruelty. And good thing too, s_c pipes up! Evil like that should always be punished!",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_train_ghost",
+                "can_have_stat": [
+                    "not_pl"
+                ],
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol isn't interested in hearing p_l's fable as they work. A pity - one should always remember the lessons of c_n's myths.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     }
-    
 ]

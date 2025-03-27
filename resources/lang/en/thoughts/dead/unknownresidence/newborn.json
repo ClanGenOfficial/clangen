@@ -13,7 +13,7 @@
     },
     {
         "id": "gen_newborn_to_parent",
-        "thoughts":[
+        "thoughts": [
             "Snuggles closer to r_c",
             "Smells r_c and immediately perks up",
             "Mews at r_c as {PRONOUN/r_c/subject} {VERB/r_c/shift/shifts} in the nest"

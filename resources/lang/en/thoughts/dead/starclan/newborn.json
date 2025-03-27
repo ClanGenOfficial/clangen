@@ -14,7 +14,7 @@
     },
     {
         "id": "gen_dead_newborn_to_alive_parent",
-        "thoughts":[
+        "thoughts": [
             "Thinks {PRONOUN/m_c/subject} heard r_c's voice",
             "Is mewling for r_c",
             "Searches for r_c's scent",
@@ -29,7 +29,7 @@
     },
     {
         "id": "gen_dead_newborn_to_dead_other",
-        "thoughts":[
+        "thoughts": [
             "Is being watched by r_c",
             "Is being bathed by r_c",
             "Is tucked under r_c's belly",

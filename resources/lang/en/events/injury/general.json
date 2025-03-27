@@ -16,7 +16,6 @@
             "trait": [
                 "daring",
                 "impulsive",
-
                 "troublesome"
             ]
         },
@@ -48,7 +47,6 @@
             "trait": [
                 "daring",
                 "impulsive",
-
                 "troublesome"
             ]
         },
@@ -114,7 +112,6 @@
             "trait": [
                 "daring",
                 "impulsive",
-
                 "troublesome"
             ]
         },
@@ -146,7 +143,6 @@
             "trait": [
                 "daring",
                 "impulsive",
-
                 "troublesome"
             ]
         },
@@ -701,7 +697,6 @@
             "trait": [
                 "calm",
                 "compassionate",
-                
                 "thoughtful",
                 "wise"
             ]
@@ -804,7 +799,6 @@
             "trait": [
                 "calm",
                 "compassionate",
-                
                 "thoughtful",
                 "daring",
                 "bold",
@@ -924,7 +918,6 @@
             "trait": [
                 "calm",
                 "compassionate",
-                
                 "thoughtful",
                 "daring",
                 "bold",
@@ -1303,7 +1296,6 @@
             "trait": [
                 "daring",
                 "impulsive",
-
                 "troublesome"
             ]
         },
@@ -2079,7 +2071,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -2153,7 +2144,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -2367,7 +2357,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -2533,7 +2522,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -2621,7 +2609,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -2831,7 +2818,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -2976,7 +2962,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -3058,7 +3043,6 @@
             "trait": [
                 "compassionate",
                 "loving",
-                
                 "responsible",
                 "loyal",
                 "adventurous",
@@ -5043,8 +5027,12 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anydisobeypunish1",
-        "location": ["any"],
-        "season": ["any"],
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 10,
         "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for disobeying {PRONOUN/r_c/object}.",
         "m_c": {
@@ -5136,8 +5124,12 @@
     },
     {
         "event_id": "gen_injury_clawwoundcatbite_anymentorfight1",
-        "location": ["any"],
-        "season": ["any"],
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 10,
         "event_text": "m_c fought with {PRONOUN/m_c/poss} mentor, r_c, and was injured.",
         "m_c": {
@@ -5790,7 +5782,9 @@
     },
     {
         "event_id": "gen_injury_crackedpads_any1",
-        "location": ["any"],
+        "location": [
+            "any"
+        ],
         "season": [
             "leaf-bare"
         ],
@@ -6634,7 +6628,9 @@
     },
     {
         "event_id": "gen_injury_beesting_multiany3",
-        "location": ["any"],
+        "location": [
+            "any"
+        ],
         "season": [
             "greenleaf",
             "newleaf"

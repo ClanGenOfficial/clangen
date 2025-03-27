@@ -1,15 +1,24 @@
 [
     {
         "patrol_id": "gen_bord_otherclan1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [-1, -1]
+            "leader": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
@@ -32,14 +41,21 @@
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["calm", "charismatic", "confident", "wise"],
+                "stat_trait": [
+                    "calm",
+                    "charismatic",
+                    "confident",
+                    "wise"
+                ],
                 "other_clan_rep": 2
             }
         ],
@@ -54,7 +70,13 @@
                 "text": "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, tails whipping and ears pinned.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "strange", "playful", "daring", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "strange",
+                    "playful",
+                    "daring",
+                    "childish"
+                ],
                 "other_clan_rep": -1
             }
         ],
@@ -77,15 +99,24 @@
     },
     {
         "patrol_id": "gen_bord_otherclan2",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [-1, -1]
+            "leader": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
@@ -108,7 +139,9 @@
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. {PRONOUN/s_c/subject/CAP} {VERB/s_c/remember/remembers} some of the news that o_c_n shared at a recent Gathering and {VERB/s_c/bring/brings} it up, impressing the other patrol with {PRONOUN/s_c/poss} polite interest.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -138,7 +171,13 @@
                 "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "cold"],
+                "stat_trait": [
+                    "vengeful",
+                    "bloodthirsty",
+                    "righteous",
+                    "vengeful",
+                    "cold"
+                ],
                 "other_clan_rep": -1
             }
         ],
@@ -161,9 +200,16 @@
     },
     {
         "patrol_id": "gen_bord_otherclan3",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting", "border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting",
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_otherclan3",
         "min_cats": 2,
@@ -178,20 +224,28 @@
                 "text": "r_c pounces without hesitation! {PRONOUN/r_c/subject/CAP} {VERB/r_c/glance/glances} around, rabbit hanging from {PRONOUN/r_c/poss} muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, {PRONOUN/r_c/poss} prize in tow and transgression unnoticed.",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["medium"]
+                "prey": [
+                    "medium"
+                ]
             },
             {
                 "text": "r_c leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c sheepishly picks {PRONOUN/r_c/self} up. It's probably for the better that {PRONOUN/r_c/subject} {VERB/r_c/weren't/wasn't} able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
                 "exp": 10,
                 "weight": 5,
-                "prey": ["medium"]
+                "prey": [
+                    "medium"
+                ]
             },
             {
                 "text": "r_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing. Thankfully, s_c smooths things over with the other patrol by graciously gifting them the rabbit. They part ways without damaging the relationship between Clans.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
-				"prey" : ["small"]
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "prey": [
+                    "small"
+                ]
             },
             {
                 "text": "r_c is about to leap for the rabbit when s_c grabs {PRONOUN/r_c/object} by the scruff and pulls {PRONOUN/r_c/object} back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan.",
@@ -204,7 +258,9 @@
                     "sneaky",
                     "responsible"
                 ],
-				"prey":["small"]
+                "prey": [
+                    "small"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -213,7 +269,9 @@
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1,
-				"prey": ["medium"]
+                "prey": [
+                    "medium"
+                ]
             },
             {
                 "text": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face-to-face with a o_c_n cat. s_c is promptly chased back over the border. The other cat glares, hissing and spitting until the patrol leaves the area.",
@@ -235,9 +293,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["LEGBITE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "LEGBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -265,15 +329,24 @@
     },
     {
         "patrol_id": "gen_bord_otherclan4",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
@@ -296,14 +369,21 @@
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["calm", "charismatic", "confident", "wise"],
+                "stat_trait": [
+                    "calm",
+                    "charismatic",
+                    "confident",
+                    "wise"
+                ],
                 "other_clan_rep": 2
             }
         ],
@@ -318,7 +398,13 @@
                 "text": "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, tails whipping and ears pinned.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "strange", "playful", "daring", "childish"],
+                "stat_trait": [
+                    "troublesome",
+                    "strange",
+                    "playful",
+                    "daring",
+                    "childish"
+                ],
                 "other_clan_rep": -1
             }
         ],
@@ -341,15 +427,24 @@
     },
     {
         "patrol_id": "gen_bord_otherclan5",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
@@ -372,7 +467,9 @@
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. {PRONOUN/s_c/subject/CAP} {VERB/s_c/remember/remembers} some of the news that o_c_n shared at a recent Gathering and bring it up, impressing the other patrol with {PRONOUN/s_c/poss} polite interest.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -402,7 +499,13 @@
                 "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "cold"],
+                "stat_trait": [
+                    "vengeful",
+                    "bloodthirsty",
+                    "righteous",
+                    "vengeful",
+                    "cold"
+                ],
                 "other_clan_rep": -1
             }
         ],
@@ -425,18 +528,36 @@
     },
     {
         "patrol_id": "gen_med_borderherb2",
-        "biome": ["any"],
-        "season": ["leaf-bare"],
-        "types": ["herb_gathering"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
         "tags": [],
         "patrol_art": "gen_med_borderherb",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "healer cats": [
+                1,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/p_l/subject/CAP} can smell some raspberries nearby - but it seems that they're just over the border.",
@@ -447,22 +568,30 @@
                 "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} over to the border and {VERB/p_l/hesitate/hesitates} only momentarily before crossing. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/gather/gathers} some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some too.",
                 "exp": 20,
                 "weight": 20,
-                "herbs": ["raspberry"],
+                "herbs": [
+                    "raspberry"
+                ],
                 "other_clan_rep": 2
             },
             {
                 "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} to the border and {VERB/p_l/pause/pauses} for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["raspberry"],
+                "herbs": [
+                    "raspberry"
+                ],
                 "other_clan_rep": 2
             },
             {
                 "text": "p_l is about to step over the border when a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/explain/explains} that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} the medicine cat, that the Warrior Code allows {PRONOUN/p_l/object} to cross the border, and {VERB/p_l/assure/assures} the warrior that {PRONOUN/p_l/subject} won't take many of the berries. The warrior looks torn but agrees.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["MEDIATOR,1"],
-                "herbs": ["raspberry"],
+                "stat_skill": [
+                    "MEDIATOR,1"
+                ],
+                "herbs": [
+                    "raspberry"
+                ],
                 "other_clan_rep": 2
             }
         ],
@@ -479,8 +608,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
                         "scars": []
                     }
                 ],
@@ -494,15 +627,24 @@
     },
     {
         "patrol_id": "gen_bord_scent1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [-1, -1]
+            "leader": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
@@ -525,14 +667,19 @@
                 "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol! s_c rallies the patrol to drive the dog away, thankfully avoiding any injuries. The o_c_n cat is grateful for the rescue.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
                 "text": "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists that the patrol at least escort the wounded warrior to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["compassionate", "calm"],
+                "stat_trait": [
+                    "compassionate",
+                    "calm"
+                ],
                 "other_clan_rep": 2
             }
         ],
@@ -547,14 +694,22 @@
                 "text": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when the patrol finds a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "strict",
+                    "vengeful"
+                ],
                 "other_clan_rep": -1
             },
             {
                 "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon the patrol. r_c is killed before they can run and the rest of the patrol scatters in fear.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} scarred by a dog.",
                     "reg_death": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog.",
@@ -568,9 +723,16 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["bite-wound", "torn pelt"],
-                        "scars": ["NORIGHTEAR"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "bite-wound",
+                            "torn pelt"
+                        ],
+                        "scars": [
+                            "NORIGHTEAR"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -600,15 +762,24 @@
     },
     {
         "patrol_id": "gen_bord_scent2",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [-1, -1]
+            "leader": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
@@ -631,7 +802,10 @@
                 "text": "s_c follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists on helping the warrior back to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["compassionate", "calm"],
+                "stat_trait": [
+                    "compassionate",
+                    "calm"
+                ],
                 "other_clan_rep": 2
             }
         ],
@@ -646,14 +820,23 @@
                 "text": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when they find a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "strict",
+                    "vengeful"
+                ],
                 "other_clan_rep": -1
             },
             {
                 "text": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon r_c. r_c is killed before they can run.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c", "some_lives"],
+                "dead_cats": [
+                    "r_c",
+                    "some_lives"
+                ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                     "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
@@ -667,9 +850,16 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["bite-wound", "mangled tail"],
-                        "scars": ["TAILSCAR"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "bite-wound",
+                            "mangled tail"
+                        ],
+                        "scars": [
+                            "TAILSCAR"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -699,16 +889,28 @@
     },
     {
         "patrol_id": "bch_bord_soloneutral1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [-1, -1],
-            "deputy": [-1, -1]
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "deputy": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
@@ -731,7 +933,9 @@
                 "text": "s_c comes across a o_c_n patrol, out on a similar mission, and decides to follow the same marking path as them. s_c strikes up a friendly conversation - while they don't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -778,27 +982,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c was injured by an enemy patrol while marking the border." },
+                "history_text": {
+                    "scar": "m_c was injured by an enemy patrol while marking the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "bch_bord_soloneutral2",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 1]
+            "deputy": [
+                1,
+                1
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
@@ -821,7 +1042,9 @@
                 "text": "s_c comes across a o_c_n patrol, out on a similar mission. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on the neighbors.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -866,7 +1089,9 @@
                 "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . . r_c never returns to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was injured by an enemy patrol while marking the border.",
                     "reg_death": "m_c lost {PRONOUN/m_c/poss} life in an ambush on the border.",
@@ -880,8 +1105,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
                         "scars": []
                     }
                 ],
@@ -896,15 +1125,24 @@
     },
     {
         "patrol_id": "bch_bord_soloneutral3",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 1]
+            "leader": [
+                1,
+                1
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
@@ -927,7 +1165,9 @@
                 "text": "s_c comes across a o_c_n patrol, out on a similar mission. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on the neighbors. Trust, but verify.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -972,7 +1212,9 @@
                 "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . . r_c returns to camp late, blood soaked through their fur and a new hardness in their heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was injured by an enemy patrol while marking the border.",
                     "reg_death": "m_c lost a life in an ambush on the border.",
@@ -986,9 +1228,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1002,15 +1250,24 @@
     },
     {
         "patrol_id": "bch_bord_soloneutral4",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
@@ -1033,7 +1290,9 @@
                 "text": "s_c comes across a o_c_n patrol, out on a similar mission and being led by their deputy. The deputies strike up a conversation, and the o_c_n warriors eventually wander off. The unexpected opportunity gives the two a chance to privately exchange news about an ongoing problem on the coast.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1064,27 +1323,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c was injured by an enemy patrol while marking the border." },
+                "history_text": {
+                    "scar": "m_c was injured by an enemy patrol while marking the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "bch_bord_soloneutral5",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
@@ -1107,7 +1383,9 @@
                 "text": "s_c comes across a o_c_n patrol, out on a similar mission and being led by their deputy. The leaders strike up a conversation, and the o_c_n warriors eventually wander off. The unexpected opportunity gives the two a chance to privately exchange news about an ongoing problem on the coast.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1138,21 +1416,35 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["SNOUT"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SNOUT"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c was injured by an enemy patrol while marking the border." },
+                "history_text": {
+                    "scar": "m_c was injured by an enemy patrol while marking the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "dst_bord_soloneutral1",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -1179,7 +1471,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1224,15 +1518,24 @@
     },
     {
         "patrol_id": "dst_bord_soloneutral2",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
@@ -1255,7 +1558,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1302,27 +1607,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "dst_bord_soloneutral3",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
@@ -1345,7 +1667,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. Trust, but verify.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1392,27 +1716,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["TWO"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "TWO"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "dst_bord_soloneutral4",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
@@ -1435,7 +1776,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1464,15 +1807,24 @@
     },
     {
         "patrol_id": "dst_bord_soloneutral5",
-        "biome": ["desert"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
@@ -1495,7 +1847,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1524,15 +1878,24 @@
     },
     {
         "patrol_id": "fst_bord_soloneutral1",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [-1, -1]
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
@@ -1549,14 +1912,18 @@
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["small"],
+                "prey": [
+                    "small"
+                ],
                 "other_clan_rep": -1
             },
             {
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1603,28 +1970,47 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["ONE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "ONE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
-                "prey": ["very_small"],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
+                "prey": [
+                    "very_small"
+                ],
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "fst_bord_soloneutral2",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
@@ -1647,7 +2033,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1692,7 +2080,9 @@
                 "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}'t make it back to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost their life in an ambush on the border.",
@@ -1706,9 +2096,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["SIDE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SIDE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1722,15 +2118,24 @@
     },
     {
         "patrol_id": "fst_bord_soloneutral3",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
@@ -1753,7 +2158,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1798,7 +2205,9 @@
                 "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life in an ambush on the border.",
@@ -1812,9 +2221,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1828,15 +2243,24 @@
     },
     {
         "patrol_id": "fst_bord_soloneutral4",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
@@ -1859,7 +2283,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the forest.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1890,27 +2316,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["SNOUT"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SNOUT"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "fst_bord_soloneutral5",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
@@ -1933,7 +2376,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the forest.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -1964,27 +2409,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_soloneutral1",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [-1, -1]
+            "deputy": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
@@ -2007,7 +2469,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2060,27 +2524,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_soloneutral2",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
@@ -2103,7 +2584,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2150,27 +2633,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["SIDE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SIDE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_soloneutral3",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
@@ -2193,7 +2693,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2240,27 +2742,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["ONE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "ONE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_soloneutral4",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
@@ -2283,7 +2802,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the mountains.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2312,15 +2833,24 @@
     },
     {
         "patrol_id": "mtn_bord_soloneutral5",
-        "biome": ["mountainous"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
@@ -2343,7 +2873,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the mountains.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2371,9 +2903,15 @@
     },
     {
         "patrol_id": "pln_bord_soloneutral1",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -2400,7 +2938,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2447,27 +2987,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["TWO"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "TWO"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "pln_bord_soloneutral2",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
@@ -2490,7 +3047,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2535,7 +3094,9 @@
                 "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}'t make it back to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost their life in an ambush on the border.",
@@ -2549,9 +3110,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2565,15 +3132,24 @@
     },
     {
         "patrol_id": "pln_bord_soloneutral3",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
@@ -2596,7 +3172,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2641,7 +3219,9 @@
                 "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
                     "reg_death": "m_c lost a life in an ambush on the border.",
@@ -2655,9 +3235,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2671,15 +3257,24 @@
     },
     {
         "patrol_id": "pln_bord_soloneutral4",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
@@ -2702,7 +3297,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the grasslands.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2733,27 +3330,44 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["ONE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "ONE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "pln_bord_soloneutral5",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
@@ -2776,7 +3390,9 @@
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the grasslands.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
                 "other_clan_rep": 2
             },
             {
@@ -2807,32 +3423,54 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["TWO"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "TWO"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured patrolling on the border." },
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border."
+                },
                 "other_clan_rep": -1
             }
         ]
     },
     {
         "patrol_id": "gen_bord_appmission",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_train_talkingAW",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "warrior": [1, 1],
-            "apprentice": [1, 1]
+            "warrior": [
+                1,
+                1
+            ],
+            "apprentice": [
+                1,
+                1
+            ]
         },
         "weight": 20,
         "chance_of_success": 20,
-        "relationship_constraint": ["dislike_10"],
+        "relationship_constraint": [
+            "dislike_10"
+        ],
         "intro_text": "p_l can't help but think that app1 has been distracted on this patrol, trailing behind and admiring any aimless distraction nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that app1 could do with a <i>special</i> mission to get {PRONOUN/app1/object} back on track.",
         "decline_text": "After a bit of thought, p_l decides that getting an apprentice to sneak across the border probably isn't the best idea... however irritating {PRONOUN/app1/subject} {VERB/app1/were/was} being.",
         "success_outcomes": [
@@ -2841,14 +3479,34 @@
                 "exp": 5,
                 "weight": 30,
                 "art": "gen_hunt_huntassessment",
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["bold", "childish", "cold", "cunning", "daring", "troublesome", "vengeful", "bloodthirsty", "rebellious"],
-                "herbs": ["catmint"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "bold",
+                    "childish",
+                    "cold",
+                    "cunning",
+                    "daring",
+                    "troublesome",
+                    "vengeful",
+                    "bloodthirsty",
+                    "rebellious"
+                ],
+                "herbs": [
+                    "catmint"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["app1"],
-                        "values": ["respect"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -2856,26 +3514,46 @@
             {
                 "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates - surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. Startled by app1's refusal, s_c stalks off to continue the patrol, fuming - and maybe a tiny bit impressed.",
                 "exp": 10,
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "bold"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "arrogant",
+                    "vengeful",
+                    "fierce",
+                    "bold"
+                ],
                 "weight": 30,
                 "art": "gen_train_argueAW",
                 "relationships": [
-                        {
-                            "cats_to": ["app1"],
-                            "cats_from": ["s_c"],
-                            "mutual": false,
-                            "values": ["respect"],
-                            "amount": 10
-                        },
-                {
-                            "cats_to": ["app1"],
-                            "cats_from": ["s_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 5
-                        }
-                    ]
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": 5
+                    }
+                ]
             },
             {
                 "text": "Sighing to {PRONOUN/p_l/self}, p_l brightly suggests a super exciting mission for app1. All {PRONOUN/app1/subject} have to do is spot the closest bush in o_c_n territory, and sprint there and back as fast as {PRONOUN/app1/subject} can. While a slightly risky decision on p_l's part, the tiny transgression thankfully goes unnoticed, and gives app1 the thrill {PRONOUN/app1/subject} {VERB/app1/need/needs} to actually focus during the rest of the patrol. And besides, p_l reasons, what o_c_n doesn't know can't hurt them.",
@@ -2883,19 +3561,23 @@
                 "weight": 20,
                 "art": "running_app2",
                 "relationships": [
-                        {
-                            "cats_to": ["app1"],
-                            "cats_from": ["p_l"],
-                            "mutual": true,
-                            "values": ["comfort"],
-                            "amount": 5
-                        }
-                    ]
-    
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5
+                    }
+                ]
             }
-    
         ],
-            "fail_outcomes": [
+        "fail_outcomes": [
             {
                 "text": "In hindsight, maybe it wasn't the best idea to suggest app1 sneak onto o_c_n territory. But app1 wasn't going to steal any prey, truly, p_l insists to the o_c_n patrol, {PRONOUN/app1/subject} just got overexcited! p_l's rambling excuses and apologies do little to soothe tensions, and the pair eventually return back to camp with heads and tails hung low. This was not going to be fun to explain.",
                 "exp": 0,
@@ -2904,10 +3586,16 @@
                 "other_clan_rep": -1,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["p_l"],
-                "mutual": true,
-                        "values": ["respect"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -2918,13 +3606,28 @@
                 "weight": 20,
                 "art": "gen_battle_app_other_clan",
                 "other_clan_rep": -2,
-                "can_have_stat": ["p_l"],
-                "stat_trait": ["bloodthirsty", "vengeful", "cunning", "sneaky"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "vengeful",
+                    "cunning",
+                    "sneaky"
+                ],
                 "injury": [
-    {
-                        "cats": ["app1"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["SCRATCHSIDE", "BRIDGE", "CATBITETWO"]
+                    {
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SCRATCHSIDE",
+                            "BRIDGE",
+                            "CATBITETWO"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2933,36 +3636,59 @@
                 },
                 "relationships": [
                     {
-                            "cats_to": ["app1"],
-                            "cats_from": ["s_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 10
-                        },
-                {
-                            "cats_to": ["s_c"],
-                            "cats_from": ["app1"],
-                            "values": ["platonic", "trust"],
-                            "amount": -10
-                        }
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "values": [
+                            "platonic",
+                            "trust"
+                        ],
+                        "amount": -10
+                    }
                 ]
             }
-    
         ]
-        
-      },
-      {
+    },
+    {
         "patrol_id": "gen_bord_otherclanapp",
-        "biome": [ "any" ],
-        "season": [ "any" ],
-        "types": [ "border" ],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_otherclan_app_allies",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [ 1, 5],
-            "warrior": [1, 5]
+            "apprentice": [
+                1,
+                5
+            ],
+            "warrior": [
+                1,
+                5
+            ]
         },
         "weight": 20,
         "chance_of_success": 40,
@@ -2973,29 +3699,64 @@
                 "text": "app1 calls out a greeting to the other apprentice, {PRONOUN/app1/poss} eyes shining and tail raised. It's exciting to chat with another Clan's apprentice somewhere other than a Gathering, where {PRONOUN/app1/subject}{VERB/app1/'re/'s} supposed to be on {PRONOUN/app1/poss} best behavior. The ice is broken between the patrols, and they stop for a chat before each carrying on their way.",
                 "exp": 15,
                 "weight": 40,
-                "stat_skill": [ "SPEAKER,1", "CLEVER,1", "MEDIATOR,1" ],
-                "stat_trait": [ "childish", "playful", "charismatic", "bold", "compassionate", "confident", "adventurous", "sincere", "flamboyant", "loving", "wise" ],
-                "can_have_stat": [ "app1" ],
+                "stat_skill": [
+                    "SPEAKER,1",
+                    "CLEVER,1",
+                    "MEDIATOR,1"
+                ],
+                "stat_trait": [
+                    "childish",
+                    "playful",
+                    "charismatic",
+                    "bold",
+                    "compassionate",
+                    "confident",
+                    "adventurous",
+                    "sincere",
+                    "flamboyant",
+                    "loving",
+                    "wise"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "art": "gen_happy_cat2",
                 "other_clan_rep": 2,
-                "relationships":
-				[
-                {
-                    "cats_to": [ "app1" ],
-                    "cats_from": [ "patrol" ],
-                    "mutual": false,
-                    "values": [ "platonic", "trust", "respect" ],
-                    "amount": 10
-                }
-				]
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "platonic",
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10
+                    }
+                ]
             },
             {
                 "text": "app1 watches the other apprentice from across the border as the two patrols get on with marking their side of the border in silence. Every so often, app1 looks up and catches the other apprentice's eye; would they have been friends, if they were born in the same Clan? The patrol passes without incident, and app1 can't help casting a look back at the border as {PRONOUN/app1/subject} {VERB/app1/leave/leaves}.",
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_train_speakingromance1",
-                "stat_trait": [ "careful", "nervous", "gloomy", "lonesome", "strange", "calm", "thoughtful" ],
-                "can_have_stat": [ "app1" ],
+                "stat_trait": [
+                    "careful",
+                    "nervous",
+                    "gloomy",
+                    "lonesome",
+                    "strange",
+                    "calm",
+                    "thoughtful"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "other_clan_rep": 1
             },
             {
@@ -3017,8 +3778,21 @@
                 "text": "app1 averts {PRONOUN/app1/poss} eyes from the other apprentice. Friendships with other Clans shouldn't be encouraged; loyalty to c_n comes first. The patrol continues marking the border in icy silence",
                 "exp": 0,
                 "weight": 40,
-                "stat_trait": [ "cold", "loyal", "faithful", "righteous", "ambitious", "grumpy", "oblivious", "careful", "nervous", "strict" ],
-                "can_have_stat": [ "app1" ],
+                "stat_trait": [
+                    "cold",
+                    "loyal",
+                    "faithful",
+                    "righteous",
+                    "ambitious",
+                    "grumpy",
+                    "oblivious",
+                    "careful",
+                    "nervous",
+                    "strict"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "other_clan_rep": -1
             },
             {
@@ -3026,16 +3800,35 @@
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_train_argueWA",
-                "stat_trait": [ "childish", "playful", "charismatic", "bold", "compassionate", "confident", "adventurous", "sincere", "flamboyant", "loving", "wise" ],
-                "can_have_stat": [ "app1" ],
+                "stat_trait": [
+                    "childish",
+                    "playful",
+                    "charismatic",
+                    "bold",
+                    "compassionate",
+                    "confident",
+                    "adventurous",
+                    "sincere",
+                    "flamboyant",
+                    "loving",
+                    "wise"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "other_clan_rep": -1,
-                "relationships":
-                [
+                "relationships": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "patrol" ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": [ "dislike" ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -3045,16 +3838,30 @@
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_train_patrolapprenticesessionfail",
-                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "cold", "arrogant" ],
-                "can_have_stat": [ "any", "adult" ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "fierce",
+                    "vengeful",
+                    "cold",
+                    "arrogant"
+                ],
+                "can_have_stat": [
+                    "any",
+                    "adult"
+                ],
                 "other_clan_rep": -2,
-                "relationships":
-                [
+                "relationships": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "s_c" ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
                         "mutual": true,
-                        "values": [ "dislike" ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -3063,8 +3870,22 @@
                 "text": "app1 greets the other apprentice confidently, and {PRONOUN/app1/poss} Clanmates strike up a conversation with the o_c_n patrol as well. app1 tells the other apprentice all about {PRONOUN/app1/poss} mastery of some of the trickiest battle moves and the most advanced hunting strategies. The other apprentice rolls their eyes, unimpressed with app1's braggadocio, and the o_c_n patrol moves on.",
                 "exp": 0,
                 "weight": 40,
-                "stat_trait": [ "bloodthirsty", "fierce", "daring", "competitive", "shameless", "arrogant", "oblivious", "troublesome", "confident", "flamboyant", "bold" ],
-                "can_have_stat": [ "app1" ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "fierce",
+                    "daring",
+                    "competitive",
+                    "shameless",
+                    "arrogant",
+                    "oblivious",
+                    "troublesome",
+                    "confident",
+                    "flamboyant",
+                    "bold"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "other_clan_rep": 0
             },
             {
@@ -3074,27 +3895,53 @@
                 "other_clan_rep": 0
             }
         ],
-        "antag_success_outcomes":
-        [
+        "antag_success_outcomes": [
             {
                 "text": "app1 sashays up to the border with a smirk and marks the border just a <i>bit</i> further forward than {PRONOUN/app1/subject} should. r_c points this out to app1, who protests that it's just one little mouse-length and shoots an insolent smile at the o_c_n apprentice. The o_c_n patrol's annoyed stares follow c_n's patrol as they carry on.",
                 "exp": 15,
                 "weight": 40,
-                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "sneaky", "daring", "cunning", "rebellious", "vengeful", "bold" ],
-                "can_have_stat": [ "app1" ],
+                "stat_trait": [
+                    "arrogant",
+                    "troublesome",
+                    "shameless",
+                    "confident",
+                    "daring",
+                    "flamboyant",
+                    "sneaky",
+                    "daring",
+                    "cunning",
+                    "rebellious",
+                    "vengeful",
+                    "bold"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "other_clan_rep": -2,
                 "art": "gen_bord_twocat_hostile_app_warrior",
-                "relationships":[
+                "relationships": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "r_c" ],
-                        "values": [ "dislike" ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "patrol" ],
-                        "values": [ "dislike" ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -3104,14 +3951,32 @@
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_bord_twocat_hostile_app_warrior",
-                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "cold", "arrogant", "daring", "bold", "confident" ],
-                "can_have_stat": [ "any", "adult" ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "fierce",
+                    "vengeful",
+                    "cold",
+                    "arrogant",
+                    "daring",
+                    "bold",
+                    "confident"
+                ],
+                "can_have_stat": [
+                    "any",
+                    "adult"
+                ],
                 "other_clan_rep": -2,
                 "relationships": [
                     {
-                        "cats_from": [ "patrol" ],
-                        "cats_to": [ "s_c" ],
-                        "values": [ "dislike" ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -3121,8 +3986,23 @@
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_bord_twocat_hostile_app_warrior",
-                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "sneaky", "daring", "cunning", "rebellious", "vengeful", "bold" ],
-                "can_have_stat": [ "app1" ],
+                "stat_trait": [
+                    "arrogant",
+                    "troublesome",
+                    "shameless",
+                    "confident",
+                    "daring",
+                    "flamboyant",
+                    "sneaky",
+                    "daring",
+                    "cunning",
+                    "rebellious",
+                    "vengeful",
+                    "bold"
+                ],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "other_clan_rep": -2
             },
             {
@@ -3132,15 +4012,33 @@
                 "art": "gen_bord_twocat_hostile_app_warrior",
                 "other_clan_rep": -2
             },
-                {
+            {
                 "text": "app1 arches {PRONOUN/app1/poss} back and spits an insult at the o_c_n apprentice. They're as scrawny as a mouse in leaf-bare! Doesn't o_c_n bother feeding their kits? Oh, sorry, they're an <i>apprentice?</i> Wow, app1 didn't think an apprentice could even <i>be</i> that small.",
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_bord_twocat_hostile_app_warrior",
-                "stat_skill": [ "SPEAKER,1" ],
-                "stat_trait": [ "arrogant", "troublesome", "shameless", "charismatic", "confident", "daring", "flamboyant", "sneaky", "daring", "cunning", "rebellious", "vengeful", "bold", "childish", "playful" ],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "stat_trait": [
+                    "arrogant",
+                    "troublesome",
+                    "shameless",
+                    "charismatic",
+                    "confident",
+                    "daring",
+                    "flamboyant",
+                    "sneaky",
+                    "daring",
+                    "cunning",
+                    "rebellious",
+                    "vengeful",
+                    "bold",
+                    "childish",
+                    "playful"
+                ],
                 "other_clan_rep": -2
-                }
+            }
         ],
         "antag_fail_outcomes": [
             {
@@ -3151,21 +4049,32 @@
                 "other_clan_rep": -2,
                 "injury": [
                     {
-                        "cats": [ "app1" ],
-                        "injuries": [ "battle_injury" ],
-                        "scars": [ "LEGBITE" ]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "LEGBITE"
+                        ]
                     }
                 ],
-                "history_text":
-                {
+                "history_text": {
                     "scar": "m_c was scarred by a o_c_n apprentice after a border scrum.",
                     "reg_death": "m_c died after picking a fight with a o_c_n apprentice on patrol."
                 },
-                "relationships":[
+                "relationships": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "patrol" ],
-                        "values": [ "dislike" ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -3175,32 +4084,66 @@
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_battle_app_other_clan",
-                "stat_skill": [ "MEDIATOR,1", "SPEAKER,1", "TEACHER,1", "INSIGHTFUL,1"],
-                "stat_trait": [ "charismatic", "compassionate", "responsible", "faithful", "loyal", "calm", "wise", "sincere", "thoughtful", "loving" ],
-                "can_have_stat": [ "any", "adult" ],
+                "stat_skill": [
+                    "MEDIATOR,1",
+                    "SPEAKER,1",
+                    "TEACHER,1",
+                    "INSIGHTFUL,1"
+                ],
+                "stat_trait": [
+                    "charismatic",
+                    "compassionate",
+                    "responsible",
+                    "faithful",
+                    "loyal",
+                    "calm",
+                    "wise",
+                    "sincere",
+                    "thoughtful",
+                    "loving"
+                ],
+                "can_have_stat": [
+                    "any",
+                    "adult"
+                ],
                 "other_clan_rep": -2,
                 "injury": [
                     {
-                        "cats": [ "multi" ],
-                        "injuries": [ "minor_injury" ]
+                        "cats": [
+                            "multi"
+                        ],
+                        "injuries": [
+                            "minor_injury"
+                        ]
                     },
                     {
-                        "cats": [ "r_c" ],
-                        "injuries": [ "small_bite_injury" ],
-                        "scar": [ "LEGBITE" ]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "small_bite_injury"
+                        ],
+                        "scar": [
+                            "LEGBITE"
+                        ]
                     }
                 ],
-                "history_text":
-                {
+                "history_text": {
                     "scar": "m_c was scarred in a border skirmish.",
                     "reg_death": "m_c died from injuries sustained in a border skirmish.",
                     "lead_death": "died from injuries sustained in a border skirmish"
                 },
-                "relationships":[
+                "relationships": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "patrol" ],
-                        "values": [ "dislike" ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -3213,9 +4156,16 @@
                 "other_clan_rep": -2,
                 "injury": [
                     {
-                        "cats": [ "multi" ],
-                        "injuries": [ "battle_injury" ],
-                        "scar": [ "NECKBITE", "SNOUT" ]
+                        "cats": [
+                            "multi"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scar": [
+                            "NECKBITE",
+                            "SNOUT"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3225,19 +4175,27 @@
                 }
             }
         ]
-
     },
     {
         "patrol_id": "gen_bord_neutral_otherclankits1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l sees two kits from o_c_n playing close to the border.",
@@ -3250,10 +4208,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 10
                     }
                 ],
@@ -3265,10 +4230,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 10
                     }
                 ],
@@ -3278,14 +4250,26 @@
                 "text": "p_l orders the patrol to go back to camp asking that r_c be left behind to help {PRONOUN/p_l/object}. They go up to the little kits convincing them that they are gonna give them the best badger ride ever. As they approach o_c_n's camp, with the kits squealing with joy on their back, they are greeted with relief and laughter.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
-                "can_have_stat": ["adult"],
+                "stat_skill": [
+                    "SPEAKER,1",
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 10
                     }
                 ],
@@ -3295,14 +4279,27 @@
                 "text": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l - knowing {PRONOUN/p_l/object} to be a kind and caring cat - and thanks both of them sincerely.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["compassionate", "loving", "charismatic"],
-                "can_have_stat": ["adult"],
+                "stat_trait": [
+                    "compassionate",
+                    "loving",
+                    "charismatic"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 10
                     }
                 ],
@@ -3316,10 +4313,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -10
                     }
                 ],
@@ -3329,17 +4333,26 @@
                 "text": "As p_l crosses the border with r_c to grab the kits by their scruff, a o_c_n patrol suddenly appears, looking furious, with their claws out and fangs bared! r_c gently drops the kit and attempts to explain the situation but is immediately and viciously killed. p_l races back over to their side of the border, just barely escaping the wrath of o_c_n warriors.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "reg_death": "m_c was slain by o_c_n warriors",
                     "lead_death": "lost a life by o_c_n warriors"
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": -10
                     }
                 ],
@@ -3371,40 +4384,81 @@
                 "text": "p_l seizes the opportunity to weaken o_c_n and orders the patrol to steal the two kits.",
                 "exp": 20,
                 "weight": 20,
-                "can_have_stat": ["p_l"],
-                "stat_trait":["bloodthirsty", "cold", "troublesome","shameless", "arrogant", "ambitious"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "bloodthirsty",
+                    "cold",
+                    "troublesome",
+                    "shameless",
+                    "arrogant",
+                    "ambitious"
+                ],
                 "other_clan_rep": -8,
                 "new_cat": [
-                    ["age: kitten", "backstory: otherclan5"],
-                    ["age: kitten", "backstory: otherclan5"]
+                    [
+                        "age: kitten",
+                        "backstory: otherclan5"
+                    ],
+                    [
+                        "age: kitten",
+                        "backstory: otherclan5"
+                    ]
                 ]
             },
             {
                 "text": "p_l gasps at seeing the two kits, how did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n.",
                 "exp": 20,
                 "weight": 20,
-                "can_have_stat": ["p_l"],
-                "stat_trait":["oblivious"],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "oblivious"
+                ],
                 "other_clan_rep": -8,
                 "new_cat": [
-                    ["age: kitten", "backstory: otherclan5"],
-                    ["age: kitten", "backstory: otherclan5"]
+                    [
+                        "age: kitten",
+                        "backstory: otherclan5"
+                    ],
+                    [
+                        "age: kitten",
+                        "backstory: otherclan5"
+                    ]
                 ]
             }
         ]
     },
     {
         "patrol_id": "gen_border_otherclan_badger1",
-        "biome": ["forest", "plains", "mountainous", "beach", "desert"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest",
+            "plains",
+            "mountainous",
+            "beach",
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [-1, -1],
-            "normal adult": [1, 6]
+            "leader": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 5,
         "intro_text": "The patrol spots a badger making a den on o_c_n territory.",
@@ -3417,10 +4471,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ],
@@ -3432,10 +4492,16 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ],
@@ -3445,14 +4511,25 @@
                 "text": "p_l tells the patrol to continue on and hops over the border to walk to o_c_n's camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} greeted at the camp entrance with bristled fur, angry hisses and the leader demanding to know what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing there. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} the situation and with {PRONOUN/p_l/poss} smooth talking skills manage to convince the cats of {PRONOUN/p_l/poss} good intentions. The leader thanks {PRONOUN/p_l/object} and orders a patrol to escort {PRONOUN/p_l/object} back to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
-                "can_have_stat": ["adult"],
+                "stat_skill": [
+                    "SPEAKER,1",
+                    "MEDIATOR,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ],
@@ -3466,10 +4543,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -3494,19 +4577,33 @@
     },
     {
         "patrol_id": "fst_bord_risingclanref_neutral_lorelocked1",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_otherclan_allies",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice":[1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 40,
-        "pl_skill_constraint": ["LORE,1"],
+        "pl_skill_constraint": [
+            "LORE,1"
+        ],
         "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale - <i>if</i> they can all sit still for it!",
         "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
         "chance_of_success": 50,
@@ -3518,24 +4615,45 @@
                 "other_clan_rep": 2,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "platonic"],
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
                         "amount": 10
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust", "platonic"],
+                        "values": [
+                            "comfort",
+                            "trust",
+                            "platonic"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]

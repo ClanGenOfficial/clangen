@@ -1,12 +1,14 @@
-[{
-    "id": "general_loner_dead_thoughts",
-    "thoughts": [
-        "Wanders around {PRONOUN/m_c/poss} old territory",
-        "Catches sight of Clan cats near {PRONOUN/m_c/poss} old territory",
-        "Explores places {PRONOUN/m_c/subject} {VERB/m_c/were/was} afraid to go in life",
-        "Hunts for prey, despite not feeling hungry"
-    ],
-    "main_status_constraint": [
-        "loner"
-    ]
-}]
+[
+    {
+        "id": "general_loner_dead_thoughts",
+        "thoughts": [
+            "Wanders around {PRONOUN/m_c/poss} old territory",
+            "Catches sight of Clan cats near {PRONOUN/m_c/poss} old territory",
+            "Explores places {PRONOUN/m_c/subject} {VERB/m_c/were/was} afraid to go in life",
+            "Hunts for prey, despite not feeling hungry"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ]
+    }
+]

@@ -1,15 +1,24 @@
 [
     {
         "patrol_id": "dst_train_newleaf_beetlesoloapp1",
-        "biome": ["desert"],
-        "season": ["newleaf"],
-        "types": ["training"],
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
@@ -30,7 +39,9 @@
                 "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["HUNTER,0"]
+                "stat_skill": [
+                    "HUNTER,0"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -45,8 +56,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["stomachache"],
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "stomachache"
+                        ],
                         "scars": []
                     }
                 ]

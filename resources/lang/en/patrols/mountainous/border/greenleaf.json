@@ -1,9 +1,15 @@
 [
     {
         "patrol_id": "mtn_bord_trackrogue1",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 1,
@@ -28,13 +34,17 @@
                 "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": [
+                    "FIGHTER,1"
+                ]
             },
             {
                 "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
@@ -67,13 +77,17 @@
                 "text": "The scent leads to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
                     "reg_death": "m_c was killed by an invading rogue.",
@@ -86,9 +100,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -101,21 +121,32 @@
                 "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": [
+                    "FIGHTER,1"
+                ]
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_trackrogue2",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border.",
@@ -149,7 +180,9 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": [
+                    "app"
+                ]
             },
             {
                 "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
@@ -167,7 +200,9 @@
                 "text": "Following the trail with {PRONOUN/r_c/poss} nose to the ground, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
                     "reg_death": "m_c was killed by an invading rogue.",
@@ -180,9 +215,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -195,15 +236,24 @@
     },
     {
         "patrol_id": "mtn_bord_trackrogue3",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something has left scent marks on the wrong side of the border.",
@@ -224,13 +274,23 @@
                 "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -239,7 +299,9 @@
                 "text": "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": [
+                    "FIGHTER,1"
+                ]
             },
             {
                 "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
@@ -272,19 +334,31 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -295,26 +369,43 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["BRIDGE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "BRIDGE"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." }
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue."
+                }
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_trackrogue4",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border.",
@@ -327,10 +418,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -341,10 +440,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -357,10 +464,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -387,13 +502,23 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": [
+                    "app"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -404,18 +529,34 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["SNOUT"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SNOUT"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue."
+                },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -424,9 +565,15 @@
     },
     {
         "patrol_id": "mtn_bord_trackrogue5",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 3,
@@ -451,19 +598,31 @@
                 "text": "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": [
+                    "FIGHTER,1"
+                ]
             },
             {
                 "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"],
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -499,13 +658,23 @@
                 "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue before p_l gives the signal, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory. s_c scrambles to {PRONOUN/s_c/poss} paws, the judgmental stares of the patrol clinging to {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"],
+                "stat_skill": [
+                    "FIGHTER,1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -514,21 +683,32 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             }
         ]
     },
     {
         "patrol_id": "mtn_bord_trackrogue6",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something has left scent marks on the wrong side of the border.",
@@ -541,10 +721,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -555,10 +743,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -571,10 +767,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -601,13 +805,23 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": [
+                    "app"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
+                        "values": [
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -616,9 +830,15 @@
     },
     {
         "patrol_id": "mtn_bord_shortswim1",
-        "biome": ["mountainous"],
-        "season": ["greenleaf"],
-        "types": ["border"],
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_shortswim",
         "min_cats": 1,

@@ -195,8 +195,8 @@
         "id": "meanie_medicine_cat_apprentice_to_nice_med",
         "thoughts": [
             "Thinks r_c is far too soft with {PRONOUN/r_c/poss} patients",
-	    "Wishes r_c wasn't so soft",
-	    "Has to promise r_c {PRONOUN/m_c/subject} won't gather deathberries again"
+            "Wishes r_c wasn't so soft",
+            "Has to promise r_c {PRONOUN/m_c/subject} won't gather deathberries again"
         ],
         "random_trait_constraint": [
             "thoughtful",

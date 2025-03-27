@@ -24,7 +24,6 @@
         "medicine_duration": 1,
         "infectiousness": 0,
         "risks": [
-
         ],
         "herbs": {
             "1": [
@@ -139,17 +138,17 @@
             }
         ],
         "herbs": {
-        "1": [
-            "catmint",
-            "tansy",
-            "mullein",
-            "plantain",
-            "juniper",
-            "poppy",
-            "moss"
-        ],
-        "2": [],
-        "3": []
+            "1": [
+                "catmint",
+                "tansy",
+                "mullein",
+                "plantain",
+                "juniper",
+                "poppy",
+                "moss"
+            ],
+            "2": [],
+            "3": []
         }
     },
     "kittencough": {
@@ -454,7 +453,8 @@
         "infectiousness": 0,
         "risks": [],
         "herbs": {
-            "1": ["marigold",
+            "1": [
+                "marigold",
                 "burdock",
                 "oak_leaves",
                 "ragwort",
@@ -533,7 +533,8 @@
             "1": [
                 "juniper",
                 "ragwort",
-                "moss"],
+                "moss"
+            ],
             "2": [],
             "3": []
         }
@@ -608,7 +609,6 @@
                 "juniper",
                 "thyme",
                 "poppy"
-
             ],
             "2": [],
             "3": []
@@ -683,7 +683,7 @@
         "risks": [],
         "herbs": {
             "1": [
-            "thyme"
+                "thyme"
             ],
             "2": [],
             "3": []

@@ -1,16 +1,30 @@
 [
     {
         "patrol_id": "bch_train_romantic_oceanswim1",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
@@ -23,10 +37,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic"],
+                        "values": [
+                            "romantic"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -37,10 +57,16 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic"],
+                        "values": [
+                            "romantic"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -53,10 +79,16 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic"],
+                        "values": [
+                            "romantic"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -65,13 +97,24 @@
                 "text": "s_c tries {PRONOUN/s_c/poss} best to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. Eventually, s_c gives up for now, discouraged.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["ambitious", "childish", "insecure", "lonesome"],
+                "stat_trait": [
+                    "ambitious",
+                    "childish",
+                    "insecure",
+                    "lonesome"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic"],
+                        "values": [
+                            "romantic"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -80,16 +123,28 @@
     },
     {
         "patrol_id": "bch_train_eagle_greenleafdappledfeather1",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point - look, the chicks are trying to fly!",
@@ -102,17 +157,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -123,17 +191,30 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -157,12 +238,20 @@
                     "arrogant",
                     "competitive"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": [
+                    "app"
+                ],
                 "injury": [
                     {
-                        "cats": ["s_c"],
-                        "injuries": ["cat bite"],
-                        "scars": ["TAILBASE"]
+                        "cats": [
+                            "s_c"
+                        ],
+                        "injuries": [
+                            "cat bite"
+                        ],
+                        "scars": [
+                            "TAILBASE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -173,16 +262,30 @@
     },
     {
         "patrol_id": "bch_train_eagle_greenleafdappledfeather_cruelseason1",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
-        "types": ["training"],
-        "tags": ["cruel_season"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "cruel_season"
+        ],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point - look, the chicks are trying to fly!",
@@ -195,17 +298,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -216,17 +332,30 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -250,12 +379,20 @@
                     "arrogant",
                     "competitive"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": [
+                    "app"
+                ],
                 "injury": [
                     {
-                        "cats": ["s_c"],
-                        "injuries": ["cat bite"],
-                        "scars": ["TAILBASE"]
+                        "cats": [
+                            "s_c"
+                        ],
+                        "injuries": [
+                            "cat bite"
+                        ],
+                        "scars": [
+                            "TAILBASE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -275,8 +412,12 @@
                     "arrogant",
                     "competitive"
                 ],
-                "can_have_stat": ["app"],
-                "dead_cats": ["s_c"],
+                "can_have_stat": [
+                    "app"
+                ],
+                "dead_cats": [
+                    "s_c"
+                ],
                 "history_text": {
                     "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure.",
                     "death": "r_c fell from a cliff as an apprentice when {PRONOUN/r_c/subject} took a stupid risk, cutting {PRONOUN/r_c/poss} life short."
@@ -286,9 +427,15 @@
     },
     {
         "patrol_id": "bch_train_greenleaf_berrybush1",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 3,
@@ -305,10 +452,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -317,13 +471,22 @@
                 "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["raspberry"],
+                "herbs": [
+                    "raspberry"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -332,14 +495,25 @@
                 "text": "Astutely, s_c recognizes the raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,2"],
-                "herbs": ["raspberry"],
+                "stat_skill": [
+                    "CLEVER,2"
+                ],
+                "herbs": [
+                    "raspberry"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -352,10 +526,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -366,8 +547,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["poisoned"],
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
                         "scars": []
                     }
                 ],
@@ -377,10 +562,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -389,15 +581,24 @@
     },
     {
         "patrol_id": "bch_train_greenleaf_berrybush2",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "Whilst helping to gather herbs, app1 stumbles upon a bush of red berries.",
@@ -413,7 +614,9 @@
                 "text": "Whatever. Identifying them is medicine cat nonsense and not app1's problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
                 "exp": 20,
                 "weight": 5,
-                "herbs": ["raspberry"]
+                "herbs": [
+                    "raspberry"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -426,7 +629,9 @@
                 "text": "Whatever. Identifying them is medicine cat nonsense and not app1's problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/app1/object}, having not identified deathberries before eating them.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["app1"],
+                "dead_cats": [
+                    "app1"
+                ],
                 "history_text": {
                     "reg_death": "m_c mistook deathberries for something edible.",
                     "lead_death": "after eating deathberries"
@@ -438,8 +643,12 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["poisoned"],
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
                         "scars": []
                     }
                 ],
@@ -452,149 +661,229 @@
     },
     {
         "patrol_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
         "tags": [],
         "types": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 6]
-            },
+            "normal adult": [
+                1,
+                6
+            ]
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["LORE,1"],
+        "pl_skill_constraint": [
+            "LORE,1"
+        ],
         "intro_text": "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight.",
         "decline_text": "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp.",
         "success_outcomes": [
-                {
-                    "text": "This is the history p_l is here to teach - every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "bch_hunt_twolegsobject",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": true,
-                            "values": ["platonic", "trust"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect"],
-                            "amount": 10
-                        }
-                        ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves, but lets the patrol end early.",
-                    "exp": 0,
-                    "weight": 20,
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": true,
-                            "values": ["comfort", "trust"],
-                            "amount": -2
-                        },
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["p_l"],
-                            "mutual": false,
-                            "values": ["respect", "trust"],
-                            "amount": -5
-                        }
-                        ]
-                }
-            ]
+            {
+                "text": "This is the history p_l is here to teach - every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
+                "exp": 30,
+                "weight": 20,
+                "art": "bch_hunt_twolegsobject",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "platonic",
+                            "trust"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves, but lets the patrol end early.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -2
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "bch_train_greenleaf_dryhot1",
-        "biome": ["beach"],
-        "season": ["greenleaf"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "fst_hunt_heat",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [2, 6]
-            },
+            "normal adult": [
+                2,
+                6
+            ]
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "relationship_constraint": ["not_mates"],
+        "relationship_constraint": [
+            "not_mates"
+        ],
         "intro_text": "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
         "decline_text": "Time to go back home and wait it out.",
         "success_outcomes": [
-                {
-                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
-                    "exp": 20,
-                    "weight": 10,
-                    "art": "gen_train_soggykitty_happy_warrior",
-                    "relationships": [
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["platonic", "comfort"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                },
-                {
-                    "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor, batting back in mock splashy fight as the rest of the patrol fades away, just the two of them in their own little world",
-                    "exp": 20,
-                    "weight": 10,
-                    "art": "fst_train_newleafmatesonadates_70locked1",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["platonic", "comfort", "romantic"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "It's a long walk home, and not a pleasant one. They probably should have drunk more water before going out to train. Or not gone out at all.",
-                    "exp": 0,
-                    "weight": 20,
-                    "injury": [
-                        {
-                            "cats": ["multi"],
-                            "injuries": ["dehydrated"],
-                            "scars": []
-                        }
-                    ],
-                    "history_text": {
-                        "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}.",
-                        "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}"
+            {
+                "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
+                "exp": 20,
+                "weight": 10,
+                "art": "gen_train_soggykitty_happy_warrior",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
                     }
+                ]
+            },
+            {
+                "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor, batting back in mock splashy fight as the rest of the patrol fades away, just the two of them in their own little world",
+                "exp": 20,
+                "weight": 10,
+                "art": "fst_train_newleafmatesonadates_70locked1",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "romantic"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It's a long walk home, and not a pleasant one. They probably should have drunk more water before going out to train. Or not gone out at all.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": [
+                            "multi"
+                        ],
+                        "injuries": [
+                            "dehydrated"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}.",
+                    "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}"
                 }
-            ]
+            }
+        ]
     }
 ]

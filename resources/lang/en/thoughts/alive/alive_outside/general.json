@@ -51,11 +51,11 @@
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
+            "warrior",
+            "mediator",
+            "medicine cat",
+            "deputy",
+            "leader",
             "elder"
         ]
     },
@@ -69,11 +69,11 @@
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
+            "warrior",
+            "mediator",
+            "medicine cat",
+            "deputy",
+            "leader",
             "elder"
         ],
         "random_status_constraint": [
@@ -99,11 +99,11 @@
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
+            "warrior",
+            "mediator",
+            "medicine cat",
+            "deputy",
+            "leader",
             "elder"
         ]
     },
@@ -119,11 +119,11 @@
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
+            "warrior",
+            "mediator",
+            "medicine cat",
+            "deputy",
+            "leader",
             "elder"
         ]
     },
@@ -136,11 +136,11 @@
             "parent/child"
         ],
         "main_status_constraint": [
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
+            "warrior",
+            "mediator",
+            "medicine cat",
+            "deputy",
+            "leader",
             "elder"
         ]
     }

@@ -5,7 +5,7 @@
         "severe": 1
     },
     "apprentice": {
-        "minor":5,
+        "minor": 5,
         "major": 2,
         "severe": 1
     },
@@ -20,7 +20,7 @@
         "severe": 2
     },
     "elder": {
-        "minor":6,
+        "minor": 6,
         "major": 3,
         "severe": 1
     },

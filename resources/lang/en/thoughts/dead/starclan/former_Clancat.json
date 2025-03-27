@@ -1,12 +1,14 @@
-[{
-    "id": "general_formerclancat_dead_thoughts",
-    "thoughts": [
-        "Feels happy to be among StarClan",
-        "Wonders if any of {PRONOUN/m_c/poss} old Clan is here",
-        "Hunts in the starry meadows",
-        "Admires {PRONOUN/m_c/poss} starry fur"
-    ],
-    "main_status_constraint": [
-        "former Clancat"
-    ]
-}]
+[
+    {
+        "id": "general_formerclancat_dead_thoughts",
+        "thoughts": [
+            "Feels happy to be among StarClan",
+            "Wonders if any of {PRONOUN/m_c/poss} old Clan is here",
+            "Hunts in the starry meadows",
+            "Admires {PRONOUN/m_c/poss} starry fur"
+        ],
+        "main_status_constraint": [
+            "former Clancat"
+        ]
+    }
+]

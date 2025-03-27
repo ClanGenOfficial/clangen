@@ -52,9 +52,9 @@
             "Wishes to be alone",
             "Misses the feeling of a warm nest",
             "Feels a sharp pang of hunger"
-    ],
-    "main_status_constraint": [
-        "former Clancat"
-    ]
+        ],
+        "main_status_constraint": [
+            "former Clancat"
+        ]
     }
 ]

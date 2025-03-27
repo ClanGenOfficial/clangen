@@ -119,59 +119,59 @@
             false
         ]
     },
-    "freshkill_tactics":{
-        "by-status":[
+    "freshkill_tactics": {
+        "by-status": [
             "by-status",
             "The Clan will be fed according their status and within the status by age.",
             true
         ],
-        "younger first":[
+        "younger first": [
             "younger first",
             "The Clan will be fed according to their age only.",
             false
         ],
-        "less nutrition first":[
+        "less nutrition first": [
             "less nutrition first",
             "First the cats with the lowest nutrition will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
-        "hunter first":[
+        "hunter first": [
             "hunter first",
             "Firstly the cats with a hunter skill will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
-        "sick/injured first":[
+        "sick/injured first": [
             "sick/injured first",
             "Firstly the sick and injured cats will be fed, afterwards the Clan will be fed according to their status.",
             false
         ],
-        "more experience first":[
+        "more experience first": [
             "high EXP first",
             "The Clan will be fed according their experience, highest one first.",
             false
         ],
-        "ration prey":[
+        "ration prey": [
             "ration prey",
             "Healthy warriors will only eat half of the food they need, even if there is enough for the Clan.",
             false
         ]
     },
-    "clan_focus":{
-        "business as usual":[
+    "clan_focus": {
+        "business as usual": [
             "Business As Usual",
             "The Clan has no specific focus and won't get any bonuses.",
             true,
             "usual_focus",
             "#usual_focus_button"
         ],
-        "hunting":[
+        "hunting": [
             "Feeding the Clan",
             "The Clan will focus on hunting, each working warrior (including deputy and leader) and each working apprentice will gather additional prey on each moonskip.",
             false,
             "hunting_focus",
             "#hunting_focus_button"
         ],
-        "herb gathering":[
+        "herb gathering": [
             "Assisting with Herb Gathering",
             "The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on each moonskip due to extra help from the warriors.",
             false,
@@ -192,7 +192,7 @@
             "entreat_focus",
             "#entreat_focus_button"
         ],
-        "rest and recover":[
+        "rest and recover": [
             "Resting and Recovering",
             "The Clan will take more care and time in their tasks and therefore the rate of injuries, illnesses and outbreaks will be reduced.",
             false,
@@ -220,7 +220,7 @@
             "raid_focus",
             "#raid_focus_button"
         ],
-        "hoarding":[
+        "hoarding": [
             "Hoarding Resources",
             "Your warriors begin stockpiling as many resources as they can get their paws on, regardless of their own safety. Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.",
             false,

@@ -23,7 +23,7 @@
             "Misses {PRONOUN/m_c/poss} family",
             "Wishes {PRONOUN/m_c/subject} could have helped {PRONOUN/m_c/poss} Clan more"
         ],
-        "backstory_constraint":{
+        "backstory_constraint": {
             "m_c": [
                 "tragedy_survivor1"
             ]

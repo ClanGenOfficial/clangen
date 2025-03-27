@@ -1,16 +1,28 @@
 [
     {
         "patrol_id": "bch_train_session1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_session1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
@@ -31,8 +43,16 @@
                 "text": "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools without an ounce of hesitation in {PRONOUN/s_c/poss} movements.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["adventurous", "bold", "confident", "daring", "ambitious"],
-                "can_have_stat": ["app"]
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "ambitious"
+                ],
+                "can_have_stat": [
+                    "app"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -45,8 +65,13 @@
                 "text": "s_c struggles to take the lesson seriously, and eventually the training session ends early with no real progress made.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "playful"],
-                "can_have_stat": ["app"]
+                "stat_trait": [
+                    "troublesome",
+                    "playful"
+                ],
+                "can_have_stat": [
+                    "app"
+                ]
             },
             {
                 "text": "app1 pokes around in the pools for potential food. Ouch! Oops, that was a sea urchin. app1 limps the whole way home.",
@@ -54,9 +79,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["QUILLCHUNK"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "minor_injury"
+                        ],
+                        "scars": [
+                            "QUILLCHUNK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -67,9 +98,15 @@
     },
     {
         "patrol_id": "bch_train_stuck1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_stuck",
         "min_cats": 3,
@@ -86,10 +123,24 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -100,10 +151,24 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -112,13 +177,29 @@
                 "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out stable footing for the patrol to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,2"],
+                "stat_skill": [
+                    "CLEVER,2"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -137,10 +218,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -171,7 +266,9 @@
                 "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -184,9 +281,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -206,7 +309,9 @@
                     "fierce",
                     "vengeful"
                 ],
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -226,9 +331,15 @@
                 ],
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": ["CHEEK"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -241,9 +352,15 @@
     },
     {
         "patrol_id": "bch_train_stuck2",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_stuck",
         "min_cats": 2,
@@ -260,10 +377,24 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -274,10 +405,24 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -286,13 +431,29 @@
                 "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,2"],
+                "stat_skill": [
+                    "CLEVER,2"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -311,10 +472,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -327,10 +502,24 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -351,10 +540,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -363,7 +566,9 @@
                 "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -371,10 +576,24 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -385,9 +604,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": ["LEFTEAR"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "LEFTEAR"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -397,10 +622,24 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l", "p_l", "s_c"],
-                        "cats_from": ["patrol", "patrol", "r_c", "r_c"],
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["platonic", "comfort", "trust"],
+                        "values": [
+                            "platonic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -409,10 +648,18 @@
     },
     {
         "patrol_id": "bch_train_stuck3",
-        "biome": ["plains"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "bch_train_stuck",
         "min_cats": 2,
         "max_cats": 2,
@@ -428,10 +675,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -442,10 +697,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -454,14 +717,26 @@
                 "text": "Without letting {PRONOUN/r_c/object} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,2"],
-                "can_have_stat": ["p_l"],
+                "stat_skill": [
+                    "CLEVER,2"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -478,13 +753,23 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": ["p_l"],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["s_c"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -497,10 +782,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -519,13 +812,23 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "can_have_stat": ["p_l"],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -534,7 +837,9 @@
                 "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -542,10 +847,18 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -556,9 +869,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": ["LEFTEAR"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "LEFTEAR"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -568,10 +887,18 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "comfort", "trust"],
+                        "values": [
+                            "romantic",
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -580,9 +907,15 @@
     },
     {
         "patrol_id": "bch_train_stuck4",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_stuck",
         "min_cats": 1,
@@ -602,7 +935,9 @@
                 "text": "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -615,7 +950,9 @@
                 "text": "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} {VERB/r_c/succumb/succumbs} to {PRONOUN/r_c/poss} injuries and {VERB/r_c/drift/drifts} to StarClan alone.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": [
+                    "r_c"
+                ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
                     "reg_death": "m_c tragically died after being trapped on patrol.",
@@ -628,9 +965,15 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": ["ONE"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "ONE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -643,15 +986,24 @@
     },
     {
         "patrol_id": "bch_train_soloapp1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
@@ -682,7 +1034,9 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": [
+                    "app"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -695,8 +1049,14 @@
                 "text": "s_c shivers a little, imagining what could be out there... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["insecure", "lonesome", "nervous"],
-                "can_have_stat": ["app"]
+                "stat_trait": [
+                    "insecure",
+                    "lonesome",
+                    "nervous"
+                ],
+                "can_have_stat": [
+                    "app"
+                ]
             },
             {
                 "text": "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
@@ -704,26 +1064,43 @@
                 "weight": 10,
                 "injury": [
                     {
-                        "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["RIGHTEAR"]
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "minor_injury"
+                        ],
+                        "scars": [
+                            "RIGHTEAR"
+                        ]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured as an apprentice while exploring alone." }
+                "history_text": {
+                    "scar": "m_c got injured as an apprentice while exploring alone."
+                }
             }
         ]
     },
     {
         "patrol_id": "bch_train_solo2",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_train_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
@@ -744,7 +1121,9 @@
                 "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows that it emerges from an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
@@ -772,21 +1151,34 @@
                 "text": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/slink/slinks} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["insecure", "lonesome", "nervous"]
+                "stat_trait": [
+                    "insecure",
+                    "lonesome",
+                    "nervous"
+                ]
             }
         ]
     },
     {
         "patrol_id": "bch_train_solo3",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_train_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "deputy": [1, 6]
+            "deputy": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
@@ -807,7 +1199,9 @@
                 "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
@@ -835,21 +1229,34 @@
                 "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do and so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["insecure", "lonesome", "nervous"]
+                "stat_trait": [
+                    "insecure",
+                    "lonesome",
+                    "nervous"
+                ]
             }
         ]
     },
     {
         "patrol_id": "bch_train_solo4",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_train_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [1, 6]
+            "leader": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
@@ -870,7 +1277,9 @@
                 "text": "s_c rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": [
+                    "CLEVER,1"
+                ]
             },
             {
                 "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, {PRONOUN/s_c/poss} ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
@@ -898,22 +1307,38 @@
                 "text": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/has} so much work to do and so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and {VERB/s_c/march/marches} straight back to camp.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["insecure", "lonesome", "nervous"]
+                "stat_trait": [
+                    "insecure",
+                    "lonesome",
+                    "nervous"
+                ]
             }
         ]
     },
     {
         "patrol_id": "bch_train_octopus1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_octopus",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
@@ -926,17 +1351,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -947,17 +1385,30 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -966,21 +1417,38 @@
                 "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, {PRONOUN/app1/subject} can see how it could be a sea cat.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
-                "can_have_stat": ["adult"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -993,17 +1461,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1012,16 +1493,28 @@
     },
     {
         "patrol_id": "bch_train_octopus2",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_octopus",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
@@ -1034,17 +1527,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1055,17 +1561,30 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1074,21 +1593,38 @@
                 "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["TEACHER,1"],
-                "can_have_stat": ["adult"],
+                "stat_skill": [
+                    "TEACHER,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1101,17 +1637,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1120,17 +1669,32 @@
     },
     {
         "patrol_id": "bch_train_octopus3",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_octopus",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
@@ -1143,17 +1707,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1164,17 +1741,30 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1183,21 +1773,38 @@
                 "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
-                "can_have_stat": ["adult"],
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1210,17 +1817,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1229,17 +1849,32 @@
     },
     {
         "patrol_id": "bch_train_octopus4",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_octopus",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
@@ -1252,17 +1887,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1273,17 +1921,30 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1292,21 +1953,38 @@
                 "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app2 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["TEACHER,1"],
-                "can_have_stat": ["adult"],
+                "stat_skill": [
+                    "TEACHER,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1319,17 +1997,30 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["dislike"],
+                        "values": [
+                            "dislike"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1338,16 +2029,31 @@
     },
     {
         "patrol_id": "bch_train_stormwaves1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["rom_two_apps", "romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "rom_two_apps",
+            "romantic"
+        ],
         "patrol_art": "bch_train_stormwaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
@@ -1360,10 +2066,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1374,10 +2088,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1396,13 +2118,23 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app1"],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1415,10 +2147,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1427,16 +2167,31 @@
     },
     {
         "patrol_id": "bch_train_stormwaves2",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["rom_two_apps", "romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "rom_two_apps",
+            "romantic"
+        ],
         "patrol_art": "bch_train_stormwaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
@@ -1449,10 +2204,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1463,10 +2226,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1485,13 +2256,23 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["app1"],
+                "can_have_stat": [
+                    "app1"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1504,10 +2285,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1516,16 +2305,31 @@
     },
     {
         "patrol_id": "bch_train_shellhunt1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["rom_two_apps", "romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "rom_two_apps",
+            "romantic"
+        ],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ]
         },
         "weight": 20,
         "intro_text": "app1 and app2 wander on a sandy beach near camp.",
@@ -1538,10 +2342,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1552,10 +2364,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1572,13 +2392,23 @@
                     "loyal",
                     "charismatic"
                 ],
-                "can_have_stat": ["app"],
+                "can_have_stat": [
+                    "app"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1591,10 +2421,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1603,16 +2441,30 @@
     },
     {
         "patrol_id": "bch_train_sunset1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "gen_train_sunset",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
@@ -1625,10 +2477,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1639,10 +2499,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1651,14 +2519,26 @@
                 "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,3"],
-                "can_have_stat": ["r_c"],
+                "stat_skill": [
+                    "HUNTER,3"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1677,13 +2557,23 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["r_c"],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1696,10 +2586,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1708,16 +2606,30 @@
     },
     {
         "patrol_id": "bch_train_sunset2",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "gen_train_sunset",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
@@ -1730,10 +2642,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1744,10 +2664,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1756,14 +2684,26 @@
                 "text": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/s_c/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes} but {VERB/s_c/work/works} through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,3"],
-                "can_have_stat": ["r_c"],
+                "stat_skill": [
+                    "HUNTER,3"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1782,13 +2722,23 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["r_c"],
+                "can_have_stat": [
+                    "r_c"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1801,10 +2751,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": -5
                     }
                 ]
@@ -1813,16 +2771,30 @@
     },
     {
         "patrol_id": "bch_train_biolumin1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1],
-            "normal adult": [1, 6]
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notice sparkles of light where the waves break upon the shore.",
@@ -1835,10 +2807,18 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1849,10 +2829,18 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1872,13 +2860,24 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": ["r_c", "p_l"],
+                "can_have_stat": [
+                    "r_c",
+                    "p_l"
+                ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": [
+                            "romantic",
+                            "platonic",
+                            "comfort"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1894,21 +2893,34 @@
     },
     {
         "patrol_id": "bch_train_arguingromance1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["romantic"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romantic"
+        ],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [-1, -1]
+            "all apprentices": [
+                -1,
+                -1
+            ]
         },
         "weight": 20,
         "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} {VERB/p_l/round/rounds} a corner and {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_10"],
+        "relationship_constraint": [
+            "dislike_10"
+        ],
         "success_outcomes": [
             {
                 "text": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in deep dry sand, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-backflip with a smug smirk.",
@@ -1916,10 +2928,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "dislike"],
+                        "values": [
+                            "romantic",
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1930,10 +2949,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "dislike"],
+                        "values": [
+                            "romantic",
+                            "dislike"
+                        ],
                         "amount": 10
                     }
                 ]
@@ -1946,10 +2972,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["romantic", "dislike"],
+                        "values": [
+                            "romantic",
+                            "dislike"
+                        ],
                         "amount": -10
                     }
                 ]
@@ -1958,17 +2991,32 @@
     },
     {
         "patrol_id": "bch_training_dolphinlore1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2],
-            "normal adult": [1, 6]
+            "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "weight": 20,
         "intro_text": "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices.",
@@ -1981,10 +3029,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -1995,10 +3050,17 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": [
+                            "platonic",
+                            "respect"
+                        ],
                         "amount": 5
                     }
                 ]
@@ -2014,10 +3076,18 @@
     },
     {
         "patrol_id": "bch_train_nessie1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["halloween"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "nessie_INTRO",
         "min_cats": 2,
         "max_cats": 6,
@@ -2031,7 +3101,9 @@
                 "text": "It's Nessie! The patrol trots up, exchanging a nice mouse for a nice deep-water fish, trading the respective delicacies that are hard for the other to obtain.",
                 "exp": 0,
                 "weight": 20,
-                "prey": ["small"]
+                "prey": [
+                    "small"
+                ]
             }
         ],
         "fail_outcomes": [
@@ -2044,10 +3116,18 @@
     },
     {
         "patrol_id": "bch_train_frogman1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": ["halloween"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "halloween"
+        ],
         "patrol_art": "loveland_frog_INTRO",
         "min_cats": 2,
         "max_cats": 6,
@@ -2072,8 +3152,13 @@
                 "weight": 20,
                 "injury": [
                     {
-                        "cats": ["r_c"],
-                        "injuries": ["shock", "non_lethal"]
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "shock",
+                            "non_lethal"
+                        ]
                     }
                 ]
             }
@@ -2081,317 +3166,501 @@
     },
     {
         "patrol_id": "bch_train_ottercreationmyth_storylocked1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 6]
-            },
+            "normal adult": [
+                1,
+                6
+            ]
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["STORY,1"],
+        "pl_skill_constraint": [
+            "STORY,1"
+        ],
         "intro_text": "As the patrol takes a break to bask, p_l begins a story. Once upon a time, many seasons ago, there was a strong, sleek-furred warrior, for whom swimming was easier than walking...",
         "decline_text": "A story is nice, but the patrol has to get back to their training, the rest will wait for another time.",
         "success_outcomes": [
             {
-                    "text": "They slipped into the ocean to feed their Clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all. Their fur grew fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
-                    "exp": 40,
-                    "weight": 20,
-                    "art": "gen_hunt_fish",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": true,
-                            "values": ["platonic", "comfort"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect"],
-                            "amount": 5
-                        }
-                        ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "As r_c settles down eagerly for the tale, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} a spike of pain in {PRONOUN/r_c/poss} paw pad and {VERB/r_c/yelp/yelps}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine cat den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
-                    "exp": 0,
-                    "weight": 20,
-                    "injury": [
-                        {
-                            "cats": ["r_c"],
-                            "injuries": ["small cut"]
-                        }
-                    ],
-                    "history_text": {
-                        "scar": "m_c got a small cut while out training, which has left a scar.",
-                        "reg_death": "m_c died from complications from a small cut.",
-                        "lead_death": "from complications from a small cut"
+                "text": "They slipped into the ocean to feed their Clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all. Their fur grew fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
+                "exp": 40,
+                "weight": 20,
+                "art": "gen_hunt_fish",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
+                        "amount": 10
                     },
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["platonic", "comfort"],
-                            "amount": 5
-                        }
-                    ]
-                }
-            ]
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "As r_c settles down eagerly for the tale, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} a spike of pain in {PRONOUN/r_c/poss} paw pad and {VERB/r_c/yelp/yelps}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/have/has} to report to the medicine cat den, but p_l reassures {PRONOUN/r_c/object} that {PRONOUN/p_l/subject}'ll wait to tell this tale until r_c can hear it.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "small cut"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c got a small cut while out training, which has left a scar.",
+                    "reg_death": "m_c died from complications from a small cut.",
+                    "lead_death": "from complications from a small cut"
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "bch_train_foxdawn_lorelocked1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice":[2, 6],
-            "normal adult": [1, 6]
-            },
+            "apprentice": [
+                2,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["LORE,1"],
+        "pl_skill_constraint": [
+            "LORE,1"
+        ],
         "intro_text": "p_l notices app1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior - have they heard this piece of Clan history?",
         "decline_text": "app1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
         "success_outcomes": [
-                {
-                    "text": "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion - a true warrior, never forgotten.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_hunt_vision",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["comfort", "trust", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as Fox Warrior-like as anyone could wish.",
-                    "exp": 0,
-                    "weight": 20,
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["app1"],
-                            "mutual": true,
-                            "values": ["respect"],
-                            "amount": 5
-                        }
-                    ]
-                }
-            ]
+            {
+                "text": "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion - a true warrior, never forgotten.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_hunt_vision",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as Fox Warrior-like as anyone could wish.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "bch_train_mauifishing_storylocked1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "bch_train_session1",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice":[2, 6],
-            "normal adult": [1, 6]
-            },
+            "apprentice": [
+                2,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["STORY,1"],
+        "pl_skill_constraint": [
+            "STORY,1"
+        ],
         "intro_text": "After a fishing lesson, the apprentices look soggy and sorry for themselves. p_l waves {PRONOUN/p_l/poss} tail to suggest they stop for a moment and take a break. After all, even Maowi had to work hard to fish!",
         "decline_text": "Taking a break turns into ending the patrol early.",
         "success_outcomes": [
-                {
-                    "text": "The great legend Maowi was once a young apprentice, p_l starts the story, who went out fishing with his older, already grown siblings. They had no faith in him, but speaking a great karakia to give StarClan's blessing to his claws, he won a stingray from the ocean that stretched from horizon to horizon and became c_n's territory.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_bord_story",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["comfort", "trust", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a Stars-blessed cat when they're finding it so hard to learn themselves.",
-                    "exp": 0,
-                    "weight": 20,
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["app1", "app2"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": -5
-                        }
-                    ]
-                }
-            ]
+            {
+                "text": "The great legend Maowi was once a young apprentice, p_l starts the story, who went out fishing with his older, already grown siblings. They had no faith in him, but speaking a great karakia to give StarClan's blessing to his claws, he won a stingray from the ocean that stretched from horizon to horizon and became c_n's territory.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_bord_story",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a Stars-blessed cat when they're finding it so hard to learn themselves.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1",
+                            "app2"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "bch_train_mauislowingthesun_storylocked1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 6]
-            },
+            "normal adult": [
+                1,
+                6
+            ]
+        },
         "weight": 40,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["STORY,1"],
+        "pl_skill_constraint": [
+            "STORY,1"
+        ],
         "intro_text": "The sun splashes orange, yellow, and gold across the sea where it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as p_l begins the myth of How Maowi Slowed The Sun.",
         "decline_text": "A story is nice, but the patrol has to get back to camp, the rest will wait for another time.",
         "success_outcomes": [
             {
-                    "text": "Once, the sun raced across the sky, each day only lasting a single catnap. The great Maowi, alongside his siblings, said a karakia to StarClan to ask for their help in fighting the sun. They pinned the great flaming sun in a burrow, clawing at it until it gave in and promised to slow, and this is why the sun gives up its race in leaf-bare and slows the day, bringing greenleaf.",
-                    "exp": 40,
-                    "weight": 20,
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": true,
-                            "values": ["platonic", "comfort"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["comfort", "trust", "platonic"],
-                            "amount": 5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect"],
-                            "amount": 5
-                        }
-                        ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "p_l gets distracted by the glory of the sunset and loses the words {PRONOUN/p_l/subject} {VERB/p_l/were/was} forming. Ah well.",
-                    "exp": 0,
-                    "weight": 20
-                }
-            ]
+                "text": "Once, the sun raced across the sky, each day only lasting a single catnap. The great Maowi, alongside his siblings, said a karakia to StarClan to ask for their help in fighting the sun. They pinned the great flaming sun in a burrow, clawing at it until it gave in and promised to slow, and this is why the sun gives up its race in leaf-bare and slows the day, bringing greenleaf.",
+                "exp": 40,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "platonic",
+                            "comfort"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l gets distracted by the glory of the sunset and loses the words {PRONOUN/p_l/subject} {VERB/p_l/were/was} forming. Ah well.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     },
     {
         "patrol_id": "bch_train_themoonandthetides_storylorelocked1",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["training"],
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
         "tags": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 6]
-            },
+            "normal adult": [
+                1,
+                6
+            ]
+        },
         "weight": 30,
         "chance_of_success": 60,
-        "pl_skill_constraint": ["LORE,1", "STORY,1"],
+        "pl_skill_constraint": [
+            "LORE,1",
+            "STORY,1"
+        ],
         "intro_text": "The heartbeat of the tides, in and out like breathing, might at first seem connected to the spirit of the land, p_l says. But that's wrong.",
         "decline_text": "No one seems interested in p_l's story.",
         "success_outcomes": [
-                {
-                    "text": "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
-                    "exp": 30,
-                    "weight": 20,
-                    "art": "gen_hunt_vision",
-                    "relationships": [
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["respect", "platonic"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["comfort", "trust", "platonic"],
-                            "amount": 5
-                        }
-                    ]
-                }
-            ],
-            "fail_outcomes": [
-                {
-                    "text": "Learning about the tides is boring - shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
-                    "exp": 0,
-                    "weight": 20,
-                    "art": "gen_train_soggykitty_mad_warrior",
-                    "relationships": [
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["p_l"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": 5
-                        }
-                    ]
-                }
-            ]
+            {
+                "text": "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
+                "exp": 30,
+                "weight": 20,
+                "art": "gen_hunt_vision",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "platonic"
+                        ],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust",
+                            "platonic"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Learning about the tides is boring - shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_train_soggykitty_mad_warrior",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "dislike"
+                        ],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     }
 ]
