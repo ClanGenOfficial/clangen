@@ -1,6 +1,6 @@
 [
   {
-        "event_id": "wtlnd_new_cat_lost_kitten1_PLACEHOLDER",
+        "event_id": "wtlnd_new_cat_lost_kitten1",
         "location": [
             "wetlands"
         ],
@@ -43,7 +43,7 @@
         }
     },
   {
-        "event_id": "wtlnd_new_cat_lost_kitten2_PLACEHOLDER",
+        "event_id": "wtlnd_new_cat_lost_kitten2",
         "location": [
             "wetlands"
         ],
@@ -93,5 +93,40 @@
             ],
             "changed": 1
         }
+    },
+    {
+        "event_id": "wtlnd_new_cat_abandoned_litter",
+        "location": [
+            "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 5,
+        "event_text": "m_c finds an abandoned litter buried in the reeds while on patrol and rushes them back to camp. Such young cats were lucky that m_c found them before something else did.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": ["leader", "deputy", "medicine cat", "warrior"]
+          },
+        "new_cat": [
+            ["age:has_kits", "meeting", "loner", "can_birth"],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:abandoned1",
+                "litter"
+            ]
+        ],
+        "outsider": {
+              "current_rep": [
+                  "neutral", "welcoming"
+              ],
+              "changed": 1
+          }
     }
 ]
