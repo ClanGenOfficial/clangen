@@ -1,12 +1,34 @@
 [
   {
-    "event_id": "wtlnd_misc_stingingnettleboop_PLACEHOLDER",
+    "event_id": "wtlnd_misc_any_stingingnettleboop",
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
     "event_text": "Whilst m_c was poking around in the undergrowth, {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant - Ouch!",
     "m_c": {
       "status": ["apprentice", "warrior", "elder", "kitten"]
+    }
+  },
+  {
+    "event_id": "wtlnd_misc_multiprophecymedcatprophet1",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "Wading through the wetlands, m_c keeps seeing prophecy_list_sight/m_c in the shallow water underpaw. {PRONOUN/m_c/subject/CAP} {VERB/m_c/shiver/shivers} as a cold breeze ruffles {PRONOUN/m_c/poss} fur, {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to tell c_n immediately about what {PRONOUN/m_c/subject} saw.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["PROPHET,2"]
+    }
+  },
+  {
+    "event_id": "wtlnd_misc_multiomenmedcatomen1",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "The things m_c saw in the ripples of the marsh today, omen_list_sight/m_c... m_c conceals {PRONOUN/m_c/self} with the frogs deep inside the reeds lining the marsh, needing privacy as {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} what these omens may foretell.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["OMEN,2"]
     }
   }
 ]
