@@ -1,6 +1,6 @@
 [
   {
-          "event_id": "dst_death_any1_PLACEHOLDER",
+          "event_id": "dst_death_any_rattlesnake1",
           "location": ["desert"],
           "season": [
               "any"
@@ -9,7 +9,7 @@
           "weight": 20,
           "event_text": "m_c was killed by a rattlesnake out in the territory.",
           "m_c": {
-              "status": [ "apprentice", "warrior", "deputy", "leader"],
+              "status": ["apprentice", "warrior", "deputy", "leader"],
               "dies": true
           },
           "history": [
@@ -17,6 +17,112 @@
               "cats": ["m_c"],
               "reg_death": "m_c was killed by a rattlesnake.",
               "lead_death": "{VERB/m_c/were/was} killed by a rattlesnake."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_rattlesnake2",
+          "location": ["desert"],
+          "season": [
+              "any"
+          ],
+          "tags": [],
+          "weight": 20,
+          "event_text": "Whilst m_c was out hunting {PRONOUN/m_c/subject} heard an all too familiar rattling from the dry underbrush, but it was far too late as the fangs of the deadly snake sunk into m_c, the venom killing {PRONOUN/m_c/object} swiftly.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "reg_death": "m_c was killed by a rattlesnake.",
+              "lead_death": "{VERB/m_c/were/was} killed by a rattlesnake."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_app_rattlesnake3",
+          "location": ["desert"],
+          "season": [
+              "any"
+          ],
+          "tags": [],
+          "weight": 20,
+          "event_text": "After venturing out on a solo hunting practice m_c heard a strange rattling sound from the grass, moving closer to investigaate m_c was startled by the jaws of a rattlesnake! Before {PRONOUN/m_c/poss} mentor could find {PRONOUN/m_c/object} the rattlesnake's venom had claimed yet another life.",
+          "m_c": {
+              "status": ["apprentice"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "reg_death": "m_c was killed by a rattlesnake.",
+              "lead_death": "{VERB/m_c/were/was} killed by a rattlesnake."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_mirage1",
+          "location": ["desert"],
+          "season": [
+              "greenleaf", "newleaf"
+          ],
+          "tags": [],
+          "weight": 20,
+          "event_text": "m_c had forgotten to fill up on water before heading out into the territory, but thankfully {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} a water pool in the distance! Yet the further {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} the pool seems to never get any closer... m_c collapses from thirst before {PRONOUN/m_c/subject} could realize {PRONOUN/m_c/subject} {VERB/m_c/were/was} chasing a mirage.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "reg_death": "m_c was mislead by a mirage thinking it was water.",
+              "lead_death": "{VERB/m_c/were/was} misead by a mirage thinking it was water."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_scorpion1",
+          "location": ["desert"],
+          "season": [
+              "any"
+          ],
+          "tags": [],
+          "weight": 20,
+          "event_text": "m_c was killed after being stung by a scorpion.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "reg_death": "m_c was killed by a scorpion.",
+              "lead_death": "{VERB/m_c/were/was} killed by a scorpion."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_scorpion2",
+          "location": ["desert"],
+          "season": [
+              "any"
+          ],
+          "tags": [],
+          "weight": 20,
+          "event_text": "Whilst m_c was out in the territory hunting {PRONOUN/m_c/subject} spotted a scorpion! Thinking it would be a great catch to show off to {PRONOUN/m_c/poss} peers {PRONOUN/m_c/subject} pounced on it, but at the feeling of something stabbing into {PRONOUN/m_c/poss} paw, {PRONOUN/m_c/subject} knew that the only cats {PRONOUN/m_c/subject} would impress were in StarClan.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "trait": ["ambitious", "bold", "charismatic", "competitive", "daring", "flamboyant", "insecure", "strange", "troublesome"]
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "reg_death": "m_c was killed by a scorpion.",
+              "lead_death": "{VERB/m_c/were/was} killed by a scorpion."
               }
           ]
   }
