@@ -7,7 +7,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "As m_c was out scouring the territory, {PRONOUN/m_c/subject} took a bad tumble over a rock hidden in the sand.",
+        "event_text": "As m_c was out scouring the territory, {PRONOUN/m_c/subject} took a bad tumble over a rock hidden by the dusty ground.",
         "m_c": {
             "age": [
                 "adolescent",
