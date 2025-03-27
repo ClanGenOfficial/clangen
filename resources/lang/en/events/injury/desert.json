@@ -1,0 +1,31 @@
+{
+        "event_id": "dst_injury_bruisessore_anymultiage1_PLACEHOLDER",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "As m_c was out scouring the territory, {PRONOUN/m_c/subject} took a bad tumble over a rock hidden in the sand.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises",
+                    "sore"
+                ]
+            }
+        ]
+    },
