@@ -1,12 +1,8 @@
 [
     {
         "event": "Great Blizzard",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Leaf-bare"
-        ],
+        "camp": ["any"],
+        "season": ["Leaf-bare"],
         "tags": [],
         "priority": "primary",
         "duration": 2,
@@ -19,9 +15,7 @@
                 "The snow doesn't seem to have an end to it, the nights and days the same dreary shade of white. It is all c_n can do to dig themselves out of their nests each morning."
             ]
         },
-        "conclusion_events": [
-            "The dazzling light of the sun shines brightly on white, still snow. The blizzard has ended, though leaf-bare still continues."
-        ],
+        "conclusion_events": ["The dazzling light of the sun shines brightly on white, still snow. The blizzard has ended, though leaf-bare still continues."],
         "secondary_disasters": [
             {
                 "disaster": "Barren Land",
@@ -52,12 +46,8 @@
     },
     {
         "event": "Drought",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Greenleaf"
-        ],
+        "camp": ["any"],
+        "season": ["Greenleaf"],
         "tags": [],
         "priority": "primary",
         "duration": 3,
@@ -121,13 +111,8 @@
     },
     {
         "event": "Wildfire",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Greenleaf",
-            "Leaf-fall"
-        ],
+        "camp": ["any"],
+        "season": ["Greenleaf", "Leaf-fall"],
         "tags": [],
         "priority": "both",
         "duration": 5,
@@ -200,13 +185,8 @@
     },
     {
         "event": "Terrible Cold",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
+        "camp": ["any"],
+        "season": ["Leaf-fall", "Leaf-bare"],
         "tags": [],
         "priority": "both",
         "duration": 2,
@@ -233,12 +213,8 @@
     },
     {
         "event": "Floods",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Newleaf"
-        ],
+        "camp": ["any"],
+        "season": ["Newleaf"],
         "tags": [],
         "priority": "both",
         "duration": 3,
@@ -282,12 +258,8 @@
     },
     {
         "event": "Twoleg Invasion",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Greenleaf"
-        ],
+        "camp": ["any"],
+        "season": ["Greenleaf"],
         "tags": [],
         "priority": "both",
         "duration": 2,
@@ -326,15 +298,8 @@
     },
     {
         "event": "Prey Sickness",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
+        "camp": ["any"],
+        "season": ["any"],
         "tags": [],
         "priority": "both",
         "duration": 2,
@@ -356,14 +321,8 @@
     },
     {
         "event": "Horrible Storms",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall"
-        ],
+        "camp": ["any"],
+        "season": ["Newleaf", "Greenleaf", "Leaf-fall"],
         "tags": [],
         "priority": "both",
         "duration": 2,
@@ -409,15 +368,8 @@
     },
     {
         "event": "Famine",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
+        "camp": ["any"],
+        "season": ["any"],
         "tags": [],
         "priority": "secondary",
         "duration": 3,
@@ -445,15 +397,8 @@
     },
     {
         "event": "Barren Land",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
+        "camp": ["any"],
+        "season": ["any"],
         "tags": [],
         "priority": "secondary",
         "duration": 3,
@@ -481,15 +426,8 @@
     },
     {
         "event": "Camp Destruction",
-        "camp": [
-            "any"
-        ],
-        "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
+        "camp": ["any"],
+        "season": ["any"],
         "tags": [],
         "priority": "secondary",
         "duration": 3,
