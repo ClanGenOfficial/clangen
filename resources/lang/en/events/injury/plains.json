@@ -40,13 +40,7 @@
         "weight": 30,
         "event_text": "m_c is feeling extremely sore from the long distances {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} run lately.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "injury": [
             {
