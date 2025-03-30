@@ -130,13 +130,7 @@
         "weight": 30,
         "event_text": "m_c's tail was badly injured by a falling tree.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "injury": [
             {
@@ -161,13 +155,7 @@
         "weight": 30,
         "event_text": "A fire rages through the forest. m_c manages to escape, though not unscathed by the experience.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "injury": [
             {
@@ -194,7 +182,7 @@
         "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside! m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/m_c/poss} grasp.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-            "trait": [ "ambitious", "bold", "daring", "fierce", "responsible" ]
+            "trait": ["ambitious", "bold", "daring", "fierce", "responsible"]
         },
         "r_c": {
             "age": ["kitten"],
@@ -219,13 +207,13 @@
             {
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
-                "values": [ "platonic", "comfort", "trust", "respect"],
+                "values": ["platonic", "comfort", "trust", "respect"],
                 "amount": 30
             },
             {
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
-                "values": [ "dislike"],
+                "values": ["dislike"],
                 "amount": -30
             }
         ]
@@ -243,12 +231,12 @@
         },
         "r_c": {
             "status": ["apprentice"],
-            "trait": [ "daring", "adventurous", "oblivious", "bold", "childish" ]
+            "trait": [ "daring", "adventurous", "oblivious", "bold", "childish"]
         },
         "injury": [
             {
                 "cats": [ "m_c", "r_c"], 
-                "injuries": [ "shivering" ],
+                "injuries": ["shivering"],
                 "scars": ["FROSTMITT", "FROSTSOCK"]
             }
         ],
@@ -261,9 +249,9 @@
         ],
         "relationships": [
             {
-                "cats_from": [ "r_c" ], 
-                "cats_to": [ "m_c" ],
-                "values": [ "platonic", "comfort", "trust", "respect", "dislike" ],
+                "cats_from": ["r_c"], 
+                "cats_to": ["m_c"],
+                "values": ["platonic", "comfort", "trust", "respect", "dislike"],
                 "amount": -5
             }
         ]
@@ -271,17 +259,17 @@
     {
         "event_id": "fst_injury_headache_anymultitraitmultistatus1",
         "location": ["forest"],
-        "season": [ "any" ],
+        "season": ["any"],
         "weight": 30,
         "event_text": "Chasing a mouse through a dense area, m_c accidentally collides with a low-hanging branch, leaving {PRONOUN/m_c/object} to return to camp empty-pawed and with splitting head pain.",
         "m_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"],
-            "trait": [ "ambitious", "childish", "playful", "bold", "daring", "confident", "adventurous", "competitive", "oblivious" ]
+            "trait": ["ambitious", "childish", "playful", "bold", "daring", "confident", "adventurous", "competitive", "oblivious"]
         },
         "injury": [
             {
-                "cats": [ "m_c" ], 
-                "injuries": [ "headache" ]
+                "cats": ["m_c"], 
+                "injuries": ["headache"]
             }
         ]
     }
