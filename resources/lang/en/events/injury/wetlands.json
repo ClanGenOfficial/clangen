@@ -1,31 +1,17 @@
 [
   {
         "event_id": "wtlnd_injury_sore_anymultiage1_PLACEHOLDER",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["wetlands"],
+        "season": ["any"],
         "weight": 20,
         "event_text": "m_c took a walk through an especially muddy and dense part of the territory, the next day {PRONOUN/m_c/subject} woke up sore.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sore"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["sore"]
             }
         ]
     },
