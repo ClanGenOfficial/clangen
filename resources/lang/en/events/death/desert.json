@@ -2,9 +2,7 @@
   {
           "event_id": "dst_death_any_rattlesnake1",
           "location": ["desert"],
-          "season": [
-              "any"
-          ],
+          "season": ["any"],
           "tags": [],
           "weight": 20,
           "event_text": "m_c was killed by a rattlesnake out in the territory.",
@@ -23,9 +21,7 @@
   {
           "event_id": "dst_death_any_rattlesnake2",
           "location": ["desert"],
-          "season": [
-              "any"
-          ],
+          "season": ["any"],
           "tags": [],
           "weight": 20,
           "event_text": "m_c was out hunting when {PRONOUN/m_c/subject} heard a rattling noise, {PRONOUN/m_c/subject} went to investigate but the jaws of a rattlesnake quickly took {PRONOUN/m_c/object} to StarClan",
@@ -44,9 +40,7 @@
   {
           "event_id": "dst_death_app_rattlesnake3",
           "location": ["desert"],
-          "season": [
-              "any"
-          ],
+          "season": ["any"],
           "tags": [],
           "weight": 20,
           "event_text": "m_c was out training alone when {PRONOUN/m_c/subject} heard a bizzare rattling noise coming from a snake, moving closer to try to hunt it m_c was bitten and killed before anycat could help {PRONOUN/m_c/object}",
@@ -65,9 +59,7 @@
   {
           "event_id": "dst_death_any_mirage1",
           "location": ["desert"],
-          "season": [
-              "greenleaf", "newleaf"
-          ],
+          "season": ["greenleaf", "newleaf"],
           "tags": [],
           "weight": 20,
           "event_text": "m_c was out alone in the territory searching for water, however the mirage from the intense heat led {PRONOUN/m_c/object} to keep walking further away from any real water source.",
@@ -86,9 +78,7 @@
   {
           "event_id": "dst_death_any_scorpion1",
           "location": ["desert"],
-          "season": [
-              "any"
-          ],
+          "season": ["any"],
           "tags": [],
           "weight": 20,
           "event_text": "m_c was killed after being stung by a scorpion.",
@@ -107,9 +97,7 @@
   {
           "event_id": "dst_death_any_multitraitscorpion2",
           "location": ["desert"],
-          "season": [
-              "any"
-          ],
+          "season": ["any"],
           "tags": [],
           "weight": 20,
           "event_text": "m_c was out hunting and spotted a scorpion, {PRONOUN/m_c/subject} pounced to catch it to show off to c_n, but one misplaced paw on the stinger sent m_c to StarClan.",
