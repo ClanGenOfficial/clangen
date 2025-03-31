@@ -2,14 +2,12 @@
   {
         "event_id": "wtlnd_death_any_quicksand",
         "location": ["wetlands"],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "tags": [],
         "weight": 10,
         "event_text": "m_c got stuck in quicksand and wasn't found in time.",
         "m_c": {
-            "status": [ "apprentice", "warrior", "deputy", "leader"],
+            "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
         },
         "history": [
@@ -23,14 +21,12 @@
   {
         "event_id": "wtlnd_death_any_cottonmouth",
         "location": ["wetlands"],
-        "season": [
-            "greenleaf", "newleaf", "leaf-fall"
-        ],
+        "season": ["greenleaf", "newleaf", "leaf-fall"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was out hunting when {PRONOUN/m_c/subject} found a snake with a strikingly white mouth, moving to hunt it m_c was bitten and killed by the lightning quick reptile.",
         "m_c": {
-            "status": [ "apprentice", "warrior", "deputy", "leader"],
+            "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
         },
         "history": [
