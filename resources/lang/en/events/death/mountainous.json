@@ -2,10 +2,7 @@
     {
         "event_id": "mtn_death_bury_multicamp1",
         "location": ["mountainous:camp1"],
-        "season": [
-            "leaf-fall",
-            "leaf-bare"
-        ],
+        "season": ["leaf-fall", "leaf-bare"],
         "tags": ["all_lives", "no_body"],
         "weight": 20,
         "event_text": "m_c was buried alive when an avalanche hit the camp.",
