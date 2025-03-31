@@ -30,5 +30,15 @@
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
     }
+  },
+  {
+    "event_id": "wtlnd_misc_multiage_blueheron",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c was feeling overwhelmed and took a walk out in the territory, after sitting down in a quiet clearing {PRONOUN/m_c/subject} saw a large blue heron fly and land right infront of {PRONOUN/m_c/object}! m_c loafed and watched the elegant bird with intrigue, wondering if it means anything.",
+    "m_c": {
+      "age": ["adolescence", "young adult", "adult", "senior adult", "senior"]
+    }
   }
 ]
