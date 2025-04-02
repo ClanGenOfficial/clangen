@@ -64,7 +64,7 @@ _date_map: Dict[SpecialDate, DateInfo] = {
 def is_today(date: SpecialDate) -> bool:
     """
     Checks if today is a specified 'special date'.
-    
+
     Only returns True if "special_dates" setting is True.
     """
     if not game.settings["special_dates"]:
@@ -77,7 +77,7 @@ def is_today(date: SpecialDate) -> bool:
 
 def get_special_date() -> Union[DateInfo, None]:
     """
-    If today is a 'special date', return the DateInfo. 
+    If today is a 'special date', return the DateInfo.
     Only returns succeeds if "special_dates" setting is True.
 
     Otherwise, return None.

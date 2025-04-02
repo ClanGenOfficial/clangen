@@ -43,7 +43,7 @@ There are two main types of `i18n` string: basic and pluralized forms. Basic key
 The possible keys for a pluralized value are `zero`, `one`, `two`, `some`, and `many`. The minimum that are required to ensure no errors occur are `one` and `many`. Sometimes, we use the pluralization nodule in some... unconventional ways.
 
 #### Crimes against Pluralization (or, where we use it weirdly)
-| File name | Affected records | Quirks 
+| File name | Affected records | Quirks
 |--|--|--|
 |`relationships.xx.json` | Labels | `one` is the basic level of relationship (e.g. "dislike"). `many` is the increased level (e.g. "hate")
 | `cat/accessories.xx.json`| All | `zero` is what is displayed on the cat's profile. `one` and `many` are used in events when a cat gains that accessory.
@@ -76,7 +76,7 @@ The possible keys for a pluralized value are `zero`, `one`, `two`, `some`, and `
 > The current ruleset operates on a hierarchy: the plural pronoun will be the first item in the dictionary that any of the cats in the group qualify for. For example, there may be three grammatically female cats and one grammatically male - if male plural comes before female plural, the pluralization chosen will be male. If this is not appropriate for the target language, please reach out and we'll see if we can figure out a solution!
 
 #### adj_default
-> When using an {ADJ} label, it's possible that there may not be a cat to refer to within the statement (for example, when talking about a warrior generically). The adjective default determines which section of the label to use if no key is provided. 
+> When using an {ADJ} label, it's possible that there may not be a cat to refer to within the statement (for example, when talking about a warrior generically). The adjective default determines which section of the label to use if no key is provided.
 >
 > Example: `{ADJ/XXX/potato/potatoes/potat}`with an `adj_default` of `1` would return `potato`.
 

@@ -16,7 +16,7 @@ class DisasterEvents():
 
     @staticmethod
     def handle_disasters(self):
-        """ 
+        """
         This function handles the disasters
         """
 

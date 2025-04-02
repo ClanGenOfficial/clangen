@@ -7,7 +7,7 @@
 - Fixed new cat moon event crash
 - Fixed patrol grammar
 - Fixed issue with problematic dependent names
-- Added missing stat attributes to certain patrols 
+- Added missing stat attributes to certain patrols
 - Fixed prefix and suffix list loading
 - Fixed tail accessories appearing on cats without tails
 - Fixed missing bracket

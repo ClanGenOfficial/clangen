@@ -11,7 +11,7 @@
     2. 9 separate life events
         - If 9 dead cats are not available, any excess lives are given by an `Unknown Blessing` event
     3. Outro
-- Each life giving event must include a virtue that the life represents.  
+- Each life giving event must include a virtue that the life represents.
 
 ### Replacement Text:
 | abbreviation | use                                                    |
@@ -88,7 +88,7 @@
 ***
 
 #### text: list[str]
-> A list of possible outro or intro texts for that event. 
+> A list of possible outro or intro texts for that event.
 
 ***
 

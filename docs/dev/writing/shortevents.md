@@ -95,12 +95,12 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
 >
 the event_id is a unique string used to identify the event. It does not affect event behavior, but it allows us to easily find events.
 
-> An event_id is formatted as following: `biome_type_cause_seasondescription#`, 
+> An event_id is formatted as following: `biome_type_cause_seasondescription#`,
 >
 >- 'cause' is something of a secondary type indicator.  Perhaps a death event is for death by heat stroke, you could use `heat` for the 'cause' section of the id. Or if a cat is hurt by a certain animal, you can indicate the animal here. If you cannot think of an appropriate 'cause' then you do not have to include one.
 >- if an event happens in more than one season, but not all seasons, then you can use `multi` for the 'season' section of the id
 >- If you are making new_cat or other_clan events, please include if the event is hostile/neutral/welcoming or hostile/neutral/allies in the ID
->- If the event is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID 
+>- If the event is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID
 
 | Abbreviations |      Meaning                     |
 |---------------|----------------------------------|
@@ -128,7 +128,7 @@ How to make sure your event_id is unique:
 
 ***
 ### location:list[str]
->This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.
 
 | string        | use                              |
 |---------------|----------------------------------|
@@ -143,14 +143,14 @@ How to make sure your event_id is unique:
 !!! todo "TODO"
     add a table listing various camps
 
-Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols.
 
 ### season:list[str]
 >List of seasons in which the event may occur.
 
 lowercase season names + "any"
 
-*** 
+***
 ### sub_type:list[str]
 >List of subtypes for this event. If the event has no subtype, remove parameter.  Possible subtypes:
 
@@ -230,14 +230,14 @@ lowercase season names + "any"
     need to make an accessory tag list
 
 ### m_c:dict[str, various]
->Specifies the requirements for the main cat (m_c) of the event. 
+>Specifies the requirements for the main cat (m_c) of the event.
 >
 >**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference/index.md#__tabbed_2_1)
 >
 >**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference/index.md#__tabbed_2_2)
 
 !!! tip
-    Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
+    Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.
 
     Another example could be adding "leader" to `status`.  If you do so, then you don't need to include all the age states possible for a leader in `age`.  Rather, you can leave `age` as "any".
 
@@ -264,13 +264,13 @@ lowercase season names + "any"
 
 >**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
 >
->**not_skill[list]** : m_c cannot possess any of the skills on this list. 
+>**not_skill[list]** : m_c cannot possess any of the skills on this list.
 >This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.  Also useful for stopping a cat with a certain skill (like FIGHTER,3) from getting an event incongruent with their skill (dying in a fight to an apprentice)
 >
 >**trait[list]** : m_c must possess at least one trait from this list. if they can be anything, use "any"
 >
->**not_trait[list]** : m_c cannot possess any of the traits on this list. 
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
+>**not_trait[list]** : m_c cannot possess any of the traits on this list.
+>This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.
 >
 >**backstory[list]** : m_c must possess a backstory from this list. if they can be anything, use "any"
 >
@@ -279,7 +279,7 @@ lowercase season names + "any"
 ***
 
 ### r_c:dict[str, various]
->Specifies the requirements for r_c of the event.  If there is no r_c in the event, then do not include this parameter. 
+>Specifies the requirements for r_c of the event.  If there is no r_c in the event, then do not include this parameter.
 >
 >**age:[list]** : a list of ages r_c can be. if they can be anything, use "any"
 >
@@ -305,7 +305,7 @@ lowercase season names + "any"
 >**trait[list]** : r_c must possess at least one trait from this list. if they can be anything, use "any"
 >
 >**not_trait[list]** : r_c cannot possess any of the traits on this list
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
+>This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.
 >
 >**backstory[list]** : r_c must possess a backstory from this list. if they can be anything, use "any"
 >
@@ -314,7 +314,7 @@ lowercase season names + "any"
 ***
 
 ### new_cat:list[list[str]]
->Optional. Adds a new cat, either joining the clan or as an outside cat. 
+>Optional. Adds a new cat, either joining the clan or as an outside cat.
 >
 >Format:
 >
@@ -325,7 +325,7 @@ lowercase season names + "any"
 >]
 >```
 >
->You are able to refer to new-cats in several places, including injuries, relationships, ect. The {index} value  corresponds to their index value on this list. Remember, computers start counting from 0. So the first entry in the list is 0, the second is 1, and so on. 
+>You are able to refer to new-cats in several places, including injuries, relationships, ect. The {index} value  corresponds to their index value on this list. Remember, computers start counting from 0. So the first entry in the list is 0, the second is 1, and so on.
 >
 >You can include the following details:
 
@@ -337,24 +337,24 @@ lowercase season names + "any"
 | "new_name"                                  | Ensure the cat takes on a clan-like name                                                                                                                                                                                                                                                                                                                             |
 | "old_name"                                  | Ensure the cat keeps their old (maybe loner or kittypet) name. Doesn't work for kittens or litters.                                                                                                                                                                                                                                                                  |
 | "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat an kittypet outsider                                                                                                                                                                                                                                             |
-| "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat an loner outsider      
+| "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat an loner outsider
 | "rogue"                                     | Gives the cat a rogue type backstory. If "meeting" is also included, this tag will make the cat an rogue outsider                                                                                                                                                                                                                                                |
 | "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                  |
-| "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new clan-like name.             
-| "exists"                                   | Will attempt to find an existing outsider to utilize instead of creating a new one.  Keep in mind that this ONLY checks if the existing outsider matches indicated status, age, and backstory.  DO NOT use this tag in conjunction with creating litters or assigning parentage.       
+| "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new clan-like name.
+| "exists"                                   | Will attempt to find an existing outsider to utilize instead of creating a new one.  Keep in mind that this ONLY checks if the existing outsider matches indicated status, age, and backstory.  DO NOT use this tag in conjunction with creating litters or assigning parentage.
 | "unknown"                                   | Prevents the inclusion of "notifying" text such as "The Clan has met `name`". Best used for situations in which a cat needs to be created, but the Clan didn't actually interact with them (i.e. creating abandoned litters).                                                                                                                                                                                                          |
 | "litter"                                    | Turns a single cat generation into a litter of kittens or newborns. Make sure to have a parent for them!                                                                                                                                                                                                                                                             |
 | "status:{some_status}"                      | Cats will join with this status. Include "medicine cat", "apprentice", "mediator", "kitten", "newborn", "medicine cat apprentice", etc, but not leader or deputy. Default for not-litters is warrior. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.                                                   |
 | "age:{some_age}"                            | Cats are "newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior". You can also specify "mate" to put them in the same age-category as the first specified mate, or "has_kits" to generate an age between 14 and 120 moons. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.  |
 | "backstory:{some}, {backstories},{another}" | Comma-separated exact backstories to pick from. Overrides "kittypet", "loner", "clancat"                                                                                                                                                                                                                                                                             |
-| "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.      
+| "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.
 | "adoptive:{index},{index}"                    | You can include multiple adoptive parents. Parents must be created BEFORE children, so the parent details must be listed before the children. You can denote any cat included in the event as being an adoptive parent by using their abbreviation (`m_c`, `p_l`, ect).  The mates of the adoptive parent will automatically be included as adoptive parents.                                                                                         |
 | "mate:{index},{index}"                      | Indexes of mates. Mates must be created BEFORE the cat with this tag. You can also specify patrol-cats (p_l, r_c, or s_c)                                                                                                                                                                                                                                            |
 
 ***
 
 ### injury:list[dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the blocks as you like within the list. 
+>Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the blocks as you like within the list.
 >
 >```json
 >    {
@@ -385,7 +385,7 @@ lowercase season names + "any"
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
->**scars: List[str]:** 
+>**scars: List[str]:**
 >Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
 >
 >[Scar List](reference/index.md#__tabbed_1_5)
@@ -428,7 +428,7 @@ lowercase season names + "any"
 >
 >Parameter for each:
 
->**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
+>**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels.
 
 | string      |                                   |
 |-------------|-----------------------------------|
@@ -446,7 +446,7 @@ lowercase season names + "any"
 | n_c:{index} | feelings toward the new cat are affected   |
 | clan | feelings toward the clan are affected (experimental, unsupported in old format and not sure if i can make work)   |
 
->**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
+>**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions.
 
 | bool  |                                                                                                                                              |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -465,7 +465,7 @@ lowercase season names + "any"
 | "trust"    | Trust (reliance) is effected                                                                                                                                                                                               |
 | "respect"  | Respect (admiration) is affected.                                                                                                                                                                                          |
 
->**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative. 
+>**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative.
 
 | int           |                                                                                                                                |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------|

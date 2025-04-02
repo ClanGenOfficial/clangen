@@ -80,4 +80,3 @@ class TestInjury(unittest.TestCase):
         with open(f"{resource_directory}Injuries.json", 'r') as read_file:
             injuries = ujson.loads(read_file.read())
         return injuries
-    

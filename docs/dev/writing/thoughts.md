@@ -47,7 +47,7 @@ It's essential to know how thoughts are formatted when adding or altering them 
         "random_living_status": [],
         "random_outside_status": []
        }
-       
+
 !!! note "Important"
     If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable.
 
@@ -86,7 +86,7 @@ This is where the text that will be displayed in-game is placed, current abbrevi
 * "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend" (kit_dead_kit)
 
 
-**HAS_INJURIES:**            
+**HAS_INJURIES:**
 Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury).
 
 > [Illness Tag List](reference/index.md#__tabbed_1_3)
@@ -97,7 +97,7 @@ You can additionally use the tag "any" to allow the thought to occur if the cat 
 
 
 **PERM_CONDITIONS:**
-Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
+Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition.
 
 > [Permanent Conditions Tag List](reference/index.md#__tabbed_1_4)
 >
@@ -114,10 +114,10 @@ Constrains the thought to only occur if m_c or r_c has the specific listed backs
 > [Backstory Tag List](reference/index.md#backstories)
 
 STATUS_CONSTRAINT:
-Constrains the thought to only happen if m_c or r_c are in a certain role. 
+Constrains the thought to only happen if m_c or r_c are in a certain role.
 
 > [Status Tag List](reference/index.md#__tabbed_2_2)
-> 
+>
 > You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
 
 AGE_CONSTRAINT:

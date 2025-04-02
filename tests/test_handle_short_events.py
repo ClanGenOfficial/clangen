@@ -80,6 +80,7 @@ class TestHandleAccessories(unittest.TestCase):
         self.test.handle_accessories(pelts=self.pelt_class)
         self.assertIsNone(self.test.main_cat.pelt.accessory)
 
+del TestHandleAccessories
 
 class TestHandleDeath(unittest.TestCase):
     pass

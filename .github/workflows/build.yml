@@ -23,42 +23,42 @@ jobs:
             python_arch: "x64"
             itch_channel: linux64_glibc_231
             api_artifact_name: linux2.31
-            
+
           - os: ubuntu-22.04
             artifact_name: Clangen_Linux64_glibc2.35+.tar.xz
             python_version: "3.11"
             python_arch: "x64"
             itch_channel: linux64_glibc_235
             api_artifact_name: linux2.35
-            
+
           - os: windows-2019
             artifact_name: Clangen_Win32.zip
             python_version: "3.8"
             python_arch: "x86"
             itch_channel: win32
             api_artifact_name: win32
-            
+
           - os: windows-latest
             artifact_name: Clangen_Win64.zip
             python_version: "3.8"
             python_arch: "x64"
             itch_channel: win64
             api_artifact_name: win64
-            
+
           - os: windows-latest
             artifact_name: Clangen_Win64_Windows10+.zip
             python_version: "3.11"
             python_arch: "x64"
             itch_channel: win64_10
             api_artifact_name: win10+
-            
+
           - os: macos-13
             artifact_name: Clangen_macOS64.dmg
             python_version: "3.11"
             python_arch: "x64"
             itch_channel: osx64
             api_artifact_name: macOS
-            
+
     runs-on: ${{ matrix.os }}
     if: ${{ !startsWith(github.ref, 'ref/heads/release') }}
     env:
@@ -159,7 +159,7 @@ jobs:
         if: startsWith(matrix.os, 'windows')
         shell: powershell
         run: |
-          cp dist/Clangen/_internal/.itch.toml dist/ 
+          cp dist/Clangen/_internal/.itch.toml dist/
           tar.exe -a -c -f ${{ matrix.artifact_name }} -C dist Clangen .itch.toml
       - name: Create DMG (macOS)
         if: startsWith(matrix.os, 'macos')

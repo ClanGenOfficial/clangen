@@ -4,7 +4,7 @@
 HOWEVER,
  Please keep the raw python script and the unittest, so it can be run by the tests/pronoun_test GitHub action.
 
-This test checks that pronoun tags are formated correctly, 
+This test checks that pronoun tags are formated correctly,
 
 """
 

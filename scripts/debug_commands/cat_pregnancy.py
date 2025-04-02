@@ -60,7 +60,7 @@ class RemovePregnancyCommand(Command):
             add_output_line_to_log(f"Removed pregnancy from {cat.name} ({cat.ID})")
         else:
             add_output_line_to_log("Invalid name/id or cat is not pregnant.")
-        
+
 class EditPregnancyCommand(Command):
     name = "edit"
     description = "Edit a pregnancy"
@@ -91,7 +91,7 @@ class EditPregnancyCommand(Command):
         second_parent = args[4] if len(args) > 4 else None
         if not second_parent or second_parent in ("same" or "" or "s"):
             second_parent = game.clan.pregnancy_data[current_cat.ID]["second_parent"]
-        
+
         second_parent_cat = get_cat_from_name_or_id(second_parent) if second_parent else None
         second_parent_repr = f"{second_parent_cat.name} ({second_parent_cat.ID})" if second_parent_cat else "None"
         if "pregnant" in current_cat.injuries:
@@ -119,7 +119,7 @@ class ViewPregnancyCommand(Command):
             add_output_line_to_log("Please specify the name/id of the cat to edit the pregnancy of.")
             return
         cat = get_cat_from_name_or_id(args[0])
-     
+
         second_parent_cat = get_cat_from_name_or_id(game.clan.pregnancy_data[cat.ID]["second_parent"]) if game.clan.pregnancy_data[cat.ID]["second_parent"] else None
         second_parent_repr = f"{second_parent_cat.name} ({second_parent_cat.ID})" if second_parent_cat else "None"
         if "pregnant" in cat.injuries:

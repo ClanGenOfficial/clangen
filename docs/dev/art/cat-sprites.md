@@ -162,7 +162,7 @@ Accessories (Accs) range from collars to leaves scattered through fur. We want t
     Also, keep gravity in mind.  It's fun to let accs hang and drape off of the cat, and it makes them feel more real.
 
 ## Linework
-Any linework that goes outside the cat sprite silhouette should be black, any linework that is inside the cat sprite silhouette should be colored.  
+Any linework that goes outside the cat sprite silhouette should be black, any linework that is inside the cat sprite silhouette should be colored.
 
 ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/6f0c9c86-0b52-4fec-9e1b-672e82d9a9ef)
 ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/59cbe337-c4ce-45d7-9277-f4b5f63caa03)

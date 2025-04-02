@@ -705,7 +705,7 @@ class UISpriteButton:
     def set_image(self, new_image):
         self.image.set_image(new_image)
 
-    """This is to simplify event handling. Rather that writing 
+    """This is to simplify event handling. Rather that writing
             'if event.ui_element = cat_sprite_object.button'
             you can treat is as any other single pygame UI element and write:
             'if event.ui_element = cat_sprite_object. """

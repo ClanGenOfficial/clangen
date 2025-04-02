@@ -1,6 +1,6 @@
 # clangen
 
-### [Discord Server](https://discord.gg/clangen) || [Official website](https://clangen.io) || [Itch.io Page](https://sablesteel.itch.io/clan-gen-fan-edit) 
+### [Discord Server](https://discord.gg/clangen) || [Official website](https://clangen.io) || [Itch.io Page](https://sablesteel.itch.io/clan-gen-fan-edit)
 
 ## Description
 Fan-edit of the warrior cat clangen game built using Python and Pygame.

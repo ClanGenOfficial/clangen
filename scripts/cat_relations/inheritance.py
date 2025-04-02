@@ -2,8 +2,8 @@
 
 This file is the file which contains information about the inheritance of a cat.
 Each cat has one instance of the inheritance class.
-The inheritance class has a dictionary for all instances of the inheritance class, to 
-easily manipulate and update the inheritance. This class will be used to check for relations 
+The inheritance class has a dictionary for all instances of the inheritance class, to
+easily manipulate and update the inheritance. This class will be used to check for relations
 while mating and for the display of the family tree screen.
 
 """

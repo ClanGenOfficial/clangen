@@ -35,7 +35,7 @@ When writing the text for patrol events, we use a variety of abbreviations that 
 	Likewise, before beginning, be sure to at least read the first section of [Coding Terms for Writers to Know](index.md#coding-terms-for-writers-to-know). This explains much of the terminology used here.
 
 ### Patrol Template
-This is a good starting point for writing your own patrols. 
+This is a good starting point for writing your own patrols.
 
 ```py
 {
@@ -111,10 +111,10 @@ What each parameter does, and what the options are for patrol.
 #### patrol_id:str
 >patrol_id is a unique string used to identify the patrol. It does not affect patrol behavior, but it allows us to easily find patrols.
 
-> A patrol_id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol. 
+> A patrol_id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol.
 >
 >- If you are making new_cat or other_clan patrols, please include if the patrol is hostile/neutral/welcoming or hostile/neutral/allies in the ID
->- If the patrol is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID 
+>- If the patrol is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID
 
 | Abbreviations |      Meaning                     |
 |---------------|----------------------------------|
@@ -131,7 +131,7 @@ What each parameter does, and what the options are for patrol.
 | med           | herb gathering type patrol       |
 
 Example:
->`fst_hunt_foxgray_leafbarescavenge_huntinglocked3` is a hunting patrol in the forest biome, involves a gray fox, and takes place in leafbare. The word scavenge tells us it's about a gray fox scavenging something, huntinglocked indicates it's locked behind p_l having the hunting skill, and 3 tells us it is the third variant of this patrol that exists in the game. 
+>`fst_hunt_foxgray_leafbarescavenge_huntinglocked3` is a hunting patrol in the forest biome, involves a gray fox, and takes place in leafbare. The word scavenge tells us it's about a gray fox scavenging something, huntinglocked indicates it's locked behind p_l having the hunting skill, and 3 tells us it is the third variant of this patrol that exists in the game.
 
 How to make sure your patrol_id is unique:
 > ctrl (or command) + f through the .json file you're writing the patrol into. As each patrol_id contains the biome & type within it and we have different jsons for different biomes/patrol types/seasons, if your potential patrol_id isn't in the json already, your patrol_id will be unique.
@@ -143,7 +143,7 @@ How to make sure your patrol_id is unique:
 ***
 
 #### biome: list[str]
->This controls the biome the patrol appears in. 
+>This controls the biome the patrol appears in.
 
 | string        | use                              |
 |---------------|----------------------------------|
@@ -155,7 +155,7 @@ How to make sure your patrol_id is unique:
 | "desert"      | appears in the desert biome      |
 | "any"         | appears in any biome             |
 
-Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols.
 
 
 ***
@@ -170,26 +170,26 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | "border"         | border patrol                            |
 | "training"       | training patrol                          |
 
-**Differences between the types** 
+**Differences between the types**
 > Training patrols are an easy difficulty for [success chance](#chance-of-success-int), but the lowest with regards to [exp reward](#exp-int). They are a relatively safe patrol type of low danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be rare (low weighed outcome), or minor. Training patrols have high [relationship rewards](#relationships-listdictstr-various).
 
 > Hunting patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int).  Hunting patrols are subject to [extra filtering](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Advanced-documentation#todo-hunting-filtering-in-depth) that effects what patrols are available based on their [prey reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#prey-liststr). This filtering ensures that we cannot starve out the player's cats simply by adding too many patrols that give out a certain prey reward. Hunting patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high weighed outcome), moderate and of a normal weight, or severe and of a low weight. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Hunting patrols should have only minor [relationship rewards](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationships-listdictstr-various) (less than 5) unless the hunting patrol text focuses on the relationship, e.g a warrior and a apprentice hunting together with the warrior teaching the apprentice.
 
 > Border patrols needs to be the hardest and most dangerous, with a high difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int).  This is where experienced cats should shine! The [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should be a wide range. Failure outcomes on border patrols that don't cause injury should be rare. You are encouraged to apply minor injuries even on success outcome. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type, with the exception that you cannot kill cats on any success outcomes. This is by far the mostly likely patrol type to have cats become [lost](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#lost_cats-liststr) on.
 
-> Herb gathering patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#herbs-liststr) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high weighed outcome), moderate and of a normal weight, or severe and of a low weight. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#clangen-biomes). 
+> Herb gathering patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#herbs-liststr) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high weighed outcome), moderate and of a normal weight, or severe and of a low weight. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#clangen-biomes).
 
 > The subtypes of [new_cat](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep) and [other_clan](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep) patrols should primarily use the type specific success, danger, injuries, death, and rewards of whatever the primary patrol type is. For example, use the success chance for herd gathering patrols if your medicine cat finds an injured kitten. However, a subtype is more likely to move away from the 'normal' setting for that type of patrol as they are by definition unusual examples of that patrol type. Brainstorm with other developers!
 
 
 !!! tip
-	There are two further subtypes of patrols which occur as isolated events within the four main types. These are other_clan and new_cat patrols. Other clan patrols deal with the Clans neighboring the player Clan and are discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep). New cat patrols deal with patrols where a new cat joins the player Clan. The chance of finding a new_cat patrol is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep), the new_cat tag is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#tags-liststr), and the code to generate a new_cat is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#new_cat-listliststr). A patrol is firstly one of the four types, e.g herb gathering, and then can also be a other_clan or new_cat (or both!) patrol in addition to the four basic types. 
+	There are two further subtypes of patrols which occur as isolated events within the four main types. These are other_clan and new_cat patrols. Other clan patrols deal with the Clans neighboring the player Clan and are discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep). New cat patrols deal with patrols where a new cat joins the player Clan. The chance of finding a new_cat patrol is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep), the new_cat tag is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#tags-liststr), and the code to generate a new_cat is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#new_cat-listliststr). A patrol is firstly one of the four types, e.g herb gathering, and then can also be a other_clan or new_cat (or both!) patrol in addition to the four basic types.
 
 
 ***
 
 #### tags: list[str]
->Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome. 
+>Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.
 
 | tag            | use                                                                                                                                                                                                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -233,7 +233,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### min_max_status: Dict[str, List[int]]
->Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol. The format for each dictionary entry is 
+>Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol. The format for each dictionary entry is
 >
 >`"status_type": [min_value, max_value]`
 >
@@ -259,12 +259,12 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 > Most constrained patrols ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr) constraints) have a weight of 40, making them twice as likely to trigger if the conditions to unlock them are met.
 
-> The default weight for patrols in the general training json (that is, training patrols that can be triggered no matter what the biome) that don't have any constraints on the patrol ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr) constraints) is 5. This is so that these patrols are four times less likely to be chosen than biome specific content. 
+> The default weight for patrols in the general training json (that is, training patrols that can be triggered no matter what the biome) that don't have any constraints on the patrol ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr) constraints) is 5. This is so that these patrols are four times less likely to be chosen than biome specific content.
 
-> The general hunting and border jsons have balancing patrols in them. These have very low weights (between 1-5) and aren't very interesting patrols, but they are made so that no matter what biome and season it is, the game has a pool of valid hunting and border patrols to choose from. 
+> The general hunting and border jsons have balancing patrols in them. These have very low weights (between 1-5) and aren't very interesting patrols, but they are made so that no matter what biome and season it is, the game has a pool of valid hunting and border patrols to choose from.
 
 !!! tip
-	Hunting patrols have an additional level of filtering active above the patrol weights. First the game decides what prey reward the patrol should give (based on chances that change depending on the biome and season), and then, from the patrols that give that prey reward _as a non-stat success_, the acceptable patrols are weighed against each other. This naturally makes patrols that give huge prey rewards rare, no matter how many of those patrols you write. Don't worry about weighing hunting patrols according to their prey reward. Instead make each hunting patrol give roughly the same prey reward for all non-stat successes. The hunting filtering code will make sure the appropriate amount of prey is given. 
+	Hunting patrols have an additional level of filtering active above the patrol weights. First the game decides what prey reward the patrol should give (based on chances that change depending on the biome and season), and then, from the patrols that give that prey reward _as a non-stat success_, the acceptable patrols are weighed against each other. This naturally makes patrols that give huge prey rewards rare, no matter how many of those patrols you write. Don't worry about weighing hunting patrols according to their prey reward. Instead make each hunting patrol give roughly the same prey reward for all non-stat successes. The hunting filtering code will make sure the appropriate amount of prey is given.
 
 
 ***
@@ -274,7 +274,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 > You do not need to adjust the success chance for different patrol sizes.  The success rate for a solo cat patrol should match its full patrol size variation.  Remember that each cat added to a patrol buffs its success chance, we don't need to give them any extra help.
 
-> The rarer the patrol, the more you should feel comfortable differing from these guidelines. Factors that make patrols rarer are [weight](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#weight-int), constraints ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr)), [min_max_status](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_max_status-dictstr-listint) for example requiring the patrol to have both the leader and deputy on it to unlock, [patrol size](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_cats-int), and the subtypes of [new_cat](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep) and [other_clan](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep) 
+> The rarer the patrol, the more you should feel comfortable differing from these guidelines. Factors that make patrols rarer are [weight](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#weight-int), constraints ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr)), [min_max_status](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_max_status-dictstr-listint) for example requiring the patrol to have both the leader and deputy on it to unlock, [patrol size](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_cats-int), and the subtypes of [new_cat](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep) and [other_clan](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep)
 
 > For medicine cat patrols that involve 'magic', such as ghosts, StarClan, the Dark Forest, or anything else unnatural, you should not automatically use the default medicine success values. Instead, consult an experienced writer for adjusting your chance of success.
 
@@ -297,7 +297,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 
 
-##### Default Success Beach: 
+##### Default Success Beach:
 
 | Season                      | Patrol type            | Success chance         |
 |-----------------------------|------------------------|------------------------|
@@ -328,7 +328,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 
 
-##### Default Success Desert: 
+##### Default Success Desert:
 
 | Season                      | Patrol type            | Success chance         |
 |-----------------------------|------------------------|------------------------|
@@ -359,7 +359,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 
 
-##### Default Success Forest: 
+##### Default Success Forest:
 
 | Season                      | Patrol type            | Success chance         |
 |-----------------------------|------------------------|------------------------|
@@ -390,7 +390,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 
 
-##### Default Success Mountainous: 
+##### Default Success Mountainous:
 
 | Season                      | Patrol type            | Success chance         |
 |-----------------------------|------------------------|------------------------|
@@ -421,7 +421,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 
 
-##### Default Success Plains: 
+##### Default Success Plains:
 
 | Season                      | Patrol type            | Success chance         |
 |-----------------------------|------------------------|------------------------|
@@ -452,7 +452,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 
 
-##### Default Success Wetlands: 
+##### Default Success Wetlands:
 
 | Season                      | Patrol type            | Success chance         |
 |-----------------------------|------------------------|------------------------|
@@ -568,7 +568,7 @@ This is a good starting point for writing your own outcomes.
 			"mutual": false,
 			"values": [],
 			"amount": 5
-},	
+},
 {
 			"cats_to": [],
 			"cats_from": [],
@@ -598,13 +598,13 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### exp: int
->The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
+>The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given.
 >
 
 ***
 
 #### stat_skill: List[str]
->Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting. 
+>Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting.
 >
 
 ***
@@ -616,12 +616,12 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### can_have_stat: List[str]
->Optional, although strongly encouraged for all outcomes (it helps with readability and catching errors). Overrides default behavior or adds additional requirements for stat_cat picking. 
+>Optional, although strongly encouraged for all outcomes (it helps with readability and catching errors). Overrides default behavior or adds additional requirements for stat_cat picking.
 >
->Default behavior: 
+>Default behavior:
 >In 1 and 2 cat patrols, only p_l can be stat_cat.
 >
->In 3+ cat patrols, p_l and r_c can't be stat_cat, but anyone else is eligible. 
+>In 3+ cat patrols, p_l and r_c can't be stat_cat, but anyone else is eligible.
 
 >To override default behavior:
 
@@ -657,7 +657,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### lost_cats: List[str]
->Optional. Indicates which cats will become lost. 
+>Optional. Indicates which cats will become lost.
 
 | string   |                                                   |
 |----------|---------------------------------------------------|
@@ -691,7 +691,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### injury: List[Dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the following blocks (in a list) as you want. 
+>Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the following blocks (in a list) as you want.
 >
 >```py
 >{
@@ -722,12 +722,12 @@ What each parameter does, and what the options are for outcomes.
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
->**scars: List[str]:** 
+>**scars: List[str]:**
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
 >[Scar List](reference/index.md#__tabbed_1_5)
 
->**no_results: bool:** 
+>**no_results: bool:**
 >Optional. Controls if the injury "got" message shows up in patrol results, as well as potential history text.
 
 | bool  |                                                                                                                                                                                                                                                 |
@@ -740,7 +740,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### history_text: Dict[str, str]
->Optional, but it should be included if any death or injury is indicated. Controls the history-text for scars and death. 
+>Optional, but it should be included if any death or injury is indicated. Controls the history-text for scars and death.
 >
 >Format:
 >
@@ -773,7 +773,7 @@ What each parameter does, and what the options are for outcomes.
 >
 >Parameter for each:
 
->**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
+>**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels.
 
 | string        |                                                                     |
 |---------------|---------------------------------------------------------------------|
@@ -799,7 +799,7 @@ What each parameter does, and what the options are for outcomes.
 | "clan"        | Feelings toward the entire clan are effected                              |
 | "n_c:{index}" | Feelings toward the new cat(s) with the index number {index} are effected |
 
->**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
+>**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions.
 
 | bool  |                                                                                                                                              |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -818,7 +818,7 @@ What each parameter does, and what the options are for outcomes.
 | "trust"    | Trust (reliance) is effected                                                                                                                                                                                               |
 | "respect"  | Respect (admiration) is affected.                                                                                                                                                                                          |
 
->**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative. 
+>**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative.
 
 | int           |                                                                                                                                |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -829,7 +829,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### new_cat: List[List[str]]
->Optional. Adds a new cat, either joining the clan or as an outside cat. 
+>Optional. Adds a new cat, either joining the clan or as an outside cat.
 >
 >Format:
 >
@@ -840,7 +840,7 @@ What each parameter does, and what the options are for outcomes.
 >]
 >```
 >
->You are able to refer to new-cats in several places, including patrol results text (but not patrol intro text!), injuries, relationships, ect. The {index} value  corresponds to their index value on this list. Remember, computers start counting from 0. So the first entry in the list is 0, the second is 1, and so on. 
+>You are able to refer to new-cats in several places, including patrol results text (but not patrol intro text!), injuries, relationships, ect. The {index} value  corresponds to their index value on this list. Remember, computers start counting from 0. So the first entry in the list is 0, the second is 1, and so on.
 >
 >You can include the following details:
 
@@ -859,7 +859,7 @@ What each parameter does, and what the options are for outcomes.
 | "status:{some_status}"                      | Cats will join with this status. Include "medicine cat", "apprentice", "mediator", "kitten", "newborn", "medicine cat apprentice", etc, but not leader or deputy. Default for not-litters is warrior. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.                                                   |
 | "age:{some_age}"                            | Cats are "newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior". You can also specify "mate" to put them in the same age-category as the first specified mate, or "has_kits" to generate an age between 14 and 120 moons. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.  |
 | "backstory:{some}, {backstories},{another}" | Comma-separated exact backstories to pick from. Overrides "kittypet", "loner", "clancat"                                                                                                                                                                                                                                                                             |
-| "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.   
+| "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.
 | "adoptive:{index},{index}"                    | You can include multiple adoptive parents. Parents must be created BEFORE children, so the parent details must be listed before the children. You can denote any cat included in the event as being an adoptive parent by using their abbreviation (`m_c`, `p_l`, ect).  The mates of the adoptive parent will automatically be included as adoptive parents.                                                                                         |                                                                                              |
 | "mate:{index},{index}"                      | Indexes of mates. Mates must be created BEFORE the cat with this tag. You can also specify patrol-cats (p_l, r_c, or s_c)                                                                                                                                                                                                                                            |
 
@@ -868,7 +868,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### art: str
->Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. 
+>Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used.
 >
 > Example: "art": "bord_general_intro",
 >
@@ -880,9 +880,9 @@ What each parameter does, and what the options are for outcomes.
 >
 
 #### outsider_rep
-> This parameter is used for **all** patrols that involve new_cats, loners, and rogues (regardless of if the new cat joins, or if the loner or rogue is even open to joining the clan). It changes the reputation the player Clan has among outsiders, those who don't belong to any Clan. 
+> This parameter is used for **all** patrols that involve new_cats, loners, and rogues (regardless of if the new cat joins, or if the loner or rogue is even open to joining the clan). It changes the reputation the player Clan has among outsiders, those who don't belong to any Clan.
 >
-> If the player Clan has a welcoming reputation (above 71), new_cat patrols tagged with the "new_cat" tag have an increased chance to appear, and will be generated from the resources/dicts/patrols/new_cat_welcoming.json. 
+> If the player Clan has a welcoming reputation (above 71), new_cat patrols tagged with the "new_cat" tag have an increased chance to appear, and will be generated from the resources/dicts/patrols/new_cat_welcoming.json.
 >
 > If the player Clan has a neutral reputation (between 31 to 70), new_cat patrols have no increased or deceased chance to appear, and will be generated from the resources/dicts/patrols/new_cat.json.
 >
@@ -906,13 +906,13 @@ Outsider reputation changes
 
 
 #### other_clan_rep
-> This parameter is used for **all** patrols that involve the other Clans that border the player Clan. It changes the reputation the player Clan has among it neighbors. 
+> This parameter is used for **all** patrols that involve the other Clans that border the player Clan. It changes the reputation the player Clan has among it neighbors.
 >
-> If the player Clan is allied with the other_clan the reputation will be greater than 17. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan_allies.json. 
+> If the player Clan is allied with the other_clan the reputation will be greater than 17. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan_allies.json.
 >
-> If the player Clan is neutral with the other_clan the reputation will be equal or greater than 7 and less than or equal to 17. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan.json. 
+> If the player Clan is neutral with the other_clan the reputation will be equal or greater than 7 and less than or equal to 17. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan.json.
 >
-> If the player Clan is hostile with the other_clan the reputation will be less than 7. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan_hostile.json. 
+> If the player Clan is hostile with the other_clan the reputation will be less than 7. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan_hostile.json.
 >
 > By default 3 to 5 other Clans are generated on Clan creations to neighbor the player Clan. Relationships with the other Clans are individual, the player Clan can get along with one Clan and hate another. Relationships can also be influenced by the temperament of the other Clan and of the player Clan (link to appropriate documentation WIP)
 >
@@ -967,7 +967,7 @@ This is a perfectly good patrol, with the bare minimum features needed!
 ```
 
 ## Full Featured Patrol Example
-This uses almost all features somewhere. Yes, it is long. Most patrols are not this long. 
+This uses almost all features somewhere. Yes, it is long. Most patrols are not this long.
 
 !!! tip
 	If you are new to patrol writing, I recommend going through this example line by line and reading the parameter explanation from above alongside it.
@@ -1013,7 +1013,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
 					"values": ["dislike"],
 					"amount": -5
 				}
-				
+
 			],
 			"prey": ["medium"],
 			"art": "patrol_outcome_art",
@@ -1028,7 +1028,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
 				["litter", "parent:0"]
 			],
 "art": "patrol_outcome_art",
-			
+
 		},
 
 {

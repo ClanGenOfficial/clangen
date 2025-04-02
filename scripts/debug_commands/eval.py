@@ -33,9 +33,9 @@ class EvalCommand(Command):
             return
         global warningAccepted  # pylint: disable=global-statement,global-variable-not-assigned
         if not warningAccepted:
-            add_multiple_lines_to_log("""WARNING: This command can be used to run code in your game. 
+            add_multiple_lines_to_log("""WARNING: This command can be used to run code in your game.
                                          Only use this if you know what you're doing.
-                                         If you have been told to use this by anyone other than the official 
+                                         If you have been told to use this by anyone other than the official
                                          ClanGen Discord contributors, BLOCK THEM IMMEDIATELY.
                                          If you are not sure what this means, DO NOT USE THIS COMMAND.
                                          To disable this warning, use \"trust\" as an argument to this command.""")

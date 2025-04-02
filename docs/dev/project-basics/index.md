@@ -1,6 +1,6 @@
 # Project Basics
 ## Contributing to ClanGen
-ClanGen is an open-source project, and anyone can contribute to it by making a pull request. Everyone who created a PR which was also merged will get the `developer` role in our [discord server](https://discord.com/invite/clangen). 
+ClanGen is an open-source project, and anyone can contribute to it by making a pull request. Everyone who created a PR which was also merged will get the `developer` role in our [discord server](https://discord.com/invite/clangen).
 
 Another way for people to join the team is through applying to become an apprentice developer. Apprentice developers will have access to the dev channels on discord and will be able to consult with other developers. They will be promoted to full developers upon the acceptance of a PR. We detail the expectations of active developers in [Development Team Roles](development-team-roles.md).
 
@@ -28,7 +28,7 @@ Another way for people to join the team is through applying to become an apprent
 
     ---
 
-    We encourage coders to have experience working in Python as well as working within a collaborative team. 
+    We encourage coders to have experience working in Python as well as working within a collaborative team.
 
 - __[Sound Designer/Composer](https://docs.google.com/forms/d/e/1FAIpQLSe-hkfF0g0QMK18GBHyumyIsWMSnbPkMp5eaTjyb3DgzVrOnA/viewform?usp=sf_link)__
 
@@ -40,6 +40,6 @@ Another way for people to join the team is through applying to become an apprent
 
 ## Contributing to the Documentation
 
-This documentation is built by the efforts of volunteers, just like the rest of ClanGen. Anyone is free to make contributions here, from as small as a typo fix to as large as full-scale feature documentation.  
+This documentation is built by the efforts of volunteers, just like the rest of ClanGen. Anyone is free to make contributions here, from as small as a typo fix to as large as full-scale feature documentation.
 
 [Contribute Documentation](../../contributing/index.md){ .md-button .md-button--primary}

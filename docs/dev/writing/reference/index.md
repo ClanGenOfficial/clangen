@@ -1,4 +1,4 @@
-# Reference 
+# Reference
 This page contains formatting information that is generally utilized across all event formats and should be treated as a main reference.
 
 ## Pronoun Tags
@@ -76,7 +76,7 @@ Our events generally require writers to "tag" certain attributes.  These "tags" 
 ### Conditions and Scars
 
 === "Taggable Injury Pools"
-    
+
     > | **INJURY POOL NAME** | **INJURIES**                                                            |
     |----------------------|-------------------------------------------------------------------------|
     | `battle_injury`      | `claw-wound`, `cat bite`, `mangled leg`, `mangled tail`, `torn pelt`    |
@@ -189,7 +189,7 @@ Our events generally require writers to "tag" certain attributes.  These "tags" 
     * `recurring shock`
     * `lasting grief`
     * `persistent headaches`
-    
+
 
 === "Scars"
 
@@ -263,7 +263,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
     * `clancat`
 
 !!! important
-    
+
     Not all statuses are utilized in all formats, please check the relevant event format guide for information on what statuses are or are not valid.
 
 
@@ -348,9 +348,9 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 
 ### Snippet Lists
-> These abbreviations can be used to insert items from snippet lists into your text. Using an abbr will add 1-3 random items from the given snippet list, formatted as a written list (i.e. `item1, item2, and item3`). 
-> 
->The following table also displays certain categories within each snippet list that you can call. To call these categories, you can just add the category after the snippet list abbr, like so: `prophecy_list_sight`.  You can even specify multiple categories, like so: `prophecy_list_sight_touch`.  If you do not add a category, then every category will be used. 
+> These abbreviations can be used to insert items from snippet lists into your text. Using an abbr will add 1-3 random items from the given snippet list, formatted as a written list (i.e. `item1, item2, and item3`).
+>
+>The following table also displays certain categories within each snippet list that you can call. To call these categories, you can just add the category after the snippet list abbr, like so: `prophecy_list_sight`.  You can even specify multiple categories, like so: `prophecy_list_sight_touch`.  If you do not add a category, then every category will be used.
 
 > Full snippet lists are found in `resources/dicts/snippet_collections.json`.  Feel free to add more options into these lists!
 
@@ -366,7 +366,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 === "prophecy_list"
 
     > Use this for amorphous, dreamy concepts.
-    
+
     > | Sense group | Examples                                                                                   |
     |-------------|--------------------------------------------------------------------------------------------|
     | sight       | blood pooling on the ground, a bird's feather, and a ghostly pair of eyes                        |
@@ -374,12 +374,12 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
     | smell       | the smell of the medicine-cat den, the scent of someone long dead, and the scent of another Clan |
     | emotional   | the excitement of an apprentice, the feeling of flight, and a half-remembered promise            |
     | touch       | the brush of a pelt against their own, a tail twining with their own, and the warmth of a parent |
-    
+
 
 === "omen_list"
 
     > Use this for more physical ideas: odd and meaningful but still grounded in reality.
-    
+
     > | Sense group | Examples                                                                                        |
     |-------------|-------------------------------------------------------------------------------------------------|
     | sight       | a five-pointed leaf, a split acorn, and a dew-covered spider's web                                    |
@@ -392,7 +392,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 === "clair_list"
 
     > Use this for amorphous, unclear things that already happened/could happen.
-    
+
     > | Sense group | Examples                                                                                                |
     |-------------|---------------------------------------------------------------------------------------------------------|
     | sound       | the rumble of many paws on the ground, a betrayal on the wind, and distant wails of grief                     |

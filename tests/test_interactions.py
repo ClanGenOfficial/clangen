@@ -20,7 +20,7 @@ class RelationshipConstraints(unittest.TestCase):
         cat_from = Cat(parent1=parent.ID)
         cat_to = Cat(parent1=parent.ID)
         rel = Relationship(cat_from, cat_to, False, True)
-    
+
         # then
         self.assertTrue(rel_fulfill_rel_constraints(rel, ["sibling"], "test"))
         self.assertTrue(rel_fulfill_rel_constraints(rel, ["not_mates"], "test"))
@@ -32,7 +32,7 @@ class RelationshipConstraints(unittest.TestCase):
         cat_from.mate.append(cat_to.ID)
         cat_to.mate.append(cat_from.ID)
         rel = Relationship(cat_from, cat_to, True, False)
-    
+
         # then
         self.assertTrue(rel_fulfill_rel_constraints(rel, ["mates"], "test"))
         self.assertFalse(rel_fulfill_rel_constraints(rel, ["not_mates"], "test"))
@@ -44,7 +44,7 @@ class RelationshipConstraints(unittest.TestCase):
 
         child_parent_rel = Relationship(child, parent, False, True)
         parent_child_rel = Relationship(parent, child, False, True)
-    
+
         # then
         self.assertTrue(rel_fulfill_rel_constraints(child_parent_rel, ["child/parent"], "test"))
         self.assertFalse(rel_fulfill_rel_constraints(child_parent_rel, ["parent/child"], "test"))
@@ -62,7 +62,7 @@ class RelationshipConstraints(unittest.TestCase):
         rel.comfortable = 50
         rel.jealousy = 50
         rel.trust = 50
-    
+
         # then
         self.assertTrue(rel_fulfill_rel_constraints(rel, ["romantic_50"], "test"))
         self.assertFalse(rel_fulfill_rel_constraints(rel, ["romantic_60"], "test"))
@@ -86,7 +86,7 @@ class RelationshipConstraints(unittest.TestCase):
         rel.comfortable = 50
         rel.jealousy = 50
         rel.trust = 50
-    
+
         # then
         self.assertTrue(rel_fulfill_rel_constraints(rel, ["romantic_50_lower"], "test"))
         self.assertFalse(rel_fulfill_rel_constraints(rel, ["romantic_30_lower"], "test"))

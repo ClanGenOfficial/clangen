@@ -25,17 +25,17 @@ The perspective should be mostly top-down and slight ¾ view.  Perspective rules
 
 ![bg_perspective](https://github.com/ClanGenOfficial/clangen/assets/115410010/fbab328a-52ee-4a94-a03b-a5751dc21787)
 
-_this is an incredibly loose perspective guide for the purpose of demonstrating what I'm explaining.  
+_this is an incredibly loose perspective guide for the purpose of demonstrating what I'm explaining.
 As you can see, the horizon line is very close to the top of the canvas. You're essentially bending your perspective from a straight-on view at the top of the canvas to a top-down view at the bottom of the canvas.  In general, keep your perspective loose but believable, you don't even need to follow this perspective guide exactly._
 
 ## Style Guidelines
-View these guidelines as loose suggestions and advice to achieve the style we’re aiming for.  
+View these guidelines as loose suggestions and advice to achieve the style we’re aiming for.
 
 ### General Style
-Our style is very painterly in that it doesn’t focus on lineart and is fairly loose.  
+Our style is very painterly in that it doesn’t focus on lineart and is fairly loose.
 
 !!! tip
-    I suggest finding a brush that has a very low anti-aliasing, but **not** no anti-aliasing.  My go-to is a crisp brush that is a bit naturally jagged/textured.  If you use CSP then I can toss you the brush file, just ask me over discord.  
+    I suggest finding a brush that has a very low anti-aliasing, but **not** no anti-aliasing.  My go-to is a crisp brush that is a bit naturally jagged/textured.  If you use CSP then I can toss you the brush file, just ask me over discord.
 
 I always start big and refine down to small details, which I find works well for achieving that loose look.  To do this, I first create my sketch (this is rather unrefined and loose, but has enough in it to get the idea of what I’m doing) and then I use a brush at a larger size to block out sections of color, following the guidelines my sketch has set.  Once I have the canvas filled with these blocks, I make my brush smaller and begin refining the shapes and adding new colors or shading as I see fit.  I try to keep my eye on the image as a whole, rather than focusing on one small area.  To ensure I don’t focus too much on one place, I will usually keep my canvas zoomed out enough to see the entire image.  I continue working with a smaller and smaller brush as I add more detailing.  Details should be kept limited, however, I very rarely worry about it being “pixel perfect”.  The majority of detailing in my BGs is less intentional detail and more the illusion of detail caused by that naturally jagged brush I mentioned.
 
@@ -55,7 +55,7 @@ I always start big and refine down to small details, which I find works well for
 
 
 ### Color
-You should avoid ever using straight black or white in your BG.  The only place I consistently use white is in snow.  Your darkest darks shouldn’t be black, but should instead be a very dark color, typically a contrasting color to whatever the majority hue is in your piece.  I generally don’t use monochromatic colors when shading.  So if I’m shading a reddish object, I usually wouldn’t use a darker red.  It’s much more dynamic to use a cool hue when shading and to vary your shading colors away from the base color of the object.  If you’re struggling to find a color to use, try color-picking from elsewhere in the image. Doing this will keep the color palette more limited and help everything look more cohesive.  
+You should avoid ever using straight black or white in your BG.  The only place I consistently use white is in snow.  Your darkest darks shouldn’t be black, but should instead be a very dark color, typically a contrasting color to whatever the majority hue is in your piece.  I generally don’t use monochromatic colors when shading.  So if I’m shading a reddish object, I usually wouldn’t use a darker red.  It’s much more dynamic to use a cool hue when shading and to vary your shading colors away from the base color of the object.  If you’re struggling to find a color to use, try color-picking from elsewhere in the image. Doing this will keep the color palette more limited and help everything look more cohesive.
 
 ### Lighting
 Lighting should be kept pretty ambiguous.  The majority of my BGs have sort of “middle of the day” lighting, but I rarely worry about adhering to a strict light source.  There are exceptions of course, like my mountain cave BG which has a very obvious light source.  Though, even in that BG, the lighting is still pretty uniform across the image.
@@ -63,9 +63,9 @@ Lighting should be kept pretty ambiguous.  The majority of my BGs have sort of �
 Remember, the cat sprites that will lay over top of your BG will not be modified in any way.  They will not appear to be affected by any lighting.  This becomes far more apparent and jarring when your BG has stark lighting changes.
 
 ### Seasons
-It’s good to keep in mind what you will be changing throughout the seasons.  This is something you should plan for ahead of time.  I’ve found it easiest to make sure I separate out my layers according to what will be changed.  Grass/plants growing and dying throughout the seasons is an easy and simple indicator.  Adding in small details like med cat herbs or kit toys that change with the season is also a fun touch that people appreciate. 
+It’s good to keep in mind what you will be changing throughout the seasons.  This is something you should plan for ahead of time.  I’ve found it easiest to make sure I separate out my layers according to what will be changed.  Grass/plants growing and dying throughout the seasons is an easy and simple indicator.  Adding in small details like med cat herbs or kit toys that change with the season is also a fun touch that people appreciate.
 
-I also like to adjust the hue and saturation (or even get really specific abt colors with color balance) according to the season.  Leafbare being less saturated and more cool colors, Greenleaf with warmer colors and higher saturation, ect. 
+I also like to adjust the hue and saturation (or even get really specific abt colors with color balance) according to the season.  Leafbare being less saturated and more cool colors, Greenleaf with warmer colors and higher saturation, ect.
 
 You can reference leafbare BGs that are snow-heavy to get an idea of how snow should look (keep in mind that some climates won’t have a lot of snow.)  I usually use three colors: pure white, a close-to-white blue, and a slightly darker purple.  Snow should drift and collect against objects inside the camp.  If you don’t have personal experience with how snow acts then I’d suggest looking up some reference images to get a feel for it!  It’s also good to consider both where cats would be walking and tracking through the snow as well as the positions that the cat sprites can take on the snow.  Spots where a sprite might be should have tramped down snow or no snow at all in order to prevent the sprites from looking like they are “on top” of the BG instead of within the BG.  Adding in cat tracks on other spots like a path to the camp entrance or paths between dens is also a fun detail.
 
@@ -120,7 +120,7 @@ Use these images as guidelines for how to stylize certain elements.  Please don�
     Snow “dusting”.  Snowflakes.  Trampled snow.
 
 ## Tutorial Sheets
-These were created for people asking for advice on the Discord, but I figure they could be helpful here as well.  If you ever have questions about how to go about drawing something specific, just ask!  
+These were created for people asking for advice on the Discord, but I figure they could be helpful here as well.  If you ever have questions about how to go about drawing something specific, just ask!
 
 ### Rocks
 !!! todo "TODO"

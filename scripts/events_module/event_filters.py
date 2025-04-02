@@ -71,7 +71,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             for _con, _val in life_lookup.items():
                 if _con in tags and leader_lives < _val:
                     return False
-                
+
         # check if main cat will allow for adoption
         if "adoption" in tags:
             if cat.no_kits:
@@ -102,10 +102,10 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
             if rank in ["leader", "deputy"] and not get_alive_status_cats(cat, [rank]):
                 return False
-            
+
             if rank not in ["leader", "deputy"] and not len(get_alive_status_cats(cat, [rank])) >= 2:
                 return False
-    
+
     special_date = get_special_date()
     # filtering for dates
     if contains_special_date_tag(tags):

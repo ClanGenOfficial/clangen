@@ -3,7 +3,7 @@
 #define ApplicationBaseName "Clan-gen"
 #define ApplicationFullName "Clan-gen (fan edit) by Sablesteel"
 
-; Update this line to the date of the latest Clan-gen (fan edit) by Sablesteel release 
+; Update this line to the date of the latest Clan-gen (fan edit) by Sablesteel release
 ; (or choose your own version-numbering scheme)
 #define ApplicationVersion "2022.08.10"
 
@@ -66,5 +66,5 @@ Name: "{app}\saves"; Permissions: users-full
 Name: {group}\Clan-gen (fan edit); Filename: {app}\main.exe; Comment: "Clan-gen (fan edit) by Sablesteel"
 Name: {commondesktop}\Clan-gen (fan edit); Filename: {app}\main.exe; Comment: "Clan-gen (fan edit) by Sablesteel";
 
-; Uninstall program Comment out to disable shortcut 
+; Uninstall program Comment out to disable shortcut
 ;Name: {group}\Uninstall {#ApplicationFullName}; Filename: {uninstallexe}

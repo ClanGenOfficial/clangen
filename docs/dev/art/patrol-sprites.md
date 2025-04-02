@@ -3,7 +3,7 @@ _by scribble (scribblecrumb)_
 
 Patrol sprites are the images seen alongside the patrol text.  They're meant to be demonstrative of the patrol text.
 
-To find out what patrol sprites are currently needed for the game, you can check our Tracking and Requests Spreadsheets.  Follow the instructions found within those spreadsheets to claim and check off patrol sprites.  
+To find out what patrol sprites are currently needed for the game, you can check our Tracking and Requests Spreadsheets.  Follow the instructions found within those spreadsheets to claim and check off patrol sprites.
 
 !!! note "Important"
     Once finished with a sprite, you must upload it to our Patrol Art google drive folder as well as within the Patrol Art Update forum on our Discord.
@@ -14,7 +14,7 @@ These spreadsheets and drive folders are only shared within the developer sectio
     Canvas size should always be 300x300 pixels!
 
 ## Lineart and General Style
-- We want to aim for semi-realism, a cartoon-y style is to be avoided.  Extraneous lines and details should be kept to a minimum, less is more!  
+- We want to aim for semi-realism, a cartoon-y style is to be avoided.  Extraneous lines and details should be kept to a minimum, less is more!
 
 !!! note "Important"
     An exception to this would be inner ear lines, these should generally be present, though still very minimal.
@@ -28,7 +28,7 @@ These spreadsheets and drive folders are only shared within the developer sectio
 - Long fur is kept very “rounded” at the tips.  It shouldn’t feel too “spiky”.
 
 - You are allowed to feature some blood and gore in your art.  We do allow players to censor patrol sprites, so it can be good practice to create a "clean" version of any art that features gore, however this is not required.  Any gore should be limited.  We aren't looking to have guts spilling out or blood flooding the screen.
-  
+
 ![fst_hunt_foxgray_leaf-fallscavenge](https://github.com/ClanGenOfficial/clangen/assets/115410010/7b6e784e-b9b8-4611-9010-ca8f0d227eee)
 
 > _An example of the level of gore we allow._
@@ -52,7 +52,7 @@ These spreadsheets and drive folders are only shared within the developer sectio
 ![fst_hunt_twolegplace](https://github.com/ClanGenOfficial/clangen/assets/115410010/79a1b423-1c3e-4843-bd59-a85792c7654b)
 
 !!! note "Important"
-    Line width should be kept to 1 px as much as possible.  This means removing any places where two pixels are side by side.  Just setting your brush to 1 px wide isn’t sufficient here (unless you’re using a program like aesprite that has pixel perfect settings), you’ll have to clean up your lineart manually.  
+    Line width should be kept to 1 px as much as possible.  This means removing any places where two pixels are side by side.  Just setting your brush to 1 px wide isn’t sufficient here (unless you’re using a program like aesprite that has pixel perfect settings), you’ll have to clean up your lineart manually.
 >
 > ![clean_lines](https://github.com/ClanGenOfficial/clangen/assets/115410010/bc08929b-c605-476a-8d25-dc4aba291d8b)
 
@@ -62,8 +62,8 @@ These spreadsheets and drive folders are only shared within the developer sectio
     ![age reference_clangen](https://github.com/ClanGenOfficial/clangen/assets/115410010/8e19bd81-d9f9-45ff-aa67-d781a3142ed3)
 
 
-## Color Palettes 
-We work off of strict color palettes for cat silhouettes and other specific entities.  We do not use "normal" cat colors for cats shown in patrol sprites because we want the player to be able to "visualize" the cats from their patrol into the patrol sprite.  
+## Color Palettes
+We work off of strict color palettes for cat silhouettes and other specific entities.  We do not use "normal" cat colors for cats shown in patrol sprites because we want the player to be able to "visualize" the cats from their patrol into the patrol sprite.
 
 Cats are color-coded by status, follow the below ref sheet.
 
@@ -95,7 +95,7 @@ Cats are color-coded by status, follow the below ref sheet.
 
 ![bch_hunt_twolegsobject](https://github.com/ClanGenOfficial/clangen/assets/115410010/46918615-0250-458e-959b-9e6bcb316c46)
 
-Silhouette and the predator colors.  Keep the red concentrated at the bottom and ensure that the shoulders up are dark. Remember that Twolegs are mysterious and should feel very unsettling to the cats.  
+Silhouette and the predator colors.  Keep the red concentrated at the bottom and ensure that the shoulders up are dark. Remember that Twolegs are mysterious and should feel very unsettling to the cats.
 
 Monsters can be done with realistic colors unless they are being “aggressive” towards the cats in the patrol.  In which case, use predator colors for the monster.  (i.e. a car just doing its business driving by should be normal colors.  A car swerving to hit a cat or bearing down directly on a cat should scream DANGER and have predator colors)
 
@@ -108,7 +108,7 @@ Feel free to illustrate more "abstract" concepts as well, like scent trails or s
 ![gen_train_ghost](https://github.com/ClanGenOfficial/clangen/assets/115410010/267a171d-c32c-4924-9cbe-dff38bd485da)
 ![gen_hunt_mouse](https://github.com/ClanGenOfficial/clangen/assets/115410010/ca5ad052-e940-449b-87a6-987808badc2d)
 
-We encourage you to play with perspective as well as close-ups/zoom-outs!  
+We encourage you to play with perspective as well as close-ups/zoom-outs!
 
 ![gen_train_huntingromance1](https://github.com/ClanGenOfficial/clangen/assets/115410010/a6b5e085-b0da-48bc-bf82-a93f553c706a)
 ![gen_train_vision4](https://github.com/ClanGenOfficial/clangen/assets/115410010/b7d62043-1539-4791-8589-263f7f1b4050)

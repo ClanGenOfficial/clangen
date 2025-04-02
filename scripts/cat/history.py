@@ -36,7 +36,7 @@ class History:
         if "mentor" in self.mentor_influence:
             del self.mentor_influence["mentor"]
 
-        """ 
+        """
         want save to look like
         {
         "beginning":{

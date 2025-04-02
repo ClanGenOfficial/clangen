@@ -43,7 +43,7 @@ Material provides a wide range of helpful Markdown extensions that provide furth
 | [toc](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=toc#table-of-contents)                                  | The Table of Contents extension automatically generates a table of contents from a document, which Material for MkDocs will render as part of the resulting page                                                                                     |                                                                                                                                                                                            |
 
 ## Custom ClanGen Assets
-We currently have custom icons set up, which can be utilized across the entire documentation. Below is a table displaying all current icons. 
+We currently have custom icons set up, which can be utilized across the entire documentation. Below is a table displaying all current icons.
 
 |             Icon              |            Markdown             |
 |:-----------------------------:|:-------------------------------:|

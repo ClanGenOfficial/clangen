@@ -18,7 +18,7 @@ jobs:
     if: vars.DO_BUILD_DOCS == 'true'
     permissions:
       contents: read
-      packages: write    
+      packages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

@@ -1094,7 +1094,7 @@ More Documentation: https://docs.google.com/document/d/1Vuyclyd40mjG7PFXtl0852Dl
 
 
 Patrol Template.
-This is a good starting point for writing your own patrols. 
+This is a good starting point for writing your own patrols.
 
 {
     "patrol_id": "some_unique_id",
@@ -1129,7 +1129,7 @@ This is a good starting point for writing your own patrols.
         },
         {
             SEE OUTCOME BLOCK TEMPLATE
-            
+
         },
     ],
     "fail_outcomes": [
@@ -1138,7 +1138,7 @@ This is a good starting point for writing your own patrols.
         },
         {
             SEE OUTCOME BLOCK TEMPLATE
-            
+
         },
     ],
 
@@ -1148,7 +1148,7 @@ This is a good starting point for writing your own patrols.
         },
         {
             SEE OUTCOME BLOCK TEMPLATE
-            
+
         },
     ],
 
@@ -1158,7 +1158,7 @@ This is a good starting point for writing your own patrols.
         },
         {
             SEE OUTCOME BLOCK TEMPLATE
-            
+
         },
     ],
 

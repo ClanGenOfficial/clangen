@@ -4,9 +4,9 @@
 
 1. Make a GitHub account.
 2. Set up GitHub Desktop.
-    - Install Git. 
+    - Install Git.
     > You can install git on windows using https://git-scm.com/download/win
-    > 
+    >
     > You can check if you have git installed by entering the command git --version in terminal
     - Install GitHub Desktop.
     - Log into GitHub in GitHub Desktop.
@@ -17,29 +17,29 @@
     - A fork is a new repository that is a copy of an existing repository. By making a fork, it becomes easier to sync your code with any changes from the main Clangen repository. Changing things on your fork will not affect the main Clangen repository in any way. In fact, unless you are a Senior Contributor, it is _impossible_ for you to accidentally commit to the main Clangen repository.
     - You can create a fork from GitHub Desktop or github web browser or using the terminal. [Github's documentation for doing so is here.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 5. Create branches of your own and other people's forks
-    - A branch represents a lineage of changes. You should make a new branch to track the changes you make from the base game (the "remote"). You branch _from_ forks, either your own or someone else's. 
+    - A branch represents a lineage of changes. You should make a new branch to track the changes you make from the base game (the "remote"). You branch _from_ forks, either your own or someone else's.
     - [This is how you make a branch.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
-    - If you are fixing a bug that is also present in the latest release branch (check before you fix the bug), please branch from the latest release branch when fixing your bug. The release branches are named like `release-x.y.z` or `release_x.y.z`, where `x.y.z` are numbers. The latest release is the one where the numbers are the highest. 
+    - If you are fixing a bug that is also present in the latest release branch (check before you fix the bug), please branch from the latest release branch when fixing your bug. The release branches are named like `release-x.y.z` or `release_x.y.z`, where `x.y.z` are numbers. The latest release is the one where the numbers are the highest.
 
 When working on multiple projects(or if you already have made a personal fork of clangen), sometimes it is required to work on multiple forks and branches from different developers (we'll refer to them as "sister forks"). Unfortunately, there is no way to do this directly through github desktop, but there is a work around. Branching from someone else's fork lets you PR to their fork, rather than the main Clangen repository, which is very helpful for large milestone development.
 
 You can add multiple "sister forks" upstream of your branches, to say have one branch for your mod, another for the Clangen development version, and another for a secret development project you're contributing to. In order to create branches that are a copy of a "sister fork", you need to add them as another "remote".  If you have your current fork cloned onto your computer, you should already have two remotes - "origin", which is your repository, and "upsteam", which is the repository that you forked (ie, the Clangen repository). Here is how to add a third (or more):
 
-1. Make sure you have Git installed on your computer. Not just Github desktop. Github Desktop uses a version of git that you can't access via the command line. 
+1. Make sure you have Git installed on your computer. Not just Github desktop. Github Desktop uses a version of git that you can't access via the command line.
 > You can install git on windows using https://git-scm.com/download/win
 > You can check if you have git installed by entering the command git --version in terminal
-2. Open up the Windows command line (or the mac/Linux equivalent). Ensure that the current working directory is the folder where you cloned your Clangen fork. 
+2. Open up the Windows command line (or the mac/Linux equivalent). Ensure that the current working directory is the folder where you cloned your Clangen fork.
 3. Run this command with the remote url you need for the specific new remote. Here, this example is the git url to add the Lifegen development version as an upstream remote:
-```py 
+```py
 git remote add Lifegen_dev https://github.com/sedgestripe/clangen.git
-``` 
+```
 You can find this url here on the github page for a fork:
 ![An image showing where to find the url for a github branch, under the code button](https://media.discordapp.net/attachments/1229932793191206913/1232500116875902987/github_explain.png?ex=6629aeae&is=66285d2e&hm=a7052baf529201613c9441bbeda71cbcaa4c64bcc1bf65b28bd4891af99d719a&=&format=webp&quality=lossless&width=2206&height=1036)
 <br> The "Lifegen_dev" bit of the above command names the new remote for your github desktop. Name your remotes informatively.
 
-4. Run git fetch --all to fetch all the info from the new remote. 
+4. Run git fetch --all to fetch all the info from the new remote.
 
-Now, when you look at "Other Branches" in Github desktop (if you use Github Desktop), you should see Lifegen's branches listed alongside the "upstream" and "origin" branches.  You can now treat it just like the Clangen "upstream" branches, and create a copy. 
+Now, when you look at "Other Branches" in Github desktop (if you use Github Desktop), you should see Lifegen's branches listed alongside the "upstream" and "origin" branches.  You can now treat it just like the Clangen "upstream" branches, and create a copy.
 
 
 

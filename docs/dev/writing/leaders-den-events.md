@@ -52,7 +52,7 @@ These should be flavored as occurring during the Gathering and should specify as
 > The event text string.  Uses same abbrs as moon events.  m_c for main cat, o_c for other_clan (NOT o_c_n)
 
 #### rel_change: int
-> How much this event changes the relationship with the other clan. 
+> How much this event changes the relationship with the other clan.
 >
 >Negative interactions give negative rel changes on success, positive or no rel changes on failure.  Positive interactions give positive rel changes on success, negative or no rel changes on failure.  Generally, failure changes should not be larger than success changes.
 >

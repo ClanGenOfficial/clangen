@@ -2,14 +2,14 @@
 
 ## Symbolism over Realism
 
-Focus on creating a _symbol_ that represents the prefix, rather than an image that realistically conveys the prefix.  For example, consider the canon Clan symbols.  RiverClan’s symbol isn’t a realistic portrayal of a river, rather it is wavy lines that suggest waves.  
+Focus on creating a _symbol_ that represents the prefix, rather than an image that realistically conveys the prefix.  For example, consider the canon Clan symbols.  RiverClan’s symbol isn’t a realistic portrayal of a river, rather it is wavy lines that suggest waves.
 
 ![image](https://github.com/user-attachments/assets/f2c486cf-1e0e-4d99-8b92-32c1daf78498)
 
 
 ## Straight POVs over ¾ POVs
 
-Straight angle POVs are far preferred over ¾ or other angled POVs. 
+Straight angle POVs are far preferred over ¾ or other angled POVs.
 
 ![image](https://github.com/user-attachments/assets/561e02e4-ec48-435d-abc5-766277916f14)
 > This Adder symbol has a very slight 3/4 angle.  This is acceptable, as it helps convey useful depth.  Notice, however, that this angle is very subtle, and that overall this looks more like a straight profile of an adder.
@@ -52,7 +52,7 @@ The vast number of prefixes within Clangen give us a unique challenge of attempt
 > Adder, Serpent, and Snake all look at their subject from different perspectives, creating unique options for players to choose from.
 
 ![image](https://github.com/user-attachments/assets/ef69b6ef-67b8-45a4-8192-131fb4dc3e0a)
-> The Blotch symbol shows off some creative thinking in illustrating itself as a cat's paw "blotching" something on the symbol. 
+> The Blotch symbol shows off some creative thinking in illustrating itself as a cat's paw "blotching" something on the symbol.
 
 ![image](https://github.com/user-attachments/assets/7a46f50b-d5d2-4087-929f-63ddd166d642)
 > Wish is conveyed as a cat "praying" to StarClan.

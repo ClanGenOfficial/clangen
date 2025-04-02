@@ -8,7 +8,7 @@
 
     ---
 
-    Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance. 
+    Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance.
 
     [Expections](#beta-tester-expectations){ .md-button .md-button--primary}
 
@@ -24,7 +24,7 @@
 
     ---
 
-    Contributors who have had a PR accepted and intend to continue contributing to the project. 
+    Contributors who have had a PR accepted and intend to continue contributing to the project.
 
     [Expections](#developer-expectations){ .md-button .md-button--primary}
 
@@ -41,23 +41,23 @@
 
 ## Beta Tester Expectations
 
-### Activity expectations 
+### Activity expectations
 
 - Beta testers are expected to have been active within the last three months. "Activity" is defined as any message within the betatesting channels (⁠dev-version-discussion and its threads + ⁠dev-version-tech-help), but there is some leeway to the time depending on the activity of development and what is there to currently test (it's not your fault if we give you nothing to test).
 
 ### Bug Reports are made through Github:
 All bugs must be reported to the [ClanGenOfficial Github](https://github.com/ClanGenOfficial/clangen/issues) issues page.
 
-1. Search the existing issues for your bug. If a post already exists for that bug, don't make a new one. Please comment on the currently-existing issue to let us know that you are experiencing the issue as well, with as many screenshots as you can. 
+1. Search the existing issues for your bug. If a post already exists for that bug, don't make a new one. Please comment on the currently-existing issue to let us know that you are experiencing the issue as well, with as many screenshots as you can.
     1. This is especially relevant for typos and spelling errors, which should all be collected under the pinned typo issue.
 
-2.  If a post for your bug doesn't already exist, make one! You'll see a "New Issue" button on Issues page. Enter a title that is clear, specific, and easily searchable. Add any additional information (such as images, instructions to replicate) in the body of the issue. 
+2.  If a post for your bug doesn't already exist, make one! You'll see a "New Issue" button on Issues page. Enter a title that is clear, specific, and easily searchable. Add any additional information (such as images, instructions to replicate) in the body of the issue.
 
 3.  Soon, a senior dev will review your issue, and give it appropriate tags.
 
 ### Playtesting
 
-Betas are often invited to playtest private, in development features before they go public. Remember to confine your discussion of these features to the private testing threads and never share links to these private branches. 
+Betas are often invited to playtest private, in development features before they go public. Remember to confine your discussion of these features to the private testing threads and never share links to these private branches.
 
 !!! caution
     If you repeatedly break confidentiality, you are liable to be kicked from the beta testing program without warning.
@@ -84,12 +84,12 @@ Be sure to check out the [Developer Expectations](#developer-expectations) for f
 
 ### Activity expectations
 
-- You must be at least somewhat active in order to keep this role. 
-- Don't fret, though, our current cutoff is two months with no activity. 
-- This may be subject to change, but you'll be warned ahead of time. 
-- If you know you won't be active for a bit, you should request the DEV IN HIATUS role. 
+- You must be at least somewhat active in order to keep this role.
+- Don't fret, though, our current cutoff is two months with no activity.
+- This may be subject to change, but you'll be warned ahead of time.
+- If you know you won't be active for a bit, you should request the DEV IN HIATUS role.
 - You will not lose your developer role if you have the hiatus role on unless you have been completely inactive for over 9 months (with no communication).
-- Activity is defined as both making PRs to contribute to game milestones, but also contributing to discussions, pitching ideas, offering critique, and planning in the development channels and forum. 
+- Activity is defined as both making PRs to contribute to game milestones, but also contributing to discussions, pitching ideas, offering critique, and planning in the development channels and forum.
 
 ### PR Ettiquette
 
@@ -107,7 +107,7 @@ Be sure to check out the [Developer Expectations](#developer-expectations) for f
 ### Private Testing Creation
 If you have a new feature that you feel needs extensive testing before merging with the main repo then you are welcome to recruit beta testers to assist you.
 
-1. Create a **thread** within the #dev-version-discussion channel. 
+1. Create a **thread** within the #dev-version-discussion channel.
 2. Ensure that this thread has a clear title and detailed description. Descriptions should include a link to your branch and detailed expectations of what beta testers should be testing for and how they should relay their feedback.
 3. Ping the beta tester role. If beta testers need tech support in any fashion, encourage them to seek it in the #dev-version-tech-help channel.
 

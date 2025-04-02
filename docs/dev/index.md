@@ -11,7 +11,7 @@ Basic information regarding the ClanGen project as a whole can be found in [Proj
 
     A variety of guides about our art styles.
 
-    
+
 
 - __[Writing Related](writing/index.md)__
 

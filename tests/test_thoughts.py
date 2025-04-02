@@ -130,7 +130,7 @@ class TestFamilyThoughts(unittest.TestCase):
         self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts1))
         self.assertEqual(function_thoughts2,[])
         '''
-    
+
     def test_family_thought_unrelated(self):
         # given
         cat1 = Cat(moons=40)
