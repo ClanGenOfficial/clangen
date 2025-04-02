@@ -184,7 +184,7 @@ class MusicManager:
                 self.silence_timer.cancel()
             self.start_silence_timer()
 
-    def fade_out_music(self, fadeout=2000, delay=randint(200, 400)):
+    def fade_out_music(self, fadeout=2000, delay=randint(120, 300)):
         """
         fades the music out, default fade is 2 seconds
         :param fadeout: length of fadeout in milliseconds
@@ -218,7 +218,7 @@ class MusicManager:
         self.music_timer.daemon = True
         self.music_timer.start()
 
-    def start_silence_timer(self, duration=randint(200, 400)):
+    def start_silence_timer(self, duration=randint(120, 300)):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
