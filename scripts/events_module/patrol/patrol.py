@@ -1207,7 +1207,7 @@ This is a good starting point for writing your own outcomes.
             "mutual": false
             "values": [],
             "amount": 5
-        },	
+        },
         {
             "cats_to": [],
             "cats_from": [],
