@@ -4,7 +4,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c took a walk through an especially muddy and dense part of the territory, the next day {PRONOUN/m_c/subject} woke up sore.",
+        "event_text": "Earlier this moon m_c walked through an especially muddy and dense part of the territory, the next day {PRONOUN/m_c/subject} woke up sore.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
@@ -20,7 +20,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c was out in the territory when {PRONOUN/m_c/subject} came across a cluster of red berries, deciding to eat some thinking they were edible, later r_c found them barely alive and rushed {PRONOUN/m_c/object} back to camp.",
+        "event_text": "m_c was out in the territory when {PRONOUN/m_c/subject} came across a cluster of red berries and ate some, later r_c found them barely alive and rushed {PRONOUN/m_c/object} back to camp.",
         "m_c": {
             "age": ["adolescent"],
             "not_skill": ["HEALER,1"]
@@ -40,7 +40,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "Whilst m_c was working on a pathway through the dense undergrowth, {PRONOUN/m_c/subject} nicked {PRONOUN/m_c/self} when weaving through the branches of a spiky tree.",
+        "event_text": "m_c was weaving through the undergrowth and nicked {PRONOUN/m_c/self} on the low branches of a spiky tree.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
@@ -56,7 +56,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "Whilst m_c was stalking through the tall grass of the marsh hunting, for a brief moment {PRONOUN/m_c/subject} could've sworn {PRONOUN/m_c/subject} felt something slither by, and was proven correct when a snake's fangs sunk into {PRONOUN/m_c/object}!",
+        "event_text": "m_c was stalking through the tall grass of the marsh hunting, however {PRONOUN/m_c/subject} stepped on a hidden snake and it bit {PRONOUN/m_c/object}!",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
