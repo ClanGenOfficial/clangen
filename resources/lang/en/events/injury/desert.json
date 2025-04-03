@@ -85,7 +85,7 @@
         "location": ["desert"],
         "season": ["greenleaf"],
         "weight": 20,
-        "event_text": "m_c was out on patrol for too long despite the sweltering Greenleaf heat, the patrol returned to camp with an overheated and disoriented m_c.",
+        "event_text": "m_c was out on patrol for too long in the sweltering Greenleaf heat, the patrol returned to camp with an overheated and disoriented m_c.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
