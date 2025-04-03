@@ -14,7 +14,7 @@
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
-    "event_text": "Wading through the wetlands, m_c keeps seeing prophecy_list_sight/m_c in the shallow water underpaw. {PRONOUN/m_c/subject/CAP} {VERB/m_c/shiver/shivers} as a cold breeze ruffles {PRONOUN/m_c/poss} fur, {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to tell c_n immediately about what {PRONOUN/m_c/subject} saw.",
+    "event_text": "m_c keeps seeing prophecy_list_sight/m_c in the water underpaw... {PRONOUN/m_c/subject/CAP} continues wading forward with {PRONOUN/m_c/poss} mission, debating the vision.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]
@@ -25,7 +25,7 @@
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
-    "event_text": "The things m_c saw in the ripples of the marsh today, omen_list_sight/m_c... m_c conceals {PRONOUN/m_c/self} with the frogs deep inside the reeds lining the marsh, needing privacy as {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} what these omens may foretell.",
+    "event_text": "The things m_c saw in the ripples of the marsh today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may foretell.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
@@ -35,8 +35,8 @@
     "event_id": "wtlnd_misc_multiage_blueheron",
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
-    "weight": 20,
-    "event_text": "m_c was feeling overwhelmed and took a walk out in the territory, after sitting down in a quiet clearing {PRONOUN/m_c/subject} saw a large blue heron fly and land right infront of {PRONOUN/m_c/object}! m_c loafed and watched the elegant bird with intrigue, wondering if it means anything.",
+    "weight": 10,
+    "event_text": "m_c took a walk out in the territory and saw a large blue heron fly close overhead! How lucky!",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     }
