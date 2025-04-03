@@ -4,7 +4,7 @@
     "location": ["desert"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
-    "event_text": "m_c was sniffing at an odd lump in the sand when suddenly a very upset lizard burst out and gave {PRONOUN/m_c/object} a nip on the nose! It sprinted away before {PRONOUN/m_c/subject} could give it payback.",
+    "event_text": "m_c was sniffing at an odd lump in the sand when suddenly an upset lizard gave {PRONOUN/m_c/object} a nip on the nose and dashed away!",
     "m_c": {
       "status": ["warrior", "apprentice", "kitten", "elder"]
     }
@@ -26,7 +26,7 @@
     "location": ["desert"],
     "season": ["newleaf", "greenleaf"],
     "weight": 20,
-    "event_text": "m_c is out combating the heat of the desert to find valuable herbs, yet in the distant mirage {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} seeing prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/continue/continues} gathering what herbs {PRONOUN/m_c/subject} can, debating what it could mean for c_n.",
+    "event_text": "m_c is out finding valuable herbs, but in the distant mirage {PRONOUN/m_c/subject} sees prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/continue/continues} gathering, attempting to decipher what the visions could mean.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]
@@ -37,7 +37,7 @@
     "location": ["desert"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
-    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c hides {PRONOUN/m_c/self} in a cool dusty dip by a large rock, needing privacy as {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
+    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
