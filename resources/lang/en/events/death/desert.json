@@ -100,7 +100,7 @@
           "season": ["any"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was out hunting and spotted a scorpion, {PRONOUN/m_c/subject} pounced to catch it to show off to c_n, but one misplaced paw on the stinger sent m_c to StarClan.",
+          "event_text": "m_c was out hunting and spotted a scorpion, {PRONOUN/m_c/subject} pounced to catch it, but one misplaced paw on the stinger sent m_c to StarClan.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
               "trait": ["ambitious", "bold", "charismatic", "competitive", "daring", "flamboyant", "insecure", "strange", "troublesome"],
