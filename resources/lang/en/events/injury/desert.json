@@ -47,53 +47,5 @@
                 "injuries": ["snake bite"]
             }
         ]
-    },
-   {
-        "event_id": "dst_injury_heatexhaustion_anymultiage1",
-        "location": ["desert"],
-        "season": ["newleaf", "greenleaf"],
-        "weight": 20,
-        "event_text": "m_c was out on patrol for too long, returning to camp panting and feeling dizzy.",
-        "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult"]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["heat exhaustion"]
-            }
-        ]
-    },
-   {
-        "event_id": "dst_injury_heatexhaustion_anymultiage2",
-        "location": ["desert"],
-        "season": ["newleaf", "greenleaf"],
-        "weight": 20,
-        "event_text": "m_c was out patrolling and didn't take enough time to rest, coming back to camp feeling weak and nauseous.",
-        "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult"]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["heat exhaustion"]
-            }
-        ]
-    },
-   {
-        "event_id": "dst_injury_heatstroke_anymultiage1",
-        "location": ["desert"],
-        "season": ["greenleaf"],
-        "weight": 20,
-        "event_text": "m_c was out on patrol for too long in the sweltering Greenleaf heat, the patrol returning to camp with an overheated and disoriented m_c.",
-        "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult"]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["heat stroke"]
-            }
-        ]
     }
 ]
