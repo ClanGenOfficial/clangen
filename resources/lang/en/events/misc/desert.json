@@ -37,7 +37,7 @@
     "location": ["desert"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
-    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
+    "event_text": "The things {PRONOUN/m_c/subject} saw in the sand today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["OMEN,2"]
