@@ -24,7 +24,7 @@
           "season": ["any"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was chasing a kangaroo rat down when it dashed into a burrow, when m_c stuck a paw in after it {PRONOUN/m_c/subject} instead felt the fangs of a surprised rattlesnake sinking into {PRONOUN/m_c/object}, joining the rat in StarClan",
+          "event_text": "m_c chased a kangaroo rat into a burrow, only to run right into the fangs of a surprised rattlesnake. {PRONOUN/m_c/subject/CAP} didn't make it back to camp...",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
               "dies": true
@@ -43,7 +43,7 @@
           "season": ["any"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was out training alone, practicing jumping from one rock to another, however {PRONOUN/m_c/subject} forgot one crucial step as an angry rattlesnake slithered out from under the rock {PRONOUN/m_c/subject} landed on, striking and killing m_c",
+          "event_text": "m_c was out training {PRONOUN/m_c/poss} agility by jumping from rock to rock. {PRONOUN/m_c/subject/CAP} didn't notice the rattlesnake until their paw landed on top of it, earning {PRONOUN/m_c/object} a nasty bite and a lethal dose of venom.",
           "m_c": {
               "status": ["apprentice"],
               "dies": true
