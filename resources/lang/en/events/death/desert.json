@@ -43,7 +43,7 @@
           "season": ["any"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was out training alone when {PRONOUN/m_c/subject} heard a bizzare rattling noise coming from a snake, moving closer to try to hunt it m_c was bitten and killed before anycat could help {PRONOUN/m_c/object}",
+          "event_text": "m_c was out training alone when {PRONOUN/m_c/subject} heard a bizarre rattling noise coming from a snake, moving closer to try to hunt it m_c was bitten and killed before anycat could help {PRONOUN/m_c/object}",
           "m_c": {
               "status": ["apprentice"],
               "dies": true
@@ -71,7 +71,7 @@
               {
               "cats": ["m_c"],
               "reg_death": "m_c was mislead by a mirage thinking it was water.",
-              "lead_death": "{VERB/m_c/were/was} misead by a mirage thinking it was water."
+              "lead_death": "{VERB/m_c/were/was} mislead by a mirage thinking it was water."
               }
           ]
   },
