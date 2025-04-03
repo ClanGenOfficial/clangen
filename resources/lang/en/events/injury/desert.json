@@ -55,7 +55,7 @@
         "weight": 20,
         "event_text": "m_c was out on patrol and pushed {PRONOUN/m_c/self} too hard, returning to camp panting and feeling dizzy.",
         "m_c": {
-            "age": ["apprentice", "young adult", "adult", "senior adult"]
+            "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
         "injury": [
             {
@@ -71,7 +71,7 @@
         "weight": 20,
         "event_text": "m_c was out patrolling and didn't take enough time to rest away from the sun, coming back to camp feeling weak and nauseous.",
         "m_c": {
-            "age": ["apprentice", "young adult", "adult", "senior adult"]
+            "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
         "injury": [
             {
@@ -87,7 +87,7 @@
         "weight": 20,
         "event_text": "m_c was out on patrol and pushed {PRONOUN/m_c/self} too hard despite the sweltering Greenleaf heat, the patrol returning to camp with an overheated and disoriented m_c.",
         "m_c": {
-            "age": ["apprentice", "young adult", "adult", "senior adult"]
+            "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
         "injury": [
             {
