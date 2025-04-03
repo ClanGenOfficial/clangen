@@ -173,7 +173,7 @@ jobs:
           path: ${{ matrix.artifact_name }}
       - name: Import GPG key
         id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5
+        uses: crazy-max/ghaction-import-gpg@v6
         if: ${{ env.gpg_private_key != '' && env.gpg_private_key_passphrase != '' }}
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
