@@ -4,7 +4,7 @@
         "location": ["desert"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "As m_c was out scouring the territory, {PRONOUN/m_c/subject} took a bad tumble over a rock hidden by the dusty ground.",
+        "event_text": "m_c was out in the territory and took a bad tumble over a rock hidden by the dusty ground.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
@@ -20,7 +20,7 @@
         "location": ["desert"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "Despite m_c's mentor's protests, {PRONOUN/m_c/subject} dashes off and tumbles face first into a cactus, thankfully the medicine cat is able to remove the spines with little difficulty.",
+        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus, thankfully the medicine cat is able to remove the spines with little difficulty.",
         "m_c": {
             "age": ["adolescent"],
             "trait": ["adventurous", "arrogant", "bold", "childish", "confident", "daring", "oblivious", "playful", "rebellious", "shameless", "troublesome"]
@@ -53,7 +53,7 @@
         "location": ["desert"],
         "season": ["newleaf", "greenleaf"],
         "weight": 20,
-        "event_text": "m_c was out on patrol and pushed {PRONOUN/m_c/self} too hard, returning to camp panting and feeling dizzy.",
+        "event_text": "m_c was out on patrol for too long, returning to camp panting and feeling dizzy.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
@@ -69,7 +69,7 @@
         "location": ["desert"],
         "season": ["newleaf", "greenleaf"],
         "weight": 20,
-        "event_text": "m_c was out patrolling and didn't take enough time to rest away from the sun, coming back to camp feeling weak and nauseous.",
+        "event_text": "m_c was out patrolling and didn't take enough time to rest, coming back to camp feeling weak and nauseous.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
@@ -85,7 +85,7 @@
         "location": ["desert"],
         "season": ["greenleaf"],
         "weight": 20,
-        "event_text": "m_c was out on patrol and pushed {PRONOUN/m_c/self} too hard despite the sweltering Greenleaf heat, the patrol returning to camp with an overheated and disoriented m_c.",
+        "event_text": "m_c was out on patrol for too long despite the sweltering Greenleaf heat, the patrol returned to camp with an overheated and disoriented m_c.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
