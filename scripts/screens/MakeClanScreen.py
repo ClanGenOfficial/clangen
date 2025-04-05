@@ -1375,7 +1375,6 @@ class MakeClanScreen(Screens):
             anchors={
                 "left_target": self.elements["random_clan_checkbox"],
                 "top_target": self.elements["random_clan_checkbox"],
-                "centerx": self.elements["random_clan_checkbox"],
             },
         )
         self.elements["mode_details"] = pygame_gui.elements.UITextBox(

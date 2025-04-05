@@ -844,7 +844,9 @@ class Pelt:
         elif self.pattern == "MINIMAL4":
             self.pattern = "MINIMALFOUR"
 
-        if isinstance(self.accessory, str):
+        if self.accessory is None:
+            self.accessory = []
+        elif isinstance(self.accessory, str):
             self.accessory = [self.accessory]
 
 
@@ -1233,9 +1235,11 @@ class Pelt:
             acc_display_choice = random.randint(0, 100)
 
         if acc_display_choice == 1:
-            self.accessory = [choice(
-                [choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)]
-            )]
+            self.accessory = [
+                choice(
+                    [choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)]
+                )
+            ]
         else:
             self.accessory = []
 

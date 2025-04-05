@@ -508,7 +508,7 @@
         "decline_text": "Taking a break turns into ending the patrol early.",
         "success_outcomes": [
                 {
-                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathize/sympathizes}, but app1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practice with enthusiasm.",
+                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathize/sympathizes}, but app1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at lifeguarding practice with enthusiasm.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -539,7 +539,7 @@
                     ]
                 },
                 {
-                    "text": "s_c nods. Life guarding isn't easy, even in practice. But {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
+                    "text": "s_c nods. Lifeguarding isn't easy, even in practice. But {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -570,7 +570,7 @@
                     ]
                 },
                 {
-                    "text": "Doesn't app1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out in to save lives that have been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
+                    "text": "Doesn't app1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",

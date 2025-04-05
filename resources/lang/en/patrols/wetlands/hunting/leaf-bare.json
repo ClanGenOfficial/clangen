@@ -1074,7 +1074,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1278,7 +1278,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2677,7 +2677,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... They wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -2782,7 +2782,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... They wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -3076,7 +3076,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... They wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["small"],
@@ -3181,7 +3181,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... they wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... They wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
                 "exp": 10,
                 "weight": 20,
                 "prey": ["medium"]
@@ -3242,7 +3242,7 @@
         "weight": 20,
         "chance_of_success": 40,
         "pl_skill_constraint": ["STORY,1", "LORE,1", "HUNTER,2", "CLIMBER,2", "TEACHER,1"],
-        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brillint color above a big stream catches app1's attention.",
+        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches app1's attention.",
         "decline_text": "It's out of the ordinary... and might be dangerous. app1 ignores it.",
         "success_outcomes": [
             {
@@ -3271,7 +3271,7 @@
                 ]
             },
             {
-                "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and steathily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
+                "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and stealthily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_train_sneakprey",

@@ -564,7 +564,7 @@ class MedDenScreen(Screens):
                         condition_list.extend(
                             [
                                 i18n.t(f"conditions.permanent_conditions.{permcond}")
-                                for permcond in list(cat.injuries.keys())
+                                for permcond in list(cat.permanent_condition.keys())
                             ]
                         )
             conditions = ",<br>".join(condition_list)

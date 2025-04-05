@@ -1546,7 +1546,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and lands heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1950,7 +1950,7 @@
                 "can_have_stat": ["adult"]
             },
             {
-                "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings to much, much larger then they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
+                "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings too much, much larger than they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c", "all_lives"],
@@ -2062,7 +2062,7 @@
                 "stat_trait": ["troublesome", "bold", "daring", "ambitious"]
             },
             {
-                "text": "p_l looks around the rocks, only to spy something flying above {PRONOUN/p_l/object}, hearing the cat from up there. Oh. It's star-blasted raven. The raven swoops and sinks its talons into p_l, who shrieks and thrashes as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carried into the air. {PRONOUN/p_l/subject/CAP} {VERB/p_l/struggle/struggles} to free {PRONOUN/p_l/self} as the raven drops {PRONOUN/p_l/object} into the jaws of wolves.",
+                "text": "p_l looks around the rocks, only to spy something flying above {PRONOUN/p_l/object}, hearing the cat from up there. Oh. It's a star-blasted raven. The raven swoops and sinks its talons into p_l, who shrieks and thrashes as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carried into the air. {PRONOUN/p_l/subject/CAP} {VERB/p_l/struggle/struggles} to free {PRONOUN/p_l/self} as the raven drops {PRONOUN/p_l/object} into the jaws of wolves.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -3336,7 +3336,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3540,7 +3540,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],

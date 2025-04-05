@@ -2353,7 +2353,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find {PRONOUN/r_c/poss} red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} {PRONOUN/r_c/poss} red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -2753,7 +2753,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -4319,7 +4319,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -4523,7 +4523,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -5761,7 +5761,7 @@
         "weight": 20,
         "chance_of_success": 40,
         "pl_skill_constraint": ["STORY,1", "LORE,1", "HUNTER,2", "CLIMBER,2", "TEACHER,1"],
-        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brillint color above a big stream catches app1's attention.",
+        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches app1's attention.",
         "decline_text": "It's out of the ordinary... and might be dangerous. app1 ignores it.",
         "success_outcomes": [
             {
@@ -5790,7 +5790,7 @@
                 ]
             },
             {
-                "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and steathily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
+                "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and stealthily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_train_sneakprey",
@@ -5934,8 +5934,8 @@
                     ],
                     "history_text": {
                         "scar":"m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
-                        "reg_death": "The view point c_n thought was safe from avalanches... was not.",
-                        "lead_death": "the view point c_n thought was safe from avalanches... was not"
+                        "reg_death": "The viewpoint c_n thought was safe from avalanches... was not.",
+                        "lead_death": "the viewpoint c_n thought was safe from avalanches... was not"
                     }
                 }
             ]

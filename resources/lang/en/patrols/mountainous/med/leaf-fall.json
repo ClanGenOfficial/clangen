@@ -731,7 +731,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when p_l does come across some. On the way home, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} some straggly-looking plantain near the path. {PRONOUN/p_l/subject/CAP} pick it, as well. The more herbs they have before leaf-bare, the better.",
+                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when p_l comes across some. On the way home, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} some straggly-looking plantain near the path. {PRONOUN/p_l/subject/CAP} pick it, as well. The more herbs they have before leaf-bare, the better.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["burdock", "plantain"]
@@ -2472,7 +2472,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet, but happy afternoon with app1. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and stop to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to app1 that while they're starting to turn colors, the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet, but happy afternoon with app1. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and {VERB/p_l/stop/stops} to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to app1 that while they're starting to turn colors, the leaves are still usable.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"],
@@ -2583,7 +2583,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. They manage to gather a good amount, even while chatting. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and stop to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} explain that while they're starting to turn colors, the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. They manage to gather a good amount, even while chatting. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and {VERB/p_l/stop/stops} to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} explain that while they're starting to turn colors, the leaves are still usable.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"],
