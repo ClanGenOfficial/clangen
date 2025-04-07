@@ -38,7 +38,7 @@
                 ]
             },
             {
-                "text": "p_l swims right through the watering hole and out the other side, stopping to shake {PRONOUN/p_l/poss} coat dry(ish). A pleasent way of getting from A to B, and a nice chance to feel the weightlessness of swimming.",
+                "text": "p_l swims right through the watering hole and out the other side, stopping to shake {PRONOUN/p_l/poss} coat dry(ish). A pleasant way of getting from A to B, and a nice chance to feel the weightlessness of swimming.",
                 "exp": 5,
                 "weight": 20,
                 "art": "gen_train_soggykitty_happy_warrior",
@@ -221,7 +221,7 @@
                 ]
             },
             {
-                "text": "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
+                "text": "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enough to escape. <i>Should.</i>",
                 "exp": 0,
                 "weight": 20,
                 "art": "cat_running_two",
@@ -241,7 +241,7 @@
                 }
             },
             {
-                "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting, but everyone who went out under the hot sun is more tired than they should be, and some have clearly gotten heat stroke.",
+                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting, but everyone who went out under the hot sun is more tired than they should be, and some have clearly gotten heat stroke.",
                 "exp": 0,
                 "weight": 20,
                 "art":"fst_hunt_heat",
@@ -280,7 +280,7 @@
                 ]
             },
             {
-                "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. But s_c brings everything to a halt, spotting that some of the patrol are beginning to feel the effects of the heat, and insisting they return home. It saves anyone else from being injured by the heat.",
+                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. But s_c brings everything to a halt, spotting that some of the patrol are beginning to feel the effects of the heat, and insisting they return home. It saves anyone else from being injured by the heat.",
                 "exp": 0,
                 "weight": 20,
                 "art": "fst_hunt_heat",
@@ -339,7 +339,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "p_l is out at night, enjoying the coolness after the heat of the day, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
-        "decline_text": "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often  feast on cats.",
+        "decline_text": "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often feast on cats.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -569,7 +569,7 @@
                 "stat_trait": ["nervous", "insecure"],
                 "dead_cats": ["s_c"],
                 "history_text": {
-                    "reg_death": "This cat died by the jaws of coyote after freezing up.",
+                    "reg_death": "This cat died by the jaws of a coyote after freezing up.",
 	                "lead_death": "died by the jaws of a coyote after freezing up."
                 }
             },
@@ -770,7 +770,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_coyote_danger2_w2",
@@ -789,7 +789,7 @@
                 "dead_cats":["r_c"],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died to keep coyotes away from c_n's borders.",
+                    "reg_death": "m_c died to keep coyotes away from c_n's borders.",
                     "lead_death": "keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -803,7 +803,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup. It's s_c that manages to hold them off long enough for the patrol retreat.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. It's s_c that manages to hold them off long enough for the patrol retreat.",
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_coyote_danger2_w2",
@@ -818,7 +818,7 @@
                 ],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died to keep coyotes away from c_n's borders.",
+                    "reg_death": "m_c died to keep coyotes away from c_n's borders.",
                     "lead_death": "keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1019,7 +1019,7 @@
                 ]
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup. r_c gets {PRONOUN/r_c/poss} ear torn, and a couple others get scraped up, but with teamwork the cats manage to maul the opposing pack, and both sides retreat, point made.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. r_c gets {PRONOUN/r_c/poss} ear torn, and a couple others get scraped up, but with teamwork the cats manage to maul the opposing pack, and both sides retreat, point made.",
                 "exp": 70,
                 "weight": 20,
                 "art": "gen_coyote_danger2_w3",
@@ -1037,7 +1037,7 @@
                 ],
                 "history_text": {
                     "scar": "Mauling a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1058,7 +1058,7 @@
                 ]
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup. It's s_c who makes the difference, and the pup's death leaves little reason for the parents to keep fighting.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. It's s_c who makes the difference, and the pup's death leaves little reason for the parents to keep fighting.",
                 "exp": 70,
                 "weight": 20,
                 "art": "gen_coyote_danger2_w3",
@@ -1082,7 +1082,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup. s_c hauls r_c out of the fight and applies pressure on {PRONOUN/r_c/poss} wound, saving {PRONOUN/r_c/poss} life.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. s_c hauls r_c out of the fight and applies pressure on {PRONOUN/r_c/poss} wound, saving {PRONOUN/r_c/poss} life.",
                 "exp": 80,
                 "weight": 10,
                 "art": "gen_angry_cat_warrior",
@@ -1102,7 +1102,7 @@
                 ],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1237,12 +1237,12 @@
                 ],
                 "history_text": {
                     "scar": "A coyote encounter left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 }
             },
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_coyote_danger2_w3",
@@ -1261,7 +1261,7 @@
                 "dead_cats":["r_c"],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1275,7 +1275,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less managable are the parents, who come running as the patrol attacks the pup. It's s_c that manages to hold them off long enough for the patrol retreat.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. It's s_c that manages to hold them off long enough for the patrol retreat.",
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_coyote_danger2_w1",
@@ -1290,7 +1290,7 @@
                 ],
                 "history_text": {
                     "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
+                    "reg_death": "m_c died from injuries sustained keeping coyotes away from c_n's borders.",
                     "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
                 },
                 "relationships": [
@@ -1465,7 +1465,7 @@
                 ]
             },
             {
-                "text": "s_c is brought forward to check it out. After careful consideration, {PRONOUN/s_c/subject} {VERB/s_c/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home rennovator appears to have moved on, leaving it open for c_n's use.",
+                "text": "s_c is brought forward to check it out. After careful consideration, {PRONOUN/s_c/subject} {VERB/s_c/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home renovator appears to have moved on, leaving it open for c_n's use.",
                 "exp": 40,
                 "weight": 20,
                 "art": "gen_bord_scent_allies",
@@ -1513,7 +1513,7 @@
                 ]
             },
             {
-                "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
+                "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and thoroughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
                 "exp": 50,
                 "weight": 20,
                 "art": "gen_warrior_crouching",
@@ -1691,7 +1691,7 @@
                 ]
             },
             {
-                "text": "s_c rushes into the tunnels with a gleeful meow! It's greeting by whimsical, echoing giggles, as the hyena cub inside laughes nervously and bites.",
+                "text": "s_c rushes into the tunnels with a gleeful meow! It's greeting by whimsical, echoing giggles, as the hyena cub inside laughs nervously and bites.",
                 "exp": 0,
                 "weight": 5,
                 "stat_trait": ["childish", "playful", "adventurous"],
@@ -1930,7 +1930,7 @@
                 ]
             },
             {
-                "text": "The apprentice has made an accidental discovery, tripping into a well hidden burrow entrance. It's always valuable to have safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
+                "text": "The apprentice has made an accidental discovery, tripping into a well hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
                 "exp": 40,
                 "weight": 20,
                 "art": "pln_bord_tunnel",
@@ -2034,7 +2034,7 @@
                 ]
             },
             {
-                "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneth {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
+                "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -2056,7 +2056,7 @@
                 ]
             },
             {
-                "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneth {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole while app1 coughes up mud and mucus.",
+                "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole while app1 coughs up mud and mucus.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -2083,7 +2083,7 @@
                 ]
             },
             {
-                "text": "app1 screeches. Something has {PRONOUN/app1/object} by the leg! The patrol tries to drag {PRONOUN/app1/object} out of the sinkhole thats developing around {PRONOUN/app1/object}, but it's no use, app1 is pulled down and out of sight.",
+                "text": "app1 screeches. Something has {PRONOUN/app1/object} by the leg! The patrol tries to drag {PRONOUN/app1/object} out of the sinkhole that's developing around {PRONOUN/app1/object}, but it's no use, app1 is pulled down and out of sight.",
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_dead_cat_app",
@@ -2175,7 +2175,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but they can report this to camp.",
+                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but they can report this to camp.",
                 "exp": 30,
                 "weight": 20,
                 "art": "fst_bord_sett",
@@ -2197,7 +2197,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but no one tell r_c and p_l that, because somehow they manage to do it anyway.",
+                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but no one tell r_c and p_l that, because somehow they manage to do it anyway.",
                 "exp": 40,
                 "weight": 5,
                 "art": "gen_bord_twocat_hostile_warrior_warrior",
@@ -2226,7 +2226,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
+                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_bord_twocat_hostile_warrior_warrior",
@@ -2259,7 +2259,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with dirt, to mark the place for another, bigger border patrol to deal with.",
+                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with dirt, to mark the place for another, bigger border patrol to deal with.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_bord_twocat_hostile_warrior_warrior",
@@ -2657,7 +2657,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. With s_c taking the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
+                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. With s_c taking the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
                 "exp": 30,
                 "weight": 20,
                 "art": "fst_bord_sett",
@@ -2952,7 +2952,7 @@
                 "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed saving an older warrior froma badger as an apprentice.",
+                    "reg_death": "This cat was killed saving an older warrior from a badger as an apprentice.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
                 }
             },
@@ -2989,7 +2989,7 @@
             "normal adult":[1, 1]
         },
         "weight": 20,
-        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird spash of shadows in a dip in the grass. Is that a burrow entrance?",
+        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in a dip in the grass. Is that a burrow entrance?",
         "decline_text": "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -3277,7 +3277,7 @@
                 ]
             },
             {
-                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
+                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionsuccess",
@@ -3344,7 +3344,7 @@
                 "lost_cats": ["app1"]
             },
             {
-                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
+                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_app_EXPLICIT",
@@ -3740,7 +3740,7 @@
                 }
             },
             {
-                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shirek, and something pulls {PRONOUN/s_c/subject} in.",
+                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in.",
                 "exp": 0,
                 "weight": 20,
                 "art": "pln_bord_tunnel",
@@ -3916,7 +3916,7 @@
                 ]
             },
             {
-                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independant adventures away from it's mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it, leaping through the grass. The elk calf snuffles, and touches noses with {PRONOUN/s_c/object}.",
+                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independant adventures away from its mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it, leaping through the grass. The elk calf snuffles, and touches noses with {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_soloapp",
@@ -4037,7 +4037,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independant adventures away from it's mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it. The calf starles, flinches backwards and stomping with its front hooves.",
+                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independant adventures away from its mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it. The calf starles, flinches backwards and stomping with its front hooves.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_soloapp",
@@ -4245,7 +4245,7 @@
                 ]
             },
             {
-                "text": "The sun blazes down in full force as the apprentices race along the border, a place without cover or shade. When they return home, they're all thisty, but for some of them, they're dazed and confused. The patrol is scolded for making themselves vulerable to heat stroke.",
+                "text": "The sun blazes down in full force as the apprentices race along the border, a place without cover or shade. When they return home, they're all thirsty, but for some of them, they're dazed and confused. The patrol is scolded for making themselves vulnerable to heat stroke.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_hotapps",
@@ -4373,7 +4373,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "s_c stares back, unimpressed. Does n_c:0 really think s_c can't see, or is going to ignore, the piece of prey half concealed behind {PRONOUN/n_c:0/object}? Well. Okay, you can't blame n_c:0 for trying, haha! s_c escorts the minx to the border, peacefully but <i>firmly</i> confistcating the prey {PRONOUN/n_c:0/subject} poached. Shoo.",
+                "text": "s_c stares back, unimpressed. Does n_c:0 really think s_c can't see, or is going to ignore, the piece of prey half concealed behind {PRONOUN/n_c:0/object}? Well. Okay, you can't blame n_c:0 for trying, haha! s_c escorts the minx to the border, peacefully but <i>firmly</i> confiscating the prey {PRONOUN/n_c:0/subject} poached. Shoo.",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_train_talkingWL",
@@ -4755,7 +4755,7 @@
                 "outsider_rep": -2
             },
             {
-                "text": "Say, pretty kitty, the loner continues, what say we- No, s_c cuts {PRONOUN/n_c:0/object} off. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} leaving c_n's territory now. The loner bristles, and makes to turn, only to swirl around, claws extended. s_c is ready, and almost disdainfully sidesteps the attack, digging in {PRONOUN/s_c/poss} hindclaws and pouncing from the side to shove n_c:0 over. The outsider hisses furiously, but it's clear who's won.",
+                "text": "Say, pretty kitty, the loner continues, what say we- No, s_c cuts {PRONOUN/n_c:0/object} off. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} leaving c_n's territory now. The loner bristles, and makes a turn, only to swirl around, claws extended. s_c is ready, and almost disdainfully sidesteps the attack, digging in {PRONOUN/s_c/poss} hindclaws and pouncing from the side to shove n_c:0 over. The outsider hisses furiously, but it's clear who's won.",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_angry_cat_loner",

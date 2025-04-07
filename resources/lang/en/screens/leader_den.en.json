@@ -52,11 +52,11 @@
         "appease": "appease",
         "declare": "declare",
         "hunt": "hunt down",
-        "hunt_down_tooltip": "This cat will be killed if found.",
-        "drive_off": "drive off",
-        "drive_off_tooltip": "This cat will be driven out of the area if found ({PRONOUN/r_c/subject} will no longer be accessible in-game).",
-        "invite_in": "invite in",
-        "search_for": "search for",
-        "invite_in_tooltip": "This cat will join the Clan if found."
+        "hunt_tooltip": "This cat will be killed if found.",
+        "drive": "drive off",
+        "drive_tooltip": "This cat will be driven out of the area if found ({PRONOUN/r_c/subject} will no longer be accessible in-game).",
+        "invite": "invite in",
+        "search": "search for",
+        "invite_tooltip": "This cat will join the Clan if found."
     }
 }

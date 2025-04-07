@@ -22,7 +22,7 @@
 			"r_c helps m_c hide from a Clanmate.",
 			"r_c makes a small sacrifice that benefits m_c.",
 			"r_c lets m_c know that a Clanmate was talking badly about {PRONOUN/m_c/object}.",
-			"r_c tells m_c that {PRONOUN/r_c/subject} was worried for {PRONOUN/m_c/object}."
+			"r_c tells m_c that {PRONOUN/r_c/subject} was worried about {PRONOUN/m_c/object}."
 		],
 		"reaction_random_cat": {
 			"trust": "increase"

@@ -718,14 +718,14 @@ What each parameter does, and what the options are for outcomes.
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](reference.md#__tabbed_1_1)
+>[Injury List](reference/index.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](reference.md#__tabbed_1_5)
+>[Scar List](reference/index.md#__tabbed_1_5)
 
 >**no_results: bool:** 
 >Optional. Controls if the injury "got" message shows up in patrol results, as well as potential history text.

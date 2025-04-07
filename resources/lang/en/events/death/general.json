@@ -1116,7 +1116,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, c_n launches a search. They find {PRONOUN/m_c/poss} cooling body after a long search. They wonder why {PRONOUN/m_c/subject} decided to leave the safety of c_n, and what killed {PRONOUN/m_c/object}.",
+        "event_text": "m_c sneaked out of camp, intending to discover more about {PRONOUN/m_c/poss} origins. After a long morning search, c_n found {PRONOUN/m_c/poss} cooling body.",
         "m_c": {
             "age": [ "adolescent", "young adult"],
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "mediator", "medicine cat", "deputy" ],
@@ -1308,7 +1308,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "When traveling together near the border of c_n territory, m_c used {PRONOUN/m_c/poss} own body to shield r_c from a surprise o_c_n ambush, even though it meant certain death.",
+        "event_text": "m_c used {PRONOUN/m_c/poss} own body to shield r_c from a surprise o_c_n ambush, even though it meant certain death.",
         "m_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
@@ -1364,7 +1364,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c sacrificed {PRONOUN/m_c/self} by taking on the role of a messenger, delivering important information that could save {PRONOUN/m_c/poss} Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} killed while investigating enemy territory.",
+        "event_text": "m_c was killed while investigating enemy territory.",
         "m_c": {
             "status": ["apprentice", "warrior"],
             "dies": true
@@ -1548,7 +1548,7 @@
         "sub_type": [ "old_age" ],
         "tags": [ "all_lives" ],
         "weight": 20,
-        "event_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
+        "event_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n found their bodies still wrapped around each other in the morning.",
         "m_c": {
             "age": [ "senior" ],
             "status": [ "any" ],
@@ -1576,7 +1576,7 @@
         ],
         "tags": [ "no_body", "all_lives" ],
         "weight": 20,
-        "event_text": "m_c couldn't miss today! Such a bright day, perfect for a walk. That was until m_c detected another scent, a foul one. {PRONOUN/m_c/subject/CAP} recoiled, but not before long claws slashed across {PRONOUN/m_c/poss} face. Later, c_n found only blood and the scent of a predator at the scene.",
+        "event_text": "m_c met their end to the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
         "m_c": {
             "age": [ "adolescent", "young adult", "adult", "senior adult" ],
             "dies": true
@@ -1731,7 +1731,7 @@
         "sub_type": [ "murder" ],
         "tags": [ "all_lives" ],
         "weight": 20,
-        "event_text": "A yowl took m_c by surprise as {PRONOUN/m_c/subject} {VERB/m_c/were/was} patrolling the territory. r_c crashed into view, meowing about how m_c had to come and see. m_c followed the distressed warrior to a small ravine. Suddenly, {PRONOUN/m_c/subject} felt a sharp shove from behind, letting out a yowl of surprise that was cut short as {PRONOUN/m_c/subject} landed on the sharp rocks below.",
+        "event_text": "Lured by trickery and deceptive words, m_c was shoved into a ravine by r_c, killing {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
                 "deputy", "leader"
@@ -1785,7 +1785,7 @@
         "sub_type": ["murder"],
         "tags": ["all_lives"],
         "weight": 20,
-        "event_text": "m_c agreed to venture with r_c out onto a frozen pond. m_c went first while r_c hung back. m_c slid around playfully, taunting the other cat to chase {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} about to launch another teasing remark when the ice cracked below {PRONOUN/m_c/poss} paws. r_c lingered to make sure {PRONOUN/m_c/subject} didn't resurface before running back to camp with a yowl.",
+        "event_text": "r_c tricked m_c into playing on thin ice. {PRONOUN/r_c/subject/CAP} watched closely as m_c disappeared beneath the surface.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "not_skill": [
@@ -1849,7 +1849,7 @@
         ],
         "tags": ["all_lives"],
         "weight": 20,
-        "event_text": "m_c and r_c talked each other into walking onto the ice of the frozen pond that lay not far from camp. It was a dare at first, but when m_c didn't immediately fall in, r_c joined {PRONOUN/m_c/object}. The two cats playfully slipped around for a bit before the faint cracks reached their ears. By then, it was too late to move.",
+        "event_text": "Last c_n heard, m_c and r_c were going out to play. They don't return, and the ice on a nearby pond is cracked.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"],
             "not_skill": [
@@ -2093,7 +2093,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c.",
+        "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
         "m_c": {
             "status": [
                 "warrior",
@@ -2512,7 +2512,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. The culprit is unknown.",
+        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom.",
         "m_c": {
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "medicine cat", "mediator", "deputy" ],
             "not_skill": [
@@ -2563,65 +2563,6 @@
         ]
     },
     {
-        "event_id": "gen_death_murder_anycliff2",
-        "location": ["beach", "mountainous", "forest"],
-        "season": [
-            "any"
-        ],
-        "sub_type": ["murder"],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}.",
-        "m_c": {
-            "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "medicine cat", "mediator", "deputy"],
-            "not_skill": [
-                "PROPHET,3",
-                "OMEN,3",
-                "FIGHTER,3"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "skill": [
-                "HUNTER,3",
-                "FIGHTER,2"
-            ]
-        },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was pushed off a cliff by r_c."
-        }],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "platonic",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ]
-    },
-    {
         "event_id": "gen_death_war_any5",
         "location": ["mountainous", "forest", "beach"],
         "season": [
@@ -2630,7 +2571,7 @@
         "sub_type": [ "war" ],
         "tags": [ "some_lives"],
         "weight": 20,
-        "event_text": "m_c was killed by a falling boulder pushed from a cliff above {PRONOUN/m_c/object} by o_c_n warriors.",
+        "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [ "apprentice", "warrior", "deputy", "leader" ],
             "dies": true
@@ -2655,7 +2596,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c, guarding camp, yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c starts sprinting to m_c's position but can't get there in time, not before m_c is carried high into the sky.",
+        "event_text": "r_c yowled a warning as {PRONOUN/r_c/subject} saw a circling shadow, right above m_c. r_c couldn't get there before m_c was carried high into the sky.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
@@ -3044,7 +2985,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c excitedly follows r_c a short distance from camp to begin the promised battle training. r_c says something about how real warriors don't hold back, even in a spar. m_c nods eagerly. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/have/has} time to duck as r_c's paw whistles past {PRONOUN/m_c/poss} head. The kit stumbles backwards, tripping over {PRONOUN/m_c/poss} paws, {PRONOUN/m_c/poss} head landing hard on a rock.",
+        "event_text": "r_c invited m_c to private battle training. When m_c slipped and hit {PRONOUN/m_c/poss} head, {PRONOUN/m_c/subject} never woke back up.",
         "m_c": {
             "age": [
                 "kitten"
@@ -3100,7 +3041,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c quietly pads after r_c, eyes bright with the promise of exploring the territory. r_c suddenly comes to a stop beside a spiky bush, pointing at it with a claw. Apparently the shiny red berries taste just like fresh prey, and r_c is offering one to m_c! The kit excitedly nods and grabs a berry with {PRONOUN/m_c/poss} teeth. It's not exactly like prey... The kit's thought trails off as darkness takes over {PRONOUN/m_c/poss} vision.",
+        "event_text": "r_c suggested m_c try some shiny red berries. m_c's excitement faded with {PRONOUN/m_c/poss} life.",
         "m_c": {
             "age": [
                 "kitten"
@@ -3155,7 +3096,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c sneaks out of camp, wondering what all is out there. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} to a small stream and {VERB/m_c/attempt/attempts} to leap across. {PRONOUN/m_c/subject/CAP} misjudged the distance and {PRONOUN/m_c/poss} paws scrabble on the bank for purchase. m_c is losing {PRONOUN/m_c/poss} grip when {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} a glimpse of r_c's pelt. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} about to call for help when {PRONOUN/m_c/poss} grip fails.",
+        "event_text": "m_c sneaked out of camp and misjudged the jump across a stream. r_c watched without concern as {PRONOUN/m_c/subject} disappeared under the water.",
         "m_c": {
             "age": [
                 "kitten"
@@ -4471,7 +4412,7 @@
         "sub_type": [ "old_age" ],
         "tags": [ "all_lives" ],
         "weight": 20,
-        "event_text": "m_c's body just couldn't continue forward - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
+        "event_text": "m_c has lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
         "m_c": {
             "age": [
                 "senior"
@@ -4773,7 +4714,7 @@
         "sub_type": ["old_age"],
         "tags": ["all_lives"],
         "weight": 20,
-        "event_text": "m_c collapses in the midst of camp, losing {PRONOUN/m_c/poss} remaining lives to old age.",
+        "event_text": "m_c collapsed in the midst of camp, losing {PRONOUN/m_c/poss} remaining lives to old age.",
         "m_c": {
             "age": [
                 "senior"
@@ -4797,7 +4738,7 @@
         "sub_type": [ "old_age" ],
         "tags": [ ],
         "weight": 20,
-        "event_text": "One day, the deputy finds m_c dead in the leader's den. Seems {PRONOUN/m_c/subject} lost a life to old age.",
+        "event_text": "One day, the deputy found m_c dead in the leader's den, a life lost to old age.",
         "m_c": {
             "age": [
                 "senior"
@@ -4823,7 +4764,7 @@
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "One day, m_c is found dead in the leader's den, never to rise again. Seems {PRONOUN/m_c/subject} lost the rest of {PRONOUN/m_c/poss} lives to old age.",
+        "event_text": "One day, m_c is found dead in the leader's den, never to rise again.",
         "m_c": {
             "age": [
                 "senior"
@@ -4851,7 +4792,7 @@
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "Despite StarClan's efforts, m_c's body just couldn't continue. {PRONOUN/m_c/poss/CAP} remaining lives were taken by old age.",
+        "event_text": "m_c's remaining lives were taken by old age.",
         "m_c": {
             "age": [
                 "senior"
@@ -5005,7 +4946,7 @@
         "sub_type": [ "murder" ],
         "tags": [ "some_lives", "mid_lives"],
         "weight": 40,
-        "event_text": "m_c was murdered by r_c, intending to take {PRONOUN/m_c/poss} place, but r_c miscalculated how many lives m_c had left! m_c retaliated by killing r_c in self defense.",
+        "event_text": "r_c attempted to murder m_c, but miscalculated how many lives {PRONOUN/m_c/subject} had. m_c retaliated with a killing blow.",
         "m_c": {
             "status": [
                 "leader"
@@ -5082,7 +5023,7 @@
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "m_c and r_c were on a walk together when a pack of dogs caught them off guard. m_c prepared to fight, but when {PRONOUN/m_c/subject} looked to r_c for backup, the other cat was nowhere to be found. r_c watched quietly as the dogs took life after life from m_c.",
+        "event_text": "m_c and r_c were ambushed by a pack of dogs, but r_c was nowhere to be found when m_c looked for help.",
         "m_c": {
             "status": [
                 "leader"
@@ -5144,7 +5085,7 @@
             "kit_manipulated"
         ],
         "weight": 20,
-        "event_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
+        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one notices.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5199,45 +5140,6 @@
     ]
     },
     {
-        "event_id": "gen_death_war_anyfriendlyfire1",
-        "location": ["any"],
-        "season": [
-            "any"
-        ],
-        "sub_type": ["war"],
-        "tags": [],
-        "weight": 20,
-        "event_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c. m_c lost one life.",
-        "m_c": {
-            "status": [
-                "leader"
-            ],
-            "relationship_status": [],
-            "not_skill": [
-                "FIGHTER,3"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "status": [ "apprentice", "warrior", "deputy" ],
-            "skill": [
-                "FIGHTER,1"
-            ],
-            "trait": [
-                "vengeful",
-                "bloodthirsty",
-                "fierce",
-                "daring",
-                "bold"
-            ]
-        },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was accidentally attacked by r_c in battle.",
-            "lead_death": "{VERB/m_c/were/was} accidentally attacked by r_c in the chaos of battle"
-        }]
-    },
-    {
         "event_id": "gen_death_curious_anylead1",
         "location": ["any"],
         "season": [
@@ -5245,7 +5147,7 @@
         ],
         "tags": [ "some_lives" ],
         "weight": 20,
-        "event_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds m_c stumbling back to camp, pelt haggard and eyes haunted.",
+        "event_text": "m_c snuck out of camp to investigate {PRONOUN/m_c/poss} origins. {PRONOUN/m_c/subject/CAP} returned in the morning, haggard and haunted.",
         "m_c": {
             "age": [
                 "young adult"
@@ -5426,7 +5328,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c dies during battle training with r_c, r_c exclaims that it was all an accident.",
+        "event_text": "m_c died during battle training with r_c. {PRONOUN/r_c/subject/CAP} exclaimed that it was all an accident.",
         "m_c": {
             "age": [
                 "adolescent", "young adult"
@@ -5589,7 +5491,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c is found within a few fox-lengths of camp after sneaking out, cold and covered in bite-marks. The scent of rat hangs heavy in the air...",
+        "event_text": "m_c was found within a few fox-lengths of camp after sneaking out, cold and covered in bite-marks. The scent of rat hung heavy in the air.",
         "m_c": {
             "status": [
                 "kitten"
@@ -5613,7 +5515,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} {VERB/m_c/sneak/sneaks} out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the stench of raccoon at the end.",
+        "event_text": "m_c boasted about how ready {PRONOUN/m_c/subject} {VERB/m_c/were/was} for apprentice-ship. {PRONOUN/m_c/subject/CAP} snuck away to prove it and the Clan finds only blood and raccoon-scent in the morning.",
         "m_c": {
             "status": [
                 "kitten"
@@ -5796,7 +5698,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "m_c woke up in the middle of the night to a strange noise. No one else was awake, or so {PRONOUN/m_c/subject} thought, until seeing someone at the fresh-kill pile. Before m_c could realize {PRONOUN/m_c/poss} mistake, sharp canine teeth were at {PRONOUN/m_c/poss} throat, ensuring the Clan wakes up to find {PRONOUN/m_c/poss} nest empty, and the prey gone.",
+    "event_text": "m_c was killed when a fox followed fresh-kill scent into camp. Not even the fresh-kill pile was left untouched.",
     "m_c": {
         "status": ["any"],
         "dies": true
@@ -5821,7 +5723,7 @@
     "location": ["any"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! {PRONOUN/m_c/subject/CAP} called to r_c for help and together they fought off the rats, but m_c didn't survive.",
+    "event_text": "m_c found a horde of rats lured by the fresh-kill pile. r_c helped {PRONOUN/m_c/object} fight, but m_c did not survive.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "dies": true
@@ -5858,7 +5760,7 @@
     "sub_type": ["war", "murder"],
     "tags": [],
     "weight": 20,
-    "event_text": "Within the haze of battle and blood-lust it can be far too easy to mistake friend for foe.  Or, at least, that's what r_c tells the Clan after {PRONOUN/m_c/subject} {VERB/m_c/kill/kills} m_c during a fight with o_c_n.",
+    "event_text": "r_c claimed the haze of battle and blood lust were the reason {PRONOUN/r_c/subject} killed m_c.",
     "m_c": {
         "status": ["warrior", "deputy", "leader"],
         "not_skill": ["FIGHTER,2"],
@@ -5903,7 +5805,7 @@
     "sub_type": ["war", "murder"],
     "tags": [],
     "weight": 20,
-      "event_text": "r_c stands back and watches as the o_c_n deputy kills m_c. r_c could probably have prevented it. Instead, {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} and {VERB/r_c/pretend/pretends} {PRONOUN/r_c/subject} saw nothing.",
+      "event_text": "r_c stood back and watched as the o_c_n deputy killed m_c.",
     "m_c": {
       "status": ["apprentice", "warrior", "deputy", "leader"],
       "not_skill": ["FIGHTER,2"],
@@ -5931,7 +5833,7 @@
     "sub_type": ["murder"],
     "tags": ["all_lives", "low_lives"],
     "weight": 30,
-    "event_text": "r_c watches impassively as m_c struggles in a Twoleg trap, waiting till {PRONOUN/m_c/subject} slowly {VERB/m_c/stop/stops} moving before leaving the area.",
+    "event_text": "r_c watched as m_c struggled in a Twoleg trap, waiting till {PRONOUN/m_c/subject} stopped moving before leaving the area.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "dies": true
@@ -5956,7 +5858,7 @@
     "sub_type": ["murder"],
     "tags": ["all_lives", "low_lives"],
     "weight": 30,
-    "event_text": "r_c hisses {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} {VERB/r_c/kill/kills} {PRONOUN/m_c/object}.",
+    "event_text": "r_c hissed {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} killed {PRONOUN/m_c/object}.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "dies": true
@@ -5980,7 +5882,7 @@
     "sub_type": ["murder"],
     "tags": ["lives_remain"],
     "weight": 30,
-      "event_text": "r_c attempts to take what remains of m_c's lives, but a warning from StarClan gives {PRONOUN/m_c/object} enough information to avoid such a fate. {PRONOUN/m_c/subject/CAP} still {VERB/m_c/lose/loses} a life, but at least {PRONOUN/m_c/subject} {VERB/m_c/manage/manages} to take r_c down with {PRONOUN/m_c/object}.",
+      "event_text": "A warning from StarClan gave m_c enough knowledge to survive r_c's attack. r_c could not say the same.",
     "m_c": {
         "status": ["leader"],
         "skill": ["OMEN,1", "DREAM,1", "PROPHET,1", "GHOST,2", "STAR,1"],

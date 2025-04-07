@@ -4,7 +4,7 @@
             "one": "single kitten",
             "many": "litter of %{count} kits"
         },
-        "pregnant_secret": "%{name} brought %{insert} back to camp, but refused to talk about their origin.",
+        "pregnant_secret": "%{name} brought a %{insert} back to camp, but refused to talk about their origin.",
         "leader_kitting_death": "died shortly after kitting",
         "leader_kitting_death_severe": "died after a harsh kitting",
         "kitting_death": "%{name} died while kitting.",

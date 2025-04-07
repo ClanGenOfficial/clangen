@@ -580,7 +580,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "It's a long walk home, and not a pleasent one. They probably should have drunk more water before going out to train. Or not gone out at all.",
+                    "text": "It's a long walk home, and not a pleasant one. They probably should have drunk more water before going out to train. Or not gone out at all.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [

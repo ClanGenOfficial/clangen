@@ -1,3 +1,4 @@
+import os.path
 from typing import List, Dict, Union, Optional
 
 import i18n
@@ -7,7 +8,7 @@ import ujson
 from scripts.game_structure.game_essentials import game
 
 lang_config: Optional[Dict] = None
-_lang_config_directory: str = "resources/lang/{locale}/config.json"
+_lang_config_directory = os.path.join("resources", "lang", "{locale}", "config.json")
 _directory_changed: bool = False
 
 default_pronouns: Dict[str, Dict[str, Dict[str, Union[str, int]]]] = {}
@@ -64,7 +65,7 @@ def get_default_adj():
     return get_lang_config()["pronouns"]["adj_default"]
 
 
-def load_lang_resource(location: str, *, root_directory="resources/lang/"):
+def load_lang_resource(location: str, *, root_directory=None):
     """
     Get a resource from the resources/lang folder for the loaded language
     :param location: If the language code is required, substitute `{lang}`. Relative location
@@ -73,21 +74,23 @@ def load_lang_resource(location: str, *, root_directory="resources/lang/"):
     :return: Whatever resource was there, from either the locale or fallback
     :exception FileNotFoundError: If requested resource doesn't exist in selected locale or fallback
     """
-    resource_directory = f"{root_directory}{i18n.config.get('locale')}/"
-    fallback_directory = f"{root_directory}{i18n.config.get('fallback')}/"
+    location = os.path.normpath(location)
+    locale, fallback = str(i18n.config.get("locale")), str(i18n.config.get("fallback"))
+    if root_directory is None:
+        root_directory = os.path.join("resources", "lang")
+    resource_directory = os.path.join(root_directory, locale)
+    fallback_directory = os.path.join(root_directory, fallback)
     location = location.lstrip("\\/")  # just in case someone is an egg and does add it
     try:
         with open(
-            f"{resource_directory}{location.replace('{lang}', i18n.config.get('locale'))}",
+            os.path.join(resource_directory, location.replace("{lang}", locale)),
             "r",
             encoding="utf-8",
         ) as string_file:
             return ujson.loads(string_file.read())
     except FileNotFoundError:
-        location2 = location
-        location2.replace("{lang}", i18n.config.get("fallback"))
         with open(
-            f"{fallback_directory}{location.replace('{lang}', i18n.config.get('fallback'))}",
+            os.path.join(fallback_directory, location.replace("{lang}", fallback)),
             "r",
             encoding="utf-8",
         ) as string_file:

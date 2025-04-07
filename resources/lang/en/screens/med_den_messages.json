@@ -1,0 +1,79 @@
+{
+    "storage_status": {
+        "empty": [
+            "The herb stores are empty and bare, this does not bode well.",
+            "m_c shifts nervously, staring at the empty herb stores.",
+            "m_c couldn't even treat a thorn in a paw with so little supplies. The herb stores need replenishing.",
+            "Seeing the empty herb stores makes m_c shiver slightly and puff out {PRONOUN/m_c/poss} fur.",
+            "Without any herbs m_c feels helpless.",
+            "c_n needs a herb gathering patrol <i>yesterday</i>, the herb stores are entirely empty and m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to vibrate out of {PRONOUN/m_c/poss} skin."
+        ],
+        "low": [
+            "m_c worries over the herb stores, there isn't nearly enough for the whole Clan.",
+            "m_c doesn't think the the current herb supply can handle all the possible ailments {PRONOUN/m_c/poss} Clanmates may face.",
+            "m_c tells {PRONOUN/m_c/poss} Clanmates to be careful this moon, {PRONOUN/m_c/subject} can't afford to waste herbs on unnecessary injury.",
+            "m_c worriedly recounts the herbs; the Clan can't afford to waste even the driest leaves.",
+            "m_c looks at the herb stores and wonders if {PRONOUN/m_c/subject}'ll have to ask for other Clans' help.",
+            "m_c scrounges around the very back of the herb stores, trying to see if there's any wilted leaves that have been overlooked.",
+            "m_c is going to talk to lead_name about giving {PRONOUN/m_c/object} a patrol full of warriors. c_n urgently needs more medicinal supplies.",
+            "The state of the herb stores makes m_c's pelt prickle with unease.",
+            "m_c is going to have to prioritize treating emergency injuries rather than easing more long term pain. The herb stores just don't have enough supplies.",
+            "It's rare for m_c to get the chance to clean out the surfaces of the herb stores. The low level of supplies worries {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} determined to find an upside."
+        ],
+        "adequate": [
+            "m_c is content with how many herbs the Clan has stocked up.",
+            "It's not enough for an emergency, but m_c thinks the Clan has enough herbs for now.",
+            "This herb supply can handle most problems, though m_c wonders if it can support the Clan in every situation.",
+            "There's enough herbs for now, but m_c considers gathering some more... just in case.",
+            "Though there's plenty of room for more, m_c is happy enough with how many herbs the Clan has for now.",
+            "Though the supply is decent, m_c knows there aren't enough herbs to face an outbreak if one occurs.",
+            "The herb stores aren't critically low, but m_c would feel safer if {PRONOUN/m_c/subject} had a little more.",
+            "The herb stores could be better stocked. Could be worse though, this isn't too bad.",
+            "Hmm. Time to go on a herb gathering patrol, m_c thinks. A pawful of prevention is worth a cat's weight of cure.",
+            "As m_c mentally reviews the day's tasks, {PRONOUN/m_c/subject} {VERB/m_c/put/puts} herb gathering on the list, though it's not the most important.",
+            "Maybe m_c should search for some of the rarer herbs, just to round out c_n's supplies fully."
+        ],
+        "full": [
+            "There's plenty of herbs in the den and m_c looks over them approvingly.",
+            "m_c has the herb supply well managed, it seems like there's plenty for all manner of ailments.",
+            "m_c feels happy with the amount of herbs stored and thinks the Clan is well prepared for any emergency.",
+            "m_c looks over the stores with satisfaction; {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} confident that {PRONOUN/m_c/subject} can handle any emergency.",
+            "There's nothing like the satisfaction of a fully stocked herb supply.",
+            "Honestly m_c can't see any herb the Clan wants for - their supplies are looking wonderful.",
+            "m_c is strongly considering reorganising the stores - but there's too many herbs to make that practical at the moment.",
+            "m_c still wants to go out gathering, but it's so nice to feel no pressure about it. c_n is wonderfully stocked with herbs at the moment.",
+            "Surrounded by the herb supplies, assaulted on all sides by their potent herbal stink, m_c kneads the ground happily."
+        ],
+        "excess": [
+            "The Clan has been blessed with plentiful herbs and m_c struggles to find places to store them all.",
+            "The herb stores are overflowing and m_c feels little worry.",
+            "The Clan has nothing to worry about, m_c has more than enough herbs for every conceivable problem.",
+            "With more herbs than places to store them, m_c wryly wonders if it's possible to have too much of a good thing.",
+            "There are so many herbs stored that m_c's only worry is finding the specific herb {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} looking for.",
+            "m_c has trouble making {PRONOUN/m_c/poss} nest - the herb supply is literally overflowing and threatening to invade m_c's bedding.",
+            "Sure, m_c has no idea where to put all these extra herbs, but it's a refreshing and reassuring problem to have.",
+            "No cat can twitch a whisker in the medicine den right now without bumping into the herb supplies. Herb gathering is not one of c_n's problems.",
+            "There are few things better at putting a skip in m_c's steps than having such an overflowing supply of herbs available."
+        ]
+    },
+    "no_meds_warning": [
+        "With no cat assigned to the medicine den, the Clan is at risk of injuries progressing to infection and fever.",
+        "The cats eye the empty medicine den uneasily. They're missing a crucial component of the Clan.",
+        "Death and sickness haunt the Clan more often without medicine cats to keep them at bay.",
+        "The absence of a medicine cats in the den sticks out like a thorn in a paw.",
+        "This isn't right - there should be a source of comfort and guidance in this den, not an uneasy absence and unsettling silence."
+    ],
+    "single_not_working": [
+        "m_c's tail twitches with irritation, but {PRONOUN/m_c/subject} {VERB/m_c/stay/stays} limp with exhaustion. c_n will have to manage without {PRONOUN/m_c/object} this moon.",
+        "m_c rests deeply, curled into a tight ball. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} that sleep is the only thing that'll get {PRONOUN/m_c/object} back on {PRONOUN/m_c/poss} paws.",
+        "m_c isn't seeing patients this moon, {PRONOUN/m_c/subject} {VERB/m_c/are/is} the patient.",
+        "m_c just hopes no one does anything mouse-brained this moon. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} in any condition to patch anyone up.",
+        "Hopefully c_n won't miss m_c's efforts this moon, because {PRONOUN/m_c/subject} aren't in any condition to work."
+    ],
+    "many_not_working": [
+        "The medicine cats aren't seeing patients this moon, they <i>are</i> the patients.",
+        "Hopefully nothing goes wrong this moon, given that the medicine cats are all unable to work.",
+        "Medicine cats make terrible patients, it turns out. Add that to the pile of reasons that c_n hopes they'll be back on their paws soon.",
+        "With no working medicine cats, c_n is vulnerable."
+    ]
+}

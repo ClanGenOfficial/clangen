@@ -21,7 +21,7 @@ Material provides a wide range of built-in features that we can enabled or disab
 | [content.code.annotate](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=content+code+copy#code-annotations)                  | Code annotations offer a comfortable and friendly way to attach arbitrary content to specific sections of code blocks by adding numeric markers in block and inline comments in the language of the code block. |
 | [navigation.top](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation#back-to-top-button)                        | A back-to-top button can be shown when the user, after scrolling down, starts to scroll up again. It's rendered centered and just below the header.                                                             |
 | [navigation.indexes](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=navigation#section-index-pages)                   | When section index pages are enabled, documents can be directly attached to sections, which is particularly useful for providing overview pages.                                                                |
-
+| [navigation.tabs](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=tabs#navigation-tabs)                                | When tabs are enabled, top-level sections are rendered in a menu layer below the header for viewports above 1220px, but remain as-is on mobile.                                                                 |
 
 ## Enabled Extensions
 Material provides a wide range of helpful Markdown extensions that provide further functionality to our documentation.  Below is a list of the currently enabled extensions and accompanying information.

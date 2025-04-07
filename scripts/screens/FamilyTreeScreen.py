@@ -573,7 +573,7 @@ class FamilyTreeScreen(Screens):
                 if len(additional_info["additional"]) > 0:
                     add_info = set(additional_info["additional"])  # remove duplicates
                     info_text += "\n"
-                    info_text += adjust_list_text(add_info)
+                    info_text += adjust_list_text(list(add_info))
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((324 + pos_x, 485 + pos_y), (50, 50))),

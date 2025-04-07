@@ -303,6 +303,9 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 === "Traits"
 
+    > !!! note
+        See the [trait dictionary](trait-dictionary.md) for further information on each trait and the desired "feel" of the personality.
+    >
     >  * `troublesome`
     * `lonesome`
     * `fierce`

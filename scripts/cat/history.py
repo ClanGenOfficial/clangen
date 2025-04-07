@@ -192,21 +192,21 @@ class History:
         facet_influence_text = {
             "lawfulness_raise": [
                 "follow rules", "follow the status quo",
-                "heed their inner compass", "have strong inner morals"
+                "heed {PRONOUN/m_c/poss} inner compass", "have strong inner morals"
             ],
             "lawfulness_lower": [
                 "bend the rules", "break away from the status quo",
-                "break rules that don't suit them", "make their own rules"
+                "break rules that don't suit {PRONOUN/m_c/object}", "make {PRONOUN/m_c/poss} own rules"
             ],
             "sociability_raise": [
-                "be friendly towards others", "step out of their comfort zone",
+                "be friendly towards others", "step out of {PRONOUN/m_c/poss} comfort zone",
                 "interact with others", "put others at ease"
             ],
             "sociability_lower": [
                 "be cold towards others", "refrain from socializing", "bicker with others"
             ],
             "aggression_raise": [
-                "be ready for a fight", "start a fight", "defend their beliefs", "use teeth and claws over words",
+                "be ready for a fight", "start a fight", "defend {PRONOUN/m_c/poss} beliefs", "use teeth and claws over words",
                 "resort to violence"
             ],
             "aggression_lower": [
@@ -262,7 +262,7 @@ class History:
             SkillPath.LORE: ["remembering lore"],
             SkillPath.CAMP: ["caring for camp"],
             SkillPath.HEALER: ["healing"],
-            SkillPath.STAR: ["connecting to starclan"],
+            SkillPath.STAR: ["connecting to StarClan"],
             SkillPath.OMEN: ["finding omens"],
             SkillPath.DREAM: ["understanding dreams"],
             SkillPath.CLAIRVOYANT: ["predicting the future"],

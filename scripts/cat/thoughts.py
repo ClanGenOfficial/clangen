@@ -221,7 +221,7 @@ class Thoughts:
                 if "m_c" in thought["has_injuries"]:
                     if main_cat.injuries or main_cat.illnesses:
                         injuries_and_illnesses = (
-                            main_cat.injuries.keys() + main_cat.injuries.keys()
+                            list(main_cat.injuries.keys()) + list(main_cat.injuries.keys())
                         )
                         if (
                             not [
@@ -232,12 +232,13 @@ class Thoughts:
                             and "any" not in thought["has_injuries"]["m_c"]
                         ):
                             return False
-                    return False
+                    else:
+                        return False
 
                 if "r_c" in thought["has_injuries"] and random_cat:
                     if random_cat.injuries or random_cat.illnesses:
                         injuries_and_illnesses = (
-                            random_cat.injuries.keys() + random_cat.injuries.keys()
+                            list(random_cat.injuries.keys()) + list(random_cat.injuries.keys())
                         )
                         if (
                             not [
@@ -248,7 +249,8 @@ class Thoughts:
                             and "any" not in thought["has_injuries"]["r_c"]
                         ):
                             return False
-                    return False
+                    else:
+                        return False
 
             if "perm_conditions" in thought:
                 if "m_c" in thought["perm_conditions"]:

@@ -96,7 +96,10 @@ class Welcoming_Events:
         # add it to the event list
         game.cur_events_list.append(
             Single_Event(
-                interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]
+                interaction_str,
+                ["relation", "interaction"],
+                [new_cat.ID, clan_cat.ID],
+                cat_dict={"m_c": new_cat, "r_c": clan_cat},
             )
         )
 

@@ -235,7 +235,7 @@ class Relationship:
             Single_Event(
                 interaction_str,
                 ["relation", "interaction"],
-                [self.cat_to.ID, self.cat_from.ID],
+                cat_dict={"m_c": self.cat_to, "r_c": self.cat_from},
             )
         )
 

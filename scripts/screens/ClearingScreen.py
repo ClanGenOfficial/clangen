@@ -571,7 +571,7 @@ class ClearingScreen(Screens):
                         nutrition_text=nutrition_info[cat.ID].nutrition_text,
                     )
                     if game.clan.clan_settings["showxp"]:
-                        full_text += f" ({str(int(nutrition_info[self.focus_cat_object.ID].percentage))})"
+                        full_text += f" ({str(int(nutrition_info[cat.ID].percentage))})"
                     condition_list.append(full_text)
             conditions = (
                 ",<br>".join(condition_list) if len(condition_list) > 0 else None

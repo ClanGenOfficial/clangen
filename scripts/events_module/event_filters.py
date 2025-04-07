@@ -3,6 +3,7 @@ import re
 import ujson
 
 from scripts.game_structure.game_essentials import game
+from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
     get_alive_status_cats,
     filter_relationship_type,
@@ -55,20 +56,33 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             return False
 
     # check leader life tags
-    if cat.status == "leader":
-        leader_lives = game.clan.leader_lives
+    if hasattr(cat, "ID"):
+        if cat.status == "leader":
+            leader_lives = game.clan.leader_lives
 
-        life_lookup = {
-            "some_lives": 4,
-            "lives_remain": 2,
-            "high_lives": 7,
-            "mid_lives": 4,
-            "low_lives": 1
-        }
+            life_lookup = {
+                "some_lives": 4,
+                "lives_remain": 2,
+                "high_lives": 7,
+                "mid_lives": 4,
+                "low_lives": 1
+            }
 
-        for _con, _val in life_lookup.items():
-            if _con in tags and leader_lives < _val:
+            for _con, _val in life_lookup.items():
+                if _con in tags and leader_lives < _val:
+                    return False
+                
+        # check if main cat will allow for adoption
+        if "adoption" in tags:
+            if cat.no_kits:
                 return False
+            if cat.moons <= 14 + cat.age_moons["kitten"][1]:
+                return False
+            if any(cat.fetch_cat(i).no_kits for i in cat.mate):
+                return False
+
+        if other_cat and "romantic" in tags and not other_cat.is_potential_mate(cat):
+            return False
 
     # check for required ranks within the clan
     for _tag in tags:
@@ -88,21 +102,15 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
             if rank in ["leader", "deputy"] and not get_alive_status_cats(cat, [rank]):
                 return False
-
-            if not len(get_alive_status_cats(cat, [rank])) >= 2:
+            
+            if rank not in ["leader", "deputy"] and not len(get_alive_status_cats(cat, [rank])) >= 2:
                 return False
-
-    # check if main cat will allow for adoption
-    if "adoption" in tags:
-        if cat.no_kits:
+    
+    special_date = get_special_date()
+    # filtering for dates
+    if contains_special_date_tag(tags):
+        if not special_date or special_date.patrol_tag not in tags:
             return False
-        if cat.moons <= 14 + cat.age_moons["kitten"][1]:
-            return False
-        if any(cat.fetch_cat(i).no_kits for i in cat.mate):
-            return False
-
-    if other_cat and "romantic" in tags and not other_cat.is_potential_mate(cat):
-        return False
 
     return True
 
@@ -190,61 +198,30 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
     if "always" in trigger:
         return True
 
-    herb_supply = game.clan.herbs.copy()
-    possible_herbs = HERBS
-    num_of_herbs = len(possible_herbs)
+    herb_supply = game.clan.herb_supply
 
-    if not herb_supply and "low" in trigger:
+    if not herb_supply.entire_supply and "empty" in trigger:
         return True
 
-    for herb in possible_herbs:
-        if herb not in herb_supply:
-            herb_supply[herb] = 0
-
-    needed_amount = clan_size * 2
-    half_amount = needed_amount / 2
-
     if supply_type == "all_herb":
-        if "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
+        if herb_supply.get_overall_rating() in trigger:
             return True
-        elif "adequate" in trigger and len(
-                [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]) == num_of_herbs:
-            return True
-        elif "full" in trigger and len(
-                [x for x in herb_supply if needed_amount < herb_supply[x] <= needed_amount * 2]) == num_of_herbs:
-            return True
-        elif "excess" in trigger and len(
-                [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
-            return True
-
         return False
 
     if supply_type == "any_herb":
-        if "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
-            return True
-        elif "adequate" in trigger and [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]:
-            return True
-        elif "full" in trigger and [x for x in herb_supply if needed_amount < herb_supply[x] <= needed_amount * 2]:
-            return True
-        elif "excess" in trigger and [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]:
-            return True
-
+        for herb in herb_supply.entire_supply:
+            if herb_supply.get_herb_rating(herb) in trigger:
+                return True
         return False
 
     else:
+        possible_herbs = herb_supply.base_herb_list
         chosen_herb = supply_type
-        if chosen_herb not in possible_herbs:
+        if chosen_herb not in possible_herbs.keys():
             print(f"WARNING: possible typo in supply constraint: {chosen_herb}")
             return False
-        if "low" in trigger and herb_supply[chosen_herb] < half_amount:
+        if herb_supply.get_herb_rating(chosen_herb) in trigger:
             return True
-        elif "adequate" in trigger and half_amount < herb_supply[chosen_herb] <= needed_amount:
-            return True
-        elif "full" in trigger and needed_amount < herb_supply[chosen_herb] <= needed_amount * 2:
-            return True
-        elif "excess" in trigger and needed_amount * 2 < herb_supply[chosen_herb]:
-            return True
-
         return False
 
 
@@ -301,6 +278,9 @@ def _check_cat_status(cat, statuses: list) -> bool:
         return True
 
     if cat.status in statuses:
+        return True
+
+    if 'lost' in statuses and cat.status not in ["rogue", "loner", "kittypet", "former Clancat"] and cat.outside:
         return True
 
     return False
@@ -389,8 +369,3 @@ def _check_cat_gender(cat, genders: list) -> bool:
         return True
 
     return False
-
-
-# until we make a herbs class, this will have to live here too to avoid a circular import. i am screaming.
-with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
-    HERBS = ujson.loads(read_file.read())

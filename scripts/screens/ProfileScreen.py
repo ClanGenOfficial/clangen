@@ -29,8 +29,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     shorten_text_to_fit,
     ui_scale_offset,
-    adjust_list_text,
-)
+    adjust_list_text, )
 from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.localization import get_new_pronouns
@@ -40,18 +39,6 @@ from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.icon import Icon
-
-
-# ---------------------------------------------------------------------------- #
-#             change how accessory info displays on cat profiles               #
-# ---------------------------------------------------------------------------- #
-def accessory_display_name(cat):
-    accessory = cat.pelt.accessory
-
-    if accessory is None:
-        return ""
-
-    return i18n.t(f"cat.accessories.{accessory}", count=0)
 
 
 # ---------------------------------------------------------------------------- #
@@ -193,15 +180,15 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
             elif (
-                "leader_ceremony" in self.profile_elements
-                and event.ui_element == self.profile_elements["leader_ceremony"]
+                    "leader_ceremony" in self.profile_elements
+                    and event.ui_element == self.profile_elements["leader_ceremony"]
             ):
                 self.change_screen("ceremony screen")
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen("med den screen")
             elif (
-                "mediation" in self.profile_elements
-                and event.ui_element == self.profile_elements["mediation"]
+                    "mediation" in self.profile_elements
+                    and event.ui_element == self.profile_elements["mediation"]
             ):
                 self.change_screen("mediation screen")
             elif event.ui_element == self.profile_elements["favourite_button"]:
@@ -271,26 +258,26 @@ class ProfileScreen(Screens):
                 ]:
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
-                    self.the_cat.gender == "male"
-                    and self.the_cat.genderalign == "female"
+                        self.the_cat.gender == "male"
+                        and self.the_cat.genderalign == "female"
                 ):
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
-                    self.the_cat.gender == "female"
-                    and self.the_cat.genderalign == "male"
+                        self.the_cat.gender == "female"
+                        and self.the_cat.genderalign == "male"
                 ):
                     self.the_cat.genderalign = self.the_cat.gender
 
                 # if the cat is cis (gender & gender align are the same) then set them to trans
                 # cis males -> trans female first
                 elif (
-                    self.the_cat.gender == "male" and self.the_cat.genderalign == "male"
+                        self.the_cat.gender == "male" and self.the_cat.genderalign == "male"
                 ):
                     self.the_cat.genderalign = "trans female"
                 # cis females -> trans male
                 elif (
-                    self.the_cat.gender == "female"
-                    and self.the_cat.genderalign == "female"
+                        self.the_cat.gender == "female"
+                        and self.the_cat.genderalign == "female"
                 ):
                     self.the_cat.genderalign = "trans male"
                 # if the cat is trans then set them to nonbinary
@@ -332,7 +319,7 @@ class ProfileScreen(Screens):
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.destroy_accessory_button:
-                self.the_cat.pelt.accessory = None
+                self.the_cat.pelt.accessory = []
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -537,15 +524,15 @@ class ProfileScreen(Screens):
         if self.the_cat is None:
             return
         if (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.df is False
+                self.the_cat.dead
+                and game.clan.instructor.ID == self.the_cat.ID
+                and self.the_cat.df is False
         ):
             is_sc_instructor = True
         elif (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.df is True
+                self.the_cat.dead
+                and game.clan.instructor.ID == self.the_cat.ID
+                and self.the_cat.df is True
         ):
             is_df_instructor = True
 
@@ -630,9 +617,9 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-            self.the_cat.status in ["medicine cat", "medicine cat apprentice"]
-            or self.the_cat.is_ill()
-            or self.the_cat.is_injured()
+                self.the_cat.status in ["medicine cat", "medicine cat apprentice"]
+                or self.the_cat.is_ill()
+                or self.the_cat.is_injured()
         ):
             self.profile_elements["med_den"].show()
         else:
@@ -664,15 +651,7 @@ class ProfileScreen(Screens):
         ) = self.the_cat.determine_next_and_previous_cats()
 
         # Disable and enable next and previous cat buttons as needed.
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        self.update_previous_next_cat_buttons()
 
         if self.open_tab == "history" and self.open_sub_tab == "user notes":
             self.load_user_notes()
@@ -743,7 +722,8 @@ class ProfileScreen(Screens):
             output += "\n"
             output += i18n.t(
                 "screens.profile.accessory_label",
-                accessory=i18n.t(f"cat.accessories.{the_cat.pelt.accessory}", count=0),
+                accessory=adjust_list_text(
+                    [i18n.t(f"cat.accessories.{acc}", count=0) for acc in the_cat.pelt.accessory])
             )
             # NEWLINE ----------
 
@@ -815,9 +795,9 @@ class ProfileScreen(Screens):
 
         # STATUS
         if (
-            the_cat.outside
-            and not the_cat.exiled
-            and the_cat.status not in ["kittypet", "loner", "rogue", "former Clancat"]
+                the_cat.outside
+                and not the_cat.exiled
+                and the_cat.status not in ["kittypet", "loner", "rogue", "former Clancat"]
         ):
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
         elif the_cat.exiled:
@@ -926,9 +906,9 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-            game.clan.game_mode in ["expanded", "cruel season"]
-            and the_cat.is_alive()
-            and FRESHKILL_ACTIVE
+                game.clan.game_mode in ["expanded", "cruel season"]
+                and the_cat.is_alive()
+                and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
             if str(the_cat.status) not in [
@@ -955,8 +935,8 @@ class ProfileScreen(Screens):
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
                 if (
-                    the_cat.permanent_condition[condition]["born_with"] is True
-                    and the_cat.permanent_condition[condition]["moons_until"] != -2
+                        the_cat.permanent_condition[condition]["born_with"] is True
+                        and the_cat.permanent_condition[condition]["moons_until"] != -2
                 ):
                     continue
                 output += i18n.t("general.has_permanent_condition")
@@ -968,11 +948,12 @@ class ProfileScreen(Screens):
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
                 output += i18n.t(
-                    "utility.exclamation", text=i18n.t("injuries.recovering from birth")
+                    "utility.exclamation",
+                    text=i18n.t("conditions.injuries.recovering from birth"),
                 )
             elif "pregnant" in the_cat.injuries:
                 output += i18n.t(
-                    "utility.exclamation", text=i18n.t("injuries.pregnant")
+                    "utility.exclamation", text=i18n.t("conditions.injuries.pregnant")
                 )
             else:
                 output += i18n.t("utility.exclamation", text=i18n.t("general.injured"))
@@ -1200,8 +1181,8 @@ class ProfileScreen(Screens):
         if self.the_cat.backstory:
             bs_blurb = i18n.t(f"cat.backstories.{self.the_cat.backstory}")
         if (
-            self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]
-            and self.the_cat.dead
+                self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]
+                and self.the_cat.dead
         ):
             bs_blurb = i18n.t(
                 "cat.backstories.cats_outside_the_clan_dead",
@@ -1331,20 +1312,20 @@ class ProfileScreen(Screens):
             ]
 
             influence_history += (
-                i18n.t(
-                    "cat.history.training_mentors",
-                    count=len(valid_former_mentors) if valid_former_mentors else 0,
-                    mentors=adjust_list_text(
-                        valid_former_mentors if valid_former_mentors else [""]
-                    ),
-                )
-                + " "
+                    i18n.t(
+                        "cat.history.training_mentors",
+                        count=len(valid_former_mentors) if valid_former_mentors else 0,
+                        mentors=adjust_list_text(
+                            valid_former_mentors if valid_former_mentors else [""]
+                        ),
+                    )
+                    + " "
             )
 
             # Second, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and isinstance(
-                mentor_influence["trait"], dict
+                    mentor_influence["trait"], dict
             ):
                 for _mentor in mentor_influence["trait"]:
                     # If the strings are not set (empty list), continue.
@@ -1372,7 +1353,7 @@ class ProfileScreen(Screens):
 
             skill_influence = []
             if "skill" in mentor_influence and isinstance(
-                mentor_influence["skill"], dict
+                    mentor_influence["skill"], dict
             ):
                 for _mentor in mentor_influence["skill"]:
                     # If the strings are not set (empty list), continue.
@@ -1403,8 +1384,8 @@ class ProfileScreen(Screens):
         graduation_history = ""
         if app_ceremony:
             graduation_history = (
-                i18n.t("cat.history.graduation_honor", honor=app_ceremony["honor"])
-                + " "
+                    i18n.t("cat.history.graduation_honor", honor=app_ceremony["honor"])
+                    + " "
             )
 
             grad_age = app_ceremony["graduation_age"]
@@ -1738,8 +1719,8 @@ class ProfileScreen(Screens):
             [i, self.get_condition_details(i)]
             for i in self.the_cat.permanent_condition
             if not (
-                self.the_cat.permanent_condition[i]["born_with"]
-                and self.the_cat.permanent_condition[i]["moons_until"] != -2
+                    self.the_cat.permanent_condition[i]["born_with"]
+                    and self.the_cat.permanent_condition[i]["moons_until"] != -2
             )
         ]
         all_illness_injuries.extend(
@@ -1846,7 +1827,7 @@ class ProfileScreen(Screens):
             else:
                 # moons with the condition if not born with condition
                 moons_with = (
-                    game.clan.age - self.the_cat.permanent_condition[name]["moon_start"]
+                        game.clan.age - self.the_cat.permanent_condition[name]["moon_start"]
                 )
                 text_list.append(
                     i18n.t("general.had_perm_condition_for", count=moons_with)
@@ -2119,10 +2100,10 @@ class ProfileScreen(Screens):
                 self.change_adoptive_parent_button.enable()
 
             if (
-                self.the_cat.age
-                not in ["young adult", "adult", "senior adult", "senior"]
-                or self.the_cat.exiled
-                or self.the_cat.outside
+                    self.the_cat.age
+                    not in ["young adult", "adult", "senior adult", "senior"]
+                    or self.the_cat.exiled
+                    or self.the_cat.outside
             ):
                 self.choose_mate_button.disable()
             else:
@@ -2135,10 +2116,10 @@ class ProfileScreen(Screens):
             else:
                 self.manage_roles.enable()
             if (
-                self.the_cat.status
-                not in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
-                or self.the_cat.dead
-                or self.the_cat.outside
+                    self.the_cat.status
+                    not in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                    or self.the_cat.dead
+                    or self.the_cat.outside
             ):
                 self.change_mentor_button.disable()
             else:
@@ -2151,7 +2132,7 @@ class ProfileScreen(Screens):
                     "screens.profile.change_gender_transfemale"
                 )
             elif (
-                self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
+                    self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
             ):
                 self.cis_trans_button.set_text(
                     "screens.profile.change_gender_transmale"

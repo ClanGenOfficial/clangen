@@ -80,3 +80,14 @@ class PatrolEvent:
                 return True
 
         return False
+
+    @property
+    def herbs_given(self) -> list:
+        """
+        returns list of herbs available to get from this patrol
+        """
+        herb_list = []
+        for out in self.success_outcomes + self.fail_outcomes + self.antag_fail_outcomes + self.antag_success_outcomes:
+            herb_list.extend([herb for herb in out.herbs if herb not in herb_list])
+
+        return herb_list

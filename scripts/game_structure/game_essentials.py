@@ -557,7 +557,7 @@ class Game:
             with open(events_path, "r", encoding="utf-8") as f:
                 events_list = ujson.loads(f.read())
             for event_dict in events_list:
-                event_obj = Single_Event.from_dict(event_dict)
+                event_obj = Single_Event.from_dict(event_dict, game.cat_class)
                 if event_obj:
                     game.cur_events_list.append(event_obj)
         except FileNotFoundError:

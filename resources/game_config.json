@@ -206,7 +206,8 @@
 		"elder_modifier": 20,
 		"happy_trait_modifier": -30,
 		"grumpy_trait_modifier": 30,
-		"ceremony_modifier": -20
+		"ceremony_modifier": -20,
+		"multiple_acc_modifier": 50
 	},
 	"transition_related": {
 		"base_trans_chance": 256,
@@ -318,11 +319,6 @@
             "warrior": 2,
             "apprentice": 1,
             "comment": "Defines how much a working warrior(leader/deputy) or apprentice gathers additionally."
-        },
-        "herb gathering" : {
-            "med": 3,
-            "med_apprentice" : 2,
-            "comment": "Defines how much a working warrior(leader/deputy) or (apprentice) medicine cat gathers additionally."
         },
         "outsiders" : {
             "reputation": 5,
@@ -443,8 +439,64 @@
 				"dropshadow_alpha": 100,
 				"mainmenu_tint": [239, 229, 206]
 			}
-		}
+		},
+		"dark_mode_clan_symbols": [239, 229, 206],
+		"light_mode_clan_symbols": [87, 76, 45],
+		"dark_mode_event_alternate": [87, 76, 55],
+		"light_mode_event_alternate": [167, 148, 111]
 	},
 	"lock_season": false, 
-	"comment": "Forces the season to be locked at the Clan's starting_season"
+	"comment": "Forces the season to be locked at the Clan's starting_season",
+	"clan_resources": {
+		"herbs": {
+			"comment": "Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier. Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier",
+			"required_herbs_per_cat": 2,
+			"adequate": 2,
+			"excess": 2,
+			"primary_sense": 3,
+			"secondary_sense": 2,
+			"primary_clever": 3,
+			"secondary_clever": 2,
+			"base_mortality_effect": 3,
+			"base_duration_effect": 1,
+			"base_risk_effect": 3,
+			"general_amount_bonus": 2,
+			"forest": {
+				"newleaf": [2, 3, 2],
+				"greenleaf": [1, 2, 3],
+				"leaf-fall": [2, 3, 2],
+				"leaf-bare": [5, 2, 1]
+			},
+			"mountainous": {
+				"newleaf": [2, 3, 2],
+				"greenleaf": [1, 2, 3],
+				"leaf-fall": [2, 3, 2],
+				"leaf-bare": [5, 2, 1]
+			},
+			"plains": {
+				"newleaf": [2, 3, 2],
+				"greenleaf": [1, 2, 3],
+				"leaf-fall": [2, 3, 2],
+				"leaf-bare": [5, 2, 1]
+			},
+			"beach": {
+				"newleaf": [2, 3, 2],
+				"greenleaf": [1, 2, 3],
+				"leaf-fall": [2, 3, 2],
+				"leaf-bare": [5, 2, 1]
+			},
+			"desert": {
+				"newleaf": [2, 3, 2],
+				"greenleaf": [1, 2, 3],
+				"leaf-fall": [2, 3, 2],
+				"leaf-bare": [5, 2, 1]
+			},
+			"wetlands": {
+				"newleaf": [2, 3, 2],
+				"greenleaf": [1, 2, 3],
+				"leaf-fall": [2, 3, 2],
+				"leaf-bare": [5, 2, 1]
+			}
+		}
+	}
 }

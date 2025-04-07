@@ -42,4 +42,4 @@ Another way for people to join the team is through applying to become an apprent
 
 This documentation is built by the efforts of volunteers, just like the rest of ClanGen. Anyone is free to make contributions here, from as small as a typo fix to as large as full-scale feature documentation.  
 
-[Contribute Documentation](../contributing/index.md){ .md-button .md-button--primary}
+[Contribute Documentation](../../contributing/index.md){ .md-button .md-button--primary}

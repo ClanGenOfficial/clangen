@@ -1,9 +1,11 @@
+from random import choice
+
 import i18n
 import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.clan import HERBS
+from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -21,7 +23,7 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
-from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -336,7 +338,7 @@ class MedDenScreen(Screens):
 
         self.meds_messages = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((108, 310), (600, 80))),
+            ui_scale(pygame.Rect((108, 310), (600, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1,
         )
@@ -345,42 +347,49 @@ class MedDenScreen(Screens):
             med_messages = []
 
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
-            number = medical_cats_condition_fulfilled(
-                Cat.all_cats.values(), amount_per_med, give_clanmembers_covered=True
+            number = amount_clanmembers_covered(
+                Cat.all_cats.values(), amount_per_med
             )
+
+            meds_cover = i18n.t(
+                "screens.med_den.meds_cover",
+                clansize=number,
+                count=len(self.meds)
+            )
+
             if game.clan.game_mode == "classic":
                 meds_cover = ""
-            else:
-                meds_cover = "screens.med_den.meds_cover"
 
-            herb_amount = sum(game.clan.herbs.values())
-            needed_amount = int(get_living_clan_cat_count(Cat) * 4)
-            med_concern = f"This should not appear."
-            if herb_amount == 0:
-                med_concern = "screens.med_den.herb_amount_none"
-            elif 0 < herb_amount <= needed_amount / 4:
-                med_concern = "screens.med_den.herb_amount_very_low"
-            elif needed_amount / 4 < herb_amount <= needed_amount / 2:
-                med_concern = "screens.med_den.herb_amount_low"
-            elif needed_amount / 2 < herb_amount <= needed_amount:
-                med_concern = "screens.med_den.herb_amount_average"
-            elif needed_amount < herb_amount <= needed_amount * 2:
-                med_concern = "screens.med_den.herb_amount_high"
-            elif needed_amount * 2 < herb_amount:
-                med_concern = "screens.med_den.herb_amount_very_high"
+            if not self.meds:
+                meds_cover = choice(MESSAGES["no_meds_warning"])
+            elif len(self.meds) == 1 and number == 0:
+                meds_cover = event_text_adjust(
+                    Cat=Cat,
+                    text=choice(MESSAGES["single_not_working"]),
+                    main_cat=self.meds[0],
+                    clan=game.clan
+                )
+            elif len(self.meds) >= 2 and number == 0:
+                meds_cover = event_text_adjust(
+                    Cat=Cat,
+                    text=choice(MESSAGES["many_not_working"]),
+                    clan=game.clan
+                )
 
-            med_messages.append(
-                i18n.t(meds_cover, count=len(self.meds), clansize=number)
-            )
-            med_messages.append(i18n.t(med_concern, count=len(self.meds)))
-            self.meds_messages.set_text(
-                event_text_adjust(Cat, "<br>".join(med_messages))
-            )
+            if meds_cover:
+                med_messages.append(event_text_adjust(
+                    Cat,
+                    meds_cover,
+                    main_cat=self.meds[0]
+                ))
+
+            if self.meds:
+                med_messages.append(game.clan.herb_supply.get_status_message(choice(self.meds)))
+            self.meds_messages.set_text("<br>".join(med_messages))
 
         else:
-            self.meds_messages.set_text(
-                "screens.med_den.meds_cover", text_kwargs={"count": 0}
-            )
+            self.meds_messages.set_text(choice(MESSAGES["no_meds_warning"]))
+
 
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
@@ -538,7 +547,7 @@ class MedDenScreen(Screens):
             if cat.injuries:
                 condition_list.extend(
                     [
-                        i18n.t(f"injuries.{injury}")
+                        i18n.t(f"conditions.injuries.{injury}")
                         for injury in list(cat.injuries.keys())
                     ]
                 )
@@ -555,7 +564,7 @@ class MedDenScreen(Screens):
                         condition_list.extend(
                             [
                                 i18n.t(f"conditions.permanent_conditions.{permcond}")
-                                for permcond in list(cat.injuries.keys())
+                                for permcond in list(cat.permanent_condition.keys())
                             ]
                         )
             conditions = ",<br>".join(condition_list)
@@ -587,15 +596,20 @@ class MedDenScreen(Screens):
             i += 1
 
     def draw_med_den(self):
-        sorted_dict = dict(sorted(game.clan.herbs.items()))
-        herbs_stored = sorted_dict.items()
+
         herb_list = []
-        for herb in herbs_stored:
-            amount = str(herb[1])
-            herb_type = i18n.t(f"conditions.herbs.{herb[0]}", count=herb[1])
-            herb_list.append(f"{amount} {herb_type}")
-        if not herbs_stored:
-            herb_list.append(i18n.t("general.empty").capitalize())
+        herb_supply = game.clan.herb_supply
+
+        if not herb_supply.total:
+            herb_list = ["Empty"]
+
+        elif game.clan.game_mode != "classic":
+            for herb, count in herb_supply.entire_supply.items():
+                if count <= 0:
+                    continue
+                display = herb_supply.herb[herb].plural_display if count > 1 else herb_supply.herb[herb].singular_display
+                herb_list.append(f"{count} {display}")
+
         if len(herb_list) <= 10:
             # classic doesn't display herbs
             if game.clan.game_mode == "classic":
@@ -643,23 +657,12 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
 
-        if game.clan.game_mode == "classic":
-            num_drawn = 0
-            herb_amount = sum(game.clan.herbs.values())
+        # otherwise draw the herbs you have
+        herbs = game.clan.herb_supply.entire_supply
 
-            # draw x different herbs where x is how many herbs you have
-            herbs = {}
-            for herb in HERBS:
-                # 2 so we have both cobwebs
-                herbs[herb] = 2
-                num_drawn += 1
-
-                if num_drawn >= herb_amount:
-                    break
-        else:
-            # otherwise draw the herbs you have
-            herbs = game.clan.herbs
-        for herb in herbs:
+        for herb, count in herbs.items():
+            if count <= 0:
+                continue
             if herb == "cobwebs":
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(
                     ui_scale(pygame.Rect((108, 95), (396, 224))),
@@ -671,7 +674,7 @@ class MedDenScreen(Screens):
                     ),
                     manager=MANAGER,
                 )
-                if herbs["cobwebs"] > 1:
+                if count > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(
                         ui_scale(pygame.Rect((108, 95), (396, 224))),
                         pygame.transform.scale(

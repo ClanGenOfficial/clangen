@@ -18,7 +18,7 @@
         "decline_text": "Time to go back home and wait it out.",
         "success_outcomes": [
                 {
-                    "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight.",
+                    "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight.",
                     "exp": 20,
                     "weight": 10,
                     "art": "gen_train_soggykitty_happy_warrior",
@@ -40,7 +40,7 @@
                     ]
                 },
                 {
-                    "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughes}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world",
+                    "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world",
                     "exp": 20,
                     "weight": 10,
                     "art": "fst_train_newleafmatesonadates_70locked1",

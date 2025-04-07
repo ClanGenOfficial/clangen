@@ -89,9 +89,9 @@ This is where the text that will be displayed in-game is placed, current abbrevi
 **HAS_INJURIES:**            
 Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury).
 
-> [Illness Tag List](reference.md#__tabbed_1_3)
+> [Illness Tag List](reference/index.md#__tabbed_1_3)
 >
-> [Injury Tag List](reference.md#__tabbed_1_2)
+> [Injury Tag List](reference/index.md#__tabbed_1_2)
 
 You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any illness or injury.
 
@@ -99,7 +99,7 @@ You can additionally use the tag "any" to allow the thought to occur if the cat 
 **PERM_CONDITIONS:**
 Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
 
-> [Permanent Conditions Tag List](reference.md#__tabbed_1_4)
+> [Permanent Conditions Tag List](reference/index.md#__tabbed_1_4)
 >
 > You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any permanent condition.
 
@@ -111,34 +111,34 @@ Constrains the thought to only occur if m_c and r_c fulfill the tags requirement
 BACKSTORY_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to resources, dicts, then the backstories.json (thank you Tiri and Ryos!)
 
-> [Backstory Tag List](reference.md#backstories)
+> [Backstory Tag List](reference/index.md#backstories)
 
 STATUS_CONSTRAINT:
 Constrains the thought to only happen if m_c or r_c are in a certain role. 
 
-> [Status Tag List](reference.md#__tabbed_2_2)
+> [Status Tag List](reference/index.md#__tabbed_2_2)
 > 
 > You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
 
 AGE_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c are within a certain age group.
 
-> [Age Tag List](reference.md#__tabbed_2_1)
+> [Age Tag List](reference/index.md#__tabbed_2_1)
 
 TRAIT_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c has a specific trait.
 
-> [Trait Tag List](reference.md#__tabbed_3_2)
+> [Trait Tag List](reference/index.md#__tabbed_3_2)
 
 **SKILL_CONSTRAINT:**
 Constrains the thought to occur only if m_c or r_c has a specific skill.
 
-> [Skill Tag List](reference.md#__tabbed_3_1)
+> [Skill Tag List](reference/index.md#__tabbed_3_1)
 
 **RANDOM_LIVING/OUTSIDE_STATUS:**
 Constrains the thought if r_c has a specific place of death (first set of tags) or outside role (second set of tags).
 
-> [Other Status Tag List](reference.md#__tabbed_2_3)
+> [Other Status Tag List](reference/index.md#__tabbed_2_3)
 
 ## Examples and Notes
 Some general notes for thoughts:

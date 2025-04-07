@@ -5,37 +5,24 @@
         "hurt_sick_label": " Cats",
         "log_title": "Medicine Den Log",
         "log_label": " Log",
-        "meds_cover": {
-            "zero": "c_n has no medicine cats who are able to work. It will be at a higher risk of death and disease.",
-            "one": "med_name can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
-            "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
-        },
         "in_den": "in den",
         "out_den": "out of den",
         "minor": "minor",
-        "herb_amount_zero": {
-            "one": "The herb stores are empty and bare, this does not bode well.",
-            "many": "The herb stores are empty and bare, this does not bode well."
+        "meds_cover": {
+            "one": "m_c can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
+            "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
         },
-        "herb_amount_very_low": {
-            "one": "med_name worries over the herb stores, {PRONOUN/med_name/subject} {VERB/med_name/doesn't/don't} have nearly enough for the Clan.",
-            "many": "The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
-        },
-        "herb_amount_low": {
-            "one": "The herb stores are small, but it's enough for now.",
-            "many": "The herb stores are small, but it's enough for now."
-        },
-        "herb_amount_average": {
-            "one": "med_name is content with how many herbs {PRONOUN/med_name/subject} {VERB/med_name/has/have} stocked up.",
-            "many": "The medicine cats are content with how many herbs they have stocked up."
-        },
-        "herb_amount_high": {
-            "one": "The herb stores are overflowing and med_name has little worry.",
-            "many": "The herb stores are overflowing and the medicine cats have little worry."
-        },
-        "herb_amount_very_high": {
-            "one": "StarClan has blessed them with plentiful herbs - med_name sends {PRONOUN/med_name/poss} thanks to Silverpelt.",
-            "many": "StarClan has blessed them with plentiful herbs - the medicine cats send their thanks to Silverpelt."
-        }
+        "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
+        "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
+        "gather_success": "%{name} collected %{herbs} during this moon.",
+        "gather_fail": "%{name} didn't collect any herbs this moon.",
+        "herb_used": "m_c was given %{herb} as treatment for: %{condition}. %{effect}",
+        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
+        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
+        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
+        "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
+        "blood_loss": "Herbs were used to stop blood loss for %{name}.",
+        "loss_event": "Lost %{herbs} during this moon.",
+        "gain_event": "Gained %{herbs} during this moon."
     }
 }

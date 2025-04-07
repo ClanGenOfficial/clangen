@@ -515,7 +515,7 @@
         ["knowing a secret that can never be revealed"],
         ["a truth unbelieved", "a truth concealed", "a truth never revealed"],
         ["a weakness in {PRONOUN/cat_tag/poss} legs"],
-        ["a belly so empty {PRONOUN/cat_tag/subject} feel nauseous"],
+        ["a belly so empty {PRONOUN/cat_tag/subject} {VERB/cat_tag/feel/feels} nauseous"],
         ["a home no longer welcoming", "a home long lost", "a home once forgotten"],
         ["oozing corruption"]
       ],

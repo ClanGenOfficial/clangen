@@ -39,10 +39,14 @@
         "clan_rep_neutral": "Relations with %{clan} are unchanged.",
         "clan_rep_worsened": "Relations with %{clan} have worsened.",
         "herbs_gathered": {
+            "zero": "Despite searching, no herbs were found.",
             "one": "%{herbs} was gathered.",
             "many": "%{herbs} were gathered."
         },
-        "herb_log": "%{herbs} gathered on a patrol.",
+        "herb_log": {
+            "one": "%{herbs} was gathered on patrol.",
+            "many": "%{herbs} were gathered on patrol."
+        },
         "prey_log": {
             "one": "%{count} piece of prey was caught on a patrol.",
             "many": "%{count} pieces of prey were caught on a patrol."

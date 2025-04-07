@@ -27,7 +27,7 @@
         "sub_type": [],
         "tags": ["clan:kitten"],
         "weight": 20,
-        "event_text": "m_c sneaks out of camp but finds {PRONOUN/m_c/self} lost in the strange, angular tunnels that lead out into the territory. The Clan searches for {PRONOUN/m_c/object} in the morning to no avail. The leftover scent of blood and mountain weasel serves as an intense warning to the other kits.",
+        "event_text": "m_c snuck out of camp and was lost to the strange, angular tunnels, nothing left to find but blood and weasel-scent.",
         "m_c": {
             "age": ["kitten"],
             "dies": true

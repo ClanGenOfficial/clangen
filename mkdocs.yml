@@ -4,35 +4,44 @@ repo_url: https://github.com/ClanGenOfficial/clangen
 repo_name: ClanGenOfficial/clangen
 edit_uri: https://github.com/ClanGenOfficial/clangen/edit/development/docs/
 nav:
-  - index.md
-  - Project Basics:
-      - project-basics/index.md
-      - project-basics/development-team-roles.md
-      - project-basics/getting-started-with-github-and-clangen.md
-      - Contributing Documentation:
-          - contributing/index.md
-          - contributing/documentation-resources.md
-  - Code:
-      - code/index.md
-      - code/content-adding.md
-  - Writing:
-      - writing/index.md
-      - writing/reference.md
-      - writing/patrols.md
-      - writing/shortevents.md
-      - writing/leaders-den-events.md
-      - writing/thoughts.md
-      - writing/leader-ceremonies.md
-      - writing/localization.md
-      - writing/advanced-documentation.md
-  - Art:
-      - art/index.md
-      - art/cat-sprites.md
-      - art/patrol-sprites.md
-      - art/clan-symbols.md
-      - art/camp-backgrounds.md
-  - Audio:
-      - audio/index.md
+  - Welcome:
+    - index.md
+    - report-a-bug.md
+  - Developer Documentation:
+    - dev/index.md
+    - Project Basics:
+        - dev/project-basics/index.md
+        - dev/project-basics/development-team-roles.md
+        - dev/project-basics/getting-started-with-github-and-clangen.md
+    - Code:
+        - dev/code/index.md
+        - dev/code/content-adding.md
+    - Writing:
+        - dev/writing/index.md
+        - Reference:
+          - dev/writing/reference/index.md
+          - dev/writing/reference/trait-dictionary.md
+        - dev/writing/patrols.md
+        - dev/writing/shortevents.md
+        - dev/writing/leaders-den-events.md
+        - dev/writing/thoughts.md
+        - dev/writing/leader-ceremonies.md
+        - dev/writing/localization.md
+        - dev/writing/advanced-documentation.md
+    - Art:
+        - dev/art/index.md
+        - dev/art/cat-sprites.md
+        - dev/art/patrol-sprites.md
+        - dev/art/clan-symbols.md
+        - dev/art/camp-backgrounds.md
+    - Audio:
+        - dev/audio/index.md
+  - User Guides:
+    - user-guides/index.md
+  - Contributing to the Wiki:
+      - contributing/index.md
+      - contributing/documentation-resources.md
+
 theme:
   name: material
   logo: assets/main.png
@@ -46,6 +55,7 @@ theme:
     - content.code.annotate
     - navigation.top
     - navigation.indexes
+    - navigation.tabs
   custom_dir: docs-resources
   palette:
     - media: "(prefers-color-scheme)"
@@ -91,6 +101,7 @@ extra_css:
 # if you add an extension, add a link to it's matching documentation to contributing/documentation-resources.md
 markdown_extensions:
   - abbr
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences

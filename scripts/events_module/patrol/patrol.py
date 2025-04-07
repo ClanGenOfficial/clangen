@@ -15,9 +15,9 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
+from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
-from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
     get_personality_compatibility,
     check_relationship_value,
@@ -308,12 +308,14 @@ class Patrol:
                         self.generate_patrol_events(self.MEDCAT_GEN)
                     )
                     possible_patrols.extend(self.generate_patrol_events(self.DISASTER))
+                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT))
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_WELCOMING)
                     )
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_HOSTILE)
                     )
+                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
                     possible_patrols.extend(
                         self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
                     )
@@ -552,7 +554,6 @@ class Patrol:
     ):
         filtered_patrols = []
         romantic_patrols = []
-        special_date = get_special_date()
         # This make sure general only gets hunting, border, or training patrols
         # chose fix type will make it not depending on the content amount
         if patrol_type == "general":
@@ -572,11 +573,6 @@ class Patrol:
             ):
                 continue
 
-            # filtering for dates
-            if contains_special_date_tag(patrol.tags):
-                if not special_date or special_date.patrol_tag not in patrol.tags:
-                    continue
-
             if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
                 continue
 
@@ -590,6 +586,9 @@ class Patrol:
                     flag = True
                     break
             if flag:
+                continue
+
+            if not event_for_tags(patrol.tags, Cat):
                 continue
 
             if biome not in patrol.biome and "any" not in patrol.biome:
@@ -608,11 +607,6 @@ class Patrol:
             elif "herb_gathering" not in patrol.types and patrol_type == "med":
                 continue
 
-            # cruel season tag check
-            if "cruel_season" in patrol.tags:
-                if game.clan and game.clan.game_mode != "cruel_season":
-                    continue
-
             if "romantic" in patrol.tags:
                 romantic_patrols.append(patrol)
             else:
@@ -630,6 +624,21 @@ class Patrol:
         filtered_patrols, romantic_patrols = self._filter_patrols(
             possible_patrols, biome, camp, current_season, patrol_type
         )
+
+        if patrol_type == "herb_gathering":
+            target_herbs = game.clan.herb_supply.sorted_by_need
+            herb_filtered_patrols = []
+            herb_romance_patrols = []
+
+            i = 0
+            while not herb_filtered_patrols and i <= len(target_herbs):
+                i += 1
+                herb_filtered_patrols = [patrol for patrol in filtered_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+                herb_romance_patrols = [patrol for patrol in romantic_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+
+            if herb_filtered_patrols:
+                filtered_patrols = herb_filtered_patrols
+                romantic_patrols = herb_romance_patrols
 
         if not filtered_patrols:
             print(
@@ -797,9 +806,6 @@ class Patrol:
         return (success_outcome if success else fail_outcome, success)
 
     def update_resources(self, biome_dir, leaf):
-        resource_dir = f"resources/lang/{i18n.config.get('locale')}/patrols/"
-        fallback_dir = f"resources/lang/{i18n.config.get('fallback')}/patrols/"
-
         resources = [
             ("HUNTING_SZN", f"{biome_dir}hunting/{leaf}.json"),
             ("HUNTING", f"{biome_dir}hunting/any.json"),
@@ -819,6 +825,7 @@ class Patrol:
             ("BORDER_GEN", "general/border.json"),
             ("MEDCAT_GEN", "general/medcat.json"),
             ("TRAINING_GEN", "general/training.json"),
+            ("DISASTER", "disaster.json"),
         ]
         for patrol_property, location in resources:
             try:

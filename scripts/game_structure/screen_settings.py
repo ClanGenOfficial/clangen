@@ -1,3 +1,4 @@
+import logging
 import os.path
 from typing import TYPE_CHECKING
 
@@ -16,6 +17,8 @@ import pygame_gui
 
 from scripts.game_structure.ui_manager import UIManager
 from scripts.ui.generate_screen_scale_json import generate_screen_scale
+
+logger = logging.getLogger(__name__)
 
 
 offset = (0, 0)
@@ -216,7 +219,7 @@ def determine_screen_scale(x, y, ingame_switch):
         with open(
             get_save_dir() + "/settings.json", "r", encoding="utf-8"
         ) as read_config:
-            screen_config = ujson.load(read_config.read())
+            screen_config = ujson.loads(read_config.read())
 
     if "fullscreen scaling" in screen_config and screen_config["fullscreen scaling"]:
         scalex = (x - 20) // 80
@@ -291,13 +294,15 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         return
 
     translation_paths = []
-    for root, dirs, files in os.walk("resources\\lang"):
+    languages = []
+    for root, dirs, files in os.walk(os.path.join("resources", "lang")):
         for directory in dirs:
+            languages.append(directory)
             translation_paths.append(os.path.join(root, directory))
         break
 
     # update old settings data from pre-localization
-    if settings_data["language"] == "english":
+    if settings_data["language"] not in languages:
         settings_data["language"] = "en"
         with open(
             get_save_dir() + "/settings.json", "w", encoding="utf-8"
@@ -307,6 +312,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             del new_settings
 
     # initialize pygame_gui manager, and load themes
+
     manager = UIManager(
         res,
         screen_offset,

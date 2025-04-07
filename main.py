@@ -409,7 +409,11 @@ while 1:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
-    if not music_manager.audio_disabled and not pygame.mixer.music.get_busy() and not music_manager.muted:
+    if (
+        not music_manager.audio_disabled
+        and not pygame.mixer.music.get_busy()
+        and not music_manager.muted
+    ):
         music_manager.play_queued()
 
     debug_mode.pre_update(clock)

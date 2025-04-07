@@ -9,46 +9,8 @@ This will cover the basic information for code.
 * keep playing around with fixing bugs or adding new features. Eventually you’ll develop an intuition for where things will probably be in the codebase
 
 ## Bug Reporting
-### Form
-This form will be used to create bug reports in the repo in the future.
 
-**Type:** (only select one)
-
-* UI - anything to do with the user interface. Maybe a button is not working, or the way some assets are formatted seems to be off.
-* Sprite - an issue with the art in the game
-* Code - general bugs related to how the game runs and responds to you. 
-* Typo - misspellings or incorrect grammar - IMPORTANT: this type of "bugs" are collected in the [typo tracking issue](https://github.com/ClanGenOfficial/clangen/issues/1818)
-
-**Describe the bug**
-ex.: This bug implies that the cat is never ....
-
-**Grade:** (only select one)
-
-* Game-breaking - a bug that makes it impossible to play the game
-* Dire - Still playable, but a major feature is broken
-* Important - The bug has a large affect on the gameplay, but is not urgent
-* Regular - A typical bug that should be seen to soon, but doesn’t necessarily break the game or inhibit the player
-* Non-vital - This bug can easily be ignored and does not have a large impact on play
-* Unimportant - This bug has little to no impact on play. 
-
-**Reproduce**
-Steps to reproduce the behavior:
-
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Patrol ID + Outcome Print (if applicable):**
-
-**Screenshots:**
-If applicable, add screenshots to help explain your problem.
-
-**Commit # or Game Version Number:**
-
-**Additional context**
-Add any other context about the issue here.
-
+See [report a bug](../../report-a-bug.md).
 ## Game Config
 The [game config](https://github.com/ClanGenOfficial/clangen/blob/development/resources/game_config.json), found in 
 resources/game_config.json, holds several developmental settings that are used within ClanGen. These settings are 
