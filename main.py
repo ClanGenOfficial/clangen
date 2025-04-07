@@ -213,12 +213,12 @@ game.rpc.start_rpc.set()
 finished_loading = False
 
 
-def load_data(load_init: bool = False):
+def load_data():
     global finished_loading
 
-    if load_init:
-        clan_list = game.read_clans()
-        game.switches["clan_list"] = clan_list or None
+    clan_list = game.read_clans()
+    game.switches["clan_list"] = clan_list or None
+
     try:
         load_cats()
         version_info = clan_class.load_clan()
@@ -285,7 +285,7 @@ def loading_animation(scale: float = 1):
 
         pygame.display.update()
 
-def load_game(load_init: bool = False):
+def load_game():
     """
     Performs the functions needed to load the game.
 
@@ -301,7 +301,7 @@ def load_game(load_init: bool = False):
     game.switches["switch_clan"] = False
 
     finished_loading = False
-    loading_thread = threading.Thread(target=load_data, args=[load_init])
+    loading_thread = threading.Thread(target=load_data)
     loading_thread.start()
     loading_animation(screen_scale)
 
@@ -311,7 +311,7 @@ def load_game(load_init: bool = False):
 
 # load spritesheets
 sprites.load_all()
-load_game(True)
+load_game()
 
 pygame.mixer.pre_init(buffer=44100)
 try:
