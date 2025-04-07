@@ -75,8 +75,6 @@ class SwitchClanScreen(Screens):
         """
         self.main_menu.kill()
         del self.main_menu
-        # self.info.kill()
-        # del self.info
         self.current_clan.kill()
         del self.current_clan
 
@@ -125,14 +123,6 @@ class SwitchClanScreen(Screens):
             object_id="@buttonstyles_squoval",
             starting_height=1,
         )
-
-        # self.info = pygame_gui.elements.UITextBox(
-        #     "screens.switch_clan.info",
-        #     # pylint: disable=line-too-long
-        #     ui_scale(pygame.Rect((100, 600), (600, 70))),
-        #     object_id=get_text_box_theme("#text_box_30_horizcenter"),
-        #     manager=MANAGER,
-        # )
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "screens.switch_clan.current_clan",

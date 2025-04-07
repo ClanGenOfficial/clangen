@@ -213,28 +213,29 @@ game.rpc.start_rpc.set()
 finished_loading = False
 
 
-def load_data():
+def load_data(load_init: bool = False):
     global finished_loading
 
-    clan_list = game.read_clans()
-    if clan_list:
-        game.switches["clan_list"] = clan_list
-        try:
-            load_cats()
-            version_info = clan_class.load_clan()
-            version_convert(version_info)
-            game.load_events()
-            scripts.screens.screens_core.screens_core.rebuild_core()
-        except Exception as e:
-            logging.exception("File failed to load")
-            if not game.switches["error_message"]:
-                game.switches[
-                    "error_message"
-                ] = "There was an error loading the cats file!"
-                game.switches["traceback"] = e
+    if load_init:
+        clan_list = game.read_clans()
+        game.switches["clan_list"] = clan_list or None
+    try:
+        load_cats()
+        version_info = clan_class.load_clan()
+        version_convert(version_info)
+        game.load_events()
+        scripts.screens.screens_core.screens_core.rebuild_core()
+    except Exception as e:
+        logging.exception("File failed to load")
+        if not game.switches["error_message"]:
+            game.switches[
+                "error_message"
+            ] = "There was an error loading the cats file!"
+            game.switches["traceback"] = e
 
     finished_loading = True
 
+images = []
 
 def loading_animation(scale: float = 1):
     # Load images, adjust color
@@ -244,17 +245,17 @@ def loading_animation(scale: float = 1):
     else:
         color.fill(game.config["theme"]["dark_mode_background"])
 
-    images = []
-    for i in range(1, 11):
-        im = pygame.transform.scale_by(
-            pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
-            screen_scale,
-        )
-        im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-        images.append(im)
+    if len(images) == 0:
+        for i in range(1, 11):
+            im = pygame.transform.scale_by(
+                pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
+                screen_scale,
+            )
+            im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+            images.append(im)
+        del im
 
     # Cleanup
-    del im
     del color
 
     x = screen.get_width() / 2
@@ -284,7 +285,7 @@ def loading_animation(scale: float = 1):
 
         pygame.display.update()
 
-def load_game():
+def load_game(load_init: bool = False):
     """
     Performs the functions needed to load the game.
 
@@ -296,19 +297,21 @@ def load_game():
     game.cur_events_list.clear()
     game.patrol_cats.clear()
     game.patrolled.clear()
+    game.clan = None
     game.switches["switch_clan"] = False
 
     finished_loading = False
-    loading_thread = threading.Thread(target=load_data)
+    loading_thread = threading.Thread(target=load_data, args=[load_init])
     loading_thread.start()
     loading_animation(screen_scale)
 
     #loading thread should be done by now, so just join it for safety.
     loading_thread.join()
+    del loading_thread
 
 # load spritesheets
 sprites.load_all()
-load_game()
+load_game(True)
 
 pygame.mixer.pre_init(buffer=44100)
 try:
@@ -335,8 +338,6 @@ while 1:
         pygame.mouse.set_cursor(disabled_cursor)
 
     if game.switches["switch_clan"]:
-        game.patrol_cats.clear()
-        game.patrolled.clear()
         load_game()
 
     # Draw screens
