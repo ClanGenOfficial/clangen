@@ -7,7 +7,8 @@
       "password": "clangen"
     },
     "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/devcontainers-contrib/features/pylint:2": {}
+    "ghcr.io/devcontainers-contrib/features/pylint:2": {},
+    "ghcr.io/devcontainers-extra/features/poetry:2": {}
   },
   "capAdd": ["SYS_PTRACE"],
   "postCreateCommand": "poetry install --no-root",
