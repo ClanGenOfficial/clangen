@@ -17,3 +17,16 @@ class CatAgeEnum(StrEnum):
 
     def can_have_mate(self):
         return self not in (CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN, CatAgeEnum.ADOLESCENT)
+
+
+class CatRankEnum(StrEnum):
+    NEWBORN = "newborn"
+    KITTEN = "kitten"
+    APPRENTICE = "apprentice"
+    MEDICINE_APPRENTICE = "medicine cat apprentice"
+    MEDIATOR_APPRENTICE = "mediator apprentice"
+    WARRIOR = "warrior"
+    MEDICINE_CAT = "medicine cat"
+    MEDIATOR = "mediator"
+    DEPUTY = "deputy"
+    LEADER = "leader"
