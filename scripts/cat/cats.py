@@ -14,7 +14,7 @@ from typing import Dict, List, Any, Union, Callable
 import i18n
 import ujson  # type: ignore
 
-from scripts.cat.enums import CatAgeEnum
+from scripts.cat.enums import CatAgeEnum, CatRankEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -67,19 +67,20 @@ class Cat:
         CatAgeEnum.SENIOR: game.config["cat_ages"]["senior"],
     }
 
+
     # This in is in reverse order: top of the list at the bottom
     rank_sort_order = [
-        "newborn",
-        "kitten",
-        "elder",
-        "apprentice",
-        "warrior",
-        "mediator apprentice",
-        "mediator",
-        "medicine cat apprentice",
-        "medicine cat",
-        "deputy",
-        "leader",
+        CatRankEnum.NEWBORN,
+        CatRankEnum.KITTEN,
+        CatRankEnum.ELDER,
+        CatRankEnum.APPRENTICE,
+        CatRankEnum.WARRIOR,
+        CatRankEnum.MEDIATOR_APPRENTICE,
+        CatRankEnum.MEDIATOR,
+        CatRankEnum.MEDICINE_APPRENTICE,
+        CatRankEnum.MEDICINE_CAT,
+        CatRankEnum.DEPUTY,
+        CatRankEnum.LEADER,
     ]
 
     gender_tags = {"female": "F", "male": "M"}
