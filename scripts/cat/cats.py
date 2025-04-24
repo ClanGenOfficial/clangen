@@ -14,12 +14,13 @@ from typing import Dict, List, Any, Union, Callable
 import i18n
 import ujson  # type: ignore
 
-from scripts.cat.enums import CatAgeEnum, CatRankEnum
+from scripts.cat.enums import CatAgeEnum, CatRankEnum, CatSocialEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
+from scripts.cat.status import Status, StatusDict
 from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.relationship import Relationship
@@ -110,7 +111,7 @@ class Cat:
         self,
         prefix=None,
         gender=None,
-        status="newborn",
+        status_dict: StatusDict = None,
         backstory="clanborn",
         parent1=None,
         parent2=None,
@@ -130,7 +131,7 @@ class Cat:
 
         :param prefix: Cat's prefix (e.g. Fire- for Fireheart)
         :param gender: Cat's gender, default None
-        :param status: Cat's age range, default "newborn"
+        :param status_dict: Dict containing information for Cat's status, default None
         :param backstory: Cat's origin, default "clanborn"
         :param parent1: ID of parent 1, default None
         :param parent2: ID of parent 2, default None
@@ -148,6 +149,7 @@ class Cat:
 
         self.history = None
 
+        # TODO: figure out status stuff for faded cats
         if (
             faded
         ):  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
@@ -163,7 +165,7 @@ class Cat:
 
         # Public attributes
         self.gender = gender
-        self.status = status
+        self.status = Status(**status_dict)
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)

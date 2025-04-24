@@ -1,5 +1,6 @@
 from itertools import groupby
 from random import choice
+from typing import TypedDict
 
 import ujson
 
@@ -242,6 +243,25 @@ class Status:
         :param new_rank: The new rank the cat will become
         """
         pass
+
+
+class StatusDict(TypedDict, total=False):
+    """
+    Dict containing:
+
+    "group_history": list,
+    "standing_history": list,
+    "social": CatSocialEnum,
+    "group": str
+    "rank": CatRankEnum
+
+    Dict does not need to contain all keys.
+    """
+    group_history: list
+    standing_history: list
+    social: CatSocialEnum
+    group: str
+    rank: CatRankEnum
 
 
 with open(
