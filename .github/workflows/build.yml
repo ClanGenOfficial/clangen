@@ -202,7 +202,7 @@ jobs:
             -F "fileBundle=@${BUNDLE_NAME}.sig" \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butler@clangen
+        uses: jdno/setup-butler@v1
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
