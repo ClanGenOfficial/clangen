@@ -4,7 +4,7 @@ from typing import TypedDict
 
 import ujson
 
-from scripts.cat.enums import CatRankEnum, CatSocialEnum, CatStandingEnum
+from scripts.cat.enums import CatRankEnum, CatSocialEnum, CatStandingEnum, CatAgeEnum
 from scripts.game_structure.game_essentials import game
 
 
@@ -14,30 +14,42 @@ class Status:
     def __init__(
             self,
             group_history: list = None,
-            standing_history: list = None,
+            standing_history: list = None
+    ):
+        """
+        Saved cats should only be passing their saved group_history and standing into this class.
+        Cats that are being newly generated should use function .generate_new_status()
+        """
+        self.group_history = group_history if group_history else []
+        self.standing_history = standing_history if standing_history else []
+
+    def generate_new_status(
+            self,
+            age: CatAgeEnum = None,
             social: CatSocialEnum = None,
             group: str = None,
             rank: CatRankEnum = None,
     ):
         """
-        Saved cats should only be passing their saved group_history and standing into this class.
-        Cats that are being newly generated should utilize social/group/rank params to create their information.
+        Starts a group history and standing history for a newly generated cat
+        :param age: The age the cat currently is.
+        :param social: The social group the cat will be (rogue, clancat, loner, kittypet)
+        :param group: The group the cat will be part of, default is None. If social is set to clancat and group is None,
+         group will default to player clan.
+        :param rank: The rank the cat holds within a group. If they have no group, then this matches their social.
         """
-        self.group_history = group_history if group_history else []
-        self.standing_history = standing_history if standing_history else []
+        self._start_group_history(
+            age,
+            social,
+            group,
+            rank,
+        )
 
-        if not self.group_history:
-            self.start_group_history(
-                social,
-                group,
-                rank,
-            )
+        self._start_standing()
 
-        if not self.standing_history:
-            self.start_standing()
-
-    def start_group_history(
+    def _start_group_history(
             self,
+            age: CatAgeEnum = None,
             social: CatSocialEnum = None,
             group: str = None,
             rank: CatRankEnum = None
@@ -50,6 +62,28 @@ class Status:
             "rank": rank,
             "moons_as": 0
         }
+
+        # if no rank, we find rank according to age
+        if not rank:
+            if social and social != CatSocialEnum.CLANCAT:
+                if social == CatSocialEnum.ROGUE:
+                    rank = CatRankEnum.ROGUE
+                elif social == CatSocialEnum.LONER:
+                    rank = CatRankEnum.LONER
+                elif social == CatSocialEnum.KITTYPET:
+                    rank = CatRankEnum.KITTYPET
+            else:
+                if age == CatAgeEnum.NEWBORN:
+                    rank = CatRankEnum.NEWBORN
+                elif age == CatAgeEnum.KITTEN:
+                    rank = CatRankEnum.KITTEN
+                elif age == CatAgeEnum.ADOLESCENT:
+                    rank = choice(
+                        [CatRankEnum.APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE])
+                elif age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT]:
+                    rank = choice([CatRankEnum.WARRIOR, CatRankEnum.MEDICINE_CAT, CatRankEnum.MEDIATOR])
+                else:
+                    rank = CatRankEnum.ELDER
 
         # if not social, then social category is found via the rank
         if not social:
@@ -76,7 +110,7 @@ class Status:
 
         self.group_history = [new_history]
 
-    def start_standing(self):
+    def _start_standing(self):
         """
         Generates basic standing info for a cat. If the cat is part of a group, it creates a "member" dict, else it
         creates an "outsider" standing dict for the player's clan
@@ -243,6 +277,13 @@ class Status:
         :param new_rank: The new rank the cat will become
         """
         pass
+
+    def is_any_apprentice(self) -> bool:
+
+        if self.rank in [CatRankEnum.APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE]:
+            return True
+
+        return False
 
 
 class StatusDict(TypedDict, total=False):

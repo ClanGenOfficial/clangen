@@ -165,7 +165,7 @@ class Cat:
 
         # Public attributes
         self.gender = gender
-        self.status = Status(**status_dict)
+        self.status = Status(**status_dict) if status_dict["group_history"] else None
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)
@@ -240,7 +240,7 @@ class Cat:
             self.ID = ID
 
         # age and status
-        if status is None and moons is None:
+        if self.status is None and moons is None:
             self.age = choice(list(CatAgeEnum))
         elif moons is not None:
             self.moons = moons
@@ -257,17 +257,13 @@ class Cat:
                     ):
                         self.age = key_age
         else:
-            if status == "newborn":
+            if self.status.rank == CatRankEnum.NEWBORN:
                 self.age = CatAgeEnum.NEWBORN
-            elif status == "kitten":
+            elif self.status.rank == CatRankEnum.KITTEN:
                 self.age = CatAgeEnum.KITTEN
-            elif status == "elder":
+            elif self.status.rank == CatRankEnum.ELDER:
                 self.age = CatAgeEnum.SENIOR
-            elif status in [
-                "apprentice",
-                "mediator apprentice",
-                "medicine cat apprentice",
-            ]:
+            elif self.status.is_any_apprentice():
                 self.age = CatAgeEnum.ADOLESCENT
             else:
                 self.age = choice(
@@ -297,7 +293,7 @@ class Cat:
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            self.init_generate_cat(skill_dict)
+            self.init_generate_cat(skill_dict, status_dict)
 
         # In camp status
         self.in_camp = 1
@@ -349,6 +345,7 @@ class Cat:
 
         :return: None
         """
+        # TODO: not sure how status actually interacts with this
         self.ID = ID
         self.parent1 = None
         self.parent2 = None
@@ -393,7 +390,7 @@ class Cat:
                 ):
                     self.age = key_age
 
-    def init_generate_cat(self, skill_dict):
+    def init_generate_cat(self, skill_dict, status_dict):
         """
         Used to roll a new cat
         :param skill_dict: TODO what is a skill dict exactly
@@ -429,6 +426,9 @@ class Cat:
         # Personality
         self.personality = Personality(kit_trait=self.age.is_baby())
 
+        # STATUS
+        self.status.generate_new_status(age=self.age, **skill_dict)
+
         # experience and current patrol status
         if self.age.is_baby():
             self.experience = 0
@@ -462,7 +462,7 @@ class Cat:
             self.experience = 0
 
         if not skill_dict:
-            self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
+            self.skills = CatSkills.generate_new_catskills(self.status.rank, self.moons)
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID

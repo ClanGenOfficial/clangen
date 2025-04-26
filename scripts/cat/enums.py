@@ -45,7 +45,7 @@ class CatRankEnum(StrEnum):
     ROGUE = "rogue"
     KITTYPET = "kittypet"
 
-    # TODO: look at Flags for these instead??
+    # TODO: these might be useless tbh? bad practice?
     @property
     def all_apprentice_ranks(self) -> list:
         return [CatRankEnum.APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE]
