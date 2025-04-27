@@ -14,6 +14,7 @@ from scripts.cat_relations.inheritance import Inheritance
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from .game_essentials import game
 from ..cat.skills import CatSkills
+from ..cat.status import StatusDict
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
@@ -56,6 +57,15 @@ def json_load():
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
+            # accounting for old saves
+            if cat.get("status"):
+                status_dict: StatusDict = {"rank": cat["status"]}
+            else:
+                status_dict: StatusDict = {
+                    "group_history": cat.get("group_history"),
+                    "standing_history": cat.get("standing_history")
+                    }
+
             new_cat = Cat(
                 ID=cat["ID"],
                 prefix=cat["name_prefix"],
@@ -64,7 +74,7 @@ def json_load():
                     cat["specsuffix_hidden"] if "specsuffix_hidden" in cat else False
                 ),
                 gender=cat["gender"],
-                status=cat["status"],
+                status_dict=status_dict,
                 parent1=cat["parent1"],
                 parent2=cat["parent2"],
                 moons=cat["moons"],
@@ -134,7 +144,7 @@ def json_load():
                 opacity=cat["opacity"] if "opacity" in cat else 100,
             )
 
-            # Runs a bunch of apperence-related convertion of old stuff.
+            # Runs a bunch of appearance-related convertion of old stuff.
             new_cat.pelt.check_and_convert(convert)
 
             # converting old specialty saves into new scar parameter
