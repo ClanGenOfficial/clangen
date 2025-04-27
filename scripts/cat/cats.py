@@ -627,12 +627,10 @@ class Cat:
         return
 
     def exile(self):
-        # TODO: Integrate new system!
-        """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
-        status."""
-        self.exiled = True
-        self.outside = True
-        self.status = "exiled"
+        """This is used to send a cat into exile."""
+        
+        self.status.exile_from_group()
+
         if self.personality.trait == "vengeful":
             self.thought = "Swears their revenge for being exiled"
         else:

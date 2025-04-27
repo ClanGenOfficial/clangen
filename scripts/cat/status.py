@@ -222,13 +222,14 @@ class Status:
             past_group_standing=CatStandingEnum.LOST
         )
 
-    def become_exiled(self):
+    def exile_from_group(self):
         """
-        updates a cat's status to exiled
+        Removes cat from current group and changes their standing with that group to exiled.
+        Cat will become a loner.
         """
 
         self._modify_group(
-            CatSocialEnum.LONER,
+            new_rank=CatRankEnum.LONER,
             past_group_standing=CatStandingEnum.EXILED)
 
     def _change_outsider_social(
