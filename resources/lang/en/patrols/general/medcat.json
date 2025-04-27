@@ -654,7 +654,7 @@
                 ]
             },
             {
-                "text": "s_c stares at r_c with a cold look, telling {PRONOUN/r_c/object} to figure out {PRONOUN/r_c/poss} dreams {PRONOUN/r_c/self}, and that its doubtful someone like r_c would have a vision.",
+                "text": "s_c stares at r_c with a cold look, telling {PRONOUN/r_c/object} to figure out {PRONOUN/r_c/poss} dreams {PRONOUN/r_c/self}, and that it's doubtful someone like r_c would have a vision.",
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat":["p_l"],
@@ -1107,7 +1107,7 @@
                 ]
             },
             {
-                "text": "s_c stares at the apprentice with a cold look, telling {PRONOUN/app1/object} to figure out {PRONOUN/app1/poss} dreams {PRONOUN/app1/self}, and that its doubtful someone like app1 would have a vision.",
+                "text": "s_c stares at the apprentice with a cold look, telling {PRONOUN/app1/object} to figure out {PRONOUN/app1/poss} dreams {PRONOUN/app1/self}, and that it's doubtful someone like app1 would have a vision.",
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat":["p_l"],
@@ -1250,7 +1250,7 @@
                 "art": "gen_angry_cat_med"
             },
             {
-                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disaproval, but vanishes.",
+                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval, but vanishes.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_angry_cat_med"
@@ -1377,7 +1377,7 @@
                 "weight": 20
             },
             {
-                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disaproval, but vanishes.",
+                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval, but vanishes.",
                 "exp": 0,
                 "art": "gen_angry_cat_med",
                 "weight": 20
@@ -3830,7 +3830,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to reasure app1, but everything {PRONOUN/p_l/subject} {VERB/p_l/say/says} comes out all wrong. Eventually, app1 mumbles something about heading back to camp, trudging off with {PRONOUN/app1/poss} tail hung low.",
+                "text": "p_l tries to reassure app1, but everything {PRONOUN/p_l/subject} {VERB/p_l/say/says} comes out all wrong. Eventually, app1 mumbles something about heading back to camp, trudging off with {PRONOUN/app1/poss} tail hung low.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

@@ -1091,7 +1091,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1295,7 +1295,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2436,7 +2436,7 @@
                 ]
             },
             {
-                "text": "s_c holds the patrol back until the swift fox's yips bring her mate, than the patrol strikes. While the vixen flees, her mate fights, and against warriors he doesn't stand a chance.",
+                "text": "s_c holds the patrol back until the swift fox's yips bring her mate, then the patrol strikes. While the vixen flees, her mate fights, and against warriors he doesn't stand a chance.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],

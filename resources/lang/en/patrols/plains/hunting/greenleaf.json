@@ -1071,7 +1071,7 @@
                 ]
             },
             {
-                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders.",
+                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -2058,7 +2058,7 @@
         "decline_text": "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venomous threat on their hunting path.",
         "success_outcomes": [
             { 
-        "text": "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air s_c's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. ",
+        "text": "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air, s_c's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. ",
         "exp": 25,
         "weight": 20, 
         "prey": ["medium"],
@@ -2117,7 +2117,7 @@
                 
             },
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, filling {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine cat den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} could barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, filling {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine cat den. Not even as {PRONOUN/r_c/poss} screams echo through camp.",
                 "exp": 0,
                 "weight": 10,
                 "relationships": [
@@ -3227,7 +3227,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3431,7 +3431,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],

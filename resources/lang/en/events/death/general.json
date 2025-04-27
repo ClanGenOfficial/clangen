@@ -38,12 +38,11 @@
                 "any"
             ]
         },
+        "exclude_involved": ["r_c"],
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c was secretly murdered by r_c."
+            "cats": ["m_c"],
+            "reg_death": "m_c was secretly murdered by r_c."
             }
         ],
         "relationships": [

@@ -1809,7 +1809,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cats in the group don't look thrilled, app1 insists there's nothing to annoyed about. app1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cats in the group don't look thrilled, app1 insists there's nothing to be annoyed about. app1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],

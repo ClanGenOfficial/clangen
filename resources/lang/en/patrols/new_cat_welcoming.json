@@ -3103,7 +3103,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
-        "decline_text": "Its not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
+        "decline_text": "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
         "chance_of_success": 85,
         "success_outcomes": [
             {
@@ -3295,13 +3295,13 @@
                 "other_clan_rep": 0
             },
             {
-                "text": "The patrol brings the apprentice, back to camp. However, the Clan is unwelcoming, and the apprentice slips out in the middle of the night, dejected.",
+                "text": "The patrol brings the apprentice back to camp. However, the Clan is unwelcoming, and the apprentice slips out in the middle of the night, dejected.",
                 "exp": 0,
                 "weight": 5,
                 "other_clan_rep": 0
             },
             {
-                "text": "s_c knows accepting this apprentice will cause conflict with o_c_n, and c_n can't risk a war. Still, {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/subject/sit/sits} with the apprentice for a while, listening to their problems and offering advice. The apprentice returns home with a new prespective.",
+                "text": "s_c knows accepting this apprentice will cause conflict with o_c_n, and c_n can't risk a war. Still, {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to help. {PRONOUN/s_c/subject/CAP} {VERB/s_c/subject/sit/sits} with the apprentice for a while, listening to their problems and offering advice. The apprentice returns home with a new perspective.",
                 "exp": 5,
                 "weight": 5,
                 "stat_skill": ["MEDIATOR,2", "SPEAKER,2"],
@@ -3329,6 +3329,399 @@
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_app_newfriend2",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": ["new_cat"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "p_l is out doing some solo training when {PRONOUN/p_l/subject} suddenly {VERB/p_l/spot/spots} another cat around {PRONOUN/p_l/poss} age.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/elect/elects} to ignore the stranger and focus on {PRONOUN/p_l/poss} training.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "A loner! p_l knows that {PRONOUN/p_l/subject} should head back to camp and report this, but... {PRONOUN/p_l/subject} can't help but be a little curious. p_l approaches the loner and strikes up a conversation. Without either cat realizing it, they wind up talking and training together for hours.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Is that... a kittypet? In c_n territory? How strange. p_l knows that {PRONOUN/p_l/subject} should chase the kittypet back home to {PRONOUN/n_c:0/poss} Twolegs, but... {PRONOUN/p_l/subject} can't help but be a little curious. Besides, what harm could a <i>kittypet</i> do? p_l approaches the kittypet and strikes up a conversation. Without either cat realizing it, they wind up talking for hours.",
+                "exp": 10,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends: which, by the time they part ways, it feels like they are.",
+                "exp": 10,
+                "weight": 40,
+                "stat_trait": ["charismatic", "confident", "playful"],
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 15
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Oh wow, a kittypet! Sure, <i>technically</i> s_c should be sending the outsider away, but {PRONOUN/s_c/subject} just {VERB/s_c/have/has} so many questions! Luckily, the kittypet is willing to sate {PRONOUN/s_c/poss} curiosity, and {PRONOUN/s_c/subject} eventually {VERB/s_c/return/returns} to camp with a new understanding... and, potentially, a new friend.",
+                "exp": 10,
+                "weight": 20,
+                "stat_trait": ["charismatic", "confident", "playful"],
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 15
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "A loner? How interesting. p_l approaches the outsider, but before {PRONOUN/p_l/subject} can even meow out a greeting, the loner takes off, evidently startled by the c_n cat's appearance.",
+                "exp": 0,
+                "weight": 20,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "outsider_rep": 0
+            },
+            {
+                "text": "What in StarClan's name is a <i>kittypet</i> doing here? c_n's territory is no place for such a pampered creature! p_l approaches the other young cat, intending to guide {PRONOUN/n_c:0/object} back to wherever {PRONOUN/n_c:0/subject} came from. However, p_l's presence clearly intimidates the kittypet, who bolts away the moment {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} {PRONOUN/p_l/object}.",
+                "exp": 0,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "outsider_rep": 0
+            },
+            {
+                "text": "A loner? How interesting. p_l approaches the outsider, but before {PRONOUN/p_l/subject} can even meow out a greeting, the loner takes a swipe at {PRONOUN/p_l/object} and bolts away.",
+                "exp": 0,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["torn pelt", "torn ear", "minor_injury"],
+                        "scars": ["RIGHTEAR", "LEFTEAR"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after being attacked by a startled loner.",
+                    "death": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled loner."
+                },
+                "outsider_rep": 0
+            },
+            {
+                "text": "What in StarClan's name is a <i>kittypet</i> doing here? c_n's territory is no place for such a pampered creature. p_l approaches the other young cat, intending to send {PRONOUN/n_c:0/object} back to wherever {PRONOUN/n_c:0/subject} came from. However, p_l's presence clearly intimidates the kittypet, who takes a swipe at p_l and bolts away the moment {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} {PRONOUN/p_l/object}.",
+                "exp": 0,
+                "weight": 5,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["torn pelt", "torn ear", "minor_injury"],
+                        "scars": ["RIGHTEAR", "LEFTEAR"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after being attacked by a startled kittypet.",
+                    "death": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled kittypet."
+                },
+                "outsider_rep": 0
+            },
+            {
+                "text": "p_l never planned for things to happen like this, but when {PRONOUN/p_l/subject} {VERB/p_l/approach/approaches} the loner and {VERB/p_l/begin/begins} talking with {PRONOUN/n_c:0/object}, {PRONOUN/p_l/subject} can't help but feel intrigued by the life the other young cat leads. Perhaps it would do {PRONOUN/p_l/object} good to experience what the world has to offer outside of c_n...",
+                "exp": 0,
+                "weight": 5,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "lost_cats": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 20
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "It's positively <i>shameful,</i> but upon approaching the kittypet and speaking with {PRONOUN/n_c:0/object}, p_l finds {PRONOUN/p_l/self}... <i>intrigued</i> by the tales of the kittypet's life. Surely it'd be okay for a few days, right? For {PRONOUN/p_l/object} to go and experience that life? Just a few days, nobody has to know...",
+                "exp": 0,
+                "weight": 2,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "lost_cats": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 20
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The loner may not be causing any trouble <i>at the moment,</i> but that doesn't mean {PRONOUN/n_c:0/subject} won't in the future. p_l hisses out a warning that the loner quickly heeds, scampering away with {PRONOUN/n_c:0/poss} tail between {PRONOUN/n_c:0/poss} legs.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "outsider_rep": -2
+            },
+            {
+                "text": "A kittypet? This'll be <i>easy.</i> With a series of hisses accompanied by bared teeth and unsheathed claws, p_l manages to intimidate the pampered creature into running back to {PRONOUN/n_c:0/poss} Twolegs.",
+                "exp": 10,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "outsider_rep": -2
+            },
+            {
+                "text": "p_l hisses out a warning, but the loner refuses to leave without a fight - which {PRONOUN/n_c:0/subject} promptly {VERB/n_c:0/lose/loses}.",
+                "exp": 10,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["battle_injury", "minor_injury", "torn ear"],
+                        "scars": ["ONE", "TWO", "THREE", "FOUR", "RIGHTEAR", "LEFTEAR", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "MANLEG", "MANTAIL", "CATBITE", "CATBITETWO", "BRIDGE", "FACE", "SNOUT", "CHEEK", "THROAT", "TAILBASE", "TAILSCAR", "BACK", "SCRATCHSIDE", "SIDE", "BELLY"],
+                        "no_results": true
+                    },
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["sore", "bruises", "scrapes", "torn ear", "torn pelt"],
+                        "scars": ["RIGHTEAR", "LEFTEAR"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after fighting with another cat.",
+                    "death": "m_c died from injuries sustained after fighting with another cat."
+                },
+                "outsider_rep": -2
+            },
+            {
+                "text": "p_l hisses out a warning and is surprised when the kittypet refuses to leave without a fight. <i>Un</i>surprisingly, {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} quickly put in {PRONOUN/n_c:0/poss} place, with p_l easily winning the ensuing scuffle.",
+                "exp": 10,
+                "weight": 5,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["claw-wound", "torn pelt", "torn ear", "minor_injury"],
+                        "scars": ["ONE", "TWO", "THREE", "FOUR", "RIGHTEAR", "LEFTEAR", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "MANLEG", "MANTAIL", "CATBITE", "CATBITETWO", "BRIDGE", "FACE", "SNOUT", "CHEEK", "THROAT", "TAILBASE", "TAILSCAR", "BACK", "SCRATCHSIDE", "SIDE", "BELLY"],
+                        "no_results": true
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after foolishly trying to take on a c_n apprentice.",
+                    "death": "m_c died from injuries sustained after foolishly trying to take on a c_n apprentice."
+                },
+                "outsider_rep": -2
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The loner may not be causing any trouble <i>at the moment,</i> but that doesn't mean {PRONOUN/n_c:0/subject} won't in the future. p_l hisses out a warning, but the loner pays no attention, acting as though {PRONOUN/n_c:0/subject} {VERB/n_c:0/don't/doesn't} even <i>see</i> p_l!",
+                "exp": 0,
+                "weight": 20,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": -1
+            },
+            {
+                "text": "A kittypet? This'll be <i>easy...</i> Or maybe not. p_l simply can't believe {PRONOUN/p_l/subject} failed to chase off a <i>kittypet!</i> Nobody else saw that, right?",
+                "exp": 0,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ],
+                "outsider_rep": -1
+            },
+            {
+                "text": "p_l hisses out a warning, but the loner refuses to leave without a fight, one which ends in a humiliating loss for p_l.",
+                "exp": 0,
+                "weight": 10,
+                "new_cat": [
+                    ["meeting", "loner", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["claw-wound", "torn pelt", "torn ear", "minor_injury"],
+                        "scars": ["ONE", "TWO", "THREE", "FOUR", "RIGHTEAR", "LEFTEAR", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "MANLEG", "MANTAIL", "CATBITE", "CATBITETWO", "BRIDGE", "FACE", "SNOUT", "CHEEK", "THROAT", "TAILBASE", "TAILSCAR", "BACK", "SCRATCHSIDE", "SIDE", "BELLY"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after losing a fight with a loner.",
+                    "death": "m_c died from injuries sustained after losing a fight with a loner."
+                },
+                "outsider_rep": -1
+            },
+            {
+                "text": "p_l hisses out a warning and is surprised when the kittypet refuses to leave without a fight. Even more surprisingly, the kittypet <i>wins</i> said fight. Honestly, despite being in quite a bit of pain, p_l kind of respects the other cat's skills.",
+                "exp": 0,
+                "weight": 5,
+                "new_cat": [
+                    ["meeting", "kittypet", "age:adolescent"]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["n_c:0"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["claw-wound", "torn pelt", "torn ear", "minor_injury"],
+                        "scars": ["ONE", "TWO", "THREE", "FOUR", "RIGHTEAR", "LEFTEAR", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "MANLEG", "MANTAIL", "CATBITE", "CATBITETWO", "BRIDGE", "FACE", "SNOUT", "CHEEK", "THROAT", "TAILBASE", "TAILSCAR", "BACK", "SCRATCHSIDE", "SIDE", "BELLY"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after losing a fight with a kittypet.",
+                    "death": "m_c died from injuries sustained after losing a fight with a kittypet."
+                },
+                "outsider_rep": -1
             }
         ]
     }

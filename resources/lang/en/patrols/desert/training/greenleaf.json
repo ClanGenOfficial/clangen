@@ -15,10 +15,10 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "Greenleaf, bah, r_c scoffs. There's nothing green about the leaves right now, so why does c_n call the dry season that?!",
-        "decline_text": "The patrol is too busy finding shelter form the sun to consider r_c's question.",
+        "decline_text": "The patrol is too busy finding shelter from the sun to consider r_c's question.",
         "success_outcomes": [
                 {
-                    "text": "It's ancient, p_l explains. Older then c_n... Maybe older than this land. No one is sure what cursed the desert to be so dry, but in other places, the sun brings light and warmth that is a relief and not a punishment. There, the dry season when the sun reaches its peak power is also the season of green leaves.",
+                    "text": "It's ancient, p_l explains. Older than c_n... Maybe older than this land. No one is sure what cursed the desert to be so dry, but in other places, the sun brings light and warmth that is a relief and not a punishment. There, the dry season when the sun reaches its peak power is also the season of green leaves.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",

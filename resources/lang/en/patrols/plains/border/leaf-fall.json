@@ -111,7 +111,7 @@
             ]
         },
         {
-            "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting.",
+            "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting.",
             "exp": 50,
             "weight": 20,
             "art": "fst_hunt_fun3",
@@ -454,7 +454,7 @@
     "chance_of_success": 30,
     "success_outcomes": [
         {
-            "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
+            "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
             "exp": 60,
             "weight": 20,
             "art": "gen_coyote1",
@@ -620,7 +620,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own.",
+            "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own.",
             "exp": 0,
             "weight": 40,
             "art": "gen_coyote1",
@@ -652,7 +652,7 @@
             ]
         },
         {
-            "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}.",
+            "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}.",
             "exp": 0,
             "weight": 40,
             "art": "gen_coyote_danger2_w2",
@@ -870,7 +870,7 @@
             ]
         },
         {
-            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
+            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
             "exp": 60,
             "weight": 10,
             "art": "gen_coyote1",
@@ -892,7 +892,7 @@
             ]
         },
         {
-            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threat c_n in the future.",
+            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threat c_n in the future.",
             "exp": 60,
             "weight": 10,
             "art": "gen_coyote1",
@@ -914,7 +914,7 @@
             ]
         },
         {
-            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. With s_c's talent for battle, this coyote won't make it to adulthood.",
+            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. With s_c's talent for battle, this coyote won't make it to adulthood.",
             "exp": 70,
             "weight": 20,
             "art": "gen_coyote1",
@@ -938,7 +938,7 @@
             ]
         },
         {
-            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. The patrol takes it down, but it manages a vicious bite on r_c. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN/r_c/poss} life.",
+            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it manages a vicious bite on r_c. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN/r_c/poss} life.",
             "exp": 80,
             "weight": 10,
             "art": "gen_coyote_danger2_w2",
@@ -1094,7 +1094,7 @@
             }
         },
         {
-            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. This coyote won't see the first day of leaf-bare - but it lashes out as the patrol finishes it off.",
+            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare - but it lashes out as the patrol finishes it off.",
             "exp": 0,
             "weight": 20,
             "art": "gen_coyote1",
@@ -1126,7 +1126,7 @@
             ]
         },
         {
-            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for fieldmice. But seeing the patrol, the coyote slips away without a trace, a frustrating opportunity lost.",
+            "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a subadult, rangy and thin after splitting from its natal pack, searches for field mice. But seeing the patrol, the coyote slips away without a trace, a frustrating opportunity lost.",
             "exp": 0,
             "weight": 20,
             "art": "gen_coyote1",
@@ -1247,7 +1247,7 @@
             ]
         },
         {
-            "text": "It's always valuable to have safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
+            "text": "It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
             "exp": 40,
             "weight": 20,
             "art": "gen_speaking_cat_w3",
@@ -1295,7 +1295,7 @@
             ]
         },
         {
-            "text": "s_c is brought forward to check it out. After careful consideration, {PRONOUN/s_c/subject} {VERB/s_c/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home rennovator appears to have moved on, leaving it open for c_n's use.",
+            "text": "s_c is brought forward to check it out. After careful consideration, {PRONOUN/s_c/subject} {VERB/s_c/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home renovator appears to have moved on, leaving it open for c_n's use.",
             "exp": 40,
             "weight": 20,
             "art": "gen_bord_scent_allies",
@@ -1343,7 +1343,7 @@
             ]
         },
         {
-            "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
+            "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and thoroughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
             "exp": 30,
             "weight": 20,
             "art": "gen_warrior_crouching",
@@ -1733,7 +1733,7 @@
             ]
         },
         {
-            "text": "The apprentice has made an accidental discovery, tripping into a well hidden burrow entrance. It's always valuable to have safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
+            "text": "The apprentice has made an accidental discovery, tripping into a well hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
             "exp": 40,
             "weight": 20,
             "art": "pln_bord_tunnel",
@@ -1837,7 +1837,7 @@
             ]
         },
         {
-            "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneth {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
+            "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
             "exp": 0,
             "weight": 20,
             "art": "gen_train_patrolapprenticesessionfail",
@@ -1859,7 +1859,7 @@
             ]
         },
         {
-            "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneth {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole while app1 coughes up mud and mucus.",
+            "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole while app1 coughs up mud and mucus.",
             "exp": 0,
             "weight": 20,
             "art": "gen_train_patrolapprenticesessionfail",
@@ -1886,7 +1886,7 @@
             ]
         },
         {
-            "text": "app1 screeches. Something has {PRONOUN/app1/object} by the leg! The patrol tries to drag {PRONOUN/app1/object} out of the sinkhole thats developing around {PRONOUN/app1/object}, but it's no use. app1 is pulled down and out of sight.",
+            "text": "app1 screeches. Something has {PRONOUN/app1/object} by the leg! The patrol tries to drag {PRONOUN/app1/object} out of the sinkhole that's developing around {PRONOUN/app1/object}, but it's no use. app1 is pulled down and out of sight.",
             "exp": 0,
             "weight": 10,
             "art": "gen_dead_cat_app_ghost_EXPLICIT",
@@ -1979,7 +1979,7 @@
             ]
         },
         {
-            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but they can report this to camp.",
+            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but they can report this to camp.",
             "exp": 30,
             "weight": 20,
             "art": "fst_bord_sett",
@@ -2001,7 +2001,7 @@
             ]
         },
         {
-            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but no one tell r_c and p_l that, because somehow they manage to do it anyway!",
+            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. Two cats aren't enough drive it out, but no one tell r_c and p_l that, because somehow they manage to do it anyway!",
             "exp": 30,
             "weight": 5,
             "art": "gen_scarybadger",
@@ -2030,7 +2030,7 @@
             ]
         },
         {
-            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
+            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
             "exp": 30,
             "weight": 20,
             "art": "gen_scarybadger",
@@ -2063,7 +2063,7 @@
             ]
         },
         {
-            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with dirt, to mark the place for another, bigger border patrol to deal with.",
+            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with dirt, to mark the place for another, bigger border patrol to deal with.",
             "exp": 30,
             "weight": 20,
             "art": "fst_bord_sett",
@@ -2460,7 +2460,7 @@
             ]
         },
         {
-            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
+            "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere.",
             "exp": 30,
             "weight": 20,
             "art": "gen_scarybadger",
@@ -2731,7 +2731,7 @@
             ]
         },
         {
-            "text": "As p_l investigates the new tunnel, its owner comes snuffling through the grass. app1 calls out, but p_l has {PRONOUN/p_l/poss} head down the burrow, and app1 runs in instead, distracting the badger, jumping on its back with claws stretched out. It saves p_l's life. It costs app1 {PRONOUN/app1/poss}s.",
+            "text": "As p_l investigates the new tunnel, its owner comes snuffling through the grass. app1 calls out, but p_l has {PRONOUN/p_l/poss} head down the burrow, and app1 runs in instead, distracting the badger, jumping on its back with claws stretched out. It saves p_l's life. It costs app1 {PRONOUN/app1/poss}.",
             "exp": 0,
             "weight": 20,
             "art": "gen_dead_cat_app_ghost_EXPLICIT",
@@ -2755,7 +2755,7 @@
             "dead_cats": ["app1"],
             "history_text": {
                 "scar": "m_c was injured after disturbing a badger in its sett.",
-                "reg_death": "This cat was killed saving an older warrior froma badger as an apprentice.",
+                "reg_death": "This cat was killed saving an older warrior from a badger as an apprentice.",
                 "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
             }
         },
@@ -3080,7 +3080,7 @@
             ]
         },
         {
-            "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
+            "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
             "exp": 20,
             "weight": 20,
             "art": "gen_train_patrolapprenticesessionsuccess",
@@ -3147,7 +3147,7 @@
             "lost_cats": ["app1"]
         },
         {
-            "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
+            "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
             "exp": 0,
             "weight": 20,
             "art": "gen_train_patrolapprenticesessionsuccess",

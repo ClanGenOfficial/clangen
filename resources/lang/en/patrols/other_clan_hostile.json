@@ -293,7 +293,7 @@
     "art": "gen_flower_date_warrior_other_clan"
     },
     {
-        "text": "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when an o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged and, despite n_c:0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c:0, horrified by {PRONOUN/n_c:0/poss} Clanmates' actions, flees the territory.",
+        "text": "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged and, despite n_c:0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c:0, horrified by {PRONOUN/n_c:0/poss} Clanmates' actions, flees the territory.",
         "exp": 0,
         "weight": 10,
         "other_clan_rep": -5,
@@ -341,7 +341,7 @@
     "art": "gen_battle_warrior_other_clan"
     },
     {
-        "text": "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when an o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged. Though n_c:0 tries pull them off p_l, the o_c_n warriors leave p_l cold on the ground. n_c:0 flees, howling in grief for {PRONOUN/n_c:0/poss} lost love.",
+        "text": "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged. Though n_c:0 tries to pull them off p_l, the o_c_n warriors leave p_l cold on the ground. n_c:0 flees, howling in grief for {PRONOUN/n_c:0/poss} lost love.",
         "exp": 0,
         "weight": 10,
         "dead_cats": [ "p_l" ],
@@ -587,7 +587,7 @@
                 "weight": 8
             },
             {
-                "text": "Right in the middle of another argument, the two are attacked along the border by an o_c_n patrol, despite the two hating each other, they fight back to back to fight off the patrol, sending the other patrol fleeing back to their territory.",
+                "text": "Right in the middle of another argument, the two are attacked along the border by a o_c_n patrol, despite the two hating each other, they fight back to back to fight off the patrol, sending the other patrol fleeing back to their territory.",
                 "exp": 10,
                 "weight": 1,
                 "art": "gen_big_fight_warriors_other_clan",
@@ -670,7 +670,7 @@
                 ]
             },
             {
-                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an imprompto contest to see who can catch the most bugs.",
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an impromptu contest to see who can catch the most bugs.",
                 "exp": 10,
                 "weight": 10,
                 "art": "gen_train_talkingWW",
@@ -740,7 +740,7 @@
                 ]
             },
             {
-                "text": "As the duo are patroling, too distracted by their argument, they didn't notice the shadow desending on them as they are ambushed by a rogue. r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "text": "As the duo are patrolling, too distracted by their argument, they don't notice the shadow descending on them as they are ambushed by a rogue. r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_dead_cat",
@@ -752,7 +752,7 @@
                 }
             },
             {
-                "text": "As the duo are patroling, they are ambushed by a o_c_n patrol! p_l is fighting for {PRONOUN/p_l/poss} life, when out of the corner of {PRONOUN/p_l/poss} eye {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c fleeing. Outnumbered and overwhelmed, p_l is killed.",
+                "text": "As the duo are patrolling, they are ambushed by a o_c_n patrol! p_l is fighting for {PRONOUN/p_l/poss} life, when out of the corner of {PRONOUN/p_l/poss} eye {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c fleeing. Outnumbered and overwhelmed, p_l is killed.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_big_fight_warriors_other_clan",
@@ -1793,7 +1793,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -2056,7 +2056,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -2519,7 +2519,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -2781,7 +2781,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -3244,7 +3244,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -3507,7 +3507,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -3970,7 +3970,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -4233,7 +4233,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c looses a life.",
+                "text": "r_c greets the leader of o_c_n along the borders, but {PRONOUN/r_c/poss} fellow leader {VERB/r_c/seemed/seems} angry, tail lashing. Before r_c can get a word out, {PRONOUN/r_c/poss} fellow leader attacks, and taken by surprise, r_c loses a life.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["r_c"],
@@ -4302,7 +4302,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c throws {PRONOUN/r_c/self} into battle, determined to throw o_c_n off {PRONOUN/r_c/poss} territory, but as {PRONOUN/r_c/subject} {VERB/r_c/twist and turn/twists and turns} in combat, two warriors from o_c_n surround {PRONOUN/r_c/object}. r_c calls to {PRONOUN/r_c/poss} Clanmate to back them up. Instead is knocked to the ground, pain spreading through the back of {PRONOUN/r_c/object} neck. {PRONOUN/r_c/subject/CAP} struggle for breath, fading rapidly - where was {PRONOUN/r_c/poss} backup, the rest of {PRONOUN/r_c/poss} patrol?",
+                "text": "r_c throws {PRONOUN/r_c/self} into battle, determined to throw o_c_n off {PRONOUN/r_c/poss} territory, but as {PRONOUN/r_c/subject} {VERB/r_c/twist and turn/twists and turns} in combat, two warriors from o_c_n surround {PRONOUN/r_c/object}. r_c calls to {PRONOUN/r_c/poss} Clanmate to back them up, but is instead knocked to the ground, pain spreading through the back of {PRONOUN/r_c/object} neck. {PRONOUN/r_c/subject/CAP} struggle for breath, fading rapidly - where was {PRONOUN/r_c/poss} backup, the rest of {PRONOUN/r_c/poss} patrol?",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -4427,7 +4427,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "Starting trouble is s_c's speciality - but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some cat to take advantage of the 'weak' section of border. s_c won't be given the chance to make the same mistake again.",
+                "text": "Starting trouble is s_c's speciality - but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some cat to take advantage of the 'weak' section of the border. s_c won't be given the chance to make the same mistake again.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -4502,19 +4502,19 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon a r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
+                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol", "some_lives"],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hositilities.",
+                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
                     "lead_death": "were killed by o_c_n in a border ambush"
                 },
                 "other_clan_rep": -1
             },
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon a r_c steps fully into o_c_n territory, the smaller c_n patrol is swamped in an ambush, fur flying, cats screaming, the scent of blood thick in the air.",
+                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, the smaller c_n patrol is swamped in an ambush, fur flying, cats screaming, the scent of blood thick in the air.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -4531,14 +4531,14 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hositilities.",
+                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
                     "lead_death": "were killed by o_c_n in a border ambush"
                 },
                 "other_clan_rep": -1
             },
             {
-                "text": "Starting trouble is s_c's speciality - but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the 'weak' section of border. The patrol won't be given the chance to make the same mistake again.",
+                "text": "Starting trouble is s_c's speciality - but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the 'weak' section of the border. The patrol won't be given the chance to make the same mistake again.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -4555,7 +4555,7 @@
                 ],
                 "dead_cats": ["patrol", "some_lives"],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hositilities.",
+                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
                     "lead_death": "were killed by o_c_n in a border ambush"
                 },
@@ -4614,19 +4614,19 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon a r_c steps fully into o_c_n territory, they descend in ambush. The big border patrol gives as good as they get, ripping o_c_n fur, but they've been taken by surprise, and not everyone will make it home from this.",
+                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, they descend in ambush. The big border patrol gives as good as they get, ripping o_c_n fur, but they've been taken by surprise, and not everyone will make it home from this.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi", "some_lives"],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hositilities.",
+                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
                     "lead_death": "were killed by o_c_n in a border ambush"
                 },
                 "other_clan_rep": -1
             },
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon a r_c steps fully into o_c_n territory, the c_n patrol is ambushed, fur flying, cats screaming, the scent of blood thick in the air.",
+                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, the c_n patrol is ambushed, fur flying, cats screaming, the scent of blood thick in the air.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -4643,14 +4643,14 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hositilities.",
+                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
                     "lead_death": "were killed by o_c_n in a border ambush"
                 },
                 "other_clan_rep": -1
             },
             {
-                "text": "Starting trouble is s_c's speciality - but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the 'weak' section of border. Though the border patrol gives as good as they get, what they get is ambushed and beaten.",
+                "text": "Starting trouble is s_c's speciality - but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the 'weak' section of the border. Though the border patrol gives as good as they get, what they get is ambushed and beaten.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -4667,7 +4667,7 @@
                 ],
                 "dead_cats": ["multi", "some_lives"],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hositilities.",
+                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
                     "lead_death": "were killed by o_c_n in a border ambush"
                 },
@@ -4812,7 +4812,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l and the patrol cross the border to attack the two kits when they are thwarted by an o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
+                "text": "p_l and the patrol cross the border to attack the two kits when they are thwarted by a o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
@@ -4830,7 +4830,7 @@
                 "other_clan_rep": -1
             },
             {
-                "text": "p_l and the patrol cross the border to steal the two kits when they are thwarted by an o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
+                "text": "p_l and the patrol cross the border to steal the two kits when they are thwarted by a o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1

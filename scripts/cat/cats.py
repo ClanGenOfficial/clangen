@@ -492,6 +492,9 @@ class Cat:
         Loads the correct pronouns for the loaded language.
         :return: List of dicts for the cat's pronouns
         """
+        if self.faded:
+            return []
+
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
         if value is None:
@@ -2028,26 +2031,19 @@ class Cat:
             return
 
         # remove accessories if need be
-        if "NOTAIL" in self.pelt.scars and self.pelt.accessory in [
-            "RED FEATHERS",
-            "BLUE FEATHERS",
-            "JAY FEATHERS",
-            "GULL FEATHERS",
-            "SPARROW FEATHERS",
-            "CLOVER",
-            "DAISY",
-        ]:
-            self.pelt.accessory = None
-        if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
-            "RED FEATHERS",
-            "BLUE FEATHERS",
-            "JAY FEATHERS",
-            "GULL FEATHERS",
-            "SPARROW FEATHERS",
-            "CLOVER",
-            "DAISY",
-        ]:
-            self.pelt.accessory = None
+        if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
+            self.pelt.accessory = [
+                acc for acc in self.pelt.accessory
+                if acc not in (
+                    "RED FEATHERS",
+                    "BLUE FEATHERS",
+                    "JAY FEATHERS",
+                    "GULL FEATHERS",
+                    "SPARROW FEATHERS",
+                    "CLOVER",
+                    "DAISY",
+                )
+            ]
 
         condition = PERMANENT[name]
         new_condition = False
@@ -3356,7 +3352,7 @@ class Cat:
                 ]
             )
         elif relationship:
-            return "\n".join(
+            return " - ".join(
                 [
                     i18n.t("general.moons_age", count=self.moons),
                     self.genderalign,
