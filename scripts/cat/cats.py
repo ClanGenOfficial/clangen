@@ -316,7 +316,7 @@ class Cat:
             )
         else:
             self.name = Name(
-                status,
+                self.status.rank,
                 prefix,
                 suffix,
                 specsuffix_hidden=self.specsuffix_hidden,
@@ -394,6 +394,7 @@ class Cat:
         """
         Used to roll a new cat
         :param skill_dict: TODO what is a skill dict exactly
+        :param status_dict: Dict containing status info (rank, social, group)
         :return: None
         """
         # trans cat chances
@@ -554,7 +555,7 @@ class Cat:
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
         """
         if (
-            self.status == "leader"
+            self.status.rank == CatRankEnum.LEADER
             and "pregnant" in self.injuries
             and game.clan.leader_lives > 0
         ):
@@ -571,9 +572,9 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        darkforest = game.clan.instructor.df
-        isoutside = self.outside
-        if self.status == "leader":
+        darkforest = True if game.clan.instructor.status.group == "darkforest" else False
+        isoutside = self.status.is_an_outsider()
+        if self.status.rank == CatRankEnum.LEADER:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(
@@ -589,7 +590,7 @@ class Cat:
                 death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
                 final_thought = event_text_adjust(self, death_thought, main_cat=self)
                 self.thought = final_thought
-                if game.clan.instructor.df is False:
+                if darkforest is False:
                     text = (
                         "They've lost their last life and have travelled to StarClan."
                     )
@@ -612,20 +613,21 @@ class Cat:
         if game.clan and not self.outside and not self.exiled:
             self.grief(body)
 
-        if not self.outside:
+        self.status.send_to_afterlife()
+
+        if not self.status.has_been_clancat():
             Cat.dead_cats.append(self)
-            if game.clan.instructor.df is False:
-                self.df = False
-                game.clan.add_to_starclan(self)
-            elif game.clan.instructor.df is True:
-                self.df = True
+            if darkforest:
                 game.clan.add_to_darkforest(self)
+            else:
+                game.clan.add_to_starclan(self)
         else:
             game.clan.add_to_unknown(self)
 
         return
 
     def exile(self):
+        # TODO: Integrate new system!
         """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
         status."""
         self.exiled = True
@@ -847,8 +849,8 @@ class Cat:
         mentors and apprentices."""
         self.outside = True
 
-        if self.status in ["leader", "warrior"]:
-            self.status_change("warrior")
+        if self.status.rank in [CatRankEnum.LEADER, CatRankEnum.WARRIOR]:
+            self.status_change(CatRankEnum.WARRIOR)
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
@@ -886,6 +888,7 @@ class Cat:
         return ids
 
     def status_change(self, new_status, resort=False):
+        # TODO: figure out how this integrates
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
                     'medicine cat', 'elder'.
@@ -955,7 +958,7 @@ class Cat:
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""
 
-        if self.status in ["warrior", "medicine cat", "mediator"]:
+        if self.status.rank in [CatRankEnum.WARRIOR, CatRankEnum.MEDICINE_CAT, CatRankEnum.MEDIATOR]:
             # Give a couple doses of mentor influence:
             if mentor:
                 max_influence = randint(0, 2)
@@ -1178,7 +1181,7 @@ class Cat:
 
         for rel in relationships:
             kitty = self.fetch_cat(rel.cat_to)
-            if kitty and kitty.dead and kitty.status != "newborn":
+            if kitty and kitty.dead and kitty.status.rank != CatRankEnum.NEWBORN:
                 # check where they reside
                 if starclan:
                     if kitty.ID not in game.clan.starclan_cats:
@@ -1208,7 +1211,7 @@ class Cat:
             for rel in dead_relations:
                 if i == 8:
                     break
-                if rel.cat_to.status == "leader":
+                if rel.cat_to.status.rank == CatRankEnum.LEADER:
                     life_giving_leader = rel.cat_to
                     continue
                 life_givers.append(rel.cat_to.ID)
@@ -1226,7 +1229,7 @@ class Cat:
                     for i in game.clan.starclan_cats
                     if self.fetch_cat(i)
                     and i not in life_givers
-                    and self.fetch_cat(i).status not in ["leader", "newborn"]
+                    and self.fetch_cat(i).status.rank not in [CatRankEnum.LEADER, CatRankEnum.NEWBORN]
                 ]
 
                 if len(possible_sc_cats) - 1 < amount:
@@ -1239,7 +1242,7 @@ class Cat:
                     for i in game.clan.darkforest_cats
                     if self.fetch_cat(i)
                     and i not in life_givers
-                    and self.fetch_cat(i).status not in ["leader", "newborn"]
+                    and self.fetch_cat(i).status.rank not in [CatRankEnum.LEADER, CatRankEnum.NEWBORN]
                 ]
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
@@ -1262,7 +1265,7 @@ class Cat:
                     for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status == "leader"
+                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1272,7 +1275,7 @@ class Cat:
                     for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status == "leader"
+                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1284,7 +1287,7 @@ class Cat:
                     for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status == "leader"
+                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1294,7 +1297,7 @@ class Cat:
                     for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status == "leader"
+                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1319,7 +1322,7 @@ class Cat:
             life_list = []
             for life in possible_lives:
                 tags = possible_lives[life]["tags"]
-                rank = giver_cat.status
+                rank = giver_cat.status.rank
 
                 if "unknown_blessing" in tags:
                     continue
@@ -1487,8 +1490,8 @@ class Cat:
         """Handles a moon skip for an alive cat."""
         old_age = self.age
         self.moons += 1
-        if self.moons == 1 and self.status == "newborn":
-            self.status = "kitten"
+        if self.moons == 1 and self.status.rank == CatRankEnum.NEWBORN:
+            self.status.rank = CatRankEnum.KITTEN
         self.in_camp = 1
 
         if self.exiled or self.outside:
@@ -1509,11 +1512,7 @@ class Cat:
         self.personality.set_kit(self.age.is_baby())
         # Upon age-change
 
-        if self.status in [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice",
-        ]:
+        if self.status.is_any_apprentice():
             self.update_mentor()
 
     def thoughts(self):
@@ -3541,10 +3540,10 @@ def create_example_cats():
         if cat_index in warrior_indices:
             game.choose_cats[cat_index] = create_cat(status="warrior")
         else:
-            random_status = choice(
-                ["kitten", "apprentice", "warrior", "warrior", "elder"]
+            random_rank = choice(
+                [CatRankEnum.KITTEN, CatRankEnum.APPRENTICE, CatRankEnum.WARRIOR, CatRankEnum.WARRIOR, CatRankEnum.ELDER]
             )
-            game.choose_cats[cat_index] = create_cat(status=random_status)
+            game.choose_cats[cat_index] = create_cat(status=random_rank)
 
 
 
