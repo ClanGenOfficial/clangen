@@ -262,10 +262,23 @@ class Status:
             age,
             standing_with_past_group=None
     ):
+        """
+        Adds the cat to the specified group. If the cat has previously been part of this group, they will take on their
+        last held rank within that group (unless it was leader or deputy). Groups are currently assumed to be Clans only,
+        so if the cat has held a Clan rank within any Clan in the past, they will attempt to take on that same rank in
+        the new group (unless it was leader or deputy). If no past valid past rank is found, they will gain a rank based
+        off their age.
+        :param new_group: The group the cat will be joining
+        :param age: The current age stage of the cat
+        :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
+        last group views the cat (exiled, lost, ect.)
+        """
         new_rank = None
 
         if new_group in self.all_groups:
             new_rank = self.find_prior_clan_rank(new_group)
+            if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
+                new_rank = None
         elif self.has_been_clancat():
             new_rank = self.find_prior_clan_rank()
             if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
