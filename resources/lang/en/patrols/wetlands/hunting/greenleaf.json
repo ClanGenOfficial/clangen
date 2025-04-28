@@ -1074,7 +1074,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -1278,7 +1278,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3138,7 +3138,7 @@
                 ]
             },
             {
-                "text": "r_c nearly managed to pin the gray vixen they find on a wet, barely above water island, but snapping jaws leave r_c dripping blood into the mud. This round goes to the gray fox.",
+                "text": "r_c nearly managed to pin the gray vixen {PRONOUN/r_c/subject} found on a wet, barely above water island, but its snapping jaws leave r_c dripping blood into the mud. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -4348,7 +4348,7 @@
                 ]
             },
             {
-                "text": "r_c nearly managed to pin the gray vixen they find on a wet, barely above water island, but snapping jaws leave r_c dripping blood into the mud. This round goes to the gray fox.",
+                "text": "r_c nearly managed to pin the gray vixen {PRONOUN/r_c/subject} found on a wet, barely above water island, but its snapping jaws leave r_c dripping blood into the mud. This round goes to the gray fox.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

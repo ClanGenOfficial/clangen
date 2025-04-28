@@ -1655,7 +1655,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "app1 is too impatient for {PRONOUN/app1/poss} lesson, and runs off to try hunt. The rest of the patrol wait, mildly irritated, until they hear a yelp. app1 has gotten stuck upsidedown in a cervice a lizard escaped into, and lifting {PRONOUN/app1/object} out takes the rest of the morning.",
+                    "text": "app1 is too impatient for {PRONOUN/app1/poss} lesson, and runs off to try to hunt. The rest of the patrol wait, mildly irritated, until they hear a yelp. app1 has gotten stuck upside down in a crevice a lizard escaped into, and lifting {PRONOUN/app1/object} out takes the rest of the morning.",
                     "exp": 0,
                     "weight": 20,
                     "art": "bch_train_stuck",
@@ -1695,7 +1695,7 @@
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
         "intro_text": "As the patrol pads forward in the dusty landscape, they spot a ball wobbling along, pushed by a gleaming scarab. A little Khepri!",
-        "decline_text": "Weird, but not dangerous. The patrol mvoes on.",
+        "decline_text": "Weird, but not dangerous. The patrol moves on.",
         "success_outcomes": [
                 {
                     "text": "It reminds s_c of an old tale. Khepri the sun beetle moves the sun across the sky, hiding it away at night in his burrow and being reborn in the morning to push it along its tracks in the sky.",
@@ -1729,7 +1729,7 @@
                     ]
                 },
                 {
-                    "text": "Scarabs bring luck, s_c says confidently. In times past, during period of great danger, desert cats would bring a scarab with them for luck, preferrably a blue one.",
+                    "text": "Scarabs bring luck, s_c says confidently. In times past, during period of great danger, desert cats would bring a scarab with them for luck, preferably a blue one.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",
@@ -1762,7 +1762,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "app1 rolls {PRONOUN/app1/poss} eyes. You're talking about dung beetles, Khepri is a <i>dung bettle</i>, you know that, right? Please stop telling app1 about poop scarabs.",
+                    "text": "app1 rolls {PRONOUN/app1/poss} eyes. You're talking about dung beetles, Khepri is a <i>dung beetle</i>, you know that, right? Please stop telling app1 about poop scarabs.",
                     "exp": 0,
                     "weight": 20,
                     "art": "gen_train_argue",
@@ -1807,11 +1807,11 @@
         "weight": 40,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "Come here a second, p_l knows a really cool feature tucked into this canyon. {PRONOUN/p_l/subject/CAP} lead the patrol down, stopping in front of the lower half of a eroding rockface. Look - bones.",
-        "decline_text": "Weird, but not dangerous. The patrol mvoes on.",
+        "intro_text": "Come here a second, p_l knows a really cool feature tucked into this canyon. {PRONOUN/p_l/subject/CAP} lead the patrol down, stopping in front of the lower half of an eroding rock face. Look - bones.",
+        "decline_text": "Weird, but not dangerous. The patrol moves on.",
         "success_outcomes": [
                 {
-                    "text": "They're not <i>bone-bone</i>, p_l exlains, tracing a claw across the protruding skull. And they don't look like anything that currently walks the badlands. They're rock, but... bone shaped? p_l thinks these were a monster, one cursed by StarClan to be entombed by the rock until they became it.",
+                    "text": "They're not <i>bone-bone</i>, p_l explains, tracing a claw across the protruding skull. And they don't look like anything that currently walks the badlands. They're rock, but... bone shaped? p_l thinks these were a monster, one cursed by StarClan to be entombed by the rock until they became it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_warrior_crouching_perplexed",

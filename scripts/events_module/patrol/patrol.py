@@ -308,12 +308,14 @@ class Patrol:
                         self.generate_patrol_events(self.MEDCAT_GEN)
                     )
                     possible_patrols.extend(self.generate_patrol_events(self.DISASTER))
+                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT))
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_WELCOMING)
                     )
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_HOSTILE)
                     )
+                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
                     possible_patrols.extend(
                         self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
                     )

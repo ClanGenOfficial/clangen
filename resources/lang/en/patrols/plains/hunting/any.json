@@ -72,7 +72,7 @@
                 ]
             },
             {
-                "text": "What they need is speed. s_c finds a good, semi-sheltered path to build up momentum and uses it to burst out towards the praire dogs at full sprint, {PRONOUN/s_c/poss} velocity flattening {PRONOUN/s_c/poss} fur against {PRONOUN/s_c/poss} skin. The sentry barks an alarm, but s_c is too fast, taking out a prairie dog in a spinning collision of fur, teeth, and claws.",
+                "text": "What they need is speed. s_c finds a good, semi-sheltered path to build up momentum and uses it to burst out towards the prairie dogs at full sprint, {PRONOUN/s_c/poss} velocity flattening {PRONOUN/s_c/poss} fur against {PRONOUN/s_c/poss} skin. The sentry barks an alarm, but s_c is too fast, taking out a prairie dog in a spinning collision of fur, teeth, and claws.",
                 "exp": 15,
                 "weight": 20,
                 "art": "running_warrior2",
@@ -90,7 +90,7 @@
                 ]
             },
             {
-                "text": "This is challenging, but s_c can see a little cover downwind. Without {PRONOUN/s_c/poss} scent to betray {PRONOUN/s_c/object}, and relying on {PRONOUN/s_c/poss} talent and the hard work {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} done to nuture it, s_c takes one of the prairie dogs down.",
+                "text": "This is challenging, but s_c can see a little cover downwind. Without {PRONOUN/s_c/poss} scent to betray {PRONOUN/s_c/object}, and relying on {PRONOUN/s_c/poss} talent and the hard work {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} done to nurture it, s_c takes one of the prairie dogs down.",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_happy_cat",
@@ -149,14 +149,14 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c performs a flawless approach, using a muddy dip to creep closer below the sentry's view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bunch/bunches} up {PRONOUN/r_c/poss} hindquarters, building up power, and {VERB/r_c/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evapourate into their waiting burrows, leaving r_c muddy and preyless.",
+                "text": "r_c performs a flawless approach, using a muddy dip to creep closer below the sentry's view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bunch/bunches} up {PRONOUN/r_c/poss} hindquarters, building up power, and {VERB/r_c/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evaporate into their waiting burrows, leaving r_c muddy and preyless.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_soggykitty_mad_warrior",
                 "prey": ["very_small"]
             },
             {
-                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, r_c is left weezing and out of breath as the prey chatters angrily from within their burrows. Starsdamnit.",
+                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, r_c is left wheezing and out of breath as the prey chatters angrily from within their burrows. Starsdamnit.",
                 "exp": 0,
                 "weight": 20,
                 "art": "fst_hunt_fun1",
@@ -322,7 +322,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, app1 is left weezing and out of breath as the prey chatters angrily from within their burrows. Awww.",
+                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, app1 is left wheezing and out of breath as the prey chatters angrily from within their burrows. Awww.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -481,7 +481,7 @@
                 ]
             },
             {
-                "text": "Twolegs squawk inside, loud and unpredictably dangerous. But outside the bigger predators have brought down a deer that stinks of smoke and killing metal. s_c twitches {PRONOUN/s_c/poss} tail. Surely the twolegs won't miss a little bit of such large prey.",
+                "text": "Twolegs squawk inside, loud and unpredictably dangerous. But outside the bigger predators have brought down a deer that stinks of smoke and killing metal. s_c twitches {PRONOUN/s_c/poss} tail. Surely the Twolegs won't miss a little bit of such large prey.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_hunt_strange",
@@ -631,7 +631,7 @@
                 "art": "gen_hunt_rabbit"
             },
             {
-                "text": "This warren was a bad call, and its rabbits twitch out of sight with the vigilence of the recently-hunted. Though p_l picks up a mouse on the way home, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} still disappointed.",
+                "text": "This warren was a bad call, and its rabbits twitch out of sight with the vigilance of the recently-hunted. Though p_l picks up a mouse on the way home, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} still disappointed.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_hunt_sneakprey",
@@ -1673,7 +1673,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
+                "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"],
@@ -2666,7 +2666,7 @@
                 ]
             },
             {
-                "text": "The ambush goes cartoonishly poorly, and it's only s_c's skill that still nets them one rabbit, snatching a sliver of victory form the jaws of failure.",
+                "text": "The ambush goes cartoonishly poorly, and it's only s_c's skill that still nets them one rabbit, snatching a sliver of victory from the jaws of failure.",
                 "exp": 20,
                 "weight": 10,
                 "art": "fst_hunt_fun1",
@@ -2693,7 +2693,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Isn't <i>every</i> season rabbit season? The unnecessry confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
+                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_argue",
@@ -3067,7 +3067,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol tries - they do - but they can't get a good look at the distorted red foxish creature and eventually have to return to camp to give a rather unsatisfatory report. The cats stalk off to attend to other duties, feeling like they should've been able to do better.",
+                "text": "The patrol tries - they do - but they can't get a good look at the distorted red foxish creature and eventually have to return to camp to give a rather unsatisfactory report. The cats stalk off to attend to other duties, feeling like they should've been able to do better.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
