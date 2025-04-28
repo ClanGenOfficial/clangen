@@ -21,7 +21,12 @@ class Status:
         Cats that are being newly generated should use function .generate_new_status()
         """
         self.group_history = group_history if group_history else []
+        """List of dicts containing the keys group, rank, and moons_as. A new dict is added any time group or rank are
+        changed."""
+
         self.standing_history = standing_history if standing_history else []
+        """List of dicts containing the keys group, standing, and near. Standing is a chronological list of the cat's 
+        standings with the group. Near is a bool with True indicating the cat is within interactable distance of that group."""
 
     def generate_new_status(
             self,
@@ -73,17 +78,7 @@ class Status:
                 elif social == CatSocialEnum.KITTYPET:
                     rank = CatRankEnum.KITTYPET
             else:
-                if age == CatAgeEnum.NEWBORN:
-                    rank = CatRankEnum.NEWBORN
-                elif age == CatAgeEnum.KITTEN:
-                    rank = CatRankEnum.KITTEN
-                elif age == CatAgeEnum.ADOLESCENT:
-                    rank = choice(
-                        [CatRankEnum.APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE])
-                elif age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT]:
-                    rank = choice([CatRankEnum.WARRIOR, CatRankEnum.MEDICINE_CAT, CatRankEnum.MEDIATOR])
-                else:
-                    rank = CatRankEnum.ELDER
+                rank = self.get_rank_from_age(age)
 
         # if not social, then social category is found via the rank
         if not social:
@@ -142,7 +137,7 @@ class Status:
     @property
     def social_history(self) -> list:
         """
-        Returns a chronological (first to last/current) list of all social classes the cat has been part of or is
+        Returns a list of all social classes the cat has been part of or is
         currently part of
         """
         social_history_dupes = [SOCIAL_LOOKUP[record["rank"]] for record in self.group_history]
@@ -154,6 +149,13 @@ class Status:
         Returns the group that a cat is currently affiliated with
         """
         return self.group_history[-1]["group"]
+
+    @property
+    def all_groups(self) -> list:
+        """
+        Returns a list of all groups the cat has been a part of or is currently a part of
+        """
+        return [record["group"] for record in self.group_history]
 
     @property
     def rank(self) -> CatRankEnum:
@@ -178,27 +180,41 @@ class Status:
 
         return history
 
+    @staticmethod
+    def get_rank_from_age(age) -> CatRankEnum:
+        """
+        Returns clan rank according to given age
+        """
+        if age == CatAgeEnum.NEWBORN:
+            rank = CatRankEnum.NEWBORN
+        elif age == CatAgeEnum.KITTEN:
+            rank = CatRankEnum.KITTEN
+        elif age == CatAgeEnum.ADOLESCENT:
+            rank = choice(
+                [CatRankEnum.APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE])
+        elif age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT]:
+            rank = choice([CatRankEnum.WARRIOR, CatRankEnum.MEDICINE_CAT, CatRankEnum.MEDIATOR])
+        else:
+            rank = CatRankEnum.ELDER
+
+        return rank
+
     def _modify_group(
             self,
-            new_rank: CatRankEnum,
-            past_group_standing: CatStandingEnum = None,
+            new_rank,
+            standing_with_past_group=None,
             new_group=None
     ):
         """
         Changes group status for a cat. They can be entering, leaving, or switching their group.
         :param new_group: the name of the new group they will be joining, default None
         :param new_rank: Indicate what social category the cat is now part of
-        :param past_group_standing: Indicate what standing the cat should have with their old group, leave None if they
+        :param standing_with_past_group: Indicate what standing the cat should have with their old group, leave None if they
         didn't have a group
         """
-        if past_group_standing:
-            for record in self.standing_history:
-                if record["group"] == self.group:
-                    record["standing"].append(past_group_standing)
+        if standing_with_past_group:
+            self.add_standing(standing_with_past_group)
 
-        # for now this can't move the cat from one group into another group (like if playerClan kit was stolen by
-        # another Clan), we don't really have the full infrastructure for that kind of thing, but it's definitely
-        # something we could do in the future
         self.group_history.append(
             {
                 "group": new_group,
@@ -207,19 +223,27 @@ class Status:
             }
         )
 
-    def become_lost(
+    def add_standing(self, new_standing):
+        """
+        Adds given standing to cat's current group
+        """
+        for record in self.standing_history:
+            if record["group"] == self.group:
+                record["standing"].append(new_standing)
+
+    def lost_from_group(
             self,
-            new_social_status: CatSocialEnum = CatSocialEnum.KITTYPET
+            new_social_status=CatSocialEnum.KITTYPET
     ):
         """
-        Updates a cat's status to lost
+        Removes from previous group and sets standing with that group to Lost.
         :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
         Twolegs and are now a kittypet)
         """
 
         self._modify_group(
             new_social_status,
-            past_group_standing=CatStandingEnum.LOST
+            standing_with_past_group=CatStandingEnum.LOST
         )
 
     def exile_from_group(self):
@@ -230,25 +254,31 @@ class Status:
 
         self._modify_group(
             new_rank=CatRankEnum.LONER,
-            past_group_standing=CatStandingEnum.EXILED)
+            standing_with_past_group=CatStandingEnum.EXILED)
 
-    def _change_outsider_social(
+    def add_to_group(
             self,
-            new_social
+            new_group,
+            age,
+            standing_with_past_group=None
     ):
-        if self.group:
-            self._modify_group(
-                new_social,
-                past_group_standing=CatStandingEnum.LEFT
-            )
-        else:
-            self.group_history.append(
-                {
-                    "group": None,
-                    "rank": new_social,
-                    "moons_as": 0
-                }
-            )
+        new_rank = None
+
+        if new_group in self.all_groups:
+            new_rank = self.find_prior_clan_rank(new_group)
+        elif self.has_been_clancat():
+            new_rank = self.find_prior_clan_rank()
+            if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
+                new_rank = None
+
+        if not new_rank:
+            new_rank = self.get_rank_from_age(age)
+
+        self._modify_group(
+            new_rank=new_rank,
+            standing_with_past_group=standing_with_past_group,
+            new_group=new_group
+        )
 
     def send_to_afterlife(self):
         """
@@ -256,7 +286,8 @@ class Status:
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if not self.has_been_clancat() and self.social in [CatSocialEnum.ROGUE, CatSocialEnum.LONER, CatSocialEnum.KITTYPET]:
+        if not self.has_been_clancat() and self.social in [CatSocialEnum.ROGUE, CatSocialEnum.LONER,
+                                                           CatSocialEnum.KITTYPET]:
             self._modify_group(
                 new_rank=self.rank,
                 new_group="unknown"
@@ -272,54 +303,42 @@ class Status:
         self._modify_group(
             new_rank=clan_rank,
             new_group=game.clan.instructor.status.group,
-            past_group_standing=CatStandingEnum.MEMBER
+            standing_with_past_group=CatStandingEnum.MEMBER
         )
 
+    def _change_outsider_social(
+            self,
+            new_social
+    ):
+        if self.group:
+            self._modify_group(
+                new_social,
+                standing_with_past_group=CatStandingEnum.LEFT
+            )
+        else:
+            self.group_history.append(
+                {
+                    "group": None,
+                    "rank": new_social,
+                    "moons_as": 0
+                }
+            )
 
-    def find_prior_clan_rank(self):
+    def find_prior_clan_rank(self, clan=None):
         """
         Finds the last clan rank held of a current outsider
+        :param clan: pass the name of a clan to only return the cat's prior rank within that clan. Default is None, if
+        None then the last rank within any Clan will be returned.
         """
-        past_ranks = [rank for rank in self.rank_history
-                      if rank not in [CatRankEnum.LONER,
-                                      CatRankEnum.KITTYPET,
-                                      CatRankEnum.ROGUE]]
+        if clan:
+            past_ranks = [record["rank"] for record in self.group_history if record["group"] == clan]
+        else:
+            past_ranks = [rank for rank in self.rank_history.keys()
+                          if rank not in [CatRankEnum.LONER,
+                                          CatRankEnum.KITTYPET,
+                                          CatRankEnum.ROGUE]]
 
         return past_ranks[-1]
-
-    def become_loner(self):
-        """
-        Turns a cat into a loner. If they were part of a group, they willingly leave it. If they are being forcibly
-        removed, use .become_lost instead
-        """
-
-        self._change_outsider_social(CatSocialEnum.LONER)
-
-    def become_rogue(self):
-        """
-        Turns a cat into a rogue. If they were part of a group, they willingly leave it. If they are being forcibly
-        removed, use .become_lost instead
-        """
-
-        self._change_outsider_social(CatSocialEnum.ROGUE)
-
-    def become_kittypet(self):
-        """
-        Turns a cat into a rogue. If they were part of a group, they willingly leave it. If they are being forcibly
-        removed, use .become_lost instead
-        """
-
-        self._change_outsider_social(CatSocialEnum.ROGUE)
-
-    def change_rank(
-            self,
-            new_rank
-    ):
-        """
-        Changes the cat's rank within it's group
-        :param new_rank: The new rank the cat will become
-        """
-        pass
 
     def is_an_outsider(self) -> bool:
 

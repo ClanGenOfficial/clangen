@@ -2164,7 +2164,7 @@ class Events:
         TODO: DOCS
         """
         cat.outside = True
-        cat.gone()
+        cat.lost_from_group()
         # The outside-value must be set to True before the cat can go to cotc
         cat.thought = "Is terrified as they are trapped in a large silver Twoleg den"
         # FIXME: Not sure what this is intended to do; 'cat_class' has no 'other_cats' attribute.

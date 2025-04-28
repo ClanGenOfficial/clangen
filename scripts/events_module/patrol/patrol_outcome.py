@@ -539,7 +539,7 @@ class PatrolOutcome:
             )
             return ""
 
-        [_cat.gone() for _cat in cats_to_lose]
+        [_cat.lost_from_group() for _cat in cats_to_lose]
 
         return i18n.t(
             "screens.patrol.lost_cats",

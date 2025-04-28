@@ -842,30 +842,38 @@ class Cat:
         else:
             return "general"
 
-    def gone(self):
-        """Makes a Clan cat an "outside" cat. Handles removing them from special positions, and removing
-        mentors and apprentices."""
-        self.outside = True
+    def become_lost(self):
+        """Makes a Clan cat a lost cat. Makes status changes and removes apprentices."""
 
-        if self.status.rank in [CatRankEnum.LEADER, CatRankEnum.WARRIOR]:
-            self.status_change(CatRankEnum.WARRIOR)
+        self.status.lost_from_group(
+            new_social_status=choice([CatSocialEnum.KITTYPET, CatSocialEnum.LONER])
+        )
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
             if app_ob:
                 app_ob.update_mentor()
+
         self.update_mentor()
+
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
+
         game.clan.add_to_outside(self)
 
     def add_to_clan(self) -> list:
         """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
         are coming with them."""
-        self.outside = False
+
         if not self.exiled:
+            # TODO: figure out how to handle this...
             History.add_beginning(self)
-        self.exiled = False
+
+        self.status.add_to_group(
+            new_group=game.clan.name,
+            age=self.age
+        )
+
         game.clan.add_to_clan(self)
 
         # check if there are kits under 12 moons with this cat and also add them to the clan
@@ -874,11 +882,13 @@ class Cat:
         for child_id in children:
             child = Cat.all_cats[child_id]
             if (
-                child.outside
-                and not child.exiled
-                and not child.dead
+                not child.dead
                 and child.moons < 12
             ):
+                child.status.add_to_group(
+                    new_group=game.clan.name,
+                    age=self.age
+                )
                 child.add_to_clan()
                 History.add_beginning(child)
                 ids.append(child_id)
