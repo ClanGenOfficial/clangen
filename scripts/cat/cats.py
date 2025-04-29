@@ -1501,10 +1501,10 @@ class Cat:
         old_age = self.age
         self.moons += 1
         if self.moons == 1 and self.status.rank == CatRankEnum.NEWBORN:
-            self.status.rank = CatRankEnum.KITTEN
+            self.status.change_rank(CatRankEnum.KITTEN)
         self.in_camp = 1
 
-        if self.exiled or self.outside:
+        if not self.status.in_player_clan():
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
             self.thoughts()
@@ -1540,13 +1540,14 @@ class Cat:
         # this figures out where the cat is
         where_kitty = None
         if self.dead:
-            if self.df:
+            if self.status.group == "darkforest":
                 where_kitty = "hell"
-            elif self.outside:
+            elif self.status.group == "unknown":
                 where_kitty = "UR"
             else:
                 where_kitty = "starclan"
-        elif self.outside:
+
+        elif self.status.is_outsider():
             where_kitty = "outside"
         else:
             where_kitty = "inside"
@@ -1614,9 +1615,7 @@ class Cat:
             iter_cat
             for iter_cat in Cat.all_cats.values()
             if iter_cat.ID != self.ID
-            and not iter_cat.outside
-            and not iter_cat.exiled
-            and not iter_cat.dead
+            and iter_cat.status.in_player_clan()
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:

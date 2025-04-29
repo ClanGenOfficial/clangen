@@ -295,7 +295,7 @@ class Status:
 
     def send_to_afterlife(self):
         """
-        Changes a cat's group into the appropriate afterlife
+        Changes a cat's group into the appropriate afterlife ("darkforest", "unknown", "starclan")
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
@@ -368,6 +368,12 @@ class Status:
             return True
 
         return False
+
+    def in_player_clan(self) -> bool:
+        """
+        Returns True if the cat is currently part of the player clan
+        """
+        return True if self.group == game.clan.name else False
 
     def is_clancat(self) -> bool:
         """
