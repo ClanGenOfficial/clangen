@@ -188,18 +188,18 @@ class Clan:
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
         if self.deputy is not None:
-            self.deputy.status_change("deputy")
+            self.deputy.rank_change("deputy")
             self.clan_cats.append(self.deputy.ID)
 
         if self.leader:
-            self.leader.status_change("leader")
+            self.leader.rank_change("leader")
             self.clan_cats.append(self.leader.ID)
 
         if self.medicine_cat is not None:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
             if self.medicine_cat.status != "medicine cat":
-                Cat.all_cats[self.medicine_cat.ID].status_change("medicine cat")
+                Cat.all_cats[self.medicine_cat.ID].rank_change("medicine cat")
 
     def create_clan(self):
         """
@@ -251,7 +251,7 @@ class Clan:
             Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = "clan_founder"
             if Cat.all_cats.get(cat_id).status == "apprentice":
-                Cat.all_cats.get(cat_id).status_change("apprentice")
+                Cat.all_cats.get(cat_id).rank_change("apprentice")
             Cat.all_cats.get(cat_id).thoughts()
 
         game.save_cats()
@@ -412,7 +412,7 @@ class Clan:
         if leader:
             self.history.add_lead_ceremony(leader)
             self.leader = leader
-            Cat.all_cats[leader.ID].status_change("leader")
+            Cat.all_cats[leader.ID].rank_change("leader")
             self.leader_predecessors += 1
             self.leader_lives = 9
         game.switches["new_leader"] = None
@@ -423,7 +423,7 @@ class Clan:
         """
         if deputy:
             self.deputy = deputy
-            Cat.all_cats[deputy.ID].status_change("deputy")
+            Cat.all_cats[deputy.ID].rank_change("deputy")
             self.deputy_predecessors += 1
 
     def new_medicine_cat(self, medicine_cat):
@@ -432,7 +432,7 @@ class Clan:
         """
         if medicine_cat:
             if medicine_cat.status != "medicine cat":
-                Cat.all_cats[medicine_cat.ID].status_change("medicine cat")
+                Cat.all_cats[medicine_cat.ID].rank_change("medicine cat")
             if medicine_cat.ID not in self.med_cat_list:
                 self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]

@@ -573,7 +573,7 @@ class Cat:
         # Deal with leader death
         text = ""
         darkforest = True if game.clan.instructor.status.group == "darkforest" else False
-        isoutside = self.status.is_an_outsider()
+        isoutside = self.status.is_outsider()
         if self.status.rank == CatRankEnum.LEADER:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
@@ -615,7 +615,7 @@ class Cat:
 
         self.status.send_to_afterlife()
 
-        if not self.status.has_been_clancat():
+        if not self.status.is_former_clancat():
             Cat.dead_cats.append(self)
             if darkforest:
                 game.clan.add_to_darkforest(self)
@@ -895,16 +895,18 @@ class Cat:
 
         return ids
 
-    def status_change(self, new_status, resort=False):
-        # TODO: figure out how this integrates
+    def rank_change(self, new_rank, resort=False):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
                     'medicine cat', 'elder'.
         resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                 only be true for non-timeskip status changes."""
-        old_status = self.status
-        self.status = new_status
-        self.name.status = new_status
+
+        old_rank = self.status.rank
+
+        self.status.change_rank(new_rank)
+
+        self.name.status = new_rank
 
         self.update_mentor()
         for app in self.apprentice.copy():
@@ -913,18 +915,18 @@ class Cat:
                 fetched_cat.update_mentor()
 
         # If they have any apprentices, make sure they are still valid:
-        if old_status == "medicine cat":
+        if old_rank == "medicine cat":
             game.clan.remove_med_cat(self)
 
         # updates mentors
-        if self.status == "apprentice":
+        if self.status.rank == CatRankEnum.APPRENTICE:
             pass
 
-        elif self.status == "medicine cat apprentice":
+        elif self.status.rank == CatRankEnum.MEDICINE_APPRENTICE:
             pass
 
-        elif self.status == "warrior":
-            if old_status == "leader" and (
+        elif self.status.rank == CatRankEnum.WARRIOR:
+            if old_rank == CatRankEnum.LEADER and (
                 game.clan.leader and game.clan.leader.ID == self.ID
             ):
                 game.clan.leader = None
@@ -933,13 +935,13 @@ class Cat:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
 
-        elif self.status == "medicine cat":
+        elif self.status.rank == CatRankEnum.MEDICINE_CAT:
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
-        elif self.status == "elder":
+        elif self.status.rank == CatRankEnum.ELDER:
             if (
-                old_status == "leader"
+                old_rank == CatRankEnum.LEADER
                 and game.clan.leader
                 and game.clan.leader.ID == self.ID
             ):
@@ -950,10 +952,10 @@ class Cat:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
 
-        elif self.status == "mediator":
+        elif self.status.rank == CatRankEnum.MEDIATOR:
             pass
 
-        elif self.status == "mediator apprentice":
+        elif self.status.rank == CatRankEnum.MEDIATOR_APPRENTICE:
             pass
 
         # update class dictionary
@@ -2137,12 +2139,12 @@ class Cat:
             "mediator apprentice",
         ]:
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
-            self.status_change(
+            self.rank_change(
                 "warrior"
             )  # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
 
-        self.status_change("elder")
+        self.rank_change("elder")
         return
 
     def is_ill(self):

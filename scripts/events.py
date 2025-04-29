@@ -550,7 +550,7 @@ class Events:
                         cat.ID,
                     )
                 )
-                cat.status_change("mediator")
+                cat.rank_change("mediator")
 
     def get_moon_freshkill(self):
         """Adding auto freshkill for the current moon."""
@@ -873,11 +873,11 @@ class Events:
                 elif x.moons < 6:
                     x.status = "kitten"
                 elif x.moons < 12 and x.status != "apprentice":
-                    x.status_change("apprentice")
+                    x.rank_change("apprentice")
                 elif x.moons < 120 and x.status != "warrior":
-                    x.status_change("warrior")
+                    x.rank_change("warrior")
                 elif x.moons > 120:
-                    x.status_change("elder")
+                    x.rank_change("elder")
 
     def handle_fading(self, cat):
         """
@@ -1446,7 +1446,7 @@ class Events:
             Cat.fetch_cat(cat.mentor) if cat.mentor else None
         )  # Grab current mentor, if they have one, before it's removed.
         old_name = str(cat.name)
-        cat.status_change(promoted_to)
+        cat.rank_change(promoted_to)
         cat.rank_change_traits_skill(_ment)
 
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
@@ -2458,7 +2458,7 @@ class Events:
                     return
 
             text = event_text_adjust(Cat, text, main_cat=random_cat, clan=game.clan)
-            random_cat.status_change("deputy")
+            random_cat.rank_change("deputy")
             game.clan.deputy = random_cat
 
             game.cur_events_list.append(Single_Event(text, "ceremony", involved_cats))

@@ -279,7 +279,7 @@ class Status:
             new_rank = self.find_prior_clan_rank(new_group)
             if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
                 new_rank = None
-        elif self.has_been_clancat():
+        elif self.is_former_clancat():
             new_rank = self.find_prior_clan_rank()
             if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
                 new_rank = None
@@ -299,8 +299,8 @@ class Status:
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if not self.has_been_clancat() and self.social in [CatSocialEnum.ROGUE, CatSocialEnum.LONER,
-                                                           CatSocialEnum.KITTYPET]:
+        if not self.is_former_clancat() and self.social in [CatSocialEnum.ROGUE, CatSocialEnum.LONER,
+                                                            CatSocialEnum.KITTYPET]:
             self._modify_group(
                 new_rank=self.rank,
                 new_group="unknown"
@@ -319,10 +319,19 @@ class Status:
             standing_with_past_group=CatStandingEnum.MEMBER
         )
 
-    def _change_outsider_social(
-            self,
-            new_social
-    ):
+    def change_rank(self, new_rank):
+        """
+        Changes the cats rank to the new_rank
+        """
+        self.group_history.append(
+            {
+                "group": self.group,
+                "rank": new_rank,
+                "moons_as": 0
+            }
+        )
+
+    def _change_outsider_social(self, new_social):
         if self.group:
             self._modify_group(
                 new_social,
@@ -353,9 +362,25 @@ class Status:
 
         return past_ranks[-1]
 
-    def is_an_outsider(self) -> bool:
+    def is_outsider(self) -> bool:
 
         if self.social != CatSocialEnum.CLANCAT:
+            return True
+
+        return False
+
+    def is_clancat(self) -> bool:
+        """
+        Returns True if the cat is currently a clancat
+        """
+        return True if self.social == CatSocialEnum.CLANCAT else False
+
+    def is_former_clancat(self) -> bool:
+        """
+        Returns True if the cat has been a clancat at any point
+        """
+
+        if CatSocialEnum.CLANCAT in self.social_history:
             return True
 
         return False
@@ -370,31 +395,21 @@ class Status:
 
         return False
 
-    def has_been_clancat(self) -> bool:
-        """
-        Returns True if the cat has been a clancat at any point
-        """
-
-        if CatSocialEnum.CLANCAT in self.social_history:
-            return True
-
-        return False
-
 
 class StatusDict(TypedDict, total=False):
     """
     Dict containing:
 
-    "group_history": list,
-    "standing_history": list,
+    "group_history": list[dict],
+    "standing_history": list[dict],
     "social": CatSocialEnum,
     "group": str
     "rank": CatRankEnum
 
     Dict does not need to contain all keys.
     """
-    group_history: list
-    standing_history: list
+    group_history: list[dict]
+    standing_history: list[dict]
     social: CatSocialEnum
     group: str
     rank: CatRankEnum
