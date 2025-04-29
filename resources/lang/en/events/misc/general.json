@@ -238,7 +238,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder_reveal"],
-    "weight": 15,
+    "weight": 5,
     "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
     "m_c": {
       "age": ["any"],
@@ -399,7 +399,7 @@
     "season": ["any"],
     "sub_type": ["murder_reveal"],
     "tags": ["skill_trait_required"],
-    "weight": 15,
+    "weight": 20,
     "event_text": "r_c sighs. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} unintentionally walking into one of {PRONOUN/r_c/poss} Clanmates' dreams again. It could have been just another boring or nonsensical dream, but r_c is horrified to discover this dream is m_c's recollection of murdering mur_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wake/wakes} up in shock, wondering what to do with this new knowledge.",
     "m_c": {
       "age": ["any"],
@@ -408,7 +408,7 @@
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["any"],
-      "skill": ["DREAM, 0"]
+      "skill": ["DREAM, 2"]
     },
       "relationships": [
         {
@@ -439,8 +439,12 @@
     }
   },
   {
-    "event_id": "gen_misc_any_collar_accessory1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_collar_accessory1",
+    "location": [
+      "forest",
+      "beach",
+      "plains"
+    ],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 5,
@@ -451,8 +455,12 @@
     }
   }, 
   {
-    "event_id": "gen_misc_any_misc1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_misc1",
+    "location": [
+      "forest",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c accidentally trespasses onto o_c_n's territory.",
@@ -512,15 +520,34 @@
     }
   },
   {
-    "event_id": "gen_misc_any_misc8",
-    "location": ["any"],
+    "event_id": "multi_misc_any_misc8",
+    "location": [
+      "forest",
+      "plains",
+      "desert",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c tossed a snake out of the camp before it could bite someone.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["any"]
-    }
+    },
+    "relationships": [
+      {
+          "cats_from": [
+              "clan"
+          ],
+          "cats_to": [
+              "m_c"
+          ],
+          "values": [
+              "respect"
+          ],
+          "amount": 2
+      }
+  ]
   },
   {
     "event_id": "gen_misc_any_misc9",
@@ -626,7 +653,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "skill": ["DARK,0"]
+      "skill": ["DARK,1"]
     }
   },
   {
@@ -635,16 +662,21 @@
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 30,
-    "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familiar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.",
+    "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familiar wispy form lingering at the edge of camp, but it disappeared before {PRONOUN/m_c/subject} could be sure.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "skill": ["GHOST,0"]
+      "skill": ["GHOST,1"]
     }
   },
   {
-    "event_id": "gen_misc_leaffall_misc1",
-    "location": ["any"],
+    "event_id": "multi_misc_leaffall_misc1",
+    "location": [
+      "forest",
+      "beach",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["leaf-fall"],
     "tags": ["clan:kitten"],
     "weight": 20,
@@ -657,8 +689,13 @@
     }
   },
   {
-    "event_id": "gen_misc_leafbare_misc1",
-    "location": ["any"],
+    "event_id": "multi_misc_leafbare_misc1",
+    "location": [
+      "forest",
+      "beach",
+      "plains",
+      "mountainous"
+    ],
     "season": ["leaf-bare"],
     "weight": 20,
     "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
@@ -687,8 +724,12 @@
     ]
   },
   {
-    "event_id": "gen_misc_leafbare_misc2",
-    "location": ["any"],
+    "event_id": "multi_misc_leafbare_misc2",
+    "location": [
+      "forest",
+      "plains",
+      "mountainous"
+    ],
     "season": ["leaf-bare"],
     "weight": 15,
     "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
@@ -875,8 +916,13 @@
     ]
   },
   {
-    "event_id": "gen_misc_leafbare_accessory1",
-    "location": ["any"],
+    "event_id": "multi_misc_leafbare_accessory1",
+    "location": [
+      "forest",
+      "plains",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["leaf-bare"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -915,7 +961,7 @@
     "event_id": "gen_misc_any_mate1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 5,
+    "weight": 20,
     "event_text": "m_c and r_c are so cuddled up and cozy in their nest they almost miss the dawn patrol.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult"],
@@ -992,7 +1038,7 @@
     "season": ["any"],
     "tags": ["clan:kitten"],
     "weight": 15,
-    "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day.",
+    "event_text": "m_c and r_c watch the Clan's kits play and exchange significant glances.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -1036,33 +1082,10 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_mate6",
-    "location": ["any"],
-    "season": ["any"],
-    "tags": ["romantic"],
-    "weight": 15,
-    "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise.",
-    "m_c": {
-      "age": ["young adult", "adult", "senior adult"]
-    },
-    "r_c": {
-      "age": ["young adult", "adult", "senior adult"]
-    },
-    "relationships": [
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["r_c"],
-          "mutual": true,
-          "values": ["romantic", "comfort","trust"],
-          "amount": 10
-        }
-    ]
-  },
-  {
     "event_id": "gen_misc_newleaf_mate1",
     "location": ["any"],
     "season": ["newleaf"],
-    "weight": 5,
+    "weight": 20,
     "event_text": "m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
@@ -1085,7 +1108,7 @@
     "event_id": "gen_misc_greenleaf_mate2",
     "location": ["any"],
     "season": ["greenleaf"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade.",
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
@@ -1134,7 +1157,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
-    "weight": 5,
+    "weight": 20,
     "event_text": "r_c gifts {PRONOUN/r_c/poss} beloved m_c with a acc_singular to wear in {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
@@ -1155,8 +1178,14 @@
     ]
   },
   {
-    "event_id": "gen_misc_greenleaf_mateaccessory1",
-    "location": ["any"],
+    "event_id": "multi_misc_greenleaf_mateaccessory1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["greenleaf"],
     "sub_type": ["accessory"],
     "weight": 15,
@@ -1180,9 +1209,12 @@
     ]
   },
   {
-    "event_id": "gen_misc_leaffall_mateaccessory1",
-    "location": ["any"],
-    "season": ["greenleaf"],
+    "event_id": "multi_misc_leaffall_mateaccessory1",
+    "location": [
+      "forest",
+      "mountainous"
+    ],
+    "season": ["leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 10,
     "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride.",
@@ -1208,16 +1240,22 @@
     "event_id": "gen_misc_any_multistatusmultiageretire1",
     "location": ["any"],
     "season": ["any"],
-    "weight": 10,
-    "event_text": "m_c thinks about retiring.",
+    "weight": 20,
+    "event_text": "m_c thinks about the possibility of retiring.",
     "m_c": {
         "age": ["senior adult", "senior"],
         "status": ["warrior", "mediator", "medicine cat", "leader"]
     }
   },
   {
-    "event_id": "gen_misc_multi_kit1",
-    "location": ["any"],
+    "event_id": "multi_misc_multi_kit1",
+    "location": [
+      "forest",
+      "beach",
+      "plains",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["greenleaf", "newleaf"],
     "weight": 15,
     "event_text": "m_c picks some flowers around the camp to bring back to the medicine cat den.",
@@ -1231,7 +1269,7 @@
     "season": ["greenleaf"],
     "tags": ["clan:warrior"],
     "weight": 15,
-    "event_text": "m_c chases fireflies around the camp, while the older warriors sleep.",
+    "event_text": "m_c chases fireflies around the camp while the warriors sleep.",
     "m_c": {
       "status": ["kitten"]
     }
@@ -1254,13 +1292,18 @@
             "cats_to": ["r_c"],
             "mutual": true,
             "values": ["platonic"],
-            "amount": 10
+            "amount": 20
           }
         ]
     },
     {
         "event_id": "gen_misc_multi_kitkit1",
-        "location": ["any"],
+        "location": [
+          "forest",
+          "plains",
+          "mountainous",
+          "wetlands"
+        ],
         "season": ["newleaf", "greenleaf"],
         "weight": 15,
         "event_text": "m_c and r_c sneak out of camp to chase butterflies.",
@@ -1276,7 +1319,7 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
-            "amount": 10
+            "amount": 15
           }
         ]
     },
@@ -1286,7 +1329,7 @@
         "season": ["greenleaf"],
       "tags": ["clan:warrior"],
         "weight": 20,
-        "event_text": "m_c and r_c chase fireflies around the camp, while the older warriors try to sleep.",
+        "event_text": "m_c and r_c chase fireflies around the camp while the warriors try to sleep.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -1304,8 +1347,12 @@
         ]
     },
     {
-        "event_id": "gen_misc_leaffall_kitkit1",
-        "location": ["any"],
+        "event_id": "multi_misc_leaffall_kitkit1",
+        "location": [
+          "forest",
+          "mountainous",
+          "wetlands"
+        ],
         "season": ["leaf-fall"],
       "tags": ["clan:warrior"],
         "weight": 20,
@@ -1322,13 +1369,17 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "comfort", "trust"],
-            "amount": 10
+            "amount": 15
           }
         ]
     },
     {
-        "event_id": "gen_misc_leaffall_kitkit2",
-        "location": ["any"],
+        "event_id": "multi_misc_leaffall_kitkit2",
+        "location": [
+          "forest",
+          "mountainous",
+          "wetlands"
+        ],
         "season": ["leaf-fall"],
         "weight": 20,
         "event_text": "m_c and r_c play with the leaves around the camp.",
@@ -1344,13 +1395,16 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
-            "amount": 10
+            "amount": 15
           }
         ]
     },
     {
-        "event_id": "gen_misc_leafbare_kitkit1",
-        "location": ["any"],
+        "event_id": "multi_misc_leafbare_kitkit1",
+        "location": [
+          "plains",
+          "mountainous"
+        ],
         "season": ["leaf-bare"],
         "weight": 20,
         "event_text": "m_c and r_c make little snow lumps at the entrance to the camp.",
@@ -1366,17 +1420,21 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
-            "amount": 10
+            "amount": 15
           }
         ]
       },
     {
-        "event_id": "gen_misc_leafbare_kitkit2",
-        "location": ["any"],
+        "event_id": "multi_misc_leafbare_kitkit2",
+        "location": [
+          "forest",
+          "plains",
+          "mountainous"
+        ],
         "season": ["leaf-bare"],
       "tags": ["clan:warrior"],
         "weight": 20,
-        "event_text": "m_c and r_c flick snow at the older warriors, giggling as they hide behind the nursery.",
+        "event_text": "m_c and r_c flick snow at the warriors, giggling as they hide behind the nursery.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -1389,7 +1447,7 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust", "comfort"],
-            "amount": 10
+            "amount": 15
           }
         ]
     },
@@ -1398,7 +1456,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
-        "weight": 10,
+        "weight": 30,
         "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c_n cats.",
         "m_c": {
             "status": ["kitten"],
@@ -1458,8 +1516,14 @@
         }
     },
     {
-      "event_id": "gen_misc_newleaf_accessorykit1",
-      "location": ["any"],
+      "event_id": "multi_misc_newleaf_accessorykit1",
+      "location": [
+        "forest",
+        "plains",
+        "mountainous",
+        "beach",
+        "wetlands"
+      ],
       "season": ["newleaf"],
       "sub_type": ["accessory"],
       "weight": 15,
@@ -1470,8 +1534,14 @@
       }
     },
     {
-        "event_id": "gen_misc_leaffall_accessorykit1",
-        "location": ["any"],
+        "event_id": "multi_misc_leaffall_accessorykit1",
+        "location": [
+          "forest",
+          "plains",
+          "mountainous",
+          "beach",
+          "wetlands"
+        ],
         "season": ["leaf-fall"],
         "sub_type": ["accessory"],
         "weight": 15,
@@ -1558,7 +1628,7 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["dislike", "jealousy"],
-            "amount": 10
+            "amount": 20
           },
           {
            "cats_to": ["m_c"],
@@ -1591,7 +1661,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
-        "weight": 15,
+        "weight": 25,
         "event_text": "m_c finds some acc_singular to wear in {PRONOUN/m_c/poss} fur to impress r_c!",
         "new_accessory": ["WILD", "PLANT"],
         "m_c": {
@@ -1615,8 +1685,13 @@
         }
     },
     {
-        "event_id": "gen_misc_any_adultsavingkitapprentice1",
-        "location": ["any"],
+        "event_id": "multi_misc_any_adultsavingkitapprentice1",
+        "location": [
+          "forest",
+          "plains",
+          "mountainous",
+          "wetlands"
+        ],
         "season": ["any"],
         "weight": 15,
         "event_text": "m_c falls into a river, but is saved by r_c.",
@@ -1654,7 +1729,7 @@
               "cats_from": ["r_c"],
               "mutual": true,
               "values": ["trust", "platonic"],
-              "amount": 10
+              "amount": 15
           }
       ]
   },
@@ -1676,7 +1751,7 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "comfort", "trust"],
-            "amount": 5
+            "amount": 15
         }
     ]
   },
@@ -1698,7 +1773,7 @@
           "cats_from": ["r_c"],
           "mutual": true,
           "values": ["platonic", "comfort", "trust"],
-          "amount": 5
+          "amount": 15
         }
     ]
   },
@@ -1722,13 +1797,17 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust"],
-          "amount": 10
+          "amount": 15
         }
     ]
   },
   {
-    "event_id": "gen_misc_multi_apprentice1",
-    "location": ["any"],
+    "event_id": "multi_misc_multi_apprentice1",
+    "location": [
+      "forest",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c were practicing climbing when they found a nest of strange eggs.",
@@ -1744,13 +1823,19 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust"],
-            "amount": 10
+            "amount": 15
         }
     ]
   },
   {
-    "event_id": "gen_misc_multi_apprentice2",
-    "location": ["any"],
+    "event_id": "multi_misc_multi_apprentice2",
+    "location": [
+      "forest",
+      "mountainous",
+      "beach",
+      "wetlands",
+      "desert"
+    ],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c sneak out of camp to go bird watching.",
@@ -1766,13 +1851,17 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust"],
-            "amount": 10
+            "amount": 15
         }
     ]
   },
   {
-    "event_id": "gen_misc_leaffall_apprentice1",
-    "location": ["any"],
+    "event_id": "multi_misc_leaffall_apprentice1",
+    "location": [
+      "forest",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["leaf-fall"],
     "weight": 20,
     "event_text": "m_c and r_c play in the fallen leaves outside of camp.",
@@ -1788,13 +1877,17 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust"],
-            "amount": 10
+            "amount": 15
         }
     ]
   },
   {
-    "event_id": "gen_misc_leafbare_apprentice1",
-    "location": ["any"],
+    "event_id": "multi_misc_leafbare_apprentice1",
+    "location": [
+      "forest",
+      "plains",
+      "mountainous"
+    ],
     "season": ["leaf-bare"],
     "weight": 20,
     "event_text": "m_c and r_c play in the snow outside of camp.",
@@ -1810,18 +1903,28 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic", "trust"],
-            "amount": 10
+            "amount": 15
         }
     ]
   },
   {
-    "event_id": "gen_misc_accessoryapprentice1",
-    "location": ["any"],
-    "season": ["any"],
+    "event_id": "multi_misc_accessoryapprentice1",
+    "location": [
+      "forest",
+      "plains",
+      "mountainous",
+      "beach",
+      "wetlands"
+    ],
+    "season": [
+      "newleaf",
+      "greenleaf",
+      "leaf-fall"
+    ],
     "sub_type": ["accessory"],
     "tags": ["romantic"],
     "weight": 20,
-    "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
+    "event_text": "m_c and r_c were chatting about their day and the chores when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
     "new_accessory": ["BLUE BERRIES", "HOLLY", "RASPBERRY"],
     "m_c": {
       "age": ["adolescent"],
@@ -1837,17 +1940,23 @@
           "cats_to": ["r_c"],
           "mutual": true,
           "values": ["romantic", "comfort", "trust", "respect"],
-          "amount": 10
+          "amount": 15
         }
     ]
   },
   {
-    "event_id": "gen_misc_any_accessoryapprentice2",
-    "location": ["any"],
+    "event_id": "multi_misc_any_accessoryapprentice2",
+    "location": [
+      "plains",
+      "mountainous",
+      "beach",
+      "wetlands",
+      "desert"
+    ],
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c, for the umpteenth time, hears r_c complaining about the dry rye stalks underneath {PRONOUN/r_c/poss} paws when {PRONOUN/r_c/subject} {VERB/r_c/finish/finishes} cleaning the elders' den and got an idea. The next day, m_c adorns {PRONOUN/m_c/poss} pelt with acc_plural.",
+    "event_text": "m_c hears r_c complaining about the dry rye stalks underneath {PRONOUN/r_c/poss} paws when {PRONOUN/r_c/subject} {VERB/r_c/finish/finishes} cleaning the elders' den for the umpteenth time. The next day, m_c adorns {PRONOUN/m_c/poss} pelt with acc_plural.",
     "new_accessory": ["RYE STALK"],
     "m_c": {
       "status": ["apprentice"]
@@ -1857,8 +1966,12 @@
     }
   },
   {
-    "event_id": "gen_misc_leafbare_accessoryapprentice",
-    "location": ["any"],
+    "event_id": "multi_misc_leafbare_accessoryapprentice",
+    "location": [
+      "forest",
+      "plains",
+      "mountainous"
+    ],
     "season": ["leaf-bare"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -1888,7 +2001,7 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["platonic","comfort"],
-            "amount": 10
+            "amount": 20
         }
     ]
   },
@@ -1916,8 +2029,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_kittypet1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_kittypet1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was caught sharing prey with a kittypet, who was chased off by a patrol.",
@@ -1942,8 +2060,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_kittypet2",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_kittypet2",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen touching noses with a kittypet. Scandalous!",
@@ -1968,8 +2091,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_kittypet3",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_kittypet3",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen playing with a kittypet over the border.",
@@ -1994,8 +2122,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_kittypet4",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_kittypet4",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen chasing a kittypet off of the territory.",
@@ -2020,8 +2153,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_kittypet5",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_kittypet5",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen in a very serious conversation with a kittypet, who ran away when another patrol approached.",
@@ -2042,8 +2180,166 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_scandalous_other_clan1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_hardtofind_kittypet1",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c caught a glimpse of a kittypet wandering in the distance.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "kittypet", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_kittypet2",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c found the scent of a stranger near the border, though the cat themself is long gone. Smells like Twolegs.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "kittypet", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_outsider1",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "On a bit of c_n's territory that borders unclaimed land, m_c finds scent that indicates there's a loner wandering somewhere out there.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "loner", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_outsider2",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "An outsider places their scent near the border, a polite courtesy that indicates they don't mean trouble.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "loner", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_outsider3",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "Tracks cross the border and then hurriedly cross out again, indicating the stranger didn't intrude intentionally.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "loner", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_rogue1",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know their face, but they memorise their smell.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "rogue", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_rogue2",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "c_n's vast territory can be difficult to defend due to its size. The tracks of a rogue have now crossed their border repeatedly.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "rogue", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_rogue3",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "m_c finds prey blood and the scent of an intruder.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "rogue", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_hardtofind_rogue4",
+    "location": [
+      "plains",
+      "mountainous",
+      "desert"
+    ],
+    "season": ["any"],
+    "weight": 20,
+    "event_text": "Someone has been trying to conceal their presence out in the borderlands...",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "new_cat": [
+      ["meeting", "rogue", "exists"]
+    ]
+  },
+  {
+    "event_id": "multi_misc_any_scandalous_other_clan1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen touching noses with someone from o_c_n. Scandalous!",
@@ -2056,8 +2352,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_other_clan2",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_other_clan2",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was loitering around o_c_n's border, looking for a specific cat.",
@@ -2066,8 +2367,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_other_clan3",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_other_clan3",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c_n.",
@@ -2080,8 +2386,13 @@
     }
   },    
   {
-    "event_id": "gen_misc_any_scandalous_other_clan4",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_other_clan4",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "tags": [],
     "weight": 10,
@@ -2095,8 +2406,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_other_clan5",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_other_clan5",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen speaking calmly to a cat from o_c_n.",
@@ -2109,8 +2425,103 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_loner1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_distant_other_clan1",
+    "location": [
+      "plains",
+      "desert",
+      "mountainous"
+    ],
+    "season": ["any"],
+    "weight": 10,
+    "event_text": "m_c sees that o_c_n has been cleaning the border trackways, and adds {PRONOUN/m_c/poss} own paws the the effort.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "other_clan": {
+      "current_rep": ["any"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "multi_misc_any_distant_other_clan2",
+    "location": [
+      "plains",
+      "desert",
+      "mountainous"
+    ],
+    "season": ["any"],
+    "weight": 10,
+    "event_text": "The thornbush might be on o_c_n's side of the border, but both Clans benefit from uprooting it before it can block the path further.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "other_clan": {
+      "current_rep": ["any"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "multi_misc_any_distant_other_clan3",
+    "location": [
+      "plains",
+      "desert",
+      "mountainous"
+    ],
+    "season": ["any"],
+    "weight": 10,
+    "event_text": "Trying to see o_c_n cats in the flesh can be hard when the Clans live so far apart. m_c has to wait hours for a o_c_n patrol to pass on the message about local loner activity.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "other_clan": {
+      "current_rep": ["any"],
+      "changed": 1
+    }
+  },
+  {
+    "event_id": "multi_misc_any_distant_other_clan4",
+    "location": [
+      "plains",
+      "desert",
+      "mountainous"
+    ],
+    "season": ["any"],
+    "weight": 10,
+    "event_text": "Tracks don't lie, even if o_c_n may. One of them has been traipsing across the border. It remains to be seen if that cat is a confused apprentice or a deliberate provacation.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "other_clan": {
+      "current_rep": ["any"],
+      "changed": -1
+    }
+  },
+  {
+    "event_id": "multi_misc_any_distant_other_clan4",
+    "location": [
+      "plains",
+      "desert",
+      "mountainous"
+    ],
+    "season": ["any"],
+    "weight": 10,
+    "event_text": "An area of the border looks a little too pristine. Almost like o_c_n have been covering something up there.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    },
+    "other_clan": {
+      "current_rep": ["any"],
+      "changed": -1
+    }
+  },
+  {
+    "event_id": "multi_misc_any_scandalous_loner1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 15,
     "event_text": "m_c was seen arguing, and borderline-fighting, with a loner.",
@@ -2135,8 +2546,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_loner2",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_loner2",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen touching noses with a loner. Scandalous!",
@@ -2161,8 +2577,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_loner3",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_loner3",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen talking calmly to a loner, before both cats went their separate ways.",
@@ -2183,8 +2604,13 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_scandalous1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 5,
     "event_text": "m_c was seen taking food from a Twoleg!",
@@ -2193,8 +2619,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_rogue1",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_rogue1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was caught sharing prey with a rogue, who was chased off by a patrol.",
@@ -2245,8 +2676,13 @@
     }
   },
   {
-    "event_id": "gen_misc_any_scandalous_rogue3",
-    "location": ["any"],
+    "event_id": "multi_misc_any_scandalous_rogue3",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "wetlands"
+    ],
     "season": ["any"],
     "weight": 10,
     "event_text": "m_c was seen chasing a rogue off of the territory.",
@@ -2277,7 +2713,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
-    "weight": 15,
+    "weight": 40,
     "event_text": "m_c goes to o_c_n in an attempt to ease the tension of war between the Clans: it goes well, and o_c_n begins to draw back from c_n's territory!",
     "m_c": {
       "age":["any"],
@@ -2487,7 +2923,7 @@
     "event_text": "m_c visits o_c_n to converse with their medicine cats about an omen StarClan sent.",
     "m_c": {
         "status": ["medicine cat"],
-        "skill": ["OMEN,0"]
+        "skill": ["OMEN,1"]
       },
     "other_clan": {
       "current_rep": ["any"],
@@ -2549,7 +2985,7 @@
     "m_c": {
       "age":["any"],
       "status": ["medicine cat"],
-      "skill": ["OMEN,0"]
+      "skill": ["OMEN,1"]
       },
     "r_c": {
       "status": ["leader"]
@@ -2564,7 +3000,7 @@
     "m_c": {
       "age":["any"],
       "status": ["medicine cat"],
-      "skill": ["OMEN,0"]
+      "skill": ["OMEN,1"]
       },
     "r_c": {
       "status": ["medicine cat"]
@@ -2715,8 +3151,14 @@
     }
   },
   {
-    "event_id": "gen_misc_leafbare_medicinecatwar1",
-    "location": ["any"],
+    "event_id": "multi_misc_leafbare_medicinecatwar1",
+    "location": [
+      "forest",
+      "plains",
+      "beach",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["leaf-bare"],
     "sub_type": ["war"],
     "weight": 10,
@@ -2921,7 +3363,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "weight": 10,
-    "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case that the worst happens.",
+    "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case the worst happens.",
     "m_c":{
       "status": ["deputy"]
     }
@@ -3932,7 +4374,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
-    "weight": 10,
+    "weight": 20,
     "event_text": "m_c yowls in shock, claws unsheathing from an unexpected weight pinning {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN/m_c/poss} mentor who attacked {PRONOUN/m_c/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly {VERB/r_c/tell/tells} m_c about the acc_plural that now adorns {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
@@ -3968,8 +4410,14 @@
     ]
   },
   {
-    "event_id": "gen_misc_any_patch_accessory",
-    "location": ["any"],
+    "event_id": "multi_misc_any_patch_accessory",
+    "location": [
+      "forest",
+      "beach",
+      "plains",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 20,
@@ -3983,8 +4431,14 @@
     }
   },
   {
-    "event_id": "gen_misc_mate_accessory_bud",
-    "location": ["any"],
+    "event_id": "multi_misc_mate_accessory_bud",
+    "location": [
+      "forest",
+      "beach",
+      "plains",
+      "mountainous",
+      "wetlands"
+    ],
     "season": ["newleaf","greenleaf"],
     "subtype": ["accessory"],
     "tags": ["romantic"],
@@ -4012,12 +4466,12 @@
     "location": ["any"],
     "season": ["any"],
     "tags": ["skill_trait_required"],
-    "weight": 5,
+    "weight": 20,
     "event_text": "m_c thinks StarClan is trying to warn {PRONOUN/m_c/object} about r_c.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["medicine cat"],
-      "skill": ["OMEN,0"]
+      "skill": ["OMEN,1", "STAR,1"]
     },
     "r_c": {
       "trait": ["bloodthirsty"]

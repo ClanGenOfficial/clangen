@@ -1,11 +1,19 @@
 {
   "general": {
     "body": [
-      "Perhaps people expected r_c to be more mournful over m_c's passing, however r_c couldn't help but feel a bitter sense of relief to be free from m_c."
+      "Perhaps {PRONOUN/r_c/poss} Clanmates expected r_c to be more mournful over m_c's passing, but r_c can't help {PRONOUN/r_c/poss} bitter sense of relief to be free of {PRONOUN/m_c/object}.",
+      "r_c avoids m_c's vigil. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} content to let {PRONOUN/r_c/poss} Clanmates think it's because {PRONOUN/r_c/subject/}{VERB/r_c/'re/'s} grieving privately.",
+      "m_c's mate is strikingly absent from the vigil. r_c doesn't want to bother pretending to grieve {PRONOUN/m_c/object}.",
+      "r_c and m_c had a difficult relationship, but now that m_c is dead, r_c attempts to look back fondly on some of the good times.",
+      "r_c studies the body of {PRONOUN/r_c/poss} mate with no emotion coloring {PRONOUN/r_c/poss} gaze. That's that, then."
 
    ],
    "no_body": [
-
+    "Perhaps {PRONOUN/r_c/poss} Clanmates expected r_c to be more mournful over m_c's passing, but r_c can't help {PRONOUN/r_c/poss} bitter sense of relief to be free of {PRONOUN/m_c/object}.",
+    "r_c avoids m_c's vigil. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} content to let {PRONOUN/r_c/poss} Clanmates think it's because {PRONOUN/r_c/subject/}{VERB/r_c/'re/'s} grieving privately.",
+    "m_c's mate is strikingly absent from the vigil. r_c doesn't want to bother pretending to grieve {PRONOUN/m_c/object}.",
+    "r_c and m_c had a difficult relationship, but now that m_c is dead, r_c attempts to look back fondly on some of the good times.",
+    "r_c wonders if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} truly free of m_c, or if the reports of {PRONOUN/r_c/poss} mate's death are exaggerated."
    ]
   },
   "adventurous": {

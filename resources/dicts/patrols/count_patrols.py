@@ -116,6 +116,8 @@ def check_patrol_sprites():
         image_name = image_name.replace("mtn_", "gen_")
         image_name = image_name.replace("pln_", "gen_")
         image_name = image_name.replace("bch_", "gen_")
+        image_name = image_name.replace("wtlnd_", "gen_")
+        image_name = image_name.replace("dst_", "gen_")
         exists = file_exists(f"{path}{image_name}.png")
         if exists:
             available_sprite = True

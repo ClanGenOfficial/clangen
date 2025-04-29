@@ -597,6 +597,12 @@ class Sprites:
                 "CLOVER",
                 "DAISY",
             ],
+            [
+                "WISTERIA",
+                "ROSE MALLOW",
+                "PICKLEWEED",
+                "GOLDEN CREEPING JENNY",
+            ],
         ]
         dryherbs_data = [["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]]
         wild_data = [
@@ -660,7 +666,7 @@ class Sprites:
         # dryherbs
         for row, dry in enumerate(dryherbs_data):
             for col, dryherbs in enumerate(dry):
-                self.make_group("medcatherbs", (col, 3), f"acc_herbs{dryherbs}")
+                self.make_group("medcatherbs", (col, 4), f"acc_herbs{dryherbs}")
         # wild
         for row, wilds in enumerate(wild_data):
             for col, wild in enumerate(wilds):

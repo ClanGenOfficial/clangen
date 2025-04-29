@@ -2454,12 +2454,13 @@ def ceremony_text_adjust(
     return adjust_text, random_living_parent, random_dead_parent
 
 
-def get_pronouns(Cat: "Cat"):
+def get_pronouns(cat: "Cat"):
     """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
-    if Cat.pronouns == {}:
-        return localization.get_new_pronouns("default")
+    if not cat.pronouns:
+        # since get_new_pronouns returns a list with length 1
+        return localization.get_new_pronouns("default")[0]
     else:
-        return choice(Cat.pronouns)
+        return choice(cat.pronouns)
 
 
 def shorten_text_to_fit(

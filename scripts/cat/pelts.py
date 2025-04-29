@@ -308,6 +308,10 @@ class Pelt:
         "DRY CATMINT",
         "DRY NETTLES",
         "DRY LAURELS",
+        "WISTERIA",
+        "ROSE MALLOW",
+        "PICKLEWEED",
+        "GOLDEN CREEPING JENNY",
     ]
     wild_accessories = [
         "RED FEATHERS",
@@ -331,6 +335,8 @@ class Pelt:
         "SPARROW FEATHERS",
         "CLOVER",
         "DAISY",
+        "WISTERIA",
+        "GOLDEN CREEPING JENNY",
     ]
     collars = [
         "CRIMSON",
@@ -434,12 +440,14 @@ class Pelt:
         "DRY CATMINT",
         "DRY NETTLES",
         "DRY LAURELS",
+        "ROSE MALLOW",
+        "PICKLEWEED",
     ]
 
     body_accessories = [
         "HERBS",
         "PETALS",
-        "DRY HERBS"
+        "DRY HERBS",
     ]
 
     tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
