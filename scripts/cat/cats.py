@@ -1854,7 +1854,7 @@ class Cat:
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
-        if name == "kittencough" and self.status != "kitten":
+        if name == "kittencough" and self.status.rank != CatRankEnum.KITTEN:
             return
 
         illness = ILLNESSES[name]
@@ -2073,7 +2073,7 @@ class Cat:
             )  # creating a range in which a condition can present
             moons_until = max(moons_until, 0)
 
-        if born_with and self.status not in ["kitten", "newborn"]:
+        if born_with and self.status.rank not in [CatRankEnum.KITTEN, CatRankEnum.NEWBORN]:
             moons_until = -2
         elif born_with is False:
             moons_until = 0
