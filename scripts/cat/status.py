@@ -401,6 +401,12 @@ class Status:
 
         return False
 
+    def is_dead(self) -> bool:
+        """
+        Returns True if the cat is currently dead
+        """
+        return True if self.group in ["darkforest", "unknown", "starclan"] else False
+
 
 class StatusDict(TypedDict, total=False):
     """

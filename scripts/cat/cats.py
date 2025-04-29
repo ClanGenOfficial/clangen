@@ -2137,11 +2137,7 @@ class Cat:
 
         # There are some special tasks we need to do for apprentice
         # Note that although you can un-retire cats, they will be a full warrior/med_cat/mediator
-        if self.moons > 6 and self.status in [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-        ]:
+        if self.moons > 6 and self.status.is_any_apprentice():
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
             self.rank_change(
                 "warrior"
@@ -2222,8 +2218,8 @@ class Cat:
 
         if (
             (not self.is_ill() and not self.is_injured() and not self.is_disabled())
-            or self.dead
-            or self.outside
+            or self.status.is_dead()
+            or self.status.is_outsider()
         ):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
@@ -2274,33 +2270,37 @@ class Cat:
     # ---------------------------------------------------------------------------- #
 
     def is_valid_mentor(self, potential_mentor: Cat):
-        # Dead or outside cats can't be mentors
-        if potential_mentor.dead or potential_mentor.outside:
+
+        # If not an app, don't need a mentor
+        if not self.status.is_any_apprentice():
             return False
+
+        # App must be member of player clan
+        if not self.status.in_player_clan():
+            return False
+
+        # Mentor must be a member of the player clan
+        if not potential_mentor.status.in_player_clan():
+            return False
+
         # Match jobs
         if (
-            self.status == "medicine cat apprentice"
-            and potential_mentor.status != "medicine cat"
+            self.status.rank == CatRankEnum.MEDICINE_APPRENTICE
+            and potential_mentor.status.rank != CatRankEnum.MEDICINE_CAT
         ):
             return False
-        if self.status == "apprentice" and potential_mentor.status not in [
-            "leader",
-            "deputy",
-            "warrior",
+        if self.status.rank == CatRankEnum.APPRENTICE and potential_mentor.status.rank not in [
+            CatRankEnum.LEADER,
+            CatRankEnum.DEPUTY,
+            CatRankEnum.WARRIOR
         ]:
             return False
         if (
-            self.status == "mediator apprentice"
-            and potential_mentor.status != "mediator"
+            self.status.rank == CatRankEnum.MEDIATOR_APPRENTICE
+            and potential_mentor.status.rank != CatRankEnum.MEDIATOR
         ):
             return False
 
-        # If not an app, don't need a mentor
-        if "apprentice" not in self.status:
-            return False
-        # Dead cats don't need mentors
-        if self.dead or self.outside or self.exiled:
-            return False
         return True
 
     def __remove_mentor(self):
@@ -2336,6 +2336,7 @@ class Cat:
         if isinstance(new_mentor, Cat):
             print("Everything is terrible!! (new_mentor {new_mentor} is a Cat D:)")
             return
+        
         # Check if cat can have a mentor
         illegible_for_mentor = (
             self.dead
