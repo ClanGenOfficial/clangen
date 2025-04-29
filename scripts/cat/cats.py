@@ -1648,13 +1648,13 @@ class Cat:
         mortality = self.illnesses[illness]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status == "leader" and mortality != 0:
+        if self.status.rank == CatRankEnum.LEADER and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status == "leader":
+            if self.status.rank == CatRankEnum.LEADER:
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
 
@@ -1690,13 +1690,13 @@ class Cat:
         mortality = self.injuries[injury]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status == "leader" and mortality != 0:
+        if self.status.rank == CatRankEnum.LEADER and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status == "leader":
+            if self.status.rank == CatRankEnum.LEADER:
                 game.clan.leader_lives -= 1
             self.die()
             return False
@@ -1750,13 +1750,13 @@ class Cat:
             return "reveal"
 
         # leader should have a higher chance of death
-        if self.status == "leader" and mortality != 0:
+        if self.status.rank == CatRankEnum.LEADER and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status == "leader":
+            if self.status.rank == CatRankEnum.LEADER:
                 game.clan.leader_lives -= 1
             self.die()
             return "continue"

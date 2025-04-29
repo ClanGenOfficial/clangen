@@ -383,10 +383,10 @@ class Status:
 
     def is_former_clancat(self) -> bool:
         """
-        Returns True if the cat has been a clancat at any point
+        Returns True if the cat has been a clancat in the past, but is not currently a clancat
         """
 
-        if CatSocialEnum.CLANCAT in self.social_history:
+        if CatSocialEnum.CLANCAT in self.social_history and self.social != CatSocialEnum.CLANCAT:
             return True
 
         return False
