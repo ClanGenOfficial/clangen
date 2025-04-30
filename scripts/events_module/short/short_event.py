@@ -21,6 +21,7 @@ class ShortEvent:
             r_c=None,
             new_cat: List[list] = None,
             injury: list = None,
+            exclude_involved: list = None,
             history: list = None,
             relationships: list = None,
             outsider: dict = None,
@@ -89,6 +90,7 @@ class ShortEvent:
                 self.r_c["gender"] = []
 
         self.new_cat = new_cat if new_cat else []
+        self.exclude_involved = exclude_involved if exclude_involved else []
         self.injury = injury if injury else []
         self.history = history if history else []
         self.relationships = relationships if relationships else []

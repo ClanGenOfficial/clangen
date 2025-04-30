@@ -27,6 +27,7 @@
             "age": ["adolescent", "young adult", "adult", "senior adult"],
             "status": [ "any" ]
         },
+        "exclude_involved": ["r_c"],
         "history": [{
             "cats": ["m_c"],
             "reg_death": "m_c was secretly murdered by r_c."

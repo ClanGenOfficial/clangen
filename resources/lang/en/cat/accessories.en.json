@@ -64,6 +64,26 @@
             "many": "petals",
             "one": "bunch of petals"
         },
+        "WISTERIA": {
+            "zero": "wisteria",
+            "many": "wisterias",
+            "one": "wisteria"
+        },
+        "ROSE MALLOW": {
+            "zero": "rose mallow",
+            "many": "rose mallows",
+            "one": "rose mallow"
+        },
+        "PICKLEWEED": {
+            "zero": "pickleweed",
+            "many": "pickleweeds",
+            "one": "pickleweed"
+        },
+        "CREEPING GOLDEN JENNY": {
+            "zero": "creeping golden jenny",
+            "many": "creeping golden jennies",
+            "one": "creeping golden jenny"
+        },
         "DRY HERBS": {
             "zero": "herb-covered pelt",
             "many": "dry herbs",

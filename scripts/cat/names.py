@@ -239,7 +239,7 @@ class Name:
             # Pelt name only gets used if there's an associated suffix.
             if named_after_pelt:
                 if (
-                    pelt in ["Tortie", "Calico"]
+                    pelt in ("Tortie", "Calico")
                     and tortiepattern in self.names_dict["tortie_pelt_suffixes"]
                 ):
                     self.suffix = random.choice(
@@ -264,7 +264,7 @@ class Name:
         # then suffixes based on ages (fixes #2004, just trust me)
 
         # Handles suffix assignment with outside cats
-        if self.cat.status not in ["rogue", "loner", "kittypet"] and self.cat.outside:
+        if self.cat.status not in ("rogue", "loner", "kittypet") and self.cat.outside:
             adjusted_status: str = ""
             if self.cat.moons >= 15:
                 adjusted_status = "warrior"
