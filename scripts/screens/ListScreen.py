@@ -668,7 +668,7 @@ class ListScreen(Screens):
             self.full_cat_list.insert(0, game.clan.instructor)
 
         search_text = search_text.strip()
-        if search_text not in ["", "name search"]:
+        if search_text not in ("", "name search"):
             self.current_listed_cats = [
                 cat
                 for cat in self.full_cat_list

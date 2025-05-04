@@ -1,10 +1,19 @@
 {
   "general": {
     "body": [
-
+      "r_c gazes at m_c's body, filled with the memories of all that {PRONOUN/r_c/poss} mate accomplished in {PRONOUN/m_c/poss} life.",
+      "At m_c's vigil, r_c speaks at length of all that {PRONOUN/r_c/subject} admired and treasured about {PRONOUN/r_c/poss} mate and all the reasons {PRONOUN/r_c/subject} fell in love with {PRONOUN/m_c/object}.",
+      "r_c is heartbroken to lose m_c, thinking of all the values and skills {PRONOUN/r_c/poss} mate brought to the Clan that are now lost forever.",
+      "m_c was not only r_c's mate, but also {PRONOUN/r_c/poss} greatest inspiration. r_c holds vigil for {PRONOUN/m_c/object} and remembers all that {PRONOUN/m_c/subject} meant to {PRONOUN/r_c/object}.",
+      "r_c keeps {PRONOUN/r_c/poss} Clanmates up late during m_c's vigil, recounting the many things {PRONOUN/r_c/subject} admired in {PRONOUN/r_c/poss} mate.",
+      "r_c rests for a while next to m_c's body, silently bidding farewell to {PRONOUN/r_c/poss} mate and thinking of the legacy that this special cat will leave behind."
     ],
     "no_body": [
-
+      "At m_c's vigil, r_c speaks at length of all that {PRONOUN/r_c/subject} admired and treasured about {PRONOUN/r_c/poss} mate and all the reasons {PRONOUN/r_c/subject} fell in love with {PRONOUN/m_c/object}.",
+      "r_c is heartbroken to lose m_c, thinking of all the values and skills {PRONOUN/r_c/poss} mate brought to the Clan that are now lost forever.",
+      "m_c was not only r_c's mate, but also {PRONOUN/r_c/poss} greatest inspiration. r_c holds vigil for {PRONOUN/m_c/object} and remembers all that {PRONOUN/m_c/subject} meant to {PRONOUN/r_c/object}.",
+      "r_c keeps {PRONOUN/r_c/poss} Clanmates up late during m_c's vigil, recounting the many things {PRONOUN/r_c/subject} admired in {PRONOUN/r_c/poss} mate.",
+      "r_c is gutted by the loss of m_c, left alone in the world to think of all that {PRONOUN/r_c/subject} treasured about {PRONOUN/r_c/poss} mate without even a body to bury."
     ]
   },
   "adventurous": {

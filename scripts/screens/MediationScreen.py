@@ -111,10 +111,10 @@ class MediationScreen(Screens):
                     self.selected_cat_1 = self.random_cat()
                 self.update_selected_cats()
             elif event.ui_element in self.cat_buttons:
-                if event.ui_element.return_cat_object() not in [
+                if event.ui_element.return_cat_object() not in (
                     self.selected_cat_1,
                     self.selected_cat_2,
-                ]:
+                ):
                     if (
                         pygame.key.get_mods() & pygame.KMOD_SHIFT
                         or not self.selected_cat_1
@@ -130,7 +130,7 @@ class MediationScreen(Screens):
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:
-            if cat.status in ["mediator", "mediator apprentice"] and not (
+            if cat.status in ("mediator", "mediator apprentice") and not (
                 cat.dead or cat.outside
             ):
                 self.mediators.append(cat)
@@ -567,16 +567,16 @@ class MediationScreen(Screens):
         if related and other_cat and not mates:
             col2 += "\n"
             if other_cat.is_uncle_aunt(cat):
-                if cat.genderalign in ["female", "trans female"]:
+                if cat.genderalign in ("female", "trans female"):
                     col2 += i18n.t("general.niece")
-                elif cat.genderalign in ["male", "trans male"]:
+                elif cat.genderalign in ("male", "trans male"):
                     col2 += i18n.t("general.nephew")
                 else:
                     col2 += i18n.t("general.siblings_child")
             elif cat.is_uncle_aunt(other_cat):
-                if cat.genderalign in ["female", "trans female"]:
+                if cat.genderalign in ("female", "trans female"):
                     col2 += i18n.t("general.aunt")
-                elif cat.genderalign in ["male", "trans male"]:
+                elif cat.genderalign in ("male", "trans male"):
                     col2 += i18n.t("general.uncle")
                 else:
                     col2 += i18n.t("general.parents_sibling")
@@ -906,7 +906,7 @@ class MediationScreen(Screens):
         Cat.sort_cats(self.all_cats_list)
 
         search_text = search_text.strip()
-        if search_text not in [""]:
+        if search_text not in ("",):
             for cat in self.all_cats_list:
                 if search_text.lower() in str(cat.name).lower():
                     self.current_listed_cats.append(cat)
