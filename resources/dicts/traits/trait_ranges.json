@@ -24,7 +24,7 @@
             "aggression": [12, 16],
             "stability": [0, 8]
         },
-        "cold": {
+        "aloof": {
             "lawfulness": [0, 8],
             "sociability": [0, 8],
             "aggression": [8, 16],
@@ -84,7 +84,7 @@
             "aggression": [8, 16],
             "stability": [8, 16]
         },
-        "compassionate": {
+        "considerate": {
             "lawfulness": [8, 16],
             "sociability": [8, 16],
             "aggression": [0, 8],
@@ -114,7 +114,7 @@
             "aggression": [3, 14],
             "stability": [8, 16]
         },
-        "calm": {
+        "laid-back": {
             "lawfulness": [9, 16],
             "sociability": [6, 14],
             "aggression": [0, 5],
@@ -138,7 +138,7 @@
             "aggression": [0, 8],
             "stability": [5, 14]
         },
-        "loyal": {
+        "devoted": {
             "lawfulness": [10, 16],
             "sociability": [5, 16],
             "aggression": [5, 13],
@@ -228,7 +228,7 @@
             "aggression": [6, 12],
             "stability": [10, 16]
         },
-        "rebellious": {
+        "defiant": {
             "lawfulness": [0, 4],
             "sociability": [0, 16],
             "aggression": [6, 10],
