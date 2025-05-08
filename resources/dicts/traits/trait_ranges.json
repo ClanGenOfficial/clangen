@@ -90,12 +90,6 @@
             "aggression": [0, 8],
             "stability": [0, 8]
         },
-        "thoughtful": {
-            "lawfulness": [8, 16],
-            "sociability": [8, 16],
-            "aggression": [0, 8],
-            "stability": [8, 16]
-        },
         "ambitious": {
             "lawfulness": [8, 16],
             "sociability": [8, 16],
@@ -126,12 +120,6 @@
             "aggression": [0, 6],
             "stability": [10, 16]
         },
-        "faithful": {
-            "lawfulness": [10, 16],
-            "sociability": [5, 11],
-            "aggression": [0, 6],
-            "stability": [3, 13]
-        },
         "loving": {
             "lawfulness": [6, 13],
             "sociability": [9, 16],
@@ -155,12 +143,6 @@
             "sociability": [4, 14],
             "aggression": [7, 12],
             "stability": [9, 16]
-        },
-        "sneaky": {
-            "lawfulness": [0, 7],
-            "sociability": [0, 7],
-            "aggression": [6, 12],
-            "stability": [8, 16]
         },
         "strange": {
             "lawfulness": [5, 10],
@@ -215,12 +197,6 @@
             "sociability": [0, 5],
             "aggression": [0, 6],
             "stability": [0, 8]
-        },
-        "sincere": {
-            "lawfulness": [12, 16],
-            "sociability": [6, 12],
-            "aggression": [0, 5],
-            "stability": [12, 16]
         },
         "flamboyant": {
             "lawfulness": [6, 10],
