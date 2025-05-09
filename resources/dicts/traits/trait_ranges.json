@@ -210,12 +210,12 @@
             "aggression": [6, 10],
             "stability": [10, 16]
         },
-		"curious": {
-			"lawfulness": [0, 7],
-			"sociability": [2, 10],
-			"aggression": [0, 6],
-			"stability": [2, 12]
-		}
+        "curious": {
+            "lawfulness": [0, 7],
+            "sociability": [2, 10],
+            "aggression": [0, 6],
+            "stability": [2, 12]
+        }
     },
     "kit_traits": {
         "unruly": {
