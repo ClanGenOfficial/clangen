@@ -9,7 +9,7 @@ For quality-of-life changes, bug fixes, minor enhancements (such as balance and 
 
 ## Installation
 > [!WARNING]
-> Running the game via poetry is deprecated. Please use uv instead.
+> Running the game via poetry is unsupported. Please use uv instead.
 
 > [!NOTE] 
 > You no longer need to install Python on your system. uv will automatically install the correct version for you.
