@@ -22,7 +22,7 @@ Download at your own risk here: [ClanGen development download](https://clangen.i
 
 ## Running from source
 > [!WARNING]
-> Running the game via poetry is unsupported. Please use uv instead.
+> Running the game via poetry is no longer supported. Please use uv instead.
 
 ClanGen uses uv to manage virtual environments. Therefore it is required to install the dependencies and run the game from source without manual tweaking.
 
