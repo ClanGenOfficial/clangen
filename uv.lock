@@ -266,7 +266,7 @@ requires-dist = [
     { name = "platformdirs", specifier = "~=3.3" },
     { name = "pygame-ce", specifier = "~=2.2" },
     { name = "pygame-gui", specifier = "~=0.6" },
-    { name = "pypresence", marker = "extra == 'discord'" },
+    { name = "pypresence", marker = "extra == 'discord'", specifier = "~=4.2" },
     { name = "requests", specifier = "~=2.28" },
     { name = "strenum", specifier = "~=0.4" },
     { name = "ujson", specifier = "~=5.7" },
