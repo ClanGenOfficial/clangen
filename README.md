@@ -21,7 +21,7 @@ Additionally, we do not provide tech support for development versions.
 Download at your own risk here: [ClanGen development download](https://clangen.io/download-development)
 
 ## Running from source
-ClanGen uses  to manage virtual environments. Therefore it is required to install the dependencies and run the game from source without manual tweaking.
+ClanGen uses uv to manage virtual environments. Therefore it is required to install the dependencies and run the game from source without manual tweaking.
 
 ### Installing python
 > [!NOTE] 
