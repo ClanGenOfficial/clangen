@@ -137,12 +137,12 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller (Development)
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: uv run PyInstaller Clangen.spec
+        run: uv run pyinstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller (Release)
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: uv PyInstaller Clangen.spec
+        run: uv run pyinstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (Linux)
