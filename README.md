@@ -58,6 +58,11 @@ Double click the `run.bat` script.
 > [!NOTE] 
 > uv automatically creates the .venv folder in the root directory of the game, unlike poetry.
 
+First, you need to let uv install the dependencies. To do so, run the following command in the terminal:
+```
+uv sync
+```
+
 After that, ensure that you have the Python extension installed in Visual Studio Code. You can install it from the Extensions tab on the left sidebar. [(or click here)
 ](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
