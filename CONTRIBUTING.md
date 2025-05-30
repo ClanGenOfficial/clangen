@@ -8,10 +8,11 @@ For quality-of-life changes, bug fixes, minor enhancements (such as balance and 
 **IF YOU ARE DOING A BUG FIX**: Before fixing the bug, please check if it also exists in the latest release branch. If it does, please branch off the release branch and target the release branch in your PR. You do not have to make another PR of the same bugfix to the development branch; the release branch is periodically merged back into development.
 
 ## Installation
+> [!WARNING]
+> Running the game via poetry is deprecated. Please use uv instead.
 
 > [!NOTE] 
 > You no longer need to install Python on your system. uv will automatically install the correct version for you.
-
 
 ClanGen now utilises a new tool called "uv" for Python dependency management and packaging. uv will automatically set up and manage your virtual environment for you. Installation instructions for uv can be found [here](https://docs.astral.sh/uv/getting-started/installation/).
 
