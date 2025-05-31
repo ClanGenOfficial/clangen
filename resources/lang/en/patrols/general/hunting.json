@@ -4098,7 +4098,8 @@
             "values": ["comfort", "trust", "platonic", "romantic"],
             "amount": 10
 }
-        ]
+        ],
+        "art": "fst_train_newleafmatesonadates_70locked1"
     },
         {
             "text": "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c isn't happy to see p_l break the Warrior Code so casually and refuses the offer coldly. The rest of the hunt is tense.",
