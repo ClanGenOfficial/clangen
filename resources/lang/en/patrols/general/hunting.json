@@ -3811,5 +3811,241 @@
         "art": "gen_train_argueWW"
 }
     ]
+},
+{
+    "patrol_id": "gen_hunt_mates",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": ["romantic"],
+    "patrol_art": "fst_hunt_fun3",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "normal adult": [2, 2],
+        "all apprentices": [-1, -1]
+    },
+    "weight": 20,
+    "chance_of_success": 50,
+    "intro_text": "p_l and r_c are delighted to go out to hunt together. Nothing like a little quality time while also helping the Clan!",
+    "decline_text": "Unfortunately, they are soon called back to camp to attend to other duties. Perhaps another day.",
+    "success_outcomes": [
+        {
+            "text": "Together, p_l and r_c corner and pick off their prey until they have a heap to bring back. They return to camp with tails twined and fresh-kill hanging from their jaws.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_bump_heads_warriors"
+},
+        {
+            "text": "p_l always enjoys hunting with {PRONOUN/p_l/poss} mate and seeing {PRONOUN/s_c/poss} skill in action. Unsurprisingly, they have to make two trips to account for all of s_c's kills.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["large"],
+            "stat_skill": ["HUNTER,2"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_bump_heads_warriors"
+},
+        {
+            "text": "Some of their Clanmates might not understand why p_l loves s_c so much, but when they're alone like this, s_c's dry wit always gets p_l purring. It doesn't hurt that their hunt is successful, too.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "stat_trait": ["cold", "gloomy", "lonesome", "strange"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_bump_heads_warriors"
+},
+        {
+            "text": "As {PRONOUN/s_c/subject} always {VERB/s_c/do/does}, s_c turns the hunt into a game. p_l is happy to play along, and they return to camp with a hefty piece of prey each.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["large"],
+            "stat_trait": ["competitive", "playful", "childish"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_bump_heads_warriors"
+},
+        {
+            "text": "p_l always feels safe alone with s_c, knowing {PRONOUN/p_l/poss} mate's fighting abilities. It doesn't hurt that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} rather muscular from all that practice... s_c spots p_l admiring {PRONOUN/s_c/object} instead of hunting and teases {PRONOUN/p_l/object}.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["small"],
+            "stat_skill": ["FIGHTER,1"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_bump_heads_warriors"
+},
+        {
+            "text": "s_c suggests a bit of fishing, and p_l playfully groans. Why does going out with s_c mean {PRONOUN/p_l/subject} always {VERB/p_l/get/gets} {PRONOUN/p_l/poss} paws wet? Still, s_c is undeniably effective at hunting in the water.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "stat_skill": ["SWIMMER,1"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_train_soggykitty_happy_warrior"
+},
+        {
+            "text": "s_c suggests hunting birds, and p_l playfully groans. Why does going out with s_c mean {PRONOUN/p_l/subject} always {VERB/p_l/end/ends} up stuck in a tree? Still, s_c is undeniably effective at hunting among the treetops.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "stat_skill": ["CLIMBER,1"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_train_speakingromance1"
+}
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l and r_c do their best, but the prey just isn't there today. They reassure each other as they return to camp.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 5
+},
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -5
+}
+],
+        "art": "gen_mates_headbump"
+},        {
+            "text": "No matter where they look, the territory is utterly devoid of prey scents. Privately, r_c thinks p_l could have done a better job of leading this patrol, but {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't share that feedback with {PRONOUN/r_c/poss} mate.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -10
+}
+],
+        "art": "gen_cat_looking_up3"
+},
+        {
+            "text": "s_c suggests fishing, but p_l shoots down the idea, sick of getting {PRONOUN/p_l/poss} paws wet for {PRONOUN/s_c/poss} sake. s_c feels a little hurt.",
+            "exp": 0,
+            "weight": 20,
+            "stat_skill": ["SWIMMER,1"],
+            "can_have_stat": ["r_c"],
+            "prey": ["very_small"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort", "trust", "platonic", "romantic"],
+            "amount": -5
+}
+],
+        "art": "gen_train_argueWW"
+},
+        {
+            "text": "s_c suggests hunting birds, but p_l shoots down the idea, sick of balancing on precarious branches for {PRONOUN/s_c/poss} sake. s_c feels a little hurt.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"],
+            "stat_skill": ["CLIMBER,1"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort", "trust", "platonic", "romantic"],
+            "amount": -5
+}
+],
+        "art": "gen_train_argueWW"
+},
+        {
+            "text": "As they hunt, s_c gently corrects p_l's hunting crouch, and p_l takes offense. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} s_c's mate, not a wet-eared apprentice, and {VERB/p_l/need/needs} no advice on how to hunt!",
+            "exp": 0,
+            "weight": 20,
+            "stat_skill": ["TEACHER,1", "HUNTER,1"],
+            "can_have_stat": ["r_c"],
+            "prey": ["very_small"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort", "trust", "platonic", "romantic"],
+            "amount": -8
+}
+],
+        "art": "gen_train_argueWW"
+}
+    ]
 }
 ]
