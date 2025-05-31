@@ -3954,6 +3954,42 @@
 }
 ],
         "art": "gen_train_speakingromance1"
+},
+        {
+            "text": "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c is pleased to have a little mid-hunting snack, and p_l teases {PRONOUN/s_c/object} about {PRONOUN/s_c/poss} growling stomach.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["small"],
+            "stat_trait": ["troublesome", "lonesome", "fierce", "confident", "compassionate", "compassionate", "confident", "loving", "oblivious", "bold", "daring", "shameless", "adventurous", "arrogant", "ambitious", "flamboyant", "bloodthirsty", "calm", "charismatic", "childish", "cold", "cunning", "gloomy", "rebellious", "responsible", "sneaky", "strange", "thoughtful", "vengeful", "wise"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_romanticstroll"
+},
+        {
+            "text": "While they hunt, s_c subtly brings up the subject of kits - <i>their</i> kits. p_l purrs and indulges s_c in a conversation about their future.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "stat_skill": ["KIT,1"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
+}
+],
+        "art": "gen_train_sunset"
 }
     ],
     "fail_outcomes": [
@@ -4063,7 +4099,75 @@
             "amount": 10
 }
         ]
-    }
+    },
+        {
+            "text": "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c isn't happy to see p_l break the Warrior Code so casually and refuses the offer coldly. The rest of the hunt is tense.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"],
+            "stat_trait": ["strict", "righteous", "faithful", "loyal", "sincere", "nervous", "insecure", "grumpy"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["s_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": -5
+},
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["s_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -5
+}
+],
+        "art": "gen_cat_looking_up1"
+},
+        {
+            "text": "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c takes offense to {PRONOUN/s_c/poss} mate's implication that {PRONOUN/s_c/subject} can't hunt for {PRONOUN/s_c/self} and rejects the offer. The rest of the hunt is tense.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"],
+            "stat_trait": ["strict", "righteous", "faithful", "loyal", "sincere", "nervous", "insecure", "grumpy"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["s_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust"],
+            "amount": -5
+},
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["s_c"],
+            "mutual": false,
+            "values": ["comfort"],
+            "amount": -10
+}
+],
+        "art": "gen_cat_looking_up1"
+},
+{
+    "text": "p_l expects hunting with s_c to be easy - after all, {PRONOUN/p_l/poss} mate has one of the sharpest noses in the Clan. However, it seems s_c is too captivated by p_l's scent to catch many prey scents...",
+    "exp": 0,
+    "weight": 30,
+    "prey": ["very_small"],
+    "stat_skill": ["SENSE,1"],
+    "can_have_stat": ["r_c"],
+    "relationships": [
+        {
+            "cats_to": ["p_l"],
+            "cats_from": ["s_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "comfort"],
+            "amount": 10
+        }
+    ],
+    "art": "gen_train_sunny3"
+}
     ]
 }
 ]
