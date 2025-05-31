@@ -3762,6 +3762,7 @@
             "text": "p_l and r_c do their best, but the prey just isn't there today. They reassure each other as they return to camp.",
             "exp": 0,
             "weight": 20,
+            "prey": ["very_small"],
             "relationships": [
 {
             "cats_to": ["r_c"],
@@ -3960,6 +3961,7 @@
             "text": "p_l and r_c do their best, but the prey just isn't there today. They reassure each other as they return to camp.",
             "exp": 0,
             "weight": 20,
+            "prey": ["very_small"],
             "relationships": [
 {
             "cats_to": ["r_c"],
@@ -3980,7 +3982,7 @@
 },        {
             "text": "No matter where they look, the territory is utterly devoid of prey scents. Privately, r_c thinks p_l could have done a better job of leading this patrol, but {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't share that feedback with {PRONOUN/r_c/poss} mate.",
             "exp": 0,
-            "weight": 20,
+            "weight": 10,
             "relationships": [
 {
             "cats_to": ["p_l"],
