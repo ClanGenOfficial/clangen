@@ -3818,7 +3818,7 @@
     "biome": ["any"],
     "season": ["any"],
     "types": ["hunting"],
-    "tags": ["romantic"],
+    "tags": [],
     "patrol_art": "fst_hunt_fun3",
     "min_cats": 2,
     "max_cats": 2,
