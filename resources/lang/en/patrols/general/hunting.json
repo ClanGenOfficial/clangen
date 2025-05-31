@@ -3619,6 +3619,197 @@
                 ]
         }
     ]
+},
+{
+    "patrol_id": "gen_hunt_romanticduo",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": ["romantic"],
+    "patrol_art": "cat_running_two",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "warrior": [2, 2],
+        "apprentice": [-1, -1]
+    },
+    "weight": 30,
+    "intro_text": "p_l and r_c set out to hunt together.",
+    "decline_text": "They are called back to camp to attend to other duties.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "Working as a team, they shut down every possible escape route for their prey and dispatch it easily. p_l compliments r_c's hunting style, and {PRONOUN/r_c/subject} {VERB/r_c/return/returns} the compliment with a gracious smile.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "relationships": [
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 5
 }
-
+],
+        "art": "gen_happy_cat"
+},
+        {
+            "text": "p_l is amazed by how intuitively s_c can anticipate {PRONOUN/p_l/poss} movements and how natural it feels to work as a team with {PRONOUN/s_c/object}. After a very successful hunt, p_l and s_c exchange admiring looks, a pleasant tension hanging in the air.",
+            "exp": 20,
+            "weight": 50,
+            "stat_skill": ["SENSE,1", "CLAIRVOYANT,1", "CLEVER,1"],
+            "can_have_stat": ["r_c"],
+            "prey": ["large"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust", "respect"],
+            "amount": 10
+}
+],
+        "art": "gen_flower_date_warrior_warrior"
+},
+        {
+            "text": "p_l and s_c corner a large prey animal, but just at the last moment, the wind changes and their prey perks up. Without hesitation, s_c bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/s_c/poss} lightning-fast reflexes and returns to camp a little hot around the ears.",
+            "exp": 20,
+            "weight": 30,
+            "prey": ["large"],
+            "stat_skill": ["HUNTER,1", "RUNNER,1"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": false,
+            "values": ["respect", "romantic", "platonic"],
+            "amount": 5
+},  
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["respect", "trust", "romantic", "platonic"],
+            "amount": 5
+        }
+],
+        "art": "gen_happy_cat"
+},
+        {
+            "text": "p_l and s_c work hard and soon have a sizeable haul. s_c winks at p_l, commenting that the two of them have a lot of chemistry - when it comes to hunting, of course. p_l feels a little hot under {PRONOUN/p_l/poss} fur.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["large"],
+            "stat_trait": ["charismatic", "loving", "confident"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["romantic", "platonic", "trust"],
+            "amount": 10
+}
+],
+        "art": "gen_romanticstroll"
+},
+        {
+            "text": "After a successful hunt together, p_l comments that the two of them make a great team, {PRONOUN/p_l/poss} whiskers twitching flirtatiously. s_c shrugs and attributes their success to the favorable direction of the wind.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["medium"],
+            "stat_trait": ["oblivious", "gloomy"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+{
+            "cats_to": ["s_c"],
+            "cats_from": ["p_l"],
+            "mutual": false,
+            "values": ["romantic", "platonic"],
+            "amount": 5
+}
+],
+        "art": "gen_train_speakingromance1"
+},
+        {
+            "text": "p_l and r_c work together to bring back an impressive haul of prey. p_l comments that they should hunt together more often - just the two of them. r_c makes a face.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["huge"],
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": false,
+            "values": ["romantic", "platonic"],
+            "amount": 5
+},
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": false,
+            "values": ["romantic", "platonic", "comfort"],
+            "amount": -8
+}
+],
+        "art": "gen_cat_looking_up2"
+}
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l and r_c do their best, but the prey just isn't there today. They reassure each other as they return to camp.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort"],
+            "amount": 5
+},
+{
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -5
+}
+],
+        "art": "gen_mates_headbump"
+},
+        {
+            "text": "p_l and r_c can't seem to find a rhythm together and return to camp empty-pawed, feeling a little annoyed with each other.",
+            "exp": 0,
+            "weight": 20,
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort", "respect", "platonic", "romantic"],
+            "amount": -5
+}
+],
+        "art": "fst_hunt_heat"
+},
+        {
+            "text": "After a disastrous failed hunt and one too many snide comments, p_l and r_c break out into an argument. p_l storms back to camp, resolving to ignore r_c for the rest of the day until both their tempers have cooled.",
+            "exp": 0,
+            "weight": 10,
+            "relationships": [
+{
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort", "respect", "platonic", "romantic"],
+            "amount": -10
+}
+],
+        "art": "gen_train_argueWW"
+}
+    ]
+}
 ]
