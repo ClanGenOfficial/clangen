@@ -3823,7 +3823,6 @@
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {
-        "normal adult": [2, 2],
         "all apprentices": [-1, -1]
     },
     "weight": 20,
