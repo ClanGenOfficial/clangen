@@ -4047,7 +4047,23 @@
 }
 ],
         "art": "gen_train_argueWW"
+},
+    {
+        "text": "p_l and s_c stalk a distracted robin gathering up bits of leaf-matter in its beak. Just before {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces}, s_c pauses and flicks {PRONOUN/s_c/poss} tail to the branches overhead where another robin nests. The first robin flies up to join its mate and add to their nest, and p_l and s_c watch, their hunt forgotten. p_l purrs at s_c's sappy nature and twines {PRONOUN/p_l/poss} tail with {PRONOUN/s_c/inposs}.",
+        "stat_trait": ["loving", "compassionate", "childish"],
+        "can_have_stat": ["r_c"],
+        "exp": 0,
+        "weight": 30,
+        "relationships": [
+{
+            "cats_to": ["s_c"],
+            "cats_from": ["p_l"],
+            "mutual": true,
+            "values": ["comfort", "trust", "platonic", "romantic"],
+            "amount": 10
 }
+        ]
+    }
     ]
 }
 ]
