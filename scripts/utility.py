@@ -2996,7 +2996,11 @@ def open_data_dir():
     elif platform.system() == "Windows":
         os.startfile(get_data_dir())  # pylint: disable=no-member
     elif platform.system() == "Linux":
-        subprocess.Popen(["xdg-open", get_data_dir()])
+        try:
+            subprocess.Popen(["xdg-open", get_data_dir()])
+        except OSError:
+            logger.exception("Failed to call to xdg-open.")
+
 
 def open_url(url: str):
     if platform.system() == "Darwin":

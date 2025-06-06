@@ -35,7 +35,7 @@ from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions, open_data_dir, open_url
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
-from ..housekeeping.datadir import get_data_dir, get_cache_dir
+from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
