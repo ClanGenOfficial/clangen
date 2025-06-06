@@ -14,6 +14,8 @@ from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
 from typing import List, Tuple, TYPE_CHECKING, Type, Union
+import platform
+import subprocess
 
 import i18n
 import pygame
@@ -34,6 +36,7 @@ from scripts.cat.names import names
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
+from scripts.housekeeping.datadir import get_data_dir
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -2986,3 +2989,19 @@ with open(
         os.path.normpath("resources/dicts/backstories.json"), "r", encoding="utf-8"
 ) as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
+
+def open_data_dir():
+    if platform.system() == "Darwin":
+        subprocess.Popen(["open", "-R", get_data_dir()])
+    elif platform.system() == "Windows":
+        os.startfile(get_data_dir())  # pylint: disable=no-member
+    elif platform.system() == "Linux":
+        subprocess.Popen(["xdg-open", get_data_dir()])
+
+def open_url(url: str):
+    if platform.system() == "Darwin":
+        subprocess.Popen(["open", "-u", url])
+    elif platform.system() == "Windows":
+        os.system(f"start \"\" {url}")
+    elif platform.system() == "Linux":
+        subprocess.Popen(["xdg-open", url])

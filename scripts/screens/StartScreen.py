@@ -32,7 +32,7 @@ from scripts.game_structure.game_essentials import (
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
-from scripts.utility import ui_scale, quit, ui_scale_dimensions
+from scripts.utility import ui_scale, quit, ui_scale_dimensions, open_data_dir, open_url
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -79,12 +79,7 @@ class StartScreen(Screens):
             if event.ui_element in screens and not self.error_open:
                 self.change_screen(screens[event.ui_element])
             elif event.ui_element == self.open_data_directory_button:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif platform.system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif platform.system() == "Linux":
-                    subprocess.Popen(["xdg-open", get_data_dir()])
+                open_data_dir()
                 return
             elif event.ui_element == self.closebtn:
                 self.error_box.kill()
@@ -100,34 +95,11 @@ class StartScreen(Screens):
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
             elif event.ui_element == self.social_buttons["discord_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-u", "https://discord.gg/clangen"])
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://discord.gg/clangen'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(["xdg-open", "https://discord.gg/clangen"])
+                open_url("https://discord.gg/clangen")
             elif event.ui_element == self.social_buttons["tumblr_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(
-                        ["open", "-u", "https://officialclangen.tumblr.com/"]
-                    )
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://officialclangen.tumblr.com/'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(
-                        ["xdg-open", "https://officialclangen.tumblr.com/"]
-                    )
+                open_url("https://officialclangen.tumblr.com/")
             elif event.ui_element == self.social_buttons["twitter_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(
-                        ["open", "-u", "https://twitter.com/OfficialClangen"]
-                    )
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(
-                        ["xdg-open", "https://twitter.com/OfficialClangen"]
-                    )
+                open_url("https://twitter.com/OfficialClangen")
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
