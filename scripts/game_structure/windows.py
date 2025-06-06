@@ -31,8 +31,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
-    UIModifiedScrollingContainer,
-    UIDropDownContainer,
+    UIDropDown,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
@@ -691,6 +690,7 @@ class PronounCreation(UIWindow):
             object_id="#change_cat_gender_window",
             resizable=False,
         )
+        self.dropdowns = {}
         self.the_cat = cat
         self.pronoun_cat = self.PronounCat(
             str(self.the_cat.name), self.the_cat.pronouns
@@ -786,118 +786,48 @@ class PronounCreation(UIWindow):
             container=self.elements["core_container"],
             anchors={"centerx": "centerx"},
         )
+        config = get_lang_config()["pronouns"]
 
-        self.dropdowns = {
-            "conju_label": pygame_gui.elements.UILabel(
+        self.dropdowns["conju_label"] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((-50, 130), (100, 32))),
                 "windows.conju",
                 object_id="#text_box_30_horizcenter_spacing_95",
                 container=self.elements["core_container"],
                 anchors={"centerx": "centerx"},
             )
-        }
-        self.dropdowns["conju_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 130), (100, 32))),
-            f"windows.conju{self.conju}",
-            get_button_dict(ButtonStyles.DROPDOWN, (100, 32)),
-            object_id="@buttonstyles_dropdown",
-            container=self.elements["core_container"],
-            anchors={"left_target": self.dropdowns["conju_label"]},
-        )
-
-        self.dropdowns["conju_container"] = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((0, -2), (0, 0))),
-            object_id="#conju_dropdown_container",
-            manager=MANAGER,
-            container=self.elements["core_container"],
-            anchors={
-                "top_target": self.dropdowns["conju_button"],
-                "left_target": self.dropdowns["conju_label"],
-            },
-            starting_height=3,
-            visible=False,
-        )
 
         self.dropdowns["gender_label"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((-50, 5), (100, 32))),
             "windows.gender",
             object_id="#text_box_30_horizcenter_spacing_95",
             container=self.elements["core_container"],
-            anchors={"top_target": self.dropdowns["conju_label"], "centerx": "centerx"},
+            anchors={"top_target": self.dropdowns["conju_label"],
+                     "centerx": "centerx"},
         )
-        self.dropdowns["gender_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 5), (100, 32))),
-            f"windows.gender{self.gender}",
-            get_button_dict(ButtonStyles.DROPDOWN, (100, 32)),
-            object_id="@buttonstyles_dropdown",
-            container=self.elements["core_container"],
-            tool_tip_text="windows.gender_tooltip",
-            tool_tip_text_kwargs={"m_c": self.the_cat},
-            starting_height=2,
-            anchors={
-                "top_target": self.dropdowns["conju_label"],
-                "left_target": self.dropdowns["gender_label"],
-            },
-        )
-        self.dropdowns[
-            "gender_container"
-        ] = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((0, -2), (0, 0))),
-            object_id="#conju_dropdown_container",
+
+        self.dropdowns["conju"] = UIDropDown(
+            pygame.Rect((0, -3), (100, 32)),
+            parent_text=f"windows.conju{self.conju}",
+            item_list=[f"windows.conju{i}" for i in range(1, config["conju_count"] + 1)],
             manager=MANAGER,
             container=self.elements["core_container"],
             anchors={
-                "top_target": self.dropdowns["gender_button"],
                 "left_target": self.dropdowns["gender_label"],
+                "top_target": self.heading
             },
-            visible=False,
+            starting_selection=[f"windows.conju{self.conju}"]
         )
-
-        config = get_lang_config()["pronouns"]
-
-        for i in range(1, config["conju_count"] + 1):
-            self.dropdowns[f"conju{i}"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, -2 if i > 1 else 0), (100, 34))),
-                f"windows.conju{i}",
-                get_button_dict(ButtonStyles.DROPDOWN, (100, 34)),
-                container=self.dropdowns["conju_container"],
-                object_id="@buttonstyles_dropdown",
-                anchors={"top_target": self.dropdowns[f"conju{i-1}"]}
-                if i > 1
-                else None,
-            )
-
-        for i in range(0, config["gender_count"]):
-            self.dropdowns[f"gender{i}"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, -2 if i > 0 else 0), (100, 34))),
-                f"windows.gender{i}",
-                get_button_dict(ButtonStyles.DROPDOWN, (100, 34)),
-                container=self.dropdowns["gender_container"],
-                object_id="@buttonstyles_dropdown",
-                anchors={"top_target": self.dropdowns[f"gender{i-1}"]}
-                if i > 0
-                else None,
-            )
-
-        self.dropdowns["conju_dropdown"] = UIDropDownContainer(
-            ui_scale(pygame.Rect((0, 125), (0, 0))),
-            container=self,
-            object_id="#conju_dropdown",
-            starting_height=1,
-            parent_button=self.dropdowns["conju_button"],
-            child_button_container=self.dropdowns["conju_container"],
-            visible=False,
+        self.dropdowns["gender"] = UIDropDown(
+            pygame.Rect((0, 34), (100, 32)),
+            parent_text=f"windows.gender{self.gender}",
+            item_list=[f"windows.gender{i}" for i in range(0, config["gender_count"])],
             manager=MANAGER,
-        )
-        self.dropdowns["gender_dropdown"] = UIDropDownContainer(
-            ui_scale(pygame.Rect((0, 125), (0, 0))),
-            container=self,
-            object_id="#gender_dropdown",
-            starting_height=1,
-            parent_button=self.dropdowns["gender_button"],
-            child_button_container=self.dropdowns["gender_container"],
-            visible=False,
-            manager=MANAGER,
+            container=self.elements["core_container"],
+            anchors={
+                "left_target": self.dropdowns["gender_label"],
+                "top_target": self.heading
+            },
+            starting_selection=[f"windows.gender{self.gender}"]
         )
 
         text_inputs = list(self.pronoun_template.keys())
@@ -972,40 +902,24 @@ class PronounCreation(UIWindow):
         )
 
     def process_event(self, event):
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 game.all_screens["change gender screen"].exit_screen()
                 game.all_screens["change gender screen"].screen_switches()
                 [item.kill() for item in self.dropdowns.values()]
                 self.kill()
-            elif event.ui_element == self.dropdowns["conju_button"]:
-                if self.dropdowns["conju_dropdown"].is_open:
-                    self.dropdowns["conju_dropdown"].close()
-                    self.dropdowns["gender_button"].enable()
-                else:
-                    self.dropdowns["conju_dropdown"].open()
-                    self.dropdowns["gender_button"].disable()
-                    self.dropdowns["gender_dropdown"].close()
-            elif event.ui_element in self.dropdowns["conju_container"]:
+            elif event.ui_element in self.dropdowns["conju"].child_buttons:
                 self.pronoun_template["conju"] = int(
                     event.ui_element.text.replace("windows.conju", "")
                 )
-                self.dropdowns["conju_button"].set_text(event.ui_element.text)
-                self.dropdowns["conju_dropdown"].close()
-                self.dropdowns["gender_button"].enable()
+                self.dropdowns["conju"].parent_button.set_text(event.ui_element.text)
                 self.update_display()
-            elif event.ui_element == self.dropdowns["gender_button"]:
-                if self.dropdowns["gender_dropdown"].is_open:
-                    self.dropdowns["gender_dropdown"].close()
-                else:
-                    self.dropdowns["gender_dropdown"].open()
-                    self.dropdowns["conju_dropdown"].close()
-            elif event.ui_element in self.dropdowns["gender_container"]:
+            elif event.ui_element in self.dropdowns["gender"].child_buttons:
                 self.pronoun_template["gender"] = int(
                     event.ui_element.text.replace("windows.gender", "")
                 )
-                self.dropdowns["gender_button"].set_text(event.ui_element.text)
-                self.dropdowns["gender_dropdown"].close()
+                self.dropdowns["gender"].parent_button.set_text(event.ui_element.text)
                 self.update_display()
             elif event.ui_element == self.buttons["save_pronouns"]:
                 add_custom_pronouns(self.pronoun_template)

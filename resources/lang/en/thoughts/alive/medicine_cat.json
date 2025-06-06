@@ -503,6 +503,32 @@
         ]
     },
     {
+        "id": "former_kittypet_medcat",
+        "thoughts": [
+            "Uses knowledge from {PRONOUN/m_c/poss} time with Twolegs to improve a healing method",
+            "Wonders what {PRONOUN/m_c/poss} old vet would do for greencough",
+            "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
+            "Knows a great garden in the Twolegplace for gathering catmint",
+            "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses",
+            "Wonders if there's a way to develop an immunizing poultice"
+        ],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "med_cat_to_mild_injury_gen",
         "thoughts": [
             "Is looking after r_c's minor injury",
