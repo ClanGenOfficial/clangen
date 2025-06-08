@@ -34,6 +34,30 @@ Check if python is installed correctly by running `python3 --version`
 ### Installing poetry
 Follow the instructions for installing poetry from the official website: https://python-poetry.org/docs/#installing-with-pipx
 
+#### Debian-based Linux (e.g. Ubuntu, Linux Mint, ChromeOS)
+```
+sudo apt update
+sudo apt install pipx
+pipx install poetry
+pipx ensurepath
+```
+
+Then restart your terminal and check if poetry is installed by running `poetry --version`.
+
+#### macOS (using Homebrew)
+First, make sure Homebrew is installed. If it isn't, install it with this command:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Test to make sure that brew works by typing `brew --version`.
+
+Then, run:
+```
+brew install pipx
+pipx install poetry
+pipx ensurepath
+```
+
 #### Linux, macOS, Windows (WSL)
 Open a terminal and paste this:
 ```
@@ -61,6 +85,7 @@ Then restart your terminal and check if poetry is installed by running `poetry -
 ### Running the game via the helper scripts
 #### Linux, macOS
 Double click the `run.sh` script or open it in the terminal via `./run.sh` with the current working directory set to the game's root directory.
+If you get a "command not found" error even though you installed poetry, make sure you ran `pipx ensurepath`, restart your terminal, and try again.
 
 #### Windows
 Double click the `run.bat` script.
