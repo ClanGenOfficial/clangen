@@ -106,7 +106,7 @@ class SkillPath(Enum):
 
         uncommon_paths = [
             i
-            for i in [
+            for i in (
                 SkillPath.GHOST,
                 SkillPath.PROPHET,
                 SkillPath.CLAIRVOYANT,
@@ -115,7 +115,7 @@ class SkillPath(Enum):
                 SkillPath.STAR,
                 SkillPath.HEALER,
                 SkillPath.DARK,
-            ]
+            )
             if i not in exclude
         ]
 
@@ -495,15 +495,15 @@ class CatSkills:
                     random.choice(parental_paths),
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
-                    ),
+                        the_cat.status in ("apprentice", "kitten")
+                    )
                 )
             else:
                 self.primary = Skill.get_random_skill(
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
-                    ),
+                        the_cat.status in ("apprentice", "kitten")
+                    )
                 )
 
         if not (the_cat.outside or the_cat.exiled):
@@ -591,7 +591,7 @@ class CatSkills:
         else:
             # For outside cats, just check interest and flip it if needed.
             # Going on age, rather than status here.
-            if the_cat.age not in ["kitten", "adolescent"]:
+            if the_cat.age not in ("kitten", "adolescent"):
                 self.primary.interest_only = False
                 if self.secondary:
                     self.secondary.interest_only = False

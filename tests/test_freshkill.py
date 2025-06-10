@@ -91,7 +91,6 @@ class FreshkillPileTest(unittest.TestCase):
                          biome='Forest',
                          camp_bg=None,
                          game_mode='expanded',
-                         starting_members=[],
                          starting_season='Newleaf')
         test_warrior = Cat()
         test_warrior.status = "warrior"

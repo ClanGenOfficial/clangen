@@ -207,7 +207,7 @@ class LeaderDenScreen(Screens):
                         and not i.exiled
                         and not i.outside
                         and not i.not_working()
-                        and i.status in ["mediator", "mediator apprentice"]
+                        and i.status in ("mediator", "mediator apprentice")
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
@@ -222,7 +222,7 @@ class LeaderDenScreen(Screens):
                     if not i.dead
                     and not i.exiled
                     and not i.outside
-                    and i.status not in ["newborn", "kitten", "leader"]
+                    and i.status not in ("newborn", "kitten", "leader")
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)
@@ -881,12 +881,12 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["hunt_down"] = UISurfaceImageButton(
+        self.focus_button["hunt"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 0), (121, 30))),
-            "screens.leader_den.hunt_down",
+            "screens.leader_den.hunt",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             object_id="@buttonstyles_squoval",
-            tool_tip_text="screens.leader_den.hunt_down_tooltip",
+            tool_tip_text="screens.leader_den.hunt_tooltip",
             tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
@@ -896,28 +896,28 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["drive_off"] = UISurfaceImageButton(
+        self.focus_button["drive"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "screens.leader_den.drive_off",
+            "screens.leader_den.drive",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             object_id="@buttonstyles_squoval",
-            tool_tip_text="screens.leader_den.drive_off_tooltip",
+            tool_tip_text="screens.leader_den.drive_tooltip",
             tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
             anchors={
                 "centerx": "centerx",
-                "top_target": self.focus_button["hunt_down"],
+                "top_target": self.focus_button["hunt"],
             },
         )
 
-        self.focus_button["invite_in"] = UISurfaceImageButton(
+        self.focus_button["invite"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "screens.leader_den.invite_in",
+            "screens.leader_den.invite",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             object_id="@buttonstyles_squoval",
-            tool_tip_text="screens.leader_den.invite_in_tooltip",
+            tool_tip_text="screens.leader_den.invite_tooltip",
             tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
@@ -925,7 +925,7 @@ class LeaderDenScreen(Screens):
             visible=False,
             anchors={
                 "centerx": "centerx",
-                "top_target": self.focus_button["drive_off"],
+                "top_target": self.focus_button["drive"],
             },
         )
 
@@ -933,13 +933,13 @@ class LeaderDenScreen(Screens):
             self.focus_cat.outside
             and not self.focus_cat.exiled
             and self.focus_cat.status
-            not in ["kittypet", "loner", "rogue", "former Clancat"]
+            not in ("kittypet", "loner", "rogue", "former Clancat")
         ):
-            self.focus_button["invite_in"].set_text("screens.leader_den.search_for")
+            self.focus_button["invite"].set_text("screens.leader_den.search")
         else:
-            self.focus_button["invite_in"].set_text("screens.leader_den.invite_in")
+            self.focus_button["invite"].set_text("screens.leader_den.invite")
 
-        self.focus_button["invite_in"].show()
+        self.focus_button["invite"].show()
 
         self.focus_outsider_button_container.enable()
         if (
@@ -968,7 +968,7 @@ class LeaderDenScreen(Screens):
             self.screen_elements["clan_notice_text"].hide()
 
             self.clan_rep = game.clan.reputation
-            if 1 <= int(self.clan_rep) <= 30:
+            if 0 <= int(self.clan_rep) <= 30:
                 reputation = "hostile"
             elif 31 <= int(self.clan_rep) <= 70:
                 reputation = "neutral"
@@ -1068,7 +1068,9 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.handle_outsider_interaction(action)
+        # because our groups are "hunt", "search", "invite" and "drive"
+        # we remove the descriptor ("hunt_down", "drive_off", "invite_in")
+        self.handle_outsider_interaction(action.split("_")[0])
 
     def handle_outsider_interaction(self, action):
         """

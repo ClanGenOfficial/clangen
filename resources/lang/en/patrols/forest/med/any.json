@@ -1176,7 +1176,7 @@
         "patrol_id": "fst_med_discussion1",
         "biome": ["forest"],
         "season": ["any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
         "min_cats": 2,
@@ -1332,7 +1332,7 @@
         "patrol_id": "fst_med_dwindleherbsgathering1",
         "biome": ["forest"],
         "season": ["any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
@@ -1809,7 +1809,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Though the other cats in the group don't look thrilled, app1 insists there's nothing to annoyed about. app1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
+                "text": "Though the other cats in the group don't look thrilled, app1 insists there's nothing to be annoyed about. app1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon, and a cool cat to spend it with!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["moss"],

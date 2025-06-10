@@ -1,10 +1,14 @@
+import logging
 import os
 from copy import copy
 
 import pygame
 import ujson
 
+from scripts.special_dates import SpecialDate, is_today
 from scripts.game_structure.game_essentials import game
+
+logger = logging.getLogger(__name__)
 
 
 class Sprites:
@@ -120,7 +124,7 @@ class Sprites:
 
         del width, height  # unneeded
 
-        for x in [
+        for x in (
             "lineart",
             "lineartdf",
             "lineartdead",
@@ -157,8 +161,8 @@ class Sprites:
             "fadestarclan",
             "fadedarkforest",
             "symbols",
-        ]:
-            if "lineart" in x and game.config["fun"]["april_fools"]:
+        ):
+            if "lineart" in x and (game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
@@ -203,7 +207,7 @@ class Sprites:
                 "PALEYELLOW",
                 "GOLD",
                 "GREENYELLOW",
-                "ORANGE"
+                "ORANGE",
             ],
         ]
 
@@ -593,6 +597,12 @@ class Sprites:
                 "CLOVER",
                 "DAISY",
             ],
+            [
+                "WISTERIA",
+                "ROSE MALLOW",
+                "PICKLEWEED",
+                "GOLDEN CREEPING JENNY",
+            ],
         ]
         dryherbs_data = [["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]]
         wild_data = [
@@ -656,7 +666,7 @@ class Sprites:
         # dryherbs
         for row, dry in enumerate(dryherbs_data):
             for col, dryherbs in enumerate(dry):
-                self.make_group("medcatherbs", (col, 3), f"acc_herbs{dryherbs}")
+                self.make_group("medcatherbs", (col, 4), f"acc_herbs{dryherbs}")
         # wild
         for row, wilds in enumerate(wild_data):
             for col, wild in enumerate(wilds):
@@ -754,17 +764,28 @@ class Sprites:
 
             y_pos += 1
 
-    def dark_mode_symbol(self, symbol):
-        """Change the color of the symbol to dark mode, then return it
-        :param Surface symbol: The clan symbol to convert"""
-        dark_mode_symbol = copy(symbol)
-        var = pygame.PixelArray(dark_mode_symbol)
-        var.replace((87, 76, 45), (239, 229, 206))
-        del var
-        # dark mode color (239, 229, 206)
-        # debug hot pink (255, 105, 180)
+    def get_symbol(self, symbol: str, force_light=False):
+        """Change the color of the symbol to match the requested theme, then return it
+        :param Surface symbol: The clan symbol to convert
+        :param force_light: Use to ignore dark mode and always display the light mode color
+        """
+        symbol = self.sprites.get(symbol)
+        if symbol is None:
+            logger.warning("%s is not a known Clan symbol! Using default.")
+            symbol = self.sprites[self.clan_symbols[0]]
 
-        return dark_mode_symbol
+        recolored_symbol = copy(symbol)
+        var = pygame.PixelArray(recolored_symbol)
+        var.replace(
+            (87, 76, 45),
+            pygame.Color(game.config["theme"]["dark_mode_clan_symbols"])
+            if not force_light and game.settings["dark mode"]
+            else pygame.Color(game.config["theme"]["light_mode_clan_symbols"]),
+            distance=0,
+        )
+        del var
+
+        return recolored_symbol
 
 
 # CREATE INSTANCE

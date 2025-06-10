@@ -39,7 +39,7 @@ class GroupEvents:
             if cat_amount == "group_types.json":
                 continue
             cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-            for file in ["neutral.json", "positive.json", "negative.json"]:
+            for file in ("neutral.json", "positive.json", "negative.json"):
                 cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
                     file[:-5]
                 ] = create_group_interaction(
@@ -133,7 +133,7 @@ class GroupEvents:
         # TODO: add the interaction to the relationship log?
 
         interaction_str = interaction_str + i18n.t(
-            f"screens.relationships.{inter_type}_postscript"
+            f"relationships.{inter_type}_postscript"
         )
         ids = list(abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
@@ -352,7 +352,7 @@ class GroupEvents:
                     trait_ids = [cat.ID for cat in interact_cats]
 
                 # only add the id if it is in all other lists
-                for cat_id in [cat.ID for cat in interact_cats]:
+                for cat_id in (cat.ID for cat in interact_cats):
                     if (
                         cat_id in status_ids
                         and cat_id in skill_ids

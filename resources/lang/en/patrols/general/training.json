@@ -425,7 +425,7 @@
                 ]
             },
             {
-                "text": "With the patrol ranged around {PRONOUN/s_c/subject} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates - has anyone heard of story_list?",
+                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates - has anyone heard of story_list?",
                 "exp": 20,
                 "weight": 40,
                 "stat_skill": [
@@ -1846,7 +1846,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't take charge or lead the patrol haring off after some grand adventure. That just isn't {PRONOUN/s_c/poss} style. Instead, the cats are reminded of the kindness in their leader's heart as they watch s_c help r_c up off the ground, reassure another Clanmate when they get a move wrong. The warmth of these little sparks of empathy reminds everyone why c_n follows s_c.",
+                "text": "s_c doesn't take charge or lead the patrol haring off after some grand adventure. That just isn't {PRONOUN/s_c/poss} style. Instead, the cats are reminded of the kindness in their leader's heart as they watch s_c help r_c up off the ground and reassure another Clanmate when they get a move wrong. The warmth of these little sparks of empathy reminds everyone why c_n follows s_c.",
                 "exp": 40,
                 "weight": 20,
                 "can_have_stat":["p_l"],
@@ -10580,7 +10580,7 @@
                 "weight": 20
             },
 			{
-                "text": "p_l can empathize- it may seem impossible for app1 to find {PRONOUN/app1/poss} place in c_n, especially as an apprentice with {PRONOUN/app1/poss} whole future ahead. But it's important to breath. In, out, in, out. It's hard for app1 to calm down, and p_l knows this, but once app1 is calm enough, the two can begin to talk and figure out the best way for app1 to thrive and learn.",
+                "text": "p_l can empathize- it may seem impossible for app1 to find {PRONOUN/app1/poss} place in c_n, especially as an apprentice with {PRONOUN/app1/poss} whole future ahead. But it's important to breathe. In, out, in, out. It's hard for app1 to calm down, and p_l knows this, but once app1 is calm enough, the two can begin to talk and figure out the best way for app1 to thrive and learn.",
                 "exp": 10,
                 "relationships": [
                     {
@@ -10777,7 +10777,7 @@
                 "weight": 20
             },
 	    {
-                "text": "Misjudging {PRONOUN/app1/poss} landing, app1 hit the ground awkwardly, {PRONOUN/app1/poss} paw twisting beneath {PRONOUN/app1/object}. Not only is it embarrassing to explain to the medicine cat, but it happeneded right in front of app2.",
+                "text": "Misjudging {PRONOUN/app1/poss} landing, app1 hit the ground awkwardly, {PRONOUN/app1/poss} paw twisting beneath {PRONOUN/app1/object}. Not only is it embarrassing to explain to the medicine cat, but it happened right in front of app2.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -10876,7 +10876,7 @@
     
         "weight": 20,
         "chance_of_success": 50,
-        "intro_text": "app1 seems distracted during training, constantly glancing in the direction of the border. Eventually, after p_l presses {PRONOUN/app1/object}, app1 admits that {PRONOUN/app1/subject} had a conversation with a kittypet on patrol yesterday, and didn't know whether being friends with a kittypet was disolyal to c_n.",
+        "intro_text": "app1 seems distracted during training, constantly glancing in the direction of the border. Eventually, after p_l presses {PRONOUN/app1/object}, app1 admits that {PRONOUN/app1/subject} had a conversation with a kittypet on patrol yesterday, and didn't know whether being friends with a kittypet was disloyal to c_n.",
         "decline_text": "p_l tells app1 that this was no time to be thinking about such things, and to focus on {PRONOUN/app1/poss} training.",
         "success_outcomes": [
             {

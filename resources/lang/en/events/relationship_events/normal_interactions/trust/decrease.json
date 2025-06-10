@@ -62,7 +62,7 @@
 			"r_c keeps avoiding eye contact with m_c.",
 			"m_c learns that r_c has been misleading {PRONOUN/m_c/object} about something trivial.",
 			"r_c does something that badly affects m_c.",
-			"r_c volunteers m_c for something that {PRONOUN/m_c/object} didn't want to do...",
+			"r_c volunteers m_c for something that {PRONOUN/m_c/subject} didn't want to do...",
 			"m_c and r_c can't seem to agree on the truth about something.",
 			"m_c asks r_c about a lie r_c told, but {PRONOUN/r_c/subject} {VERB/r_c/dodge/dodges} the question.",
 			"m_c realizes that r_c's been avoiding {PRONOUN/m_c/object}.",

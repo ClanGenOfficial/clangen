@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.8', '3.11']
+        include:
+          # v2 of poetry dropped support for 3.8
+          - python-version: '3.8'
+            test-poetry-version: '1.8.5'
+          - python-version: '3.11'
+            test-poetry-version: 'latest'
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: 'x64'
       - name: Download the test saves
         run: wget https://github.com/ImLvna/clangen-unittest-saves/archive/refs/heads/main.zip -O tests/saves.zip
       - name: Unzip
@@ -27,7 +27,15 @@ jobs:
       - name: Install poetry
         uses: abatilo/actions-poetry@v3
         with:
-          poetry-version: 1.4.1
+          poetry-version: ${{ matrix.test-poetry-version }}
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: 'x64'
+      - name: Switch Poetry Python environment
+        if: matrix.python-version == '3.8'
+        run: poetry env use 3.8
       - name: install dependencies
         run: poetry install
       - name: Run unit tests
@@ -47,7 +55,7 @@ jobs:
       - name: Install poetry
         uses: abatilo/actions-poetry@v3
         with:
-          poetry-version: 1.4.1
+          poetry-version: latest
       - name: install dependencies
         run: poetry install --with test
       - name: Check json validity
@@ -66,7 +74,7 @@ jobs:
         - name: Install poetry
           uses: abatilo/actions-poetry@v3
           with:
-            poetry-version: 1.4.1
+            poetry-version: latest
         - name: install dependencies
           run: poetry install
         - name: Check for pronoun tag errors in resources
@@ -83,7 +91,7 @@ jobs:
         - name: Install poetry
           uses: abatilo/actions-poetry@v3
           with:
-            poetry-version: 1.4.1
+            poetry-version: latest
         - name: install dependencies
           run: poetry install
         - name: Check for pronoun tag errors in resources

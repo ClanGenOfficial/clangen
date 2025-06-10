@@ -439,7 +439,11 @@
 				"dropshadow_alpha": 100,
 				"mainmenu_tint": [239, 229, 206]
 			}
-		}
+		},
+		"dark_mode_clan_symbols": [239, 229, 206],
+		"light_mode_clan_symbols": [87, 76, 45],
+		"dark_mode_event_alternate": [87, 76, 55],
+		"light_mode_event_alternate": [167, 148, 111]
 	},
 	"lock_season": false, 
 	"comment": "Forces the season to be locked at the Clan's starting_season",

@@ -123,7 +123,7 @@
 			"m_c mocks r_c for smelling like mouse bile.",
 			"m_c keeps trying to quiz r_c on herbs that r_c doesn't know yet.",
 			"m_c looks down on r_c, because there's no way {PRONOUN/r_c/subject} could ever be a useful medicine cat.",
-			"m_c doesn't trust r_c to heal {PRONOUN/m_c/object} wound."
+			"m_c doesn't trust r_c to heal {PRONOUN/m_c/object} wounds."
 		],
 		"main_status_constraint": [
 			"apprentice"

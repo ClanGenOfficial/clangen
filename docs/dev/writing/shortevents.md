@@ -16,7 +16,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "event_id": "",
     "location": [],
     "season": [],
-    "sub_type": []
+    "sub_type": [],
     "tags": [],
     "weight": 0,
     "event_text": "event text here",
@@ -53,6 +53,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "scars": [],
        }
     ],
+    "exclude_involved": [],
     "history:": [
       {
       "cats": [],
@@ -389,6 +390,15 @@ lowercase season names + "any"
 >Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
 >
 >[Scar List](reference/index.md#__tabbed_1_5)
+
+## exclude_involved: List[str]:
+>Optional. Excludes certain cats from showing up in the "involved cats" list of the event, meaning their button will not be present on the events screen. Cats listed here will still be a part of the event and can be affected by other parameters like injuries, accessories, relationships, and death, if they're written to.
+
+| string      |                                    |
+|-------------|------------------------------------|
+| m_c         | main cat is excluded               |
+| r_c         | other cat in the event is excluded |
+| n_c:{index} | new cat of given index is excluded |
 
 ## history_text: Dict[str, str]:
 >Controls the history-text for scars and death. You must include a list of cats for whom the history will be assigned (i.e. "m_c", "r_c").

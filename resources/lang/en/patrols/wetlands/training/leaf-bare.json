@@ -42,7 +42,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "The apprentices are inattentive and twitchy. p_l lets them go before {PRONOUN/p_l/subject} really start the story. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not going to waste {PRONOUN/p_l/poss} story on an unappreciative audience.",
+                    "text": "The apprentices are inattentive and twitchy. p_l lets them go before {PRONOUN/p_l/subject} really {VERB/p_l/start/starts} the story. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not going to waste {PRONOUN/p_l/poss} story on an unappreciative audience.",
                     "exp": 0,
                     "weight": 20,
                     "relationships": [

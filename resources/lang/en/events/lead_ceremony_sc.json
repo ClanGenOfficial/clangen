@@ -167,7 +167,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "r_c approaches. Pain surges through m_c's pelt as {PRONOUN/m_c/subject} receive a life for [virtue]. r_c watches dispassionately.",
+          "text": "r_c approaches. Pain surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. r_c watches dispassionately.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
@@ -354,7 +354,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "r_c steps foward with indomitable strength that commands both respect and a reverent awe, as an enigmatic beauty of {PRONOUN/r_c/poss} steps catches m_c's gaze. {PRONOUN/r_c/subject/CAP} {VERB/r_c/offer/offers} a life for [virtue], but {VERB/r_c/retreat/retreats} to {PRONOUN/r_c/poss} chilling solitude as swiftly as {PRONOUN/r_c/subject} emerged.",
+          "text": "r_c steps forward with indomitable strength that commands both respect and a reverent awe, as an enigmatic beauty of {PRONOUN/r_c/poss} steps catches m_c's gaze. {PRONOUN/r_c/subject/CAP} {VERB/r_c/offer/offers} a life for [virtue], but {VERB/r_c/retreat/retreats} to {PRONOUN/r_c/poss} chilling solitude as swiftly as {PRONOUN/r_c/subject} emerged.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
@@ -478,7 +478,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "r_c gazes at the lonesome leader with a deep sympathy as {PRONOUN/r_c/subject} approach, sensing the weight of {PRONOUN/m_c/poss} solitude. m_c's eyes begin to well up as a life for [virtue] flows through {PRONOUN/m_c/object}, a warm embrace that wards off the cold isolation, even if for a brief moment.",
+          "text": "r_c gazes at the lonesome leader with a deep sympathy as {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches}, sensing the weight of {PRONOUN/m_c/poss} solitude. m_c's eyes begin to well up as a life for [virtue] flows through {PRONOUN/m_c/object}, a warm embrace that wards off the cold isolation, even if for a brief moment.",
           "virtue": ["gratitude", "bravery", "trust", "affection", "friendship", "love", "determination", "endurance", "hope", "humor", "certainty", "devotion", "healing", "strength", "unity"]
         }
       ]
@@ -812,7 +812,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "m_c had always been known for a dramatic persona, but r_c hopes that the new leader will let that become an asset than a bane. r_c gives the c_n cat a life for [virtue].",
+          "text": "m_c has always been known for a dramatic persona, but r_c hopes that the new leader will let that become an asset rather than a bane. r_c gives the c_n cat a life for [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
@@ -849,7 +849,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "Sincerity and honesty was one of the most prominent trait of a StarClan cat. r_c presses {PRONOUN/r_c/poss} nose against m_c and with a serene voice gives the new leader a life for [virtue].",
+          "text": "Sincerity and honesty was one of the most prominent traits of a StarClan cat. r_c presses {PRONOUN/r_c/poss} nose against m_c and with a serene voice gives the new leader a life for [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
@@ -912,7 +912,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c nearly sprints out of the crowd, caught last moment by an older StarClan cat who gives a sharp, but endeared, whisper before setting {PRONOUN/r_c/object} back down. r_c continues towards m_c, but slower this time, barely containing {PRONOUN/r_c/poss} excitement. When {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue], {PRONOUN/r_c/subject} {VERB/r_c/press/presses} {PRONOUN/r_c/self} tightly against m_c's legs before returning to the ranks of StarClan.",
+          "text": "r_c nearly sprints out of the crowd, caught at the last moment by an older StarClan cat who gives a sharp, but endeared, whisper before setting {PRONOUN/r_c/object} back down. r_c continues towards m_c, but slower this time, barely containing {PRONOUN/r_c/poss} excitement. When {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue], {PRONOUN/r_c/subject} {VERB/r_c/press/presses} {PRONOUN/r_c/self} tightly against m_c's legs before returning to the ranks of StarClan.",
           "virtue": ["love", "patience", "trust", "optimism", "happiness", "courage", "protection", "resilience", "adventure", "curiosity", "forgiveness"]
         }
       ]

@@ -23,7 +23,7 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
-from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -347,8 +347,8 @@ class MedDenScreen(Screens):
             med_messages = []
 
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
-            number = medical_cats_condition_fulfilled(
-                Cat.all_cats.values(), amount_per_med, give_clanmembers_covered=True
+            number = amount_clanmembers_covered(
+                Cat.all_cats.values(), amount_per_med
             )
 
             meds_cover = i18n.t(
@@ -564,7 +564,7 @@ class MedDenScreen(Screens):
                         condition_list.extend(
                             [
                                 i18n.t(f"conditions.permanent_conditions.{permcond}")
-                                for permcond in list(cat.injuries.keys())
+                                for permcond in list(cat.permanent_condition.keys())
                             ]
                         )
             conditions = ",<br>".join(condition_list)

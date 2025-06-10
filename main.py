@@ -345,13 +345,13 @@ while 1:
             # Don't display if on the start screen or there is no clan.
             if (
                 game.switches["cur_screen"]
-                in [
+                in (
                     "start screen",
                     "switch clan screen",
                     "settings screen",
                     "info screen",
                     "make clan screen",
-                ]
+                )
                 or not game.clan
             ):
                 quit(savesettings=False)
