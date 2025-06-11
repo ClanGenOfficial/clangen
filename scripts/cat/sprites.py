@@ -124,7 +124,7 @@ class Sprites:
 
         del width, height  # unneeded
 
-        for x in [
+        for x in (
             "lineart",
             "lineartdf",
             "lineartdead",
@@ -161,7 +161,7 @@ class Sprites:
             "fadestarclan",
             "fadedarkforest",
             "symbols",
-        ]:
+        ):
             if "lineart" in x and (game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
@@ -597,6 +597,12 @@ class Sprites:
                 "CLOVER",
                 "DAISY",
             ],
+            [
+                "WISTERIA",
+                "ROSE MALLOW",
+                "PICKLEWEED",
+                "GOLDEN CREEPING JENNY",
+            ],
         ]
         dryherbs_data = [["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]]
         wild_data = [
@@ -660,7 +666,7 @@ class Sprites:
         # dryherbs
         for row, dry in enumerate(dryherbs_data):
             for col, dryherbs in enumerate(dry):
-                self.make_group("medcatherbs", (col, 3), f"acc_herbs{dryherbs}")
+                self.make_group("medcatherbs", (col, 4), f"acc_herbs{dryherbs}")
         # wild
         for row, wilds in enumerate(wild_data):
             for col, wild in enumerate(wilds):

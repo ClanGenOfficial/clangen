@@ -229,7 +229,7 @@ class Condition_Events:
 
         elif MAL_PERCENTAGE >= cat_nutrition.percentage > STARV_PERCENTAGE:
             # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
-            if cat.status in ["kitten", "elder"]:
+            if cat.status in ("kitten", "elder"):
                 illness = "starving"
             else:
                 illness = "malnourished"
@@ -310,10 +310,10 @@ class Condition_Events:
                 cat.get_ill(chosen_illness)
 
                 # create event text
-                if i18n.config.get("locale") == "en" and chosen_illness in [
+                if i18n.config.get("locale") == "en" and chosen_illness in (
                     "running nose",
                     "stomachache",
-                ]:
+                ):
                     illness = f"a {chosen_illness}"
 
                 # try to translate the illness
@@ -384,7 +384,7 @@ class Condition_Events:
             if (
                 not triggered
                 and cat.personality.trait
-                in [
+                in (
                     "adventurous",
                     "bold",
                     "daring",
@@ -396,7 +396,7 @@ class Condition_Events:
                     "troublesome",
                     "vengeful",
                     "impulsive",
-                ]
+                )
                 and random_number <= 15
             ):
                 triggered = True
@@ -622,7 +622,7 @@ class Condition_Events:
 
                 cat.illnesses.pop(illness)
                 # make sure complications get reset if infection or fester were healed
-                if illness in ["an infected wound", "a festering wound"]:
+                if illness in ("an infected wound", "a festering wound"):
                     for injury in cat.injuries:
                         keys = cat.injuries[injury].keys()
                         if "complication" in keys:

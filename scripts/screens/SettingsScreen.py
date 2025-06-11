@@ -168,7 +168,7 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-            if self.sub_menu in ["general", "relation", "language"]:
+            if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:

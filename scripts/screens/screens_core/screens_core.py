@@ -272,7 +272,7 @@ def rebuild_mute(location: str):
 
     mute_pos = ui_scale(pygame.Rect((0, 0), (34, 34)))
 
-    if location in ["bottomright", "default"]:
+    if location in ("bottomright", "default"):
         mute_pos.bottomright = ui_scale_offset((-25, -25))
         anchors = {"bottom": "bottom", "right": "right"}
     elif location == "topright":
@@ -404,15 +404,15 @@ def rebuild_bgs():
         },
     }
 
-    for theme in ["light", "dark"]:
+    for theme in ("light", "dark"):
         for name, bg in default_fullscreen_bgs[theme].items():
-            if name not in [
+            if name not in (
                 "default",
                 "mainmenu_bg",
                 "darkforest",
                 "unknown_residence",
                 "starclan",
-            ]:
+            ):
                 default_fullscreen_bgs[theme][name] = process_blur_bg(
                     default_fullscreen_bgs[theme][name], theme=theme
                 )
@@ -423,7 +423,7 @@ def rebuild_bgs():
                     vignette_strength=0,
                     fade_color=None,
                 )
-            elif name in ["mainmenu_bg", "darkforest", "unknown_residence"]:
+            elif name in ("mainmenu_bg", "darkforest", "unknown_residence"):
                 default_fullscreen_bgs[theme][name] = process_blur_bg(
                     default_fullscreen_bgs[theme][name], theme=theme, blur_radius=10
                 )
@@ -434,7 +434,7 @@ def rebuild_bgs():
 
     camp_bgs = get_camp_bgs()
 
-    for theme in ["light", "dark"]:
+    for theme in ("light", "dark"):
         for name, camp_bg in camp_bgs[theme].items():
             default_fullscreen_bgs[theme][name] = process_blur_bg(camp_bg, theme=theme)
 
@@ -452,7 +452,7 @@ def get_camp_bgs():
         biome = available_biome[0]
 
     all_backgrounds = []
-    for light_dark in ["light", "dark"]:
+    for light_dark in ("light", "dark"):
         for leaf in leaves:
             platform_dir = (
                 f"{camp_bg_base_dir}/{biome}/{leaf}_{camp_nr}_{light_dark}.png"

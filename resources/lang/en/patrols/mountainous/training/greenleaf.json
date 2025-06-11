@@ -1381,7 +1381,7 @@
         "patrol_art": "gen_bord_story",
         "biome": ["mountainous"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["training"],
         "tags": [],
         "min_cats": 3,
         "max_cats": 6,
