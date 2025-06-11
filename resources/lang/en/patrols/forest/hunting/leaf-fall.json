@@ -511,7 +511,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l sees the rat's tail in a clump of leaves and pounced after it. {PRONOUN/p_l/subject/CAP} head is held high as {PRONOUN/p_l/subject} {VERB/p_l/travel/travels} back to camp with the large piece of fresh-kill!",
+                "text": "p_l sees the rat's tail in a clump of leaves and pounces after it. {PRONOUN/p_l/subject/CAP} head is held high as {PRONOUN/p_l/subject} {VERB/p_l/travel/travels} back to camp with the large piece of fresh-kill!",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"]
@@ -1726,7 +1726,7 @@
         "patrol_id": "fst_hunt_redvixen7",
         "biome": ["forest"],
         "season": ["leaf-fall"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -1902,7 +1902,7 @@
         "patrol_id": "fst_hunt_redvixen8",
         "biome": ["forest"],
         "season": ["leaf-fall"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -2054,7 +2054,7 @@
         "patrol_id": "fst_hunt_redvixen9",
         "biome": ["forest"],
         "season": ["leaf-fall"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -2202,7 +2202,7 @@
         "patrol_id": "fst_hunt_grayvixen7",
         "biome": ["forest"],
         "season": ["leaf-fall"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -2365,7 +2365,7 @@
         "patrol_id": "fst_hunt_grayvixen8",
         "biome": ["forest"],
         "season": ["leaf-fall"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -2528,7 +2528,7 @@
         "patrol_id": "fst_hunt_grayvixen9",
         "biome": ["forest"],
         "season": ["leaf-fall"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -4283,7 +4283,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -4487,7 +4487,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],

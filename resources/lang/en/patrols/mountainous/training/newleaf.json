@@ -550,7 +550,7 @@
                 ]
             },
             {
-                "text": "app1 finds a snowdrift, and {PRONOUN/app1/subject} and app2 spend the early morning by turning it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+                "text": "app1 finds a snowdrift, and {PRONOUN/app1/subject} and app2 spend the early morning by turning it into a very respectable snow den, complete with a short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [

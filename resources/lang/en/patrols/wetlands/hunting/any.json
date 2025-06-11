@@ -3477,7 +3477,7 @@
                 ]
             },
             {
-                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try to win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3713,7 +3713,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and nobody's happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -3905,7 +3905,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and nobody's happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -5421,7 +5421,7 @@
                 ]
             },
             {
-                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
+                "text": "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young duck, and waits carefully. Eventually, as the fox starts to hunt at a different river, it drops its fresh-kill to try to win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -5653,7 +5653,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and nobody's happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -5845,7 +5845,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and no one is happy with s_c.",
+                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and nobody's happy with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [

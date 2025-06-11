@@ -13,7 +13,7 @@ jobs:
       - name: Install poetry
         uses: abatilo/actions-poetry@v3
         with:
-          poetry-version: 1.4.1
+          poetry-version: latest
       - name: install dependencies
         run: poetry install --with test
       - name: Run Pylint

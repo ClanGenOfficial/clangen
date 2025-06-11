@@ -15,9 +15,9 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
+from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
-from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
     get_personality_compatibility,
     check_relationship_value,
@@ -168,7 +168,7 @@ class Patrol:
             else:
                 self.patrol_statuses[cat.status] = 1
 
-            # Combined patrol_statuses catagories
+            # Combined patrol_statuses categories
             if cat.status in ("medicine cat", "medicine cat apprentice"):
                 if "healer cats" in self.patrol_statuses:
                     self.patrol_statuses["healer cats"] += 1
@@ -219,7 +219,7 @@ class Patrol:
             possible_leader = [
                 i
                 for i in self.patrol_cats
-                if i.status not in ["medicine cat apprentice", "apprentice"]
+                if i.status not in ("medicine cat apprentice", "apprentice")
             ]
             if possible_leader:
                 # Flip a coin to pick the most experience, or oldest.
@@ -308,12 +308,14 @@ class Patrol:
                         self.generate_patrol_events(self.MEDCAT_GEN)
                     )
                     possible_patrols.extend(self.generate_patrol_events(self.DISASTER))
+                    possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT))
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_WELCOMING)
                     )
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_HOSTILE)
                     )
+                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
                     possible_patrols.extend(
                         self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
                     )
@@ -531,7 +533,7 @@ class Patrol:
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
             if (
-                val in ["romantic", "platonic", "admiration", "comfortable", "trust"]
+                val in ("romantic", "platonic", "admiration", "comfortable", "trust")
                 and value_check >= 20
             ):
                 chance_of_romance_patrol -= 1
@@ -552,7 +554,6 @@ class Patrol:
     ):
         filtered_patrols = []
         romantic_patrols = []
-        special_date = get_special_date()
         # This make sure general only gets hunting, border, or training patrols
         # chose fix type will make it not depending on the content amount
         if patrol_type == "general":
@@ -572,11 +573,6 @@ class Patrol:
             ):
                 continue
 
-            # filtering for dates
-            if contains_special_date_tag(patrol.tags):
-                if not special_date or special_date.patrol_tag not in patrol.tags:
-                    continue
-
             if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
                 continue
 
@@ -590,6 +586,9 @@ class Patrol:
                     flag = True
                     break
             if flag:
+                continue
+
+            if not event_for_tags(patrol.tags, Cat):
                 continue
 
             if biome not in patrol.biome and "any" not in patrol.biome:
@@ -607,11 +606,6 @@ class Patrol:
                 continue
             elif "herb_gathering" not in patrol.types and patrol_type == "med":
                 continue
-
-            # cruel season tag check
-            if "cruel_season" in patrol.tags:
-                if game.clan and game.clan.game_mode != "cruel_season":
-                    continue
 
             if "romantic" in patrol.tags:
                 romantic_patrols.append(patrol)

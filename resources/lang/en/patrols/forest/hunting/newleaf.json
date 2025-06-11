@@ -465,7 +465,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l, leading the search for r_c, hears a yowl in distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c/object}, calling off their hunt.",
+                "text": "p_l, leading the search for r_c, hears a yowl in the distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c/object}, calling off their hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1528,7 +1528,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1879,7 +1879,7 @@
         "patrol_id": "fst_hunt_redvixen1",
         "biome": ["forest"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -2070,7 +2070,7 @@
         "patrol_id": "fst_hunt_redvixen2",
         "biome": ["forest"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -2233,7 +2233,7 @@
         "patrol_id": "fst_hunt_redvixen3",
         "biome": ["forest"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -2381,7 +2381,7 @@
         "patrol_id": "fst_hunt_grayvixen1",
         "biome": ["forest"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -2544,7 +2544,7 @@
         "patrol_id": "fst_hunt_grayvixen2",
         "biome": ["forest"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -2707,7 +2707,7 @@
         "patrol_id": "fst_hunt_grayvixen3",
         "biome": ["forest"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -3206,7 +3206,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "Finally! It felt like the snow would never clear. s_c ignores the odd dirty slushy pile still trying to hold out in the most sheltered spots under evergreen trees, telling {PRONOUN/s_c/self} those are probably mostly mud by now anyway, and cheerfully brings back to c_n camp a full haul of several f_tp_p and a plump f_tp_s.",
+                "text": "Finally! It felt like the snow would never clear. s_c ignores the odd dirty slush pile still trying to hold out in the most sheltered spots under evergreen trees, telling {PRONOUN/s_c/self} those are probably mostly mud by now anyway, and cheerfully brings back to c_n camp a full haul of several f_tp_p and a plump f_tp_s.",
                 "exp": 15,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -3239,7 +3239,7 @@
                 ]
             },
             {
-                "text": "s_c overconfidently tries to jump a muddy puddle, doesn't make it, and slides face first into a tree. Also there's snow within the puddle, not quite melted. Fantastic.",
+                "text": "s_c, overconfident, tries to jump a muddy puddle, doesn't make it, and slides face first into a tree. Also there's snow within the puddle, not quite melted. Fantastic.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["bold", "daring"],
@@ -3292,7 +3292,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "While rounds a bend in the path, app1 hears a bird call. Jerking {PRONOUN/app1/poss} head up, {PRONOUN/app1/subject} {VERB/app1/lose/loses} {PRONOUN/app1/poss} footing and {VERB/app1/skid/skids} down a slope that's more mud than grass. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
+                "text": "While rounding a bend in the path, app1 hears a bird call. Jerking {PRONOUN/app1/poss} head up, {PRONOUN/app1/subject} {VERB/app1/lose/loses} {PRONOUN/app1/poss} footing and {VERB/app1/skid/skids} down a slope that's more mud than grass. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -5049,7 +5049,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -5253,7 +5253,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],

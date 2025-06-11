@@ -3,7 +3,7 @@
         "patrol_id": "mtn_med_romance_greenleaf1",
         "biome": ["mountainous"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
@@ -1822,7 +1822,7 @@
                 "herbs": ["elder_leaves", "juniper"]
             },
             {
-                "text": "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple, today, warmed by the greenleaf sun.",
+                "text": "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple today, warmed by the greenleaf sun.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "elder_leaves", "juniper"]
@@ -1897,7 +1897,7 @@
                 ]
             },
             {
-                "text": "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple, today, warmed by the greenleaf sun. They even stop for a nap before going home, and app1 stretches out and rips at the ground with {PRONOUN/app1/poss} claws indulgently.",
+                "text": "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple today, warmed by the greenleaf sun. They even stop for a nap before going home, and app1 stretches out and rips at the ground with {PRONOUN/app1/poss} claws indulgently.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "elder_leaves", "juniper"],
@@ -2035,7 +2035,7 @@
                 ]
             },
             {
-                "text": "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple, today, warmed by the greenleaf sun. It makes the patrol an easy mission, and the cats take the opportunity to hang out and socialize as much as gather herbs.",
+                "text": "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple today, warmed by the greenleaf sun. It makes the patrol an easy mission, and the cats take the opportunity to hang out and socialize as much as gather herbs.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "elder_leaves", "juniper"],
@@ -6502,7 +6502,8 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "all apprentices": [1, 6]
+            "all apprentices": [1, 5],
+            "medicine cat": [1, 5]
         },
         "weight": 20,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",

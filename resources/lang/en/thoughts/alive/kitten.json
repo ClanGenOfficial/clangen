@@ -38,7 +38,7 @@
             "Wants to be big someday",
             "Wants to have fun",
             "Is playing pretend",
-            "Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates chagrin",
+            "Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates' chagrin",
             "Is fighting sleep... and failing",
             "Knocked {PRONOUN/m_c/self} over with a sneeze",
             "Wants a badger ride",
@@ -188,8 +188,8 @@
     {
         "id": "guarding_kit",
         "thoughts": [
-            "Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously",
-            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp",
+            "Guards the fresh-kill pile to make sure each Clanmate only takes one piece",
+            "Demands to be allowed to guard camp",
             "Wants to guard the nursery"
 	],
         "main_trait_constraint": [
@@ -798,5 +798,34 @@
         "random_living_status": [
             "starclan"
         ]
+    },
+    {
+        "id": "kittencough_gen",
+        "thoughts": [
+            "Wants to play but can't stop coughing",
+            "Is unusually willing to nap",
+            "Is trembling after a coughing fit",
+            "Is rattling when breathing",
+            "Just wants to stay in {PRONOUN/m_c/poss} nest"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "kittencough"
+            ]
+        }
+    },
+    {
+        "id": "kit_to_pregnant_cat",
+        "thoughts": [
+            "Wants r_c to let {PRONOUN/m_c/object} name one of the kits",
+            "Can't wait for r_c's kits to be here so they can play together",
+            "Is asking r_c question after question about being pregnant",
+            "Asks r_c if {PRONOUN/r_c/subject}'ll have twelve kits since {PRONOUN/r_c/poss} belly is so big"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "pregnant"
+            ]
+        }
     }
 ]

@@ -570,16 +570,16 @@ class RelationshipScreen(Screens):
             if related:
                 relation = ""
                 if self.the_cat.is_uncle_aunt(self.inspect_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.genderalign in ("female", "trans female"):
                         relation = "general.niece"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.genderalign in ("male", "trans male"):
                         relation = "general.nephew"
                     else:
                         relation = "general.siblings_child"
                 elif self.inspect_cat.is_uncle_aunt(self.the_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.genderalign in ("female", "trans female"):
                         relation = "general.aunt"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.genderalign in ("male", "trans male"):
                         relation = "general.uncle"
                     else:
                         relation = "general.parents_sibling"

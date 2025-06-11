@@ -193,7 +193,7 @@
                 "herbs": ["raspberry", "blackberry"]
             },
             {
-                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangle bramble of blackberry and raspberry.",
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangled bramble of blackberry and raspberry.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["raspberry", "blackberry"]
@@ -271,7 +271,7 @@
                 ]
             },
             {
-                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangle bramble of blackberry and raspberry. app1 holds {PRONOUN/app1/poss} breath, hoping {PRONOUN/app1/poss} mentor comes down unscathed.",
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangled bramble of blackberry and raspberry. app1 holds {PRONOUN/app1/poss} breath, hoping {PRONOUN/app1/poss} mentor comes down unscathed.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["raspberry", "blackberry"],
@@ -412,7 +412,7 @@
                 ]
             },
             {
-                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangle bramble of blackberry and raspberry. The rest of the patrol gingerly follows {PRONOUN/p_l/poss} lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangled bramble of blackberry and raspberry. The rest of the patrol gingerly follows {PRONOUN/p_l/poss} lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["raspberry", "blackberry"],

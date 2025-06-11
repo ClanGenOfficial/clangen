@@ -67,7 +67,7 @@
   },
   {
     "event_id": "fst_misc_sparrow_accessory",
-    "location": ["any"],
+    "location": ["forest"],
     "season": ["newleaf","greenleaf"],
     "subtype": ["accessory"],
     "weight": 20,

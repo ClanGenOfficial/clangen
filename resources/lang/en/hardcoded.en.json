@@ -101,8 +101,6 @@
         "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{injury} but will forever be marked by a scar.",
         "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
         "move_on_dead_mate": "m_c will always love r_c, but has decided to move on.",
-        "breakup_angy": "m_c and r_c had a huge fight and broke up.",
-        "breakup_chill": "m_c and r_c broke up.",
         "expired_prey": {
             "one": "A piece of freshkill expired and was removed from the freshkill pile.",
             "many": "%{count} pieces of prey expired and were removed from the freshkill pile."

@@ -191,28 +191,28 @@ def cats_fulfill_thought_constraints(
         if living_status and living_status != "living":
             return False
 
-    if (
-        random_cat
-        and random_cat.outside
-        and random_cat.status
-        not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]
-    ):
-        outside_status = "lost"
-    elif random_cat and random_cat.outside:
-        outside_status = "outside"
-    else:
-        outside_status = "clancat"
-    if random_cat and "random_outside_status" in thought:
-        if outside_status not in thought["random_outside_status"]:
-            return False
-    else:
         if (
-            main_cat.outside
-        ):  # makes sure that outsiders can get thoughts all the time
-            pass
+            random_cat
+            and random_cat.outside
+            and random_cat.status
+            not in ("kittypet", "loner", "rogue", "former Clancat", "exiled")
+        ):
+            outside_status = "lost"
+        elif random_cat and random_cat.outside:
+            outside_status = "outside"
         else:
-            if outside_status and outside_status != "clancat" and len(r_c_in) > 0:
+            outside_status = "clancat"
+        if random_cat and "random_outside_status" in thought:
+            if outside_status not in thought["random_outside_status"]:
                 return False
+        else:
+            if (
+                main_cat.outside
+            ):  # makes sure that outsiders can get thoughts all the time
+                pass
+            else:
+                if outside_status and outside_status != "clancat" and len(r_c_in) > 0:
+                    return False
 
         if "has_injuries" in thought:
             if "m_c" in thought["has_injuries"]:

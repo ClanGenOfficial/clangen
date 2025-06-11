@@ -5,6 +5,8 @@ If you would like to contribute writing, art, or a major gameplay feature, pleas
 
 For quality-of-life changes, bug fixes, minor enhancements (such as balance and customization), or any open issues, feel free to make a Pull Request. You do not have to be on the Discord or have a developer role on the Discord to submit a Pull Request.
 
+**IF YOU ARE DOING A BUG FIX**: Before fixing the bug, please check if it also exists in the latest release branch. If it does, please branch off the release branch and target the release branch in your PR. You do not have to make another PR of the same bugfix to the development branch; the release branch is periodically merged back into development.
+
 ## Installation
 The following instructions assume that you have already [installed Python](https://www.python.org/downloads/), and the working directory in your terminal is `clangen`.
 
