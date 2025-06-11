@@ -168,7 +168,7 @@ class Patrol:
             else:
                 self.patrol_statuses[cat.status] = 1
 
-            # Combined patrol_statuses catagories
+            # Combined patrol_statuses categories
             if cat.status in ("medicine cat", "medicine cat apprentice"):
                 if "healer cats" in self.patrol_statuses:
                     self.patrol_statuses["healer cats"] += 1

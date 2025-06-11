@@ -2199,7 +2199,7 @@ def event_text_adjust(
             )
 
     # new_cats (include pre version)
-    if "n_c" in text:
+    if "n_c" in text and new_cats:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
                 pronoun = localization.get_new_pronouns("default plural")[0]

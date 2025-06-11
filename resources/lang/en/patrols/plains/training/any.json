@@ -2893,7 +2893,7 @@
         "biome": ["plains"],
         "season": ["any"],
         "tags": [],
-        "types": [],
+        "types": ["training"],
         "patrol_art": "pln_train_session1",
         "min_cats": 3,
         "max_cats": 6,
