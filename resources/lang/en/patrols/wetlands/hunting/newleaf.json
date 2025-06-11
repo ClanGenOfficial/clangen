@@ -2211,7 +2211,7 @@
         "patrol_id": "wtlnd_hunt_redvixen1",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -2402,7 +2402,7 @@
         "patrol_id": "wtlnd_hunt_redvixen2",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -2565,7 +2565,7 @@
         "patrol_id": "wtlnd_hunt_redvixen12",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -2713,7 +2713,7 @@
         "patrol_id": "wtlnd_hunt_grayvixen1",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -2876,7 +2876,7 @@
         "patrol_id": "wtlnd_hunt_grayvixen2",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -3039,7 +3039,7 @@
         "patrol_id": "wtlnd_hunt_grayvixen3",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -3420,7 +3420,7 @@
         "patrol_id": "wtlnd_hunt_redvixen10",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -3611,7 +3611,7 @@
         "patrol_id": "wtlnd_hunt_redvixen11",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -3774,7 +3774,7 @@
         "patrol_id": "wtlnd_hunt_redvixen3",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -3922,7 +3922,7 @@
         "patrol_id": "wtlnd_hunt_grayvixen10",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -4085,7 +4085,7 @@
         "patrol_id": "wtlnd_hunt_grayvixen11",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -4248,7 +4248,7 @@
         "patrol_id": "wtlnd_hunt_grayvixen12",
         "biome": ["wetlands"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -4622,6 +4622,88 @@
                     "reg_death": "While scavenging alone, m_c was killed by a predator {PRONOUN/m_c/subject} didn't see.",
                     "lead_death": "taken by an alligator"
                 }
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_highwater1",
+        "biome": ["wetlands"],
+        "season": ["newleaf"],
+        "types": ["hunting"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "While out on a solo hunt, p_l notices that the water level within c_n's territory is higher than usual. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} it's dangerous to continue on alone, but p_l can practically <i>taste</i> the prey already.",
+        "decline_text": "p_l considers it for a bit, but eventually decides that it's just too risky to go any further. Perhaps {PRONOUN/p_l/subject}'ll try again later with an actual patrol.",
+        "weight": 20,
+        "chance_of_success": 50,
+        "tags": [],
+        "success_outcomes": [
+            {
+                "text": "p_l carefully traipses along the water's edge, making sure to avoid wading in too far whenever {PRONOUN/p_l/subject} <i>{VERB/p_l/do/does}</i> enter the water. And {PRONOUN/p_l/poss} tenacity pays off! It's not the haul to end all hauls, but it'll surely be enough to fill a hungry belly or two.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "p_l carefully traipses along the water's edge, making sure to avoid wading in too far whenever {PRONOUN/p_l/subject} <i>{VERB/p_l/do/does}</i> enter the water. And p_l's tenacity pays off with a catch so big that {PRONOUN/p_l/subject} almost can't haul it back to camp!",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["large"]
+            },
+            {
+                "text": "A little water has never stopped p_l before, and by StarClan, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not about to let it stop {PRONOUN/p_l/object} now! Without a second thought, p_l dives in and starts swimming, only returning to land once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} caught an absolute <i>feast</i> of prey.",
+                "exp": 20,
+                "weight": 40,
+                "stat_skill": ["SWIMMER,2"],
+                "prey": ["large"]
+            }
+
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l eventually decides to continue on and... it doesn't go well. By the time p_l decides to cut {PRONOUN/p_l/poss} losses and head back to camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} tired, cranky, and soaked to the bone with absolutely nothing to show for it.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "p_l eventually decides to continue on and... it doesn't go well. By the time {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to cut {PRONOUN/p_l/poss} losses and head back to camp, p_l's tired, cranky, and soaked to the bone with absolutely nothing to show for it. Even worse, {PRONOUN/p_l/subject} fell in earlier and now {PRONOUN/p_l/subject} can't stop hacking up water no matter what {PRONOUN/p_l/subject} {VERB/p_l/do/does}.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["water in their lungs"],
+                        "scars": []
+                    }
+                ]
+            },
+            {
+                "text": "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! With a boastful swagger, p_l continues on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into a (thankfully) shallow part of the water. Thank StarClan nobody saw that.",
+                "exp": 0,
+                "weight": 40,
+                "stat_trait": [
+                    "arrogant",
+                    "bold",
+                    "confident"
+                ]
+            },
+            {
+                "text": "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! With a boastful swagger, p_l continues on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into the water. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} eventually able to pull {PRONOUN/p_l/self} out of the water, but not without inhaling quite a bit.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "arrogant",
+                    "bold",
+                    "confident"
+                ],
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["water in their lungs"],
+                        "scars": []
+                    }
+                ]
             }
         ]
     }

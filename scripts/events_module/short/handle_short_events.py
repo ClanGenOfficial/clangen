@@ -194,6 +194,19 @@ class HandleShortEvents:
         # create new cats (must happen here so that new cats can be included in further changes)
         self.handle_new_cats()
 
+        # remove cats from involved_cats if theyre supposed to be
+        if self.chosen_event.r_c and "r_c" in self.chosen_event.exclude_involved:
+            self.involved_cats.remove(self.random_cat.ID)
+        if "m_c" in self.chosen_event.exclude_involved:
+            self.involved_cats.remove(self.main_cat.ID)
+
+        for n_c in self.new_cats:
+            nc_index = self.new_cats.index(n_c)
+            n_c_string = f"n_c:{nc_index}"
+            if n_c_string in self.chosen_event.exclude_involved:
+                if n_c[0].ID in self.involved_cats:
+                    self.involved_cats.remove(str(n_c[0].ID))
+
         # give accessory
         if self.chosen_event.new_accessory:
             if self.handle_accessories() is False:
@@ -341,7 +354,11 @@ class HandleShortEvents:
                         Cat, i18n.t("defaults.event_dead_outsider"), main_cat=cat
                     )
                 elif cat.outside:
-                    if "unknown" in attribute_list:
+                    n_c_index = self.new_cats.index([cat])
+                    if (
+                        f"n_c:{n_c_index}" in self.chosen_event.exclude_involved or
+                        "unknown" in attribute_list
+                    ):
                         extra_text = ""
                     else:
                         extra_text = event_text_adjust(
@@ -389,7 +406,7 @@ class HandleShortEvents:
             acc_list.extend(pelts.collars)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ("WILD", "PLANT", "COLLAR"):
                 acc_list.append(acc)
 
         if hasattr(self.main_cat.pelt, "scars"):
@@ -807,7 +824,7 @@ class HandleShortEvents:
 
         # adjust entire herb store
         if supply_type == "all_herb":
-            for herb, count in herb_supply.entire_supply.copy():
+            for (herb, count) in herb_supply.entire_supply.items():
                 herb_list.append(herb)
                 if adjustment == "reduce_full":
                     herb_supply.remove_herb(herb, count)

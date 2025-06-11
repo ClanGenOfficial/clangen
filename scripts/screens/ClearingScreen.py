@@ -92,7 +92,7 @@ class ClearingScreen(Screens):
                     self.focus_info.kill()
                 if self.focus_name:
                     self.focus_name.kill()
-            elif event.ui_element in [self.feed_one_button, self.feed_max_button]:
+            elif event.ui_element in (self.feed_one_button, self.feed_max_button):
                 amount = 1
                 if event.ui_element == self.feed_max_button:
                     nutrition_info = game.clan.freshkill_pile.nutrition_info
@@ -795,7 +795,7 @@ class ClearingScreen(Screens):
                     "number": str(n),
                     "status": i18n.t(
                         f"general.{status}",
-                        count=2 if status not in ["leader", "deputy"] else 1,
+                        count=2 if status not in ("leader", "deputy") else 1,
                     ),
                     "prey": i18n.t("screens.clearing.prey_count", count=amount),
                 },

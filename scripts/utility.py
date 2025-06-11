@@ -48,7 +48,7 @@ def get_alive_clan_queens(living_cats):
     living_kits = [
         cat
         for cat in living_cats
-        if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]
+        if not (cat.dead or cat.outside) and cat.status in ("kitten", "newborn")
     ]
 
     queen_dict = {}
@@ -205,15 +205,13 @@ def get_random_moon_cat(
     random_cat = None
 
     # grab list of possible random cats
-    possible_r_c = list(
-        filter(
-            lambda c: not c.dead
-                      and not c.exiled
-                      and not c.outside
-                      and (c.ID != main_cat.ID),
-            Cat.all_cats.values(),
-        )
-    )
+    possible_r_c = [
+        cat for cat in Cat.all_cats.values()
+        if not cat.dead
+        and not cat.exiled
+        and not cat.outside
+        and (cat.ID != main_cat.ID)
+    ]
 
     if possible_r_c:
         random_cat = choice(possible_r_c)
@@ -234,7 +232,7 @@ def get_random_moon_cat(
         if mentor_app_modifier:
             if (
                     main_cat.status
-                    in ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+                    in ("apprentice", "mediator apprentice", "medicine cat apprentice")
                     and main_cat.mentor
                     and not int(random() * 3)
             ):
@@ -378,11 +376,11 @@ def create_new_cat_block(
         # TODO: make this less ugly
         for index in mate_indexes:
             if index in in_event_cats:
-                if in_event_cats[index] in [
+                if in_event_cats[index] in (
                     "apprentice",
                     "medicine cat apprentice",
                     "mediator apprentice",
-                ]:
+                ):
                     print("Can't give apprentices mates")
                     continue
 
@@ -426,7 +424,7 @@ def create_new_cat_block(
         if not match:
             continue
 
-        if match.group(1) in [
+        if match.group(1) in (
             "newborn",
             "kitten",
             "elder",
@@ -436,7 +434,7 @@ def create_new_cat_block(
             "mediator",
             "medicine cat apprentice",
             "medicine cat",
-        ]:
+        ):
             status = match.group(1)
             break
 
@@ -463,12 +461,12 @@ def create_new_cat_block(
             break
 
     if status and not age:
-        if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
+        if status in ("apprentice", "mediator apprentice", "medicine cat apprentice"):
             age = randint(
                 Cat.age_moons[CatAgeEnum.ADOLESCENT][0],
                 Cat.age_moons[CatAgeEnum.ADOLESCENT][1],
             )
-        elif status in ["warrior", "mediator", "medicine cat"]:
+        elif status in ("warrior", "mediator", "medicine cat"):
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
@@ -490,7 +488,7 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if status not in ["kitten", "newborn"]:
+        if status not in ("kitten", "newborn"):
             status = "kitten"
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
@@ -538,7 +536,7 @@ def create_new_cat_block(
         chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
-    if status in ["kitten", "newborn"]:
+    if status in ("kitten", "newborn"):
         thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -617,10 +615,10 @@ def create_new_cat_block(
         new_cats = create_new_cat(
             Cat,
             new_name=new_name,
-            loner=cat_type in ["loner", "rogue"],
+            loner=cat_type in ("loner", "rogue"),
             kittypet=cat_type == "kittypet",
             other_clan=cat_type == "former Clancat",
-            kit=False if litter else status in ["kitten", "newborn"],
+            kit=(not litter) and status in ("kitten", "newborn"),
             # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -931,10 +929,10 @@ def create_new_cat(
         if not int(random() * chance):
             possible_conditions = []
             for condition in PERMANENT:
-                if (kit or litter) and PERMANENT[condition]["congenital"] not in [
+                if (kit or litter) and PERMANENT[condition]["congenital"] not in (
                     "always",
                     "sometimes",
-                ]:
+                ):
                     continue
                 # next part ensures that a kit won't get a condition that takes too long to reveal
                 age = new_cat.moons
@@ -946,10 +944,10 @@ def create_new_cat(
             if possible_conditions:
                 chosen_condition = choice(possible_conditions)
                 born_with = False
-                if PERMANENT[chosen_condition]["congenital"] in [
+                if PERMANENT[chosen_condition]["congenital"] in (
                     "always",
                     "sometimes",
-                ]:
+                ):
                     born_with = True
 
                     new_cat.get_permanent_condition(chosen_condition, born_with)
@@ -962,9 +960,9 @@ def create_new_cat(
                         ] = -2
 
                 # assign scars
-                if chosen_condition in ["lost a leg", "born without a leg"]:
+                if chosen_condition in ("lost a leg", "born without a leg"):
                     new_cat.pelt.scars.append("NOPAW")
-                elif chosen_condition in ["lost their tail", "born without a tail"]:
+                elif chosen_condition in ("lost their tail", "born without a tail"):
                     new_cat.pelt.scars.append("NOTAIL")
 
         if outside:
@@ -2201,7 +2199,7 @@ def event_text_adjust(
             )
 
     # new_cats (include pre version)
-    if "n_c" in text:
+    if "n_c" in text and new_cats:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
                 pronoun = localization.get_new_pronouns("default plural")[0]
@@ -2454,12 +2452,13 @@ def ceremony_text_adjust(
     return adjust_text, random_living_parent, random_dead_parent
 
 
-def get_pronouns(Cat: "Cat"):
+def get_pronouns(cat: "Cat"):
     """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
-    if Cat.pronouns == {}:
-        return localization.get_new_pronouns("default")
+    if not cat.pronouns:
+        # since get_new_pronouns returns a list with length 1
+        return localization.get_new_pronouns("default")[0]
     else:
-        return choice(Cat.pronouns)
+        return choice(cat.pronouns)
 
 
 def shorten_text_to_fit(

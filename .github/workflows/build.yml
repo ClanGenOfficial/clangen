@@ -17,13 +17,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-20.04
-            artifact_name: Clangen_Linux64_glibc2.31+.tar.xz
-            python_version: "3.11"
-            python_arch: "x64"
-            itch_channel: linux64_glibc_231
-            api_artifact_name: linux2.31
-            
           - os: ubuntu-22.04
             artifact_name: Clangen_Linux64_glibc2.35+.tar.xz
             python_version: "3.11"
@@ -202,7 +195,7 @@ jobs:
             -F "fileBundle=@${BUNDLE_NAME}.sig" \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butler@clangen
+        uses: jdno/setup-butler@v1
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}

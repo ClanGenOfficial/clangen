@@ -45,7 +45,7 @@ from ..ui.icon import Icon
 #               assigns backstory blurbs to the backstory                      #
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
-    if cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
+    if cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
         return event_text_adjust(
             Cat,
             i18n.t(
@@ -250,12 +250,12 @@ class ProfileScreen(Screens):
             # when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 # if the cat is anything besides m/f/transm/transf then turn them back to cis
-                if self.the_cat.genderalign not in [
+                if self.the_cat.genderalign not in (
                     "female",
                     "trans female",
                     "male",
                     "trans male",
-                ]:
+                ):
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
                         self.the_cat.gender == "male"
@@ -281,7 +281,7 @@ class ProfileScreen(Screens):
                 ):
                     self.the_cat.genderalign = "trans male"
                 # if the cat is trans then set them to nonbinary
-                elif self.the_cat.genderalign in ["trans female", "trans male"]:
+                elif self.the_cat.genderalign in ("trans female", "trans male"):
                     self.the_cat.genderalign = "nonbinary"
                 self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
                 self.clear_profile()
@@ -617,7 +617,7 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-                self.the_cat.status in ["medicine cat", "medicine cat apprentice"]
+                self.the_cat.status in ("medicine cat", "medicine cat apprentice")
                 or self.the_cat.is_ill()
                 or self.the_cat.is_injured()
         ):
@@ -664,7 +664,7 @@ class ProfileScreen(Screens):
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
-        elif self.the_cat.status in ["mediator", "mediator apprentice"]:
+        elif self.the_cat.status in ("mediator", "mediator apprentice"):
             self.profile_elements["mediation"] = UIImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",
@@ -797,7 +797,7 @@ class ProfileScreen(Screens):
         if (
                 the_cat.outside
                 and not the_cat.exiled
-                and the_cat.status not in ["kittypet", "loner", "rogue", "former Clancat"]
+                and the_cat.status not in ("kittypet", "loner", "rogue", "former Clancat")
         ):
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
         elif the_cat.exiled:
@@ -893,7 +893,7 @@ class ProfileScreen(Screens):
 
         # BACKSTORY
         bs_text = "this should not appear"
-        if the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
+        if the_cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
             bs_text = the_cat.status
         else:
             if the_cat.backstory:
@@ -906,18 +906,18 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-                game.clan.game_mode in ["expanded", "cruel season"]
+                game.clan.game_mode in ("expanded", "cruel season")
                 and the_cat.is_alive()
                 and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
-            if str(the_cat.status) not in [
+            if str(the_cat.status) not in (
                 "loner",
                 "kittypet",
                 "rogue",
                 "former Clancat",
                 "exiled",
-            ]:
+            ):
                 nutr = None
                 if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1181,14 +1181,14 @@ class ProfileScreen(Screens):
         if self.the_cat.backstory:
             bs_blurb = i18n.t(f"cat.backstories.{self.the_cat.backstory}")
         if (
-                self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]
+                self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat")
                 and self.the_cat.dead
         ):
             bs_blurb = i18n.t(
                 "cat.backstories.cats_outside_the_clan_dead",
                 status=i18n.t(f"general.{self.the_cat.status}", count=1),
             )
-        elif self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
+        elif self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
             bs_blurb = i18n.t(
                 "cat.backstories.cats_outside_the_clan",
                 status=i18n.t(f"general.{self.the_cat.status}", count=1),
@@ -1200,12 +1200,12 @@ class ProfileScreen(Screens):
         else:
             text = i18n.t("cat.backstories.unknown", name=self.the_cat.name)
 
-        if not self.the_cat.dead and self.the_cat.status not in [
+        if not self.the_cat.dead and self.the_cat.status not in (
             "kittypet",
             "loner",
             "rogue",
             "former Clancat",
-        ]:
+        ):
             beginning = History.get_beginning(self.the_cat)
             if beginning:
                 text += " "
@@ -1289,20 +1289,20 @@ class ProfileScreen(Screens):
         """
         returns adjusted apprenticeship history text (mentor influence and app ceremony)
         """
-        if self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
+        if self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
             return ""
 
         mentor_influence = History.get_mentor_influence(self.the_cat)
         influence_history = ""
 
         # First, just list the mentors:
-        if self.the_cat.status in ["kitten", "newborn"]:
+        if self.the_cat.status in ("kitten", "newborn"):
             influence_history = i18n.t("cat.history.training_kit")
-        elif self.the_cat.status in [
+        elif self.the_cat.status in (
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
-        ]:
+        ):
             influence_history = i18n.t("cat.history.training_app")
         else:
             valid_former_mentors = [
@@ -1736,11 +1736,11 @@ class ProfileScreen(Screens):
         # forgive me. Since I don't know how else to do this,
         # we just kind of brute-force it
         for cond in all_illness_injuries:
-            for i in [
+            for i in (
                 "conditions.injuries.",
                 "conditions.illnesses.",
                 "conditions.permanent_conditions.",
-            ]:
+            ):
                 temp = i18n.t(i + cond[0])
                 if temp != i + cond[0]:
                     cond[0] = temp
@@ -2101,7 +2101,7 @@ class ProfileScreen(Screens):
 
             if (
                     self.the_cat.age
-                    not in ["young adult", "adult", "senior adult", "senior"]
+                    not in ("young adult", "adult", "senior adult", "senior")
                     or self.the_cat.exiled
                     or self.the_cat.outside
             ):
