@@ -1277,8 +1277,8 @@ class Pelt:
 
                 else:
                     # Normal generation
-                    if self.tortiebase in ("singlestripe", "smoke", "single"):
-                        self.tortiepattern = choice(
+                    if self.tortie_base in ("singlestripe", "smoke", "single"):
+                        self.tortie_pattern = choice(
                             [
                                 "tabby",
                                 "mackerel",
@@ -1685,7 +1685,7 @@ def _describe_torties(cat, color_name, short=False) -> [str, str]:
             "rosette",
             "speckled",
         ):
-            base = f"cat.pelts.{cat.pelt.tortiebase.capitalize()}_long"  # the extra space is intentional
+            base = f"cat.pelts.{cat.pelt.tortie_base.capitalize()}_long"  # the extra space is intentional
         else:
             base = ""
         return base, color_name

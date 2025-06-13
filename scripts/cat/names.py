@@ -240,7 +240,7 @@ class Name:
             if named_after_pelt:
                 if (
                     pelt in ("Tortie", "Calico")
-                    and tortiepattern in self.names_dict["tortie_pelt_suffixes"]
+                    and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
                 ):
                     self.suffix = random.choice(
                         self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
