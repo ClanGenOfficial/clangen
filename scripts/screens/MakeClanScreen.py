@@ -483,7 +483,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["random_background"]:
             # Select a random biome and background
             self.biome_selected = self.random_biome_selection()
-            if self.biome_selected in ("Forest", "Mountainous"):
+            if self.biome_selected in ("Forest", "Mountainous", "Beach"):
                 self.selected_camp_tab = randrange(1, 5)
             else:
                 self.selected_camp_tab = randrange(1, 4)
@@ -1256,7 +1256,7 @@ class MakeClanScreen(Screens):
     def random_quick_start(self):
         self.clan_name = self.random_clan_name()
         self.biome_selected = self.random_biome_selection()
-        if self.biome_selected in ("Forest", "Mountainous"):
+        if self.biome_selected in ("Forest", "Mountainous", "Beach"):
             self.selected_camp_tab = randrange(1, 5)
         else:
             self.selected_camp_tab = randrange(1, 4)

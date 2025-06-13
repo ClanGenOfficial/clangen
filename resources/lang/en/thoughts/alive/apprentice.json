@@ -265,6 +265,24 @@
         ]
     },
     {
+        "id": "warrior_apprentice_to_alive_nonwar_app",
+        "thoughts": [
+            "Can't understand why r_c doesn't want to learn to fight",
+            "Shows r_c some defensive moves",
+            "Promises r_c that once {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a warrior, {PRONOUN/m_c/subject}'ll take care of {PRONOUN/r_c/object}"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "warrior_apprentice_to_alive_elder",
         "thoughts": [
             "Is dreading having to clean the elders' den later",
@@ -305,6 +323,7 @@
             "Hopes r_c will be an apprentice with {PRONOUN/m_c/object}",
             "Is letting r_c see the apprentices' den",
             "Takes time to play with r_c in between training sessions",
+            "Is scolded by a warrior for wrestling with r_c",
             "Tries to teach r_c something new... but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not listening",
             "Wonders if all kits are gross or if it's just r_c"
         ],
@@ -929,6 +948,58 @@
             "refugee4",
             "tragedy_survivor2",
             "guided2"
+        ]
+    },
+    {
+        "id": "formerly_kittypet_warrior_apprentice",
+        "thoughts": [
+            "Hopes to become a warrior soon so others will stop teasing {PRONOUN/m_c/object} about being a kittypet",
+            "Hopes to earn some fierce scars to hide {PRONOUN/m_c/poss} past",
+            "Trains all day long to prove {PRONOUN/m_c/self} to be as good as any other apprentice"
+        ],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "formerly_kittypet_warrior_apprentice_to_apprentice",
+        "thoughts": [
+            "Tries to prove former kittypets are just as good as Clanborn apprentices by one-upping r_c",
+            "Tries to convince r_c to slice {PRONOUN/m_c/poss} ear in hopes it'll scar"
+        ],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_backstory_constraint": [
+            "clan_founder",
+            "clanborn"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {

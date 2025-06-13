@@ -188,8 +188,8 @@
     {
         "id": "guarding_kit",
         "thoughts": [
-            "Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously",
-            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp",
+            "Guards the fresh-kill pile to make sure each Clanmate only takes one piece",
+            "Demands to be allowed to guard camp",
             "Wants to guard the nursery"
 	],
         "main_trait_constraint": [

@@ -6435,7 +6435,8 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "all apprentices": [1, 6]
+            "all apprentices": [1, 5],
+            "medicine cat": [1, 5]
         },
         "weight": 20,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",

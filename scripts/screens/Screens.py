@@ -70,7 +70,7 @@ class Screens:
             "change gender screen",
         ):
             game.last_list_forProfile = None
-            self.current_group = "clan"
+            self.current_group = "your_clan"
             self.death_status = "living"
             self.current_page = 1
 
