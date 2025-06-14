@@ -10,6 +10,7 @@ from typing import List, Tuple, Optional
 import i18n
 import pygame
 
+from scripts import constants
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
@@ -275,7 +276,7 @@ class Patrol:
         # This is for debugging purposes, load-in *ALL* the possible patrols when debug_override_patrol_stat_requirements is true. (May require longer loading time)
         if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
             leaves = ["greenleaf", "leaf-bare", "leaf-fall", "newleaf", "any"]
-            for biome in game.clan.BIOME_TYPES:
+            for biome in constants.BIOME_TYPES:
                 for leaf in leaves:
                     biome_dir = f"{biome.lower()}/"
                     self.update_resources(biome_dir, leaf)
@@ -315,7 +316,9 @@ class Patrol:
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_HOSTILE)
                     )
-                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.OTHER_CLAN)
+                    )
                     possible_patrols.extend(
                         self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
                     )
@@ -633,8 +636,18 @@ class Patrol:
             i = 0
             while not herb_filtered_patrols and i <= len(target_herbs):
                 i += 1
-                herb_filtered_patrols = [patrol for patrol in filtered_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
-                herb_romance_patrols = [patrol for patrol in romantic_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+                herb_filtered_patrols = [
+                    patrol
+                    for patrol in filtered_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
+                herb_romance_patrols = [
+                    patrol
+                    for patrol in romantic_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
 
             if herb_filtered_patrols:
                 filtered_patrols = herb_filtered_patrols

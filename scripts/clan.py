@@ -17,6 +17,7 @@ import i18n
 import pygame
 import ujson
 
+from scripts import constants
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
@@ -30,7 +31,8 @@ from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
     get_current_season,
     quit,
-    clan_symbol_sprite, get_living_clan_cat_count,
+    clan_symbol_sprite,
+    get_living_clan_cat_count,
 )  # pylint: disable=redefined-builtin
 
 
@@ -40,21 +42,6 @@ class Clan:
     TODO: Docs
 
     """
-
-    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
-
-    CAT_TYPES = [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "warrior",
-        "medicine",
-        "deputy",
-        "leader",
-        "elder",
-        "mediator",
-        "general",
-    ]
 
     leader_lives = 0
     clan_cats = []
@@ -75,15 +62,6 @@ class Clan:
         "Leaf-bare",
         "Leaf-bare",
     ]
-
-    temperament_dict = {
-        "low_social": ["cunning", "proud", "bloodthirsty"],
-        "mid_social": ["amiable", "stoic", "wary"],
-        "high_social": ["gracious", "mellow", "logical"],
-    }
-
-    with open("resources/placements.json", "r", encoding="utf-8") as read_file:
-        layouts = ujson.loads(read_file.read())
 
     age = 0
     current_season = "Newleaf"
@@ -1102,18 +1080,14 @@ class Clan:
         try:
             # load the old file path and convert the save data into current format
             if os.path.exists(old_file_path):
-                with open(
-                    old_file_path, "r", encoding="utf-8"
-                ) as save_file:
+                with open(old_file_path, "r", encoding="utf-8") as save_file:
                     herbs = ujson.load(save_file)
                     clan.herb_supply = HerbSupply()
                     clan.herb_supply.convert_old_save(herbs)
 
             # load the current file path, if it exists in save
             elif os.path.exists(current_file_path):
-                with open(
-                    current_file_path, "r", encoding="utf-8"
-                ) as save_file:
+                with open(current_file_path, "r", encoding="utf-8") as save_file:
                     herbs = ujson.load(save_file)
                     clan.herb_supply = HerbSupply(herb_supply=herbs["storage"])
                     clan.herb_supply.collected = herbs["collected"]
@@ -1134,13 +1108,12 @@ class Clan:
 
         game.safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
-            clan.herb_supply.combined_supply_dict
+            clan.herb_supply.combined_supply_dict,
         )
 
         # delete old herb save file if it exists
         if os.path.exists(get_save_dir() + f"/{game.clan.name}/herbs.json"):
             os.remove(get_save_dir() + f"/{game.clan.name}/herbs.json")
-
 
     def load_freshkill_pile(self, clan):
         """
@@ -1277,11 +1250,11 @@ class Clan:
 
         # _temperament = ['low_aggression', 'med_aggression', 'high_aggression', ]
         if 11 <= clan_sociability:
-            _temperament = self.temperament_dict["high_social"]
+            _temperament = constants.TEMPERAMENT_DICT["high_social"]
         elif 7 <= clan_sociability:
-            _temperament = self.temperament_dict["mid_social"]
+            _temperament = constants.TEMPERAMENT_DICT["mid_social"]
         else:
-            _temperament = self.temperament_dict["low_social"]
+            _temperament = constants.TEMPERAMENT_DICT["low_social"]
 
         if 11 <= clan_aggression:
             _temperament = _temperament[2]
@@ -1381,4 +1354,3 @@ class StarClan:
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
-

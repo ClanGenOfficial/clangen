@@ -5,6 +5,7 @@ import random
 import i18n
 import ujson
 
+from scripts import constants
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
@@ -145,7 +146,9 @@ class GenerateEvents:
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
-                        exclude_involved=event["exclude_involved"] if "exclude_involved" in event else [],
+                        exclude_involved=event["exclude_involved"]
+                        if "exclude_involved" in event
+                        else [],
                         history=event["history"] if "history" in event else [],
                         relationships=event["relationships"]
                         if "relationships" in event
@@ -217,7 +220,7 @@ class GenerateEvents:
         event_list = []
 
         # skip the rest of the loading if there is an unrecognised biome
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        if game.clan.biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
@@ -469,7 +472,7 @@ class GenerateEvents:
     def possible_ongoing_events(event_type=None, specific_event=None):
         event_list = []
 
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        if game.clan.biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
             )

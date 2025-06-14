@@ -23,6 +23,7 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
+from .. import constants
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -112,13 +113,13 @@ class ClanScreen(Screens):
         self.show_mute_buttons()
         self.update_camp_bg()
         game.switches["cat"] = None
-        if game.clan.biome + game.clan.camp_bg in game.clan.layouts:
-            self.layout = game.clan.layouts[game.clan.biome + game.clan.camp_bg]
+        if game.clan.biome + game.clan.camp_bg in constants.LAYOUTS:
+            self.layout = constants.LAYOUTS[game.clan.biome + game.clan.camp_bg]
         else:
-            self.layout = game.clan.layouts["default"]
+            self.layout = constants.LAYOUTS["default"]
 
         if "cat_shading" not in self.layout:
-            self.layout["cat_shading"] = game.clan.layouts["default"]["cat_shading"]
+            self.layout["cat_shading"] = constants.LAYOUTS["default"]["cat_shading"]
 
         self.choose_cat_positions()
 
