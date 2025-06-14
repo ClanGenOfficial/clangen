@@ -306,13 +306,13 @@ class GenerateEvents:
             # check for old age
             if (
                 "old_age" in event.sub_type
-                and cat.moons < game.config["death_related"]["old_age_death_start"]
+                and cat.moons < constants.CONFIG["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
                 "old_age" not in event.sub_type
-                and cat.moons > game.config["death_related"]["old_age_death_start"]
+                and cat.moons > constants.CONFIG["death_related"]["old_age_death_start"]
                 and int(random.random() * 3)
             ):
                 continue

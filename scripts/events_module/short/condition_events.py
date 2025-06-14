@@ -5,6 +5,7 @@ from typing import Dict, List
 import i18n
 import ujson
 
+from scripts import constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
@@ -287,7 +288,7 @@ class Condition_Events:
             ):
                 # CLAN FOCUS!
                 if game.clan.clan_settings.get("rest and recover"):
-                    stopping_chance = game.config["focus"]["rest and recover"][
+                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                         "illness_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -326,11 +327,7 @@ class Condition_Events:
                     illness=illness,
                 )
 
-                event_string = event_text_adjust(
-                    Cat,
-                    text=event_string,
-                    main_cat=cat
-                )
+                event_string = event_text_adjust(Cat, text=event_string, main_cat=cat)
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
@@ -406,7 +403,7 @@ class Condition_Events:
             if triggered:
                 # CLAN FOCUS!
                 if game.clan.clan_settings.get("rest and recover"):
-                    stopping_chance = game.config["focus"]["rest and recover"][
+                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                         "injury_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -497,7 +494,7 @@ class Condition_Events:
                                 possible_conditions.append(x)
                         if len(possible_conditions) > 0 and not int(
                             random.random()
-                            * game.config["condition_related"][
+                            * constants.CONFIG["condition_related"][
                                 "permanent_condition_chance"
                             ]
                         ):
@@ -1221,4 +1218,3 @@ class Condition_Events:
 
 
 Condition_Events.rebuild_strings()
-

@@ -26,6 +26,8 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
+from scripts import constants
+
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -245,9 +247,9 @@ def loading_animation(scale: float = 1):
     # Load images, adjust color
     color = pygame.Surface((200 * scale, 210 * scale))
     if game.settings["dark mode"]:
-        color.fill(game.config["theme"]["light_mode_background"])
+        color.fill(constants.CONFIG["theme"]["light_mode_background"])
     else:
-        color.fill(game.config["theme"]["dark_mode_background"])
+        color.fill(constants.CONFIG["theme"]["dark_mode_background"])
 
     images = []
     for i in range(1, 11):
@@ -271,9 +273,9 @@ def loading_animation(scale: float = 1):
         clock.tick(8)  # Loading screen is 8FPS
 
         if game.settings["dark mode"]:
-            screen.fill(game.config["theme"]["dark_mode_background"])
+            screen.fill(constants.CONFIG["theme"]["dark_mode_background"])
         else:
-            screen.fill(game.config["theme"]["light_mode_background"])
+            screen.fill(constants.CONFIG["theme"]["light_mode_background"])
 
         screen.blit(
             images[i], (x - images[i].get_width() / 2, y - images[i].get_height() / 2)

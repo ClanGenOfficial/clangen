@@ -140,8 +140,8 @@ class ClanScreen(Screens):
                 and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
                 and (
                     Cat.all_cats[x].status != "newborn"
-                    or game.config["fun"]["all_cats_are_newborn"]
-                    or game.config["fun"]["newborns_can_roam"]
+                    or constants.CONFIG["fun"]["all_cats_are_newborn"]
+                    or constants.CONFIG["fun"]["newborns_can_roam"]
                 )
             ):
                 i += 1
@@ -462,11 +462,11 @@ class ClanScreen(Screens):
             # Newborns are not meant to be placed. They are hiding.
             if (
                 Cat.all_cats[x].status == "newborn"
-                or game.config["fun"]["all_cats_are_newborn"]
+                or constants.CONFIG["fun"]["all_cats_are_newborn"]
             ):
                 if (
-                    game.config["fun"]["all_cats_are_newborn"]
-                    or game.config["fun"]["newborns_can_roam"]
+                    constants.CONFIG["fun"]["all_cats_are_newborn"]
+                    or constants.CONFIG["fun"]["newborns_can_roam"]
                 ):
                     # Free them
                     Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(

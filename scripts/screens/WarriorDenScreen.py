@@ -4,6 +4,7 @@ import pygame_gui
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts import constants
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
@@ -74,7 +75,7 @@ class WarriorDenScreen(Screens):
                         if (
                             game.clan.last_focus_change is None
                             or game.clan.last_focus_change
-                            + game.config["focus"]["duration"]
+                            + constants.CONFIG["focus"]["duration"]
                             <= game.clan.age
                         ):
                             self.save_button.enable()
@@ -321,7 +322,7 @@ class WarriorDenScreen(Screens):
             )
             moons = (
                 game.clan.last_focus_change
-                + game.config["focus"]["duration"]
+                + constants.CONFIG["focus"]["duration"]
                 - game.clan.age
             )
             moons = moons if moons > 0 else 0

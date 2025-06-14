@@ -26,6 +26,7 @@ from scripts.utility import (
     event_text_adjust,
 )
 from .Screens import Screens
+from .. import constants
 from ..cat_relations.relationship import Relationship
 from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_box import get_box, BoxStyles
@@ -402,7 +403,7 @@ class RelationshipScreen(Screens):
         self.inspect_cat = None
 
         # Keep a list of all the relations
-        if game.config["sorting"]["sort_by_rel_total"]:
+        if constants.CONFIG["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
                 self.the_cat.relationships.values(),
                 key=lambda x: sum(

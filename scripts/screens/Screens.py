@@ -8,6 +8,7 @@ from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
+from scripts import constants
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.audio import music_manager
@@ -109,11 +110,11 @@ class Screens:
         self.work_done = {}
 
         bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-        bg.fill(game.config["theme"]["light_mode_background"])
+        bg.fill(constants.CONFIG["theme"]["light_mode_background"])
         bg_dark = pygame.Surface(
             scripts.game_structure.screen_settings.game_screen_size
         )
-        bg_dark.fill(game.config["theme"]["dark_mode_background"])
+        bg_dark.fill(constants.CONFIG["theme"]["dark_mode_background"])
 
         self.game_bgs = {}
         self.fullscreen_bgs = {}
@@ -723,7 +724,7 @@ class Screens:
         # intialise the vignette strength
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
-            vignette_alpha = game.config["theme"]["fullscreen_background"][
+            vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][
                 "dark" if game.settings["dark mode"] else "light"
             ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
@@ -945,10 +946,16 @@ class Screens:
 
     def update_previous_next_cat_buttons(self):
         """Updates disabled status of previous and next cat buttons. Does nothing if the screen does not have both previous and next cat buttons."""
-        if not hasattr(self, "previous_cat_button") or not hasattr(self, "next_cat_button"):
+        if not hasattr(self, "previous_cat_button") or not hasattr(
+            self, "next_cat_button"
+        ):
             return
-        self.previous_cat_button.enable() if hasattr(self, "previous_cat") and self.previous_cat else self.previous_cat_button.disable() # pylint: disable=no-member
-        self.next_cat_button.enable() if hasattr(self, "next_cat") and self.next_cat else self.next_cat_button.disable() # pylint: disable=no-member
+        self.previous_cat_button.enable() if hasattr(
+            self, "previous_cat"
+        ) and self.previous_cat else self.previous_cat_button.disable()  # pylint: disable=no-member
+        self.next_cat_button.enable() if hasattr(
+            self, "next_cat"
+        ) and self.next_cat else self.next_cat_button.disable()  # pylint: disable=no-member
 
 
 # CAT PROFILES

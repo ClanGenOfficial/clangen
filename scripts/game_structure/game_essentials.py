@@ -1,11 +1,11 @@
 import os
 import traceback
-from ast import literal_eval
 from shutil import move as shutil_move
 
 import pygame
 import ujson
 
+from scripts import constants
 from scripts.event_class import Single_Event
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
@@ -180,7 +180,6 @@ class Game:
     # CLAN
     clan = None
     cat_class = None
-    config = {}
     prey_config = {}
 
     rpc = None
@@ -193,15 +192,15 @@ class Game:
         self.keyspressed = []
         self.switch_screens = False
 
-        with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
-            self.config = ujson.loads(read_file.read())
-
         with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())
 
-        if self.config["fun"]["april_fools"]:
-            self.config["fun"]["newborns_can_roam"] = True
-            self.config["fun"]["newborns_can_patrol"] = True
+    @property
+    def config(self):
+        import warnings
+
+        warnings.warn("Use constants.CONFIG instead", DeprecationWarning, 2)
+        return constants.CONFIG
 
     def update_game(self):
         if self.current_screen != self.switches["cur_screen"]:
@@ -598,14 +597,14 @@ class Game:
         }
 
         # Get Value
-        config_value = self.config
+        config_value = constants.CONFIG
         for key in args:
             config_value = config_value[key]
 
         # Apply war if needed
         if self.clan and self.clan.war.get("at_war", False) and args in war_effected:
             # Grabs the modifer
-            mod = self.config
+            mod = constants.CONFIG
             for key in war_effected[args]:
                 mod = mod[key]
 

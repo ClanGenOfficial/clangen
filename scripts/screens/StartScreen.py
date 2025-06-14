@@ -34,6 +34,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
+from .. import constants
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
@@ -171,7 +172,9 @@ class StartScreen(Screens):
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game.settings["dark mode"]:
             bg.fill(
-                game.config["theme"]["fullscreen_background"]["dark"]["mainmenu_tint"],
+                constants.CONFIG["theme"]["fullscreen_background"]["dark"][
+                    "mainmenu_tint"
+                ],
                 bg.get_rect(),
                 pygame.BLEND_MULT,
             )

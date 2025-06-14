@@ -20,6 +20,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from .. import constants
 from ..game_structure import image_cache
 from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
@@ -995,9 +996,9 @@ class PatrolScreen(Screens):
             ):
                 if (
                     the_cat.status == "newborn"
-                    or game.config["fun"]["all_cats_are_newborn"]
+                    or constants.CONFIG["fun"]["all_cats_are_newborn"]
                 ):
-                    if game.config["fun"]["newborns_can_patrol"]:
+                    if constants.CONFIG["fun"]["newborns_can_patrol"]:
                         self.able_cats.append(the_cat)
                 else:
                     self.able_cats.append(the_cat)

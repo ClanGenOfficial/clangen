@@ -9,11 +9,9 @@ TODO: Docs
 # pylint: enable=line-too-long
 
 import os
-import random
 import statistics
 from random import choice, randint
 
-import i18n
 import pygame
 import ujson
 
@@ -688,7 +686,7 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         game.clan.age = int(general[1])
-        if not game.config["lock_season"]:
+        if not constants.CONFIG["lock_season"]:
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season

@@ -3,6 +3,7 @@ from typing import List
 
 import i18n
 
+from scripts import constants
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
@@ -141,23 +142,25 @@ class HandleShortEvents:
             sub_types=self.sub_types,
         )
 
-        if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
+        if isinstance(
+            constants.CONFIG["event_generation"]["debug_ensure_event_id"], str
+        ):
             found = False
             for _event in final_events:
                 if (
                     _event.event_id
-                    == game.config["event_generation"]["debug_ensure_event_id"]
+                    == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
                 ):
                     final_events = [_event]
                     print(
-                        f"FOUND debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                        f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
                         f"was set as the only event option"
                     )
                     found = True
                     break
             if not found:
                 # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
-                # print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
                 #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
                 pass
         # ---------------------------------------------------------------------------- #
@@ -211,7 +214,6 @@ class HandleShortEvents:
         if self.chosen_event.new_accessory:
             if self.handle_accessories() is False:
                 return
-
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
@@ -356,8 +358,8 @@ class HandleShortEvents:
                 elif cat.outside:
                     n_c_index = self.new_cats.index([cat])
                     if (
-                        f"n_c:{n_c_index}" in self.chosen_event.exclude_involved or
-                        "unknown" in attribute_list
+                        f"n_c:{n_c_index}" in self.chosen_event.exclude_involved
+                        or "unknown" in attribute_list
                     ):
                         extra_text = ""
                     else:
@@ -418,7 +420,12 @@ class HandleShortEvents:
                     if acc in acc_list:
                         acc_list.remove(acc)
 
-        accessory_groups = [pelts.collars, pelts.head_accessories, pelts.tail_accessories, pelts.body_accessories]
+        accessory_groups = [
+            pelts.collars,
+            pelts.head_accessories,
+            pelts.tail_accessories,
+            pelts.body_accessories,
+        ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:
                 # find which accessory group it belongs to
@@ -435,7 +442,6 @@ class HandleShortEvents:
             self.main_cat.pelt.accessory.append(random.choice(acc_list))
         else:
             self.main_cat.pelt.accessory = [random.choice(acc_list)]
-
 
     def handle_transition(self):
         """
@@ -526,7 +532,7 @@ class HandleShortEvents:
         # if there's enough eligible cats, then we KILL
         if alive_count > 15:
             max_deaths = int(alive_count / 2)  # 1/2 of alive cats
-            if max_deaths > 10:  # make this into a game config setting?
+            if max_deaths > 10:  # make this into a constants.CONFIG setting?
                 max_deaths = 10  # we don't want to have massive events with a wall of names to read
             weights = []
             population = []
@@ -824,7 +830,7 @@ class HandleShortEvents:
 
         # adjust entire herb store
         if supply_type == "all_herb":
-            for (herb, count) in herb_supply.entire_supply.items():
+            for herb, count in herb_supply.entire_supply.items():
                 herb_list.append(herb)
                 if adjustment == "reduce_full":
                     herb_supply.remove_herb(herb, count)
@@ -873,13 +879,11 @@ class HandleShortEvents:
 
         if "reduce" in adjustment:
             self.herb_notice = i18n.t(
-                "screens.med_den.loss_event",
-                herbs=adjust_list_text(herb_list)
+                "screens.med_den.loss_event", herbs=adjust_list_text(herb_list)
             )
         elif "increase" in adjustment:
             self.herb_notice = i18n.t(
-                "screens.med_den.gain_event",
-                herbs=adjust_list_text(herb_list)
+                "screens.med_den.gain_event", herbs=adjust_list_text(herb_list)
             )
 
     def reset(self):

@@ -8,6 +8,7 @@ import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.game_structure.localization import get_new_pronouns
+from .. import constants
 from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -291,7 +292,7 @@ def json_load():
             raise
 
         # Save integrety checks
-        if game.config["save_load"]["load_integrity_checks"]:
+        if constants.CONFIG["save_load"]["load_integrity_checks"]:
             save_check()
 
 
