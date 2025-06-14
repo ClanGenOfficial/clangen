@@ -28,8 +28,8 @@ def load_cats():
         try:
             csv_load(Cat.all_cats)
         except FileNotFoundError as e:
-            game.switches["error_message"] = "Can't find clan_cats.json!"
-            game.switches["traceback"] = e
+            switches.error_message = "Can't find clan_cats.json!"
+            switches.traceback = e
             raise
 
 
@@ -45,12 +45,12 @@ def json_load():
         with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
-        game.switches["error_message"] = f"Can\t open {clan_cats_json_path}!"
-        game.switches["traceback"] = e
+        switches.error_message = f"Can\t open {clan_cats_json_path}!"
+        switches.traceback = e
         raise
     except ujson.JSONDecodeError as e:
-        game.switches["error_message"] = f"{clan_cats_json_path} is malformed!"
-        game.switches["traceback"] = e
+        switches.error_message = f"{clan_cats_json_path} is malformed!"
+        switches.traceback = e
         raise
 
     old_tortie_patches = convert["old_tortie_patches"]
@@ -246,7 +246,7 @@ def json_load():
             game.switches[
                 "error_message"
             ] = f"Cat{key}in clan_cats.json is missing {e}!"
-            game.switches["traceback"] = e
+            switches.traceback = e
             raise
 
     # replace cat ids with cat objects and add other needed variables
@@ -274,7 +274,7 @@ def json_load():
             game.switches[
                 "error_message"
             ] = f"There was an error loading relationships for cat #{cat}."
-            game.switches["traceback"] = e
+            switches.traceback = e
             raise
 
         cat.inheritance = Inheritance(cat)
@@ -289,7 +289,7 @@ def json_load():
             game.switches[
                 "error_message"
             ] = f"There was an error when thoughts for cat #{cat} are created."
-            game.switches["traceback"] = e
+            switches.traceback = e
             raise
 
         # Save integrety checks
@@ -298,21 +298,19 @@ def json_load():
 
 
 def csv_load(all_cats):
-    if game.switches["clan_list"][0].strip() == "":
+    if switches.clan_list[0].strip() == "":
         cat_data = ""
     else:
-        if os.path.exists(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.csv"
-        ):
+        if os.path.exists(get_save_dir() + "/" + switches.clan_list[0] + "cats.csv"):
             with open(
-                get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.csv",
+                get_save_dir() + "/" + switches.clan_list[0] + "cats.csv",
                 "r",
                 encoding="utf-8",
             ) as read_file:
                 cat_data = read_file.read()
         else:
             with open(
-                get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.txt",
+                get_save_dir() + "/" + switches.clan_list[0] + "cats.txt",
                 "r",
                 encoding="utf-8",
             ) as read_file:
@@ -479,7 +477,7 @@ def csv_load(all_cats):
         ] = "There was an error loading this clan's mentors, apprentices, relationships, or sprite info."
         for inter_cat in all_cats.values():
             # Load the mentors and apprentices after all cats have been loaded
-            game.switches["error_message"] = (
+            switches.error_message = (
                 "There was an error loading this clan's mentors/apprentices. Last cat read was "
                 + str(inter_cat)
             )
@@ -501,12 +499,12 @@ def csv_load(all_cats):
             ]  # Switch back to IDs. I don't want to risk breaking everything.
             inter_cat.former_apprentices = [a.ID for a in former_apps]
             if not inter_cat.dead:
-                game.switches["error_message"] = (
+                switches.error_message = (
                     "There was an error loading this clan's relationships. Last cat read was "
                     + str(inter_cat)
                 )
                 inter_cat.load_relationship_of_cat()
-            game.switches["error_message"] = (
+            switches.error_message = (
                 "There was an error loading a cat's sprite info. Last cat read was "
                 + str(inter_cat)
             )
@@ -523,7 +521,7 @@ def csv_load(all_cats):
                 ] = f"There was an error when relationships for cat #{the_cat} are created."
                 if the_cat.relationships is not None and len(the_cat.relationships) < 1:
                     the_cat.create_all_relationships()
-        game.switches["error_message"] = ""
+        switches.error_message = ""
 
 
 def save_check():

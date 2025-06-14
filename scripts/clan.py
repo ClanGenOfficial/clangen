@@ -252,14 +252,14 @@ class Clan:
         #    save_map(game.map_info, game.clan.name)
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
-        if game.switches["camp_bg"] is None:
+        if switches.camp_bg is None:
             random_camp_options = ["camp1", "camp2"]
             random_camp = choice(random_camp_options)
-            game.switches["camp_bg"] = random_camp
+            switches.camp_bg = random_camp
 
         # if no game mode chosen, set to Classic
-        if game.switches["game_mode"] is None:
-            game.switches["game_mode"] = "classic"
+        if switches.game_mode == "":
+            switches.game_mode = "classic"
             self.game_mode = "classic"
         # if game.switches['game_mode'] == 'cruel_season':
         #    game.settings['disasters'] = True
@@ -550,16 +550,12 @@ class Clan:
         """
 
         version_info = None
-        if os.path.exists(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.json"
-        ):
+        if os.path.exists(get_save_dir() + "/" + switches.clan_list[0] + "clan.json"):
             version_info = self.load_clan_json()
-        elif os.path.exists(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.txt"
-        ):
+        elif os.path.exists(get_save_dir() + "/" + switches.clan_list[0] + "clan.txt"):
             self.load_clan_txt()
         else:
-            game.switches["error_message"] = "There was an error loading the clan.json"
+            switches.error_message = "There was an error loading the clan.json"
 
         game.clan.load_clan_settings()
 
@@ -570,19 +566,19 @@ class Clan:
         TODO: DOCS
         """
 
-        if game.switches["clan_list"] == "":
+        if switches.clan_list == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        if game.switches["clan_list"][0].strip() == "":
+        if switches.clan_list[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        game.switches["error_message"] = "There was an error loading the clan.txt"
+        switches.error_message = "There was an error loading the clan.txt"
         with open(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.txt",
+            get_save_dir() + "/" + switches.clan_list[0] + "clan.txt",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -735,27 +731,27 @@ class Clan:
         # assigning a symbol, since this save would be too old to have a chosen symbol
         game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
 
-        game.switches["error_message"] = ""
+        switches.error_message = ""
 
     def load_clan_json(self):
         """
         TODO: DOCS
         """
         other_clans = []
-        if game.switches["clan_list"] == "":
+        if switches.clan_list == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        if game.switches["clan_list"][0].strip() == "":
+        if switches.clan_list[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
 
-        game.switches["error_message"] = "There was an error loading the clan.json"
+        switches.error_message = "There was an error loading the clan.json"
         with open(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.json",
+            get_save_dir() + "/" + switches.clan_list[0] + "clan.json",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -895,7 +891,7 @@ class Clan:
         self.load_disaster(game.clan)
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
-        game.switches["error_message"] = ""
+        switches.error_message = ""
 
         # Return Version Info.
         return {
@@ -906,10 +902,10 @@ class Clan:
 
     def load_clan_settings(self):
         if os.path.exists(
-            get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'
+            get_save_dir() + f"/{switches.clan_list[0]}/clan_settings.json"
         ):
             with open(
-                get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json',
+                get_save_dir() + f"/{switches.clan_list[0]}/clan_settings.json",
                 "r",
                 encoding="utf-8",
             ) as write_file:

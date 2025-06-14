@@ -30,6 +30,7 @@ from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
+from scripts.game_structure import switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.windows import SaveError
 from scripts.events_module.patrol.patrol import Patrol
@@ -76,7 +77,7 @@ class Events:
         game.herb_events_list = []
         game.freshkill_events_list = []
         game.mediated = []
-        game.switches["saved_clan"] = False
+        switches.saved_clan = False
         self.new_cat_invited = False
         Relation_Events.clear_trigger_dict()
         Patrol.used_patrols.clear()
@@ -986,7 +987,7 @@ class Events:
                 Condition_Events.handle_illnesses(cat)
             else:
                 Condition_Events.handle_injuries(cat)
-            game.switches["skip_conditions"].clear()
+            game.switches["switches.skip_conditions"].clear()
             if cat.dead:
                 return
             self.handle_outbreaks(cat)
@@ -1035,19 +1036,19 @@ class Events:
             if not triggered_death:
                 self.handle_illnesses_or_illness_deaths(cat)
             else:
-                game.switches["skip_conditions"].clear()
+                game.switches["switches.skip_conditions"].clear()
                 return
         else:
             triggered_death = self.handle_illnesses_or_illness_deaths(cat)
             if not triggered_death:
                 self.handle_injuries_or_general_death(cat)
             else:
-                game.switches["skip_conditions"].clear()
+                game.switches["switches.skip_conditions"].clear()
                 return
 
         self.handle_murder(cat)
 
-        game.switches["skip_conditions"].clear()
+        game.switches["switches.skip_conditions"].clear()
 
     def load_war_resources(self):
         if Events.war_lang == i18n.config.get("locale"):
@@ -1105,7 +1106,7 @@ class Events:
             else:  # try to influence the relation with warring clan
                 game.clan.war["duration"] += 1
                 choice = random.choice(["rel_up", "rel_up", "neutral", "rel_down"])
-                game.switches["war_rel_change_type"] = choice
+                switches.war_rel_change_type = choice
                 war_events = self.WAR_TXT["progress_events"][choice]
                 if enemy_clan.relations < 0:
                     enemy_clan.relations = 0

@@ -5,10 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -111,13 +108,13 @@ class ChooseAdoptiveParentScreen(Screens):
 
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switches.cat = self.previous_cat
                     self.update_current_cat_info()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switches.cat = self.next_cat
                     self.update_current_cat_info()
                 else:
                     print("invalid next cat", self.next_cat)
@@ -160,7 +157,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.selected_cat = event.ui_element.cat_object
                 self.update_selected_cat()
             elif event.ui_element in self.birth_parents_buttons.values():
-                game.switches["cat"] = event.ui_element.cat_object.ID
+                switches.cat = event.ui_element.cat_object.ID
                 self.change_screen("profile screen")
 
     def screen_switches(self):
@@ -660,7 +657,7 @@ class ChooseAdoptiveParentScreen(Screens):
     def update_current_cat_info(self, reset_selected_cat=True):
         """Updates all elements with the current cat, as well as the selected cat.
         Called when the screen switched, and whenever the focused cat is switched"""
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switches.cat]
 
         (
             self.next_cat,

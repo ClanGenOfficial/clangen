@@ -12,9 +12,11 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_offset,
-    get_text_box_theme, )
+    get_text_box_theme,
+)
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..game_structure import switches
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -58,13 +60,13 @@ class SpriteInspectScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switches.cat = self.next_cat
                     self.cat_setup()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switches.cat = self.previous_cat
                     self.cat_setup()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -225,7 +227,7 @@ class SpriteInspectScreen(Screens):
             self.cat_elements[ele].kill()
         self.cat_elements = {}
 
-        self.the_cat = Cat.fetch_cat(game.switches["cat"])
+        self.the_cat = Cat.fetch_cat(switches.cat)
 
         self.cat_elements["platform"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((120, 100), (560, 490))),
@@ -443,7 +445,6 @@ class SpriteInspectScreen(Screens):
         return super().exit_screen()
 
     def update_disabled_buttons(self):
-
         self.update_previous_next_cat_buttons()
 
         if self.displayed_life_stage >= len(self.valid_life_stages) - 1:
@@ -457,7 +458,7 @@ class SpriteInspectScreen(Screens):
             self.previous_life_stage.enable()
 
     def get_platform(self):
-        the_cat = Cat.all_cats.get(game.switches["cat"], game.clan.instructor)
+        the_cat = Cat.all_cats.get(switches.cat, game.clan.instructor)
 
         light_dark = "light"
         if game.settings["dark mode"]:

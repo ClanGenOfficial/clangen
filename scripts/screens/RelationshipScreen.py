@@ -5,7 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -79,20 +79,20 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.switch_focus_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                switches.cat = self.inspect_cat.ID
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                switches.cat = self.inspect_cat.ID
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switches.cat = self.next_cat
                     self.update_focus_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switches.cat = self.previous_cat
                     self.update_focus_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -397,7 +397,7 @@ class RelationshipScreen(Screens):
             self.focus_cat_elements[ele].kill()
         self.focus_cat_elements = {}
 
-        self.the_cat = Cat.all_cats.get(game.switches["cat"], game.clan.instructor)
+        self.the_cat = Cat.all_cats.get(switches.cat, game.clan.instructor)
 
         self.current_page = 1
         self.inspect_cat = None

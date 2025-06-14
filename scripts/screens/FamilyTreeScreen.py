@@ -5,7 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -93,19 +93,19 @@ class FamilyTreeScreen(Screens):
 
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
-                game.switches["root_cat"] = None
+                switches.root_cat = None
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
-                    game.switches["root_cat"] = Cat.all_cats[self.previous_cat]
+                    switches.cat = self.previous_cat
+                    switches.root_cat = Cat.all_cats[self.previous_cat]
                     self.exit_screen()
                     self.screen_switches()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
-                    game.switches["root_cat"] = Cat.all_cats[self.next_cat]
+                    switches.cat = self.next_cat
+                    switches.root_cat = Cat.all_cats[self.next_cat]
                     self.exit_screen()
                     self.screen_switches()
                 else:
@@ -162,7 +162,7 @@ class FamilyTreeScreen(Screens):
                 self.handle_relation_groups()
             elif event.ui_element == self.cat_elements["center_cat_image"]:
                 self.change_screen("profile screen")
-                game.switches["root_cat"] = None
+                switches.root_cat = None
             elif (
                 event.ui_element in self.relation_elements.values()
                 or self.cat_elements.values()
@@ -171,12 +171,12 @@ class FamilyTreeScreen(Screens):
                     id = event.ui_element.return_cat_id()
                     if Cat.fetch_cat(id).faded:
                         return
-                    game.switches["cat"] = id
+                    switches.cat = id
                 except AttributeError:
                     return
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                     self.change_screen("profile screen")
-                    game.switches["root_cat"] = None
+                    switches.root_cat = None
                 else:
                     self.exit_screen()
                     self.screen_switches()
@@ -242,8 +242,8 @@ class FamilyTreeScreen(Screens):
         )
         self.relation_backdrop.disable()
 
-        if not game.switches["root_cat"]:
-            game.switches["root_cat"] = Cat.all_cats[game.switches["cat"]]
+        if not switches.root_cat:
+            switches.root_cat = Cat.all_cats[switches.cat]
         self.root_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((64, 475), (226, 170))),
             pygame.transform.scale(
@@ -256,10 +256,10 @@ class FamilyTreeScreen(Screens):
         )
         self.cat_elements["root_cat_image"] = UISpriteButton(
             ui_scale(pygame.Rect((231, 575), (50, 50))),
-            game.switches["root_cat"].sprite,
-            cat_id=game.switches["root_cat"].ID,
+            switches.root_cat.sprite,
+            cat_id=switches.root_cat.ID,
             manager=MANAGER,
-            tool_tip_text=f'Started viewing tree at {game.switches["root_cat"].name}',
+            tool_tip_text=f"Started viewing tree at {switches.root_cat.name}",
         )
 
         self.root_cat_frame.disable()
@@ -312,7 +312,7 @@ class FamilyTreeScreen(Screens):
         # everything in here is held together by duct tape and hope, TAKE CARE WHEN EDITING
 
         # the cat whose family tree is being viewed
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switches.cat]
 
         self.cat_elements["screen_title"] = pygame_gui.elements.UITextBox(
             "screens.family_tree.heading",

@@ -7,7 +7,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
@@ -41,13 +41,13 @@ class RoleScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switches.cat = self.next_cat
                     self.update_selected_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switches.cat = self.previous_cat
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -90,10 +90,10 @@ class RoleScreen(Screens):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
             elif event.key == pygame.K_RIGHT:
-                game.switches["cat"] = self.next_cat
+                switches.cat = self.next_cat
                 self.update_selected_cat()
             elif event.key == pygame.K_LEFT:
-                game.switches["cat"] = self.previous_cat
+                switches.cat = self.previous_cat
                 self.update_selected_cat()
 
     def screen_switches(self):
@@ -223,7 +223,7 @@ class RoleScreen(Screens):
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
 
-        self.the_cat = Cat.fetch_cat(game.switches["cat"])
+        self.the_cat = Cat.fetch_cat(switches.cat)
         if not self.the_cat:
             return
 
@@ -326,7 +326,6 @@ class RoleScreen(Screens):
         self.update_disabled_buttons()
 
     def update_disabled_buttons(self):
-
         self.update_previous_next_cat_buttons()
 
         if game.clan.leader:

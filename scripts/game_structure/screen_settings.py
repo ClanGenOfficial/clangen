@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 import ujson
 
+from scripts.game_structure import switches
 from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
@@ -151,7 +152,7 @@ def set_display_mode(
         from scripts.screens.all_screens import AllScreens
 
         new_screen: "Screens" = getattr(
-            AllScreens, game.switches["cur_screen"].replace(" ", "_")
+            AllScreens, switches.cur_screen.replace(" ", "_")
         )
         new_screen.display_change_load(curr_variable_dict)
 

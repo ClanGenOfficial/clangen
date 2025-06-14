@@ -5,7 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -115,13 +115,13 @@ class ChooseMateScreen(Screens):
 
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switches.cat = self.previous_cat
                     self.update_current_cat_info()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switches.cat = self.next_cat
                     self.update_current_cat_info()
                 else:
                     print("invalid next cat", self.next_cat)
@@ -185,7 +185,7 @@ class ChooseMateScreen(Screens):
                 if event.ui_element.cat_object.faded:
                     return
 
-                game.switches["cat"] = event.ui_element.cat_object.ID
+                switches.cat = event.ui_element.cat_object.ID
                 self.change_screen("profile screen")
 
     def screen_switches(self):
@@ -798,7 +798,7 @@ class ChooseMateScreen(Screens):
     def update_current_cat_info(self, reset_selected_cat=True):
         """Updates all elements with the current cat, as well as the selected cat.
         Called when the screen switched, and whenever the focused cat is switched"""
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switches.cat]
         if not self.the_cat.inheritance:
             self.the_cat.create_inheritance_new_cat()
 
@@ -806,7 +806,11 @@ class ChooseMateScreen(Screens):
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats(
-            filter_func = (lambda cat: cat.age in ("young adult", "adult", "senior adult", "senior")))
+            filter_func=(
+                lambda cat: cat.age
+                in ("young adult", "adult", "senior adult", "senior")
+            )
+        )
         self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
         self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
 

@@ -7,6 +7,7 @@ import ujson
 
 from scripts import constants
 from scripts.event_class import Single_Event
+from scripts.game_structure import switches
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
@@ -75,71 +76,7 @@ class Game:
     patrolled = []
 
     # store changing parts of the game that the user can toggle with buttons
-    switches = {
-        "cat": None,
-        "clan_name": "",
-        "leader": None,
-        "deputy": None,
-        "medicine_cat": None,
-        "members": [],
-        "re_roll": False,
-        "roll_count": 0,
-        "event": None,
-        "cur_screen": "start screen",
-        "naming_text": "",
-        "timeskip": False,
-        "mate": None,
-        "choosing_mate": False,
-        "mentor": None,
-        "setting": None,
-        "save_settings": False,
-        "list_page": 1,
-        "last_screen": "start screen",
-        "events_left": 0,
-        "save_clan": False,
-        "saved_clan": False,
-        "new_leader": False,
-        "apprentice_switch": False,
-        "deputy_switch": False,
-        "clan_list": "",
-        "switch_clan": False,
-        "read_clans": False,
-        "kill_cat": False,
-        "current_patrol": [],
-        "patrol_remove": False,
-        "cat_remove": False,
-        "fill_patrol": False,
-        "patrol_done": False,
-        "error_message": "",
-        "traceback": "",
-        "apprentice": None,
-        "change_name": "",
-        "change_suffix": "",
-        "name_cat": None,
-        "biome": None,
-        "camp_bg": None,
-        "language": "en",
-        "options_tab": None,
-        "profile_tab_group": None,
-        "sub_tab_group": None,
-        "gender_align": None,
-        "show_details": False,
-        "chosen_cat": None,
-        "game_mode": "",
-        "set_game_mode": False,
-        "broke_up": False,
-        "show_info": False,
-        "patrol_chosen": "general",
-        "favorite_sub_tab": None,
-        "root_cat": None,
-        "skip_conditions": [],
-        "show_history_moons": False,
-        "fps": 30,
-        "war_rel_change_type": "neutral",
-        "disallowed_symbol_tags": [],
-        "saved_scroll_positions": {},
-        "moon_and_seasons_open": False,
-    }
+
     all_screens = {}
     cur_events = {}
     map_info = {}
@@ -203,9 +140,20 @@ class Game:
         warnings.warn("Use constants.CONFIG instead", DeprecationWarning, 2)
         return constants.CONFIG
 
+    @property
+    def switches(self):
+        """DEPRECATED: use switches.[key] instead - WILL CRASH if you try and use this anyway"""
+        import warnings
+
+        # unfortunately there's no way to let this one fix itself, so we have to CTD.
+        warnings.warn("Use switches.[key] instead", DeprecationWarning, 2)
+        raise Exception(
+            "game.switches has been deprecated, use switches.[key] instead. Unrecoverable."
+        )
+
     def update_game(self):
-        if self.current_screen != self.switches["cur_screen"]:
-            self.current_screen = self.switches["cur_screen"]
+        if self.current_screen != switches.cur_screen:
+            self.current_screen = switches.cur_screen
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []

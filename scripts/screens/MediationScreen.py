@@ -6,7 +6,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -138,9 +138,9 @@ class MediationScreen(Screens):
         self.page = 1
 
         if self.mediators:
-            if Cat.fetch_cat(game.switches["cat"]) in self.mediators:
+            if Cat.fetch_cat(switches.cat) in self.mediators:
                 self.selected_mediator = self.mediators.index(
-                    Cat.fetch_cat(game.switches["cat"])
+                    Cat.fetch_cat(switches.cat)
                 )
             else:
                 self.selected_mediator = 0
@@ -631,7 +631,9 @@ class MediationScreen(Screens):
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
-            both_adult = cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
+            both_adult = (
+                cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
+            )
             check_age = both_adult or same_age
 
             # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,

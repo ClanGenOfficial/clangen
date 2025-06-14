@@ -25,7 +25,7 @@ from pygame_gui.core import ObjectID
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game_essentials import (
     game,
@@ -383,35 +383,35 @@ class StartScreen(Screens):
         self.warning_label.text_horiz_alignment = "center"
         self.warning_label.rebuild()
 
-        if game.clan is not None and game.switches["error_message"] == "":
+        if game.clan is not None and switches.error_message == "":
             self.continue_button.enable()
         else:
             self.continue_button.disable()
 
-        if len(game.switches["clan_list"]) > 1:
+        if len(switches.clan_list) > 1:
             self.switch_clan_button.enable()
         else:
             self.switch_clan_button.disable()
 
-        if game.switches["error_message"]:
+        if switches.error_message:
             error_text = "screens.start.error_text"
             traceback_text = ""
-            if game.switches["traceback"]:
+            if switches.traceback:
                 print("Traceback:")
-                print(game.switches["traceback"])
+                print(switches.traceback)
                 traceback_text = "<br><br>" + escape(
                     "".join(
                         traceback.format_exception(
-                            game.switches["traceback"],
-                            game.switches["traceback"],
-                            game.switches["traceback"].__traceback__,
+                            switches.traceback,
+                            switches.traceback,
+                            switches.traceback.__traceback__,
                         )
                     )
                 )  # pylint: disable=line-too-long
             self.error_label.set_text(
                 error_text,
                 text_kwargs={
-                    "error": str(game.switches["error_message"]),
+                    "error": str(switches.error_message),
                     "traceback": traceback_text,
                 },
             )

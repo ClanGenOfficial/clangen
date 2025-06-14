@@ -5,10 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -85,7 +82,7 @@ class ChooseMentorScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switches.cat = self.next_cat
                     self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
@@ -94,7 +91,7 @@ class ChooseMentorScreen(Screens):
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switches.cat = self.previous_cat
                     self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
@@ -123,7 +120,7 @@ class ChooseMentorScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switches.cat]
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
         self.heading = pygame_gui.elements.UITextBox(
@@ -392,7 +389,7 @@ class ChooseMentorScreen(Screens):
             self.apprentice_details[ele].kill()
         self.apprentice_details = {}
 
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switches.cat]
         self.current_page = 1
         self.selected_mentor = Cat.fetch_cat(self.the_cat.mentor)
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
@@ -439,7 +436,10 @@ class ChooseMentorScreen(Screens):
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats(
-            filter_func = (lambda cat: cat.status in ("apprentice", "medicine cat apprentice", "mediator apprentice"))
+            filter_func=(
+                lambda cat: cat.status
+                in ("apprentice", "medicine cat apprentice", "mediator apprentice")
+            )
         )
 
         self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()

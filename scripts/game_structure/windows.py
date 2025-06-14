@@ -19,7 +19,7 @@ from pygame_gui.windows import UIMessageWindow
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import (
     get_lang_config,
@@ -115,7 +115,7 @@ class SymbolFilterWindow(UIWindow):
                 starting_height=2,
                 manager=MANAGER,
             )
-            if tag in game.switches["disallowed_symbol_tags"]:
+            if tag in switches.disallowed_symbol_tags:
                 self.checkbox[tag].change_object_id("@unchecked_checkbox")
 
             self.checkbox_text[tag] = pygame_gui.elements.UILabel(
@@ -138,9 +138,9 @@ class SymbolFilterWindow(UIWindow):
                         manager=MANAGER,
                     )
 
-                    if tag in game.switches["disallowed_symbol_tags"]:
+                    if tag in switches.disallowed_symbol_tags:
                         self.checkbox[s_tag].disable()
-                    if s_tag in game.switches["disallowed_symbol_tags"]:
+                    if s_tag in switches.disallowed_symbol_tags:
                         self.checkbox[s_tag].change_object_id("@unchecked_checkbox")
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
@@ -168,8 +168,8 @@ class SymbolFilterWindow(UIWindow):
                         if "@checked_checkbox" in object_ids:
                             self.checkbox[tag].change_object_id("@unchecked_checkbox")
                             # add tag to disallowed list
-                            if tag not in game.switches["disallowed_symbol_tags"]:
-                                game.switches["disallowed_symbol_tags"].append(tag)
+                            if tag not in switches.disallowed_symbol_tags:
+                                switches.disallowed_symbol_tags.append(tag)
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
@@ -177,20 +177,15 @@ class SymbolFilterWindow(UIWindow):
                                         "@unchecked_checkbox"
                                     )
                                     self.checkbox[s_tag].disable()
-                                    if (
-                                        s_tag
-                                        not in game.switches["disallowed_symbol_tags"]
-                                    ):
-                                        game.switches["disallowed_symbol_tags"].append(
-                                            s_tag
-                                        )
+                                    if s_tag not in switches.disallowed_symbol_tags:
+                                        switches.disallowed_symbol_tags.append(s_tag)
 
                         # handle unchecked checkboxes becoming checked
                         elif "@unchecked_checkbox" in object_ids:
                             self.checkbox[tag].change_object_id("@checked_checkbox")
                             # remove tag from disallowed list
-                            if tag in game.switches["disallowed_symbol_tags"]:
-                                game.switches["disallowed_symbol_tags"].remove(tag)
+                            if tag in switches.disallowed_symbol_tags:
+                                switches.disallowed_symbol_tags.remove(tag)
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
@@ -198,10 +193,8 @@ class SymbolFilterWindow(UIWindow):
                                         "@checked_checkbox"
                                     )
                                     self.checkbox[s_tag].enable()
-                                    if s_tag in game.switches["disallowed_symbol_tags"]:
-                                        game.switches["disallowed_symbol_tags"].remove(
-                                            s_tag
-                                        )
+                                    if s_tag in switches.disallowed_symbol_tags:
+                                        switches.disallowed_symbol_tags.remove(s_tag)
         return super().process_event(event)
 
 
@@ -316,8 +309,8 @@ class SaveCheck(UIWindow):
                 if self.isMainMenu:
                     game.is_close_menu_open = False
                     self.mm_btn.enable()
-                    game.last_screen_forupdate = game.switches["cur_screen"]
-                    game.switches["cur_screen"] = "start screen"
+                    game.last_screen_forupdate = switches.cur_screen
+                    switches.cur_screen = "start screen"
                     game.switch_screens = True
                     self.kill()
                 else:
@@ -462,8 +455,8 @@ class GameOver(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = game.switches["cur_screen"]
-                game.switches["cur_screen"] = "start screen"
+                game.last_screen_forupdate = switches.cur_screen
+                switches.cur_screen = "start screen"
                 game.switch_screens = True
                 self.kill()
             elif event.ui_element == self.not_yet_button:
@@ -789,33 +782,34 @@ class PronounCreation(UIWindow):
         config = get_lang_config()["pronouns"]
 
         self.dropdowns["conju_label"] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((-50, 130), (100, 32))),
-                "windows.conju",
-                object_id="#text_box_30_horizcenter_spacing_95",
-                container=self.elements["core_container"],
-                anchors={"centerx": "centerx"},
-            )
+            ui_scale(pygame.Rect((-50, 130), (100, 32))),
+            "windows.conju",
+            object_id="#text_box_30_horizcenter_spacing_95",
+            container=self.elements["core_container"],
+            anchors={"centerx": "centerx"},
+        )
 
         self.dropdowns["gender_label"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((-50, 5), (100, 32))),
             "windows.gender",
             object_id="#text_box_30_horizcenter_spacing_95",
             container=self.elements["core_container"],
-            anchors={"top_target": self.dropdowns["conju_label"],
-                     "centerx": "centerx"},
+            anchors={"top_target": self.dropdowns["conju_label"], "centerx": "centerx"},
         )
 
         self.dropdowns["conju"] = UIDropDown(
             pygame.Rect((0, -3), (100, 32)),
             parent_text=f"windows.conju{self.conju}",
-            item_list=[f"windows.conju{i}" for i in range(1, config["conju_count"] + 1)],
+            item_list=[
+                f"windows.conju{i}" for i in range(1, config["conju_count"] + 1)
+            ],
             manager=MANAGER,
             container=self.elements["core_container"],
             anchors={
                 "left_target": self.dropdowns["gender_label"],
-                "top_target": self.heading
+                "top_target": self.heading,
             },
-            starting_selection=[f"windows.conju{self.conju}"]
+            starting_selection=[f"windows.conju{self.conju}"],
         )
         self.dropdowns["gender"] = UIDropDown(
             pygame.Rect((0, 34), (100, 32)),
@@ -825,9 +819,9 @@ class PronounCreation(UIWindow):
             container=self.elements["core_container"],
             anchors={
                 "left_target": self.dropdowns["gender_label"],
-                "top_target": self.heading
+                "top_target": self.heading,
             },
-            starting_selection=[f"windows.gender{self.gender}"]
+            starting_selection=[f"windows.gender{self.gender}"],
         )
 
         text_inputs = list(self.pronoun_template.keys())
@@ -902,7 +896,6 @@ class PronounCreation(UIWindow):
         )
 
     def process_event(self, event):
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 game.all_screens["change gender screen"].exit_screen()
@@ -1340,7 +1333,7 @@ class UpdateAvailablePopup(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
                 self.x = UpdateWindow(
-                    game.switches["cur_screen"], self.announce_restart_callback
+                    switches.cur_screen, self.announce_restart_callback
                 )
                 self.kill()
             elif (
@@ -1368,7 +1361,7 @@ class UpdateAvailablePopup(UIWindow):
 
     def announce_restart_callback(self):
         self.x.kill()
-        y = AnnounceRestart(game.switches["cur_screen"])
+        y = AnnounceRestart(switches.cur_screen)
         y.update(1)
 
 

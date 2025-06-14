@@ -18,6 +18,7 @@ from scripts.events_module.event_filters import (
 )
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
+from scripts.game_structure import switches
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     get_living_clan_cat_count,
@@ -419,7 +420,7 @@ class GenerateEvents:
                 # during a war we want to encourage the clans to have positive events
                 # when the overall war notice was positive
                 if "war" in event.sub_type:
-                    rel_change_type = game.switches["war_rel_change_type"]
+                    rel_change_type = switches.war_rel_change_type
                     if (
                         event.other_clan["changed"] < 0
                         and rel_change_type != "rel_down"

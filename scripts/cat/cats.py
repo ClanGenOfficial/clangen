@@ -34,7 +34,7 @@ from scripts.conditions import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
@@ -1032,10 +1032,10 @@ class Cat:
     def load_history(self):
         """Load this cat's history"""
         try:
-            if game.switches["clan_name"] != "":
-                clanname = game.switches["clan_name"]
+            if switches.clan_name != "":
+                clanname = switches.clan_name
             else:
-                clanname = game.switches["clan_list"][0]
+                clanname = switches.clan_list[0]
         except IndexError:
             print("WARNING: History failed to load, no Clan in game.switches?")
             return
@@ -1525,9 +1525,9 @@ class Cat:
         """Generates a thought for the cat, which displays on their profile."""
         all_cats = self.all_cats
         other_cat = choice(list(all_cats.keys()))
-        game_mode = game.switches["game_mode"]
-        biome = game.switches["biome"]
-        camp = game.switches["camp_bg"]
+        game_mode = switches.game_mode
+        biome = switches.biome
+        camp = switches.camp_bg
         try:
             season = game.clan.current_season
         except Exception:
@@ -2215,10 +2215,10 @@ class Cat:
     def save_condition(self):
         # save conditions for each cat
         clanname = None
-        if game.switches["clan_name"] != "":
-            clanname = game.switches["clan_name"]
-        elif len(game.switches["clan_name"]) > 0:
-            clanname = game.switches["clan_list"][0]
+        if switches.clan_name != "":
+            clanname = switches.clan_name
+        elif len(switches.clan_name) > 0:
+            clanname = switches.clan_list[0]
         elif game.clan is not None:
             clanname = game.clan.name
 
@@ -2248,10 +2248,10 @@ class Cat:
         game.safe_save(condition_file_path, conditions)
 
     def load_conditions(self):
-        if game.switches["clan_name"] != "":
-            clanname = game.switches["clan_name"]
+        if switches.clan_name != "":
+            clanname = switches.clan_name
         else:
-            clanname = game.switches["clan_list"][0]
+            clanname = switches.clan_list[0]
 
         condition_directory = get_save_dir() + "/" + clanname + "/conditions/"
         condition_cat_directory = condition_directory + self.ID + "_conditions.json"
@@ -2748,10 +2748,10 @@ class Cat:
         game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
     def load_relationship_of_cat(self):
-        if game.switches["clan_name"] != "":
-            clanname = game.switches["clan_name"]
+        if switches.clan_name != "":
+            clanname = switches.clan_name
         else:
-            clanname = game.switches["clan_list"][0]
+            clanname = switches.clan_list[0]
 
         relation_directory = get_save_dir() + "/" + clanname + "/relationships/"
         relation_cat_directory = relation_directory + self.ID + "_relations.json"
@@ -3144,9 +3144,7 @@ class Cat:
             return
 
         try:
-            clan = (
-                game.switches["clan_list"][0] if game.clan is None else game.clan.name
-            )
+            clan = switches.clan_list[0] if game.clan is None else game.clan.name
 
             with open(
                 get_save_dir() + "/" + clan + "/faded_cats/" + cat + ".json",
@@ -3162,7 +3160,7 @@ class Cat:
             with open(
                 get_save_dir()
                 + "/"
-                + game.switches["clan_list"][0]
+                + switches.clan_list[0]
                 + "/faded_cats/"
                 + cat
                 + ".json",
