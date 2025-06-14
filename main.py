@@ -27,6 +27,7 @@ from importlib import reload
 from importlib.util import find_spec
 
 from scripts.game_structure import switches, constants
+from scripts.game_structure.game.save_load import read_clans
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -221,7 +222,7 @@ def load_data():
     # load in the spritesheets
     sprites.load_all()
 
-    clan_list = game.read_clans()
+    clan_list = read_clans()
     if clan_list:
         switches.clan_list = clan_list
         try:

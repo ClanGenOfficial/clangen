@@ -23,7 +23,7 @@ from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure import switches, constants
-from scripts.game_structure.game.save_load import safe_save
+from scripts.game_structure.game.save_load import safe_save, save_clanlist, read_clans
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -232,8 +232,8 @@ class Clan:
             other_clan = OtherClan(name=other_clan_name)
             self.all_clans.append(other_clan)
         self.save_clan()
-        game.save_clanlist(self.name)
-        switches.clan_list = game.read_clans()
+        save_clanlist(self.name)
+        switches.clan_list = read_clans()
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
         if switches.camp_bg is None:
@@ -421,7 +421,7 @@ class Clan:
         """
         TODO: DOCS
         """
-        game.save_clanlist(clan)
+        save_clanlist(clan)
         quit(savesettings=False, clearevents=True)
 
     def save_clan(self):
@@ -1038,9 +1038,7 @@ class Clan:
         else:
             disaster = {}
 
-        safe_save(
-            f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster
-        )
+        safe_save(f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster)
 
     def load_herb_supply(self, clan):
         """

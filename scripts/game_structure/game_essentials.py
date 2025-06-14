@@ -137,81 +137,6 @@ class Game:
         self.clicked = False
         self.keyspressed = []
 
-    def read_clans(self):
-        """with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
-            clan_list = read_file.read()
-            if_clans = len(clan_list)
-        if if_clans > 0:
-            clan_list = clan_list.split('\n')
-            clan_list = [i.strip() for i in clan_list if i]  # Remove empty and whitespace
-            return clan_list
-        else:
-            return None"""
-        # All of the above is old code
-        # Now, we want clanlist.txt to contain ONLY the name of the Clan that is currently loaded
-        # We will get the list of clans from the saves folder
-        # each Clan has its own folder, and the name of the folder is the name of the clan
-        # so we can just get a list of all the folders in the saves folder
-
-        # First, we need to make sure the saves folder exists
-        if not os.path.exists(get_save_dir()):
-            os.makedirs(get_save_dir())
-            print("Created saves folder")
-            return None
-
-        # Now we can get a list of all the folders in the saves folder
-        clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
-
-        # the Clan specified in saves/clanlist.txt should be first in the list
-        # so we can load it automatically
-
-        if os.path.exists(get_save_dir() + "/clanlist.txt"):
-            with open(get_save_dir() + "/clanlist.txt", "r", encoding="utf-8") as f:
-                loaded_clan = f.read().strip().splitlines()
-                if loaded_clan:
-                    loaded_clan = loaded_clan[0]
-                else:
-                    loaded_clan = None
-            os.remove(get_save_dir() + "/clanlist.txt")
-            if loaded_clan:
-                safe_save(get_save_dir() + "/currentclan.txt", loaded_clan)
-        elif os.path.exists(get_save_dir() + "/currentclan.txt"):
-            with open(get_save_dir() + "/currentclan.txt", "r", encoding="utf-8") as f:
-                loaded_clan = f.read().strip()
-        else:
-            loaded_clan = None
-
-        if loaded_clan and loaded_clan in clan_list:
-            clan_list.remove(loaded_clan)
-            clan_list.insert(0, loaded_clan)
-
-        # Now we can return the list of clans
-        if not clan_list:
-            print("No clans found")
-            return None
-        return clan_list
-
-    def save_clanlist(self, loaded_clan=None):
-        """clans = []
-        if loaded_clan:
-            clans.append(f"{loaded_clan}\n")
-
-        for clan_name in self.switches['clan_list']:
-            if clan_name and clan_name != loaded_clan:
-                clans.append(f"{clan_name}\n")
-
-        if clans:
-            with open(get_save_dir() + '/clanlist.txt', 'w') as f:
-                f.writelines(clans)"""
-        if loaded_clan:
-            if os.path.exists(get_save_dir() + "/clanlist.txt"):
-                # we don't need clanlist.txt anymore
-                os.remove(get_save_dir() + "/clanlist.txt")
-            safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
-        else:
-            if os.path.exists(get_save_dir() + "/currentclan.txt"):
-                os.remove(get_save_dir() + "/currentclan.txt")
-
     def save_settings(self, currentscreen=None):
         """Save user settings for later use"""
         if os.path.exists(get_save_dir() + "/settings.txt"):
@@ -336,9 +261,7 @@ class Game:
             # SAVE TO ITS OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
             cat_data = inter_cat.get_save_dict(faded=True)
 
-            safe_save(
-                f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data
-            )
+            safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
 
             # Remove the cat from the active cats lists
             self.clan.remove_cat(cat)
