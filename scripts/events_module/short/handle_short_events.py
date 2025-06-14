@@ -3,10 +3,8 @@ from typing import List
 
 import i18n
 
-from scripts import constants
-from scripts.game_structure import localization
+from scripts.game_structure import localization, constants
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship

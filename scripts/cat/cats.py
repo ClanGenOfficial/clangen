@@ -14,7 +14,6 @@ from typing import Dict, List, Any, Union, Callable
 import i18n
 import ujson  # type: ignore
 
-from scripts import constants
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -30,11 +29,10 @@ from scripts.conditions import (
     PermanentCondition,
     get_amount_cat_for_one_medic,
     medicine_cats_can_cover_clan,
-    amount_clanmembers_covered,
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache, switches, constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir

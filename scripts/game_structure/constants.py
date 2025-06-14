@@ -1,6 +1,23 @@
 import ujson
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
+
+SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
+SEASON_CALENDAR = [
+    "Newleaf",
+    "Newleaf",
+    "Newleaf",
+    "Greenleaf",
+    "Greenleaf",
+    "Greenleaf",
+    "Leaf-fall",
+    "Leaf-fall",
+    "Leaf-fall",
+    "Leaf-bare",
+    "Leaf-bare",
+    "Leaf-bare",
+]
+
 TEMPERAMENT_DICT = {
     "low_social": ["cunning", "proud", "bloodthirsty"],
     "mid_social": ["amiable", "stoic", "wary"],

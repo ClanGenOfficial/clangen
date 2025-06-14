@@ -20,7 +20,6 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts import constants
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -28,7 +27,7 @@ from scripts.game_structure.localization import (
 )
 
 logger = logging.getLogger(__name__)
-from scripts.game_structure import image_cache, localization, switches
+from scripts.game_structure import image_cache, localization, switches, constants
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names
@@ -282,7 +281,7 @@ def get_current_season():
     if index > 11:
         index = index - 12
 
-    game.clan.current_season = game.clan.seasons[index]
+    game.clan.current_season = constants.SEASON_CALENDAR[index]
 
     return game.clan.current_season
 

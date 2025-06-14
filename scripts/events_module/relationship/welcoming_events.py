@@ -4,7 +4,7 @@ from random import choice
 
 import i18n
 
-from scripts import constants
+from scripts.game_structure import constants
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game

@@ -13,7 +13,6 @@ import traceback
 
 import i18n
 
-from scripts import constants
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
@@ -30,7 +29,7 @@ from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.game_structure import switches
+from scripts.game_structure import switches, constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.windows import SaveError
 from scripts.events_module.patrol.patrol import Patrol

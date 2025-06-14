@@ -8,8 +8,7 @@ import random
 
 import ujson
 
-from scripts import constants
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import constants
 from scripts.housekeeping.datadir import get_save_dir
 
 

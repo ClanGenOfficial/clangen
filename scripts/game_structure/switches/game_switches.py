@@ -34,7 +34,7 @@ def reset_switches():
     clan_name = ""
     cur_screen = "start screen"
     saved_clan = False
-    clan_list: List = []
+    clan_list = []
     error_message = ""
     traceback = None
 

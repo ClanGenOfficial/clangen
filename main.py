@@ -26,8 +26,7 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
-from scripts import constants
-from scripts.game_structure import switches
+from scripts.game_structure import switches, constants
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -319,6 +318,7 @@ cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 fps = switches.fps
+music_manager.check_music("start screen")
 while 1:
     time_delta = clock.tick(fps) / 1000.0
 
@@ -339,7 +339,10 @@ while 1:
         ):
             pass
         else:
-            game.all_screens[game.current_screen].handle_event(event)
+            # ...shouldn't this be `switches.cur_screen`?
+            getattr(AllScreens, game.current_screen.replace(" ", "_")).handle_event(
+                event
+            )
             sound_manager.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
@@ -393,8 +396,8 @@ while 1:
     # update
     game.update_game()
     if game.switch_screens:
-        game.all_screens[game.last_screen_forupdate].exit_screen()
-        game.all_screens[game.current_screen].screen_switches()
+        getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
+        getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
     if (
         not music_manager.audio_disabled

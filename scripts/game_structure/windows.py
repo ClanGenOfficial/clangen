@@ -1228,7 +1228,7 @@ class AnnounceRestart(UIWindow):
 
 
 class UpdateAvailablePopup(UIWindow):
-    def __init__(self, last_screen, show_checkbox: bool = False):
+    def __init__(self, show_checkbox: bool = False):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 230))),
             window_display_title="Update available",
@@ -1236,7 +1236,6 @@ class UpdateAvailablePopup(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.last_screen = last_screen
 
         self.begin_update_title = UIImageButton(
             ui_scale(pygame.Rect((97, 15), (200, 40))),
@@ -1366,7 +1365,7 @@ class UpdateAvailablePopup(UIWindow):
 
 
 class ChangelogPopup(UIWindow):
-    def __init__(self, last_screen):
+    def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((150, 150), (500, 400))),
             window_display_title="Changelog",
@@ -1375,7 +1374,6 @@ class ChangelogPopup(UIWindow):
         )
         self.set_blocking(True)
 
-        self.last_screen = last_screen
         self.changelog_popup_title = UITextBoxTweaked(
             "windows.whats_new",
             ui_scale(pygame.Rect((0, 10), (500, -1))),

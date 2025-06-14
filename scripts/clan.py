@@ -15,7 +15,6 @@ from random import choice, randint
 import pygame
 import ujson
 
-from scripts import constants
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.history import History
 from scripts.cat.names import names
@@ -23,7 +22,7 @@ from scripts.cat.sprites import sprites
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
-from scripts.game_structure import switches
+from scripts.game_structure import switches, constants
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -47,20 +46,6 @@ class Clan:
     starclan_cats = []
     darkforest_cats = []
     unknown_cats = []
-    seasons = [
-        "Newleaf",
-        "Newleaf",
-        "Newleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Leaf-bare",
-        "Leaf-bare",
-    ]
 
     age = 0
     current_season = "Newleaf"
@@ -259,12 +244,10 @@ class Clan:
         if switches.game_mode == "":
             switches.game_mode = "classic"
             self.game_mode = "classic"
-        # if game.switches['game_mode'] == 'cruel_season':
-        #    game.settings['disasters'] = True
 
         # set the starting season
-        season_index = self.seasons.index(self.starting_season)
-        self.current_season = self.seasons[season_index]
+        season_index = constants.SEASON_CALENDAR.index(self.starting_season)
+        self.current_season = constants.SEASON_CALENDAR[season_index]
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
@@ -682,7 +665,7 @@ class Clan:
             game.clan.post_initialization_functions()
         game.clan.age = int(general[1])
         if not constants.CONFIG["lock_season"]:
-            game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+            game.clan.current_season = constants.SEASON_CALENDAR[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season
         game.clan.leader_lives, game.clan.leader_predecessors = int(

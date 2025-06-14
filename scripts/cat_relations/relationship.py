@@ -3,7 +3,7 @@ from random import choice
 
 import i18n
 
-from scripts import constants
+from scripts.game_structure import constants
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     rel_fulfill_rel_constraints,

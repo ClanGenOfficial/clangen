@@ -5,7 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache, switches, constants
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -23,10 +23,8 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_blit,
     ui_scale_offset,
-    event_text_adjust,
 )
 from .Screens import Screens
-from .. import constants
 from ..cat_relations.relationship import Relationship
 from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_box import get_box, BoxStyles

@@ -11,7 +11,7 @@ import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache, switches, constants
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -24,7 +24,6 @@ from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
-from .. import constants
 from ..cat.sprites import sprites
 from ..game_structure.screen_settings import MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow

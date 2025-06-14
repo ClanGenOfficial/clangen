@@ -4,8 +4,7 @@ import pygame
 import pygame_gui
 
 import scripts.game_structure.screen_settings
-from scripts import constants
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton

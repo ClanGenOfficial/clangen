@@ -18,14 +18,13 @@ import subprocess
 import traceback
 from html import escape
 
-import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache, switches, constants
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game_essentials import (
     game,
@@ -34,7 +33,6 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
-from .. import constants
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
@@ -97,7 +95,7 @@ class StartScreen(Screens):
                 # game.switches['error_message'] = ''
                 # game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
-                UpdateAvailablePopup(game.switches["last_screen"])
+                UpdateAvailablePopup()
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
             elif event.ui_element == self.social_buttons["discord_button"]:
@@ -340,9 +338,7 @@ class StartScreen(Screens):
                                 show_popup = False
 
                     if show_popup:
-                        UpdateAvailablePopup(
-                            game.switches["last_screen"], show_checkbox=True
-                        )
+                        UpdateAvailablePopup(show_checkbox=True)
 
                 has_checked_for_update = True
 
@@ -364,7 +360,7 @@ class StartScreen(Screens):
                         show_changelog = False
 
             if show_changelog:
-                ChangelogPopup(game.switches["last_screen"])
+                ChangelogPopup()
                 with open(
                     f"{get_cache_dir()}/changelog_popup_shown", "w", encoding="utf-8"
                 ) as write_file:

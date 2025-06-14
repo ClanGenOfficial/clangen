@@ -5,7 +5,6 @@ import random
 import i18n
 import ujson
 
-from scripts import constants
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
@@ -18,7 +17,7 @@ from scripts.events_module.event_filters import (
 )
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
-from scripts.game_structure import switches
+from scripts.game_structure import switches, constants
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     get_living_clan_cat_count,

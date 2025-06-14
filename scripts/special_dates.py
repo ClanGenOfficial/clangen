@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Dict, Tuple, Union, List
 
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
 
 # fixing year to 2000 so we can use date comparison functions.

@@ -5,9 +5,8 @@ from shutil import move as shutil_move
 import pygame
 import ujson
 
-from scripts import constants
 from scripts.event_class import Single_Event
-from scripts.game_structure import switches
+from scripts.game_structure import switches, constants
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 

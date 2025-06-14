@@ -4,7 +4,7 @@ from random import choice, shuffle
 
 import i18n.config
 
-from scripts import constants
+from scripts.game_structure import constants
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (

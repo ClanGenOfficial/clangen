@@ -7,11 +7,9 @@ from os.path import exists as path_exists
 from random import choice, randint, choices
 from typing import List, Tuple, Optional
 
-import i18n
 import pygame
 
-from scripts import constants
-from scripts.game_structure import localization
+from scripts.game_structure import localization, constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.clan import Clan
