@@ -138,7 +138,7 @@ class Game:
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
         "saved_scroll_positions": {},
-        "moon&season_open": False,
+        "moon_and_seasons_open": False,
     }
     all_screens = {}
     cur_events = {}
@@ -146,7 +146,7 @@ class Game:
 
     # SETTINGS
     settings = {}
-    settings["moon&season_open"] = False
+    settings["moon_and_seasons_open"] = False
     setting_lists = {}
 
     debug_settings = {
@@ -197,6 +197,7 @@ class Game:
 
     @property
     def config(self):
+        """DEPRECATED: use constants.CONFIG instead"""
         import warnings
 
         warnings.warn("Use constants.CONFIG instead", DeprecationWarning, 2)
@@ -371,8 +372,6 @@ class Game:
         for key, value in settings_data.items():
             if key in self.settings:
                 self.settings[key] = value
-
-        self.switches["language"] = self.settings["language"]
 
     def switch_setting(self, setting_name):
         """Call this function to change a setting given in the parameter by one to the right on it's list"""
@@ -561,7 +560,7 @@ class Game:
             pass
 
     def get_config_value(self, *args):
-        """Fetches a value from the self.config dictionary. Pass each key as a
+        """Fetches a value from the config dictionary. Pass each key as a
         separate argument, in the same order you would access the dictionary.
         This function will apply war modifiers if the clan is currently at war."""
 
@@ -613,7 +612,7 @@ class Game:
         return config_value
 
 
-game = Game()
+game: Game = Game()
 
 if not os.path.exists(get_save_dir() + "/settings.txt"):
     os.makedirs(get_save_dir(), exist_ok=True)

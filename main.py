@@ -27,6 +27,7 @@ from importlib import reload
 from importlib.util import find_spec
 
 from scripts import constants
+from scripts.game_structure import switches
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -223,7 +224,7 @@ def load_data():
 
     clan_list = game.read_clans()
     if clan_list:
-        game.switches["clan_list"] = clan_list
+        switches.clan_list = clan_list
         try:
             load_cats()
             version_info = clan_class.load_clan()
@@ -232,11 +233,9 @@ def load_data():
             scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
-            if not game.switches["error_message"]:
-                game.switches[
-                    "error_message"
-                ] = "There was an error loading the cats file!"
-                game.switches["traceback"] = e
+            if switches.error_message is None:
+                switches.error_message = "There was an error loading the cats file!"
+                switches.traceback = e
 
     finished_loading = True
 
@@ -319,9 +318,9 @@ AllScreens.start_screen.screen_switches()
 cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
-
+fps = switches.fps
 while 1:
-    time_delta = clock.tick(game.switches["fps"]) / 1000.0
+    time_delta = clock.tick(fps) / 1000.0
 
     if game.settings["custom cursor"]:
         if pygame.mouse.get_cursor() == disabled_cursor:
@@ -346,7 +345,7 @@ while 1:
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
             if (
-                game.switches["cur_screen"]
+                switches.cur_screen
                 in (
                     "start screen",
                     "switch clan screen",
@@ -358,7 +357,7 @@ while 1:
             ):
                 quit(savesettings=False)
             else:
-                SaveCheck(game.switches["cur_screen"], False, None)
+                SaveCheck(switches.cur_screen, False, None)
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -382,7 +381,7 @@ while 1:
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
-                        AllScreens, game.switches["cur_screen"].replace(" ", "_")
+                        AllScreens, switches.cur_screen.replace(" ", "_")
                     ),
                     show_confirm_dialog=False,
                 )

@@ -321,10 +321,10 @@ class Screens:
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            if game.switches["moon&season_open"]:
-                game.switches["moon&season_open"] = False
+            if game.switches["moon_and_seasons_open"]:
+                game.switches["moon_and_seasons_open"] = False
             else:
-                game.switches["moon&season_open"] = True
+                game.switches["moon_and_seasons_open"] = True
             self.update_moon_and_season()
         elif event.ui_element == Screens.menu_buttons["dens"]:
             self.update_dens()
@@ -569,7 +569,7 @@ class Screens:
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if game.switches["moon&season_open"]:
+            if game.switches["moon_and_seasons_open"]:
                 if cls.name == "events screen":
                     cls.close_moon_and_season()
                 else:

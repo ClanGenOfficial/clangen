@@ -8,6 +8,7 @@ import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.game_structure.localization import get_new_pronouns
+from . import switches
 from .. import constants
 from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
@@ -34,7 +35,7 @@ def load_cats():
 
 def json_load():
     all_cats = []
-    clanname = game.switches["clan_list"][0]
+    clanname = switches.clan_list[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
     with open(
         f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"

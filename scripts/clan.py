@@ -23,6 +23,7 @@ from scripts.cat.sprites import sprites
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
+from scripts.game_structure import switches
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -246,7 +247,7 @@ class Clan:
             self.all_clans.append(other_clan)
         self.save_clan()
         game.save_clanlist(self.name)
-        game.switches["clan_list"] = game.read_clans()
+        switches.clan_list = game.read_clans()
         # if map_available:
         #    save_map(game.map_info, game.clan.name)
 
