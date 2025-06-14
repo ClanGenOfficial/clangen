@@ -954,7 +954,7 @@ class Cat:
         self.all_cats[self.ID] = self
 
         # If we have it sorted by rank, we also need to re-sort
-        if game.sort_type == "rank" and resort:
+        if switches.sort_type == "rank" and resort:
             Cat.sort_cats()
 
     def rank_change_traits_skill(self, mentor):
@@ -3206,21 +3206,21 @@ class Cat:
             given_list = []
         if not given_list:
             given_list = Cat.all_cats_list
-        if game.sort_type == "age":
+        if switches.sort_type == "age":
             given_list.sort(key=lambda x: Cat.get_adjusted_age(x))
-        elif game.sort_type == "reverse_age":
+        elif switches.sort_type == "reverse_age":
             given_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
-        elif game.sort_type == "id":
+        elif switches.sort_type == "id":
             given_list.sort(key=lambda x: int(x.ID))
-        elif game.sort_type == "reverse_id":
+        elif switches.sort_type == "reverse_id":
             given_list.sort(key=lambda x: int(x.ID), reverse=True)
-        elif game.sort_type == "rank":
+        elif switches.sort_type == "rank":
             given_list.sort(
                 key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True
             )
-        elif game.sort_type == "exp":
+        elif switches.sort_type == "exp":
             given_list.sort(key=lambda x: x.experience, reverse=True)
-        elif game.sort_type == "death":
+        elif switches.sort_type == "death":
             given_list.sort(key=lambda x: -1 * int(x.dead_for))
 
         return
@@ -3228,15 +3228,15 @@ class Cat:
     @staticmethod
     def insert_cat(c: Cat):
         try:
-            if game.sort_type == "age":
+            if switches.sort_type == "age":
                 bisect.insort(
                     Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x)
                 )
-            elif game.sort_type == "reverse_age":
+            elif switches.sort_type == "reverse_age":
                 bisect.insort(
                     Cat.all_cats_list, c, key=lambda x: -1 * Cat.get_adjusted_age(x)
                 )
-            elif game.sort_type == "rank":
+            elif switches.sort_type == "rank":
                 bisect.insort(
                     Cat.all_cats_list,
                     c,
@@ -3245,13 +3245,13 @@ class Cat:
                         -1 * Cat.get_adjusted_age(x),
                     ),
                 )
-            elif game.sort_type == "exp":
+            elif switches.sort_type == "exp":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: x.experience)
-            elif game.sort_type == "id":
+            elif switches.sort_type == "id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
-            elif game.sort_type == "reverse_id":
+            elif switches.sort_type == "reverse_id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
-            elif game.sort_type == "death":
+            elif switches.sort_type == "death":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.dead_for))
         except (TypeError, NameError):
             # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
@@ -3272,7 +3272,7 @@ class Cat:
         total age, rather than age at death"""
         if cat.dead:
             if constants.CONFIG["sorting"]["sort_rank_by_death"]:
-                if game.sort_type == "rank":
+                if switches.sort_type == "rank":
                     return cat.dead_for
                 else:
                     if constants.CONFIG["sorting"]["sort_dead_by_total_age"]:

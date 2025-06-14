@@ -24,10 +24,11 @@ war_rel_change_type: str = "neutral"
 disallowed_symbol_tags: List = []
 saved_scroll_positions: Dict = {}
 moon_and_seasons_open: bool = False
+sort_type: str = "rank"
 
 
 def reset_switches():
-    global cat, clan_name, cur_screen, saved_clan, clan_list, error_message, traceback, biome, camp_bg, game_mode, favorite_sub_tab, root_cat, skip_conditions, show_history_moons, fps, war_rel_change_type, disallowed_symbol_tags, saved_scroll_positions, moon_and_seasons_open
+    global cat, clan_name, cur_screen, saved_clan, clan_list, error_message, traceback, biome, camp_bg, game_mode, favorite_sub_tab, root_cat, skip_conditions, show_history_moons, fps, war_rel_change_type, disallowed_symbol_tags, saved_scroll_positions, moon_and_seasons_open, sort_type
 
     cat = ""
     clan_name = ""
@@ -37,10 +38,11 @@ def reset_switches():
     error_message = ""
     traceback = None
 
-    # even though this is used in ONE PLACE and I think it's actually broken
+    # even though these are used in just one place and I think they're actually broken
     biome = ""
     camp_bg = ""
     game_mode = ""
+
     favorite_sub_tab = None
     root_cat = None
     skip_conditions = []
@@ -50,3 +52,4 @@ def reset_switches():
     disallowed_symbol_tags = []
     saved_scroll_positions = {}
     moon_and_seasons_open = False
+    sort_type = "rank"

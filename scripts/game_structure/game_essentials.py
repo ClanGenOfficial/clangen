@@ -16,14 +16,6 @@ pygame.init()
 
 # G A M E
 class Game:
-    max_name_length = 10
-    # max_events_displayed = 10
-    # event_scroll_ct = 0
-    # max_allegiance_displayed = 17
-    # allegiance_scroll_ct = 0
-    # max_relation_events_displayed = 10
-    # relation_scroll_ct = 0
-
     mediated = []  # Keep track of which couples have been mediated this moon.
     just_died = []  # keeps track of which cats died this moon via die()
 
@@ -37,14 +29,7 @@ class Game:
     herb_events_list = []
     freshkill_event_list = []
 
-    allegiance_list = []
-    language = {}
-    game_mode = ""
-    language_list = ["english", "spanish", "german"]
-    game_mode_list = ["classic", "expanded", "cruel season"]
-
     cat_to_fade = []
-    sub_tab_list = ["life events", "user notes"]
 
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = "start screen"
@@ -53,9 +38,6 @@ class Game:
 
     # down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
     # up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
-
-    # Sort-type
-    sort_type = "rank"
 
     choose_cats = {}
     """cat_buttons = {
@@ -78,8 +60,6 @@ class Game:
     # store changing parts of the game that the user can toggle with buttons
 
     all_screens = {}
-    cur_events = {}
-    map_info = {}
 
     # SETTINGS
     settings = {}

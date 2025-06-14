@@ -55,7 +55,7 @@ class RoleScreen(Screens):
                 if self.the_cat == game.clan.deputy:
                     game.clan.deputy = None
                 game.clan.new_leader(self.the_cat)
-                if game.sort_type == "rank":
+                if switches.sort_type == "rank":
                     Cat.sort_cats()
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:

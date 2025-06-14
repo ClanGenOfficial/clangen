@@ -155,7 +155,7 @@ class ListScreen(Screens):
                     self.choose_group_dropdown.disable_child("general.starclan")
                     self.sort_by_dropdown.new_item_list(self.dead_filter_names)
                     self.sort_by_dropdown.disable_child(
-                        f"screens.list.filter_{game.sort_type}"
+                        f"screens.list.filter_{switches.sort_type}"
                     )
 
                     # switch button text
@@ -168,13 +168,13 @@ class ListScreen(Screens):
                     self.choose_group_dropdown.new_item_list(self.living_group_names)
                     self.choose_group_dropdown.disable_child("general.your_clan")
                     self.sort_by_dropdown.new_item_list(self.dead_filter_names)
-                    if game.sort_type == "death":
-                        game.sort_type = "rank"
+                    if switches.sort_type == "death":
+                        switches.sort_type = "rank"
                     self.sort_by_dropdown.disable_child(
-                        f"screens.list.filter_{game.sort_type}"
+                        f"screens.list.filter_{switches.sort_type}"
                     )
                     self.sort_by_dropdown.parent_button.set_text(
-                        f"screens.list.filter_{game.sort_type}"
+                        f"screens.list.filter_{switches.sort_type}"
                     )
 
                     # switch button text
@@ -309,8 +309,8 @@ class ListScreen(Screens):
             starting_height=1,
         )
 
-        if self.death_status != "dead" and game.sort_type == "death":
-            game.sort_type = "rank"
+        if self.death_status != "dead" and switches.sort_type == "death":
+            switches.sort_type = "rank"
 
         # CHOOSE GROUP DROPDOWN
         self.choose_group_dropdown = UIDropDown(
@@ -343,7 +343,7 @@ class ListScreen(Screens):
 
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (63, 34))),
-            f"screens.list.filter_{game.sort_type}",
+            f"screens.list.filter_{switches.sort_type}",
             object_id=ObjectID("#filter_by_button", "@buttonstyles_dropdown"),
             container=self.cat_list_bar,
             starting_height=1,
@@ -353,7 +353,7 @@ class ListScreen(Screens):
 
         self.sort_by_dropdown = UIDropDown(
             pygame.Rect((-2, 0), (63, 34)),
-            f"screens.list.filter_{game.sort_type}",
+            f"screens.list.filter_{switches.sort_type}",
             item_list=self.living_filter_names,
             manager=MANAGER,
             container=self.cat_list_bar,
@@ -523,12 +523,12 @@ class ListScreen(Screens):
             and self.sort_by_dropdown.selected_list[0].replace(
                 "screens.list.filter_", ""
             )
-            != game.sort_type
+            != switches.sort_type
         ):
             sort_type = self.sort_by_dropdown.selected_list[0].replace(
                 "screens.list.filter_", ""
             )
-            game.sort_type = sort_type
+            switches.sort_type = sort_type
             self.sort_by_dropdown.parent_button.set_text(
                 f"screens.list.filter_{sort_type}"
             )

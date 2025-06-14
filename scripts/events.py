@@ -300,7 +300,7 @@ class Events:
         self.check_and_promote_deputy()
 
         # Resort
-        if game.sort_type != "id":
+        if switches.sort_type != "id":
             Cat.sort_cats()
 
         # Clear all the loaded event dicts.

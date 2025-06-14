@@ -248,8 +248,6 @@ class Clan:
         self.save_clan()
         game.save_clanlist(self.name)
         switches.clan_list = game.read_clans()
-        # if map_available:
-        #    save_map(game.map_info, game.clan.name)
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
         if switches.camp_bg is None:
