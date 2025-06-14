@@ -1,12 +1,12 @@
 import os
 import traceback
-from shutil import move as shutil_move
 
 import pygame
 import ujson
 
 from scripts.event_class import Single_Event
 from scripts.game_structure import switches, constants
+from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
@@ -137,64 +137,6 @@ class Game:
         self.clicked = False
         self.keyspressed = []
 
-    @staticmethod
-    def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
-        """If write_data is not a string, assumes you want this
-        in json format. If check_integrity is true, it will read back the file
-        to check that the correct data has been written to the file.
-        If not, it will simply write the data to the file with no other
-        checks."""
-
-        # If write_data is not a string,
-        if type(write_data) is not str:
-            _data = ujson.dumps(write_data, indent=4)
-        else:
-            _data = write_data
-
-        dir_name, file_name = os.path.split(path)
-
-        if check_integrity:
-            if not file_name:
-                raise RuntimeError(f"Safe_Save: No file name was found in {path}")
-
-            temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
-            i = 0
-            while True:
-                # Attempt to write to temp file
-                with open(temp_file_path, "w", encoding="utf-8") as write_file:
-                    write_file.write(_data)
-                    write_file.flush()
-                    os.fsync(write_file.fileno())
-
-                # Read the entire file back in
-                with open(temp_file_path, "r", encoding="utf-8") as read_file:
-                    _read_data = read_file.read()
-
-                if _data != _read_data:
-                    i += 1
-                    if i > max_attempts:
-                        print(
-                            f"Safe_Save ERROR: {file_name} was unable to properly save {i} times. Saving Failed."
-                        )
-                        raise RuntimeError(
-                            f"Safe_Save: {file_name} was unable to properly save {i} times!"
-                        )
-                    print(
-                        f"Safe_Save: {file_name} was incorrectly saved. Trying again."
-                    )
-                    continue
-
-                # This section is reached is the file was not nullied. Move the file and return True
-
-                shutil_move(temp_file_path, path)
-                return
-        else:
-            os.makedirs(dir_name, exist_ok=True)
-            with open(path, "w", encoding="utf-8") as write_file:
-                write_file.write(_data)
-                write_file.flush()
-                os.fsync(write_file.fileno())
-
     def read_clans(self):
         """with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
@@ -232,7 +174,7 @@ class Game:
                     loaded_clan = None
             os.remove(get_save_dir() + "/clanlist.txt")
             if loaded_clan:
-                self.safe_save(get_save_dir() + "/currentclan.txt", loaded_clan)
+                safe_save(get_save_dir() + "/currentclan.txt", loaded_clan)
         elif os.path.exists(get_save_dir() + "/currentclan.txt"):
             with open(get_save_dir() + "/currentclan.txt", "r", encoding="utf-8") as f:
                 loaded_clan = f.read().strip()
@@ -265,7 +207,7 @@ class Game:
             if os.path.exists(get_save_dir() + "/clanlist.txt"):
                 # we don't need clanlist.txt anymore
                 os.remove(get_save_dir() + "/clanlist.txt")
-            game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
+            safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
         else:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")
@@ -277,7 +219,7 @@ class Game:
 
         self.settings_changed = False
         try:
-            game.safe_save(get_save_dir() + "/settings.json", self.settings)
+            safe_save(get_save_dir() + "/settings.json", self.settings)
         except RuntimeError:
             from scripts.game_structure.windows import SaveError
 
@@ -353,7 +295,7 @@ class Game:
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + "/relationships")
 
-        self.safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
+        safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
 
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded"""
@@ -391,10 +333,10 @@ class Game:
                     + "\n--------------------------------------------------------------------------\n"
                 )
 
-            # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
+            # SAVE TO ITS OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
             cat_data = inter_cat.get_save_dict(faded=True)
 
-            self.safe_save(
+            safe_save(
                 f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data
             )
 
@@ -438,7 +380,7 @@ class Game:
         events_list = []
         for event in game.cur_events_list:
             events_list.append(event.to_dict())
-        game.safe_save(f"{get_save_dir()}/{game.clan.name}/events.json", events_list)
+        safe_save(f"{get_save_dir()}/{game.clan.name}/events.json", events_list)
 
     def add_faded_offspring_to_faded_cat(self, parent, offspring):
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
@@ -462,7 +404,7 @@ class Game:
 
         cat_info["faded_offspring"].append(offspring)
 
-        self.safe_save(
+        safe_save(
             f"{get_save_dir()}/{self.clan.name}/faded_cats/{parent}.json", cat_info
         )
 

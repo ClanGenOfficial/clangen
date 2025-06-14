@@ -23,6 +23,7 @@ from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure import switches, constants
+from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -494,7 +495,7 @@ class Clan:
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
-        game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
+        safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
         if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
             self.name != "current"
@@ -521,7 +522,7 @@ class Clan:
             ]
 
     def save_clan_settings(self):
-        game.safe_save(
+        safe_save(
             get_save_dir() + f"/{self.name}/clan_settings.json", self.clan_settings
         )
 
@@ -920,7 +921,7 @@ class Clan:
         if not game.clan.name:
             return
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{game.clan.name}/pregnancy.json", clan.pregnancy_data
         )
 
@@ -1020,7 +1021,7 @@ class Clan:
         else:
             disaster = {}
 
-        game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
+        safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
 
         if clan.secondary_disaster:
             disaster = {
@@ -1037,7 +1038,7 @@ class Clan:
         else:
             disaster = {}
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster
         )
 
@@ -1082,7 +1083,7 @@ class Clan:
         if not clan.herb_supply:
             return
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
             clan.herb_supply.combined_supply_dict,
         )
@@ -1131,7 +1132,7 @@ class Clan:
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{game.clan.name}/freshkill_pile.json",
             clan.freshkill_pile.pile,
         )
@@ -1144,7 +1145,7 @@ class Clan:
                 "percentage": nutr.percentage,
             }
 
-        game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
+        safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
 
     ## Properties
 
