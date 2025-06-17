@@ -28,8 +28,6 @@ class Game:
     herb_events_list = []
     freshkill_event_list = []
 
-    cat_to_fade = []
-
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = "start screen"
     last_screen_forProfile = "list screen"
@@ -136,36 +134,6 @@ class Game:
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-
-    def save_settings(self, currentscreen=None):
-        """Save user settings for later use"""
-        if os.path.exists(get_save_dir() + "/settings.txt"):
-            os.remove(get_save_dir() + "/settings.txt")
-
-        self.settings_changed = False
-        try:
-            safe_save(get_save_dir() + "/settings.json", self.settings)
-        except RuntimeError:
-            from scripts.game_structure.windows import SaveError
-
-            SaveError(traceback.format_exc())
-            if currentscreen is not None:
-                currentscreen.change_screen("start screen")
-
-    def load_settings(self):
-        """Load settings that user has saved from previous use"""
-
-        try:
-            with open(
-                get_save_dir() + "/settings.json", "r", encoding="utf-8"
-            ) as read_file:
-                settings_data = ujson.loads(read_file.read())
-        except FileNotFoundError:
-            return
-
-        for key, value in settings_data.items():
-            if key in self.settings:
-                self.settings[key] = value
 
     def switch_setting(self, setting_name):
         """Call this function to change a setting given in the parameter by one to the right on it's list"""
@@ -405,12 +373,6 @@ class Game:
 
 
 game: Game = Game()
-
-if not os.path.exists(get_save_dir() + "/settings.txt"):
-    os.makedirs(get_save_dir(), exist_ok=True)
-    with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
-        write_file.write("")
-game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 

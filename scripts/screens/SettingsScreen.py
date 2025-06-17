@@ -20,6 +20,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.audio import music_manager, sound_manager
+from ..game_structure.game.settings.settings import save_settings
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
@@ -137,7 +138,7 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting("fullscreen")
                 self.save_settings()
-                game.save_settings(self)
+                save_settings(self)
                 set_display_mode(
                     fullscreen=game.settings["fullscreen"], source_screen=self
                 )
@@ -154,7 +155,7 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
-                game.save_settings(self)
+                save_settings(self)
                 self.settings_changed = False
                 self.update_save_button()
                 return

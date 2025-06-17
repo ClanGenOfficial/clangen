@@ -6,7 +6,6 @@ if TYPE_CHECKING:
 # This is set up in this way so that IDEs are forced to import the entire switches module rather than make a local copy
 # of just one switch.
 
-
 cat: str = ""
 clan_name: str = ""
 cur_screen: str = "start screen"

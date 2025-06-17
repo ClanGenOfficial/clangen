@@ -23,6 +23,7 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
+from ..game_structure.game.settings.settings import save_settings
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -63,7 +64,7 @@ class ClanScreen(Screens):
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
-                    game.save_settings(self)
+                    save_settings(self)
                     switches.saved_clan = True
                     self.update_buttons_and_text()
                 except RuntimeError:
@@ -103,7 +104,7 @@ class ClanScreen(Screens):
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
-                game.save_settings(self)
+                save_settings(self)
                 switches.saved_clan = True
                 self.update_buttons_and_text()
 

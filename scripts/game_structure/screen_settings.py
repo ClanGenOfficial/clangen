@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 import ujson
 
 from scripts.game_structure import switches
+from scripts.game_structure.game.settings.settings import save_settings
 from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
@@ -120,7 +121,7 @@ def set_display_mode(
             from scripts.screens.all_screens import AllScreens
             import scripts.screens.screens_core.screens_core
 
-            game.save_settings(currentscreen=source_screen)
+            save_settings(currentscreen=source_screen)
             source_screen.exit_screen()
 
             if fullscreen:
@@ -271,7 +272,7 @@ def toggle_fullscreen(
         fullscreen = not game.settings["fullscreen"]
 
     game.settings["fullscreen"] = fullscreen
-    game.save_settings()
+    save_settings()
 
     set_display_mode(
         fullscreen=fullscreen,

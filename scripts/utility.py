@@ -20,6 +20,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.game_structure.game.settings.settings import save_settings
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -2963,7 +2964,7 @@ def quit(savesettings=False, clearevents=False):
     Quits the game, avoids a bunch of repeated lines
     """
     if savesettings:
-        game.save_settings(None)
+        save_settings(None)
     if clearevents:
         game.cur_events_list.clear()
     game.rpc.close_rpc.set()
