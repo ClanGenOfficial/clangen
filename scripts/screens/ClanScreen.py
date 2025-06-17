@@ -62,7 +62,7 @@ class ClanScreen(Screens):
                 try:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    game.save_cats()
+                    save_cats(get_switch(Switches.clan_name), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
@@ -102,7 +102,7 @@ class ClanScreen(Screens):
             elif event.key == pygame.K_SPACE:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
-                game.save_cats()
+                save_cats(get_switch(Switches.clan_name), Cat, game)
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()

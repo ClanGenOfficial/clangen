@@ -310,7 +310,7 @@ class Events:
         # autosave
         if game.clan.clan_settings.get("autosave") and game.clan.age % 5 == 0:
             try:
-                game.save_cats()
+                save_cats(get_switch(Switches.clan_name), Cat, game)
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
