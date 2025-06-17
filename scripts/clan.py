@@ -145,6 +145,21 @@ class Clan:
             if self.medicine_cat.status != "medicine cat":
                 Cat.all_cats[self.medicine_cat.ID].status_change("medicine cat")
 
+    @property
+    def settings(self):
+        """DEPRECATED: use get_clan_setting() and set_clan_setting() instead.
+        WILL CRASH if you try and use this anyway."""
+        import warnings
+
+        warnings.warn(
+            "Use get_clan_setting() and set_clan_setting() instead. WILL CRASH if you try and use this anyway.",
+            DeprecationWarning,
+            2,
+        )
+        raise Exception(
+            "clan.settings has been deprecated, use get_clan_setting() and set_clan_setting() instead. Unrecoverable."
+        )
+
     def create_clan(self):
         """
         This function is only called once a new clan is

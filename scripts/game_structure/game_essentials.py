@@ -98,6 +98,21 @@ class Game:
             "game.switches has been deprecated, use switches.[key] instead. Unrecoverable."
         )
 
+    @property
+    def settings(self):
+        """DEPRECATED: use get_setting() and set_setting() or helpers instead.
+        WILL CRASH if you try and use this anyway."""
+        import warnings
+
+        warnings.warn(
+            "Use get_setting() and set_setting() or helpers instead. WILL CRASH if you try and use this anyway.",
+            DeprecationWarning,
+            2,
+        )
+        raise Exception(
+            "game.settings has been deprecated, use get_setting() and set_setting() or helpers instead. Unrecoverable."
+        )
+
     def update_game(self):
         if self.current_screen != get_switch(Switches.cur_screen):
             self.current_screen = get_switch(Switches.cur_screen)
