@@ -14,6 +14,7 @@ from typing import Dict, List, Any, Union, Callable
 import i18n
 import ujson  # type: ignore
 
+import scripts.game_structure.localization as pronouns
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -35,7 +36,9 @@ from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache, switches, constants
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
+from scripts.game_structure.switches import get_switch
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     clamp,
@@ -45,9 +48,6 @@ from scripts.utility import (
     update_sprite,
     leader_ceremony_text_adjust,
 )
-from scripts.game_structure.localization import load_lang_resource
-
-import scripts.game_structure.localization as pronouns
 
 
 class Cat:
@@ -1031,12 +1031,12 @@ class Cat:
     def load_history(self):
         """Load this cat's history"""
         try:
-            if switches.clan_name != "":
-                clanname = switches.clan_name
+            if get_switch("clan_name") != "":
+                clanname = get_switch("clan_name")
             else:
-                clanname = switches.clan_list[0]
+                clanname = get_switch("clan_list")[0]
         except IndexError:
-            print("WARNING: History failed to load, no Clan in game.switches?")
+            print("WARNING: History failed to load, no Clan in switches?")
             return
 
         history_directory = f"{get_save_dir()}/{clanname}/history/"
@@ -2214,10 +2214,10 @@ class Cat:
     def save_condition(self):
         # save conditions for each cat
         clanname = None
-        if switches.clan_name != "":
-            clanname = switches.clan_name
-        elif len(switches.clan_name) > 0:
-            clanname = switches.clan_list[0]
+        if get_switch("clan_name") != "":
+            clanname = get_switch("clan_name")
+        elif len(get_switch("clan_list")) > 0:
+            clanname = get_switch("clan_list")[0]
         elif game.clan is not None:
             clanname = game.clan.name
 
@@ -2247,10 +2247,10 @@ class Cat:
         safe_save(condition_file_path, conditions)
 
     def load_conditions(self):
-        if switches.clan_name != "":
-            clanname = switches.clan_name
+        if get_switch("clan_name") != "":
+            clanname = get_switch("clan_name")
         else:
-            clanname = switches.clan_list[0]
+            clanname = get_switch("clan_list")[0]
 
         condition_directory = get_save_dir() + "/" + clanname + "/conditions/"
         condition_cat_directory = condition_directory + self.ID + "_conditions.json"
@@ -2747,10 +2747,10 @@ class Cat:
         safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
     def load_relationship_of_cat(self):
-        if switches.clan_name != "":
-            clanname = switches.clan_name
+        if get_switch("clan_name") != "":
+            clanname = get_switch("clan_name")
         else:
-            clanname = switches.clan_list[0]
+            clanname = get_switch("clan_list")[0]
 
         relation_directory = get_save_dir() + "/" + clanname + "/relationships/"
         relation_cat_directory = relation_directory + self.ID + "_relations.json"

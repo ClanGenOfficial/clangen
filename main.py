@@ -28,6 +28,7 @@ from importlib.util import find_spec
 
 from scripts.game_structure import switches, constants
 from scripts.game_structure.game.save_load import read_clans
+from scripts.game_structure.switches import get_switch
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -340,7 +341,7 @@ while 1:
         ):
             pass
         else:
-            # ...shouldn't this be `switches.cur_screen`?
+            # todo ...shouldn't this be `get_switch("cur_screen")`?
             getattr(AllScreens, game.current_screen.replace(" ", "_")).handle_event(
                 event
             )
@@ -349,7 +350,7 @@ while 1:
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
             if (
-                switches.cur_screen
+                get_switch("cur_screen")
                 in (
                     "start screen",
                     "switch clan screen",
@@ -361,7 +362,7 @@ while 1:
             ):
                 quit(savesettings=False)
             else:
-                SaveCheck(switches.cur_screen, False, None)
+                SaveCheck(get_switch("cur_screen"), False, None)
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -385,7 +386,7 @@ while 1:
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
-                        AllScreens, switches.cur_screen.replace(" ", "_")
+                        AllScreens, get_switch("cur_screen").replace(" ", "_")
                     ),
                     show_confirm_dialog=False,
                 )

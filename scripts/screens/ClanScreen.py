@@ -7,7 +7,7 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, switches, constants
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -24,7 +24,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.game.settings.settings import save_settings
-from ..game_structure.switches import set_switch
+from ..game_structure.switches import set_switch, get_switch
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -66,7 +66,7 @@ class ClanScreen(Screens):
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
                     save_settings(self)
-                    switches.saved_clan = True
+                    set_switch("saved_clan", True)
                     self.update_buttons_and_text()
                 except RuntimeError:
                     SaveError(traceback.format_exc())
@@ -106,7 +106,7 @@ class ClanScreen(Screens):
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
                 save_settings(self)
-                switches.saved_clan = True
+                set_switch("saved_clan", True)
                 self.update_buttons_and_text()
 
     def screen_switches(self):
@@ -337,7 +337,7 @@ class ClanScreen(Screens):
         del self.show_den_labels_text
 
         # reset save status
-        switches.saved_clan = False
+        set_switch("saved_clan", False)
 
     def update_camp_bg(self):
         light_dark = "dark" if game.settings["dark mode"] else "light"
@@ -507,7 +507,7 @@ class ClanScreen(Screens):
                 )
 
     def update_buttons_and_text(self):
-        if switches.saved_clan:
+        if get_switch("saved_clan"):
             self.save_button_saving_state.hide()
             self.save_button_saved_state.show()
             self.save_button.disable()

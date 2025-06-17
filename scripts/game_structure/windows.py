@@ -4,7 +4,6 @@ import subprocess
 import threading
 import time
 from collections import namedtuple
-from copy import deepcopy
 from platform import system
 from random import choice
 from re import search as re_search
@@ -27,6 +26,7 @@ from scripts.game_structure.localization import (
     add_custom_pronouns,
 )
 from scripts.game_structure.screen_settings import MANAGER
+from scripts.game_structure.switches import get_switch, set_switch
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
@@ -309,8 +309,8 @@ class SaveCheck(UIWindow):
                 if self.isMainMenu:
                     game.is_close_menu_open = False
                     self.mm_btn.enable()
-                    game.last_screen_forupdate = switches.cur_screen
-                    switches.cur_screen = "start screen"
+                    game.last_screen_forupdate = get_switch("cur_screen")
+                    set_switch("cur_screen", "start screen")
                     game.switch_screens = True
                     self.kill()
                 else:
@@ -455,8 +455,8 @@ class GameOver(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = switches.cur_screen
-                switches.cur_screen = "start screen"
+                game.last_screen_forupdate = get_switch("cur_screen")
+                set_switch("cur_screen", "start screen")
                 game.switch_screens = True
                 self.kill()
             elif event.ui_element == self.not_yet_button:
@@ -1332,7 +1332,7 @@ class UpdateAvailablePopup(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
                 self.x = UpdateWindow(
-                    switches.cur_screen, self.announce_restart_callback
+                    get_switch("cur_screen"), self.announce_restart_callback
                 )
                 self.kill()
             elif (
@@ -1360,7 +1360,7 @@ class UpdateAvailablePopup(UIWindow):
 
     def announce_restart_callback(self):
         self.x.kill()
-        y = AnnounceRestart(switches.cur_screen)
+        y = AnnounceRestart(get_switch("cur_screen"))
         y.update(1)
 
 

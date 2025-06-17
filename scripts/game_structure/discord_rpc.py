@@ -11,8 +11,8 @@ import asyncio
 import threading
 from time import time
 
-from scripts.game_structure import switches
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.switches import get_switch
 
 status_dict = {
     "start screen": "At the start screen",
@@ -92,7 +92,7 @@ class _DiscordRPC(threading.Thread):
     def update(self):
         if self._connected:
             try:
-                state_text = status_dict[switches.cur_screen]
+                state_text = status_dict[get_switch("cur_screen")]
             except KeyError:
                 state_text = "Leading the Clan"
 

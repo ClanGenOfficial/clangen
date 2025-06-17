@@ -29,7 +29,6 @@ __switches = {
     "sort_type": "rank",
 }
 
-cat: str = ""
 clan_name: str = ""
 cur_screen: str = "start screen"
 saved_clan: bool = False
