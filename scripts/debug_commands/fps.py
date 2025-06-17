@@ -1,10 +1,8 @@
 from typing import List
 
-from scripts.game_structure.switches import set_switch, get_switch
-
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
-from scripts.game_structure.game.switches.game_switches import Switches
+from scripts.game_structure.game.switches import Switches, set_switch, get_switch
 
 
 class FpsCommand(Command):

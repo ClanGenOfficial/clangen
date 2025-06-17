@@ -3,9 +3,9 @@ import os.path
 from typing import TYPE_CHECKING
 
 import ujson
-from scripts.game_structure.switches import get_switch, Switches
 
 from scripts.game_structure.game.settings import save_settings
+from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:

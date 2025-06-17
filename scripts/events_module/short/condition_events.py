@@ -21,7 +21,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import constants
-from scripts.game_structure.game.switches.game_switches import (
+from scripts.game_structure.game.switches import (
     Switches,
     get_switch,
     set_switch,

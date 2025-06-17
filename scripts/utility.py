@@ -19,9 +19,9 @@ import i18n
 import pygame
 import ujson
 from pygame_gui.core import ObjectID
-from scripts.game_structure.switches import get_switch, Switches
 
 from scripts.game_structure.game.settings import save_settings
+from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,

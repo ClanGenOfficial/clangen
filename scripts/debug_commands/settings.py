@@ -1,16 +1,14 @@
 from typing import List
 
-from scripts.game_structure.switches import get_switch
-
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
-from scripts.game_structure import switches
 from scripts.game_structure.game.settings import (
     set_setting,
     get_setting,
     settings_generator,
 )
-from scripts.game_structure.game.switches.game_switches import switch_generator
+from scripts.game_structure.game.switches import get_switch, set_switch, Switches
+from scripts.game_structure.game.switches import switch_generator
 from scripts.game_structure.game_essentials import game
 
 
@@ -30,8 +28,8 @@ class ToggleCommand(Command):
                 set_setting(args[1], not get_setting(args[1]))
                 output = get_setting(args[1])
             elif args[0] == "switch":
-                setattr(switches, args[1], not getattr(switches, args[1]))
-                output = getattr(switches, args[1])
+                set_switch(Switches[args[1]], not get_switch(Switches[args[1]]))
+                output = get_switch(Switches[args[1]])
             elif args[0] == "debug":
                 game.debug_settings[args[1]] = not game.debug_settings[args[1]]
                 output = game.debug_settings[args[1]]
@@ -67,8 +65,8 @@ class SetCommand(Command):
             set_setting(args[1], value)
             output = get_setting(args[1])
         elif args[0] == "switch":
-            setattr(switches, args[1], value)
-            output = getattr(switches, args[1])
+            set_switch(Switches[args[1]], not get_switch(Switches[args[1]]))
+            output = get_switch(Switches[args[1]])
         elif args[0] == "debug":
             game.debug_settings[args[1]] = value
             output = game.debug_settings[args[1]]

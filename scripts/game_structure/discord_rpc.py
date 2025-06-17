@@ -11,8 +11,8 @@ import asyncio
 import threading
 from time import time
 
+from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.switches import get_switch, Switches
 
 status_dict = {
     "start screen": "At the start screen",

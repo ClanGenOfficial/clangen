@@ -15,13 +15,16 @@ import pygame
 import pygame_gui
 from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
-from scripts.game_structure.switches import get_switch, set_switch
 
+from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.names import Name
+from scripts.cat.save_load import save_cats
 from scripts.game_structure import image_cache
-from scripts.game_structure.game.switches.game_switches import (
+from scripts.game_structure.game.switches import (
     Switches,
+    get_switch,
+    set_switch,
     switch_list_append,
     switch_list_remove,
 )

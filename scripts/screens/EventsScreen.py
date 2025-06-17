@@ -3,15 +3,15 @@ from typing import Dict
 import i18n
 import pygame
 import pygame_gui
-from scripts.game_structure.switches import set_switch
 
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure import image_cache
-from scripts.game_structure.game.switches.game_switches import (
+from scripts.game_structure.game.switches import (
     Switches,
     get_switch,
+    set_switch,
     set_switch_dict_value,
 )
 from scripts.game_structure.game_essentials import game

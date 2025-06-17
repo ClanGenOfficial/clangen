@@ -26,9 +26,9 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
-from scripts.game_structure import switches, constants
+from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import read_clans
-from scripts.game_structure.switches import get_switch, set_switch, Switches
+from scripts.game_structure.game.switches import get_switch, set_switch, Switches
 
 if not getattr(sys, "frozen", False):
     requiredModules = [

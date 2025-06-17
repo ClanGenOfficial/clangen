@@ -35,10 +35,10 @@ from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.save_load import safe_save
+from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
-from scripts.game_structure.switches import get_switch, Switches
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     clamp,

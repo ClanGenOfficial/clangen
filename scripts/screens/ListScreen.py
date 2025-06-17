@@ -6,9 +6,9 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.game_structure.game.switches import set_switch, get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
-from scripts.game_structure.switches import set_switch, get_switch, Switches
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UICatListDisplay,

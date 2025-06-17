@@ -9,8 +9,8 @@ import ujson
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
+from scripts.game_structure.game.switches import get_switch, set_switch, Switches
 from scripts.game_structure.localization import get_new_pronouns
-from scripts.game_structure.switches import get_switch, set_switch, Switches
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from . import constants
 from .game_essentials import game

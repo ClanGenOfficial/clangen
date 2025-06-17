@@ -24,7 +24,8 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
-from ..game_structure.switches import set_switch, get_switch, Switches
+from ..cat.save_load import save_cats
+from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
