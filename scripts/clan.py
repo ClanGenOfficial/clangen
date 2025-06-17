@@ -22,9 +22,10 @@ from scripts.cat.sprites import sprites
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
-from scripts.game_structure import switches, constants
+from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save, save_clanlist, read_clans
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.switches import set_switch, get_switch
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
@@ -233,17 +234,17 @@ class Clan:
             self.all_clans.append(other_clan)
         self.save_clan()
         save_clanlist(self.name)
-        switches.clan_list = read_clans()
+        set_switch("clan_list", read_clans())
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
-        if switches.camp_bg is None:
+        if get_switch("camp_bg") is None:
             random_camp_options = ["camp1", "camp2"]
             random_camp = choice(random_camp_options)
-            switches.camp_bg = random_camp
+            set_switch("camp_bg", random_camp)
 
         # if no game mode chosen, set to Classic
-        if switches.game_mode == "":
-            switches.game_mode = "classic"
+        if get_switch("game_mode") == "":
+            set_switch("game_mode", "classic")
             self.game_mode = "classic"
 
         # set the starting season
@@ -374,7 +375,7 @@ class Clan:
             Cat.all_cats[leader.ID].status_change("leader")
             self.leader_predecessors += 1
             self.leader_lives = 9
-        game.switches["new_leader"] = None
+        set_switch("new_leader", None)
 
     def new_deputy(self, deputy):
         """
@@ -532,12 +533,16 @@ class Clan:
         """
 
         version_info = None
-        if os.path.exists(get_save_dir() + "/" + switches.clan_list[0] + "clan.json"):
+        if os.path.exists(
+            get_save_dir() + "/" + get_switch("clan_list")[0] + "clan.json"
+        ):
             version_info = self.load_clan_json()
-        elif os.path.exists(get_save_dir() + "/" + switches.clan_list[0] + "clan.txt"):
+        elif os.path.exists(
+            get_save_dir() + "/" + get_switch("clan_list")[0] + "clan.txt"
+        ):
             self.load_clan_txt()
         else:
-            switches.error_message = "There was an error loading the clan.json"
+            set_switch("error_message", "There was an error loading the clan.json")
 
         game.clan.load_clan_settings()
 
@@ -548,19 +553,19 @@ class Clan:
         TODO: DOCS
         """
 
-        if switches.clan_list == "":
+        if not get_switch("clan_list"):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        if switches.clan_list[0].strip() == "":
+        if get_switch("clan_list")[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        switches.error_message = "There was an error loading the clan.txt"
+        set_switch("error_message", "There was an error loading the clan.txt")
         with open(
-            get_save_dir() + "/" + switches.clan_list[0] + "clan.txt",
+            get_save_dir() + "/" + get_switch("clan_list")[0] + "clan.txt",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -713,27 +718,27 @@ class Clan:
         # assigning a symbol, since this save would be too old to have a chosen symbol
         game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
 
-        switches.error_message = ""
+        set_switch("error_message", "")
 
     def load_clan_json(self):
         """
         TODO: DOCS
         """
         other_clans = []
-        if switches.clan_list == "":
+        if not get_switch("clan_list"):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        if switches.clan_list[0].strip() == "":
+        if get_switch("clan_list")[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
 
-        switches.error_message = "There was an error loading the clan.json"
+        set_switch("error_message", "There was an error loading the clan.json")
         with open(
-            get_save_dir() + "/" + switches.clan_list[0] + "clan.json",
+            get_save_dir() + "/" + get_switch("clan_list")[0] + "clan.json",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -873,7 +878,7 @@ class Clan:
         self.load_disaster(game.clan)
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
-        switches.error_message = ""
+        set_switch("error_message", "")
 
         # Return Version Info.
         return {
@@ -884,10 +889,10 @@ class Clan:
 
     def load_clan_settings(self):
         if os.path.exists(
-            get_save_dir() + f"/{switches.clan_list[0]}/clan_settings.json"
+            get_save_dir() + f"/{get_switch('clan_list')[0]}/clan_settings.json"
         ):
             with open(
-                get_save_dir() + f"/{switches.clan_list[0]}/clan_settings.json",
+                get_save_dir() + f"/{get_switch('clan_list')[0]}/clan_settings.json",
                 "r",
                 encoding="utf-8",
             ) as write_file:

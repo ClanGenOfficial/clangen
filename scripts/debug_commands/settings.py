@@ -6,10 +6,11 @@ from scripts.game_structure import switches
 from scripts.game_structure.game.settings.settings import (
     set_setting,
     get_setting,
-    settings,
     settings_generator,
 )
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.switches import get_switch
+from scripts.game_structure.switches.game_switches import switch_generator
 
 
 class ToggleCommand(Command):
@@ -101,10 +102,10 @@ class GetCommand(Command):
                     for (
                         setting,
                         val,
-                    ) in switches.items():  # TODO how the heck do I fix that?
+                    ) in switch_generator():
                         add_output_line_to_log(f"  {setting} - {val}")
                     return
-                output = game.switches[args[1]]
+                output = get_switch(args[1])
             elif args[0] == "debug":
                 if len(args) == 1:
                     add_output_line_to_log("Available settings:")

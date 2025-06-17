@@ -28,7 +28,7 @@ from importlib.util import find_spec
 
 from scripts.game_structure import switches, constants
 from scripts.game_structure.game.save_load import read_clans
-from scripts.game_structure.switches import get_switch
+from scripts.game_structure.switches import get_switch, set_switch
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -225,7 +225,7 @@ def load_data():
 
     clan_list = read_clans()
     if clan_list:
-        switches.clan_list = clan_list
+        set_switch("clan_list", clan_list)
         try:
             load_cats()
             version_info = clan_class.load_clan()
@@ -234,9 +234,9 @@ def load_data():
             scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
-            if switches.error_message is None:
-                switches.error_message = "There was an error loading the cats file!"
-                switches.traceback = e
+            if get_switch("error_message") is None:
+                set_switch("error_message", "There was an error loading the cats file!")
+                set_switch("traceback", e)
 
     finished_loading = True
 

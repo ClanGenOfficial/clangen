@@ -26,9 +26,10 @@ from scripts.game_structure.localization import (
     determine_plural_pronouns,
     get_lang_config,
 )
+from scripts.game_structure.switches import get_switch
 
 logger = logging.getLogger(__name__)
-from scripts.game_structure import image_cache, localization, switches, constants
+from scripts.game_structure import image_cache, localization, constants
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names
@@ -2084,7 +2085,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         clan_name = str(clan.name)
     else:
         if game.clan is None:
-            clan_name = switches.clan_list[0]
+            clan_name = get_switch("clan_list")[0]
         else:
             clan_name = str(game.clan.name)
 
@@ -2271,7 +2272,7 @@ def event_text_adjust(
         try:
             clan_name = clan.name
         except AttributeError:
-            clan_name = switches.clan_list[0]
+            clan_name = get_switch("clan_list")[0]
 
         pos = 0
         for x in range(text.count("c_n")):

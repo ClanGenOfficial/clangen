@@ -99,7 +99,7 @@ class Events:
             and not cat.outside
             for cat in Cat.all_cats.values()
         ):
-            game.switches["no_able_left"] = False
+            set_switch("no_able_left", False)
 
         # age up the clan, set current season
         game.clan.age += 1
@@ -986,7 +986,7 @@ class Events:
                 Condition_Events.handle_illnesses(cat)
             else:
                 Condition_Events.handle_injuries(cat)
-            game.switches["switches.skip_conditions"].clear()
+            set_switch("skip_conditions", [])
             if cat.dead:
                 return
             self.handle_outbreaks(cat)
@@ -1035,19 +1035,19 @@ class Events:
             if not triggered_death:
                 self.handle_illnesses_or_illness_deaths(cat)
             else:
-                game.switches["switches.skip_conditions"].clear()
+                set_switch("skip_conditions", [])
                 return
         else:
             triggered_death = self.handle_illnesses_or_illness_deaths(cat)
             if not triggered_death:
                 self.handle_injuries_or_general_death(cat)
             else:
-                game.switches["switches.skip_conditions"].clear()
+                set_switch("skip_conditions", [])
                 return
 
         self.handle_murder(cat)
 
-        game.switches["switches.skip_conditions"].clear()
+        set_switch("skip_conditions", [])
 
     def load_war_resources(self):
         if Events.war_lang == i18n.config.get("locale"):

@@ -3143,7 +3143,8 @@ class Cat:
             return
 
         try:
-            clan = switches.clan_list[0] if game.clan is None else game.clan.name
+            # why can't this be `get_switch("clan_name")`?
+            clan = get_switch("clan_list")[0] if game.clan is None else game.clan.name
 
             with open(
                 get_save_dir() + "/" + clan + "/faded_cats/" + cat + ".json",
@@ -3159,7 +3160,7 @@ class Cat:
             with open(
                 get_save_dir()
                 + "/"
-                + switches.clan_list[0]
+                + get_switch("clan_list")[0]
                 + "/faded_cats/"
                 + cat
                 + ".json",

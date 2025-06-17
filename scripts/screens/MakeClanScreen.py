@@ -11,6 +11,7 @@ import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
+from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, switches, constants
 from scripts.game_structure.game_essentials import (
     game,
@@ -20,12 +21,12 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
 from ..cat.sprites import sprites
 from ..game_structure.screen_settings import MANAGER, screen
+from ..game_structure.switches import get_switch
 from ..game_structure.windows import SymbolFilterWindow
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -265,7 +266,9 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if new_name.casefold() in (clan.casefold() for clan in switches.clan_list):
+            if new_name.casefold() in (
+                clan.casefold() for clan in get_switch("clan_list")
+            ):
                 self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
@@ -292,7 +295,7 @@ class MakeClanScreen(Screens):
                     self.elements["error"].show()
                     return
                 if new_name.casefold() in (
-                    clan.casefold() for clan in switches.clan_list
+                    clan.casefold() for clan in get_switch("clan_list")
                 ):
                     self.elements["error"].set_text(
                         "A Clan with that name already exists."
@@ -309,7 +312,9 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if new_name.casefold() in (clan.casefold() for clan in switches.clan_list):
+            if new_name.casefold() in (
+                clan.casefold() for clan in get_switch("clan_list")
+            ):
                 self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
@@ -580,7 +585,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 self.elements["next_step"].disable()
             elif self.elements["name_entry"].get_text().casefold() in (
-                clan.casefold() for clan in switches.clan_list
+                clan.casefold() for clan in get_switch("clan_list")
             ):
                 self.elements["error"].set_text(
                     "screens.make_clan.error_clan_name_duplicate"
@@ -1277,7 +1282,7 @@ class MakeClanScreen(Screens):
         while True:
             chosen_name = choice(clan_names)
             if chosen_name.casefold() not in (
-                clan.casefold() for clan in switches.clan_list
+                clan.casefold() for clan in get_switch("clan_list")
             ):
                 return chosen_name
             print("Generated clan name was already in use! Rerolling...")

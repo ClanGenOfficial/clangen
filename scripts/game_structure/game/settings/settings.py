@@ -1,5 +1,6 @@
 import os
 import traceback
+from typing import Any, Tuple
 
 import ujson
 
@@ -84,3 +85,16 @@ if not os.path.exists(get_save_dir() + "/settings.txt"):
     with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
         write_file.write("")
 load_settings()
+
+
+def get_setting(name):
+    return settings[name]
+
+
+def set_setting(name, value):
+    settings[name] = value
+
+
+def settings_generator() -> Tuple[str, Any]:
+    for key, value in settings:
+        yield key, value
