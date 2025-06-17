@@ -12,24 +12,6 @@ settings = {"moon_and_seasons_open": False}
 setting_lists = {}
 
 
-# Init Settings
-with open("resources/gamesettings.json", "r", encoding="utf-8") as read_file:
-    _settings = ujson.loads(read_file.read())
-
-for setting, values in _settings["__other"].items():
-    settings[setting] = values[0]
-    setting_lists[setting] = values
-
-_ = [_settings["general"]]
-
-for cat in _:  # Add all the settings to the settings dictionary
-    for setting_name, inf in cat.items():
-        settings[setting_name] = inf[2]
-        setting_lists[setting_name] = [inf[2], not inf[2]]
-del _settings, setting_name, _
-# End init settings
-
-
 def save_settings(currentscreen=None):
     """Save user settings for later use"""
     if os.path.exists(get_save_dir() + "/settings.txt"):
@@ -80,13 +62,6 @@ def switch_setting(setting_name):
         settings[setting_name] = setting_lists[setting_name][list_index + 1]
 
 
-if not os.path.exists(get_save_dir() + "/settings.txt"):
-    os.makedirs(get_save_dir(), exist_ok=True)
-    with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
-        write_file.write("")
-load_settings()
-
-
 def get_setting(name):
     return settings[name]
 
@@ -98,3 +73,27 @@ def set_setting(name, value):
 def settings_generator() -> Tuple[str, Any]:
     for key, value in settings:
         yield key, value
+
+
+# Init Settings
+with open("resources/gamesettings.json", "r", encoding="utf-8") as read_file:
+    _settings = ujson.loads(read_file.read())
+
+for setting, values in _settings["__other"].items():
+    settings[setting] = values[0]
+    setting_lists[setting] = values
+
+_ = [_settings["general"]]
+
+for cat in _:  # Add all the settings to the settings dictionary
+    for setting_name, inf in cat.items():
+        settings[setting_name] = inf[2]
+        setting_lists[setting_name] = [inf[2], not inf[2]]
+del _settings, setting_name, _
+
+if not os.path.exists(get_save_dir() + "/settings.txt"):
+    os.makedirs(get_save_dir(), exist_ok=True)
+    with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
+        write_file.write("")
+load_settings()
+# End init settings

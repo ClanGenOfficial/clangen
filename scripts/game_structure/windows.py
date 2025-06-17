@@ -15,10 +15,16 @@ import pygame
 import pygame_gui
 from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
+from scripts.game_structure.switches import get_switch, set_switch
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
+from scripts.game_structure.game.switches.game_switches import (
+    Switches,
+    switch_list_append,
+    switch_list_remove,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import (
     get_lang_config,
@@ -26,12 +32,6 @@ from scripts.game_structure.localization import (
     add_custom_pronouns,
 )
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.switches import get_switch, set_switch
-from scripts.game_structure.switches.game_switches import (
-    Switches,
-    switch_list_append,
-    switch_list_remove,
-)
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,

@@ -26,6 +26,7 @@ from requests.exceptions import RequestException, Timeout
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
+from scripts.game_structure.game.settings import load_settings
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -33,7 +34,6 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
-from ..game_structure.game.settings.settings import load_settings
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.switches import get_switch, Switches
 from ..housekeeping.datadir import get_data_dir, get_cache_dir

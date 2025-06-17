@@ -4,6 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+from scripts.game_structure.game.switches.game_switches import Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.utility import get_text_box_theme
@@ -12,7 +13,6 @@ from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.switches import get_switch
-from ..game_structure.switches.game_switches import Switches
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 

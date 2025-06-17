@@ -6,6 +6,8 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.events_module.short.condition_events import Condition_Events
+from scripts.game_structure.game.settings import switch_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -20,8 +22,6 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
-from scripts.events_module.short.condition_events import Condition_Events
-from ..game_structure.game.settings.settings import switch_setting
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict

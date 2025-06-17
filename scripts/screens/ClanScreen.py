@@ -8,6 +8,7 @@ from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
+from scripts.game_structure.game.settings import save_settings
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -23,7 +24,6 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
-from ..game_structure.game.settings.settings import save_settings
 from ..game_structure.switches import set_switch, get_switch, Switches
 from ..ui.generate_button import ButtonStyles, get_button_dict
 

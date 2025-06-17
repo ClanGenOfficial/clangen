@@ -1,16 +1,17 @@
 from typing import List
 
+from scripts.game_structure.switches import get_switch
+
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
 from scripts.game_structure import switches
-from scripts.game_structure.game.settings.settings import (
+from scripts.game_structure.game.settings import (
     set_setting,
     get_setting,
     settings_generator,
 )
+from scripts.game_structure.game.switches.game_switches import switch_generator
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.switches import get_switch
-from scripts.game_structure.switches.game_switches import switch_generator
 
 
 class ToggleCommand(Command):

@@ -2,13 +2,13 @@ import os
 
 import pygame
 import ujson
+from scripts.game_structure.switches import get_switch
 
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save
+from scripts.game_structure.game.switches.game_switches import Switches
 from scripts.game_structure.screen_settings import toggle_fullscreen
-from scripts.game_structure.switches import get_switch
-from scripts.game_structure.switches.game_switches import Switches
 from scripts.housekeeping.datadir import get_save_dir
 
 pygame.init()

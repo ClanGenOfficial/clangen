@@ -1,7 +1,7 @@
 import os
+from shutil import move as shutil_move
 
 import ujson
-from shutil import move as shutil_move
 
 from scripts.housekeeping.datadir import get_temp_dir, get_save_dir
 

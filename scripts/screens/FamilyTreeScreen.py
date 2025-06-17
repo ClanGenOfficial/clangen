@@ -6,6 +6,7 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
+from scripts.game_structure.game.switches.game_switches import Switches
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -21,7 +22,6 @@ from scripts.utility import (
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.switches import set_switch, get_switch
-from ..game_structure.switches.game_switches import Switches
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon

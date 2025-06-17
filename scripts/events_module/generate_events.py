@@ -4,6 +4,7 @@ import random
 
 import i18n
 import ujson
+from scripts.game_structure.switches import get_switch
 
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -18,10 +19,9 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants
+from scripts.game_structure.game.switches.game_switches import Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.switches import get_switch
-from scripts.game_structure.switches.game_switches import Switches
 from scripts.utility import (
     get_living_clan_cat_count,
 )

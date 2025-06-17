@@ -11,6 +11,7 @@ import random
 import traceback
 
 import i18n
+from scripts.game_structure.switches import set_switch
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAgeEnum
@@ -30,10 +31,9 @@ from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.game_structure import constants
+from scripts.game_structure.game.switches.game_switches import Switches, get_switch
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.switches import set_switch
-from scripts.game_structure.switches.game_switches import Switches, get_switch
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     change_clan_relations,
