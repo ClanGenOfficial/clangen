@@ -36,6 +36,7 @@ from ..cat.history import History
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
+from ..game_structure.switches import set_switch, get_switch
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
@@ -147,7 +148,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
-                    switches.cat = self.previous_cat
+                    set_switch("cat", self.previous_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -155,7 +156,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
-                    switches.cat = self.next_cat
+                    set_switch("cat", self.next_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -207,7 +208,7 @@ class ProfileScreen(Screens):
             if event.key == pygame.K_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
-                    switches.cat = self.previous_cat
+                    set_switch("cat", self.previous_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -215,7 +216,7 @@ class ProfileScreen(Screens):
             elif event.key == pygame.K_RIGHT:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
-                    switches.cat = self.next_cat
+                    set_switch("cat", self.next_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -381,7 +382,7 @@ class ProfileScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        self.the_cat = Cat.all_cats.get(switches.cat)
+        self.the_cat = Cat.all_cats.get(get_switch("cat"))
 
         # Set up the menu buttons, which appear on all cat profile images.
         self.next_cat_button = UISurfaceImageButton(
@@ -518,7 +519,7 @@ class ProfileScreen(Screens):
     def build_profile(self):
         """Rebuild builds the cat profile. Run when you switch cats
         or for changes in the profile."""
-        self.the_cat = Cat.all_cats.get(switches.cat)
+        self.the_cat = Cat.all_cats.get(get_switch("cat"))
 
         # use these attributes to create differing profiles for StarClan cats etc.
         is_sc_instructor = False
@@ -2383,7 +2384,7 @@ class ProfileScreen(Screens):
     #                               cat platforms                                  #
     # ---------------------------------------------------------------------------- #
     def get_platform(self):
-        the_cat = Cat.all_cats.get(switches.cat, game.clan.instructor)
+        the_cat = Cat.all_cats.get(get_switch("cat"), game.clan.instructor)
 
         light_dark = "light"
         if game.settings["dark mode"]:

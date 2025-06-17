@@ -27,6 +27,7 @@ from scripts.utility import (
 from .Screens import Screens
 from ..cat_relations.relationship import Relationship
 from ..game_structure.screen_settings import MANAGER, screen
+from ..game_structure.switches import set_switch, get_switch
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -77,20 +78,20 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.switch_focus_button:
-                switches.cat = self.inspect_cat.ID
+                set_switch("cat", self.inspect_cat.ID)
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
-                switches.cat = self.inspect_cat.ID
+                set_switch("cat", self.inspect_cat.ID)
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    switches.cat = self.next_cat
+                    set_switch("cat", self.next_cat)
                     self.update_focus_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    switches.cat = self.previous_cat
+                    set_switch("cat", self.previous_cat)
                     self.update_focus_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -395,7 +396,7 @@ class RelationshipScreen(Screens):
             self.focus_cat_elements[ele].kill()
         self.focus_cat_elements = {}
 
-        self.the_cat = Cat.all_cats.get(switches.cat, game.clan.instructor)
+        self.the_cat = Cat.all_cats.get(get_switch("cat"), game.clan.instructor)
 
         self.current_page = 1
         self.inspect_cat = None

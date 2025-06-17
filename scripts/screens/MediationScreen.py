@@ -22,6 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..game_structure.switches import get_switch
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -138,9 +139,9 @@ class MediationScreen(Screens):
         self.page = 1
 
         if self.mediators:
-            if Cat.fetch_cat(switches.cat) in self.mediators:
+            if Cat.fetch_cat(get_switch("cat")) in self.mediators:
                 self.selected_mediator = self.mediators.index(
-                    Cat.fetch_cat(switches.cat)
+                    Cat.fetch_cat(get_switch("cat"))
                 )
             else:
                 self.selected_mediator = 0

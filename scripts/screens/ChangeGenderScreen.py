@@ -25,8 +25,9 @@ from scripts.utility import (
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import ui_scale
 from .Screens import Screens
-from ..game_structure import localization as pronouns, switches
+from ..game_structure import localization as pronouns
 from ..game_structure.screen_settings import MANAGER
+from ..game_structure.switches import get_switch, set_switch
 from ..game_structure.windows import PronounCreation
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -71,11 +72,11 @@ class ChangeGenderScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    switches.cat = self.next_cat
+                    set_switch("cat", self.next_cat)
                     self.update_selected_cat()
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    switches.cat = self.previous_cat
+                    set_switch("cat", self.previous_cat)
                     self.update_selected_cat()
             elif event.ui_element == self.buttons["save"]:
                 if self.are_boxes_full():
@@ -205,7 +206,7 @@ class ChangeGenderScreen(Screens):
     def update_selected_cat(self):
         self.reset_buttons_and_boxes()
 
-        self.the_cat = Cat.fetch_cat(switches.cat)
+        self.the_cat = get_switch("cat")
         if not self.the_cat:
             return
 

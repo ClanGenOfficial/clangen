@@ -21,6 +21,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..game_structure.switches import set_switch, get_switch
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -96,16 +97,16 @@ class FamilyTreeScreen(Screens):
                 switches.root_cat = None
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    switches.cat = self.previous_cat
-                    switches.root_cat = Cat.all_cats[self.previous_cat]
+                    set_switch("cat", self.previous_cat)
+                    set_switch("root_cat", Cat.all_cats[self.previous_cat])
                     self.exit_screen()
                     self.screen_switches()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    switches.cat = self.next_cat
-                    switches.root_cat = Cat.all_cats[self.next_cat]
+                    set_switch("cat", self.next_cat)
+                    set_switch("root_cat", Cat.all_cats[self.next_cat])
                     self.exit_screen()
                     self.screen_switches()
                 else:
@@ -171,7 +172,7 @@ class FamilyTreeScreen(Screens):
                     id = event.ui_element.return_cat_id()
                     if Cat.fetch_cat(id).faded:
                         return
-                    switches.cat = id
+                    set_switch("cat", id)
                 except AttributeError:
                     return
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
@@ -242,8 +243,8 @@ class FamilyTreeScreen(Screens):
         )
         self.relation_backdrop.disable()
 
-        if not switches.root_cat:
-            switches.root_cat = Cat.all_cats[switches.cat]
+        if not get_switch("root_cat"):
+            set_switch("root_cat", Cat.all_cats[get_switch("cat")])
         self.root_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((64, 475), (226, 170))),
             pygame.transform.scale(
@@ -312,7 +313,7 @@ class FamilyTreeScreen(Screens):
         # everything in here is held together by duct tape and hope, TAKE CARE WHEN EDITING
 
         # the cat whose family tree is being viewed
-        self.the_cat = Cat.all_cats[switches.cat]
+        self.the_cat = get_switch("cat")
 
         self.cat_elements["screen_title"] = pygame_gui.elements.UITextBox(
             "screens.family_tree.heading",

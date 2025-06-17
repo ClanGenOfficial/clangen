@@ -10,6 +10,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
+from scripts.game_structure.switches import set_switch
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UICatListDisplay,
@@ -213,7 +214,7 @@ class ListScreen(Screens):
 
             # CAT SPRITES
             elif element in self.cat_display.cat_sprites.values():
-                switches.cat = element.return_cat_id()
+                set_switch("cat", element.return_cat_id())
                 game.last_list_forProfile = self.current_group
                 self.change_screen("profile screen")
 

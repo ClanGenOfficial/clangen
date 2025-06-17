@@ -22,6 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..game_structure.switches import set_switch, get_switch
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -41,13 +42,13 @@ class RoleScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    switches.cat = self.next_cat
+                    set_switch("cat", self.next_cat)
                     self.update_selected_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    switches.cat = self.previous_cat
+                    set_switch("cat", self.previous_cat)
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -90,10 +91,10 @@ class RoleScreen(Screens):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
             elif event.key == pygame.K_RIGHT:
-                switches.cat = self.next_cat
+                set_switch("cat", self.next_cat)
                 self.update_selected_cat()
             elif event.key == pygame.K_LEFT:
-                switches.cat = self.previous_cat
+                set_switch("cat", self.previous_cat)
                 self.update_selected_cat()
 
     def screen_switches(self):
@@ -223,7 +224,7 @@ class RoleScreen(Screens):
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
 
-        self.the_cat = Cat.fetch_cat(switches.cat)
+        self.the_cat = Cat.fetch_cat(get_switch("cat"))
         if not self.the_cat:
             return
 

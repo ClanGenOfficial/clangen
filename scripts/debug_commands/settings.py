@@ -2,6 +2,13 @@ from typing import List
 
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
+from scripts.game_structure import switches
+from scripts.game_structure.game.settings.settings import (
+    set_setting,
+    get_setting,
+    settings,
+    settings_generator,
+)
 from scripts.game_structure.game_essentials import game
 
 
@@ -18,11 +25,11 @@ class ToggleCommand(Command):
 
         try:
             if args[0] == "game":
-                game.settings[args[1]] = not game.settings[args[1]]
-                output = game.settings[args[1]]
+                set_setting(args[1], not get_setting(args[1]))
+                output = get_setting(args[1])
             elif args[0] == "switch":
-                game.switches[args[1]] = not game.switches[args[1]]
-                output = game.switches[args[1]]
+                setattr(switches, args[1], not getattr(switches, args[1]))
+                output = getattr(switches, args[1])
             elif args[0] == "debug":
                 game.debug_settings[args[1]] = not game.debug_settings[args[1]]
                 output = game.debug_settings[args[1]]
@@ -55,11 +62,11 @@ class SetCommand(Command):
             value = int(value)
 
         if args[0] == "game":
-            game.settings[args[1]] = value
-            output = game.settings[args[1]]
+            set_setting(args[1], value)
+            output = get_setting(args[1])
         elif args[0] == "switch":
-            game.switches[args[1]] = value
-            output = game.switches[args[1]]
+            setattr(switches, args[1], value)
+            output = getattr(switches, args[1])
         elif args[0] == "debug":
             game.debug_settings[args[1]] = value
             output = game.debug_settings[args[1]]
@@ -83,21 +90,24 @@ class GetCommand(Command):
         try:
             if args[0] == "game":
                 if len(args) == 1:
-                    add_output_line_to_log("Avaliable settings:")
-                    for setting, val in game.settings.items():
+                    add_output_line_to_log("Available settings:")
+                    for setting, val in settings_generator():
                         add_output_line_to_log(f"  {setting} - {val}")
                     return
-                output = game.settings[args[1]]
+                output = get_setting(args[1])
             elif args[0] == "switch":
                 if len(args) == 1:
-                    add_output_line_to_log("Avaliable settings:")
-                    for setting, val in game.switches.items():
+                    add_output_line_to_log("Available settings:")
+                    for (
+                        setting,
+                        val,
+                    ) in switches.items():  # TODO how the heck do I fix that?
                         add_output_line_to_log(f"  {setting} - {val}")
                     return
                 output = game.switches[args[1]]
             elif args[0] == "debug":
                 if len(args) == 1:
-                    add_output_line_to_log("Avaliable settings:")
+                    add_output_line_to_log("Available settings:")
                     for setting, val in game.debug_settings.items():
                         add_output_line_to_log(f"  {setting} - {val}")
                     return

@@ -10,6 +10,7 @@ from scripts.events import events_class
 from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
+from scripts.game_structure.switches import set_switch
 from scripts.game_structure.ui_elements import (
     UIModifiedScrollingContainer,
     IDImageButton,
@@ -134,7 +135,7 @@ class EventsScreen(Screens):
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:
                 self.save_scroll_position()
-                switches.cat = element.cat_id
+                set_switch("cat", element.cat_id)
                 self.change_screen("profile screen")
             else:
                 self.save_scroll_position()

@@ -24,6 +24,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.game.settings.settings import save_settings
+from ..game_structure.switches import set_switch
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -71,7 +72,7 @@ class ClanScreen(Screens):
                     SaveError(traceback.format_exc())
                     self.change_screen("start screen")
             if event.ui_element in self.cat_buttons:
-                switches.cat = event.ui_element.return_cat_id()
+                set_switch("cat", event.ui_element.return_cat_id())
                 self.change_screen("profile screen")
             if event.ui_element == self.label_toggle:
                 if game.clan.clan_settings["den labels"]:
@@ -112,7 +113,7 @@ class ClanScreen(Screens):
         super().screen_switches()
         self.show_mute_buttons()
         self.update_camp_bg()
-        switches.cat = None
+        set_switch("cat", None)
         if game.clan.biome + game.clan.camp_bg in constants.LAYOUTS:
             self.layout = constants.LAYOUTS[game.clan.biome + game.clan.camp_bg]
         else:
