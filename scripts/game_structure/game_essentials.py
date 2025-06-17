@@ -89,13 +89,15 @@ class Game:
 
     @property
     def switches(self):
-        """DEPRECATED: use switches.[key] instead - WILL CRASH if you try and use this anyway"""
+        """DEPRECATED: use get_switch(), set_switch(), or helpers instead - WILL CRASH if you try and use this anyway"""
         import warnings
 
         # unfortunately there's no way to let this one fix itself, so we have to CTD.
-        warnings.warn("Use switches.[key] instead", DeprecationWarning, 2)
+        warnings.warn(
+            "Use get_switch(), set_switch(), or helpers instead", DeprecationWarning, 2
+        )
         raise Exception(
-            "game.switches has been deprecated, use switches.[key] instead. Unrecoverable."
+            "game.switches has been deprecated; use get_switch(), set_switch(), or helpers instead. Unrecoverable."
         )
 
     @property
