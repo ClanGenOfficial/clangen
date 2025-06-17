@@ -206,7 +206,7 @@ class ChangeGenderScreen(Screens):
     def update_selected_cat(self):
         self.reset_buttons_and_boxes()
 
-        self.the_cat = get_switch(Switches.cat)
+        self.the_cat = Cat.all_cats[get_switch(Switches.cat)]
         if not self.the_cat:
             return
 

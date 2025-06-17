@@ -312,7 +312,7 @@ class FamilyTreeScreen(Screens):
         # everything in here is held together by duct tape and hope, TAKE CARE WHEN EDITING
 
         # the cat whose family tree is being viewed
-        self.the_cat = get_switch(Switches.cat)
+        self.the_cat = Cat.all_cats[get_switch(Switches.cat)]
 
         self.cat_elements["screen_title"] = pygame_gui.elements.UITextBox(
             "screens.family_tree.heading",
