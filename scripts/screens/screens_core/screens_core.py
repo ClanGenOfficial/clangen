@@ -511,7 +511,7 @@ def process_blur_bg(
     global fade
     global dropshadow
     if theme is None:
-        theme = "dark" if game.settings["dark mode"] else "light"
+        theme = "dark" if get_setting("dark mode") else "light"
 
     fade.fill(constants.CONFIG["theme"]["fullscreen_background"][theme]["fade_color"])
     vignette.set_alpha(

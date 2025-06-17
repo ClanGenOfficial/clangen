@@ -4,6 +4,7 @@ import ujson
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save
+from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir
@@ -31,9 +32,6 @@ class Game:
     last_screen_forProfile = "list screen"
     last_list_forProfile = None
 
-    # down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
-    # up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
-
     choose_cats = {}
     """cat_buttons = {
         'cat0': None,
@@ -56,38 +54,12 @@ class Game:
 
     all_screens = {}
 
-    # SETTINGS
-    settings = {}
-    settings["moon_and_seasons_open"] = False
-    setting_lists = {}
-
     debug_settings = {
         "showcoords": False,
         "showbounds": False,
         "visualdebugmode": False,
         "showfps": False,
     }
-
-    # Init Settings
-    with open("resources/gamesettings.json", "r", encoding="utf-8") as read_file:
-        _settings = ujson.loads(read_file.read())
-
-    for setting, values in _settings["__other"].items():
-        settings[setting] = values[0]
-        setting_lists[setting] = values
-
-    _ = []
-    _.append(_settings["general"])
-
-    for cat in _:  # Add all the settings to the settings dictionary
-        for setting_name, inf in cat.items():
-            settings[setting_name] = inf[2]
-            setting_lists[setting_name] = [inf[2], not inf[2]]
-    del _settings
-    del _
-    # End init settings
-
-    settings_changed = False
 
     # CLAN
     clan = None
@@ -246,7 +218,7 @@ game: Game = Game()
 pygame.display.set_caption("Clan Generator")
 
 toggle_fullscreen(
-    fullscreen=game.settings["fullscreen"],
+    fullscreen=get_setting("fullscreen"),
     show_confirm_dialog=False,
     ingame_switch=False,
 )

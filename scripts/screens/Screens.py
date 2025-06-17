@@ -9,8 +9,10 @@ from pygame_gui.core import ObjectID
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
+from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
+from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game.switches import set_switch, get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
@@ -79,7 +81,7 @@ class Screens:
         game.switch_screens = True
         game.rpc.update_rpc.set()
         if game.clan:
-            if game.clan.clan_settings["moons and seasons"]:
+            if get_clan_setting("moons and seasons"):
                 x_shift = 1358
                 y_shift = 70
                 if new_screen == "events screen":
@@ -232,12 +234,12 @@ class Screens:
         for name, button in cls.menu_buttons.items():
             if name == "dens":
                 if (
-                    game.clan.clan_settings["moons and seasons"]
+                    get_clan_setting("moons and seasons")
                     and get_switch(Switches.cur_screen) == "events screen"
                 ):
                     button.show()
                 elif (
-                    not game.clan.clan_settings["moons and seasons"]
+                    not get_clan_setting("moons and seasons")
                     and get_switch(Switches.cur_screen) != "camp screen"
                 ):
                     button.show()
@@ -564,12 +566,12 @@ class Screens:
     def update_moon_and_season(cls):
         """Updates the moons and seasons widget."""
         if (
-            game.clan.clan_settings["moons and seasons"]
+            get_clan_setting("moons and seasons")
             and get_switch(Switches.cur_screen) != "events screen"
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if get_switch(Switches.moon_and_season_open):
+            if get_switch(Switches.moon_and_seasons_open):
                 if cls.name == "events screen":
                     cls.close_moon_and_season()
                 else:
@@ -725,7 +727,7 @@ class Screens:
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
             vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][
-                "dark" if game.settings["dark mode"] else "light"
+                "dark" if get_setting("dark mode") else "light"
             ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
             raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
@@ -936,7 +938,7 @@ class Screens:
     @property
     def theme(self) -> str:
         try:
-            return "dark" if game.settings["dark mode"] else "light"
+            return "dark" if get_setting("dark mode") else "light"
         except AttributeError:
             with open(
                 "resources/gamesettings.json", "r", encoding="utf-8"

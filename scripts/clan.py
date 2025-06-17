@@ -20,6 +20,7 @@ from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.save_load import save_cats
 from scripts.cat.sprites import sprites
+from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
@@ -100,28 +101,6 @@ class Clan:
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
-
-        # Init Settings
-        self.clan_settings = {}
-        self.setting_lists = {}
-        with open("resources/clansettings.json", "r", encoding="utf-8") as read_file:
-            _settings = ujson.loads(read_file.read())
-
-        for setting, values in _settings["__other"].items():
-            self.clan_settings[setting] = values[0]
-            self.setting_lists[setting] = values
-
-        all_settings = []
-        all_settings.append(_settings["general"])
-        all_settings.append(_settings["role"])
-        all_settings.append(_settings["relation"])
-        all_settings.append(_settings["freshkill_tactics"])
-        all_settings.append(_settings["clan_focus"])
-
-        for setting in all_settings:  # Add all the settings to the settings dictionary
-            for setting_name, inf in setting.items():
-                self.clan_settings[setting_name] = inf[2]
-                self.setting_lists[setting_name] = [inf[2], not inf[2]]
 
         # Reputation is for loners/kittypets/outsiders in general that wish to join the clan.
         # it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
@@ -495,7 +474,7 @@ class Clan:
         self.save_disaster(game.clan)
         self.save_pregnancy(game.clan)
 
-        self.save_clan_settings()
+        save_clan_settings()
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
@@ -505,30 +484,6 @@ class Clan:
             self.name != "current"
         ):
             os.remove(get_save_dir() + f"/{self.name}clan.txt")
-
-    def switch_setting(self, setting_name):
-        """Call this function to change a setting given in the parameter by one to the right on it's list"""
-        self.settings_changed = True
-
-        # Give the index that the list is currently at
-        list_index = self.setting_lists[setting_name].index(
-            self.clan_settings[setting_name]
-        )
-
-        if (
-            list_index == len(self.setting_lists[setting_name]) - 1
-        ):  # The option is at the list's end, go back to 0
-            self.clan_settings[setting_name] = self.setting_lists[setting_name][0]
-        else:
-            # Else move on to the next item on the list
-            self.clan_settings[setting_name] = self.setting_lists[setting_name][
-                list_index + 1
-            ]
-
-    def save_clan_settings(self):
-        safe_save(
-            get_save_dir() + f"/{self.name}/clan_settings.json", self.clan_settings
-        )
 
     def load_clan(self):
         """
@@ -549,7 +504,7 @@ class Clan:
                 Switches.error_message, "There was an error loading the clan.json"
             )
 
-        game.clan.load_clan_settings()
+        load_clan_settings()
 
         return version_info
 
@@ -891,23 +846,6 @@ class Clan:
             "version_commit": clan_data.get("version_commit"),
             "source_build": clan_data.get("source_build"),
         }
-
-    def load_clan_settings(self):
-        if os.path.exists(
-            get_save_dir() + f"/{get_switch('clan_list')[0]}/clan_settings.json"
-        ):
-            with open(
-                get_save_dir() + f"/{get_switch('clan_list')[0]}/clan_settings.json",
-                "r",
-                encoding="utf-8",
-            ) as write_file:
-                _load_settings = ujson.loads(write_file.read())
-
-            for key, value in _load_settings.items():
-                if key in self.clan_settings:
-                    self.clan_settings[key] = value
-
-        # if settings files does not exist, default has been loaded by __init__
 
     def load_pregnancy(self, clan):
         """

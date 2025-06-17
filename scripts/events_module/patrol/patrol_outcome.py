@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import random
-import re
 from os.path import exists as path_exists
 from random import choice, choices
 from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
@@ -9,7 +8,9 @@ from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 import i18n
 import pygame
 
+from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.short.handle_short_events import INJURY_GROUPS
+from scripts.game_structure.game.settings import get_setting
 
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
@@ -27,7 +28,6 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.enums import CatAgeEnum
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import (
@@ -400,7 +400,7 @@ class PatrolOutcome:
         """Return outcome art, if not None. Return's None if there is no outcome art, or if outcome art can't be found."""
         root_dir = "resources/images/patrol_art/"
 
-        if game.settings.get("gore") and self.outcome_art_clean:
+        if get_setting("gore") and self.outcome_art_clean:
             file_name = self.outcome_art_clean
         else:
             file_name = self.outcome_art
@@ -708,7 +708,10 @@ class PatrolOutcome:
                 found_herbs[herb] = amount
 
             # add found_herbs to storage and get patrol outcome msg
-            list_of_herb_strs, found_herbs = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
+            (
+                list_of_herb_strs,
+                found_herbs,
+            ) = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
 
         herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 
@@ -857,7 +860,7 @@ class PatrolOutcome:
                         sub_sub[0] != sub[0]
                         and (
                             sub_sub[0].gender == "female"
-                            or game.clan.clan_settings["same sex birth"]
+                            or get_clan_setting("same sex birth")
                         )
                         and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
                         and not (sub_sub[0].dead or sub_sub[0].outside)

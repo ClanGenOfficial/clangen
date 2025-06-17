@@ -10,7 +10,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game.settings import switch_setting
+from scripts.game_structure.game.settings import switch_setting, get_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
@@ -20,6 +20,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
@@ -39,8 +40,8 @@ class ClanSettingsScreen(Screens):
     sub_menu = "general"
 
     # This is set to the current settings when the screen is opened.
-    # All edits are made directly to game.settings, however, when you
-    #  leave the screen,game.settings will be reverted based on this variable
+    # All edits are made directly to settings, however, when you
+    #  leave the screen, settings will be reverted based on this variable
     #   However, if settings are saved, edits will also be made to this variable.
     settings_at_open = {}
 
@@ -183,7 +184,6 @@ class ClanSettingsScreen(Screens):
             tool_tip_text="buttons.open_data_directory_tooltip",
         )
 
-        screentext = "windowed" if game.settings["fullscreen"] else "fullscreen"
         rect = ui_scale(pygame.Rect((0, 0), (158, 36)))
         rect.bottomright = ui_scale_offset((-5, -25))
         self.fullscreen_toggle = UIImageButton(
@@ -193,7 +193,7 @@ class ClanSettingsScreen(Screens):
             manager=MANAGER,
             starting_height=2,
             tool_tip_text="buttons.toggle_fullscreen_windowed"
-            if game.settings["fullscreen"]
+            if get_setting("fullscreen")
             else "buttons.toggle_fullscreen_fullscreen",
             anchors={
                 "bottom": "bottom",
@@ -201,7 +201,7 @@ class ClanSettingsScreen(Screens):
                 "right_target": Screens.menu_buttons["mute_button"],
             },
         )
-        del screentext, rect
+        del rect
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
@@ -463,7 +463,7 @@ class ClanSettingsScreen(Screens):
 
         n = 0
         for code, desc in settings_dict[self.sub_menu].items():
-            if game.clan.clan_settings[code]:
+            if get_clan_setting(code):
                 box_type = "@checked_checkbox"
             else:
                 box_type = "@unchecked_checkbox"
@@ -474,8 +474,7 @@ class ClanSettingsScreen(Screens):
             if len(desc) == 4 and isinstance(desc[3], list):
                 x_val += 25
                 disabled = (
-                    game.clan.clan_settings.get(desc[3][0], not desc[3][1])
-                    != desc[3][1]
+                    get_clan_setting(desc[3][0], default=not desc[3][1]) != desc[3][1]
                 )
 
             self.checkboxes[code] = UIImageButton(

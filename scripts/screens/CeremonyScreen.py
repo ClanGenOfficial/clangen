@@ -5,7 +5,6 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.switches import get_switch, Switches
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import ui_scale
@@ -100,7 +99,7 @@ class CeremonyScreen(Screens):
             else:
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
         return

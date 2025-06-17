@@ -8,6 +8,7 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
+from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
     MAL_PERCENTAGE,
@@ -292,7 +293,7 @@ class Condition_Events:
                 and not event_string
             ):
                 # CLAN FOCUS!
-                if game.clan.clan_settings.get("rest and recover"):
+                if get_clan_setting("rest and recover"):
                     stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                         "illness_prevent"
                     ]
@@ -407,7 +408,7 @@ class Condition_Events:
 
             if triggered:
                 # CLAN FOCUS!
-                if game.clan.clan_settings.get("rest and recover"):
+                if get_clan_setting("rest and recover"):
                     stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                         "injury_prevent"
                     ]
@@ -987,7 +988,7 @@ class Condition_Events:
 
     @staticmethod
     def determine_retirement(cat, triggered):
-        if game.clan.clan_settings["retirement"] or cat.no_retire:
+        if get_clan_setting("retirement") or cat.no_retire:
             return
 
         if (

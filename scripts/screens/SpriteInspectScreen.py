@@ -16,8 +16,10 @@ from scripts.utility import (
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting
+from ..game_structure.game.settings import get_setting
+from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import set_switch, get_switch, Switches
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -214,10 +216,7 @@ class SpriteInspectScreen(Screens):
             starting_height=2,
         )
 
-        if game.clan.clan_settings["backgrounds"]:
-            self.platform_shown = True
-        else:
-            self.platform_shown = False
+        self.platform_shown = get_clan_setting("background")
 
         self.cat_setup()
 
@@ -461,7 +460,7 @@ class SpriteInspectScreen(Screens):
         the_cat = Cat.all_cats.get(get_switch(Switches.cat), game.clan.instructor)
 
         light_dark = "light"
-        if game.settings["dark mode"]:
+        if get_setting("dark mode"):
             light_dark = "dark"
 
         available_biome = ["Forest", "Mountainous", "Plains", "Beach"]

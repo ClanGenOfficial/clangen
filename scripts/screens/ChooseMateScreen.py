@@ -6,9 +6,6 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import (
-    game,
-)
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -23,8 +20,9 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting
+from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import set_switch, get_switch, Switches
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -1056,7 +1054,7 @@ class ChooseMateScreen(Screens):
             )
 
         if (
-            not game.clan.clan_settings["same sex birth"]
+            not get_clan_setting("same sex birth")
             and self.the_cat.gender == self.selected_cat.gender
         ):
             warning_rect = ui_scale(pygame.Rect((0, 0), (160, 45)))
@@ -1183,7 +1181,7 @@ class ChooseMateScreen(Screens):
             and (not self.single_only or not i.mate)
             and (
                 not self.have_kits_only
-                or game.clan.clan_settings["same sex birth"]
+                or get_clan_setting("same sex birth")
                 or i.gender != self.the_cat.gender
             )
         ]

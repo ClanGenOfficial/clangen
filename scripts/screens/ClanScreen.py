@@ -8,7 +8,7 @@ from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game.settings import save_settings
+from scripts.game_structure.game.settings import save_settings, get_setting
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -25,6 +25,8 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..cat.save_load import save_cats
+from ..clan_package.settings import get_clan_setting
+from ..clan_package.settings.clan_settings import set_clan_setting
 from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
@@ -51,7 +53,7 @@ class ClanScreen(Screens):
         self.layout = None
 
     def on_use(self):
-        if not game.clan.clan_settings["backgrounds"]:
+        if not get_clan_setting("backgrounds"):
             self.set_bg(None)
         super().on_use()
 
@@ -76,10 +78,7 @@ class ClanScreen(Screens):
                 set_switch(Switches.cat, event.ui_element.return_cat_id())
                 self.change_screen("profile screen")
             if event.ui_element == self.label_toggle:
-                if game.clan.clan_settings["den labels"]:
-                    game.clan.clan_settings["den labels"] = False
-                else:
-                    game.clan.clan_settings["den labels"] = True
+                set_clan_setting("den labels", not get_clan_setting("den_labels"))
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
                 self.change_screen("med den screen")
@@ -94,7 +93,7 @@ class ClanScreen(Screens):
             if event.ui_element == self.leader_den_label:
                 self.change_screen("leader den screen")
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
             if event.key == pygame.K_RIGHT:
                 self.change_screen("list screen")
             elif event.key == pygame.K_LEFT:
@@ -341,7 +340,7 @@ class ClanScreen(Screens):
         set_switch(Switches.saved_clan, False)
 
     def update_camp_bg(self):
-        light_dark = "dark" if game.settings["dark mode"] else "light"
+        light_dark = "dark" if get_setting("dark mode") else "light"
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
@@ -516,7 +515,7 @@ class ClanScreen(Screens):
             self.save_button.enable()
 
         self.label_toggle.kill()
-        if game.clan.clan_settings["den labels"]:
+        if get_clan_setting("den labels"):
             self.label_toggle = UIImageButton(
                 ui_scale(pygame.Rect((25, 641), (34, 34))),
                 "",

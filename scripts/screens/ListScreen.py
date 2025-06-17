@@ -6,6 +6,10 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.clan_package.settings.clan_settings import (
+    set_clan_setting,
+    get_clan_setting,
+)
 from scripts.game_structure.game.switches import set_switch, get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
@@ -135,11 +139,11 @@ class ListScreen(Screens):
                 if "#fav_cat_toggle_on" in event.ui_element.get_object_ids():
                     element.change_object_id("#fav_cat_toggle_off")
                     element.set_tooltip("screens.list.favorite_show_tooltip")
-                    game.clan.clan_settings["show fav"] = False
+                    set_clan_setting("show fav", False)
                 else:
                     element.change_object_id("#fav_cat_toggle_on")
                     element.set_tooltip("screens.list.favorite_hide_tooltip")
-                    game.clan.clan_settings["show fav"] = True
+                    set_clan_setting("show fav", True)
                 self.update_cat_list(
                     self.cat_list_bar_elements["search_bar_entry"].get_text()
                 )
@@ -221,7 +225,7 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:
@@ -263,11 +267,11 @@ class ListScreen(Screens):
             ui_scale(pygame.Rect((0, 0), (38, 34))),
             "",
             object_id="#fav_cat_toggle_on"
-            if game.clan.clan_settings["show fav"]
+            if get_clan_setting("show fav")
             else "#fav_cat_toggle_off",
             container=self.cat_list_bar,
             tool_tip_text="screens.list.favorite_hide_tooltip"
-            if game.clan.clan_settings["show fav"]
+            if get_clan_setting("show fav")
             else "screens.list.favorite_show_tooltip",
             starting_height=1,
         )

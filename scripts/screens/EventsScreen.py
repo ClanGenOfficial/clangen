@@ -147,7 +147,7 @@ class EventsScreen(Screens):
                 self.menu_button_pressed(event)
 
         # KEYBIND CONTROLS
-        elif game.settings["keybinds"]:
+        elif get_setting("keybinds"):
             # ON PRESSING A KEY
             if event.type == pygame.KEYDOWN:
                 # LEFT ARROW
@@ -615,7 +615,7 @@ class EventsScreen(Screens):
 
         alternate_color = (
             pygame.Color(87, 76, 55)
-            if game.settings["dark mode"]
+            if get_setting("dark mode")
             else pygame.Color(167, 148, 111)
         )
 
@@ -633,7 +633,7 @@ class EventsScreen(Screens):
                 MANAGER,
                 container=self.event_display,
                 element_id="event_panel",
-                object_id="#dark" if game.settings["dark mode"] else None,
+                object_id="#dark" if get_setting("dark mode") else None,
                 margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
                 anchors=anchor,
             )

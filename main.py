@@ -26,8 +26,10 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
+from scripts.clan import clan_class
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import read_clans
+from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game.switches import get_switch, set_switch, Switches
 
 if not getattr(sys, "frozen", False):
@@ -192,7 +194,6 @@ from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
-from scripts.clan import clan_class
 from scripts.utility import (
     quit,
 )  # pylint: disable=redefined-builtin
@@ -248,7 +249,7 @@ def loading_animation(scale: float = 1):
 
     # Load images, adjust color
     color = pygame.Surface((200 * scale, 210 * scale))
-    if game.settings["dark mode"]:
+    if get_setting("dark mode"):
         color.fill(constants.CONFIG["theme"]["light_mode_background"])
     else:
         color.fill(constants.CONFIG["theme"]["dark_mode_background"])
@@ -274,7 +275,7 @@ def loading_animation(scale: float = 1):
     while not finished_loading:
         clock.tick(8)  # Loading screen is 8FPS
 
-        if game.settings["dark mode"]:
+        if get_setting("dark mode"):
             screen.fill(constants.CONFIG["theme"]["dark_mode_background"])
         else:
             screen.fill(constants.CONFIG["theme"]["light_mode_background"])
@@ -326,7 +327,7 @@ music_manager.check_music("start screen")
 while 1:
     time_delta = clock.tick(fps) / 1000.0
 
-    if game.settings["custom cursor"]:
+    if get_setting("custom cursor"):
         if pygame.mouse.get_cursor() == disabled_cursor:
             pygame.mouse.set_cursor(cursor)
     elif pygame.mouse.get_cursor() == cursor:
@@ -338,7 +339,7 @@ while 1:
     for event in pygame.event.get():
         if (
             event.type == pygame.KEYDOWN
-            and game.settings["keybinds"]
+            and get_setting("keybinds")
             and debug_mode.debug_menu.visible
         ):
             pass
@@ -372,7 +373,7 @@ while 1:
 
             if MANAGER.visual_debug_active:
                 _ = pygame.mouse.get_pos()
-                if game.settings["fullscreen"]:
+                if get_setting("fullscreen"):
                     print(f"(x: {_[0]}, y: {_[1]})")
                 else:
                     print(f"(x: {_[0] * screen_scale}, y: {_[1] * screen_scale})")

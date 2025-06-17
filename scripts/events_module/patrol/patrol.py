@@ -9,14 +9,17 @@ from typing import List, Tuple, Optional
 
 import pygame
 
-from scripts.game_structure import localization, constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
 from scripts.clan import Clan
-from scripts.game_structure.game_essentials import game
+from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
+from scripts.game_structure import localization, constants
+from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_personality_compatibility,
     check_relationship_value,
@@ -27,7 +30,6 @@ from scripts.utility import (
     get_special_snippet_list,
     adjust_list_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -89,7 +91,7 @@ class Patrol:
             str(game.clan.biome).casefold(),
             str(game.clan.camp_bg).casefold(),
             patrol_type,
-            game.settings.get("disasters"),
+            get_setting("disasters"),
         )
 
         print(
@@ -263,7 +265,7 @@ class Patrol:
         game_setting_disaster = (
             game_setting_disaster
             if game_setting_disaster is not None
-            else game.clan.clan_settings["disasters"]
+            else get_clan_setting("disasters")
         )
         season = current_season.lower()
         leaf = f"{season}"
@@ -932,7 +934,7 @@ class Patrol:
 
         root_dir = "resources/images/patrol_art/"
 
-        if game.settings.get("gore") and self.patrol_event.patrol_art_clean:
+        if get_setting("gore") and self.patrol_event.patrol_art_clean:
             file_name = self.patrol_event.patrol_art_clean
         else:
             file_name = self.patrol_event.patrol_art

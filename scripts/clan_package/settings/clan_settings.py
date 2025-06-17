@@ -1,0 +1,64 @@
+import os
+
+import ujson
+
+from scripts.game_structure.game.save_load import safe_save
+from scripts.game_structure.game.switches import Switches, get_switch
+from scripts.housekeeping.datadir import get_save_dir
+
+
+def load_clan_settings():
+    if os.path.exists(
+        get_save_dir() + f"/{get_switch(Switches.clan_list)[0]}/clan_settings.json"
+    ):
+        with open(
+            get_save_dir() + f"/{get_switch(Switches.clan_list)[0]}/clan_settings.json",
+            "r",
+            encoding="utf-8",
+        ) as write_file:
+            _load_settings = ujson.loads(write_file.read())
+
+        for key, value in _load_settings.items():
+            if key in clan_settings:
+                clan_settings[key] = value
+
+    # if settings files does not exist, default has been loaded by __init__
+
+
+def save_clan_settings():
+    safe_save(
+        get_save_dir() + f"/{get_switch(Switches.clan_name)}/clan_settings.json",
+        clan_settings,
+    )
+
+
+def get_clan_setting(name: str, *, default=None):
+    return clan_settings.get(name, default)
+
+
+def set_clan_setting(name: str, value):
+    clan_settings[name] = value
+
+
+# Init Settings
+clan_settings = {}
+setting_lists = {}
+with open("resources/clansettings.json", "r", encoding="utf-8") as read_file:
+    _settings = ujson.loads(read_file.read())
+
+for setting, values in _settings["__other"].items():
+    clan_settings[setting] = values[0]
+    setting_lists[setting] = values
+
+all_settings = [
+    _settings["general"],
+    _settings["role"],
+    _settings["relation"],
+    _settings["freshkill_tactics"],
+    _settings["clan_focus"],
+]
+
+for setting in all_settings:  # Add all the settings to the settings dictionary
+    for setting_name, inf in setting.items():
+        clan_settings[setting_name] = inf[2]
+        setting_lists[setting_name] = [inf[2], not inf[2]]

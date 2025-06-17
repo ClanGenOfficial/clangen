@@ -103,7 +103,7 @@ class SettingsScreen(Screens):
     def __init__(self, name="settings_screen"):
         super().__init__(name)
         self.prev_setting = None
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.toggled_theme = "dark" if get_setting("dark mode") else "light"
 
     def handle_event(self, event):
         """
@@ -172,7 +172,7 @@ class SettingsScreen(Screens):
             if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("start screen")
             elif event.key == pygame.K_RIGHT:
@@ -363,7 +363,7 @@ class SettingsScreen(Screens):
         del self.open_data_directory_button
 
         self.settings_at_open = game.settings
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.toggled_theme = "dark" if get_setting("dark mode") else "light"
 
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""

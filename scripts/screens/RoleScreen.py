@@ -87,7 +87,7 @@ class RoleScreen(Screens):
                 self.the_cat.status_change("mediator apprentice", resort=True)
                 self.update_selected_cat()
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
             elif event.key == pygame.K_RIGHT:

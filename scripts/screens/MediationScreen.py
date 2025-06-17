@@ -21,8 +21,10 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting
+from ..game_structure.game.settings import get_setting
+from ..game_structure.game.switches import get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import get_switch, Switches
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -405,7 +407,7 @@ class MediationScreen(Screens):
         chunked_cats = self.chunks(self.current_listed_cats, 24)
         if chunked_cats:
             for cat in chunked_cats[self.page - 1]:
-                if game.clan.clan_settings["show fav"] and cat.favourite:
+                if get_clan_setting("show fav") and cat.favourite:
                     _temp = pygame.transform.scale(
                         pygame.image.load(
                             f"resources/images/fav_marker.png"
@@ -513,7 +515,7 @@ class MediationScreen(Screens):
         elif other_cat:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.clan.clan_settings["first cousin mates"]:
+            if get_clan_setting("first cousin mates"):
                 check_cousins = False
             else:
                 check_cousins = other_cat.is_cousin(cat)
@@ -591,9 +593,9 @@ class MediationScreen(Screens):
                 col2 += i18n.t("general.child")
             elif cat.is_sibling(other_cat) or other_cat.is_sibling(cat):
                 col2 += i18n.t("general.sibling")
-            elif not game.clan.clan_settings[
-                "first cousin mates"
-            ] and other_cat.is_cousin(cat):
+            elif not get_clan_setting("first cousin mates") and other_cat.is_cousin(
+                cat
+            ):
                 col2 += i18n.t("general.cousin")
 
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
@@ -675,7 +677,7 @@ class MediationScreen(Screens):
                 ),
                 display_romantic,
                 positive_trait=True,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
             bar_count += 1
 
@@ -702,7 +704,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.platonic_like,
                 positive_trait=True,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
 
             bar_count += 1
@@ -730,7 +732,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.dislike,
                 positive_trait=False,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
 
             bar_count += 1
@@ -758,7 +760,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.admiration,
                 positive_trait=True,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
 
             bar_count += 1
@@ -786,7 +788,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.comfortable,
                 positive_trait=True,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
 
             bar_count += 1
@@ -814,7 +816,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.jealousy,
                 positive_trait=False,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
 
             bar_count += 1
@@ -845,7 +847,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.trust,
                 positive_trait=True,
-                dark_mode=game.settings["dark mode"],
+                dark_mode=get_setting("dark mode"),
             )
 
     def selected_cat_list(self):

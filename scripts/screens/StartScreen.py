@@ -129,7 +129,7 @@ class StartScreen(Screens):
                     subprocess.Popen(
                         ["xdg-open", "https://twitter.com/OfficialClangen"]
                     )
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
             ) and self.continue_button.is_enabled:
@@ -170,7 +170,7 @@ class StartScreen(Screens):
         music_manager.check_music("start screen")
 
         bg = pygame.image.load("resources/images/menu.png").convert()
-        if game.settings["dark mode"]:
+        if get_setting("dark mode"):
             bg.fill(
                 constants.CONFIG["theme"]["fullscreen_background"]["dark"][
                     "mainmenu_tint"
