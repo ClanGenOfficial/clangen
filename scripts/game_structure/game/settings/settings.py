@@ -62,8 +62,8 @@ def switch_game_setting(setting_name):
         settings[setting_name] = setting_lists[setting_name][list_index + 1]
 
 
-def get_game_setting(name):
-    return settings[name]
+def get_game_setting(name, *, default=None):
+    return settings.get(name, default)
 
 
 def set_game_setting(name, value):

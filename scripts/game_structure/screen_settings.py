@@ -4,7 +4,11 @@ from typing import TYPE_CHECKING
 
 import ujson
 
-from scripts.game_structure.game.settings import save_game_settings, get_game_setting, set_game_setting
+from scripts.game_structure.game.settings import (
+    save_game_settings,
+    get_game_setting,
+    set_game_setting,
+)
 from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.housekeeping.datadir import get_save_dir
 

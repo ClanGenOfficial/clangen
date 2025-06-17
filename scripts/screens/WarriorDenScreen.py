@@ -8,9 +8,10 @@ from scripts.cat.cats import Cat
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
+    switch_clan_setting,
 )
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import switch_game_setting, get_game_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -67,14 +68,15 @@ class WarriorDenScreen(Screens):
                     if value == event.ui_element:
                         description = settings_dict["clan_focus"][code][1]
 
-                        switch_game_setting(self.active_code)
-                        switch_game_setting(code)
+                        # TODO why is this here twice?
+                        switch_clan_setting(self.active_code)
+                        switch_clan_setting(code)
                         self.active_code = code
 
                         # un-switch the old checkbox
-                        switch_game_setting(self.active_code)
+                        switch_clan_setting(self.active_code)
                         # switch the new checkbox
-                        switch_game_setting(code)
+                        switch_clan_setting(code)
                         self.active_code = code
                         # only enable the save button if a focus switch is possible
                         if (

@@ -7,7 +7,6 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.game_structure.game.settings import switch_game_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -22,7 +21,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
-from ..clan_package.settings import get_clan_setting
+from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -914,7 +913,7 @@ class ClearingScreen(Screens):
                     value == event.ui_element
                     and value.object_ids[1] == "@unchecked_checkbox"
                 ):
-                    switch_game_setting(key)
+                    switch_clan_setting(key)
                     active_key = key
                     self.settings_changed = True
                     self.create_checkboxes()
@@ -927,7 +926,7 @@ class ClearingScreen(Screens):
                     and key != active_key
                     and value.object_ids[1] == "@checked_checkbox"
                 ):
-                    switch_game_setting(key)
+                    switch_clan_setting(key)
                     self.settings_changed = True
                     self.create_checkboxes()
                     break
@@ -935,7 +934,7 @@ class ClearingScreen(Screens):
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
-                    switch_game_setting(key)
+                    switch_clan_setting(key)
                     active_key = key
                     self.settings_changed = True
                     self.create_checkboxes()

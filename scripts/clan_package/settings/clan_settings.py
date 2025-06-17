@@ -40,6 +40,21 @@ def set_clan_setting(name: str, value):
     clan_settings[name] = value
 
 
+def switch_clan_setting(setting_name):
+    """Call this function to change a setting given in the parameter by one to the right on it's list"""
+
+    # Give the index that the list is currently at
+    list_index = setting_lists[setting_name].index(clan_settings[setting_name])
+
+    if (
+        list_index == len(setting_lists[setting_name]) - 1
+    ):  # The option is at the list's end, go back to 0
+        clan_settings[setting_name] = setting_lists[setting_name][0]
+    else:
+        # Else move on to the next item on the list
+        clan_settings[setting_name] = setting_lists[setting_name][list_index + 1]
+
+
 # Init Settings
 clan_settings = {}
 setting_lists = {}
