@@ -69,8 +69,8 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
         # If they have a mate, break it up
         if inter_cat.mate:
             for mate_id in inter_cat.mate:
-                if mate_id in Cat.all_cats:
-                    Cat.all_cats[mate_id].unset_mate(inter_cat)
+                if mate_id in cat_class.all_cats:
+                    cat_class.all_cats[mate_id].unset_mate(inter_cat)
 
         # If they have parents, add them to their parents "faded offspring" list:
         for x in inter_cat.get_parents():
