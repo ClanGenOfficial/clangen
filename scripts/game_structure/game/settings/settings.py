@@ -25,8 +25,7 @@ for cat in _:  # Add all the settings to the settings dictionary
     for setting_name, inf in cat.items():
         settings[setting_name] = inf[2]
         setting_lists[setting_name] = [inf[2], not inf[2]]
-del _settings
-del _
+del _settings, setting_name, _
 # End init settings
 
 
@@ -61,6 +60,23 @@ def load_settings():
     for key, value in settings_data.items():
         if key in settings:
             settings[key] = value
+
+
+def switch_setting(setting_name):
+    """Call this function to change a setting given in the parameter by one to the right on it's list"""
+    global settings_changed, settings
+    settings_changed = True
+
+    # Give the index that the list is currently at
+    list_index = setting_lists[setting_name].index(settings[setting_name])
+
+    if (
+        list_index == len(setting_lists[setting_name]) - 1
+    ):  # The option is at the list's end, go back to 0
+        settings[setting_name] = setting_lists[setting_name][0]
+    else:
+        # Else move on to the next item on the list
+        settings[setting_name] = setting_lists[setting_name][list_index + 1]
 
 
 if not os.path.exists(get_save_dir() + "/settings.txt"):

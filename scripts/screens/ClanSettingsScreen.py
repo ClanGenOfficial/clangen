@@ -19,6 +19,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..game_structure.game.settings.settings import switch_setting
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
@@ -108,7 +109,7 @@ class ClanSettingsScreen(Screens):
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
-                    game.clan.switch_setting(key)
+                    switch_setting(key)
                     self.settings_changed = True
                     # self.update_save_button()
 

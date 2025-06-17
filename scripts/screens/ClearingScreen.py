@@ -21,6 +21,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from scripts.events_module.short.condition_events import Condition_Events
+from ..game_structure.game.settings.settings import switch_setting
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -913,7 +914,7 @@ class ClearingScreen(Screens):
                     value == event.ui_element
                     and value.object_ids[1] == "@unchecked_checkbox"
                 ):
-                    game.clan.switch_setting(key)
+                    switch_setting(key)
                     active_key = key
                     self.settings_changed = True
                     self.create_checkboxes()
@@ -926,7 +927,7 @@ class ClearingScreen(Screens):
                     and key != active_key
                     and value.object_ids[1] == "@checked_checkbox"
                 ):
-                    game.clan.switch_setting(key)
+                    switch_setting(key)
                     self.settings_changed = True
                     self.create_checkboxes()
                     break
@@ -934,7 +935,7 @@ class ClearingScreen(Screens):
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
-                    game.clan.switch_setting(key)
+                    switch_setting(key)
                     active_key = key
                     self.settings_changed = True
                     self.create_checkboxes()

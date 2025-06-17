@@ -6,6 +6,7 @@ from pygame_gui.core import ObjectID
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
+from scripts.game_structure.game.settings.settings import switch_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -62,14 +63,14 @@ class WarriorDenScreen(Screens):
                     if value == event.ui_element:
                         description = settings_dict["clan_focus"][code][1]
 
-                        game.clan.switch_setting(self.active_code)
-                        game.clan.switch_setting(code)
+                        switch_setting(self.active_code)
+                        switch_setting(code)
                         self.active_code = code
 
                         # un-switch the old checkbox
-                        game.clan.switch_setting(self.active_code)
+                        switch_setting(self.active_code)
                         # switch the new checkbox
-                        game.clan.switch_setting(code)
+                        switch_setting(code)
                         self.active_code = code
                         # only enable the save button if a focus switch is possible
                         if (

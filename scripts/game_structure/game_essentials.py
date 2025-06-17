@@ -135,23 +135,6 @@ class Game:
         self.clicked = False
         self.keyspressed = []
 
-    def switch_setting(self, setting_name):
-        """Call this function to change a setting given in the parameter by one to the right on it's list"""
-        self.settings_changed = True
-
-        # Give the index that the list is currently at
-        list_index = self.setting_lists[setting_name].index(self.settings[setting_name])
-
-        if (
-            list_index == len(self.setting_lists[setting_name]) - 1
-        ):  # The option is at the list's end, go back to 0
-            self.settings[setting_name] = self.setting_lists[setting_name][0]
-        else:
-            # Else move on to the next item on the list
-            self.settings[setting_name] = self.setting_lists[setting_name][
-                list_index + 1
-            ]
-
     def save_cats(self):
         """Save the cat data."""
 

@@ -20,7 +20,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.audio import music_manager, sound_manager
-from ..game_structure.game.settings.settings import save_settings
+from ..game_structure.game.settings.settings import save_settings, switch_setting
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
@@ -136,7 +136,7 @@ class SettingsScreen(Screens):
                 self.change_screen("start screen")
                 return
             if event.ui_element == self.fullscreen_toggle:
-                game.switch_setting("fullscreen")
+                switch_setting("fullscreen")
                 self.save_settings()
                 save_settings(self)
                 set_display_mode(
@@ -200,7 +200,7 @@ class SettingsScreen(Screens):
                         self.checkboxes[key].disable()
                         game.settings["language"] = key
                     else:
-                        game.switch_setting(key)
+                        switch_setting(key)
                         value.change_object_id(
                             "@checked_checkbox"
                             if game.settings[key]
