@@ -116,5 +116,5 @@ def switch_generator() -> Tuple[str, Any]:
     Iterate through the switch keys and values. Made for debug, try to avoid using
     :return:
     """
-    for key, value in __switches:
+    for key, value in __switches.items():
         yield key, value

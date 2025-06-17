@@ -22,6 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.game.save_load import read_clans
+from ..game_structure.game.settings import get_setting
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon

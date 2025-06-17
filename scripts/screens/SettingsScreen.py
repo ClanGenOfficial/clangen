@@ -17,6 +17,9 @@ from scripts.game_structure.game.settings import (
     get_setting,
     set_setting,
 )
+
+# please don't do this. we have to.
+import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -330,7 +333,9 @@ class SettingsScreen(Screens):
 
         self.set_bg("default", "mainmenu_bg")
 
-        self.settings_at_open = game.settings.copy()
+        self.settings_at_open = (
+            all_settings.settings
+        )  # please don't do this anywhere else.
 
         self.refresh_checkboxes()
 
@@ -365,12 +370,12 @@ class SettingsScreen(Screens):
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
 
-        self.settings_at_open = game.settings
+        self.settings_at_open = all_settings.settings
         self.toggled_theme = "dark" if get_setting("dark mode") else "light"
 
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
-        self.settings_at_open = game.settings.copy()
+        self.settings_at_open = all_settings.settings.copy()
 
     def open_general_settings(self):
         """Opens and draws general_settings"""

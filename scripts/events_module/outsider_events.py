@@ -1,11 +1,14 @@
 import random
 
-from scripts.cat.cats import Cat
+from typing import TYPE_CHECKING
+
 from scripts.cat.history import History
 from scripts.event_class import Single_Event
 from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game_essentials import game
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 # ---------------------------------------------------------------------------- #
 #                               New Cat Event Class                              #
@@ -16,7 +19,7 @@ class OutsiderEvents:
     """All events with a connection to outsiders."""
 
     @staticmethod
-    def killing_outsiders(cat: Cat):
+    def killing_outsiders(cat: "Cat"):
         if get_setting("lead_den_outsider_event"):
             info_dict = get_setting("lead_den_outsider_event")
             if cat.ID == info_dict["cat_ID"]:
@@ -52,7 +55,7 @@ class OutsiderEvents:
                 )
 
     @staticmethod
-    def lost_cat_become_outsider(cat: Cat):
+    def lost_cat_become_outsider(cat: "Cat"):
         """
         this will be for lost cats becoming kittypets/loners/etc
         TODO: need to make a unique backstory for these cats so they still have thoughts related to their clan
@@ -61,15 +64,15 @@ class OutsiderEvents:
             OutsiderEvents.become_kittypet(cat)
 
     @staticmethod
-    def become_kittypet(cat: Cat):
+    def become_kittypet(cat: "Cat"):
         # TODO: Make backstory for all of these + for exiled cats
         cat.status = "kittypet"
 
     @staticmethod
-    def become_loner(cat: Cat):
+    def become_loner(cat: "Cat"):
         cat.status = "loner"
 
     @staticmethod
-    def become_rogue(cat: Cat):
+    def become_rogue(cat: "Cat"):
         """Cats will probably only become rogues if they were exiled formerly"""
         cat.status = "rogue"

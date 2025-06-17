@@ -12,7 +12,7 @@ from scripts.cat_relations.inheritance import Inheritance
 from scripts.game_structure.game.switches import get_switch, set_switch, Switches
 from scripts.game_structure.localization import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
-from . import constants
+from scripts.game_structure import constants
 from .game_essentials import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills

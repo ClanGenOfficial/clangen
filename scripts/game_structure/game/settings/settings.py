@@ -71,7 +71,7 @@ def set_setting(name, value):
 
 
 def settings_generator() -> Tuple[str, Any]:
-    for key, value in settings:
+    for key, value in settings.items():
         yield key, value
 
 

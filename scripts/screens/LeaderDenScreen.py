@@ -7,6 +7,7 @@ from pygame_gui.core import UIContainer
 
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
+from scripts.game_structure import constants
 from scripts.game_structure.game.settings import set_setting, get_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
@@ -738,7 +739,7 @@ class LeaderDenScreen(Screens):
         # base equation for fail chance (temper_int - temper_int) / 10
         fail_chance = (abs(int(player_temper_int - other_temper_int))) / 10
 
-        temper_dict = game.clan.temperament_dict
+        temper_dict = constants.TEMPERAMENT_DICT
         clan_index = 0
         clan_social = None
         other_index = 0
@@ -777,7 +778,7 @@ class LeaderDenScreen(Screens):
         """
         returns int value (social rank + aggression rank) of given temperament
         """
-        temper_dict = game.clan.temperament_dict
+        temper_dict = constants.TEMPERAMENT_DICT
         temper_int = 0
 
         if temper in temper_dict["low_social"]:
