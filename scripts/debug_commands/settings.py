@@ -3,9 +3,9 @@ from typing import List
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
 from scripts.game_structure.game.settings import (
-    set_setting,
-    get_setting,
-    settings_generator,
+    set_game_setting,
+    get_game_setting,
+    game_settings_generator,
 )
 from scripts.game_structure.game.switches import get_switch, set_switch, Switches
 from scripts.game_structure.game.switches import switch_generator
@@ -25,8 +25,8 @@ class ToggleCommand(Command):
 
         try:
             if args[0] == "game":
-                set_setting(args[1], not get_setting(args[1]))
-                output = get_setting(args[1])
+                set_game_setting(args[1], not get_game_setting(args[1]))
+                output = get_game_setting(args[1])
             elif args[0] == "switch":
                 set_switch(Switches[args[1]], not get_switch(Switches[args[1]]))
                 output = get_switch(Switches[args[1]])
@@ -62,8 +62,8 @@ class SetCommand(Command):
             value = int(value)
 
         if args[0] == "game":
-            set_setting(args[1], value)
-            output = get_setting(args[1])
+            set_game_setting(args[1], value)
+            output = get_game_setting(args[1])
         elif args[0] == "switch":
             set_switch(Switches[args[1]], not get_switch(Switches[args[1]]))
             output = get_switch(Switches[args[1]])
@@ -91,10 +91,10 @@ class GetCommand(Command):
             if args[0] == "game":
                 if len(args) == 1:
                     add_output_line_to_log("Available settings:")
-                    for setting, val in settings_generator():
+                    for setting, val in game_settings_generator():
                         add_output_line_to_log(f"  {setting} - {val}")
                     return
-                output = get_setting(args[1])
+                output = get_game_setting(args[1])
             elif args[0] == "switch":
                 if len(args) == 1:
                     add_output_line_to_log("Available settings:")

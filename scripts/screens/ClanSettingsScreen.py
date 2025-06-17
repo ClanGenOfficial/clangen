@@ -10,7 +10,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game.settings import switch_setting, get_setting
+from scripts.game_structure.game.settings import switch_game_setting, get_game_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
@@ -110,7 +110,7 @@ class ClanSettingsScreen(Screens):
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
-                    switch_setting(key)
+                    switch_game_setting(key)
                     self.settings_changed = True
                     # self.update_save_button()
 
@@ -193,7 +193,7 @@ class ClanSettingsScreen(Screens):
             manager=MANAGER,
             starting_height=2,
             tool_tip_text="buttons.toggle_fullscreen_windowed"
-            if get_setting("fullscreen")
+            if get_game_setting("fullscreen")
             else "buttons.toggle_fullscreen_fullscreen",
             anchors={
                 "bottom": "bottom",

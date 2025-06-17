@@ -12,7 +12,7 @@ from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game.switches import set_switch, get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
@@ -727,7 +727,7 @@ class Screens:
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
             vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][
-                "dark" if get_setting("dark mode") else "light"
+                "dark" if get_game_setting("dark mode") else "light"
             ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
             raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
@@ -938,7 +938,7 @@ class Screens:
     @property
     def theme(self) -> str:
         try:
-            return "dark" if get_setting("dark mode") else "light"
+            return "dark" if get_game_setting("dark mode") else "light"
         except AttributeError:
             with open(
                 "resources/gamesettings.json", "r", encoding="utf-8"

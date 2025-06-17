@@ -34,7 +34,7 @@ from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import set_setting, get_setting
+from scripts.game_structure.game.settings import set_game_setting, get_game_setting
 from scripts.game_structure.game.switches import Switches, get_switch, set_switch
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
@@ -131,7 +131,7 @@ class Events:
             self.get_moon_freshkill()
 
         # Adding in any potential lead den events that have been saved
-        if get_setting("lead_den_interaction"):
+        if get_game_setting("lead_den_interaction"):
             self.handle_lead_den_event()
 
         # checking if a lost cat returns on their own
@@ -324,8 +324,8 @@ class Events:
         """
         Handles the events that are chosen in the leaders den the previous moon and resets the relevant clan settings
         """
-        if get_setting("lead_den_clan_event"):
-            info_dict = get_setting("lead_den_clan_event")
+        if get_game_setting("lead_den_clan_event"):
+            info_dict = get_game_setting("lead_den_clan_event")
             gathering_cat = Cat.fetch_cat(info_dict["cat_ID"])
 
             # drop the event if the gathering cat is no longer available
@@ -370,10 +370,10 @@ class Events:
                 4, Single_Event(event_text, "other_clans", [gathering_cat.ID])
             )
 
-            set_setting("lead_den_clan_event", {})
+            set_game_setting("lead_den_clan_event", {})
 
-        if get_setting("lead_den_outsider_event"):
-            info_dict = get_setting("lead_den_outsider_event")
+        if get_game_setting("lead_den_outsider_event"):
+            info_dict = get_game_setting("lead_den_outsider_event")
             outsider_cat = Cat.fetch_cat(info_dict["cat_ID"])
             involved_cats = [outsider_cat.ID]
             invited_cats = []
@@ -515,9 +515,9 @@ class Events:
             game.cur_events_list.insert(
                 4, Single_Event(event_text, "misc", involved_cats)
             )
-            set_setting("lead_den_outsider_event", {})
+            set_game_setting("lead_den_outsider_event", {})
 
-        set_setting("lead_den_interaction", False)
+        set_game_setting("lead_den_interaction", False)
 
     def mediator_events(self, cat):
         """Check for mediator events"""
@@ -702,7 +702,7 @@ class Events:
                 chance -= increase * len(game.clan.clans_in_focus)
             for cat in relevant_cats:
                 # if the raid setting or 50/50 for hoarding to get to the injury part
-                if get_setting("raid other clans") or random.getrandbits(1):
+                if get_game_setting("raid other clans") or random.getrandbits(1):
                     status_use = cat.status
                     if status_use in ("deputy", "leader"):
                         status_use = "warrior"

@@ -4,7 +4,7 @@ import ujson
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir
@@ -102,17 +102,17 @@ class Game:
 
     @property
     def settings(self):
-        """DEPRECATED: use get_setting() and set_setting() or helpers instead.
+        """DEPRECATED: use get_game_setting() and set_game_setting() or helpers instead.
         WILL CRASH if you try and use this anyway."""
         import warnings
 
         warnings.warn(
-            "Use get_setting() and set_setting() or helpers instead. WILL CRASH if you try and use this anyway.",
+            "Use get_game_setting() and set_game_setting() or helpers instead. WILL CRASH if you try and use this anyway.",
             DeprecationWarning,
             2,
         )
         raise Exception(
-            "game.settings has been deprecated, use get_setting() and set_setting() or helpers instead. Unrecoverable."
+            "game.settings has been deprecated, use get_game_setting() and set_game_setting() or helpers instead. Unrecoverable."
         )
 
     def update_game(self):
@@ -235,7 +235,7 @@ game: Game = Game()
 pygame.display.set_caption("Clan Generator")
 
 toggle_fullscreen(
-    fullscreen=get_setting("fullscreen"),
+    fullscreen=get_game_setting("fullscreen"),
     show_confirm_dialog=False,
     ingame_switch=False,
 )

@@ -21,7 +21,7 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.clan_package.settings import get_clan_setting
-from scripts.game_structure.game.settings import save_settings, get_setting
+from scripts.game_structure.game.settings import save_game_settings, get_game_setting
 from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.localization import (
     load_lang_resource,
@@ -2811,7 +2811,7 @@ def generate_sprite(
                     )
 
         # draw line art
-        if get_setting("shaders") and not dead:
+        if get_game_setting("shaders") and not dead:
             new_sprite.blit(
                 sprites.sprites["shaders" + cat_sprite],
                 (0, 0),
@@ -2955,7 +2955,7 @@ def is_iterable(y):
 
 def get_text_box_theme(theme_name=None):
     """Updates the name of the theme based on dark or light mode"""
-    if get_setting("dark mode"):
+    if get_game_setting("dark mode"):
         return ObjectID("#dark", theme_name)
     else:
         return theme_name
@@ -2966,7 +2966,7 @@ def quit(savesettings=False, clearevents=False):
     Quits the game, avoids a bunch of repeated lines
     """
     if savesettings:
-        save_settings(None)
+        save_game_settings(None)
     if clearevents:
         game.cur_events_list.clear()
     game.rpc.close_rpc.set()

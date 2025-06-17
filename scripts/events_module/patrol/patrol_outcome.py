@@ -10,7 +10,7 @@ import pygame
 
 from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.short.handle_short_events import INJURY_GROUPS
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
@@ -400,7 +400,7 @@ class PatrolOutcome:
         """Return outcome art, if not None. Return's None if there is no outcome art, or if outcome art can't be found."""
         root_dir = "resources/images/patrol_art/"
 
-        if get_setting("gore") and self.outcome_art_clean:
+        if get_game_setting("gore") and self.outcome_art_clean:
             file_name = self.outcome_art_clean
         else:
             file_name = self.outcome_art

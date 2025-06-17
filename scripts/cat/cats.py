@@ -36,7 +36,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.save_load import safe_save
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
@@ -2676,7 +2676,7 @@ class Cat:
                 comfortable = 0
                 jealousy = 0
                 trust = 0
-                if get_setting("random relation"):
+                if get_game_setting("random relation"):
                     if (
                         game.clan
                         and the_cat == game.clan.instructor

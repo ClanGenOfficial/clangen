@@ -22,7 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting
-from ..game_structure.game.settings import get_setting
+from ..game_structure.game.settings import get_game_setting
 from ..game_structure.game.switches import get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
@@ -677,7 +677,7 @@ class MediationScreen(Screens):
                 ),
                 display_romantic,
                 positive_trait=True,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
             bar_count += 1
 
@@ -704,7 +704,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.platonic_like,
                 positive_trait=True,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
 
             bar_count += 1
@@ -732,7 +732,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.dislike,
                 positive_trait=False,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
 
             bar_count += 1
@@ -760,7 +760,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.admiration,
                 positive_trait=True,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
 
             bar_count += 1
@@ -788,7 +788,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.comfortable,
                 positive_trait=True,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
 
             bar_count += 1
@@ -816,7 +816,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.jealousy,
                 positive_trait=False,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
 
             bar_count += 1
@@ -847,7 +847,7 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.trust,
                 positive_trait=True,
-                dark_mode=get_setting("dark mode"),
+                dark_mode=get_game_setting("dark mode"),
             )
 
     def selected_cat_list(self):

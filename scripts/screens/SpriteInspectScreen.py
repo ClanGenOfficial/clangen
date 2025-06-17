@@ -17,7 +17,7 @@ from scripts.utility import (
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting
-from ..game_structure.game.settings import get_setting
+from ..game_structure.game.settings import get_game_setting
 from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
@@ -460,7 +460,7 @@ class SpriteInspectScreen(Screens):
         the_cat = Cat.all_cats.get(get_switch(Switches.cat), game.clan.instructor)
 
         light_dark = "light"
-        if get_setting("dark mode"):
+        if get_game_setting("dark mode"):
             light_dark = "dark"
 
         available_biome = ["Forest", "Mountainous", "Plains", "Beach"]

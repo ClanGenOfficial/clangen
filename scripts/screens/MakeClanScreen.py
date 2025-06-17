@@ -26,7 +26,7 @@ from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
 from ..cat import save_load
 from ..cat.sprites import sprites
-from ..game_structure.game.settings import set_setting, get_setting
+from ..game_structure.game.settings import set_game_setting, get_game_setting
 from ..game_structure.game.switches import get_switch, Switches
 from ..game_structure.screen_settings import MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow
@@ -190,7 +190,7 @@ class MakeClanScreen(Screens):
             elif self.sub_screen == "saved screen":
                 self.handle_saved_clan_event(event)
 
-        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
             if self.sub_screen == "game mode":
                 self.handle_game_mode_key(event)
             elif self.sub_screen == "name clan":
@@ -217,7 +217,7 @@ class MakeClanScreen(Screens):
 
         # Logic for when to quick-start clan
         elif event.ui_element == self.elements["next_step"]:
-            set_setting("game_mode", self.game_mode)
+            set_game_setting("game_mode", self.game_mode)
             if "@checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
                 self.random_quick_start()
                 self.save_clan()
@@ -252,7 +252,7 @@ class MakeClanScreen(Screens):
 
         elif event.key == pygame.K_RIGHT or event.key == pygame.K_RETURN:
             if self.elements["next_step"].is_enabled:
-                set_setting("game_mode", self.game_mode)
+                set_game_setting("game_mode", self.game_mode)
                 self.open_name_clan()
 
     def handle_name_clan_event(self, event):
@@ -2175,7 +2175,7 @@ class MakeClanScreen(Screens):
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         start_leave = leaf.casefold()
-        light_dark = "dark" if get_setting("dark mode") else "light"
+        light_dark = "dark" if get_game_setting("dark mode") else "light"
 
         biome = self.biome_selected.lower()
 

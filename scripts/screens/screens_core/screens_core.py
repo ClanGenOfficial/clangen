@@ -5,7 +5,7 @@ import pygame_gui
 
 import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
@@ -512,7 +512,7 @@ def process_blur_bg(
     global fade
     global dropshadow
     if theme is None:
-        theme = "dark" if get_setting("dark mode") else "light"
+        theme = "dark" if get_game_setting("dark mode") else "light"
 
     fade.fill(constants.CONFIG["theme"]["fullscreen_background"][theme]["fade_color"])
     vignette.set_alpha(

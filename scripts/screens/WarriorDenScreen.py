@@ -10,7 +10,7 @@ from scripts.clan_package.settings.clan_settings import (
     get_clan_setting,
 )
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import switch_setting, get_setting
+from scripts.game_structure.game.settings import switch_game_setting, get_game_setting
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -67,14 +67,14 @@ class WarriorDenScreen(Screens):
                     if value == event.ui_element:
                         description = settings_dict["clan_focus"][code][1]
 
-                        switch_setting(self.active_code)
-                        switch_setting(code)
+                        switch_game_setting(self.active_code)
+                        switch_game_setting(code)
                         self.active_code = code
 
                         # un-switch the old checkbox
-                        switch_setting(self.active_code)
+                        switch_game_setting(self.active_code)
                         # switch the new checkbox
-                        switch_setting(code)
+                        switch_game_setting(code)
                         self.active_code = code
                         # only enable the save button if a focus switch is possible
                         if (
@@ -178,7 +178,7 @@ class WarriorDenScreen(Screens):
         if self.base_image:
             self.base_image.kill()
 
-        if get_setting("dark mode"):
+        if get_game_setting("dark mode"):
             image = "base_image_dark"
         else:
             image = "base_image"

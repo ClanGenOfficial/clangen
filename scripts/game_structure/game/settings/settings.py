@@ -12,7 +12,7 @@ settings = {"moon_and_seasons_open": False}
 setting_lists = {}
 
 
-def save_settings(currentscreen=None):
+def save_game_settings(currentscreen=None):
     """Save user settings for later use"""
     if os.path.exists(get_save_dir() + "/settings.txt"):
         os.remove(get_save_dir() + "/settings.txt")
@@ -29,7 +29,7 @@ def save_settings(currentscreen=None):
             currentscreen.change_screen("start screen")
 
 
-def load_settings():
+def load_game_settings():
     """Load settings that user has saved from previous use"""
 
     try:
@@ -45,7 +45,7 @@ def load_settings():
             settings[key] = value
 
 
-def switch_setting(setting_name):
+def switch_game_setting(setting_name):
     """Call this function to change a setting given in the parameter by one to the right on it's list"""
     global settings_changed, settings
     settings_changed = True
@@ -62,15 +62,15 @@ def switch_setting(setting_name):
         settings[setting_name] = setting_lists[setting_name][list_index + 1]
 
 
-def get_setting(name):
+def get_game_setting(name):
     return settings[name]
 
 
-def set_setting(name, value):
+def set_game_setting(name, value):
     settings[name] = value
 
 
-def settings_generator() -> Tuple[str, Any]:
+def game_settings_generator() -> Tuple[str, Any]:
     for key, value in settings.items():
         yield key, value
 
@@ -95,5 +95,5 @@ if not os.path.exists(get_save_dir() + "/settings.txt"):
     os.makedirs(get_save_dir(), exist_ok=True)
     with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
         write_file.write("")
-load_settings()
+load_game_settings()
 # End init settings

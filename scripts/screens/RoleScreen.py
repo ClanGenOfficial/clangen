@@ -21,7 +21,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
-from ..game_structure.game.settings import get_setting
+from ..game_structure.game.settings import get_game_setting
 from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -88,7 +88,7 @@ class RoleScreen(Screens):
                 self.the_cat.status_change("mediator apprentice", resort=True)
                 self.update_selected_cat()
 
-        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
             elif event.key == pygame.K_RIGHT:

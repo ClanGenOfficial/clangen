@@ -34,7 +34,7 @@ from ..cat.enums import CatAgeEnum
 from ..cat.history import History
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
-from ..game_structure.game.settings import get_setting
+from ..game_structure.game.settings import get_game_setting
 from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
@@ -205,7 +205,7 @@ class ProfileScreen(Screens):
                 )
             else:
                 self.handle_tab_events(event)
-        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
             if event.key == pygame.K_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
@@ -2381,7 +2381,7 @@ class ProfileScreen(Screens):
         the_cat = Cat.all_cats.get(get_switch(Switches.cat), game.clan.instructor)
 
         light_dark = "light"
-        if get_setting("dark mode"):
+        if get_game_setting("dark mode"):
             light_dark = "dark"
 
         available_biome = ["Forest", "Mountainous", "Plains", "Beach"]

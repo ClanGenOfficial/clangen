@@ -8,7 +8,7 @@ from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game.settings import save_settings, get_setting
+from scripts.game_structure.game.settings import save_game_settings, get_game_setting
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -68,7 +68,7 @@ class ClanScreen(Screens):
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
-                    save_settings(self)
+                    save_game_settings(self)
                     set_switch(Switches.saved_clan, True)
                     self.update_buttons_and_text()
                 except RuntimeError:
@@ -93,7 +93,7 @@ class ClanScreen(Screens):
             if event.ui_element == self.leader_den_label:
                 self.change_screen("leader den screen")
 
-        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
             if event.key == pygame.K_RIGHT:
                 self.change_screen("list screen")
             elif event.key == pygame.K_LEFT:
@@ -105,7 +105,7 @@ class ClanScreen(Screens):
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
-                save_settings(self)
+                save_game_settings(self)
                 set_switch(Switches.saved_clan, True)
                 self.update_buttons_and_text()
 
@@ -340,7 +340,7 @@ class ClanScreen(Screens):
         set_switch(Switches.saved_clan, False)
 
     def update_camp_bg(self):
-        light_dark = "dark" if get_setting("dark mode") else "light"
+        light_dark = "dark" if get_game_setting("dark mode") else "light"
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]

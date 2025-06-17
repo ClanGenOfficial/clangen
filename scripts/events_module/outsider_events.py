@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from scripts.cat.history import History
 from scripts.event_class import Single_Event
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game_essentials import game
 
 if TYPE_CHECKING:
@@ -20,8 +20,8 @@ class OutsiderEvents:
 
     @staticmethod
     def killing_outsiders(cat: "Cat"):
-        if get_setting("lead_den_outsider_event"):
-            info_dict = get_setting("lead_den_outsider_event")
+        if get_game_setting("lead_den_outsider_event"):
+            info_dict = get_game_setting("lead_den_outsider_event")
             if cat.ID == info_dict["cat_ID"]:
                 return
 

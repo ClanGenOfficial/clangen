@@ -10,7 +10,7 @@ from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
 )
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.game_structure.game.switches import set_switch, get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
@@ -226,7 +226,7 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:

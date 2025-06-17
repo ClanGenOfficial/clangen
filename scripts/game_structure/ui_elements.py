@@ -15,7 +15,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
@@ -706,7 +706,7 @@ class UISpriteButton:
                     relative_rect.height <= ui_scale_value(sprite.get_height())
                     or relative_rect.width <= ui_scale_value(sprite.get_height())
                 )
-                and not get_setting("no sprite antialiasing")
+                and not get_game_setting("no sprite antialiasing")
             )
             else pygame.transform.scale(input_sprite, relative_rect.size)
         )
@@ -1253,7 +1253,7 @@ class UICatListDisplay(UIContainer):
             pygame.image.load(f"resources/images/fav_marker.png").convert_alpha(),
             ui_scale_dimensions((50, 50)),
         )
-        if get_setting("dark mode"):
+        if get_game_setting("dark mode"):
             self._favor_circle.set_alpha(150)
 
         self.generate_grid()

@@ -26,7 +26,7 @@ from requests.exceptions import RequestException, Timeout
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
-from scripts.game_structure.game.settings import load_settings, get_setting
+from scripts.game_structure.game.settings import load_game_settings, get_game_setting
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -129,7 +129,7 @@ class StartScreen(Screens):
                     subprocess.Popen(
                         ["xdg-open", "https://twitter.com/OfficialClangen"]
                     )
-        elif event.type == pygame.KEYDOWN and get_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
             ) and self.continue_button.is_enabled:
@@ -170,7 +170,7 @@ class StartScreen(Screens):
         music_manager.check_music("start screen")
 
         bg = pygame.image.load("resources/images/menu.png").convert()
-        if get_setting("dark mode"):
+        if get_game_setting("dark mode"):
             bg.fill(
                 constants.CONFIG["theme"]["fullscreen_background"]["dark"][
                     "mainmenu_tint"
@@ -324,7 +324,7 @@ class StartScreen(Screens):
                 and not get_version_info().is_itch
                 and get_version_info().upstream.lower()
                 == "ClanGenOfficial/clangen".lower()
-                and get_setting("check_for_updates")
+                and get_game_setting("check_for_updates")
                 and not has_checked_for_update
             ):
                 if has_update(UpdateChannel(get_version_info().release_channel)):
@@ -350,7 +350,7 @@ class StartScreen(Screens):
             logger.exception("Failed to check for update")
             has_checked_for_update = True
 
-        if get_setting("show_changelog"):
+        if get_game_setting("show_changelog"):
             show_changelog = True
             lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
@@ -432,4 +432,4 @@ class StartScreen(Screens):
                     game.clan.remove_cat(x)
 
         # LOAD settings
-        load_settings()
+        load_game_settings()

@@ -8,7 +8,7 @@ from enum import Enum, auto
 from typing import Dict, Tuple, Union, List
 
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import get_setting
+from scripts.game_structure.game.settings import get_game_setting
 
 # fixing year to 2000 so we can use date comparison functions.
 # 2000 is used because it is a leap year.
@@ -77,7 +77,7 @@ def is_today(date: SpecialDate) -> bool:
 
     Only returns True if "special_dates" setting is True.
     """
-    if not get_setting("special_dates"):
+    if not get_game_setting("special_dates"):
         return False
     if constants.CONFIG["fun"].get("always_halloween", False):
         return True
@@ -93,7 +93,7 @@ def get_special_date() -> Union[DateInfo, None]:
 
     Otherwise, return None.
     """
-    if not get_setting("special_dates"):
+    if not get_game_setting("special_dates"):
         return None
     if constants.CONFIG["fun"].get("always_halloween", False):
         return _date_map[SpecialDate.HALLOWEEN]
