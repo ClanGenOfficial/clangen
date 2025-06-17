@@ -26,8 +26,8 @@ from scripts.utility import (
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure import localization as pronouns
+from ..game_structure.game.switches import get_switch, set_switch, Switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import get_switch, set_switch, Switches
 from ..game_structure.windows import PronounCreation
 from ..ui.generate_button import get_button_dict, ButtonStyles
 

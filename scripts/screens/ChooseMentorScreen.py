@@ -18,8 +18,8 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
+from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import set_switch, get_switch, Switches
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon

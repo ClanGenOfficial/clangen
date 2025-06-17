@@ -123,9 +123,9 @@ class Clan:
         self.last_focus_change = None
         self.clans_in_focus = []
 
-        self.faded_ids = (
-            []
-        )  # Stores ID's of faded cats, to ensure these IDs aren't reused.
+        self.faded_ids = []
+        """Stores ID's of faded cats, to ensure these IDs aren't reused."""
+
         if self_run_init_functions:
             self.post_initialization_functions()
 

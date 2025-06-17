@@ -11,7 +11,12 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
-from scripts.game_structure.game.settings import save_settings, switch_setting
+from scripts.game_structure.game.settings import (
+    save_settings,
+    switch_setting,
+    get_setting,
+    set_setting,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -140,7 +145,7 @@ class SettingsScreen(Screens):
                 self.save_settings()
                 save_settings(self)
                 set_display_mode(
-                    fullscreen=game.settings["fullscreen"], source_screen=self
+                    fullscreen=get_setting("fullscreen"), source_screen=self
                 )
             elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == "Darwin":
@@ -198,12 +203,12 @@ class SettingsScreen(Screens):
                         MANAGER.set_locale(key)
                         i18n.config.set("locale", key)
                         self.checkboxes[key].disable()
-                        game.settings["language"] = key
+                        set_setting("language", key)
                     else:
                         switch_setting(key)
                         value.change_object_id(
                             "@checked_checkbox"
-                            if game.settings[key]
+                            if get_setting(key)
                             else "@unchecked_checkbox"
                         )
                     self.settings_changed = True
@@ -227,7 +232,7 @@ class SettingsScreen(Screens):
                         self.sub_menu == "general"
                         and event.ui_element is self.checkboxes["discord"]
                     ):
-                        if game.settings["discord"]:
+                        if get_setting("discord"):
                             print("Starting Discord RPC")
                             game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
                             game.rpc.start()
@@ -292,12 +297,10 @@ class SettingsScreen(Screens):
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             tool_tip_text="buttons.toggle_fullscreen_windowed"
-            if game.settings["fullscreen"]
+            if get_setting("fullscreen")
             else "buttons.toggle_fullscreen_fullscreen",
             tool_tip_text_kwargs={
-                "screentext": "windowed"
-                if game.settings["fullscreen"]
-                else "fullscreen"
+                "screentext": "windowed" if get_setting("fullscreen") else "fullscreen"
             },
         )
 
@@ -769,7 +772,7 @@ class SettingsScreen(Screens):
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
-                if game.settings[code]:
+                if get_setting(code):
                     box_type = "@checked_checkbox"
                 else:
                     box_type = "@unchecked_checkbox"

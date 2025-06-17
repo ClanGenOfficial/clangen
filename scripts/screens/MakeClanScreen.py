@@ -24,9 +24,11 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
+from ..cat import save_load
 from ..cat.sprites import sprites
+from ..game_structure.game.settings import set_setting, get_setting
+from ..game_structure.game.switches import get_switch, Switches
 from ..game_structure.screen_settings import MANAGER, screen
-from ..game_structure.switches import get_switch, Switches
 from ..game_structure.windows import SymbolFilterWindow
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -215,7 +217,7 @@ class MakeClanScreen(Screens):
 
         # Logic for when to quick-start clan
         elif event.ui_element == self.elements["next_step"]:
-            game.settings["game_mode"] = self.game_mode
+            set_setting("game_mode", self.game_mode)
             if "@checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
                 self.random_quick_start()
                 self.save_clan()
@@ -250,7 +252,7 @@ class MakeClanScreen(Screens):
 
         elif event.key == pygame.K_RIGHT or event.key == pygame.K_RETURN:
             if self.elements["next_step"].is_enabled:
-                game.settings["game_mode"] = self.game_mode
+                set_setting("game_mode", self.game_mode)
                 self.open_name_clan()
 
     def handle_name_clan_event(self, event):
@@ -2140,7 +2142,7 @@ class MakeClanScreen(Screens):
     def save_clan(self):
         game.mediated.clear()
         game.patrolled.clear()
-        game.cat_to_fade.clear()
+        save_load.cat_to_fade.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}

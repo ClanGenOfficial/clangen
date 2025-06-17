@@ -8,6 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure import image_cache
+from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game.switches import (
     Switches,
     get_switch,

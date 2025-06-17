@@ -19,8 +19,8 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from ..game_structure.game.switches import set_switch, get_switch, Switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import set_switch, get_switch, Switches
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon

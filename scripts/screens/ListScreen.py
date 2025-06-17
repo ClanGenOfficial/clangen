@@ -10,6 +10,7 @@ from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
 )
+from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game.switches import set_switch, get_switch, Switches
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER

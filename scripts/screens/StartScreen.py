@@ -26,7 +26,7 @@ from requests.exceptions import RequestException, Timeout
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
-from scripts.game_structure.game.settings import load_settings
+from scripts.game_structure.game.settings import load_settings, get_setting
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -35,7 +35,7 @@ from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import get_switch, Switches
+from ..game_structure.game.switches import get_switch, Switches
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
@@ -324,7 +324,7 @@ class StartScreen(Screens):
                 and not get_version_info().is_itch
                 and get_version_info().upstream.lower()
                 == "ClanGenOfficial/clangen".lower()
-                and game.settings["check_for_updates"]
+                and get_setting("check_for_updates")
                 and not has_checked_for_update
             ):
                 if has_update(UpdateChannel(get_version_info().release_channel)):
@@ -350,7 +350,7 @@ class StartScreen(Screens):
             logger.exception("Failed to check for update")
             has_checked_for_update = True
 
-        if game.settings["show_changelog"]:
+        if get_setting("show_changelog"):
             show_changelog = True
             lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):

@@ -7,6 +7,7 @@ TODO: Docs
 """
 
 import random
+
 # pylint: enable=line-too-long
 import traceback
 

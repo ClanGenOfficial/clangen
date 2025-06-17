@@ -11,6 +11,7 @@ import asyncio
 import threading
 from time import time
 
+from scripts.game_structure.game.settings import get_setting
 from scripts.game_structure.game.switches import get_switch, Switches
 from scripts.game_structure.game_essentials import game
 
@@ -52,7 +53,7 @@ class _DiscordRPC(threading.Thread):
 
     def get_rpc(self):
         # Check if pypresence is available.
-        if not game.settings["discord"]:
+        if not get_setting("discord"):
             return
         try:
             # raise ImportError # uncomment this line to disable rpc without uninstalling pypresence
@@ -99,7 +100,7 @@ class _DiscordRPC(threading.Thread):
             try:
                 img_str = (
                     f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_"
-                    f"{game.clan.camp_bg}_{'dark' if game.settings['dark mode'] else 'light'}"
+                    f"{game.clan.camp_bg}_{'dark' if get_setting('dark mode') else 'light'}"
                 )
                 img_text = game.clan.biome
             except AttributeError:

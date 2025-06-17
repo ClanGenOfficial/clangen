@@ -1134,10 +1134,10 @@ class Cat:
         # determine which dict we're pulling from
         if game.clan.instructor.df:
             starclan = False
-            ceremony_dict = LEAD_CEREMONY_DF
+            ceremony_dict: Dict = LEAD_CEREMONY_DF
         else:
             starclan = True
-            ceremony_dict = LEAD_CEREMONY_SC
+            ceremony_dict: Dict = LEAD_CEREMONY_SC
 
         # ---------------------------------------------------------------------------- #
         #                                    INTRO                                     #
@@ -3611,8 +3611,8 @@ def load_grief_reactions():
 
 load_grief_reactions()
 
-LEAD_CEREMONY_SC = None
-LEAD_CEREMONY_DF = None
+LEAD_CEREMONY_SC: Optional[Dict] = None
+LEAD_CEREMONY_DF: Optional[Dict] = None
 lead_ceremony_lang = None
 
 
