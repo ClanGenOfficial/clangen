@@ -5,22 +5,23 @@ from typing import Dict, List
 
 import i18n
 
+import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
-import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_highest_romantic_relation,
     event_text_adjust,
     get_personality_compatibility,
     process_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class RomanticEvents:

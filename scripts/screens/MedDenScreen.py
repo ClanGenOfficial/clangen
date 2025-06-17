@@ -18,15 +18,13 @@ from scripts.utility import (
     ui_scale,
     get_alive_status_cats,
     shorten_text_to_fit,
-    get_living_clan_cat_count,
     event_text_adjust,
     ui_scale_offset,
 )
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
-from ..game_structure import switches
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import set_switch
+from ..game_structure.switches import set_switch, Switches
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -113,11 +111,11 @@ class MedDenScreen(Screens):
                 self.update_sick_cats()
             elif event.ui_element in self.cat_buttons.values():
                 cat = event.ui_element.return_cat_object()
-                set_switch("cat", cat.ID)
+                set_switch(Switches.cat, cat.ID)
                 self.change_screen("profile screen")
             elif event.ui_element == self.med_cat:
                 cat = event.ui_element.return_cat_object()
-                set_switch("cat", cat.ID)
+                set_switch(Switches.cat, cat.ID)
                 self.change_screen("profile screen")
             elif event.ui_element == self.cats_tab:
                 self.open_tab = "cats"

@@ -11,7 +11,9 @@ from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     create_new_cat,
     get_highest_romantic_relation,
@@ -21,7 +23,6 @@ from scripts.utility import (
     get_alive_status_cats,
     adjust_list_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class Pregnancy_Events:

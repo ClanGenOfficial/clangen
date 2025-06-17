@@ -8,6 +8,7 @@ from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.game_structure.switches import get_switch
+from scripts.game_structure.switches.game_switches import Switches
 from scripts.housekeeping.datadir import get_save_dir
 
 pygame.init()
@@ -129,8 +130,8 @@ class Game:
         )
 
     def update_game(self):
-        if self.current_screen != get_switch("cur_screen"):
-            self.current_screen = get_switch("cur_screen")
+        if self.current_screen != get_switch(Switches.cur_screen):
+            self.current_screen = get_switch(Switches.cur_screen)
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []

@@ -9,7 +9,7 @@ from pygame_gui.core import ObjectID
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, switches, constants
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
@@ -17,7 +17,7 @@ from scripts.game_structure.screen_settings import (
     MANAGER,
     screen,
 )
-from scripts.game_structure.switches import set_switch, get_switch
+from scripts.game_structure.switches import set_switch, get_switch, Switches
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SaveCheck, EventLoading
 from scripts.utility import (
@@ -75,7 +75,7 @@ class Screens:
             self.death_status = "living"
             self.current_page = 1
 
-        set_switch("cur_screen", new_screen)
+        set_switch(Switches.cur_screen, new_screen)
         game.switch_screens = True
         game.rpc.update_rpc.set()
         if game.clan:
@@ -233,12 +233,12 @@ class Screens:
             if name == "dens":
                 if (
                     game.clan.clan_settings["moons and seasons"]
-                    and get_switch("cur_screen") == "events screen"
+                    and get_switch(Switches.cur_screen) == "events screen"
                 ):
                     button.show()
                 elif (
                     not game.clan.clan_settings["moons and seasons"]
-                    and get_switch("cur_screen") != "camp screen"
+                    and get_switch(Switches.cur_screen) != "camp screen"
                 ):
                     button.show()
                 button.hide()
@@ -313,16 +313,18 @@ class Screens:
         elif event.ui_element == Screens.menu_buttons["patrol_screen"]:
             self.change_screen("patrol screen")
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
-            SaveCheck(get_switch("cur_screen"), True, Screens.menu_buttons["main_menu"])
+            SaveCheck(
+                get_switch(Switches.cur_screen), True, Screens.menu_buttons["main_menu"]
+            )
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
             self.change_screen("allegiances screen")
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            if get_switch("moon_and_seasons_open"):
-                set_switch("moon_and_seasons_open", False)
-            else:
-                switches.moon_and_seasons_open = True
+            set_switch(
+                Switches.moon_and_seasons_open,
+                not get_switch(Switches.moon_and_seasons_open),
+            )
             self.update_moon_and_season()
         elif event.ui_element == Screens.menu_buttons["dens"]:
             self.update_dens()
@@ -544,7 +546,7 @@ class Screens:
                 }
             )
 
-        if get_switch("cur_screen") != "camp screen":
+        if get_switch(Switches.cur_screen) != "camp screen":
             cls.menu_buttons.update(
                 {
                     "dens": UIImageButton(
@@ -563,11 +565,11 @@ class Screens:
         """Updates the moons and seasons widget."""
         if (
             game.clan.clan_settings["moons and seasons"]
-            and get_switch("cur_screen") != "events screen"
+            and get_switch(Switches.cur_screen) != "events screen"
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if get_switch("moon_and_seasons_open"):
+            if get_switch(Switches.moon_and_season_open):
                 if cls.name == "events screen":
                     cls.close_moon_and_season()
                 else:

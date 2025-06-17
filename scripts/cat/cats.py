@@ -33,12 +33,12 @@ from scripts.conditions import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure import image_cache, switches, constants
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
-from scripts.game_structure.switches import get_switch
+from scripts.game_structure.switches import get_switch, Switches
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     clamp,
@@ -953,7 +953,7 @@ class Cat:
         self.all_cats[self.ID] = self
 
         # If we have it sorted by rank, we also need to re-sort
-        if switches.sort_type == "rank" and resort:
+        if get_switch(Switches.sort_type) == "rank" and resort:
             Cat.sort_cats()
 
     def rank_change_traits_skill(self, mentor):
@@ -1031,10 +1031,10 @@ class Cat:
     def load_history(self):
         """Load this cat's history"""
         try:
-            if get_switch("clan_name") != "":
-                clanname = get_switch("clan_name")
+            if get_switch(Switches.clan_name) != "":
+                clanname = get_switch(Switches.clan_name)
             else:
-                clanname = get_switch("clan_list")[0]
+                clanname = get_switch(Switches.clan_list)[0]
         except IndexError:
             print("WARNING: History failed to load, no Clan in switches?")
             return
@@ -1524,9 +1524,9 @@ class Cat:
         """Generates a thought for the cat, which displays on their profile."""
         all_cats = self.all_cats
         other_cat = choice(list(all_cats.keys()))
-        game_mode = switches.game_mode
-        biome = switches.biome
-        camp = switches.camp_bg
+        game_mode = get_switch(Switches.game_mode)
+        biome = get_switch(Switches.biome)
+        camp = get_switch(Switches.camp_bg)
         try:
             season = game.clan.current_season
         except Exception:
@@ -2214,10 +2214,10 @@ class Cat:
     def save_condition(self):
         # save conditions for each cat
         clanname = None
-        if get_switch("clan_name") != "":
-            clanname = get_switch("clan_name")
-        elif len(get_switch("clan_list")) > 0:
-            clanname = get_switch("clan_list")[0]
+        if get_switch(Switches.clan_name) != "":
+            clanname = get_switch(Switches.clan_name)
+        elif len(get_switch(Switches.clan_list)) > 0:
+            clanname = get_switch(Switches.clan_list)[0]
         elif game.clan is not None:
             clanname = game.clan.name
 
@@ -2247,10 +2247,10 @@ class Cat:
         safe_save(condition_file_path, conditions)
 
     def load_conditions(self):
-        if get_switch("clan_name") != "":
-            clanname = get_switch("clan_name")
+        if get_switch(Switches.clan_name) != "":
+            clanname = get_switch(Switches.clan_name)
         else:
-            clanname = get_switch("clan_list")[0]
+            clanname = get_switch(Switches.clan_list)[0]
 
         condition_directory = get_save_dir() + "/" + clanname + "/conditions/"
         condition_cat_directory = condition_directory + self.ID + "_conditions.json"
@@ -2747,10 +2747,10 @@ class Cat:
         safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
     def load_relationship_of_cat(self):
-        if get_switch("clan_name") != "":
-            clanname = get_switch("clan_name")
+        if get_switch(Switches.clan_name) != "":
+            clanname = get_switch(Switches.clan_name)
         else:
-            clanname = get_switch("clan_list")[0]
+            clanname = get_switch(Switches.clan_list)[0]
 
         relation_directory = get_save_dir() + "/" + clanname + "/relationships/"
         relation_cat_directory = relation_directory + self.ID + "_relations.json"
@@ -3143,8 +3143,12 @@ class Cat:
             return
 
         try:
-            # why can't this be `get_switch("clan_name")`?
-            clan = get_switch("clan_list")[0] if game.clan is None else game.clan.name
+            # todo: why can't this be `get_switch(Switches.clan_name)`?
+            clan = (
+                get_switch(Switches.clan_list)[0]
+                if game.clan is None
+                else game.clan.name
+            )
 
             with open(
                 get_save_dir() + "/" + clan + "/faded_cats/" + cat + ".json",
@@ -3160,7 +3164,7 @@ class Cat:
             with open(
                 get_save_dir()
                 + "/"
-                + get_switch("clan_list")[0]
+                + get_switch(Switches.clan_list)[0]
                 + "/faded_cats/"
                 + cat
                 + ".json",
@@ -3206,37 +3210,39 @@ class Cat:
             given_list = []
         if not given_list:
             given_list = Cat.all_cats_list
-        if switches.sort_type == "age":
+        sort_type = get_switch(Switches.sort_type)
+        if sort_type == "age":
             given_list.sort(key=lambda x: Cat.get_adjusted_age(x))
-        elif switches.sort_type == "reverse_age":
+        elif sort_type == "reverse_age":
             given_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
-        elif switches.sort_type == "id":
+        elif sort_type == "id":
             given_list.sort(key=lambda x: int(x.ID))
-        elif switches.sort_type == "reverse_id":
+        elif sort_type == "reverse_id":
             given_list.sort(key=lambda x: int(x.ID), reverse=True)
-        elif switches.sort_type == "rank":
+        elif sort_type == "rank":
             given_list.sort(
                 key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True
             )
-        elif switches.sort_type == "exp":
+        elif sort_type == "exp":
             given_list.sort(key=lambda x: x.experience, reverse=True)
-        elif switches.sort_type == "death":
+        elif sort_type == "death":
             given_list.sort(key=lambda x: -1 * int(x.dead_for))
 
         return
 
     @staticmethod
     def insert_cat(c: Cat):
+        sort_type = get_switch(Switches.sort_type)
         try:
-            if switches.sort_type == "age":
+            if sort_type == "age":
                 bisect.insort(
                     Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x)
                 )
-            elif switches.sort_type == "reverse_age":
+            elif sort_type == "reverse_age":
                 bisect.insort(
                     Cat.all_cats_list, c, key=lambda x: -1 * Cat.get_adjusted_age(x)
                 )
-            elif switches.sort_type == "rank":
+            elif sort_type == "rank":
                 bisect.insort(
                     Cat.all_cats_list,
                     c,
@@ -3245,13 +3251,13 @@ class Cat:
                         -1 * Cat.get_adjusted_age(x),
                     ),
                 )
-            elif switches.sort_type == "exp":
+            elif sort_type == "exp":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: x.experience)
-            elif switches.sort_type == "id":
+            elif sort_type == "id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
-            elif switches.sort_type == "reverse_id":
+            elif sort_type == "reverse_id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
-            elif switches.sort_type == "death":
+            elif sort_type == "death":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.dead_for))
         except (TypeError, NameError):
             # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
@@ -3272,7 +3278,7 @@ class Cat:
         total age, rather than age at death"""
         if cat.dead:
             if constants.CONFIG["sorting"]["sort_rank_by_death"]:
-                if switches.sort_type == "rank":
+                if get_switch(Switches.sort_type) == "rank":
                     return cat.dead_for
                 else:
                     if constants.CONFIG["sorting"]["sort_dead_by_total_age"]:

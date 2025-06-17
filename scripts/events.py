@@ -29,10 +29,11 @@ from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import handle_short_events
-from scripts.game_structure import switches, constants
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.switches import set_switch
+from scripts.game_structure.switches.game_switches import Switches, get_switch
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     change_clan_relations,
@@ -76,7 +77,7 @@ class Events:
         game.herb_events_list = []
         game.freshkill_events_list = []
         game.mediated = []
-        set_switch("saved_clan", False)
+        set_switch(Switches.saved_clan, False)
         self.new_cat_invited = False
         Relation_Events.clear_trigger_dict()
         Patrol.used_patrols.clear()
@@ -99,7 +100,8 @@ class Events:
             and not cat.outside
             for cat in Cat.all_cats.values()
         ):
-            set_switch("no_able_left", False)
+            # todo: this links nowhere, can it be removed?
+            set_switch(Switches.no_able_left, False)
 
         # age up the clan, set current season
         game.clan.age += 1
@@ -299,7 +301,7 @@ class Events:
         self.check_and_promote_deputy()
 
         # Resort
-        if switches.sort_type != "id":
+        if get_switch(Switches.sort_type) != "id":
             Cat.sort_cats()
 
         # Clear all the loaded event dicts.
@@ -986,7 +988,7 @@ class Events:
                 Condition_Events.handle_illnesses(cat)
             else:
                 Condition_Events.handle_injuries(cat)
-            set_switch("skip_conditions", [])
+            set_switch(Switches.skip_conditions, [])
             if cat.dead:
                 return
             self.handle_outbreaks(cat)
@@ -1035,19 +1037,19 @@ class Events:
             if not triggered_death:
                 self.handle_illnesses_or_illness_deaths(cat)
             else:
-                set_switch("skip_conditions", [])
+                set_switch(Switches.skip_conditions, [])
                 return
         else:
             triggered_death = self.handle_illnesses_or_illness_deaths(cat)
             if not triggered_death:
                 self.handle_injuries_or_general_death(cat)
             else:
-                set_switch("skip_conditions", [])
+                set_switch(Switches.skip_conditions, [])
                 return
 
         self.handle_murder(cat)
 
-        set_switch("skip_conditions", [])
+        set_switch(Switches.skip_conditions, [])
 
     def load_war_resources(self):
         if Events.war_lang == i18n.config.get("locale"):
@@ -1105,7 +1107,7 @@ class Events:
             else:  # try to influence the relation with warring clan
                 game.clan.war["duration"] += 1
                 choice = random.choice(["rel_up", "rel_up", "neutral", "rel_down"])
-                switches.war_rel_change_type = choice
+                set_switch(Switches.war_rel_change_type, choice)
                 war_events = self.WAR_TXT["progress_events"][choice]
                 if enemy_clan.relations < 0:
                     enemy_clan.relations = 0

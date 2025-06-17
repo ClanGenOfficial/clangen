@@ -12,6 +12,7 @@ from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.switches import get_switch
+from ..game_structure.switches.game_switches import Switches
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -30,7 +31,7 @@ class CeremonyScreen(Screens):
         self.hide_menu_buttons()
         self.show_mute_buttons()
 
-        self.the_cat = Cat.all_cats.get(get_switch("cat"), "")
+        self.the_cat = Cat.all_cats.get(get_switch(Switches.cat), "")
         if self.the_cat.status == "leader":
             self.header = pygame_gui.elements.UITextBox(
                 "screens.ceremony.heading_leader",

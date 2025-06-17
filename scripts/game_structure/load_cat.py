@@ -10,10 +10,10 @@ from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.game_structure.localization import get_new_pronouns
+from scripts.game_structure.switches import get_switch, set_switch, Switches
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
-from . import switches, constants
+from . import constants
 from .game_essentials import game
-from .switches import get_switch, set_switch
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
 from ..housekeeping.datadir import get_save_dir
@@ -28,14 +28,14 @@ def load_cats():
         try:
             csv_load(Cat.all_cats)
         except FileNotFoundError as e:
-            set_switch("error_message", "Can't find clan_cats.json!")
-            set_switch("traceback", e)
+            set_switch(Switches.error_message, "Can't find clan_cats.json!")
+            set_switch(Switches.traceback, e)
             raise
 
 
 def json_load():
     all_cats = []
-    clanname = get_switch("clan_list")[0]
+    clanname = get_switch(Switches.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
     with open(
         f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
@@ -45,12 +45,12 @@ def json_load():
         with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
-        set_switch("error_message", f"Can\t open {clan_cats_json_path}!")
-        set_switch("traceback", e)
+        set_switch(Switches.error_message, f"Can\t open {clan_cats_json_path}!")
+        set_switch(Switches.traceback, e)
         raise
     except ujson.JSONDecodeError as e:
-        set_switch("error_message", f"{clan_cats_json_path} is malformed!")
-        set_switch("traceback", e)
+        set_switch(Switches.error_message, f"{clan_cats_json_path} is malformed!")
+        set_switch(Switches.traceback, e)
         raise
 
     old_tortie_patches = convert["old_tortie_patches"]
@@ -243,8 +243,10 @@ def json_load():
                 key = f" ID #{cat['ID']} "
             else:
                 key = f" at index {i} "
-            set_switch("error_message", f"Cat{key}in clan_cats.json is missing {e}!")
-            set_switch("traceback", e)
+            set_switch(
+                Switches.error_message, f"Cat{key}in clan_cats.json is missing {e}!"
+            )
+            set_switch(Switches.traceback, e)
             raise
 
     # replace cat ids with cat objects and add other needed variables
@@ -270,10 +272,10 @@ def json_load():
                 f"There was an error loading relationships for cat #{cat}."
             )
             set_switch(
-                "error_message",
+                Switches.error_message,
                 f"There was an error loading relationships for cat #{cat}.",
             )
-            switches.traceback = e
+            set_switch(Switches.traceback, e)
             raise
 
         cat.inheritance = Inheritance(cat)
@@ -286,10 +288,10 @@ def json_load():
                 f"There was an error when thoughts for cat #{cat} are created."
             )
             set_switch(
-                "error_message",
+                Switches.error_message,
                 f"There was an error when thoughts for cat #{cat} are created.",
             )
-            switches.traceback = e
+            set_switch(Switches.traceback, e)
             raise
 
         # Save integrety checks
@@ -298,21 +300,21 @@ def json_load():
 
 
 def csv_load(all_cats):
-    if get_switch("clan_list")[0].strip() == "":
+    if get_switch(Switches.clan_list)[0].strip() == "":
         cat_data = ""
     else:
         if os.path.exists(
-            get_save_dir() + "/" + get_switch("clan_list")[0] + "cats.csv"
+            get_save_dir() + "/" + get_switch(Switches.clan_list)[0] + "cats.csv"
         ):
             with open(
-                get_save_dir() + "/" + get_switch("clan_list")[0] + "cats.csv",
+                get_save_dir() + "/" + get_switch(Switches.clan_list)[0] + "cats.csv",
                 "r",
                 encoding="utf-8",
             ) as read_file:
                 cat_data = read_file.read()
         else:
             with open(
-                get_save_dir() + "/" + get_switch("clan_list")[0] + "cats.txt",
+                get_save_dir() + "/" + get_switch(Switches.clan_list)[0] + "cats.txt",
                 "r",
                 encoding="utf-8",
             ) as read_file:
@@ -339,14 +341,14 @@ def csv_load(all_cats):
                     elif attr[x].upper() == "FALSE":
                         attr[x] = False
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 1)",
                 )
                 the_pelt = Pelt(
                     colour=attr[2], name=attr[11], length=attr[9], eye_color=attr[17]
                 )
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 2)",
                 )
                 the_cat = Cat(
@@ -361,12 +363,12 @@ def csv_load(all_cats):
                 )
 
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 3)",
                 )
                 the_cat.age, the_cat.mentor = attr[4], attr[8]
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 4)",
                 )
                 (
@@ -374,7 +376,7 @@ def csv_load(all_cats):
                     the_cat.pelt.cat_sprites["adolescent"],
                 ) = int(attr[13]), int(attr[14])
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 5)",
                 )
                 the_cat.pelt.cat_sprites["adult"], the_cat.pelt.cat_sprites["elder"] = (
@@ -382,7 +384,7 @@ def csv_load(all_cats):
                     int(attr[16]),
                 )
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 6)",
                 )
                 (
@@ -390,7 +392,7 @@ def csv_load(all_cats):
                     the_cat.pelt.cat_sprites["senior adult"],
                 ) = int(attr[15]), int(attr[15])
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 7)",
                 )
                 (
@@ -399,7 +401,7 @@ def csv_load(all_cats):
                     the_cat.pelt.pattern,
                 ) = (attr[18], attr[19], attr[20])
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 8)",
                 )
                 (
@@ -408,7 +410,7 @@ def csv_load(all_cats):
                     the_cat.pelt.tortiecolour,
                 ) = (attr[21], attr[22], attr[23])
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 9)",
                 )
                 the_cat.trait, the_cat.pelt.skin, the_cat.specialty = (
@@ -417,7 +419,7 @@ def csv_load(all_cats):
                     attr[27],
                 )
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 10)",
                 )
                 the_cat.skill = attr[25]
@@ -428,7 +430,7 @@ def csv_load(all_cats):
                 else:
                     the_cat.specialty2 = None
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 11)",
                 )
                 if len(attr) > 34:
@@ -450,7 +452,7 @@ def csv_load(all_cats):
                 else:
                     the_cat.experience = 0
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 12)",
                 )
                 if len(attr) > 30:
@@ -464,19 +466,19 @@ def csv_load(all_cats):
                         the_cat.dead = attr[32]
                         the_cat.pelt.cat_sprites["dead"] = attr[33]
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 13)",
                 )
                 if len(attr) > 35:
                     the_cat.dead_for = int(attr[35])
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 14)",
                 )
                 if len(attr) > 36 and attr[36] is not None:
                     the_cat.apprentice = attr[36].split(";")
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 15)",
                 )
                 if len(attr) > 37:
@@ -490,13 +492,13 @@ def csv_load(all_cats):
                 if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
                     the_cat.former_apprentices = attr[41].split(";")
         set_switch(
-            "error_message",
+            Switches.error_message,
             "There was an error loading this clan's mentors, apprentices, relationships, or sprite info.",
         )
         for inter_cat in all_cats.values():
             # Load the mentors and apprentices after all cats have been loaded
             set_switch(
-                "error_message",
+                Switches.error_message,
                 f"There was an error loading this clan's mentors/apprentices. Last cat read was {inter_cat}",
             )
             inter_cat.mentor = Cat.all_cats.get(inter_cat.mentor)
@@ -518,30 +520,30 @@ def csv_load(all_cats):
             inter_cat.former_apprentices = [a.ID for a in former_apps]
             if not inter_cat.dead:
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error loading this clan's relationships. Last cat read was {inter_cat}",
                 )
                 inter_cat.load_relationship_of_cat()
             set_switch(
-                "error_message",
+                Switches.error_message,
                 f"There was an error loading a cat's sprite info. Last cat read was {inter_cat}",
             )
             # update_sprite(inter_cat)
         # generate the relationship if some is missing
         if not the_cat.dead:
             set_switch(
-                "error_message",
+                Switches.error_message,
                 f"There was an error when relationships were created.",
             )
             for id in all_cats.keys():
                 the_cat = all_cats.get(id)
                 set_switch(
-                    "error_message",
+                    Switches.error_message,
                     f"There was an error when relationships for cat #{the_cat} are created.",
                 )
                 if the_cat.relationships is not None and len(the_cat.relationships) < 1:
                     the_cat.create_all_relationships()
-        set_switch("error_message", "")
+        set_switch(Switches.error_message, "")
 
 
 def save_check():

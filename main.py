@@ -28,7 +28,7 @@ from importlib.util import find_spec
 
 from scripts.game_structure import switches, constants
 from scripts.game_structure.game.save_load import read_clans
-from scripts.game_structure.switches import get_switch, set_switch
+from scripts.game_structure.switches import get_switch, set_switch, Switches
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -225,7 +225,7 @@ def load_data():
 
     clan_list = read_clans()
     if clan_list:
-        set_switch("clan_list", clan_list)
+        set_switch(Switches.clan_list, clan_list)
         try:
             load_cats()
             version_info = clan_class.load_clan()
@@ -234,9 +234,11 @@ def load_data():
             scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
-            if get_switch("error_message") is None:
-                set_switch("error_message", "There was an error loading the cats file!")
-                set_switch("traceback", e)
+            if get_switch(Switches.error_message) is None:
+                set_switch(
+                    Switches.error_message, "There was an error loading the cats file!"
+                )
+                set_switch(Switches.traceback, e)
 
     finished_loading = True
 
@@ -319,7 +321,7 @@ AllScreens.start_screen.screen_switches()
 cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
-fps = switches.fps
+fps = get_switch(Switches.fps)
 music_manager.check_music("start screen")
 while 1:
     time_delta = clock.tick(fps) / 1000.0
@@ -341,7 +343,7 @@ while 1:
         ):
             pass
         else:
-            # todo ...shouldn't this be `get_switch("cur_screen")`?
+            # todo ...shouldn't this be `get_switch(Switches.cur_screen)`?
             getattr(AllScreens, game.current_screen.replace(" ", "_")).handle_event(
                 event
             )
@@ -350,7 +352,7 @@ while 1:
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
             if (
-                get_switch("cur_screen")
+                get_switch(Switches.cur_screen)
                 in (
                     "start screen",
                     "switch clan screen",
@@ -362,7 +364,7 @@ while 1:
             ):
                 quit(savesettings=False)
             else:
-                SaveCheck(get_switch("cur_screen"), False, None)
+                SaveCheck(get_switch(Switches.cur_screen), False, None)
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -386,7 +388,7 @@ while 1:
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
-                        AllScreens, get_switch("cur_screen").replace(" ", "_")
+                        AllScreens, get_switch(Switches.cur_screen).replace(" ", "_")
                     ),
                     show_confirm_dialog=False,
                 )

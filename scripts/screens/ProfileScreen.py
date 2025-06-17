@@ -10,8 +10,6 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from ..cat.enums import CatAgeEnum
-from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache, switches
 from scripts.game_structure.game_essentials import game
@@ -32,11 +30,12 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
+from ..cat.enums import CatAgeEnum
 from ..cat.history import History
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import set_switch, get_switch
+from ..game_structure.switches import set_switch, get_switch, Switches
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
@@ -148,7 +147,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
-                    set_switch("cat", self.previous_cat)
+                    set_switch(Switches.cat, self.previous_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -156,7 +155,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
-                    set_switch("cat", self.next_cat)
+                    set_switch(Switches.cat, self.next_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -174,10 +173,10 @@ class ProfileScreen(Screens):
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
                 if self.open_sub_tab is None:
-                    if switches.favorite_sub_tab is None:
+                    if not get_switch(Switches.favorite_sub_tab):
                         self.open_sub_tab = "life events"
                     else:
-                        self.open_sub_tab = switches.favorite_sub_tab
+                        self.open_sub_tab = get_switch(Switches.favorite_sub_tab)
 
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
@@ -208,7 +207,7 @@ class ProfileScreen(Screens):
             if event.key == pygame.K_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
-                    set_switch("cat", self.previous_cat)
+                    set_switch(Switches.cat, self.previous_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -216,7 +215,7 @@ class ProfileScreen(Screens):
             elif event.key == pygame.K_RIGHT:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
-                    set_switch("cat", self.next_cat)
+                    set_switch(Switches.cat, self.next_cat)
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
@@ -345,11 +344,11 @@ class ProfileScreen(Screens):
                 self.open_sub_tab = "user notes"
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
-                switches.favorite_sub_tab = None
+                set_switch(Switches.favorite_sub_tab, None)
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
             elif event.ui_element == self.not_fav_tab:
-                switches.favorite_sub_tab = self.open_sub_tab
+                set_switch(Switches.favorite_sub_tab, self.open_sub_tab)
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
@@ -365,10 +364,10 @@ class ProfileScreen(Screens):
                 self.editing_notes = True
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.no_moons:
-                switches.show_history_moons = True
+                set_switch(Switches.show_history_moons, True)
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.show_moons:
-                switches.show_history_moons = False
+                set_switch(Switches.show_history_moons, False)
                 self.update_disabled_buttons_and_text()
 
         # Conditions Tab
@@ -382,7 +381,7 @@ class ProfileScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        self.the_cat = Cat.all_cats.get(get_switch("cat"))
+        self.the_cat = Cat.all_cats.get(get_switch(Switches.cat))
 
         # Set up the menu buttons, which appear on all cat profile images.
         self.next_cat_button = UISurfaceImageButton(
@@ -519,7 +518,7 @@ class ProfileScreen(Screens):
     def build_profile(self):
         """Rebuild builds the cat profile. Run when you switch cats
         or for changes in the profile."""
-        self.the_cat = Cat.all_cats.get(get_switch("cat"))
+        self.the_cat = Cat.all_cats.get(get_switch(Switches.cat))
 
         # use these attributes to create differing profiles for StarClan cats etc.
         is_sc_instructor = False
@@ -1240,10 +1239,7 @@ class ProfileScreen(Screens):
         """
         scar_text = []
         scar_history = History.get_death_or_scars(self.the_cat, scar=True)
-        if switches.show_history_moons:
-            moons = True
-        else:
-            moons = False
+        moons = get_switch(Switches.show_history_moons)
 
         if scar_history:
             i = 0
@@ -1409,7 +1405,7 @@ class ProfileScreen(Screens):
                     "cat.history.graduation_normal", age=grad_age
                 )
 
-            if switches.show_history_moons:
+            if get_switch(Switches.show_history_moons):
                 graduation_history += f" (moon {app_ceremony['moon']})"
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         apprenticeship_history = influence_history + " " + graduation_history
@@ -1483,7 +1479,7 @@ class ProfileScreen(Screens):
             self.the_cat, death=True
         )
         murder_history = self.the_cat.history.get_murders(self.the_cat)
-        if switches.show_history_moons:
+        if get_switch(Switches.show_history_moons):
             moons = True
         else:
             moons = False
@@ -1609,10 +1605,7 @@ class ProfileScreen(Screens):
         murder_history = History.get_murders(self.the_cat)
         victim_text = ""
 
-        if switches.show_history_moons:
-            moons = True
-        else:
-            moons = False
+        moons = get_switch(Switches.show_history_moons)
         victims = []
         if murder_history:
             if "is_murderer" in murder_history:
@@ -2221,7 +2214,7 @@ class ProfileScreen(Screens):
         # History Tab:
         elif self.open_tab == "history":
             # show/hide fav tab star
-            if self.open_sub_tab == switches.favorite_sub_tab:
+            if self.open_sub_tab == get_switch(Switches.favorite_sub_tab):
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             else:
@@ -2256,7 +2249,7 @@ class ProfileScreen(Screens):
                     tool_tip_text="screens.profile.no_moons_tooltip",
                     manager=MANAGER,
                 )
-                if switches.show_history_moons:
+                if get_switch(Switches.show_history_moons):
                     self.no_moons.kill()
                 else:
                     self.show_moons.kill()
@@ -2384,7 +2377,7 @@ class ProfileScreen(Screens):
     #                               cat platforms                                  #
     # ---------------------------------------------------------------------------- #
     def get_platform(self):
-        the_cat = Cat.all_cats.get(get_switch("cat"), game.clan.instructor)
+        the_cat = Cat.all_cats.get(get_switch(Switches.cat), game.clan.instructor)
 
         light_dark = "light"
         if game.settings["dark mode"]:

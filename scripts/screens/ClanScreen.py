@@ -24,7 +24,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.game.settings.settings import save_settings
-from ..game_structure.switches import set_switch, get_switch
+from ..game_structure.switches import set_switch, get_switch, Switches
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -66,13 +66,13 @@ class ClanScreen(Screens):
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
                     save_settings(self)
-                    set_switch("saved_clan", True)
+                    set_switch(Switches.saved_clan, True)
                     self.update_buttons_and_text()
                 except RuntimeError:
                     SaveError(traceback.format_exc())
                     self.change_screen("start screen")
             if event.ui_element in self.cat_buttons:
-                set_switch("cat", event.ui_element.return_cat_id())
+                set_switch(Switches.cat, event.ui_element.return_cat_id())
                 self.change_screen("profile screen")
             if event.ui_element == self.label_toggle:
                 if game.clan.clan_settings["den labels"]:
@@ -106,14 +106,14 @@ class ClanScreen(Screens):
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
                 save_settings(self)
-                set_switch("saved_clan", True)
+                set_switch(Switches.saved_clan, True)
                 self.update_buttons_and_text()
 
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
         self.update_camp_bg()
-        set_switch("cat", None)
+        set_switch(Switches.cat, None)
         if game.clan.biome + game.clan.camp_bg in constants.LAYOUTS:
             self.layout = constants.LAYOUTS[game.clan.biome + game.clan.camp_bg]
         else:
@@ -337,7 +337,7 @@ class ClanScreen(Screens):
         del self.show_den_labels_text
 
         # reset save status
-        set_switch("saved_clan", False)
+        set_switch(Switches.saved_clan, False)
 
     def update_camp_bg(self):
         light_dark = "dark" if game.settings["dark mode"] else "light"
@@ -507,7 +507,7 @@ class ClanScreen(Screens):
                 )
 
     def update_buttons_and_text(self):
-        if get_switch("saved_clan"):
+        if get_switch(Switches.saved_clan):
             self.save_button_saving_state.hide()
             self.save_button_saved_state.show()
             self.save_button.disable()

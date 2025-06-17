@@ -6,7 +6,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -22,7 +22,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import get_switch
+from ..game_structure.switches import get_switch, Switches
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -139,9 +139,9 @@ class MediationScreen(Screens):
         self.page = 1
 
         if self.mediators:
-            if Cat.fetch_cat(get_switch("cat")) in self.mediators:
+            if Cat.fetch_cat(get_switch(Switches.cat)) in self.mediators:
                 self.selected_mediator = self.mediators.index(
-                    Cat.fetch_cat(get_switch("cat"))
+                    Cat.fetch_cat(get_switch(Switches.cat))
                 )
             else:
                 self.selected_mediator = 0

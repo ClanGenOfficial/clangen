@@ -7,10 +7,15 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events import events_class
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.switches import set_switch
+from scripts.game_structure.switches.game_switches import (
+    Switches,
+    get_switch,
+    set_switch_dict_value,
+)
 from scripts.game_structure.ui_elements import (
     UIModifiedScrollingContainer,
     IDImageButton,
@@ -135,7 +140,7 @@ class EventsScreen(Screens):
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:
                 self.save_scroll_position()
-                set_switch("cat", element.cat_id)
+                set_switch(Switches.cat, element.cat_id)
                 self.change_screen("profile screen")
             else:
                 self.save_scroll_position()
@@ -162,9 +167,12 @@ class EventsScreen(Screens):
         adds current event display vert scroll bar position to switches.saved_scroll_positions dict
         """
         if self.event_display.vert_scroll_bar:
-            switches.saved_scroll_positions[self.current_display] = (
+            position = (
                 self.event_display.vert_scroll_bar.scroll_position
                 / self.event_display.vert_scroll_bar.scrollable_height
+            )
+            set_switch_dict_value(
+                Switches.saved_scroll_positions, self.current_display, position
             )
 
     def handle_tab_select(self, event):
@@ -366,9 +374,9 @@ class EventsScreen(Screens):
         self.handle_tab_switch(self.current_display, is_rescale=True)
         MANAGER.update(1)
 
-        if switches.saved_scroll_positions.get(self.current_display):
+        if get_switch(Switches.saved_scroll_positions).get(self.current_display):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                switches.saved_scroll_positions[self.current_display]
+                get_switch(Switches.saved_scroll_positions)[self.current_display]
             )
 
     def make_event_scrolling_container(self):
@@ -700,9 +708,9 @@ class EventsScreen(Screens):
         )
 
         # set saved scroll position
-        if switches.saved_scroll_positions.get(self.current_display):
+        if get_switch(Switches.saved_scroll_positions).get(self.current_display):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                switches.saved_scroll_positions[self.current_display]
+                get_switch(Switches.saved_scroll_positions)[self.current_display]
             )
 
     def update_list_buttons(self):
@@ -721,7 +729,7 @@ class EventsScreen(Screens):
     def timeskip_done(self):
         """Various sorting and other tasks that must be done with the timeskip is over."""
 
-        switches.saved_scroll_positions = {}
+        set_switch(Switches.saved_scroll_positions, {})
 
         if get_living_clan_cat_count(Cat) == 0:
             GameOver("events screen")

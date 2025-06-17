@@ -35,7 +35,7 @@ from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.game.settings.settings import load_settings
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.switches import get_switch
+from ..game_structure.switches import get_switch, Switches
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
@@ -381,36 +381,36 @@ class StartScreen(Screens):
         self.warning_label.text_horiz_alignment = "center"
         self.warning_label.rebuild()
 
-        if game.clan is not None and get_switch("error_message") == "":
+        if game.clan is not None and get_switch(Switches.error_message) == "":
             self.continue_button.enable()
         else:
             self.continue_button.disable()
 
-        if len(get_switch("clan_list")) > 1:
+        if len(get_switch(Switches.clan_list)) > 1:
             self.switch_clan_button.enable()
         else:
             self.switch_clan_button.disable()
 
-        if get_switch("error_message"):
+        if get_switch(Switches.error_message):
             error_text = "screens.start.error_text"
             traceback_text = ""
-            if get_switch("traceback"):
+            if get_switch(Switches.traceback):
                 print("Traceback:")
-                print(get_switch("traceback"))
+                print(get_switch(Switches.traceback))
                 traceback_text = "<br><br>" + escape(
                     "".join(
                         traceback.format_exception(
-                            get_switch("traceback"),
-                            get_switch("traceback"),
-                            get_switch("traceback").__traceback__,
+                            get_switch(Switches.traceback),
+                            get_switch(Switches.traceback),
+                            get_switch(Switches.traceback).__traceback__,
                         )
                     )
                 )  # pylint: disable=line-too-long
             self.error_label.set_text(
                 error_text,
                 text_kwargs={
-                    "error": str(get_switch("error_message")),
-                    "traceback": traceback_text,
+                    "error": str(get_switch(Switches.error_message)),
+                    Switches.traceback: traceback_text,
                 },
             )
             self.error_box.show()

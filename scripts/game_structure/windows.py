@@ -18,7 +18,7 @@ from pygame_gui.windows import UIMessageWindow
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
-from scripts.game_structure import image_cache, switches
+from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import (
     get_lang_config,
@@ -27,6 +27,11 @@ from scripts.game_structure.localization import (
 )
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.switches import get_switch, set_switch
+from scripts.game_structure.switches.game_switches import (
+    Switches,
+    switch_list_append,
+    switch_list_remove,
+)
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
@@ -115,7 +120,7 @@ class SymbolFilterWindow(UIWindow):
                 starting_height=2,
                 manager=MANAGER,
             )
-            if tag in switches.disallowed_symbol_tags:
+            if tag in get_switch(Switches.disallowed_symbol_tags):
                 self.checkbox[tag].change_object_id("@unchecked_checkbox")
 
             self.checkbox_text[tag] = pygame_gui.elements.UILabel(
@@ -138,9 +143,9 @@ class SymbolFilterWindow(UIWindow):
                         manager=MANAGER,
                     )
 
-                    if tag in switches.disallowed_symbol_tags:
+                    if tag in get_switch(Switches.disallowed_symbol_tags):
                         self.checkbox[s_tag].disable()
-                    if s_tag in switches.disallowed_symbol_tags:
+                    if s_tag in get_switch(Switches.disallowed_symbol_tags):
                         self.checkbox[s_tag].change_object_id("@unchecked_checkbox")
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
@@ -168,8 +173,8 @@ class SymbolFilterWindow(UIWindow):
                         if "@checked_checkbox" in object_ids:
                             self.checkbox[tag].change_object_id("@unchecked_checkbox")
                             # add tag to disallowed list
-                            if tag not in switches.disallowed_symbol_tags:
-                                switches.disallowed_symbol_tags.append(tag)
+                            if tag not in get_switch(Switches.disallowed_symbol_tags):
+                                switch_list_append(Switches.disallowed_symbol_tags, tag)
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
@@ -177,15 +182,19 @@ class SymbolFilterWindow(UIWindow):
                                         "@unchecked_checkbox"
                                     )
                                     self.checkbox[s_tag].disable()
-                                    if s_tag not in switches.disallowed_symbol_tags:
-                                        switches.disallowed_symbol_tags.append(s_tag)
+                                    if s_tag not in get_switch(
+                                        Switches.disallowed_symbol_tags
+                                    ):
+                                        switch_list_append(
+                                            Switches.disallowed_symbol_tags, tag
+                                        )
 
                         # handle unchecked checkboxes becoming checked
                         elif "@unchecked_checkbox" in object_ids:
                             self.checkbox[tag].change_object_id("@checked_checkbox")
                             # remove tag from disallowed list
-                            if tag in switches.disallowed_symbol_tags:
-                                switches.disallowed_symbol_tags.remove(tag)
+                            if tag in get_switch(Switches.disallowed_symbol_tags):
+                                switch_list_remove(Switches.disallowed_symbol_tags, tag)
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
@@ -193,8 +202,12 @@ class SymbolFilterWindow(UIWindow):
                                         "@checked_checkbox"
                                     )
                                     self.checkbox[s_tag].enable()
-                                    if s_tag in switches.disallowed_symbol_tags:
-                                        switches.disallowed_symbol_tags.remove(s_tag)
+                                    if tag in get_switch(
+                                        Switches.disallowed_symbol_tags
+                                    ):
+                                        switch_list_remove(
+                                            Switches.disallowed_symbol_tags, tag
+                                        )
         return super().process_event(event)
 
 
@@ -309,8 +322,8 @@ class SaveCheck(UIWindow):
                 if self.isMainMenu:
                     game.is_close_menu_open = False
                     self.mm_btn.enable()
-                    game.last_screen_forupdate = get_switch("cur_screen")
-                    set_switch("cur_screen", "start screen")
+                    game.last_screen_forupdate = get_switch(Switches.cur_screen)
+                    set_switch(Switches.cur_screen, "start screen")
                     game.switch_screens = True
                     self.kill()
                 else:
@@ -455,8 +468,8 @@ class GameOver(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = get_switch("cur_screen")
-                set_switch("cur_screen", "start screen")
+                game.last_screen_forupdate = get_switch(Switches.cur_screen)
+                set_switch(Switches.cur_screen, "start screen")
                 game.switch_screens = True
                 self.kill()
             elif event.ui_element == self.not_yet_button:
@@ -1332,7 +1345,7 @@ class UpdateAvailablePopup(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
                 self.x = UpdateWindow(
-                    get_switch("cur_screen"), self.announce_restart_callback
+                    get_switch(Switches.cur_screen), self.announce_restart_callback
                 )
                 self.kill()
             elif (
@@ -1360,7 +1373,7 @@ class UpdateAvailablePopup(UIWindow):
 
     def announce_restart_callback(self):
         self.x.kill()
-        y = AnnounceRestart(get_switch("cur_screen"))
+        y = AnnounceRestart(get_switch(Switches.cur_screen))
         y.update(1)
 
 
