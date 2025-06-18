@@ -8,6 +8,7 @@ from scripts.housekeeping.datadir import get_save_dir
 
 
 def load_clan_settings():
+    reset_loaded_clan_settings()
     if os.path.exists(
         get_save_dir() + f"/{get_switch(Switches.clan_list)[0]}/clan_settings.json"
     ):
@@ -45,14 +46,17 @@ def switch_clan_setting(setting_name):
 
     # Give the index that the list is currently at
     list_index = setting_lists[setting_name].index(clan_settings[setting_name])
+    list_index = (list_index + 1) % len(setting_lists[setting_name])
 
-    if (
-        list_index == len(setting_lists[setting_name]) - 1
-    ):  # The option is at the list's end, go back to 0
-        clan_settings[setting_name] = setting_lists[setting_name][0]
-    else:
-        # Else move on to the next item on the list
-        clan_settings[setting_name] = setting_lists[setting_name][list_index + 1]
+    clan_settings[setting_name] = setting_lists[setting_name][list_index]
+
+
+def reset_loaded_clan_settings():
+    global clan_settings
+
+    for setting in all_settings:  # Add all the settings to the settings dictionary
+        for setting_name, inf in setting.items():
+            clan_settings[setting_name] = inf[2]
 
 
 # Init Settings
@@ -73,7 +77,9 @@ all_settings = [
     _settings["clan_focus"],
 ]
 
-for setting in all_settings:  # Add all the settings to the settings dictionary
-    for setting_name, inf in setting.items():
-        clan_settings[setting_name] = inf[2]
-        setting_lists[setting_name] = [inf[2], not inf[2]]
+setting_lists = {
+    key: [inf[2], not inf[2]]
+    for category in all_settings
+    for key, inf in category.items()
+}
+reset_loaded_clan_settings()

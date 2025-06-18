@@ -21,6 +21,7 @@ from scripts.cat.names import names
 from scripts.cat.save_load import save_cats
 from scripts.cat.sprites import sprites
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
+from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
 from scripts.events_module.generate_events import OngoingEvent
@@ -171,6 +172,7 @@ class Clan:
         the program starts
         """
         set_switch(Switches.clan_name, self.name)
+        reset_loaded_clan_settings()
         self.instructor = Cat(
             status=choice(
                 [
