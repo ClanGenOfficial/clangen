@@ -274,19 +274,6 @@ class Clan:
         # if map_available:
         #    save_map(game.map_info, game.clan.name)
 
-        # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
-        if game.switches["camp_bg"] is None:
-            random_camp_options = ["camp1", "camp2"]
-            random_camp = choice(random_camp_options)
-            game.switches["camp_bg"] = random_camp
-
-        # if no game mode chosen, set to Classic
-        if game.switches["game_mode"] is None:
-            game.switches["game_mode"] = "classic"
-            self.game_mode = "classic"
-        # if game.switches['game_mode'] == 'cruel_season':
-        #    game.settings['disasters'] = True
-
         # set the starting season
         season_index = self.seasons.index(self.starting_season)
         self.current_season = self.seasons[season_index]

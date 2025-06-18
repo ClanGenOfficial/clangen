@@ -1520,9 +1520,9 @@ class Cat:
         """Generates a thought for the cat, which displays on their profile."""
         all_cats = self.all_cats
         other_cat = choice(list(all_cats.keys()))
-        game_mode = game.switches["game_mode"]
-        biome = game.switches["biome"]
-        camp = game.switches["camp_bg"]
+        game_mode = game.clan.game_mode
+        biome = game.clan.biome
+        camp = game.clan.camp_bg
         try:
             season = game.clan.current_season
         except Exception:
