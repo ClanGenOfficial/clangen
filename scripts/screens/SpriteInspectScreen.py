@@ -216,7 +216,7 @@ class SpriteInspectScreen(Screens):
             starting_height=2,
         )
 
-        self.platform_shown = get_clan_setting("background")
+        self.platform_shown = get_clan_setting("backgrounds")
 
         self.cat_setup()
 

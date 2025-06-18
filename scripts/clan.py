@@ -102,6 +102,10 @@ class Clan:
         self.inheritance = {}
         self.custom_pronouns = {}
 
+        set_switch(Switches.biome, biome)
+        set_switch(Switches.camp_bg, camp_bg)
+        set_switch(Switches.game_mode, game_mode)
+
         # Reputation is for loners/kittypets/outsiders in general that wish to join the clan.
         # it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
@@ -166,6 +170,7 @@ class Clan:
         created in the 'clan created' screen, not every time
         the program starts
         """
+        set_switch(Switches.clan_name, self.name)
         self.instructor = Cat(
             status=choice(
                 [

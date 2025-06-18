@@ -227,6 +227,7 @@ def load_data():
     clan_list = read_clans()
     if clan_list:
         set_switch(Switches.clan_list, clan_list)
+        set_switch(Switches.clan_name, clan_list[0])
         try:
             load_cats()
             version_info = clan_class.load_clan()
