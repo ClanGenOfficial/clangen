@@ -1555,9 +1555,7 @@ class EventEditScreen(Screens):
         :param index_limit: indicate a maximum index for the new cat list.
         :param include_clan: should "clan" and "some_clan" tags be included
         """
-        involved_cats = ["m_c"]
-        if self.random_cat_info:
-            involved_cats.append("r_c")
+        involved_cats = ["m_c", "r_c"]
 
         new_cat_list = list(self.new_cat_block_dict.keys())
         if isinstance(index_limit, int):
@@ -1727,6 +1725,7 @@ class EventEditScreen(Screens):
             self.new_cat_editor["display"].set_text(
                 f"selected cat: "
                 f"{self.new_cat_block_dict.get(self.selected_new_cat) if self.new_cat_block_dict.get(self.selected_new_cat) else '[]'}")
+            self.update_new_cat_button_tooltips()
 
             # need to reset the cat connections info here or it'll be incorrect
             new_selection = (self.connections_element["cat_list"].selected_list.copy()
@@ -2011,6 +2010,8 @@ class EventEditScreen(Screens):
             self.new_cat_editor["cat_list"].new_item_list(self.new_cat_block_dict.keys())
             self.new_cat_editor["cat_list"].set_selected_list([self.selected_new_cat])
             self.new_cat_editor["display"].set_text(f"selected cat: []")
+            self.update_new_cat_button_tooltips()
+
             if self.new_cat_element.get("checkbox_container"):
                 self.update_new_cat_options()
 
@@ -4649,7 +4650,6 @@ class EventEditScreen(Screens):
             }
         )
 
-        # TODO: consider tooltips to show the hovered cat's tag info
         self.new_cat_editor["cat_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 168)),
             item_list=self.new_cat_block_dict.keys(),
@@ -4662,6 +4662,7 @@ class EventEditScreen(Screens):
                 "left_target": self.new_cat_editor["intro"]
             }
         )
+        self.update_new_cat_button_tooltips()
 
         self.new_cat_editor["add"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((30, 4), (36, 36))),
@@ -4710,6 +4711,10 @@ class EventEditScreen(Screens):
             self.new_cat_editor["cat_list"].set_selected_list([selected])
             self.new_cat_select()
             self.display_new_cat_constraints()
+
+    def update_new_cat_button_tooltips(self):
+        for name, button in self.new_cat_editor["cat_list"].buttons.items():
+            button.set_tooltip(f"{self.new_cat_block_dict[name]}")
 
     def clear_new_cat_constraints(self):
         for ele in self.new_cat_checkbox.values():
