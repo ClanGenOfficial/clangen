@@ -339,6 +339,8 @@ class EventEditScreen(Screens):
         self.selected_new_cat: str = ""
         """The new cat currently being viewed by the user"""
 
+        self.new_cat_editor = {}
+        self.new_cat_element = {}
         self.new_cat_checkbox = {}
         self.cat_story_element = {}
         self.new_status_element = {}
@@ -1021,7 +1023,6 @@ class EventEditScreen(Screens):
     def select_type_tab_creation(self):
         # clear all tabs first
         self.kill_tabs()
-        # TODO: replace with a for loop
         self.type_tab_buttons["death"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 136), (36, 36))),
             Icon.STARCLAN,
@@ -1293,8 +1294,6 @@ class EventEditScreen(Screens):
             "not_trait": [],
             "backstory": []
         }
-        # TODO: add a checkbox somewhere that indicates if the event should have a random cat
-        self.r_c_needed = False
         self.random_cat_info = {
             "rank": [],
             "age": [],
