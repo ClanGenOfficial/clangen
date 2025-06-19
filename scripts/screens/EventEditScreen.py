@@ -213,6 +213,7 @@ class EventEditScreen(Screens):
         self.event_buttons = {}
 
         self.editor_element = {}
+        self.lock_buttons = {}
 
         self.current_preview_state: int = self.preview_states[0]
         """The currently used preview state. This can be 0 (preview off), 1 (plural), or 2 (singular)"""
@@ -727,6 +728,13 @@ class EventEditScreen(Screens):
                 self.clear_event_info()
                 self.clear_editor_tab()
 
+            # PARAM LOCKS
+            elif event.ui_element in self.lock_buttons.values():
+                if event.ui_element.text == Icon.PAW:
+                    event.ui_element.set_text(Icon.SCRATCHES)
+                elif event.ui_element.text == Icon.SCRATCHES:
+                    event.ui_element.set_text(Icon.PAW)
+
             elif event.ui_element in self.editor_element.values():
                 # SAVE NEW EVENT
                 if event.ui_element == self.editor_element["save"]:
@@ -1220,7 +1228,7 @@ class EventEditScreen(Screens):
 
     def clear_event_info(self):
         """
-        Clears all of the saved event info so we can start fresh.
+        Clears all the saved event info, so we can start fresh.
         """
         # Settings elements
         self.event_text_info = ""
@@ -1463,6 +1471,28 @@ class EventEditScreen(Screens):
             self.generate_personal_tab()
         elif self.current_editor_tab == "outside consequences":
             self.generate_outside_tab()
+
+    def create_lock(self, top_anchor, name, container=None):
+        """
+        Creates a lock button based on parameters.
+        :param top_anchor: The element the divider should anchor it's top coord to
+        :param name: The key the divider should use within the self.editor_element dict
+        :param container: As a default, it uses self.editor_container, but you can change that with this param
+        """
+        if not container:
+            container = self.editor_container
+        self.lock_buttons[name] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((10, 10), (36, 36))),
+            Icon.PAW,
+            get_button_dict(ButtonStyles.ICON, (36, 36)),
+            manager=MANAGER,
+            object_id="@buttonstyles_icon",
+            container=container,
+            anchors={
+                "top_target": top_anchor
+            },
+            tool_tip_text="If locked, these parameters will be preserved when making a new event."
+        )
 
     def create_divider(self, top_anchor, name, off_set: int = -12, container=None):
         """
@@ -6008,18 +6038,21 @@ class EventEditScreen(Screens):
             )
             prev_element = self.location_element[biome]
 
+        self.create_lock(self.location_element[biome_list[-1]], "location")
+
         self.location_element["display"] = UITextBoxTweaked(
             f"chosen location: {self.location_info}",
-            ui_scale(pygame.Rect((10, 10), (440, -1))),
+            ui_scale(pygame.Rect((0, 10), (420, -1))),
             object_id="#text_box_30_horizleft_pad_10_10",
             manager=MANAGER,
             container=self.editor_container,
             anchors={
-                "top_target": (self.location_element[biome_list[-1]]),
+                "top_target": self.location_element[biome_list[-1]],
+                "left_target": self.lock_buttons["location"]
             },
             allow_split_dashes=False
         )
-        self.create_divider(self.location_element["display"], "location", -14)
+        self.create_divider(self.location_element["display"], "location")
 
     def update_camp_list(self, chosen_biome):
 
