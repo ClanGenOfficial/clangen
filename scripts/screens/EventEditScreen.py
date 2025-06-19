@@ -737,7 +737,8 @@ class EventEditScreen(Screens):
                             or not self.type_info
                             or not self.valid_injury()
                             or not self.valid_history()
-                            or not self.valid_relationships()):
+                            or not self.valid_relationships()
+                            or not self.valid_supply()):
                         EditorMissingInfo(self.alert_text)
                     else:
                         new_event = self.compile_new_event()
@@ -1799,6 +1800,20 @@ class EventEditScreen(Screens):
         if not valid:
             self.alert_text = f"A Relationship block is missing information! Do all blocks have cats, values, " \
                               f"and an amount chosen?"
+        return valid
+
+    def valid_supply(self) -> bool:
+        """
+        Checks if supply blocks have all required info
+        """
+        valid = True
+        for block in self.supply_block_list:
+            if not block["type"]:
+                valid = False
+
+        if not valid:
+            self.alert_text = f"A Supply block has no type selected. A type must be chosen!"
+
         return valid
 
     # HANDLE EVENT FUNCS
